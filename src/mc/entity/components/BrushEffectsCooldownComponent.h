@@ -9,9 +9,10 @@ public:
     BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&);
     BrushEffectsCooldownComponent();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class ExpiringTick const EXPIRED_TICK;
+    MCAPI static class ExpiringTick const& EXPIRED_TICK();
 
     // NOLINTEND
 };

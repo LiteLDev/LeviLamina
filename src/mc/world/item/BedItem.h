@@ -62,4 +62,29 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _checkUseOnPermissions$(
+        class Actor&          entity,
+        class ItemStackBase&  item,
+        uchar const&          face,
+        class BlockPos const& pos
+    ) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    // NOLINTEND
 };

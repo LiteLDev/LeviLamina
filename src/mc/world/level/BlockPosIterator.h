@@ -33,6 +33,16 @@ public:
         MCAPI class BlockPosIterator::FromCenter& operator++();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
     class ManhattanDistance {
@@ -57,6 +67,16 @@ public:
         MCAPI class BlockPosIterator::ManhattanDistance& operator++();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -78,6 +98,16 @@ public:
     MCAPI class BlockPos const& operator*();
 
     MCAPI class BlockPosIterator& operator++();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

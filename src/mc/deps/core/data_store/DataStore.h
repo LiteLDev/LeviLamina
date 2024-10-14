@@ -41,6 +41,13 @@ public:
         MCAPI ~CustomFileHandlers();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class EditorImpl {
@@ -72,6 +79,24 @@ public:
         setValueForKey(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
+
+        MCAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore$();
+
+        MCAPI class Bedrock::JSONObject::Node* getValueForKey$(std::string_view key);
+
+        MCAPI class Bedrock::JSONObject::Node const* getValueForKey$(std::string_view key) const;
+
+        MCAPI class Bedrock::JSONObject::Node*
+        setValueForKey$(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value);
+
+        // NOLINTEND
     };
 
     class Impl {
@@ -86,6 +111,16 @@ public:
         MCAPI explicit Impl(class Bedrock::DataStore* owner);
 
         MCAPI void load();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -112,6 +147,13 @@ public:
         virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const = 0;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        // NOLINTEND
     };
 
     class ViewerImpl : public ::Bedrock::DataStore::Viewer {
@@ -136,6 +178,19 @@ public:
         virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
+
+        MCAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore$();
+
+        MCAPI class Bedrock::JSONObject::Node const* getValueForKey$(std::string_view key) const;
+
+        // NOLINTEND
     };
 
 public:
@@ -155,6 +210,20 @@ public:
     MCAPI void setCustomFileHandlers(struct Bedrock::DataStore::CustomFileHandlers handlers);
 
     MCAPI void setFilePath(class Core::Path const& filePath);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

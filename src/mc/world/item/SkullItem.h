@@ -70,4 +70,39 @@ public:
         const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI std::string getAuxValuesDescription$() const;
+
+    MCAPI ::BlockShape getBlockShape$() const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI ::ActorLocation getEquipLocation$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

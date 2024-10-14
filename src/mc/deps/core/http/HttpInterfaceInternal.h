@@ -35,6 +35,19 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void send$(
+        gsl::not_null<struct HC_CALL*>     call,
+        gsl::not_null<struct XAsyncBlock*> asyncBlock,
+        struct HC_PERFORM_ENV*             env
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

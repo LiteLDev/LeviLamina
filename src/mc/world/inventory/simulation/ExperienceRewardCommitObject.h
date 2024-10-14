@@ -29,4 +29,22 @@ public:
     MCAPI explicit ExperienceRewardCommitObject(int experienceReward);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool append$(class ContainerValidationCommitObject* other);
+
+    MCAPI bool canCommit$(class ContainerScreenContext const&) const;
+
+    MCAPI void commit$(class ContainerScreenContext const& screenContext);
+
+    // NOLINTEND
 };

@@ -25,4 +25,20 @@ public:
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const& tag, class ServerLevel& level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CommandOrigin> load$(class CompoundTag const& tag);
+
+    // NOLINTEND
 };

@@ -34,6 +34,13 @@ public:
         MCAPI ~PoolEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -57,6 +64,33 @@ public:
     MCVAPI void tick();
 
     MCAPI WorkerPoolManagerImpl();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForBedrockImplBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::shared_ptr<class Bedrock::WorkerPoolHandleInterface> createWorkerPool$(
+        std::string                                       name,
+        uint64                                            threadCount,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinityMask,
+        bool                                              suppressWorkerProfiling,
+        std::optional<int>                                idealCore
+    );
+
+    MCAPI void init$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

@@ -36,4 +36,18 @@ public:
     MCAPI InfestedDeepslateBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Block const* tryGetUninfested$(class Block const& block) const;
+
+    // NOLINTEND
 };

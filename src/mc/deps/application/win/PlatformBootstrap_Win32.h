@@ -46,6 +46,31 @@ public:
     virtual struct Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory(char const*, char*, uint64);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::string_view getAssetRoot$();
+
+    MCAPI std::string_view getSaveDataRoot$();
+
+    MCAPI void initialize$();
+
+    MCAPI struct Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory$(char const*, char*, uint64);
+
+    MCAPI struct Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile$(char*, uint64, char const*, char*, uint64);
+
+    MCAPI struct Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile$(char*, uint64, char const*, char*, uint64);
+
+    MCAPI struct Bedrock::PlatformBootstrap::LoadResult
+    rawLoadFromCustomRoot$(char*, uint64, char const*, char*, uint64);
+
+    MCAPI struct Bedrock::PlatformBootstrap::SaveResult
+    rawSaveDataFile$(char const*, uint64, char const*, bool, char*, uint64);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

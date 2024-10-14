@@ -17,6 +17,13 @@ public:
     virtual ~PublisherDisconnector() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

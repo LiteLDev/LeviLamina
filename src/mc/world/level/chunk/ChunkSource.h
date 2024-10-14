@@ -166,8 +166,6 @@ public:
 
     MCAPI bool shouldServerGeneratePos(class ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
 
-    MCAPI static bool gPerfIsClientSide;
-
     // NOLINTEND
 
     // protected:
@@ -231,6 +229,92 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _saveDirtyChunks(class LevelStorage&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI bool canCreateViews$() const;
+
+    MCAPI bool canLaunchTasks$() const;
+
+    MCAPI void checkAndReplaceChunk$(class ChunkViewSource& neighborhood, class LevelChunk& lc);
+
+    MCAPI bool chunkPosNeedsBlending$(class ChunkPos const& cp);
+
+    MCAPI void clearDeletedEntities$();
+
+    MCAPI void compact$();
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI void deserializeActorStorageToLevelChunk$(class LevelChunk& levelChunk);
+
+    MCAPI void flushPendingDiscardedChunkWrites$();
+
+    MCAPI void flushThreadBatch$();
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const&);
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          getOrLoadChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Random& random);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage$() const;
+
+    MCAPI void hintDiscardBatchBegin$();
+
+    MCAPI void hintDiscardBatchEnd$();
+
+    MCAPI bool isChunkKnown$(class ChunkPos const& chunkPos);
+
+    MCAPI bool isChunkSaved$(class ChunkPos const& chunkPos);
+
+    MCAPI bool isShutdownDone$();
+
+    MCAPI bool isWithinWorldLimit$(class ChunkPos const& cp) const;
+
+    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary$();
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI void
+    postProcessMobsAt$(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+
+    MCAPI bool saveLiveChunk$(class LevelChunk& lc);
+
+    MCAPI void setLevelChunk$(std::shared_ptr<class LevelChunk>);
+
+    MCAPI void shutdown$();
+
+    MCAPI std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider$();
+
+    MCAPI void writeEntityChunkTransfer$(class LevelChunk& levelChunk);
+
+    MCAPI void writeEntityChunkTransfersToUnloadedChunk$(
+        class ChunkKey const&                                      chunkKey,
+        std::vector<struct ActorUnloadedChunkTransferEntry> const& transfers
+    );
+
+    MCAPI static bool& gPerfIsClientSide();
 
     // NOLINTEND
 };

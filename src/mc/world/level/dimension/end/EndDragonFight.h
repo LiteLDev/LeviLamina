@@ -27,6 +27,13 @@ public:
         MCAPI ~GateWayGenerator();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -103,25 +110,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const ARENA_SIZE_CHUNKS;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
+    MCAPI static int const& ARENA_SIZE_CHUNKS();
 
-    MCAPI static int const GATEWAY_CHUNK_RADIUS;
+    MCAPI static class BlockPos const& DEFAULT_PORTAL_LOCATION();
 
-    MCAPI static int const GATEWAY_COUNT;
+    MCAPI static int const& GATEWAY_CHUNK_RADIUS();
 
-    MCAPI static int const GATEWAY_DISTANCE;
+    MCAPI static int const& GATEWAY_COUNT();
 
-    MCAPI static int const GATEWAY_HEIGHT;
+    MCAPI static int const& GATEWAY_DISTANCE();
 
-    MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
+    MCAPI static int const& GATEWAY_HEIGHT();
 
-    MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
+    MCAPI static int const& TIME_BETWEEN_CRYSTAL_SCANS();
 
-    MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
+    MCAPI static int const& TIME_BETWEEN_PLAYER_SCANS();
+
+    MCAPI static int const& TIME_BETWEEN_PORTAL_SCANS();
 
     // NOLINTEND
 };

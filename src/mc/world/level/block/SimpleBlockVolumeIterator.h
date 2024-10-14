@@ -23,4 +23,18 @@ public:
     MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const& vol, bool begin);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };

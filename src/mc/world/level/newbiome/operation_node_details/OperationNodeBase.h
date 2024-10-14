@@ -20,6 +20,15 @@ public:
     virtual void init(int64 seed);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void init$(int64 seed);
+
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeDetails

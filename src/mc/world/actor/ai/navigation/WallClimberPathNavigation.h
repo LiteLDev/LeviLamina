@@ -41,4 +41,23 @@ public:
     MCAPI bool _isInsideBorderBlock(class AABB const& aabb, class BlockSource const& region, float grow) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canUpdatePath$(class Mob const& mob) const;
+
+    MCAPI std::unique_ptr<class Path>
+          createPath$(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+
+    MCAPI std::unique_ptr<class Path>
+          createPath$(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+
+    MCAPI bool moveTo$(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);
+
+    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

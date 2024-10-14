@@ -30,4 +30,21 @@ public:
     virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void onBaseGamePackDownloadComplete$();
+
+    MCAPI void onFullPackStackInvalid$();
+
+    MCAPI void onLanguageSubpacksChanged$();
+
+    MCAPI void onResourceManagerDestroyed$(class ResourcePackManager& mgr);
+
+    // NOLINTEND
 };

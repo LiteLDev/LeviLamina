@@ -66,4 +66,26 @@ public:
     MCAPI void _startGoingDark();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent$() const;
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void normalTick$();
+
+    // NOLINTEND
 };

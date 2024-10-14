@@ -13,7 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct persona::PersonaCharacterHandle const INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct persona::PersonaCharacterHandle const& INVALID();
 
     // NOLINTEND
 };

@@ -32,4 +32,15 @@ public:
     deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random&, class LootTableContext& context);
+
+    MCAPI void apply$(class ItemInstance& item, class Random&, class LootTableContext& context);
+
+    // NOLINTEND
 };

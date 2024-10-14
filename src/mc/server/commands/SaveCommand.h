@@ -43,13 +43,18 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Bedrock::Threading::Mutex mSaveAllMutex;
+    MCAPI void execute$(class CommandOrigin const&, class CommandOutput& output) const;
 
-    MCAPI static ::SaveCommand::State mState;
+    MCAPI static std::vector<struct SnapshotFilenameAndLength>& mSaveAllFileList();
+
+    MCAPI static class Bedrock::Threading::Mutex& mSaveAllMutex();
+
+    MCAPI static ::SaveCommand::State& mState();
 
     // NOLINTEND
 };

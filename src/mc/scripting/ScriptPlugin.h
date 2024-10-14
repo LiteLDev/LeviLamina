@@ -55,4 +55,21 @@ public:
     MCAPI std::optional<struct Scripting::ScriptData> _loadScript(std::string const& fileName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::optional<struct Scripting::ScriptData>
+    onLoadScript$(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>> moduleBindings);
+
+    // NOLINTEND
 };

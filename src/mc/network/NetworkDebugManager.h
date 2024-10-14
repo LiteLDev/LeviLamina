@@ -31,6 +31,18 @@ public:
         MCAPI ~Tracker();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -44,9 +56,16 @@ public:
     // vIndex: 0
     virtual ~NetworkDebugManager() = default;
 
-    MCAPI static int const MAX_NUMBER_OF_SAMPLES;
+    // NOLINTEND
 
-    MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static int const& MAX_NUMBER_OF_SAMPLES();
+
+    MCAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
 
     // NOLINTEND
 };

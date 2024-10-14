@@ -115,28 +115,6 @@ public:
 
     MCAPI bool isLastBuildBlockInteractive() const;
 
-    MCAPI static float const MIN_MOVING_NON_CREATIVE_BUILD_DELAY;
-
-    MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
-
-    MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
-
-    MCAPI static float const PICKRANGE_GAMEPAD;
-
-    MCAPI static float const PICKRANGE_MOUSE;
-
-    MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM;
-
-    MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM_SQR;
-
-    MCAPI static float const PICKRANGE_TOUCH_CREATIVE;
-
-    MCAPI static float const PICKRANGE_TOUCH_SURVIVAL;
-
-    MCAPI static float const PICKRANGE_VR_CREATIVE;
-
-    MCAPI static float const PICKRANGE_VR_SURVIVAL;
-
     // NOLINTEND
 
     // private:
@@ -162,6 +140,83 @@ public:
 
     MCAPI class InteractionResult
     _sendUseItemOnEvents(class ItemStack& item, class BlockPos const& at, uchar face, class Vec3 const& hit) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool attack$(class Actor& entity);
+
+    MCAPI bool buildBlock$(class BlockPos const& pos, uchar face, bool isSimTick);
+
+    MCAPI void continueBuildBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool
+    continueDestroyBlock$(class BlockPos const& pos, uchar face, class Vec3 const& playerPos, bool& hasDestroyedBlock);
+
+    MCAPI bool destroyBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI float getPickRange$(::InputMode const& currentInputMode, bool isVR);
+
+    MCAPI bool interact$(class Actor& entity, class Vec3 const& location);
+
+    MCAPI bool isInTrialMode$();
+
+    MCAPI void registerUpsellScreenCallback$(std::function<void(bool)> callback);
+
+    MCAPI void releaseUsingItem$();
+
+    MCAPI void setTrialMode$(bool isEnabled);
+
+    MCAPI void startBuildBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool startDestroyBlock$(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+
+    MCAPI void stopBuildBlock$();
+
+    MCAPI void stopDestroyBlock$(class BlockPos const& pos);
+
+    MCAPI void tick$();
+
+    MCAPI bool useItem$(class ItemStack& item);
+
+    MCAPI class InteractionResult useItemOn$(
+        class ItemStack&      item,
+        class BlockPos const& at,
+        uchar                 face,
+        class Vec3 const&     hit,
+        class Block const*    targetBlock
+    );
+
+    MCAPI static float const& MIN_MOVING_NON_CREATIVE_BUILD_DELAY();
+
+    MCAPI static float const& PICKRANGE_CREATIVE_MAXIMUM();
+
+    MCAPI static float const& PICKRANGE_CREATIVE_MAXIMUM_SQR();
+
+    MCAPI static float const& PICKRANGE_GAMEPAD();
+
+    MCAPI static float const& PICKRANGE_MOUSE();
+
+    MCAPI static float const& PICKRANGE_SURVIVAL_MAXIMUM();
+
+    MCAPI static float const& PICKRANGE_SURVIVAL_MAXIMUM_SQR();
+
+    MCAPI static float const& PICKRANGE_TOUCH_CREATIVE();
+
+    MCAPI static float const& PICKRANGE_TOUCH_SURVIVAL();
+
+    MCAPI static float const& PICKRANGE_VR_CREATIVE();
+
+    MCAPI static float const& PICKRANGE_VR_SURVIVAL();
 
     // NOLINTEND
 };

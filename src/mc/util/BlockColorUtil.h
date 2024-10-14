@@ -13,8 +13,6 @@ namespace mce { class Color; }
 
 namespace BlockColorUtil {
 // NOLINTBEGIN
-MCAPI extern std::array<::BlockColor, 16> RAINBOW;
-
 MCAPI ::BlockColor fromInt(int auxValue);
 
 MCAPI ::BlockColor fromItemColor(::ItemColor color);
@@ -26,6 +24,11 @@ MCAPI std::string const& getName(::BlockColor color);
 MCAPI std::string const& getNameMixedCase(::BlockColor color);
 
 MCAPI int getRGBColor(::BlockColor color);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI std::array<::BlockColor, 16>& RAINBOW();
 // NOLINTEND
 
 }; // namespace BlockColorUtil

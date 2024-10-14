@@ -34,6 +34,13 @@ public:
         MCAPI ~LoadedBiome();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -88,6 +95,20 @@ public:
 
     MCAPI static struct BiomeRegistry::LoadedBiome
     _loadSingleBiome(class ResourcePackManager& loader, std::string const& biomeName, bool loadFromPacks);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

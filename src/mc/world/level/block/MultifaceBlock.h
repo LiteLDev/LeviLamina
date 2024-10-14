@@ -116,22 +116,6 @@ public:
 
     MCAPI static bool hasFace(class Block const& block, uchar faceDirection);
 
-    MCAPI static int const MULTIFACE_ALL;
-
-    MCAPI static int const MULTIFACE_DOWN;
-
-    MCAPI static int const MULTIFACE_EAST;
-
-    MCAPI static int const MULTIFACE_NORTH;
-
-    MCAPI static int const MULTIFACE_SIDES;
-
-    MCAPI static int const MULTIFACE_SOUTH;
-
-    MCAPI static int const MULTIFACE_UP;
-
-    MCAPI static int const MULTIFACE_WEST;
-
     // NOLINTEND
 
     // protected:
@@ -150,6 +134,73 @@ public:
         class BlockPos const&    pos,
         bool                     canSpawnParticles
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class HitResult
+    clip$(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
+
+    MCAPI bool isMultifaceBlock$() const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI class Block const& sanitizeFillBlock$(class Block const& block) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static int const& MULTIFACE_ALL();
+
+    MCAPI static int const& MULTIFACE_DOWN();
+
+    MCAPI static int const& MULTIFACE_EAST();
+
+    MCAPI static int const& MULTIFACE_NORTH();
+
+    MCAPI static int const& MULTIFACE_SIDES();
+
+    MCAPI static int const& MULTIFACE_SOUTH();
+
+    MCAPI static int const& MULTIFACE_UP();
+
+    MCAPI static int const& MULTIFACE_WEST();
 
     // NOLINTEND
 };

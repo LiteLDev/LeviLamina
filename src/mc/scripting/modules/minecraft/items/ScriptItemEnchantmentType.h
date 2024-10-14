@@ -33,6 +33,13 @@ public:
     getOrCreateHandle(class Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

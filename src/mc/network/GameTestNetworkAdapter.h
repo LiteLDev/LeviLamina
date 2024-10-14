@@ -51,6 +51,25 @@ public:
         virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& testInstance);
+
+        MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& testInstance);
+
+        MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
+
+        // NOLINTEND
     };
 
 public:
@@ -69,6 +88,16 @@ public:
         class Dimension&                       dimension,
         struct gametest::TestParameters const& params
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

@@ -11,9 +11,10 @@ public:
     CRC32(CRC32 const&);
     CRC32();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uint const table[];
+    MCAPI static ::ll::CArrayT<uint const>& table();
 
     // NOLINTEND
 };

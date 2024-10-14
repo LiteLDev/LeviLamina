@@ -34,4 +34,19 @@ public:
     unPackLootTable(class Level& level, class Container& container, DimensionType dimensionId, class Actor* actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void eraseLootTable$();
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    // NOLINTEND
 };

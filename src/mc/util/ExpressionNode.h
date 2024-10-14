@@ -135,10 +135,6 @@ public:
     MCAPI static void
     unregisterQueryFunction(std::string const& queryFunctionName, class HashedString querySetIdentifier);
 
-    MCAPI static std::vector<std::pair<std::string, ::ExpressionOp>> mAliasOpTokens;
-
-    MCAPI static std::vector<std::string> mExpressionOpTokens;
-
     // NOLINTEND
 
     // private:
@@ -242,19 +238,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
     MCAPI static std::function<
-        struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)>
-        _defaultUnknownQueryFunction;
+        struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)>&
+    _defaultUnknownQueryFunction();
 
-    MCAPI static class ExperimentStorage mExperiments;
+    MCAPI static std::vector<std::pair<std::string, ::ExpressionOp>>& mAliasOpTokens();
 
-    MCAPI static bool mMolangInitialized;
+    MCAPI static class ExperimentStorage& mExperiments();
 
-    MCAPI static std::unordered_multimap<class HashedString, struct MolangQueryFunction> mQueryFunctionAccessors;
+    MCAPI static std::vector<std::string>& mExpressionOpTokens();
 
-    MCAPI static std::unordered_map<class HashedString, std::unordered_set<class HashedString>> mQuerySets;
+    MCAPI static bool& mMolangInitialized();
+
+    MCAPI static std::unordered_multimap<class HashedString, struct MolangQueryFunction>& mQueryFunctionAccessors();
+
+    MCAPI static std::unordered_map<class HashedString, std::unordered_set<class HashedString>>& mQuerySets();
 
     // NOLINTEND
 };

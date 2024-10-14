@@ -59,4 +59,16 @@ public:
     MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value& root, class SemVersion const& engineVersion);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

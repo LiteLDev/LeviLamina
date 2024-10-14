@@ -20,9 +20,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::function<float(float, float, float)>> mEasingFuncs;
+    MCAPI static std::vector<std::function<float(float, float, float)>>& mEasingFuncs();
 
     // NOLINTEND
 };

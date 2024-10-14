@@ -40,9 +40,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
+    MCAPI static class mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
 
     // NOLINTEND
 };

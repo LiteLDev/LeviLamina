@@ -44,4 +44,31 @@ public:
     virtual void updateInfluences();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int getChunkRebuildPriority$(class ChunkPos const& cp) const;
+
+    MCAPI uint registerForUpdates$();
+
+    MCAPI void
+    setPlayerInfluence$(uint handle, class ChunkPos const& playerPosition, class Vec3 const& playerMovementDirection);
+
+    MCAPI void setTickingAreaInfluence$(
+        uint                  handle,
+        class ChunkPos const& tickingAreaPosition,
+        int                   sizeX,
+        int                   sizeZ,
+        bool                  isCircle,
+        bool                  preload
+    );
+
+    MCAPI void unregisterForUpdates$(uint handle);
+
+    MCAPI void updateInfluences$();
+
+    // NOLINTEND
 };

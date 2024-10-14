@@ -48,4 +48,38 @@ public:
     MCAPI static bool isShipwreckBeached(class Biome const* biome);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class StructureStart>
+    createStructureStart$(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI bool isFeatureChunk$(
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    pos,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
+    );
+
+    // NOLINTEND
 };

@@ -35,4 +35,15 @@ public:
     MCAPI void _set(bool v, bool saveOptionChange);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void load$(std::string const& valueString);
+
+    MCAPI void save$(std::vector<std::pair<std::string, std::string>>& propertyVector);
+
+    // NOLINTEND
 };

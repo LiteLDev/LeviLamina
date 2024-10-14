@@ -35,4 +35,15 @@ public:
     MCAPI static void validate(class ItemStackBase& stack);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
+
+    // NOLINTEND
 };

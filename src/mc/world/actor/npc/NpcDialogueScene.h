@@ -22,4 +22,11 @@ public:
     parse(class Json::Value const& sceneNode, std::string const& fileName, int packCommandVersion);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

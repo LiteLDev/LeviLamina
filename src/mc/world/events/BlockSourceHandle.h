@@ -22,4 +22,13 @@ public:
     virtual void onSourceDestroyed(class BlockSource& source);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onSourceDestroyed$(class BlockSource& source);
+
+    // NOLINTEND
 };

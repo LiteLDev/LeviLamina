@@ -19,9 +19,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemStackNetResult, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemStackNetResult, std::string> const& mMap();
 
     // NOLINTEND
 };

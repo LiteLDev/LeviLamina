@@ -25,6 +25,13 @@ public:
         MCAPI ~BatchEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -79,6 +86,32 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _writeKey(std::string const& key, std::shared_ptr<std::string>&& data, ::DBHelpers::Category category);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void deleteKey$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI void flush$(class LevelStorage& db);
+
+    MCAPI void putKey$(std::string const& key, std::string_view data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::string const& data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::string&& data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::shared_ptr<std::string> data, ::DBHelpers::Category category);
 
     // NOLINTEND
 };

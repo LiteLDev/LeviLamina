@@ -33,4 +33,13 @@ public:
     virtual std::string buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const*) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const*) const;
+
+    // NOLINTEND
 };

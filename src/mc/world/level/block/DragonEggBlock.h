@@ -54,4 +54,26 @@ public:
     MCAPI static void _attemptTeleport(class BlockSource& region, class Random& random, class BlockPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI class mce::Color getDustColor$(class Block const&) const;
+
+    MCAPI std::string getDustParticleName$(class Block const&) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+
+    // NOLINTEND
 };

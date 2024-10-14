@@ -112,7 +112,12 @@ public:
     MCAPI static std::vector<class Core::PathBuffer<std::string>>
     splitPathIntoFullPathSegments(class Core::Path const& path);
 
-    MCAPI static std::string const COPY_FOLDER_SENTINEL_FILE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& COPY_FOLDER_SENTINEL_FILE();
 
     // NOLINTEND
 };

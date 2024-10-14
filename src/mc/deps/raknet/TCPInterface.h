@@ -88,6 +88,36 @@ public:
     MCAPI bool _removeFromBlockingSocketList(uint64 const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void PushBackPacket$(struct RakNet::Packet* packet, bool pushAtHead);
+
+    MCAPI struct RakNet::Packet* Receive$();
+
+    MCAPI bool ReceiveHasPackets$();
+
+    MCAPI void Send$(char const* data, uint length, struct RakNet::SystemAddress const& systemAddress, bool broadcast);
+
+    MCAPI bool SendList$(
+        char const**                        data,
+        uint const*                         lengths,
+        int                                 numParameters,
+        struct RakNet::SystemAddress const& systemAddress,
+        bool                                broadcast
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

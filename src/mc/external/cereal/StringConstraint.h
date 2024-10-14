@@ -42,6 +42,24 @@ public:
     MCAPI class cereal::StringConstraint& rejectEmpty();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+
+    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

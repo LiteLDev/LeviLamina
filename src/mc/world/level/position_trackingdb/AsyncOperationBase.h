@@ -36,6 +36,23 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool
+    _quit$(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr, class PositionTrackingDB::TrackingRecord&);
+
+    MCAPI bool isAsync$() const;
+
+    MCAPI bool isComplete$() const;
+
+    MCAPI bool tick$(
+        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        class PositionTrackingDB::TrackingRecord&                         record
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

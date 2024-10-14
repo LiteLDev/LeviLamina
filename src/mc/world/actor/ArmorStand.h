@@ -112,35 +112,65 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
+    MCAPI static void** $vftable();
 
-    MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float, bool, bool);
 
-    MCAPI static struct ArmorStand::Pose const POSE_CANCAN_B;
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
 
-    MCAPI static struct ArmorStand::Pose const POSE_DEFAULT;
+    MCAPI void die$(class ActorDamageSource const& source);
 
-    MCAPI static struct ArmorStand::Pose const POSE_ENTERTAIN;
+    MCAPI bool getInteraction$(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
-    MCAPI static struct ArmorStand::Pose const POSE_HERO;
+    MCAPI float getShadowRadius$() const;
 
-    MCAPI static struct ArmorStand::Pose const POSE_HONOR;
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
 
-    MCAPI static struct ArmorStand::Pose const POSE_RIPOSTE;
+    MCAPI void kill$();
 
-    MCAPI static struct ArmorStand::Pose const POSE_SALUTE;
+    MCAPI void normalTick$();
 
-    MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
+    MCAPI void pushActors$();
 
-    MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
 
-    MCAPI static struct ArmorStand::Pose const* STAND_POSES[];
+    MCAPI static struct ArmorStand::Pose const& POSE_ATHENA();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_BRANDISH();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_CANCAN_A();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_CANCAN_B();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_DEFAULT();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_ENTERTAIN();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_HERO();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_HONOR();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_RIPOSTE();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_SALUTE();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_SOLEMN();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_ZERO_ROTATION();
+
+    MCAPI static struct ArmorStand::Pose const& POSE_ZOMBIE();
+
+    MCAPI static ::ll::CArrayT<struct ArmorStand::Pose const>& STAND_POSES();
 
     // NOLINTEND
 };

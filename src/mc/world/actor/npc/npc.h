@@ -82,9 +82,47 @@ public:
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext);
 
-    MCAPI static std::string const SKIN_ID_TAG;
+    // NOLINTEND
 
-    MCAPI static std::vector<std::pair<std::string, std::string>> const Skins;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float, bool, bool);
+
+    MCAPI void buildDebugInfo$(std::string& out) const;
+
+    MCAPI bool canBeAffected$(uint) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canExistWhenDisallowMob$() const;
+
+    MCAPI bool canShowNameTag$() const;
+
+    MCAPI void die$(class ActorDamageSource const&);
+
+    MCAPI class mce::Color getNameTagTextColor$() const;
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isTargetable$() const;
+
+    MCAPI void knockback$(class Actor*, int, float, float, float, float, float);
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI static std::string const& SKIN_ID_TAG();
+
+    MCAPI static std::vector<std::pair<std::string, std::string>> const& Skins();
 
     // NOLINTEND
 };

@@ -65,4 +65,46 @@ public:
     virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult
+    onBlockDestroyedByPlayer$(class Player& player, class Block const& destroyedBlock, class BlockPos const& pos, class ItemStackBase const&, class ItemStackBase const&);
+
+    MCAPI ::EventResult onBlockDestructionStarted$(class Player&, class BlockPos const&, class Block const&, uchar);
+
+    MCAPI ::EventResult onBlockDestructionStopped$(class Player& player, class BlockPos const& blockPos, int progress);
+
+    MCAPI ::EventResult onBlockExploded$(
+        class Dimension&      dimension,
+        class BlockPos const& blockPos,
+        class Block const&    destroyedBlock,
+        class Actor*          source
+    );
+
+    MCAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer$(class Player& player, class BlockPos const& pos);
+
+    MCAPI ::EventResult onBlockInteractedWith$(class Player& player, class BlockPos const& blockPos);
+
+    MCAPI ::EventResult
+    onBlockModified$(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+
+    MCAPI ::EventResult
+    onBlockMovedByPiston$(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
+
+    MCAPI ::EventResult onBlockPlacedByPlayer$(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
+
+    MCAPI ::EventResult onEvent$(struct BlockNotificationEvent const&);
+
+    MCAPI ::EventResult onUnknownBlockReceived$(class Level& level, struct NewBlockID const& blockId, ushort data);
+
+    // NOLINTEND
 };

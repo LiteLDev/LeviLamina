@@ -14,4 +14,11 @@ public:
     MCAPI ~ActorDefinitionTriggeredEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -31,6 +31,26 @@ public:
     MCAPI FilePickerManagerImpl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForBedrockImplBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool directoryPickingEnabledForPlatform$() const;
+
+    MCAPI std::shared_ptr<
+        class Bedrock::Threading::IAsyncResult<struct Bedrock::FilePickerManager::DirectoryPickerResult>>
+    pickDirectory$(class Bedrock::DirectoryPickerConfig const&);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

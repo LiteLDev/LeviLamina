@@ -45,13 +45,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class SculkBlockBehavior const sSculkBlockBehavior;
+    MCAPI static class DefaultSculkBehavior const& sDefaultSculkBehavior();
 
-    MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
+    MCAPI static class SculkBlockBehavior const& sSculkBlockBehavior();
+
+    MCAPI static class SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
 
     // NOLINTEND
 };

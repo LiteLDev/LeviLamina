@@ -40,11 +40,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const CHEW_CHANCE;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const EATING_TIME;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static int const& CHEW_CHANCE();
+
+    MCAPI static int const& EATING_TIME();
 
     // NOLINTEND
 };

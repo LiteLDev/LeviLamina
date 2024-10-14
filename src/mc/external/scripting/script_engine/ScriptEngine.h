@@ -47,6 +47,13 @@ public:
         MCAPI ~NamedRuntime();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -114,6 +121,29 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI class Scripting::IRuntime* _getRuntime(std::string const& runtimeName) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI struct Scripting::ScriptContextResult createScriptingContext$(
+        std::string const&                                     runtimeName,
+        struct Scripting::ModuleDescriptor const&              forModule,
+        std::vector<struct Scripting::ModuleDescriptor> const& dependencies,
+        class Scripting::IDependencyLoader*                    loader,
+        class Scripting::IPrinter*                             printer,
+        struct Scripting::ContextConfig const&                 config
+    );
+
+    MCAPI class Scripting::RegistryManager& getRegistryManager$();
 
     // NOLINTEND
 };

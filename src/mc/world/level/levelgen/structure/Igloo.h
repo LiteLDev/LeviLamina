@@ -29,15 +29,24 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
+    MCAPI ::StructurePieceType getType$() const;
 
-    MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
+    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI static std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
+
+    MCAPI static std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
+
+    MCAPI static std::string const& STRUCTURE_LOCATION_LABORATORY();
+
+    MCAPI static std::string const& STRUCTURE_LOCATION_LADDER();
 
     // NOLINTEND
 };

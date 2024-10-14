@@ -40,4 +40,22 @@ public:
     MCAPI ::ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::ItemStackNetResult endRequest$();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+
+    MCAPI void postRequest$(bool wasSuccess);
+
+    // NOLINTEND
 };

@@ -60,4 +60,38 @@ public:
     MCAPI TorchflowerCropBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance const getBaseSeed$() const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
+
+    MCAPI class Block const& setGrowth$(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    baseBlock,
+        ushort                newGrowth,
+        int                   updateFlags
+    ) const;
+
+    // NOLINTEND
 };

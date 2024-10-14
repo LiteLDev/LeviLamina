@@ -40,4 +40,20 @@ public:
     MCAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& getDimensionOwnerPtrFactory();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class OwnerPtr<class Dimension> create$(std::string const& dimensionName) const;
+
+    MCAPI void initializeDimension$(class Dimension& dimension) const;
+
+    // NOLINTEND
 };

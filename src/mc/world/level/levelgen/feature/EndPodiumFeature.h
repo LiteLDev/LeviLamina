@@ -22,17 +22,33 @@ public:
 
     MCAPI explicit EndPodiumFeature(bool active);
 
-    MCAPI static float const CORNER_ROUNDING;
+    // NOLINTEND
 
-    MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static class BlockPos const END_PODIUM_LOCATION;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int const PODIUM_PILLAR_HEIGHT;
+    MCAPI void dtor$();
 
-    MCAPI static int const PODIUM_RADIUS;
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    MCAPI static int const RIM_RADIUS;
+    MCAPI static float const& CORNER_ROUNDING();
+
+    MCAPI static class BlockPos const& END_PODIUM_CHUNK_POSITION();
+
+    MCAPI static class BlockPos const& END_PODIUM_LOCATION();
+
+    MCAPI static int const& PODIUM_PILLAR_HEIGHT();
+
+    MCAPI static int const& PODIUM_RADIUS();
+
+    MCAPI static int const& RIM_RADIUS();
 
     // NOLINTEND
 };

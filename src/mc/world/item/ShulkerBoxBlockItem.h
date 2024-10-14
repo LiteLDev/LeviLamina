@@ -52,4 +52,27 @@ public:
     MCAPI std::string _buildContainedItemList(class CompoundTag const* containerList) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

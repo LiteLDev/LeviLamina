@@ -30,6 +30,17 @@ public:
     virtual float nextFloat();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI float nextFloat$();
+
+    // NOLINTEND
 };
 
 }; // namespace NoiseUtils

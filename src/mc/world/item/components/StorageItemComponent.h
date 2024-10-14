@@ -34,8 +34,6 @@ public:
 
     MCAPI static class HashedString const& getIdentifier();
 
-    MCAPI static uint const DEFAULT_MAX_CARRY_WEIGHT;
-
     // NOLINTEND
 
     // private:
@@ -51,6 +49,15 @@ public:
     _storeItemInNewOrExistingSlot(class ItemStack& item, class ItemStack& newItemStack, uint addableCount) const;
 
     MCAPI void _updateRemainingWeight(class ItemStack& item, class ItemStack const& newItemStack, int count) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static uint const& DEFAULT_MAX_CARRY_WEIGHT();
 
     // NOLINTEND
 };

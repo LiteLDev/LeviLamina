@@ -46,6 +46,18 @@ public:
     MCAPI bool ParseHost(http_string const&, std::_String_const_iterator<std::_String_val<std::_Simple_types<char>>>&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

@@ -87,8 +87,6 @@ public:
 
     MCAPI BucketItem(std::string const& name, int id, ::BucketFillType type);
 
-    MCAPI static int const DRINK_DURATION;
-
     // NOLINTEND
 
     // protected:
@@ -132,9 +130,56 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const mFillTypeToEntityType;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const* userData) const;
+
+    MCAPI bool canUseOnSimTick$() const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI std::string getAuxValuesDescription$() const;
+
+    MCAPI struct Brightness getLightEmission$(int) const;
+
+    MCAPI uchar getMaxStackSize$(class ItemDescriptor const&) const;
+
+    MCAPI bool isBucket$() const;
+
+    MCAPI bool isDestructive$(int auxValue) const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI void releaseUsing$(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI bool validFishInteraction$(int) const;
+
+    MCAPI static int const& DRINK_DURATION();
+
+    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
 
     // NOLINTEND
 };

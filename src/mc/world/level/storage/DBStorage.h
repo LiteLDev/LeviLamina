@@ -40,6 +40,13 @@ public:
         MCAPI ~CommitOperation();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class DBStorageToken {
@@ -52,6 +59,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~DBStorageToken();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -68,6 +82,18 @@ public:
         MCAPI PendingWriteResult(std::shared_ptr<std::string const>, bool);
 
         MCAPI ~PendingWriteResult();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -222,6 +248,85 @@ public:
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(std::function<class TaskResult()> action, std::function<void()> callback);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addStorageObserver$(std::unique_ptr<class LevelStorageObserver> observer);
+
+    MCAPI bool checkShutdownDone$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> compactStorage$();
+
+    MCAPI std::unique_ptr<class ChunkSource>
+          createChunkStorage$(std::unique_ptr<class ChunkSource> generator, ::StorageVersion);
+
+    MCAPI std::vector<struct SnapshotFilenameAndLength>
+          createSnapshot$(std::string const& filePrefix, bool flushWriteCache);
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          deleteData$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI void flushToPermanentStorage$();
+
+    MCAPI void forEachKeyWithPrefix$(
+        std::string_view                                               prefix,
+        ::DBHelpers::Category                                          category,
+        std::function<void(std::string_view, std::string_view)> const& callback
+    ) const;
+
+    MCAPI void freeCaches$();
+
+    MCAPI std::unique_ptr<class CompoundTag> getCompoundTag$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI class Core::PathBuffer<std::string> const& getFullPath$() const;
+
+    MCAPI struct Core::LevelStorageResult getLevelStorageState$() const;
+
+    MCAPI struct Core::LevelStorageResult getState$() const;
+
+    MCAPI void getStatistics$(std::string& outStats, ::LevelStorage::StatsType statsType) const;
+
+    MCAPI bool hasKey$(std::string_view key, ::DBHelpers::Category category) const;
+
+    MCAPI bool isShuttingDown$() const;
+
+    MCAPI bool loadData$(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI bool loadLevelData$(class LevelData& data);
+
+    MCAPI void releaseSnapshot$();
+
+    MCAPI void resumeStorage$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          saveData$(std::string const& key, std::string&& data, ::DBHelpers::Category category);
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          saveData$(class LevelStorageWriteBatch const& batch);
+
+    MCAPI void saveLevelData$(class LevelData const& levelData);
+
+    MCAPI void setCompactionCallback$(std::function<void(::CompactionStatus)> callback);
+
+    MCAPI void setCriticalSyncSaveCallback$(std::function<void()> callback);
+
+    MCAPI void setFlushAllowed$(bool flushAllowed);
+
+    MCAPI void startShutdown$();
+
+    MCAPI void syncAndSuspendStorage$();
 
     // NOLINTEND
 };

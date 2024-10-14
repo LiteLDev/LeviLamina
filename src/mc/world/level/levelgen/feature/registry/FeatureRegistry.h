@@ -25,6 +25,13 @@ public:
         MCAPI ~FeatureBinaryJsonFormat();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -63,30 +70,6 @@ public:
 
     MCAPI void setSmallFeaturePasses(std::vector<std::string> smallFeaturePasses);
 
-    MCAPI static std::string const AFTER_SKY_PASS;
-
-    MCAPI static std::string const AFTER_SURFACE_PASS;
-
-    MCAPI static std::string const AFTER_UNDERGROUND_PASS;
-
-    MCAPI static std::string const BEFORE_SKY_PASS;
-
-    MCAPI static std::string const BEFORE_SURFACE_PASS;
-
-    MCAPI static std::string const BEFORE_UNDERGROUND_PASS;
-
-    MCAPI static std::string const FINAL_PASS;
-
-    MCAPI static std::string const FIRST_PASS;
-
-    MCAPI static std::string const PREGENERATION_PASS;
-
-    MCAPI static std::string const SKY_PASS;
-
-    MCAPI static std::string const SURFACE_PASS;
-
-    MCAPI static std::string const UNDERGROUND_PASS;
-
     // NOLINTEND
 
     // private:
@@ -104,6 +87,40 @@ public:
         class SemVersion const&          engineVersion,
         bool                             serializeFeatures
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::string const& AFTER_SKY_PASS();
+
+    MCAPI static std::string const& AFTER_SURFACE_PASS();
+
+    MCAPI static std::string const& AFTER_UNDERGROUND_PASS();
+
+    MCAPI static std::string const& BEFORE_SKY_PASS();
+
+    MCAPI static std::string const& BEFORE_SURFACE_PASS();
+
+    MCAPI static std::string const& BEFORE_UNDERGROUND_PASS();
+
+    MCAPI static std::string const& FINAL_PASS();
+
+    MCAPI static std::string const& FIRST_PASS();
+
+    MCAPI static std::string const& PREGENERATION_PASS();
+
+    MCAPI static std::string const& SKY_PASS();
+
+    MCAPI static std::string const& SURFACE_PASS();
+
+    MCAPI static std::string const& UNDERGROUND_PASS();
 
     // NOLINTEND
 };

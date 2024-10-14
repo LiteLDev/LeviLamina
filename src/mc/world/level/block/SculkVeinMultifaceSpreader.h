@@ -32,4 +32,24 @@ public:
     virtual bool _isOtherBlockValidAsSource(class Block const& block) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canSpreadFrom$(class Block const& block, uchar facing) const;
+
+    MCAPI bool _canSpreadInto$(
+        class IBlockWorldGenAPI& target,
+        class Block const&       self,
+        class BlockPos const&    pos,
+        uchar                    placementDirection
+    ) const;
+
+    MCAPI bool _isOtherBlockValidAsSource$(class Block const& block) const;
+
+    // NOLINTEND
 };

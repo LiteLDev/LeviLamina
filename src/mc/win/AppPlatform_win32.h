@@ -145,4 +145,119 @@ public:
     MCAPI struct OSInformation _fetchOSInformation() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIAppPlatform();
+
+    MCAPI static void** $vftableForISecureStorageKeySystem();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool canLaunchUri$(std::string const&);
+
+    MCAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder$(class Core::Path const&);
+
+    MCAPI std::shared_ptr<class WebviewInterface> createWebview$(class Webview::PlatformArguments&&) const;
+
+    MCAPI std::string getApplicationId$() const;
+
+    MCAPI class Core::PathBuffer<std::string> getAssetFileFullPath$(class Core::Path const&);
+
+    MCAPI ::BuildPlatform getBuildPlatform$() const;
+
+    MCAPI int getCaretPosition$() const;
+
+    MCAPI int getDisplayHeight$();
+
+    MCAPI int getDisplayWidth$();
+
+    MCAPI std::string getEdition$() const;
+
+    MCAPI uint64 getFreeMemory$() const;
+
+    MCAPI class Core::PathBuffer<std::string> getLoggingPath$() const;
+
+    MCAPI uint64 getMemoryLimit$() const;
+
+    MCAPI std::string getModelName$();
+
+    MCAPI ::OsVersion getOSVersion$() const;
+
+    MCAPI std::string getPackageFamilyName$() const;
+
+    MCAPI class Core::PathBuffer<std::string> getPackagePath$() const;
+
+    MCAPI int getPlatformDpi$() const;
+
+    MCAPI std::string getPlatformString$() const;
+
+    MCAPI bool getPlatformTTSEnabled$() const;
+
+    MCAPI ::PlatformType getPlatformType$() const;
+
+    MCAPI ::UIScalingRules getPlatformUIScalingRules$() const;
+
+    MCAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters$() const;
+
+    MCAPI int getScreenHeight$() const;
+
+    MCAPI int getScreenWidth$() const;
+
+    MCAPI std::unique_ptr<class SecureStorage> getSecureStorage$();
+
+    MCAPI class SecureStorageKey getSecureStorageKey$(std::string const&);
+
+    MCAPI std::string getSubPlatformString$() const;
+
+    MCAPI std::string getTextBoxBackend$() const;
+
+    MCAPI uint64 getTotalPhysicalMemory$() const;
+
+    MCAPI uint64 getUsedMemory$();
+
+    MCAPI bool hasBuyButtonWhenInvalidLicense$();
+
+    MCAPI bool hasFastAlphaTest$() const;
+
+    MCAPI void hideSplashScreen$();
+
+    MCAPI bool isCentennial$() const;
+
+    MCAPI std::optional<bool> isOnWifiConnectionTelemetryValue$();
+
+    MCAPI bool isWebviewSupported$() const;
+
+    MCAPI void launchUri$(std::string const&);
+
+    MCAPI std::set<class Core::PathBuffer<std::string>>
+          listAssetFilesIn$(class Core::Path const&, std::string const&) const;
+
+    MCAPI std::string readAssetFile$(class Core::Path const&);
+
+    MCAPI void setCaretPosition$(int);
+
+    MCAPI void setFullscreenMode$(::FullscreenMode);
+
+    MCAPI void setScreenSize$(int, int);
+
+    MCAPI void setSecureStorageKey$(std::string const&, class SecureStorageKey const&);
+
+    MCAPI void setTextBoxBackend$(std::string const&);
+
+    MCAPI void setWindowSize$(int, int);
+
+    MCAPI void setWindowText$(std::string const&);
+
+    MCAPI bool supportsFliteTTS$() const;
+
+    MCAPI bool supportsVibration$() const;
+
+    // NOLINTEND
 };

@@ -20,4 +20,11 @@ public:
     MCAPI ~CompoundTagVariant();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

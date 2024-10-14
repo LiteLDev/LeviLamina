@@ -34,4 +34,15 @@ public:
     MCAPI bool _tryEmptyComposter();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void start$();
+
+    MCAPI void useWorkstation$();
+
+    // NOLINTEND
 };

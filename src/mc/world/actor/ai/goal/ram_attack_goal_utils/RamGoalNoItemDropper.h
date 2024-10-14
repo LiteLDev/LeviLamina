@@ -35,6 +35,19 @@ public:
     virtual void dontDropHorn();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void checkForHornDropOnCollision$(class Vec3 collisionPos);
+
+    MCAPI void dontDropHorn$();
+
+    MCAPI void tryDropHorn$(class Vec3 dropPos) const;
+
+    // NOLINTEND
 };
 
 }; // namespace RamAttackGoalUtils

@@ -151,4 +151,76 @@ public:
     MCAPI static bool shouldSkipCarving(float yd, float xd_sq, float yd_sq, float zd_sq, float floorLevel);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addFeature$(
+        class IBlockWorldGenAPI&                                               target,
+        class ChunkPos const&                                                  pos,
+        class Random&                                                          random,
+        class ChunkPos const&                                                  startChunk,
+        class RenderParams&                                                    renderParams,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
+
+    MCAPI void addRoom$(
+        class IBlockWorldGenAPI&                                               target,
+        struct CaveFeatureUtils::CarverConfiguration const&                    configuration,
+        class Random&                                                          random,
+        class ChunkPos const&                                                  chunkPos,
+        class Vec3 const&                                                      startPos,
+        class RenderParams&                                                    renderParams,
+        struct CaveFeatureUtils::CarvingParameters const&                      carvingParameters,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
+
+    MCAPI void addTunnel$(
+        class IBlockWorldGenAPI&                                               target,
+        struct CaveFeatureUtils::CarverConfiguration const&                    configuration,
+        class Random&                                                          random,
+        class ChunkPos const&                                                  chunkPos,
+        class Vec3 const&                                                      startPos,
+        float                                                                  thickness,
+        float                                                                  horizontalRotation,
+        float                                                                  verticalRotation,
+        int                                                                    step,
+        int                                                                    dist,
+        float                                                                  yScale,
+        class RenderParams&                                                    renderParams,
+        struct CaveFeatureUtils::CarvingParameters const&                      carvingParameters,
+        std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
+
+    MCAPI bool carveEllipsoidVolume$(
+        class IBlockWorldGenAPI&                            target,
+        struct CaveFeatureUtils::CarverConfiguration const& configuration,
+        class Random&                                       random,
+        class ChunkPos const&                               chunkPos,
+        class Vec3 const&                                   startPos,
+        class BoundingBox const&                            volume,
+        float                                               rad,
+        float                                               yRad,
+        struct CaveFeatureUtils::CarvingParameters const&   carvingParameters
+    ) const;
+
+    MCAPI bool isValidPlacement$(std::string const& pass);
+
+    MCAPI std::optional<class BlockPos> place$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
+
+    // NOLINTEND
 };

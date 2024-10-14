@@ -55,4 +55,42 @@ public:
     MCAPI explicit Trade1Ingredient2ContainerValidation(bool isServerSide);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canDestroy$(class ContainerScreenContext const& screenContext) const;
+
+    MCAPI bool canItemMoveToContainer$(class ItemStackBase const& item) const;
+
+    MCAPI int getAvailableSetCount$(int slot, class ItemStackBase const& item) const;
+
+    MCAPI int getContainerOffset$(class ContainerScreenContext const&) const;
+
+    MCAPI int
+    getContainerSize$(class ContainerScreenContext const& screenContext, class Container const& container) const;
+
+    MCAPI bool
+    isItemAllowedInSlot$(class ContainerScreenContext const& screenContext, int, class ItemStackBase const& item, int)
+        const;
+
+    MCAPI bool isItemAllowedToAdd$(class ItemStack const& item) const;
+
+    MCAPI bool
+    isItemAllowedToRemove$(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
+
+    MCAPI bool isValidSlotForContainer$(
+        class ContainerScreenContext const& screenContext,
+        class Container const&              container,
+        int                                 slot
+    ) const;
+
+    // NOLINTEND
 };

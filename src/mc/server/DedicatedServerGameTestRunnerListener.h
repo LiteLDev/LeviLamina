@@ -55,4 +55,23 @@ public:
     MCAPI static std::string _getTestNameWithRotation(class gametest::BaseGameTestInstance& testInstance);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
+
+    // NOLINTEND
 };

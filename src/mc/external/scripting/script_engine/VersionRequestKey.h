@@ -16,6 +16,13 @@ public:
     MCAPI ~VersionRequestKey();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

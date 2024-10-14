@@ -14,4 +14,11 @@ public:
     MCAPI ~PieceWeight();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

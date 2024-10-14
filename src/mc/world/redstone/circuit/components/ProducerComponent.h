@@ -40,4 +40,28 @@ public:
     MCAPI void allowAttachments(bool bAttached);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+
+    MCAPI bool canStopPower$() const;
+
+    MCAPI bool evaluate$(class CircuitSystem&, class BlockPos const&);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI void setStopPower$(bool bPower);
+
+    MCAPI void setStrength$(int strength);
+
+    // NOLINTEND
 };

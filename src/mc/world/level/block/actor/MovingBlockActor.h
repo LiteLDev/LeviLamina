@@ -66,4 +66,36 @@ public:
     MCAPI bool _validPistonPos(class IConstBlockSource const& region) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI class AABB getCollisionShape$(class IConstBlockSource const& region) const;
+
+    MCAPI class PistonBlockActor const* getOwningPiston$(class BlockSource& region) const;
+
+    MCAPI class PistonBlockActor* getOwningPiston$(class BlockSource& region);
+
+    MCAPI bool isPreserved$(class BlockSource& region) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI bool shouldPreserve$(class BlockSource& region);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    // NOLINTEND
 };

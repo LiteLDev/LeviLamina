@@ -46,6 +46,19 @@ public:
         virtual bool isSolidBlock(class Block const& block) const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI bool isFoundationBlock$(class Block const& block) const;
+
+        MCAPI bool isSolidBlock$(class Block const& block) const;
+
+        MCAPI bool isWaterBlock$(class Block const& block) const;
+
+        // NOLINTEND
     };
 
 public:
@@ -76,6 +89,22 @@ public:
         int                                           endHeight,
         std::function<class Block const*(int)> const& getBlockFn
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+
+    MCAPI void init$(class Biome& biome, uint levelSeed);
 
     // NOLINTEND
 };

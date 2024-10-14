@@ -75,4 +75,36 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool canDisableShield$();
+
+    MCAPI bool checkSpawnObstruction$() const;
+
+    MCAPI bool checkSpawnRules$(bool);
+
+    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void onPush$(class Actor& source);
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void setTarget$(class Actor* target);
+
+    // NOLINTEND
 };

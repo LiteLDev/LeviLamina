@@ -224,6 +224,88 @@ public:
                                    struct EntityFactoryT<>>&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct BoatFlag>,
+                class FlagComponent<struct FreezeImmuneFlag>,
+                class FlagComponent<struct IsDeadFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct InWaterFlag>>,
+            struct Read<
+                struct AABBShapeComponent,
+                struct MovementAbilitiesComponent,
+                struct ActorGameTypeComponent,
+                struct DimensionTypeComponent>,
+            struct Write<
+                struct BlockMovementSlowdownMultiplierComponent,
+                struct FallDistanceComponent,
+                struct InsideBlockComponent,
+                struct StateVectorComponent>,
+            struct AddRemove<
+                struct BlockMovementSlowdownAppliedComponent,
+                class FreezingComponent,
+                struct IgnoresEntityInsideFlagComponent,
+                struct InsideBubbleColumnBlockComponent,
+                struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
+                struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
+                struct InsideGenericBlockComponent,
+                struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
+                struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
+                struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
+                struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
+                class FlagComponent<struct WebBlockTag>>,
+            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct ActorMovementTickNeededFlag>,
+                         class FlagComponent<struct BoatFlag>,
+                         class FlagComponent<struct FreezeImmuneFlag>,
+                         class FlagComponent<struct IsDeadFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct InWaterFlag>>,
+                     struct Read<
+                         struct AABBShapeComponent,
+                         struct MovementAbilitiesComponent,
+                         struct ActorGameTypeComponent,
+                         struct DimensionTypeComponent>,
+                     struct Write<
+                         struct BlockMovementSlowdownMultiplierComponent,
+                         struct FallDistanceComponent,
+                         struct InsideBlockComponent,
+                         struct StateVectorComponent>,
+                     struct AddRemove<
+                         struct BlockMovementSlowdownAppliedComponent,
+                         class FreezingComponent,
+                         struct IgnoresEntityInsideFlagComponent,
+                         struct InsideBubbleColumnBlockComponent,
+                         struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
+                         struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
+                         struct InsideGenericBlockComponent,
+                         struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
+                         struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
+                         struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
+                         struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
+                         class FlagComponent<struct WebBlockTag>>,
+                     struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& executionContext);
+
+    // NOLINTEND
 };
 
 }; // namespace EntityInsideSystemImpl

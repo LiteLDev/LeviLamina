@@ -61,4 +61,26 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void applyNaturalSlowdown$(class BlockSource& region);
+
+    MCAPI void destroy$(class ActorDamageSource const& source, bool dropMinecartComponents);
+
+    MCAPI class Block const* getDefaultDisplayBlock$() const;
+
+    MCAPI int getDefaultDisplayOffset$() const;
+
+    MCAPI ::MinecartType getType$();
+
+    // NOLINTEND
 };

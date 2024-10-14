@@ -35,4 +35,16 @@ public:
     MCAPI void broadcastLocalEvent(class IDimension& dimension, ::LevelEvent type, class Vec3 const& pos, int data);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Bedrock::PubSub::Connector<void(::LevelEvent, class CompoundTag const&)>&
+    getLevelEventCompoundTagConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(::LevelEvent, class Vec3 const&, int)>& getLevelEventDataConnector$();
+
+    // NOLINTEND
 };

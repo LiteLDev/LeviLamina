@@ -64,4 +64,39 @@ public:
     MCAPI BoatItem(std::string const& name, int id, int woodType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::ActorType _getActorType$() const;
+
+    MCAPI class InteractionResult _useOn$(
+        class ItemStack&  item,
+        class Actor&      spawningActor,
+        class BlockPos    pos,
+        uchar             face,
+        class Vec3 const& clickPos
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isStackedByData$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

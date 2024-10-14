@@ -14,4 +14,11 @@ public:
     MCAPI ~PlayerAddExpEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

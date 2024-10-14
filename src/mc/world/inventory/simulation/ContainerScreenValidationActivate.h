@@ -21,4 +21,13 @@ public:
     virtual struct ContainerValidationResult tryActivate();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct ContainerValidationResult tryActivate$();
+
+    // NOLINTEND
 };

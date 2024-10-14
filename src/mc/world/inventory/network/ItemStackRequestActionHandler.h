@@ -35,6 +35,18 @@ public:
         MCAPI ~PlayerLegacyRequestSlotIdAssignment();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct RequestSlotIdAssignment {
@@ -58,6 +70,16 @@ public:
 
         MCAPI struct ItemStackRequestActionHandler::ScreenData&
         operator=(struct ItemStackRequestActionHandler::ScreenData&&);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -144,6 +166,16 @@ public:
     );
 
     MCAPI struct ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

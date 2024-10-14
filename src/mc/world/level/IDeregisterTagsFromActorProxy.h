@@ -18,4 +18,11 @@ public:
     virtual void deregisterTagsFromActor(class Actor& actor) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

@@ -16,4 +16,11 @@ public:
     MCAPI static void bindType();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

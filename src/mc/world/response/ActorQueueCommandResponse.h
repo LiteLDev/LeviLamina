@@ -30,11 +30,33 @@ public:
         class Factory<class ActorEventResponse> const& factory
     ) const;
 
-    MCVAPI void executeAction(class RenderParams& pars) const;
+    MCVAPI void executeAction(class RenderParams& params) const;
 
     MCVAPI std::string const& getName() const;
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForActorEventResponse();
+
+    MCAPI static void** $vftableForCommandResponseBase();
+
+    MCAPI ::CommandOriginSystem _getCommandOriginSystem$() const;
+
+    MCAPI void buildSchema$(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&
+                                                       root,
+        class Factory<class ActorEventResponse> const& factory
+    ) const;
+
+    MCAPI void executeAction$(class RenderParams& params) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

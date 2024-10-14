@@ -55,6 +55,18 @@ public:
         MCAPI ~State();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -117,11 +129,23 @@ public:
     MCAPI static class BlockDescriptor
     fromTagExpression(std::string const& tagExpression, ::MolangVersion molangVersion);
 
-    MCAPI static char const JSON_NAME_FIELD[];
+    // NOLINTEND
 
-    MCAPI static char const JSON_STATES_FIELD[];
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static char const JSON_TAGS_FIELD[];
+    MCAPI void dtor$();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_NAME_FIELD();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_STATES_FIELD();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_TAGS_FIELD();
 
     // NOLINTEND
 };

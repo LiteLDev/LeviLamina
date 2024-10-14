@@ -31,4 +31,11 @@ public:
     createReaction(::LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

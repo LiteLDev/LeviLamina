@@ -73,13 +73,52 @@ public:
 
     MCAPI bool fertilize(class BlockSource& region, class BlockPos const& pos, class Randomize& randomize) const;
 
-    MCAPI static struct Brightness const MIN_BRIGHTNESS;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool _canBeGrass(class BlockSource const& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI int
+    calcVariant$(class BlockSource& region, class BlockPos const& pos, class mce::Color const& baseColor) const;
+
+    MCAPI bool
+    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI int getColor$(class Block const& block) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool
+    tryToTill$(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    MCAPI static struct Brightness const& MIN_BRIGHTNESS();
 
     // NOLINTEND
 };

@@ -22,11 +22,16 @@ public:
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionOptions>
     bindV1();
 
-    MCAPI static bool const ALLOW_UNDERWATER_DEFAULT;
+    // NOLINTEND
 
-    MCAPI static bool const BREAKS_BLOCKS_DEFAULT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
 
-    MCAPI static bool const CAUSES_FIRE_DEFAULT;
+    MCAPI static bool const& BREAKS_BLOCKS_DEFAULT();
+
+    MCAPI static bool const& CAUSES_FIRE_DEFAULT();
 
     // NOLINTEND
 };

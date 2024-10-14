@@ -145,9 +145,26 @@ public:
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
           saveData(std::string const& key, class CompoundTag const& tag, ::DBHelpers::Category category);
 
-    MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
+    // NOLINTEND
 
-    MCAPI static std::string const LOCAL_PLAYER_TAG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool clonePlayerData$(std::string_view fromKey, std::string_view toKey);
+
+    MCAPI void corruptLevel$();
+
+    MCAPI void freeCaches$();
+
+    MCAPI bool loadData$(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI static std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
+
+    MCAPI static std::string const& LOCAL_PLAYER_TAG();
 
     // NOLINTEND
 };

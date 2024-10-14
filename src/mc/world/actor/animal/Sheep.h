@@ -53,9 +53,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const EAT_ANIMATION_TICKS;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI static int const& EAT_ANIMATION_TICKS();
 
     // NOLINTEND
 };

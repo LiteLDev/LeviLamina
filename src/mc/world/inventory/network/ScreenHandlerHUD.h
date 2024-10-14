@@ -22,4 +22,13 @@ public:
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+
+    // NOLINTEND
 };

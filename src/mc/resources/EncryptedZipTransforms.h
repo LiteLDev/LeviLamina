@@ -29,4 +29,20 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool readTransform$(std::vector<uchar>& stream) const;
+
+    MCAPI bool writeTransform$(std::vector<uchar>& stream) const;
+
+    // NOLINTEND
 };

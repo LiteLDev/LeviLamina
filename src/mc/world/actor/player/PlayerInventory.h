@@ -106,4 +106,27 @@ public:
     MCAPI void tick();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainerContentChangeListener();
+
+    MCAPI static void** $vftableForContainerSizeChangeListener();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI void containerSizeChanged$(int size);
+
+    MCAPI void createTransactionContext$(
+        std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)> callback,
+        std::function<void()>                                                                      execute
+    );
+
+    // NOLINTEND
 };

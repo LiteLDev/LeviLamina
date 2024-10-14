@@ -47,4 +47,30 @@ public:
     virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*> task);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::TaskGroupState getState$() const;
+
+    MCAPI void processCoroutines$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue$(
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
+    );
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          queueSync$(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
+
+    MCAPI void requeueTask$(std::shared_ptr<class BackgroundTaskBase>, bool);
+
+    MCAPI void taskComplete$(gsl::not_null<class BackgroundTaskBase*> task);
+
+    MCAPI void taskRegister$(std::shared_ptr<class BackgroundTaskBase>);
+
+    // NOLINTEND
 };

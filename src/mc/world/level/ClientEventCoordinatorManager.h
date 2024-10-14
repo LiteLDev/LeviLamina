@@ -28,4 +28,17 @@ public:
     virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator$();
+
+    MCAPI gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator$();
+
+    MCAPI class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator$();
+
+    // NOLINTEND
 };

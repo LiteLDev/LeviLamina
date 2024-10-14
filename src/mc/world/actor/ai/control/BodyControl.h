@@ -23,9 +23,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const MAX_CLAMP_ANGLE;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void clientTick$(class Mob& mob);
+
+    MCAPI static float const& MAX_CLAMP_ANGLE();
 
     // NOLINTEND
 };

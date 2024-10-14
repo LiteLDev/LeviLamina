@@ -56,11 +56,23 @@ public:
 
     MCAPI ~ScriptBlockFiller();
 
-    MCAPI static char const* ERROR_MSG_FILL_BAD_HEIGHT;
+    // NOLINTEND
 
-    MCAPI static char const* ERROR_MSG_FILL_TOO_BIG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static char const* ERROR_MSG_FILL_UNKNOWN_BLOCK;
+    MCAPI void dtor$();
+
+    MCAPI static char const* const& ERROR_MSG_FILL_BAD_HEIGHT();
+
+    MCAPI static char const* const& ERROR_MSG_FILL_TOO_BIG();
+
+    MCAPI static char const* const& ERROR_MSG_FILL_UNKNOWN_BLOCK();
 
     // NOLINTEND
 };

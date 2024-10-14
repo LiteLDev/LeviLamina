@@ -36,6 +36,13 @@ public:
         MCAPI ~MemberDescriptor();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct SetterDescriptor {
@@ -48,6 +55,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~SetterDescriptor();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -133,6 +147,53 @@ public:
 
     MCAPI static class cereal::internal::BasicSchema const&
     lookup(struct cereal::ReflectionCtx const& reflectionCtx, uint id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addMember$(std::string_view, std::unique_ptr<class cereal::internal::BasicSchema>, bool);
+
+    MCAPI void addParent$(std::unique_ptr<class cereal::internal::BasicSchema>);
+
+    MCAPI void
+        addSetter$(std::unique_ptr<class cereal::internal::BasicSchema>, entt::meta_type (*)(entt::meta_ctx const&));
+
+    MCAPI void constraint$(std::unique_ptr<class cereal::Constraint> constraint);
+
+    MCAPI class cereal::Constraint const* constraint$() const;
+
+    MCAPI void customError$(std::string const&, std::string);
+
+    MCAPI void doLoad$(
+        struct cereal::SchemaReader&,
+        entt::meta_any&,
+        entt::meta_any const&,
+        class cereal::SerializerContext& context
+    ) const;
+
+    MCAPI void
+    doSave$(struct cereal::SchemaWriter&, entt::meta_any const&, class cereal::SerializerContext& context) const;
+
+    MCAPI bool doVerifyInitialization$(entt::meta_any const&) const;
+
+    MCAPI void enumMapping$(class cereal::SerializerEnumMapping);
+
+    MCAPI class cereal::SerializerEnumMapping const* enumMapping$() const;
+
+    MCAPI void
+    unpack$(std::vector<std::reference_wrapper<struct cereal::internal::BasicSchema::SetterDescriptor const>>&, entt::dense_map<std::string_view, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
+        const;
 
     // NOLINTEND
 };

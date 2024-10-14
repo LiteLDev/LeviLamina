@@ -83,9 +83,42 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const DEFAULT_USE_DURATION;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeCharged$() const;
+
+    MCAPI void enchantProjectile$(class ItemStackBase const& weapon, class Actor& projectile) const;
+
+    MCAPI int
+    getAnimationFrameFor$(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI int getMaxUseDuration$(class ItemStack const* instance) const;
+
+    MCAPI void playSoundIncrementally$(class ItemStack const& item, class Mob& mob) const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI static int const& DEFAULT_USE_DURATION();
 
     // NOLINTEND
 };

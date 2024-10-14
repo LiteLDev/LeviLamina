@@ -34,6 +34,13 @@ public:
         MCAPI ~UpgradeLogEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct ValidationLogEntry {
@@ -46,6 +53,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~ValidationLogEntry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -99,6 +113,13 @@ public:
     MCAPI class Puv::Logger& operator=(class Puv::Logger&&);
 
     MCAPI ~Logger();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

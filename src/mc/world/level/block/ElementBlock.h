@@ -61,9 +61,25 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class BlockLegacy const*> mElements;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const& requiredBaseGameVersion) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
+
+    MCAPI class Block const* tryLegacyUpgrade$(ushort extraData) const;
+
+    MCAPI static std::vector<class BlockLegacy const*>& mElements();
 
     // NOLINTEND
 };

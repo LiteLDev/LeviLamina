@@ -21,4 +21,11 @@ public:
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+
+    // NOLINTEND
 };

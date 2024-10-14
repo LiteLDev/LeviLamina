@@ -67,4 +67,11 @@ public:
     MCAPI void _onNewDimensionCreated(class Dimension& dimension);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -21,4 +21,11 @@ public:
     MCAPI ~PackSetting();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

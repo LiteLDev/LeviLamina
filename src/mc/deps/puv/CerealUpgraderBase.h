@@ -35,6 +35,13 @@ public:
         MCAPI ~UpgradeState();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -136,6 +143,18 @@ public:
         entt::meta_type const&                                  t,
         struct Puv::internal::CerealUpgraderBase::UpgradeState& state
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

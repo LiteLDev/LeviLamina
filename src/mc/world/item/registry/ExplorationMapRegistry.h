@@ -23,9 +23,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<struct ExplorationMapData, 11> const mRegistry;
+    MCAPI static std::array<struct ExplorationMapData, 11> const& mRegistry();
 
     // NOLINTEND
 };

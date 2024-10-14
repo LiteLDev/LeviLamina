@@ -27,4 +27,20 @@ public:
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const& id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::EventResult onScoreChanged$(struct ScoreboardId const& id, std::string const& objective, int score);
+
+    // NOLINTEND
 };

@@ -97,4 +97,48 @@ public:
     MCAPI void _release(int slot);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool add$(class ItemStack& item);
+
+    MCAPI bool canAdd$(class ItemStack const& item) const;
+
+    MCAPI int clearInventory$(int resizeTo);
+
+    MCAPI void clearSlot$(int slot);
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void load$(class ListTag const& inventoryList, class SemVersion const&, class Level& level);
+
+    MCAPI void removeItem$(int slot, int count);
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+
+    MCAPI void startOpen$(class Player&);
+
+    // NOLINTEND
 };

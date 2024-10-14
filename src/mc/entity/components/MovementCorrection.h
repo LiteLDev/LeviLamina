@@ -17,4 +17,14 @@ public:
     MCAPI MovementCorrection(::CorrectionMethod method, class Vec3 const& acceptPos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

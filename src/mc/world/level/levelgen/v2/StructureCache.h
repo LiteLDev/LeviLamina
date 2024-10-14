@@ -33,6 +33,13 @@ public:
         MCAPI ~StructurePair();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class StructureTempOwner {
@@ -45,6 +52,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~StructureTempOwner();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -70,6 +84,16 @@ public:
     );
 
     MCAPI void tick();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

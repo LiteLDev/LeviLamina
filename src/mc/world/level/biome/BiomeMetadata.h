@@ -14,4 +14,11 @@ public:
     MCAPI ~BiomeMetadata();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

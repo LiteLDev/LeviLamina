@@ -43,6 +43,21 @@ public:
     MCAPI class Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$();
+
+    MCAPI void fireCommandDoneEvent$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

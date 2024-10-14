@@ -20,4 +20,13 @@ public:
     MCAPI void initialize(class EntityContext& entity, class TargetGoal& goal) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

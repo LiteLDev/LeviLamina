@@ -26,6 +26,19 @@ public:
     virtual void legacyHurtAndBreak(int damage);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void creatorHook$();
+
+    MCAPI void legacyHurtAndBreak$(int damage);
+
+    MCAPI void legacyMineBlock$();
+
+    // NOLINTEND
 };
 
 }; // namespace Interactions::Mining

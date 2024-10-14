@@ -42,4 +42,19 @@ public:
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float getViewDamping$() const;
+
+    MCAPI void releaseUsing$(class ItemStack& inoutInstance, class Player* player, int) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    MCAPI ::ItemUseMethod useTimeDepleted$(class ItemStack& inoutInstance, class Level*, class Player* player) const;
+
+    // NOLINTEND
 };

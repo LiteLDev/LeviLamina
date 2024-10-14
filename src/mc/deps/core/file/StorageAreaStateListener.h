@@ -45,6 +45,33 @@ public:
     MCAPI void initListener(std::shared_ptr<class Core::FileStorageArea> fileStorageArea);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void onCriticalDiskError$(bool bSet, ::Core::LevelStorageState const& errorCode);
+
+    MCAPI void onExtendDiskSpace$(
+        bool                                        bSet,
+        std::weak_ptr<class Core::FileStorageArea>& fileStorageAreaWeakPtr,
+        uint64                                      freeSpace,
+        std::function<void()>                       onHandledEventCallback
+    );
+
+    MCAPI void onLowDiskSpace$(bool bSet);
+
+    MCAPI void onOutOfDiskSpace$(bool bSet);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -35,6 +35,17 @@ public:
     MCAPI static bool checkValidVanillaName(std::string const& geoName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+
+    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
+
+    // NOLINTEND
 };
 
 }; // namespace BlockGeometrySerializer

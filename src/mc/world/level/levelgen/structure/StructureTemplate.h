@@ -92,8 +92,6 @@ public:
 
     MCAPI class Block const* tryGetBlockAtPos(class BlockPos const& pos) const;
 
-    MCAPI static class BlockPos const INVALID_POSITION;
-
     // NOLINTEND
 
     // private:
@@ -144,9 +142,27 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const NO_BLOCK_INDEX_VALUE;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _allowReadActor$(class Actor const& actor) const;
+
+    MCAPI bool _allowReadBlock$(class BlockPos const&, class Block const& block) const;
+
+    MCAPI void clear$();
+
+    MCAPI static class BlockPos const& INVALID_POSITION();
+
+    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
 
     // NOLINTEND
 };

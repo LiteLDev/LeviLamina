@@ -26,4 +26,13 @@ public:
     virtual class Block const& getUnknownBlock(class CompoundTag const& serId) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -56,4 +56,32 @@ public:
     MCAPI CherryLeavesBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void animateTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI ::BlockRenderLayer
+    getRenderLayer$(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI bool isSeasonTinted$(class Block const&, class BlockSource&, class BlockPos const&) const;
+
+    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
+
+    // NOLINTEND
 };

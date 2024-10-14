@@ -4,15 +4,18 @@
 
 namespace BedrockBlockNames {
 // NOLINTBEGIN
-MCAPI extern class HashedString const Air;
-
-MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
-
-MCAPI extern class HashedString const Unknown;
-
 MCAPI void cleanupBedrockBlockNames();
 
 MCAPI void initBedrockBlockNames();
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI class HashedString const& Air();
+
+MCAPI class HashedString const& ClientRequestPlaceholderBlock();
+
+MCAPI class HashedString const& Unknown();
 // NOLINTEND
 
 }; // namespace BedrockBlockNames

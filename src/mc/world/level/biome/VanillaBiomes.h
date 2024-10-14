@@ -40,11 +40,16 @@ public:
 
     MCAPI static void shutdownBiomes();
 
-    MCAPI static class mce::Color const SWAMP_WATER_COLOR;
+    // NOLINTEND
 
-    MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class mce::Color const& SWAMP_WATER_COLOR();
 
-    MCAPI static std::set<int> mPlayerValidSpawns;
+    MCAPI static class mce::Color const& WATER_FOG_COLOR_SWAMP();
+
+    MCAPI static std::set<int>& mPlayerValidSpawns();
 
     // NOLINTEND
 };

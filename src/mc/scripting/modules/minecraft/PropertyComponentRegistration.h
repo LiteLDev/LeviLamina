@@ -16,6 +16,13 @@ public:
     MCAPI ~PropertyComponentRegistration();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft::ScriptPropertyComponents

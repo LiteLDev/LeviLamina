@@ -39,4 +39,23 @@ public:
     MCAPI static bool isDiggable(class Block const& block);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool carveEllipsoidVolume$(
+        class IBlockWorldGenAPI&                            target,
+        struct CaveFeatureUtils::CarverConfiguration const& configuration,
+        class Random&                                       random,
+        class ChunkPos const&                               pos,
+        class Vec3 const&                                   startPos,
+        class BoundingBox const&                            volume,
+        float                                               rad,
+        float                                               yRad,
+        struct CaveFeatureUtils::CarvingParameters const&   carveValues
+    ) const;
+
+    // NOLINTEND
 };

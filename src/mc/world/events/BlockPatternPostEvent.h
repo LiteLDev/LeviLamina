@@ -14,4 +14,11 @@ public:
     MCAPI ~BlockPatternPostEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

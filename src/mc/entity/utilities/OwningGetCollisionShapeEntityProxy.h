@@ -50,4 +50,34 @@ public:
     MCAPI explicit OwningGetCollisionShapeEntityProxy(class EntityContext const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canDescendThroughBlock$() const;
+
+    MCAPI class AABB const& getAABB$() const;
+
+    MCAPI ::ActorType getEntityTypeId$() const;
+
+    MCAPI float getFallDistance$() const;
+
+    MCAPI bool hasLightWeightFamilyTag$() const;
+
+    MCAPI bool hasPassenger$() const;
+
+    MCAPI bool isRiding$() const;
+
+    MCAPI bool isWearingLeatherBoots$() const;
+
+    MCAPI bool isWorldBuilder$() const;
+
+    // NOLINTEND
 };

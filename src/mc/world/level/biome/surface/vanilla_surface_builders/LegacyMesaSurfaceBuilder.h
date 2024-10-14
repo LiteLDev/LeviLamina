@@ -43,6 +43,17 @@ public:
     MCAPI ::BlockColor getBand(int worldX, int y, int worldZ, class PerlinSimplexNoise const& noiseBuf) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+
+    MCAPI void init$(class Biome& biome, uint levelSeed);
+
+    // NOLINTEND
 };
 
 }; // namespace VanillaSurfaceBuilders

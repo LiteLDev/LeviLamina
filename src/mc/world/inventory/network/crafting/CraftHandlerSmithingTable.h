@@ -27,4 +27,15 @@ public:
     virtual class Recipes const* _getLevelRecipes() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Recipes const* _getLevelRecipes$() const;
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+
+    // NOLINTEND
 };

@@ -91,6 +91,57 @@ public:
     MCAPI static struct Scripting::InterfaceBinding bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI struct Scripting::Version getVersion$() const;
+
+    MCAPI std::optional<class Scripting::Closure<
+        void(class Scripting::StrongTypedObjectHandle<
+             struct ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent>)>>
+          onBeforeDurabilityDamage$() const;
+
+    MCAPI std::optional<
+        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent>)>>
+    onCompleteUse$() const;
+
+    MCAPI std::optional<
+        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent>)>>
+    onConsume$() const;
+
+    MCAPI std::optional<
+        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent>)>>
+    onHitEntity$() const;
+
+    MCAPI std::optional<
+        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent>)>>
+    onMineBlock$() const;
+
+    MCAPI
+    std::optional<class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                                struct ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent>)>>
+    onUse$() const;
+
+    MCAPI std::optional<
+        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
+                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent>)>>
+    onUseOn$() const;
+
+    MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags toFlags$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

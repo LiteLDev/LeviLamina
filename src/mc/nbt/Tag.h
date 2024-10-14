@@ -55,7 +55,24 @@ public:
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class Tag>> newTag(::Tag::Type type);
 
-    MCAPI static std::string const NullString;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void deleteChildren$();
+
+    MCAPI bool equals$(class Tag const& rhs) const;
+
+    MCAPI void print$(class PrintStream& out) const;
+
+    MCAPI void print$(std::string const& prefix, class PrintStream& out) const;
+
+    MCAPI static std::string const& NullString();
 
     // NOLINTEND
 };

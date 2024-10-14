@@ -14,4 +14,11 @@ public:
     MCAPI ~ComponentInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

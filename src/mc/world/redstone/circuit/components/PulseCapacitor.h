@@ -45,4 +45,33 @@ public:
     MCAPI PulseCapacitor();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI uchar getPoweroutDirection$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI void setStrength$(int strength);
+
+    // NOLINTEND
 };

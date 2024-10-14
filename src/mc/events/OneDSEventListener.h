@@ -67,17 +67,35 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const ENDPOINT_IDENTIFIER;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::string const ONEDS_URL;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const PARTA_IDENTIFIER;
+    MCAPI void dtor$();
 
-    MCAPI static std::string const SAFETY_ENDPOINT_IDENTIFIER;
+    MCAPI bool _checkAgainstEventAllowlist$(class Social::Events::Event const& event) const;
 
-    MCAPI static std::string const SAFETY_PARTA_IDENTIFIER;
+    MCAPI void _flushEventQueue$();
+
+    MCAPI int getEventTagsFilter$() const;
+
+    MCAPI void sendEvent$(class Social::Events::Event const& event);
+
+    MCAPI static std::string const& ENDPOINT_IDENTIFIER();
+
+    MCAPI static std::string const& ONEDS_URL();
+
+    MCAPI static std::string const& PARTA_IDENTIFIER();
+
+    MCAPI static std::string const& SAFETY_ENDPOINT_IDENTIFIER();
+
+    MCAPI static std::string const& SAFETY_PARTA_IDENTIFIER();
 
     // NOLINTEND
 };

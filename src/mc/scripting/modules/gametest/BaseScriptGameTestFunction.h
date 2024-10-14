@@ -35,6 +35,21 @@ public:
     MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope scope, std::string const& testName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class gametest::IGameTestFunctionContext>
+          createContext$(class gametest::BaseGameTestHelper& helper) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

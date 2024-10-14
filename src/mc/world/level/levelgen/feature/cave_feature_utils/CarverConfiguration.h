@@ -16,6 +16,13 @@ public:
     MCAPI ~CarverConfiguration();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace CaveFeatureUtils

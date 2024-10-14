@@ -16,6 +16,13 @@ public:
     MCVAPI ~XboxLiveUserObserver();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Social

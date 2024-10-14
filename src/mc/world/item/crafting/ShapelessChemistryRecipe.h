@@ -28,7 +28,18 @@ public:
     // vIndex: 7
     virtual class mce::UUID const& getId() const;
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class mce::UUID const& getId$() const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

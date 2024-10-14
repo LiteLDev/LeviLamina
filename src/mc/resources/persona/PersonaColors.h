@@ -18,17 +18,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mHairColors;
+    // NOLINTEND
 
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mIrisColors;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mHairColors();
 
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mMouthColors;
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mIrisColors();
 
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mPremiumColors;
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mMouthColors();
 
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mScleraColors;
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mPremiumColors();
 
-    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const mSkinColors;
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mScleraColors();
+
+    MCAPI static std::vector<std::pair<class mce::Color, std::string>> const& mSkinColors();
 
     // NOLINTEND
 };

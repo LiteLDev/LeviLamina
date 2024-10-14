@@ -32,4 +32,24 @@ public:
     MCAPI ServerEventCoordinatorManager();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator$();
+
+    // NOLINTEND
 };

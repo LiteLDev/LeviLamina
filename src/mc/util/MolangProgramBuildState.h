@@ -24,4 +24,11 @@ public:
     MCAPI ~MolangProgramBuildState();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

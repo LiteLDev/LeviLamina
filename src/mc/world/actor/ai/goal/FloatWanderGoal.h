@@ -34,4 +34,17 @@ public:
     MCAPI bool _canReach(class Vec3 const& targetPos, float dist);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

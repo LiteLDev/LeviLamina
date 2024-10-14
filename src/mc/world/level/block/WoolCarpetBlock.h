@@ -47,4 +47,21 @@ public:
     MCAPI static bool _tryEquipCarpet(class Actor* actor, class ItemStack const& carpet);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canDamperVibrations$() const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    // NOLINTEND
 };

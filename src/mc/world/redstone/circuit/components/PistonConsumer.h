@@ -35,4 +35,25 @@ public:
     MCAPI void setBlockPowerFace(uchar blockFace);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool
+    addSource$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+
+    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    // NOLINTEND
 };

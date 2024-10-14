@@ -23,6 +23,13 @@ public:
     MCAPI ~ComposedAssertMessage();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace DebugUtils

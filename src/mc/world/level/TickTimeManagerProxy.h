@@ -35,4 +35,26 @@ public:
     MCAPI explicit TickTimeManagerProxy(class LevelData& levelData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI struct Tick getCurrentTick$() const;
+
+    MCAPI int getWorldTickTime$() const;
+
+    MCAPI void incrementCurrentTick$();
+
+    MCAPI void setWorldTickTime$(int time);
+
+    MCAPI bool shouldUpdateWorldTime$() const;
+
+    // NOLINTEND
 };

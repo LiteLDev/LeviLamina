@@ -34,6 +34,23 @@ public:
     MCAPI static std::error_category const& get();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::error_condition default_error_condition$(int) const;
+
+    MCAPI bool equivalent$(int, std::error_condition const&) const;
+
+    MCAPI bool equivalent$(std::error_code const&, int) const;
+
+    MCAPI std::string message$(int _Errval) const;
+
+    MCAPI char const* name$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Util::ResourceUri

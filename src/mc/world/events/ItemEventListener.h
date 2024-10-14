@@ -70,4 +70,47 @@ public:
     virtual ::EventResult onEvent(struct ItemNotificationEvent const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ItemNotificationEvent const&);
+
+    MCAPI ::EventResult onInventoryItemClosed$();
+
+    MCAPI ::EventResult onInventoryItemCraftedAutomaticallyByRecipe$(class ItemStackBase const& item);
+
+    MCAPI ::EventResult onInventoryItemOpened$(bool workbench);
+
+    MCAPI ::EventResult onInventoryLayoutSelected$(int activeInventoryLayout, int activeInventoryLeftTabIndex);
+
+    MCAPI ::EventResult onItemDefinitionEventTriggered$(class ItemStackBase const& item, std::string const& event);
+
+    MCAPI ::EventResult onItemModifiedActor$(class ItemStackBase const& item, class Actor const& modifiedActor);
+
+    MCAPI ::EventResult onItemSelected$(class ItemStackBase const&);
+
+    MCAPI ::EventResult onItemSelectedSlot$(int slot);
+
+    MCAPI ::EventResult
+    onItemSmelted$(class Player& player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem);
+
+    MCAPI ::EventResult onItemSpawnedActor$(class ItemStackBase const& item, class Actor const& spawnedActor);
+
+    MCAPI ::EventResult onItemSpawningActor$(class Actor const& spawningActor);
+
+    MCAPI ::EventResult
+    onItemTransferredFromContainer$(class ItemStackBase const& item, std::string const& srcContainerName);
+
+    MCAPI ::EventResult
+    onItemTransferredToContainer$(class ItemStackBase const& item, std::string const& dstContainerName);
+
+    MCAPI ::EventResult
+    onPreviewItemPopulatedInContainer$(class ItemStackBase const& item, std::string const& containerName);
+
+    MCAPI ::EventResult onRecipeSelected$(class ItemStackBase const& item);
+
+    // NOLINTEND
 };

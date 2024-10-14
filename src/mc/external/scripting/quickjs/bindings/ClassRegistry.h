@@ -82,6 +82,16 @@ public:
     MCAPI void _registerBakedProperties(struct Scripting::ClassBinding const& classBinding);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

@@ -24,4 +24,20 @@ public:
     ScriptPluginPackSourceEnumerator(std::string const& scriptRoot, std::vector<class PackInstance> const& packStack);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::vector<std::shared_ptr<class IScriptPluginSource>> const& getPluginSources$() const;
+
+    // NOLINTEND
 };

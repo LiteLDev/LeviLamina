@@ -32,6 +32,13 @@ public:
         MCAPI ~Config();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class Data {
@@ -44,6 +51,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~Data();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -60,6 +74,13 @@ public:
         MCAPI ~PlayerScanResult();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct WeightedItemStack {
@@ -74,6 +95,13 @@ public:
         MCAPI ~WeightedItemStack();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct WeightedLootTable {
@@ -86,6 +114,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~WeightedLootTable();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -121,12 +156,6 @@ public:
     MCAPI void tick(class BlockSource& region);
 
     MCAPI ~TrialSpawner();
-
-    MCAPI static int const DELAY_BETWEEN_ITEM_DISPENSING;
-
-    MCAPI static int const SPAWN_ITEM_DELAY_MAX;
-
-    MCAPI static int const SPAWN_ITEM_DELAY_MIN;
 
     // NOLINTEND
 
@@ -192,6 +221,24 @@ public:
 
     MCAPI static std::unique_ptr<class CompoundTag>
     _saveConfig(struct TrialSpawner::Config& config, struct TrialSpawner::Config const* baselineConfig);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static int const& DELAY_BETWEEN_ITEM_DISPENSING();
+
+    MCAPI static int const& SPAWN_ITEM_DELAY_MAX();
+
+    MCAPI static int const& SPAWN_ITEM_DELAY_MIN();
 
     // NOLINTEND
 };

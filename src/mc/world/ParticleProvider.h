@@ -80,4 +80,32 @@ public:
     MCAPI void sendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&)>&
+    getAddBreakingItemParticleEffectConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<
+        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
+    getAddTerrainParticleEffectConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<
+        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
+    getAddTerrainSlideEffectConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(::ParticleType, class Vec3 const&, class Vec3 const&, int)>&
+    getSendServerLegacyParticleConnector$();
+
+    // NOLINTEND
 };

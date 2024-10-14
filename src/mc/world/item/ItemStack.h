@@ -101,7 +101,33 @@ public:
 
     MCAPI static class ItemStack fromTag(class CompoundTag const& tag, class Level& level);
 
-    MCAPI static class ItemStack const EMPTY_ITEM;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void reinit$(class Item const& item, int count, int auxValue);
+
+    MCAPI void reinit$(class BlockLegacy const& block, int count);
+
+    MCAPI void reinit$(std::string_view name, int count, int auxValue);
+
+    MCAPI void setNull$(std::optional<std::string> reason);
+
+    MCAPI std::string toDebugString$() const;
+
+    MCAPI std::string toString$() const;
+
+    MCAPI static class ItemStack const& EMPTY_ITEM();
 
     // NOLINTEND
 };

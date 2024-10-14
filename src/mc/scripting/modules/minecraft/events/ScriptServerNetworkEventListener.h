@@ -36,6 +36,19 @@ public:
     virtual ::EventResult onEvent(struct ChatEvent const& chatEvent);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ServerNetworkGameplayNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ChatEvent const& chatEvent);
+
+    MCAPI ::EventResult onMessage$(struct MessageEvent const& messageEvent);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

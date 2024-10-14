@@ -50,7 +50,31 @@ public:
 
     MCAPI StoneSlabBlock4(std::string const& nameId, int id, bool fullSize, class HashedString const& baseSlab);
 
-    MCAPI static std::array<std::string, 5> const SLAB_NAMES;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI static std::array<std::string, 5> const& SLAB_NAMES();
 
     // NOLINTEND
 };

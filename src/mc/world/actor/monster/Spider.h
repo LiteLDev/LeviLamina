@@ -60,4 +60,26 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    MCAPI bool canBeAffected$(uint effectId) const;
+
+    MCAPI float getModelScale$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool shouldRender$() const;
+
+    // NOLINTEND
 };

@@ -33,6 +33,22 @@ public:
     MCAPI NetherSurfaceBuilder();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+
+    MCAPI void init$(class Biome&, uint levelSeed);
+
+    // NOLINTEND
 };
 
 }; // namespace VanillaSurfaceBuilders

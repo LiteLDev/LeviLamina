@@ -65,21 +65,9 @@ namespace Core::ZipUtils { class ZipSettings; }
 
 namespace Core {
 // NOLINTBEGIN
-MCAPI extern char const* RESULT_FAILED_MESSAGE;
-
-MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE;
-
-MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE;
-
 MCAPI uint64 operator&(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
 MCAPI ::Core::DirectoryIterationFlags operator|(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
-
-MCAPI extern std::string const sLockBlobName;
-
-MCAPI extern std::string const sMultiChunkTag;
-
-MCAPI extern std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
 
 MCAPI class Core::Result transferDirectory(
     class Core::FileSystemImpl*                                                                pSourceTransaction,
@@ -88,6 +76,21 @@ MCAPI class Core::Result transferDirectory(
     class Core::Path const&                                                                    targetDirectoryPath,
     std::function<class Core::Result(class Core::Path const&, class Core::Path const&)> const& fileTransferFunction
 );
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI char const* const& RESULT_FAILED_MESSAGE();
+
+MCAPI char const* const& RESULT_NOT_IMPLEMENTED_MESSAGE();
+
+MCAPI char const* const& RESULT_SUCCEEDED_MESSAGE();
+
+MCAPI std::string const& sLockBlobName();
+
+MCAPI std::string const& sMultiChunkTag();
+
+MCAPI std::shared_ptr<class Core::FileStorageArea>& sRootStorageArea();
 // NOLINTEND
 
 }; // namespace Core

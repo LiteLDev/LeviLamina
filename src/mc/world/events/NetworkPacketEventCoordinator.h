@@ -17,4 +17,11 @@ public:
     MCAPI void sendPacketReceivedFrom(class PacketHeader const& header, class Packet const& packet);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

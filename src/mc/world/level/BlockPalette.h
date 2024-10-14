@@ -78,4 +78,26 @@ public:
     MCAPI bool shouldWarnFor(struct NewBlockID id, ushort data) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void appendBlock$(class Block const& blockState);
+
+    MCAPI void assignBlockNetworkId$(class Block const& block, uint64 networkId) const;
+
+    MCAPI class Block const& getBlock$(uint const& networkId) const;
+
+    MCAPI ::BlockPalette::PaletteType getPaletteType$();
+
+    // NOLINTEND
 };

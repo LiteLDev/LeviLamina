@@ -103,4 +103,50 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct MinecartFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct VerticalCollisionFlag>>,
+            struct Read<
+                struct DimensionTypeComponent,
+                struct StateVectorComponent,
+                struct ActorDataFlagComponent,
+                struct MoveRequestComponent,
+                struct AABBShapeComponent>,
+            struct Write<struct StateVectorComponent>,
+            struct AddRemove<struct BounceComponent>,
+            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& strictContext,
+        class StrictEntityContext&    entity
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct MinecartFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct VerticalCollisionFlag>>,
+                     struct Read<
+                         struct DimensionTypeComponent,
+                         struct StateVectorComponent,
+                         struct ActorDataFlagComponent,
+                         struct MoveRequestComponent,
+                         struct AABBShapeComponent>,
+                     struct Write<struct StateVectorComponent>,
+                     struct AddRemove<struct BounceComponent>,
+                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& strictContext);
+
+    // NOLINTEND
 };

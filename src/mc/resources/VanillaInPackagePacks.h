@@ -22,4 +22,13 @@ public:
     virtual std::vector<struct IInPackagePacks::MetaData> getPacks(::PackType packType) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::vector<struct IInPackagePacks::MetaData> getPacks$(::PackType packType) const;
+
+    // NOLINTEND
 };

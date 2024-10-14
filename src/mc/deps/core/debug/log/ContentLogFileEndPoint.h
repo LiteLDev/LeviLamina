@@ -37,7 +37,31 @@ public:
         std::optional<::LogLevel> minLogLevel
     );
 
-    MCAPI static std::string_view const FILE_NAME;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForBedrockLogEndPoint();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void flush$();
+
+    MCAPI bool isEnabled$() const;
+
+    MCAPI void log$(::LogArea area, ::LogLevel level, char const* message);
+
+    MCAPI bool logOnlyOnce$() const;
+
+    MCAPI void setEnabled$(bool newState);
+
+    MCAPI static std::string_view const& FILE_NAME();
 
     // NOLINTEND
 };

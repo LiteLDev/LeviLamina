@@ -29,6 +29,16 @@ public:
         MCAPI int getItemId() const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
     template <typename T0>
@@ -88,21 +98,22 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>>& mChemistryMixes();
 
-    MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>> mContainerMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>>& mContainerMixes();
 
-    MCAPI static bool mIsInitialized;
+    MCAPI static bool& mIsInitialized();
 
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>>& mPotionMixes();
 
-    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
+    MCAPI static std::vector<class PotionBrewing::Ingredient>& mValidContainers();
 
-    MCAPI static std::unordered_set<class PotionBrewing::Ingredient> mValidIngredients;
+    MCAPI static std::unordered_set<class PotionBrewing::Ingredient>& mValidIngredients();
 
-    MCAPI static std::unordered_set<class PotionBrewing::Ingredient> mValidRecipeInputs;
+    MCAPI static std::unordered_set<class PotionBrewing::Ingredient>& mValidRecipeInputs();
 
     // NOLINTEND
 };

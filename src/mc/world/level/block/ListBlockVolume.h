@@ -55,4 +55,34 @@ public:
     MCAPI class ListBlockVolume& operator=(class ListBlockVolume const& rhs);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void forEach$(std::function<bool(class BlockPos const&)> callback) const;
+
+    MCAPI class BoundingBox getBoundingBox$() const;
+
+    MCAPI int getCapacity$() const;
+
+    MCAPI std::set<class ChunkPos> getChunks$() const;
+
+    MCAPI class BlockPos getMax$() const;
+
+    MCAPI class BlockPos getMin$() const;
+
+    MCAPI glm::ivec3 getSpan$() const;
+
+    MCAPI bool isInside$(class BlockPos const& pos) const;
+
+    MCAPI void translate$(class BlockPos const& delta);
+
+    // NOLINTEND
 };

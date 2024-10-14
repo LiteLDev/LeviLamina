@@ -85,4 +85,34 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct BlockTryPlaceByPlayerEvent const& eventData);
+
+    MCAPI struct GameplayHandlerResult<std::optional<std::string>>
+    handleEvent$(struct CraftUISetResultNameEvent const&);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct ExplosionStartedEvent& explosionStartedEvent);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct BlockTryDestroyByPlayerEvent& eventData
+    );
+
+    MCAPI ::HandlerResult handleEvent$(struct BlockGameplayEvent<void> const&);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct BlockGameplayEvent<::CoordinatorResult> const&);
+
+    MCAPI struct GameplayHandlerResult<std::optional<std::string>>
+    handleEvent$(struct BlockGameplayEvent<std::optional<std::string>> const&);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableBlockGameplayEvent<::CoordinatorResult>& event);
+
+    // NOLINTEND
 };

@@ -38,4 +38,15 @@ public:
     MCAPI void _fillUserData(class CompoundTag& tag);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random&, class LootTableContext&);
+
+    MCAPI void apply$(class ItemInstance& itemInstance, class Random&, class LootTableContext&);
+
+    // NOLINTEND
 };

@@ -20,7 +20,16 @@ public:
     // vIndex: 4
     virtual void onActorRemovedAfterDeath(class Actor& target, int amplifier) const;
 
-    MCAPI static class Vec3 const COBWEB_SLOWDOWN_OVERRIDE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onActorRemovedAfterDeath$(class Actor& target, int amplifier) const;
+
+    MCAPI static class Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
 
     // NOLINTEND
 };

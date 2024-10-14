@@ -135,6 +135,79 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI ::EventResult onBlockDestroyedByPlayer$(
+        class Player&              player,
+        class Block const&         destroyedBlock,
+        class BlockPos const&      pos,
+        class ItemStackBase const& currentItem,
+        class ItemStackBase const& itemBeforeBlockBreak
+    );
+
+    MCAPI ::EventResult onBlockDestructionStarted$(
+        class Player&         player,
+        class BlockPos const& pos,
+        class Block const&    hitBlock,
+        uchar                 face
+    );
+
+    MCAPI ::EventResult onBlockDestructionStopped$(class Player& player, class BlockPos const& blockPos, int progress);
+
+    MCAPI ::EventResult onBlockExploded$(
+        class Dimension&      dimension,
+        class BlockPos const& blockPos,
+        class Block const&    explodedBlock,
+        class Actor*          source
+    );
+
+    MCAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer$(class Player& player, class BlockPos const& pos);
+
+    MCAPI ::EventResult onBlockInteractedWith$(class Player& player, class BlockPos const& blockPos);
+
+    MCAPI ::EventResult
+    onBlockModified$(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+
+    MCAPI ::EventResult
+    onBlockMovedByPiston$(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
+
+    MCAPI ::EventResult onBlockPlacedByPlayer$(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
+
+    MCAPI ::EventResult onEvent$(struct BlockNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ExplosionStartedEvent const& explosionStartedEvent);
+
+    MCAPI ::EventResult onEvent$(struct PistonActionEvent const& pistonActionEvent);
+
+    MCAPI ::EventResult onEvent$(struct LeverActionEvent const& leverActionEvent);
+
+    MCAPI ::EventResult onEvent$(struct ButtonPushEvent const& buttonPushEvent);
+
+    MCAPI ::EventResult onEvent$(struct PressurePlatePushEvent const& pressurePlatePushEvent);
+
+    MCAPI ::EventResult onEvent$(struct PressurePlatePopEvent const& pressurePlatePopEvent);
+
+    MCAPI ::EventResult onEvent$(struct TargetBlockHitEvent const& targetBlockHitEvent);
+
+    MCAPI ::EventResult onEvent$(struct TripWireTripEvent const& tripWireTripEvent);
+
+    MCAPI ::EventResult onUnknownBlockReceived$(class Level& level, struct NewBlockID const& blockId, ushort data);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -16,6 +16,13 @@ public:
     MCVAPI bool isSequenceWriter() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool isSequenceWriter$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

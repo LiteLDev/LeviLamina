@@ -54,7 +54,7 @@ public:
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
     MCVAPI void
-    postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+    postProcessMobsAt(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
     MCVAPI ~WorldGenerator();
 
@@ -91,9 +91,46 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& lc);
+
+    MCAPI void debugRender$();
+
+    MCAPI bool findNearestStructureFeature$(
+        ::StructureFeatureType            feature,
+        class BlockPos const&             origin,
+        class BlockPos&                   pos,
+        bool                              mustBeInNewChunks,
+        std::optional<class HashedString> biomeTag
+    );
+
+    MCAPI ::StructureFeatureType findStructureFeatureTypeAt$(class BlockPos const& pos);
+
+    MCAPI void garbageCollectBlueprints$(class buffer_span<class ChunkPos> activeChunks);
+
+    MCAPI std::optional<short> getPreliminarySurfaceLevel$(class DividedPos2d<4>) const;
+
+    MCAPI void init$();
+
+    MCAPI bool isStructureFeatureTypeAt$(class BlockPos const& pos, ::StructureFeatureType type) const;
+
+    MCAPI void
+    postProcessMobsAt$(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+
+    MCAPI static uint64 const& TICKING_QUEUE_PASS_LIMIT();
 
     // NOLINTEND
 };

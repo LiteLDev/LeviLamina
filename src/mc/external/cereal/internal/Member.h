@@ -16,6 +16,13 @@ public:
     MCAPI ~Member();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

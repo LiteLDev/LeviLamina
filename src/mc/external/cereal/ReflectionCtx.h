@@ -18,6 +18,13 @@ public:
     MCAPI static struct cereal::ReflectionCtx& global();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

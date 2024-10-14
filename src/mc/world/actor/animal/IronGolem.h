@@ -69,4 +69,32 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    MCAPI void aiStep$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

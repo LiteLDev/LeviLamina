@@ -29,4 +29,24 @@ public:
     MCAPI void start();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void print$(std::string const& prepend);
+
+    MCAPI double stop$();
+
+    MCAPI double stopContinue$();
+
+    // NOLINTEND
 };

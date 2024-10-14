@@ -65,4 +65,28 @@ public:
     MCAPI void preTravel();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void aiStep$();
+
+    MCAPI float getBrightness$(float, class IConstBlockSource const&) const;
+
+    MCAPI bool isDarkEnoughToSpawn$() const;
+
+    MCAPI bool isOnFire$() const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

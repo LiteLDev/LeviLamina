@@ -50,4 +50,13 @@ public:
     MCAPI static void WebSocketConnectComplete(struct XAsyncBlock*);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

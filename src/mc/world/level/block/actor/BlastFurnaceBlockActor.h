@@ -17,4 +17,15 @@ public:
     MCVAPI std::string getName() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForContainer();
+
+    MCAPI std::string getName$() const;
+
+    // NOLINTEND
 };

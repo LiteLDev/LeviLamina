@@ -30,10 +30,6 @@ public:
     // vIndex: 0
     virtual ~CommonModuleFactory() = default;
 
-    MCAPI static char const* ModuleName;
-
-    MCAPI static struct Scripting::UUID const ModuleUUID;
-
     // NOLINTEND
 
     // private:
@@ -45,6 +41,17 @@ public:
         bool                                   allowUntagged,
         std::vector<std::string> const&        allowedTags
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI static char const* const& ModuleName();
+
+    MCAPI static struct Scripting::UUID const& ModuleUUID();
 
     // NOLINTEND
 };

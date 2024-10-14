@@ -332,9 +332,129 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Core::FileStats sStats;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Core::Result _addIgnoredThrottlePath$(class Core::Path const&);
+
+    MCAPI class Core::Result _copyDirectoryAndContentsRecursively$(
+        class Core::Path const& sourceDirectoryPath,
+        class Core::Path const& targetDirectoryPath
+    );
+
+    MCAPI class Core::Result _copyFile$(class Core::Path const& sourceFileName, class Core::Path const& targetFileName);
+
+    MCAPI class Core::Result _copyFileWithLimit$(
+        class Core::Path const& sourceFileName,
+        class Core::Path const& targetFileName,
+        uint64                  startPosition,
+        uint64&                 outBytesWritten,
+        uint64&                 outBytesRemaining
+    );
+
+    MCAPI class Core::Result _copyFlatFile$(
+        class Core::Path const&                       sourceDirectoryPath,
+        class Core::Path const&                       targetDirectoryPath,
+        std::vector<struct Core::ExcludedPath> const& excludedDirectories,
+        std::vector<struct Core::ExcludedPath> const& excludedFiles
+    );
+
+    MCAPI class Core::Result _createDirectoryRecursively$(class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _createEmptyFile$(class Core::Path const& fileName);
+
+    MCAPI class Core::Result
+    _createFlatFile$(class Core::Path const& sourceDirectoryPath, class Core::Path const& targetDirectoryPath);
+
+    MCAPI class Core::Result _createOneDirectoryIfNotExisting$(class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _deleteDirectoryAndContentsRecursively$(class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _deleteDirectoryContentsRecursively$(class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result
+    _deleteRecursively$(class Core::Path const& directoryPath, ::Core::FileType deleteFileType);
+
+    MCAPI class Core::Result _endTransaction$();
+
+    MCAPI class Core::Result _flatFileDeleteFileOrDirectory$(
+        class Core::Path const& fileOrDirectoryPath,
+        class Core::Path const& manifestPath,
+        bool                    directoryDeleteEnabled,
+        bool                    deleteRecursively
+    );
+
+    MCAPI bool _flatFileDirectoryExists$(class Core::Path const& directoryPath, class Core::Path const& manifestPath);
+
+    MCAPI bool _flatFileFileExists$(class Core::Path const& filePath, class Core::Path const& manifestPath);
+
+    MCAPI class Core::Result
+    _flatFileGetFileSize$(class Core::Path const& filePath, class Core::Path const& manifestPath, uint64* pFileSize);
+
+    MCAPI class Core::Result _flatFileIterateOverDirectory$(
+        class Core::Path const&                                                       directoryPath,
+        class Core::Path const&                                                       manifestPath,
+        ::Core::DirectoryIterationFlags                                               flags,
+        std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
+    );
+
+    MCAPI class Core::Result
+    _getDirectoryFiles$(std::vector<class Core::PathBuffer<std::string>>& files, class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _getDirectoryFilesAllocatedSizeRecursively$(
+        uint64&                 totalSize,
+        uint64&                 totalSizeAllocated,
+        class Core::Path const& directoryPath
+    );
+
+    MCAPI class Core::Result _getDirectoryFilesRecursively$(
+        std::vector<class Core::PathBuffer<std::string>>& filesOut,
+        class Core::Path const&                           directoryPath
+    );
+
+    MCAPI class Core::Result
+    _getDirectoryFilesSizeRecursively$(uint64& totalSize, class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _getFileOrDirectorySize$(class Core::Path const& entryName, uint64* pFileSizeOut);
+
+    MCAPI void _initializeInternal$();
+
+    MCAPI bool _isDirectoryPathAFlatFile$(class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result _readFileData$(class Core::Path const& filePath, std::vector<uchar>& data);
+
+    MCAPI class Core::Result _removeIgnoredThrottlePath$(class Core::Path const&);
+
+    MCAPI class Core::Result _writeOperation$(
+        class Core::Path const&                           fullPath,
+        class Core::Result&&                              result,
+        std::function<void(class Core::FileStorageArea*)> observerCallOrNull,
+        uint64                                            numBytesWritten
+    );
+
+    MCAPI class Core::Result
+    copyTimeAndAccessRights$(class Core::Path const& sourceFilePath, class Core::Path const& targetFilePath);
+
+    MCAPI ::Core::CrossStorageCopyMode getCrossStorageCopyMode$();
+
+    MCAPI class Core::Result getLastModificationTime$(class Core::Path const& entryPath, int64* lastModificationTime);
+
+    MCAPI uint64 getTransactionWriteSizeLimit$() const;
+
+    MCAPI void requestFlush$(std::vector<struct Core::PendingWrite> const& writeRequests);
+
+    MCAPI bool shouldCommit$();
+
+    MCAPI static class Core::FileStats& sStats();
 
     // NOLINTEND
 };

@@ -60,8 +60,6 @@ public:
     MCAPI static struct ActorPathingData
     extractPathingData(class Actor& mutableActor, ::PathFinder::ExtractionPurpose purpose);
 
-    MCAPI static struct PreferredPathDescription const DEFAULT_DESC;
-
     // NOLINTEND
 
     // private:
@@ -191,6 +189,20 @@ public:
 
     MCAPI std::unique_ptr<class Path>
           _reconstructPath(class PathfinderNode* to, ::PathCompletionType completionType, struct ActorUniqueID actorId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static struct PreferredPathDescription const& DEFAULT_DESC();
 
     // NOLINTEND
 };

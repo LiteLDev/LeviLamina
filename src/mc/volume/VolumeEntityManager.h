@@ -35,8 +35,6 @@ public:
         struct cereal::ReflectionCtx const&  ctx
     );
 
-    MCAPI static bool isTriggerVolumesEnabled;
-
     // NOLINTEND
 
     // protected:
@@ -44,6 +42,22 @@ public:
     MCAPI VolumeEntityManager(class StackRefResult<class EntityRegistry> registry, struct cereal::ReflectionCtx& ctx);
 
     MCAPI class OwnerPtr<class EntityContext> _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static bool& isTriggerVolumesEnabled();
 
     // NOLINTEND
 };

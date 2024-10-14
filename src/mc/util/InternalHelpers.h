@@ -7,9 +7,12 @@
 
 namespace InternalHelpers {
 // NOLINTBEGIN
-MCAPI extern std::chrono::steady_clock::time_point lastRenderTime;
-
 MCAPI std::string toString(::MovePredictionType type);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI std::chrono::steady_clock::time_point& lastRenderTime();
 // NOLINTEND
 
 }; // namespace InternalHelpers

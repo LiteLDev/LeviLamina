@@ -13,7 +13,12 @@ public:
     // NOLINTBEGIN
     MCAPI static struct PlayerMovementSettings getDefault();
 
-    MCAPI static struct PlayerMovementSettings const INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct PlayerMovementSettings const& INVALID();
 
     // NOLINTEND
 };

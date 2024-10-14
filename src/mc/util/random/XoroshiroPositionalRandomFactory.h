@@ -33,9 +33,18 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5> mThreadLocalDigest;
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class IRandom> forBlockPos$(class BlockPos const& blockPos) const;
+
+    MCAPI std::unique_ptr<class IRandom> forString$(std::string const& s) const;
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5>& mThreadLocalDigest();
 
     // NOLINTEND
 };

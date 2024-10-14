@@ -125,4 +125,94 @@ public:
     MCAPI void _refreshSummary(std::string const& levelId, class LevelCache& cache);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockThreadingEnableQueueForMainThread();
+
+    MCAPI static void** $vftableForILevelListCache();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addLevel$(std::string const& levelId, class LevelData&& levelData);
+
+    MCAPI void addObserver$(class LevelListCacheObserver& observer);
+
+    MCAPI void
+    createBackupCopyOfWorld$(std::string const& levelId, std::string const& newLevelId, std::string const& newName);
+
+    MCAPI std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage$(
+        std::string const&                                                  levelId,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
+
+    MCAPI class OwnerPtr<class LevelStorage> createLevelStorage$(
+        class Scheduler&                                                    scheduler,
+        std::string const&                                                  levelId,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        std::chrono::nanoseconds const&                                     writeFlushInterval,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                       levelDbEnv,
+        std::unique_ptr<class LevelStorageEventing>                         levelStorageEventing
+    );
+
+    MCAPI std::unique_ptr<class LevelStorageObserver> createLevelStorageObserver$();
+
+    MCAPI void deleteLevel$(std::string const& levelId);
+
+    MCAPI void deleteLevelFiles$(std::string const& levelId);
+
+    MCAPI class Core::PathBuffer<std::string> const getBasePath$() const;
+
+    MCAPI class LevelData* getLevelData$(std::string const& levelId);
+
+    MCAPI class StackRefResult<class LevelData> getLevelDataStackRefResult$(std::string const& levelId);
+
+    MCAPI void getLevelList$(
+        std::vector<struct LevelSummary>& dest,
+        bool                              includeShallowSummaries,
+        bool                              includePartiallyCopiedLevels,
+        bool                              includeBetaRetailLevels
+    );
+
+    MCAPI struct LevelSummary* getLevelSummary$(std::string const& levelId);
+
+    MCAPI struct LevelSummary const* getLevelSummaryByName$(std::string const& levelName);
+
+    MCAPI struct LevelSummary* getOrCreateLevelSummary$(class Core::Path const& directory);
+
+    MCAPI struct LevelSummary* getShallowLevelSummary$(std::string const& levelId);
+
+    MCAPI bool hasCachedLevels$(bool includeShallowSummaries) const;
+
+    MCAPI bool hasLevelWithId$(std::string const& levelId);
+
+    MCAPI void onSave$(std::string const& levelId);
+
+    MCAPI void onStorageChanged$();
+
+    MCAPI void postDeleteLevel$(std::string const& levelId);
+
+    MCAPI void refreshLevel$(std::string const& levelId);
+
+    MCAPI void removeObserver$(class LevelListCacheObserver& observer);
+
+    MCAPI void renameAndSaveLevelData$(
+        std::string const&     levelId,
+        std::string const&     newLevelName,
+        class LevelData const& levelData
+    );
+
+    MCAPI void renameLevel$(std::string const& levelId, std::string const& newLevelName);
+
+    MCAPI void saveLevelData$(std::string const& levelId, class LevelData const& levelData);
+
+    MCAPI void updateLevelCache$(std::string const& levelId);
+
+    // NOLINTEND
 };

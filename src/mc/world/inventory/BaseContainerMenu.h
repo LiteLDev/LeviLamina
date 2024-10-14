@@ -42,4 +42,33 @@ public:
     MCAPI void _saveLastSlots(class Container* container);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainerContentChangeListener();
+
+    MCAPI static void** $vftableForIContainerManager();
+
+    MCAPI void dtor$();
+
+    MCAPI void broadcastChanges$();
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI ::ContainerID getContainerId$() const;
+
+    MCAPI ::ContainerType getContainerType$() const;
+
+    MCAPI bool isResultSlot$(int slot);
+
+    MCAPI bool isSlotDirty$(int slot);
+
+    MCAPI void setContainerId$(::ContainerID id);
+
+    MCAPI void setContainerType$(::ContainerType type);
+
+    MCAPI void setData$(int id, int value);
+
+    // NOLINTEND
 };

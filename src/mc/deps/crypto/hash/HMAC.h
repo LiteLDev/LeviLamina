@@ -23,6 +23,16 @@ public:
     MCAPI void signAndAppend(std::string const& data, std::string& out, uint64 counter);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Hash

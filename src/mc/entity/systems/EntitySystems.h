@@ -65,4 +65,31 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForIEntitySystems();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void registerTickingSystem$(
+        gsl::span<class Bedrock::typeid_t<struct SystemCategory> const> categories,
+        std::unique_ptr<class ITickingSystem>                           system,
+        struct SystemInfo const&                                        info,
+        struct EntitySystemTickingMode                                  tickingMode
+    );
+
+    MCAPI void tickMovementCatchup$(class EntityRegistry& registry);
+
+    MCAPI void tickMovementCorrectionReplay$(class EntityRegistry& registry);
+
+    // NOLINTEND
 };

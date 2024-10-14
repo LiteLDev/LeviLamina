@@ -25,4 +25,11 @@ public:
     MCAPI void onPlace(struct BlockEvents::BlockPlaceEvent const& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

@@ -30,4 +30,22 @@ public:
     StructurePoolBlockPredicateAlwaysTrueExcept(std::set<class Block const*> const& cannotReplace, float probability);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+
+    MCAPI bool test$(class Block const& block, class Randomize& randomize) const;
+
+    MCAPI bool test$(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
+
+    // NOLINTEND
 };

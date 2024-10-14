@@ -57,29 +57,34 @@ public:
 
     MCAPI static class Vec2 rotationFromDirection(class Vec3 const& dir);
 
-    MCAPI static class Vec3 const HALF;
+    // NOLINTEND
 
-    MCAPI static class Vec3 const MAX;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Vec3 const& HALF();
 
-    MCAPI static class Vec3 const MIN;
+    MCAPI static class Vec3 const& MAX();
 
-    MCAPI static class Vec3 const NEG_UNIT_X;
+    MCAPI static class Vec3 const& MIN();
 
-    MCAPI static class Vec3 const NEG_UNIT_Y;
+    MCAPI static class Vec3 const& NEG_UNIT_X();
 
-    MCAPI static class Vec3 const NEG_UNIT_Z;
+    MCAPI static class Vec3 const& NEG_UNIT_Y();
 
-    MCAPI static class Vec3 const ONE;
+    MCAPI static class Vec3 const& NEG_UNIT_Z();
 
-    MCAPI static class Vec3 const TWO;
+    MCAPI static class Vec3 const& ONE();
 
-    MCAPI static class Vec3 const UNIT_X;
+    MCAPI static class Vec3 const& TWO();
 
-    MCAPI static class Vec3 const UNIT_Y;
+    MCAPI static class Vec3 const& UNIT_X();
 
-    MCAPI static class Vec3 const UNIT_Z;
+    MCAPI static class Vec3 const& UNIT_Y();
 
-    MCAPI static class Vec3 const ZERO;
+    MCAPI static class Vec3 const& UNIT_Z();
+
+    MCAPI static class Vec3 const& ZERO();
 
     // NOLINTEND
 };

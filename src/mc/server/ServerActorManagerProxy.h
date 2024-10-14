@@ -33,4 +33,21 @@ public:
     virtual void deleteActorFromWorldInLevelChunk(class Actor const& actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void deleteActorFromWorldInLevelChunk$(class Actor const& actor);
+
+    MCAPI void initializeActor$(class Actor& actor);
+
+    MCAPI void removeActor$(class Actor& actor);
+
+    MCAPI void removeActorInLevelChunk$(class Actor const& actor);
+
+    MCAPI bool validate$(class Actor const& actor);
+
+    // NOLINTEND
 };

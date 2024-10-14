@@ -151,8 +151,6 @@ public:
 
     MCAPI static bool forceOffClientChunkGeneration(class LevelData& levelData);
 
-    MCAPI static std::chrono::nanoseconds const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
-
     // NOLINTEND
 
     // private:
@@ -164,6 +162,58 @@ public:
     MCAPI void _update();
 
     MCAPI bool _useClientSideChunkGeneration(class LevelData* levelData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForAppPlatformListener();
+
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForCoreStorageAreaStateListener();
+
+    MCAPI static void** $vftableForGameCallbacks();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void onAppResumed$();
+
+    MCAPI void onAppSuspended$();
+
+    MCAPI void onCriticalDiskError$(bool bSet, ::Core::LevelStorageState const& errorCode);
+
+    MCAPI void onCriticalScriptError$(char const* clientDisconnectMessage, char const* logMessage);
+
+    MCAPI void onGameModeChanged$();
+
+    MCAPI void onGameSessionReset$();
+
+    MCAPI void onInternetUpdate$();
+
+    MCAPI void onLevelCorrupt$();
+
+    MCAPI void onLevelExit$();
+
+    MCAPI void onLowDiskSpace$(bool bSet);
+
+    MCAPI void onLowMemory$();
+
+    MCAPI void onOutOfDiskSpace$(bool bSet);
+
+    MCAPI void onRequestResourceReload$();
+
+    MCAPI void onTick$(int nTick, int maxTick);
+
+    MCAPI void updateScreens$();
+
+    MCAPI static std::chrono::nanoseconds const& SERVER_MAX_DELAY_BEFORE_SLOWDOWN();
 
     // NOLINTEND
 };

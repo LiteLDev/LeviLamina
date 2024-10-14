@@ -34,6 +34,19 @@ public:
     virtual void tick();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$();
+
+    MCAPI bool isDone$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

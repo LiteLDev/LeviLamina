@@ -106,6 +106,47 @@ public:
                       struct EntityFactoryT<>>& context);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct ActorMovementTickNeededFlag>,
+                         struct PassengerComponent,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct HorseFlag>,
+                         class FlagComponent<struct MobFlag>,
+                         class FlagComponent<struct ParrotFlag>,
+                         struct VehicleComponent,
+                         class FlagComponent<struct CamelFlag>>,
+                     struct Read<
+                         struct DimensionTypeComponent,
+                         class ExhaustionComponent,
+                         struct OnGroundFlagComponent,
+                         struct ActorGameTypeComponent,
+                         struct ServerPlayerCurrentMovementComponent,
+                         struct StateVectorComponent,
+                         struct ActorDataFlagComponent,
+                         class FlagComponent<struct InWaterFlag>,
+                         struct ActorRotationComponent,
+                         struct MobBodyRotationComponent,
+                         struct PassengerComponent,
+                         struct RenderRotationComponent,
+                         struct StandAnimationComponent,
+                         struct AABBShapeComponent,
+                         struct OffsetsComponent,
+                         struct VanillaOffsetComponent,
+                         struct PassengerRenderingRidingOffsetComponent>,
+                     struct Write<>,
+                     struct AddRemove<struct AttributeRequestComponent>,
+                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };
 
 }; // namespace FoodExhaustionSystemImpl

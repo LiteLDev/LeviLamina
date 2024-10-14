@@ -58,4 +58,31 @@ public:
     _createKnot(class BlockSource& region, class BlockPos pos, class ItemInstance const& item) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class InteractionResult _useOn$(
+        class ItemStack&  instance,
+        class Actor&      spawningActor,
+        class BlockPos    pos,
+        uchar             face,
+        class Vec3 const& clickPos
+    ) const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
+
+    MCAPI bool isDyeable$() const;
+
+    // NOLINTEND
 };

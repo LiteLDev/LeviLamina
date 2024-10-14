@@ -98,23 +98,31 @@ public:
 
     MCAPI static class BlockPos getOrientedBounds(class BlockPos const& size, ::Rotation rotation);
 
-    MCAPI static std::string const DEFAULT_EXPORT_NAME;
-
-    MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
-
-    MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
-
-    MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
-
-    MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
-
-    MCAPI static char const NAMESPACE_DELIMITER;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static ::StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DEFAULT_EXPORT_NAME();
+
+    MCAPI static std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+
+    MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
+
+    MCAPI static class BlockPos const& MAX_STRUCTURE_OFFSET();
+
+    MCAPI static class BlockPos const& MIN_STRUCTURE_OFFSET();
+
+    MCAPI static class BlockPos const& MIN_STRUCTURE_SIZE();
+
+    MCAPI static char const& NAMESPACE_DELIMITER();
 
     // NOLINTEND
 };

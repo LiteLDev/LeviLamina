@@ -30,6 +30,18 @@ public:
         MCAPI ~CachedLineData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class CachedMessageData {
@@ -42,6 +54,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~CachedMessageData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -149,6 +168,36 @@ public:
     // NOLINTBEGIN
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder
     _findChalkboard(class BlockSource& region, class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI std::string getImmersiveReaderText$(class BlockSource& region);
+
+    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const& tag) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void setUgcStrings$(class CompoundTag& tag, std::vector<std::string> const& list) const;
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -104,11 +104,23 @@ public:
 
     MCAPI static class MobEffectInstance load(class CompoundTag const& tag);
 
-    MCAPI static int const MAX_AMPLIFIER_COUNT;
+    // NOLINTEND
 
-    MCAPI static class MobEffectInstance const NO_EFFECT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static float splashDurationMultiplier;
+    MCAPI void dtor$();
+
+    MCAPI static int const& MAX_AMPLIFIER_COUNT();
+
+    MCAPI static class MobEffectInstance const& NO_EFFECT();
+
+    MCAPI static float& splashDurationMultiplier();
 
     // NOLINTEND
 };

@@ -82,4 +82,56 @@ public:
     virtual ::EventResult onActorMovementRewindCorrected(class Actor&, uint64, ::ReplayCorrectionResult);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ::EventResult onActorAttackedActor$(class Actor& actor, class Actor& target);
+
+    MCAPI ::EventResult onActorCreated$(class Actor& actor, ::ActorInitializationMethod initializationMethod);
+
+    MCAPI ::EventResult onActorCreationAttemptFailed$(class Actor& actor, std::string_view message);
+
+    MCAPI ::EventResult onActorDefinitionEvent$(
+        class Actor&                                 actor,
+        std::string const&                           event,
+        std::vector<struct ActorDefinitionModifier>& modifiers
+    );
+
+    MCAPI ::EventResult onActorMobInteraction$(
+        class Actor&                         actor,
+        ::MinecraftEventing::InteractionType interactionType,
+        ::ActorType                          interactedActorType
+    );
+
+    MCAPI ::EventResult onActorMovementRewindCorrected$(class Actor&, uint64, ::ReplayCorrectionResult);
+
+    MCAPI ::EventResult onActorSneakChanged$(class Actor& actor, bool isSneaking);
+
+    MCAPI ::EventResult onActorStartRiding$(class Actor& actor, class Actor& vehicle);
+
+    MCAPI ::EventResult
+    onActorStopRiding$(class Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+
+    MCAPI ::EventResult onActorTargetAcquired$(class Actor& actor, class Actor& target);
+
+    MCAPI ::EventResult onActorTeleported$(class Actor& actor);
+
+    MCAPI ::EventResult onActorTick$(class Actor& actor);
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const&);
+
+    MCAPI ::EventResult onPlayerAIStepBegin$(class Player&);
+
+    MCAPI ::EventResult onPlayerAIStepEnd$(class Player&);
+
+    MCAPI ::EventResult onPlayerAuthInputApplied$(class Player&);
+
+    MCAPI ::EventResult onPlayerAuthInputReceived$(class Player&);
+
+    // NOLINTEND
 };

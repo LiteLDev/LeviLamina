@@ -95,11 +95,32 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
+    MCAPI static void** $vftable();
 
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
+    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+
+    MCAPI void _initializeComponent$();
+
+    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI bool checkComponentDataForContentErrors$() const;
+
+    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+
+    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI void writeSettings$();
+
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
+
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
 
     // NOLINTEND
 };

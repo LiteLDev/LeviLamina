@@ -34,4 +34,17 @@ public:
     _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::shared_ptr<class gametest::BaseGameTestInstance>
+          _createGameTestInstance$(class gametest::BaseGameTestFunction& function);
+
+    MCAPI void
+    _runTest$(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
+
+    // NOLINTEND
 };

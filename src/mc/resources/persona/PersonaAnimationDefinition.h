@@ -13,7 +13,14 @@ public:
     // NOLINTBEGIN
     MCAPI ~PersonaAnimationDefinition();
 
-    MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static struct PersonaAnimationDefinition const& INVALID_ANIMATION_DEFINITION();
 
     // NOLINTEND
 };

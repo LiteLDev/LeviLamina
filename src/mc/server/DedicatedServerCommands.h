@@ -26,9 +26,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::string> mSaveAllFileList;
+    MCAPI static std::vector<std::string>& mSaveAllFileList();
 
     // NOLINTEND
 };

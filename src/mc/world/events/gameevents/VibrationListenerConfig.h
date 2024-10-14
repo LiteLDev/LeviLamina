@@ -18,4 +18,15 @@ public:
     MCVAPI void onSerializableDataChanged(class BlockSource&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource&);
+
+    // NOLINTEND
 };

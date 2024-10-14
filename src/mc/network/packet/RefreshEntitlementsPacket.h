@@ -32,4 +32,19 @@ public:
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream&);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream&) const;
+
+    // NOLINTEND
 };

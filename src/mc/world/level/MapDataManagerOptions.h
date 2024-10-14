@@ -32,4 +32,24 @@ public:
     MCAPI explicit MapDataManagerOptions(class LevelData& levelData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class BlockPos const& getWorldCenter$() const;
+
+    MCAPI bool hasMapsCenteredToOrigin$() const;
+
+    MCAPI bool isLegacyLevel$() const;
+
+    MCAPI bool isPremiumWorldTemplate$() const;
+
+    // NOLINTEND
 };

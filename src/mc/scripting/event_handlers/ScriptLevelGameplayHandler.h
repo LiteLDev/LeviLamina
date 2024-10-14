@@ -60,4 +60,20 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::HandlerResult handleEvent$(struct ScriptingInitializeEvent const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct LevelWeatherChangedEvent& event);
+
+    MCAPI ::HandlerResult handleEvent$(struct LevelGameplayEvent<void> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableLevelGameplayEvent<::CoordinatorResult>& event);
+
+    // NOLINTEND
 };

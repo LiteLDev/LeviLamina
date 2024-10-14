@@ -89,4 +89,52 @@ public:
     MCAPI bool const _isBlockConvertibleToMud(class BlockLegacy const& block) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar, class Vec3 const& clickPos)
+        const;
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const*) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI ::Potion::PotionType getPotionType$() const;
+
+    MCAPI bool isDestructive$(int auxValue) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    MCAPI ::ItemUseMethod useTimeDepleted$(class ItemStack& instance, class Level* level, class Player* player) const;
+
+    // NOLINTEND
 };

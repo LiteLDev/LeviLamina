@@ -11,8 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<class HashedString, bool (*)(struct ActorTargetFilter const&, class Actor&)>
-        ConditionPredicates;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::unordered_map<class HashedString, bool (*)(struct ActorTargetFilter const&, class Actor&)>&
+    ConditionPredicates();
 
     // NOLINTEND
 };

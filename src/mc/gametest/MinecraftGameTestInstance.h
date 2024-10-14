@@ -60,4 +60,35 @@ public:
     virtual class BlockSource& getBlockSource() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int _getLevelTick$() const;
+
+    MCAPI bool _isTestReady$();
+
+    MCAPI void clearStructure$();
+
+    MCAPI class BlockSource& getBlockSource$() const;
+
+    MCAPI std::optional<class Vec3> getStructureBlockPivot$() const;
+
+    MCAPI std::optional<class Vec3> getStructureBlockPosPivot$() const;
+
+    MCAPI class BoundingBox getStructureBoundingBox$() const;
+
+    MCAPI std::optional<class AABB> getStructureBounds$() const;
+
+    MCAPI DimensionType getStructureDimension$() const;
+
+    MCAPI bool hasStructureBlock$() const;
+
+    MCAPI void initialize$();
+
+    MCAPI void spawnStructure$();
+
+    // NOLINTEND
 };

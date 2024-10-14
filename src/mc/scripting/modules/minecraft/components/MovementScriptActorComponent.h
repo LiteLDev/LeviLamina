@@ -32,6 +32,15 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::MovementScriptActorComponent> bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Scripting::Result<float> getMaxTurn$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

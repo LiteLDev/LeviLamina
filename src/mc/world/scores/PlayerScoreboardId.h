@@ -14,7 +14,17 @@ public:
 
     MCAPI explicit PlayerScoreboardId(int64 actorUniqueId);
 
-    MCAPI static struct PlayerScoreboardId const INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static struct PlayerScoreboardId const& INVALID();
 
     // NOLINTEND
 };

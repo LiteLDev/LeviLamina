@@ -76,8 +76,6 @@ public:
 
     MCAPI int retrieve();
 
-    MCAPI static float const BOBBER_SIZE;
-
     // NOLINTEND
 
     // protected:
@@ -101,6 +99,36 @@ public:
     MCAPI void _updateGravity();
 
     MCAPI void _updateServer();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI bool save$(class CompoundTag&) const;
+
+    MCAPI bool shouldDropDeathLoot$() const;
+
+    MCAPI static float const& BOBBER_SIZE();
 
     // NOLINTEND
 };

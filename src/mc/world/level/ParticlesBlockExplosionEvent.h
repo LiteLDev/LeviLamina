@@ -18,4 +18,11 @@ public:
     MCAPI ~ParticlesBlockExplosionEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

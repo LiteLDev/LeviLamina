@@ -37,7 +37,24 @@ public:
         class Factory<class EventResponse> const&                                                              factory
     ) const;
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void buildSchema$(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>& root,
+        class Factory<class EventResponse> const&                                                              factory
+    ) const;
+
+    MCAPI void executeAction$(class RenderParams& params) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

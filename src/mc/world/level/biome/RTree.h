@@ -50,6 +50,18 @@ public:
         MCAPI static void sort(std::vector<class RTree::Node>& children, int dimension, bool absolute);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -69,6 +81,13 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static std::optional<class RTree::Node> build(std::vector<class RTree::Node>&& children);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

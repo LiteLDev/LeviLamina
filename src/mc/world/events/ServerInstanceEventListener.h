@@ -33,4 +33,26 @@ public:
     MCVAPI ::EventResult onStartLeaveGame(class ServerInstance& instance);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI ::EventResult onServerInitializeEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerInitializeStart$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerMinecraftInitialized$(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
+
+    MCAPI ::EventResult onServerResume$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerSuspend$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerUpdateEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onStartLeaveGame$(class ServerInstance& instance);
+
+    // NOLINTEND
 };

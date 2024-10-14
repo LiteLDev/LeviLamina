@@ -36,11 +36,6 @@ public:
 
     MCAPI static void shutdown();
 
-    MCAPI static std::unordered_map<
-        std::string,
-        std::function<std::unique_ptr<class Goal>(class Mob&, struct LegacyGoalDefinition const&)>>
-        mGoalMap;
-
     // NOLINTEND
 
     // private:
@@ -51,6 +46,23 @@ public:
 
     MCAPI static std::vector<::ActorDamageCause>
     _getPanicGoalDamageSources(struct ConstDeserializeDataParams const& deserializeDataParams);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_map<
+        std::string,
+        std::function<std::unique_ptr<class Goal>(class Mob&, struct LegacyGoalDefinition const&)>>&
+    mGoalMap();
 
     // NOLINTEND
 };

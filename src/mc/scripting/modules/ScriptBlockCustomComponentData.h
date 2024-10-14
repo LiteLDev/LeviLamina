@@ -14,4 +14,11 @@ public:
     MCAPI ~ScriptBlockCustomComponentData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -16,4 +16,11 @@ public:
     MCAPI ~ListTagIntAdder();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

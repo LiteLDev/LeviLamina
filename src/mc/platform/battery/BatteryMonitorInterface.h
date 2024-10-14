@@ -24,4 +24,11 @@ public:
     virtual float getBatteryLevel() const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

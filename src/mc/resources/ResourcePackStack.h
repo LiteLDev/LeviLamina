@@ -75,9 +75,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::map<class Core::PathBuffer<std::string>, class Core::PathBuffer<std::string>> mUpgradePathMap;
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::vector<class LoadedResourceData> loadAllVersionsOf$(class ResourceLocation const& resourceLocation
+    ) const;
+
+    MCAPI bool loadAllVersionsOf$(
+        class ResourceLocation const&    resourceLocation,
+        class ResourcePackMergeStrategy& mergeStrategy
+    ) const;
+
+    MCAPI bool loadAllVersionsOf$(
+        class ResourceLocation const&                         resourceLocation,
+        std::function<bool(class PackInstance const&)> const& packInstanceFilter,
+        class ResourcePackMergeStrategy&                      mergeStrategy
+    ) const;
+
+    MCAPI static std::map<class Core::PathBuffer<std::string>, class Core::PathBuffer<std::string>>& mUpgradePathMap();
 
     // NOLINTEND
 };

@@ -33,4 +33,20 @@ public:
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void registerOutputCallback$(std::function<void(class AutomationCmdOutput&)> const& callback);
+
+    MCAPI void send$(class CommandOrigin const& origin, class CommandOutput const& output);
+
+    // NOLINTEND
 };

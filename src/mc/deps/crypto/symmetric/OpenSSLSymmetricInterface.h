@@ -38,6 +38,27 @@ public:
     virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void decrypt$(std::string const& ciphertext, std::string& out);
+
+    MCAPI void encrypt$(std::string const& plaintext, std::string& out);
+
+    MCAPI bool encryptToBuffer$(gsl::span<char const>, gsl::span<char>, uint64&);
+
+    MCAPI uint64 getBlockSize$() const;
+
+    MCAPI uint64 getEncryptionBufferSize$(uint64 inputSize) const;
+
+    MCAPI uint64 getKeySize$() const;
+
+    MCAPI void init$(std::string const& key, std::string const& IV);
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Symmetric

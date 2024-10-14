@@ -62,9 +62,27 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& entityTag) const;
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI static class mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
 
     // NOLINTEND
 };

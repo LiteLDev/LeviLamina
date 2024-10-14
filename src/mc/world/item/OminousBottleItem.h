@@ -71,9 +71,42 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_AMPLIFIER;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& item,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& item) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
+
+    MCAPI ::Potion::PotionType getPotionType$() const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod useTimeDepleted$(class ItemStack& item, class Level* level, class Player* player) const;
+
+    MCAPI static int const& MAX_AMPLIFIER();
 
     // NOLINTEND
 };

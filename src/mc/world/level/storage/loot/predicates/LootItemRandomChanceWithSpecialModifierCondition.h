@@ -22,4 +22,13 @@ public:
     virtual bool applies(class Random& random, class LootTableContext& context);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool applies$(class Random& random, class LootTableContext& context);
+
+    // NOLINTEND
 };

@@ -49,6 +49,26 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Scripting::ResultAny
+    runOn$(struct Scripting::ContextId contextId, class Scripting::NativeRuntime& runtime, std::optional<::Scripting::Privilege>);
+
+    MCAPI class Scripting::ResultAny
+    runOn$(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

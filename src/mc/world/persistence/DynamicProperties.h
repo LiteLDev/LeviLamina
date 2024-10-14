@@ -88,8 +88,6 @@ public:
         std::variant<double, float, bool, std::string, class Vec3> const* value
     );
 
-    MCAPI static std::string const STORAGE_TAG;
-
     // NOLINTEND
 
     // private:
@@ -101,6 +99,15 @@ public:
 
     MCAPI static entt::meta_any
     _getPropertyVariant(std::variant<double, float, bool, std::string, class Vec3> const& var);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& STORAGE_TAG();
 
     // NOLINTEND
 };

@@ -59,4 +59,39 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void applyToPose$(
+        class RenderParams&                                                               renderParams,
+        std::unordered_map<::SkeletalHierarchyIndex, std::vector<class BoneOrientation>>& destBoneOrientationMap,
+        float                                                                             blendWeight
+    );
+
+    MCAPI void
+    bindParticleEffects$(std::unordered_map<class HashedString, class HashedString> const& actorParticleEffectMap);
+
+    MCAPI void bindSoundEffects$(std::unordered_map<class HashedString, std::string> const& actorSoundEffectMap);
+
+    MCAPI void buildBoneToPartMapping$(class AnimationComponent& animationComponent);
+
+    MCAPI std::shared_ptr<class ActorAnimationPlayer> findAnimation$(class HashedString const&);
+
+    MCAPI ::ActorAnimationType getAnimationType$() const;
+
+    MCAPI class HashedString const& getRawName$() const;
+
+    MCAPI bool hasAnimationFinished$() const;
+
+    MCAPI void resetAnimation$();
+
+    // NOLINTEND
 };

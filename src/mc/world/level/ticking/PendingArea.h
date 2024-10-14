@@ -25,4 +25,11 @@ public:
     MCAPI static struct PendingArea load(std::string const& key, class CompoundTag const& tag);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

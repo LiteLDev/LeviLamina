@@ -37,4 +37,23 @@ public:
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const& filePath);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void initFilePick$(class Core::Path const& filePath, std::function<void(bool, struct FileInfo)> callback);
+
+    MCAPI uint64 readBytes$(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar>& buffer);
+
+    MCAPI bool
+    writeBytes$(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar> const& buffer);
+
+    // NOLINTEND
 };

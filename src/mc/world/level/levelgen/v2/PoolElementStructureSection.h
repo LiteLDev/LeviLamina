@@ -40,6 +40,21 @@ public:
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void
+    appendJunctions$(class BoundingBox const& box, std::vector<struct br::worldgen::JigsawJunction>& junctions);
+
+    MCAPI void
+    appendRigid$(::br::worldgen::TerrainAdjustment::Type type, std::vector<struct br::worldgen::Rigid>& rigids);
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB) const;
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

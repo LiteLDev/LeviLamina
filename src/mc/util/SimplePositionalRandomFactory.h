@@ -28,4 +28,20 @@ public:
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const& blockPos) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class IRandom> forBlockPos$(class BlockPos const& blockPos) const;
+
+    MCAPI std::unique_ptr<class IRandom> forString$(std::string const& string) const;
+
+    // NOLINTEND
 };

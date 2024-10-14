@@ -21,4 +21,13 @@ public:
     virtual void handle(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
+
+    // NOLINTEND
 };

@@ -36,4 +36,24 @@ public:
     MCAPI GrantXPSubcomponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void doOnHitEffect$(class Actor& owner, class ProjectileComponent& component);
+
+    MCAPI char const* getName$();
+
+    MCAPI void readfromJSON$(class Json::Value& component, class SemVersion const&);
+
+    MCAPI void writetoJSON$(class Json::Value& component) const;
+
+    // NOLINTEND
 };

@@ -36,4 +36,27 @@ public:
     MCAPI AllayVibrationConfig(class Actor& actor, ushort);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource&);
+
+    MCAPI void
+    onSignalReceive$(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
+
+    MCAPI bool shouldListen$(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+
+    // NOLINTEND
 };

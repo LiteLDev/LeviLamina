@@ -101,4 +101,66 @@ public:
     MCAPI static class AABB refreshAABB(float heightOffset, class Vec3 const& pos, class Vec2 const& aabbDim);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct ActorAddedFlag>,
+                class FlagComponent<struct ActorRemovedFlag>,
+                class FlagComponent<struct LocalPlayerComponentFlag>,
+                class FlagComponent<struct PaintingFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct ShulkerFlag>>,
+            struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
+            struct Write<
+                struct AABBShapeComponent,
+                struct ActorSetPositionRequestComponent,
+                class HitboxComponent,
+                struct StateVectorComponent,
+                struct SynchedActorDataComponent,
+                struct ActorDataFlagComponent,
+                struct ActorDataDirtyFlagsComponent>,
+            struct AddRemove<
+                class FlagComponent<struct ActorChunkMoveFlag>,
+                class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
+                struct ActorSetPositionRequestComponent>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct ActorAddedFlag>,
+                         class FlagComponent<struct ActorRemovedFlag>,
+                         class FlagComponent<struct LocalPlayerComponentFlag>,
+                         class FlagComponent<struct PaintingFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct ShulkerFlag>>,
+                     struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
+                     struct Write<
+                         struct AABBShapeComponent,
+                         struct ActorSetPositionRequestComponent,
+                         class HitboxComponent,
+                         struct StateVectorComponent,
+                         struct SynchedActorDataComponent,
+                         struct ActorDataFlagComponent,
+                         struct ActorDataDirtyFlagsComponent>,
+                     struct AddRemove<
+                         class FlagComponent<struct ActorChunkMoveFlag>,
+                         class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
+                         struct ActorSetPositionRequestComponent>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& executionContext);
+
+    // NOLINTEND
 };

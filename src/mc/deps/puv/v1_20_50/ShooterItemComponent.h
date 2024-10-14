@@ -33,6 +33,16 @@ public:
         operator=(struct Puv::v1_20_50::ShooterItemComponent::Ammunition const&);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -48,6 +58,16 @@ public:
     MCAPI struct Puv::v1_20_50::ShooterItemComponent& operator=(struct Puv::v1_20_50::ShooterItemComponent const&);
 
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

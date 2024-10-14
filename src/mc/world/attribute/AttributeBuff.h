@@ -58,4 +58,20 @@ public:
     MCAPI AttributeBuff(float amount, int operand, class ActorDamageSource const& source, ::AttributeBuffType type);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void setDurationAmplifier$(std::shared_ptr<class Amplifier> amplifier);
+
+    // NOLINTEND
 };

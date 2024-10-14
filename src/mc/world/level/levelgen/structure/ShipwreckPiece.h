@@ -37,9 +37,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
+    MCAPI static void** $vftable();
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI static ::ll::CArrayT<std::string const>& STRUCTURE_SHIPWRECK_TYPES();
 
     // NOLINTEND
 };

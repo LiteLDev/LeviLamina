@@ -79,4 +79,36 @@ public:
     MCAPI void _setPower(class Vec3 const& power);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI float getBrightness$(float, class IConstBlockSource const&) const;
+
+    MCAPI float getInertia$();
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI ::ParticleType getTrailParticle$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool shouldBurn$();
+
+    // NOLINTEND
 };

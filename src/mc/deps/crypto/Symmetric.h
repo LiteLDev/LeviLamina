@@ -44,6 +44,34 @@ public:
     MCAPI Symmetric(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void decrypt$(std::string const& ciphertext, std::string& output);
+
+    MCAPI void encrypt$(std::string const& plaintext, std::string& output);
+
+    MCAPI bool encryptToBuffer$(gsl::span<char const>, gsl::span<char>, uint64&);
+
+    MCAPI uint64 getBlockSize$() const;
+
+    MCAPI uint64 getEncryptionBufferSize$(uint64 inputSize) const;
+
+    MCAPI uint64 getKeySize$() const;
+
+    MCAPI void init$(std::string const& key, std::string const& IV);
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Symmetric

@@ -86,4 +86,45 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const&) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool isCraftingBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI void onFillBlock$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+
+    // NOLINTEND
 };

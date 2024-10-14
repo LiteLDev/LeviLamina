@@ -3,178 +3,179 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace VanillaBiomeNames {
+// thunks
 // NOLINTBEGIN
-MCAPI extern class HashedString const BambooJungle;
+MCAPI class HashedString const& BambooJungle();
 
-MCAPI extern class HashedString const BambooJungleHills;
+MCAPI class HashedString const& BambooJungleHills();
 
-MCAPI extern class HashedString const BasaltDeltas;
+MCAPI class HashedString const& BasaltDeltas();
 
-MCAPI extern class HashedString const Beach;
+MCAPI class HashedString const& Beach();
 
-MCAPI extern class HashedString const BirchForest;
+MCAPI class HashedString const& BirchForest();
 
-MCAPI extern class HashedString const BirchForestHills;
+MCAPI class HashedString const& BirchForestHills();
 
-MCAPI extern class HashedString const BirchForestHillsMutated;
+MCAPI class HashedString const& BirchForestHillsMutated();
 
-MCAPI extern class HashedString const BirchForestMutated;
+MCAPI class HashedString const& BirchForestMutated();
 
-MCAPI extern class HashedString const CherryGrove;
+MCAPI class HashedString const& CherryGrove();
 
-MCAPI extern class HashedString const ColdBeach;
+MCAPI class HashedString const& ColdBeach();
 
-MCAPI extern class HashedString const ColdOcean;
+MCAPI class HashedString const& ColdOcean();
 
-MCAPI extern class HashedString const ColdTaiga;
+MCAPI class HashedString const& ColdTaiga();
 
-MCAPI extern class HashedString const ColdTaigaHills;
+MCAPI class HashedString const& ColdTaigaHills();
 
-MCAPI extern class HashedString const ColdTaigaMutated;
+MCAPI class HashedString const& ColdTaigaMutated();
 
-MCAPI extern class HashedString const CrimsonForest;
+MCAPI class HashedString const& CrimsonForest();
 
-MCAPI extern class HashedString const DeepColdOcean;
+MCAPI class HashedString const& DeepColdOcean();
 
-MCAPI extern class HashedString const DeepDark;
+MCAPI class HashedString const& DeepDark();
 
-MCAPI extern class HashedString const DeepFrozenOcean;
+MCAPI class HashedString const& DeepFrozenOcean();
 
-MCAPI extern class HashedString const DeepLukewarmOcean;
+MCAPI class HashedString const& DeepLukewarmOcean();
 
-MCAPI extern class HashedString const DeepOcean;
+MCAPI class HashedString const& DeepOcean();
 
-MCAPI extern class HashedString const DeepWarmOcean;
+MCAPI class HashedString const& DeepWarmOcean();
 
-MCAPI extern class HashedString const Desert;
+MCAPI class HashedString const& Desert();
 
-MCAPI extern class HashedString const DesertHills;
+MCAPI class HashedString const& DesertHills();
 
-MCAPI extern class HashedString const DesertMutated;
+MCAPI class HashedString const& DesertMutated();
 
-MCAPI extern class HashedString const DripstoneCaves;
+MCAPI class HashedString const& DripstoneCaves();
 
-MCAPI extern class HashedString const ExtremeHills;
+MCAPI class HashedString const& ExtremeHills();
 
-MCAPI extern class HashedString const ExtremeHillsEdge;
+MCAPI class HashedString const& ExtremeHillsEdge();
 
-MCAPI extern class HashedString const ExtremeHillsMutated;
+MCAPI class HashedString const& ExtremeHillsMutated();
 
-MCAPI extern class HashedString const ExtremeHillsPlusTrees;
+MCAPI class HashedString const& ExtremeHillsPlusTrees();
 
-MCAPI extern class HashedString const ExtremeHillsPlusTreesMutated;
+MCAPI class HashedString const& ExtremeHillsPlusTreesMutated();
 
-MCAPI extern class HashedString const FlowerForest;
+MCAPI class HashedString const& FlowerForest();
 
-MCAPI extern class HashedString const Forest;
+MCAPI class HashedString const& Forest();
 
-MCAPI extern class HashedString const ForestHills;
+MCAPI class HashedString const& ForestHills();
 
-MCAPI extern class HashedString const FrozenOcean;
+MCAPI class HashedString const& FrozenOcean();
 
-MCAPI extern class HashedString const FrozenPeaks;
+MCAPI class HashedString const& FrozenPeaks();
 
-MCAPI extern class HashedString const FrozenRiver;
+MCAPI class HashedString const& FrozenRiver();
 
-MCAPI extern class HashedString const Grove;
+MCAPI class HashedString const& Grove();
 
-MCAPI extern class HashedString const Hell;
+MCAPI class HashedString const& Hell();
 
-MCAPI extern class HashedString const IceMountains;
+MCAPI class HashedString const& IceMountains();
 
-MCAPI extern class HashedString const IcePlains;
+MCAPI class HashedString const& IcePlains();
 
-MCAPI extern class HashedString const IcePlainsSpikes;
+MCAPI class HashedString const& IcePlainsSpikes();
 
-MCAPI extern class HashedString const JaggedPeaks;
+MCAPI class HashedString const& JaggedPeaks();
 
-MCAPI extern class HashedString const Jungle;
+MCAPI class HashedString const& Jungle();
 
-MCAPI extern class HashedString const JungleEdge;
+MCAPI class HashedString const& JungleEdge();
 
-MCAPI extern class HashedString const JungleEdgeMutated;
+MCAPI class HashedString const& JungleEdgeMutated();
 
-MCAPI extern class HashedString const JungleHills;
+MCAPI class HashedString const& JungleHills();
 
-MCAPI extern class HashedString const JungleMutated;
+MCAPI class HashedString const& JungleMutated();
 
-MCAPI extern class HashedString const LegacyFrozenOcean;
+MCAPI class HashedString const& LegacyFrozenOcean();
 
-MCAPI extern class HashedString const LukewarmOcean;
+MCAPI class HashedString const& LukewarmOcean();
 
-MCAPI extern class HashedString const LushCaves;
+MCAPI class HashedString const& LushCaves();
 
-MCAPI extern class HashedString const MangroveSwamp;
+MCAPI class HashedString const& MangroveSwamp();
 
-MCAPI extern class HashedString const Meadow;
+MCAPI class HashedString const& Meadow();
 
-MCAPI extern class HashedString const MegaTaiga;
+MCAPI class HashedString const& MegaTaiga();
 
-MCAPI extern class HashedString const MegaTaigaHills;
+MCAPI class HashedString const& MegaTaigaHills();
 
-MCAPI extern class HashedString const Mesa;
+MCAPI class HashedString const& Mesa();
 
-MCAPI extern class HashedString const MesaBryce;
+MCAPI class HashedString const& MesaBryce();
 
-MCAPI extern class HashedString const MesaPlateau;
+MCAPI class HashedString const& MesaPlateau();
 
-MCAPI extern class HashedString const MesaPlateauMutated;
+MCAPI class HashedString const& MesaPlateauMutated();
 
-MCAPI extern class HashedString const MesaPlateauStone;
+MCAPI class HashedString const& MesaPlateauStone();
 
-MCAPI extern class HashedString const MesaPlateauStoneMutated;
+MCAPI class HashedString const& MesaPlateauStoneMutated();
 
-MCAPI extern class HashedString const MushroomIsland;
+MCAPI class HashedString const& MushroomIsland();
 
-MCAPI extern class HashedString const MushroomIslandShore;
+MCAPI class HashedString const& MushroomIslandShore();
 
-MCAPI extern class HashedString const Ocean;
+MCAPI class HashedString const& Ocean();
 
-MCAPI extern class HashedString const Plains;
+MCAPI class HashedString const& Plains();
 
-MCAPI extern class HashedString const RedwoodTaigaHillsMutated;
+MCAPI class HashedString const& RedwoodTaigaHillsMutated();
 
-MCAPI extern class HashedString const RedwoodTaigaMutated;
+MCAPI class HashedString const& RedwoodTaigaMutated();
 
-MCAPI extern class HashedString const River;
+MCAPI class HashedString const& River();
 
-MCAPI extern class HashedString const RoofedForest;
+MCAPI class HashedString const& RoofedForest();
 
-MCAPI extern class HashedString const RoofedForestMutated;
+MCAPI class HashedString const& RoofedForestMutated();
 
-MCAPI extern class HashedString const Savanna;
+MCAPI class HashedString const& Savanna();
 
-MCAPI extern class HashedString const SavannaMutated;
+MCAPI class HashedString const& SavannaMutated();
 
-MCAPI extern class HashedString const SavannaPlateau;
+MCAPI class HashedString const& SavannaPlateau();
 
-MCAPI extern class HashedString const SavannaPlateauMutated;
+MCAPI class HashedString const& SavannaPlateauMutated();
 
-MCAPI extern class HashedString const SnowySlopes;
+MCAPI class HashedString const& SnowySlopes();
 
-MCAPI extern class HashedString const SoulsandValley;
+MCAPI class HashedString const& SoulsandValley();
 
-MCAPI extern class HashedString const StoneBeach;
+MCAPI class HashedString const& StoneBeach();
 
-MCAPI extern class HashedString const StonyPeaks;
+MCAPI class HashedString const& StonyPeaks();
 
-MCAPI extern class HashedString const SunflowerPlains;
+MCAPI class HashedString const& SunflowerPlains();
 
-MCAPI extern class HashedString const Swampland;
+MCAPI class HashedString const& Swampland();
 
-MCAPI extern class HashedString const SwamplandMutated;
+MCAPI class HashedString const& SwamplandMutated();
 
-MCAPI extern class HashedString const Taiga;
+MCAPI class HashedString const& Taiga();
 
-MCAPI extern class HashedString const TaigaHills;
+MCAPI class HashedString const& TaigaHills();
 
-MCAPI extern class HashedString const TaigaMutated;
+MCAPI class HashedString const& TaigaMutated();
 
-MCAPI extern class HashedString const TheEnd;
+MCAPI class HashedString const& TheEnd();
 
-MCAPI extern class HashedString const WarmOcean;
+MCAPI class HashedString const& WarmOcean();
 
-MCAPI extern class HashedString const WarpedForest;
+MCAPI class HashedString const& WarpedForest();
 // NOLINTEND
 
 }; // namespace VanillaBiomeNames

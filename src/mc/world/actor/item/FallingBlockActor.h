@@ -92,4 +92,37 @@ public:
     MCAPI void _waitRemoval();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const&, float, bool, bool);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI float causeFallDamageToActor$(float distance, float multiplier, class ActorDamageSource source);
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI void normalTick$();
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    // NOLINTEND
 };

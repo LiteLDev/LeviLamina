@@ -38,4 +38,11 @@ public:
     MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

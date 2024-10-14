@@ -75,40 +75,6 @@ public:
 
     MCAPI static class BlockPos transform(class BlockPos pos, ::Mirror mirror, ::Rotation rotation);
 
-    MCAPI static std::string const AUTHOR_TAG;
-
-    MCAPI static std::string const BLOCKS_TAG;
-
-    MCAPI static std::string const BLOCK_TAG_NBT;
-
-    MCAPI static std::string const BLOCK_TAG_POS;
-
-    MCAPI static std::string const BLOCK_TAG_STATE;
-
-    MCAPI static int const CHUNK_SIZE;
-
-    MCAPI static std::string const DATA_VERSION_TAG;
-
-    MCAPI static std::string const ENTITIES_TAG;
-
-    MCAPI static std::string const ENTITY_TAG_BLOCKPOS;
-
-    MCAPI static std::string const ENTITY_TAG_NBT;
-
-    MCAPI static std::string const ENTITY_TAG_POS;
-
-    MCAPI static std::string const MINECRAFT_PREFIX;
-
-    MCAPI static std::string const PALETTE_TAG;
-
-    MCAPI static std::string const SIZE_TAG;
-
-    MCAPI static int const STRUCTURE_VERSION;
-
-    MCAPI static std::string const VERSION_TAG;
-
-    MCAPI static class LegacyStructureSettings const defaultSettings;
-
     // NOLINTEND
 
     // private:
@@ -125,6 +91,62 @@ public:
 
     MCAPI static std::unique_ptr<class CompoundTag>
     _mapTag(std::unique_ptr<class CompoundTag> originalTag, std::string const& javaBlockName, int dataVersion);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unordered_map<class BlockPos, std::string>
+          getMarkers$(class BlockPos const& position, class LegacyStructureSettings& settings) const;
+
+    MCAPI void placeInWorld$(
+        class BlockSource&             region,
+        class BlockPos const&          pos,
+        class LegacyStructureSettings& settings,
+        class Random&                  random
+    ) const;
+
+    MCAPI static std::string const& AUTHOR_TAG();
+
+    MCAPI static std::string const& BLOCKS_TAG();
+
+    MCAPI static std::string const& BLOCK_TAG_NBT();
+
+    MCAPI static std::string const& BLOCK_TAG_POS();
+
+    MCAPI static std::string const& BLOCK_TAG_STATE();
+
+    MCAPI static int const& CHUNK_SIZE();
+
+    MCAPI static std::string const& DATA_VERSION_TAG();
+
+    MCAPI static std::string const& ENTITIES_TAG();
+
+    MCAPI static std::string const& ENTITY_TAG_BLOCKPOS();
+
+    MCAPI static std::string const& ENTITY_TAG_NBT();
+
+    MCAPI static std::string const& ENTITY_TAG_POS();
+
+    MCAPI static std::string const& MINECRAFT_PREFIX();
+
+    MCAPI static std::string const& PALETTE_TAG();
+
+    MCAPI static std::string const& SIZE_TAG();
+
+    MCAPI static int const& STRUCTURE_VERSION();
+
+    MCAPI static std::string const& VERSION_TAG();
+
+    MCAPI static class LegacyStructureSettings const& defaultSettings();
 
     // NOLINTEND
 };

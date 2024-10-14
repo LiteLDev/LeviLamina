@@ -133,23 +133,90 @@ public:
 
     MCAPI static bool isDamageable(class ItemDescriptor const& item);
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const CHAIN;
+    // NOLINTEND
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const DIAMOND;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const ELYTRA;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const GOLD;
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const IRON;
+    MCAPI int buildIdAux$(short auxValue, class CompoundTag const* userData) const;
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const LEATHER;
+    MCAPI void clearColor$(class ItemStackBase& instance) const;
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const NETHERITE;
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
-    MCAPI static class HumanoidArmorItem::ArmorMaterial const TURTLE;
+    MCAPI float getArmorKnockbackResistance$() const;
 
-    MCAPI static int const mHealthPerSlot[];
+    MCAPI int getArmorValue$() const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
+
+    MCAPI int getDamageChance$(int unbreaking) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI ::ActorLocation getEquipLocation$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI int getToughnessValue$() const;
+
+    MCAPI bool hasCustomColor$(class CompoundTag const* userData) const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool isHumanoidArmor$() const;
+
+    MCAPI bool isTrimAllowed$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI void setColor$(class ItemStackBase& item, class mce::Color const& color) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& CHAIN();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& DIAMOND();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& ELYTRA();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& GOLD();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& IRON();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& LEATHER();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& NETHERITE();
+
+    MCAPI static class HumanoidArmorItem::ArmorMaterial const& TURTLE();
+
+    MCAPI static ::ll::CArrayT<int const>& mHealthPerSlot();
 
     // NOLINTEND
 };

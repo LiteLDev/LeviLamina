@@ -380,4 +380,203 @@ public:
     MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool
+    _calculatePlacePos$(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+
+    MCAPI bool _checkUseOnPermissions$(
+        class Actor&          entity,
+        class ItemStackBase&  item,
+        uchar const&          face,
+        class BlockPos const& pos
+    ) const;
+
+    MCAPI bool _shouldAutoCalculatePlacePos$() const;
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI std::string buildDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$() const;
+
+    MCAPI bool canBeCharged$() const;
+
+    MCAPI bool canBeDepleted$() const;
+
+    MCAPI bool canDestroyInCreative$() const;
+
+    MCAPI bool canDestroySpecial$(class Block const& block) const;
+
+    MCAPI void clearColor$(class ItemStackBase&) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI void executeEvent$(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
+
+    MCAPI int getAnimationFrameFor$(class Mob*, bool, class ItemStack const*, bool) const;
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI int getAttackDamage$() const;
+
+    MCAPI std::string getAuxValuesDescription$() const;
+
+    MCAPI ::BlockShape getBlockShape$() const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
+
+    MCAPI class ItemComponent* getComponent$(class HashedString const& id) const;
+
+    MCAPI int getCooldownTime$() const;
+
+    MCAPI class HashedString const& getCooldownType$() const;
+
+    MCAPI int getDamageChance$(int unbreaking) const;
+
+    MCAPI std::string const& getDescriptionId$() const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI ::ActorLocation getEquipLocation$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+
+    MCAPI class IFoodItemComponent* getFood$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI std::string getInteractText$(class Player const& player) const;
+
+    MCAPI int getLevelDataForAuxValue$(int) const;
+
+    MCAPI short getMaxDamage$() const;
+
+    MCAPI uchar getMaxStackSize$(class ItemDescriptor const&) const;
+
+    MCAPI int getVariant$(int, int, bool) const;
+
+    MCAPI bool hasCustomColor$(class ItemStackBase const&) const;
+
+    MCAPI void hitActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI void
+    hitBlock$(class ItemStack& item, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
+        const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI void initClient$(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
+
+    MCAPI bool initServer$(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag);
+
+    MCAPI bool isBlockPlanterItem$() const;
+
+    MCAPI bool isComponentBased$() const;
+
+    MCAPI bool isDamageable$() const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool isEmissive$(int) const;
+
+    MCAPI bool isFood$() const;
+
+    MCAPI bool isGlint$(class ItemStackBase const& stack) const;
+
+    MCAPI bool isHumanoidArmor$() const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isMusicDisk$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI bool isTrimAllowed$() const;
+
+    MCAPI bool isUseable$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI void setColor$(class ItemStackBase&, class mce::Color const&) const;
+
+    MCAPI class ComponentItem& setDescriptionId$(std::string const& descriptionId);
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int frame);
+
+    MCAPI class Item& setMaxDamage$(int maxDamage);
+
+    MCAPI bool shouldUseJsonForRenderMatrix$() const;
+
+    MCAPI void tearDown$();
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI bool useVariant$(int, int, bool) const;
+
+    MCAPI std::vector<std::string> validateFromNetwork$(class CompoundTag const& tag);
+
+    // NOLINTEND
 };

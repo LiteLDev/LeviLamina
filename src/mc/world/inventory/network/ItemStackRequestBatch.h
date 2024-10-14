@@ -26,4 +26,11 @@ public:
     read(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

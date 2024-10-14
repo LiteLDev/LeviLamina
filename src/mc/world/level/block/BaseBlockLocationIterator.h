@@ -42,4 +42,20 @@ public:
     MCAPI BaseBlockLocationIterator(class BlockPos const& min, class BlockPos const& max, bool begin);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _begin$();
+
+    MCAPI void _end$();
+
+    // NOLINTEND
 };

@@ -49,6 +49,15 @@ public:
     MCAPI static class br::worldgen::JigsawStructureBuilder create(std::string_view key, ::StructureFeatureType type);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

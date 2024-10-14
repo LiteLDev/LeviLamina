@@ -14,4 +14,11 @@ public:
     MCAPI ~DynamicAmbientSound();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

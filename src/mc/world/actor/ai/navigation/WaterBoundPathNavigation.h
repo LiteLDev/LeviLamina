@@ -36,4 +36,23 @@ public:
     virtual void updatePath(class NavigationComponent& parent, class Mob& mob);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canUpdatePath$(class Mob const& mob) const;
+
+    MCAPI class Vec3 getTempMobPos$(class Mob const& mob) const;
+
+    MCAPI void initializeInternal$(class Mob& mob, struct NavigationDescription* description);
+
+    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+
+    MCAPI bool travel$(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
+
+    MCAPI void updatePath$(class NavigationComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

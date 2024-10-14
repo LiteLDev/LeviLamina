@@ -196,6 +196,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _isValid$() const;
+
+    MCAPI class Scripting::Result<void> applyImpulse$(class Actor& self, class Vec3 const& vector);
+
+    MCAPI class Scripting::Result<void> clearVelocity$(class Actor& self);
+
+    MCAPI class Scripting::Result<void> remove$(class Actor& self);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

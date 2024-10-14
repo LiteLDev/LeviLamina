@@ -27,4 +27,13 @@ public:
     MCAPI int getRandomArrayIndex(class BlockPos const& pos, uint64 length, float scale) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    // NOLINTEND
 };

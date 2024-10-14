@@ -926,50 +926,6 @@ public:
     MCAPI static void
     updatePlayerGameTypeEntityData(class EntityContext& entity, ::GameType gameType, ::GameType defaultGameType);
 
-    MCAPI static float const DEFAULT_BB_HEIGHT;
-
-    MCAPI static float const DEFAULT_BB_WIDTH;
-
-    MCAPI static float const DEFAULT_PLAYER_EYE_OFFSET;
-
-    MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
-
-    MCAPI static float const DEFAULT_WALK_SPEED;
-
-    MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
-
-    MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
-
-    MCAPI static class Attribute const EXHAUSTION;
-
-    MCAPI static class Attribute const EXPERIENCE;
-
-    MCAPI static int const GLIDE_STOP_DELAY;
-
-    MCAPI static class Attribute const HUNGER;
-
-    MCAPI static class Attribute const LEVEL;
-
-    MCAPI static float const PLAYER_ALIVE_HEIGHT;
-
-    MCAPI static float const PLAYER_ALIVE_WIDTH;
-
-    MCAPI static float const PLAYER_DEAD_HEIGHT;
-
-    MCAPI static float const PLAYER_DEAD_WIDTH;
-
-    MCAPI static int const PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS;
-
-    MCAPI static float const PLAYER_SLEEPING_HEIGHT;
-
-    MCAPI static float const PLAYER_SLEEPING_WIDTH;
-
-    MCAPI static class Attribute const SATURATION;
-
-    MCAPI static uint const SPAWN_CHUNK_LARGE_JUMP;
-
-    MCAPI static uint const SPAWN_CHUNK_RADIUS;
-
     // NOLINTEND
 
     // protected:
@@ -1043,6 +999,342 @@ public:
 
     MCAPI bool
     _updateFroglightCountAndTestForAchievement(class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class ChunkViewSource> _createChunkSource$(class ChunkSource& mainChunkSource);
+
+    MCAPI void _crit$(class Actor& actor);
+
+    MCAPI void _fireDimensionChanged$();
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void _serverInitItemStackIds$();
+
+    MCAPI bool _shouldProvideFeedbackOnArmorSet$(::ArmorSlot slot, class ItemStack const& item) const;
+
+    MCAPI bool _shouldProvideFeedbackOnHandContainerItemSet$(::HandSlot handSlot, class ItemStack const& item) const;
+
+    MCAPI bool add$(class ItemStack& item);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& entityTag) const;
+
+    MCAPI void addExperience$(int xp);
+
+    MCAPI void addLevels$(int levels);
+
+    MCAPI void aiStep$();
+
+    MCAPI bool attack$(class Actor& actor, ::ActorDamageCause const& cause);
+
+    MCAPI bool canAddPassenger$(class Actor& passenger) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI bool canExistWhenDisallowMob$() const;
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI bool canInteractWithOtherEntitiesInGame$() const;
+
+    MCAPI bool canObstructSpawningAndBlockPlacement$() const;
+
+    MCAPI bool canStartSleepInBed$();
+
+    MCAPI float causeFallDamageToActor$(float distance, float multiplier, class ActorDamageSource source);
+
+    MCAPI void changeDimensionWithCredits$(DimensionType);
+
+    MCAPI void checkMovementStats$(class Vec3 const&);
+
+    MCAPI void clearVanishEnchantedItemsOnDeath$();
+
+    MCAPI bool consumeTotem$();
+
+    MCAPI void deleteContainerManager$();
+
+    MCAPI void destroyRegion$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI void displayChatMessage$(std::string const& author, std::string const& message);
+
+    MCAPI void displayClientMessage$(std::string const& message);
+
+    MCAPI void displayTextObjectMessage$(
+        class TextObjectRoot const& textObject,
+        std::string const&          fromXuid,
+        std::string const&          fromPlatformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        class ResolvedTextObject const& resolvedTextObject,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void displayWhisperMessage$(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void doEnterWaterSplashEffect$();
+
+    MCAPI void doExitWaterSplashEffect$();
+
+    MCAPI bool drop$(class ItemStack const& item, bool randomly);
+
+    MCAPI void dropEquipmentOnDeath$(class ActorDamageSource const& source);
+
+    MCAPI void dropEquipmentOnDeath$();
+
+    MCAPI void feed$(int itemId);
+
+    MCAPI class HashedString const& getActorRendererId$() const;
+
+    MCAPI std::vector<class ItemStack const*> getAllEquipment$() const;
+
+    MCAPI std::vector<class ItemStack const*> getAllHand$() const;
+
+    MCAPI class AnimationComponent& getAnimationComponent$();
+
+    MCAPI class ItemStack const& getCarriedItem$() const;
+
+    MCAPI ::CommandPermissionLevel getCommandPermissionLevel$() const;
+
+    MCAPI ::StructureFeatureType getCurrentStructureFeature$() const;
+
+    MCAPI class ItemStack const& getEquippedTotem$() const;
+
+    MCAPI class IMinecraftEventing* getEventing$() const;
+
+    MCAPI class Vec3 getInterpolatedRidingOffset$(float, int) const;
+
+    MCAPI int getItemUseDuration$() const;
+
+    MCAPI float getItemUseIntervalProgress$() const;
+
+    MCAPI float getItemUseStartupProgress$() const;
+
+    MCAPI std::optional<DimensionType> getLastDeathDimension$() const;
+
+    MCAPI std::optional<class BlockPos> getLastDeathPos$() const;
+
+    MCAPI float getMapDecorationRotation$() const;
+
+    MCAPI uchar getMaxChunkBuildRadius$() const;
+
+    MCAPI struct PlayerMovementSettings const& getMovementSettings$() const;
+
+    MCAPI class mce::Color getNameTagTextColor$() const;
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI float getSpeed$() const;
+
+    MCAPI std::vector<class ChunkPos> const& getTickingOffsets$() const;
+
+    MCAPI uint getUserId$() const;
+
+    MCAPI std::string getXuid$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI bool hasDiedBefore$() const;
+
+    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+
+    MCAPI void initHUDContainerManager$();
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isActorRelevant$(class Actor const&);
+
+    MCAPI bool isAutoJumpEnabled$() const;
+
+    MCAPI bool isBlocking$() const;
+
+    MCAPI bool isDamageBlocked$(class ActorDamageSource const& source) const;
+
+    MCAPI bool isFireImmune$() const;
+
+    MCAPI bool isImmobile$() const;
+
+    MCAPI bool isInTrialMode$();
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI bool isLoading$() const;
+
+    MCAPI bool isPlayerInitialized$() const;
+
+    MCAPI bool isSilentObserver$() const;
+
+    MCAPI bool isSimulated$() const;
+
+    MCAPI bool isSleeping$() const;
+
+    MCAPI void moveSpawnView$(class Vec3 const& spawnPosition, DimensionType dimensionType);
+
+    MCAPI void moveView$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void onLinkedSlotsChanged$();
+
+    MCAPI void onMovePlayerPacketNormal$(class Vec3 const& pos, class Vec2 const& rot, float yHeadRot);
+
+    MCAPI void onSuspension$();
+
+    MCAPI void onSynchedDataUpdate$(int dataId);
+
+    MCAPI void openBook$(int, bool, int, class BlockActor*);
+
+    MCAPI void openChalkboard$(class ChalkboardBlockActor&, bool);
+
+    MCAPI void openInventory$();
+
+    MCAPI void openNpcInteractScreen$(std::shared_ptr<struct INpcDialogueData> npc);
+
+    MCAPI void openPortfolio$();
+
+    MCAPI void openSign$(class BlockPos const&, bool);
+
+    MCAPI void openTrading$(struct ActorUniqueID const&, bool);
+
+    MCAPI void passengerTick$();
+
+    MCAPI void playEmote$(std::string const&, bool);
+
+    MCAPI void prepareRegion$(class ChunkSource& mainChunkSource);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void requestMissingSubChunk$(class SubChunkPos const&);
+
+    MCAPI void resetRot$();
+
+    MCAPI void resetUserPos$(bool clearMore);
+
+    MCAPI void respawn$();
+
+    MCAPI void sendInventory$(bool);
+
+    MCAPI void sendMotionPacketIfNeeded$(struct PlayerMovementSettings const&);
+
+    MCAPI void sendNetworkPacket$(class Packet& packet) const;
+
+    MCAPI void setAbilities$(class LayeredAbilities const& newAbilities);
+
+    MCAPI void setArmor$(::ArmorSlot slot, class ItemStack const& item);
+
+    MCAPI void setCarriedItem$(class ItemStack const& item);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setPlayerGameType$(::GameType gameType);
+
+    MCAPI void setSleeping$(bool val);
+
+    MCAPI void setSpeed$(float _speed);
+
+    MCAPI bool shouldDropDeathLoot$() const;
+
+    MCAPI ::BedSleepingResult startSleepInBed$(class BlockPos const& bedBlockPos);
+
+    MCAPI void startSpinAttack$();
+
+    MCAPI void startSwimming$();
+
+    MCAPI void stopLoading$();
+
+    MCAPI void stopSleepInBed$(bool forcefulWakeUp, bool updateLevelList);
+
+    MCAPI void stopSpinAttack$();
+
+    MCAPI void stopSwimming$();
+
+    MCAPI void suspendRegion$();
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    MCAPI void tickWorld$(struct Tick const&);
+
+    MCAPI std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket$();
+
+    MCAPI void useItem$(class ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
+
+    MCAPI static float const& DEFAULT_BB_HEIGHT();
+
+    MCAPI static float const& DEFAULT_BB_WIDTH();
+
+    MCAPI static float const& DEFAULT_PLAYER_EYE_OFFSET();
+
+    MCAPI static float const& DEFAULT_PLAYER_HEIGHT_OFFSET();
+
+    MCAPI static float const& DEFAULT_WALK_SPEED();
+
+    MCAPI static float const& DISTANCE_TO_TRANSFORM_EVENT();
+
+    MCAPI static float const& DISTANCE_TO_TRAVELLED_EVENT();
+
+    MCAPI static class Attribute const& EXHAUSTION();
+
+    MCAPI static class Attribute const& EXPERIENCE();
+
+    MCAPI static int const& GLIDE_STOP_DELAY();
+
+    MCAPI static class Attribute const& HUNGER();
+
+    MCAPI static class Attribute const& LEVEL();
+
+    MCAPI static float const& PLAYER_ALIVE_HEIGHT();
+
+    MCAPI static float const& PLAYER_ALIVE_WIDTH();
+
+    MCAPI static float const& PLAYER_DEAD_HEIGHT();
+
+    MCAPI static float const& PLAYER_DEAD_WIDTH();
+
+    MCAPI static int const& PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS();
+
+    MCAPI static float const& PLAYER_SLEEPING_HEIGHT();
+
+    MCAPI static float const& PLAYER_SLEEPING_WIDTH();
+
+    MCAPI static class Attribute const& SATURATION();
+
+    MCAPI static uint const& SPAWN_CHUNK_LARGE_JUMP();
+
+    MCAPI static uint const& SPAWN_CHUNK_RADIUS();
 
     // NOLINTEND
 };

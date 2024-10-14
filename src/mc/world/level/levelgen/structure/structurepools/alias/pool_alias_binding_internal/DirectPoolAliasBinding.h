@@ -33,6 +33,18 @@ public:
     virtual ~DirectPoolAliasBinding() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void
+    appendResolvedAliases$(class IRandom&, class PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
+
+    MCAPI void forAllTargets$(std::function<void(std::string const&, std::string const&)> const& fn) const;
+
+    // NOLINTEND
 };
 
 }; // namespace PoolAliasBindingInternal

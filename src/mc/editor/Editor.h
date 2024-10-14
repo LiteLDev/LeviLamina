@@ -12,11 +12,14 @@ namespace Scripting { struct Version; }
 
 namespace Editor {
 // NOLINTBEGIN
-MCAPI extern std::string_view const EDITOR_PACK_CAPABILITY;
-
 MCAPI bool isEditorTestWorld(::Editor::WorldType t);
 
 MCAPI bool isEditorWorld(::Editor::WorldType t);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI std::string_view const& EDITOR_PACK_CAPABILITY();
 // NOLINTEND
 
 }; // namespace Editor

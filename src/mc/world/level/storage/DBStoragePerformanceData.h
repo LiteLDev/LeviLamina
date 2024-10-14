@@ -34,9 +34,14 @@ public:
     // NOLINTBEGIN
     MCAPI void resetAll();
 
-    MCAPI static std::array<char const*, 13> CATEGORY_NAMES;
+    // NOLINTEND
 
-    MCAPI static std::array<char const*, 4> OPERATION_NAMES;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::array<char const*, 13>& CATEGORY_NAMES();
+
+    MCAPI static std::array<char const*, 4>& OPERATION_NAMES();
 
     // NOLINTEND
 };

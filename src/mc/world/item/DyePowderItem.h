@@ -47,4 +47,26 @@ public:
     MCAPI DyePowderItem(std::string const& name, int id, ::ItemColor color);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const*) const;
+
+    MCAPI ::ItemColor getItemColor$() const;
+
+    MCAPI bool isDye$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    // NOLINTEND
 };

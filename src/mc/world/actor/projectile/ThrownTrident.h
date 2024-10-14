@@ -83,4 +83,36 @@ public:
     MCAPI void setTridentItem(class ItemStack const& item);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemStack _getPickupItem$() const;
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void despawn$();
+
+    MCAPI bool isEnchanted$() const;
+
+    MCAPI void outOfWorld$();
+
+    MCAPI void playerTouch$(class Player& player);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void shoot$(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+
+    // NOLINTEND
 };

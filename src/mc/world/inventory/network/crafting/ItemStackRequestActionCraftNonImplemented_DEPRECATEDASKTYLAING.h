@@ -27,4 +27,20 @@ public:
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream&);
+
+    MCAPI void _write$(class BinaryStream& stream) const;
+
+    // NOLINTEND
 };

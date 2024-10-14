@@ -64,4 +64,28 @@ public:
     MCAPI void _initRakNetProfileTracking();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void dataReceivedFrom$(class NetworkIdentifier const& source, std::string const& data);
+
+    MCAPI void dataSentTo$(class NetworkIdentifier const& target, std::string_view data);
+
+    MCAPI void packetReceivedFrom$(class NetworkIdentifier const& source, class Packet const& packet, uint size);
+
+    MCAPI void packetSentTo$(class NetworkIdentifier const& target, class Packet const& packet, uint size);
+
+    MCAPI void reset$();
+
+    // NOLINTEND
 };

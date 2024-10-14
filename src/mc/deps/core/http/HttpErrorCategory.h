@@ -55,6 +55,35 @@ public:
     MCAPI static std::error_category const& get();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void cancel$();
+
+    MCAPI void complete$();
+
+    MCAPI std::error_condition default_error_condition$(int errorValue) const;
+
+    MCAPI bool equivalent$(int, std::error_condition const&) const;
+
+    MCAPI bool equivalent$(std::error_code const& code, int condition) const;
+
+    MCAPI gsl::span<uchar const> getLoggableData$() const;
+
+    MCAPI std::string const& getLoggableDestination$() const;
+
+    MCAPI std::string message$(int errorValue) const;
+
+    MCAPI char const* name$() const;
+
+    MCAPI std::error_code start$(std::optional<uint64> size);
+
+    MCAPI std::error_code write$(gsl::span<uchar const>);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

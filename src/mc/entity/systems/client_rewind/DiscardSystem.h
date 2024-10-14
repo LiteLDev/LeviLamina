@@ -99,6 +99,46 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>,
+            struct Read<
+                struct ActorDataFlagComponent,
+                struct ActorDataHorseFlagComponent,
+                struct ActorDataJumpDurationComponent,
+                struct ActorDataBoundingBoxComponent,
+                struct ActorDataSeatOffsetComponent>,
+            struct Write<struct ReplayStateTrackerComponent>,
+            struct AddRemove<>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>,
+                     struct Read<
+                         struct ActorDataFlagComponent,
+                         struct ActorDataHorseFlagComponent,
+                         struct ActorDataJumpDurationComponent,
+                         struct ActorDataBoundingBoxComponent,
+                         struct ActorDataSeatOffsetComponent>,
+                     struct Write<struct ReplayStateTrackerComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& executionContext);
+
+    // NOLINTEND
 };
 
 }; // namespace ClientRewind

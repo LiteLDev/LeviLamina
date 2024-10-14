@@ -31,9 +31,15 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const DEFAULT_MUTATION_RATE;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static float const& DEFAULT_MUTATION_RATE();
 
     // NOLINTEND
 };

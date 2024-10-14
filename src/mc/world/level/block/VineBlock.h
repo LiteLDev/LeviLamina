@@ -95,16 +95,6 @@ public:
 
     MCAPI static bool isAcceptableNeighbour(class Block const& block);
 
-    MCAPI static int const VINE_ALL;
-
-    MCAPI static int const VINE_EAST;
-
-    MCAPI static int const VINE_NORTH;
-
-    MCAPI static int const VINE_SOUTH;
-
-    MCAPI static int const VINE_WEST;
-
     // NOLINTEND
 
     // private:
@@ -116,6 +106,67 @@ public:
     MCAPI bool _canSideSpread(class BlockSource& region, class BlockPos const& pos) const;
 
     MCAPI int _nextVineDirections(class BlockSource& region, class BlockPos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getColor$(class Block const&) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferValue
+    ) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB&                    bufferAABB
+    ) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    MCAPI static int const& VINE_ALL();
+
+    MCAPI static int const& VINE_EAST();
+
+    MCAPI static int const& VINE_NORTH();
+
+    MCAPI static int const& VINE_SOUTH();
+
+    MCAPI static int const& VINE_WEST();
 
     // NOLINTEND
 };

@@ -15,9 +15,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
+    MCAPI static int const& MAX_INT_REPRESENTABLE_AS_FLOAT();
 
     // NOLINTEND
 };

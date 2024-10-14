@@ -34,4 +34,18 @@ public:
     MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float getAttributeModifierValue$(int amplifier, class AttributeModifier const& modifier) const;
+
+    // NOLINTEND
 };

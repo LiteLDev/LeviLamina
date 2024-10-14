@@ -38,6 +38,13 @@ public:
             MCAPI ~Description();
 
             // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
+
+            // NOLINTEND
         };
 
         struct Rule {
@@ -94,6 +101,13 @@ public:
         operator=(struct Puv::v1_20_60::BlockCulling::Contents const&);
 
         MCAPI ~Contents();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };

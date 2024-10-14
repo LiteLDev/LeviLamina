@@ -75,6 +75,13 @@ public:
         MCAPI ~NameInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct RearrangedStateCollection : public ::BlockLegacy::AlteredStateCollection {
@@ -103,6 +110,17 @@ public:
             class SemVersion const&                                               removedSupportVersion);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI std::optional<int> getState$(class BlockLegacy const& blockLegacy, int blockData) const;
+
+        MCAPI class Block const* setState$(class BlockLegacy const& blockLegacy, int blockData, int stateData) const;
+
+        // NOLINTEND
     };
 
     struct RemovedStateCollection : public ::BlockLegacy::AlteredStateCollection {
@@ -123,6 +141,16 @@ public:
         public:
             // NOLINTBEGIN
             MCAPI SplitBlock(int data, class BlockLegacy& blockLegacyRef);
+
+            // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            template <class... Args>
+            auto* ctor$(Args... args) {
+                return std::construct_at(this, std::forward<Args>(args)...);
+            }
 
             // NOLINTEND
         };
@@ -148,6 +176,17 @@ public:
         add(class BlockState const&                                               stateRef,
             std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock>&& splitBlocks,
             class SemVersion const&                                               removedSupportVersion);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI std::optional<int> getState$(class BlockLegacy const& blockLegacy, int) const;
+
+        MCAPI class Block const* setState$(class BlockLegacy const& blockLegacy, int blockData, int stateData) const;
 
         // NOLINTEND
     };
@@ -1046,10 +1085,6 @@ public:
     MCAPI static class ItemActor*
     popResource(class BlockSource& region, class BlockPos const& pos, class ItemStack const& item);
 
-    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-
-    MCAPI static float const SIZE_OFFSET;
-
     // NOLINTEND
 
     // protected:
@@ -1106,6 +1141,476 @@ public:
     MCAPI std::optional<int> _tryLookupAlteredStateCollection(uint64 stateId, ushort blockData) const;
 
     MCAPI class Block const* _trySetStateFromAlteredStateCollection(uint64 stateId, int val, ushort blockData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+
+    MCAPI void
+    _iterateCandles$(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
+        const;
+
+    MCAPI void _onHitByActivatingAttack$(class BlockSource&, class BlockPos const&, class Actor*) const;
+
+    MCAPI void addAABBs$(
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class AABB const*              intersectTestBox,
+        std::vector<class AABB>&       inoutBoxes
+    ) const;
+
+    MCAPI bool addCollisionShapes$(
+        class Block const&                                         block,
+        class IConstBlockSource const&                             region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+
+    MCAPI void animateTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion version) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const&) const;
+
+    MCAPI int
+    calcVariant$(class BlockSource& region, class BlockPos const& pos, class mce::Color const& baseColor) const;
+
+    MCAPI bool
+    canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos, class BlockItem const& newItem) const;
+
+    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool canBeDestroyedByWaterSpread$() const;
+
+    MCAPI bool
+    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const& baseGameVersion) const;
+
+    MCAPI bool canConnect$(class Block const&, uchar toOther, class Block const& thisBlock) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canDamperVibrations$() const;
+
+    MCAPI bool canFillAtPos$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool canHaveExtraData$() const;
+
+    MCAPI bool canInstatick$() const;
+
+    MCAPI bool canOccludeVibrations$() const;
+
+    MCAPI bool canProvideMultifaceSupport$(class Block const& block, uchar face) const;
+
+    MCAPI bool canProvideSupport$(class Block const& block, uchar face, ::BlockSupportType) const;
+
+    MCAPI bool canRenderSelectionOverlay$(::BlockRenderLayer) const;
+
+    MCAPI bool canSlide$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool canSpawnAt$(class BlockSource const& region, class BlockPos const& pos) const;
+
+    MCAPI bool canSpawnOn$(class Actor*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool causesFreezeEffect$() const;
+
+    MCAPI bool
+    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+
+    MCAPI class HitResult clip$(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class Vec3 const&                                          A,
+        class Vec3 const&                                          B,
+        ::ShapeType                                                shapeType,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI bool dealsContactDamage$(class Actor const& actor, class Block const& block, bool isPathFinding) const;
+
+    MCAPI void
+    destroy$(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
+        const;
+
+    MCAPI bool detachesOnPistonMove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI void entityInside$(class BlockSource&, class BlockPos const&, class Actor&) const;
+
+    MCAPI void executeEvent$(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    block,
+        std::string const&    eventName,
+        class Actor&          sourceEntity
+    ) const;
+
+    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class ItemInstance const getBaseSeed$() const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool getCollisionShapeForCamera$(
+        class AABB&                    outAABB,
+        class Block const&             block,
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos
+    ) const;
+
+    MCAPI int getColor$(class Block const& block) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI int getColorAtPos$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int
+    getColorForParticle$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI int getDirectSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+
+    MCAPI class mce::Color getDustColor$(class Block const&) const;
+
+    MCAPI struct Brightness getEmissiveBrightness$(class Block const&) const;
+
+    MCAPI int getExtraRenderLayers$() const;
+
+    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+
+    MCAPI int getIconYOffset$() const;
+
+    MCAPI bool getIgnoresDestroyPermissions$(class Actor& entity, class BlockPos const& pos) const;
+
+    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI struct Brightness getLight$(class Block const&) const;
+
+    MCAPI struct Brightness getLightEmission$(class Block const&) const;
+
+    MCAPI bool getLiquidClipVolume$(
+        class Block const&    block,
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class AABB&           includeBox
+    ) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class MobSpawnerData const*
+    getMobToSpawn$(class SpawnConditions const& conditions, class BlockSource& region) const;
+
+    MCAPI class Block const* getNextBlockPermutation$(class Block const& currentBlock) const;
+
+    MCAPI class Block const* getOffBlock$(class Block const* block) const;
+
+    MCAPI class Block const* getOnBlock$(class Block const* block) const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
+
+    MCAPI int getOutputSignal$(class Block const& block) const;
+
+    MCAPI class Block const& getPlacementBlock$(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
+
+    MCAPI ::BlockProperty getRedstoneProperty$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const& getRenderBlock$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI ::BlockRenderLayer
+    getRenderLayer$(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
+
+    MCAPI std::optional<class HashedString> getRequiredMedium$() const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI float getShadeBrightness$(class Block const& block) const;
+
+    MCAPI class Block const& getStrippedBlock$(class Block const& srcBlock) const;
+
+    MCAPI int getTurnOffDelay$(class Block const& block) const;
+
+    MCAPI int getTurnOnDelay$(class Block const& block) const;
+
+    MCAPI class AABB const& getUIShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB&) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
+
+    MCAPI void
+    handlePrecipitation$(class BlockSource& region, class BlockPos const& pos, float downfallAmount, float temperature)
+        const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool
+    hasTag$(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
+        const;
+
+    MCAPI bool hasVariableLighting$() const;
+
+    MCAPI bool ignoreEntitiesOnPistonMove$(class Block const& block) const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI bool isAttachedTo$(class BlockSource& region, class BlockPos const& pos, class BlockPos& outAttachedTo) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool isBounceBlock$() const;
+
+    MCAPI bool isButtonBlock$() const;
+
+    MCAPI bool isCandleCakeBlock$() const;
+
+    MCAPI bool isContainerBlock$() const;
+
+    MCAPI bool isCraftingBlock$() const;
+
+    MCAPI bool isDoorBlock$() const;
+
+    MCAPI bool isDoubleSlabBlock$() const;
+
+    MCAPI bool isFenceBlock$() const;
+
+    MCAPI bool isFenceGateBlock$() const;
+
+    MCAPI bool isFilteredOut$(::BlockRenderLayer) const;
+
+    MCAPI bool isFreeToFall$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isLeverBlock$() const;
+
+    MCAPI bool isMovingBlock$() const;
+
+    MCAPI bool isMultifaceBlock$() const;
+
+    MCAPI bool
+    isObstructingChests$(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
+
+    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
+
+    MCAPI bool isRailBlock$() const;
+
+    MCAPI bool isSeasonTinted$(class Block const& block, class BlockSource& region, class BlockPos const& p) const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI bool isSilentWhenJumpingOff$() const;
+
+    MCAPI bool isSlabBlock$() const;
+
+    MCAPI bool isStairBlock$() const;
+
+    MCAPI bool isStemBlock$() const;
+
+    MCAPI bool isStrippable$(class Block const& srcBlock) const;
+
+    MCAPI bool isThinFenceBlock$() const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI bool isWallBlock$() const;
+
+    MCAPI bool isWaterBlocking$() const;
+
+    MCAPI bool liquidCanFlowIntoFromDirection$(
+        uchar                                                           flowIntoFacing,
+        std::function<class Block const&(class BlockPos const&)> const& getBlock,
+        class BlockPos const&                                           pos
+    ) const;
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource& region) const;
+
+    MCAPI bool mayPick$() const;
+
+    MCAPI bool mayPick$(class BlockSource const& region, class Block const& block, bool liquid) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void movedByPiston$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI std::shared_ptr<class BlockActor> newBlockEntity$(class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void notifySpawnedAt$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onExploded$(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
+
+    MCAPI void onFillBlock$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
+
+    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onLightningHit$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onMove$(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onProjectileHit$(class BlockSource&, class BlockPos const&, class Actor const&) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const& pos) const;
+
+    MCAPI void onStructureBlockPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onStructureNeighborBlockPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool pushesUpFallingBlocks$() const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class Vec3 randomlyModifyPosition$(class BlockPos const& pos, int& seed) const;
+
+    MCAPI class Vec3 randomlyModifyPosition$(class BlockPos const& pos) const;
+
+    MCAPI class Block const& sanitizeFillBlock$(class Block const& block) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI bool shouldDispense$(class BlockSource& region, class Container& container) const;
+
+    MCAPI bool shouldStopFalling$(class Actor& entity) const;
+
+    MCAPI bool shouldTickOnSetBlock$() const;
+
+    MCAPI bool
+    shouldTriggerEntityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+
+    MCAPI void
+    spawnAfterBreak$(class BlockSource&, class Block const&, class BlockPos const&, struct ResourceDropsContext const&)
+        const;
+
+    MCAPI void
+    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
+
+    MCAPI int telemetryVariant$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void
+    transformOnFall$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, float fallDistance)
+        const;
+
+    MCAPI void triggerEvent$(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
+
+    MCAPI class CopperBehavior const* tryGetCopperBehavior$() const;
+
+    MCAPI class Block const* tryGetInfested$(class Block const&) const;
+
+    MCAPI class Block const* tryGetUninfested$(class Block const&) const;
+
+    MCAPI class Block const* tryLegacyUpgrade$(ushort) const;
+
+    MCAPI bool tryToPlace$(
+        class BlockSource&                  region,
+        class BlockPos const&               pos,
+        class Block const&                  block,
+        struct ActorBlockSyncMessage const* syncMsg
+    ) const;
+
+    MCAPI bool
+    tryToTill$(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
+
+    MCAPI void
+    updateEntityAfterFallOn$(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3>) const;
+
+    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    MCAPI static std::string const& BLOCK_DESCRIPTION_PREFIX();
+
+    MCAPI static float const& SIZE_OFFSET();
 
     // NOLINTEND
 };

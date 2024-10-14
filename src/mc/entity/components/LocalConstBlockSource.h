@@ -14,4 +14,11 @@ public:
     MCAPI ~LocalConstBlockSource();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

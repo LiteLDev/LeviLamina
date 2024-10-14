@@ -362,4 +362,170 @@ public:
     MCAPI void _updateNearbyActors();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI int _getSpawnChunkLimit$() const;
+
+    MCAPI void _serverInitItemStackIds$();
+
+    MCAPI void _updateChunkPublisherView$(class Vec3 const& position, float minDistance);
+
+    MCAPI void aiStep$();
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI void changeDimension$(DimensionType toId);
+
+    MCAPI void changeDimensionWithCredits$(DimensionType dimension);
+
+    MCAPI void checkMovementStats$(class Vec3 const& d);
+
+    MCAPI void clearVanishEnchantedItemsOnDeath$();
+
+    MCAPI void destroyEditorPlayer$();
+
+    MCAPI void destroyRegion$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI void displayTextObjectMessage$(
+        class TextObjectRoot const& textObject,
+        std::string const&          fromXuid,
+        std::string const&          fromPlatformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        class ResolvedTextObject const& textObject,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void displayWhisperMessage$(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void frameUpdate$(class FrameUpdateContextBase&);
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI ::StructureFeatureType getCurrentStructureFeature$() const;
+
+    MCAPI class Bedrock::NonOwnerPointer<class Editor::IEditorPlayer> getEditorPlayer$() const;
+
+    MCAPI uchar getMaxChunkBuildRadius$() const;
+
+    MCAPI class PlayerEventCoordinator& getPlayerEventCoordinator$();
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void hurtArmorSlots$(class ActorDamageSource const& source, int dmg, std::bitset<4> hurtSlots);
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isActorRelevant$(class Actor const& actor);
+
+    MCAPI bool isLoading$() const;
+
+    MCAPI bool isPlayerInitialized$() const;
+
+    MCAPI bool isTeacher$() const;
+
+    MCAPI bool isValidTarget$(class Actor* attacker) const;
+
+    MCAPI void knockback$(
+        class Actor* source,
+        int          dmg,
+        float        xd,
+        float        zd,
+        float        horizontalPower,
+        float        verticalPower,
+        float        heightCap
+    );
+
+    MCAPI bool load$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void moveSpawnView$(class Vec3 const& spawnPosition, DimensionType dimension);
+
+    MCAPI void moveView$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void onLinkedSlotsChanged$();
+
+    MCAPI void onSuspension$();
+
+    MCAPI void openBook$(int, bool, int, class BlockActor* lectern);
+
+    MCAPI void openInventory$();
+
+    MCAPI void openNpcInteractScreen$(std::shared_ptr<struct INpcDialogueData> npc);
+
+    MCAPI void openPortfolio$();
+
+    MCAPI void openSign$(class BlockPos const& position, bool isFrontSide);
+
+    MCAPI void openTrading$(struct ActorUniqueID const& uniqueID, bool useNewScreen);
+
+    MCAPI void prepareRegion$(class ChunkSource& mainChunkSource);
+
+    MCAPI void refreshContainer$(class IContainerManager& menu);
+
+    MCAPI void respawn$();
+
+    MCAPI void sendArmor$(std::bitset<4> armorSlots);
+
+    MCAPI void sendArmorDamage$(std::bitset<4> damagedSlots);
+
+    MCAPI void sendComplexInventoryTransaction$(std::unique_ptr<class ComplexInventoryTransaction> transaction) const;
+
+    MCAPI void sendInventory$(bool shouldSelectSlot);
+
+    MCAPI void sendInventoryTransaction$(class InventoryTransaction const& transaction) const;
+
+    MCAPI void sendNetworkPacket$(class Packet& packet) const;
+
+    MCAPI void setArmor$(::ArmorSlot armorSlot, class ItemStack const& item);
+
+    MCAPI void setContainerData$(class IContainerManager& menu, int id, int value);
+
+    MCAPI void setDamagedArmor$(::ArmorSlot slot, class ItemStack const& item);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setPlayerGameType$(::GameType gameType);
+
+    MCAPI void slotChanged$(
+        class IContainerManager& menu,
+        class Container&         container,
+        int                      slot,
+        class ItemStack const&   oldItem,
+        class ItemStack const&   newItem,
+        bool                     isResultSlot
+    );
+
+    MCAPI void stopSleepInBed$(bool forcefulWakeUp, bool updateLevelList);
+
+    MCAPI void tickWorld$(struct Tick const& currentTick);
+
+    // NOLINTEND
 };

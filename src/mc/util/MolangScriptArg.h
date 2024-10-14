@@ -38,25 +38,37 @@ public:
 
     MCAPI ~MolangScriptArg();
 
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float0;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float1;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_floatNeg1;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_molangActorIdEmptyArrayPtr;
-
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_structUV0;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void reportGetFailure() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_break();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_float0();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_float1();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_floatNeg1();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
+
+    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_structUV0();
 
     // NOLINTEND
 };

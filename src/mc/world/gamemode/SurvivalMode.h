@@ -72,9 +72,47 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mTrialHasEnded;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool attack$(class Actor& entity);
+
+    MCAPI bool buildBlock$(class BlockPos const& pos, uchar face, bool isSimTick);
+
+    MCAPI bool destroyBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool interact$(class Actor& entity, class Vec3 const& location);
+
+    MCAPI bool isInTrialMode$();
+
+    MCAPI void registerUpsellScreenCallback$(std::function<void(bool)> callback);
+
+    MCAPI void setTrialMode$(bool isEnabled);
+
+    MCAPI void startBuildBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool startDestroyBlock$(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+
+    MCAPI void tick$();
+
+    MCAPI bool useItem$(class ItemStack& item);
+
+    MCAPI class InteractionResult useItemOn$(
+        class ItemStack&      item,
+        class BlockPos const& at,
+        uchar                 face,
+        class Vec3 const&     hit,
+        class Block const*    targetBlock
+    );
+
+    MCAPI static bool& mTrialHasEnded();
 
     // NOLINTEND
 };

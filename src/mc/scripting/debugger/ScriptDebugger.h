@@ -67,4 +67,34 @@ public:
     MCAPI ushort _sanitizePort(uint port) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIScriptDebugger();
+
+    MCAPI static void** $vftableForIScriptStatPublisher();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void close$();
+
+    MCAPI bool connect$(std::string const& host, ushort port);
+
+    MCAPI struct ScriptResourceStats getResourceStats$() const;
+
+    MCAPI bool isStatPublisherEnabled$() const;
+
+    MCAPI bool listen$(ushort port, std::chrono::seconds duration);
+
+    MCAPI void publishStats$(std::vector<struct ScriptStat> const& stats);
+
+    MCAPI void startProfiler$();
+
+    MCAPI void stopProfiler$(std::string const& savePath);
+
+    // NOLINTEND
 };

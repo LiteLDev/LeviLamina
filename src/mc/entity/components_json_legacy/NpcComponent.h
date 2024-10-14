@@ -98,20 +98,6 @@ public:
 
     MCAPI bool setSkinIndex(class Actor& owner, int skinIndex, bool setLocal);
 
-    MCAPI static std::string const ACTIONS_TAG;
-
-    MCAPI static std::string const INTERACTIVE_TAG;
-
-    MCAPI static std::string const NAME_RAW_TEXT_TAG;
-
-    MCAPI static std::string const PLAYER_ID_TAG;
-
-    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
-
-    MCAPI static std::string const SCENE_NAME_TAG;
-
-    MCAPI static std::string const URL_TAG;
-
     // NOLINTEND
 
     // private:
@@ -119,6 +105,34 @@ public:
     MCAPI void _defineEntityDataString(class Actor& owner, ::ActorDataIDs id);
 
     MCAPI void _deserializeData(class Json::Value const& npcData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& ACTIONS_TAG();
+
+    MCAPI static std::string const& INTERACTIVE_TAG();
+
+    MCAPI static std::string const& NAME_RAW_TEXT_TAG();
+
+    MCAPI static std::string const& PLAYER_ID_TAG();
+
+    MCAPI static std::string const& PLAYER_SCENE_MAPPING_TAG();
+
+    MCAPI static std::string const& SCENE_NAME_TAG();
+
+    MCAPI static std::string const& URL_TAG();
 
     // NOLINTEND
 };

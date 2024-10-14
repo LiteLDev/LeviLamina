@@ -39,4 +39,24 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+
+    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+
+    MCAPI ::PackOrigin getPackOrigin$() const;
+
+    MCAPI ::PackType getPackType$() const;
+
+    MCAPI class PackSourceReport load$(
+        class IPackManifestFactory&                                         manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
+
+    // NOLINTEND
 };

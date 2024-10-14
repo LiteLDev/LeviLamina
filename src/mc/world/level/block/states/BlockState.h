@@ -19,7 +19,12 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static struct BlockState::StateListNode* mHead;
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static struct BlockState::StateListNode*& mHead();
 
         // NOLINTEND
     };
@@ -42,6 +47,15 @@ public:
     virtual bool fromNBT(class CompoundTag const& tag, int& outValue) const = 0;
 
     MCAPI static void forEachState(std::function<bool(class BlockState const&)> callback);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -46,4 +46,34 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Vec3 findTargetPositionAndSetPosition$(
+        class Actor&                     actor,
+        DimensionType                    toId,
+        DimensionType                    fromId,
+        class IDimension const&          toDimension,
+        class PortalForcer const&        portalForcer,
+        std::optional<class Vec3> const& actorPosition
+    );
+
+    MCAPI void setupActorForTransfer$(class Actor& actor);
+
+    MCAPI void transferActor$(
+        class Actor&                     actor,
+        class Dimension&                 toDimension,
+        class Vec3 const&                targetPosition,
+        std::optional<class Vec3> const& actorPosition
+    );
+
+    // NOLINTEND
 };

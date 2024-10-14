@@ -34,4 +34,13 @@ public:
     MCAPI void _onHurtActor(int& durabilityDamage, class ItemStack& item, class Actor& actor, class Mob& attacker);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _initializeComponent$();
+
+    // NOLINTEND
 };

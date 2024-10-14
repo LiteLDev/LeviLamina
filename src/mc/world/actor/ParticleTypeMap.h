@@ -21,9 +21,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ParticleType, class HashedString> const map;
+    MCAPI static class BidirectionalUnorderedMap<::ParticleType, class HashedString> const& map();
 
     // NOLINTEND
 };

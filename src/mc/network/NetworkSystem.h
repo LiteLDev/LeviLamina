@@ -31,6 +31,13 @@ public:
         MCAPI ~Dependencies();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -158,6 +165,68 @@ public:
 
     MCAPI bool
     _sortAndPacketizeEvents(class NetworkConnection& connection, std::chrono::steady_clock::time_point endTime);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForNetworkEnableDisableListener();
+
+    MCAPI static void** $vftableForRakNetConnectorConnectionCallbacks();
+
+    MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void _onDisable$();
+
+    MCAPI void _onEnable$();
+
+    MCAPI ushort getDefaultGamePort$() const;
+
+    MCAPI ushort getDefaultGamePortv6$() const;
+
+    MCAPI void onAllConnectionsClosed$(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI void onAllRemoteConnectionsClosed$(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI void onConnectionClosed$(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI bool onNewIncomingConnection$(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
+
+    MCAPI bool onNewOutgoingConnection$(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
+
+    MCAPI void
+    onOutgoingConnectionFailed$(::Connection::DisconnectFailReason discoReason, std::string const& reasonMessage);
+
+    MCAPI void onWebsocketRequest$(
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
+    );
+
+    MCAPI bool useIPv4Only$() const;
+
+    MCAPI bool useIPv6Only$() const;
 
     // NOLINTEND
 };

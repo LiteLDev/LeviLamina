@@ -108,19 +108,27 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::bitset<196608> mOuterEdgeOfComputationBits;
+    MCAPI void dtor$();
 
-    MCAPI static class SpinLock sDarkSpinLock;
+    MCAPI static std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCAPI static std::unique_ptr<struct SubChunk> sFullyDarkSubChunk;
+    MCAPI static std::bitset<196608>& mOuterEdgeOfComputationBits();
 
-    MCAPI static std::unique_ptr<struct SubChunk> sFullyLitSubChunk;
+    MCAPI static class SpinLock& sDarkSpinLock();
 
-    MCAPI static class SpinLock sLitSpinLock;
+    MCAPI static std::unique_ptr<struct SubChunk>& sFullyDarkSubChunk();
+
+    MCAPI static std::unique_ptr<struct SubChunk>& sFullyLitSubChunk();
+
+    MCAPI static class SpinLock& sLitSpinLock();
 
     // NOLINTEND
 };

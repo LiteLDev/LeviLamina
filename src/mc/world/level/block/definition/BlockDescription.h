@@ -22,6 +22,16 @@ public:
         MCAPI struct BlockDescription::BlockTraits& operator=(struct BlockDescription::BlockTraits const&);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -37,6 +47,18 @@ public:
     MCAPI struct BlockDescription& operator=(struct BlockDescription const&);
 
     MCAPI ~BlockDescription();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

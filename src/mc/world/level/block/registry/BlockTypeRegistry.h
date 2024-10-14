@@ -31,6 +31,13 @@ public:
         MCAPI ~BlockComplexAliasBlockState();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class BlockComplexAliasContent {
@@ -47,6 +54,13 @@ public:
         MCAPI class Block const* operator()(int data) const;
 
         MCAPI ~BlockComplexAliasContent();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -74,6 +88,16 @@ public:
 
         MCAPI
         LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -155,27 +179,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<class HashedString, class HashedString> mBlockAliasLookupMap;
+    MCAPI static std::unordered_map<class HashedString, class HashedString>& mBlockAliasLookupMap();
 
-    MCAPI static entt::dense_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>
-        mBlockComplexAliasLookupMap;
+    MCAPI static entt::dense_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>&
+    mBlockComplexAliasLookupMap();
 
-    MCAPI static std::vector<std::vector<std::reference_wrapper<class HashedString const>>>
-        mBlockComplexAliasPostSplitBlockNamesList;
+    MCAPI static std::vector<std::vector<std::reference_wrapper<class HashedString const>>>&
+    mBlockComplexAliasPostSplitBlockNamesList();
 
-    MCAPI static entt::dense_map<uint64, uint64> mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    MCAPI static entt::dense_map<uint64, uint64>& mBlockComplexAliasPostSplitBlockNamesLookupMap();
 
-    MCAPI static std::map<class HashedString, class SharedPtr<class BlockLegacy>> mBlockLookupMap;
+    MCAPI static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& mBlockLookupMap();
 
-    MCAPI static entt::dense_map<uint64, class HashedString> mBlockNameHashToStringMap;
+    MCAPI static entt::dense_map<uint64, class HashedString>& mBlockNameHashToStringMap();
 
-    MCAPI static std::unique_ptr<struct BlockTypeRegistry::DirectAccessBlocks> mDirectAccessBlocks;
+    MCAPI static std::unique_ptr<struct BlockTypeRegistry::DirectAccessBlocks>& mDirectAccessBlocks();
 
-    MCAPI static std::set<std::string> mKnownNamespaces;
+    MCAPI static std::set<std::string>& mKnownNamespaces();
 
-    MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
+    MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock>& mRWLock();
 
     // NOLINTEND
 };

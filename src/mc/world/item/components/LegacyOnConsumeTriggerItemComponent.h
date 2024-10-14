@@ -34,4 +34,13 @@ public:
     MCAPI void _consume(class ItemStack const&, class ItemStack& item, class Actor& actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _initializeComponent$();
+
+    // NOLINTEND
 };

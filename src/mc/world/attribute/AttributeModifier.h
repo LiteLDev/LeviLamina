@@ -58,9 +58,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const mInvalidUUID;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool isInstantaneous$() const;
+
+    MCAPI static class mce::UUID const& mInvalidUUID();
 
     // NOLINTEND
 };

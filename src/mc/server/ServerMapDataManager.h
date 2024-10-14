@@ -45,4 +45,22 @@ public:
     MCAPI void _onGameplayUserAdded(class EntityContext& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void _copyAndLockMap$(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
+
+    MCAPI class MapItemSavedData& createMapSavedData$(struct ActorUniqueID const& uuid);
+
+    MCAPI class Bedrock::PubSub::Subscription
+    registerOnCreateMapSavedDataCallback$(std::function<void(class MapItemSavedData&)> callback);
+
+    MCAPI void registerOnGameplayUserAddedSubscription$(class GameplayUserManager& gameplayUserManager);
+
+    MCAPI void requestMapInfo$(struct ActorUniqueID, bool);
+
+    // NOLINTEND
 };

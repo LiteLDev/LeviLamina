@@ -30,4 +30,17 @@ public:
     virtual bool _isExpectedItem(std::vector<class ItemStack const*> const& itemList) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool _isExpectedItem$(std::vector<class ItemStack const*> const& itemList) const;
+
+    MCAPI std::string_view getName$() const;
+
+    // NOLINTEND
 };

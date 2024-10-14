@@ -59,4 +59,27 @@ public:
     MCAPI static bool _tryShearActor(class BlockSource& region, class Actor& mob);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+
+    MCAPI bool canDestroySpecial$(class Block const& block) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool mineBlock$(class ItemStack& item, class Block const& block, int, int, int, class Actor* owner) const;
+
+    // NOLINTEND
 };

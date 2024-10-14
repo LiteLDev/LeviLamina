@@ -78,18 +78,6 @@ public:
 
     MCAPI static void setColor(class ItemStackBase& instance);
 
-    MCAPI static std::string const TAG_EXPLOSION;
-
-    MCAPI static std::string const TAG_E_COLORS;
-
-    MCAPI static std::string const TAG_E_FADECOLORS;
-
-    MCAPI static std::string const TAG_E_FLICKER;
-
-    MCAPI static std::string const TAG_E_TRAIL;
-
-    MCAPI static std::string const TAG_E_TYPE;
-
     // NOLINTEND
 
     // private:
@@ -104,6 +92,45 @@ public:
     );
 
     MCAPI static void appendColors(std::string& hovertext, std::vector<uchar> const& colorList);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       advancedToolTips
+    ) const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
+
+    MCAPI bool hasSameRelevantUserData$(class ItemStackBase const& stack, class ItemStackBase const& other) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI static std::string const& TAG_EXPLOSION();
+
+    MCAPI static std::string const& TAG_E_COLORS();
+
+    MCAPI static std::string const& TAG_E_FADECOLORS();
+
+    MCAPI static std::string const& TAG_E_FLICKER();
+
+    MCAPI static std::string const& TAG_E_TRAIL();
+
+    MCAPI static std::string const& TAG_E_TYPE();
 
     // NOLINTEND
 };

@@ -30,4 +30,21 @@ public:
     virtual leveldb::Status RenameFile(std::string const& from, std::string const& to);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+
+    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& f, leveldb::RandomAccessFile** r);
+
+    MCAPI leveldb::Status NewSequentialFile$(std::string const& f, leveldb::SequentialFile** r);
+
+    MCAPI leveldb::Status NewWritableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status RenameFile$(std::string const& from, std::string const& to);
+
+    // NOLINTEND
 };

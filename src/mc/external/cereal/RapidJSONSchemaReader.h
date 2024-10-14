@@ -107,6 +107,64 @@ public:
     MCAPI bool isArithmeticType() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<bool> asBool$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<double> asDouble$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<float> asFloat$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<short> asInt16$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<int> asInt32$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<int64> asInt64$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<schar> asInt8$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<std::string> asString$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<ushort> asUInt16$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<uint> asUInt32$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<uint64> asUInt64$(class cereal::PropertyReader const&);
+
+    MCAPI class Bedrock::Result<uchar> asUInt8$(class cereal::PropertyReader const&);
+
+    MCAPI ::cereal::SchemaReaderState isArray$() const;
+
+    MCAPI ::cereal::SchemaReaderState isObject$() const;
+
+    MCAPI bool isSequenceReader$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI uint64 length$();
+
+    MCAPI uint64 members$();
+
+    MCAPI void pop$();
+
+    MCAPI void pushElement$(uint64 index, class cereal::PropertyReader const&);
+
+    MCAPI bool pushMember$(std::string_view name, class cereal::PropertyReader const&);
+
+    MCAPI std::string_view pushNextMember$(class cereal::PropertyReader const&);
+
+    // NOLINTEND
 };
 
 }; // namespace cereal

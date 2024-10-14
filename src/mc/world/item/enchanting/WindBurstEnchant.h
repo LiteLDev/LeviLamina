@@ -48,4 +48,30 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void doPostItemHurtActor$(class Actor& attacker, class Actor&, int enchantLevel) const;
+
+    MCAPI float getDamageBonus$(int, class Actor const&, class Actor const&) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isDiscoverable$() const;
+
+    MCAPI bool isTreasureOnly$() const;
+
+    // NOLINTEND
 };

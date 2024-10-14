@@ -37,4 +37,25 @@ public:
     virtual uchar getPoweroutDirection() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI uchar getPoweroutDirection$() const;
+
+    MCAPI void removeFromAnySourceList$(class BaseCircuitComponent const* component);
+
+    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+
+    // NOLINTEND
 };

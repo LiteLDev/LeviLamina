@@ -44,9 +44,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const sMinecraftNamespace;
+    MCAPI static std::string const& sMinecraftNamespace();
 
     // NOLINTEND
 };

@@ -35,6 +35,13 @@ public:
         MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -89,6 +96,18 @@ public:
         class Core::PathBuffer<class Core::StackString<char, 1024>> const&                   path,
         std::function<void(std::string const&, class SemVersion const&, std::string const&)> callback
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

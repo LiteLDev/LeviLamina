@@ -36,9 +36,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<::persona::ArmSize::Type, struct persona::SizeInfo> const mInfoList;
+    MCAPI static std::unordered_map<::persona::ArmSize::Type, struct persona::SizeInfo> const& mInfoList();
 
     // NOLINTEND
 };

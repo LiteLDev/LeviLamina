@@ -89,4 +89,36 @@ public:
     MCAPI void setEnchantPunch(int level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemStack _getPickupItem$() const;
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void applyParticleColor$(class Particle* p);
+
+    MCAPI class mce::Color getEffectColor$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void playerTouch$(class Player& player);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void setAuxValue$(int aux);
+
+    MCAPI void shoot$(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+
+    // NOLINTEND
 };

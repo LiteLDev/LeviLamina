@@ -9,13 +9,14 @@ public:
     LowMemoryWatcher(LowMemoryWatcher const&);
     LowMemoryWatcher();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mPlatformToldUsLowMemory;
+    MCAPI static bool& mPlatformToldUsLowMemory();
 
-    MCAPI static std::list<std::vector<char>> mPleaseLeakMemory;
+    MCAPI static std::list<std::vector<char>>& mPleaseLeakMemory();
 
-    MCAPI static std::chrono::steady_clock::time_point mTimeToResetWarning;
+    MCAPI static std::chrono::steady_clock::time_point& mTimeToResetWarning();
 
     // NOLINTEND
 };

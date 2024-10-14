@@ -51,4 +51,28 @@ public:
     MCAPI StonecutterBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool isCraftingBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+
+    // NOLINTEND
 };

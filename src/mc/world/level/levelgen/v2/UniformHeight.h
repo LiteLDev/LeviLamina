@@ -32,6 +32,15 @@ public:
     of(class br::worldgen::VerticalAnchor min, class br::worldgen::VerticalAnchor max);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int sample$(class IRandom& randomSource, class br::worldgen::WorldGenContext const& heightAccessor) const;
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

@@ -19,13 +19,23 @@ public:
 
     MCAPI class Vec3 toBlockSpaceVec3(float y) const;
 
-    MCAPI static class ChunkPos const INVALID;
+    // NOLINTEND
 
-    MCAPI static class ChunkPos const MAX;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class ChunkPos const MIN;
+    MCAPI static class ChunkPos const& INVALID();
 
-    MCAPI static class ChunkPos const ONE;
+    MCAPI static class ChunkPos const& MAX();
+
+    MCAPI static class ChunkPos const& MIN();
+
+    MCAPI static class ChunkPos const& ONE();
 
     // NOLINTEND
 };

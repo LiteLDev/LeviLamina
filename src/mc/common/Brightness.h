@@ -17,11 +17,21 @@ public:
 
     MCAPI struct Brightness& operator=(struct Brightness const&);
 
-    MCAPI static struct Brightness const INVALID;
+    // NOLINTEND
 
-    MCAPI static struct Brightness const MAX;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static struct Brightness const MIN;
+    MCAPI static struct Brightness const& INVALID();
+
+    MCAPI static struct Brightness const& MAX();
+
+    MCAPI static struct Brightness const& MIN();
 
     // NOLINTEND
 };

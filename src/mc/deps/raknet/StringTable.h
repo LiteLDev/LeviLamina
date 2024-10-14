@@ -19,11 +19,12 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class RakNet::StringTable* instance;
+    MCAPI static class RakNet::StringTable*& instance();
 
-    MCAPI static int referenceCount;
+    MCAPI static int& referenceCount();
 
     // NOLINTEND
 };

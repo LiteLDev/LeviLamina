@@ -21,4 +21,13 @@ public:
     virtual void deregisterTagsFromActor(class Actor& actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void deregisterTagsFromActor$(class Actor& actor);
+
+    // NOLINTEND
 };

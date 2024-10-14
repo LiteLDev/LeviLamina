@@ -37,9 +37,31 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const ITEMS_SIZE;
+    MCAPI static void** $vftableForFillingContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
+
+    MCAPI bool canPushInItem$(int, int, class ItemStack const&) const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void openBy$(class Player& p);
+
+    MCAPI void playCloseSound$(class BlockSource& region);
+
+    MCAPI void playOpenSound$(class BlockSource& region);
+
+    MCAPI static int const& ITEMS_SIZE();
 
     // NOLINTEND
 };

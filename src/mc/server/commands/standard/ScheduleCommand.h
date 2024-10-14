@@ -25,6 +25,13 @@ public:
         MCAPI ~FunctionInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -53,6 +60,15 @@ public:
 
     MCAPI struct ScheduleCommand::FunctionInfo
     _tryGetFunction(class FunctionManager& functionManager, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

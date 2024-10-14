@@ -31,13 +31,26 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mInitialized;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::shared_ptr<class BrazeSDKManager> mInstance;
+    MCAPI void _disableBrazeSDK$();
 
-    MCAPI static bool mIsReady;
+    MCAPI void _enableBrazeSDK$();
+
+    MCAPI void disableBrazeSDK$();
+
+    MCAPI void enableBrazeSDK$();
+
+    MCAPI void setBrazeId$(std::string const&);
+
+    MCAPI static bool& mInitialized();
+
+    MCAPI static std::shared_ptr<class BrazeSDKManager>& mInstance();
+
+    MCAPI static bool& mIsReady();
 
     // NOLINTEND
 };

@@ -44,6 +44,13 @@ public:
         MCAPI ~IconData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -134,6 +141,18 @@ public:
     // NOLINTBEGIN
     MCAPI class Scripting::Result<class Json::Value>
     _buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

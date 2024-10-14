@@ -45,4 +45,15 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+
+    MCAPI void _postCraftRequest$(bool wasSuccess);
+
+    // NOLINTEND
 };

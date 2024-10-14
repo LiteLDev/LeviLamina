@@ -200,6 +200,32 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI struct ScoreboardId const& _getScoreboardId$(class Scoreboard const& scoreboard) const;
+
+    MCAPI bool _isValid$() const;
+
+    MCAPI class Scripting::Result<void> applyImpulse$(class Actor&, class Vec3 const&);
+
+    MCAPI class Scripting::Result<void> clearVelocity$(class Actor&);
+
+    MCAPI class Scripting::Result<void> remove$(class Actor&);
+
+    MCAPI void setUnloaded$(class Actor& actor);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -26,16 +26,6 @@ namespace Util::Url { struct ComponentsView; }
 
 namespace Util {
 // NOLINTBEGIN
-MCAPI extern int const COLOR_CODE;
-
-MCAPI extern std::string const EMPTY_GUID;
-
-MCAPI extern std::string const EMPTY_STRING;
-
-MCAPI extern std::string const HEX_CHARS;
-
-MCAPI extern std::string const NEW_LINE;
-
 MCAPI void _breakIntoWordsAndFindProfanity(
     std::string&                                str,
     std::vector<std::pair<int, int>> const&     originalStrIndexes,
@@ -230,6 +220,19 @@ MCAPI bool validateIdentifier(
 );
 
 MCAPI bool validateIdentifierChunk(std::string const& chunk, ::LogArea logArea);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI int const& COLOR_CODE();
+
+MCAPI std::string const& EMPTY_GUID();
+
+MCAPI std::string const& EMPTY_STRING();
+
+MCAPI std::string const& HEX_CHARS();
+
+MCAPI std::string const& NEW_LINE();
 // NOLINTEND
 
 }; // namespace Util

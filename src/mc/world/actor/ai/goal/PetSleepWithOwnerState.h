@@ -22,4 +22,13 @@ public:
     MCAPI void dampenSpeed();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    // NOLINTEND
 };

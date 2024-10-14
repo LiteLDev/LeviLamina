@@ -62,6 +62,46 @@ public:
     MCAPI bool canComputeSecret();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string computeSharedSecret$(std::string const& myPrivateKey, std::string const& peerPublicKey);
+
+    MCAPI std::string
+    decryptData$(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
+
+    MCAPI std::string encryptData$(
+        std::string const&                 publicKey,
+        std::string const&                 data,
+        ::Crypto::Asymmetric::Padding      paddingType,
+        ::Crypto::Asymmetric::PubKeyFormat keyFormat
+    );
+
+    MCAPI bool generateKeyPair$(std::string& privateKey, std::string& publicKey);
+
+    MCAPI std::string signData$(
+        std::string const&                            privateKey,
+        std::string const&                            data,
+        ::Crypto::Hash::HashType                      hash,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat format
+    );
+
+    MCAPI bool verifyData$(
+        std::string const&       publicKey,
+        std::string const&       signature,
+        std::string const&       data,
+        ::Crypto::Hash::HashType hash
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Asymmetric

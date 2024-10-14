@@ -15,11 +15,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::set<class HashedString> const mExposedGameEvents;
+    MCAPI static std::set<class HashedString> const& mExposedGameEvents();
 
-    MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
+    MCAPI static std::vector<struct GameEventPair> const& mGameEventPairs();
 
     // NOLINTEND
 };

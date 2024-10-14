@@ -25,4 +25,17 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool shouldListen$(
+        class BlockSource&             region,
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext
+    );
+
+    // NOLINTEND
 };

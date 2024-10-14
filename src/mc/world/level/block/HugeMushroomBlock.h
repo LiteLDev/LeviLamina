@@ -55,4 +55,25 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& source, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    // NOLINTEND
 };

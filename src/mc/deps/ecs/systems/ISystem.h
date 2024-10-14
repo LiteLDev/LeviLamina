@@ -14,4 +14,11 @@ public:
     MCVAPI void registerEvents(entt::dispatcher& dispatcher);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    // NOLINTEND
 };

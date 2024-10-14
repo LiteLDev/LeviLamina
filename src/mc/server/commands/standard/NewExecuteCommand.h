@@ -39,67 +39,76 @@ public:
 
         MCAPI static void setup(class CommandRegistry& registry);
 
-        MCAPI static char const* CHAINED_OPTION_0;
+        // NOLINTEND
 
-        MCAPI static char const* CONDITION_SUBCOMMAND_OPTION_BLOCK;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
 
-        MCAPI static char const* CONDITION_SUBCOMMAND_OPTION_BLOCKS;
+        MCAPI std::string getCommandName$() const;
 
-        MCAPI static char const* CONDITION_SUBCOMMAND_OPTION_ENTITY;
+        MCAPI static char const* const& CHAINED_OPTION_0();
 
-        MCAPI static char const* CONDITION_SUBCOMMAND_OPTION_SCORE;
+        MCAPI static char const* const& CONDITION_SUBCOMMAND_OPTION_BLOCK();
 
-        MCAPI static char const* SUBCOMMAND_ALIGN;
+        MCAPI static char const* const& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
 
-        MCAPI static char const* SUBCOMMAND_ANCHORED;
+        MCAPI static char const* const& CONDITION_SUBCOMMAND_OPTION_ENTITY();
 
-        MCAPI static char const* SUBCOMMAND_AS;
+        MCAPI static char const* const& CONDITION_SUBCOMMAND_OPTION_SCORE();
 
-        MCAPI static char const* SUBCOMMAND_AT;
+        MCAPI static char const* const& SUBCOMMAND_ALIGN();
 
-        MCAPI static char const* SUBCOMMAND_BLOCK;
+        MCAPI static char const* const& SUBCOMMAND_ANCHORED();
 
-        MCAPI static char const* SUBCOMMAND_BLOCKS;
+        MCAPI static char const* const& SUBCOMMAND_AS();
 
-        MCAPI static char const* SUBCOMMAND_ENTITY;
+        MCAPI static char const* const& SUBCOMMAND_AT();
 
-        MCAPI static char const* SUBCOMMAND_FACING;
+        MCAPI static char const* const& SUBCOMMAND_BLOCK();
 
-        MCAPI static char const* SUBCOMMAND_IF;
+        MCAPI static char const* const& SUBCOMMAND_BLOCKS();
 
-        MCAPI static char const* SUBCOMMAND_IN;
+        MCAPI static char const* const& SUBCOMMAND_ENTITY();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_ALIGN;
+        MCAPI static char const* const& SUBCOMMAND_FACING();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_ANCHORED;
+        MCAPI static char const* const& SUBCOMMAND_IF();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_AS;
+        MCAPI static char const* const& SUBCOMMAND_IN();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_AT;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_ALIGN();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_ENTITY;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_ANCHORED();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_FACING;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_AS();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_IF_UNLESS;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_AT();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_IN;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_ENTITY();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_POSITIONED;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_FACING();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_ROTATED;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_IF_UNLESS();
 
-        MCAPI static char const* SUBCOMMAND_OPTION_RUN;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_IN();
 
-        MCAPI static char const* SUBCOMMAND_POSITIONED;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_POSITIONED();
 
-        MCAPI static char const* SUBCOMMAND_ROTATED;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_ROTATED();
 
-        MCAPI static char const* SUBCOMMAND_RUN;
+        MCAPI static char const* const& SUBCOMMAND_OPTION_RUN();
 
-        MCAPI static char const* SUBCOMMAND_SCORE;
+        MCAPI static char const* const& SUBCOMMAND_POSITIONED();
 
-        MCAPI static char const* SUBCOMMAND_UNLESS;
+        MCAPI static char const* const& SUBCOMMAND_ROTATED();
+
+        MCAPI static char const* const& SUBCOMMAND_RUN();
+
+        MCAPI static char const* const& SUBCOMMAND_SCORE();
+
+        MCAPI static char const* const& SUBCOMMAND_UNLESS();
 
         // NOLINTEND
     };
@@ -149,6 +158,22 @@ public:
         class CommandOrigin const&                origin,
         class CommandOutput&                      output
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

@@ -36,6 +36,19 @@ public:
     virtual uint64 valueCount() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void addValue$(class CompoundTag const& tag);
+
+    MCAPI void match$(class CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+
+    MCAPI uint64 valueCount$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace FlatteningUtils

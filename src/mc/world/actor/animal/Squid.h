@@ -77,4 +77,32 @@ public:
     MCAPI class Vec3 _randomInkDir();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent$() const;
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool checkSpawnObstruction$() const;
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    // NOLINTEND
 };

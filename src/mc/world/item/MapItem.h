@@ -92,20 +92,6 @@ public:
 
     MCAPI static void setMapNameIndex(class ItemStack& item, int mapNameIndex);
 
-    MCAPI static std::string const TAG_MAP_INIT;
-
-    MCAPI static std::string const TAG_MAP_NAME_INDEX;
-
-    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
-
-    MCAPI static std::string const TAG_MAP_REGENERATE;
-
-    MCAPI static std::string const TAG_MAP_SCALE;
-
-    MCAPI static std::string const TAG_MAP_SCALING;
-
-    MCAPI static std::string const TAG_MAP_UUID;
-
     // NOLINTEND
 
     // private:
@@ -116,6 +102,53 @@ public:
         struct MapItemSavedData::ChunkBounds bb,
         std::shared_ptr<bool>                chunksRefCount
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    appendFormattedHovertext$(class ItemStackBase const& stack, class Level& level, std::string& hovertext, bool) const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI void fixupCommon$(class ItemStackBase& stack, class Level& level) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI std::unique_ptr<class Packet>
+          getUpdatePacket$(class ItemStack const& item, class Level& level, class Actor& player) const;
+
+    MCAPI bool hasSameRelevantUserData$(class ItemStackBase const& stack, class ItemStackBase const& other) const;
+
+    MCAPI bool inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
+
+    MCAPI void refreshedInContainer$(class ItemStackBase const& stack, class Level& level) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI static std::string const& TAG_MAP_INIT();
+
+    MCAPI static std::string const& TAG_MAP_NAME_INDEX();
+
+    MCAPI static std::string const& TAG_MAP_PLAYER_DISPLAY();
+
+    MCAPI static std::string const& TAG_MAP_REGENERATE();
+
+    MCAPI static std::string const& TAG_MAP_SCALE();
+
+    MCAPI static std::string const& TAG_MAP_SCALING();
+
+    MCAPI static std::string const& TAG_MAP_UUID();
 
     // NOLINTEND
 };

@@ -26,9 +26,28 @@ public:
         class Factory<class EventResponse> const&                                                              factory
     ) const;
 
-    MCVAPI void executeAction(class RenderParams& pars) const;
+    MCVAPI void executeAction(class RenderParams& params) const;
 
     MCVAPI std::string const& getName() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForCommandResponseBase();
+
+    MCAPI static void** $vftableForEventResponse();
+
+    MCAPI void buildSchema$(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>& root,
+        class Factory<class EventResponse> const&                                                              factory
+    ) const;
+
+    MCAPI void executeAction$(class RenderParams& params) const;
+
+    MCAPI std::string const& getName$() const;
 
     // NOLINTEND
 };

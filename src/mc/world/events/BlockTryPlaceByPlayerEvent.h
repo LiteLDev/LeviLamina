@@ -14,4 +14,11 @@ public:
     MCAPI ~BlockTryPlaceByPlayerEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

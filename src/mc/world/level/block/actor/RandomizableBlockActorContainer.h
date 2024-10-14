@@ -37,4 +37,32 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void dropContents$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
+
+    MCAPI void dropSlotContent$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
+
+    MCAPI void initializeContainerContents$(class BlockSource& region);
+
+    MCAPI void onRemoved$(class BlockSource&);
+
+    MCAPI void setContainerChanged$(int slot);
+
+    MCAPI void startOpen$(class Player& player);
+
+    // NOLINTEND
 };

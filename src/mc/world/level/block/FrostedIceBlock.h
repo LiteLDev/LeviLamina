@@ -53,11 +53,30 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_AGE;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const MIN_NEIGHBORS;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion version) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI static int const& MAX_AGE();
+
+    MCAPI static int const& MIN_NEIGHBORS();
 
     // NOLINTEND
 };

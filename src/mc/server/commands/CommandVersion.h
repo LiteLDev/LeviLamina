@@ -20,7 +20,17 @@ public:
 
     MCAPI static ::CurrentCmdVersion const getVersionMapping(class SemVersion const& engineVersion);
 
-    MCAPI static int const CurrentVersion;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static int const& CurrentVersion();
 
     // NOLINTEND
 };

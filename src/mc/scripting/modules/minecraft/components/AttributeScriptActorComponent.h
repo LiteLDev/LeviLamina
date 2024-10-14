@@ -57,6 +57,31 @@ public:
     bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _isValid$() const;
+
+    MCAPI class Scripting::Result<float> getCurrent$() const;
+
+    MCAPI class Scripting::Result<float> getEffectiveMaxValue$() const;
+
+    MCAPI class Scripting::Result<float> getEffectiveMinValue$() const;
+
+    MCAPI class Scripting::Result<float> getValue$() const;
+
+    MCAPI class Scripting::Result<void> resetToDefaultValue$() const;
+
+    MCAPI class Scripting::Result<void> resetToMaxValue$() const;
+
+    MCAPI class Scripting::Result<void> resetToMinValue$() const;
+
+    MCAPI class Scripting::Result<bool> setCurrent$(float const& value) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

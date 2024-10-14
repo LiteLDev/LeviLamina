@@ -43,21 +43,42 @@ public:
 
     MCAPI static std::string contentKeyLookup(std::string const&);
 
-    MCAPI static class Core::Path const MANIFEST_LOG_PATH;
+    // NOLINTEND
 
-    MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static class Core::Path const MANIFEST_PATH;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class Core::Path const MANIFEST_PATH_OLD;
+    MCAPI void dtor$();
 
-    MCAPI static class Core::Path const MANIFEST_PATH_OLD_BACKUP;
+    MCAPI std::unique_ptr<class PackManifest> create$(
+        class PackAccessStrategy&     accessStrategy,
+        class ResourceLocation const& location,
+        class PackReport&             report,
+        class SubpackInfoCollection*  subpackInfoStack
+    );
 
-    MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
+    MCAPI static class Core::Path const& MANIFEST_LOG_PATH();
 
-    MCAPI static std::unordered_map<std::string, std::vector<char> const> mAlternateContentKeys;
+    MCAPI static std::string const& MANIFEST_PACK_UUID_UPGRADE_SALT();
 
-    MCAPI static std::unordered_map<std::string, std::vector<char> const> mContentKeys;
+    MCAPI static class Core::Path const& MANIFEST_PATH();
+
+    MCAPI static class Core::Path const& MANIFEST_PATH_OLD();
+
+    MCAPI static class Core::Path const& MANIFEST_PATH_OLD_BACKUP();
+
+    MCAPI static class SemVersion const& REQUIRED_VANILLA_FOR_OLD_PACKS();
+
+    MCAPI static std::unordered_map<std::string, std::vector<char> const>& mAlternateContentKeys();
+
+    MCAPI static std::unordered_map<std::string, std::vector<char> const>& mContentKeys();
 
     // NOLINTEND
 };

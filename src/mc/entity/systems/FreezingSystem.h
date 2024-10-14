@@ -34,9 +34,24 @@ public:
     // vIndex: 4
     virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
-    MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
+    // NOLINTEND
 
-    MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void tick$(class EntityRegistry& registry);
+
+    MCAPI static class mce::UUID const& FREEZE_EFFECT_UUID();
+
+    MCAPI static int const& VULNERABLE_MOB_FREEZE_DAMAGE();
 
     // NOLINTEND
 };

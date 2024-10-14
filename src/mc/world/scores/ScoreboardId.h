@@ -27,7 +27,17 @@ public:
 
     MCAPI bool operator==(struct ScoreboardId const& rhs) const;
 
-    MCAPI static struct ScoreboardId INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static struct ScoreboardId& INVALID();
 
     // NOLINTEND
 };

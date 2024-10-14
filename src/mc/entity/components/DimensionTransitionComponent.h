@@ -18,17 +18,22 @@ public:
     MCAPI void
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    MCAPI static std::string const AXIS_TAG;
+    // NOLINTEND
 
-    MCAPI static std::string const COMPONENT_TAG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& AXIS_TAG();
 
-    MCAPI static std::string const DIMENSION_TAG;
+    MCAPI static std::string const& COMPONENT_TAG();
 
-    MCAPI static std::string const POSITION_X_TAG;
+    MCAPI static std::string const& DIMENSION_TAG();
 
-    MCAPI static std::string const POSITION_Y_TAG;
+    MCAPI static std::string const& POSITION_X_TAG();
 
-    MCAPI static std::string const POSITION_Z_TAG;
+    MCAPI static std::string const& POSITION_Y_TAG();
+
+    MCAPI static std::string const& POSITION_Z_TAG();
 
     // NOLINTEND
 };

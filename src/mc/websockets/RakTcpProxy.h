@@ -54,4 +54,31 @@ public:
     virtual struct RakNet::SystemAddress nextLostConnection();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void close$(struct RakNet::SystemAddress address);
+
+    MCAPI struct RakNet::SystemAddress connect$(std::string const& host, ushort port);
+
+    MCAPI void deallocatePacket$(struct RakNet::Packet* packet);
+
+    MCAPI struct RakNet::SystemAddress nextCompletedConnectionAttempt$();
+
+    MCAPI struct RakNet::SystemAddress nextFailedConnectionAttempt$();
+
+    MCAPI struct RakNet::SystemAddress nextLostConnection$();
+
+    MCAPI struct RakNet::Packet* nextPacket$();
+
+    MCAPI bool packetsAvailable$();
+
+    MCAPI void send$(char const* data, uint length, struct RakNet::SystemAddress address);
+
+    MCAPI bool start$(ushort port, ushort maxIncomming, ushort maxOutgoing);
+
+    // NOLINTEND
 };

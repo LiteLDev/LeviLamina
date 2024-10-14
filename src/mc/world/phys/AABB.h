@@ -95,9 +95,19 @@ public:
 
     MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
 
-    MCAPI static class AABB const BLOCK_SHAPE;
+    // NOLINTEND
 
-    MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class AABB const& BLOCK_SHAPE();
+
+    MCAPI static class AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
 
     // NOLINTEND
 };

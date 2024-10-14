@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace DanceComponentInternal {
+// thunks
 // NOLINTBEGIN
-MCAPI extern float DEFAULT_DISTANCE;
+MCAPI float& DEFAULT_DISTANCE();
 // NOLINTEND
 
 }; // namespace DanceComponentInternal

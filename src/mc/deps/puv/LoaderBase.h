@@ -34,6 +34,13 @@ public:
     MCAPI class Puv::LoadResultAny doLoad(std::string const& input, class SemVersion const& parserVersion) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Puv::internal

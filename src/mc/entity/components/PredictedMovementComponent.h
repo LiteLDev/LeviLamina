@@ -52,6 +52,17 @@ public:
         virtual bool isOnGround() const = 0;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        MCAPI std::string toString$() const;
+
+        // NOLINTEND
     };
 
     class HistoryCache {
@@ -81,6 +92,13 @@ public:
         MCAPI void _clearHistory();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class HistoryTimestampData {
@@ -90,9 +108,10 @@ public:
         HistoryTimestampData(HistoryTimestampData const&);
         HistoryTimestampData();
 
-        // private:
+        // thunks
+    public:
         // NOLINTBEGIN
-        MCAPI static uint mSequenceIdGenerator;
+        MCAPI static uint& mSequenceIdGenerator();
 
         // NOLINTEND
     };
@@ -131,6 +150,27 @@ public:
         virtual bool isOnGround() const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI class Vec3 const& getPos$() const;
+
+        MCAPI class Vec2 const& getRot$() const;
+
+        MCAPI float getYHeadRot$() const;
+
+        MCAPI bool isAddedActorItem$() const;
+
+        MCAPI bool isMotionHintItem$() const;
+
+        MCAPI bool isOnGround$() const;
+
+        MCAPI bool isValidStartItem$() const;
+
+        // NOLINTEND
     };
 
     struct PredictionDbgData {
@@ -145,6 +185,13 @@ public:
         MCAPI std::string toString() const;
 
         MCAPI ~PredictionDbgData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -164,9 +211,10 @@ public:
             LerpedInterval(LerpedInterval const&);
             LerpedInterval();
 
-            // private:
+            // thunks
+        public:
             // NOLINTBEGIN
-            MCAPI static uint const mMaxTicks;
+            MCAPI static uint const& mMaxTicks();
 
             // NOLINTEND
         };
@@ -184,6 +232,18 @@ public:
         MCAPI RuntimePredictionData();
 
         MCAPI void reset();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -204,10 +264,6 @@ public:
         std::chrono::steady_clock::time_point const& timepoint
     );
 
-    MCAPI static uint const LERP_STEP_SIZE;
-
-    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
-
     // NOLINTEND
 
     // private:
@@ -221,6 +277,21 @@ public:
         struct PredictedMovementSystemParams&        params,
         std::chrono::steady_clock::time_point const& renderTimepoint
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static uint const& LERP_STEP_SIZE();
+
+    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData>&
+    mGlobalRuntimePredictionData();
 
     // NOLINTEND
 };

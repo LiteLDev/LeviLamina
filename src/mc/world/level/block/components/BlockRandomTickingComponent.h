@@ -28,4 +28,11 @@ public:
     MCAPI void onTick(struct BlockEvents::BlockRandomTickEvent const& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

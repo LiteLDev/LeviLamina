@@ -23,6 +23,13 @@ public:
     MCAPI static struct Scripting::ErrorBinding bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -57,4 +57,24 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _playStepSound$(class BlockPos const&, class Block const&);
+
+    MCAPI float causeFallDamageToActor$(float fallDistance, float multiplier, class ActorDamageSource source);
+
+    MCAPI void onFailedTame$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
+
+    // NOLINTEND
 };

@@ -58,4 +58,33 @@ public:
     MCAPI static void spawnSilverfish(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI void spawnAfterBreak$(
+        class BlockSource& region,
+        class Block const&,
+        class BlockPos const&              pos,
+        struct ResourceDropsContext const& resourceDropsContext
+    ) const;
+
+    MCAPI class Block const* tryGetUninfested$(class Block const& block) const;
+
+    // NOLINTEND
 };

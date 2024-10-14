@@ -26,4 +26,14 @@ public:
     MCAPI ::FunctionState getErrorState() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void
+    execute$(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
+
+    // NOLINTEND
 };

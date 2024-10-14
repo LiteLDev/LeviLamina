@@ -61,4 +61,26 @@ public:
     MCAPI void _onDiscoverWorldTemplate(class Pack const& pack);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI struct WorldTemplateInfo const*
+    findInstalledWorldTemplateByUUID$(std::vector<class mce::UUID> const& packUUIDs) const;
+
+    MCAPI std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates$() const;
+
+    MCAPI class Bedrock::PubSub::Subscription
+    registerModifiedCallback$(std::function<void(std::pair<std::string, bool> const&)> newCallbackFunction);
+
+    // NOLINTEND
 };

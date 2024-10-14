@@ -19,4 +19,13 @@ public:
     MCVAPI void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    // NOLINTEND
 };

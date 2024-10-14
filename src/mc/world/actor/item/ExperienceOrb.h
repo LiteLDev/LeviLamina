@@ -111,4 +111,34 @@ public:
     MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource& region, class Vec3 const& pos, int xpValue);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const&, float damage, bool, bool);
+
+    MCAPI void _playStepSound$(class BlockPos const&, class Block const&);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void doWaterSplashEffect$();
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void playerTouch$(class Player& player);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

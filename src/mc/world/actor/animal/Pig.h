@@ -50,4 +50,20 @@ public:
         class EntityContext&                    entityContext);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    // NOLINTEND
 };

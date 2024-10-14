@@ -16,4 +16,11 @@ public:
     MCAPI ~BoostItem();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

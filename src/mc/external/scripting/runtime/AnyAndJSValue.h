@@ -16,6 +16,13 @@ public:
     MCAPI ~AnyAndJSValue();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

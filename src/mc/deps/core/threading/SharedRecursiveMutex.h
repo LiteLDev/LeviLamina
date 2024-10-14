@@ -34,6 +34,21 @@ public:
     virtual bool _shouldUnLockForSharedAccess(std::thread::id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool _shouldLockForSharedAccess$(std::thread::id);
+
+    MCAPI bool _shouldUnLockForSharedAccess$(std::thread::id);
+
+    MCAPI bool _threadHoldsSharedLock$(std::thread::id);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

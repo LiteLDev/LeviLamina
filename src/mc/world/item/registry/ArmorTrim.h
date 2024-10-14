@@ -28,17 +28,29 @@ public:
 
     MCAPI static void setTrim(class ItemStackBase& instance, class ArmorTrim trim);
 
-    MCAPI static std::string const TAG_TRIM;
+    // NOLINTEND
 
-    MCAPI static std::string const TAG_TRIM_MATERIAL;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const TAG_TRIM_PATTERN;
+    MCAPI void dtor$();
 
-    MCAPI static std::string const UPGRADE_DESCRIPTION;
+    MCAPI static std::string const& TAG_TRIM();
 
-    MCAPI static std::string const UPGRADE_DESCRIPTION_FORMAT;
+    MCAPI static std::string const& TAG_TRIM_MATERIAL();
 
-    MCAPI static std::string const WRONG_VERSION_OR_ITEM_ERROR;
+    MCAPI static std::string const& TAG_TRIM_PATTERN();
+
+    MCAPI static std::string const& UPGRADE_DESCRIPTION();
+
+    MCAPI static std::string const& UPGRADE_DESCRIPTION_FORMAT();
+
+    MCAPI static std::string const& WRONG_VERSION_OR_ITEM_ERROR();
 
     // NOLINTEND
 };

@@ -59,4 +59,36 @@ public:
     MCAPI SnowballItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource& region,
+        class ItemStack const&,
+        class Vec3 const& pos,
+        class Vec3 const& direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI class SnowballItem& setDescriptionId$(std::string const& descriptionId);
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    // NOLINTEND
 };

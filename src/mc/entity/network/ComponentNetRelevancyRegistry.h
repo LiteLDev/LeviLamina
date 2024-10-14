@@ -26,6 +26,13 @@ public:
         MCAPI ~NetSerializationCallbacks();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -50,6 +57,13 @@ public:
     ) const;
 
     MCAPI ~ComponentNetRelevancyRegistry();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

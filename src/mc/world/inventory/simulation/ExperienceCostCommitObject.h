@@ -27,4 +27,17 @@ public:
     virtual void commit(class ContainerScreenContext const& screenContext);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool append$(class ContainerValidationCommitObject* other);
+
+    MCAPI bool canCommit$(class ContainerScreenContext const& screenContext) const;
+
+    MCAPI void commit$(class ContainerScreenContext const& screenContext);
+
+    // NOLINTEND
 };

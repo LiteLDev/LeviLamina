@@ -147,4 +147,55 @@ public:
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WAIT*, ulong);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI long Attach$(struct ITaskQueuePortContext*);
+
+    MCAPI void CancelTermination$(void*);
+
+    MCAPI void Detach$(struct ITaskQueuePortContext*);
+
+    MCAPI bool Dispatch$(struct ITaskQueuePortContext*, uint);
+
+    MCAPI struct XTaskQueuePortObject* GetHandle$();
+
+    MCAPI bool IsEmpty$();
+
+    MCAPI long PrepareTerminate$(struct ITaskQueuePortContext*, void*, void (*)(void*), void**);
+
+    MCAPI long QueryApi$(::ApiId, void**);
+
+    MCAPI void* QueryApiImpl$(::ApiId);
+
+    MCAPI long QueueItem$(struct ITaskQueuePortContext*, uint, void*, void (*)(void*, bool));
+
+    MCAPI long
+    RegisterWaitHandle$(struct ITaskQueuePortContext*, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
+
+    MCAPI uint Release$();
+
+    MCAPI void ResumePort$();
+
+    MCAPI void ResumeTermination$(struct ITaskQueuePortContext*);
+
+    MCAPI void SuspendPort$();
+
+    MCAPI long SuspendTermination$(struct ITaskQueuePortContext*);
+
+    MCAPI void Terminate$(void*);
+
+    MCAPI void UnregisterWaitHandle$(struct XTaskQueueRegistrationToken);
+
+    // NOLINTEND
 };

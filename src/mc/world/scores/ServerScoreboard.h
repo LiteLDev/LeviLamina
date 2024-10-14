@@ -115,4 +115,52 @@ public:
     MCAPI void _updateScoreTag(struct ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Objective* clearDisplayObjective$(std::string const& displaySlotName);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Player const& player);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Actor const& entity);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(std::string const& name);
+
+    MCAPI bool isClientSide$() const;
+
+    MCAPI void onObjectiveAdded$(class Objective const& objective);
+
+    MCAPI void onObjectiveRemoved$(class Objective& objective);
+
+    MCAPI void onPlayerIdentityUpdated$(struct PlayerScoreboardId const& playerId);
+
+    MCAPI void onPlayerJoined$(class Player const& player);
+
+    MCAPI void onPlayerScoreRemoved$(struct ScoreboardId const& id, class Objective const& objective);
+
+    MCAPI void onScoreChanged$(struct ScoreboardId const& id, class Objective const& obj);
+
+    MCAPI class DisplayObjective const* setDisplayObjective$(
+        std::string const&     displaySlotName,
+        class Objective const& objective,
+        ::ObjectiveSortOrder   order
+    );
+
+    MCAPI void setPacketSender$(class PacketSender* sender);
+
+    MCAPI void tick$();
+
+    MCAPI void writeToLevelStorage$();
+
+    // NOLINTEND
 };

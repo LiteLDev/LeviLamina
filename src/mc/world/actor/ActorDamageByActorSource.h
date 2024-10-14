@@ -54,4 +54,39 @@ public:
     MCAPI ActorDamageByActorSource(class Actor const& actor, ::ActorDamageCause cause);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+
+    MCAPI ::ActorType getDamagingEntityType$() const;
+
+    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+
+    MCAPI std::pair<std::string, std::vector<std::string>>
+          getDeathMessage$(std::string deadName, class Actor* dead) const;
+
+    MCAPI ::ActorCategory getEntityCategories$() const;
+
+    MCAPI ::ActorType getEntityType$() const;
+
+    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+
+    MCAPI bool getIsCreative$() const;
+
+    MCAPI bool getIsWorldBuilder$() const;
+
+    MCAPI bool isEntitySource$() const;
+
+    // NOLINTEND
 };

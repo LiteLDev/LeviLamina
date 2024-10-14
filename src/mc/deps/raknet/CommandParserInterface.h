@@ -13,7 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static uchar const VARIABLE_NUMBER_OF_PARAMETERS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static uchar const& VARIABLE_NUMBER_OF_PARAMETERS();
 
     // NOLINTEND
 };

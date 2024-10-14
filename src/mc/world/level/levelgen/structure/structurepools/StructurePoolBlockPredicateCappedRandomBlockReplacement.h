@@ -35,4 +35,17 @@ public:
     _finalize(class BlockSource& region, class IRandom& random, std::function<void(class BlockPos&)> applyToBlocks);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool finalize$(class BlockSource& region, class IRandom& random);
+
+    MCAPI bool test$(class Block const& block, class Randomize&) const;
+
+    MCAPI bool test$(class BlockPos const& pos, class BlockPos const&, class Randomize&) const;
+
+    // NOLINTEND
 };

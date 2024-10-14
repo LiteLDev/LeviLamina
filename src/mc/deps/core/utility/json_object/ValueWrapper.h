@@ -34,6 +34,13 @@ public:
     MCAPI static class Bedrock::JSONObject::ValueWrapper _createRaw(char const* s, uint64 length, bool copy);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

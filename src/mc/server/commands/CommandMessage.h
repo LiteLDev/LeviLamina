@@ -29,6 +29,16 @@ public:
         MCAPI MessageComponent(struct CommandMessage::MessageComponent&& m);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -43,6 +53,18 @@ public:
     MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const& origin, int maxLength) const;
 
     MCAPI ~CommandMessage();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

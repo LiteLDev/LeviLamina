@@ -31,9 +31,22 @@ public:
     // vIndex: 3
     virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
 
-    MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
+    // NOLINTEND
 
-    MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Json::Value asJsonValue$() const;
+
+    MCAPI std::string asString$() const;
+
+    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+
+    MCAPI static std::string const& RAW_TEXT_SELECTOR_KEY();
+
+    MCAPI static std::string const& RAW_TEXT_SELECTOR_STAR();
 
     // NOLINTEND
 };

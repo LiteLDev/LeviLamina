@@ -60,13 +60,33 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static int const& FIND_PARTNER_INTERVAL_TICKS();
+
+    MCAPI static int const& SPEAK_INTERVAL_TICKS_MAX();
+
+    MCAPI static int const& SPEAK_INTERVAL_TICKS_MIN();
 
     // NOLINTEND
 };

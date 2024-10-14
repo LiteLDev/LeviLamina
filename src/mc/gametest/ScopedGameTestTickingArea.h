@@ -23,13 +23,25 @@ public:
 
     MCAPI ~ScopedGameTestTickingArea();
 
-    MCAPI static std::string const TICKING_AREA_PREFIX;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _removeTickingArea();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& TICKING_AREA_PREFIX();
 
     // NOLINTEND
 };

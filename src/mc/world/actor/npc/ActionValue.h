@@ -20,6 +20,13 @@ public:
     MCAPI ~ActionValue();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace npc

@@ -204,13 +204,87 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class Core::FileStats*> sStorageAreaFileStats;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::recursive_mutex sStorageAreaLock;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class Core::StorageAreasTree sStorageAreas;
+    MCAPI void dtor$();
+
+    MCAPI class Core::Result _commit$();
+
+    MCAPI void _onTeardown$();
+
+    MCAPI class Core::Result _onTransactionsEmpty$(bool fromChild);
+
+    MCAPI void attemptExtendSize$(int64 const& currentFreeSpace, std::function<void()> onCompleteCallback);
+
+    MCAPI bool canExtendSize$() const;
+
+    MCAPI bool checkCorrupt$(bool handleCorruption);
+
+    MCAPI void clearUsedSizeOverride$();
+
+    MCAPI std::unique_ptr<class Core::FileSystemImpl>
+          createTransaction$(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
+
+    MCAPI void enableFlushToDisk$(bool);
+
+    MCAPI void flushImmediately$();
+
+    MCAPI uint64 getAvailableUserStorageSize$();
+
+    MCAPI class Core::Result getExtendSizeThreshold$(uint64& outExtendSizeThreshold) const;
+
+    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType$() const;
+
+    MCAPI struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo$();
+
+    MCAPI uint64 getTransactionWriteSizeLimit$() const;
+
+    MCAPI bool handlesPendingWrites$() const;
+
+    MCAPI void informPendingWriteSize$(uint64 numBytesWritePending, bool fromResourcePack);
+
+    MCAPI void informStorageAreaCopy$(uint64 storageAreaSize);
+
+    MCAPI void notifyChangeInFileSize$(int64 changeInSize, int64 changeInAllocatedSize);
+
+    MCAPI void preemptiveExtendSize$(
+        uint64                expectedContentSize,
+        std::function<void()> successCallback,
+        std::function<void()> failureCallback
+    );
+
+    MCAPI void resetCanAttemptExtendSize$();
+
+    MCAPI class Core::Result setSaveDataIcon$(class Core::Path const& iconPath);
+
+    MCAPI void setUsedSizeOverride$(uint64);
+
+    MCAPI bool shouldAllowCommit$() const;
+
+    MCAPI bool supportsExtendSize$() const;
+
+    MCAPI void tick$();
+
+    MCAPI void
+    trackBytesWritten$(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+
+    MCAPI void trackWriteOperation$(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+
+    MCAPI void unloadFlatFileManifests$(bool shouldClearManifests);
+
+    MCAPI static std::vector<class Core::FileStats*>& sStorageAreaFileStats();
+
+    MCAPI static std::recursive_mutex& sStorageAreaLock();
+
+    MCAPI static class Core::StorageAreasTree& sStorageAreas();
 
     // NOLINTEND
 };

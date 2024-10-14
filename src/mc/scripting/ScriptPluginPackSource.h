@@ -41,4 +41,19 @@ public:
     MCAPI class Core::Path _removeRootFromPath(class Core::Path const& pathIn);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::vector<std::string> enumerateScripts$(std::string const& extension);
+
+    MCAPI class PackManifest const& getManifest$();
+
+    MCAPI std::optional<std::string> loadScript$(std::string const& path);
+
+    MCAPI std::string removeRootFromPath$(std::string const&);
+
+    // NOLINTEND
 };

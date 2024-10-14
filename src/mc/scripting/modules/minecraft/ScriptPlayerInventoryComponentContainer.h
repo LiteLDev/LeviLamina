@@ -51,6 +51,24 @@ public:
     bindV010();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class ItemContext _getItemContext$(int slot) const;
+
+    MCAPI class Container* _tryGetContainer$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -24,4 +24,15 @@ public:
     virtual void updateBlockSourceTick(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void updateBlockSourceTick$(class Player& player);
+
+    MCAPI void updateDimensionBlockSourceTick$(class Dimension& dimension);
+
+    // NOLINTEND
 };

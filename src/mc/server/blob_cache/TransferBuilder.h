@@ -18,6 +18,13 @@ public:
     MCAPI ~TransferBuilder();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ClientBlobCache::Server

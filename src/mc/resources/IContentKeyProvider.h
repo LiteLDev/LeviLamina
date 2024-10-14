@@ -27,4 +27,13 @@ public:
     MCVAPI bool requireEncryptedReads() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+
+    MCAPI bool requireEncryptedReads$() const;
+
+    // NOLINTEND
 };

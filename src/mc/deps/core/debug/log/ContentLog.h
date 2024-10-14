@@ -34,6 +34,16 @@ public:
         MCAPI explicit ContentLogEndPointData(gsl::not_null<class ContentLogEndPoint*> contentLogEndPoint);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
     class ContentLogScope {
@@ -48,6 +58,18 @@ public:
         MCAPI explicit ContentLogScope(class Bedrock::StaticOptimizedString scope);
 
         MCAPI ~ContentLogScope();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -91,6 +113,18 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _writeToLog(bool, ::LogArea, ::LogLevel, char*&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
     // NOLINTEND
 };

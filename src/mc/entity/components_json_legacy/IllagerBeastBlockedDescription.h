@@ -24,4 +24,17 @@ public:
     virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+
+    MCAPI char const* getJsonName$() const;
+
+    // NOLINTEND
 };

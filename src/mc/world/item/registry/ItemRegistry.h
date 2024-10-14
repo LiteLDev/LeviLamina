@@ -36,6 +36,13 @@ public:
         MCAPI ~ItemAlias();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct ItemHashAlias {
@@ -50,6 +57,13 @@ public:
         MCAPI ~ItemHashAlias();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -62,8 +76,6 @@ public:
     MCAPI ItemRegistry();
 
     MCAPI ~ItemRegistry();
-
-    MCAPI static std::string_view const MINECRAFT_NAMESPACE;
 
     // NOLINTEND
 
@@ -181,6 +193,20 @@ public:
     MCAPI static short getBlockItemId(class Block const& block);
 
     MCAPI static short getBlockItemId(class BlockLegacy const& block);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string_view const& MINECRAFT_NAMESPACE();
 
     // NOLINTEND
 };

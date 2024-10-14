@@ -41,4 +41,28 @@ public:
     TradeContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ContainerScreenContext _postInit$();
+
+    MCAPI void broadcastChanges$();
+
+    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+
+    MCAPI class ItemStack const& getSlot$(int slot) const;
+
+    MCAPI bool isValid$(float pickRange);
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
+
+    // NOLINTEND
 };

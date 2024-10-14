@@ -34,4 +34,31 @@ public:
     MCVAPI bool onRunSystemTick();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool onFlushBlockCustomComponentAfterEvents$();
+
+    MCAPI bool onFlushEditorDataStoreAfterEvents$();
+
+    MCAPI bool onFlushEditorExtensionContextAfterEvents$();
+
+    MCAPI bool onFlushItemCustomComponentAfterEvents$();
+
+    MCAPI bool onFlushSystemAfterEvents$();
+
+    MCAPI bool onFlushWorldAfterEvents$();
+
+    MCAPI void onLevelTickEnd$();
+
+    MCAPI void onPostFlushAfterEvents$();
+
+    MCAPI void onPreFlushAfterEvents$();
+
+    MCAPI void onRunAsyncJobs$();
+
+    MCAPI bool onRunSystemTick$();
+
+    // NOLINTEND
 };

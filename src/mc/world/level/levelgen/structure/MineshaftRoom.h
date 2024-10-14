@@ -35,4 +35,23 @@ public:
     virtual bool postProcess(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void addChildren$(
+        class StructurePiece&                               startPiece,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random
+    );
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

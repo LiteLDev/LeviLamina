@@ -33,4 +33,19 @@ public:
     virtual std::string_view getName() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool evaluate$(struct FilterContext const& context) const;
+
+    MCAPI std::string_view getName$() const;
+
+    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
+
+    // NOLINTEND
 };

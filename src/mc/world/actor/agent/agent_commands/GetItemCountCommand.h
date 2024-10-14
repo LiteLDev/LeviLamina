@@ -34,6 +34,19 @@ public:
     virtual void fireCommandDoneEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$();
+
+    MCAPI void fireCommandDoneEvent$();
+
+    MCAPI bool isDone$();
+
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

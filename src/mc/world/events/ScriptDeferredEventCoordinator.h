@@ -28,6 +28,13 @@ public:
         MCAPI ~DocumentableEventExecution();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -62,10 +69,13 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
-        sEventExecutionOrder;
+    MCAPI static void** $vftable();
+
+    MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+    sEventExecutionOrder();
 
     // NOLINTEND
 };

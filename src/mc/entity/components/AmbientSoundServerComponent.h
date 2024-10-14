@@ -16,4 +16,11 @@ public:
     MCAPI ~AmbientSoundServerComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

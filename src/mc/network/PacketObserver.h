@@ -25,6 +25,16 @@ public:
         MCAPI explicit PacketStats(uint id);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        // NOLINTEND
     };
 
 public:
@@ -52,6 +62,25 @@ public:
 
     // vIndex: 5
     virtual void reset();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void dataReceivedFrom$(class NetworkIdentifier const&, std::string const&);
+
+    MCAPI void dataSentTo$(class NetworkIdentifier const&, std::string_view);
+
+    MCAPI void packetReceivedFrom$(class NetworkIdentifier const&, class Packet const&, uint size);
+
+    MCAPI void packetSentTo$(class NetworkIdentifier const&, class Packet const&, uint size);
+
+    MCAPI void reset$();
 
     // NOLINTEND
 };

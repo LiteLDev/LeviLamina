@@ -95,11 +95,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const mSinScale;
+    MCAPI static ::ll::CArrayT<float>& mSin();
 
-    MCAPI static float mSin[];
+    MCAPI static float const& mSinScale();
 
     // NOLINTEND
 };

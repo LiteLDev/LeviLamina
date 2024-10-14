@@ -95,4 +95,32 @@ public:
     MCAPI bool _validateWebSocketURI();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::WSConnectionResult connect$(std::string const& uri, std::vector<std::string> const& subProtocols);
+
+    MCAPI ::WSConnectionResult connect$(std::string const& uri);
+
+    MCAPI bool isReady$() const;
+
+    MCAPI void setOnCloseHandler$(std::function<void(::CloseStatusCode, std::string const&)> const& handler);
+
+    MCAPI void setOnConnectedHandler$(std::function<void(std::string const&)> const& handler);
+
+    MCAPI void setOnMessageReceivedHandler$(std::function<void(class RakWebSocketDataFrame const&)> const& handler);
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

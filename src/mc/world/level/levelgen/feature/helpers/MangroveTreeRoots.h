@@ -57,9 +57,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const RANDOM_SKEW_CHANCE;
+    MCAPI static void** $vftable();
+
+    MCAPI std::optional<class BlockPos> placeRoots$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        int                      trunkHeight,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams
+    ) const;
+
+    MCAPI static float const& RANDOM_SKEW_CHANCE();
 
     // NOLINTEND
 };

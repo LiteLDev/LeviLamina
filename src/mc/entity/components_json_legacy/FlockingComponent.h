@@ -37,4 +37,14 @@ public:
     MCAPI bool validateVariantEntityTypes(class Actor const& e0, class Actor const& e1) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

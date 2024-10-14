@@ -72,4 +72,11 @@ public:
     MCAPI void sendUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

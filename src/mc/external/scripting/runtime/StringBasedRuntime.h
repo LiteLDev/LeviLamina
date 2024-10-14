@@ -31,6 +31,17 @@ public:
         std::optional<::Scripting::Privilege> privilege);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI class Scripting::ResultAny run$(
+        struct Scripting::ContextId           contextId,
+        class Scripting::IPayload*            payload,
+        std::optional<::Scripting::Privilege> privilege
+    );
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

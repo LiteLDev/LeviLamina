@@ -83,11 +83,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientImpl> sWeakThis;
+    MCAPI static void** $vftable();
 
-    MCAPI static class Bedrock::Threading::Mutex sWeakThisMutex;
+    MCAPI void initialize$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+          send$(class Bedrock::Http::Request&& request);
+
+    MCAPI void shutdown$();
+
+    MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientImpl>& sWeakThis();
+
+    MCAPI static class Bedrock::Threading::Mutex& sWeakThisMutex();
 
     // NOLINTEND
 };

@@ -21,4 +21,11 @@ public:
     MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

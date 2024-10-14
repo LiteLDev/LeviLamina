@@ -39,4 +39,20 @@ public:
     MCAPI ShulkerBoxBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI int getColor$(class Block const& block) const;
+
+    // NOLINTEND
 };

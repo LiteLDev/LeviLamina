@@ -26,12 +26,6 @@ public:
 
     MCAPI ~RopeSystem();
 
-    MCAPI static float const sBucketLength;
-
-    MCAPI static bool sEnabled;
-
-    MCAPI static float const sEpsilon;
-
     // NOLINTEND
 
     // private:
@@ -68,6 +62,24 @@ public:
     MCAPI void _tickWaves();
 
     MCAPI void _updateRenderPoints();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static float const& sBucketLength();
+
+    MCAPI static bool& sEnabled();
+
+    MCAPI static float const& sEpsilon();
 
     // NOLINTEND
 };

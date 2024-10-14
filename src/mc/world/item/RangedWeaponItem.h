@@ -50,4 +50,29 @@ public:
     MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI int
+    getAnimationFrameFor$(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    // NOLINTEND
 };

@@ -36,12 +36,6 @@ public:
 
     MCAPI ~SynchedActorData();
 
-    MCAPI static std::string const DIFF_ITEM;
-
-    MCAPI static std::string const DIFF_ITEMS_SIZE;
-
-    MCAPI static std::string const DIFF_ITEM_NULL;
-
     // NOLINTEND
 
     // private:
@@ -53,6 +47,24 @@ public:
     MCAPI void _resizeToContain(ushort id);
 
     MCAPI void _setDirty(ushort);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DIFF_ITEM();
+
+    MCAPI static std::string const& DIFF_ITEMS_SIZE();
+
+    MCAPI static std::string const& DIFF_ITEM_NULL();
 
     // NOLINTEND
 };

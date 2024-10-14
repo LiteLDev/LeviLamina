@@ -32,6 +32,17 @@ public:
     virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI uint64 threadId$();
+
+    MCAPI void writeToDebugger$(char const* area, ::HCTraceLevel level, char const* message);
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

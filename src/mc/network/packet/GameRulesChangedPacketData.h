@@ -20,4 +20,11 @@ public:
     MCAPI ~GameRulesChangedPacketData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

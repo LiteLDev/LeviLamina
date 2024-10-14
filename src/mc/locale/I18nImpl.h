@@ -31,6 +31,13 @@ public:
         MCAPI ~CurrentLanguageInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -176,6 +183,102 @@ public:
     MCAPI gsl::not_null<std::shared_ptr<class Localization>> _getPackKeywordLocale(std::string const& langCode);
 
     MCAPI void _notifyLanguagesLoaded();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addI18nObserver$(class I18nObserver& observer);
+
+    MCAPI void appendAdditionalTranslations$(
+        std::unordered_map<std::string, std::string> const& translations,
+        std::string const&                                  keyPrefix
+    );
+
+    MCAPI void appendLanguageStrings$(class PackAccessStrategy* accessStrategy);
+
+    MCAPI void appendLanguageStringsFromPack$(
+        class PackManifest const&                                              manifest,
+        std::multimap<std::string, std::pair<std::string, std::string>> const& localizationMapping
+    );
+
+    MCAPI void appendTranslations$(
+        std::string const&                                  localeCode,
+        std::unordered_map<std::string, std::string> const& translations
+    );
+
+    MCAPI void chooseLanguage$(std::string const& code);
+
+    MCAPI void clearLanguages$();
+
+    MCAPI std::unordered_map<std::string, std::string>
+          findAvailableLanguageNames$(class ResourcePackManager& resourcePackManager);
+
+    MCAPI std::vector<std::string> findAvailableLanguages$(class ResourcePackManager& resourcePackManager);
+
+    MCAPI std::string
+    get$(std::string const& id, std::vector<std::string> const& params, std::shared_ptr<class Localization> locale);
+
+    MCAPI std::string get$(std::string const& langString, std::shared_ptr<class Localization> locale);
+
+    MCAPI gsl::not_null<std::shared_ptr<class Localization const>> getCurrentLanguage$();
+
+    MCAPI std::vector<std::string> getLanguageCodesFromPack$(class PackAccessStrategy const& accessStrategy);
+
+    MCAPI std::unordered_map<std::string, std::string>
+          getLanguageKeywordsFromPack$(class PackManifest const& manifest, std::string const& keyword);
+
+    MCAPI std::string const& getLanguageName$(std::string const&);
+
+    MCAPI std::string const& getLocaleCodeFor$(std::string const&);
+
+    MCAPI std::shared_ptr<class Localization> const getLocaleFor$(std::string const& code);
+
+    MCAPI std::string
+          getLocalizedAssetFileWithFallback$(std::string const& fileNamePrefix, std::string const& fileNameSuffix);
+
+    MCAPI std::string getPackKeywordValue$(class PackManifest const& manifest, std::string const& key);
+
+    MCAPI std::string getPackKeywordValueForTelemetry$(class PackManifest const& manifest, std::string const& key);
+
+    MCAPI std::vector<std::string> const& getSupportedLanguageCodes$();
+
+    MCAPI bool hasPackKeyEntry$(class PackManifest const& manifest, std::string const& key);
+
+    MCAPI bool isPackKeyword$(std::string const& key);
+
+    MCAPI bool languageSupportsHypenSplitting$();
+
+    MCAPI void loadAllLanguages$(class ResourcePackManager& resourcePackManager);
+
+    MCAPI void loadLangaugesByLocale$(
+        std::unordered_multimap<std::string, std::pair<std::string, std::string>> const& storeLocalization
+    );
+
+    MCAPI void
+    loadLanguageKeywordsFromPack$(class PackManifest const& manifest, class PackAccessStrategy const& accessStrategy);
+
+    MCAPI void loadLanguageKeywordsFromPack$(
+        class PackManifest const&       manifest,
+        class PackAccessStrategy const& accessStrategy,
+        std::vector<std::string> const& languageCodes
+    );
+
+    MCAPI void loadLanguages$(
+        class ResourcePackManager&                             resourcePackManager,
+        Bedrock::NotNullNonOwnerPtr<class ResourceLoadManager> resourceLoadManager,
+        std::string const&                                     initLang
+    );
 
     // NOLINTEND
 };

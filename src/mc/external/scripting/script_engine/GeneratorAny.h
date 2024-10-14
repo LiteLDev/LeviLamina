@@ -52,6 +52,18 @@ public:
     MCAPI class Scripting::ResultAny nextGeneric(entt::meta_any& argAny, entt::meta_type expectedReturnType) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

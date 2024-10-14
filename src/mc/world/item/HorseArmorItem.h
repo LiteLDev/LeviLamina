@@ -67,7 +67,41 @@ public:
 
     MCAPI ::HorseArmorItem::Tier getTier() const;
 
-    MCAPI static int const mHealthPerTier[];
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI void clearColor$(class ItemStackBase& item) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
+
+    MCAPI bool hasCustomColor$(class CompoundTag const* userData) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI void setColor$(class ItemStackBase& item, class mce::Color const& color) const;
+
+    MCAPI static ::ll::CArrayT<int const>& mHealthPerTier();
 
     // NOLINTEND
 };

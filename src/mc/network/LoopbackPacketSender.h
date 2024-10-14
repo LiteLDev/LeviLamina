@@ -53,4 +53,33 @@ public:
     MCAPI void setUserList(std::vector<class OwnerPtr<class EntityContext>> const* userList);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void flush$(class NetworkIdentifier const& id, std::function<void()>&& callback);
+
+    MCAPI void send$(class Packet& packet);
+
+    MCAPI void sendBroadcast$(class Packet const& packet);
+
+    MCAPI void
+    sendBroadcast$(class NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, class Packet const& packet);
+
+    MCAPI void sendToClient$(class UserEntityIdentifierComponent const* userIdentifier, class Packet const& packet);
+
+    MCAPI void sendToClient$(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId subid);
+
+    MCAPI void sendToClients$(std::vector<struct NetworkIdentifierWithSubId> const& ids, class Packet const& packet);
+
+    MCAPI void sendToServer$(class Packet& packet);
+
+    // NOLINTEND
 };

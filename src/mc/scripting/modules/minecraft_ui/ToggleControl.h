@@ -37,6 +37,21 @@ public:
     ToggleControl(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, std::optional<bool>);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Scripting::Result<class Json::Value>
+    buildJson$(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

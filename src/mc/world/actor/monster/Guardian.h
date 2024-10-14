@@ -95,11 +95,37 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const ATTACK_TIME;
+    MCAPI static void** $vftable();
 
-    MCAPI static int const FIRST_DAMAGE_TIME;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI bool checkSpawnRules$(bool);
+
+    MCAPI float getMaxHeadXRot$();
+
+    MCAPI bool isDarkEnoughToSpawn$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void setTarget$(class Actor* target);
+
+    MCAPI static int const& ATTACK_TIME();
+
+    MCAPI static int const& FIRST_DAMAGE_TIME();
 
     // NOLINTEND
 };

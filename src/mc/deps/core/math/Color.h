@@ -25,41 +25,51 @@ public:
 
     MCAPI static class mce::Color fromHexString(std::string const& hexStr);
 
-    MCAPI static class mce::Color const BLACK;
+    // NOLINTEND
 
-    MCAPI static class mce::Color const BLUE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class mce::Color const CYAN;
+    MCAPI static class mce::Color const& BLACK();
 
-    MCAPI static class mce::Color const GREEN;
+    MCAPI static class mce::Color const& BLUE();
 
-    MCAPI static class mce::Color const GREY;
+    MCAPI static class mce::Color const& CYAN();
 
-    MCAPI static class mce::Color const MINECOIN_GOLD;
+    MCAPI static class mce::Color const& GREEN();
 
-    MCAPI static class mce::Color const NIL;
+    MCAPI static class mce::Color const& GREY();
 
-    MCAPI static class mce::Color const ORANGE;
+    MCAPI static class mce::Color const& MINECOIN_GOLD();
 
-    MCAPI static class mce::Color const PINK;
+    MCAPI static class mce::Color const& NIL();
 
-    MCAPI static class mce::Color const PURPLE;
+    MCAPI static class mce::Color const& ORANGE();
 
-    MCAPI static class mce::Color const REBECCA_PURPLE;
+    MCAPI static class mce::Color const& PINK();
 
-    MCAPI static class mce::Color const RED;
+    MCAPI static class mce::Color const& PURPLE();
 
-    MCAPI static class mce::Color const SHADE_DOWN;
+    MCAPI static class mce::Color const& REBECCA_PURPLE();
 
-    MCAPI static class mce::Color const SHADE_NORTH_SOUTH;
+    MCAPI static class mce::Color const& RED();
 
-    MCAPI static class mce::Color const SHADE_UP;
+    MCAPI static class mce::Color const& SHADE_DOWN();
 
-    MCAPI static class mce::Color const SHADE_WEST_EAST;
+    MCAPI static class mce::Color const& SHADE_NORTH_SOUTH();
 
-    MCAPI static class mce::Color const WHITE;
+    MCAPI static class mce::Color const& SHADE_UP();
 
-    MCAPI static class mce::Color const YELLOW;
+    MCAPI static class mce::Color const& SHADE_WEST_EAST();
+
+    MCAPI static class mce::Color const& WHITE();
+
+    MCAPI static class mce::Color const& YELLOW();
 
     // NOLINTEND
 };

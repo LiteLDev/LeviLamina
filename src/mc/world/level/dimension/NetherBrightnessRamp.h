@@ -21,4 +21,13 @@ public:
     virtual float getBaseAmbientValue() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI float getBaseAmbientValue$() const;
+
+    // NOLINTEND
 };

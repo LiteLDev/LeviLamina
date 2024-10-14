@@ -37,4 +37,25 @@ public:
     virtual void postReplicationtick(class ServerPlayer& serverPlayer, struct Tick const& currentTick);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void clearDimensionPlayerReplicationList$(class Dimension& dimension);
+
+    MCAPI void playerTick$(class Player& player, struct Tick const& currentTick);
+
+    MCAPI void postReplicationtick$(class ServerPlayer& serverPlayer, struct Tick const& currentTick);
+
+    MCAPI void preReplicationTick$(
+        class ServerPlayer&  serverPlayer,
+        struct Tick const&   currentTick,
+        class EntityContext& userEntity
+    );
+
+    MCAPI void processDimensionPlayerReplication$(class Dimension& dimension);
+
+    // NOLINTEND
 };

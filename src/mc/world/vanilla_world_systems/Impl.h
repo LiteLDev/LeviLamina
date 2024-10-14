@@ -33,7 +33,17 @@ public:
         std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
     );
 
-    MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl> mInstance;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl>& mInstance();
 
     // NOLINTEND
 };

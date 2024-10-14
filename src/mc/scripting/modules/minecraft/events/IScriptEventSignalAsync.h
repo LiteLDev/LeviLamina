@@ -23,6 +23,15 @@ public:
     MCVAPI bool isActorSignal() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void enqueueClosureRemovalForActor$(struct ActorUniqueID const&);
+
+    MCAPI bool isActorSignal$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

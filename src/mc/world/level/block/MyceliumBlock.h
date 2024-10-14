@@ -39,15 +39,32 @@ public:
 
     MCAPI MyceliumBlock(std::string const& nameId, int id);
 
-    MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
-
-    MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool _canSpreadToBlock(class BlockSource const& region, class BlockPos const& blockPos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI static struct Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
+
+    MCAPI static struct Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
 
     // NOLINTEND
 };

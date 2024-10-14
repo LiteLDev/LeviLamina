@@ -20,9 +20,10 @@ public:
     BodySize(BodySize const&);
     BodySize();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<::persona::BodySize::Type, struct persona::SizeInfo> const mInfoList;
+    MCAPI static std::unordered_map<::persona::BodySize::Type, struct persona::SizeInfo> const& mInfoList();
 
     // NOLINTEND
 };

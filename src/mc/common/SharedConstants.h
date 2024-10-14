@@ -11,74 +11,75 @@
 #include "mc/world/level/storage/StorageVersion.h"
 
 namespace SharedConstants {
+// thunks
 // NOLINTBEGIN
-MCAPI extern ::CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
+MCAPI ::CodeBuilder::ProtocolVersion const& CodeBuilderProtocolVersion();
 
-MCAPI extern ::ActorDigestFormat const CurrentActorDigestFormat;
+MCAPI ::ActorDigestFormat const& CurrentActorDigestFormat();
 
-MCAPI extern ::BlendVersion const CurrentBlendVersion;
+MCAPI ::BlendVersion const& CurrentBlendVersion();
 
-MCAPI extern class SemVersion const CurrentGameSemVersion;
+MCAPI class SemVersion const& CurrentGameSemVersion();
 
-MCAPI extern ::LevelChunkFormat const CurrentLevelChunkFormat;
+MCAPI ::LevelChunkFormat const& CurrentLevelChunkFormat();
 
-MCAPI extern ::StorageVersion const CurrentStorageVersion;
+MCAPI ::StorageVersion const& CurrentStorageVersion();
 
-MCAPI extern ::SubChunkFormat const CurrentSubChunkFormat;
+MCAPI ::SubChunkFormat const& CurrentSubChunkFormat();
 
-MCAPI extern bool const DevInitiallyMuteMusic;
+MCAPI bool const& DevInitiallyMuteMusic();
 
-MCAPI extern uint64 const DeviceIdMaxLength;
+MCAPI uint64 const& DeviceIdMaxLength();
 
-MCAPI extern int const EduDiscoveryProtocolVersion;
+MCAPI int const& EduDiscoveryProtocolVersion();
 
-MCAPI extern bool const IsAnyBeta;
+MCAPI bool const& IsAnyBeta();
 
-MCAPI extern bool const IsBeta;
+MCAPI bool const& IsBeta();
 
-MCAPI extern bool const IsCreatorEditorBuild;
+MCAPI bool const& IsCreatorEditorBuild();
 
-MCAPI extern bool const IsDevBuild;
+MCAPI bool const& IsDevBuild();
 
-MCAPI extern bool const IsPS4Platform;
+MCAPI bool const& IsPS4Platform();
 
-MCAPI extern bool const IsPlaytest;
+MCAPI bool const& IsPlaytest();
 
-MCAPI extern bool const IsPreviewApp;
+MCAPI bool const& IsPreviewApp();
 
-MCAPI extern bool const IsWin32Platform;
+MCAPI bool const& IsWin32Platform();
 
-MCAPI extern bool const IsXboxPlatform;
+MCAPI bool const& IsXboxPlatform();
 
-MCAPI extern int const LevelDBCompressorID;
+MCAPI int const& LevelDBCompressorID();
 
-MCAPI extern int const MajorVersion;
+MCAPI int const& MajorVersion();
 
-MCAPI extern int const MaxChatLength;
+MCAPI int const& MaxChatLength();
 
-MCAPI extern uint const MinTickingChunksRadius;
+MCAPI uint const& MinTickingChunksRadius();
 
-MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;
+MCAPI class GameVersion const& MinimumCompatibleGameVersionForLevelData();
 
-MCAPI extern int const MinorVersion;
+MCAPI int const& MinorVersion();
 
-MCAPI extern ushort const NetworkDefaultGamePort;
+MCAPI ushort const& NetworkDefaultGamePort();
 
-MCAPI extern ushort const NetworkDefaultGamePortv6;
+MCAPI ushort const& NetworkDefaultGamePortv6();
 
-MCAPI extern int const NetworkDefaultMaxConnections;
+MCAPI int const& NetworkDefaultMaxConnections();
 
-MCAPI extern ushort const NetworkEphemeralPort;
+MCAPI ushort const& NetworkEphemeralPort();
 
-MCAPI extern int const NetworkMaxPlayerCount;
+MCAPI int const& NetworkMaxPlayerCount();
 
-MCAPI extern int const NetworkProtocolVersion;
+MCAPI int const& NetworkProtocolVersion();
 
-MCAPI extern int const PatchVersion;
+MCAPI int const& PatchVersion();
 
-MCAPI extern int const RevisionVersion;
+MCAPI int const& RevisionVersion();
 
-MCAPI extern int const StoreVersion;
+MCAPI int const& StoreVersion();
 // NOLINTEND
 
 }; // namespace SharedConstants

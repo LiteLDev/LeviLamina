@@ -54,6 +54,24 @@ public:
     MCAPI void _handleResult(long);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void
+    addOnComplete$(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);
+
+    MCAPI void cancel$();
+
+    MCAPI std::error_code getError$() const;
+
+    MCAPI struct XAsyncBlock* getResult$() const;
+
+    MCAPI ::Bedrock::Threading::AsyncStatus getStatus$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading::AsyncResult

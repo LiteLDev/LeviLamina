@@ -21,11 +21,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
     MCAPI static std::vector<
-        std::pair<::BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>
-        mCustomBlockEntityCreation;
+        std::pair<::BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>&
+    mCustomBlockEntityCreation();
 
     // NOLINTEND
 };

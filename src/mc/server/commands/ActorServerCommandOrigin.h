@@ -46,4 +46,21 @@ public:
     MCAPI void setTargetOther(struct ActorUniqueID targetOther);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    // NOLINTEND
 };

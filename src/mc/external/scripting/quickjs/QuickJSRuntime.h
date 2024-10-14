@@ -169,6 +169,96 @@ public:
     _moduleNameNormalizer(struct JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Scripting::ResultAny call$(
+        struct Scripting::ContextId                                        contextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::ClosureType> closureHandle,
+        entt::meta_any*                                                    args,
+        uint                                                               argc,
+        entt::meta_type const&                                             expectedReturnType,
+        std::optional<::Scripting::Privilege>                              privilege
+    );
+
+    MCAPI struct Scripting::RuntimeStats computeRuntimeStats$() const;
+
+    MCAPI std::optional<class Scripting::ScriptContext> createContext$(
+        struct Scripting::ModuleBindingBundle&& bindings,
+        class Scripting::IDependencyLoader*     loader,
+        class Scripting::IPrinter*              printer,
+        struct Scripting::ContextConfig const&  config
+    );
+
+    MCAPI void destroyContext$(struct Scripting::ContextId contextId);
+
+    MCAPI void disableDebugger$();
+
+    MCAPI void disableWatchdog$();
+
+    MCAPI class Scripting::IDebuggerController* enableDebugger$(class Scripting::IDebuggerTransport& transport);
+
+    MCAPI class Scripting::IWatchdog* enableWatchdog$(struct Scripting::WatchdogSettings settings);
+
+    MCAPI class Scripting::Result<struct Scripting::CoRoutineResult>
+    executeCoroutines$(std::optional<std::chrono::microseconds> timeSlice);
+
+    MCAPI class Scripting::ResultAny getFutureResult$(
+        struct Scripting::ContextId                                       contextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::FutureType> futureHandle,
+        entt::meta_type const&                                            expectedResultType
+    ) const;
+
+    MCAPI ::Scripting::FutureStatus getFutureStatus$(
+        struct Scripting::ContextId                                       contextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::FutureType> futureHandle
+    ) const;
+
+    MCAPI std::optional<struct Scripting::TypeNameInfo>
+    getNameForType$(struct Scripting::ContextId contextId, entt::meta_type const& type, bool allowUnknownTypes) const;
+
+    MCAPI class Scripting::IWatchdog* getWatchdog$() const;
+
+    MCAPI bool hasPendingJobs$();
+
+    MCAPI class Scripting::ResultAny reject$(
+        struct Scripting::ContextId                                        contextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::PromiseType> promise,
+        entt::meta_any&                                                    arg
+    );
+
+    MCAPI class Scripting::ResultAny resolve$(
+        struct Scripting::ContextId                                        contextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::PromiseType> promise,
+        entt::meta_any&                                                    arg
+    );
+
+    MCAPI class Scripting::ResultAny run$(
+        struct Scripting::ContextId           contextId,
+        class Scripting::IPayload*            payload,
+        std::optional<::Scripting::Privilege> privilege
+    );
+
+    MCAPI class Scripting::ResultAny runString$(
+        struct Scripting::ContextId           contextId,
+        std::string const&                    scriptName,
+        std::string const&                    scriptData,
+        std::optional<::Scripting::Privilege> privilege
+    );
+
+    MCAPI void startProfiler$();
+
+    MCAPI void stopProfiler$(std::string const& savePath);
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

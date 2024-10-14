@@ -54,4 +54,29 @@ public:
     deserialize(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+
+    MCAPI std::string const& getFullName$() const;
+
+    MCAPI uint64 getHash$() const;
+
+    MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+
+    MCAPI ::ItemDescriptor::InternalType getType$() const;
+
+    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
+
+    MCAPI std::optional<class CompoundTag> save$() const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
+
+    MCAPI std::map<std::string, std::string> toMap$() const;
+
+    // NOLINTEND
 };

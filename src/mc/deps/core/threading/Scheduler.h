@@ -34,7 +34,19 @@ public:
 
     MCAPI void setTargetFPS(uint FPS);
 
-    MCAPI static float const AVERAGE_TASK_TOLERANCE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static float const& AVERAGE_TASK_TOLERANCE();
 
     // NOLINTEND
 };

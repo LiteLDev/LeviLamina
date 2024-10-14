@@ -79,9 +79,54 @@ public:
 
     MCAPI WolfArmorItem(std::string const& nameId, short id, struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::vector<::ActorDamageCause> const ABSORBABLE_DAMAGE_CAUSES;
+    // NOLINTEND
 
-    MCAPI static std::vector<int> const CRACKS_THRESHOLDS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& item,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI void clearColor$(class ItemStackBase& item) const;
+
+    MCAPI int getAnimationFrameFor$(class Mob*, bool, class ItemStack const* item, bool) const;
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getBreakSound$() const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+
+    MCAPI bool hasCustomColor$(class ItemStackBase const& item) const;
+
+    MCAPI bool hasCustomColor$(class CompoundTag const* userData) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool
+    isValidRepairItem$(class ItemStackBase const&, class ItemStackBase const& repairItem, class BaseGameVersion const&)
+        const;
+
+    MCAPI void setColor$(class ItemStackBase& item, class mce::Color const& color) const;
+
+    MCAPI static std::vector<::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
+
+    MCAPI static std::vector<int> const& CRACKS_THRESHOLDS();
 
     // NOLINTEND
 };

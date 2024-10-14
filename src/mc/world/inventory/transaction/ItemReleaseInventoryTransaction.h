@@ -39,4 +39,21 @@ public:
     virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+
+    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError error) const;
+
+    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void write$(class BinaryStream& stream) const;
+
+    // NOLINTEND
 };

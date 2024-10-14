@@ -60,9 +60,17 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<int, std::string> const JOINT_TYPE_TO_NAME;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_map<int, std::string> const& JOINT_TYPE_TO_NAME();
 
     // NOLINTEND
 };

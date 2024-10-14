@@ -76,6 +76,35 @@ public:
     MCAPI void _sendNextEvent(std::unordered_map<std::string, std::deque<class Social::Events::Event>>& queueToSend);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool _checkAgainstEventAllowlist$(class Social::Events::Event const& event) const;
+
+    MCAPI void _flushEventQueue$();
+
+    MCAPI bool _isListenerReadyForEvents$() const;
+
+    MCAPI void recordEvent$(
+        class Social::Events::Event const&                       event,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform
+    );
+
+    MCAPI void sendEvents$(bool forceSend);
+
+    MCAPI void stopDebugEventLogging$();
+
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

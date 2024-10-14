@@ -25,4 +25,17 @@ public:
     virtual uint64 numBytesLeft() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI uint64 numBytesLeft$() const;
+
+    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+
+    // NOLINTEND
 };

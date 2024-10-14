@@ -24,4 +24,17 @@ public:
     virtual std::unordered_map<int, std::string> const& getEventErrorMessageMap() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::unordered_map<int, std::string> const& getEventErrorMessageMap$() const;
+
+    MCAPI std::unordered_map<int, std::string> const& getLocErrorMessageMap$() const;
+
+    // NOLINTEND
 };

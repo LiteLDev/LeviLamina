@@ -95,6 +95,31 @@ public:
         virtual ~BaseDescriptor();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        MCAPI bool forEachItemUntil$(std::function<bool(class Item const&, short)> func) const;
+
+        MCAPI std::string const& getFullName$() const;
+
+        MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+
+        MCAPI bool isValid$() const;
+
+        MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve$() const;
+
+        MCAPI bool sameItems$(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+
+        MCAPI void serialize$(class Json::Value& val) const;
+
+        MCAPI bool shouldResolve$() const;
+
+        // NOLINTEND
     };
 
 public:
@@ -179,6 +204,24 @@ public:
     MCAPI void _resolve() const;
 
     MCAPI static struct Puv::Legacy::ItemDescriptor toPuv(class ItemDescriptor const& id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void serialize$(class Json::Value& val) const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

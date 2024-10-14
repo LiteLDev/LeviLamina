@@ -21,9 +21,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<::ActorType, ::Puv::Legacy::LevelSoundEvent> const imitateMobMap;
+    MCAPI static std::unordered_map<::ActorType, ::Puv::Legacy::LevelSoundEvent> const& imitateMobMap();
 
     // NOLINTEND
 };

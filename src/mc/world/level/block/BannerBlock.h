@@ -64,15 +64,48 @@ public:
 
     MCAPI static class ItemInstance itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*> banner);
 
-    MCAPI static class AABB EAST_AABB;
+    // NOLINTEND
 
-    MCAPI static class AABB NORTH_AABB;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static class AABB SOUTH_AABB;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class AABB STANDING_AABB;
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
 
-    MCAPI static class AABB WEST_AABB;
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB&) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static class AABB& EAST_AABB();
+
+    MCAPI static class AABB& NORTH_AABB();
+
+    MCAPI static class AABB& SOUTH_AABB();
+
+    MCAPI static class AABB& STANDING_AABB();
+
+    MCAPI static class AABB& WEST_AABB();
 
     // NOLINTEND
 };

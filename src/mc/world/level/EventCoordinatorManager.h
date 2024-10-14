@@ -50,4 +50,28 @@ public:
     MCAPI static class OwnerPtr<class EventCoordinatorManager> createEventCoordinatorManager(bool isClientSide);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator$();
+
+    MCAPI class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator$();
+
+    MCAPI class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator$();
+
+    // NOLINTEND
 };

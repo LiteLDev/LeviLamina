@@ -63,7 +63,29 @@ public:
 
     MCAPI void setLinger(bool linger);
 
-    MCAPI static float const SPLASH_RANGE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI class HashedString const& queryEntityRenderer$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void setAuxValue$(int aux);
+
+    MCAPI static float const& SPLASH_RANGE();
 
     // NOLINTEND
 };

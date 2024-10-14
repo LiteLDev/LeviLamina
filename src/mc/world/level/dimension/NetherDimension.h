@@ -59,4 +59,56 @@ public:
     MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForIDimension();
+
+    MCAPI static void** $vftableForLevelListener();
+
+    MCAPI static void** $vftableForSavedData();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _upgradeOldLimboEntity$(class CompoundTag& tag, ::LimboEntitiesVersion vers);
+
+    MCAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility$(
+        std::unique_ptr<class ChunkSource> storageSource,
+        ::StorageVersion                   levelVersion
+    );
+
+    MCAPI std::unique_ptr<class WorldGenerator>
+          createGenerator$(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI void fixWallChunk$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI bool forceCheckAllNeighChunkSavedStat$() const;
+
+    MCAPI class HashedString getDefaultBiome$() const;
+
+    MCAPI float getTimeOfDay$(int time, float a) const;
+
+    MCAPI void init$(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI bool isNaturalDimension$() const;
+
+    MCAPI bool isValidSpawn$(int x, int z) const;
+
+    MCAPI bool levelChunkNeedsUpgrade$(class LevelChunk const& lc) const;
+
+    MCAPI bool mayRespawnViaBed$() const;
+
+    MCAPI bool showSky$() const;
+
+    MCAPI class Vec3 translatePosAcrossDimension$(class Vec3 const& originalPos, DimensionType fromId) const;
+
+    MCAPI void upgradeLevelChunk$(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
+
+    // NOLINTEND
 };

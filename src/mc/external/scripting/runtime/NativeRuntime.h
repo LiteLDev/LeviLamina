@@ -129,6 +129,70 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Scripting::ResultAny
+    call$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any*, uint, entt::meta_type const&, std::optional<::Scripting::Privilege>);
+
+    MCAPI struct Scripting::RuntimeStats computeRuntimeStats$() const;
+
+    MCAPI std::optional<class Scripting::ScriptContext>
+    createContext$(struct Scripting::ModuleBindingBundle&& bindings, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter* printer, struct Scripting::ContextConfig const&);
+
+    MCAPI void destroyContext$(struct Scripting::ContextId contextId);
+
+    MCAPI void disableDebugger$();
+
+    MCAPI void disableWatchdog$();
+
+    MCAPI class Scripting::IDebuggerController* enableDebugger$(class Scripting::IDebuggerTransport&);
+
+    MCAPI class Scripting::IWatchdog* enableWatchdog$(struct Scripting::WatchdogSettings);
+
+    MCAPI class Scripting::Result<struct Scripting::CoRoutineResult>
+        executeCoroutines$(std::optional<std::chrono::microseconds>);
+
+    MCAPI class Scripting::ResultAny
+    getFutureResult$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>, entt::meta_type const&)
+        const;
+
+    MCAPI ::Scripting::FutureStatus
+        getFutureStatus$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>)
+            const;
+
+    MCAPI std::optional<struct Scripting::TypeNameInfo>
+          getNameForType$(struct Scripting::ContextId, entt::meta_type const&, bool) const;
+
+    MCAPI class Scripting::IWatchdog* getWatchdog$() const;
+
+    MCAPI bool hasPendingJobs$();
+
+    MCAPI class Scripting::ResultAny
+    reject$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+
+    MCAPI class Scripting::ResultAny
+    resolve$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+
+    MCAPI class Scripting::ResultAny run$(
+        struct Scripting::ContextId           contextId,
+        class Scripting::IPayload*            payload,
+        std::optional<::Scripting::Privilege> privilege
+    );
+
+    MCAPI void startProfiler$();
+
+    MCAPI void stopProfiler$(std::string const&);
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

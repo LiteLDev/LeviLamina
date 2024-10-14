@@ -34,4 +34,21 @@ public:
     virtual void setOutputSignal(int value);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI int getOutputSignal$();
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void setOutputSignal$(int value);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    // NOLINTEND
 };

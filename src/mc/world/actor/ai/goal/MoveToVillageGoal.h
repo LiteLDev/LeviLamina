@@ -51,4 +51,32 @@ public:
     MCAPI std::shared_ptr<class Village> _tryGetCurrentVillage();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI class BlockPos _selectRandomPosInVillage$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void start$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

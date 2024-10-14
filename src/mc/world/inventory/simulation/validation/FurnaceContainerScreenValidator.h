@@ -24,4 +24,21 @@ public:
     MCAPI FurnaceContainerScreenValidator();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class ContainerValidationCommitObject>
+          postCommitItemRemoved$(::ContainerEnumName containerEnumName, int slot, class ItemStack const& item);
+
+    // NOLINTEND
 };

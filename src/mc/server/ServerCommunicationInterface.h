@@ -41,4 +41,11 @@ public:
     MCAPI void communicate(std::string const& method, class Json::Value const& params);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

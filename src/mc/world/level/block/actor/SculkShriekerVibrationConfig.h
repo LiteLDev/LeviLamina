@@ -42,4 +42,30 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource& region);
+
+    MCAPI void onSignalReceive$(
+        class BlockSource& region,
+        class BlockPos const&,
+        class GameEvent const&,
+        class Actor* source,
+        float,
+        uint,
+        class Actor* projectileOwner
+    );
+
+    MCAPI bool
+    shouldListen$(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
+
+    // NOLINTEND
 };

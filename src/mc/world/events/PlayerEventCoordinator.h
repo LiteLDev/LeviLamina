@@ -62,4 +62,11 @@ public:
     MCAPI void sendPlayerTick(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

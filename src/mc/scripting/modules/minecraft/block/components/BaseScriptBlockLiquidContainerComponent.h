@@ -52,6 +52,17 @@ public:
     _getActualCauldronLiquidType(class BlockSource& region, class BlockPos position);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool _isValid$() const;
+
+    MCAPI class Scripting::Result<void> setFillLevel$(int level);
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

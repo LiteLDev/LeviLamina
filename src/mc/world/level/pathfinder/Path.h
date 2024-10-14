@@ -76,4 +76,16 @@ public:
     MCAPI void buildFromNodes(std::vector<class Path::Node>&& nodeArray, ::PathCompletionType completionType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

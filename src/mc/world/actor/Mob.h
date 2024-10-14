@@ -469,40 +469,6 @@ public:
 
     MCAPI static class Mob* tryGetFromEntity(class EntityContext& entity, bool);
 
-    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
-
-    MCAPI static float const ARMOR_PROTECTION_DIVIDER;
-
-    MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
-
-    MCAPI static float const BASE_ARMOR_TOUGHNESS;
-
-    MCAPI static float const DEFAULT_GRAVITY;
-
-    MCAPI static float const FRICTION_CONSTANT;
-
-    MCAPI static float const FRICTION_CONSTANT_MODIFIED;
-
-    MCAPI static float const FRICTION_MODIFIER;
-
-    MCAPI static float const GLIDING_FALL_RESET_DELTA;
-
-    MCAPI static float const LADDER_CLIMB_SPEED;
-
-    MCAPI static float const MAX_ARMOR;
-
-    MCAPI static float const MIN_ARMOR_RATIO;
-
-    MCAPI static float const NUM_ARMOR_ITEMS;
-
-    MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
-
-    MCAPI static int const REMOVE_PASSENGERS_DELAY;
-
-    MCAPI static float const SLOW_FALL_GRAVITY;
-
-    MCAPI static int const SPAWN_XP_DELAY;
-
     // NOLINTEND
 
     // protected:
@@ -553,9 +519,231 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_INACTIVITY_TIMER;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void _doInitialMove$();
+
+    MCAPI class AABB _getAdjustedAABBForSpawnCheck$(class AABB const& aabb, class Vec3 const&) const;
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const&);
+
+    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool);
+
+    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& entityTag) const;
+
+    MCAPI void addPassenger$(class Actor& newPassenger);
+
+    MCAPI void aiStep$();
+
+    MCAPI bool attack$(class Actor& target, ::ActorDamageCause const& cause);
+
+    MCAPI void baseTick$();
+
+    MCAPI void blockedByShield$(class ActorDamageSource const& source, class Actor& blocker);
+
+    MCAPI void buildDebugInfo$(std::string& out) const;
+
+    MCAPI bool canBePulledIntoVehicle$() const;
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI bool canExistWhenDisallowMob$() const;
+
+    MCAPI bool canFreeze$() const;
+
+    MCAPI bool canPowerJump$() const;
+
+    MCAPI float causeFallDamageToActor$(float distance, float multiplier, class ActorDamageSource source);
+
+    MCAPI bool checkSpawnObstruction$() const;
+
+    MCAPI bool checkSpawnRules$(bool);
+
+    MCAPI void clearVanishEnchantedItemsOnDeath$();
+
+    MCAPI bool createAIGoals$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI bool doFireHurt$(int amount);
+
+    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+
+    MCAPI void dropEquipmentOnDeath$(class ActorDamageSource const& source);
+
+    MCAPI void dropEquipmentOnDeath$();
+
+    MCAPI std::vector<class ItemStack const*> getAllEquipment$() const;
+
+    MCAPI std::vector<class ItemStack const*> getAllHand$() const;
+
+    MCAPI float getArmorColorInSlot$(::ArmorSlot slot, int channelRGBA) const;
+
+    MCAPI ::ArmorMaterialType getArmorMaterialTypeInSlot$(::ArmorSlot slot) const;
+
+    MCAPI int getArmorTextureIndexInSlot$(::ArmorSlot slot) const;
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI ::ActorDamageCause getBlockDamageCause$(class Block const& block) const;
+
+    MCAPI float getDamageAfterEnchantReduction$(class ActorDamageSource const& source, float damage) const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getDeathSound$();
+
+    MCAPI int getDeathTime$() const;
+
+    MCAPI float getInterpolatedBodyRot$(float a) const;
+
+    MCAPI float getInterpolatedBodyYaw$(float a) const;
+
+    MCAPI float getInterpolatedHeadRot$(float a) const;
+
+    MCAPI int getItemUseDuration$() const;
+
+    MCAPI float getItemUseIntervalProgress$() const;
+
+    MCAPI float getItemUseStartupProgress$() const;
+
+    MCAPI float getMaxHeadXRot$();
+
+    MCAPI float getSpeed$() const;
+
+    MCAPI float getYawSpeedInDegreesPerSecond$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI bool hasComponent$(class HashedString const& name) const;
+
+    MCAPI void hurtArmorSlots$(class ActorDamageSource const& source, int dmg, std::bitset<4> hurtSlots);
+
+    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool inCaravan$() const;
+
+    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isAlive$() const;
+
+    MCAPI bool isAlliedTo$(class Mob*);
+
+    MCAPI bool isBlocking$() const;
+
+    MCAPI bool isImmobile$() const;
+
+    MCAPI bool isSleeping$() const;
+
+    MCAPI bool isSurfaceMob$() const;
+
+    MCAPI void kill$();
+
+    MCAPI void
+    knockback$(class Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
+
+    MCAPI void newServerAiStep$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void onBorn$(class Actor&, class Actor&);
+
+    MCAPI void outOfWorld$();
+
+    MCAPI void pushActors$();
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void renderDebugServerState$(class Options const& options);
+
+    MCAPI void sendArmor$(std::bitset<4> armorSlots);
+
+    MCAPI void sendArmorDamage$(std::bitset<4>);
+
+    MCAPI void sendInventory$(bool);
+
+    MCAPI void setDamagedArmor$(::ArmorSlot slot, class ItemStack const& item);
+
+    MCAPI void setEquippedSlot$(::Puv::Legacy::EquipmentSlot slot, class ItemStack const& item);
+
+    MCAPI bool setItemSlot$(::Puv::Legacy::EquipmentSlot slot, class ItemStack const& item);
+
+    MCAPI void setSleeping$(bool val);
+
+    MCAPI void setSpeed$(float speed);
+
+    MCAPI void setSprinting$(bool shouldSprint);
+
+    MCAPI void setTarget$(class Actor* target);
+
+    MCAPI void setTransitioningSitting$(bool value);
+
+    MCAPI bool shouldDropDeathLoot$() const;
+
+    MCAPI void spawnAnim$();
+
+    MCAPI bool startRiding$(class Actor& vehicle);
+
+    MCAPI void swing$();
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    MCAPI void tickDeath$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    MCAPI static int const& ARMOR_DAMAGE_DIVISOR();
+
+    MCAPI static float const& ARMOR_PROTECTION_DIVIDER();
+
+    MCAPI static float const& ASCEND_BLOCK_BY_JUMPING_SPEED();
+
+    MCAPI static float const& BASE_ARMOR_TOUGHNESS();
+
+    MCAPI static float const& DEFAULT_GRAVITY();
+
+    MCAPI static float const& FRICTION_CONSTANT();
+
+    MCAPI static float const& FRICTION_CONSTANT_MODIFIED();
+
+    MCAPI static float const& FRICTION_MODIFIER();
+
+    MCAPI static float const& GLIDING_FALL_RESET_DELTA();
+
+    MCAPI static float const& LADDER_CLIMB_SPEED();
+
+    MCAPI static float const& MAX_ARMOR();
+
+    MCAPI static int const& MAX_INACTIVITY_TIMER();
+
+    MCAPI static float const& MIN_ARMOR_RATIO();
+
+    MCAPI static float const& NUM_ARMOR_ITEMS();
+
+    MCAPI static float const& PLAYER_SWIMMING_SURFACE_OFFSET();
+
+    MCAPI static int const& REMOVE_PASSENGERS_DELAY();
+
+    MCAPI static float const& SLOW_FALL_GRAVITY();
+
+    MCAPI static int const& SPAWN_XP_DELAY();
 
     // NOLINTEND
 };

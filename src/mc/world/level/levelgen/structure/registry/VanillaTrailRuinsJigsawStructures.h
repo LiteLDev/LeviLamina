@@ -14,7 +14,12 @@ public:
     MCAPI static void
     initialize(struct StructureTemplateRegistrationContext& context, class JigsawStructureRegistry& registry);
 
-    MCAPI static std::string_view const START;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string_view const& START();
 
     // NOLINTEND
 };

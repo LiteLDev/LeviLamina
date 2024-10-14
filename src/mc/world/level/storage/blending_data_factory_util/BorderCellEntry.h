@@ -16,6 +16,13 @@ public:
     MCAPI ~BorderCellEntry();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace BlendingDataFactoryUtil

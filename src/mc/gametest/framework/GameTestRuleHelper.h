@@ -26,6 +26,19 @@ public:
     virtual void restoreRules();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void addRuleToClear$(int ruleID);
+
+    MCAPI void clearRules$();
+
+    MCAPI void restoreRules$();
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

@@ -21,9 +21,21 @@ public:
 
     MCAPI ~EducationMetadata();
 
-    MCAPI static std::unordered_map<std::string, ::EducationMetadata::ContentType> const STRING_TO_CONTENT_TYPE;
+    // NOLINTEND
 
-    MCAPI static std::unordered_map<std::string, ::EducationMetadata::UserType> const STRING_TO_USER_TYPE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_map<std::string, ::EducationMetadata::ContentType> const& STRING_TO_CONTENT_TYPE();
+
+    MCAPI static std::unordered_map<std::string, ::EducationMetadata::UserType> const& STRING_TO_USER_TYPE();
 
     // NOLINTEND
 };

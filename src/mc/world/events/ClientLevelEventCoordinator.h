@@ -18,4 +18,11 @@ public:
     virtual ~ClientLevelEventCoordinator() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

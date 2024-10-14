@@ -54,13 +54,23 @@ public:
 
     MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static class BlockPos const MAX;
+    // NOLINTEND
 
-    MCAPI static class BlockPos const MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class BlockPos const ONE;
+    MCAPI static class BlockPos const& MAX();
 
-    MCAPI static class BlockPos const ZERO;
+    MCAPI static class BlockPos const& MIN();
+
+    MCAPI static class BlockPos const& ONE();
+
+    MCAPI static class BlockPos const& ZERO();
 
     // NOLINTEND
 };

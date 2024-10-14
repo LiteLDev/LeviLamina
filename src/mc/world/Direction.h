@@ -27,25 +27,30 @@ public:
 
     MCAPI static ::Direction::Type rotateDirection(::Direction::Type direction, ::Rotation rotation);
 
-    MCAPI static ::Direction::Type const DIRECTION_CLOCKWISE[];
+    // NOLINTEND
 
-    MCAPI static ::Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_CLOCKWISE();
 
-    MCAPI static std::array<uchar, 4> const DIRECTION_FACING;
+    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_COUNTER_CLOCKWISE();
 
-    MCAPI static ::Direction::Type const DIRECTION_OPPOSITE[];
+    MCAPI static std::array<uchar, 4> const& DIRECTION_FACING();
 
-    MCAPI static ::Direction::Type const FACING_DIRECTION[];
+    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_OPPOSITE();
 
-    MCAPI static std::unordered_map<std::string, ::Direction::Type> const FROM_STRING_MAP;
+    MCAPI static ::ll::CArrayT<::Direction::Type const>& FACING_DIRECTION();
 
-    MCAPI static int const STEP_X[];
+    MCAPI static std::unordered_map<std::string, ::Direction::Type> const& FROM_STRING_MAP();
 
-    MCAPI static int const STEP_Z[];
+    MCAPI static ::ll::CArrayT<int const>& STEP_X();
 
-    MCAPI static std::array<std::string, 4> const TO_STRING_ARRAY;
+    MCAPI static ::ll::CArrayT<int const>& STEP_Z();
 
-    MCAPI static std::unordered_map<uint, std::string> const TO_STRING_MAP;
+    MCAPI static std::array<std::string, 4> const& TO_STRING_ARRAY();
+
+    MCAPI static std::unordered_map<uint, std::string> const& TO_STRING_MAP();
 
     // NOLINTEND
 };

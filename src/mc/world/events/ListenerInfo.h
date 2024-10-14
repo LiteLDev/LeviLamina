@@ -9,9 +9,10 @@ public:
     ListenerInfo(ListenerInfo const&);
     ListenerInfo();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const SQRT_FLT_MAX;
+    MCAPI static float const& SQRT_FLT_MAX();
 
     // NOLINTEND
 };

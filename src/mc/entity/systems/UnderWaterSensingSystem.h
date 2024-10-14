@@ -123,4 +123,76 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct HorseFlag>,
+                class FlagComponent<struct MobFlag>,
+                class FlagComponent<struct ParrotFlag>,
+                struct VehicleComponent,
+                class FlagComponent<struct CamelFlag>,
+                class FlagComponent<struct PlayerComponentFlag>>,
+            struct Read<
+                struct DimensionTypeComponent,
+                struct StateVectorComponent,
+                struct UpdateWaterStateRequestComponent,
+                struct ActorRotationComponent,
+                struct MobBodyRotationComponent,
+                struct PassengerComponent,
+                struct RenderRotationComponent,
+                struct StandAnimationComponent,
+                struct ActorDataFlagComponent,
+                struct AABBShapeComponent,
+                struct OffsetsComponent,
+                struct VanillaOffsetComponent,
+                struct PassengerRenderingRidingOffsetComponent>,
+            struct Write<>,
+            struct AddRemove<
+                class FlagComponent<struct ActorHeadInWaterFlag>,
+                class FlagComponent<struct ActorHeadWasInWaterFlag>>,
+            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& context,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct HorseFlag>,
+                         class FlagComponent<struct MobFlag>,
+                         class FlagComponent<struct ParrotFlag>,
+                         struct VehicleComponent,
+                         class FlagComponent<struct CamelFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>>,
+                     struct Read<
+                         struct DimensionTypeComponent,
+                         struct StateVectorComponent,
+                         struct UpdateWaterStateRequestComponent,
+                         struct ActorRotationComponent,
+                         struct MobBodyRotationComponent,
+                         struct PassengerComponent,
+                         struct RenderRotationComponent,
+                         struct StandAnimationComponent,
+                         struct ActorDataFlagComponent,
+                         struct AABBShapeComponent,
+                         struct OffsetsComponent,
+                         struct VanillaOffsetComponent,
+                         struct PassengerRenderingRidingOffsetComponent>,
+                     struct Write<>,
+                     struct AddRemove<
+                         class FlagComponent<struct ActorHeadInWaterFlag>,
+                         class FlagComponent<struct ActorHeadWasInWaterFlag>>,
+                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };

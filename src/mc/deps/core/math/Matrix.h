@@ -17,7 +17,17 @@ public:
 
     MCAPI void translate(glm::vec3 const&);
 
-    MCAPI static class Matrix const IDENTITY;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class Matrix const& IDENTITY();
 
     // NOLINTEND
 };

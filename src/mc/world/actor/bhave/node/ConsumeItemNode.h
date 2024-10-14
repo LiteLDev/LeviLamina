@@ -22,4 +22,13 @@ public:
     virtual ::BehaviorStatus tick(class Actor& owner);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::BehaviorStatus tick$(class Actor& owner);
+
+    // NOLINTEND
 };

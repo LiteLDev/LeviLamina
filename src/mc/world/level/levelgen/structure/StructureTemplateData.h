@@ -30,8 +30,6 @@ public:
 
     MCAPI void setExtraBlockIndices(std::vector<int> extraBlockIndices);
 
-    MCAPI static std::string const DEFAULT_PALETTE_NAME;
-
     // NOLINTEND
 
     // protected:
@@ -57,6 +55,22 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _contentErrorMissingField(std::string const& tagName) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DEFAULT_PALETTE_NAME();
 
     // NOLINTEND
 };

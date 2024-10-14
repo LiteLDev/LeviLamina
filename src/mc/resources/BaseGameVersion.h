@@ -52,11 +52,23 @@ public:
 
     MCAPI static ::SemVersion::MatchType fromString(std::string const& source, class BaseGameVersion& output);
 
-    MCAPI static class BaseGameVersion const ANY;
+    // NOLINTEND
 
-    MCAPI static class BaseGameVersion const EMPTY;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static class BaseGameVersion const INCOMPATIBLE;
+    MCAPI void dtor$();
+
+    MCAPI static class BaseGameVersion const& ANY();
+
+    MCAPI static class BaseGameVersion const& EMPTY();
+
+    MCAPI static class BaseGameVersion const& INCOMPATIBLE();
 
     // NOLINTEND
 };

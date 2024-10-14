@@ -92,4 +92,24 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct ActorAddEffectEvent& actorEffectAddedEvent);
+
+    MCAPI ::HandlerResult handleEvent$(struct ActorGameplayEvent<void> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct ActorGameplayEvent<::CoordinatorResult> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableActorGameplayEvent<::CoordinatorResult>& event);
+
+    MCAPI ::HandlerResult handleEvent$(struct ActorRemovedEvent const& actorRemovedEvent);
+
+    // NOLINTEND
 };

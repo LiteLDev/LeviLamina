@@ -48,4 +48,38 @@ public:
     MCAPI explicit PillagerOutpostFeature(uint seed);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::unique_ptr<class StructureStart>
+    createStructureStart$(class Dimension& generator, class BiomeSource const&, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry& spawnAreas);
+
+    MCAPI bool
+    isFeatureChunk$(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& lc, uint levelSeed, class IPreliminarySurfaceProvider const& preliminarySurfaceLevel, class Dimension const&);
+
+    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
+
+    MCAPI bool shouldPostProcessMobs$() const;
+
+    // NOLINTEND
 };

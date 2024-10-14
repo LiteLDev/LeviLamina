@@ -48,6 +48,34 @@ public:
     MCAPI AppIsland();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ushort getId$();
+
+    MCAPI void mainUpdate$();
+
+    MCAPI void processActivationArguments$(class Bedrock::ActivationArguments const& args);
+
+    MCAPI bool resume$();
+
+    MCAPI bool start$();
+
+    MCAPI bool stop$();
+
+    MCAPI bool suspend$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

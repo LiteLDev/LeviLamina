@@ -35,4 +35,22 @@ public:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance& serverInstance);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void sendChunkLoadTelemetryData$();
+
+    MCAPI void sendPeriodicMetrics$(class ServerInstance& serverInstance);
+
+    MCAPI void sendServerTickTime$(std::chrono::nanoseconds const& timepoint);
+
+    // NOLINTEND
 };

@@ -30,6 +30,15 @@ public:
     virtual Bedrock::NotNullNonOwnerPtr<class WorkerPool> get() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class WorkerPool> get$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

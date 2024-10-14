@@ -30,4 +30,22 @@ public:
     MCAPI RiseToLiquidLevelGoal(class Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

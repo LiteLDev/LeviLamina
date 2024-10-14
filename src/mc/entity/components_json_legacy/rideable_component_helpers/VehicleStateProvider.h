@@ -38,6 +38,20 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canAddPassenger$(
+        std::vector<struct StrictActorIDEntityContextPair> const& vehiclePassengers,
+        struct RideableComponentData const&                       vehicleData,
+        class RideableComponentHelpers::IRideableActor const&     vehicleActor,
+        class RideableComponentHelpers::IRideableActor const&     passengerActor
+    ) const;
+
+    // NOLINTEND
 };
 
 }; // namespace RideableComponentHelpers

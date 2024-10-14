@@ -16,4 +16,11 @@ public:
     MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    // NOLINTEND
 };

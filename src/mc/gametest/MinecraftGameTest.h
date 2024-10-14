@@ -74,4 +74,20 @@ public:
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const& testFunction);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void onLevelDestruction$(std::string const&);
+
+    // NOLINTEND
 };

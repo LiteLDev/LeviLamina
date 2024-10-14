@@ -99,9 +99,39 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const LIFETIME;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool _hurt$(class ActorDamageSource const&, float damage, bool, bool);
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& entityTag) const;
+
+    MCAPI bool canSynchronizeNewEntity$() const;
+
+    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
+
+    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+
+    MCAPI bool isFireImmune$() const;
+
+    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+
+    MCAPI void playerTouch$(class Player& player);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket$();
+
+    MCAPI static int const& LIFETIME();
 
     // NOLINTEND
 };

@@ -20,4 +20,11 @@ public:
     MCAPI int getRandomTickDelay(class Random& random) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

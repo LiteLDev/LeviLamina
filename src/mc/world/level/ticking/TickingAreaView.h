@@ -62,4 +62,37 @@ public:
     _tickChunk(struct Tick const& currentTick, class BlockSource& region, class Level& level, class ChunkPos const& cp);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool checkInitialLoadDone$(struct Tick currentLevelTick);
+
+    MCAPI bool checkLoadedChunkNeighborsDone$(class BlockSource const& region, bool useDoneLoading) const;
+
+    MCAPI std::unique_ptr<class ChunkViewSource> createChildSource$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getAvailableChunk$(class ChunkPos const& cp);
+
+    MCAPI struct Bounds const& getBounds$() const;
+
+    MCAPI DimensionType getDimensionId$() const;
+
+    MCAPI void init$(struct Bounds const& bounds, bool isCircle);
+
+    MCAPI bool isCircle$() const;
+
+    MCAPI bool isDoneLoading$() const;
+
+    MCAPI void move$(struct Bounds const& bounds);
+
+    MCAPI void tick$(struct Tick const& currentTick, class BlockSource& region, bool preload, bool randomize);
+
+    MCAPI void tickSeasons$(class BlockSource& region, class Random& random);
+
+    // NOLINTEND
 };

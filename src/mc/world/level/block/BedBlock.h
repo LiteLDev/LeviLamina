@@ -111,15 +111,73 @@ public:
 
     MCAPI static void setOccupied(class BlockSource& region, class BlockPos const& pos, bool occupied);
 
-    MCAPI static ushort const HEAD_PIECE_DATA;
-
-    MCAPI static ushort const OCCUPIED_DATA;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI static bool _isDangerousSpawnBlock(class Block const& block);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
+
+    MCAPI bool canFillAtPos$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool canSpawnAt$(class BlockSource const& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+
+    MCAPI class mce::Color
+    getMapColor$(class BlockSource& source, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const* getNextBlockPermutation$(class Block const&) const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isBounceBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onFillBlock$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class Block const& sanitizeFillBlock$(class Block const& block) const;
+
+    MCAPI int telemetryVariant$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    updateEntityAfterFallOn$(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    MCAPI static ushort const& HEAD_PIECE_DATA();
+
+    MCAPI static ushort const& OCCUPIED_DATA();
 
     // NOLINTEND
 };

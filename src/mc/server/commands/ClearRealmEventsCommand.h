@@ -24,9 +24,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class DedicatedServer* mServer;
+    MCAPI static void** $vftable();
+
+    MCAPI void execute$(class CommandOrigin const&, class CommandOutput&) const;
+
+    MCAPI static class DedicatedServer*& mServer();
 
     // NOLINTEND
 };

@@ -67,9 +67,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
+    MCAPI static std::array<struct RailMovementUtility::RailExits, 10> const& RAIL_EXITS();
 
     // NOLINTEND
 };

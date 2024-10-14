@@ -44,4 +44,11 @@ public:
         calculateNextStorageCheckTime(std::chrono::steady_clock::time_point);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

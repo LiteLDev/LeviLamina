@@ -24,6 +24,13 @@ public:
         MCAPI ~ScopedPop();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -37,6 +44,13 @@ public:
     MCVAPI bool isSequenceReader() const;
 
     MCAPI struct cereal::SchemaReader::ScopedPop scopedPop();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool isSequenceReader$() const;
 
     // NOLINTEND
 };

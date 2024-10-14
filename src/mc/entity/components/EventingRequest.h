@@ -28,4 +28,11 @@ public:
     addVehiclePositionComparisonFailure(class Vec3 const& clientPos, class Vec3 const& serverPos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

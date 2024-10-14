@@ -14,4 +14,11 @@ public:
     MCAPI ~BlockSet();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

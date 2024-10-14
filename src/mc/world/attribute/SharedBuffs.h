@@ -11,25 +11,30 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<class AttributeBuff> ABSORPTION;
+    // NOLINTEND
 
-    MCAPI static std::shared_ptr<class AttributeBuff> FATAL_POISON;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::shared_ptr<class AttributeBuff>& ABSORPTION();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
+    MCAPI static std::shared_ptr<class AttributeBuff>& FATAL_POISON();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> HARM;
+    MCAPI static std::shared_ptr<class AttributeBuff>& FOOD_POSIONING();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> HEAL;
+    MCAPI static std::shared_ptr<class AttributeBuff>& HARM();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> POISON;
+    MCAPI static std::shared_ptr<class AttributeBuff>& HEAL();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
+    MCAPI static std::shared_ptr<class AttributeBuff>& POISON();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> REGENERATION;
+    MCAPI static std::shared_ptr<class AttributeBuff>& PUFFER_POSIONING();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> SATURATION;
+    MCAPI static std::shared_ptr<class AttributeBuff>& REGENERATION();
 
-    MCAPI static std::shared_ptr<class AttributeBuff> WITHER;
+    MCAPI static std::shared_ptr<class AttributeBuff>& SATURATION();
+
+    MCAPI static std::shared_ptr<class AttributeBuff>& WITHER();
 
     // NOLINTEND
 };

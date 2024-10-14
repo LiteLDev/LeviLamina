@@ -57,13 +57,63 @@ public:
 
     MCAPI AppPlatformWindows();
 
-    MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
-
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIAppPlatform();
+
+    MCAPI static void** $vftableForISecureStorageKeySystem();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Core::PathBuffer<std::string> _getCurrentStoragePath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> _getExternalStoragePath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> _getInternalStoragePath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> _getUserdataPath$() const;
+
+    MCAPI bool allowContentLogWriteToDisk$();
+
+    MCAPI uint64 calculateAvailableDiskFreeSpace$(class Core::Path const&);
+
+    MCAPI bool canAppSelfTerminate$() const;
+
+    MCAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder$(class Core::Path const&);
+
+    MCAPI uint64 getHighPerformanceThreadsCount$() const;
+
+    MCAPI class MPMCQueue<std::function<void()>>& getMainThreadQueue$();
+
+    MCAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath$();
+
+    MCAPI bool getPlatformTTSEnabled$() const;
+
+    MCAPI bool getPlatformTTSExists$() const;
+
+    MCAPI class Core::PathBuffer<std::string> getPlatformTempPath$() const;
+
+    MCAPI uint64 getTotalHardwareThreadsCount$() const;
+
+    MCAPI void queueForMainThread_DEPRECATED$(std::function<void()>);
+
+    MCAPI void registerExperimentsActiveCrashDump$(std::vector<std::string> const&) const;
+
+    MCAPI static std::string const& EXPERIMENTS_ACTIVE_KEY();
 
     // NOLINTEND
 };

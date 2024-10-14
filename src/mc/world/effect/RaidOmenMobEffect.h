@@ -24,4 +24,15 @@ public:
     virtual void onEffectExpired(class Actor& target) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
+
+    MCAPI void onEffectExpired$(class Actor& target) const;
+
+    // NOLINTEND
 };

@@ -117,4 +117,75 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool doRespawnIfReady$(
+        class Player&                 player,
+        class ChangeDimensionRequest& changeRequest,
+        struct AddLimboActorHelper*   addLimboActorHelper
+    );
+
+    MCAPI class Bedrock::PubSub::Connector<void(DimensionType)>&
+    getOnAnyPlayerChangeDimensionPreSuspendRegionConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void()>& getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector$();
+
+    MCAPI void playerDestroyRegion$(class Player& player, class ChangeDimensionRequest const& changeRequest);
+
+    MCAPI void playerDestroyRemotePlayers$(class GameplayUserManager& gameplayUserManager);
+
+    MCAPI void playerPrepareRegion$(
+        class Player&                       player,
+        class ChangeDimensionRequest const& changeRequest,
+        class Dimension const&              toDimension
+    );
+
+    MCAPI void playerSaveLimboActors$(
+        class Player&                  player,
+        class ChangeDimensionRequest&  changeRequest,
+        class Dimension&               toDimension,
+        class PlayerLimboActorManager* playerLimboActorManager
+    );
+
+    MCAPI void playerStartChangeDimensionSuspendRegion$(class Player& player, DimensionType fromDimension);
+
+    MCAPI void playerSwitchDimension$(
+        class Player&                 player,
+        class ChangeDimensionRequest& changeRequest,
+        struct AddLimboActorHelper*   addLimboActorHelper
+    );
+
+    MCAPI bool
+    playerWaitForDimensionTransitionSystem$(class Player const& player, class EntityRegistry& entityRegistry);
+
+    MCAPI bool playerWaitForServer$(class Player& player, std::chrono::steady_clock::time_point currentTime);
+
+    MCAPI void
+    sendClientRespawnMovePacketFromServer$(class Player const& player, class ChangeDimensionRequest& changeRequest);
+
+    MCAPI void setPacketSender$(class PacketSender& packetSender);
+
+    MCAPI void setTransitionLocation$(
+        class Player&                 player,
+        class ChangeDimensionRequest& changeRequest,
+        class Dimension&              toDimension
+    );
+
+    MCAPI void startWaitForRespawn$(class Player const& player);
+
+    MCAPI void
+    syncTransitionComponentTargetPosition$(class Player& player, class ChangeDimensionRequest const& changeRequest);
+
+    MCAPI bool waitForSubChunks$(class Player& player, class Dimension const& toDimension);
+
+    // NOLINTEND
 };

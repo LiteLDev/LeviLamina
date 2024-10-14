@@ -17,7 +17,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SimulationType getSimulationType(class StackRefResult<class PauseManager const> pauseManager);
 
-    MCAPI static ::SimulationType const DEFAULT_SIMULATION_TYPE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static ::SimulationType const& DEFAULT_SIMULATION_TYPE();
 
     // NOLINTEND
 };

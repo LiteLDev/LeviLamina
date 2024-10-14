@@ -13,7 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string const name;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& name();
 
     // NOLINTEND
 };

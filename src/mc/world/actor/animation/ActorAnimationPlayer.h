@@ -50,4 +50,19 @@ public:
     virtual class HashedString const& getRawName() const = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void bindParticleEffects$(std::unordered_map<class HashedString, class HashedString> const&);
+
+    MCAPI void bindSoundEffects$(std::unordered_map<class HashedString, std::string> const&);
+
+    MCAPI void buildBoneToPartMapping$(class AnimationComponent&);
+
+    // NOLINTEND
 };

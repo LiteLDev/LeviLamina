@@ -88,9 +88,21 @@ public:
 
     MCAPI ~StructureSettings();
 
-    MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
+    // NOLINTEND
 
-    MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class BlockPos const& DEFAULT_STRUCTURE_OFFSET();
+
+    MCAPI static class BlockPos const& DEFAULT_STRUCTURE_SIZE();
 
     // NOLINTEND
 };

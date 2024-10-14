@@ -69,6 +69,33 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void _handleDataMarker$(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
+
+        MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
+
+        MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        MCAPI void
+        postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        // NOLINTEND
     };
 
 public:
@@ -99,15 +126,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<std::string_view, 7> MSC_FEATURES;
+    MCAPI static std::array<std::string_view, 7>& MSC_FEATURES();
 
-    MCAPI static std::string_view PILLAGER_LOOT;
+    MCAPI static std::string_view& PILLAGER_LOOT();
 
-    MCAPI static std::string_view STRUCTURE_WATCHTOWER;
+    MCAPI static std::string_view& STRUCTURE_WATCHTOWER();
 
-    MCAPI static std::string_view STRUCTURE_WATCHTOWER_OVERGROWN;
+    MCAPI static std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
 
     // NOLINTEND
 };

@@ -39,4 +39,15 @@ public:
     MCAPI class mce::Color _getRandomDyeColor(class Random& random) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
+
+    // NOLINTEND
 };

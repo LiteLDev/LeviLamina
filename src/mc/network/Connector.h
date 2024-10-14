@@ -104,4 +104,48 @@ public:
     MCAPI explicit Connector(struct Connector::ConnectionCallbacks& callbacks);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener*);
+
+    MCAPI class Social::GameConnectionInfo const& getConnectedGameInfo$() const;
+
+    MCAPI ushort getIPv4Port$() const;
+
+    MCAPI ushort getIPv6Port$() const;
+
+    MCAPI std::string getLocalIp$();
+
+    MCAPI std::vector<std::string> getLocalIps$() const;
+
+    MCAPI struct Connector::NatPunchInfo getNatPunchInfo$() const;
+
+    MCAPI ::TransportLayer getNetworkType$() const;
+
+    MCAPI ushort getPort$() const;
+
+    MCAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps$() const;
+
+    MCAPI bool isIPv4Supported$() const;
+
+    MCAPI bool isIPv6Supported$() const;
+
+    MCAPI void removeConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+
+    MCAPI void setupNatPunch$(bool connectToClient);
+
+    MCAPI void startNatPunchingClient$(std::string const&, ushort);
+
+    // NOLINTEND
 };

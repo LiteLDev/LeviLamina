@@ -29,4 +29,22 @@ public:
     MCAPI explicit PlayerContainerSetter(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void setArmor$(int slot, class ItemStack const& item);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setPlayerUIItem$(int slot, class ItemStack const& item);
+
+    // NOLINTEND
 };

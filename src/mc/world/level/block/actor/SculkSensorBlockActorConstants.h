@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace SculkSensorBlockActorConstants {
+// thunks
 // NOLINTBEGIN
-MCAPI extern std::string const VibrationListenerTag;
+MCAPI std::string const& VibrationListenerTag();
 // NOLINTEND
 
 }; // namespace SculkSensorBlockActorConstants

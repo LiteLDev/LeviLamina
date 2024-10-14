@@ -20,10 +20,6 @@ public:
 
     MCAPI static uint64 getFlags(std::bitset<119> const& bitset, int id);
 
-    MCAPI static std::bitset<119> const ALL_HIGHER_ONES;
-
-    MCAPI static std::bitset<119> const ALL_LOWER_ONES;
-
     // NOLINTEND
 
     // protected:
@@ -33,6 +29,15 @@ public:
     MCAPI void setStatusFlag(::ActorFlags flag, bool value);
 
     MCAPI static std::optional<std::bitset<119>> setFlags(std::bitset<119>& bitset, uint64 flags, int id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::bitset<119> const& ALL_HIGHER_ONES();
+
+    MCAPI static std::bitset<119> const& ALL_LOWER_ONES();
 
     // NOLINTEND
 };

@@ -34,4 +34,28 @@ public:
     MCAPI ActorDimensionTransferProxy();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void removeActorFromLevelChunk$(class Actor& actor) const;
+
+    MCAPI void transferActorToDimension$(
+        class Actor const&                 actor,
+        class Dimension&                   dimension,
+        class Vec3 const&                  targetPosition,
+        std::unique_ptr<class CompoundTag> saveTag,
+        bool                               usePortal
+    ) const;
+
+    MCAPI void transferTickingArea$(class Actor& actor, class Dimension& dimension) const;
+
+    // NOLINTEND
 };

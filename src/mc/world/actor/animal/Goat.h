@@ -75,11 +75,33 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int DEFAULT_HORN_COUNT;
+    MCAPI static void** $vftable();
 
-    MCAPI static int SCREAMING_GOAT_VARIANT;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getDeathSound$();
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    MCAPI static int& DEFAULT_HORN_COUNT();
+
+    MCAPI static int& SCREAMING_GOAT_VARIANT();
 
     // NOLINTEND
 };

@@ -24,9 +24,14 @@ public:
 
     MCAPI static class PackCapability getPackCapability(std::optional<bool> creator_editor_override);
 
-    MCAPI static std::string const EDITOR_MODE_ARGUMENT_KEY;
+    // NOLINTEND
 
-    MCAPI static std::string const EDITOR_MODE_ARGUMENT_VALUE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& EDITOR_MODE_ARGUMENT_KEY();
+
+    MCAPI static std::string const& EDITOR_MODE_ARGUMENT_VALUE();
 
     // NOLINTEND
 };

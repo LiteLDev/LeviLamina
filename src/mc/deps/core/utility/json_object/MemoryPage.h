@@ -41,6 +41,16 @@ public:
     MCAPI uint64 _tryAllocateFront(uint64 bytes, uint64 align);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

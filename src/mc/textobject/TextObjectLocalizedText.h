@@ -34,4 +34,22 @@ public:
     MCAPI explicit TextObjectLocalizedText(std::string text);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Json::Value asJsonValue$() const;
+
+    MCAPI std::string asString$() const;
+
+    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+
+    // NOLINTEND
 };

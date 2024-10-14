@@ -95,4 +95,62 @@ public:
     MCAPI AirBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void
+    addAABBs$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
+        const;
+
+    MCAPI bool
+    addCollisionShapes$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI void animateTick$(class BlockSource&, class BlockPos const&, class Random&) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI void destroy$(class BlockSource&, class BlockPos const&, class Block const&, class Actor*) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const&
+    getOutline$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB& bufferValue)
+        const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB&) const;
+
+    MCAPI class AABB const&
+    getVisualShapeInWorld$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&)
+        const;
+
+    MCAPI bool isObstructingChests$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI bool mayPick$() const;
+
+    MCAPI bool mayPick$(class BlockSource const&, class Block const&, bool) const;
+
+    MCAPI bool mayPlace$(class BlockSource&, class BlockPos const&, uchar) const;
+
+    MCAPI bool mayPlace$(class BlockSource&, class BlockPos const&) const;
+
+    MCAPI class Block const* playerWillDestroy$(class Player&, class BlockPos const&, class Block const&) const;
+
+    MCAPI void tick$(class BlockSource&, class BlockPos const&, class Random&) const;
+
+    MCAPI bool
+    tryToPlace$(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*)
+        const;
+
+    // NOLINTEND
 };

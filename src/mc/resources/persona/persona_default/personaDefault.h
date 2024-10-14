@@ -8,10 +8,11 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace personaDefault {
+// thunks
 // NOLINTBEGIN
-MCAPI extern std::set<class mce::UUID> const ALLOW_ITEM_LIST;
+MCAPI std::set<class mce::UUID> const& ALLOW_ITEM_LIST();
 
-MCAPI extern std::vector<std::string> const EMOTE_LIST;
+MCAPI std::vector<std::string> const& EMOTE_LIST();
 // NOLINTEND
 
 }; // namespace personaDefault

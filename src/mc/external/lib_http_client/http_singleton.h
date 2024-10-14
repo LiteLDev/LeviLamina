@@ -50,6 +50,18 @@ public:
     singleton_access(::xbox::httpclient::http_singleton::singleton_access_mode, struct HCInitArgs*, std::shared_ptr<struct xbox::httpclient::http_singleton>&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

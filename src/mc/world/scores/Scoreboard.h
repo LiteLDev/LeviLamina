@@ -167,21 +167,69 @@ public:
     MCAPI std::optional<struct ScoreInfo>
           tryGetIdScore(struct ScoreboardId const& id, uint64 const& objectiveHash) const;
 
-    MCAPI static std::string const DEFAULT_CRITERIA;
-
-    MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
-
-    MCAPI static std::string const DISPLAY_SLOT_LIST;
-
-    MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
-
-    MCAPI static char const* OBJECTIVES_ENUM;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _init();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Objective* clearDisplayObjective$(std::string const& displaySlotName);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Player const& player);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Actor const& entity);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(std::string const& fakePlayer);
+
+    MCAPI bool isClientSide$() const;
+
+    MCAPI void onObjectiveAdded$(class Objective const& objective);
+
+    MCAPI void onObjectiveRemoved$(class Objective& objective);
+
+    MCAPI void onPlayerIdentityUpdated$(struct PlayerScoreboardId const& playerId);
+
+    MCAPI void onPlayerJoined$(class Player const& player);
+
+    MCAPI void onPlayerScoreRemoved$(struct ScoreboardId const& id, class Objective const& objective);
+
+    MCAPI void onScoreChanged$(struct ScoreboardId const& id, class Objective const& obj);
+
+    MCAPI class DisplayObjective const* setDisplayObjective$(
+        std::string const&     displaySlotName,
+        class Objective const& objective,
+        ::ObjectiveSortOrder   order
+    );
+
+    MCAPI void setPacketSender$(class PacketSender* sender);
+
+    MCAPI void tick$();
+
+    MCAPI void writeToLevelStorage$();
+
+    MCAPI static std::string const& DEFAULT_CRITERIA();
+
+    MCAPI static std::string const& DISPLAY_SLOT_BELOWNAME();
+
+    MCAPI static std::string const& DISPLAY_SLOT_LIST();
+
+    MCAPI static std::string const& DISPLAY_SLOT_SIDEBAR();
+
+    MCAPI static char const* const& OBJECTIVES_ENUM();
 
     // NOLINTEND
 };

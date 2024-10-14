@@ -57,7 +57,38 @@ public:
 
     MCAPI MudBlock(std::string const& nameId, int id);
 
-    MCAPI static class AABB BLOCK_AABB;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool getCollisionShapeForCamera$(
+        class AABB& outAABB,
+        class Block const&,
+        class IConstBlockSource const&,
+        class BlockPos const& pos
+    ) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI static class AABB& BLOCK_AABB();
 
     // NOLINTEND
 };

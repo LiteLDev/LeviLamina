@@ -50,4 +50,34 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::vector<class JigsawBlockInfo>
+          getJigsawMarkers$(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region)
+        const;
+
+    MCAPI class BlockPos getSize$(::Rotation rotation) const;
+
+    MCAPI bool place$(
+        class BlockSource&                                                                   region,
+        class BlockPos                                                                       position,
+        ::Rotation                                                                           rotation,
+        class BoundingBox                                                                    chunkBB,
+        class Random&                                                                        random,
+        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace,
+        class BlockPos                                                                       refPos
+    ) const;
+
+    MCAPI ::StructurePoolElementType type$() const;
+
+    // NOLINTEND
 };

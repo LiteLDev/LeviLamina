@@ -29,11 +29,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::Mutex sMutex;
+    MCAPI static void** $vftable();
 
-    MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientInstance> sWeakInstance;
+    MCAPI void dtor$();
+
+    MCAPI static class Bedrock::Threading::Mutex& sMutex();
+
+    MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientInstance>& sWeakInstance();
 
     // NOLINTEND
 };

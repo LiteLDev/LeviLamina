@@ -60,4 +60,15 @@ public:
     MCAPI void _applyImplForNormalBlock(class Block const*& inOutBlock, class Random& random);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
+
+    // NOLINTEND
 };

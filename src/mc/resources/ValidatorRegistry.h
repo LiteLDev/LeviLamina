@@ -40,6 +40,13 @@ public:
         MCAPI ~ValidatorRegistryValidators();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -71,6 +78,13 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static class Bedrock::NonOwnerPointer<class ValidatorRegistry> _get();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
     // NOLINTEND
 };

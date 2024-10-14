@@ -42,8 +42,6 @@ public:
     MCAPI void
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    MCAPI static int const INVALID_ALLELE_VALUE;
-
     // NOLINTEND
 
     // private:
@@ -56,13 +54,21 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const GENE_ARRAY;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::string const HIDDEN_ALLELE;
+    MCAPI static std::string const& GENE_ARRAY();
 
-    MCAPI static std::string const MAIN_ALLELE;
+    MCAPI static std::string const& HIDDEN_ALLELE();
+
+    MCAPI static int const& INVALID_ALLELE_VALUE();
+
+    MCAPI static std::string const& MAIN_ALLELE();
 
     // NOLINTEND
 };

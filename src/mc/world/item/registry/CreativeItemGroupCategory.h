@@ -34,4 +34,13 @@ public:
     MCAPI class CreativeGroupInfo* getOrAddTailAnonymousGroup();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

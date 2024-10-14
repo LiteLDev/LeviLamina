@@ -93,6 +93,52 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct MinecartFlag>,
+                class FlagComponent<struct ShulkerFlag>>,
+            struct Read<>,
+            struct Write<
+                struct AABBShapeComponent,
+                struct ActorDataBoundingBoxComponent,
+                struct ActorDataDirtyFlagsComponent,
+                struct DepenetrationComponent,
+                struct OffsetsComponent>,
+            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct MinecartFlag>,
+                         class FlagComponent<struct ShulkerFlag>>,
+                     struct Read<>,
+                     struct Write<
+                         struct AABBShapeComponent,
+                         struct ActorDataBoundingBoxComponent,
+                         struct ActorDataDirtyFlagsComponent,
+                         struct DepenetrationComponent,
+                         struct OffsetsComponent>,
+                     struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& executionContext);
+
+    // NOLINTEND
 };
 
 }; // namespace UpdateBoundingBox

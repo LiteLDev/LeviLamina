@@ -31,9 +31,21 @@ public:
 
     MCAPI static class TaskResult requeueAfter(std::chrono::nanoseconds requeueDelay);
 
-    MCAPI static class TaskResult const Done;
+    // NOLINTEND
 
-    MCAPI static class TaskResult const Requeue;
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static class TaskResult const& Done();
+
+    MCAPI static class TaskResult const& Requeue();
 
     // NOLINTEND
 };

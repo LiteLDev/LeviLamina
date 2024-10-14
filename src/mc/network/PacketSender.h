@@ -51,4 +51,11 @@ public:
     virtual void flush(class NetworkIdentifier const& id, std::function<void()>&& callback) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

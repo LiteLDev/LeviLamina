@@ -22,4 +22,11 @@ public:
     MCAPI void sendStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

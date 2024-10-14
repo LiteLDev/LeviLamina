@@ -45,6 +45,15 @@ public:
         virtual void resetActorNoActionTime(class Actor& actor) = 0;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class WorldAccessor : public ::DespawnComponent::IWorldAccessor {
@@ -79,6 +88,29 @@ public:
 
         // vIndex: 7
         virtual void resetActorNoActionTime(class Actor& actor);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void dtor$();
+
+        MCAPI bool areChunksFullyLoaded$(class BlockPos const& min, int r) const;
+
+        MCAPI class Player* fetchAnyInteractablePlayer$(class Vec3 const& searchPos, float maxDist) const;
+
+        MCAPI std::optional<int> getActorNoActionTime$(class Actor const& actor) const;
+
+        MCAPI class Randomize& getChanceRandomize$();
+
+        MCAPI uint getChunkTickRange$() const;
+
+        MCAPI bool hasUntickedNeighborChunk$(class ChunkPos const& pos, int chunkRadius) const;
+
+        MCAPI void resetActorNoActionTime$(class Actor& actor);
 
         // NOLINTEND
     };

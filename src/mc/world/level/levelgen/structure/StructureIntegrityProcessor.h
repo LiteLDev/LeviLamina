@@ -16,4 +16,14 @@ public:
     MCAPI std::vector<bool> generateFlagsForIndices(int startIndex, int endIndex) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    // NOLINTEND
 };

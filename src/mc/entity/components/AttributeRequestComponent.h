@@ -23,6 +23,13 @@ public:
         MCAPI ~AddModifier();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct RemoveModifier {
@@ -35,6 +42,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~RemoveModifier();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };

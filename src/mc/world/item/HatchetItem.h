@@ -42,4 +42,22 @@ public:
     MCAPI HatchetItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void executeEvent$(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    // NOLINTEND
 };

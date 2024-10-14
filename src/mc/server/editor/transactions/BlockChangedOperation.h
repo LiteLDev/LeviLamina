@@ -13,7 +13,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string const DEFAULT_OPERATION_NAME;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& DEFAULT_OPERATION_NAME();
 
     // NOLINTEND
 };

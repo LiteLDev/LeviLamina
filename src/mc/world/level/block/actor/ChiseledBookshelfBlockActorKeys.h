@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ChiseledBookshelfBlockActorKeys {
+// thunks
 // NOLINTBEGIN
-MCAPI extern std::string const Items;
+MCAPI std::string const& Items();
 // NOLINTEND
 
 }; // namespace ChiseledBookshelfBlockActorKeys

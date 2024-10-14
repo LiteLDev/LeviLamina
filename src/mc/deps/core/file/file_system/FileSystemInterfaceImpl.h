@@ -58,6 +58,37 @@ public:
     MCAPI FileSystemInterfaceImpl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool fileExists$(class Core::Path const& filePath);
+
+    MCAPI class Core::Result
+    getDirectoryFiles$(std::vector<class Core::PathBuffer<std::string>>& files, class Core::Path const& directoryPath);
+
+    MCAPI class Core::Result iterateOverDirectory$(
+        class Core::Path const&                                                       directoryName,
+        ::Core::DirectoryIterationFlags                                               flags,
+        std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
+    );
+
+    MCAPI std::unique_ptr<class Core::IFile> openFile$(
+        class Core::Path const&   filePath,
+        class Core::FileOpenMode  openMode,
+        ::Core::FileBufferingMode bufferingMode
+    );
+
+    MCAPI std::unique_ptr<std::iostream> openFileStream$(class Core::Path const& filePath, int openMode);
+
+    // NOLINTEND
 };
 
 }; // namespace Core

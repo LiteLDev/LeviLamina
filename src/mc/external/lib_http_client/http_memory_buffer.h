@@ -16,6 +16,13 @@ public:
     MCAPI ~http_memory_buffer();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

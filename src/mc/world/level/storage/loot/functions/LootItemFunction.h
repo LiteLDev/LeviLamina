@@ -37,13 +37,24 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI int
+    apply$(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+
+    MCAPI int
+    apply$(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+
     MCAPI static std::unordered_map<
         class HashedString,
         std::function<std::unique_ptr<
-            class LootItemFunction>(class Json::Value&, std::vector<std::unique_ptr<class LootItemCondition>>&)>> const
-        mLootingFunctions;
+            class LootItemFunction>(class Json::Value&, std::vector<std::unique_ptr<class LootItemCondition>>&)>> const&
+    mLootingFunctions();
 
     // NOLINTEND
 };

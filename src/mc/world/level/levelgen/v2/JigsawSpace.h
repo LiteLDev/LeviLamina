@@ -16,6 +16,13 @@ public:
     MCAPI ~JigsawSpace();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace br::worldgen

@@ -25,9 +25,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static ::MolangVersion const mStopExpressionVersion;
+    MCAPI static void** $vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+
+    MCAPI static ::MolangVersion const& mStopExpressionVersion();
 
     // NOLINTEND
 };

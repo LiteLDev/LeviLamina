@@ -28,6 +28,15 @@ public:
     virtual class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> makePromise();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> makePromise$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

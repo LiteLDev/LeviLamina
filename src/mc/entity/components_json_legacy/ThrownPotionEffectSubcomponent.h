@@ -32,4 +32,17 @@ public:
     virtual char const* getName();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void doOnHitEffect$(class Actor& owner, class ProjectileComponent& component);
+
+    MCAPI char const* getName$();
+
+    MCAPI void writetoJSON$(class Json::Value&) const;
+
+    // NOLINTEND
 };

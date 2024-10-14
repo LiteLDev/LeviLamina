@@ -39,4 +39,20 @@ public:
     MCAPI DeepslateBlock(std::string const& nameId, int id);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI class Block const* tryGetInfested$(class Block const& block) const;
+
+    // NOLINTEND
 };

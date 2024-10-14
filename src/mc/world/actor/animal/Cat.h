@@ -55,9 +55,29 @@ public:
         struct ActorDefinitionIdentifier const& definitionName,
         class EntityContext&                    entityContext);
 
-    MCAPI static float const SNEAK_SPEED_MOD;
+    // NOLINTEND
 
-    MCAPI static float const SPRINT_SPEED_MOD;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void aiStep$();
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+
+    MCAPI void onTame$();
+
+    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+
+    MCAPI static float const& SNEAK_SPEED_MOD();
+
+    MCAPI static float const& SPRINT_SPEED_MOD();
 
     // NOLINTEND
 };

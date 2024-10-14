@@ -54,4 +54,22 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class AABB _getAdjustedAABBForSpawnCheck$(class AABB const& aabb, class Vec3 const& mobPos) const;
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    // NOLINTEND
 };

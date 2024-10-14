@@ -14,4 +14,11 @@ public:
     MCAPI ~DBStorageConfig();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

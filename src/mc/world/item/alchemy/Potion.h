@@ -77,100 +77,6 @@ public:
 
     MCAPI static void shutdownPotions();
 
-    MCAPI static std::shared_ptr<class Potion const> const Awkward;
-
-    MCAPI static std::shared_ptr<class Potion const> const FireResistance;
-
-    MCAPI static std::shared_ptr<class Potion const> const Harming;
-
-    MCAPI static std::shared_ptr<class Potion const> const Healing;
-
-    MCAPI static std::shared_ptr<class Potion const> const Infested;
-
-    MCAPI static std::shared_ptr<class Potion const> const Invisibility;
-
-    MCAPI static std::shared_ptr<class Potion const> const Leaping;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongFireResistance;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongInvisibility;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongLeaping;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongMundane;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongNightvision;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongPoison;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongRegeneration;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongSlowFalling;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongSlowness;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongStrength;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongSwiftness;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongTurtleMaster;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongWaterBreathing;
-
-    MCAPI static std::shared_ptr<class Potion const> const LongWeakness;
-
-    MCAPI static std::shared_ptr<class Potion const> const Mundane;
-
-    MCAPI static std::shared_ptr<class Potion const> const Nightvision;
-
-    MCAPI static std::shared_ptr<class Potion const> const Oozing;
-
-    MCAPI static std::shared_ptr<class Potion const> const Poison;
-
-    MCAPI static std::shared_ptr<class Potion const> const Regeneration;
-
-    MCAPI static std::shared_ptr<class Potion const> const SlowFalling;
-
-    MCAPI static std::shared_ptr<class Potion const> const Slowness;
-
-    MCAPI static std::shared_ptr<class Potion const> const Strength;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongHarming;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongHealing;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongLeaping;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongPoison;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongRegeneration;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongSlowness;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongStrength;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongSwiftness;
-
-    MCAPI static std::shared_ptr<class Potion const> const StrongTurtleMaster;
-
-    MCAPI static std::shared_ptr<class Potion const> const Swiftness;
-
-    MCAPI static std::shared_ptr<class Potion const> const Thick;
-
-    MCAPI static std::shared_ptr<class Potion const> const TurtleMaster;
-
-    MCAPI static std::shared_ptr<class Potion const> const Water;
-
-    MCAPI static std::shared_ptr<class Potion const> const WaterBreathing;
-
-    MCAPI static std::shared_ptr<class Potion const> const Weakness;
-
-    MCAPI static std::shared_ptr<class Potion const> const Weaving;
-
-    MCAPI static std::shared_ptr<class Potion const> const WindCharged;
-
-    MCAPI static std::shared_ptr<class Potion const> const Wither;
-
     // NOLINTEND
 
     // private:
@@ -197,13 +103,115 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int mLastId;
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
 
-    MCAPI static std::shared_ptr<class Potion const> mPotionsById[];
+    MCAPI void dtor$();
 
-    MCAPI static std::unordered_map<std::string, int> mPotionsByName;
+    MCAPI static std::shared_ptr<class Potion const> const& Awkward();
+
+    MCAPI static std::shared_ptr<class Potion const> const& FireResistance();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Harming();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Healing();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Infested();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Invisibility();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Leaping();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongFireResistance();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongInvisibility();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongLeaping();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongMundane();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongNightvision();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongPoison();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongRegeneration();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongSlowFalling();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongSlowness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongStrength();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongSwiftness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongTurtleMaster();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongWaterBreathing();
+
+    MCAPI static std::shared_ptr<class Potion const> const& LongWeakness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Mundane();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Nightvision();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Oozing();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Poison();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Regeneration();
+
+    MCAPI static std::shared_ptr<class Potion const> const& SlowFalling();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Slowness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Strength();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongHarming();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongHealing();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongLeaping();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongPoison();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongRegeneration();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongSlowness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongStrength();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongSwiftness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& StrongTurtleMaster();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Swiftness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Thick();
+
+    MCAPI static std::shared_ptr<class Potion const> const& TurtleMaster();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Water();
+
+    MCAPI static std::shared_ptr<class Potion const> const& WaterBreathing();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Weakness();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Weaving();
+
+    MCAPI static std::shared_ptr<class Potion const> const& WindCharged();
+
+    MCAPI static std::shared_ptr<class Potion const> const& Wither();
+
+    MCAPI static int& mLastId();
+
+    MCAPI static ::ll::CArrayT<std::shared_ptr<class Potion const>>& mPotionsById();
+
+    MCAPI static std::unordered_map<std::string, int>& mPotionsByName();
 
     // NOLINTEND
 };

@@ -45,11 +45,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static char const* ModuleName;
+    MCAPI static void** $vftable();
 
-    MCAPI static class mce::UUID ModuleUUID;
+    MCAPI static char const* const& ModuleName();
+
+    MCAPI static class mce::UUID& ModuleUUID();
 
     // NOLINTEND
 };

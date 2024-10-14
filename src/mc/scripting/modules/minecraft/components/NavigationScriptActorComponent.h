@@ -87,6 +87,51 @@ public:
     bind();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Scripting::Result<bool> getAvoidDamageBlocks$() const;
+
+    MCAPI class Scripting::Result<bool> getAvoidPortals$() const;
+
+    MCAPI class Scripting::Result<bool> getAvoidSun$() const;
+
+    MCAPI class Scripting::Result<bool> getAvoidWater$() const;
+
+    MCAPI class Scripting::Result<bool> getCanBreach$() const;
+
+    MCAPI class Scripting::Result<bool> getCanBreakDoors$() const;
+
+    MCAPI class Scripting::Result<bool> getCanFloat$() const;
+
+    MCAPI class Scripting::Result<bool> getCanJump$() const;
+
+    MCAPI class Scripting::Result<bool> getCanOpenDoors$() const;
+
+    MCAPI class Scripting::Result<bool> getCanOpenIronDoors$() const;
+
+    MCAPI class Scripting::Result<bool> getCanPassDoors$() const;
+
+    MCAPI class Scripting::Result<bool> getCanPathFromAir$() const;
+
+    MCAPI class Scripting::Result<bool> getCanPathOverLava$() const;
+
+    MCAPI class Scripting::Result<bool> getCanPathOverWater$() const;
+
+    MCAPI class Scripting::Result<bool> getCanSink$() const;
+
+    MCAPI class Scripting::Result<bool> getCanSwim$() const;
+
+    MCAPI class Scripting::Result<bool> getCanWalk$() const;
+
+    MCAPI class Scripting::Result<bool> getCanWalkInLava$() const;
+
+    MCAPI class Scripting::Result<bool> getIsAmphibious$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

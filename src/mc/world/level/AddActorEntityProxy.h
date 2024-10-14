@@ -26,4 +26,20 @@ public:
     MCAPI explicit AddActorEntityProxy(class Dimension& dimension);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void initializeActor$(class Actor& actor);
+
+    MCAPI void reloadActor$(class Actor& actor);
+
+    // NOLINTEND
 };

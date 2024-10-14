@@ -76,4 +76,52 @@ public:
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const& file, int chunkID) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool canCancelUpload$(struct FileInfo const& file) const;
+
+    MCAPI void cancelUpload$(struct FileInfo const& file);
+
+    MCAPI void confirmChunkReceived$(struct FileInfo const&, struct FileChunkInfo const&);
+
+    MCAPI struct FileChunkInfo getChunkInfo$(struct FileInfo const& file, int chunkID) const;
+
+    MCAPI ::UploadError getInitErrorCode$() const;
+
+    MCAPI void getServerMissingChunks$(
+        struct FileInfo const&                                 file,
+        std::function<void(std::vector<struct FileChunkInfo>)> callback
+    ) const;
+
+    MCAPI float getUploadProgress$(struct FileInfo const& file) const;
+
+    MCAPI void initFileUploader$(
+        std::string const&        uploadId,
+        struct FileInfo const&    file,
+        int                       chunkSize,
+        class Json::Value const&  uploadOptions,
+        std::function<void(bool)> callback
+    );
+
+    MCAPI void update$();
+
+    MCAPI void uploadChunk$(
+        struct FileInfo const&      file,
+        struct FileChunkInfo const& chunk,
+        std::vector<uchar> const&   data,
+        std::function<void(bool)>   onCompleteCallback
+    );
+
+    MCAPI void uploadStream$(
+        struct FileInfo const&                                        file,
+        uint64                                                        streamSize,
+        std::string const&                                            boundary,
+        std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+    );
+
+    // NOLINTEND
 };

@@ -31,9 +31,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static schar const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
+        // NOLINTEND
 
-        MCAPI static schar const HEIGHT_COLUMN_BELOW_SUBCHUNK;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+
+        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
 
         // NOLINTEND
     };
@@ -50,6 +55,18 @@ public:
         MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
 
         MCAPI ~SubChunkPacketData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -87,6 +104,28 @@ public:
     MCAPI SubChunkPacket();
 
     MCAPI SubChunkPacket(DimensionType const& dimension, class SubChunkPos const& centerPos, bool cacheEnabled);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

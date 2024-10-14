@@ -42,4 +42,23 @@ public:
     virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& test);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& test);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance& test);
+
+    // NOLINTEND
 };

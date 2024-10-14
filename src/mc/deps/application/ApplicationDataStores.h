@@ -44,6 +44,21 @@ public:
     MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
+    getDataStore$(::Bedrock::IApplicationDataStores::DataStores which);
+
+    MCAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
+    getDataStore$(::Bedrock::IApplicationDataStores::DataStores which) const;
+
+    MCAPI void init$();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

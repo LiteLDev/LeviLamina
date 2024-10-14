@@ -9,9 +9,10 @@ public:
     ScriptPackPermissions(ScriptPackPermissions const&);
     ScriptPackPermissions();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const sWildCardModuleName;
+    MCAPI static std::string const& sWildCardModuleName();
 
     // NOLINTEND
 };

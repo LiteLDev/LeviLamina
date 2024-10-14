@@ -30,4 +30,19 @@ public:
     virtual bool get(std::string const& key, std::string& outValue);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI bool add$(std::string const& key, std::string const& value);
+
+    MCAPI bool addOrUpdate$(std::string const& key, std::string const& value);
+
+    MCAPI bool get$(std::string const& key, std::string& outValue);
+
+    MCAPI bool remove$(std::string const& key);
+
+    // NOLINTEND
 };

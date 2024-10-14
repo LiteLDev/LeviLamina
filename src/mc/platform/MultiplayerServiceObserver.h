@@ -18,6 +18,15 @@ public:
     MCVAPI ~MultiplayerServiceObserver();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI void onUserDisconnectedBecauseConcurrentLogin$(std::string const& id);
+
+    // NOLINTEND
 };
 
 }; // namespace Social

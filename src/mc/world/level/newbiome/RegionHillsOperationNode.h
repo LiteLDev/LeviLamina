@@ -45,4 +45,30 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class OperationNodeDetails::TransferData<class Biome const*>
+    _allocateAndFill$(uint64 requiredBytes, class Pos2d const& origin, class Pos2d const& size) const;
+
+    MCAPI void _fillArea$(
+        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
+        class Pos2d const&                                                               origin,
+        class Pos2d const&                                                               size,
+        int                                                                              pw
+    ) const;
+
+    MCAPI std::tuple<class Pos2d, class Pos2d> _getAreaRead$(class Pos2d const& origin, class Pos2d const& size) const;
+
+    MCAPI void init$(int64 seed);
+
+    // NOLINTEND
 };

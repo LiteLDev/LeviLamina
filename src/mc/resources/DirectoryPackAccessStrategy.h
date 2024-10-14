@@ -86,4 +86,59 @@ public:
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const& packLocation, bool recurse);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI bool canRecurse$() const;
+
+    MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
+
+    MCAPI bool deleteAsset$(class Core::Path const& packRelativePath);
+
+    MCAPI void forEachIn$(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback,
+        bool                                         recurseAnyways
+    ) const;
+
+    MCAPI void forEachInAssetSet$(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback
+    ) const;
+
+    MCAPI bool getAsset$(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+
+    MCAPI class ResourceLocation const& getPackLocation$() const;
+
+    MCAPI std::string const& getPackName$() const;
+
+    MCAPI uint64 getPackSize$() const;
+
+    MCAPI ::PackAccessStrategyType getStrategyType$() const;
+
+    MCAPI bool hasAsset$(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCAPI bool hasFolder$(class Core::Path const& packRelativePath) const;
+
+    MCAPI bool isTrusted$() const;
+
+    MCAPI bool isWritable$() const;
+
+    MCAPI void setIsTrusted$(bool);
+
+    MCAPI void unload$();
+
+    MCAPI bool writeAsset$(class Core::Path const& packRelativePath, std::string const& fileContent);
+
+    // NOLINTEND
 };

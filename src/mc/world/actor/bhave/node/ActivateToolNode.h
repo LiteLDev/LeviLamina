@@ -25,4 +25,15 @@ public:
     virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void initializeFromDefinition$(class Actor& owner);
+
+    MCAPI ::BehaviorStatus tick$(class Actor& owner);
+
+    // NOLINTEND
 };

@@ -64,4 +64,38 @@ public:
     MCAPI void initializeLogging();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBedrockAppIsland();
+
+    MCAPI static void** $vftableForIMinecraftApp();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient$() const;
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class FileArchiver> getFileArchiver$() const;
+
+    MCAPI class IGameModuleShared& getGameModuleShared$();
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class Minecraft> getPrimaryMinecraft$();
+
+    MCAPI bool isDedicatedServer$() const;
+
+    MCAPI bool isEduMode$() const;
+
+    MCAPI void onNetworkMaxPlayersChanged$(uint newMaxPlayerCount);
+
+    MCAPI void requestServerShutdown$(std::string const&);
+
+    MCAPI bool stop$();
+
+    // NOLINTEND
 };

@@ -71,6 +71,30 @@ public:
                       struct EntityFactoryT<>>& context);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         struct MobTravelComponent,
+                         class FlagComponent<struct InWaterFlag>,
+                         class FlagComponent<struct MobIsJumpingFlag>>,
+                     struct Read<
+                         struct ActorDataFlagComponent,
+                         struct MovementAbilitiesComponent,
+                         struct ActorRotationComponent,
+                         struct MoveInputComponent,
+                         struct PlayerInputRequestComponent>,
+                     struct Write<struct StateVectorComponent>,
+                     struct AddRemove<>,
+                     struct GlobalRead<>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& context);
+
+    // NOLINTEND
 };
 
 }; // namespace SwimControlSystemImpl

@@ -14,4 +14,11 @@ public:
     MCAPI ~DeserializeDataParams();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -27,4 +27,13 @@ public:
     MCAPI void _registerBlock(std::string const& name, uint64 serIdHash);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI class Block const& getUnknownBlock$(class CompoundTag const& serId);
+
+    // NOLINTEND
 };

@@ -13,15 +13,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Http::Method const DEL;
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Http::Method const GET;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Bedrock::Http::Method const& DEL();
 
-    MCAPI static class Bedrock::Http::Method const HEAD;
+    MCAPI static class Bedrock::Http::Method const& GET();
 
-    MCAPI static class Bedrock::Http::Method const POST;
+    MCAPI static class Bedrock::Http::Method const& HEAD();
 
-    MCAPI static class Bedrock::Http::Method const PUT;
+    MCAPI static class Bedrock::Http::Method const& POST();
+
+    MCAPI static class Bedrock::Http::Method const& PUT();
 
     // NOLINTEND
 };

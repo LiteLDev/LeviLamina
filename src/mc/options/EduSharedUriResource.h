@@ -23,4 +23,16 @@ public:
     MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const& resource);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

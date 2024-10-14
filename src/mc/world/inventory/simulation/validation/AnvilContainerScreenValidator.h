@@ -29,4 +29,19 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct ContainerValidationCraftResult getCraftResult$(
+        class ContainerScreenContext const&                    screenContext,
+        class ContainerScreenValidation&                       screenValidation,
+        std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
+
+    MCAPI bool isCraftingImplemented$();
+
+    // NOLINTEND
 };

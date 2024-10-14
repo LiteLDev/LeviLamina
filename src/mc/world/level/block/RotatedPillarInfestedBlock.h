@@ -41,4 +41,23 @@ public:
     MCAPI RotatedPillarInfestedBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void spawnAfterBreak$(
+        class BlockSource& region,
+        class Block const&,
+        class BlockPos const&              pos,
+        struct ResourceDropsContext const& resourceDropsContext
+    ) const;
+
+    // NOLINTEND
 };

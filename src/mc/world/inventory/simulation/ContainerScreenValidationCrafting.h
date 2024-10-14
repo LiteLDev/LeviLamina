@@ -32,4 +32,17 @@ public:
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult& craftResult);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI struct ContainerValidationCraftResult
+    getCraftResults$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
+
+    MCAPI struct ContainerValidationResult tryCraft$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
+
+    // NOLINTEND
 };

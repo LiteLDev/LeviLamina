@@ -50,6 +50,13 @@ public:
         MCAPI ~ChainedSubcommand();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct Enum {
@@ -62,6 +69,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~Enum();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -96,6 +110,18 @@ public:
         MCAPI ~Overload();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class ParamSymbols {
@@ -107,6 +133,16 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ParamSymbols();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -134,6 +170,16 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ParseTable();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -166,6 +212,18 @@ public:
         MCAPI ~Signature();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class Symbol {
@@ -182,6 +240,16 @@ public:
         MCAPI uint64 toIndex() const;
 
         MCAPI int value() const;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -227,6 +295,18 @@ public:
         MCAPI bool _parse(std::string const& in);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct RegistryState {
@@ -241,6 +321,13 @@ public:
         MCAPI ~RegistryState();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct SoftEnum {
@@ -253,6 +340,16 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI SoftEnum(std::string const& name, std::vector<std::string> values);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
 
         // NOLINTEND
     };
@@ -338,36 +435,6 @@ public:
     MCAPI void setSoftEnumValues(std::string const& enumName, std::vector<std::string> values);
 
     MCAPI ~CommandRegistry();
-
-    MCAPI static char const* CODE_STATUS_PROPERTY_NAME;
-
-    MCAPI static char const* COMMAND_NAME_ENUM_NAME;
-
-    MCAPI static char const* FUNCTION_NAME_SOFTENUM_NAME;
-
-    MCAPI static char const* HASITEM_PARAM_DATA;
-
-    MCAPI static char const* HASITEM_PARAM_ITEM;
-
-    MCAPI static char const* HASITEM_PARAM_LOCATION;
-
-    MCAPI static char const* HASITEM_PARAM_QUANTITY;
-
-    MCAPI static char const* HASITEM_PARAM_SLOT;
-
-    MCAPI static char const* HASPERMISSIONCATEGORY_ENUM_CAMERA;
-
-    MCAPI static char const* HASPERMISSIONCATEGORY_ENUM_MOVEMENT;
-
-    MCAPI static char const* HASPERMISSIONSTATE_ENUM_DISABLED;
-
-    MCAPI static char const* HASPERMISSIONSTATE_ENUM_ENABLED;
-
-    MCAPI static char const* HASPROPERTY_PARAM_PROPERTY_NAME;
-
-    MCAPI static char const* TAG_VALUES_SOFTENUM_NAME;
-
-    MCAPI static char const* UNLOCKABLE_RECIPES_SOFTENUM_NAME;
 
     // NOLINTEND
 
@@ -622,12 +689,51 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::pair<
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI static char const* const& CODE_STATUS_PROPERTY_NAME();
+
+    MCAPI static char const* const& COMMAND_NAME_ENUM_NAME();
+
+    MCAPI static char const* const& FUNCTION_NAME_SOFTENUM_NAME();
+
+    MCAPI static char const* const& HASITEM_PARAM_DATA();
+
+    MCAPI static char const* const& HASITEM_PARAM_ITEM();
+
+    MCAPI static char const* const& HASITEM_PARAM_LOCATION();
+
+    MCAPI static char const* const& HASITEM_PARAM_QUANTITY();
+
+    MCAPI static char const* const& HASITEM_PARAM_SLOT();
+
+    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_CAMERA();
+
+    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_MOVEMENT();
+
+    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_DISABLED();
+
+    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_ENABLED();
+
+    MCAPI static char const* const& HASPROPERTY_PARAM_PROPERTY_NAME();
+
+    MCAPI static ::ll::CArrayT<std::pair<
         bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const,
-        class CommandRegistry::Symbol> const ParseRuleSymbols[];
+        class CommandRegistry::Symbol> const>&
+    ParseRuleSymbols();
+
+    MCAPI static char const* const& TAG_VALUES_SOFTENUM_NAME();
+
+    MCAPI static char const* const& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
 
     // NOLINTEND
 };

@@ -44,6 +44,18 @@ public:
         MCAPI ~KnownPackInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        template <class... Args>
+        auto* ctor$(Args... args) {
+            return std::construct_at(this, std::forward<Args>(args)...);
+        }
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct KnownPackContainer {
@@ -58,6 +70,13 @@ public:
         MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const& packLocation);
 
         MCAPI ~KnownPackContainer();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -245,8 +264,6 @@ public:
         bool                                                                    initAsync
     );
 
-    MCAPI static std::set<class mce::UUID> CHEMISTRY_PACK_UUIDS;
-
     // NOLINTEND
 
     // private:
@@ -286,6 +303,133 @@ public:
     _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer& knownPackLocations, ::KnownPackType type);
 
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack* resourcePack);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI void addCachedResourcePacks$(std::unordered_map<class ContentIdentity, std::string> const* tempCacheKeys);
+
+    MCAPI void addInvalidPack$(class ResourceLocation const& packLocation, ::PackType type);
+
+    MCAPI void addKnownPackFromImport$(class PackManifest const& pack);
+
+    MCAPI void addPremiumWorldTemplateResourcePacks$(
+        class Core::Path const&      worldTemplatePath,
+        class ContentIdentity const& premiumWorldIdentity
+    );
+
+    MCAPI void addServicePacksToStack$(class ResourcePackStack& stack) const;
+
+    MCAPI void addWorldResourcePacks$(class Core::Path const& levelPath);
+
+    MCAPI void deletePack$(class ResourceLocation const& packLocation);
+
+    MCAPI void deletePackFiles$(class ResourceLocation const& packLocation);
+
+    MCAPI class Core::PathBuffer<std::string> const getBehaviorPacksPath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getDevelopmentBehaviorPacksPath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getDevelopmentResourcePacksPath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getDevelopmentSkinPacksPath$() const;
+
+    MCAPI class ResourcePack* getEditorPack$() const;
+
+    MCAPI std::vector<class ResourceLocation> const& getInvalidPacks$(::PackType type) const;
+
+    MCAPI std::vector<class ResourceLocation> getInvalidPacks$(struct InvalidPacksFilterGroup const& packTypes) const;
+
+    MCAPI Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> getKeyProvider$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getKnownInvalidPacksPath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getKnownPacksPath$(::KnownPackType type) const;
+
+    MCAPI class Core::PathBuffer<std::string> const getKnownValidPacksPath$() const;
+
+    MCAPI class PackSourceReport const* getPackLoadingReport$() const;
+
+    MCAPI class PackManifestFactory& getPackManifestFactory$();
+
+    MCAPI class PackSettingsFactory& getPackSettingsFactory$() const;
+
+    MCAPI class PackSourceFactory& getPackSourceFactory$();
+
+    MCAPI std::vector<class ResourcePack*> getPacksByCategory$(::PackCategory category) const;
+
+    MCAPI std::vector<class ResourcePack*> getPacksByResourceLocation$(::PackOrigin type) const;
+
+    MCAPI std::vector<class ResourcePack*> getPacksByType$(::PackType type) const;
+
+    MCAPI class ResourcePack* getResourcePackByUUID$(class mce::UUID const& id) const;
+
+    MCAPI class ResourcePack* getResourcePackContainingModule$(struct PackIdVersion const& idAndVersion) const;
+
+    MCAPI class ResourcePack* getResourcePackForPackId$(struct PackIdVersion const& idAndVersion) const;
+
+    MCAPI class ResourcePack* getResourcePackForPackIdOwned$(struct PackIdVersion const& idAndVersion) const;
+
+    MCAPI class ResourcePack* getResourcePackInPath$(class Core::Path const& path) const;
+
+    MCAPI class ResourcePack*
+    getResourcePackSatisfiesPackId$(struct PackIdVersion const& idAndVersion, bool requireOwnership) const;
+
+    MCAPI void getResourcePacksByPackId$(
+        std::vector<struct PackInstanceId> const& packInstanceIds,
+        std::vector<class PackInstance>&          result
+    ) const;
+
+    MCAPI class Core::PathBuffer<std::string> const getResourcePacksPath$() const;
+
+    MCAPI std::vector<struct PackIdVersion> const& getServicePacks$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getSkinPacksPath$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const getTreatmentPacksPath$() const;
+
+    MCAPI class ResourcePack* getVanillaPack$() const;
+
+    MCAPI class CompositePackSource const* getWorldPackSource$() const;
+
+    MCAPI bool hasServicePacks$(std::vector<struct PackIdVersion> const& servicePacksIds) const;
+
+    MCAPI bool isInitialized$();
+
+    MCAPI bool isResourcePackLoaded$(struct PackIdVersion const& identity, ::PackOrigin const& location);
+
+    MCAPI void postDeletePack$(class ResourceLocation const& packLocation);
+
+    MCAPI void refreshPacks$();
+
+    MCAPI void registerResourcePackRemovedCallback$(void* ptr, std::function<void(class ResourcePack*)> callback);
+
+    MCAPI void removePacksLoadedFromCache$();
+
+    MCAPI void removePacksLoadedFromWorld$();
+
+    MCAPI void requestReloadDynamicPackagePacks$();
+
+    MCAPI void requestReloadUserPacks$();
+
+    MCAPI bool setServicePacks$(std::vector<struct PackIdVersion> servicePackIds);
+
+    MCAPI void unregisterResourcePackRemovedCallback$(void* ptr);
+
+    MCAPI void untrackInvalidPack$(class ResourceLocation const& packLocation);
+
+    MCAPI static std::set<class mce::UUID>& CHEMISTRY_PACK_UUIDS();
 
     // NOLINTEND
 };

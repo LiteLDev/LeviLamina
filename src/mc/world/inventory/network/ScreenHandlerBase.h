@@ -32,4 +32,26 @@ public:
     MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler& requestHandler);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI ::ItemStackNetResult endRequest$();
+
+    MCAPI void endRequestBatch$();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+
+    MCAPI void postRequest$(bool wasSuccess);
+
+    // NOLINTEND
 };

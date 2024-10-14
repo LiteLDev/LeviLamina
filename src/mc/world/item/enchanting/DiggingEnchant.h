@@ -31,9 +31,20 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static void** $vftable();
+
+    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
 
     // NOLINTEND
 };

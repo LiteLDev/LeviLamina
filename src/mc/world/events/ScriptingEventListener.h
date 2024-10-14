@@ -21,4 +21,13 @@ public:
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI ::EventResult onEvent$(struct ScriptingNotificationEvent const&);
+
+    // NOLINTEND
 };

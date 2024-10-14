@@ -73,6 +73,13 @@ public:
     MCAPI class Scripting::Result<std::string> _prependVariable(std::string const& variableName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

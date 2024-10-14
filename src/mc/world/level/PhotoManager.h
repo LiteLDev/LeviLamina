@@ -53,4 +53,20 @@ public:
     MCAPI class Core::PathBuffer<std::string> _getPhotoStoragePath();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class Bedrock::PubSub::Connector<
+        void(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&)>&
+    getPictureTakenConnector$();
+
+    // NOLINTEND
 };

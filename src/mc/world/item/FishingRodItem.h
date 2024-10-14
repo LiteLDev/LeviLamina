@@ -72,4 +72,42 @@ public:
     MCAPI FishingRodItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const*, bool) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int newAnimationFrame, bool) const;
+
+    MCAPI std::string getInteractText$(class Player const&) const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI bool shouldSendInteractionGameEvents$() const;
+
+    MCAPI bool shouldUseJsonForRenderMatrix$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    // NOLINTEND
 };

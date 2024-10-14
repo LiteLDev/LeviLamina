@@ -96,13 +96,68 @@ public:
 
     MCAPI void playBreakSound(class Player* player) const;
 
-    MCAPI static int const EFFECTIVE_BLOCK_DELAY;
+    // NOLINTEND
 
-    MCAPI static int const IN_HAND_BLOCK_DURATION;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static int const NO_SHIELD_PATTERN;
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
-    MCAPI static std::string const TIMESTAMP_TAG;
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const* userData) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    MCAPI int getCooldownTime$() const;
+
+    MCAPI class HashedString const& getCooldownType$() const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+
+    MCAPI ::InHandUpdateType getInHandUpdateType$(
+        class Player const&    player,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
+        bool                   isMainHand,
+        bool                   slotChanged
+    ) const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI void
+    readUserData$(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
+        const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player&) const;
+
+    MCAPI void writeUserData$(class ItemStackBase const& stack, class IDataOutput& output) const;
+
+    MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
+
+    MCAPI static int const& IN_HAND_BLOCK_DURATION();
+
+    MCAPI static int const& NO_SHIELD_PATTERN();
+
+    MCAPI static std::string const& TIMESTAMP_TAG();
 
     // NOLINTEND
 };

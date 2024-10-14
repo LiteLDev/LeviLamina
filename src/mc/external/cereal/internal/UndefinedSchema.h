@@ -44,6 +44,22 @@ public:
     MCAPI static class cereal::internal::UndefinedSchema const& instance();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI void doLoad$(
+        struct cereal::SchemaReader&,
+        entt::meta_any&,
+        entt::meta_any const&,
+        class cereal::SerializerContext& context
+    ) const;
+
+    MCAPI struct cereal::SchemaDescription makeDescription$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

@@ -57,6 +57,27 @@ public:
         virtual void _cancel();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
+
+        MCAPI void _cancel$();
+
+        MCAPI void addOnComplete$(
+            std::function<void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)> callback
+        );
+
+        MCAPI void cancel$();
+
+        MCAPI std::error_code getError$() const;
+
+        MCAPI class Bedrock::Http::Response getResult$() const;
+
+        MCAPI ::Bedrock::Threading::AsyncStatus getStatus$() const;
+
+        // NOLINTEND
     };
 
 public:
@@ -88,6 +109,23 @@ public:
     MCAPI void _handlePendingRequest();
 
     MCAPI void _onCompletion();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+          send$(class Bedrock::Http::Request&& request);
 
     // NOLINTEND
 };

@@ -75,9 +75,17 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI static class Core::PathBuffer<std::string> const& EDUCATION_METADATA_FILE();
 
     // NOLINTEND
 };

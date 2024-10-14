@@ -27,4 +27,11 @@ public:
     MCAPI bool _load(class Json::Value const& root, class LevelData const& levelData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -12,8 +12,6 @@ namespace Json { class Value; }
 
 namespace CommandUtils {
 // NOLINTBEGIN
-MCAPI extern std::vector<std::pair<std::string, char>> const CMD_INPUT_UNICODE_TRANSLATE_MAP;
-
 MCAPI bool
 addItemInstanceComponents(class ItemInstance& itemInstance, class Json::Value const& components, std::string& errorMsg);
 
@@ -84,6 +82,11 @@ MCAPI class Actor* spawnEntityAt(
 MCAPI std::string toJsonResult(std::string const& commandName, class Json::Value const& rawData);
 
 MCAPI std::string const validatePath(class CommandOutput& output, class CommandFilePath const& filePath);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI std::vector<std::pair<std::string, char>> const& CMD_INPUT_UNICODE_TRANSLATE_MAP();
 // NOLINTEND
 
 }; // namespace CommandUtils

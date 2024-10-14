@@ -14,4 +14,11 @@ public:
     MCAPI ~ActorHurtEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

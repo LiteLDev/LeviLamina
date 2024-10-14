@@ -16,6 +16,13 @@ public:
     MCAPI ~PrivilegeScope();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting::QuickJS

@@ -25,4 +25,11 @@ public:
     MCAPI void onInteract(struct BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    // NOLINTEND
 };

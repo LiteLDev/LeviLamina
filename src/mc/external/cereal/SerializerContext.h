@@ -30,6 +30,13 @@ public:
         MCAPI ~LogEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class ScopedPop {
@@ -42,6 +49,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~ScopedPop();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -77,6 +91,13 @@ public:
 
     MCAPI static std::string
     contextString(std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>> const& contextStack);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

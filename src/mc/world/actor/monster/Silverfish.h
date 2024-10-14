@@ -63,4 +63,28 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+
+    MCAPI void _playStepSound$(class BlockPos const&, class Block const&);
+
+    MCAPI bool checkSpawnRules$(bool fromSpawner);
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI bool isDarkEnoughToSpawn$() const;
+
+    MCAPI void spawnAnim$();
+
+    // NOLINTEND
 };

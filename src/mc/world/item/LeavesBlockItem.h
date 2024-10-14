@@ -43,4 +43,20 @@ public:
     virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
+
+    MCAPI void fixupCommon$(class ItemStackBase& stack, class Level& level) const;
+
+    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+
+    // NOLINTEND
 };

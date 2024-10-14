@@ -63,7 +63,40 @@ public:
 
     MCAPI BrushableBlock(std::string const& nameID, int id);
 
-    MCAPI static class HashedString const EmptyBrushedBlock;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+
+    template <class... Args>
+    auto* ctor$(Args... args) {
+        return std::construct_at(this, std::forward<Args>(args)...);
+    }
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const* blockActor) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+
+    MCAPI class mce::Color getDustColor$(class Block const&) const;
+
+    MCAPI std::string getDustParticleName$(class Block const&) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+
+    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI static class HashedString const& EmptyBrushedBlock();
 
     // NOLINTEND
 };
