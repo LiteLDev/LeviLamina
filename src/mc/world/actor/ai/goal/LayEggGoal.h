@@ -74,10 +74,21 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        float                                    speedModifier,
+        int                                      searchRange,
+        int                                      searchHeight,
+        float                                    goalRadius,
+        std::vector<class ItemDescriptor> const& targetBlocks,
+        std::vector<::MaterialType> const&       targetMaterialsAboveBlock,
+        bool                                     allowLayingFromBelow,
+        bool                                     useDefaultAnimation,
+        float                                    laySeconds,
+        class ItemDescriptor const&              eggType,
+        class ActorDefinitionTrigger const&      onLay,
+        std::string const&                       layEggSound
+    );
 
     MCAPI void _moveToBlock$();
 

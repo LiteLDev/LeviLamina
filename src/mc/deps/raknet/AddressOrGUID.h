@@ -32,10 +32,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct RakNet::RakNetGUID const& input);
+
+    MCAPI void* ctor$(struct RakNet::SystemAddress const& input);
+
+    MCAPI void* ctor$(struct RakNet::AddressOrGUID const& input);
 
     // NOLINTEND
 };

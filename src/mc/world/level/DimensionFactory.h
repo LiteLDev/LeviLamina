@@ -54,10 +54,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class ILevel>       level,
+        Bedrock::NotNullNonOwnerPtr<class Scheduler>    scheduler,
+        class br::worldgen::StructureSetRegistry const& structureSetRegistry
+    );
 
     MCAPI class OwnerPtr<class Dimension> create$(std::string const& dimensionName) const;
 

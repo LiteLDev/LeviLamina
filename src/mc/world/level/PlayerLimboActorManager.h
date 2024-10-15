@@ -59,10 +59,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class StackRefResult<class LevelStorage> const& levelStorage,
+        class StackRefResult<class ActorManager> const& actorManager,
+        class StackRefResult<class ActorFactory> const& actorFactory
+    );
 
     MCAPI void dtor$();
 

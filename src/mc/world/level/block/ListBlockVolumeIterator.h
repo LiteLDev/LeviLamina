@@ -43,10 +43,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ListBlockVolume const&,
+        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
+        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
+        bool
+    );
 
     MCAPI void _begin$();
 

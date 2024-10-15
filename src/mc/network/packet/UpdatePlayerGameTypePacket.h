@@ -48,10 +48,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::GameType playerGameType, struct ActorUniqueID const& targetPlayer, uint64 tick);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

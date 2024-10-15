@@ -111,10 +111,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct ActorUniqueID             executionEntity,
+        class Vec3 const&                position,
+        std::optional<class Vec2> const& rotation,
+        struct ActorUniqueID             rotationActor,
+        struct ActorUniqueID             positionActor,
+        ::ActorLocation                  anchor,
+        DimensionType                    dimensionType,
+        class Level&                     level,
+        int                              version
+    );
 
     MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
 

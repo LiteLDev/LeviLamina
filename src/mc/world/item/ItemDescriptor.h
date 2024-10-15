@@ -221,10 +221,27 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string_view fullName, int itemAux);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void* ctor$(struct Puv::Legacy::ItemDescriptor const& desc);
+
+    MCAPI void* ctor$(struct ItemTag const& itemTag);
+
+    MCAPI void* ctor$(class Item const& item, int auxValue);
+
+    MCAPI void* ctor$(class BlockLegacy const& block);
+
+    MCAPI void* ctor$(class ItemDescriptor&& rhs);
+
+    MCAPI void* ctor$(class ItemDescriptor const& rhs);
+
+    MCAPI void* ctor$(class Json::Value const& val, class SemVersion const& engineVersion);
+
+    MCAPI void* ctor$(class Block const& block);
 
     MCAPI void dtor$();
 

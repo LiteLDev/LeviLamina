@@ -104,10 +104,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class WorkerPool& workers, class Scheduler& context, std::string name);
 
     MCAPI void dtor$();
 

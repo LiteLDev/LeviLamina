@@ -50,10 +50,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Scripting::GeneratorIteratorAny const& rhs);
+
+    MCAPI void* ctor$(
+        class Scripting::IRuntime*         runtime,
+        struct Scripting::ContextId        contextId,
+        class Scripting::WeakLifetimeScope scope,
+        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorIteratorType> const&
+                                           generatorIteratorHandle,
+        class Scripting::IObjectInspector* inspector
+    );
 
     MCAPI void dtor$();
 

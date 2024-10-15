@@ -34,10 +34,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        int                                                         legacyId_,
+        class HashedString                                          legacyFullName_,
+        class HashedString                                          legacyRawName_,
+        uchar                                                       maxAuxValue_,
+        std::vector<struct FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_
+    );
 
     MCAPI void dtor$();
 

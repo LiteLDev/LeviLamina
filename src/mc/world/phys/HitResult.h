@@ -65,10 +65,25 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        class Vec3 const&     startPos,
+        class Vec3 const&     rayDir,
+        class BlockPos const& blockPos,
+        uchar                 facing,
+        class Vec3 const&     pos
+    );
+
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity, class Vec3 const& pos);
+
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& rayEnd);
+
+    MCAPI void* ctor$(class HitResult const&);
+
+    MCAPI void* ctor$(class HitResult&&);
 
     MCAPI void dtor$();
 

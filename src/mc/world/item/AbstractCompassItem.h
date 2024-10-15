@@ -52,10 +52,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string const&                                       name,
+        int                                                      id,
+        std::function<class CompassSpriteCalculator(class Mob*)> getSpriteCalculator
+    );
 
     MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const*, bool) const;
 

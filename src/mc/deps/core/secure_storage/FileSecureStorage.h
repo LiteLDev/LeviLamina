@@ -141,10 +141,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Core::PathBuffer<std::string> const&                         settingsPath,
+        class Core::PathBuffer<class Core::StackString<char, 1024>> const& baseSettingsPath,
+        class ISecureStorageKeySystem*                                     sskSystem,
+        class Core::Path const&                                            userDataPath,
+        class FileSecureStorage::StorageSystem*                            storage
+    );
 
     MCAPI bool add$(std::string const& key, std::string const& value);
 

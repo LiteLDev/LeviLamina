@@ -153,10 +153,15 @@ public:
 
     MCAPI static void** $vftableForISecureStorageKeySystem();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct HWND__*,
+        std::string const&,
+        std::string const&,
+        std::string_view,
+        std::shared_ptr<class HIDController>,
+        int,
+        int
+    );
 
     MCAPI void dtor$();
 

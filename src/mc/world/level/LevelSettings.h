@@ -249,10 +249,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class LevelSettings&&);
+
+    MCAPI void* ctor$(class LevelSettings const&);
+
+    MCAPI void* ctor$(class LevelData const& data, DimensionType dimension);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

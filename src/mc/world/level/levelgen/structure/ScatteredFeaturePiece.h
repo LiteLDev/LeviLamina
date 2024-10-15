@@ -33,10 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int west, int floor, int north, int width, int height, int depth);
 
     MCAPI void dtor$();
 

@@ -269,10 +269,9 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct CommandRegistry::Overload&&);
+
+        MCAPI void* ctor$(class CommandVersion, std::unique_ptr<class Command> (*)());
 
         MCAPI void dtor$();
 
@@ -316,10 +315,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
 
         // NOLINTEND
     };
@@ -352,10 +348,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
 
         // NOLINTEND
     };
@@ -405,10 +398,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct CommandRegistry::Signature&&);
 
         MCAPI void dtor$();
 
@@ -468,10 +458,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(class CommandRegistry const& registry, int version);
 
         MCAPI void dtor$();
 
@@ -525,10 +512,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::string const& name, std::vector<std::string> values);
 
         // NOLINTEND
     };
@@ -924,10 +908,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(bool isEduMode);
 
     MCAPI void dtor$();
 

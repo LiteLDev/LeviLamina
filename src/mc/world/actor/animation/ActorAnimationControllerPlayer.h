@@ -77,10 +77,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class HashedString const&                                    friendlyName,
+        class ActorAnimationControllerPtr const&                     animationControllerPtr,
+        class AnimationComponent&                                    animationComponent,
+        class ExpressionNode const&                                  blendExpression,
+        std::set<class HashedString, std::hash<class HashedString>>& animationControllerNameStack
+    );
 
     MCAPI void applyToPose$(
         class RenderParams&                                                               renderParams,

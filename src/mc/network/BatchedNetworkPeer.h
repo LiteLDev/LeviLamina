@@ -41,10 +41,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct BatchedNetworkPeer::DataCallback&&);
 
         MCAPI void dtor$();
 
@@ -108,10 +105,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::shared_ptr<class NetworkPeer> peer, class Scheduler& scheduler);
 
     MCAPI void flush$(std::function<void()>&& callback);
 

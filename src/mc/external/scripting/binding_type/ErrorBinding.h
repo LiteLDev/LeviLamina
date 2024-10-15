@@ -30,10 +30,10 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Scripting::ErrorBinding&&);
+
+    MCAPI void*
+    ctor$(std::string name_, entt::meta_type type_, std::vector<struct Scripting::PropertyBinding> properties_);
 
     MCAPI void dtor$();
 

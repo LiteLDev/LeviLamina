@@ -39,10 +39,7 @@ public:
 
     MCAPI static void** $vftableForNetEventCallback();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(bool isDedicatedServer);
 
     MCAPI bool allowIncomingPacketId$(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
 

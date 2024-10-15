@@ -54,10 +54,8 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(struct HttpPerformInfo const&, struct WebSocketPerformInfo const&, std::unique_ptr<struct HC_PERFORM_ENV, struct http_alloc_deleter<struct HC_PERFORM_ENV>>&&);
 
     MCAPI void dtor$();
 

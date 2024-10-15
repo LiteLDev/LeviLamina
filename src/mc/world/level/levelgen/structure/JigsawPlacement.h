@@ -81,10 +81,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint64                                              maxDepth,
+        uint64                                              globalContextSize,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieceList,
+        std::function<std::unique_ptr<
+            class
+            PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>
+                                             factory,
+        class Random&                        random,
+        class JigsawStructureRegistry const& pools,
+        class Dimension&                     dimension
+    );
 
     MCAPI void dtor$();
 

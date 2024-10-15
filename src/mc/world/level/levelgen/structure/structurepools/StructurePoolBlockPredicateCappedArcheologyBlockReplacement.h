@@ -36,10 +36,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::map<class HashedString, class HashedString> const& blockMappings,
+        uint64                                                  maximumAmount,
+        ::BrushableBlockActor::Placement                        placement
+    );
 
     MCAPI bool finalize$(class BlockSource& region, class IRandom& random);
 

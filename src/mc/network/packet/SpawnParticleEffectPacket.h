@@ -51,10 +51,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Vec3 const&                      pos,
+        std::string const&                     name,
+        uchar                                  vanillaDimensionId,
+        std::optional<class MolangVariableMap> molangVariables
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

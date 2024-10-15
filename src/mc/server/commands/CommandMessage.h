@@ -32,10 +32,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::string&& s);
+
+        MCAPI void* ctor$(std::unique_ptr<class CommandSelector<class Actor>>&& s);
+
+        MCAPI void* ctor$(struct CommandMessage::MessageComponent&& m);
 
         // NOLINTEND
     };
@@ -52,10 +53,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

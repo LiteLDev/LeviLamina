@@ -146,10 +146,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class IFileAccess> const& inner,
+        std::unique_ptr<class FileAccessTransforms>           transforms
+    );
 
     MCAPI int fclose$(void* file);
 

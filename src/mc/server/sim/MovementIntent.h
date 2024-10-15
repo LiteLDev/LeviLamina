@@ -39,10 +39,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::variant<
+                      struct sim::VoidMoveIntent,
+                      struct sim::MoveInDirectionIntent,
+                      struct sim::MoveToPositionIntent,
+                      struct sim::NavigateToPositionsIntent,
+                      struct sim::NavigateToEntityIntent> type);
 
     MCAPI void dtor$();
 

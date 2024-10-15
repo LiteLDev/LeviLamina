@@ -74,10 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& nameId, int id, int height, int aabbOffset);
 
     MCAPI bool canProvideSupport$(class Block const& block, uchar face, ::BlockSupportType type) const;
 

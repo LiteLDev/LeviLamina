@@ -74,10 +74,7 @@ public:
 
     MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI ::EventResult onEvent$(struct PlayerFormResponseEvent const& formResponseEvent);
 

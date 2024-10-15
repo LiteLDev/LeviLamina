@@ -49,10 +49,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Scripting::WeakLifetimeScope scope,
+        class Scripting::Closure<
+            void(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)> functionHandle,
+        std::string const&                                                                               testName
+    );
 
     MCAPI std::unique_ptr<class gametest::IGameTestFunctionRunResult>
           run$(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext& fnContext) const;

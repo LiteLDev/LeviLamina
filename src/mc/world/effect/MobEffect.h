@@ -80,10 +80,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct MobEffect::FactorCalculationData const&);
 
         MCAPI void dtor$();
 
@@ -214,10 +211,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint               id,
+        std::string const& resourceName,
+        std::string const& locName,
+        bool               isHarmful,
+        int                color,
+        int                icon,
+        std::string const& iconName,
+        bool               drawParticles
+    );
 
     MCAPI void dtor$();
 

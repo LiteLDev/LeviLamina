@@ -34,10 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int64 seed);
 
     MCAPI std::unique_ptr<class IRandom> forBlockPos$(class BlockPos const& blockPos) const;
 

@@ -452,10 +452,31 @@ public:
 
     MCAPI static void** $vftableForSocialXboxLiveUserObserver();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class GameCallbacks&                                            gameCallbacks,
+        class Bedrock::NonOwnerPointer<class ILevel> const&             level,
+        class ServerNetworkSystem&                                      network,
+        class PrivateKeyManager&                                        serverKeys,
+        class ServerLocator&                                            serverLocator,
+        class PacketSender&                                             packetSender,
+        class AllowList&                                                allowList,
+        class PermissionsFile*                                          permissionsFile,
+        class mce::UUID const&                                          hostPlayerId,
+        int                                                             maxChunkRadius,
+        std::vector<std::string> const&                                 extraTrustedKeys,
+        std::string                                                     serverType,
+        int                                                             maxNumPlayers,
+        class MinecraftCommands&                                        commandHandler,
+        class IMinecraftApp&                                            app,
+        std::unordered_map<struct PackIdVersion, std::string> const&    packIdToContentKey,
+        class Scheduler&                                                scheduler,
+        class Bedrock::NonOwnerPointer<class TextFilteringProcessor>    textFilteringProcessor,
+        class optional_ref<class MinecraftGameTest>                     gameTest,
+        class ServiceReference<class AppConfigs>                        appConfigs,
+        class ServiceReference<class Social::MultiplayerServiceManager> multiplayerServiceManager,
+        struct NetworkPermissions const&                                networkPermissions,
+        struct ServerNetworkHandler::HandlerToggles const&              handlerToggles
+    );
 
     MCAPI void dtor$();
 

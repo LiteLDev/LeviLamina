@@ -72,10 +72,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type);
+
+    MCAPI void* ctor$(int fadeInTime, int stayTime, int fadeOutTime);
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
+
+    MCAPI void* ctor$(class SetTitlePacket const&);
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type, std::string const& titleText);
 
     MCAPI void dtor$();
 

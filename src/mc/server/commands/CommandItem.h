@@ -36,10 +36,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int id, short version, bool overrideAux);
+
+    MCAPI void* ctor$(uint64 versionId);
 
     // NOLINTEND
 };

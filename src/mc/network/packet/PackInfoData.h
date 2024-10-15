@@ -42,10 +42,16 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class mce::UUID const&       guid,
+        class SemVersion const&      version,
+        uint64                       packSize,
+        std::string const&           contentKey,
+        std::string const&           subpackName,
+        class ContentIdentity const& contentIdentity,
+        bool                         hasScripts,
+        bool                         isRayTracingCapable
+    );
 
     MCAPI void dtor$();
 

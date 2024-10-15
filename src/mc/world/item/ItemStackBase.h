@@ -429,10 +429,19 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class BlockLegacy const& block, int count);
+
+    MCAPI void* ctor$(class Block const& block, int count, class CompoundTag const* _userData);
+
+    MCAPI void* ctor$(std::string_view name, int count, int auxValue, class CompoundTag const* _userData);
+
+    MCAPI void* ctor$(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
+
+    MCAPI void* ctor$(class RecipeIngredient const& ingredient);
+
+    MCAPI void* ctor$(class ItemStackBase const& rhs);
 
     MCAPI void dtor$();
 

@@ -58,10 +58,17 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct Scripting::ContextId                         contextId_,
+        class Scripting::WeakLifetimeScope                  scope_,
+        class Scripting::QuickJS::ClassRegistry&            classReg_,
+        struct Scripting::QuickJS::ResolvedTypes&           resolvedTypes_,
+        class Scripting::ScriptObjectFactory&               objectFactory_,
+        class Scripting::QuickJS::ObjectInspector&          objectInspector_,
+        class Scripting::IPrinter*                          printer_,
+        std::vector<struct Scripting::ModuleBinding> const& modules,
+        struct Scripting::ContextConfig                     contextConfig
+    );
 
     // NOLINTEND
 };

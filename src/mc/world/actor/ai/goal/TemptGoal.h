@@ -57,10 +57,19 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class TemptGoal const&);
+
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        float                                    speed,
+        std::vector<class ItemDescriptor> const& itemList,
+        ::Puv::Legacy::LevelSoundEvent           sound,
+        struct FloatRange                        soundIntervalRange,
+        bool                                     canGetScared,
+        float                                    temptDistance,
+        bool                                     canTemptVertically,
+        bool                                     canTemptWhileRidden
+    );
 
     MCAPI void appendDebugInfo$(std::string& str) const;
 

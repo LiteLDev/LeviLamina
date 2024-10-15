@@ -59,10 +59,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::vector<class ActorRuntimeID> const& runtimeIds,
+        std::string const&                       animation,
+        std::string const&                       nextState,
+        float                                    blendOutTime,
+        std::string const&                       stopExpression,
+        ::MolangVersion                          stopExpressionVersion,
+        std::string const&                       controller
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

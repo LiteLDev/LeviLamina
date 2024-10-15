@@ -46,10 +46,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
+
+    MCAPI void* ctor$(
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>                   player,
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> item,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>                    target
+    );
 
     // NOLINTEND
 };

@@ -32,10 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(gsl::not_null<class Tag const*> tag, struct cereal::ReflectionCtx const& reflectionCtx);
 
     MCAPI void dtor$();
 

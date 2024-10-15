@@ -80,10 +80,38 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::MolangStruct_RGB, class mce::Color const& color);
+
+    MCAPI void* ctor$(::MolangStruct_MinAndMax, struct MolangMemberArray&& min, struct MolangMemberArray&& max);
+
+    MCAPI void* ctor$(::MolangStruct_XYZ, class Vec3 const& vec);
+
+    MCAPI void* ctor$(::MolangStruct_SpeedAndDirection, float speed, class Vec3 const& direction);
+
+    MCAPI void* ctor$(::MolangStruct_RotYAndPosY, float rotY, float posY);
+
+    MCAPI void* ctor$(struct MolangMemberArray const&);
+
+    MCAPI void* ctor$(::MolangStruct_RGBA, class mce::Color const& color);
+
+    MCAPI void* ctor$(::MolangStruct_BaseAndPattern, int base, int pattern);
+
+    MCAPI void* ctor$(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
+
+    MCAPI void* ctor$(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
+
+    MCAPI void* ctor$(::MolangStruct_UV, float u, float v);
+
+    MCAPI void* ctor$(
+        ::MolangStruct_TRS,
+        struct MolangMemberArray&& translation,
+        struct MolangMemberArray&& rotation,
+        struct MolangMemberArray&& scale
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::MolangStruct_XY, class Vec2 const& vec);
 
     MCAPI void dtor$();
 

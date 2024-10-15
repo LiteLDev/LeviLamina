@@ -59,10 +59,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class BaseGameVersion const& rhs);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(ushort major, uint minor, uint patch);
+
+    MCAPI void* ctor$(class SemVersion const& semVersion);
 
     MCAPI void dtor$();
 

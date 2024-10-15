@@ -49,10 +49,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+
+    MCAPI void* ctor$(
+        struct BlockEvents::BlockPlayerPlacingEvent const& engineEvent,
+        class Scripting::WeakLifetimeScope const&          scope
+    );
 
     MCAPI void dtor$();
 

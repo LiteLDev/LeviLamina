@@ -56,10 +56,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::string const& groupName, class ItemInstance const& iconInstance);
+
+        MCAPI void* ctor$(std::string const& groupName, class Block const* block, class CompoundTag const* userData);
+
+        MCAPI void* ctor$(std::string const& groupName, short id, short auxValue, class CompoundTag const* userData);
 
         MCAPI void dtor$();
 
@@ -92,10 +93,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(int level, int uses, float speed, int damage, int enchant);
 
         // NOLINTEND
     };
@@ -684,10 +682,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& nameId, short id);
 
     MCAPI void dtor$();
 

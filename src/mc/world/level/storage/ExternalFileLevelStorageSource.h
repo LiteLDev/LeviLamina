@@ -105,10 +105,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&  pathManager,
+        Bedrock::NotNullNonOwnerPtr<class SaveTransactionManager> const& saveTransactionManager
+    );
 
     MCAPI void dtor$();
 

@@ -33,10 +33,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockDefinitionGroup*                group,
+        class Core::PathBuffer<std::string> const* heapPathBuffer,
+        std::string                                resourcePackLocation,
+        class SemVersion                           engineVersion,
+        class Experiments const*                   experiments,
+        bool                                       isBaseGamePack
+    );
 
     MCAPI void dtor$();
 

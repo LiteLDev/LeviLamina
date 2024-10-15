@@ -31,10 +31,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockPos const&  pos,
+        class Block const*     block,
+        class Block const*     finalBlock,
+        class JigsawEditorData editorData
+    );
+
+    MCAPI void* ctor$(class JigsawBlockInfo&&);
 
     MCAPI void dtor$();
 

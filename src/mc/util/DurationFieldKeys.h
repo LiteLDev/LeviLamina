@@ -31,10 +31,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string days, std::string hours, std::string minutes, std::string seconds);
+
+    MCAPI void* ctor$(
+        std::string days,
+        std::string hours,
+        std::string minutes,
+        std::string seconds,
+        std::string day,
+        std::string hour,
+        std::string minute,
+        std::string second
+    );
 
     MCAPI void dtor$();
 

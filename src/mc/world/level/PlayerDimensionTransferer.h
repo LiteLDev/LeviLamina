@@ -123,10 +123,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class IPlayerDimensionTransferProxy>           playerDimensionTransferProxy,
+        bool                                                           isClientSide,
+        gsl::not_null<class StackRefResult<class PortalForcer>> const& portalForcer,
+        std::unique_ptr<class ISharedSpawnGetter>                      sharedSpawnGetter,
+        class StackRefResult<class LevelStorage> const&                levelStorage
+    );
 
     MCAPI bool doRespawnIfReady$(
         class Player&                 player,

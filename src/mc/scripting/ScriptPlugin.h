@@ -61,10 +61,18 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::shared_ptr<class IScriptPluginSource>        pluginSource,
+        struct Scripting::ModuleDescriptor&&              moduleDesc,
+        std::vector<struct Scripting::ModuleDescriptor>&& moduleDependencies,
+        struct Scripting::Capabilities&&                  capabilities,
+        std::string const&                                engineVersion,
+        struct PackIdVersion const&                       packId,
+        std::string const&                                runtimeName,
+        std::string const&                                mainScriptFilePath
+    );
+
+    MCAPI void* ctor$(class ScriptPlugin&& rhs);
 
     MCAPI void dtor$();
 

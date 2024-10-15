@@ -67,10 +67,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class PackManifestFactory&                                          packManifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        class PackSourceFactory&                                            packSourceFactory,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
+        bool                                                                initAsync
+    );
 
     MCAPI void dtor$();
 

@@ -48,10 +48,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct ResourcePackRepository::KnownPackInfo const&);
 
         MCAPI void dtor$();
 
@@ -313,10 +310,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class IMinecraftEventing&                                               eventing,
+        class PackManifestFactory&                                              manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const& contentAccessibility,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&         pathManager,
+        class PackSourceFactory&                                                packSourceFactory,
+        bool                                                                    initAsync
+    );
 
     MCAPI void dtor$();
 

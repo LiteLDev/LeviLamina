@@ -125,10 +125,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct ScriptSettings                           scriptSettings,
+        class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler,
+        class IMinecraftEventing&                       minecraftEventings,
+        class ItemRegistryRef                           itemRegistry
+    );
 
     MCAPI void dtor$();
 

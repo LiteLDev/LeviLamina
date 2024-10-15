@@ -78,10 +78,8 @@ public:
 
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(::BlockActorType type, std::string const& id, ::BlockActorRendererId renderId, class BlockPos const& pos);
 
     MCAPI bool _detectEntityObstruction$(class BlockSource&) const;
 

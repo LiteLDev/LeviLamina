@@ -52,10 +52,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(std::unique_ptr<class StructureAnimationData> structureAnimationData, DimensionType dimensionType);
+
+    MCAPI void* ctor$(
+        class StructureSettings const& structureSettings,
+        DimensionType                  dimensionType,
+        class BlockPos const&          loadPosition,
+        std::string const&             fullName
+    );
 
     MCAPI void execute$(class ServerLevel& level, class Dimension& dimension);
 

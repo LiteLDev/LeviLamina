@@ -61,10 +61,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::vector<class BlockPos> const& blockPositions);
+
+    MCAPI void* ctor$(class ListBlockVolume const& rhs);
+
+    MCAPI void* ctor$(std::vector<class Vec3> const& blockPositions);
 
     MCAPI void forEach$(std::function<bool(class BlockPos const&)> callback) const;
 

@@ -52,10 +52,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(float amount, int duration, ::AttributeBuffType type, bool serialize, std::string const& name);
+
+    MCAPI void* ctor$(class TemporalAttributeBuff const&);
 
     MCAPI void dtor$();
 

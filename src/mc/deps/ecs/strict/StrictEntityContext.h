@@ -64,10 +64,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class EntityContext const& entity);
+
+    MCAPI void* ctor$(class StrictEntityContext&& other);
+
+    MCAPI void* ctor$(class EntityRegistry& registry, class EntityId entity);
 
     // NOLINTEND
 };

@@ -93,10 +93,7 @@ public:
 
     MCAPI static void** $vftableForIPreliminarySurfaceProvider();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Dimension& dimension, uint, class Json::Value const& generationOptionsJSON);
 
     MCAPI void
     decorateWorldGenLoadChunk$(class Biome const&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&)

@@ -57,10 +57,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Scripting::StrongObjectHandle&& rhs);
+
+    MCAPI void*
+    ctor$(class Scripting::WeakLifetimeScope scope, struct Scripting::ObjectHandle objHandle, bool addReference);
+
+    MCAPI void* ctor$(class Scripting::StrongObjectHandle const& rhs);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

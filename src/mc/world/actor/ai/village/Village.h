@@ -238,10 +238,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Dimension& dimension, class mce::UUID id, class BlockPos const& origin);
 
     MCAPI static float const& ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE();
 

@@ -54,10 +54,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        std::error_code const&    error_code,
+        ::PacketViolationResponse violationResponse,
+        ::MinecraftPacketIds      violatingPacketId,
+        std::string const&        violationContext
+    );
 
     MCAPI void dtor$();
 

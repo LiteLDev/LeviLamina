@@ -350,10 +350,20 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class LevelSettings const& settings,
+        std::string const&         levelName,
+        ::GeneratorType            generatorVersion,
+        class BlockPos const&      defaultSpawn,
+        bool                       achievementsDisabled,
+        ::EducationEditionOffer    eduOffer,
+        float                      rainLevel,
+        float                      lightningLevel
+    );
+
+    MCAPI void* ctor$(class LevelData&& rhs);
+
+    MCAPI void* ctor$(bool isEduMode);
 
     MCAPI void dtor$();
 

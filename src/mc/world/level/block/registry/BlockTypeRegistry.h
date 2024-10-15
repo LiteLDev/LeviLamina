@@ -103,10 +103,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(class Block const* block, bool resolveBlockLegacy);
+
+        MCAPI void* ctor$(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
+
+        MCAPI void* ctor$(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
 
         // NOLINTEND
     };

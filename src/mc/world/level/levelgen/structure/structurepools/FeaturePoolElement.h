@@ -56,10 +56,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager, class WeakRef<class IFeature> feature);
 
     MCAPI std::vector<class JigsawBlockInfo>
           getJigsawMarkers$(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region)

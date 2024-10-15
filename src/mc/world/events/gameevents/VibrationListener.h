@@ -88,10 +88,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class VibrationListenerConfig>&& config,
+        class GameEvents::PositionSource                 positionSource,
+        uint                                             range,
+        ::VibrationListener::OwnerType                   ownerType
+    );
 
     MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
 

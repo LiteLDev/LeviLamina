@@ -56,10 +56,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::string&& taskGroupName, class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
 
         // NOLINTEND
     };
@@ -108,10 +105,8 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(std::string const& descriptorString, class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
 
     MCAPI void dtor$();
 

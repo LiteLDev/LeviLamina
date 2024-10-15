@@ -34,10 +34,8 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void*
+        ctor$(std::string value, std::optional<::Bedrock::LogLevel> logLevel, std::optional<::LogAreaID> logArea);
 
         MCAPI void dtor$();
 
@@ -66,10 +64,8 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void*
+        ctor$(struct Bedrock::CallStack::Frame&& frame, std::optional<struct Bedrock::CallStack::Context>&& context);
 
         MCAPI void dtor$();
 
@@ -93,10 +89,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Bedrock::CallStack const&);
+
+    MCAPI void* ctor$(struct Bedrock::CallStack::FrameWithContext&& frame);
+
+    MCAPI void* ctor$(std::vector<struct Bedrock::CallStack::FrameWithContext>&& frames);
 
     MCAPI void dtor$();
 

@@ -133,10 +133,17 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::nullptr_t);
+
+    MCAPI void* ctor$(class HashedString const& rhs);
+
+    MCAPI void* ctor$(uint64 hash, char const* str);
+
+    MCAPI void* ctor$(class HashedString&& rhs);
+
+    MCAPI void* ctor$(char const* str);
+
+    MCAPI void* ctor$(std::string const& str);
 
     MCAPI void dtor$();
 

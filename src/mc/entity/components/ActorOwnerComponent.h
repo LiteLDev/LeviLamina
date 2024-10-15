@@ -28,10 +28,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::unique_ptr<class Actor> uniqueActor);
+
+    MCAPI void* ctor$(class ActorOwnerComponent&& other);
 
     MCAPI void dtor$();
 

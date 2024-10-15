@@ -62,10 +62,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(class HashedString name, struct Puv::v1_20_50::BlockDescriptor::Compound state);
+
+        MCAPI void* ctor$(class HashedString name, int intState);
+
+        MCAPI void* ctor$(class HashedString name, std::string const& stringState);
 
         MCAPI void dtor$();
 
@@ -137,10 +138,17 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Puv::v1_20_50::BlockDescriptor desc);
+
+    MCAPI void* ctor$(class BlockDescriptor const& rhs);
+
+    MCAPI void* ctor$(std::string const& name, std::vector<struct BlockDescriptor::State>&& states);
+
+    MCAPI void* ctor$(class BlockDescriptor&& rhs);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class HashedString const& fullName);
 
     MCAPI void dtor$();
 

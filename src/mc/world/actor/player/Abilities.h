@@ -64,10 +64,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Abilities const& rhs);
+
+    MCAPI void* ctor$(bool setToDefaults);
 
     MCAPI static std::array<char const*, 19>& ABILITY_NAMES();
 

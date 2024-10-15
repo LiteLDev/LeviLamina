@@ -45,10 +45,8 @@ public:
 
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(::BlockActorType blockEntityType, std::string const& id, class BlockPos const& pos, ::ContainerType);
 
     MCAPI void dtor$();
 

@@ -40,10 +40,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(int id, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon);
 
     MCAPI float getAttributeModifierValue$(int amplifier, class AttributeModifier const& modifier) const;
 

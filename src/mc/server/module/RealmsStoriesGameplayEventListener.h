@@ -58,10 +58,7 @@ public:
 
     MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class LevelStorage& levelStorage);
 
     MCAPI ::EventResult onEvent$(struct ActorKilledEvent const& actorKilledEvent);
 

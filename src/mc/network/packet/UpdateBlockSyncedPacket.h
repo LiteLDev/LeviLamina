@@ -50,10 +50,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        class BlockPos const&               pos,
+        uint                                layer,
+        uint                                runtimeId,
+        uchar                               updateFlags,
+        struct ActorBlockSyncMessage const& syncMsg
+    );
 
     MCAPI void dtor$();
 

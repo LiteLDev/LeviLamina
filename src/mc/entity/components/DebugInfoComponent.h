@@ -177,10 +177,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class DebugInfoComponent const&);
+
+    MCAPI void* ctor$(class DebugInfoComponent&&);
 
     MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
 

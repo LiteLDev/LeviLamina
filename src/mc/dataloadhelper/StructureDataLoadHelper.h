@@ -100,10 +100,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockPos const& structurePlacementLocation,
+        class BlockPos const& structureWorldOrigin,
+        class Vec3 const&     rotationPivot,
+        struct ActorUniqueID  ownerID,
+        ::Rotation            rotation,
+        ::Mirror              mirror,
+        class Level&          level
+    );
 
     MCAPI void dtor$();
 

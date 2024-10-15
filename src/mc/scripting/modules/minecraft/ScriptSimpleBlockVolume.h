@@ -66,10 +66,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+
+    MCAPI void* ctor$(class Vec3 const& from, class Vec3 const& to);
 
     MCAPI void dtor$();
 

@@ -70,10 +70,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class PlayerLimboActorManager>                        playerLimboActorManager,
+        std::unique_ptr<class IPlayerDimensionTransferer>                     playerDimensionTransferer,
+        gsl::not_null<class StackRefResult<class DimensionManager>> const&    dimensionManager,
+        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager,
+        gsl::not_null<class StackRefResult<class EntityRegistry>> const&      entityRegistry,
+        std::unique_ptr<class ILevelCrashDumpManager>                         levelCrashDumpManager
+    );
 
     MCAPI void dtor$();
 

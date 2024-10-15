@@ -1057,10 +1057,26 @@ public:
 
     MCAPI static void** $vftableForIWorldRegistriesProvider();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
+        class OwnerPtr<class LevelStorage>                             levelStorage,
+        class IMinecraftEventing&                                      eventing,
+        bool                                                           isClientSide,
+        ::SubClientId                                                  subClientId,
+        class Scheduler&                                               callbackContext,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
+        class ResourcePackManager&                                     addOnResourcePackManager,
+        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
+        class WeakRef<class EntityContext>                             levelEntity,
+        std::unique_ptr<class BlockComponentFactory>                   blockComponentFactory,
+        std::unique_ptr<class BlockDefinitionGroup>                    blockDefinitionGroup,
+        class ItemRegistryRef                                          itemRegistry,
+        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry,
+        bool                                                           clientSideChunkGenerationEnabled,
+        bool                                                           blockNetworkIdsAreHashes,
+        struct NetworkPermissions const&                               networkPermissions,
+        std::optional<class DimensionDefinitionGroup>                  dimensionDefinitionGroup
+    );
 
     MCAPI void dtor$();
 

@@ -209,10 +209,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::Core::FileAccessType                       type,
+        class Core::Path const&                      rootPath,
+        bool                                         usesFlatFiles,
+        bool                                         isAccessedDirectly,
+        std::shared_ptr<class Core::FileStorageArea> parent
+    );
 
     MCAPI void dtor$();
 

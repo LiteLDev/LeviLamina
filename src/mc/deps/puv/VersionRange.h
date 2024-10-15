@@ -33,10 +33,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Puv::VersionRange const&);
+
+    MCAPI void* ctor$(class SemVersion min, class SemVersion max, ::Puv::RangeType type);
 
     MCAPI void dtor$();
 

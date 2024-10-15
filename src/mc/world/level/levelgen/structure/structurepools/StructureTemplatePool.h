@@ -59,10 +59,19 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct StructureTemplateRegistrationContext                         context,
+        std::string_view                                                    name,
+        std::string_view                                                    fallback,
+        ::Projection                                                        projection,
+        std::initializer_list<struct WeightedStructureTemplateRegistration> pieces
+    );
+
+    MCAPI void* ctor$(
+        std::string                                                           name,
+        std::string                                                           fallback,
+        std::vector<std::pair<class StructurePoolElement const*, int>> const& templates
+    );
 
     // NOLINTEND
 };

@@ -69,10 +69,20 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct Bounds const&                  bounds,
+        std::unique_ptr<class IRequestAction> requestAction,
+        bool                                  isCircleArea,
+        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+    );
+
+    MCAPI void* ctor$(class ChunkLoadedRequest&&);
+
+    MCAPI void* ctor$(
+        std::string const&                    tickingAreaName,
+        std::unique_ptr<class IRequestAction> requestAction,
+        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+    );
 
     MCAPI void dtor$();
 

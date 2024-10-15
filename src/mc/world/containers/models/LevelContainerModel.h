@@ -75,10 +75,22 @@ public:
 
     MCAPI static void** $vftableForContainerRemovedListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::ContainerEnumName  containerName,
+        int                  containerSize,
+        class Player&        player,
+        struct ActorUniqueID entityId,
+        ::ContainerCategory  category
+    );
+
+    MCAPI void* ctor$(
+        ::ContainerEnumName   containerName,
+        int                   containerSize,
+        class Player&         player,
+        ::BlockActorType      type,
+        class BlockPos const& blockPos,
+        ::ContainerCategory   category
+    );
 
     MCAPI class Container* _getContainer$() const;
 

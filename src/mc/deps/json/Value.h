@@ -108,10 +108,15 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(char const* cstr);
+
+        MCAPI void* ctor$(class Json::Value::CZString const& other);
+
+        MCAPI void* ctor$(class Json::Value::CZString&& other);
+
+        MCAPI void* ctor$(char* cstr, bool duplicate);
 
         MCAPI void dtor$();
 
@@ -297,10 +302,29 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(bool value);
+
+    MCAPI void* ctor$(uint64 value);
+
+    MCAPI void* ctor$(char const* value);
+
+    MCAPI void* ctor$(double value);
+
+    MCAPI void* ctor$(int64 value);
+
+    MCAPI void* ctor$(class Json::Value const& other);
+
+    MCAPI void* ctor$(std::string const& value);
+
+    MCAPI void* ctor$(::Json::ValueType type);
+
+    MCAPI void* ctor$(class Json::Value::CZString* str);
+
+    MCAPI void* ctor$(class Json::Value&& other);
+
+    MCAPI void* ctor$(int value);
+
+    MCAPI void* ctor$(uint value);
 
     MCAPI void dtor$();
 

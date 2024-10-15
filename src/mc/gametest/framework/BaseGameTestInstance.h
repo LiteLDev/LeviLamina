@@ -108,10 +108,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class gametest::BaseGameTestFunction const&              testFunction,
+        std::unique_ptr<class gametest::IGameTestHelperProvider> helper
+    );
 
     MCAPI void dtor$();
 

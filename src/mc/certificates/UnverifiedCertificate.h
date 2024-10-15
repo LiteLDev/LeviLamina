@@ -47,10 +47,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class UnverifiedCertificate const& other);
+
+    MCAPI void* ctor$(class UnverifiedCertificate&& other);
+
+    MCAPI void*
+    ctor$(class WebToken const& rawToken, std::unique_ptr<class UnverifiedCertificate> parentUnverifiedCertificate);
 
     MCAPI void dtor$();
 

@@ -39,10 +39,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Player& player, ::ContainerType screenContainerType, struct ActorUniqueID const& actorId);
+
+    MCAPI void* ctor$(class Player& player, ::ContainerType screenContainerType, class BlockPos const& blockPos);
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

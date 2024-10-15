@@ -68,10 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Core::Path const& pathToWorld, ::PackType type);
 
     MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
 

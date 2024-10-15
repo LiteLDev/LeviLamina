@@ -43,10 +43,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class mce::UUID const& id, class SemVersion const& version, ::PackType packType);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

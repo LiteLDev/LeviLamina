@@ -45,10 +45,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ServerNetworkSystem&                                                   network,
+        std::unique_ptr<class ServerNetworkHandler>                                  serverNetworkHandler,
+        class LoopbackPacketSender&                                                  loopbackPacketSender,
+        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
+        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
+        ::SubClientId                                                                subid
+    );
 
     // NOLINTEND
 };

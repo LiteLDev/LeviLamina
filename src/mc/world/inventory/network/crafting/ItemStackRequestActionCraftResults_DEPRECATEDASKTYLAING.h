@@ -31,10 +31,7 @@ public:
 
     MCAPI static void** $vftableForItemStackRequestAction();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
 

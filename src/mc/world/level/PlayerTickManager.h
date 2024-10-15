@@ -32,10 +32,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        gsl::not_null<class StackRefResult<class DimensionManager>> const&    dimensionManagerStackRef,
+        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManagerStackRef,
+        std::unique_ptr<class IPlayerTickProxy>                               playerTickProxy,
+        bool                                                                  isClientSide
+    );
 
     MCAPI void dtor$();
 

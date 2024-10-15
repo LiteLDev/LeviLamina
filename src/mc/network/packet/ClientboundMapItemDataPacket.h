@@ -85,10 +85,24 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(gsl::not_null<class MapItemSavedData*> newMapItem, class Level& level);
+
+    MCAPI void* ctor$(
+        struct ActorUniqueID mapId,
+        schar                scale,
+        std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&
+                                decorations,
+        class buffer_span<uint> mapColors,
+        int                     startX,
+        int                     startY,
+        int                     width,
+        int                     height,
+        DimensionType           dimension,
+        bool                    isLocked,
+        class BlockPos const&   mapOrigin
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

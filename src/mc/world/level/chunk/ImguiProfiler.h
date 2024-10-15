@@ -58,10 +58,7 @@ public:
             // thunks
         public:
             // NOLINTBEGIN
-            template <class... Args>
-            auto* ctor$(Args... args) {
-                return std::construct_at(this, std::forward<Args>(args)...);
-            }
+            MCAPI void* ctor$(struct ImguiProfiler::RecordGroup::FullStackRecord&&);
 
             MCAPI void dtor$();
 
@@ -87,10 +84,7 @@ public:
             // thunks
         public:
             // NOLINTBEGIN
-            template <class... Args>
-            auto* ctor$(Args... args) {
-                return std::construct_at(this, std::forward<Args>(args)...);
-            }
+            MCAPI void* ctor$(struct ImguiProfiler::RecordGroup::Record const&);
 
             MCAPI void dtor$();
 
@@ -188,10 +182,7 @@ public:
         // NOLINTBEGIN
         MCAPI static void** $vftable();
 
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(char const* group, char const* name, bool isClient);
 
         MCAPI void dtor$();
 
@@ -222,10 +213,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI static std::vector<struct ImguiProfiler::Record>& sPendingRecords();
 

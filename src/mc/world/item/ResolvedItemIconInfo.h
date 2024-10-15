@@ -36,10 +36,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& name, int frame, ::ItemIconInfoType type);
+
+    MCAPI void* ctor$(uint legacyID, int frame);
+
+    MCAPI void*
+    ctor$(std::string const& name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

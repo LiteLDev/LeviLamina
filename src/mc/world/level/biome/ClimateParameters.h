@@ -47,10 +47,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct ClimateUtils::Parameter temperature,
+        struct ClimateUtils::Parameter humidity,
+        struct ClimateUtils::Parameter continentalness,
+        struct ClimateUtils::Parameter erosion,
+        struct ClimateUtils::Parameter depth,
+        struct ClimateUtils::Parameter weirdness,
+        float                          offset
+    );
 
     // NOLINTEND
 };

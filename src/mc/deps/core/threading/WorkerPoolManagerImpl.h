@@ -74,10 +74,7 @@ public:
 
     MCAPI static void** $vftableForBedrockImplBase();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI std::shared_ptr<class Bedrock::WorkerPoolHandleInterface> createWorkerPool$(
         std::string                                       name,

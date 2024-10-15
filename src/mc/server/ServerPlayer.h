@@ -368,10 +368,24 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Level&                                           level,
+        class PacketSender&                                    packetSender,
+        class ServerNetworkSystem&                             network,
+        class ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
+        ::GameType                                             playerGameType,
+        bool                                                   isHostingPlayer,
+        class NetworkIdentifier const&                         owner,
+        ::SubClientId                                          subid,
+        std::function<void(class ServerPlayer&)>               onPlayerLoadedCallback,
+        class mce::UUID                                        uuid,
+        std::string const&                                     playFabId,
+        std::string const&                                     deviceId,
+        std::unique_ptr<class Certificate>                     certificate,
+        int                                                    maxChunkRadius,
+        bool                                                   enableItemStackNetManager,
+        class EntityContext&                                   entityContext
+    );
 
     MCAPI void dtor$();
 

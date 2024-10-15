@@ -47,10 +47,21 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        std::vector<struct MobDescriptor> const& targetTypes,
+        float                                    within,
+        int                                      attackInterval,
+        bool                                     mustSee,
+        int                                      mustSeeForgetTicks,
+        bool                                     mustReach,
+        bool                                     reselectTargets,
+        int                                      scanInterval,
+        float                                    targetSearchHeight,
+        bool                                     attackOwner,
+        int                                      persistTargetTicks,
+        bool                                     setPersistent
+    );
 
     MCAPI struct ActorUniqueID _findTarget$(struct MobDescriptor const** outMobDescriptor);
 

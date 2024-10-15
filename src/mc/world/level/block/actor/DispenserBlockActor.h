@@ -70,10 +70,9 @@ public:
 
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class BlockPos pos);
+
+    MCAPI void* ctor$(class BlockPos pos, ::BlockActorType type);
 
     MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
 

@@ -24,10 +24,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Scripting::PropertyOutOfBoundsError&&);
+
+    MCAPI void* ctor$(std::string const& propertyName, double value_, double minValue_, double maxValue_);
 
     MCAPI void dtor$();
 

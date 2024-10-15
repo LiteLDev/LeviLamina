@@ -130,10 +130,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Dimension&      dimension,
+        class mce::UUID       uniqueId,
+        std::string const&    name,
+        struct ActorUniqueID  entityId,
+        struct Bounds const&  bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
 
     MCAPI void dtor$();
 

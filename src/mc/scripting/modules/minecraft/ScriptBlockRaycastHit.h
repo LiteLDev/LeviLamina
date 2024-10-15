@@ -41,10 +41,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockSource&                        source,
+        class BlockPos const&                     pos,
+        uchar                                     face,
+        class Vec3 const&                         faceLocation,
+        class Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI void dtor$();
 

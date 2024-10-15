@@ -60,10 +60,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int slot);
+
+    MCAPI void* ctor$(int slot, class ListTag const& tag);
 
     MCAPI void dtor$();
 

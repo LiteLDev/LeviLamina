@@ -48,10 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& nameId, int id, bool lit);
 
     MCAPI void _lightUpBlock$(class BlockSource& region, class BlockPos const& pos) const;
 

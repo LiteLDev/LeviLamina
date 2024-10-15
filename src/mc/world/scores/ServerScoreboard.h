@@ -141,10 +141,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class CommandSoftEnumRegistry                                         registry,
+        class LevelStorage*                                                   levelStorage,
+        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
+    );
 
     MCAPI void dtor$();
 

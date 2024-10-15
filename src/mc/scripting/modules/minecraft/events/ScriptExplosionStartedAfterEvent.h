@@ -43,10 +43,10 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
+
+    MCAPI void*
+    ctor$(struct ExplosionStartedEvent const& explosionStartedEvent, class Scripting::WeakLifetimeScope const& scope);
 
     // NOLINTEND
 };

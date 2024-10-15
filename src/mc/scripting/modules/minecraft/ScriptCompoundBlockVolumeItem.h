@@ -38,10 +38,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+
+    MCAPI void* ctor$(class CompoundBlockVolumeItem const& item);
 
     MCAPI void dtor$();
 

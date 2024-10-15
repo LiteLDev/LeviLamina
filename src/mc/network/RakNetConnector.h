@@ -292,10 +292,12 @@ public:
 
     MCAPI static void** $vftableForNetworkEnableDisableListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct RakNetConnector::ConnectionCallbacks&             callbacks,
+        class RakPeerHelper::IPSupportInterface&                 ipInterface,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
+        struct RakNet::RakPeerConfiguration const&               rakPeerConfig
+    );
 
     MCAPI void dtor$();
 

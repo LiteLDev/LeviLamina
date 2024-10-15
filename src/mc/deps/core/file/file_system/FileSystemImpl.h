@@ -337,10 +337,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::Core::FileAccessType                               accessType,
+        std::shared_ptr<class Core::FileStorageArea>         storageArea,
+        ::Core::TransactionFlags                             transactionFlags,
+        std::shared_ptr<class Core::FlatFileManifestTracker> manifestTracker
+    );
 
     MCAPI void dtor$();
 

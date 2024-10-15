@@ -30,10 +30,10 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct Scripting::ModuleDescriptor const& missingModule_,
+        struct Scripting::ModuleDescriptor const& requestedBy_
+    );
 
     MCAPI void dtor$();
 

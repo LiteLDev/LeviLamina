@@ -79,10 +79,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(uint initialBytesToAllocate);
+
+    MCAPI void* ctor$(uchar* _data, uint lengthInBytes, bool _copyData);
 
     MCAPI void dtor$();
 

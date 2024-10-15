@@ -69,10 +69,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        std::string               text,
+        class mce::Color const&   color,
+        class Vec3 const&         position,
+        std::chrono::milliseconds duration
+    );
+
+    MCAPI void* ctor$(::ClientboundDebugRendererPacket::Type type);
 
     MCAPI void dtor$();
 

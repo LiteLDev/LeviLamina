@@ -50,10 +50,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Core::Path const& path, ::ResourceFileSystem fileSystem);
+
+    MCAPI void* ctor$(class Core::Path const& path);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

@@ -555,10 +555,7 @@ public:
 
     MCAPI static void** $vftableForISecureStorageKeySystem();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(bool registerService);
 
     MCAPI void dtor$();
 

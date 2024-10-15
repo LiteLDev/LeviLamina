@@ -97,10 +97,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct SubChunkPacket::SubChunkPacketData&&);
 
         MCAPI void dtor$();
 
@@ -145,10 +142,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(DimensionType const& dimension, class SubChunkPos const& centerPos, bool cacheEnabled);
 
     MCAPI void dtor$();
 

@@ -137,10 +137,9 @@ public:
 
     MCAPI static void** $vftableForScriptModuleMinecraftIScriptWorldBeforeEvents();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptV010Events&&);
+
+    MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class Level*> level);
 
     MCAPI void dtor$();
 

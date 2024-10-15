@@ -46,10 +46,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                  manager,
+            std::string const&                                                   location,
+            std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules
+        );
 
         // NOLINTEND
     };
@@ -171,10 +172,28 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> manager,
+        std::string const&                                  location,
+        ::Projection                                        projection,
+        ::PostProcessSettings                               postProcessSettings
+    );
+
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> manager,
+        std::string const&                                  location,
+        struct StructurePoolElementSettings                 settings
+    );
+
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>                  manager,
+        std::string const&                                                   location,
+        std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*    blockRules,
+        std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules,
+        std::vector<std::unique_ptr<class StructurePoolActorRule>> const*    actorRules,
+        ::Projection                                                         projection,
+        ::PostProcessSettings                                                postProcessSettings
+    );
 
     MCAPI void dtor$();
 

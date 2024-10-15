@@ -89,10 +89,16 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        ::MapDecoration::Type   img,
+        schar                   x,
+        schar                   y,
+        schar                   rot,
+        std::string const&      label,
+        class mce::Color const& color
+    );
 
     MCAPI void dtor$();
 

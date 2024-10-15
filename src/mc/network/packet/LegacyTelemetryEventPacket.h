@@ -187,10 +187,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
 
         MCAPI void dtor$();
 
@@ -306,10 +303,65 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
+
+    MCAPI void* ctor$(class Player const* player, int partySize, gsl::not_null<class Actor const*> e);
+
+    MCAPI void*
+    ctor$(class Player const& player, class ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
+
+    MCAPI void* ctor$(class Player const& player, std::string const& objective, int score);
+
+    MCAPI void* ctor$(class Player const* player, short contentsType, uint contentsColor, short fillLevel);
+
+    MCAPI void* ctor$(
+        class Player const* player,
+        std::string const&  commandName,
+        int                 successCount,
+        int                 errorCount,
+        std::string const&  errorList
+    );
+
+    MCAPI void* ctor$(class Player const* player, struct LegacyTelemetryEventPacket::Data const& data);
+
+    MCAPI void* ctor$(class Player const* player, gsl::not_null<class Mob const*> baby);
+
+    MCAPI void* ctor$(class Player const* player, class Raid const& raid, bool success);
+
+    MCAPI void* ctor$(
+        class Player const*             player,
+        class Actor const*              killerEntity,
+        gsl::not_null<class Mob const*> killedMob,
+        ::ActorDamageCause              cause,
+        std::string                     traderName,
+        int                             traderTier,
+        ::ActorType                     damageChildType
+    );
+
+    MCAPI void* ctor$(
+        class Player const*                  player,
+        gsl::not_null<class Actor const*>    interactedEntity,
+        ::MinecraftEventing::InteractionType interactionType
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Player const* player, DimensionType portalBuiltInDimension);
+
+    MCAPI void* ctor$(class Player const& player, std::string const& codebuilderRuntimeAction);
+
+    MCAPI void* ctor$(class Player const* player, DimensionType fromDimension, DimensionType toDimension);
+
+    MCAPI void* ctor$(
+        class Player const*             player,
+        class Actor const*              killerEntity,
+        gsl::not_null<class Mob const*> killedMob,
+        ::ActorDamageCause              cause,
+        ::ActorType                     damageChildType
+    );
+
+    MCAPI void*
+    ctor$(class Player const* player, int killerId, int killerVariant, ::ActorDamageCause cause, bool inRaid);
 
     MCAPI void dtor$();
 

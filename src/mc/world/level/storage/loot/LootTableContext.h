@@ -47,10 +47,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(class ILevel* level, DimensionType dimensionId);
 
         MCAPI void dtor$();
 
@@ -92,10 +89,17 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        float                          luck,
+        class ILevel*                  level,
+        struct ActorUniqueID           thisEntityID,
+        class Player*                  player,
+        class Actor*                   killedActor,
+        class ActorDamageSource const* deathSource,
+        float                          explosionRadius,
+        DimensionType                  dimensionId,
+        class ItemStack const*         tool
+    );
 
     MCAPI void dtor$();
 

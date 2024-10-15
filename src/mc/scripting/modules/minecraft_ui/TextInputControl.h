@@ -46,10 +46,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
+        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
+        std::optional<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
+    );
 
     MCAPI class Scripting::Result<class Json::Value>
     buildJson$(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;

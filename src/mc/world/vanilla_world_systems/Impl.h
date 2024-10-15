@@ -38,10 +38,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Bedrock::NonOwnerPointer<class Level> const&             level,
+        class Experiments const&                                       experiments,
+        class BaseGameVersion const&                                   baseGameVersion,
+        class ItemRegistryRef                                          itemRegistry,
+        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+    );
 
     MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl>& mInstance();
 

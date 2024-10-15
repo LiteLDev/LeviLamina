@@ -110,10 +110,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& itemName, short itemId);
 
     MCAPI void
     appendFormattedHovertext$(class ItemStackBase const& stack, class Level& level, std::string& hovertext, bool) const;

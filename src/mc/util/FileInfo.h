@@ -25,10 +25,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Core::Path _filePath, int _fileSize, std::string _fileHash);
 
     MCAPI void dtor$();
 

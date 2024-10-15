@@ -244,10 +244,36 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void*
+    ctor$(std::string const& expression, ::MolangVersion molangVersion, gsl::span<class HashedString const> querySetID);
+
+    MCAPI void* ctor$(class ExpressionNode const& rhs);
+
+    MCAPI void* ctor$(
+        std::string const&                  expression,
+        class SemVersion const&             molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
+
+    MCAPI void* ctor$(
+        class Json::Value const&            value,
+        ::MolangVersion                     molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
+
+    MCAPI void* ctor$(struct MolangScriptArg& value, ::ExpressionOp op);
+
+    MCAPI void* ctor$(float value);
+
+    MCAPI void* ctor$(class ExpressionNode&& rhs);
+
+    MCAPI void* ctor$(
+        class Json::Value const&            value,
+        class SemVersion const&             molangVersion,
+        gsl::span<class HashedString const> querySetID
+    );
 
     MCAPI void dtor$();
 

@@ -179,10 +179,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Player&                              player,
+        std::unique_ptr<struct IGameModeTimer>     timer,
+        std::unique_ptr<struct IGameModeMessenger> messenger
+    );
 
     MCAPI bool attack$(class Actor& entity);
 

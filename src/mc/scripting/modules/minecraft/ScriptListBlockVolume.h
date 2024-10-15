@@ -57,10 +57,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::vector<class Vec3> const& locations);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::vector<class BlockPos> const& locations);
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator$(class Scripting::WeakLifetimeScope scope);

@@ -59,10 +59,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(float x, float y, float z);
+
+    MCAPI void* ctor$(class ChunkPos const& cp, int y);
+
+    MCAPI void* ctor$(class Vec3 const& v);
+
+    MCAPI void* ctor$(class SubChunkPos const& subChunkPos);
+
+    MCAPI void* ctor$(class ChunkPos const& cp, class ChunkBlockPos const& offset, short minDimensionHeight);
 
     MCAPI static class BlockPos const& MAX();
 

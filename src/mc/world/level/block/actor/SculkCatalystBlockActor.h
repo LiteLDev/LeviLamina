@@ -59,10 +59,7 @@ public:
 
     MCAPI static void** $vftableForGameEventListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class BlockPos const& pos);
 
     MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
 

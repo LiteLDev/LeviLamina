@@ -29,10 +29,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct ContainerValidationResult const&);
+
+    MCAPI void* ctor$(::ContainerValidationOutcome outcome);
 
     MCAPI void dtor$();
 

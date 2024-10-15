@@ -64,10 +64,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int& orientation, class BoundingBox& boundingBox);
+
+    MCAPI void* ctor$(
+        int                                   genDepth,
+        int&                                  orientation,
+        std::shared_ptr<class RoomDefinition> roomDefinition,
+        int                                   roomWidth,
+        int                                   roomHeight,
+        int                                   roomDepth
+    );
 
     MCAPI void dtor$();
 

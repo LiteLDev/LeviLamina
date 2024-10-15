@@ -122,10 +122,29 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint id,
+        int  duration,
+        int  durationEasy,
+        int  durationNormal,
+        int  durationHard,
+        int  amplifier,
+        bool ambient,
+        bool effectVisible,
+        bool displayAnimation
+    );
+
+    MCAPI void* ctor$(uint id, int duration);
+
+    MCAPI void* ctor$(uint id, int duration, int amplifier, bool ambient, bool effectVisible, bool displayAnimation);
+
+    MCAPI void* ctor$(class MobEffectInstance&&);
+
+    MCAPI void* ctor$(uint id);
+
+    MCAPI void* ctor$(class MobEffectInstance const&);
+
+    MCAPI void* ctor$(uint id, int duration, int amplifier);
 
     MCAPI void dtor$();
 

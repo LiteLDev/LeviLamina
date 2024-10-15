@@ -60,10 +60,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ReplayStateComponent&& rhs);
+
+    MCAPI void* ctor$(std::unique_ptr<class ActorHistory> history, std::unique_ptr<struct IReplayStatePolicy> policy);
 
     MCAPI void dtor$();
 

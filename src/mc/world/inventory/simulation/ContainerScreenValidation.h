@@ -119,10 +119,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ContainerScreenContext const&                                       screenContext,
+        ::ContainerValidationCaller                                               caller,
+        std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>> predictiveContainers
+    );
 
     MCAPI struct ContainerValidationCraftResult
     getCraftResults$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);

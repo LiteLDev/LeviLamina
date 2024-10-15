@@ -66,10 +66,21 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class CommandParameterData const& p);
+
+    MCAPI void* ctor$(
+        class Bedrock::typeid_t<class CommandRegistry> typeIndex,
+        bool (CommandRegistry::*
+                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+            const,
+        char const*                name,
+        ::CommandParameterDataType paramType,
+        char const*                enumNameOrPostfix,
+        char const*                chainedSubcommand,
+        int                        offset,
+        bool                       optional,
+        int                        setOffset
+    );
 
     MCAPI void dtor$();
 

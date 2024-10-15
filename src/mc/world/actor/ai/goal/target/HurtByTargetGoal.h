@@ -39,10 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
 
     MCAPI void alertOther$(class Mob* other, class Mob* hurtByMob);
 

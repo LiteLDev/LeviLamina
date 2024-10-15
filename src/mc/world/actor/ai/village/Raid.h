@@ -64,10 +64,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        int                                        raidPreparationTime,
+        int                                        groupCompleteDelayInTicks,
+        int                                        locationHelpDelayInTicks,
+        int                                        finishedDelayInTicks,
+        ::Difficulty                               difficulty,
+        uchar                                      allowedSpawnFailures,
+        std::function<bool(uint64, class Vec3&)>&& pickSpawnPointCallback,
+        std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&& spawnGroupCallback,
+        std::function<bool(struct ActorUniqueID const&)>&& doesActorExistCallback,
+        std::function<bool()>&&                            isVillageDefeatedCallback
+    );
 
     MCAPI void dtor$();
 

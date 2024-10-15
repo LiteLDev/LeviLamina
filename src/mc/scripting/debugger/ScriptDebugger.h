@@ -75,10 +75,14 @@ public:
 
     MCAPI static void** $vftableForIScriptStatPublisher();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct ScriptDebuggerSettings                 settings,
+        struct cereal::ReflectionCtx&                 ctx,
+        class Scripting::ScriptEngine&                scriptEngine,
+        class ScriptPluginManager&                    scriptPluginManager,
+        class IScriptDebuggerWatchdog&                debuggerWatchdog,
+        std::unique_ptr<class IScriptTelemetryLogger> telemetryLogger
+    );
 
     MCAPI void close$();
 

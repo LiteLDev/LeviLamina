@@ -75,10 +75,15 @@ public:
         // NOLINTBEGIN
         MCAPI static void** $vftable();
 
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            ::Rotation                                          rotation,
+            float                                               integrity,
+            bool                                                isSatellite,
+            class Dimension&                                    dimension
+        );
 
         MCAPI void _handleDataMarker$(
             std::string const&       markerId,

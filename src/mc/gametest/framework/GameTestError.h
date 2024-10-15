@@ -33,10 +33,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::gametest::GameTestErrorType, std::string const&, std::vector<std::string>);
+
+    MCAPI void* ctor$(struct gametest::GameTestError&&);
+
+    MCAPI void* ctor$(struct gametest::GameTestError const&);
 
     MCAPI void dtor$();
 

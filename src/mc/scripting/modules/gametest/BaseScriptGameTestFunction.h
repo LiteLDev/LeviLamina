@@ -41,10 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Scripting::WeakLifetimeScope scope, std::string const& testName);
 
     MCAPI std::unique_ptr<class gametest::IGameTestFunctionContext>
           createContext$(class gametest::BaseGameTestHelper& helper) const;
