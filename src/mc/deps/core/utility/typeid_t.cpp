@@ -8,20 +8,20 @@ using namespace ll::literals;
 template <>
 std::atomic_ushort& Bedrock::typeid_t<CommandRegistry>::_getCounter() {
     return *(std::atomic_ushort*)"?storage@?1??_getCounter@?$typeid_t@VCommandRegistry@@@Bedrock@@CAAEAU?$atomic@G@std@"
-                                 "@XZ@4U45@A"_sym;
+                                 "@XZ@4U45@A"_symp;
 }
 #define LL_TYPEID_STORAGE_SYMBOL(TYPE, SYMBOL)                                                                         \
     template <>                                                                                                        \
     Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, TYPE>() {                                     \
         static auto* id =                                                                                              \
             (Bedrock::typeid_t<CommandRegistry>*)"?id@?1???$type_id@VCommandRegistry@@" SYMBOL                         \
-                                                 "@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A"_sigv       \
+                                                 "@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A"_sig        \
                                                                                                                        \
                                                                                                                        \
                                                      .resolve(true);                                                   \
         if (!id) {                                                                                                     \
             static auto* fn = (Bedrock::typeid_t<CommandRegistry>(*)()                                                 \
-            ) "??$type_id@VCommandRegistry@@" SYMBOL "@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ"_sigv          \
+            ) "??$type_id@VCommandRegistry@@" SYMBOL "@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ"_sig           \
                                                                                                                        \
                                                                                                                        \
                                   .resolve();                                                                          \

@@ -57,8 +57,8 @@ namespace ll::i18n::detail {
 template <LL_I18N_STRING_LITERAL_TYPE str>
 struct TrStrOut;
 #ifndef LL_I18N_COLLECT_STRINGS_CUSTOM
-    template <LL_I18N_STRING_LITERAL_TYPE str>
-    struct TrStrOut {
+template <LL_I18N_STRING_LITERAL_TYPE str>
+struct TrStrOut {
     static inline int _ = [] {
         fmt::print("\"{0}\": \"{0}\", // at {1}\n", str.sv(), str.loc().toString());
         return 0;

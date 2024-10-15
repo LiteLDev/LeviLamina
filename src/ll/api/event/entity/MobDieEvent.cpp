@@ -14,14 +14,7 @@ void MobDieEvent::serialize(CompoundTag& nbt) const {
 ActorDamageSource const& MobDieEvent::source() const { return mSource; }
 
 
-LL_TYPE_INSTANCE_HOOK(
-    MobDieEventHook,
-    HookPriority::Normal,
-    Mob,
-    "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
-    void,
-    ActorDamageSource const& source
-) {
+LL_TYPE_INSTANCE_HOOK(MobDieEventHook, HookPriority::Normal, Mob, &Mob::die$, void, ActorDamageSource const& source) {
     auto ev = MobDieEvent(*this, source);
     EventBus::getInstance().publish(ev);
     return origin(source);

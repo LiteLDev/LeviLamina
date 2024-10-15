@@ -11,7 +11,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerJoinEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle,
+    &ServerNetworkHandler::handle$,
     void,
     NetworkIdentifier const&                 identifier,
     SetLocalPlayerAsInitializedPacket const& packet

@@ -23,13 +23,16 @@ namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
 
+class IMinecraftApp;
+class ServerInstanceEventCoordinator;
+
 class ServerInstance : public ::Bedrock::EnableNonOwnerReferences,
                        public ::AppPlatformListener,
                        public ::GameCallbacks,
                        public ::Core::StorageAreaStateListener {
 public:
     std::chrono::steady_clock::time_point mLastSyncTime;
-    class IMinecraftApp const&            mApp;
+    IMinecraftApp const&                  mApp;
     std::unique_ptr<Minecraft>            mMinecraft;
     // other...
 

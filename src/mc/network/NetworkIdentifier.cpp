@@ -8,7 +8,7 @@ std::string NetworkIdentifier::getIPAndPort() const {
     return ll::service::getRakPeer()
         .and_then([&](auto& peer) -> std::optional<std::string> {
             auto address = peer.GetSystemAddressFromGuid(mGuid);
-            if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS) {
+            if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS()) {
                 return address;
             }
             return std::nullopt;

@@ -22,7 +22,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerAddExperienceEventHook,
     HookPriority::Normal,
     Player,
-    "?addExperience@Player@@UEAAXH@Z",
+    &Player::addExperience$,
     void,
     int exp
 ) {

@@ -25,7 +25,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle,
+    &ServerNetworkHandler::handle$,
     void,
     NetworkIdentifier const& identifier,
     TextPacket const&        packet

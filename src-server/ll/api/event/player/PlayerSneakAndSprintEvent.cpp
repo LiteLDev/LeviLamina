@@ -12,7 +12,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerActionEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle,
+    &ServerNetworkHandler::handle$,
     void,
     NetworkIdentifier const&  id,
     PlayerActionPacket const& packet

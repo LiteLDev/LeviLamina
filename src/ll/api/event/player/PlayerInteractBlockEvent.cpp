@@ -29,7 +29,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerInteractBlockEventHook,
     HookPriority::Normal,
     GameMode,
-    "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
+    &GameMode::useItemOn$,
     InteractionResult,
     ItemStack&      item,
     BlockPos const& blockPos,

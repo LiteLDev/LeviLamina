@@ -14,6 +14,8 @@
 
 #include "magic_enum.hpp"
 
+using namespace ll::literals;
+
 template <>
 struct magic_enum::customize::enum_range<MinecraftPacketIds> {
     static constexpr int min = 0;
@@ -124,7 +126,7 @@ void autoGenerate() {
     }
 }
 
-LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a, char* c) {
+LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, int a, char* c) {
     autoGenerate();
     return origin(a, c);
 }

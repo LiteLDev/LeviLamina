@@ -98,6 +98,7 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
+#include "ll/api/base/Alias.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
 
@@ -153,16 +154,4 @@ using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class
 namespace asio::ssl {
 class verify_context;
 }
-namespace ll {
-template <class T, size_t N>
-struct CArray {
-    using type = T[N];
-};
-template <class T>
-struct CArray<T, 0> {
-    using type = T[];
-};
-template <class T, size_t N = 0>
-using CArrayT = typename CArray<T, N>::type;
-} // namespace ll
 // clang-format on

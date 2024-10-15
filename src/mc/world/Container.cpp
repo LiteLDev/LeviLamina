@@ -3,7 +3,7 @@
 
 optional_ref<ItemStack> Container::getItemNonConst(int index) {
     auto& item = getItem(index);
-    if (&item != &ItemStack::EMPTY_ITEM) {
+    if (&item != &ItemStack::EMPTY_ITEM()) {
         return const_cast<ItemStack&>(item);
     }
     return std::nullopt;

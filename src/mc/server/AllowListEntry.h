@@ -18,12 +18,7 @@ public:
     std::string mXuid;               // 56
     bool        mIgnoresPlayerLimit; // 88
 
-    AllowListEntry(
-        std::string name,
-        std::string xuid,
-        mce::UUID   uuid               = mce::UUID::EMPTY,
-        bool        ignoresPlayerLimit = false
-    )
+    AllowListEntry(std::string name, std::string xuid, mce::UUID uuid = {}, bool ignoresPlayerLimit = false)
     : mName(std::move(name)),
       mUuid(uuid),
       mXuid(std::move(xuid)),
