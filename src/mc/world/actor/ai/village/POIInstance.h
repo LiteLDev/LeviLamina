@@ -76,10 +76,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockPos const& pos,
+        bool                  useBoundingBox,
+        std::string           name,
+        ::POIType             type,
+        float                 radius,
+        uint64                maxCapacity,
+        uint64                weight,
+        std::string           soundEvent,
+        std::string           initEvent,
+        std::string           endEvent
+    );
 
     // NOLINTEND
 };

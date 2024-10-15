@@ -36,10 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Puv::v1_20_80::CustomComponentsItemComponent component);
 
     // NOLINTEND
 };

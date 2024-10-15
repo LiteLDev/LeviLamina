@@ -62,10 +62,22 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint                                                              id,
+        std::string const&                                                eventName,
+        std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const&          appPlatform,
+        int                                                               eventTags
+    );
+
+    MCAPI void* ctor$(class Social::Events::Event const&);
+
+    MCAPI void* ctor$(
+        uint                                                              id,
+        std::string const&                                                eventName,
+        std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
+        int                                                               eventTags
+    );
 
     MCAPI void dtor$();
 

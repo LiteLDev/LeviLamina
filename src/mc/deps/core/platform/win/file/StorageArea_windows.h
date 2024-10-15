@@ -128,10 +128,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::Core::FileAccessType, class Core::Path const&, bool);
 
     MCAPI void attemptExtendSize$(int64 const&, std::function<void()>);
 

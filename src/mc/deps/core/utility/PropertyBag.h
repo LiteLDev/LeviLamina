@@ -28,10 +28,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Json::Value const& jsonValue);
+
+    MCAPI void* ctor$();
 
     MCAPI static class PropertyBag& EMPTY();
 

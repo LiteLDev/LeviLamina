@@ -66,10 +66,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct ActorUniqueID           playerId,
+        class Level&                   level,
+        std::string const&             requestId,
+        class NetworkIdentifier const& sourceId
+    );
+
+    MCAPI void* ctor$(std::string const& requestId, class Player& origin);
 
     MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
 

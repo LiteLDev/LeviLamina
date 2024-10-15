@@ -34,10 +34,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BiomeRegistry const& registry,
+        class Biome const&         defaultOceanBiome,
+        class Biome const&         fallbackBiome,
+        ::GeneratorType            generator
+    );
 
     // NOLINTEND
 };

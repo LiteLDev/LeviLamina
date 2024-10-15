@@ -82,10 +82,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Connector::ConnectionCallbacks& callbacks, class NetworkIdentifier const& localId);
 
     MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener* listener);
 

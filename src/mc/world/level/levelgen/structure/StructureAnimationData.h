@@ -64,10 +64,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class CommandArea> cmdArea,
+        uint64                             tickQueued,
+        std::string const&                 structureName,
+        class StructureSettings const&     structureSettings,
+        uchar                              structureVersion,
+        class BlockPos const&              placementPos
+    );
 
     MCAPI void dtor$();
 

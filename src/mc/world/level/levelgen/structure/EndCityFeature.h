@@ -54,10 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Dimension& dimension, uint& seed);
 
     MCAPI std::unique_ptr<class StructureStart>
     createStructureStart$(class Dimension& dimension, class BiomeSource const&, class Random& random, class ChunkPos const& pos, class IPreliminarySurfaceProvider const&);

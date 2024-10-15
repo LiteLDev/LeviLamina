@@ -45,10 +45,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Actor const&                      actor,
+        std::function<void(int, std::string&&)> outputCallback,
+        std::optional<::CommandPermissionLevel> permissionLevel
+    );
 
     MCAPI void dtor$();
 

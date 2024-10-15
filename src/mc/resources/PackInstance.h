@@ -95,10 +95,21 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
+        std::string const&                              subpackName,
+        bool                                            isDependent,
+        class PackSettings*                             packSettings
+    );
+
+    MCAPI void* ctor$(class PackInstance const&);
+
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
+        int                                             subpackIndex,
+        bool                                            isDependent,
+        class PackSettings*                             packSettings
+    );
 
     MCAPI void dtor$();
 

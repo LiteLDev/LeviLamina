@@ -54,10 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Biome const& fixedBiome);
 
     MCAPI bool containsOnly$(int, int, int, int, gsl::span<uint64 const>) const;
 

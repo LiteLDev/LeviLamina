@@ -33,10 +33,7 @@ public:
 
     MCAPI static void** $vftableForNetworkEnableDisableListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
 
     MCAPI void _onDisable$();
 

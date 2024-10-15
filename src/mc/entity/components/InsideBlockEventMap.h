@@ -49,10 +49,16 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Block const&                  block,
+        bool                                watchEnter,
+        bool                                watchExit,
+        bool                                ignoreStates,
+        class ActorDefinitionTrigger const& enteredEvent,
+        class ActorDefinitionTrigger const& exitedEvent
+    );
+
+    MCAPI void* ctor$(class InsideBlockEventMap const&);
 
     MCAPI void dtor$();
 

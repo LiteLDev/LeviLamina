@@ -44,10 +44,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::shared_ptr<class xbox::httpclient::WebSocket>, struct XAsyncBlock*);
 
         // NOLINTEND
     };
@@ -117,10 +114,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(uint64, struct WebSocketPerformInfo, struct HC_PERFORM_ENV*);
 
     // NOLINTEND
 };

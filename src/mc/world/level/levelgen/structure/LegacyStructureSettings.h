@@ -68,10 +68,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(::Mirror mirror, ::Rotation rotation, class Block const* ignoreBlock, class BoundingBox const& boundingBox);
+
+    MCAPI void* ctor$(class LegacyStructureSettings const&);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

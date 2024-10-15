@@ -49,10 +49,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct RakNetServerLocator::AnnounceServerData const&);
 
         MCAPI void dtor$();
 
@@ -240,10 +237,18 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class RakNetConnector&                                   rakNetConnector,
+        class RakPeerHelper::IPSupportInterface&                 ipInterface,
+        std::vector<std::string>                                 overrideBroadcastAddresses,
+        bool                                                     isServer,
+        ::RakNetServerLANVisibility                              serverLanVisibility,
+        ::PermissionLAN                                          permissionLAN,
+        ::PermissionIPv6                                         permissionIPv6,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
+        std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>()>
+            createUniqueRakPeerFunc
+    );
 
     MCAPI void dtor$();
 

@@ -42,10 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Mob& pathMob, float speedModifier, float within);
 
     MCAPI void appendDebugInfo$(std::string& str) const;
 

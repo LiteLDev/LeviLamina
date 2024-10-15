@@ -27,10 +27,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(char const* desc, char const* arg, int line, char const* file, char const* function);
+
+    MCAPI void* ctor$(class DebugAssertException const& e);
 
     MCAPI void dtor$();
 

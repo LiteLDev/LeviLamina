@@ -70,10 +70,25 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string const&        nameId,
+        int                       id,
+        bool                      fullSize,
+        class HashedString const& baseSlab,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant
+    );
+
+    MCAPI void* ctor$(
+        std::string const&        nameId,
+        int                       id,
+        bool                      fullSize,
+        class HashedString const& baseSlab,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant,
+        class HashedString const& nextAgeVariant,
+        class HashedString const& waxedVariant
+    );
 
     MCAPI void onLightningHit$(class BlockSource& region, class BlockPos const& pos) const;
 

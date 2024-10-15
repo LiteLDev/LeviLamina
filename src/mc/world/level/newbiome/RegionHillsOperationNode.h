@@ -51,10 +51,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint                                                                   seedMixup,
+        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>& parent,
+        std::shared_ptr<class OperationNode<int, class Pos2d>>&                riverOperationNode,
+        class BiomeRegistry const&                                             biomeRegistry
+    );
 
     MCAPI class OperationNodeDetails::TransferData<class Biome const*>
     _allocateAndFill$(uint64 requiredBytes, class Pos2d const& origin, class Pos2d const& size) const;

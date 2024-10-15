@@ -43,10 +43,7 @@ public:
 
     MCAPI static void** $vftableForResourcePackListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ResourcePackManager* packMan);
 
     MCAPI void dtor$();
 

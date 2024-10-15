@@ -35,10 +35,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        DimensionType fromId,
+        DimensionType toId,
+        class Vec3    fromLocation,
+        class Vec3    toLocation,
+        bool          usePortal,
+        bool          respawn
+    );
+
+    MCAPI void* ctor$(class ChangeDimensionRequest&& other);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

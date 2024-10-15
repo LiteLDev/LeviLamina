@@ -70,10 +70,15 @@ public:
 
     MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Scheduler&                                                 receiveThread,
+        std::vector<std::string> const&                                  overrideBroadcastAddresses,
+        struct NetworkSystemToggles const&                               networkToggles,
+        class Bedrock::NonOwnerPointer<class NetworkDebugManager> const& networkDebugManager,
+        class ServiceReference<class ServicesManager>                    sharedServicesManager,
+        Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>           networkSessionOwner,
+        struct NetworkSettingOptions                                     networkSettingOption
+    );
 
     MCAPI void dtor$();
 

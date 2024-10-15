@@ -71,10 +71,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string                                       name,
+        bool                                              async,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinity,
+        std::optional<int>                                idealCore,
+        class WorkerPool&                                 workerPool,
+        bool                                              suppressProfiling
+    );
 
     MCAPI void dtor$();
 

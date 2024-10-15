@@ -85,10 +85,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ResourceLocation const&                                                       resourceLocation,
+        class ContentIdentity const&                                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&                 keyProvider,
+        bool                                                                                canRecurse,
+        std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>> assetSet
+    );
 
     MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
 

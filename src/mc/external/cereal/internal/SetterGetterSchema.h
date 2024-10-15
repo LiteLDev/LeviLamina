@@ -69,10 +69,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct cereal::ReflectionCtx const&                  ctx,
+        std::unique_ptr<class cereal::internal::BasicSchema> setterSchema,
+        std::unique_ptr<class cereal::internal::BasicSchema> getterSchema
+    );
 
     MCAPI void doLoad$(
         struct cereal::SchemaReader&     reader,

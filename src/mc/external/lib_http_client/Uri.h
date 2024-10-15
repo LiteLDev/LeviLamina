@@ -50,10 +50,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class xbox::httpclient::Uri const&);
+
+    MCAPI void* ctor$(http_string const&);
 
     MCAPI void dtor$();
 

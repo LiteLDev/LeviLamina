@@ -63,10 +63,7 @@ public:
 
     MCAPI static void** $vftableForNetworkedItemComponent();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI void _initializeComponent$();
 

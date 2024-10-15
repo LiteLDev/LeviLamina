@@ -35,10 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider);
 
     MCAPI bool readTransform$(std::vector<uchar>& stream) const;
 

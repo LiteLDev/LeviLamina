@@ -60,10 +60,12 @@ public:
 
     MCAPI static void** $vftableForContainerContentChangeListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Container&                                   backingContainer,
+        ::SparseContainerBackingSetType                    backingSetType,
+        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
+        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+    );
 
     MCAPI void containerContentChanged$(int slot);
 

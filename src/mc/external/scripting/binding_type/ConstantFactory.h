@@ -31,10 +31,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Scripting::ConstantFactory&&);
+
+    MCAPI void* ctor$(struct Scripting::ConstantFactory const&);
+
+    MCAPI void*
+    ctor$(std::string, entt::meta_type, bool, std::function<entt::meta_any(class Scripting::WeakLifetimeScope&)>);
 
     MCAPI void dtor$();
 

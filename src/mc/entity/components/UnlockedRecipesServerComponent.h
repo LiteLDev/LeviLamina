@@ -96,10 +96,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class UnlockedRecipesServerComponent const&);
+
+    MCAPI void* ctor$(class UnlockedRecipesServerComponent&&);
 
     MCAPI static std::string const& COMPONENT_TAG();
 

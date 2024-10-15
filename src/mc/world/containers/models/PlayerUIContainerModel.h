@@ -31,10 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::ContainerEnumName containerName, class Player& player);
 
     MCAPI int _getContainerOffset$() const;
 

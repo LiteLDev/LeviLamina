@@ -67,10 +67,9 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(class StringByteInput& stream);
 
         MCAPI static std::array<std::pair<::LevelChunkNeighbor, class ChunkPos>, 8> const& sOffsetMap();
 
@@ -620,10 +619,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Dimension&      dimension,
+        class ChunkPos const& cp,
+        bool                  readOnly,
+        ::SubChunkInitMode    initBlocks,
+        bool                  initializeMetaData
+    );
 
     MCAPI void dtor$();
 

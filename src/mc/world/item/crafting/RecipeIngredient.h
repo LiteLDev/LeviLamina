@@ -46,10 +46,23 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ItemDescriptor const& descriptor, ushort stackSize);
+
+    MCAPI void* ctor$(class Block const& block, ushort stackSize);
+
+    MCAPI void* ctor$(class RecipeIngredient const&);
+
+    MCAPI void* ctor$(struct ItemTag const& itemTag, ushort stackSize);
+
+    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void* ctor$(class BlockLegacy const& block, ushort stackSize);
+
+    MCAPI void* ctor$(class RecipeIngredient&&);
+
+    MCAPI void* ctor$(std::string_view item, int auxValue, ushort stackSize);
 
     MCAPI void dtor$();
 

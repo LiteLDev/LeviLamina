@@ -41,10 +41,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::MolangVariableIndex index, class HashedString name, struct MolangScriptArg value);
 
     MCAPI void dtor$();
 

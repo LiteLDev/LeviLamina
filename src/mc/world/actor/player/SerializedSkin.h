@@ -48,10 +48,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class SubClientConnectionRequest const& request);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class SerializedSkin const& rhs);
+
+    MCAPI void* ctor$(class SerializedSkin&& rhs);
+
+    MCAPI void* ctor$(class ConnectionRequest const& request);
 
     MCAPI void dtor$();
 

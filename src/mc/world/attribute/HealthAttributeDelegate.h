@@ -38,10 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class AttributeInstance const& attribute, class Mob* mob);
 
     MCAPI float change$(float oldValue, float newValue, class AttributeBuff const& buff);
 

@@ -36,10 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::set<class Block const*> const& cannotReplace, float probability);
 
     MCAPI bool finalize$(class BlockSource&, class IRandom&);
 

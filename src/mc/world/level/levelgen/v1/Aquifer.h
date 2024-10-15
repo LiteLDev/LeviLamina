@@ -57,10 +57,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ChunkPos const&           chunkPos,
+        class AquiferNoises const&      aquiferNoises,
+        struct OverworldNoises3d const& terrainNoises,
+        class SurfaceLevelCache const&  surfaceLevelCache,
+        int                             dimensionMinHeight,
+        int                             levelGenHeight,
+        int                             seaLevel
+    );
 
     MCAPI static std::array<std::pair<int, int>, 13> const& chunkOffset();
 

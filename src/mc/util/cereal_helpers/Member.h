@@ -52,10 +52,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string_view name, class cereal::SerializerEnumMapping enumMapping, bool required);
+
+    MCAPI void* ctor$(
+        std::string_view              name,
+        ::CerealHelpers::Member::Type type,
+        bool                          required,
+        std::optional<float>          min,
+        std::optional<float>          max
+    );
 
     MCAPI void dtor$();
 

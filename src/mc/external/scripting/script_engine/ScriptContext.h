@@ -59,10 +59,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Scripting::ScriptContext&& rhs);
+
+    MCAPI void* ctor$(
+        class Scripting::IRuntime*                         runtime,
+        struct Scripting::ContextId                        contextId,
+        std::unique_ptr<class Scripting::LifetimeRegistry> registry
+    );
 
     MCAPI void dtor$();
 

@@ -147,10 +147,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(std::string_view name, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry);
+
+    MCAPI void* ctor$(
+        class StructureTemplate const&                                  temp,
+        class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
 
     MCAPI void dtor$();
 

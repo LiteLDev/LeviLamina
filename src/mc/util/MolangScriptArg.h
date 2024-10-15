@@ -49,10 +49,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct MolangScriptArg const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int value);
+
+    MCAPI void* ctor$(struct MolangScriptArg&&);
+
+    MCAPI void* ctor$(float value);
 
     MCAPI void dtor$();
 

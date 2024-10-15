@@ -73,10 +73,9 @@ public:
 
     MCAPI static void** $vftableForIEntitySystems();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::unique_ptr<struct IEntitySystemsCollection> systems, std::string name);
+
+    MCAPI void* ctor$(std::string name);
 
     MCAPI void dtor$();
 

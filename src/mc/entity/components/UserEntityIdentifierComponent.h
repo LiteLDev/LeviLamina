@@ -42,10 +42,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class UserEntityIdentifierComponent&&);
+
+    MCAPI void* ctor$(
+        class NetworkIdentifier const&     networkId,
+        ::SubClientId                      clientSubId,
+        class mce::UUID                    clientUUID,
+        std::string const&                 playFabID,
+        std::unique_ptr<class Certificate> certificate
+    );
 
     MCAPI void dtor$();
 

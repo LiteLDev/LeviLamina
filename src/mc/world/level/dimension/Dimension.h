@@ -354,10 +354,13 @@ public:
 
     MCAPI static void** $vftableForSavedData();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ILevel&              level,
+        DimensionType              dimId,
+        class DimensionHeightRange heightRange,
+        class Scheduler&           callbackContext,
+        std::string                name
+    );
 
     MCAPI void dtor$();
 

@@ -50,10 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class StructureManager> manager);
 
     MCAPI class BoundingBox getBoundingBox$(class BlockPos, ::Rotation) const;
 

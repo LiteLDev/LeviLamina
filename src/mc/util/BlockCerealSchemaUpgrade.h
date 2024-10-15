@@ -30,10 +30,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(class SemVersion targetVersion, std::string const& mSchemaKey, std::string const& mJsonMemberName);
 
     MCAPI void dtor$();
 

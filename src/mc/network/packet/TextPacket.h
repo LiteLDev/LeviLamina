@@ -120,10 +120,18 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        ::TextPacketType                type,
+        std::string const&              author,
+        std::string const&              message,
+        std::optional<std::string>      filteredMessage,
+        std::vector<std::string> const& params,
+        bool                            localize_,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
 
     MCAPI void dtor$();
 

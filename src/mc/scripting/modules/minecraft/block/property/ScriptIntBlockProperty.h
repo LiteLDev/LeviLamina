@@ -54,10 +54,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string                                                                                   name,
+        class BlockState const&                                                                       blockState,
+        std::vector<int>                                                                              validValues,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptIntBlockProperty&& rhs);
 
     MCAPI void dtor$();
 

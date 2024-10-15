@@ -63,10 +63,21 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class mce::UUID              id,
+        std::string const&           name,
+        float                        amount,
+        ::AttributeModifierOperation operation,
+        ::AttributeOperands          operand,
+        bool                         serializable
+    );
+
+    MCAPI void* ctor$(class AttributeModifier const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void*
+    ctor$(class mce::UUID id, std::string const& name, float amount, int operation, int operand, bool serializable);
 
     MCAPI void dtor$();
 

@@ -40,10 +40,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        class Block const*                                    resultBlock
+    );
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& distancePredicate,
+        class Block const*                                    resultBlock
+    );
 
     // NOLINTEND
 };

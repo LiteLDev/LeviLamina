@@ -99,10 +99,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI std::unordered_map<class BlockPos, std::string>
           getMarkers$(class BlockPos const& position, class LegacyStructureSettings& settings) const;

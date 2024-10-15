@@ -24,10 +24,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class DefinitionEvent&&);
+
+    MCAPI void* ctor$(class DefinitionEvent const&);
 
     MCAPI void dtor$();
 

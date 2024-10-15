@@ -48,10 +48,16 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Social::GameConnectionInfo const&);
+
+    MCAPI void* ctor$(
+        struct RakNet::SystemAddress     connection,
+        struct RakNet::RakNetGUID const& rakGuid,
+        class ThirdPartyInfo const&      serverInfo,
+        class GatheringServerInfo const& gatheringServerInfo
+    );
 
     MCAPI void dtor$();
 

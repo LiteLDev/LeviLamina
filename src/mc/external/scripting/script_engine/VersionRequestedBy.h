@@ -34,10 +34,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct Scripting::Version          version_,
+        struct Scripting::Version          originalVersion,
+        struct Scripting::ModuleDescriptor by_,
+        bool                               supported_,
+        bool                               missing_,
+        bool                               explicitRequest_,
+        bool                               promotion_
+    );
 
     // NOLINTEND
 };

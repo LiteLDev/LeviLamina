@@ -47,10 +47,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::function<class BlockPos(class BlockSource const*, class Actor*)> targetToPointTo,
+        std::function<bool(class BlockSource const*, class Actor*)>           isPointingAtTarget,
+        float                                                                 rot,
+        float                                                                 rotA
+    );
 
     MCAPI void dtor$();
 

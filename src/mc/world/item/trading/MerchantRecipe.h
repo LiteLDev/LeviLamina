@@ -92,10 +92,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ItemInstance const& buy, class ItemInstance const& sell);
+
+    MCAPI void* ctor$(class MerchantRecipe const&);
+
+    MCAPI void* ctor$(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
 
     MCAPI void dtor$();
 

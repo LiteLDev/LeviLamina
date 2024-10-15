@@ -46,10 +46,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class ScriptCommand>  scriptCommand,
+        std::unique_ptr<class CommandContext> commandContext,
+        class Scripting::WeakLifetimeScope    scope,
+        class Scripting::Promise<
+            class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
+            struct ScriptModuleMinecraft::ScriptCommandError,
+            void> promise
+    );
 
     MCAPI void execute$(class MinecraftCommands& commands);
 

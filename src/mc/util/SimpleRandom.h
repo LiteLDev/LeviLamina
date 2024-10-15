@@ -52,10 +52,7 @@ public:
 
     MCAPI static void** $vftableForIRandomSeeded();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int64 seed);
 
     MCAPI void dtor$();
 

@@ -58,10 +58,25 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class MobEquipmentPacket&&);
+
+    MCAPI void* ctor$(
+        class ActorRuntimeID   runtimeId,
+        class ItemStack const& item,
+        int                    slot,
+        int                    selectedSlot,
+        ::ContainerID          containerId
+    );
+
+    MCAPI void* ctor$(
+        class ActorRuntimeID                    runtimeId,
+        class NetworkItemStackDescriptor const& item,
+        int                                     slot,
+        int                                     selectedSlot,
+        ::ContainerID                           containerId
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

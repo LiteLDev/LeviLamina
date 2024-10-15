@@ -45,10 +45,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(float minFloatVal, float maxFloatVal, bool invert, bool inclusive);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int minIntVal, int maxIntVal, bool invert, bool inclusive);
 
     // NOLINTEND
 };

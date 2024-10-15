@@ -84,10 +84,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob& mob,
+        float      speedModifier,
+        float      cooldownTimeout,
+        float      goalRadius,
+        int        maxStayTicks,
+        int        giveUpTicks
+    );
 
     MCAPI void dtor$();
 

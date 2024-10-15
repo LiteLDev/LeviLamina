@@ -26,10 +26,8 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void*
+    ctor$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& item, uchar amountOverride);
 
     // NOLINTEND
 };

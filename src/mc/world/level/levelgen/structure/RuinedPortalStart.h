@@ -32,10 +32,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BiomeRegistry&                     registry,
+        class BiomeSource const&                 source,
+        int                                      chunkX,
+        int                                      chunkZ,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     // NOLINTEND
 };

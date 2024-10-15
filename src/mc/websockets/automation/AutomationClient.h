@@ -81,10 +81,7 @@ public:
 
     MCAPI static void** $vftableForUriListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class IMinecraftApp& minecraft);
 
     MCAPI void onLevelDestruction$(std::string const&);
 

@@ -37,10 +37,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint64                         readResult,
+        std::string                    readResultContext,
+        ::PacketViolationResponse      violationResponse,
+        ::MinecraftPacketIds           violatingPacketId,
+        class NetworkIdentifier const& netId
+    );
 
     MCAPI void dtor$();
 

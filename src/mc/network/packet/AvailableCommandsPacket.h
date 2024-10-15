@@ -47,10 +47,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct AvailableCommandsPacket::CommandData&&);
 
         MCAPI void dtor$();
 
@@ -204,10 +201,18 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        std::vector<std::string> const&                                      enumValues,
+        std::vector<std::string> const&                                      chainedSubcommandValues,
+        std::vector<std::string> const&                                      postfixes,
+        std::vector<struct AvailableCommandsPacket::EnumData>&&              enumData,
+        std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
+        std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
+        std::vector<struct AvailableCommandsPacket::CommandData>&&           commandData,
+        std::vector<struct AvailableCommandsPacket::SoftEnumData>&&          softEnumData
+    );
 
     MCAPI void dtor$();
 

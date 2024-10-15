@@ -205,10 +205,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::ContainerType type);
+
+    MCAPI void* ctor$(::ContainerType type, std::string const& name, bool customName);
+
+    MCAPI void* ctor$(class Container const&);
 
     MCAPI void dtor$();
 

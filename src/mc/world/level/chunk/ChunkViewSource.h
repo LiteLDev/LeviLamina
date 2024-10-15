@@ -99,10 +99,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ChunkViewSource const& otherChunkViewSource);
+
+    MCAPI void* ctor$(class ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
+
+    MCAPI void* ctor$(
+        class ChunkSource&                                                mainSource,
+        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& gridArea,
+        struct Bounds const&                                              bounds
+    );
 
     MCAPI void dtor$();
 

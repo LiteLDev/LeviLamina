@@ -41,10 +41,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& testName, std::string const& error, bool succeeded);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

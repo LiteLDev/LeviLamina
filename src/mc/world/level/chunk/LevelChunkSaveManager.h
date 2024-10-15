@@ -47,10 +47,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class ILevelChunkSaveManagerProxy>                          levelChunkSaverProxy,
+        gsl::not_null<class StackRefResult<class GameplayUserManager const>> const& gameplayUserManager,
+        gsl::not_null<class StackRefResult<class DimensionManager>> const&          dimensionManager
+    );
 
     MCAPI void dtor$();
 

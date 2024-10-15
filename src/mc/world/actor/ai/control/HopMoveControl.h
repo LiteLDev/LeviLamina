@@ -32,10 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
 
     MCAPI void
     setWantedPosition$(class MoveControlComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);

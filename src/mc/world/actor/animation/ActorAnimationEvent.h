@@ -33,10 +33,10 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ActorAnimationEvent&&);
+
+    MCAPI void*
+    ctor$(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
 
     MCAPI void dtor$();
 

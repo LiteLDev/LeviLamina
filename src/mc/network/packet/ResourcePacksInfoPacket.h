@@ -48,10 +48,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        bool                                               resourcePackRequired,
+        std::vector<struct PackInfoData>&                  behaviorPacks,
+        std::vector<struct PackInfoData>&                  resourcePacks,
+        bool                                               forceServerPacksEnabled,
+        std::vector<std::pair<std::string, std::string>>&& cdnUrls,
+        bool                                               hasAddonPacks
+    );
 
     MCAPI void dtor$();
 

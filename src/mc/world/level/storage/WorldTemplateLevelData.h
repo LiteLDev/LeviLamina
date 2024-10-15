@@ -58,10 +58,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        bool                         isFromWorldTemplate,
+        bool                         isWorldTemplateOptionLocked,
+        class BaseGameVersion const& baseGameVersion,
+        class BaseGameVersion const& maxBaseGameVersion
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

@@ -41,10 +41,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string               name,
+        ::ActorDamageCause        cause,
+        struct Scripting::Version version,
+        std::optional<uchar>      deprecatedMajorVersion
+    );
 
     MCAPI void dtor$();
 

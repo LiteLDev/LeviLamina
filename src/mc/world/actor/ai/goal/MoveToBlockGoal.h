@@ -73,10 +73,22 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob&                                mob,
+        float                                     speedModifier,
+        int                                       searchRange,
+        int                                       searchHeight,
+        int                                       tickInterval,
+        int                                       stayDurationTicks,
+        float                                     goalRadius,
+        class Vec3                                targetPositionOffset,
+        float                                     chanceToStart,
+        ::TargetSelectionMethod                   targetSelectionMethod,
+        std::vector<class ActorDefinitionTrigger> onReachTriggers,
+        std::vector<class ActorDefinitionTrigger> onStayCompletedTriggers,
+        std::vector<class ItemDescriptor>         targetBlocks,
+        class ActorFilterGroup const&             targetBlockFilter
+    );
 
     MCAPI void appendDebugInfo$(std::string& str) const;
 

@@ -56,10 +56,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class LevelStorage& levelStorage);
 
     MCAPI static std::string const& EVENTS_ENABLED_STRING();
 

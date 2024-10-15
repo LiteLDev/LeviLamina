@@ -35,10 +35,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct Scripting::EnumBinding::EnumValue&&);
 
         MCAPI void dtor$();
 
@@ -67,10 +64,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct Scripting::EnumBinding const&);
+
+    MCAPI void* ctor$(struct Scripting::EnumBinding&&);
+
+    MCAPI void*
+    ctor$(std::string, entt::meta_type, bool, std::vector<struct Scripting::ConstantFactory>, std::vector<struct Scripting::EnumBinding::EnumValue>);
 
     MCAPI void dtor$();
 

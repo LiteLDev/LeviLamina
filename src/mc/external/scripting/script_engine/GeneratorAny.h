@@ -58,10 +58,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Scripting::GeneratorAny const& rhs);
+
+    MCAPI void* ctor$(class Scripting::GeneratorAny&& rhs);
+
+    MCAPI void* ctor$(
+        class Scripting::IRuntime*                                                       runtime,
+        struct Scripting::ContextId                                                      contextId,
+        class Scripting::WeakLifetimeScope                                               scope,
+        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorType> const& generatorHandle
+    );
 
     // NOLINTEND
 };

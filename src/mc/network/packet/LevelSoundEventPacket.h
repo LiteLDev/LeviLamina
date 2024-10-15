@@ -49,10 +49,16 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::Puv::Legacy::LevelSoundEvent id,
+        class Vec3 const&              pos,
+        int                            data,
+        std::string const&             entityType,
+        bool                           isBabyMob,
+        bool                           isGlobal
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

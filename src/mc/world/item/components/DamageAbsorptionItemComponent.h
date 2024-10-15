@@ -35,10 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::vector<::ActorDamageCause> const& absorbableDamageCauses);
 
     MCAPI static std::array<::ArmorSlot, 1> const& VALID_SLOTS();
 

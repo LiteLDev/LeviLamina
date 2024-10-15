@@ -80,10 +80,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class PackManifest>          manifest,
+        std::unique_ptr<class PackAccessStrategy>    accessStrategy,
+        std::unique_ptr<class SubpackInfoCollection> subpacks,
+        std::unique_ptr<class PackMetadata>          metadata
+    );
 
     MCAPI static class Core::PathBuffer<std::string> const& EDUCATION_METADATA_FILE();
 

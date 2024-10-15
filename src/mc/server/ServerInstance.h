@@ -176,10 +176,10 @@ public:
 
     MCAPI static void** $vftableForGameCallbacks();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class IMinecraftApp&                                                     app,
+        Bedrock::NotNullNonOwnerPtr<class ServerInstanceEventCoordinator> const& coordinator
+    );
 
     MCAPI void dtor$();
 

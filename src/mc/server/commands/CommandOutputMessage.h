@@ -33,10 +33,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class CommandOutputMessage const& rhs);
+
+    MCAPI void* ctor$(class CommandOutputMessage&& rhs);
+
+    MCAPI void* ctor$(::CommandOutputMessageType type, std::string const& msgId, std::vector<std::string>&& params);
 
     MCAPI void dtor$();
 

@@ -27,10 +27,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class MobEvent const&);
+
+    MCAPI void* ctor$(std::string name, std::string localizableName, bool val);
 
     MCAPI void dtor$();
 

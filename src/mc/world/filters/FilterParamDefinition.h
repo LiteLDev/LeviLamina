@@ -40,10 +40,22 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::FilterParamType        type,
+        ::FilterParamRequirement requirement,
+        std::string              description,
+        ::FilterParamOption      opt,
+        class FilterInput        def,
+        struct FilterStringMap   stringMap
+    );
+
+    MCAPI void* ctor$(
+        ::FilterParamType        type,
+        ::FilterParamRequirement requirement,
+        std::string              description,
+        class FilterInput        def,
+        struct FilterStringMap   stringMap
+    );
 
     MCAPI void dtor$();
 

@@ -39,10 +39,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(::ContainerEnumName containerName, class Container& container);
 
         MCAPI void dtor$();
 
@@ -76,10 +73,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(struct ItemStackRequestActionHandler::ScreenData&&);
 
         // NOLINTEND
     };
@@ -172,10 +166,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ItemStackNetManagerServer& itemStackNetManager, class Player& player);
 
     // NOLINTEND
 };

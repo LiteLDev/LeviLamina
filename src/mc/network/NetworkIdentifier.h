@@ -66,10 +66,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct RakNet::RakNetGUID const& guid);
+
+    MCAPI void* ctor$(struct sockaddr_in6 const& address);
+
+    MCAPI void* ctor$(struct sockaddr_in const& address);
+
+    MCAPI void* ctor$(uint64 nethernetId);
+
+    MCAPI void* ctor$();
 
     MCAPI static class NetworkIdentifier& INVALID_ID();
 

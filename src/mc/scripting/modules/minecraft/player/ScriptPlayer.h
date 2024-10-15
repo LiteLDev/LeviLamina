@@ -206,10 +206,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptPlayer&&);
+
+    MCAPI void* ctor$(class Player const& player, class Scripting::WeakLifetimeScope const& scope);
 
     MCAPI void dtor$();
 

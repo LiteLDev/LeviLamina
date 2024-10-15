@@ -59,10 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::SubClientId subid, class ServerNetworkSystem& network);
 
     MCAPI void flush$(class NetworkIdentifier const& id, std::function<void()>&& callback);
 

@@ -56,10 +56,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct IntRange                                                    count,
+        struct IntRange                                                    durability,
+        std::string                                                        itemName,
+        std::vector<struct LootItemMatchToolCondition::EnchantInfo> const& enchantments
+    );
 
     MCAPI bool applies$(class Random& random, class LootTableContext& context);
 

@@ -142,10 +142,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::function<class Core::PathBuffer<std::string>()>                getPath,
+        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
+        bool                                                                needsToInitialize
+    );
 
     MCAPI void dtor$();
 

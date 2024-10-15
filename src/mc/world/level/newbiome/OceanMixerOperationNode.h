@@ -54,10 +54,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        uint                                                                           seedMixup,
+        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>&         biomeLayer,
+        std::shared_ptr<class OperationNode<::BiomeTemperatureCategory, class Pos2d>>& oceanLayer,
+        class BiomeRegistry const&                                                     registry,
+        class Biome const&                                                             genericShallowOcean,
+        class Biome const&                                                             genericDeepOcean
+    );
 
     MCAPI void _fillArea$(
         class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,

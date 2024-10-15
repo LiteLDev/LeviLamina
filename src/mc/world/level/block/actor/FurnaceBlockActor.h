@@ -144,10 +144,18 @@ public:
 
     MCAPI static void** $vftableForContainer();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI void* ctor$(
+        ::BlockActorType               blockActorType,
+        class BlockPos const&          pos,
+        class HashedString const&      recipeTag,
+        ::Puv::Legacy::LevelSoundEvent smeltSound,
+        ::ContainerType                containerType,
+        int                            burnInterval,
+        class Block const&             unlitFurnace,
+        class Block const&             litFurnace
+    );
 
     MCAPI void dtor$();
 

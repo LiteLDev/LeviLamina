@@ -81,10 +81,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class buffer_span_mut<class Block const*> buffer,
+        int                                       width,
+        int                                       height,
+        int                                       depth,
+        class Block const&                        initBlock,
+        int                                       dimensionBottom
+    );
 
     // NOLINTEND
 };

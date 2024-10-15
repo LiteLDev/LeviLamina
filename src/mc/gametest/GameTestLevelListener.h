@@ -34,10 +34,7 @@ public:
 
     MCAPI static void** $vftableForScriptDeferredEventListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class gametest::GameTestTicker& testTicker);
 
     MCAPI ::EventResult onEvent$(struct LevelNotificationEvent const& event);
 

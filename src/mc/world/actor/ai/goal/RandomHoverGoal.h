@@ -60,10 +60,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob&      mob,
+        float           speedMultiplier,
+        int             interval,
+        float           xzDist,
+        float           yDist,
+        float           yOffset,
+        struct IntRange hoverHeight
+    );
 
     MCAPI void appendDebugInfo$(std::string& str) const;
 

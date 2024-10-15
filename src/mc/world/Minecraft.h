@@ -151,10 +151,22 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class IMinecraftApp&                                                app,
+        class GameCallbacks&                                                gameCallbacks,
+        class AllowList&                                                    allowList,
+        class PermissionsFile*                                              permissionsFile,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
+        std::chrono::seconds                                                maxPlayerIdleTime,
+        class IMinecraftEventing&                                           eventing,
+        class ClientOrServerNetworkSystemRef                                network,
+        class PacketSender&                                                 packetSender,
+        ::SubClientId                                                       clientSubId,
+        class Timer&                                                        simTimer,
+        class Timer&                                                        realTimer,
+        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
+        class ServerMetrics*                                                serverMetrics
+    );
 
     MCAPI void dtor$();
 

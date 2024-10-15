@@ -175,10 +175,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Scripting::RegistryManager&                           registryManager,
+        class Scripting::DependencyLocator*                         locator,
+        std::unique_ptr<struct Scripting::QuickJS::MallocFunctions> mallocFns,
+        std::function<std::string(std::string_view const&, std::string const&, std::vector<std::string> const&)>
+            normalizerFn
+    );
 
     MCAPI class Scripting::ResultAny call$(
         struct Scripting::ContextId                                        contextId,

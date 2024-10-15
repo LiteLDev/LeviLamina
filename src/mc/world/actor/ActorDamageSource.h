@@ -117,10 +117,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::ActorDamageCause cause);
 
     MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
 

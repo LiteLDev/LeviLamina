@@ -162,10 +162,7 @@ public:
 
     MCAPI static void** $vftableForCodeBuilderCommandOutputObserver();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient> codeBuilderClient);
 
     MCAPI void
     blockBroken$(class Player const* player, class Block const& block, int method, int variantData, ushort auxType)

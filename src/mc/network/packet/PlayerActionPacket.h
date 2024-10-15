@@ -66,10 +66,23 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        ::PlayerActionType    action,
+        class BlockPos const& pos,
+        class BlockPos const& resultPos,
+        int                   data,
+        class ActorRuntimeID  runtimeId
+    );
+
+    MCAPI void* ctor$(::PlayerActionType action, class BlockPos const& pos, class ActorRuntimeID runtimeId);
+
+    MCAPI void* ctor$(::PlayerActionType action, class BlockPos const& pos, uchar face, class ActorRuntimeID runtimeId);
+
+    MCAPI void* ctor$(::PlayerActionType action, class BlockPos const& pos, int data, class ActorRuntimeID runtimeId);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::PlayerActionType action, class ActorRuntimeID runtimeId);
 
     MCAPI void dtor$();
 

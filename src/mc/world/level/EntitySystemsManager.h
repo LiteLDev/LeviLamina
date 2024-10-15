@@ -31,10 +31,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        bool                                                             isClientSide,
+        ::SubClientId                                                    subClientId,
+        gsl::not_null<class StackRefResult<class EntityRegistry>> const& entityRegistry,
+        gsl::not_null<class StackRefResult<class PauseManager>> const&   pauseManager
+    );
 
     // NOLINTEND
 };

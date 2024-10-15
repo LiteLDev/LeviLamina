@@ -106,10 +106,19 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string_view                     nameId,
+        std::vector<std::string>             descriptionIDs,
+        std::vector<class MobEffectInstance> mobEffects,
+        ::Potion::PotionVariant              var
+    );
+
+    MCAPI void* ctor$(
+        std::string_view               nameId,
+        std::string_view               descriptionID,
+        class MobEffectInstance const& mobEffect,
+        ::Potion::PotionVariant        var
+    );
 
     MCAPI void dtor$();
 

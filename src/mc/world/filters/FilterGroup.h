@@ -83,10 +83,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class FilterGroup const&);
 
     MCAPI bool _handleUnknownMember$(std::string const&, class Json::Value const&);
 

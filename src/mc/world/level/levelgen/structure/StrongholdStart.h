@@ -35,10 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Dimension& dimension, class Random& random, int chunkX, int chunkZ);
 
     MCAPI bool isValid$() const;
 

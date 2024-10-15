@@ -29,10 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Dimension& dim, class Random& random, int x, int z);
 
     MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 

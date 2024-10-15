@@ -70,10 +70,19 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ServerNetworkSystem&                              server,
+        ::TrackerType                                           type,
+        std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
+        Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>  networkDebugManager
+    );
+
+    MCAPI void* ctor$(
+        class ClientOrServerNetworkSystemRef&&                  network,
+        ::TrackerType                                           type,
+        std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
+        Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>  networkDebugManager
+    );
 
     MCAPI void dtor$();
 

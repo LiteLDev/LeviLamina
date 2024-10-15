@@ -51,10 +51,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct LegacyItemTriggerHandlerConfig&& config);
 
     MCAPI bool executeTrigger$(
         std::unordered_map<std::string, class DefinitionEvent> const& eventHandlers,

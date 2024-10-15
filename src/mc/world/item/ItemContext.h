@@ -106,10 +106,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class BlockSource& region, class BlockPos const& containerPos, int slot);
+
+    MCAPI void* ctor$(class WeakEntityRef const& entityRef, ::Puv::Legacy::EquipmentSlot equipmentSlot);
+
+    MCAPI void* ctor$(class WeakEntityRef const& entityRef, int slot);
 
     MCAPI void dtor$();
 

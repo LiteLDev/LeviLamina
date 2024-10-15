@@ -43,10 +43,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class Scripting::WeakObjectHandle&& rhs);
+
+    MCAPI void* ctor$(class Scripting::WeakLifetimeScope scope, struct Scripting::ObjectHandle objHandle);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Scripting::WeakObjectHandle const& rhs);
 
     MCAPI void dtor$();
 

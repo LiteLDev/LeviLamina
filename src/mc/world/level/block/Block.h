@@ -482,10 +482,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(ushort data, gsl::not_null<class BlockLegacy*> oldBlock);
+
+    MCAPI void*
+    ctor$(ushort data, gsl::not_null<class BlockLegacy*> oldBlock, class CompoundTag serId, uint const& runId);
 
     MCAPI ::BlockRenderLayer getRenderLayer$() const;
 

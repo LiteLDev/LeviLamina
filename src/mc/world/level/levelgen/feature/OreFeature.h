@@ -59,10 +59,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int count, std::vector<struct ReplaceRule>&& replaceRules);
+
+    MCAPI void* ctor$();
 
     MCAPI bool isValidPlacement$(std::string const&);
 

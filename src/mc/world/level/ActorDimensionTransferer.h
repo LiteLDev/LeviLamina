@@ -52,10 +52,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::unique_ptr<class IActorDimensionTransferProxy>            actorDimensionTransferProxy,
+        gsl::not_null<class StackRefResult<class ActorManager>> const& actorManager
+    );
 
     MCAPI class Vec3 findTargetPositionAndSetPosition$(
         class Actor&                     actor,

@@ -40,10 +40,11 @@ public:
 
     MCAPI static void** $vftableForScriptDeferredEventListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Scripting::ScriptEngine&   scriptEngine,
+        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
+        class ScriptFormPromiseTracker&  formPromiseTracker
+    );
 
     MCAPI ::EventResult onLevelRemovedPlayer$(class Level&, class Player& player);
 

@@ -54,10 +54,20 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        ::ContainerID               containerID,
+        ::ContainerType             type,
+        int                         size,
+        std::string const&          displayName,
+        class CompoundTag&&         tag,
+        struct ActorUniqueID const& entityID,
+        struct ActorUniqueID const& playerID,
+        int                         traderTier,
+        bool                        useNewTradeScreen,
+        bool                        usingEconomyTrade
+    );
 
     MCAPI void dtor$();
 

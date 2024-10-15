@@ -18,10 +18,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int, int, uint64, float, float, float, float);
 
     MCAPI static ::ll::CArrayT<struct CrashDumpFormatEntryImpl const>& kFormat();
 

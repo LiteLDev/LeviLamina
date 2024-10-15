@@ -113,10 +113,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class BlockVolume&            blockVolume,
+        class Level&                  level,
+        class BiomeSource const&      biomeSource,
+        DimensionType                 dimensionType,
+        struct WorldGenContext const& context
+    );
 
     MCAPI void dtor$();
 

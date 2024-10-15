@@ -41,10 +41,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class PerlinNoise const&);
+
+    MCAPI void* ctor$(class IRandom& random, struct YBlendingBugSettings yBlendingSettings, int levels, int minLevel);
+
+    MCAPI void* ctor$(class IRandom& random, int levels, int minLevel);
+
+    MCAPI void* ctor$(uint seed, int levels, int minLevel);
 
     MCAPI void dtor$();
 

@@ -100,10 +100,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$();
 
         MCAPI void dtor$();
 
@@ -157,10 +154,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Scheduler&                                                  scheduler,
+        class ILevelListCache&                                            levelListCache,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&   pathManager,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& resourcePackRepository,
+        bool                                                              isEditorModeEnabled,
+        std::unique_ptr<class FileArchiver::IWorldConverter>              worldConverter,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>      keyProvider,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                     levelDbEnv,
+        std::function<void(std::string const&)>                           displayMessageFunction
+    );
 
     MCAPI static std::string const& EXTENSION_ADDON();
 

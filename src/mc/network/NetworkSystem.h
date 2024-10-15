@@ -177,10 +177,7 @@ public:
 
     MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct NetworkSystem::Dependencies&& deps);
 
     MCAPI void dtor$();
 

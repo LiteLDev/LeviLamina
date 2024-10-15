@@ -40,10 +40,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class br::worldgen::UniformHeight provider);
+
+    MCAPI void* ctor$(class br::worldgen::StructureHeightProvider&& other);
+
+    MCAPI void* ctor$(class br::worldgen::ConstantHeight provider);
 
     MCAPI void dtor$();
 

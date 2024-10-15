@@ -70,10 +70,9 @@ public:
 
     MCAPI static void** $vftableForIRandomSeeded();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct br::worldgen::WorldGenRandom const& other);
 
     MCAPI void dtor$();
 

@@ -38,10 +38,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(std::shared_ptr<class Bedrock::Threading::Mutex>);
 
         MCAPI void dtor$();
 
@@ -183,10 +180,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::weak_ptr<class ItemRegistry> registry);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ItemRegistryRef const&);
 
     MCAPI void dtor$();
 

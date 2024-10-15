@@ -60,10 +60,11 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(
+            class CommandRegistry::Parser& parser,
+            class CommandOrigin const&     commandOrigin,
+            class Scoreboard const&        scoreboard
+        );
 
         // NOLINTEND
     };

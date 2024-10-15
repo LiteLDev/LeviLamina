@@ -47,10 +47,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ActorRuntimeID                 id,
+        class SynchedActorDataEntityWrapper& entityData,
+        class PropertyComponent*             propertyComponent,
+        uint64                               tick,
+        bool                                 packAll
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

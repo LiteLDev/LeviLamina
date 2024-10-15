@@ -64,10 +64,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class StructurePoolElement const& element,
+        class BlockPos                    position,
+        ::Rotation                        rotation,
+        int                               genDepth,
+        struct JigsawJunction&            junction,
+        class BoundingBox const&          box,
+        class BlockPos                    refPos
+    );
 
     MCAPI void dtor$();
 

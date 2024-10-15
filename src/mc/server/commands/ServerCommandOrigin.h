@@ -86,10 +86,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string const&       requestId,
+        class ServerLevel&       level,
+        ::CommandPermissionLevel permission,
+        DimensionType            dimensionType
+    );
 
     MCAPI void dtor$();
 

@@ -86,10 +86,47 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string const&                      id,
+        std::string const&                      name,
+        int64                                   lastSaved,
+        ::GameType                              gameType,
+        bool                                    isHardcore,
+        ::Difficulty                            gameDifficulty,
+        class LevelSeed64                       seed,
+        int                                     npv,
+        uint64                                  sizeOnDisk,
+        bool                                    confirmedPlatformLockedContent,
+        bool                                    isMultiplayerEnabled,
+        bool                                    lanBroadcastIntent,
+        ::Social::GamePublishSetting            xblBroadcastIntent,
+        bool                                    commandsEnabled,
+        ::EducationEditionOffer                 eduOffer,
+        class GameVersion const&                lastLoadedWithGameVersion,
+        class GameVersion const&                minCompatibleClientVersion,
+        ::StorageVersion                        storageVersion,
+        class Core::Path const&                 path,
+        class ContentIdentity const&            premiumContentIdentity,
+        std::string const&                      educationOid,
+        bool                                    isSingleUseWorld,
+        struct EduSharedUriResource const&      eduSharedUriResource,
+        class Experiments const&                experiments,
+        class BaseGameVersion const&            baseGameVersion,
+        ::Editor::WorldType                     editorWorldType,
+        std::optional<class CloudSaveLevelInfo> cloudSaveInfo
+    );
+
+    MCAPI void* ctor$(struct LevelSummary const&);
+
+    MCAPI void* ctor$(
+        std::string const&      levelId,
+        class LevelData const&  levelData,
+        class Core::Path const& levelDirectory,
+        class Core::Path const& levelInfoDirectory,
+        bool                    isBetaRetailLevel
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

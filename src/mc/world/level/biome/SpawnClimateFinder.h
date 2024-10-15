@@ -50,10 +50,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::vector<struct ClimateParameters> targetClimates,
+        struct OverworldNoises3d const&       noiseSampler,
+        class DimensionHeightRange const&     dimensionHeightRange
+    );
 
     MCAPI void dtor$();
 

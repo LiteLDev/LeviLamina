@@ -59,10 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class StackRefResult<class LevelStorage> const& levelStorage, bool isClientSide);
 
     MCAPI class Bedrock::PubSub::Connector<
         void(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&)>&

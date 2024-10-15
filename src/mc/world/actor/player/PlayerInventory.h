@@ -114,10 +114,7 @@ public:
 
     MCAPI static void** $vftableForContainerSizeChangeListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::unique_ptr<class Inventory> inv);
 
     MCAPI void containerContentChanged$(int slot);
 

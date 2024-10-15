@@ -49,10 +49,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class Mob& mob,
+        float      speedModifier,
+        int        horizontalSearchRange,
+        int        verticalSearchRange,
+        float      goalRadius,
+        int        interval
+    );
 
     MCAPI void _createBreakProgressParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
 

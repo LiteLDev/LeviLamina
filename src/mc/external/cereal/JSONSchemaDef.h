@@ -41,10 +41,14 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct cereal::internal::SchemaInfo const& info);
+
+    MCAPI void* ctor$(struct cereal::ext::internal::JSONSchemaDef const&);
+
+    MCAPI void*
+    ctor$(struct cereal::internal::ExtendedSchemaInfo const& schemaInfo, std::map<std::string, int>& outRefs);
 
     MCAPI void dtor$();
 

@@ -39,10 +39,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(int centerX, int centerZ, int radius, int height, bool guarded);
 
         // NOLINTEND
     };
@@ -79,10 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class SpikeFeature::EndSpike const& spike);
 
     MCAPI void dtor$();
 

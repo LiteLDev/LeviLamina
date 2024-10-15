@@ -32,10 +32,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(int64 bytes);
+
+    MCAPI void* ctor$(struct ScoreboardId const& scoreboardId);
+
+    MCAPI void* ctor$();
 
     MCAPI static struct ScoreboardId& INVALID();
 

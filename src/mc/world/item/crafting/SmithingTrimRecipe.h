@@ -54,10 +54,13 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        std::string const&            recipeId,
+        class RecipeIngredient const& templateIngredient,
+        class RecipeIngredient const& baseIngredient,
+        class RecipeIngredient const& additionIngredient,
+        class HashedString const&     tag
+    );
 
     MCAPI std::vector<class ItemInstance> const&
           assemble$(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;

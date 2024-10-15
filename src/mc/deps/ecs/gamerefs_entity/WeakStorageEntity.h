@@ -33,10 +33,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class StackResultStorageEntity const& stackResultStorage);
+
+    MCAPI void* ctor$(class OwnerStorageEntity const& ownerStorage);
+
+    MCAPI void* ctor$(class EntityContext const& stackRef);
 
     // NOLINTEND
 };

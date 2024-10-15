@@ -102,10 +102,9 @@ public:
 
     MCAPI static void** $vftableForContainerContentChangeListener();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class ContainerComponent&& other);
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

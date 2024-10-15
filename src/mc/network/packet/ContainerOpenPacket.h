@@ -48,10 +48,10 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$();
+
+    MCAPI void*
+    ctor$(::ContainerID containerId, ::ContainerType type, class BlockPos const& pos, struct ActorUniqueID const& id);
 
     MCAPI void dtor$();
 

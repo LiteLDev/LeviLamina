@@ -128,10 +128,26 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class CommandOrigin const&        outputReceiver,
+        class CommandOrigin const&        source,
+        class CommandPositionFloat const& commandPosition,
+        int                               version
+    );
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class CommandOrigin> outputReceiver,
+        std::unique_ptr<class CommandOrigin> source,
+        class CommandPositionFloat const&    commandPosition,
+        int                                  version
+    );
+
+    MCAPI void* ctor$(
+        class CommandOrigin const&        outputReceiver,
+        class Actor&                      entity,
+        class CommandPositionFloat const& commandPosition,
+        int                               version
+    );
 
     MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
 

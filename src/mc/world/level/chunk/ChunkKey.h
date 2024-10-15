@@ -27,10 +27,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(class LevelChunk const& lc);
+
+    MCAPI void* ctor$(class ChunkPos const& pos, DimensionType id);
 
     // NOLINTEND
 };

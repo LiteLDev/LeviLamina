@@ -58,10 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(::ContainerEnumName containerName, int size, class Player& player);
 
     MCAPI class Container* _getContainer$() const;
 

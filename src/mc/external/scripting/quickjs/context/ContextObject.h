@@ -198,10 +198,18 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        struct Scripting::ContextId                                  contextId,
+        struct JSContext*                                            jsContext,
+        class Scripting::WeakLifetimeScope                           scope,
+        struct Scripting::ModuleBindingBundle&&                      bindings,
+        std::unique_ptr<class Scripting::ScriptObjectFactory>&&      factory,
+        std::unique_ptr<class Scripting::QuickJS::ObjectInspector>&& inspector,
+        class Scripting::IPrinter*                                   printer,
+        class Scripting::IDependencyLoader*                          loader,
+        struct JSRuntime*                                            jsRuntime,
+        struct Scripting::ContextConfig const&                       contextConfig
+    );
 
     MCAPI void dtor$();
 

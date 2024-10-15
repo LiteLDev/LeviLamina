@@ -40,10 +40,19 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        template <class... Args>
-        auto* ctor$(Args... args) {
-            return std::construct_at(this, std::forward<Args>(args)...);
-        }
+        MCAPI void* ctor$(
+            class Biome const&                               biome,
+            class Random&                                    random,
+            class BlockVolume&                               blocks,
+            class BlockPos const&                            pos,
+            float                                            depthValue,
+            short                                            seaLevel,
+            std::unique_ptr<class PerlinSimplexNoise> const& materialAdjNoise,
+            ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
+            int                                              lowerLimit,
+            class HeightmapWrapper const&                    preWorldGenHeightmap,
+            bool                                             useCCOrLater
+        );
 
         // NOLINTEND
     };

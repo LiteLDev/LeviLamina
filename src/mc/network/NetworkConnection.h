@@ -66,10 +66,16 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class NetworkIdentifier const&                        id,
+        std::shared_ptr<class NetworkPeer>                    peer,
+        std::chrono::steady_clock::time_point                 lastPacketTime,
+        bool                                                  isSafeAndFast,
+        class Bedrock::NonOwnerPointer<class IPacketObserver> packetObserver,
+        class Scheduler&                                      mainThread,
+        bool                                                  isRawRecordingEnabled,
+        bool                                                  encryptionDisabled
+    );
 
     MCAPI void dtor$();
 

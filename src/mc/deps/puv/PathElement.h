@@ -28,10 +28,10 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Puv::internal::PathElement&&);
+
+    MCAPI void*
+    ctor$(entt::meta_type metaType, uint id, std::string name, ::cereal::SerializerContext::ContextType type);
 
     MCAPI void dtor$();
 

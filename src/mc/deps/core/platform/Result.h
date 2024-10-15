@@ -76,10 +76,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(struct Bedrock::ErrorInfo<class Bedrock::OSError>&& error);
+
+    MCAPI void* ctor$(class Core::Result&& rhs);
+
+    MCAPI void* ctor$(struct Bedrock::ErrorInfo<std::error_code>&& error);
+
+    MCAPI void* ctor$(bool success);
 
     MCAPI void dtor$();
 

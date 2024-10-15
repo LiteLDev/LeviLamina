@@ -69,10 +69,31 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class ItemRegistryRef                itemRegistry,
+        class LevelSettings const&           settings,
+        struct ActorUniqueID                 entityId,
+        class ActorRuntimeID                 runtimeId,
+        ::GameType                           entityGameType,
+        bool                                 enableItemStackNetManager,
+        class Vec3 const&                    pos,
+        class Vec2 const&                    rot,
+        std::string const&                   levelId,
+        std::string const&                   levelName,
+        class ContentIdentity const&         premiumTemplateContentIdentity,
+        std::string const&                   multiplayerCorrelationId,
+        class BlockDefinitionGroup const&    blockDefinitionGroup,
+        bool                                 isTrial,
+        class CompoundTag                    playerPropertyData,
+        struct PlayerMovementSettings const& movementSettings,
+        std::string const&                   serverVersion,
+        class mce::UUID const&               worldTemplateId,
+        uint64                               levelCurrentTime,
+        int                                  enchantmentSeed,
+        uint64                               blockTypeRegistryChecksum
+    );
+
+    MCAPI void* ctor$();
 
     MCAPI void dtor$();
 

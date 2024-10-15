@@ -37,10 +37,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::vector<class HashedString> blockMatchings);
+
+    MCAPI void* ctor$(class Block const& block);
 
     MCAPI bool finalize$(class BlockSource&, class IRandom&);
 

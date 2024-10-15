@@ -86,10 +86,12 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class OwnerPtr<class LevelStorage>        levelStorage,
+        std::unique_ptr<class GameDataSaveTimer>  gameDataSaveTimer,
+        std::unique_ptr<class UserStorageChecker> userStorageChecker,
+        class IMinecraftEventing&                 eventing
+    );
 
     MCAPI void dtor$();
 

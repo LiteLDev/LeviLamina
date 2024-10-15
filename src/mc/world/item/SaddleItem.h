@@ -48,10 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(std::string const& nameId, short id);
 
     MCAPI bool
     dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;

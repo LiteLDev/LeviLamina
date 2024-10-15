@@ -133,10 +133,11 @@ public:
 
     MCAPI static void** $vftableForILevelListCache();
 
-    template <class... Args>
-    auto* ctor$(Args... args) {
-        return std::construct_at(this, std::forward<Args>(args)...);
-    }
+    MCAPI void* ctor$(
+        class LevelStorageSource&                            levelStorageSource,
+        Bedrock::NotNullNonOwnerPtr<class AppPlatform const> appPlatform,
+        std::function<bool()>&&                              checkIsSafeToFlushCache
+    );
 
     MCAPI void addLevel$(std::string const& levelId, class LevelData&& levelData);
 
