@@ -28,7 +28,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(class SemVersion targetVersion, std::string const& mSchemaKey, std::string const& mJsonMemberName);

@@ -56,7 +56,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::ContainerEnumName containerName, int size, class Player& player);
 

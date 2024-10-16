@@ -32,7 +32,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool applies$(class Random& random, class LootTableContext& context);
 

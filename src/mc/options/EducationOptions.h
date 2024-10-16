@@ -39,9 +39,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForResourcePackListener();
+    MCAPI static void** vftableForResourcePackListener();
 
     MCAPI void* ctor$(class ResourcePackManager* packMan);
 

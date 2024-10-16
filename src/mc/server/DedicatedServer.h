@@ -68,9 +68,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockAppIsland();
+    MCAPI static void** vftableForBedrockAppIsland();
 
-    MCAPI static void** $vftableForIMinecraftApp();
+    MCAPI static void** vftableForIMinecraftApp();
 
     MCAPI void* ctor$();
 

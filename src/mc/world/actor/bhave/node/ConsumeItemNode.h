@@ -26,7 +26,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::BehaviorStatus tick$(class Actor& owner);
 

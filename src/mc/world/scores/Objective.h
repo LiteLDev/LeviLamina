@@ -64,7 +64,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::string const& name, class ObjectiveCriteria const& criteria);
 

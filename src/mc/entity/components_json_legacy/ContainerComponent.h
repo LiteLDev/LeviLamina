@@ -98,9 +98,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerCloseListener();
+    MCAPI static void** vftableForContainerCloseListener();
 
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCAPI static void** vftableForContainerContentChangeListener();
 
     MCAPI void* ctor$(class ContainerComponent&& other);
 

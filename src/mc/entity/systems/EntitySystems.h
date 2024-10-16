@@ -69,9 +69,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIEntitySystems();
+    MCAPI static void** vftableForIEntitySystems();
 
     MCAPI void* ctor$(std::unique_ptr<struct IEntitySystemsCollection> systems, std::string name);
 

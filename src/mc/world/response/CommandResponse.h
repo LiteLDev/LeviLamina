@@ -35,9 +35,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForCommandResponseBase();
+    MCAPI static void** vftableForCommandResponseBase();
 
-    MCAPI static void** $vftableForEventResponse();
+    MCAPI static void** vftableForEventResponse();
 
     MCAPI void buildSchema$(
         std::shared_ptr<

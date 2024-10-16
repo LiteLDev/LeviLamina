@@ -36,13 +36,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventListenerDispatcherActorEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherActorEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherBlockEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherBlockEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherLevelEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
 
     MCAPI ::EventResult onActorCreationAttemptFailed$(class Actor& actor, std::string_view message);
 

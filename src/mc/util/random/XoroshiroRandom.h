@@ -46,9 +46,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIRandom();
+    MCAPI static void** vftableForIRandom();
 
-    MCAPI static void** $vftableForIRandomSeeded();
+    MCAPI static void** vftableForIRandomSeeded();
 
     MCAPI void dtor$();
 

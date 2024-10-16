@@ -57,7 +57,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(int count, std::vector<struct ReplaceRule>&& replaceRules);
 

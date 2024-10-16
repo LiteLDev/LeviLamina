@@ -43,7 +43,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void
     addChildren$(class StructurePiece& startPiece, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);

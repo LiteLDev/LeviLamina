@@ -40,7 +40,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::ActorDamageCause cause, int dmg, std::bitset<4> armorSlots);
 

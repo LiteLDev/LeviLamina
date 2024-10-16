@@ -36,7 +36,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI int sample$(class IRandom& randomSource, class br::worldgen::WorldGenContext const& heightAccessor) const;
 

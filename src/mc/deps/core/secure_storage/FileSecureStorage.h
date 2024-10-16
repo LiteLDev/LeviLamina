@@ -44,7 +44,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI bool getData$(std::string& output, class Core::Path path);
 
@@ -76,7 +76,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI bool getData$(std::string& output, class Core::Path path);
 
@@ -139,7 +139,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(
         class Core::PathBuffer<std::string> const&                         settingsPath,

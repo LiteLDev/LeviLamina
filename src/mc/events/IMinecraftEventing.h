@@ -93,17 +93,17 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIConnectionEventing();
+    MCAPI static void** vftableForIConnectionEventing();
 
-    MCAPI static void** $vftableForIPackTelemetry();
+    MCAPI static void** vftableForIPackTelemetry();
 
-    MCAPI static void** $vftableForIScreenChangedEventing();
+    MCAPI static void** vftableForIScreenChangedEventing();
 
-    MCAPI static void** $vftableForIUIEventTelemetry();
+    MCAPI static void** vftableForIUIEventTelemetry();
 
-    MCAPI static void** $vftableForIWebviewTelemetry();
+    MCAPI static void** vftableForIWebviewTelemetry();
 
     MCAPI void dtor$();
 

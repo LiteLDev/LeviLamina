@@ -25,11 +25,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForConnector();
+    MCAPI static void** vftableForConnector();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCAPI static void** vftableForNetworkEnableDisableListener();
 
     MCAPI void* ctor$(struct Connector::ConnectionCallbacks&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 

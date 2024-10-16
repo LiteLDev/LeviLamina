@@ -55,7 +55,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI leveldb::Status DeleteFileA$(std::string const&);
 

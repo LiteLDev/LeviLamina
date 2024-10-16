@@ -75,7 +75,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI gsl::not_null<class Block const*> getPlacementBlock$(
             gsl::not_null<class Block const*> block,
@@ -116,7 +116,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI gsl::not_null<class Block const*> getPlacementBlock$(
             gsl::not_null<class Block const*> block,
@@ -165,7 +165,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(bool, bool);
 

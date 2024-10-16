@@ -49,7 +49,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool
     attemptSpreadVeins$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int facingData, class SculkSpreader&)

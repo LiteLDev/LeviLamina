@@ -30,7 +30,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void dropResources$(class BlockSource& region, class BlockPos const& pos, class Block const& block);
 

@@ -43,7 +43,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
 

@@ -58,7 +58,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void
     addOnComplete$(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);

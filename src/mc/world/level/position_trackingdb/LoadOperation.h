@@ -60,7 +60,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool _init$(
         std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,

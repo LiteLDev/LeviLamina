@@ -42,9 +42,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForBedrockLogEndPoint();
+    MCAPI static void** vftableForBedrockLogEndPoint();
 
     MCAPI void*
     ctor$(class Core::Path debugLogDirectory, class Core::Path fileName, std::optional<::LogLevel> minLogLevel);

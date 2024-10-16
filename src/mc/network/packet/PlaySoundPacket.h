@@ -39,7 +39,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::string name, class Vec3 const& pos, float volume, float pitch);
 

@@ -72,7 +72,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();

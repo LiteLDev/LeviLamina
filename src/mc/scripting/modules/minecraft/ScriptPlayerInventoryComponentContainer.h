@@ -55,7 +55,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class WeakEntityRef const& entityRef, class Scripting::WeakLifetimeScope const& scope);
 

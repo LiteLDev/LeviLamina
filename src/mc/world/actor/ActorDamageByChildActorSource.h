@@ -53,7 +53,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class Actor const& childActor, class Actor const& actor, ::ActorDamageCause cause);
 

@@ -29,9 +29,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForCoreFileSizePresetManager();
+    MCAPI static void** vftableForCoreFileSizePresetManager();
 
     MCAPI std::optional<uint64> checkFileInitialSize$(class Core::Path const& filePath);
 

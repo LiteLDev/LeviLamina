@@ -100,7 +100,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(gsl::not_null<class IBackgroundTaskOwner*> group, struct TaskStartInfoBase const& startInfo, bool isAsync);

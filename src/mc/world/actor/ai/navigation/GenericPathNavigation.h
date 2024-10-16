@@ -37,7 +37,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Vec3 getTempMobPos$(class Mob const& mob) const;
 

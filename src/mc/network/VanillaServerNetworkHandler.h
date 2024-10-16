@@ -25,7 +25,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void handle$(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
 

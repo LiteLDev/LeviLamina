@@ -75,11 +75,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForCodeBuilderIClient();
+    MCAPI static void** vftableForCodeBuilderIClient();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCAPI static void** vftableForLevelListener();
 
-    MCAPI static void** $vftableForUriListener();
+    MCAPI static void** vftableForUriListener();
 
     MCAPI void* ctor$(class IMinecraftApp& minecraft);
 

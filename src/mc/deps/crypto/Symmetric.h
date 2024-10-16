@@ -48,7 +48,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
 

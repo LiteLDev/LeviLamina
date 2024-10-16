@@ -45,7 +45,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::vector<std::string> enumerateScripts$(std::string const& extension);
 

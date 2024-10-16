@@ -45,7 +45,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(class WorkerPool& workerPool, class Scheduler& scheduler, std::function<void(bool)> showIconFunction);

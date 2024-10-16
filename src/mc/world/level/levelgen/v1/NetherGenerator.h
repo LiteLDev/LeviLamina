@@ -91,9 +91,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForChunkSource();
+    MCAPI static void** vftableForChunkSource();
 
-    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
+    MCAPI static void** vftableForIPreliminarySurfaceProvider();
 
     MCAPI void* ctor$(class Dimension& dimension, uint seed, class Biome const* biomeOverride);
 

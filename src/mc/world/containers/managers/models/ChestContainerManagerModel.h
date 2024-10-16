@@ -40,7 +40,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
 

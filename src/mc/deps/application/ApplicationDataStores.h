@@ -48,7 +48,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
     getDataStore$(::Bedrock::IApplicationDataStores::DataStores which);

@@ -27,7 +27,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 

@@ -39,7 +39,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class Scripting::WeakLifetimeScope scope, std::string const& testName);
 

@@ -26,7 +26,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void
     onActorHurt$(class Actor& target, int amplifier, class ActorDamageSource const& source, float damage) const;

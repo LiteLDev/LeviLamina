@@ -145,7 +145,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(std::string_view name, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry);

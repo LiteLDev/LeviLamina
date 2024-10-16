@@ -43,7 +43,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
 

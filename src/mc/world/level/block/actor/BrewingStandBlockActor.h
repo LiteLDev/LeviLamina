@@ -80,9 +80,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCAPI static void** vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
     MCAPI bool canPullOutItem$(int slot, int face, class ItemStack const&) const;
 

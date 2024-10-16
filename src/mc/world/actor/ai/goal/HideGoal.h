@@ -45,7 +45,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::weak_ptr<class POIInstance> _getOwnedPOI$(::POIType type) const;
 

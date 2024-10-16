@@ -33,7 +33,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI struct ContainerValidationCraftResult getCraftResult$(
         class ContainerScreenContext const&                    screenContext,

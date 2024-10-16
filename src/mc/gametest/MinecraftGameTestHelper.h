@@ -336,7 +336,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::optional<struct gametest::GameTestError>
           assertBlockPresent$(class BlockLegacy const& blockType, int x, int y, int z, bool isPresent);

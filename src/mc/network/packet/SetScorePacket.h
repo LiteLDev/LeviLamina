@@ -49,7 +49,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
 

@@ -129,7 +129,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::EventResult onCameraSetPlayerRot$(class Player&, class Vec2 const&);
 

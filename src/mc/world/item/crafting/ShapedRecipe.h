@@ -57,7 +57,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(struct Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
 

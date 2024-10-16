@@ -28,7 +28,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
 

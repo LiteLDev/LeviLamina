@@ -25,7 +25,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI leveldb::Status Read$(uint64 n, leveldb::Slice* result, char* scratch);
 

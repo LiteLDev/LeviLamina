@@ -551,9 +551,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIAppPlatform();
+    MCAPI static void** vftableForIAppPlatform();
 
-    MCAPI static void** $vftableForISecureStorageKeySystem();
+    MCAPI static void** vftableForISecureStorageKeySystem();
 
     MCAPI void* ctor$(bool registerService);
 

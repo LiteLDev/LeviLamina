@@ -57,7 +57,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(class Core::Path const& path, ::PackType packType, ::PackOrigin packOrigin, bool isDeveloperDirectory);

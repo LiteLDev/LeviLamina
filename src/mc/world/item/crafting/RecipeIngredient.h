@@ -44,7 +44,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class ItemDescriptor const& descriptor, ushort stackSize);
 

@@ -112,7 +112,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(uint64, struct WebSocketPerformInfo, struct HC_PERFORM_ENV*);
 

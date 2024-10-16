@@ -36,7 +36,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI struct ContainerValidationCraftResult
     getCraftResults$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);

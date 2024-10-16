@@ -29,7 +29,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
 

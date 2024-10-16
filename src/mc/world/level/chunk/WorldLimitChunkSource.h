@@ -45,7 +45,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::unique_ptr<class ChunkSource> storage, class BlockPos const& center, int width, int depth);
 

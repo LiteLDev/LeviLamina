@@ -74,7 +74,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 

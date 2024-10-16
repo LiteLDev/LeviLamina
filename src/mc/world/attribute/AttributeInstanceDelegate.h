@@ -34,7 +34,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI float change$(float, float newValue, class AttributeBuff const&);
 

@@ -132,7 +132,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::HandlerResult handleEvent$(struct PlayerGameplayEvent<void> const& event);
 

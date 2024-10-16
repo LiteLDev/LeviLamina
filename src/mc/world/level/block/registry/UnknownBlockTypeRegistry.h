@@ -31,7 +31,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Block const& getUnknownBlock$(class CompoundTag const& serId);
 

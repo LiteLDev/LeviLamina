@@ -64,7 +64,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void tick$(class StrictExecutionContext<
                      struct Filter<class FlagComponent<struct PlayerComponentFlag>>,

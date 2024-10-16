@@ -42,7 +42,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::RakNet::RNS2BindResult Bind$(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);
 

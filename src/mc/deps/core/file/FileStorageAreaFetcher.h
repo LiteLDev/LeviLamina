@@ -38,7 +38,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Core::Result getStorageAreaForPath$(
         std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,

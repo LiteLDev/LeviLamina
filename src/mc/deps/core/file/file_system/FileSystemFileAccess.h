@@ -42,7 +42,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI uint64 fread$(void* buffer, uint64 size, uint64 count, void* file) const;
 
@@ -69,7 +69,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI uint64 fwrite$(void const* buffer, uint64 size, uint64 count, void* file);
 
@@ -115,7 +115,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::FileSystemMode mode);
 

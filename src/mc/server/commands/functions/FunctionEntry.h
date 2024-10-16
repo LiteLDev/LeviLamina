@@ -30,7 +30,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void
     execute$(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);

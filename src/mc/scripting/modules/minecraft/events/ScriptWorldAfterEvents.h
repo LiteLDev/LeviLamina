@@ -120,7 +120,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI bool onFlushBlockCustomComponentAfterEvents$();
 
@@ -388,7 +388,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class Level*> level);
 
