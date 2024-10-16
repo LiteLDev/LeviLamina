@@ -30,7 +30,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(uint, std::string const&, std::string const&, bool, int, int);
 

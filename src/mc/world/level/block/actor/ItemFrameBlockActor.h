@@ -79,7 +79,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class BlockPos pos, ::BlockActorType type, std::string const& id);
 

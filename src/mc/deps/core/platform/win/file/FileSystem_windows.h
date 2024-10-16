@@ -242,7 +242,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
         ctor$(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);

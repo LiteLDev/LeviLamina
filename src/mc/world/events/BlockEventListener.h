@@ -69,7 +69,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::EventResult
     onBlockDestroyedByPlayer$(class Player& player, class Block const& destroyedBlock, class BlockPos const& pos, class ItemStackBase const&, class ItemStackBase const&);

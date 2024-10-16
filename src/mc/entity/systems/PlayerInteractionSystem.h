@@ -30,7 +30,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI bool getInteraction$(class Actor&, class Player&, class ActorInteraction&);
 

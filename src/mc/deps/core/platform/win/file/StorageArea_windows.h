@@ -126,7 +126,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::Core::FileAccessType, class Core::Path const&, bool);
 

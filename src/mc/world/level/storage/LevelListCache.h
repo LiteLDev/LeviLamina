@@ -129,9 +129,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockThreadingEnableQueueForMainThread();
+    MCAPI static void** vftableForBedrockThreadingEnableQueueForMainThread();
 
-    MCAPI static void** $vftableForILevelListCache();
+    MCAPI static void** vftableForILevelListCache();
 
     MCAPI void* ctor$(
         class LevelStorageSource&                            levelStorageSource,

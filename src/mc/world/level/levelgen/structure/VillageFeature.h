@@ -56,7 +56,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(uint seed, int townSpacing, int minTownSeparation);
 

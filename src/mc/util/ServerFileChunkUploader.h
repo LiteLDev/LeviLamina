@@ -80,7 +80,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool canCancelUpload$(struct FileInfo const& file) const;
 

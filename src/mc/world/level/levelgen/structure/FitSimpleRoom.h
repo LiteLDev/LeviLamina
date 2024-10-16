@@ -29,7 +29,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::unique_ptr<class OceanMonumentPiece>
           create$(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random);

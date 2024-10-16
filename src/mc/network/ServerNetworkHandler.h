@@ -442,15 +442,15 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockThreadingEnableQueueForMainThread();
+    MCAPI static void** vftableForBedrockThreadingEnableQueueForMainThread();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCAPI static void** vftableForLevelListener();
 
-    MCAPI static void** $vftableForNetEventCallback();
+    MCAPI static void** vftableForNetEventCallback();
 
-    MCAPI static void** $vftableForSocialMultiplayerServiceObserver();
+    MCAPI static void** vftableForSocialMultiplayerServiceObserver();
 
-    MCAPI static void** $vftableForSocialXboxLiveUserObserver();
+    MCAPI static void** vftableForSocialXboxLiveUserObserver();
 
     MCAPI void* ctor$(
         class GameCallbacks&                                            gameCallbacks,

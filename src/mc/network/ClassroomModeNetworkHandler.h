@@ -35,9 +35,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockThreadingEnableQueueForMainThread();
+    MCAPI static void** vftableForBedrockThreadingEnableQueueForMainThread();
 
-    MCAPI static void** $vftableForNetEventCallback();
+    MCAPI static void** vftableForNetEventCallback();
 
     MCAPI void* ctor$(bool isDedicatedServer);
 

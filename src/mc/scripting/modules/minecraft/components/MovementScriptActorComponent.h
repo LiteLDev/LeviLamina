@@ -36,7 +36,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Scripting::Result<float> getMaxTurn$() const;
 

@@ -46,7 +46,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::string const& requestId, ::AgentActionType action, class Json::Value const& response);
 

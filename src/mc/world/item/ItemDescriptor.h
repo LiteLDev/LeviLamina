@@ -106,7 +106,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI void dtor$();
 
@@ -219,7 +219,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::string_view fullName, int itemAux);
 

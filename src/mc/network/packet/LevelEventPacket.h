@@ -47,7 +47,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::LevelEvent eventId, float x, float y, float z, int data);
 

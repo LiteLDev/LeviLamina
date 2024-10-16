@@ -50,7 +50,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool containsOnly$(int, int, int, int, gsl::span<uint64 const>) const;
 

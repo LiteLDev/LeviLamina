@@ -36,7 +36,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void _fillArea$(
         class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,

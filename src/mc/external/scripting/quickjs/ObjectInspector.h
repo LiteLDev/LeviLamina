@@ -42,7 +42,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::optional<class Scripting::ResultAny>
     getPropertyValue$(struct Scripting::ObjectHandle handle, char const* name, entt::meta_type expectedType) const;

@@ -57,7 +57,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
 

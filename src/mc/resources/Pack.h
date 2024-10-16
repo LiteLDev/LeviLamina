@@ -85,7 +85,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(
         std::unique_ptr<class PackManifest>          manifest,

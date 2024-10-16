@@ -37,7 +37,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::optional<class BlockPos> placeCanopy$(
         class IBlockWorldGenAPI&             target,

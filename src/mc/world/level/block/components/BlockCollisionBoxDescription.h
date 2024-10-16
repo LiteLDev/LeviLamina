@@ -53,7 +53,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class Vec3 const& origin, class Vec3 const& size);
 

@@ -41,9 +41,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
 
     MCAPI void*
     ctor$(::BlockActorType blockEntityType, std::string const& id, class BlockPos const& pos, ::ContainerType);

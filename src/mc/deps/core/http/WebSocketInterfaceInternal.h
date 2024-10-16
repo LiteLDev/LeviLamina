@@ -48,7 +48,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI long
     connect$(char const*, char const*, gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);

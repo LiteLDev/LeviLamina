@@ -28,7 +28,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(gsl::not_null<class Command*> compiledCommand, std::unique_ptr<class CommandOrigin> origin);
 

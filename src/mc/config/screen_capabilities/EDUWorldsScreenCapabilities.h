@@ -25,7 +25,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 

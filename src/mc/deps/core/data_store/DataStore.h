@@ -83,7 +83,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
 
@@ -148,7 +148,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -179,7 +179,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
 
@@ -213,7 +213,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$();
 

@@ -72,9 +72,9 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+        MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-        MCAPI static void** $vftableForCoreZipUtilsZipProgress();
+        MCAPI static void** vftableForCoreZipUtilsZipProgress();
 
         MCAPI void dtor$();
 
@@ -152,7 +152,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(
         class Scheduler&                                                  scheduler,

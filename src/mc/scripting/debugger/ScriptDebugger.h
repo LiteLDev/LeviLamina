@@ -71,9 +71,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIScriptDebugger();
+    MCAPI static void** vftableForIScriptDebugger();
 
-    MCAPI static void** $vftableForIScriptStatPublisher();
+    MCAPI static void** vftableForIScriptStatPublisher();
 
     MCAPI void* ctor$(
         struct ScriptDebuggerSettings                 settings,

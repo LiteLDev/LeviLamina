@@ -135,7 +135,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(struct Puv::v1_20_50::ShooterItemComponent const& component);
 

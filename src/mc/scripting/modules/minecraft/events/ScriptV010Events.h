@@ -133,9 +133,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForScriptModuleMinecraftIScriptWorldAfterEvents();
+    MCAPI static void** vftableForScriptModuleMinecraftIScriptWorldAfterEvents();
 
-    MCAPI static void** $vftableForScriptModuleMinecraftIScriptWorldBeforeEvents();
+    MCAPI static void** vftableForScriptModuleMinecraftIScriptWorldBeforeEvents();
 
     MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptV010Events&&);
 

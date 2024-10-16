@@ -114,7 +114,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI std::optional<int> getState$(class BlockLegacy const& blockLegacy, int blockData) const;
 
@@ -179,7 +179,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI std::optional<int> getState$(class BlockLegacy const& blockLegacy, int) const;
 
@@ -1149,7 +1149,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
 

@@ -39,7 +39,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(float minChance, float maxChance, int mMinDistance, int mMaxDistance, uchar axis);
 

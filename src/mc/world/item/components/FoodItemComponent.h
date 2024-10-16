@@ -59,9 +59,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForIFoodItemComponent();
+    MCAPI static void** vftableForIFoodItemComponent();
 
-    MCAPI static void** $vftableForNetworkedItemComponent();
+    MCAPI static void** vftableForNetworkedItemComponent();
 
     MCAPI void* ctor$();
 

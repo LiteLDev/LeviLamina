@@ -70,9 +70,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
 
     MCAPI void* ctor$();
 

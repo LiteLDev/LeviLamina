@@ -62,13 +62,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCAPI static void** vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftableForRakNetConnectorConnectionCallbacks();
+    MCAPI static void** vftableForRakNetConnectorConnectionCallbacks();
 
-    MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
+    MCAPI static void** vftableForRakPeerHelperIPSupportInterface();
 
     MCAPI void* ctor$(
         class Scheduler&                                                 receiveThread,

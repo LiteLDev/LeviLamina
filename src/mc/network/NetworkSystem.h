@@ -171,11 +171,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCAPI static void** vftableForNetworkEnableDisableListener();
 
-    MCAPI static void** $vftableForRakNetConnectorConnectionCallbacks();
+    MCAPI static void** vftableForRakNetConnectorConnectionCallbacks();
 
-    MCAPI static void** $vftableForRakPeerHelperIPSupportInterface();
+    MCAPI static void** vftableForRakPeerHelperIPSupportInterface();
 
     MCAPI void* ctor$(struct NetworkSystem::Dependencies&& deps);
 

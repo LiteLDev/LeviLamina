@@ -25,7 +25,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(char const* desc, char const* arg, int line, char const* file, char const* function);
 

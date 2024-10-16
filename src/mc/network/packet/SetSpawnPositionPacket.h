@@ -54,7 +54,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::SpawnPositionType spawnPosType, DimensionType dimension, class BlockPos const& pos);
 

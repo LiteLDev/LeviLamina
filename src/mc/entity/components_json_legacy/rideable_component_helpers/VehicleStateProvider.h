@@ -42,7 +42,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool canAddPassenger$(
         std::vector<struct StrictActorIDEntityContextPair> const& vehiclePassengers,

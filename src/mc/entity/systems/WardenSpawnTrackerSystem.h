@@ -23,9 +23,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForITickingSystem();
+    MCAPI static void** vftableForITickingSystem();
 
-    MCAPI static void** $vftableForLevelEventListener();
+    MCAPI static void** vftableForLevelEventListener();
 
     MCAPI ::EventResult onLevelAddedPlayer$(class Level&, class Player& player);
 

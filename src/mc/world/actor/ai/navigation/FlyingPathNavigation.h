@@ -56,7 +56,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool canUpdatePath$(class Mob const& mob) const;
 

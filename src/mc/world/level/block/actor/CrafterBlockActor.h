@@ -83,9 +83,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
 
     MCAPI void* ctor$(class BlockPos pos);
 

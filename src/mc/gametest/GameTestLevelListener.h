@@ -30,9 +30,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForLevelEventListener();
+    MCAPI static void** vftableForLevelEventListener();
 
-    MCAPI static void** $vftableForScriptDeferredEventListener();
+    MCAPI static void** vftableForScriptDeferredEventListener();
 
     MCAPI void* ctor$(class gametest::GameTestTicker& testTicker);
 

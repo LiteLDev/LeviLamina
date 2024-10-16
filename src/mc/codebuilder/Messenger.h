@@ -158,9 +158,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForCodeBuilderCommandOutputObserver();
+    MCAPI static void** vftableForCodeBuilderCommandOutputObserver();
 
     MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient> codeBuilderClient);
 

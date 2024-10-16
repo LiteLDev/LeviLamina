@@ -501,7 +501,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(ushort data, gsl::not_null<class BlockLegacy*> oldBlock);
 

@@ -156,11 +156,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockSourceListener();
+    MCAPI static void** vftableForBlockSourceListener();
 
-    MCAPI static void** $vftableForILevel();
+    MCAPI static void** vftableForILevel();
 
-    MCAPI static void** $vftableForIWorldRegistriesProvider();
+    MCAPI static void** vftableForIWorldRegistriesProvider();
 
     MCAPI void* ctor$(
         Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,

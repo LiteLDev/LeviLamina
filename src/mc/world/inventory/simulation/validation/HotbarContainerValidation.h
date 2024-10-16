@@ -60,7 +60,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI bool canDestroy$(class ContainerScreenContext const& screenContext) const;
 

@@ -76,9 +76,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCAPI static void** vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
     MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
 

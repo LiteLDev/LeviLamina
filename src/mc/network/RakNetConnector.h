@@ -67,7 +67,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -167,7 +167,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
 
@@ -286,11 +286,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForConnector();
+    MCAPI static void** vftableForConnector();
 
-    MCAPI static void** $vftableForNetworkEnableDisableListener();
+    MCAPI static void** vftableForNetworkEnableDisableListener();
 
     MCAPI void* ctor$(
         struct RakNetConnector::ConnectionCallbacks&             callbacks,

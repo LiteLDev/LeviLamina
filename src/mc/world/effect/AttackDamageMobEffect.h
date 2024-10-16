@@ -38,7 +38,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(int id, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon);

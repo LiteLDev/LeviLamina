@@ -35,9 +35,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForBedrockImplBase();
+    MCAPI static void** vftableForBedrockImplBase();
 
     MCAPI void* ctor$();
 

@@ -56,7 +56,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
 

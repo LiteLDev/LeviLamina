@@ -34,7 +34,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(class Player& player, std::string const& name, bool customName, int size, ::ContainerType containerType);

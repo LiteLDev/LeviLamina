@@ -55,9 +55,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCAPI static void** vftableForBlockActor();
 
-    MCAPI static void** $vftableForGameEventListener();
+    MCAPI static void** vftableForGameEventListener();
 
     MCAPI void* ctor$(class BlockPos const& pos);
 

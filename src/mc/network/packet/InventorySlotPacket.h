@@ -45,7 +45,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(::ContainerID id, uint slot, class ItemStack const& item);
 

@@ -52,7 +52,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(class WitherBoss& witherBoss, std::vector<struct MobDescriptor> const& targetTypes);
 

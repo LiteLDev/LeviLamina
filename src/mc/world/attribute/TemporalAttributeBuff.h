@@ -50,7 +50,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(float amount, int duration, ::AttributeBuffType type, bool serialize, std::string const& name);
 

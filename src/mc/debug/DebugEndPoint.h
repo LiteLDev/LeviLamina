@@ -46,7 +46,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI void dtor$();
 
@@ -86,9 +86,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForBedrockLogEndPoint();
+    MCAPI static void** vftableForBedrockLogEndPoint();
 
     MCAPI void* ctor$(std::optional<::LogLevel> minLogLevel);
 

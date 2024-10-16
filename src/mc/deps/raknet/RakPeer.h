@@ -534,9 +534,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRakNetRNS2EventHandler();
+    MCAPI static void** vftableForRakNetRNS2EventHandler();
 
-    MCAPI static void** $vftableForRakNetRakPeerInterface();
+    MCAPI static void** vftableForRakNetRakPeerInterface();
 
     MCAPI void* ctor$();
 

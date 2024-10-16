@@ -34,7 +34,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI float getDamageBonus$(int level, class Actor const&, class Actor const& attacker) const;
 

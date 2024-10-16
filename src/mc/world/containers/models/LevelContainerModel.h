@@ -71,9 +71,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerModel();
+    MCAPI static void** vftableForContainerModel();
 
-    MCAPI static void** $vftableForContainerRemovedListener();
+    MCAPI static void** vftableForContainerRemovedListener();
 
     MCAPI void* ctor$(
         ::ContainerEnumName  containerName,

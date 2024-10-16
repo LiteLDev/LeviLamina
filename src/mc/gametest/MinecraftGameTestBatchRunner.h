@@ -38,7 +38,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI std::shared_ptr<class gametest::BaseGameTestInstance>
           _createGameTestInstance$(class gametest::BaseGameTestFunction& function);

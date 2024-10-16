@@ -35,9 +35,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCAPI static void** vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForIContainerManager();
+    MCAPI static void** vftableForIContainerManager();
 
     MCAPI void* ctor$(class Player& player, class Container* container);
 

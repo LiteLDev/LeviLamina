@@ -248,7 +248,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void* ctor$(struct DBStorageConfig config, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv);
 

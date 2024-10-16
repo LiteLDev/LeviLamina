@@ -110,9 +110,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCAPI static void** vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForContainerSizeChangeListener();
+    MCAPI static void** vftableForContainerSizeChangeListener();
 
     MCAPI void* ctor$(std::unique_ptr<class Inventory> inv);
 

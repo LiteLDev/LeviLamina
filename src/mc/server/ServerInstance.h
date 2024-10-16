@@ -186,13 +186,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForAppPlatformListener();
+    MCAPI static void** vftableForAppPlatformListener();
 
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForCoreStorageAreaStateListener();
+    MCAPI static void** vftableForCoreStorageAreaStateListener();
 
-    MCAPI static void** $vftableForGameCallbacks();
+    MCAPI static void** vftableForGameCallbacks();
 
     MCAPI void* ctor$(
         class IMinecraftApp&                                                     app,

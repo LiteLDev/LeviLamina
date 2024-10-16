@@ -56,9 +56,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCAPI static void** vftableForContainerContentChangeListener();
 
     MCAPI void* ctor$(
         class Container&                                   backingContainer,

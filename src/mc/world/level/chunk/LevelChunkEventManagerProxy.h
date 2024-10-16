@@ -43,7 +43,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI int getClosestPlayerDistanceSquared$(class LevelChunk const& levelChunk) const;
 

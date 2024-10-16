@@ -55,7 +55,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI static uint const& DEFAULT_MAX_CARRY_WEIGHT();
 

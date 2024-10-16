@@ -40,7 +40,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI ::EventResult onEvent$(struct ServerNetworkGameplayNotificationEvent const& event);
 

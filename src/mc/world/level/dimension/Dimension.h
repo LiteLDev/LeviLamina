@@ -521,13 +521,13 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
 
-    MCAPI static void** $vftableForIDimension();
+    MCAPI static void** vftableForIDimension();
 
-    MCAPI static void** $vftableForLevelListener();
+    MCAPI static void** vftableForLevelListener();
 
-    MCAPI static void** $vftableForSavedData();
+    MCAPI static void** vftableForSavedData();
 
     MCAPI void* ctor$(
         class ILevel&              level,

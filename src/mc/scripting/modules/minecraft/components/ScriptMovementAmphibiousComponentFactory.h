@@ -40,7 +40,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent> createComponent$(
         class WeakEntityRef                       entity,

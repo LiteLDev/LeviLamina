@@ -102,9 +102,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForCodeBuilderIRequestHandler();
+    MCAPI static void** vftableForCodeBuilderIRequestHandler();
 
-    MCAPI static void** $vftableForWebviewObserver();
+    MCAPI static void** vftableForWebviewObserver();
 
     MCAPI void* ctor$(class Automation::AutomationClient& owner);
 

@@ -63,7 +63,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -106,7 +106,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI std::string get1x1$(class Random& random);
 
@@ -225,7 +225,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI std::string get1x1$(class Random& random);
 
@@ -358,7 +358,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -425,7 +425,7 @@ public:
         // thunks
     public:
         // NOLINTBEGIN
-        MCAPI static void** $vftable();
+        MCAPI static void** vftable();
 
         MCAPI void* ctor$(
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,

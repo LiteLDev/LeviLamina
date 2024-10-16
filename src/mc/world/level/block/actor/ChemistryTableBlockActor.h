@@ -70,9 +70,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCAPI static void** vftableForBlockActor();
 
-    MCAPI static void** $vftableForContainer();
+    MCAPI static void** vftableForContainer();
 
     MCAPI class Container* getContainer$();
 

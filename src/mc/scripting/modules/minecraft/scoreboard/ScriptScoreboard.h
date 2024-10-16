@@ -119,7 +119,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** vftable();
 
     MCAPI void*
     ctor$(class Scoreboard& scoreboard, class Level& level, class Scripting::WeakLifetimeScope const& scope);

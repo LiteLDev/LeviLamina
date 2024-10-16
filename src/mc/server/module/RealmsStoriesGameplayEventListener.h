@@ -54,9 +54,9 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static void** $vftableForEventListenerDispatcherActorEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherActorEventListener();
 
-    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
+    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
 
     MCAPI void* ctor$(class LevelStorage& levelStorage);
 
