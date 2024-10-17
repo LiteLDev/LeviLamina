@@ -17,7 +17,14 @@ public:
     // vIndex: 0
     virtual ~BlockTickConfigurationComponent() = default;
 
-    MCAPI int getRandomTickDelay(class Random&) const;
+    MCAPI int getRandomTickDelay(class Random& random) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

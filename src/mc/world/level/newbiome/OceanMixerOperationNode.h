@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OperationGraphResult.h"
-#include "mc/deps/core/data/OperationNode.h"
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
-#include "mc/world/level/newbiome/WorkingData.h"
+#include "mc/world/level/newbiome/OperationGraphResult.h"
+#include "mc/world/level/newbiome/OperationNode.h"
+#include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 
 class OceanMixerOperationNode {
 public:
@@ -28,11 +28,11 @@ public:
 
     // vIndex: 3
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>&,
-        class Pos2d const&                                     origin,
-        class Pos2d const&                                     size,
-        int                                                    pw,
-        class OperationGraphResult<::BiomeTemperatureCategory> oceanData
+        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
+        class Pos2d const&                                                               origin,
+        class Pos2d const&                                                               size,
+        int                                                                              pw,
+        class OperationGraphResult<::BiomeTemperatureCategory>                           oceanData
     ) const;
 
     // vIndex: 4
@@ -46,6 +46,34 @@ public:
         class Biome const&                                                             genericShallowOcean,
         class Biome const&                                                             genericDeepOcean
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        uint                                                                           seedMixup,
+        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>&         biomeLayer,
+        std::shared_ptr<class OperationNode<::BiomeTemperatureCategory, class Pos2d>>& oceanLayer,
+        class BiomeRegistry const&                                                     registry,
+        class Biome const&                                                             genericShallowOcean,
+        class Biome const&                                                             genericDeepOcean
+    );
+
+    MCAPI void _fillArea$(
+        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
+        class Pos2d const&                                                               origin,
+        class Pos2d const&                                                               size,
+        int                                                                              pw,
+        class OperationGraphResult<::BiomeTemperatureCategory>                           oceanData
+    ) const;
+
+    MCAPI std::tuple<class Pos2d, class Pos2d> _getAreaRead$(class Pos2d const& origin, class Pos2d const& size) const;
+
+    MCAPI void init$(int64 seed);
 
     // NOLINTEND
 };

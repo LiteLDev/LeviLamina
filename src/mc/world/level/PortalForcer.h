@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/saveddata/SavedData.h"
 
 class PortalForcer : public ::SavedData {
@@ -39,20 +39,19 @@ public:
         class BlockPos&       targetBlockPos
     ) const;
 
-    MCAPI void force(class Actor& entity, struct DimensionTransitionComponent const&);
+    MCAPI void force(class Actor& entity, struct DimensionTransitionComponent const& portalEntranceComponent);
 
     MCAPI bool portalRecordExists(DimensionType dimensionType, class PortalRecord const& record) const;
 
-    MCAPI void
-    removeMisalignedPortalRecords(class BlockSource& region, class PortalShape const&, class PortalRecord const&);
+    MCAPI void removeMisalignedPortalRecords(
+        class BlockSource&        region,
+        class PortalShape const&  referenceShape,
+        class PortalRecord const& referenceRecord
+    );
 
     MCAPI void removePortalRecord(class BlockSource& source, class BlockPos const& pos);
 
     MCAPI static bool canPortalReplaceBlock(class BlockSource& region, class BlockPos const& blockPos);
-
-    MCAPI static class BaseGameVersion const MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION;
-
-    MCAPI static std::string const PORTAL_FILE_ID;
 
     // NOLINTEND
 
@@ -64,6 +63,23 @@ public:
         int                   radius,
         class BlockPos&       targetBlockPos
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Level& level);
+
+    MCAPI void deserialize$(class CompoundTag const& tag);
+
+    MCAPI void serialize$(class CompoundTag& tag) const;
+
+    MCAPI static class BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
+
+    MCAPI static std::string const& PORTAL_FILE_ID();
 
     // NOLINTEND
 };

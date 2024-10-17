@@ -39,6 +39,15 @@ public:
         virtual ~IPSupportInterface();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -88,6 +97,13 @@ public:
         int&                                           socketCount,
         int                                            ipv6Index
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class RakPeerHelper::IPSupportInterface& ipInterface);
 
     // NOLINTEND
 };

@@ -26,4 +26,13 @@ public:
     MCAPI ~ResourcePackTransmissionManager();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Scheduler& scheduler);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

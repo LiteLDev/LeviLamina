@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit InventoryTransactionManager(class Player&);
+    MCAPI explicit InventoryTransactionManager(class Player& player);
 
     MCAPI void _createServerSideAction(class ItemStack const& oldItem, class ItemStack const& newItem);
 
@@ -30,6 +30,15 @@ public:
     MCAPI void resetExpectedActions();
 
     MCAPI ~InventoryTransactionManager();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Player& player);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

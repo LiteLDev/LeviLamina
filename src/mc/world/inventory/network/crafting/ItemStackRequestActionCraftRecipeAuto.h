@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class ItemStackRequestActionCraftRecipeAuto {
 public:
@@ -35,6 +35,27 @@ public:
     virtual struct ItemStackNetIdVariant const& getRecipeNetId() const;
 
     MCAPI ItemStackRequestActionCraftRecipeAuto();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void _write$(class BinaryStream& stream) const;
+
+    MCAPI class ItemStackRequestActionCraftBase const* getCraftAction$() const;
+
+    MCAPI int getFilteredStringIndex$() const;
+
+    MCAPI struct ItemStackNetIdVariant const& getRecipeNetId$() const;
+
+    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
 
     // NOLINTEND
 };

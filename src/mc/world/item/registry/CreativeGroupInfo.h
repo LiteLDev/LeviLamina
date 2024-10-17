@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +24,15 @@ public:
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
 
     MCAPI void addCreativeItem(class CreativeItemEntry* itemEntry);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class CreativeGroupInfo const&);
 
     // NOLINTEND
 };

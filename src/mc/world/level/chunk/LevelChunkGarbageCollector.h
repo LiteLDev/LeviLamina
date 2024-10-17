@@ -30,4 +30,13 @@ public:
     MCAPI void flush();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Dimension& dim);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

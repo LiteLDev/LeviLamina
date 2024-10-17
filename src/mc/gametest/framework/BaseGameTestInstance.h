@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -73,7 +73,7 @@ public:
     virtual void _removeSimulatedPlayers();
 
     MCAPI BaseGameTestInstance(
-        class gametest::BaseGameTestFunction const&,
+        class gametest::BaseGameTestFunction const&              testFunction,
         std::unique_ptr<class gametest::IGameTestHelperProvider> helper
     );
 
@@ -81,9 +81,9 @@ public:
 
     MCAPI class gametest::GameTestSequence& createSequence();
 
-    MCAPI void fail(struct gametest::GameTestError error, bool);
+    MCAPI void fail(struct gametest::GameTestError error, bool canRetry);
 
-    MCAPI void finish(bool);
+    MCAPI void finish(bool canRetry);
 
     MCAPI std::optional<struct gametest::GameTestError> const& getError() const;
 
@@ -100,6 +100,28 @@ public:
     MCAPI void succeed();
 
     MCAPI void tick();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class gametest::BaseGameTestFunction const&              testFunction,
+        std::unique_ptr<class gametest::IGameTestHelperProvider> helper
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI void _removeSimulatedPlayers$();
+
+    MCAPI void _rerun$();
+
+    MCAPI void initialize$();
+
+    MCAPI void spawnStructure$();
 
     // NOLINTEND
 };

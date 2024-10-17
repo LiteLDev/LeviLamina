@@ -23,4 +23,17 @@ public:
     MCAPI explicit HugeFungusFeature(bool isBlue);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(bool isBlue);
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+
+    // NOLINTEND
 };

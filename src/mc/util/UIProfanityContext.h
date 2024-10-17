@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/ProfanityFilterContext.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/util/ProfanityFilterContext.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -20,9 +20,18 @@ public:
 
     MCAPI ~ComponentItemData_v1_20_20();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
 
     // NOLINTEND
 };

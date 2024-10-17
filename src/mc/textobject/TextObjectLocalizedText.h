@@ -29,9 +29,24 @@ public:
     virtual class Json::Value asJsonValue() const;
 
     // vIndex: 3
-    virtual class Json::Value resolve(struct ResolveData const&) const;
+    virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
 
     MCAPI explicit TextObjectLocalizedText(std::string text);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string text);
+
+    MCAPI class Json::Value asJsonValue$() const;
+
+    MCAPI std::string asString$() const;
+
+    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
 
     // NOLINTEND
 };

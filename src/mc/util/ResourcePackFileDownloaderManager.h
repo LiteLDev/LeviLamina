@@ -17,9 +17,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_CHUNK_ATTEMPTS;
+    MCAPI static int const& MAX_CHUNK_ATTEMPTS();
 
     // NOLINTEND
 };

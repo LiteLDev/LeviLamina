@@ -31,4 +31,22 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class BehaviorNode> createNode$(
+        class Actor&                 owner,
+        class BehaviorFactory const& factory,
+        class BehaviorNode*          parent,
+        class BehaviorData*          data
+    ) const;
+
+    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+
+    // NOLINTEND
 };

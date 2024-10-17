@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ObjectiveSortOrder.h"
+#include "mc/server/commands/Command.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
-#include "mc/world/level/Command.h"
+#include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 class ScoreboardCommand : public ::Command {
 public:
@@ -29,6 +29,13 @@ public:
         MCAPI explicit InitProxy(class ServerLevel& level);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class ServerLevel& level);
+
+        // NOLINTEND
     };
 
     struct SetScoreOutput {
@@ -41,6 +48,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~SetScoreOutput();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -175,9 +189,20 @@ public:
         class CommandOutput&                                           output
     ) const;
 
-    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
+    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard& scoreboard);
 
-    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
+    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard& scoreboard);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

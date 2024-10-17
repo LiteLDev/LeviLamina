@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/ItemFrameBlockActor.h"
 
 class GlowItemFrameBlockActor : public ::ItemFrameBlockActor {
@@ -19,6 +19,15 @@ public:
     virtual ~GlowItemFrameBlockActor() = default;
 
     MCAPI explicit GlowItemFrameBlockActor(class BlockPos pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos pos);
 
     // NOLINTEND
 };

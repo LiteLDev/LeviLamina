@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/threading/SPSCQueue.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/BinaryStream.h"
-#include "mc/external/spsc_queue/SPSCQueue.h"
 
 // auto generated inclusion list
-#include "mc/enums/Compressibility.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class BatchedNetworkPeer : public ::NetworkPeer {
@@ -35,6 +35,15 @@ public:
         MCAPI struct BatchedNetworkPeer::DataCallback& operator=(struct BatchedNetworkPeer::DataCallback&&);
 
         MCAPI ~DataCallback();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct BatchedNetworkPeer::DataCallback&&);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -68,7 +77,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
 
     // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
@@ -88,6 +97,27 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _startSendTask();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::shared_ptr<class NetworkPeer> peer, class Scheduler& scheduler);
+
+    MCAPI void flush$(std::function<void()>&& callback);
+
+    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+    MCAPI ::NetworkPeer::DataStatus
+    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+
+    MCAPI void
+    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+
+    MCAPI void update$();
 
     // NOLINTEND
 };

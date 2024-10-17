@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,8 @@ public:
     virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    virtual bool
+    shouldConnectToRedstone(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
 
     // vIndex: 66
     virtual void
@@ -75,11 +76,9 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 153
-    virtual bool allowStateMismatchOnPlacement(class Block const&, class Block const&) const;
+    virtual bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
 
     MCAPI ObserverBlock(std::string const& nameId, int id);
-
-    MCAPI static struct Tick const MAX_TICK_DELAY;
 
     // NOLINTEND
 
@@ -91,6 +90,50 @@ public:
     MCAPI void
     _updateState(class BlockSource& region, class BlockPos const& pos, class PulseCapacitor& component, bool turnOn)
         const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+
+    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const& getRenderBlock$() const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI bool isValidAuxValue$(int value) const;
+
+    MCAPI void movedByPiston$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI static struct Tick const& MAX_TICK_DELAY();
 
     // NOLINTEND
 };

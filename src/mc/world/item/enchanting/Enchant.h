@@ -214,16 +214,76 @@ public:
 
     MCAPI static void shutdownEnchants();
 
-    MCAPI static std::string stringFromEnchantSlot(::Enchant::Slot const&);
+    MCAPI static std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
 
-    MCAPI static std::unordered_map<class HashedString, ::Enchant::Type> mEnchantNameToType;
+    // NOLINTEND
 
-    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher>
-        mEnchantSlotTypeEnumToStringMap;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static std::unordered_map<std::string, ::Enchant::Slot> mEnchantSlotTypeNameToEnumMap;
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
 
-    MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots,
+        bool                 isLootable
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+
+    MCAPI void doPostAttack$(class Actor& attacker, class Actor& victim, int level) const;
+
+    MCAPI void doPostHurt$(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
+
+    MCAPI void doPostItemHurtActor$(class Actor&, class Actor&, int) const;
+
+    MCAPI float getAfterBreachArmorFraction$(int, float) const;
+
+    MCAPI float getDamageBonus$(int, class Actor const&, class Actor const&) const;
+
+    MCAPI int getDamageProtection$(int level, class ActorDamageSource const& source) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI int getMinLevel$() const;
+
+    MCAPI bool isCompatibleWith$(::Enchant::Type type) const;
+
+    MCAPI bool isDiscoverable$() const;
+
+    MCAPI bool isMeleeDamageEnchant$() const;
+
+    MCAPI bool isProtectionEnchant$() const;
+
+    MCAPI bool isTreasureOnly$() const;
+
+    MCAPI static std::unordered_map<class HashedString, ::Enchant::Type>& mEnchantNameToType();
+
+    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher>&
+    mEnchantSlotTypeEnumToStringMap();
+
+    MCAPI static std::unordered_map<std::string, ::Enchant::Slot>& mEnchantSlotTypeNameToEnumMap();
+
+    MCAPI static std::vector<std::unique_ptr<class Enchant>>& mEnchants();
 
     // NOLINTEND
 };

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
-#include "mc/enums/LogArea.h"
-#include "mc/enums/LogLevel.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
 
 class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:
@@ -27,6 +27,27 @@ public:
     MCVAPI void setEnabled(bool newState);
 
     MCAPI explicit WorldSessionEndPoint(class IMinecraftEventing& eventing);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForBedrockLogEndPoint();
+
+    MCAPI void* ctor$(class IMinecraftEventing& eventing);
+
+    MCAPI void flush$();
+
+    MCAPI bool isEnabled$() const;
+
+    MCAPI void log$(::LogArea area, ::LogLevel level, char const* message);
+
+    MCAPI bool logOnlyOnce$() const;
+
+    MCAPI void setEnabled$(bool newState);
 
     // NOLINTEND
 };

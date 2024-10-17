@@ -26,12 +26,6 @@ public:
 
     MCAPI ~RopeSystem();
 
-    MCAPI static float const sBucketLength;
-
-    MCAPI static bool sEnabled;
-
-    MCAPI static float const sEpsilon;
-
     // NOLINTEND
 
     // private:
@@ -68,6 +62,21 @@ public:
     MCAPI void _tickWaves();
 
     MCAPI void _updateRenderPoints();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static float const& sBucketLength();
+
+    MCAPI static bool& sEnabled();
+
+    MCAPI static float const& sEpsilon();
 
     // NOLINTEND
 };

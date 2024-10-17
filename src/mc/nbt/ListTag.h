@@ -4,8 +4,8 @@
 #include "mc/nbt/UniqueTagPtr.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class CompoundTagVariant;
 
@@ -79,9 +79,38 @@ public:
 
     MCAPI int64 getInt64(int index) const;
 
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int index) const;
 
     MCAPI void popBack();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class Tag> copy$() const;
+
+    MCAPI void deleteChildren$();
+
+    MCAPI bool equals$(class Tag const& rhs) const;
+
+    MCAPI ::Tag::Type getId$() const;
+
+    MCAPI uint64 hash$() const;
+
+    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+
+    MCAPI void print$(std::string const& prefix_, class PrintStream& out) const;
+
+    MCAPI std::string toString$() const;
+
+    MCAPI void write$(class IDataOutput& dos) const;
 
     // NOLINTEND
 };

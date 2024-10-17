@@ -31,4 +31,11 @@ public:
     MCAPI bool _shouldBreakDoor(class Mob& mob);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

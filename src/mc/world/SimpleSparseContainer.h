@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/SparseContainerBackingSetType.h"
+#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 class SimpleSparseContainer {
 public:
@@ -34,8 +34,12 @@ public:
 
     MCVAPI void stopOpen(class Player& player);
 
-    MCAPI
-    SimpleSparseContainer(class Container& backingContainer, ::SparseContainerBackingSetType backingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
+    MCAPI SimpleSparseContainer(
+        class Container&                                   backingContainer,
+        ::SparseContainerBackingSetType                    backingSetType,
+        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
+        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+    );
 
     MCAPI void clearItem(int slot);
 
@@ -46,6 +50,42 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _setBackingContainerSlot(int slot, class ItemStack const& newItem);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainer();
+
+    MCAPI static void** vftableForContainerContentChangeListener();
+
+    MCAPI void* ctor$(
+        class Container&                                   backingContainer,
+        ::SparseContainerBackingSetType                    backingSetType,
+        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
+        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+    );
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player& player);
+
+    MCAPI void stopOpen$(class Player& player);
 
     // NOLINTEND
 };

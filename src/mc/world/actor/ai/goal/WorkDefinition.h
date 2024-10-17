@@ -20,4 +20,15 @@ public:
     MCAPI class WorkDefinition& operator=(class WorkDefinition const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -4,8 +4,8 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/world/level/dimension/OverworldDimension.h"
-#include "mc/world/level/levelgen/structure/StructureSetRegistry.h"
 #include "mc/world/level/levelgen/structure/VillageFeature.h"
+#include "mc/world/level/levelgen/structure/registry/StructureSetRegistry.h"
 
 // LL_AUTO_TYPE_INSTANCE_HOOK(
 //     OverworldDimensionCreateGeneratorHook,

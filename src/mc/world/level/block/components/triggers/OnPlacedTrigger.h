@@ -20,9 +20,16 @@ public:
     // vIndex: 0
     virtual ~OnPlacedTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlaceEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlaceEventComponent*> comp);
 
-    MCAPI void onPlace(struct BlockEvents::BlockPlaceEvent const&) const;
+    MCAPI void onPlace(struct BlockEvents::BlockPlaceEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

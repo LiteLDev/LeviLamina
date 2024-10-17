@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mc/enums/ModalFormCancelReason.h"
+#include "mc/network/packet/ModalFormCancelReason.h"
 
 namespace ll::form {
 

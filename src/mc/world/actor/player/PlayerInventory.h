@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
+#include "mc/world/ContainerID.h"
 
 class PlayerInventory {
 public:
@@ -104,6 +104,26 @@ public:
     MCAPI void swapSlots(int from, int to);
 
     MCAPI void tick();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainerContentChangeListener();
+
+    MCAPI static void** vftableForContainerSizeChangeListener();
+
+    MCAPI void* ctor$(std::unique_ptr<class Inventory> inv);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI void containerSizeChanged$(int size);
+
+    MCAPI void createTransactionContext$(
+        std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)> callback,
+        std::function<void()>                                                                      execute
+    );
 
     // NOLINTEND
 };

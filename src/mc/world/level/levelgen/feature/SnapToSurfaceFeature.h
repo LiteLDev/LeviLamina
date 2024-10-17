@@ -37,8 +37,29 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos>
-    _findSnapPos(class IBlockWorldGenAPI& target, class BlockPos const& pos, ::SnapToSurfaceFeature::Surface) const;
+    MCAPI std::optional<class BlockPos> _findSnapPos(
+        class IBlockWorldGenAPI&        target,
+        class BlockPos const&           pos,
+        ::SnapToSurfaceFeature::Surface targetSurface
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos> place$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // NOLINTEND
 };

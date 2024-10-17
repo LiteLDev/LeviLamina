@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraftServerAdmin {
 
@@ -29,6 +29,15 @@ public:
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptSecretString>
     bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

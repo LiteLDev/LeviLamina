@@ -11,11 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
+    // NOLINTEND
 
-    MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static float const& UNIFORM_MAX_DENSITY_HEIGHT();
 
-    MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
+    MCAPI static float const& UNIFORM_ZERO_DENSITY_HEIGHT();
+
+    MCAPI static struct FogVolumetricDensitySetting const& ZERO_SETTING();
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/BannerBlockType.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/utils/BannerBlockType.h"
 
 class BannerBlockActor : public ::BlockActor {
 public:
@@ -32,7 +32,7 @@ public:
     virtual void onPlace(class BlockSource& region);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -51,17 +51,36 @@ public:
 
     MCAPI static bool removeLastPattern(class ItemStack& instance, class Player&);
 
-    MCAPI static int const MAX_PATTERNS;
+    // NOLINTEND
 
-    MCAPI static std::string const TAG_BASE_COLOR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static std::string const TAG_COLOR;
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
 
-    MCAPI static std::string const TAG_PATTERN;
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
 
-    MCAPI static std::string const TAG_PATTERNS;
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
-    MCAPI static std::string const TAG_TYPE;
+    MCAPI void onPlace$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static int const& MAX_PATTERNS();
+
+    MCAPI static std::string const& TAG_BASE_COLOR();
+
+    MCAPI static std::string const& TAG_COLOR();
+
+    MCAPI static std::string const& TAG_PATTERN();
+
+    MCAPI static std::string const& TAG_PATTERNS();
+
+    MCAPI static std::string const& TAG_TYPE();
 
     // NOLINTEND
 };

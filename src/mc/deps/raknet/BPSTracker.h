@@ -25,6 +25,15 @@ public:
         MCAPI ~TimeAndValue2();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -37,6 +46,15 @@ public:
     MCAPI BPSTracker();
 
     MCAPI ~BPSTracker();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

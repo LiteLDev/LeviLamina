@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/BodyControl.h"
+#include "mc/world/actor/ai/control/BodyControl.h"
 
 class LegacyBodyControl : public ::BodyControl {
 public:
@@ -20,6 +20,17 @@ public:
     virtual void clientTick(class Mob& mob);
 
     MCAPI LegacyBodyControl();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void clientTick$(class Mob& mob);
 
     // NOLINTEND
 };

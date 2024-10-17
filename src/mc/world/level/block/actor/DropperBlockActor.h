@@ -25,9 +25,26 @@ public:
     MCAPI bool pushOutItems(class BlockSource& region);
 
     MCAPI static bool
-    addItemsToContainerAndDepleteStack(class Container& container, class ItemStack& item, int, int face);
+    addItemsToContainerAndDepleteStack(class Container& container, class ItemStack& item, int stackSizeLimit, int face);
 
     MCAPI static class Container* getContainerAt(class BlockSource& region, class Vec3 const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void* ctor$(class BlockPos pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI std::string getName$() const;
 
     // NOLINTEND
 };

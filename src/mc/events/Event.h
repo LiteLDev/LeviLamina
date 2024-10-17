@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -56,6 +56,30 @@ public:
     MCAPI void updateMeasurements(class Social::Events::Event const& event);
 
     MCAPI ~Event();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        uint                                                              id,
+        std::string const&                                                eventName,
+        std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const&          appPlatform,
+        int                                                               eventTags
+    );
+
+    MCAPI void* ctor$(class Social::Events::Event const&);
+
+    MCAPI void* ctor$(
+        uint                                                              id,
+        std::string const&                                                eventName,
+        std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
+        int                                                               eventTags
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

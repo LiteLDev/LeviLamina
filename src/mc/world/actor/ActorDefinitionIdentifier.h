@@ -4,7 +4,7 @@
 #include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/world/actor/ActorType.h"
 
 struct ActorDefinitionIdentifier {
 public:
@@ -66,6 +66,27 @@ public:
     MCAPI void _initialize();
 
     MCAPI static void _extractIdentifier(std::string const& name, struct ActorDefinitionIdentifier& id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::ActorType type);
+
+    MCAPI void* ctor$(char const* fullName);
+
+    MCAPI void* ctor$(std::string nameSpace, std::string identifier, std::string initEvent);
+
+    MCAPI void* ctor$(struct ActorDefinitionIdentifier const& other);
+
+    MCAPI void* ctor$(struct ActorDefinitionIdentifier&& other);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::string const& fullName);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

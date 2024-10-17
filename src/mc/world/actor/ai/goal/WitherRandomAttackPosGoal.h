@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
@@ -31,6 +31,23 @@ public:
     virtual void stop();
 
     MCAPI WitherRandomAttackPosGoal(class Mob& mob, float speed, int xzDist, int yDist);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float speed, int xzDist, int yDist);
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
 
     // NOLINTEND
 };

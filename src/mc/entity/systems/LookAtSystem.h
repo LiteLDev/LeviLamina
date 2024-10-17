@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class LookAtSystem : public ::ITickingSystem {
 public:
@@ -18,7 +18,7 @@ public:
     virtual ~LookAtSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -27,9 +27,25 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
-    MCAPI static void tickLookAtComponent(class ActorOwnerComponent&, class LookAtComponent& lookAtComponent);
+    MCAPI static void
+    tickLookAtComponent(class ActorOwnerComponent& actorOwnerComponent, class LookAtComponent& lookAtComponent);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void tick$(class EntityRegistry& registry);
 
     // NOLINTEND
 };

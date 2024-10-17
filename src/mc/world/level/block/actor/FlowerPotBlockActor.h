@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class FlowerPotBlockActor : public ::BlockActor {
@@ -38,6 +38,25 @@ public:
     MCAPI class Block const* getPlantItem() const;
 
     MCAPI void setPlantItem(class Block const* plant);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
 
     // NOLINTEND
 };

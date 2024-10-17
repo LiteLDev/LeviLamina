@@ -27,4 +27,20 @@ public:
     MCAPI ~JigsawBlockInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class BlockPos const&  pos,
+        class Block const*     block,
+        class Block const*     finalBlock,
+        class JigsawEditorData editorData
+    );
+
+    MCAPI void* ctor$(class JigsawBlockInfo&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

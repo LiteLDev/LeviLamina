@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 
 class StructureAnimationAction : public ::IRequestAction {
@@ -44,6 +44,27 @@ public:
 
     MCAPI static std::unique_ptr<class StructureAnimationAction>
     load(class CompoundTag const& tag, std::string const& dimensionPrefix);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void*
+    ctor$(std::unique_ptr<class StructureAnimationData> structureAnimationData, DimensionType dimensionType);
+
+    MCAPI void* ctor$(
+        class StructureSettings const& structureSettings,
+        DimensionType                  dimensionType,
+        class BlockPos const&          loadPosition,
+        std::string const&             fullName
+    );
+
+    MCAPI void execute$(class ServerLevel& level, class Dimension& dimension);
+
+    MCAPI void serialize$(class CompoundTag& tag);
 
     // NOLINTEND
 };

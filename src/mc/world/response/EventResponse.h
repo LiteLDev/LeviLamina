@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/Factory.h"
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/Factory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,6 +33,21 @@ public:
     virtual void
     buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
         const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void
+    buildSchema$(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
+        const;
+
+    MCAPI std::string const& getName$() const;
 
     // NOLINTEND
 };

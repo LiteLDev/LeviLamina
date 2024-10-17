@@ -81,4 +81,11 @@ public:
     MCAPI bool _tryAddItemsFromPos(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int moveItemSpeed, bool isEntity);
+
+    // NOLINTEND
 };

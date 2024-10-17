@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionDataless.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
-#include "mc/world/item/components/ItemStackRequestActionDataless.h"
 
 class ScreenHandlerLabTable : public ::ScreenHandlerBase {
 public:
@@ -28,14 +28,32 @@ public:
     // vIndex: 4
     virtual void postRequest(bool wasSuccess);
 
-    MCAPI
-    ScreenHandlerLabTable(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler&);
+    MCAPI ScreenHandlerLabTable(
+        class ContainerScreenContext const&  screenContext,
+        class ItemStackRequestActionHandler& craftRequestHandler
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI ::ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void*
+    ctor$(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler& craftRequestHandler);
+
+    MCAPI ::ItemStackNetResult endRequest$();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+
+    MCAPI void postRequest$(bool wasSuccess);
 
     // NOLINTEND
 };

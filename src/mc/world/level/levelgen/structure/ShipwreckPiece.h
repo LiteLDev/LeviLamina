@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
@@ -37,9 +37,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
+    MCAPI static void** vftable();
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI static ::ll::CArrayT<std::string const>& STRUCTURE_SHIPWRECK_TYPES();
 
     // NOLINTEND
 };

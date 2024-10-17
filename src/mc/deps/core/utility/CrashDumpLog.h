@@ -46,37 +46,34 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct CrashDump_AllData* mAllData;
+    MCAPI static struct CrashDump_AllData*& mAllData();
 
-    // NOLINTEND
+    MCAPI static class Bedrock::Threading::Mutex& mAssertDataMutex();
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::Mutex mAssertDataMutex;
+    MCAPI static std::unique_ptr<std::thread>& mCrashDumpLog_logThread();
 
-    MCAPI static std::unique_ptr<std::thread> mCrashDumpLog_logThread;
+    MCAPI static class Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mCrashDumpThreadMutex;
+    MCAPI static std::condition_variable& mCrashDumpThreadMutexCV();
 
-    MCAPI static std::condition_variable mCrashDumpThreadMutexCV;
+    MCAPI static class Bedrock::Threading::Mutex& mEventDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mEventDataMutex;
+    MCAPI static class Bedrock::Threading::Mutex& mFrameDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mFrameDataMutex;
+    MCAPI static class Bedrock::Threading::Mutex& mGameplayDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mGameplayDataMutex;
+    MCAPI static class Bedrock::Threading::Mutex& mGlobalDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mGlobalDataMutex;
+    MCAPI static bool& mIsThreadRunning();
 
-    MCAPI static bool mIsThreadRunning;
+    MCAPI static class Bedrock::Threading::Mutex& mKeyValueDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mKeyValueDataMutex;
+    MCAPI static class Bedrock::Threading::Mutex& mPlayerDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex mPlayerDataMutex;
-
-    MCAPI static class Bedrock::Threading::Mutex mRenderDataMutex;
+    MCAPI static class Bedrock::Threading::Mutex& mRenderDataMutex();
 
     // NOLINTEND
 };

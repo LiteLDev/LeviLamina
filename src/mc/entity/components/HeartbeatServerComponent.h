@@ -16,4 +16,13 @@ public:
     MCAPI ~HeartbeatServerComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class HeartbeatServerComponent&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

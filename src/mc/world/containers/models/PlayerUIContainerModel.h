@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerExpandStatus.h"
+#include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/containers/models/PlayerUIContainerModelBase.h"
 
 class PlayerUIContainerModel : public ::PlayerUIContainerModelBase {
@@ -23,6 +23,17 @@ public:
     virtual int _getContainerOffset() const;
 
     MCAPI PlayerUIContainerModel(::ContainerEnumName containerName, class Player& player);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerEnumName containerName, class Player& player);
+
+    MCAPI int _getContainerOffset$() const;
 
     // NOLINTEND
 };

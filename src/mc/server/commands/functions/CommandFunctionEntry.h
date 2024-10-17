@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FunctionQueueOrder.h"
+#include "mc/server/commands/functions/FunctionQueueOrder.h"
 #include "mc/server/commands/functions/IFunctionEntry.h"
 
 class CommandFunctionEntry : public ::IFunctionEntry {
@@ -21,6 +21,16 @@ public:
     // vIndex: 1
     virtual void
     execute(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void
+    execute$(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 
     // NOLINTEND
 };

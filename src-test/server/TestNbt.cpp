@@ -3,10 +3,10 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 
-#include "mc/common/ColorFormat.h"
-#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerInstance.h"
+#include "mc/util/ColorFormat.h"
 
 #include "nlohmann/json.hpp"
 
@@ -187,6 +187,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
             ->toSnbt(SnbtFormat::PrettyConsolePrint)
     );
 
-    ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sigv.toString(false, false));
-    ll::getLogger().debug("resolve   {}", "48 8D 05 ? ? ? ? E8"_sigv.resolve());
+    ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sig.toString(false, false));
+    ll::getLogger().debug("resolve   {}", "48 8D 05 ? ? ? ? E8"_sig.resolve());
 }

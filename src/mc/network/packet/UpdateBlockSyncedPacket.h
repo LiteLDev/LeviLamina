@@ -4,9 +4,9 @@
 #include "mc/world/level/ActorBlockSyncMessage.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/UpdateBlockPacket.h"
+#include "mc/platform/Result.h"
 
 class UpdateBlockSyncedPacket : public ::UpdateBlockPacket {
 public:
@@ -42,6 +42,33 @@ public:
         uchar                               updateFlags,
         struct ActorBlockSyncMessage const& syncMsg
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        class BlockPos const&               pos,
+        uint                                layer,
+        uint                                runtimeId,
+        uchar                               updateFlags,
+        struct ActorBlockSyncMessage const& syncMsg
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

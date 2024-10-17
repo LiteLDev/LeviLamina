@@ -11,11 +11,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI LevelStorageEventing(std::string const&, class LevelData const& levelData, std::string const& levelId);
+    MCAPI LevelStorageEventing(
+        std::string const&     creationReason,
+        class LevelData const& levelData,
+        std::string const&     levelId
+    );
 
     MCAPI void fireDBStorageError(char const* errorType);
 
-    MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const& reason, std::optional<bool>);
+    MCAPI void
+    fireEventWorldCorruptionCausedWorldShutdown(std::string const& reason, std::optional<bool> isOutOfDiskSpace);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& creationReason, class LevelData const& levelData, std::string const& levelId);
 
     // NOLINTEND
 };

@@ -14,4 +14,11 @@ public:
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent&&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct EventingRequestQueueComponent&&);
+
+    // NOLINTEND
 };

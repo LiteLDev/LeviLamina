@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/Connector.h"
 
 class RemoteConnector {
@@ -19,6 +19,21 @@ public:
 
     MCAPI
     RemoteConnector(struct Connector::ConnectionCallbacks&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForConnector();
+
+    MCAPI static void** vftableForNetworkEnableDisableListener();
+
+    MCAPI void* ctor$(struct Connector::ConnectionCallbacks&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

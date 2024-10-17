@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/ShowStoreOfferRedirectType.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
+#include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/packet/ShowStoreOfferRedirectType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,8 +43,13 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType, std::string const& offerID);
 
     // vIndex: 6
-    virtual void
-    onDisconnect(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool, std::string const&);
+    virtual void onDisconnect(
+        class NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason,
+        std::string const& message,
+        bool               skipMessage,
+        std::string const& telemetryOverride
+    );
 
     // vIndex: 7
     virtual void __unk_vfn_7() = 0;
@@ -682,6 +687,459 @@ public:
 
     // vIndex: 215
     virtual void handle(class NetworkIdentifier const&, class AwardAchievementPacket const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback$();
+
+    MCAPI bool getIsConnectedToApplicationLayer$() const;
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PacketViolationWarningPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class DisconnectPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class EmoteListPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class EmotePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LoginPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SubClientLoginPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientToServerHandshakePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ServerToClientHandshakePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePacksInfoPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackStackPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PositionTrackingDBClientRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PositionTrackingDBServerBroadcastPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayStatusPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetTimePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class TextPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class StartGamePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddItemActorPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddPaintingPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class TakeItemActorPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddActorPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddMobPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddPlayerPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RemoveActorPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MoveActorAbsolutePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MoveActorDeltaPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MovePlayerPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PassengerJumpPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetPlayerGameTypePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdatePlayerGameTypePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetDefaultGameTypePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class UpdateBlockPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class UpdateBlockSyncedPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SpawnParticleEffectPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LevelSoundEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LevelSoundEventPacketV1 const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LevelSoundEventPacketV2 const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LevelEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LevelEventGenericPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BlockEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BlockPickRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ActorPickRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class GuiDataPickItemPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ActorEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MobEffectPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MobEquipmentPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MobArmorEquipmentPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetActorDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetActorMotionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MotionPredictionHintsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetHealthPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetActorLinkPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetSpawnPositionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class InteractPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerActionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ActorFallPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class HurtArmorPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerArmorDamagePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ItemStackRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ItemStackResponsePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ContainerOpenPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ContainerClosePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ContainerSetDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerHotbarPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class InventoryContentPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class InventorySlotPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CraftingDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AnimatePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class BlockActorDataPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerAuthInputPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerInputPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class LevelChunkPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SubChunkPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SubChunkRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientCacheBlobStatusPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class ClientCacheMissResponsePacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetCommandsEnabledPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetDifficultyPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SimpleEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ChangeDimensionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class UpdateAttributesPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerListPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LegacyTelemetryEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SpawnExperienceOrbPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientboundDebugRendererPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientboundMapItemDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientboundCloseFormPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ClientCacheStatusPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RequestChunkRadiusPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MapCreateLockedCopyPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MapInfoRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ChunkRadiusUpdatedPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BossEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateTradePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateEquipPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AvailableCommandsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CommandRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CommandOutputPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CommandBlockUpdatePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CompletedUsingItemPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CameraInstructionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CameraPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CameraPresetsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CameraShakePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class InventoryActionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class GameRulesChangedPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackDataInfoPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackChunkDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackChunkRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class NetworkChunkPublisherUpdatePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class StructureBlockUpdatePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class StructureTemplateDataRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class StructureTemplateDataResponsePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class TransferPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlaySoundPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class StopSoundPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetTitlePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, std::shared_ptr<class InventoryTransactionPacket>);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddBehaviorTreePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ShowStoreOfferPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PurchaseReceiptPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RemoveObjectivePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetDisplayObjectivePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AutomationClientConnectPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ModalFormRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ToastRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class OnScreenTextureAnimationPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ServerSettingsRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ServerSettingsResponsePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ShowProfilePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetScorePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetScoreboardIdentityPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class TickingAreasLoadStatusPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateSoftEnumPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AvailableActorIdentifiersPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AddVolumeEntityPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RemoveVolumeEntityPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class DimensionDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class EditorNetworkPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RefreshEntitlementsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ServerPlayerPostMovePositionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RespawnPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ShowCreditsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerSkinPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerStartItemCooldownPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerToggleCrafterSlotRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetLastHurtByPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BookAddPagePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BookDeletePagePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LecternUpdatePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BookEditPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BookSignPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BookSwapPagesPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class NpcRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PhotoTransferPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LabTablePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class NetworkSettingsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class NetworkStackLatencyPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ServerStatsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetLocalPlayerAsInitializedPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ScriptMessagePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class BiomeDefinitionListPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class EducationSettingsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class EduUriResourcePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class MultiplayerSettingsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SettingsCommandPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AnvilDamagePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CreativeContentPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CodeBuilderPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerEnchantOptionsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class DebugInfoPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ChangeMobPropertyPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AnimateEntityPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CorrectPlayerMovePredictionPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class PlayerFogPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ItemComponentPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class LessonProgressPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class FeatureRegistryPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SyncActorPropertyPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SimulationTypePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class NpcDialoguePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CreatePhotoPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateSubChunkBlocksPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CodeBuilderSourcePacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AgentActionEventPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class DeathInfoPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RequestAbilityPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RequestPermissionsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateAbilitiesPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateAdventureSettingsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class RequestNetworkSettingsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class GameTestRequestPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class GameTestResultsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UpdateClientInputLocksPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class UnlockedRecipesPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class CompressedBiomeDefinitionListPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class TrimDataPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class OpenSignPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AgentAnimationPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetPlayerInventoryOptionsPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class SetHudPacket const&);
+
+    MCAPI void handle$(class NetworkIdentifier const&, class AwardAchievementPacket const&);
+
+    MCAPI void onConnect$(class NetworkIdentifier const&);
+
+    MCAPI void onDisconnect$(
+        class NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason,
+        std::string const& message,
+        bool               skipMessage,
+        std::string const& telemetryOverride
+    );
+
+    MCAPI void onPlayerReady$(class Player&);
+
+    MCAPI void onStoreOfferReceive$(::ShowStoreOfferRedirectType, std::string const& offerID);
+
+    MCAPI void onTick$();
+
+    MCAPI void onTransferRequest$(class NetworkIdentifier const&, std::string const&, int);
+
+    MCAPI void onUnableToConnect$(::Connection::DisconnectFailReason, std::string const&);
+
+    MCAPI void onWebsocketRequest$(std::string const&, std::string const&, std::function<void()>);
+
+    MCAPI void sendPacketViolationDetectedTelemetryData$(
+        uint64,
+        std::string,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        class NetworkIdentifier const&,
+        uint,
+        ::SubClientId,
+        ::SubClientId,
+        uint
+    );
 
     // NOLINTEND
 };

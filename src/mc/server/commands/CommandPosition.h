@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
 
 class CommandPosition {
@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandPosition(class Vec3 const&);
+    MCAPI explicit CommandPosition(class Vec3 const& absoluteOffset);
 
     MCAPI class BlockPos getBlockPos(class Vec3 const& ref, class Vec3 const& offsetFromBase = {}) const;
 
@@ -29,6 +29,15 @@ public:
     getPosition(int version, class CommandOrigin const& origin, class Vec3 const& offsetFromBase = {}) const;
 
     MCAPI class CompoundTag serialize() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Vec3 const& absoluteOffset);
 
     // NOLINTEND
 };

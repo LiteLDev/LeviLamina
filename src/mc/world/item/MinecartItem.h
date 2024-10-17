@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/enums/MinecartType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/item/MinecartType.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,6 +42,23 @@ public:
     _useOn(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar, class Vec3 const&) const;
 
     MCAPI MinecartItem(std::string const& name, int id, ::MinecartType type);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id, ::MinecartType type);
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar, class Vec3 const&) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI bool isDestructive$(int) const;
 
     // NOLINTEND
 };

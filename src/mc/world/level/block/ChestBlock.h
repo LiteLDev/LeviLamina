@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -96,6 +96,57 @@ public:
     MCAPI ChestBlock(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
 
     MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+
+    MCAPI void dtor$();
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool detachesOnPistonMove$(class BlockSource&, class BlockPos const&) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI bool
+    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI class BlockLegacy& init$();
+
+    MCAPI bool isContainerBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI void onMove$(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
 };

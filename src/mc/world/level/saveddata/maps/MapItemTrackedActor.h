@@ -49,4 +49,11 @@ public:
     MCAPI void setPixelDirty(uint x, uint y);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct MapItemTrackedActor::UniqueId const& id, class BlockSource& region);
+
+    // NOLINTEND
 };

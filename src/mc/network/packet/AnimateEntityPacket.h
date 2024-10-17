@@ -1,14 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/molang/MolangVersion.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/platform/Result.h"
 
 class AnimateEntityPacket : public ::Packet {
 public:
@@ -44,14 +43,43 @@ public:
     MCAPI AnimateEntityPacket();
 
     MCAPI AnimateEntityPacket(
-        std::vector<class ActorRuntimeID> const&,
-        std::string const& animation,
-        std::string const&,
-        float              blendOutTime,
-        std::string const& stopExpression,
-        ::MolangVersion,
-        std::string const& controller
+        std::vector<class ActorRuntimeID> const& runtimeIds,
+        std::string const&                       animation,
+        std::string const&                       nextState,
+        float                                    blendOutTime,
+        std::string const&                       stopExpression,
+        ::MolangVersion                          stopExpressionVersion,
+        std::string const&                       controller
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::vector<class ActorRuntimeID> const& runtimeIds,
+        std::string const&                       animation,
+        std::string const&                       nextState,
+        float                                    blendOutTime,
+        std::string const&                       stopExpression,
+        ::MolangVersion                          stopExpressionVersion,
+        std::string const&                       controller
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& s);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& s) const;
 
     // NOLINTEND
 };

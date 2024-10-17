@@ -1,8 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/InventorySourceType.h"
-#include "mc/world/containers/ContainerID.h"
+#include "mc/world/inventory/transaction/InventorySourceType.h"
 
 class InventorySource {
 public:

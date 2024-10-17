@@ -26,7 +26,7 @@ public:
     virtual ~FastWriter();
 
     // vIndex: 1
-    virtual std::string write(class Json::Value const&);
+    virtual std::string write(class Json::Value const& root);
 
     MCAPI FastWriter();
 
@@ -35,6 +35,19 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void writeValue(class Json::Value const& value);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI std::string write$(class Json::Value const& root);
 
     // NOLINTEND
 };

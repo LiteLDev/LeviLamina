@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class NapGoal : public ::Goal {
@@ -55,9 +55,32 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const MOB_DETECT_TIME;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                    mob,
+        float                         cooldownTimeMin,
+        float                         cooldownTimeMax,
+        float                         detectMobDistXZ,
+        float                         detectMobDistY,
+        class ActorFilterGroup const& canNapFilters,
+        class ActorFilterGroup const& wakeMobExceptions
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI static float const& MOB_DETECT_TIME();
 
     // NOLINTEND
 };

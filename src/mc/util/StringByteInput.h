@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/util/BytesDataInput.h"
 
 class StringByteInput : public ::BytesDataInput {
@@ -21,10 +21,23 @@ public:
     virtual ~StringByteInput() = default;
 
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void*, uint64);
+    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
 
     // vIndex: 10
     virtual uint64 numBytesLeft() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI uint64 numBytesLeft$() const;
+
+    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
 
     // NOLINTEND
 };

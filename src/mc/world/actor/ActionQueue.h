@@ -15,4 +15,11 @@ public:
     MCAPI void pushBackActionEvent(class ActionEvent actionEvent);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

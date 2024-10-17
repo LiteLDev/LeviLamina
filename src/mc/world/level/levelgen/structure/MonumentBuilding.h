@@ -56,4 +56,19 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Random& random, short seaLevel, int west, int north, int& orientation);
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,17 +22,18 @@ class Vec3;
 namespace gametest::StructureUtils {
 // NOLINTBEGIN
 MCAPI void AddCommandBlockAndButtonToStartTest(
-    class BlockPos const&,
+    class BlockPos const& structureBlockPos,
     ::Rotation,
-    class BlockPos const&,
-    std::string const&,
-    class BlockSource& region
+    class BlockPos const& commandBlockPosRelativeToTestPos,
+    std::string const&    testName,
+    class BlockSource&    region
 );
 
-MCAPI void ClearSpaceForStructure(class BoundingBox const&, int, class BlockSource& region);
+MCAPI void
+ClearSpaceForStructure(class BoundingBox const& structureBoundingBox, int structureYPos, class BlockSource& region);
 
 MCAPI void CreateNewEmptyStructureBlock(
-    std::string const&,
+    std::string const&    testName,
     class BlockPos const& structurePos,
     class BlockPos const& size,
     ::Rotation            rotation,
@@ -48,7 +49,7 @@ MCAPI std::optional<class BlockPos>
 MCAPI std::vector<class BlockPos>
       FindStructureBlocks(class BlockPos const& centerPos, int searchRadius, class BlockSource& region);
 
-MCAPI ::Rotation GetRotationForRotationSteps(int);
+MCAPI ::Rotation GetRotationForRotationSteps(int rotationSteps);
 
 MCAPI class BoundingBox GetStructureBoundingBox(class StructureBlockActor const& structureBlockActor);
 
@@ -63,9 +64,9 @@ GetStructureRelativePos(class StructureBlockActor const& structureBlockActor, cl
 MCAPI class StructureTemplate* GetStructureTemplate(std::string const& structureName, class Level& level);
 
 MCAPI class StructureBlockActor* SpawnStructure(
-    std::string const& structureName,
-    class BlockPos const&,
-    ::Rotation rotation,
+    std::string const&    structureName,
+    class BlockPos const& northWestCorner,
+    ::Rotation            rotation,
     int,
     class BlockSource& region
 );

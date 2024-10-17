@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class IDataOutput;
 class IDataInput;
@@ -116,9 +116,28 @@ public:
     // vIndex: 10
     virtual uint64 hash() const = 0;
 
-    MCAPI static std::string getTagName(::Tag::Type);
+    MCAPI static std::string getTagName(::Tag::Type type);
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class Tag>> newTag(::Tag::Type type);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void deleteChildren$();
+
+    MCAPI bool equals$(class Tag const& rhs) const;
+
+    MCAPI void print$(class PrintStream& out) const;
+
+    MCAPI void print$(std::string const& prefix, class PrintStream& out) const;
+
+    MCAPI static std::string const& NullString();
 
     // NOLINTEND
 };

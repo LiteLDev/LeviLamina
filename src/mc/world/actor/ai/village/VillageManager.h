@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IVillageManager.h"
+#include "mc/world/actor/ai/village/IVillageManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,6 +33,13 @@ public:
         MCAPI ~DwellerTestVillageInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class VillageInfo {
@@ -45,6 +52,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~VillageInfo();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -62,15 +76,18 @@ public:
 
     // vIndex: 1
     virtual std::weak_ptr<class Village>
-    fetchClosestVillage(class BlockPos const& position, int, uint searchRadius) const;
+    fetchClosestVillage(class BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
 
     // vIndex: 2
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const& villageID) const;
 
     MCAPI explicit VillageManager(class Dimension& dimension);
 
-    MCAPI std::weak_ptr<class Village>
-          fetchClosestVillageMostSuitableForDweller(class BlockPos const& position, int, uint searchRadius) const;
+    MCAPI std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(
+        class BlockPos const& position,
+        int                   maxDistFromVillageBounds,
+        uint                  searchRadius
+    ) const;
 
     MCAPI std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const& pos);
 
@@ -78,7 +95,7 @@ public:
 
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const& name) const;
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
     MCAPI void insertPOI(std::shared_ptr<class POIInstance>&& poi);
 
@@ -97,8 +114,6 @@ public:
     MCAPI void tickVillages(struct Tick const& tick, class Vec3 const& position, class BlockSource& region);
 
     MCAPI std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const& position, class Block const& block);
-
-    MCAPI static int const MAX_POI_TOLERANCE_DIST;
 
     // NOLINTEND
 
@@ -121,7 +136,7 @@ public:
 
     MCAPI void _removeVillage(class Village& village);
 
-    MCAPI void _saveAllVillages(class LevelStorage&);
+    MCAPI void _saveAllVillages(class LevelStorage& levelStorage);
 
     MCAPI void _tryAssignPOIOrCreateVillage(std::shared_ptr<class POIInstance>&& pi);
 
@@ -129,13 +144,25 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static uint64 const MAX_POI_QUERIES;
+    MCAPI static void** vftable();
 
-    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    MCAPI void* ctor$(class Dimension& dimension);
 
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+    MCAPI std::weak_ptr<class Village>
+          fetchClosestVillage$(class BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
+
+    MCAPI std::weak_ptr<class Village> getVillageByID$(class mce::UUID const& villageID) const;
+
+    MCAPI static uint64 const& MAX_POI_QUERIES();
+
+    MCAPI static int const& MAX_POI_TOLERANCE_DIST();
+
+    MCAPI static int const& MAX_QUERY_SCAN_ITERATIONS();
+
+    MCAPI static int const& VILLAGE_HERO_EFFECT_DURATION();
 
     // NOLINTEND
 };

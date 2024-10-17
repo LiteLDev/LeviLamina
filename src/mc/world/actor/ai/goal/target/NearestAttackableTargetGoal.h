@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 class NearestAttackableTargetGoal : public ::TargetGoal {
@@ -35,7 +35,7 @@ public:
 
     MCAPI explicit NearestAttackableTargetGoal(class Mob& mob);
 
-    MCAPI bool isTargetVisible(class Mob const&, float, float) const;
+    MCAPI bool isTargetVisible(class Mob const& mob, float maxDistance, float maxHeight) const;
 
     // NOLINTEND
 
@@ -43,13 +43,34 @@ public:
     // NOLINTBEGIN
     MCAPI bool _canStartSearching();
 
-    MCAPI bool _isTargetInCooldown(struct MobDescriptor const&) const;
+    MCAPI bool _isTargetInCooldown(struct MobDescriptor const& descriptor) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool _selectTarget();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void dtor$();
+
+    MCAPI struct ActorUniqueID _findTarget$(struct MobDescriptor const** outMobDescriptor);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
 
     // NOLINTEND
 };

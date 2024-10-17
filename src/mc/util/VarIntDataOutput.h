@@ -49,4 +49,31 @@ public:
     virtual void writeBytes(void const* data, uint64 bytes);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void writeByte$(char v);
+
+    MCAPI void writeBytes$(void const* data, uint64 bytes);
+
+    MCAPI void writeDouble$(double v);
+
+    MCAPI void writeFloat$(float v);
+
+    MCAPI void writeInt$(int v);
+
+    MCAPI void writeLongLong$(int64 v);
+
+    MCAPI void writeLongString$(std::string_view v);
+
+    MCAPI void writeShort$(short v);
+
+    MCAPI void writeString$(std::string_view v);
+
+    // NOLINTEND
 };

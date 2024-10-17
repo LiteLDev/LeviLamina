@@ -30,33 +30,52 @@ public:
         class SubpackInfoCollection*  subpackInfoStack
     );
 
-    MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry& eventing);
+    MCAPI
+    PackManifestFactory(class PackCapabilityRegistry const& packCapabilityRegistry, class IPackTelemetry& eventing);
 
     MCAPI std::unique_ptr<class PackManifest> create(
-        class PackAccessStrategy& accessStrategy,
-        std::string const&        manifestContent,
-        class PackReport&         report,
-        std::unique_ptr<class PackManifest>,
-        class SubpackInfoCollection* subpackInfoStack
+        class PackAccessStrategy&           accessStrategy,
+        std::string const&                  manifestContent,
+        class PackReport&                   report,
+        std::unique_ptr<class PackManifest> sourceManifest,
+        class SubpackInfoCollection*        subpackInfoStack
     );
 
-    MCAPI static std::string contentKeyLookup(std::string const& packIdentity);
+    MCAPI static std::string contentKeyLookup(std::string const&);
 
-    MCAPI static class Core::Path const MANIFEST_LOG_PATH;
+    // NOLINTEND
 
-    MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static class Core::Path const MANIFEST_PATH;
+    MCAPI void* ctor$(class PackCapabilityRegistry const& packCapabilityRegistry, class IPackTelemetry& eventing);
 
-    MCAPI static class Core::Path const MANIFEST_PATH_OLD;
+    MCAPI void dtor$();
 
-    MCAPI static class Core::Path const MANIFEST_PATH_OLD_BACKUP;
+    MCAPI std::unique_ptr<class PackManifest> create$(
+        class PackAccessStrategy&     accessStrategy,
+        class ResourceLocation const& location,
+        class PackReport&             report,
+        class SubpackInfoCollection*  subpackInfoStack
+    );
 
-    MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
+    MCAPI static class Core::Path const& MANIFEST_LOG_PATH();
 
-    MCAPI static std::unordered_map<std::string, std::vector<char> const> mAlternateContentKeys;
+    MCAPI static std::string const& MANIFEST_PACK_UUID_UPGRADE_SALT();
 
-    MCAPI static std::unordered_map<std::string, std::vector<char> const> mContentKeys;
+    MCAPI static class Core::Path const& MANIFEST_PATH();
+
+    MCAPI static class Core::Path const& MANIFEST_PATH_OLD();
+
+    MCAPI static class Core::Path const& MANIFEST_PATH_OLD_BACKUP();
+
+    MCAPI static class SemVersion const& REQUIRED_VANILLA_FOR_OLD_PACKS();
+
+    MCAPI static std::unordered_map<std::string, std::vector<char> const>& mAlternateContentKeys();
+
+    MCAPI static std::unordered_map<std::string, std::vector<char> const>& mContentKeys();
 
     // NOLINTEND
 };

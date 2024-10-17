@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class SporeBlossomBlockActor : public ::BlockActor {
@@ -22,6 +22,17 @@ public:
     virtual void tick(class BlockSource& region);
 
     MCAPI explicit SporeBlossomBlockActor(class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -15,4 +15,13 @@ public:
     MCAPI ~ItemUseEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ItemUseEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

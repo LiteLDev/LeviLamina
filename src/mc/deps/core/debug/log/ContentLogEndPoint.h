@@ -17,4 +17,19 @@ public:
     MCAPI ContentLogEndPoint();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForBedrockLogEndPoint();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void log$(char const* message);
+
+    // NOLINTEND
 };

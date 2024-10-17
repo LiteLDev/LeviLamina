@@ -22,4 +22,15 @@ public:
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ComponentItemDeprecatedComponentData_v1_20_50&&);
+
+    MCAPI void* ctor$(struct ComponentItemDeprecatedComponentData_v1_20_50 const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

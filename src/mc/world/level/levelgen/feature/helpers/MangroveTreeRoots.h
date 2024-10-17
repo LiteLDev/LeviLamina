@@ -37,25 +37,41 @@ public:
 
     MCAPI void _placeRoot(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random) const;
 
-    MCAPI std::vector<class BlockPos>
-    _potentialRootPositions(class BlockPos const& pos, uchar, class Random& random, class BlockPos const& origin) const;
+    MCAPI std::vector<class BlockPos> _potentialRootPositions(
+        class BlockPos const& pos,
+        uchar                 prevDir,
+        class Random&         random,
+        class BlockPos const& origin
+    ) const;
 
     MCAPI bool _simulateRoots(
-        class IBlockWorldGenAPI& target,
-        class Random&            random,
-        class BlockPos const&,
-        class BlockPos const&,
-        uchar dir,
-        std::vector<class BlockPos>*,
+        class IBlockWorldGenAPI&             target,
+        class Random&                        random,
+        class BlockPos const&                rootPos,
+        class BlockPos const&                newOrigin,
+        uchar                                dir,
+        std::vector<class BlockPos>*         rootPositions,
         int                                  layer,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const RANDOM_SKEW_CHANCE;
+    MCAPI static void** vftable();
+
+    MCAPI std::optional<class BlockPos> placeRoots$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        int                      trunkHeight,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams
+    ) const;
+
+    MCAPI static float const& RANDOM_SKEW_CHANCE();
 
     // NOLINTEND
 };

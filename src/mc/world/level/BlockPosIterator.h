@@ -33,6 +33,13 @@ public:
         MCAPI class BlockPosIterator::FromCenter& operator++();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class BlockPos const& pos, class BlockPos const& reach);
+
+        // NOLINTEND
     };
 
     class ManhattanDistance {
@@ -57,6 +64,13 @@ public:
         MCAPI class BlockPosIterator::ManhattanDistance& operator++();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class BlockPos const& pos, int distance);
+
+        // NOLINTEND
     };
 
 public:
@@ -78,6 +92,13 @@ public:
     MCAPI class BlockPos const& operator*();
 
     MCAPI class BlockPosIterator& operator++();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& a, class BlockPos const& b);
 
     // NOLINTEND
 };

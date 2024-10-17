@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +27,17 @@ public:
     virtual ~IControl();
 
     // vIndex: 1
-    virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const = 0;
+    virtual class Scripting::Result<class Json::Value>
+    buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

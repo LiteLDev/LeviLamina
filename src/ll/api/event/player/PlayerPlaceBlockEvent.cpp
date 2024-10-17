@@ -3,7 +3,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/BlockEventCoordinator.h"
+#include "mc/world/events/BlockEventCoordinator.h"
 #include "mc/world/level/BlockSource.h"
 
 
@@ -29,7 +29,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerPlacingBlockEventHook,
     HookPriority::Normal,
     BlockSource,
-    "?checkBlockPermissions@BlockSource@@UEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStackBase@@_N@Z",
+    &BlockSource::checkBlockPermissions$,
     bool,
     Actor&               actor,
     BlockPos const&      blockpos,

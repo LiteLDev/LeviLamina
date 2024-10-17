@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +24,7 @@ public:
     virtual ~AgentMoveCommandSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -33,15 +33,36 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
     MCAPI static void cleanUp(class EntityContext& agent, float cooldownTime);
 
-    MCAPI static void
-    initialize(class EntityContext& entity, struct AgentComponents::ActionDetails& details, class AgentComponents::Move&);
+    MCAPI static void initialize(
+        class EntityContext&                   entity,
+        struct AgentComponents::ActionDetails& details,
+        class AgentComponents::Move&           moveComp
+    );
 
-    MCAPI static void
-    tickMove(class EntityContext& entity, struct AgentComponents::ActionDetails& details, class AgentComponents::Move&);
+    MCAPI static void tickMove(
+        class EntityContext&                   entity,
+        struct AgentComponents::ActionDetails& details,
+        class AgentComponents::Move&           moveComp
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void tick$(class EntityRegistry& registry);
 
     // NOLINTEND
 };

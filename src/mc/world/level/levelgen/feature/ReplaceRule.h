@@ -21,4 +21,13 @@ public:
     MCAPI ~ReplaceRule();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockDescriptor, std::vector<class BlockDescriptor>);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

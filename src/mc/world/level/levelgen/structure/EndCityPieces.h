@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
@@ -66,6 +66,34 @@ public:
         MCAPI void _loadAndSetup(class BlockPos const& position);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void* ctor$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            ::Rotation                                          rotation,
+            bool                                                overwrite
+        );
+
+        MCAPI void _handleDataMarker$(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
+
+        MCAPI ::StructurePieceType getType$() const;
+
+        MCAPI void
+        postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        // NOLINTEND
     };
 
     class SectionGenerator {
@@ -90,6 +118,13 @@ public:
 
         // vIndex: 1
         virtual ~SectionGenerator() = default;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -118,6 +153,23 @@ public:
         virtual ~FatTowerGenerator() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI bool generate$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                        structureManager,
+            std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            class EndCityPieces::EndCityPiece*                                         parent,
+            class BlockPos const&                                                      offset,
+            std::vector<std::unique_ptr<class StructurePiece>>&                        pieces,
+            class Random&                                                              random
+        );
+
+        // NOLINTEND
     };
 
     class HouseTowerGenerator : public ::EndCityPieces::SectionGenerator {
@@ -142,6 +194,23 @@ public:
 
         // vIndex: 1
         virtual ~HouseTowerGenerator() = default;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI bool generate$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                        structureManager,
+            std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            class EndCityPieces::EndCityPiece*                                         parent,
+            class BlockPos const&                                                      offset,
+            std::vector<std::unique_ptr<class StructurePiece>>&                        pieces,
+            class Random&                                                              random
+        );
 
         // NOLINTEND
     };
@@ -170,6 +239,23 @@ public:
         virtual ~TowerBridgeGenerator() = default;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI bool generate$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                        structureManager,
+            std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            class EndCityPieces::EndCityPiece*                                         parent,
+            class BlockPos const&                                                      offset,
+            std::vector<std::unique_ptr<class StructurePiece>>&                        pieces,
+            class Random&                                                              random
+        );
+
+        // NOLINTEND
     };
 
     class TowerGenerator : public ::EndCityPieces::SectionGenerator {
@@ -194,6 +280,23 @@ public:
 
         // vIndex: 1
         virtual ~TowerGenerator() = default;
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI bool generate$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                        structureManager,
+            std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            class EndCityPieces::EndCityPiece*                                         parent,
+            class BlockPos const&                                                      offset,
+            std::vector<std::unique_ptr<class StructurePiece>>&                        pieces,
+            class Random&                                                              random
+        );
 
         // NOLINTEND
     };
@@ -245,11 +348,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class LegacyStructureSettings mInsertSettings;
+    MCAPI static class LegacyStructureSettings& mInsertSettings();
 
-    MCAPI static class LegacyStructureSettings mOverwriteSettings;
+    MCAPI static class LegacyStructureSettings& mOverwriteSettings();
 
     // NOLINTEND
 };

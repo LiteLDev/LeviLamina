@@ -24,4 +24,13 @@ public:
     virtual void onLanguagesLoaded() = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void onLanguageChanged$(std::string const& code, bool languageSystemInitializing);
+
+    // NOLINTEND
 };

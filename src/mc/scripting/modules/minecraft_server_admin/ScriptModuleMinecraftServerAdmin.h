@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off

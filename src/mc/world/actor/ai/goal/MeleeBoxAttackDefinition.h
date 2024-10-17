@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/MeleeAttackBaseDefinition.h"
 
 // auto generated forward declare list
@@ -24,10 +24,22 @@ public:
 
     MCAPI MeleeBoxAttackDefinition();
 
-    MCAPI void initialize(class EntityContext&, class MeleeBoxAttackGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class MeleeBoxAttackGoal& goal) const;
 
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeBoxAttackDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeBoxAttackDefinition>>& root
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

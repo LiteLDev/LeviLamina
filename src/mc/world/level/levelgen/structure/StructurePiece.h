@@ -178,4 +178,58 @@ public:
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const& pieceWeights);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void addChildren$(
+        class StructurePiece&                               startPiece,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random
+    );
+
+    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
+
+    MCAPI bool canBeReplaced$(class BlockSource&, int, int, int, class BoundingBox const&);
+
+    MCAPI void generateBox$(
+        class BlockSource&       region,
+        class BoundingBox const& chunkBB,
+        int                      x0,
+        int                      y0,
+        int                      z0,
+        int                      x1,
+        int                      y1,
+        int                      z1,
+        class Block const&       edgeBlock,
+        class Block const&       fillBlock,
+        bool                     skipAir
+    );
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI int getWorldX$(int x, int z);
+
+    MCAPI int getWorldZ$(int x, int z);
+
+    MCAPI bool isInInvalidLocation$(class BlockSource& region, class BoundingBox const& chunkBB);
+
+    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+
+    MCAPI void placeBlock$(
+        class BlockSource&       region,
+        class Block const&       block,
+        int                      x,
+        int                      y,
+        int                      z,
+        class BoundingBox const& chunkBB
+    );
+
+    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

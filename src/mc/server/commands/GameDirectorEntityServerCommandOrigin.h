@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/ActorServerCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,6 +42,25 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Actor& origin);
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
 
     // NOLINTEND
 };

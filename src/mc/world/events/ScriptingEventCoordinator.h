@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/events/MutableScriptingGameplayEvent.h"
-#include "mc/external/scripting/ScriptingGameplayEvent.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/EventRef.h"
+#include "mc/world/events/MutableScriptingGameplayEvent.h"
+#include "mc/world/events/ScriptingGameplayEvent.h"
 
 class ScriptingEventCoordinator {
 public:
@@ -28,6 +28,13 @@ public:
     );
 
     MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<::CoordinatorResult>> event);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

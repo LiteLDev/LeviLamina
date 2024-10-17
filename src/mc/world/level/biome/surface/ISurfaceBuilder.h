@@ -4,9 +4,9 @@
 #include "mc/util/Random.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/biome/Biome.h"
-#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
 #include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/chunk/HeightmapWrapper.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 class ISurfaceBuilder {
 public:
@@ -44,6 +44,25 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI BuildParameters(
+            class Biome const&                               biome,
+            class Random&                                    random,
+            class BlockVolume&                               blocks,
+            class BlockPos const&                            pos,
+            float                                            depthValue,
+            short                                            seaLevel,
+            std::unique_ptr<class PerlinSimplexNoise> const& materialAdjNoise,
+            ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
+            int                                              lowerLimit,
+            class HeightmapWrapper const&                    preWorldGenHeightmap,
+            bool                                             useCCOrLater
+        );
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(
             class Biome const&                               biome,
             class Random&                                    random,
             class BlockVolume&                               blocks,

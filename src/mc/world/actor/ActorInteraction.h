@@ -26,4 +26,13 @@ public:
     MCAPI ~ActorInteraction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(bool noCapture);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/WeakEntityRef.h"
-#include "mc/enums/FacingID.h"
-#include "mc/math/Vec3.h"
+#include "mc/common/FacingID.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/phys/HitResultType.h"
 
@@ -56,9 +56,36 @@ public:
 
     MCAPI class HitResult& operator=(class HitResult const&);
 
-    MCAPI void setIsHitLiquid(bool, class HitResult const&);
+    MCAPI void setIsHitLiquid(bool isHit, class HitResult const& liquidHit);
 
     MCAPI ~HitResult();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        class Vec3 const&     startPos,
+        class Vec3 const&     rayDir,
+        class BlockPos const& blockPos,
+        uchar                 facing,
+        class Vec3 const&     pos
+    );
+
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity, class Vec3 const& pos);
+
+    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& rayEnd);
+
+    MCAPI void* ctor$(class HitResult const&);
+
+    MCAPI void* ctor$(class HitResult&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

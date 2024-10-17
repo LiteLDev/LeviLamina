@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +46,7 @@ public:
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
     // vIndex: 78
-    virtual void hurtActor(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
@@ -55,22 +55,56 @@ public:
     virtual bool shouldSendInteractionGameEvents() const;
 
     // vIndex: 103
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int newAnimationFrame, bool) const;
 
     // vIndex: 105
     virtual std::string getInteractText(class Player const&) const;
 
     // vIndex: 106
-    virtual int
-    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+    virtual int getAnimationFrameFor(class Mob* holder, bool, class ItemStack const*, bool) const;
 
     // vIndex: 121
     virtual bool shouldUseJsonForRenderMatrix() const;
 
-    MCAPI FishingRodItem(std::string const&, int, struct cereal::ReflectionCtx&);
+    MCAPI FishingRodItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const*, bool) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int newAnimationFrame, bool) const;
+
+    MCAPI std::string getInteractText$(class Player const&) const;
+
+    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+
+    MCAPI bool isHandEquipped$() const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI bool shouldSendInteractionGameEvents$() const;
+
+    MCAPI bool shouldUseJsonForRenderMatrix$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
 
     // NOLINTEND
 };

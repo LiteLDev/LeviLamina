@@ -21,4 +21,15 @@ public:
     virtual class Block const& next(class Random& random, int, int, int, bool isEdge) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Block const& next$(class Random& random, int, int, int, bool isEdge) const;
+
+    // NOLINTEND
 };

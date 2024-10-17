@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/RespawnAnimation.h"
+#include "mc/world/level/dimension/end/RespawnAnimation.h"
 
 class EndDragonFight {
 public:
@@ -25,6 +25,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~GateWayGenerator();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -103,25 +110,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const ARENA_SIZE_CHUNKS;
+    MCAPI void* ctor$(class BlockSource& level);
 
-    MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
+    MCAPI static int const& ARENA_SIZE_CHUNKS();
 
-    MCAPI static int const GATEWAY_CHUNK_RADIUS;
+    MCAPI static class BlockPos const& DEFAULT_PORTAL_LOCATION();
 
-    MCAPI static int const GATEWAY_COUNT;
+    MCAPI static int const& GATEWAY_CHUNK_RADIUS();
 
-    MCAPI static int const GATEWAY_DISTANCE;
+    MCAPI static int const& GATEWAY_COUNT();
 
-    MCAPI static int const GATEWAY_HEIGHT;
+    MCAPI static int const& GATEWAY_DISTANCE();
 
-    MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
+    MCAPI static int const& GATEWAY_HEIGHT();
 
-    MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
+    MCAPI static int const& TIME_BETWEEN_CRYSTAL_SCANS();
 
-    MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
+    MCAPI static int const& TIME_BETWEEN_PLAYER_SCANS();
+
+    MCAPI static int const& TIME_BETWEEN_PORTAL_SCANS();
 
     // NOLINTEND
 };

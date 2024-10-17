@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,6 +28,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~DeleteFileEntry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -72,6 +79,27 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const& file);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(leveldb::Env* env);
+
+    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+
+    MCAPI leveldb::Status NewAppendableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& f, leveldb::RandomAccessFile** r);
+
+    MCAPI leveldb::Status NewSequentialFile$(std::string const& f, leveldb::SequentialFile** r);
+
+    MCAPI leveldb::Status NewWritableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status RenameFile$(std::string const& from, std::string const& to);
 
     // NOLINTEND
 };

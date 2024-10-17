@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/common/wrapper/GameplayHandlerResult.h"
-#include "mc/common/wrapper/HandlerResult.h"
-#include "mc/events/MutableItemGameplayEvent.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
-#include "mc/world/item/components/ItemGameplayEvent.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/world/events/ItemGameplayEvent.h"
+#include "mc/world/events/MutableItemGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,20 +57,44 @@ public:
     virtual void __unk_vfn_9();
 
     // vIndex: 10
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseOnEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseOnEvent& itemEvent);
 
     // vIndex: 11
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseEvent& itemEvent);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _handleItemUseEvent(struct ItemUseEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
+    MCAPI bool _handleItemUseEvent(
+        struct ItemUseEvent&                      itemEvent,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    );
 
-    MCAPI bool
-    _handleItemUseOnEvent(struct ItemUseOnEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>);
+    MCAPI bool _handleItemUseOnEvent(
+        struct ItemUseOnEvent&                    itemEvent,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI ::HandlerResult handleEvent$(struct ItemGameplayEvent<void> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableItemGameplayEvent<::CoordinatorResult>& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct ItemUseOnEvent& itemEvent);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct ItemUseEvent& itemEvent);
 
     // NOLINTEND
 };

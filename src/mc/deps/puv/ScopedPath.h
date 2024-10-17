@@ -16,6 +16,13 @@ public:
     MCAPI ~ScopedPath();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Puv::internal

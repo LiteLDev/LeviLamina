@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Projection.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
 
 class LegacyStructureSettings {
 public:
@@ -63,11 +63,25 @@ public:
 
     MCAPI ~LegacyStructureSettings();
 
-    MCAPI static float const INTEGRITY_MAX;
+    // NOLINTEND
 
-    MCAPI static float const INTEGRITY_MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(::Mirror mirror, ::Rotation rotation, class Block const* ignoreBlock, class BoundingBox const& boundingBox);
 
-    MCAPI static int const MAX_STRUCTURE_SIZE;
+    MCAPI void* ctor$(class LegacyStructureSettings const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static float const& INTEGRITY_MAX();
+
+    MCAPI static float const& INTEGRITY_MIN();
+
+    MCAPI static int const& MAX_STRUCTURE_SIZE();
 
     // NOLINTEND
 };

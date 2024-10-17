@@ -15,4 +15,13 @@ public:
     MCAPI ~ActorGriefingBlockEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorGriefingBlockEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -29,4 +29,11 @@ public:
         const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    // NOLINTEND
 };

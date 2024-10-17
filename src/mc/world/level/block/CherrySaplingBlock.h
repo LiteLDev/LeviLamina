@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -68,6 +68,31 @@ public:
     // NOLINTBEGIN
     MCAPI bool
     _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$(class Block const&, class BlockSource&, class BlockPos const&) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

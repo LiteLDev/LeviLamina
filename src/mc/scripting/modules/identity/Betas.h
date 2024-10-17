@@ -8,8 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleIdentity::Betas {
+// thunks
 // NOLINTBEGIN
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI struct Scripting::Version const& CURRENT();
 // NOLINTEND
 
 }; // namespace ScriptModuleIdentity::Betas

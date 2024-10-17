@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/world/level/block/utils/GetCollisionShapeInterface.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/level/block/GetCollisionShapeInterface.h"
 
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 public:
@@ -48,7 +48,36 @@ public:
     // vIndex: 10
     virtual bool hasPassenger() const;
 
-    MCAPI explicit GetCollisionShapeActorProxy(class Actor const&);
+    MCAPI explicit GetCollisionShapeActorProxy(class Actor const& actor);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Actor const& actor);
+
+    MCAPI bool canDescendThroughBlock$() const;
+
+    MCAPI class AABB const& getAABB$() const;
+
+    MCAPI ::ActorType getEntityTypeId$() const;
+
+    MCAPI float getFallDistance$() const;
+
+    MCAPI float getFeetAttachPosY$() const;
+
+    MCAPI bool hasLightWeightFamilyTag$() const;
+
+    MCAPI bool hasPassenger$() const;
+
+    MCAPI bool isRiding$() const;
+
+    MCAPI bool isWearingLeatherBoots$() const;
+
+    MCAPI bool isWorldBuilder$() const;
 
     // NOLINTEND
 };

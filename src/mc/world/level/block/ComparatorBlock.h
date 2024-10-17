@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,8 @@ public:
     virtual int getDirectSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
 
     // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    virtual bool
+    shouldConnectToRedstone(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
 
     // vIndex: 66
     virtual void
@@ -47,7 +48,7 @@ public:
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 76
-    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
+    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const* medium) const;
 
     // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -92,6 +93,52 @@ public:
     MCAPI void _installCircuit(class BlockSource& region, class BlockPos const& pos, bool loading) const;
 
     MCAPI void _refreshOutputState(class BlockSource& region, class BlockPos const& pos, int strength) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, bool on);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canSpawnOn$(class Actor*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getDirectSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI void triggerEvent$(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
 };

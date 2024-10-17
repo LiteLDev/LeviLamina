@@ -77,4 +77,17 @@ public:
     MCAPI bool _parseTest(class Json::Value const& jsonVal);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class FilterGroup const&);
+
+    MCAPI bool _handleUnknownMember$(std::string const&, class Json::Value const&);
+
+    MCAPI bool _setupContext$(class FilterTest const& test, struct FilterContext& context) const;
+
+    // NOLINTEND
 };

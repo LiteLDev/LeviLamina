@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/ContainerType.h"
 #include "mc/world/SimpleContainer.h"
-#include "mc/world/containers/ContainerType.h"
 
 class SimplePlayerContainer : public ::SimpleContainer {
 public:
@@ -28,6 +28,18 @@ public:
         int                size,
         ::ContainerType    containerType
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void*
+    ctor$(class Player& player, std::string const& name, bool customName, int size, ::ContainerType containerType);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
 
     // NOLINTEND
 };

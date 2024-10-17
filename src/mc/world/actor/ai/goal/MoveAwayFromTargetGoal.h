@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -33,10 +33,21 @@ public:
         // vIndex: 0
         virtual ~Definition() = default;
 
-        MCAPI void initialize(class EntityContext&, class MoveAwayFromTargetGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class MoveAwayFromTargetGoal& goal) const;
 
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveAwayFromTargetGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                              name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class MoveAwayFromTargetGoal::Definition>>& root
+        );
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -68,9 +79,30 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI explicit MoveAwayFromTargetGoal(class Mob&);
+    MCAPI explicit MoveAwayFromTargetGoal(class Mob& mob);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

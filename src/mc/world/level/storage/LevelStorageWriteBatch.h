@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/d_b_helpers/Category.h"
+#include "mc/world/level/storage/db_helpers/Category.h"
 
 class LevelStorageWriteBatch {
 public:
@@ -23,6 +23,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~BatchEntry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -65,7 +72,7 @@ public:
 
     MCAPI void clear();
 
-    MCAPI void erase(BatchEntryMap::const_iterator const& it);
+    MCAPI void erase(BatchEntryMap::const_iterator const&);
 
     MCAPI BatchEntryMap::const_iterator find(std::string const& key) const;
 
@@ -76,6 +83,31 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _writeKey(std::string const& key, std::shared_ptr<std::string>&& data, ::DBHelpers::Category category);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class LevelStorageWriteBatch&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void deleteKey$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI void flush$(class LevelStorage& db);
+
+    MCAPI void putKey$(std::string const& key, std::string_view data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::string const& data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::string&& data, ::DBHelpers::Category category);
+
+    MCAPI void putKey$(std::string const& key, std::shared_ptr<std::string> data, ::DBHelpers::Category category);
 
     // NOLINTEND
 };

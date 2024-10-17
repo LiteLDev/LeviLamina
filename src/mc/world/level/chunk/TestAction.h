@@ -25,4 +25,15 @@ public:
     MCAPI TestAction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void execute$(class ServerLevel& level, class Dimension& dimension);
+
+    // NOLINTEND
 };

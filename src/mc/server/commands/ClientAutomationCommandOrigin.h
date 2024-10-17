@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -75,6 +75,47 @@ public:
     virtual bool isValid() const;
 
     MCAPI explicit ClientAutomationCommandOrigin(std::string const& requestId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& requestId);
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI struct CommandOriginData toCommandOriginData$() const;
 
     // NOLINTEND
 };

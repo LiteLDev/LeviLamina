@@ -40,17 +40,40 @@ public:
     // vIndex: 6
     virtual int size() const;
 
-    MCAPI ShapedRecipe(struct Recipe::ConstructionContext&&, int, int, bool);
+    MCAPI ShapedRecipe(struct Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
 
     MCAPI bool assumeSymmetry() const;
 
-    MCAPI uint64 getIngredientsHashOffset(int, int, int offsetX, int offsetY) const;
+    MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool matches(class CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
+
+    MCAPI void dtor$();
+
+    MCAPI std::vector<class ItemInstance> const& assemble$(class CraftingContainer&, class CraftingContext&) const;
+
+    MCAPI int getCraftingSize$() const;
+
+    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+
+    MCAPI bool isShapeless$() const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+
+    MCAPI int size$() const;
 
     // NOLINTEND
 };

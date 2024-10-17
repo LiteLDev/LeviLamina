@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomLookAroundGoal.h"
 
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
@@ -36,7 +36,52 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI RandomLookAroundAndSitGoal(class Mob&, bool, bool, int, int, float, float, int, int, float, int);
+    MCAPI RandomLookAroundAndSitGoal(
+        class Mob& mob,
+        bool       continueSittingOnReload,
+        bool       continueIfLeashed,
+        int        minLookCount,
+        int        maxLookCount,
+        float      minAngleOfView,
+        float      maxAngleOfView,
+        int        minLookTime,
+        int        maxLookTime,
+        float      probability,
+        int        randomLookAroundCooldown
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob& mob,
+        bool       continueSittingOnReload,
+        bool       continueIfLeashed,
+        int        minLookCount,
+        int        maxLookCount,
+        float      minAngleOfView,
+        float      maxAngleOfView,
+        int        minLookTime,
+        int        maxLookTime,
+        float      probability,
+        int        randomLookAroundCooldown
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

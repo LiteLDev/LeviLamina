@@ -23,4 +23,15 @@ public:
     MCAPI DiscFeature(class Block const& block, int radius);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Block const& block, int radius);
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

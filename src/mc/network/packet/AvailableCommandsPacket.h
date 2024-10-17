@@ -5,9 +5,9 @@
 #include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class AvailableCommandsPacket : public ::Packet {
 public:
@@ -52,6 +52,15 @@ public:
         MCAPI ~CommandData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct AvailableCommandsPacket::CommandData&&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct ConstrainedValueData {
@@ -63,6 +72,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~ConstrainedValueData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -77,6 +93,13 @@ public:
         MCAPI ~EnumData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct OverloadData {
@@ -87,6 +110,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~OverloadData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -103,6 +133,13 @@ public:
         MCAPI ~ParamData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct SoftEnumData {
@@ -113,6 +150,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~SoftEnumData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -150,8 +194,46 @@ public:
 
     MCAPI AvailableCommandsPacket();
 
-    MCAPI
-    AvailableCommandsPacket(std::vector<std::string> const&, std::vector<std::string> const&, std::vector<std::string> const&, std::vector<struct AvailableCommandsPacket::EnumData>&&, std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&, std::vector<struct AvailableCommandsPacket::CommandData>&&, std::vector<struct AvailableCommandsPacket::SoftEnumData>&&);
+    MCAPI AvailableCommandsPacket(
+        std::vector<std::string> const&                                      enumValues,
+        std::vector<std::string> const&                                      chainedSubcommandValues,
+        std::vector<std::string> const&                                      postfixes,
+        std::vector<struct AvailableCommandsPacket::EnumData>&&              enumData,
+        std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
+        std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
+        std::vector<struct AvailableCommandsPacket::CommandData>&&           commandData,
+        std::vector<struct AvailableCommandsPacket::SoftEnumData>&&          softEnumData
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        std::vector<std::string> const&                                      enumValues,
+        std::vector<std::string> const&                                      chainedSubcommandValues,
+        std::vector<std::string> const&                                      postfixes,
+        std::vector<struct AvailableCommandsPacket::EnumData>&&              enumData,
+        std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
+        std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
+        std::vector<struct AvailableCommandsPacket::CommandData>&&           commandData,
+        std::vector<struct AvailableCommandsPacket::SoftEnumData>&&          softEnumData
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

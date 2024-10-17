@@ -17,4 +17,11 @@ public:
     MCAPI void sortKeyFrames();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BoneAnimationChannel const&);
+
+    // NOLINTEND
 };

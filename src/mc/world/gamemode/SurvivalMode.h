@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/InputMode.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/world/gamemode/GameMode.h"
 
 class SurvivalMode : public ::GameMode {
@@ -28,7 +28,7 @@ public:
     virtual void startBuildBlock(class BlockPos const& pos, uchar face);
 
     // vIndex: 6
-    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool);
+    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool isSimTick);
 
     // vIndex: 9
     virtual void tick();
@@ -72,9 +72,44 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mTrialHasEnded;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Player& player);
+
+    MCAPI bool attack$(class Actor& entity);
+
+    MCAPI bool buildBlock$(class BlockPos const& pos, uchar face, bool isSimTick);
+
+    MCAPI bool destroyBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool interact$(class Actor& entity, class Vec3 const& location);
+
+    MCAPI bool isInTrialMode$();
+
+    MCAPI void registerUpsellScreenCallback$(std::function<void(bool)> callback);
+
+    MCAPI void setTrialMode$(bool isEnabled);
+
+    MCAPI void startBuildBlock$(class BlockPos const& pos, uchar face);
+
+    MCAPI bool startDestroyBlock$(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+
+    MCAPI void tick$();
+
+    MCAPI bool useItem$(class ItemStack& item);
+
+    MCAPI class InteractionResult useItemOn$(
+        class ItemStack&      item,
+        class BlockPos const& at,
+        uchar                 face,
+        class Vec3 const&     hit,
+        class Block const*    targetBlock
+    );
+
+    MCAPI static bool& mTrialHasEnded();
 
     // NOLINTEND
 };

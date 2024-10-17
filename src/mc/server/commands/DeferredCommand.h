@@ -28,4 +28,20 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class CommandContext> context,
+        bool                                  suppressOutput,
+        bool                                  isRequest,
+        std::function<void(struct MCRESULT)>  callback
+    );
+
+    MCAPI void execute$(class MinecraftCommands& commands);
+
+    // NOLINTEND
 };

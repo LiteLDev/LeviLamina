@@ -11,7 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class StopwatchHandler watches;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class StopwatchHandler& watches();
 
     // NOLINTEND
 };

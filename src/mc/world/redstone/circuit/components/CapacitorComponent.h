@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/ProducerComponent.h"
 
 class CapacitorComponent : public ::ProducerComponent {
@@ -22,6 +22,19 @@ public:
     virtual uchar getPoweroutDirection() const;
 
     MCAPI CapacitorComponent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI uchar getPoweroutDirection$() const;
 
     // NOLINTEND
 };

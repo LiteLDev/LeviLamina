@@ -38,6 +38,13 @@ public:
             MCAPI ~Description();
 
             // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
+
+            // NOLINTEND
         };
 
         struct Rule {
@@ -96,6 +103,13 @@ public:
         MCAPI ~Contents();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -106,7 +120,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 };

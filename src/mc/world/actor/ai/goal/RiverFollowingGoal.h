@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RiverFollowingGoal : public ::Goal {
@@ -43,6 +43,27 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI void determineSteerDirection();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float lookAhead, float speed);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

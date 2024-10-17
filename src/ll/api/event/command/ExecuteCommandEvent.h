@@ -4,7 +4,7 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/Event.h"
 
-#include "mc/codebuilder/MCRESULT.h"
+#include "mc/deps/core/utility/MCRESULT.h"
 #include "mc/server/commands/CommandContext.h"
 #include "mc/server/commands/MinecraftCommands.h"
 

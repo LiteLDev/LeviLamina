@@ -2,8 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/common/BrightnessPair.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/StorageVersion.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/network/packet/UpdateSubChunkBlocksPacket.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/LevelListener.h"
@@ -16,13 +15,14 @@
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
 #include "mc/world/level/saveddata/SavedData.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/enums/LimboEntitiesVersion.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/BlockChangedEventTarget.h"
+#include "mc/world/level/dimension/LimboEntitiesVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -321,10 +321,10 @@ public:
     );
 
     MCAPI void addActorUnloadedChunkTransferToQueue(
-        class ChunkPos const&,
-        class ChunkPos const&,
-        DimensionType dimId,
-        std::string&,
+        class ChunkPos const&              fromChunkPos,
+        class ChunkPos const&              toChunkPos,
+        DimensionType                      dimId,
+        std::string&                       actorStorageKey,
         std::unique_ptr<class CompoundTag> entityTag
     );
 
@@ -336,7 +336,7 @@ public:
 
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3 origin);
 
-    MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
+    MCAPI class Player* fetchAnyInteractablePlayer(class Vec3 const& searchPos, float maxDist) const;
 
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor& source, float maxDist) const;
 
@@ -345,10 +345,14 @@ public:
 
     MCAPI class Player* fetchNearestInteractablePlayer(class Actor& source, float maxDist) const;
 
-    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float maxDist) const;
+    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const& searchPos, float maxDist) const;
 
-    MCAPI class Player*
-    fetchNearestPlayer(class Vec3 const&, float maxDist, bool, std::function<bool(class Player const&)>) const;
+    MCAPI class Player* fetchNearestPlayer(
+        class Vec3 const&                        searchPos,
+        float                                    maxDist,
+        bool                                     isFetchAny,
+        std::function<bool(class Player const&)> playerFilter
+    ) const;
 
     MCAPI class Player* findPlayer(std::function<bool(class Player const&)> pred) const;
 
@@ -432,7 +436,7 @@ public:
 
     MCAPI bool isRedstoneTick();
 
-    MCAPI bool isSubChunkHeightWithinRange(short const&) const;
+    MCAPI bool isSubChunkHeightWithinRange(short const& subChunkHeight) const;
 
     MCAPI bool isUltraWarm() const;
 
@@ -459,19 +463,19 @@ public:
     MCAPI void setUltraWarm(bool warm);
 
     MCAPI void transferEntity(
-        class ChunkPos const&,
+        class ChunkPos const&              fromChunkPos,
         class Vec3 const&                  spawnPos,
         std::unique_ptr<class CompoundTag> entityTag,
-        bool
+        bool                               ignorePortal
     );
 
-    MCAPI void transferEntityToUnloadedChunk(class Actor& actor, class LevelChunk*);
+    MCAPI void transferEntityToUnloadedChunk(class Actor& actor, class LevelChunk* fromChunk);
 
     MCAPI void transferEntityToUnloadedChunk(
-        class ChunkPos const&,
-        class ChunkPos const&,
-        DimensionType dimId,
-        std::string&,
+        class ChunkPos const&              fromChunkPos,
+        class ChunkPos const&              toChunkPos,
+        DimensionType                      dimId,
+        std::string&                       actorStorageKey,
         std::unique_ptr<class CompoundTag> entityTag
     );
 
@@ -479,7 +483,7 @@ public:
 
     MCAPI void tryLoadLimboEntities(class ChunkPos const& loadPos);
 
-    MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext>);
+    MCAPI void unregisterDisplayEntity(class WeakRef<class EntityContext> entityRef);
 
     MCAPI void unregisterEntity(struct ActorUniqueID const& actorID);
 
@@ -494,19 +498,11 @@ public:
 
     MCAPI void updateDimensionBlockSourceTick();
 
-    MCAPI static ::LimboEntitiesVersion const CurrentLimboEntitiesVersion;
-
-    MCAPI static uint const LOW_CPU_PACKET_BLOCK_LIMIT;
-
-    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
-
-    MCAPI static std::chrono::seconds const STRUCTURE_PRUNE_INTERVAL;
-
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext>, bool);
+    MCAPI void _completeEntityTransfer(class OwnerPtr<class EntityContext> entity, bool ignorePortal);
 
     // NOLINTEND
 
@@ -519,6 +515,126 @@ public:
     MCAPI void _sendBlocksChangedPackets();
 
     MCAPI void _tickEntityChunkMoves();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForIDimension();
+
+    MCAPI static void** vftableForLevelListener();
+
+    MCAPI static void** vftableForSavedData();
+
+    MCAPI void* ctor$(
+        class ILevel&              level,
+        DimensionType              dimId,
+        class DimensionHeightRange heightRange,
+        class Scheduler&           callbackContext,
+        std::string                name
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy$();
+
+    MCAPI void deserialize$(class CompoundTag const& tag);
+
+    MCAPI class Actor* fetchEntity$(struct ActorUniqueID actorID, bool getRemoved) const;
+
+    MCAPI void flushLevelChunkGarbageCollector$();
+
+    MCAPI void forEachPlayer$(std::function<bool(class Player&)> callback) const;
+
+    MCAPI bool forceCheckAllNeighChunkSavedStat$() const;
+
+    MCAPI class BiomeRegistry const& getBiomeRegistry$() const;
+
+    MCAPI class BiomeRegistry& getBiomeRegistry$();
+
+    MCAPI class mce::Color getBrightnessDependentFogColor$(class mce::Color const& baseColor, float brightness) const;
+
+    MCAPI class DimensionBrightnessRamp const& getBrightnessRamp$() const;
+
+    MCAPI short getCloudHeight$() const;
+
+    MCAPI class HashedString getDefaultBiome$() const;
+
+    MCAPI DimensionType getDimensionId$() const;
+
+    MCAPI class BaseLightTextureImageBuilder* getLightTextureImageBuilder$() const;
+
+    MCAPI class BlockPos getSpawnPos$() const;
+
+    MCAPI int getSpawnYPosition$() const;
+
+    MCAPI float getSunIntensity$(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
+
+    MCAPI float getTimeOfDay$(int time, float a) const;
+
+    MCAPI bool hasGround$() const;
+
+    MCAPI bool hasPrecipitationFog$() const;
+
+    MCAPI void init$(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+
+    MCAPI void initializeWithLevelStorageManager$(class LevelStorageManager& levelStorageManager);
+
+    MCAPI bool is2DPositionRelevantForPlayer$(class BlockPos const& position, class Player& player) const;
+
+    MCAPI bool isActorRelevantForPlayer$(class Player& player, class Actor const& actor) const;
+
+    MCAPI bool isDay$() const;
+
+    MCAPI bool isNaturalDimension$() const;
+
+    MCAPI bool isValidSpawn$(int x, int z) const;
+
+    MCAPI bool mayRespawnViaBed$() const;
+
+    MCAPI void onBlockChanged$(
+        class BlockSource&                  source,
+        class BlockPos const&               pos,
+        uint                                layer,
+        class Block const&                  block,
+        class Block const&                  oldBlock,
+        int                                 updateFlags,
+        struct ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget           eventTarget,
+        class Actor*                        blockChangeSource
+    );
+
+    MCAPI void onBlockEvent$(class BlockSource& source, int x, int y, int z, int b0, int b1);
+
+    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onLevelDestruction$(std::string const&);
+
+    MCAPI void sendBroadcast$(class Packet const& packet, class Player* except);
+
+    MCAPI void
+    sendPacketForPosition$(class BlockPos const& position, class Packet const& packet, class Player const* except);
+
+    MCAPI void serialize$(class CompoundTag& tag) const;
+
+    MCAPI bool showSky$() const;
+
+    MCAPI void startLeaveGame$();
+
+    MCAPI void tick$();
+
+    MCAPI void tickRedstone$();
+
+    MCAPI static ::LimboEntitiesVersion const& CurrentLimboEntitiesVersion();
+
+    MCAPI static uint const& LOW_CPU_PACKET_BLOCK_LIMIT();
+
+    MCAPI static ::ll::CArrayT<float const>& MOON_BRIGHTNESS_PER_PHASE();
+
+    MCAPI static std::chrono::seconds const& STRUCTURE_PRUNE_INTERVAL();
 
     // NOLINTEND
 };

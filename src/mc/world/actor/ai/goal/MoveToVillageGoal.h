@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class MoveToVillageGoal : public ::BaseMoveToGoal {
@@ -49,6 +49,31 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI std::shared_ptr<class Village> _tryGetCurrentVillage();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI class BlockPos _selectRandomPosInVillage$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void start$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

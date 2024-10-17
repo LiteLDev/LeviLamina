@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Optional.h"
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class GameEventMovementTrackingSystem : public ::ITickingSystem {
 public:
@@ -19,7 +19,7 @@ public:
     virtual ~GameEventMovementTrackingSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -28,17 +28,38 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    _tickGameEventMovementTrackingComponent(class ActorOwnerComponent&, class GameEventMovementTrackingComponent&, class Optional<class RailMovementComponent const>);
+    MCAPI static void _tickGameEventMovementTrackingComponent(
+        class ActorOwnerComponent&                        actorOwnerComponent,
+        class GameEventMovementTrackingComponent&         gameEventMovementTrackingComponent,
+        class Optional<class RailMovementComponent const> railMovementComponent
+    );
 
-    MCAPI static void
-    _trackMovement(class Actor&, class GameEventMovementTrackingComponent&, class Optional<class RailMovementComponent const>);
+    MCAPI static void _trackMovement(
+        class Actor&                                      actor,
+        class GameEventMovementTrackingComponent&         component,
+        class Optional<class RailMovementComponent const> railMovementComponent
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void tick$(class EntityRegistry& registry);
 
     // NOLINTEND
 };

@@ -11,9 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const* block);
+    MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory randomFactory, class Block const* block);
 
     MCAPI class Block const* getBlock(class BlockPos const& pos, class Block const* fallback) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class XoroshiroPositionalRandomFactory randomFactory, class Block const* block);
 
     // NOLINTEND
 };

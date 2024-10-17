@@ -4,7 +4,7 @@
 #include "mc/network/NetworkSettingOptions.h"
 
 // auto generated inclusion list
-#include "mc/enums/Compressibility.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class CompressedNetworkPeer : public ::NetworkPeer {
@@ -30,7 +30,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
 
     // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
@@ -38,6 +38,23 @@ public:
     MCAPI explicit CompressedNetworkPeer(std::shared_ptr<class NetworkPeer> peer);
 
     MCAPI void setCompressionEnabled(bool val, struct NetworkSettingOptions options);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::shared_ptr<class NetworkPeer> peer);
+
+    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+    MCAPI ::NetworkPeer::DataStatus
+    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+
+    MCAPI void
+    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
     // NOLINTEND
 };

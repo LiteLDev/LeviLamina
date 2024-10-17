@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,8 @@ public:
 
     // vIndex: 9
     virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
+        const;
 
     // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
@@ -47,15 +48,13 @@ public:
 
     // vIndex: 80
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
     // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
+    virtual bool mayConsumeFertilizer(class BlockSource&) const;
 
     // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -68,7 +67,7 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 121
-    virtual int getColor(class Block const& block) const;
+    virtual int getColor(class Block const&) const;
 
     // vIndex: 126
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
@@ -77,7 +76,7 @@ public:
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 154
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
@@ -91,6 +90,51 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _tryGrow(class BlockSource& region, class BlockPos const& pos, int age) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getColor$(class Block const&) const;
+
+    MCAPI class AABB const&
+    getOutline$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
+        const;
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+
+    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
 
     // NOLINTEND
 };

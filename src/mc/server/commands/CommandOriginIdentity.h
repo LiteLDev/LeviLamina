@@ -14,4 +14,11 @@ public:
     MCAPI ~CommandOriginIdentity();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

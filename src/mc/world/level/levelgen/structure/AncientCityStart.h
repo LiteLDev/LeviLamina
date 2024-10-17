@@ -21,4 +21,13 @@ public:
     virtual bool isValid() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };

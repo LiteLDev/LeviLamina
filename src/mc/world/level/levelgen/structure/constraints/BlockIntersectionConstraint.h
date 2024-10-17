@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 
 class BlockIntersectionConstraint {
 public:
@@ -25,6 +25,21 @@ public:
     ) const;
 
     MCAPI explicit BlockIntersectionConstraint(class StructureTemplate& structure);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class StructureTemplate& structure);
+
+    MCAPI bool isSatisfied$(
+        class IBlockWorldGenAPI const& target,
+        class BlockPos const&          structurePos,
+        ::Rotation const&              structureRot
+    ) const;
 
     // NOLINTEND
 };

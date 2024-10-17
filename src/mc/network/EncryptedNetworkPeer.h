@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Compressibility.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
 class EncryptedNetworkPeer : public ::NetworkPeer {
@@ -24,7 +24,7 @@ public:
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
 
     // vIndex: 3
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
@@ -33,6 +33,25 @@ public:
     virtual bool isEncrypted() const;
 
     MCAPI void enableEncryption(std::string const& symmetricKey);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+
+    MCAPI bool isEncrypted$() const;
+
+    MCAPI ::NetworkPeer::DataStatus
+    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+
+    MCAPI void
+    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
     // NOLINTEND
 };

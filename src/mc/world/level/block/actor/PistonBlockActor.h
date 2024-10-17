@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class PistonBlockActor : public ::BlockActor {
@@ -31,13 +31,13 @@ public:
     virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 30
-    virtual class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
+    virtual class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
 
     // vIndex: 31
-    virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
+    virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -111,9 +111,30 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const ARM_ANIMATION_SPEED;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos, bool isSticky);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI class PistonBlockActor const* getOwningPiston$(class BlockSource&) const;
+
+    MCAPI class PistonBlockActor* getOwningPiston$(class BlockSource&);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static float const& ARM_ANIMATION_SPEED();
 
     // NOLINTEND
 };

@@ -11,8 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void
-    _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&);
+    MCAPI static void _storePreviousRideStats(
+        class StrictEntityContext const&,
+        struct StateVectorComponent const&     stateVectorComponent,
+        struct VanillaClientGameplayComponent& vanillaClientGameplayComponent
+    );
 
     MCAPI static struct TickingSystemWithInfo createSystem();
 

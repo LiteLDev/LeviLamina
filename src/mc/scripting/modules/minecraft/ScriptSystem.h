@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Closure.h"
-#include "mc/external/scripting/Generator.h"
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/external/scripting/script_engine/Generator.h"
+#include "mc/external/scripting/script_engine/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,9 +35,10 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
 
-    MCAPI void clearJob(class Scripting::WeakLifetimeScope const&, class Scripting::DependencyLocator&, uint);
+    MCAPI void
+    clearJob(class Scripting::WeakLifetimeScope const& scope, class Scripting::DependencyLocator& locator, uint jobId);
 
-    MCAPI void clearRun(uint);
+    MCAPI void clearRun(uint runId);
 
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>
     getSystemAfterEvents();
@@ -45,19 +46,27 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>
     getSystemBeforeEvents();
 
-    MCAPI uint runInterval(class Scripting::Closure<void()>, std::optional<uint> interval);
+    MCAPI uint runInterval(class Scripting::Closure<void()> closure, std::optional<uint> interval);
 
-    MCAPI uint runJob(class Scripting::DependencyLocator&, class Scripting::Generator<void, void, void>);
+    MCAPI uint
+    runJob(class Scripting::DependencyLocator& locator, class Scripting::Generator<void, void, void> generator);
 
-    MCAPI uint runSafe(class Scripting::Closure<void()>);
+    MCAPI uint runSafe(class Scripting::Closure<void()> closure);
 
-    MCAPI uint runTimeout(class Scripting::Closure<void()>, std::optional<uint> delay);
+    MCAPI uint runTimeout(class Scripting::Closure<void()> closure, std::optional<uint> delay);
 
     MCAPI class Scripting::
         Result<class Scripting::Promise<void, struct Scripting::Error, void>, struct Scripting::EngineError>
-        waitTicks(class Scripting::ScriptObjectFactory&, uint);
+        waitTicks(class Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSystem> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
 
     // NOLINTEND
 };

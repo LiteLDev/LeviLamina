@@ -29,4 +29,19 @@ public:
     MCAPI explicit PlayerContainerSetter(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Player& player);
+
+    MCAPI void setArmor$(int slot, class ItemStack const& item);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setPlayerUIItem$(int slot, class ItemStack const& item);
+
+    // NOLINTEND
 };

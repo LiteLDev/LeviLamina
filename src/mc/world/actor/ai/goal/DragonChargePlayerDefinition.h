@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/DragonBaseGoalDefinition.h"
 
 // auto generated forward declare list
@@ -31,6 +31,15 @@ public:
         std::shared_ptr<
             class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>>& root
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

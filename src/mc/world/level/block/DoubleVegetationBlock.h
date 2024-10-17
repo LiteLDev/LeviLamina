@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/DoublePlantBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,9 +37,24 @@ public:
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 122
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
-    MCAPI DoubleVegetationBlock(std::string const&, int);
+    MCAPI DoubleVegetationBlock(std::string const& nameId, int id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI bool onFertilized$(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
     // NOLINTEND
 };

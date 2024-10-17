@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class MeleeAttackBaseGoal : public ::Goal {
@@ -31,19 +31,40 @@ public:
     virtual void stop();
 
     // vIndex: 10
-    virtual void _attemptMoveToTarget(class Actor&);
+    virtual void _attemptMoveToTarget(class Actor& target);
 
-    MCAPI explicit MeleeAttackBaseGoal(class Mob&);
+    MCAPI explicit MeleeAttackBaseGoal(class Mob& mob);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _attemptAttackTarget(class Actor&, bool, bool);
+    MCAPI void _attemptAttackTarget(class Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCAPI void _attemptMoveToTargetPosition(class Actor&, bool, float);
+    MCAPI void _attemptMoveToTargetPosition(class Actor& target, bool canReachTarget, float targetDistanceSq);
 
-    MCAPI bool _inSunlight(class Actor const&) const;
+    MCAPI bool _inSunlight(class Actor const& actor) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void dtor$();
+
+    MCAPI void _attemptMoveToTarget$(class Actor& target);
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
 
     // NOLINTEND
 };

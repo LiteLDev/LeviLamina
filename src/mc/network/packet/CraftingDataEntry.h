@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/enums/CraftingDataEntryType.h"
 #include "mc/world/item/NetworkItemInstanceDescriptor.h"
+#include "mc/world/item/crafting/CraftingDataEntryType.h"
 #include "mc/world/item/crafting/Recipe.h"
 
 class CraftingDataEntry {
@@ -24,6 +24,13 @@ public:
     MCAPI void write(class BinaryStream& stream) const;
 
     MCAPI ~CraftingDataEntry();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

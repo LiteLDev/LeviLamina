@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/scripting/modules/minecraft/ScriptActorLifetimeState.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/actor/ScriptActorLifetimeState.h"
 
 namespace ScriptModuleMinecraft {
 

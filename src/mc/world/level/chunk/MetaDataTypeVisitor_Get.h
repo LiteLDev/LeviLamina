@@ -14,4 +14,11 @@ public:
     MCAPI ~MetaDataTypeVisitor_Get();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

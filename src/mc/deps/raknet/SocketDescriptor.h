@@ -16,6 +16,13 @@ public:
     MCAPI SocketDescriptor(ushort _port, char const* _hostAddress);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(ushort _port, char const* _hostAddress);
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

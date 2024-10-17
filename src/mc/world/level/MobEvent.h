@@ -23,4 +23,15 @@ public:
     MCAPI ~MobEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class MobEvent const&);
+
+    MCAPI void* ctor$(std::string name, std::string localizableName, bool val);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AdjustmentEffect.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
+#include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
 class PoolElementStructurePiece : public ::StructurePiece {
 public:
@@ -56,6 +56,33 @@ public:
         class BoundingBox const&          box,
         class BlockPos                    refPos
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class StructurePoolElement const& element,
+        class BlockPos                    position,
+        ::Rotation                        rotation,
+        int                               genDepth,
+        struct JigsawJunction&            junction,
+        class BoundingBox const&          box,
+        class BlockPos                    refPos
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool _needsPostProcessing$(class BlockSource& region);
+
+    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 };

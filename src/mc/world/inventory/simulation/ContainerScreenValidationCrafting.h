@@ -18,17 +18,31 @@ public:
     virtual ~ContainerScreenValidationCrafting() = default;
 
     // vIndex: 1
-    virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
 
     // vIndex: 2
     virtual struct ContainerValidationCraftResult
-        getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult& craftResult);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI struct ContainerValidationCraftResult
+    getCraftResults$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
+
+    MCAPI struct ContainerValidationResult tryCraft$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
 
     // NOLINTEND
 };

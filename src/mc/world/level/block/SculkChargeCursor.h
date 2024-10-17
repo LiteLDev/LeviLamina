@@ -18,8 +18,8 @@ public:
         class BlockSource*       region,
         class BlockPos const&    origin,
         class Random&            random,
-        class SculkSpreader&,
-        bool
+        class SculkSpreader&     spreader,
+        bool                     spreadVeins
     );
 
     // NOLINTEND
@@ -33,8 +33,8 @@ public:
     MCAPI static std::optional<class BlockPos> _getValidMovementPos(
         class IBlockWorldGenAPI& target,
         class BlockPos const&    pos,
-        class SculkSpreader&,
-        class Random& random
+        class SculkSpreader&     spreader,
+        class Random&            random
     );
 
     MCAPI static bool _isMovementUnobstructed(
@@ -45,13 +45,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
+    MCAPI void* ctor$(class CompoundTag const& tag);
 
-    MCAPI static class SculkBlockBehavior const sSculkBlockBehavior;
+    MCAPI static class DefaultSculkBehavior const& sDefaultSculkBehavior();
 
-    MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
+    MCAPI static class SculkBlockBehavior const& sSculkBlockBehavior();
+
+    MCAPI static class SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
 
     // NOLINTEND
 };

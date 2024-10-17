@@ -17,8 +17,28 @@ public:
     // vIndex: 0
     virtual ~RuinedPortalStart() = default;
 
-    MCAPI
-    RuinedPortalStart(class BiomeRegistry& registry, class BiomeSource const& source, int chunkX, int chunkZ, class IPreliminarySurfaceProvider const&);
+    MCAPI RuinedPortalStart(
+        class BiomeRegistry&                     registry,
+        class BiomeSource const&                 source,
+        int                                      chunkX,
+        int                                      chunkZ,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class BiomeRegistry&                     registry,
+        class BiomeSource const&                 source,
+        int                                      chunkX,
+        int                                      chunkZ,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     // NOLINTEND
 };

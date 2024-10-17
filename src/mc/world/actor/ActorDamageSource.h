@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -92,20 +92,72 @@ public:
     MCAPI void setCause(::ActorDamageCause cause);
 
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-        generateDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+    generateDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
 
     MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-        generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+    generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
 
     MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version);
+    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version scriptingVersion);
 
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
 
     MCAPI static ::ActorDamageCause lookupCause(std::string const& name);
 
-    MCAPI static std::string const& lookupCauseName(::ActorDamageCause);
+    MCAPI static std::string const& lookupCauseName(::ActorDamageCause cause);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ActorDamageCause cause);
+
+    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+
+    MCAPI ::ActorCategory getDamagingEntityCategories$() const;
+
+    MCAPI bool getDamagingEntityIsCreative$() const;
+
+    MCAPI bool getDamagingEntityIsWorldBuilder$() const;
+
+    MCAPI ::ActorType getDamagingEntityType$() const;
+
+    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+
+    MCAPI std::pair<std::string, std::vector<std::string>>
+          getDeathMessage$(std::string deadName, class Actor* dead) const;
+
+    MCAPI ::ActorCategory getEntityCategories$() const;
+
+    MCAPI ::ActorType getEntityType$() const;
+
+    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+
+    MCAPI bool getIsCreative$() const;
+
+    MCAPI bool getIsWorldBuilder$() const;
+
+    MCAPI bool isBlockSource$() const;
+
+    MCAPI bool isChildEntitySource$() const;
+
+    MCAPI bool isEntitySource$() const;
+
+    MCAPI bool isFallDamage$() const;
+
+    MCAPI bool isFallingBlockDamage$() const;
+
+    MCAPI bool isFire$() const;
+
+    MCAPI bool isReducedByArmorReduction$() const;
+
+    MCAPI bool isReducedByEnchantReduction$() const;
+
+    MCAPI bool isReducedByResistanceEffect$() const;
 
     // NOLINTEND
 };

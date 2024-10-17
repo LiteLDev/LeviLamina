@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ExecutionResult.h"
+#include "mc/server/sim/ExecutionResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,11 +23,18 @@ public:
     // NOLINTBEGIN
     MCAPI BuildIntent();
 
-    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer&, class BlockSource&);
+    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer& player, class BlockSource& region);
 
-    MCAPI void finalize(class SimulatedPlayer&);
+    MCAPI void finalize(class SimulatedPlayer& player);
 
     MCAPI void reset();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

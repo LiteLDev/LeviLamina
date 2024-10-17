@@ -29,4 +29,19 @@ public:
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const& block, float probability);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Block const& block, float probability);
+
+    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+
+    MCAPI bool test$(class Block const& block, class Randomize& randomize) const;
+
+    MCAPI bool test$(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
+
+    // NOLINTEND
 };

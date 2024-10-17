@@ -27,7 +27,7 @@ public:
     virtual int getMaxLevel() const;
 
     // vIndex: 8
-    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+    virtual float getDamageBonus(int level, class Actor const& target, class Actor const&) const;
 
     MCAPI TridentImpalerEnchant(
         ::Enchant::Type      type,
@@ -38,6 +38,31 @@ public:
         bool                 isLootable,
         int                  secondarySlots
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        bool                 isLootable,
+        int                  secondarySlots
+    );
+
+    MCAPI float getDamageBonus$(int level, class Actor const& target, class Actor const&) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
 
     // NOLINTEND
 };

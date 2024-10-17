@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/CopperType.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/CopperType.h"
 #include "mc/world/level/block/DoorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,21 +32,67 @@ public:
     virtual ~CopperDoorBlock() = default;
 
     // vIndex: 18
-    virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
+    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 27
     virtual class CopperBehavior const* tryGetCopperBehavior() const;
 
     // vIndex: 149
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    MCAPI CopperDoorBlock(std::string const&, int, ::DoorBlock::DoorType, ::CopperType, class HashedString const&);
+    MCAPI CopperDoorBlock(
+        std::string const&        nameId,
+        int                       id,
+        ::DoorBlock::DoorType     type,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant
+    );
 
-    MCAPI
-    CopperDoorBlock(std::string const&, int, ::DoorBlock::DoorType, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
+    MCAPI CopperDoorBlock(
+        std::string const&        nameId,
+        int                       id,
+        ::DoorBlock::DoorType     type,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant,
+        class HashedString const& nextAgeVariant,
+        class HashedString const& waxedVariant
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::string const&        nameId,
+        int                       id,
+        ::DoorBlock::DoorType     type,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant,
+        class HashedString const& nextAgeVariant,
+        class HashedString const& waxedVariant
+    );
+
+    MCAPI void* ctor$(
+        std::string const&        nameId,
+        int                       id,
+        ::DoorBlock::DoorType     type,
+        ::CopperType              copperType,
+        class HashedString const& previousVariant
+    );
+
+    MCAPI void onLightningHit$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class CopperBehavior const* tryGetCopperBehavior$() const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
 };

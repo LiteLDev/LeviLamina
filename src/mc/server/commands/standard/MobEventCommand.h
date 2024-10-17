@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class MobEventCommand : public ::Command {
 public:
@@ -25,6 +25,13 @@ public:
         MCAPI explicit InitProxy(class ServerLevel& level);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class ServerLevel& level);
+
+        // NOLINTEND
     };
 
 public:
@@ -42,6 +49,15 @@ public:
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     MCAPI static void setup(class CommandRegistry& registry, struct MobEventCommand::InitProxy&& dependencies);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

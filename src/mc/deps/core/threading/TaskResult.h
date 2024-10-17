@@ -1,10 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 
 class TaskResult {
 public:
@@ -37,9 +36,18 @@ public:
 
     MCAPI static class TaskResult requeueAfter(std::chrono::nanoseconds requeueDelay);
 
-    MCAPI static class TaskResult const Done;
+    // NOLINTEND
 
-    MCAPI static class TaskResult const Requeue;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class TaskResult const& Done();
+
+    MCAPI static class TaskResult const& Requeue();
 
     // NOLINTEND
 };

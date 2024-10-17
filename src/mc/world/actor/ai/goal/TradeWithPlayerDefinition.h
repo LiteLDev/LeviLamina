@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
@@ -23,8 +23,18 @@ public:
     // vIndex: 0
     virtual ~TradeWithPlayerDefinition() = default;
 
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerDefinition>>& root
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

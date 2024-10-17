@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemColor.h"
+#include "mc/world/item/ItemColor.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -40,6 +40,17 @@ public:
 
     MCAPI static void
     _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>>& patternVec, class Json::Value const& object);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 };

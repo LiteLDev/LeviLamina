@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI class Puv::LoadResult<struct ComponentItemDataAll_Latest> load(class Json::Value const&) const;
+    MCAPI class Puv::LoadResult<struct ComponentItemDataAll_Latest> load(class Json::Value const& input) const;
 
     MCAPI ~ComponentItemDataLoader();
 
@@ -27,11 +27,18 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20_80> _parseCereal(class Json::Value const&) const;
+    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20_80> _parseCereal(class Json::Value const& input) const;
 
-    MCAPI std::optional<struct LegacyEventItemComponentData> _parseEvents(class Json::Value const&) const;
+    MCAPI std::optional<struct LegacyEventItemComponentData> _parseEvents(class Json::Value const& input) const;
 
-    MCAPI std::pair<struct ComponentItemData_Legacy, bool> _parseLegacyComponents(class Json::Value) const;
+    MCAPI std::pair<struct ComponentItemData_Legacy, bool> _parseLegacyComponents(class Json::Value input) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -120,6 +120,80 @@ public:
 
     MCAPI static std::unique_ptr<class VirtualCommandOrigin>
     load(class CompoundTag const& tag, class ServerLevel& level);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class CommandOrigin const&        outputReceiver,
+        class CommandOrigin const&        source,
+        class CommandPositionFloat const& commandPosition,
+        int                               version
+    );
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class CommandOrigin> outputReceiver,
+        std::unique_ptr<class CommandOrigin> source,
+        class CommandPositionFloat const&    commandPosition,
+        int                                  version
+    );
+
+    MCAPI void* ctor$(
+        class CommandOrigin const&        outputReceiver,
+        class Actor&                      entity,
+        class CommandPositionFloat const& commandPosition,
+        int                               version
+    );
+
+    MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+
+    MCAPI struct CommandOriginIdentity getIdentity$() const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class NetworkIdentifier const& getSourceId$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI bool hasChatPerms$() const;
+
+    MCAPI bool hasTellPerms$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI void updateValues$();
 
     // NOLINTEND
 };

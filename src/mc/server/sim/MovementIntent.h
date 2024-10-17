@@ -28,11 +28,25 @@ public:
                                   struct sim::MoveInDirectionIntent,
                                   struct sim::MoveToPositionIntent,
                                   struct sim::NavigateToPositionsIntent,
-                                  struct sim::NavigateToEntityIntent>);
+                                  struct sim::NavigateToEntityIntent> type);
 
-    MCAPI void finalize(class SimulatedPlayer&);
+    MCAPI void finalize(class SimulatedPlayer& player);
 
     MCAPI ~MovementIntent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::variant<
+                      struct sim::VoidMoveIntent,
+                      struct sim::MoveInDirectionIntent,
+                      struct sim::MoveToPositionIntent,
+                      struct sim::NavigateToPositionsIntent,
+                      struct sim::NavigateToEntityIntent> type);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

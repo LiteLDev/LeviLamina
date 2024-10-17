@@ -28,4 +28,15 @@ public:
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider& registries);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class FilterGroup> _createSubgroup$(::FilterGroup::CollectionType type) const;
+
+    // NOLINTEND
 };

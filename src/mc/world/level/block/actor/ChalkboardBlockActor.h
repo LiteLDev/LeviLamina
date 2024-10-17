@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/ChalkboardSize.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/ChalkboardSize.h"
 
 class ChalkboardBlockActor : public ::BlockActor {
 public:
@@ -30,6 +30,15 @@ public:
         MCAPI ~CachedLineData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class CachedMessageData {
@@ -42,6 +51,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~CachedMessageData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -84,16 +100,16 @@ public:
     virtual void onChanged(class BlockSource& region);
 
     // vIndex: 28
-    virtual std::string getImmersiveReaderText(class BlockSource&);
+    virtual std::string getImmersiveReaderText(class BlockSource& region);
 
     // vIndex: 37
-    virtual std::vector<std::string> getUgcStrings(class CompoundTag const&) const;
+    virtual std::vector<std::string> getUgcStrings(class CompoundTag const& tag) const;
 
     // vIndex: 38
     virtual void setUgcStrings(class CompoundTag& tag, std::vector<std::string> const& list) const;
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -126,7 +142,7 @@ public:
         int                          dir,
         std::vector<class BlockPos>& occupiedBlocks,
         class ItemStack const&       instance,
-        bool
+        bool                         generateParticles
     );
 
     MCAPI static class ChalkboardBlockActor* convertFromEntity(class BlockSource& region, class CompoundTag const& tag);
@@ -149,6 +165,33 @@ public:
     // NOLINTBEGIN
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder
     _findChalkboard(class BlockSource& region, class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI std::string getImmersiveReaderText$(class BlockSource& region);
+
+    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const& tag) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void setUgcStrings$(class CompoundTag& tag, std::vector<std::string> const& list) const;
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -32,10 +32,23 @@ public:
     // NOLINTBEGIN
     MCAPI bool _placeMushroom(
         class BlockSource&    region,
-        class BlockPos const& pos,
+        class BlockPos const& origin,
         class Block const&    mushroom,
         class Random&         random
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Block const& block);
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

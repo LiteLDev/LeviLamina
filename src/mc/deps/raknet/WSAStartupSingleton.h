@@ -17,9 +17,10 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int refCount;
+    MCAPI static int& refCount();
 
     // NOLINTEND
 };

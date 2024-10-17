@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 
 struct SoundEventRequest {
 public:
@@ -25,6 +25,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~PlainData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -57,6 +64,15 @@ public:
         class Vec3 const&                       pos,
         int                                     data
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct SoundEventRequest&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

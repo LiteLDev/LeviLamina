@@ -2,11 +2,11 @@
 
 #include "ll/api/base/Meta.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorDataIDs.h"
-#include "mc/enums/DataItemType.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorDataIDs.h"
+#include "mc/world/actor/DataItemType.h"
 #include "mc/world/level/BlockPos.h"
 
 class DataItem {
@@ -31,16 +31,16 @@ public:
 
     template <typename T>
         requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
-    [[nodiscard]] static constexpr std::unique_ptr<DataItem> create(ushort key, T&& value);
-    [[nodiscard]] static constexpr std::unique_ptr<DataItem> create(ushort key, bool value) {
+    [[nodiscard]] static LL_CONSTEXPR23 std::unique_ptr<DataItem> create(ushort key, T&& value);
+    [[nodiscard]] static LL_CONSTEXPR23 std::unique_ptr<DataItem> create(ushort key, bool value) {
         return create(key, (schar)value);
     }
     template <typename T>
         requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
-    [[nodiscard]] static constexpr std::unique_ptr<DataItem> create(::ActorDataIDs key, T&& value) {
+    [[nodiscard]] static LL_CONSTEXPR23 std::unique_ptr<DataItem> create(::ActorDataIDs key, T&& value) {
         return create(static_cast<std::underlying_type_t<::ActorDataIDs>>(key), std::forward<T>(value));
     }
-    [[nodiscard]] static constexpr std::unique_ptr<DataItem> create(::ActorDataIDs key, bool value) {
+    [[nodiscard]] static LL_CONSTEXPR23 std::unique_ptr<DataItem> create(::ActorDataIDs key, bool value) {
         return create(key, (schar)value);
     }
 
@@ -57,6 +57,17 @@ public:
 
     // vIndex: 2
     virtual std::unique_ptr<class DataItem> clone() const = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool isDataEqual$(class DataItem const&) const;
 
     // NOLINTEND
 };
@@ -117,6 +128,6 @@ constexpr bool DataItem::setData(T&& value) {
 
 template <typename T>
     requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
-constexpr std::unique_ptr<DataItem> DataItem::create(ushort key, T&& value) {
+LL_CONSTEXPR23 std::unique_ptr<DataItem> DataItem::create(ushort key, T&& value) {
     return std::make_unique<DataItem2<std::remove_cvref_t<T>>>(key, std::forward<T>(value));
 }

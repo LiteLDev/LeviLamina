@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/WeakEntityRef.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 struct ChatEvent {
 public:
@@ -27,6 +27,17 @@ public:
     MCAPI ChatEvent(class WeakRef<class EntityContext>, class TextPacket const&);
 
     MCAPI ~ChatEvent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class WeakRef<class EntityContext>, class TextPacket const&);
+
+    MCAPI void* ctor$(struct ChatEvent const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

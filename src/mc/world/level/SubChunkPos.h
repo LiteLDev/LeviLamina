@@ -12,13 +12,20 @@ public:
 
     MCAPI explicit operator class BlockPos() const;
 
-    MCAPI static class SubChunkPos const MAX;
+    // NOLINTEND
 
-    MCAPI static class SubChunkPos const MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& bp);
 
-    MCAPI static class SubChunkPos const ONE;
+    MCAPI static class SubChunkPos const& MAX();
 
-    MCAPI static class SubChunkPos const ZERO;
+    MCAPI static class SubChunkPos const& MIN();
+
+    MCAPI static class SubChunkPos const& ONE();
+
+    MCAPI static class SubChunkPos const& ZERO();
 
     // NOLINTEND
 };

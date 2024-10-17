@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/dimension/BlockEventDispatcher.h"
+#include "mc/world/events/BlockEventDispatcher.h"
 
 class BlockEventDispatcherToken {
 public:
@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockEventDispatcherToken();
 
-    MCAPI BlockEventDispatcherToken(class BlockEventDispatcherToken&&);
+    MCAPI BlockEventDispatcherToken(class BlockEventDispatcherToken&& rhs);
 
     MCAPI class BlockEventDispatcher* getDispatcher() const;
 
@@ -28,6 +28,17 @@ public:
     MCAPI void unregister();
 
     MCAPI ~BlockEventDispatcherToken();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class BlockEventDispatcherToken&& rhs);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

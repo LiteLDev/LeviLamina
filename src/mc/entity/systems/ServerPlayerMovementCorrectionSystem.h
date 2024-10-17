@@ -4,8 +4,14 @@
 
 namespace ServerPlayerMovementCorrectionSystem {
 // NOLINTBEGIN
-MCAPI void
-_afterMovementSimulation(class UserEntityIdentifierComponent const&, class Actor&, class PlayerAuthInputPacket const&, class ReplayStateComponent&, struct ActorRotationComponent const*, struct StateVectorComponent&);
+MCAPI void _afterMovementSimulation(
+    class UserEntityIdentifierComponent const& userIdentifier,
+    class Actor&                               actor,
+    class PlayerAuthInputPacket const&         packet,
+    class ReplayStateComponent&                replay,
+    struct ActorRotationComponent const*       actorRotation,
+    struct StateVectorComponent&               stateVector
+);
 
 MCAPI struct TickingSystemWithInfo createSystem();
 // NOLINTEND

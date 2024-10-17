@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/PotionItem.h"
 #include "mc/world/item/alchemy/Potion.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,24 +45,68 @@ public:
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 73
-    virtual class Actor*
-    createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
+    virtual class Actor* createProjectileActor(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
 
     // vIndex: 74
     virtual bool
     dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string
+    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     // vIndex: 119
     virtual ::Potion::PotionType getPotionType() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI ::Potion::PotionType getPotionType$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
 
     // NOLINTEND
 };

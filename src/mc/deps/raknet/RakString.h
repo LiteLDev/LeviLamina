@@ -56,10 +56,6 @@ public:
 
     MCAPI static void FreeMemoryNoMutex();
 
-    MCAPI static struct RakNet::RakString::SharedString emptyString;
-
-    MCAPI static class DataStructures::List<struct RakNet::RakString::SharedString*> freeList;
-
     // NOLINTEND
 
     // protected:
@@ -71,6 +67,23 @@ public:
     MCAPI void Assign(char const*, char*);
 
     MCAPI void Free();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class RakNet::RakString const& rhs);
+
+    MCAPI void* ctor$(char const*, ...);
+
+    MCAPI void dtor$();
+
+    MCAPI static struct RakNet::RakString::SharedString& emptyString();
+
+    MCAPI static class DataStructures::List<struct RakNet::RakString::SharedString*>& freeList();
 
     // NOLINTEND
 };

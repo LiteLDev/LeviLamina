@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class BreedGoal : public ::Goal {
@@ -42,6 +42,25 @@ public:
     MCAPI bool _isCloseEnoughToBreed(class Vec3 pos1, class Vec2 size1, class Vec3 pos2, class Vec2 size2) const;
 
     MCAPI class Mob* _moveToFreePartner() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& animal, float speed);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

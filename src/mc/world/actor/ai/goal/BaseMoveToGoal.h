@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class BaseMoveToGoal : public ::Goal {
@@ -76,6 +76,44 @@ public:
     MCAPI bool _isCooldownActive() const;
 
     MCAPI void setInterval(int interval);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob& mob,
+        float      speedModifier,
+        float      cooldownTimeout,
+        float      goalRadius,
+        int        maxStayTicks,
+        int        giveUpTicks
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canReach$(class BlockPos const& pos);
+
+    MCAPI uint64 _getRepathTime$() const;
+
+    MCAPI class Vec3 _getTargetPosition$() const;
+
+    MCAPI int _nextStartTick$();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool hasReachedTarget$() const;
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

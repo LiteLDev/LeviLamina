@@ -15,4 +15,11 @@ public:
     virtual ~NpcEventCoordinator() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

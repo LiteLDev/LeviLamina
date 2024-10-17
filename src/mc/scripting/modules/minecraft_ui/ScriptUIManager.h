@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,15 @@ public:
     MCAPI ~ScriptUIManager();
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptUIManager> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

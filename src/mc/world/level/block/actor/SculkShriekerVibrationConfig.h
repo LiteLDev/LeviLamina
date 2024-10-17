@@ -18,20 +18,54 @@ public:
     virtual ~SculkShriekerVibrationConfig() = default;
 
     // vIndex: 1
-    virtual void
-    onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const&, class Actor* source, float, uint, class Actor*);
+    virtual void onSignalReceive(
+        class BlockSource& region,
+        class BlockPos const&,
+        class GameEvent const&,
+        class Actor* source,
+        float,
+        uint,
+        class Actor* projectileOwner
+    );
 
     // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const&);
+    virtual bool isValidVibration(class GameEvent const& gameEvent);
 
     // vIndex: 3
-    virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
+    virtual bool
+    shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
 
     // vIndex: 4
-    virtual void onSerializableDataChanged(class BlockSource&);
+    virtual void onSerializableDataChanged(class BlockSource& region);
 
     // vIndex: 5
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource& region);
+
+    MCAPI void onSignalReceive$(
+        class BlockSource& region,
+        class BlockPos const&,
+        class GameEvent const&,
+        class Actor* source,
+        float,
+        uint,
+        class Actor* projectileOwner
+    );
+
+    MCAPI bool
+    shouldListen$(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
 
     // NOLINTEND
 };

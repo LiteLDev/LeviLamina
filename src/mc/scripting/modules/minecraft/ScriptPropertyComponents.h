@@ -15,7 +15,10 @@ namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 MCAPI std::vector<struct ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration>
       GetComponentRegistration();
 
-MCAPI void bind(class Scripting::ModuleBindingBuilder&, class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
+MCAPI void bind(
+    class Scripting::ModuleBindingBuilder&                       moduleBuilder,
+    class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+);
 
 MCAPI void registerScriptPropertyComponentFactories(
     std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>& factory

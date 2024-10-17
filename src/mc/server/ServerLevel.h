@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/entity/systems/common/CommandOriginSystem.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/Level.h"
 
 // auto generated forward declare list
@@ -55,10 +55,8 @@ public:
 
     MCVAPI class TradeTables* getTradeTables();
 
-    MCVAPI void incrementTagCache(
-        std::string const&                                                                                tag,
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>& tagRegistry
-    );
+    MCVAPI void
+    incrementTagCache(std::string const& tag, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&);
 
     MCVAPI bool initialize(
         std::string const&         levelName,
@@ -85,7 +83,25 @@ public:
 
     MCVAPI ~ServerLevel();
 
-    MCAPI ServerLevel(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const&, class OwnerPtr<class LevelStorage>, class IMinecraftEventing&, class ResourcePackManager&, class ResourcePackManager&, Bedrock::NotNullNonOwnerPtr<class StructureManager>, class MinecraftCommands&, class Scheduler&, Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const&, class WeakRef<class EntityContext>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const&, std::weak_ptr<class BlockTypeRegistry>);
+    MCAPI ServerLevel(
+        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
+        class OwnerPtr<class LevelStorage>                             levelStorage,
+        class IMinecraftEventing&                                      eventing,
+        class ResourcePackManager&                                     serverResourcePackManager,
+        class ResourcePackManager&                                     clientResourcePackManager,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
+        class MinecraftCommands&                                       commands,
+        class Scheduler&                                               callbackContext,
+        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
+        class WeakRef<class EntityContext>                             levelEntity,
+        std::unique_ptr<class BlockComponentFactory>                   bcf,
+        std::unique_ptr<class BlockDefinitionGroup>                    bdg,
+        class ItemRegistryRef                                          itemRegistry,
+        bool                                                           clientSideChunkGenerationEnabled,
+        bool                                                           blockNetworkIdsAreHashes,
+        struct NetworkPermissions const&                               networkPermissions,
+        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry
+    );
 
     MCAPI void clearAllGenerationRequests(class NetworkIdentifier const& player, ::SubClientId clientId);
 
@@ -129,11 +145,97 @@ public:
 
     MCAPI void _onPlayerWakeUp(class Player& player);
 
-    MCAPI void _onSleepingPlayerListUpdated(struct PlayerSleepStatus const&);
+    MCAPI void _onSleepingPlayerListUpdated(struct PlayerSleepStatus const& playerSleepStatus);
 
     MCAPI void _onWakeUpAllPlayers();
 
-    MCAPI void _postReloadActorAdded(class Actor&, ::ActorInitializationMethod);
+    MCAPI void _postReloadActorAdded(class Actor& actor, ::ActorInitializationMethod initializationMethod);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBlockSourceListener();
+
+    MCAPI static void** vftableForILevel();
+
+    MCAPI static void** vftableForIWorldRegistriesProvider();
+
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
+        class OwnerPtr<class LevelStorage>                             levelStorage,
+        class IMinecraftEventing&                                      eventing,
+        class ResourcePackManager&                                     serverResourcePackManager,
+        class ResourcePackManager&                                     clientResourcePackManager,
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
+        class MinecraftCommands&                                       commands,
+        class Scheduler&                                               callbackContext,
+        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
+        class WeakRef<class EntityContext>                             levelEntity,
+        std::unique_ptr<class BlockComponentFactory>                   bcf,
+        std::unique_ptr<class BlockDefinitionGroup>                    bdg,
+        class ItemRegistryRef                                          itemRegistry,
+        bool                                                           clientSideChunkGenerationEnabled,
+        bool                                                           blockNetworkIdsAreHashes,
+        struct NetworkPermissions const&                               networkPermissions,
+        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class MapDataManager& _getMapDataManager$();
+
+    MCAPI class PlayerDeathManager* _getPlayerDeathManager$();
+
+    MCAPI void _initializeMapDataManager$();
+
+    MCAPI void _subTick$();
+
+    MCAPI void
+    decrementTagCache$(std::string const& tag, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&);
+
+    MCAPI class ResourcePackManager* getClientResourcePackManager$() const;
+
+    MCAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager$();
+
+    MCAPI class PlayerSleepManager const& getPlayerSleepManager$() const;
+
+    MCAPI class PlayerSleepManager& getPlayerSleepManager$();
+
+    MCAPI class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer$() const;
+
+    MCAPI class ResourcePackManager* getServerResourcePackManager$() const;
+
+    MCAPI class Random& getThreadRandom$() const;
+
+    MCAPI class TradeTables* getTradeTables$();
+
+    MCAPI void
+    incrementTagCache$(std::string const& tag, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&);
+
+    MCAPI bool initialize$(
+        std::string const&         levelName,
+        class LevelSettings const& levelSettings,
+        class LevelData*           levelData,
+        class Experiments const&   experiments,
+        std::string const*         levelId
+    );
+
+    MCAPI void loadFunctionManager$();
+
+    MCAPI void runCommand$(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
+
+    MCAPI void runCommand$(
+        class HashedString const& commandStr,
+        class CommandOrigin&      origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion       commandVersion
+    );
+
+    MCAPI void setCommandsEnabled$(bool commandsEnabled);
+
+    MCAPI void setWorldTemplateOptionsUnlocked$();
 
     // NOLINTEND
 };

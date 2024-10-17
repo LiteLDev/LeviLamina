@@ -40,7 +40,7 @@ LL_TYPE_INSTANCE_HOOK(
     auto event = ExecutingCommandEvent{*this, context, suppressOutput};
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
-        return MCRESULT_CommandsDisabled;
+        return MCRESULT_CommandsDisabled();
     }
     return origin(context, suppressOutput);
 }

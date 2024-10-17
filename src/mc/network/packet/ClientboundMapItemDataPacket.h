@@ -1,16 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/platform/Result.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 
 class ClientboundMapItemDataPacket : public ::Packet {
@@ -63,8 +63,56 @@ public:
 
     MCAPI ClientboundMapItemDataPacket(gsl::not_null<class MapItemSavedData*> newMapItem, class Level& level);
 
-    MCAPI
-    ClientboundMapItemDataPacket(struct ActorUniqueID mapId, schar scale, std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const& decorations, class buffer_span<uint> mapColors, int startX, int startY, int width, int height, DimensionType dimension, bool isLocked, class BlockPos const&);
+    MCAPI ClientboundMapItemDataPacket(
+        struct ActorUniqueID mapId,
+        schar                scale,
+        std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&
+                                decorations,
+        class buffer_span<uint> mapColors,
+        int                     startX,
+        int                     startY,
+        int                     width,
+        int                     height,
+        DimensionType           dimension,
+        bool                    isLocked,
+        class BlockPos const&   mapOrigin
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(gsl::not_null<class MapItemSavedData*> newMapItem, class Level& level);
+
+    MCAPI void* ctor$(
+        struct ActorUniqueID mapId,
+        schar                scale,
+        std::vector<std::pair<struct MapItemTrackedActor::UniqueId, std::shared_ptr<class MapDecoration>>> const&
+                                decorations,
+        class buffer_span<uint> mapColors,
+        int                     startX,
+        int                     startY,
+        int                     width,
+        int                     height,
+        DimensionType           dimension,
+        bool                    isLocked,
+        class BlockPos const&   mapOrigin
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

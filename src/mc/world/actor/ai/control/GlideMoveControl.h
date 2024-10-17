@@ -25,4 +25,17 @@ public:
     MCAPI GlideMoveControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void initializeInternal$(class Mob&, struct MoveControlDescription* description);
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

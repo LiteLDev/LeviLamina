@@ -23,4 +23,13 @@ public:
     MCAPI struct Description* parseDescription(struct DeserializeDataParams deserializeDataParams);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void deserializeData$(struct DeserializeDataParams);
+
+    // NOLINTEND
 };

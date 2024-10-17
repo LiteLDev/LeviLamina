@@ -1,23 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/enums/GameType.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/packet/ItemData.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SyncedPlayerMovementSettings.h"
+#include "mc/world/level/GameType.h"
 #include "mc/world/level/LevelSettings.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/level/GameType.h"
 
 class StartGamePacket : public ::Packet {
 public:
@@ -71,28 +71,71 @@ public:
     MCAPI StartGamePacket();
 
     MCAPI StartGamePacket(
-        class ItemRegistryRef,
-        class LevelSettings const&        settings,
-        struct ActorUniqueID              entityId,
-        class ActorRuntimeID              runtimeId,
-        ::GameType                        entityGameType,
-        bool                              enableItemStackNetManager,
-        class Vec3 const&                 pos,
-        class Vec2 const&                 rot,
-        std::string const&                levelId,
-        std::string const&                levelName,
-        class ContentIdentity const&      premiumTemplateContentIdentity,
-        std::string const&                multiplayerCorrelationId,
-        class BlockDefinitionGroup const& blockDefinitionGroup,
-        bool                              isTrial,
-        class CompoundTag,
+        class ItemRegistryRef                itemRegistry,
+        class LevelSettings const&           settings,
+        struct ActorUniqueID                 entityId,
+        class ActorRuntimeID                 runtimeId,
+        ::GameType                           entityGameType,
+        bool                                 enableItemStackNetManager,
+        class Vec3 const&                    pos,
+        class Vec2 const&                    rot,
+        std::string const&                   levelId,
+        std::string const&                   levelName,
+        class ContentIdentity const&         premiumTemplateContentIdentity,
+        std::string const&                   multiplayerCorrelationId,
+        class BlockDefinitionGroup const&    blockDefinitionGroup,
+        bool                                 isTrial,
+        class CompoundTag                    playerPropertyData,
         struct PlayerMovementSettings const& movementSettings,
-        std::string const&,
-        class mce::UUID const& worldTemplateId,
-        uint64                 levelCurrentTime,
-        int                    enchantmentSeed,
-        uint64
+        std::string const&                   serverVersion,
+        class mce::UUID const&               worldTemplateId,
+        uint64                               levelCurrentTime,
+        int                                  enchantmentSeed,
+        uint64                               blockTypeRegistryChecksum
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class ItemRegistryRef                itemRegistry,
+        class LevelSettings const&           settings,
+        struct ActorUniqueID                 entityId,
+        class ActorRuntimeID                 runtimeId,
+        ::GameType                           entityGameType,
+        bool                                 enableItemStackNetManager,
+        class Vec3 const&                    pos,
+        class Vec2 const&                    rot,
+        std::string const&                   levelId,
+        std::string const&                   levelName,
+        class ContentIdentity const&         premiumTemplateContentIdentity,
+        std::string const&                   multiplayerCorrelationId,
+        class BlockDefinitionGroup const&    blockDefinitionGroup,
+        bool                                 isTrial,
+        class CompoundTag                    playerPropertyData,
+        struct PlayerMovementSettings const& movementSettings,
+        std::string const&                   serverVersion,
+        class mce::UUID const&               worldTemplateId,
+        uint64                               levelCurrentTime,
+        int                                  enchantmentSeed,
+        uint64                               blockTypeRegistryChecksum
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

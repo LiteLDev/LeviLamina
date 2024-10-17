@@ -18,4 +18,11 @@ public:
     MCAPI ~PropertyMetadata();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

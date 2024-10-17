@@ -6,7 +6,7 @@
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerType.h"
 
 class HopperBlockActor : public BlockActor, public Container, public Hopper {
 public:
@@ -17,9 +17,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource&);
 
     MCVAPI class Container* getContainer();
 
@@ -37,7 +37,7 @@ public:
 
     MCVAPI void onMove();
 
-    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
+    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const&);
 
     MCVAPI void onRemoved(class BlockSource&);
 
@@ -80,6 +80,59 @@ public:
     MCAPI bool isAttachedToContainerType(class BlockSource& region, ::ContainerType containerType);
 
     MCAPI bool isSourceOfContainerType(class BlockSource& region, ::ContainerType containerType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBlockActor();
+
+    MCAPI static void** vftableForContainer();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource&);
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onMove$();
+
+    MCAPI void onNeighborChanged$(class BlockSource& region, class BlockPos const&);
+
+    MCAPI void onRemoved$(class BlockSource&);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setContainerChanged$(int slot);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player&);
+
+    MCAPI void stopOpen$(class Player&);
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -27,4 +27,11 @@ public:
     MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID val);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

@@ -15,4 +15,11 @@ public:
     MCAPI void addTime(std::chrono::nanoseconds const& time);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/MoveTowardsRestrictionDefinition.h"
 
 // auto generated forward declare list
@@ -30,6 +30,15 @@ public:
             class JsonUtil::EmptyClass,
             class MoveTowardsDwellingRestrictionDefinition>>& root
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

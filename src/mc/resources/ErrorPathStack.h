@@ -16,4 +16,13 @@ public:
     MCAPI ~ErrorPathStack();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::vector<std::string>& errorPath, std::string const& element);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

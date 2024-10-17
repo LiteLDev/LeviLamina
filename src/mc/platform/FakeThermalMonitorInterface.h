@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ThermalState.h"
 #include "mc/platform/thermal/ThermalMonitorInterface.h"
+#include "mc/platform/thermal/ThermalState.h"
 
 class FakeThermalMonitorInterface : public ::ThermalMonitorInterface {
 public:
@@ -27,6 +27,21 @@ public:
     virtual bool isLowBatteryModeEnabled() const;
 
     MCAPI FakeThermalMonitorInterface();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI ::ThermalState getThermalState$() const;
+
+    MCAPI float getThermalValueCelsius$() const;
+
+    MCAPI bool isLowBatteryModeEnabled$() const;
 
     // NOLINTEND
 };

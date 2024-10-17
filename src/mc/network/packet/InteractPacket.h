@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class InteractPacket : public ::Packet {
 public:
@@ -51,6 +51,27 @@ public:
     MCAPI InteractPacket();
 
     MCAPI InteractPacket(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

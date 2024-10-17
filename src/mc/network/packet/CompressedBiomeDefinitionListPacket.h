@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/BiomeDefinitionListPacket.h"
+#include "mc/platform/Result.h"
 
 class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
 public:
@@ -35,6 +35,25 @@ public:
     MCAPI CompressedBiomeDefinitionListPacket();
 
     MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag biomeData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class CompoundTag biomeData);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

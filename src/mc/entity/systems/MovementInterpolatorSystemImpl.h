@@ -11,8 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void
-    _onGroundPostTick(class StrictEntityContext const&, struct MovementInterpolatorComponent const&, struct StateVectorComponent&);
+    MCAPI static void _onGroundPostTick(
+        class StrictEntityContext const&,
+        struct MovementInterpolatorComponent const& movementInterpolatorComponent,
+        struct StateVectorComponent&                stateVectorComponent
+    );
 
     MCAPI static std::tuple<class Vec3, float>
     _tickPosition(struct MovementInterpolatorComponent&, class Vec3 const&, float);

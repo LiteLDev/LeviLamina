@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class WorkGoal : public ::MoveToPOIGoal {
 public:
@@ -52,11 +52,32 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
+    MCAPI static void** vftable();
 
-    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void dtor$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI void useWorkstation$();
+
+    MCAPI static int const& RAIN_CHECK_MAX_COOLDOWN();
+
+    MCAPI static int const& WORK_TIMESTAMP_UPDATE_INVERVAL();
 
     // NOLINTEND
 };

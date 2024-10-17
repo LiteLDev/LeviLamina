@@ -22,4 +22,15 @@ public:
     MCAPI ~PackSourceReport();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class PackSourceReport const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

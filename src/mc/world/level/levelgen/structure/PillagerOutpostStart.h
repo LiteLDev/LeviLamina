@@ -23,4 +23,15 @@ public:
     MCAPI PillagerOutpostStart(class Dimension& dim, class Random& random, int x, int z);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Dimension& dim, class Random& random, int x, int z);
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

@@ -36,4 +36,15 @@ public:
     virtual void writeLongLong(int64);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void writeByte$(char v);
+
+    MCAPI void writeLongString$(std::string_view v);
+
+    MCAPI void writeString$(std::string_view v);
+
+    // NOLINTEND
 };

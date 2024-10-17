@@ -28,6 +28,13 @@ public:
     virtual void __unk_vfn_1();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

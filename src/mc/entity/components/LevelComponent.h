@@ -18,4 +18,13 @@ public:
     MCAPI ~LevelComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::unique_ptr<class ILevel> level);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

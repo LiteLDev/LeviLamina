@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/Optional.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class MinecartMoveAlongRailSystem {
 public:
@@ -18,8 +18,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static bool
-    _calculateAllPassengersRailMovementInput(std::vector<struct StrictActorIDEntityContextPair> const&, class Vec3& posDelta, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>);
+    MCAPI static bool _calculateAllPassengersRailMovementInput(
+        std::vector<struct StrictActorIDEntityContextPair> const& passengers,
+        class Vec3&                                               posDelta,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PlayerComponentFlag>>,
+            struct ActorRotationComponent const,
+            struct LocalMoveVelocityComponent const> playerView
+    );
 
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
 
@@ -34,24 +41,36 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static void _calculateRailMovementSystem(
-        class StrictEntityContext const&   context,
-        class RailMovementComponent const& railMovementComponent,
-        struct SnapOnRailComponent&,
-        struct StateVectorComponent&,
-        class Optional<struct VehicleComponent const>,
+        class StrictEntityContext const&              context,
+        class RailMovementComponent const&            railMovementComponent,
+        struct SnapOnRailComponent&                   snapOnRailComponent,
+        struct StateVectorComponent&                  stateVectorComponent,
+        class Optional<struct VehicleComponent const> vehicleComponent,
         class ViewT<
             class StrictEntityContext,
             struct Include<class FlagComponent<struct PlayerComponentFlag>>,
             struct ActorRotationComponent const,
-            struct LocalMoveVelocityComponent const>,
+            struct LocalMoveVelocityComponent const>      playerView,
         class EntityModifier<struct MoveRequestComponent> mod
     );
 
-    MCAPI static void
-    _postRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const& context, struct SnapOnRailComponent const&, struct StateVectorComponent&, class EntityModifier<struct ActorSetPositionRequestComponent> mod, class IConstBlockSource const&);
+    MCAPI static void _postRailMovementCalculateMinecartPositionSystem(
+        class StrictEntityContext const&                              context,
+        struct SnapOnRailComponent const&                             snapOnRailComponent,
+        struct StateVectorComponent&                                  stateVectorComponent,
+        class EntityModifier<struct ActorSetPositionRequestComponent> mod,
+        class IConstBlockSource const&                                constBlockSource
+    );
 
-    MCAPI static void
-    _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const& context, struct OffsetsComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&, struct SnapOnRailComponent&, class EntityModifier<struct ActorSetPositionRequestComponent> mod, class IConstBlockSource const&);
+    MCAPI static void _preRailMovementCalculateMinecartPositionSystem(
+        class StrictEntityContext const&                              context,
+        struct OffsetsComponent const&                                offsetsComponent,
+        struct StateVectorComponent const&                            stateVectorComponent,
+        struct FallDistanceComponent&                                 fallDistanceComponent,
+        struct SnapOnRailComponent&                                   snapOnRailComponent,
+        class EntityModifier<struct ActorSetPositionRequestComponent> mod,
+        class IConstBlockSource const&                                constBlockSource
+    );
 
     MCAPI static void _tickCalculateRailMovementSystem(
         class ViewT<
@@ -64,7 +83,7 @@ public:
             class StrictEntityContext,
             struct Include<class FlagComponent<struct PlayerComponentFlag>>,
             struct ActorRotationComponent const,
-            struct LocalMoveVelocityComponent const>,
+            struct LocalMoveVelocityComponent const>      playerView,
         class EntityModifier<struct MoveRequestComponent> mod
     );
 

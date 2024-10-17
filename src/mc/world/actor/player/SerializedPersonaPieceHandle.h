@@ -1,11 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/client/services/persona/PieceType.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
-#include "mc/client/services/persona/PieceType.h"
+#include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,6 +32,19 @@ public:
     );
 
     MCAPI class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        std::string const&   pieceId,
+        ::persona::PieceType pieceType,
+        class mce::UUID      packId,
+        bool                 isDefaultPiece,
+        std::string const&   productId
+    );
 
     // NOLINTEND
 };

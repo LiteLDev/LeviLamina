@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class Goal {
 public:
@@ -52,6 +52,31 @@ public:
     MCAPI void setRequiredControlFlags(int requiredControlFlags);
 
     MCAPI void setTypeId(ushort typeId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI bool canBeInterrupted$();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool isTargetGoal$() const;
+
+    MCAPI void onPlayerDimensionChanged$(class Player* player, DimensionType fromDimension, DimensionType toDimension);
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

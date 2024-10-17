@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/CreativeItemCategory.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/item/CreativeItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,6 +32,15 @@ public:
     MCAPI ::CreativeItemCategory getCreativeCategory();
 
     MCAPI class CreativeGroupInfo* getOrAddTailAnonymousGroup();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

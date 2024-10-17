@@ -14,7 +14,16 @@ public:
 
     MCAPI ~PersonaPiece();
 
-    MCAPI static class PersonaPiece const INVALID_PIECE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class PersonaPiece const& INVALID_PIECE();
 
     // NOLINTEND
 };

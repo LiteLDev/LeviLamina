@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RandomHoverGoal : public ::Goal {
@@ -52,6 +52,33 @@ public:
     MCAPI std::unique_ptr<class Path> _findNewTarget() const;
 
     MCAPI void _moveToTarget();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&      mob,
+        float           speedMultiplier,
+        int             interval,
+        float           xzDist,
+        float           yDist,
+        float           yOffset,
+        struct IntRange hoverHeight
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

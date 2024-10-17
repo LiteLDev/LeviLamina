@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerValidationCaller.h"
+#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 class ContainerValidatorFactory {
 public:
@@ -21,7 +21,7 @@ public:
     MCAPI static std::shared_ptr<class ContainerValidationBase const> createContainerValidator(
         ::ContainerEnumName                 containerId,
         class ContainerScreenContext const& screenContext,
-        ::ContainerValidationCaller
+        ::ContainerValidationCaller         caller
     );
 
     MCAPI static class Container*

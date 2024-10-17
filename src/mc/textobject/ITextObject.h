@@ -11,13 +11,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
+    // NOLINTEND
 
-    MCAPI static std::string const RAW_TEXT_TEXT_KEY;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& RAW_TEXT_OBJECT_KEY();
 
-    MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
+    MCAPI static std::string const& RAW_TEXT_TEXT_KEY();
 
-    MCAPI static std::string const RAW_TEXT_WITH_KEY;
+    MCAPI static std::string const& RAW_TEXT_TRANSLATE_KEY();
+
+    MCAPI static std::string const& RAW_TEXT_WITH_KEY();
 
     // NOLINTEND
 };

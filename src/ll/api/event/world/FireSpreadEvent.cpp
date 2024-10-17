@@ -20,7 +20,7 @@ LL_TYPE_INSTANCE_HOOK(
     FireSpreadEventHook1,
     HookPriority::Normal,
     FireBlock,
-    "?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+    &FireBlock::onPlace$,
     void,
     BlockSource&    blockSource,
     BlockPos const& blockPos
@@ -34,7 +34,7 @@ LL_TYPE_INSTANCE_HOOK(
     FireSpreadEventHook2,
     HookPriority::Normal,
     FireBlock,
-    "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
+    &FireBlock::mayPlace$,
     bool,
     BlockSource&    blockSource,
     BlockPos const& blockPos

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/scripting/commands/ScriptCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,8 +32,30 @@ public:
     // vIndex: 10
     virtual std::unique_ptr<class CommandOrigin> clone() const;
 
-    MCAPI
-    ScriptActorCommandOrigin(class Actor const&, std::function<void(int, std::string&&)>, std::optional<::CommandPermissionLevel>);
+    MCAPI ScriptActorCommandOrigin(
+        class Actor const&                      actor,
+        std::function<void(int, std::string&&)> outputCallback,
+        std::optional<::CommandPermissionLevel> permissionLevel
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Actor const&                      actor,
+        std::function<void(int, std::string&&)> outputCallback,
+        std::optional<::CommandPermissionLevel> permissionLevel
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class Actor* getEntity$() const;
 
     // NOLINTEND
 };

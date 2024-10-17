@@ -4,7 +4,7 @@
 #include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/level/storage/GameRule.h"
 
 // auto generated forward declare list
@@ -76,7 +76,7 @@ public:
 
     MCAPI GameRules();
 
-    MCAPI GameRules(class GameRules const&);
+    MCAPI GameRules(class GameRules const& rhs);
 
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;
 
@@ -92,16 +92,16 @@ public:
 
     MCAPI GameRuleList const& getRules() const;
 
-    MCAPI void getTagData(class CompoundTag const&, class BaseGameVersion const&);
+    MCAPI void getTagData(class CompoundTag const& tag, class BaseGameVersion const& version);
 
     MCAPI bool hasRule(struct GameRuleId ruleType) const;
 
     MCAPI struct GameRuleId nameToGameRuleIndex(std::string const& name) const;
 
-    MCAPI class GameRules& operator=(class GameRules const&);
+    MCAPI class GameRules& operator=(class GameRules const& rhs);
 
     MCAPI class Bedrock::PubSub::Subscription
-        registerOnGameRuleChangeCallback(std::function<void(class GameRules const&, struct GameRuleId const&)>);
+    registerOnGameRuleChangeCallback(std::function<void(class GameRules const&, struct GameRuleId const&)> callback);
 
     MCAPI void setMarketplaceOverrides();
 
@@ -134,20 +134,6 @@ public:
 
     MCAPI void setTagData(class CompoundTag& tag) const;
 
-    MCAPI static uint const DEFAULT_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
-
-    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
-
-    MCAPI static uint const MAX_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static int const MAX_RANDOMTICKSPEED;
-
-    MCAPI static uint const MIN_PLAYER_SPAWN_RADIUS;
-
-    MCAPI static std::string const WORLD_POLICY_TAG_NAME;
-
     // NOLINTEND
 
     // private:
@@ -177,6 +163,33 @@ public:
     );
 
     MCAPI static std::map<struct GameRuleId, class GameRule> const& _getMarketplaceGameRulesDefaultMap();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class GameRules const& rhs);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static uint const& DEFAULT_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static int const& DEFAULT_RANDOMTICKSPEED();
+
+    MCAPI static int const& MAX_FUNCTIONCOMMANDLIMIT();
+
+    MCAPI static uint const& MAX_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static int const& MAX_RANDOMTICKSPEED();
+
+    MCAPI static uint const& MIN_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static std::string const& WORLD_POLICY_TAG_NAME();
 
     // NOLINTEND
 };

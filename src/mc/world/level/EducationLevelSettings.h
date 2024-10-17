@@ -30,7 +30,18 @@ public:
 
     MCAPI ~EducationLevelSettings();
 
-    MCAPI static std::string const DEFAULT_BORDER_PATH;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct EducationLevelSettings const&);
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DEFAULT_BORDER_PATH();
 
     // NOLINTEND
 };

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -82,9 +82,19 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class PackManifest>          manifest,
+        std::unique_ptr<class PackAccessStrategy>    accessStrategy,
+        std::unique_ptr<class SubpackInfoCollection> subpacks,
+        std::unique_ptr<class PackMetadata>          metadata
+    );
+
+    MCAPI static class Core::PathBuffer<std::string> const& EDUCATION_METADATA_FILE();
 
     // NOLINTEND
 };

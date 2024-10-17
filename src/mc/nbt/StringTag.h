@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/nbt/Tag.h"
+#include "mc/platform/Result.h"
 
 class StringTag : public ::Tag, public std::string {
 public:
@@ -42,6 +42,33 @@ public:
 
     // vIndex: 10
     virtual uint64 hash() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::string data);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class Tag> copy$() const;
+
+    MCAPI bool equals$(class Tag const& rhs) const;
+
+    MCAPI ::Tag::Type getId$() const;
+
+    MCAPI uint64 hash$() const;
+
+    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+
+    MCAPI std::string toString$() const;
+
+    MCAPI void write$(class IDataOutput& dos) const;
 
     // NOLINTEND
 };

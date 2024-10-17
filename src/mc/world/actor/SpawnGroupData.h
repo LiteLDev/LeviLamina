@@ -21,4 +21,11 @@ public:
     MCAPI std::vector<class MobSpawnRules> const& getSpawnRules() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& identifier, class MobSpawnRules& spawnRules);
+
+    // NOLINTEND
 };

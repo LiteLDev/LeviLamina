@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/AdvanceFrameResult.h"
-#include "mc/common/wrapper/ReplayCorrectionResult.h"
+#include "mc/entity/components/ReplayCorrectionResult.h"
+#include "mc/input/AdvanceFrameResult.h"
 
 class ReplayStateComponent {
 public:
@@ -22,14 +22,14 @@ public:
         std::unique_ptr<struct IReplayStatePolicy> policy
     );
 
-    MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput>) const;
+    MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput> input) const;
 
     MCAPI ::ReplayCorrectionResult
-    applyFrameCorrection(class Actor&, std::shared_ptr<struct IMovementCorrection>, uint64);
+    applyFrameCorrection(class Actor& actor, std::shared_ptr<struct IMovementCorrection> correction, uint64 frame);
 
     MCAPI void clearHistory();
 
-    MCAPI void enqueueInputSimulation(std::unique_ptr<struct IReplayableActorInput>);
+    MCAPI void enqueueInputSimulation(std::unique_ptr<struct IReplayableActorInput> input);
 
     MCAPI uint64 getCurrentTick() const;
 
@@ -38,7 +38,7 @@ public:
     MCAPI class ReplayStateComponent& operator=(class ReplayStateComponent&&);
 
     MCAPI struct MovementCorrection
-    shouldSendCorrectionToClient(class EntityContext&, class PlayerAuthInputPacket const&) const;
+    shouldSendCorrectionToClient(class EntityContext& entity, class PlayerAuthInputPacket const& packet) const;
 
     MCAPI void tick(class Actor* actor, uint64 currentTick, class EntityRegistry* registry);
 
@@ -48,8 +48,23 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult
-    _applyCorrection(std::shared_ptr<struct IMovementCorrection>, class Actor&, uint64, bool) const;
+    MCAPI ::AdvanceFrameResult _applyCorrection(
+        std::shared_ptr<struct IMovementCorrection> correction,
+        class Actor&                                actor,
+        uint64                                      destinationTimestamp,
+        bool                                        addInput
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ReplayStateComponent&& rhs);
+
+    MCAPI void* ctor$(std::unique_ptr<class ActorHistory> history, std::unique_ptr<struct IReplayStatePolicy> policy);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

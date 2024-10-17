@@ -23,4 +23,15 @@ public:
     MCAPI explicit StructurePoolActorPredicateActorMatch(std::string actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string actor);
+
+    MCAPI bool test$(std::string const& actor) const;
+
+    // NOLINTEND
 };

@@ -25,4 +25,17 @@ public:
     MCAPI std::string getPublicKey() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& publicKey, ::Crypto::Asymmetric::System system);
+
+    MCAPI void dtor$();
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };

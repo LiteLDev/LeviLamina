@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/PackAccessAssetGenerationResult.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
@@ -45,7 +45,7 @@ public:
     virtual bool isTrusted() const;
 
     // vIndex: 7
-    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
     // vIndex: 8
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;
@@ -54,7 +54,7 @@ public:
     virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
 
     // vIndex: 10
-    virtual bool deleteAsset(class Core::Path const&);
+    virtual bool deleteAsset(class Core::Path const& packRelativePath);
 
     // vIndex: 11
     virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
@@ -92,6 +92,59 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const& packRelativePath, std::string& result) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        Bedrock::NotNullNonOwnerPtr<class IFileAccess> const& fileAccess,
+        class ResourceLocation const&                         location,
+        class Core::Path const&                               subPath
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
+
+    MCAPI bool deleteAsset$(class Core::Path const& packRelativePath);
+
+    MCAPI void forEachIn$(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback,
+        bool                                         recurseAnyways
+    ) const;
+
+    MCAPI bool getAsset$(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+
+    MCAPI class ResourceLocation const& getPackLocation$() const;
+
+    MCAPI std::string const& getPackName$() const;
+
+    MCAPI uint64 getPackSize$() const;
+
+    MCAPI ::PackAccessStrategyType getStrategyType$() const;
+
+    MCAPI class Core::PathBuffer<std::string> const& getSubPath$() const;
+
+    MCAPI bool hasAsset$(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCAPI bool hasFolder$(class Core::Path const& packRelativePath) const;
+
+    MCAPI bool isTrusted$() const;
+
+    MCAPI bool isWritable$() const;
+
+    MCAPI class ContentIdentity readContentIdentity$() const;
+
+    MCAPI void setIsTrusted$(bool newValue);
+
+    MCAPI void unload$();
+
+    MCAPI bool writeAsset$(class Core::Path const& packRelativePath, std::string const& fileContent);
 
     // NOLINTEND
 };

@@ -49,11 +49,37 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const THORNS_CHANCE_PER_LEVEL;
+    MCAPI static void** vftable();
 
-    MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
+
+    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+
+    MCAPI void doPostHurt$(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
+
+    MCAPI int getDamageProtection$(int level, class ActorDamageSource const& source) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isProtectionEnchant$() const;
+
+    MCAPI static float const& THORNS_CHANCE_PER_LEVEL();
+
+    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
 
     // NOLINTEND
 };

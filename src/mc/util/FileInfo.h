@@ -21,4 +21,13 @@ public:
     MCAPI ~FileInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Core::Path _filePath, int _fileSize, std::string _fileHash);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

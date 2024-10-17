@@ -4,13 +4,13 @@
 #include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/ecs/gamerefs_entity/IEntityRegistryOwner.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -98,7 +98,11 @@ public:
 
     MCAPI void configureGameTest(class Level& level, class Experiments const& experiments);
 
-    MCAPI void disconnectClient(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&);
+    MCAPI void disconnectClient(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage
+    );
 
     MCAPI void earlyShutdownMainthread();
 
@@ -126,7 +130,23 @@ public:
 
     MCAPI bool hasCommands();
 
-    MCAPI bool hostMultiplayer(std::string const& serverName, std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>>, class Player* localPlayer, class mce::UUID const& localPlayerId, std::unique_ptr<class NetEventCallback> clientNetworkHandler, int maxChunkRadius, bool shouldAnnounce, bool requireTrustedAuthentication, std::vector<std::string> const& extraTrustedKeys, std::string serverType, struct ConnectionDefinition const& connectionDefinition, std::unordered_map<struct PackIdVersion, std::string> const& packIdToContentKey, class Scheduler& scheduler, class TextFilteringProcessor* textFilteringProcessor, struct NetworkPermissions const&);
+    MCAPI bool hostMultiplayer(
+        std::string const&                                                           serverName,
+        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
+        class Player*                                                                localPlayer,
+        class mce::UUID const&                                                       localPlayerId,
+        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
+        int                                                                          maxChunkRadius,
+        bool                                                                         shouldAnnounce,
+        bool                                                                         requireTrustedAuthentication,
+        std::vector<std::string> const&                                              extraTrustedKeys,
+        std::string                                                                  serverType,
+        struct ConnectionDefinition const&                                           connectionDefinition,
+        std::unordered_map<struct PackIdVersion, std::string> const&                 packIdToContentKey,
+        class Scheduler&                                                             scheduler,
+        class TextFilteringProcessor*                                                textFilteringProcessor,
+        struct NetworkPermissions const&                                             networkPermissions
+    );
 
     MCAPI void init();
 
@@ -144,7 +164,7 @@ public:
 
     MCAPI bool update();
 
-    MCAPI static void _tryCatchupMovementTicks(class EntitySystems&, class EntityRegistry& registry);
+    MCAPI static void _tryCatchupMovementTicks(class EntitySystems& entitySystems, class EntityRegistry& registry);
 
     // NOLINTEND
 
@@ -153,6 +173,44 @@ public:
     MCAPI void _tryCatchupMovementTicks();
 
     MCAPI void tickSimtime(int nTick, int maxTick);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class IMinecraftApp&                                                app,
+        class GameCallbacks&                                                gameCallbacks,
+        class AllowList&                                                    allowList,
+        class PermissionsFile*                                              permissionsFile,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
+        std::chrono::seconds                                                maxPlayerIdleTime,
+        class IMinecraftEventing&                                           eventing,
+        class ClientOrServerNetworkSystemRef                                network,
+        class PacketSender&                                                 packetSender,
+        ::SubClientId                                                       clientSubId,
+        class Timer&                                                        simTimer,
+        class Timer&                                                        realTimer,
+        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
+        class ServerMetrics*                                                serverMetrics
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class StackRefResult<class EntityRegistry> getEntityRegistry$();
+
+    MCAPI class StackRefResult<class EntityRegistry const> getEntityRegistry$() const;
+
+    MCAPI bool getSimPaused$() const;
+
+    MCAPI bool isOnlineClient$() const;
+
+    MCAPI void setSimTimePause$(bool pause);
+
+    MCAPI void setSimTimeScale$(float scale);
 
     // NOLINTEND
 };

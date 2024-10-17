@@ -17,7 +17,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    MCAPI static void _doSimulatedPlayerPostAIStepSystem(
+        class StrictEntityContext const&,
+        class ActorOwnerComponent& actorOwnerComponent
+    );
 
     // NOLINTEND
 };

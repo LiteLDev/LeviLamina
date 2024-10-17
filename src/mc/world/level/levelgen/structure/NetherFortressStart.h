@@ -20,4 +20,13 @@ public:
     MCAPI NetherFortressStart(class Random& random, short seaLevel, int chunkX, int chunkZ);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Random& random, short seaLevel, int chunkX, int chunkZ);
+
+    // NOLINTEND
 };

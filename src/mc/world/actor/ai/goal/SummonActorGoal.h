@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SummonActorGoal : public ::Goal {
@@ -43,16 +43,37 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _createSpellEntity(
-        float                            x,
-        float                            z,
-        float                            minY,
-        float                            maxY,
-        float                            angle,
+        float x,
+        float z,
+        float minY,
+        float maxY,
+        float,
         int                              lifespan,
         struct ActorDefinitionIdentifier summonType
     ) const;
 
     MCAPI int _selectBestSpell(class Actor& target) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& caster, std::vector<struct SummonSpellData> const& spellTypes);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

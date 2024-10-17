@@ -11,7 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static class Vec3 mDummy;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Vec3& mDummy();
 
     // NOLINTEND
 };

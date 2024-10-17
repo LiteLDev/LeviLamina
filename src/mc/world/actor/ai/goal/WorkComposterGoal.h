@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/WorkGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class WorkComposterGoal : public ::WorkGoal {
 public:
@@ -32,6 +32,17 @@ public:
     MCAPI bool _tryCompostItems();
 
     MCAPI bool _tryEmptyComposter();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void start$();
+
+    MCAPI void useWorkstation$();
 
     // NOLINTEND
 };

@@ -29,4 +29,21 @@ public:
     MCAPI explicit PackSettingsError(std::vector<std::string> const& errorParam);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::vector<std::string> const& errorParam);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unordered_map<int, std::string> const& getEventErrorMessageMap$() const;
+
+    MCAPI std::string getLocErrorMessage$() const;
+
+    MCAPI std::unordered_map<int, std::string> const& getLocErrorMessageMap$() const;
+
+    // NOLINTEND
 };

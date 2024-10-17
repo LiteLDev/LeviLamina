@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AnimationLoopMode.h"
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/world/actor/animation/AnimationLoopMode.h"
 
 class ActorSkeletalAnimation {
 public:
@@ -47,7 +47,7 @@ public:
 
     MCAPI void setLoopDelay(class ExpressionNode const& expression);
 
-    MCAPI void setLoopMode(::AnimationLoopMode);
+    MCAPI void setLoopMode(::AnimationLoopMode loopMode);
 
     MCAPI void setShouldOverridePreviousAnimation(bool overridePreviousAnimation);
 
@@ -60,6 +60,15 @@ public:
     MCAPI void sortSoundEffectEvents();
 
     MCAPI ~ActorSkeletalAnimation();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& name, std::string const& sourceFilePathWithExtension);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

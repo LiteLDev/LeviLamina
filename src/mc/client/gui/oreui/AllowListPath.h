@@ -16,6 +16,13 @@ public:
     MCAPI ~AllowListPath();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace OreUI

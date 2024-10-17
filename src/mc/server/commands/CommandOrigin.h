@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -142,9 +142,52 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class NetworkIdentifier sUnknownSource;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void _setUUID$(class mce::UUID const& uuid);
+
+    MCAPI bool canUseAbility$(::AbilitiesIndex ability) const;
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::optional<class BlockPos> getCursorHitBlockPos$() const;
+
+    MCAPI std::optional<class Vec3> getCursorHitPos$() const;
+
+    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+
+    MCAPI struct CommandOriginIdentity getIdentity$() const;
+
+    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+
+    MCAPI class NetworkIdentifier const& getSourceId$() const;
+
+    MCAPI ::SubClientId getSourceSubId$() const;
+
+    MCAPI class mce::UUID const& getUUID$() const;
+
+    MCAPI void handleCommandOutputCallback$(int, std::string&&) const;
+
+    MCAPI bool hasChatPerms$() const;
+
+    MCAPI bool hasTellPerms$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isWorldBuilder$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI struct CommandOriginData toCommandOriginData$() const;
+
+    MCAPI void updateValues$();
+
+    MCAPI static class NetworkIdentifier& sUnknownSource();
 
     // NOLINTEND
 };

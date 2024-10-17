@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ErrorBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -16,11 +16,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ScriptUnloadedChunksError(uint64, uint64);
+    MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
 
     MCAPI ~ScriptUnloadedChunksError();
 
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(uint64 unloadedChunks, uint64 totalChunks);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -36,4 +36,15 @@ public:
     virtual ushort getRuntimeTypeId() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ushort getRuntimeTypeId$() const;
+
+    // NOLINTEND
 };

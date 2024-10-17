@@ -24,4 +24,11 @@ public:
     MCAPI void pushChild(std::string const& tagName);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

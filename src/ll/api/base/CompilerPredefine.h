@@ -74,6 +74,10 @@
 #define LL_CURRENT_FUNCTION __builtin_FUNCTION()
 #endif
 
+#ifndef LL_CURRENT_FUNCSIG
+#define LL_CURRENT_FUNCSIG __builtin_FUNCSIG()
+#endif
+
 #ifndef LL_MACHINE_PAUSE
 #define LL_MACHINE_PAUSE _mm_pause()
 #endif
@@ -233,7 +237,7 @@ consteval bool virtualDetector() noexcept {
     return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
 }
 #if LL_HAS_CXX23
-using std_optional_construct_from_invoke_tag = std::_Construct_from_invoke_result_tag;
+using stdOptionalConstructFromInvokeTag = std::_Construct_from_invoke_result_tag;
 #endif
 
 using FileHandleT = void*;
@@ -295,7 +299,7 @@ using FileHandleT = void*;
 #endif
 
 #ifndef LL_CURRENT_COLUMN
-#define LL_CURRENT_COLUMN 0
+#define LL_CURRENT_COLUMN (0)
 #endif
 
 #ifndef LL_CURRENT_FILE
@@ -306,12 +310,16 @@ using FileHandleT = void*;
 #define LL_CURRENT_FUNCTION __builtin_FUNCTION()
 #endif
 
+#ifndef LL_CURRENT_FUNCSIG
+#define LL_CURRENT_FUNCSIG __builtin_FUNCTION()
+#endif
+
 namespace ll::internal {
 
 [[nodiscard]] void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
 #if LL_HAS_CXX23
-using std_optional_construct_from_invoke_tag = std::__optional_construct_from_invoke_tag;
+using stdOptionalConstructFromInvokeTag = std::__optional_construct_from_invoke_tag;
 #endif
 
 using FileHandleT = int;

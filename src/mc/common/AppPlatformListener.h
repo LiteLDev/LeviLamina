@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/OperationMode.h"
+#include "mc/deps/core/platform/OperationMode.h"
 
 class AppPlatformListener {
 public:
@@ -76,11 +76,60 @@ public:
     // vIndex: 19
     virtual void onClipboardPaste(std::string const&);
 
-    MCAPI explicit AppPlatformListener(bool);
+    MCAPI explicit AppPlatformListener(bool doInit);
 
     MCAPI void initListener(float priority);
 
     MCAPI void terminate();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(bool doInit);
+
+    MCAPI void dtor$();
+
+    MCAPI void onAppFocusGained$();
+
+    MCAPI void onAppFocusLost$();
+
+    MCAPI void onAppPaused$();
+
+    MCAPI void onAppPreSuspended$();
+
+    MCAPI void onAppResumed$();
+
+    MCAPI void onAppSurfaceCreated$();
+
+    MCAPI void onAppSurfaceDestroyed$();
+
+    MCAPI void onAppSuspended$();
+
+    MCAPI void onAppTerminated$();
+
+    MCAPI void onAppUnpaused$();
+
+    MCAPI void onClipboardCopy$(std::string const&);
+
+    MCAPI void onClipboardPaste$(std::string const&);
+
+    MCAPI void onDeviceLost$();
+
+    MCAPI void onLowMemory$();
+
+    MCAPI void onOperationModeChanged$(::OperationMode operationMode);
+
+    MCAPI void onPerformanceModeChanged$(bool boost);
+
+    MCAPI void onPushNotificationReceived$(class PushNotificationMessage const& msg);
+
+    MCAPI void onResizeBegin$();
+
+    MCAPI void onResizeEnd$();
 
     // NOLINTEND
 };

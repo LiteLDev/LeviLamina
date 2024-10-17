@@ -9,14 +9,14 @@
 #include "mc/server/commands/WildcardCommandSelector.h"
 
 // auto generated inclusion list
-#include "mc/common/InvertableFilter.h"
-#include "mc/deps/core/common/bedrock/typeid_t.h"
-#include "mc/enums/SemanticConstraint.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandStatus.h"
-#include "mc/server/commands/flags/CommandTypeFlag.h"
+#include "mc/server/commands/CommandTypeFlag.h"
+#include "mc/server/commands/SemanticConstraint.h"
+#include "mc/world/actor/selectors/InvertableFilter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -172,6 +172,13 @@ public:
         MCAPI ~ChainedSubcommand();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct Enum {
@@ -184,6 +191,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~Enum();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -251,6 +265,17 @@ public:
         MCAPI struct CommandRegistry::LexicalToken& operator=(struct CommandLexer::Token const&);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct CommandRegistry::Overload&&);
+
+        MCAPI void* ctor$(class CommandVersion, std::unique_ptr<class Command> (*)());
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class ParamSymbols {
@@ -286,6 +311,13 @@ public:
         MCAPI ParamSymbols();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        // NOLINTEND
     };
 
     struct ParseRule {
@@ -310,6 +342,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ParseTable();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
 
         // NOLINTEND
     };
@@ -353,6 +392,15 @@ public:
         MCAPI Signature(struct CommandRegistry::Signature&&);
 
         MCAPI ~Signature();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct CommandRegistry::Signature&&);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -406,6 +454,15 @@ public:
         MCAPI bool _parse(std::string const& in);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class CommandRegistry const& registry, int version);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct RegistryState {
@@ -432,6 +489,13 @@ public:
         MCAPI ~RegistryState();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct SoftEnum {
@@ -442,6 +506,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI SoftEnum(std::string const&, std::vector<std::string>);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(std::string const& name, std::vector<std::string> values);
 
         // NOLINTEND
     };
@@ -529,7 +600,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandRegistry(bool);
+    MCAPI explicit CommandRegistry(bool isEduMode);
 
     MCAPI void addEnumValueConstraints(
         std::string const&              enumName,
@@ -548,17 +619,17 @@ public:
 
     MCAPI bool enabledInEditor(std::string const& nameIn) const;
 
-    MCAPI void finalizeChainedSubcommandOverloadRules(char const*);
+    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
     MCAPI void fireCommandParseTableTelemetry(class IMinecraftEventing const& eventing, bool isServer) const;
 
-    MCAPI class Json::Value generateDocumentationMetadata(bool) const;
+    MCAPI class Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
 
     MCAPI std::vector<std::string> getAliases(std::string const& command) const;
 
-    MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const&) const;
+    MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const& origin) const;
 
-    MCAPI std::string getCommandName(std::string const& commandLine) const;
+    MCAPI std::string getCommandName(std::string const&) const;
 
     MCAPI struct CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(class CommandOrigin const& origin, std::string const& commandName) const;
@@ -595,58 +666,38 @@ public:
 
     MCAPI ~CommandRegistry();
 
-    MCAPI static char const* CODE_STATUS_PROPERTY_NAME;
-
-    MCAPI static char const* COMMAND_NAME_ENUM_NAME;
-
-    MCAPI static char const* FUNCTION_NAME_SOFTENUM_NAME;
-
-    MCAPI static char const* HASITEM_PARAM_DATA;
-
-    MCAPI static char const* HASITEM_PARAM_ITEM;
-
-    MCAPI static char const* HASITEM_PARAM_LOCATION;
-
-    MCAPI static char const* HASITEM_PARAM_QUANTITY;
-
-    MCAPI static char const* HASITEM_PARAM_SLOT;
-
-    MCAPI static char const* HASPERMISSIONCATEGORY_ENUM_CAMERA;
-
-    MCAPI static char const* HASPERMISSIONCATEGORY_ENUM_MOVEMENT;
-
-    MCAPI static char const* HASPERMISSIONSTATE_ENUM_DISABLED;
-
-    MCAPI static char const* HASPERMISSIONSTATE_ENUM_ENABLED;
-
-    MCAPI static char const* HASPROPERTY_PARAM_PROPERTY_NAME;
-
-    MCAPI static char const* TAG_VALUES_SOFTENUM_NAME;
-
-    MCAPI static char const* UNLOCKABLE_RECIPES_SOFTENUM_NAME;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI class CommandRegistry::Symbol
-    _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<std::string, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, ParseFn, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        std::string const&                               name,
+        std::vector<std::pair<std::string, uint>> const& strings,
+        class Bedrock::typeid_t<class CommandRegistry>   type,
+        ParseFn                                          parse,
+        struct CommandRegistry::Signature*               signature
+    );
 
-    MCAPI class CommandRegistry::Symbol
-    _addChainedSubcommandValuesInternal(std::string const&, std::vector<std::pair<uint64, uint>> const&, class Bedrock::typeid_t<class CommandRegistry>, ParseFn, struct CommandRegistry::Signature*);
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        std::string const&                             name,
+        std::vector<std::pair<uint64, uint>> const&    values,
+        class Bedrock::typeid_t<class CommandRegistry> type,
+        ParseFn                                        parse,
+        struct CommandRegistry::Signature*             signature
+    );
 
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
         std::string const&                                 name,
         std::vector<std::pair<std::string, uint64>> const& strings,
         class Bedrock::typeid_t<class CommandRegistry>     type,
-        ParseFn
+        ParseFn                                            parse
     );
 
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
         std::string const&                             name,
         std::vector<std::pair<uint64, uint64>> const&  values,
         class Bedrock::typeid_t<class CommandRegistry> type,
-        ParseFn
+        ParseFn                                        parse
     );
 
     MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();
@@ -662,7 +713,7 @@ public:
         ::SemanticConstraint                 requiredConstraints
     ) const;
 
-    MCAPI void addChainedSubcommandValuesToExisting(uint, std::vector<std::pair<uint64, uint>> const&);
+    MCAPI void addChainedSubcommandValuesToExisting(uint index, std::vector<std::pair<uint64, uint>> const& values);
 
     MCAPI void addEnumValuesToExisting(uint index, std::vector<std::pair<uint64, uint64>> const& values);
 
@@ -698,9 +749,9 @@ public:
         uint64                                         count
     );
 
-    MCAPI void buildParseTable(uint) const;
+    MCAPI void buildParseTable(uint version) const;
 
-    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable&, uint) const;
+    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable& table, uint version) const;
 
     MCAPI class CommandRegistry::Symbol buildRules(
         struct CommandRegistry::Signature&                                   signature,
@@ -722,9 +773,9 @@ public:
         std::vector<std::string>&                 errorParams
     ) const;
 
-    MCAPI std::string describe(class CommandParameterData const&) const;
+    MCAPI std::string describe(class CommandParameterData const& param) const;
 
-    MCAPI std::string describe(class CommandRegistry::Symbol) const;
+    MCAPI std::string describe(class CommandRegistry::Symbol symbol) const;
 
     MCAPI std::string describe(
         struct CommandRegistry::Signature const& command,
@@ -749,7 +800,8 @@ public:
 
     MCAPI uint64 getEnumData(struct CommandRegistry::ParseToken const& token) const;
 
-    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const&) const;
+    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const& token
+    ) const;
 
     MCAPI bool isValid(class CommandRegistry::Symbol symbol) const;
 
@@ -779,13 +831,13 @@ public:
     MCAPI void
     registerOverloadInternal(struct CommandRegistry::Signature& signature, struct CommandRegistry::Overload& overload);
 
-    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature&);
+    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature& signature);
 
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature& signature);
 
-    MCAPI std::string symbolToString(class CommandRegistry::Symbol) const;
+    MCAPI std::string symbolToString(class CommandRegistry::Symbol symbol) const;
 
-    MCAPI static std::string _removeStringQuotes(std::string const& str);
+    MCAPI static std::string _removeStringQuotes(std::string const&);
 
     MCAPI static void addNonEpsilonSymbols(
         entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher>&       destination,
@@ -844,14 +896,53 @@ public:
         std::vector<std::string>&                 errorParams
     );
 
-    MCAPI static bool
-    readString(std::string&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
+    MCAPI static bool readString(
+        std::string&                              value,
+        struct CommandRegistry::ParseToken const& token,
+        std::string&                              error,
+        std::vector<std::string>&                 errorParams
+    );
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::pair<ParseFn, class CommandRegistry::Symbol> const ParseRuleSymbols[];
+    MCAPI void* ctor$(bool isEduMode);
+
+    MCAPI void dtor$();
+
+    MCAPI static char const* const& CODE_STATUS_PROPERTY_NAME();
+
+    MCAPI static char const* const& COMMAND_NAME_ENUM_NAME();
+
+    MCAPI static char const* const& FUNCTION_NAME_SOFTENUM_NAME();
+
+    MCAPI static char const* const& HASITEM_PARAM_DATA();
+
+    MCAPI static char const* const& HASITEM_PARAM_ITEM();
+
+    MCAPI static char const* const& HASITEM_PARAM_LOCATION();
+
+    MCAPI static char const* const& HASITEM_PARAM_QUANTITY();
+
+    MCAPI static char const* const& HASITEM_PARAM_SLOT();
+
+    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_CAMERA();
+
+    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_MOVEMENT();
+
+    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_DISABLED();
+
+    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_ENABLED();
+
+    MCAPI static char const* const& HASPROPERTY_PARAM_PROPERTY_NAME();
+
+    MCAPI static ::ll::CArrayT<std::pair<ParseFn, class CommandRegistry::Symbol> const>& ParseRuleSymbols();
+
+    MCAPI static char const* const& TAG_VALUES_SOFTENUM_NAME();
+
+    MCAPI static char const* const& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
 
     // NOLINTEND
 };

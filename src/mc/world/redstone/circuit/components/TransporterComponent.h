@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class TransporterComponent : public ::BaseCircuitComponent {
 public:
@@ -41,6 +41,33 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
     MCAPI TransporterComponent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool addSource$(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
+
+    MCAPI bool
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
 
     // NOLINTEND
 };

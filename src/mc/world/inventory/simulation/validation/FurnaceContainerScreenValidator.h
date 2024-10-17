@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
+#include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 class FurnaceContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
@@ -22,6 +22,20 @@ public:
     postCommitItemRemoved(::ContainerEnumName containerEnumName, int slot, class ItemStack const& item);
 
     MCAPI FurnaceContainerScreenValidator();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class ContainerValidationCommitObject>
+          postCommitItemRemoved$(::ContainerEnumName containerEnumName, int slot, class ItemStack const& item);
 
     // NOLINTEND
 };

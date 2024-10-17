@@ -25,4 +25,13 @@ public:
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

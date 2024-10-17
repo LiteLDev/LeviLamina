@@ -7,8 +7,8 @@
 #include "mc/resources/PackError.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/resources/PackErrorType.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -71,6 +71,19 @@ public:
     MCAPI bool wasUpgraded() const;
 
     MCAPI ~PackReport();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class PackReport&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class PackReport const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

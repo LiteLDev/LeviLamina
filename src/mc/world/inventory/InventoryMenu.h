@@ -31,4 +31,29 @@ public:
     MCAPI InventoryMenu(class Player& player, class Container* container);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainerContentChangeListener();
+
+    MCAPI static void** vftableForIContainerManager();
+
+    MCAPI void* ctor$(class Player& player, class Container* container);
+
+    MCAPI void dtor$();
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+
+    MCAPI class ItemStack const& getSlot$(int slot) const;
+
+    MCAPI void removeSlot$(int slot, int count);
+
+    MCAPI void serverInitItemStackIds$();
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 class CommandVersion {
 public:
@@ -19,7 +19,14 @@ public:
 
     MCAPI static ::CurrentCmdVersion const getVersionMapping(class SemVersion const& engineVersion);
 
-    MCAPI static int const CurrentVersion;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int from, int to);
+
+    MCAPI static int const& CurrentVersion();
 
     // NOLINTEND
 };

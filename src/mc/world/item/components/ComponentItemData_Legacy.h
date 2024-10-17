@@ -20,4 +20,15 @@ public:
     MCAPI ~ComponentItemData_Legacy();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ComponentItemData_Legacy&&);
+
+    MCAPI void* ctor$(struct ComponentItemData_Legacy const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

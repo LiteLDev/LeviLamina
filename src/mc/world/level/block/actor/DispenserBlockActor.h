@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class DispenserBlockActor : public ::RandomizableBlockActorContainer {
 public:
@@ -60,6 +60,53 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI void initItems();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void* ctor$(class BlockPos pos);
+
+    MCAPI void* ctor$(class BlockPos pos, ::BlockActorType type);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onMove$();
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player& player);
+
+    MCAPI void stopOpen$(class Player&);
 
     // NOLINTEND
 };

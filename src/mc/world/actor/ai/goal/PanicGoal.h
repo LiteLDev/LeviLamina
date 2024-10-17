@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class PanicGoal : public ::Goal {
@@ -54,6 +54,38 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _tryGeneratePathEnd();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                      mob,
+        float                           speedMultiplier,
+        bool                            ignoreMobDamage,
+        ::Puv::Legacy::LevelSoundEvent  sound,
+        struct FloatRange               soundIntervalRange,
+        bool                            forceUse,
+        bool                            preferWater,
+        std::vector<::ActorDamageCause> damageCauses
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

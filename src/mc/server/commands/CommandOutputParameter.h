@@ -55,4 +55,43 @@ public:
     MCAPI class CommandOutputParameter& operator=(class CommandOutputParameter&& rhs);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::vector<std::string> const& strings);
+
+    MCAPI void* ctor$(class Actor const& entity);
+
+    MCAPI void* ctor$(class Actor const* entity);
+
+    MCAPI void* ctor$(class BlockPos value);
+
+    MCAPI void* ctor$(char const* text);
+
+    MCAPI void* ctor$(class CommandOutputParameter&& rhs);
+
+    MCAPI void* ctor$(float value);
+
+    MCAPI void* ctor$(int value);
+
+    MCAPI void* ctor$(::CommandOutputParameter::NoCountType);
+
+    MCAPI void* ctor$(bool value);
+
+    MCAPI void* ctor$(class CommandSelectorResults<class Actor> const& entities);
+
+    MCAPI void* ctor$(class CommandSelectorResults<class Player> const& players);
+
+    MCAPI void* ctor$(std::string const& text);
+
+    MCAPI void* ctor$(std::vector<class Actor const*> const& entities);
+
+    MCAPI void* ctor$(std::vector<class Player const*> const& players);
+
+    MCAPI void* ctor$(class CommandOutputParameter const& rhs);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

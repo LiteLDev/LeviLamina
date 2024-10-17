@@ -7,9 +7,9 @@
 #include "mc/network/packet/PotionMixDataEntry.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class CraftingDataPacket : public ::Packet {
 public:
@@ -42,7 +42,25 @@ public:
 
     MCAPI CraftingDataPacket();
 
-    MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const&, bool);
+    MCAPI static std::unique_ptr<class CraftingDataPacket>
+    prepareFromRecipes(class Recipes const& levelRecipes, bool onlyCraftingRecipes);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

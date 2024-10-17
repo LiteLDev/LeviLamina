@@ -20,7 +20,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerAttackEventHook,
     HookPriority::Normal,
     Player,
-    "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
+    &Player::attack$,
     bool,
     Actor&                  ac,
     ActorDamageCause const& cause

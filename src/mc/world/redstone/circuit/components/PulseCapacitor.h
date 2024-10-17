@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class PulseCapacitor : public ::CapacitorComponent {
 public:
@@ -43,6 +43,32 @@ public:
     virtual uchar getPoweroutDirection() const;
 
     MCAPI PulseCapacitor();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI uchar getPoweroutDirection$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI void setStrength$(int strength);
 
     // NOLINTEND
 };

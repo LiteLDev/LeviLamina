@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
 class ItemEnchants {
@@ -54,6 +54,17 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI std::unique_ptr<class ListTag> _toList() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int slot);
+
+    MCAPI void* ctor$(int slot, class ListTag const& tag);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

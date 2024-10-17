@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class BeehiveBlockActor : public ::BlockActor {
@@ -25,6 +25,14 @@ public:
         // NOLINTBEGIN
         MCAPI
         Occupant(struct ActorDefinitionIdentifier actorIdentifier, class CompoundTag saveData, uint ticksLeftToStay);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void*
+        ctor$(struct ActorDefinitionIdentifier actorIdentifier, class CompoundTag saveData, uint ticksLeftToStay);
 
         // NOLINTEND
     };
@@ -57,8 +65,6 @@ public:
 
     MCAPI bool tryAdmit(class Actor& actor);
 
-    MCAPI static uint const MAX_OCCUPANCY;
-
     // NOLINTEND
 
     // private:
@@ -69,6 +75,21 @@ public:
     MCAPI bool _tickOccupant(class BlockSource& region, struct BeehiveBlockActor::Occupant& occupant);
 
     MCAPI void _trySpawnBees(class BlockSource& region);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static uint const& MAX_OCCUPANCY();
 
     // NOLINTEND
 };

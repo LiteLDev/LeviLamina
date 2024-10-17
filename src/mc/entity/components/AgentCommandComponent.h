@@ -26,4 +26,11 @@ public:
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command> command);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

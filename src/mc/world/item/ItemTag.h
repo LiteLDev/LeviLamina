@@ -9,4 +9,11 @@ public:
     MCAPI ~ItemTag();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

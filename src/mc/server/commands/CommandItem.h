@@ -18,9 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandItem(uint64);
+    MCAPI explicit CommandItem(uint64 versionId);
 
-    MCAPI CommandItem(int id, short version, bool);
+    MCAPI CommandItem(int id, short version, bool overrideAux);
 
     MCAPI std::optional<class ItemInstance>
           createInstance(int count, int aux, class CommandOutput& output, bool requireExactAux) const;
@@ -30,6 +30,17 @@ public:
     MCAPI explicit operator bool() const;
 
     MCAPI explicit operator uint64() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int id, short version, bool overrideAux);
+
+    MCAPI void* ctor$(uint64 versionId);
 
     // NOLINTEND
 };

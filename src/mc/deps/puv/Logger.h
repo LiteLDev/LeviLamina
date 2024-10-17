@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/ResultCode.h"
-#include "mc/deps/cereal/SerializerContext.h"
 #include "mc/deps/puv/LoggerIterator.h"
+#include "mc/external/cereal/ResultCode.h"
+#include "mc/external/cereal/SerializerContext.h"
 
 namespace Puv {
 
@@ -34,6 +34,13 @@ public:
         MCAPI ~UpgradeLogEntry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct ValidationLogEntry {
@@ -46,6 +53,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~ValidationLogEntry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -63,42 +77,49 @@ public:
             std::_Vector_val<std::_Simple_types<struct cereal::SerializerContext::LogEntry>>>>,
         class Puv::LoggerIterator<std::_Vector_const_iterator<
             std::_Vector_val<std::_Simple_types<struct cereal::SerializerContext::LogEntry>>>>>
-        getParseLog(::cereal::ResultCode) const;
+    getParseLog(::cereal::ResultCode mask) const;
 
     MCAPI entt::iterable_adaptor<
         class Puv::LoggerIterator<
             std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct Puv::Logger::UpgradeLogEntry>>>>,
         class Puv::LoggerIterator<
             std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct Puv::Logger::UpgradeLogEntry>>>>>
-        getUpgradeLog(::Puv::Logger::UpgradeResultCode) const;
+    getUpgradeLog(::Puv::Logger::UpgradeResultCode mask) const;
 
     MCAPI entt::iterable_adaptor<
         class Puv::LoggerIterator<
             std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct Puv::Logger::ValidationLogEntry>>>>,
         class Puv::LoggerIterator<
             std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct Puv::Logger::ValidationLogEntry>>>>>
-        getValidationLog(::Puv::Logger::ValidationResultCode) const;
+    getValidationLog(::Puv::Logger::ValidationResultCode mask) const;
 
     MCAPI bool hasErrors() const;
 
-    MCAPI void log(::Puv::Logger::ValidationResultCode, std::string);
+    MCAPI void log(::Puv::Logger::ValidationResultCode res, std::string msg);
 
     MCAPI void
-        log(::cereal::ResultCode,
-            std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>,
-            std::string);
+    log(::cereal::ResultCode                                                          res,
+        std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>> path,
+        std::string                                                                   msg);
 
     MCAPI void
-        log(::Puv::Logger::UpgradeResultCode,
-            std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>,
-            std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>>,
-            std::string);
+    log(::Puv::Logger::UpgradeResultCode                                              res,
+        std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>> src,
+        std::vector<std::pair<::cereal::SerializerContext::ContextType, std::string>> dst,
+        std::string                                                                   msg);
 
-    MCAPI void merge(class Puv::Logger);
+    MCAPI void merge(class Puv::Logger log);
 
     MCAPI class Puv::Logger& operator=(class Puv::Logger&&);
 
     MCAPI ~Logger();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -22,4 +22,13 @@ public:
     MCAPI static struct NpcDialogueButton parse(class Json::Value const& root, std::string const& fileName, int);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

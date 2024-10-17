@@ -5,9 +5,9 @@
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class NetworkChunkPublisherUpdatePacket : public ::Packet {
 public:
@@ -39,6 +39,27 @@ public:
     MCAPI NetworkChunkPublisherUpdatePacket();
 
     MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const& position, uint radius);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& position, uint radius);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

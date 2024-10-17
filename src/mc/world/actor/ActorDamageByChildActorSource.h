@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorCategory.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorType.h"
+#include "mc/network/packet/types/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorType.h"
 
 class ActorDamageByChildActorSource : public ::ActorDamageByActorSource {
 public:
@@ -48,6 +48,34 @@ public:
 
     MCAPI
     ActorDamageByChildActorSource(class Actor const& childActor, class Actor const& actor, ::ActorDamageCause cause);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Actor const& childActor, class Actor const& actor, ::ActorDamageCause cause);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+
+    MCAPI ::ActorCategory getDamagingEntityCategories$() const;
+
+    MCAPI bool getDamagingEntityIsCreative$() const;
+
+    MCAPI bool getDamagingEntityIsWorldBuilder$() const;
+
+    MCAPI ::ActorType getDamagingEntityType$() const;
+
+    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+
+    MCAPI std::pair<std::string, std::vector<std::string>>
+          getDeathMessage$(std::string deadName, class Actor* dead) const;
+
+    MCAPI bool isChildEntitySource$() const;
 
     // NOLINTEND
 };

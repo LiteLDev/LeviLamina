@@ -20,4 +20,17 @@ public:
     MCAPI ~AttributesComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct AttributesComponent&& other);
+
+    MCAPI void* ctor$(struct AttributesComponent const& other);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

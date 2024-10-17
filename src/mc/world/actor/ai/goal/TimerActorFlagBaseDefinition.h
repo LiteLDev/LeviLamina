@@ -18,7 +18,18 @@ public:
 
     MCAPI TimerActorFlagBaseDefinition();
 
-    MCAPI void initialize(class EntityContext&, class TimerActorFlagBaseGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class TimerActorFlagBaseGoal& goal) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

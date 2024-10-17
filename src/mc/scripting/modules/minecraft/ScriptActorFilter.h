@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -24,6 +24,19 @@ public:
     MCAPI ~ScriptActorFilter();
 
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptActorFilter> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptActorFilter&&);
+
+    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptActorFilter const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

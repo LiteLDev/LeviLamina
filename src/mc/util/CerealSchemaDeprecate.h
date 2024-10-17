@@ -23,11 +23,41 @@ public:
                                 rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
 
     // vIndex: 2
-    virtual void
-    upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator>&, class SemVersion const&)
-        const;
+    virtual void upgradeToNext(
+        rapidjson::GenericDocument<
+            rapidjson::UTF8<char>,
+            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+            rapidjson::CrtAllocator>& document,
+        class SemVersion const&       documentOriginalVersion
+    ) const;
 
-    MCAPI CerealSchemaDeprecate(class SemVersion, std::string const&, std::string const&);
+    MCAPI CerealSchemaDeprecate(
+        class SemVersion   deprecateVersion,
+        std::string const& schemaKey,
+        std::string const& jsonMemberName
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void*
+    ctor$(class SemVersion deprecateVersion, std::string const& schemaKey, std::string const& jsonMemberName);
+
+    MCAPI bool previousSchema$(rapidjson::GenericValue<
+                               rapidjson::UTF8<char>,
+                               rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&) const;
+
+    MCAPI void upgradeToNext$(
+        rapidjson::GenericDocument<
+            rapidjson::UTF8<char>,
+            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
+            rapidjson::CrtAllocator>& document,
+        class SemVersion const&       documentOriginalVersion
+    ) const;
 
     // NOLINTEND
 };

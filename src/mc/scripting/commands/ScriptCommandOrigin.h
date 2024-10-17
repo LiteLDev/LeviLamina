@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,17 +66,63 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     // vIndex: 26
-    virtual void handleCommandOutputCallback(int, std::string&&) const;
+    virtual void handleCommandOutputCallback(int successCount, std::string&& messages) const;
 
     // vIndex: 30
     virtual bool isValid() const;
 
     MCAPI ScriptCommandOrigin(
-        class ServerLevel& origin,
-        class Dimension*   dimension,
-        std::function<void(int, std::string&&)>,
+        class ServerLevel&                      origin,
+        class Dimension*                        dimension,
+        std::function<void(int, std::string&&)> outputCallback,
         std::optional<::CommandPermissionLevel> permissionLevel
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class ServerLevel&                      origin,
+        class Dimension*                        dimension,
+        std::function<void(int, std::string&&)> outputCallback,
+        std::optional<::CommandPermissionLevel> permissionLevel
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI void handleCommandOutputCallback$(int successCount, std::string&& messages) const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI bool isValid$() const;
 
     // NOLINTEND
 };

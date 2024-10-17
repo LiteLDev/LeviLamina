@@ -20,19 +20,28 @@ public:
 
     MCAPI ~PhotoStorage();
 
-    MCAPI static std::string const BOOKS_DIR;
-
-    MCAPI static std::string const MANIFEST_NAME;
-
-    MCAPI static std::string const PHOTOITEM_DIR;
-
-    MCAPI static std::string const PHOTO_DIR;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _readManifest();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Core::Path const& baseDir);
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& BOOKS_DIR();
+
+    MCAPI static std::string const& MANIFEST_NAME();
+
+    MCAPI static std::string const& PHOTOITEM_DIR();
+
+    MCAPI static std::string const& PHOTO_DIR();
 
     // NOLINTEND
 };

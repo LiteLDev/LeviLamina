@@ -3,7 +3,7 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerClickEvent.h"
 
-#include "mc/world/item/registry/ItemStack.h"
+#include "mc/world/item/ItemStack.h"
 
 namespace ll::event::inline player {
 

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,18 +31,49 @@ public:
     virtual ~RecordItem() = default;
 
     // vIndex: 3
-    virtual class RecordItem& setDescriptionId(std::string const&);
+    virtual class RecordItem& setDescriptionId(std::string const& descriptionId);
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string
+    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // vIndex: 103
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI RecordItem(std::string const&, int, struct cereal::ReflectionCtx&, ::Puv::Legacy::LevelSoundEvent);
+    MCAPI RecordItem(
+        std::string const&             name,
+        int                            id,
+        struct cereal::ReflectionCtx&  ctx,
+        ::Puv::Legacy::LevelSoundEvent soundEvent
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::string const&             name,
+        int                            id,
+        struct cereal::ReflectionCtx&  ctx,
+        ::Puv::Legacy::LevelSoundEvent soundEvent
+    );
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI class RecordItem& setDescriptionId$(std::string const& descriptionId);
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
 
     // NOLINTEND
 };

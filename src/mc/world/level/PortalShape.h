@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/PortalAxis.h"
 #include "mc/world/Facing.h"
+#include "mc/world/level/block/PortalAxis.h"
 
 class PortalShape {
 public:
@@ -29,7 +29,8 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI void removePortalBlocks(class WorldChangeTransaction& transaction, class BlockPos const&) const;
+    MCAPI void
+    removePortalBlocks(class WorldChangeTransaction& transaction, class BlockPos const& firstPortalPosition) const;
 
     MCAPI void setAxis(::PortalAxis axis);
 
@@ -43,6 +44,13 @@ public:
 
     MCAPI int
     _getDistanceUntilEdge(class BlockPos const& pos, ::Facing::Name direction, class BlockSource const& source) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockSource const& source, class BlockPos const& pos, ::PortalAxis axis);
 
     // NOLINTEND
 };

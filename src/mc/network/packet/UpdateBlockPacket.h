@@ -1,13 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BlockUpdateFlag.h"
 #include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class UpdateBlockPacket : public ::Packet {
 public:
@@ -15,6 +14,16 @@ public:
         Standard = 0,
         Extra    = 1,
         Count    = 2,
+    };
+    enum class BlockUpdateFlag : uchar {
+        None                = 0,
+        Neighbors           = 1 << 0,
+        Network             = 1 << 1,
+        NoGraphic           = 1 << 2,
+        Priority            = 1 << 3,
+        ForceNoticeListener = 1 << 4,
+        All                 = Neighbors | Network, // default value
+        AllPriority         = All | Priority,
     };
 
     static const bool          SHARE_WITH_HANDLER = true; // constant
@@ -43,6 +52,27 @@ public:
     MCAPI UpdateBlockPacket();
 
     MCAPI UpdateBlockPacket(class BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

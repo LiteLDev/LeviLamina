@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
 
 class ItemRegistryManager {
 public:
@@ -22,13 +22,24 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI explicit ScopedItemRegistry(class ItemRegistryRef);
+        MCAPI explicit ScopedItemRegistry(class ItemRegistryRef registryRef);
 
         MCAPI explicit ScopedItemRegistry(std::weak_ptr<class ItemRegistry> registry);
 
-        MCAPI void construct(class ItemRegistryRef);
+        MCAPI void construct(class ItemRegistryRef registryRef);
 
         MCAPI ~ScopedItemRegistry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class ItemRegistryRef registryRef);
+
+        MCAPI void* ctor$(std::weak_ptr<class ItemRegistry> registry);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -45,13 +56,14 @@ public:
 
     MCAPI static void resetItemRegistry();
 
-    MCAPI static void setItemRegistry(class ItemRegistryRef);
+    MCAPI static void setItemRegistry(class ItemRegistryRef registryRef);
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class ItemRegistry>> mThreadLocalRegistry;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class ItemRegistry>>& mThreadLocalRegistry();
 
     // NOLINTEND
 };

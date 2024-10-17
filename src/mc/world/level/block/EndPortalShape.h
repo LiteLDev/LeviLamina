@@ -20,4 +20,13 @@ public:
     MCAPI ~EndPortalShape();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockSource& region, class BlockPos pos);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

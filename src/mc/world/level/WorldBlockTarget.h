@@ -5,8 +5,8 @@
 #include "mc/world/level/WorldGenContext.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
-#include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
 class WorldBlockTarget : public ::IBlockWorldGenAPI {
 public:
@@ -48,7 +48,7 @@ public:
     fetchBlocksInBox(class BoundingBox const& box, std::function<bool(class Block const&)> predicate);
 
     // vIndex: 8
-    virtual bool hasBiomeTag(uint64, class BlockPos const& pos) const;
+    virtual bool hasBiomeTag(uint64 tagNameHash, class BlockPos const& pos) const;
 
     // vIndex: 9
     virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
@@ -107,6 +107,72 @@ public:
     virtual void disableBlockSimple();
 
     MCAPI WorldBlockTarget(class BlockSource& region, struct WorldGenContext const& context);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockSource& region, struct WorldGenContext const& context);
+
+    MCAPI void dtor$();
+
+    MCAPI bool apply$() const;
+
+    MCAPI bool canBeBuiltOver$(class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool canGetChunk$() const;
+
+    MCAPI bool canSurvive$(class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void disableBlockSimple$();
+
+    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
+          fetchBlocksInBox$(class BoundingBox const& box, std::function<bool(class Block const&)> predicate);
+
+    MCAPI class Biome const* getBiome$(class BlockPos const& pos) const;
+
+    MCAPI class Block const& getBlock$(class BlockPos const& pos) const;
+
+    MCAPI class Block const& getBlockNoBoundsCheck$(class BlockPos const& pos) const;
+
+    MCAPI class LevelChunk* getChunk$(class ChunkPos const& pos);
+
+    MCAPI struct WorldGenContext const& getContext$();
+
+    MCAPI class Block const& getExtraBlock$(class BlockPos const& pos) const;
+
+    MCAPI short getHeightmap$(int x, int z);
+
+    MCAPI class LevelData const& getLevelData$() const;
+
+    MCAPI short getLocalWaterLevel$(class BlockPos const& pos) const;
+
+    MCAPI short getMaxHeight$() const;
+
+    MCAPI short getMinHeight$() const;
+
+    MCAPI bool hasBiomeTag$(uint64 tagNameHash, class BlockPos const& pos) const;
+
+    MCAPI bool isInBounds$(class Pos const& pos) const;
+
+    MCAPI bool isLegacyLevel$();
+
+    MCAPI bool mayPlace$(class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool
+    placeStructure$(class BlockPos const& pos, class StructureTemplate& structure, class StructureSettings& settings);
+
+    MCAPI bool setBlock$(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
+
+    MCAPI bool setBlockSimple$(class BlockPos const& pos, class Block const& block);
+
+    MCAPI bool
+    shimPlaceForOldFeatures$(class Feature const& feature, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class Block const* tryGetLiquidBlock$(class BlockPos const& pos) const;
 
     // NOLINTEND
 };

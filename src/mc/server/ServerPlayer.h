@@ -3,32 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/BedSleepingResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/CrashDumpLogStringID.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/HudElement.h"
-#include "mc/enums/HudVisibility.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/util/HudElement.h"
+#include "mc/util/HudVisibility.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/player/BedSleepingResult.h"
 #include "mc/world/actor/player/Player.h"
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/GameType.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -87,7 +87,15 @@ public:
     virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 151
-    virtual void knockback(class Actor* source, int dmg, float xd, float zd, float, float, float heightCap);
+    virtual void knockback(
+        class Actor* source,
+        int          dmg,
+        float        xd,
+        float        zd,
+        float        horizontalPower,
+        float        verticalPower,
+        float        heightCap
+    );
 
     // vIndex: 158
     virtual void aiStep();
@@ -144,7 +152,7 @@ public:
     virtual void openPortfolio();
 
     // vIndex: 207
-    virtual void openBook(int, bool, int, class BlockActor*);
+    virtual void openBook(int, bool, int, class BlockActor* lectern);
 
     // vIndex: 208
     virtual void openTrading(struct ActorUniqueID const& uniqueID, bool useNewScreen);
@@ -156,8 +164,11 @@ public:
     virtual void openInventory();
 
     // vIndex: 214
-    virtual void
-    displayTextObjectMessage(class TextObjectRoot const& textObject, std::string const&, std::string const&);
+    virtual void displayTextObjectMessage(
+        class TextObjectRoot const& textObject,
+        std::string const&          fromXuid,
+        std::string const&          fromPlatformId
+    );
 
     // vIndex: 215
     virtual void displayTextObjectWhisperMessage(
@@ -182,7 +193,7 @@ public:
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
     // vIndex: 221
-    virtual void openSign(class BlockPos const& position, bool);
+    virtual void openSign(class BlockPos const& position, bool isFrontSide);
 
     // vIndex: 223
     virtual bool isLoading() const;
@@ -248,12 +259,28 @@ public:
     // vIndex: 256
     virtual void _updateChunkPublisherView(class Vec3 const& position, float minDistance);
 
-    MCAPI
-    ServerPlayer(class Level&, class PacketSender&, class ServerNetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, ::GameType, bool, class NetworkIdentifier const&, ::SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::string const&, std::unique_ptr<class Certificate>, int, bool, class EntityContext&);
+    MCAPI ServerPlayer(
+        class Level&                                           level,
+        class PacketSender&                                    packetSender,
+        class ServerNetworkSystem&                             network,
+        class ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
+        ::GameType                                             playerGameType,
+        bool                                                   isHostingPlayer,
+        class NetworkIdentifier const&                         owner,
+        ::SubClientId                                          subid,
+        std::function<void(class ServerPlayer&)>               onPlayerLoadedCallback,
+        class mce::UUID                                        uuid,
+        std::string const&                                     playFabId,
+        std::string const&                                     deviceId,
+        std::unique_ptr<class Certificate>                     certificate,
+        int                                                    maxChunkRadius,
+        bool                                                   enableItemStackNetManager,
+        class EntityContext&                                   entityContext
+    );
 
-    MCAPI void acceptClientPosition(class Vec3 const&);
+    MCAPI void acceptClientPosition(class Vec3 const& clientPos);
 
-    MCAPI void addActorToReplicationList(gsl::not_null<class Actor*> actor, bool);
+    MCAPI void addActorToReplicationList(gsl::not_null<class Actor*> actor, bool autonomous);
 
     MCAPI void checkCheating(class Vec3 const& clientPos);
 
@@ -271,7 +298,7 @@ public:
 
     MCAPI void handleBlockPickRequestOnServer(class BlockPos const& position, bool withData);
 
-    MCAPI void hideAllExcept(std::optional<std::vector<::HudElement>> const&);
+    MCAPI void hideAllExcept(std::optional<std::vector<::HudElement>> const& hudElements);
 
     MCAPI void initiateContainerClose();
 
@@ -281,7 +308,7 @@ public:
 
     MCAPI ::ContainerID openUnmanagedContainer();
 
-    MCAPI void postLoad(bool isNewPlayer);
+    MCAPI void postLoad(bool newPlayerCreated);
 
     MCAPI void postReplicationTick(struct Tick const& currentTick);
 
@@ -293,13 +320,14 @@ public:
 
     MCAPI void sendPlayerAuthInputReceivedEvent();
 
-    MCAPI void setClientChunkRadius(uint requestedRadius, uchar);
+    MCAPI void setClientChunkRadius(uint requestedRadius, uchar clientMaxChunkRadius);
 
-    MCAPI void setHudVisibilityState(::HudVisibility, std::optional<std::vector<::HudElement>> const&);
+    MCAPI void
+    setHudVisibilityState(::HudVisibility hudVisibility, std::optional<std::vector<::HudElement>> const& hudElements);
 
-    MCAPI void setIsCompatibleWithClientSideChunkGen(bool);
+    MCAPI void setIsCompatibleWithClientSideChunkGen(bool isCompatible);
 
-    MCAPI void setIsPendingDisconnect(bool);
+    MCAPI void setIsPendingDisconnect(bool isPendingDisconnect);
 
     MCAPI void setLocalPlayerAsInitialized();
 
@@ -307,16 +335,21 @@ public:
 
     MCAPI void triggerRespawnFromCompletingTheEnd();
 
-    MCAPI static void initializePlayerTickComponents(class EntityContext&, struct PlayerMovementSettings const&);
+    MCAPI static void
+    initializePlayerTickComponents(class EntityContext& entity, struct PlayerMovementSettings const& settings);
 
-    MCAPI static class ServerPlayer* tryGetFromEntity(class EntityContext& entity, bool);
+    MCAPI static class ServerPlayer* tryGetFromEntity(class EntityContext& entity, bool includeRemoved);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-        _logCDEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+    MCAPI void _logCDEvent(
+        ::CrashDumpLogStringID option1,
+        ::CrashDumpLogStringID option2,
+        ::CrashDumpLogStringID option3,
+        ::CrashDumpLogStringID option4
+    );
 
     MCAPI ::ContainerID _nextContainerCounter();
 
@@ -327,6 +360,186 @@ public:
     MCAPI void _setContainerManager(std::shared_ptr<class IContainerManager> menu);
 
     MCAPI void _updateNearbyActors();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Level&                                           level,
+        class PacketSender&                                    packetSender,
+        class ServerNetworkSystem&                             network,
+        class ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
+        ::GameType                                             playerGameType,
+        bool                                                   isHostingPlayer,
+        class NetworkIdentifier const&                         owner,
+        ::SubClientId                                          subid,
+        std::function<void(class ServerPlayer&)>               onPlayerLoadedCallback,
+        class mce::UUID                                        uuid,
+        std::string const&                                     playFabId,
+        std::string const&                                     deviceId,
+        std::unique_ptr<class Certificate>                     certificate,
+        int                                                    maxChunkRadius,
+        bool                                                   enableItemStackNetManager,
+        class EntityContext&                                   entityContext
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI int _getSpawnChunkLimit$() const;
+
+    MCAPI void _serverInitItemStackIds$();
+
+    MCAPI void _updateChunkPublisherView$(class Vec3 const& position, float minDistance);
+
+    MCAPI void aiStep$();
+
+    MCAPI bool canChangeDimensionsUsingPortal$() const;
+
+    MCAPI void changeDimension$(DimensionType toId);
+
+    MCAPI void changeDimensionWithCredits$(DimensionType dimension);
+
+    MCAPI void checkMovementStats$(class Vec3 const& d);
+
+    MCAPI void clearVanishEnchantedItemsOnDeath$();
+
+    MCAPI void destroyEditorPlayer$();
+
+    MCAPI void destroyRegion$();
+
+    MCAPI void die$(class ActorDamageSource const& source);
+
+    MCAPI void displayTextObjectMessage$(
+        class TextObjectRoot const& textObject,
+        std::string const&          fromXuid,
+        std::string const&          fromPlatformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        class ResolvedTextObject const& textObject,
+        std::string const&              xuid,
+        std::string const&              platformId
+    );
+
+    MCAPI void displayTextObjectWhisperMessage$(
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void displayWhisperMessage$(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
+
+    MCAPI void frameUpdate$(class FrameUpdateContextBase&);
+
+    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+
+    MCAPI ::StructureFeatureType getCurrentStructureFeature$() const;
+
+    MCAPI class Bedrock::NonOwnerPointer<class Editor::IEditorPlayer> getEditorPlayer$() const;
+
+    MCAPI uchar getMaxChunkBuildRadius$() const;
+
+    MCAPI class PlayerEventCoordinator& getPlayerEventCoordinator$();
+
+    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+
+    MCAPI void hurtArmorSlots$(class ActorDamageSource const& source, int dmg, std::bitset<4> hurtSlots);
+
+    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI bool isActorRelevant$(class Actor const& actor);
+
+    MCAPI bool isLoading$() const;
+
+    MCAPI bool isPlayerInitialized$() const;
+
+    MCAPI bool isTeacher$() const;
+
+    MCAPI bool isValidTarget$(class Actor* attacker) const;
+
+    MCAPI void knockback$(
+        class Actor* source,
+        int          dmg,
+        float        xd,
+        float        zd,
+        float        horizontalPower,
+        float        verticalPower,
+        float        heightCap
+    );
+
+    MCAPI bool load$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void moveSpawnView$(class Vec3 const& spawnPosition, DimensionType dimension);
+
+    MCAPI void moveView$();
+
+    MCAPI void normalTick$();
+
+    MCAPI void onLinkedSlotsChanged$();
+
+    MCAPI void onSuspension$();
+
+    MCAPI void openBook$(int, bool, int, class BlockActor* lectern);
+
+    MCAPI void openInventory$();
+
+    MCAPI void openNpcInteractScreen$(std::shared_ptr<struct INpcDialogueData> npc);
+
+    MCAPI void openPortfolio$();
+
+    MCAPI void openSign$(class BlockPos const& position, bool isFrontSide);
+
+    MCAPI void openTrading$(struct ActorUniqueID const& uniqueID, bool useNewScreen);
+
+    MCAPI void prepareRegion$(class ChunkSource& mainChunkSource);
+
+    MCAPI void refreshContainer$(class IContainerManager& menu);
+
+    MCAPI void respawn$();
+
+    MCAPI void sendArmor$(std::bitset<4> armorSlots);
+
+    MCAPI void sendArmorDamage$(std::bitset<4> damagedSlots);
+
+    MCAPI void sendComplexInventoryTransaction$(std::unique_ptr<class ComplexInventoryTransaction> transaction) const;
+
+    MCAPI void sendInventory$(bool shouldSelectSlot);
+
+    MCAPI void sendInventoryTransaction$(class InventoryTransaction const& transaction) const;
+
+    MCAPI void sendNetworkPacket$(class Packet& packet) const;
+
+    MCAPI void setArmor$(::ArmorSlot armorSlot, class ItemStack const& item);
+
+    MCAPI void setContainerData$(class IContainerManager& menu, int id, int value);
+
+    MCAPI void setDamagedArmor$(::ArmorSlot slot, class ItemStack const& item);
+
+    MCAPI void setOffhandSlot$(class ItemStack const& item);
+
+    MCAPI void setPlayerGameType$(::GameType gameType);
+
+    MCAPI void slotChanged$(
+        class IContainerManager& menu,
+        class Container&         container,
+        int                      slot,
+        class ItemStack const&   oldItem,
+        class ItemStack const&   newItem,
+        bool                     isResultSlot
+    );
+
+    MCAPI void stopSleepInBed$(bool forcefulWakeUp, bool updateLevelList);
+
+    MCAPI void tickWorld$(struct Tick const& currentTick);
 
     // NOLINTEND
 };

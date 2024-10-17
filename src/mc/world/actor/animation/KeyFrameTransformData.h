@@ -17,4 +17,11 @@ public:
     MCAPI bool operator==(class KeyFrameTransformData const& rhs) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class KeyFrameTransformData const&);
+
+    // NOLINTEND
 };

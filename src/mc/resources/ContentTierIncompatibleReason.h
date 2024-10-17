@@ -19,7 +19,14 @@ public:
         std::vector<std::string> const& arguments
     );
 
-    MCAPI static class ContentTierIncompatibleReason NoError;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(uint errorValue);
+
+    MCAPI static class ContentTierIncompatibleReason& NoError();
 
     // NOLINTEND
 };

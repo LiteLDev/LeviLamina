@@ -18,4 +18,11 @@ public:
     virtual ~BlockGeometryComponent() = default;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

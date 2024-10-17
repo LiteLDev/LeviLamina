@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
 #include "mc/world/containers/managers/IContainerManager.h"
 
 class ContainerManagerModel : public ::IContainerManager {
@@ -77,6 +77,39 @@ public:
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const& blockPos, float pickRange) const;
 
     MCAPI static void _appendCopies(std::vector<class ItemStack>& out, std::vector<class ItemStack> const& items);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player);
+
+    MCAPI void dtor$();
+
+    MCAPI void debitPlayerLevels$(int levels);
+
+    MCAPI ::ContainerID getContainerId$() const;
+
+    MCAPI ::ContainerType getContainerType$() const;
+
+    MCAPI bool isClientSide$() const;
+
+    MCAPI bool isCreativeMode$() const;
+
+    MCAPI bool isServerAuthoritative$() const;
+
+    MCAPI bool isValid$(float pickRange);
+
+    MCAPI void serverInitItemStackIds$();
+
+    MCAPI void setContainerId$(::ContainerID id);
+
+    MCAPI void setContainerType$(::ContainerType type);
+
+    MCAPI bool tick$();
 
     // NOLINTEND
 };

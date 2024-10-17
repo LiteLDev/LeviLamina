@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/ticking/ITickingAreaView.h"
 
 class TickingAreaView : public ::ITickingAreaView {
@@ -22,7 +22,7 @@ public:
     virtual void init(struct Bounds const& bounds, bool isCircle);
 
     // vIndex: 2
-    virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool, bool randomize);
+    virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool preload, bool randomize);
 
     // vIndex: 3
     virtual void tickSeasons(class BlockSource& region, class Random& random);
@@ -43,7 +43,7 @@ public:
     virtual bool checkInitialLoadDone(struct Tick currentLevelTick);
 
     // vIndex: 9
-    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool) const;
+    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool useDoneLoading) const;
 
     // vIndex: 10
     virtual void move(struct Bounds const& bounds);
@@ -60,6 +60,39 @@ public:
     // NOLINTBEGIN
     MCAPI bool
     _tickChunk(struct Tick const& currentTick, class BlockSource& region, class Level& level, class ChunkPos const& cp);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool checkInitialLoadDone$(struct Tick currentLevelTick);
+
+    MCAPI bool checkLoadedChunkNeighborsDone$(class BlockSource const& region, bool useDoneLoading) const;
+
+    MCAPI std::unique_ptr<class ChunkViewSource> createChildSource$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getAvailableChunk$(class ChunkPos const& cp);
+
+    MCAPI struct Bounds const& getBounds$() const;
+
+    MCAPI DimensionType getDimensionId$() const;
+
+    MCAPI void init$(struct Bounds const& bounds, bool isCircle);
+
+    MCAPI bool isCircle$() const;
+
+    MCAPI bool isDoneLoading$() const;
+
+    MCAPI void move$(struct Bounds const& bounds);
+
+    MCAPI void tick$(struct Tick const& currentTick, class BlockSource& region, bool preload, bool randomize);
+
+    MCAPI void tickSeasons$(class BlockSource& region, class Random& random);
 
     // NOLINTEND
 };

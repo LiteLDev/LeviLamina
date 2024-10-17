@@ -22,7 +22,7 @@ public:
 
     MCAPI bool isPlanting() const;
 
-    MCAPI void setPlanting(bool);
+    MCAPI void setPlanting(bool planting);
 
     MCAPI bool useOn(
         class ItemStack&      instance,
@@ -37,6 +37,13 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _canPlant(class Block const& target) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Item& owner);
 
     // NOLINTEND
 };

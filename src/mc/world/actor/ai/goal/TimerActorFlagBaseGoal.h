@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class TimerActorFlagBaseGoal : public ::Goal {
@@ -35,9 +35,30 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI TimerActorFlagBaseGoal(class Mob&, ::ActorFlags);
+    MCAPI TimerActorFlagBaseGoal(class Mob& mob, ::ActorFlags actorFlag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, ::ActorFlags actorFlag);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

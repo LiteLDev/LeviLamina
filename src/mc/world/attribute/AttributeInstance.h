@@ -114,4 +114,17 @@ public:
     MCAPI void _setDirty();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class AttributeInstance const&);
+
+    MCAPI void dtor$();
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

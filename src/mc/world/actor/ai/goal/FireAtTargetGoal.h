@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/enums/ProjectileAnchor.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/projectile/ProjectileAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,16 +34,27 @@ public:
         // vIndex: 0
         virtual ~Definition() = default;
 
-        MCAPI void initialize(class EntityContext&, class FireAtTargetGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class FireAtTargetGoal& goal) const;
 
-        MCAPI void setOwnerAnchor(int const&);
+        MCAPI void setOwnerAnchor(int const& value);
 
-        MCAPI void setProjectileDefinitionByName(std::string const&);
+        MCAPI void setProjectileDefinitionByName(std::string const& name);
 
-        MCAPI void setTargetAnchor(int const&);
+        MCAPI void setTargetAnchor(int const& value);
 
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FireAtTargetGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const& name,
+            std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FireAtTargetGoal::Definition>>&
+                root
+        );
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
 
         // NOLINTEND
     };
@@ -75,9 +86,9 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
-    MCAPI explicit FireAtTargetGoal(class Mob&);
+    MCAPI explicit FireAtTargetGoal(class Mob& mob);
 
     // NOLINTEND
 
@@ -85,7 +96,29 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 _getCurrentTime() const;
 
-    MCAPI static class Vec3 _getAnchorAndOffsetPosition(class Actor const&, ::ProjectileAnchor, class Vec3 const&);
+    MCAPI static class Vec3
+    _getAnchorAndOffsetPosition(class Actor const& actor, ::ProjectileAnchor anchor, class Vec3 const& offset);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

@@ -46,4 +46,30 @@ public:
     MCAPI static int getLevel(class Actor const& entity);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isDiscoverable$() const;
+
+    MCAPI bool isTreasureOnly$() const;
+
+    // NOLINTEND
 };

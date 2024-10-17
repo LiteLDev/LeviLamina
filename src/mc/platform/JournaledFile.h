@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/FileBufferingMode.h"
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/FileBufferingMode.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,9 +31,9 @@ public:
 
     MCAPI ~JournaledFile();
 
-    MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path fileName);
 
-    MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path fileName);
 
     MCAPI static bool isOldFile(class Core::Path fileName);
 
@@ -46,6 +46,15 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _flushFiles();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::function<class Core::Result(class Core::Path)>&& validationCallback);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

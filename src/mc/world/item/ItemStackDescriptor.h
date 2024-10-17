@@ -30,4 +30,17 @@ public:
     MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&& other);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize, class CompoundTag const* userData);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

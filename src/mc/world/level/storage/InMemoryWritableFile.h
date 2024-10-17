@@ -27,4 +27,19 @@ public:
     virtual leveldb::Status Sync();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI leveldb::Status Append$(leveldb::Slice const& data);
+
+    MCAPI leveldb::Status Close$();
+
+    MCAPI leveldb::Status Flush$();
+
+    MCAPI leveldb::Status Sync$();
+
+    // NOLINTEND
 };

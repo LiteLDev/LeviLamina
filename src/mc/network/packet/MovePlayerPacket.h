@@ -1,19 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
-#include "mc/entity/utilities/ActorType.h"
 #include "mc/events/MinecraftEventing.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class MovePlayerPacket : public ::Packet {
 public:
@@ -62,6 +62,36 @@ public:
         int                                         cause,
         int                                         sourceEntityType
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Player const&                         player,
+        ::PlayerPositionModeComponent::PositionMode resetPosition,
+        int                                         cause,
+        int                                         sourceEntityType
+    );
+
+    MCAPI void* ctor$(class Player const& player, class Vec3 const& pos);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

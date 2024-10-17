@@ -15,4 +15,13 @@ public:
     MCAPI ~PlayerInteractEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct PlayerInteractEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

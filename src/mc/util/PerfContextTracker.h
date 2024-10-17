@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/PerfContextEvent.h"
+#include "mc/util/PerfContextEvent.h"
 
 class PerfContextTracker {
 public:
@@ -32,6 +32,19 @@ public:
         MCAPI Duration();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
+
+        MCAPI void reset$();
+
+        // NOLINTEND
     };
 
     class EventScope {
@@ -46,6 +59,15 @@ public:
         MCAPI explicit EventScope(::PerfContextEvent eventType);
 
         MCAPI ~EventScope();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(::PerfContextEvent eventType);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -66,6 +88,15 @@ public:
         virtual void reset();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void reset$();
+
+        // NOLINTEND
     };
 
 public:
@@ -76,9 +107,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void incrementPacketReceivedInfo(uint);
+    MCAPI void incrementPacketReceivedInfo(uint packetSize);
 
-    MCAPI void incrementPacketSentInfo(uint);
+    MCAPI void incrementPacketSentInfo(uint packetSize);
 
     MCAPI static class PerfContextTracker& getInstance();
 

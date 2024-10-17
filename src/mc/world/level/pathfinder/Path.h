@@ -1,13 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/NodeType.h"
-#include "mc/enums/PathCompletionType.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/NodeType.h"
-#include "mc/enums/PathCompletionType.h"
+#include "mc/world/level/pathfinder/NodeType.h"
+#include "mc/world/level/pathfinder/PathCompletionType.h"
 
 class Path {
 public:
@@ -79,5 +77,14 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void buildFromNodes(NodeArray&& nodeArray, ::PathCompletionType completionType);
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
     // NOLINTEND
 };

@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BookEditAction.h"
+#include "mc/network/packet/BookEditAction.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class BookEditPacket : public ::Packet {
 public:
@@ -51,6 +51,27 @@ public:
     MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream& stream);
 
     MCAPI void _writePage(class BinaryStream& stream) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class BookEditPacket const&);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

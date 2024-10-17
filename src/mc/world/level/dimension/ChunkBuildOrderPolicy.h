@@ -27,13 +27,48 @@ public:
     virtual void unregisterForUpdates(uint handle);
 
     // vIndex: 4
-    virtual void setPlayerInfluence(uint handle, class ChunkPos const& playerPosition, class Vec3 const&);
+    virtual void
+    setPlayerInfluence(uint handle, class ChunkPos const& playerPosition, class Vec3 const& playerMovementDirection);
 
     // vIndex: 5
-    virtual void setTickingAreaInfluence(uint handle, class ChunkPos const&, int sizeX, int sizeZ, bool isCircle, bool);
+    virtual void setTickingAreaInfluence(
+        uint                  handle,
+        class ChunkPos const& tickingAreaPosition,
+        int                   sizeX,
+        int                   sizeZ,
+        bool                  isCircle,
+        bool                  preload
+    );
 
     // vIndex: 6
     virtual void updateInfluences();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI int getChunkRebuildPriority$(class ChunkPos const& cp) const;
+
+    MCAPI uint registerForUpdates$();
+
+    MCAPI void
+    setPlayerInfluence$(uint handle, class ChunkPos const& playerPosition, class Vec3 const& playerMovementDirection);
+
+    MCAPI void setTickingAreaInfluence$(
+        uint                  handle,
+        class ChunkPos const& tickingAreaPosition,
+        int                   sizeX,
+        int                   sizeZ,
+        bool                  isCircle,
+        bool                  preload
+    );
+
+    MCAPI void unregisterForUpdates$(uint handle);
+
+    MCAPI void updateInfluences$();
 
     // NOLINTEND
 };

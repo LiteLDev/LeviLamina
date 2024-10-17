@@ -38,4 +38,22 @@ public:
     MCAPI ~PackInfoData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class mce::UUID const&       guid,
+        class SemVersion const&      version,
+        uint64                       packSize,
+        std::string const&           contentKey,
+        std::string const&           subpackName,
+        class ContentIdentity const& contentIdentity,
+        bool                         hasScripts,
+        bool                         isRayTracingCapable
+    );
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

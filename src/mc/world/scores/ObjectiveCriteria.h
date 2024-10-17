@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ObjectiveRenderType.h"
+#include "mc/world/scores/ObjectiveRenderType.h"
 
 class ObjectiveCriteria {
 public:
@@ -33,6 +33,13 @@ public:
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const& dataTag);
 
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const& toSave);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
 
     // NOLINTEND
 };

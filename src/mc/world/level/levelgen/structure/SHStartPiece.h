@@ -22,4 +22,13 @@ public:
     virtual ::StructurePieceType getType() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    // NOLINTEND
 };

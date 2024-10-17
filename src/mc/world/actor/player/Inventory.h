@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/FillingContainer.h"
+#include "mc/world/inventory/FillingContainer.h"
 
 class Inventory : public ::FillingContainer {
 public:
@@ -50,6 +50,31 @@ public:
     MCAPI void setupDefault();
 
     MCAPI void tick(int selectedSlot);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Player* player);
+
+    MCAPI bool add$(class ItemStack& item);
+
+    MCAPI bool canAdd$(class ItemStack const& item) const;
+
+    MCAPI int getEmptySlotsCount$() const;
+
+    MCAPI int getFirstEmptySlot$() const;
+
+    MCAPI void init$();
+
+    MCAPI void setContainerSize$(int size);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
 
     // NOLINTEND
 };

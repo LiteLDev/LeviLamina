@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/network/ItemStackResponseInfo.h"
+#include "mc/network/packet/ItemStackResponseInfo.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class ItemStackResponsePacket : public ::Packet {
 public:
@@ -38,6 +38,27 @@ public:
     MCAPI explicit ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&& responses);
 
     MCAPI std::vector<struct ItemStackResponseInfo> const& getResponses() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::vector<struct ItemStackResponseInfo>&& responses);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

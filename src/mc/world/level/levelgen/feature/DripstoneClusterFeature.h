@@ -18,12 +18,8 @@ public:
     virtual ~DripstoneClusterFeature() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
 
     // vIndex: 2
     virtual bool isValidPlacement(std::string const&);
@@ -32,7 +28,7 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static int _getDripstoneHeight(class Random& random, int dx, int dz, float, int maxHeight);
+    MCAPI static int _getDripstoneHeight(class Random& random, int dx, int dz, float density, int maxHeight);
 
     MCAPI static bool _placeColumn(
         class IBlockWorldGenAPI& target,
@@ -40,18 +36,30 @@ public:
         class BlockPos const&    pos,
         int                      dx,
         int                      dz,
-        float,
-        double,
-        int,
-        float
+        float                    chanceOfWater,
+        double                   chanceOfStalagmiteOrStalactite,
+        int                      clusterHeight,
+        float                    density
     );
 
     MCAPI static void _replaceBlocksWithDripstoneBlocks(
         class IBlockWorldGenAPI& target,
-        class BlockPos const&,
-        int   maxCount,
-        uchar direction
+        class BlockPos const&    firstPos,
+        int                      maxCount,
+        uchar                    direction
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos>
+    place$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
 
     // NOLINTEND
 };

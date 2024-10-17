@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class LookAtActorGoal : public ::Goal {
@@ -51,6 +51,35 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _withinFieldOfView(class Actor& entity);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob& mob,
+        float      lookDistance,
+        float      probability,
+        int        minLookTime,
+        int        maxLookTime,
+        int        angleOfViewX,
+        int        angleOfViewY
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

@@ -30,12 +30,36 @@ public:
     virtual bool processPopulationControl(std::string const&, std::string const&);
 
     // vIndex: 4
-    virtual void
-    readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&);
+    virtual void readResourceFiles(
+        class ResourcePackManager&                                  resourcePackManager,
+        class MobSpawnRules const&                                  baseSpawnRules,
+        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    );
 
     MCAPI explicit SpawnGroupRegistry(class ResourcePackManager& resourcePackManager);
 
     MCAPI class SpawnGroupData const* getSpawnGroup(std::string const& identifier) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ResourcePackManager& resourcePackManager);
+
+    MCAPI std::string const& getFileType$();
+
+    MCAPI std::string const& getRootKey$();
+
+    MCAPI bool processPopulationControl$(std::string const&, std::string const&);
+
+    MCAPI void readResourceFiles$(
+        class ResourcePackManager&                                  resourcePackManager,
+        class MobSpawnRules const&                                  baseSpawnRules,
+        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    );
 
     // NOLINTEND
 };

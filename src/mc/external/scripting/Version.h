@@ -24,11 +24,20 @@ public:
 
     MCAPI bool operator>=(struct Scripting::Version const& rhs) const;
 
-    MCAPI bool satisfies(struct Scripting::Version const&, bool) const;
+    MCAPI bool satisfies(struct Scripting::Version const& other, bool strict) const;
 
     MCAPI std::string toString() const;
 
     MCAPI ~Version();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Scripting::Version const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

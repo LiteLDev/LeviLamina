@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BatteryStatus.h"
+#include "mc/platform/battery/BatteryStatus.h"
 
 class BatteryMonitorInterface {
 public:
@@ -22,6 +22,13 @@ public:
 
     // vIndex: 2
     virtual float getBatteryLevel() const = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

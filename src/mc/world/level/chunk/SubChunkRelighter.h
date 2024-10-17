@@ -19,9 +19,9 @@ public:
         bool                  useFullyDarkSubchunk
     );
 
-    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(struct SubChunkLightIndex const&);
+    MCAPI void _checkEdgeForSubtractiveBlockLightProcessing(struct SubChunkLightIndex const& coordIndex);
 
-    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(struct SubChunkLightIndex const&);
+    MCAPI void _checkEdgeForSubtractiveSkyLightProcessing(struct SubChunkLightIndex const& coordIndex);
 
     MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex coordIndex, uchar& absorption) const;
 
@@ -63,8 +63,11 @@ public:
         struct Brightness         newAbsorption
     );
 
-    MCAPI void
-    relightSubChunk(class LevelChunk const&, std::vector<struct SubChunkLightUpdate> const&, std::vector<class BlockPos>&);
+    MCAPI void relightSubChunk(
+        class LevelChunk const&                        levelChunk,
+        std::vector<struct SubChunkLightUpdate> const& alteredBlockList,
+        std::vector<class BlockPos>&                   brightnessChangedList
+    );
 
     MCAPI void setBlockLight(
         class Pos const&  pos,
@@ -105,19 +108,30 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
+    MCAPI void* ctor$(
+        class IBlockSource&   source,
+        uint64                centerSubChunkIndex,
+        class ChunkPos const& centerChunkPos,
+        bool                  originalLighting,
+        bool                  useFullyDarkSubchunk
+    );
 
-    MCAPI static std::bitset<196608> mOuterEdgeOfComputationBits;
+    MCAPI void dtor$();
 
-    MCAPI static class SpinLock sDarkSpinLock;
+    MCAPI static std::bitset<196608>& mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
 
-    MCAPI static std::unique_ptr<struct SubChunk> sFullyDarkSubChunk;
+    MCAPI static std::bitset<196608>& mOuterEdgeOfComputationBits();
 
-    MCAPI static std::unique_ptr<struct SubChunk> sFullyLitSubChunk;
+    MCAPI static class SpinLock& sDarkSpinLock();
 
-    MCAPI static class SpinLock sLitSpinLock;
+    MCAPI static std::unique_ptr<struct SubChunk>& sFullyDarkSubChunk();
+
+    MCAPI static std::unique_ptr<struct SubChunk>& sFullyLitSubChunk();
+
+    MCAPI static class SpinLock& sLitSpinLock();
 
     // NOLINTEND
 };

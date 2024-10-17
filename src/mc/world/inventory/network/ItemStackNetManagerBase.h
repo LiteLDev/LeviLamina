@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedClientNetId.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
 
 class ItemStackNetManagerBase {
 public:
@@ -81,6 +81,35 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _pushScreen(class ContainerScreenContext screenContext);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Player& player, bool isClientSide, bool isEnabled);
+
+    MCAPI void dtor$();
+
+    MCAPI void
+    _addLegacyTransactionRequestSetItemSlot$(class ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+
+    MCAPI void _initScreen$(class ItemStackNetManagerScreen&);
+
+    MCAPI gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest$();
+
+    MCAPI class SparseContainer*
+    initOpenContainer$(class BlockSource&, ::ContainerEnumName, class ContainerWeakRef const&);
+
+    MCAPI bool isEnabled$() const;
+
+    MCAPI void onContainerScreenClose$();
+
+    MCAPI void onContainerScreenOpen$(class ContainerScreenContext const& screenContext);
+
+    MCAPI bool retainSetItemStackNetIdVariant$() const;
 
     // NOLINTEND
 };

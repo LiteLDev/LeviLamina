@@ -1,15 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/CameraShakeAction.h"
-#include "mc/enums/CameraShakeType.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/CameraShakeAction.h"
-#include "mc/enums/CameraShakeType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/deps/minecraft_camera/CameraShakeAction.h"
+#include "mc/deps/minecraft_camera/CameraShakeType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class CameraShakePacket : public ::Packet {
 public:
@@ -41,9 +39,32 @@ public:
 
     MCAPI CameraShakePacket();
 
-    MCAPI explicit CameraShakePacket(::CameraShakeAction);
+    MCAPI explicit CameraShakePacket(::CameraShakeAction shakeAction);
 
-    MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType);
+    MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType shakeType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(float intensity, float seconds, ::CameraShakeType shakeType);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::CameraShakeAction shakeAction);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

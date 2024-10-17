@@ -26,6 +26,17 @@ public:
         MCAPI ~Components();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(struct BlockComponentGroupDescription::Components const&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -47,6 +58,19 @@ public:
     MCAPI struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const&);
 
     MCAPI ~BlockComponentGroupDescription();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct BlockComponentGroupDescription const&);
+
+    MCAPI void* ctor$(struct BlockComponentGroupDescription&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

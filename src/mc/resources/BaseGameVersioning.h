@@ -3,14 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 namespace BaseGameVersioning {
 // NOLINTBEGIN
-MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
-
-MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
-
 MCAPI std::vector<class BaseGameVersion> const& getAvailableChemistryBehaviorPackGameVersions();
 
 MCAPI std::vector<class BaseGameVersion> const& getAvailableChemistryResourcePackGameVersions();
@@ -23,6 +19,13 @@ MCAPI bool upgradeBaseGameVersionFromWorldTemplate(
     Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const& worldTemplateManager,
     class LevelData&                                                     levelData
 );
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI class BaseGameVersion const& PATCH_UPGRADE_VERSION();
+
+MCAPI class BaseGameVersion const& REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT();
 // NOLINTEND
 
 }; // namespace BaseGameVersioning

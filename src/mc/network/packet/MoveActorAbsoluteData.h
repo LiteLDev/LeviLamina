@@ -46,4 +46,13 @@ public:
     MCAPI void setYHeadRot(float rot);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Actor const& entity);
+
+    // NOLINTEND
 };

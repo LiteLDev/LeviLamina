@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/server/commands/CommandBlockMode.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/level/block/CommandBlockMode.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class CommandBlockUpdatePacket : public ::Packet {
 public:
@@ -48,6 +48,27 @@ public:
     MCAPI CommandBlockUpdatePacket();
 
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class CommandBlockUpdatePacket const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

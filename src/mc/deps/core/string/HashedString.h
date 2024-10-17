@@ -128,7 +128,26 @@ public:
     // NOLINTBEGIN
     MCAPI static class HashedString const& getEmptyString();
 
-    MCAPI static class HashedString defaultErrorValue;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::nullptr_t);
+
+    MCAPI void* ctor$(class HashedString const& rhs);
+
+    MCAPI void* ctor$(uint64 hash, char const* str);
+
+    MCAPI void* ctor$(class HashedString&& rhs);
+
+    MCAPI void* ctor$(char const* str);
+
+    MCAPI void* ctor$(std::string const& str);
+
+    MCAPI void dtor$();
+
+    MCAPI static class HashedString& defaultErrorValue();
 
     // NOLINTEND
 };

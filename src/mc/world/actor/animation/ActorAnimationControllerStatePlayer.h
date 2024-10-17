@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorAnimationType.h"
-#include "mc/enums/SkeletalHierarchyIndex.h"
+#include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
+#include "mc/world/actor/animation/ActorAnimationType.h"
 
 class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
 public:
@@ -47,13 +47,56 @@ public:
     // vIndex: 9
     virtual class HashedString const& getRawName() const;
 
-    MCAPI ActorAnimationControllerStatePlayer(class HashedString const& friendlyName, class ActorAnimationControllerPlayer& owner, std::shared_ptr<class ActorAnimationControllerState> animationControllerState, class AnimationComponent& animationComponent, class ExpressionNode const& blendExpression, std::set<class HashedString, std::hash<class HashedString>>&);
+    MCAPI ActorAnimationControllerStatePlayer(
+        class HashedString const&                                    friendlyName,
+        class ActorAnimationControllerPlayer&                        owner,
+        std::shared_ptr<class ActorAnimationControllerState>         animationControllerState,
+        class AnimationComponent&                                    animationComponent,
+        class ExpressionNode const&                                  blendExpression,
+        std::set<class HashedString, std::hash<class HashedString>>& animationControllerNameStack
+    );
 
     MCAPI bool allAnimationsFinished() const;
 
     MCAPI bool anyAnimationsFinished() const;
 
     MCAPI float getStateTime() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class HashedString const&                                    friendlyName,
+        class ActorAnimationControllerPlayer&                        owner,
+        std::shared_ptr<class ActorAnimationControllerState>         animationControllerState,
+        class AnimationComponent&                                    animationComponent,
+        class ExpressionNode const&                                  blendExpression,
+        std::set<class HashedString, std::hash<class HashedString>>& animationControllerNameStack
+    );
+
+    MCAPI void applyToPose$(
+        class RenderParams&                                                               renderParams,
+        std::unordered_map<::SkeletalHierarchyIndex, std::vector<class BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
+    );
+
+    MCAPI void bindParticleEffects$(std::unordered_map<class HashedString, class HashedString> const&);
+
+    MCAPI void bindSoundEffects$(std::unordered_map<class HashedString, std::string> const& actorSoundEffectMap);
+
+    MCAPI std::shared_ptr<class ActorAnimationPlayer> findAnimation$(class HashedString const& friendlyName);
+
+    MCAPI ::ActorAnimationType getAnimationType$() const;
+
+    MCAPI class HashedString const& getRawName$() const;
+
+    MCAPI bool hasAnimationFinished$() const;
+
+    MCAPI void resetAnimation$();
 
     // NOLINTEND
 };

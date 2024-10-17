@@ -27,6 +27,13 @@ public:
         MCAPI ~ComponentInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -48,8 +55,6 @@ public:
     MCAPI void
     initializeComponents(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper) const;
 
-    MCAPI static std::string const INTERNAL_COMPONENTS;
-
     // NOLINTEND
 
     // protected:
@@ -62,6 +67,17 @@ public:
 
     MCAPI static class CompoundTag&
     _getOrCreateComponentScope(class CompoundTag& tag, std::string const& componentName);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerComponents$();
+
+    MCAPI static std::string const& INTERNAL_COMPONENTS();
 
     // NOLINTEND
 };

@@ -22,4 +22,15 @@ public:
     MCAPI CommandDispatcher();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI int performCommand$(class CommandOrigin const& origin, class Command& command);
+
+    // NOLINTEND
 };

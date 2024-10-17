@@ -11,9 +11,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI BeardDescription(class BeardingDescriptionCache cache, struct BeardKernel const&);
+    MCAPI BeardDescription(class BeardingDescriptionCache cache, struct BeardKernel const& beardKernel);
 
     MCAPI float calculateContribution(class BlockPos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BeardingDescriptionCache cache, struct BeardKernel const& beardKernel);
 
     // NOLINTEND
 };

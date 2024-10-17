@@ -13,9 +13,18 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI
-    CommandIntegerRange(int, int, bool, bool);
+    CommandIntegerRange(int minVal, int maxVal, bool invert, bool inclusive);
 
     MCAPI bool isWithinRange(int value) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int minVal, int maxVal, bool invert, bool inclusive);
 
     // NOLINTEND
 };

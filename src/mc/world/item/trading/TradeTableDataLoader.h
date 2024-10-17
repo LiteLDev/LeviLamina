@@ -14,11 +14,20 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit TradeTableDataLoader(class ItemRegistryRef);
+    MCAPI explicit TradeTableDataLoader(class ItemRegistryRef itemRegistry);
 
-    MCAPI class Puv::LoadResult<struct TradeTableData> load(std::string const&) const;
+    MCAPI class Puv::LoadResult<struct TradeTableData> load(std::string const& input) const;
 
     MCAPI ~TradeTableDataLoader();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ItemRegistryRef itemRegistry);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

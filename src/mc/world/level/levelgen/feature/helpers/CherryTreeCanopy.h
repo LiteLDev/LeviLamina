@@ -32,31 +32,42 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _placeLayerOfLeaves(
-        class IBlockWorldGenAPI& target,
-        class Random&            random,
-        class BlockPos const&,
-        int,
-        class Block const&,
+        class IBlockWorldGenAPI&             target,
+        class Random&                        random,
+        class BlockPos const&                canopyPos,
+        int                                  layerOffset,
+        class Block const&                   leavesBlock,
         int                                  radius,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
     MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
-        class IBlockWorldGenAPI& target,
-        class Random&            random,
-        class BlockPos const&,
-        int,
-        class Block const&,
+        class IBlockWorldGenAPI&             target,
+        class Random&                        random,
+        class BlockPos const&                canopyPos,
+        int                                  layerOffset,
+        class Block const&                   leavesBlock,
         int                                  radius,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
 
     MCAPI bool _tryPlaceBlock(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Block const&,
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Block const&                   leavesBlock,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::optional<class BlockPos>
+    placeCanopy$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, std::vector<class BlockPos> const&)
+        const;
 
     // NOLINTEND
 };

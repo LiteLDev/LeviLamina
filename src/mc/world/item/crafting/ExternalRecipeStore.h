@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     MCAPI void registerBlockReduction(class ItemStack const& block, std::vector<class ItemStack>&& elements);
 
-    MCAPI void setBlockReducer(class BlockReducer*);
+    MCAPI void setBlockReducer(class BlockReducer* reducer);
 
     // NOLINTEND
 };

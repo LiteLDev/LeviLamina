@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
 class ItemStackRequestActionCraftBase : public ::ItemStackRequestAction {
@@ -17,6 +17,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ItemStackRequestActionCraftBase();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

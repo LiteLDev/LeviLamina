@@ -24,4 +24,15 @@ public:
     MCAPI NBStartPiece(class Random& random, int west, int north);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Random& random, int west, int north);
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    // NOLINTEND
 };

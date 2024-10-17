@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/RangedWeaponItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,13 +46,14 @@ public:
     virtual void releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
 
     // vIndex: 96
-    virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
+    virtual void enchantProjectile(class ItemStackBase const& weapon, class Actor& projectile) const;
 
     // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     // vIndex: 106
     virtual int
@@ -82,9 +83,39 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const DEFAULT_USE_DURATION;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id);
+
+    MCAPI bool canBeCharged$() const;
+
+    MCAPI void enchantProjectile$(class ItemStackBase const& weapon, class Actor& projectile) const;
+
+    MCAPI int
+    getAnimationFrameFor$(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI int getMaxUseDuration$(class ItemStack const* instance) const;
+
+    MCAPI void playSoundIncrementally$(class ItemStack const& item, class Mob& mob) const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI static int const& DEFAULT_USE_DURATION();
 
     // NOLINTEND
 };

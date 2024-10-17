@@ -25,9 +25,9 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
+#include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/server/common/DedicatedServer.h"
-#include "mc/server/common/commands/StopCommand.h"
+#include "mc/server/commands/StopCommand.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/core/Config.h"
@@ -127,8 +127,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (StopCommand::mServer) {
-            StopCommand::mServer->requestServerShutdown("");
+        if (StopCommand::mServer()) {
+            StopCommand::mServer()->requestServerShutdown("");
         } else {
             std::terminate();
         }
@@ -144,7 +144,7 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (StopCommand::mServer) StopCommand::mServer->requestServerShutdown("");
+        if (StopCommand::mServer()) StopCommand::mServer()->requestServerShutdown("");
         else std::terminate();
         break;
     }
@@ -194,7 +194,7 @@ void leviLaminaMain() {
     mod::ModRegistrar::getInstance().loadAllMods();
 }
 
-LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
+LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main"_sym, int, int argc, char* argv[]) {
 
 #if defined(LL_DEBUG)
     static stacktrace_utils::SymbolLoader symbols{};

@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class LevelSoundEventPacketV2 : public ::Packet {
 public:
@@ -40,6 +40,23 @@ public:
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     MCAPI LevelSoundEventPacketV2();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

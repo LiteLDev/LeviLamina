@@ -19,4 +19,15 @@ public:
     MCAPI ~BehaviorComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BehaviorComponent&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

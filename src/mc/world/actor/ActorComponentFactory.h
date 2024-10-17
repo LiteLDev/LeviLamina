@@ -24,4 +24,11 @@ public:
     MCAPI void _initialize(class Experiments const& experiments);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

@@ -23,13 +23,22 @@ public:
 
     MCAPI ~ScopedGameTestTickingArea();
 
-    MCAPI static std::string const TICKING_AREA_PREFIX;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _removeTickingArea();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Dimension& dimension, class BoundingBox const& bounds, std::string const& structureName);
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& TICKING_AREA_PREFIX();
 
     // NOLINTEND
 };

@@ -22,6 +22,13 @@ public:
         MCAPI ~RuntimeLightingSubchunkList();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -59,6 +66,15 @@ public:
     MCAPI void _relightChunks(std::chrono::nanoseconds timeLimit);
 
     MCAPI void _removeProcessedSubchunks();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Dimension& dimension);
 
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/TypedClientNetId.h"
-#include "mc/world/events/TextProcessingEventOrigin.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
+#include "mc/events/TextProcessingEventOrigin.h"
+#include "mc/platform/Result.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
 
 class ItemStackRequestData {
 public:
@@ -35,6 +35,13 @@ public:
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>>
     read(class ReadOnlyBinaryStream& stream);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

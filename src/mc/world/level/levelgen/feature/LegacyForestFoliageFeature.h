@@ -27,4 +27,15 @@ public:
     MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+
+    // NOLINTEND
 };

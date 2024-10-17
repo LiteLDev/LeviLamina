@@ -1,14 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/containers/ContainerID.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/containers/ContainerID.h"
+#include "mc/platform/Result.h"
+#include "mc/world/ContainerID.h"
 
 class InventoryContentPacket : public ::Packet {
 public:
@@ -41,6 +40,27 @@ public:
     MCAPI InventoryContentPacket(::ContainerID id, std::vector<class ItemStack> const& items);
 
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID id, class Player& player);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::ContainerID id, std::vector<class ItemStack> const& items);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

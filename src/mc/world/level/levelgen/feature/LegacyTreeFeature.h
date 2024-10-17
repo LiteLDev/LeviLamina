@@ -35,4 +35,22 @@ public:
     MCAPI LegacyTreeFeature(::LegacyTreeFeature::Type placementType, class FeatureRegistry& registry);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::LegacyTreeFeature::Type placementType, class FeatureRegistry& registry);
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos> place$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
+
+    // NOLINTEND
 };

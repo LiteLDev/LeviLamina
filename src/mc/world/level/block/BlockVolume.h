@@ -58,7 +58,7 @@ public:
         int                                       height,
         int                                       depth,
         class Block const&                        initBlock,
-        int
+        int                                       dimensionBottom
     );
 
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
@@ -88,6 +88,20 @@ public:
     MCAPI bool isInBounds(class BlockPos const& pos) const;
 
     MCAPI bool isInBounds(class Pos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class buffer_span_mut<class Block const*> buffer,
+        int                                       width,
+        int                                       height,
+        int                                       depth,
+        class Block const&                        initBlock,
+        int                                       dimensionBottom
+    );
 
     // NOLINTEND
 };

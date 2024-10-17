@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/ConnectionType.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/events/MinecraftEventing.h"
+#include "mc/network/ConnectionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,8 +21,9 @@ namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social {
+// thunks
 // NOLINTBEGIN
-MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
+MCAPI class Social::GameConnectionInfo const& INVALID_CONNECTION();
 // NOLINTEND
 
 }; // namespace Social

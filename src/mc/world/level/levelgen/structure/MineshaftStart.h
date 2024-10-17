@@ -17,8 +17,28 @@ public:
     // vIndex: 0
     virtual ~MineshaftStart() = default;
 
-    MCAPI
-    MineshaftStart(class Dimension const& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& pos, class IPreliminarySurfaceProvider const&);
+    MCAPI MineshaftStart(
+        class Dimension const&                   dimension,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Dimension const&                   dimension,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     // NOLINTEND
 };

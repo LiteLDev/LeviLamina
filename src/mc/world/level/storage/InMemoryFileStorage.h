@@ -31,4 +31,13 @@ public:
     MCAPI ~InMemoryFileStorage();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(leveldb::Env* env);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

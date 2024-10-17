@@ -2,18 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
-
 namespace Crypto::Random {
-// NOLINTBEGIN
-MCAPI class mce::UUID generateCryptographicPlatformUUID();
 
-MCAPI class mce::UUID generateUUID();
+class Random {
+public:
+    // prevent constructor by default
+    Random& operator=(Random const&);
+    Random(Random const&);
 
-MCAPI uint64 generateUUID64Bit();
-// NOLINTEND
+public:
+    // NOLINTBEGIN
+    MCAPI Random();
+
+    MCAPI void fillData(char* data, uint amount);
+
+    MCAPI std::string getBytes(uint amount);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
+};
 
 }; // namespace Crypto::Random

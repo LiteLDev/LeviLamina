@@ -1,14 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/LabTableReactionType.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/LabTableReactionType.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/level/block/actor/LabTableReactionType.h"
 
 class LabTablePacket : public ::Packet {
 public:
@@ -50,6 +49,29 @@ public:
     MCAPI LabTablePacket(class BlockPos const& pos, ::LabTableReactionType reaction);
 
     MCAPI LabTablePacket(::LabTablePacket::Type type, class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class BlockPos const& pos, ::LabTableReactionType reaction);
+
+    MCAPI void* ctor$(::LabTablePacket::Type type, class BlockPos const& pos);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

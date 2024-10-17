@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class ChangeDimensionRequest {
 public:
@@ -32,10 +32,38 @@ public:
     // NOLINTBEGIN
     MCAPI ChangeDimensionRequest();
 
-    MCAPI ChangeDimensionRequest(class ChangeDimensionRequest&&);
+    MCAPI ChangeDimensionRequest(class ChangeDimensionRequest&& other);
 
-    MCAPI ChangeDimensionRequest(DimensionType, DimensionType, class Vec3, class Vec3, bool, bool);
+    MCAPI ChangeDimensionRequest(
+        DimensionType fromId,
+        DimensionType toId,
+        class Vec3    fromLocation,
+        class Vec3    toLocation,
+        bool          usePortal,
+        bool          respawn
+    );
 
-    MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&&);
+    MCAPI class ChangeDimensionRequest& operator=(class ChangeDimensionRequest&& other);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        DimensionType fromId,
+        DimensionType toId,
+        class Vec3    fromLocation,
+        class Vec3    toLocation,
+        bool          usePortal,
+        bool          respawn
+    );
+
+    MCAPI void* ctor$(class ChangeDimensionRequest&& other);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
     // NOLINTEND
 };

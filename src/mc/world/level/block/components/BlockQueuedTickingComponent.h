@@ -23,11 +23,18 @@ public:
     // vIndex: 0
     virtual ~BlockQueuedTickingComponent() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockQueuedTickEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockQueuedTickEventComponent*> comp);
 
-    MCAPI int getRandomTickDelay(class Random&) const;
+    MCAPI int getRandomTickDelay(class Random& random) const;
 
-    MCAPI void onTick(struct BlockEvents::BlockQueuedTickEvent const&) const;
+    MCAPI void onTick(struct BlockEvents::BlockQueuedTickEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

@@ -28,4 +28,13 @@ public:
     MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&& other);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class WeakStorageFeature&& other);
+
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

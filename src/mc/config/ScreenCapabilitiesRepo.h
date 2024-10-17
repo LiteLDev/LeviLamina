@@ -15,4 +15,11 @@ public:
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const& screenName) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

@@ -19,10 +19,10 @@ public:
 
     // vIndex: 1
     virtual void
-    onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const&, class Actor*, float, uint, class Actor*);
+    onSignalReceive(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
 
     // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const&);
+    virtual bool isValidVibration(class GameEvent const& gameEvent);
 
     // vIndex: 3
     virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
@@ -34,6 +34,26 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     MCAPI AllayVibrationConfig(class Actor& actor, ushort);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Actor& actor, ushort);
+
+    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+
+    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+
+    MCAPI void onSerializableDataChanged$(class BlockSource&);
+
+    MCAPI void
+    onSignalReceive$(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
+
+    MCAPI bool shouldListen$(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
 
     // NOLINTEND
 };

@@ -18,9 +18,22 @@ public:
     virtual ~MossStoneSelector();
 
     // vIndex: 1
-    virtual class Block const& next(class Random& random, int worldX, int worldY, int worldZ, bool isEdge) const;
+    virtual class Block const& next(class Random& random, int, int, int, bool) const;
 
-    MCAPI MossStoneSelector(class Block const*, class Block const*);
+    MCAPI MossStoneSelector(class Block const* cobblestone, class Block const* mossyCobblestone);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Block const* cobblestone, class Block const* mossyCobblestone);
+
+    MCAPI void dtor$();
+
+    MCAPI class Block const& next$(class Random& random, int, int, int, bool) const;
 
     // NOLINTEND
 };

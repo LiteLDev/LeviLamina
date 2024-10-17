@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -24,7 +24,7 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
+    virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
 
     // vIndex: 3
     virtual std::string const& getFullName() const;
@@ -52,6 +52,31 @@ public:
 
     MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>
     deserialize(class ReadOnlyBinaryStream& stream);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+
+    MCAPI std::string const& getFullName$() const;
+
+    MCAPI uint64 getHash$() const;
+
+    MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+
+    MCAPI ::ItemDescriptor::InternalType getType$() const;
+
+    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
+
+    MCAPI std::optional<class CompoundTag> save$() const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
+
+    MCAPI std::map<std::string, std::string> toMap$() const;
 
     // NOLINTEND
 };

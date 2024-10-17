@@ -25,4 +25,19 @@ public:
     MCAPI LookControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void initializeInternal$(class Mob& mob);
+
+    MCAPI void tick$(class Mob& mob);
+
+    // NOLINTEND
 };

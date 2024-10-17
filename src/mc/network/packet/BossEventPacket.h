@@ -1,15 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BossBarColor.h"
-#include "mc/enums/BossBarOverlay.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossBarOverlay.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/events/BossEventUpdateType.h"
+#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
+#include "mc/platform/Result.h"
 
 class BossEventPacket : public ::Packet {
 public:
@@ -51,6 +51,29 @@ public:
     MCAPI BossEventPacket(::BossEventUpdateType type, class RaidBossComponent& component);
 
     MCAPI BossEventPacket(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::BossEventUpdateType type, class RaidBossComponent& component);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -28,4 +28,17 @@ public:
     MCAPI ~IndexSet();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class IndexSet&& other);
+
+    MCAPI void* ctor$(class IndexSet const& other);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

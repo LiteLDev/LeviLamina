@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -34,11 +34,26 @@ public:
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

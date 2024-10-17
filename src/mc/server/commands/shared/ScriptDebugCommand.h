@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class ScriptDebugCommand : public ::Command {
 public:
@@ -31,8 +31,8 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI void _handleDebuggerAttach(
-        class IScriptDebugger*,
-        std::string const&,
+        class IScriptDebugger*               debugger,
+        std::string const&                   locPrefix,
         ::ScriptDebugCommand::DebuggerAction action,
         std::string const&                   host,
         ushort                               port,
@@ -40,18 +40,29 @@ public:
     ) const;
 
     MCAPI void _handleProfilerAction(
-        class IScriptDebugger*,
-        std::string const&,
+        class IScriptDebugger*               debugger,
+        std::string const&                   locPrefix,
         ::ScriptDebugCommand::ProfilerAction action,
         class CommandOutput&                 output
     ) const;
 
     MCAPI void _handleWatchdogAction(
-        class IScriptDebugger*,
-        std::string const&,
+        class IScriptDebugger*               debugger,
+        std::string const&                   locPrefix,
         ::ScriptDebugCommand::WatchdogAction action,
         class CommandOutput&                 output
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

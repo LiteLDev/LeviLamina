@@ -4,7 +4,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
+#include "mc/util/Rotation.h"
 
 class AABB;
 
@@ -77,6 +77,13 @@ public:
     MCAPI bool isValid() const;
 
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& min, class BlockPos const& size, ::Rotation rotation);
 
     // NOLINTEND
 };

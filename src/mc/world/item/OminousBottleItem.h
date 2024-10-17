@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/alchemy/Potion.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,25 +34,30 @@ public:
     virtual bool isDestructive(int) const;
 
     // vIndex: 48
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& item,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 56
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 59
     virtual bool uniqueAuxValues() const;
 
     // vIndex: 72
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
     // vIndex: 75
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod useTimeDepleted(class ItemStack& item, class Level* level, class Player* player) const;
 
     // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 84
-    virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
+    virtual std::string buildEffectDescriptionName(class ItemStackBase const& item) const;
 
     // vIndex: 104
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
@@ -60,15 +65,45 @@ public:
     // vIndex: 119
     virtual ::Potion::PotionType getPotionType() const;
 
-    MCAPI OminousBottleItem(std::string const&, int);
+    MCAPI OminousBottleItem(std::string const& name, int id);
 
-    MCAPI static class MobEffectInstance getAppliedMobEffect(int);
+    MCAPI static class MobEffectInstance getAppliedMobEffect(int auxValue);
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const MAX_AMPLIFIER;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id);
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& item,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& item) const;
+
+    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
+
+    MCAPI ::Potion::PotionType getPotionType$() const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod useTimeDepleted$(class ItemStack& item, class Level* level, class Player* player) const;
+
+    MCAPI static int const& MAX_AMPLIFIER();
 
     // NOLINTEND
 };

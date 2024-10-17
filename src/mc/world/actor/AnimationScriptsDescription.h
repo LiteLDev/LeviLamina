@@ -21,7 +21,20 @@ public:
     virtual ~AnimationScriptsDescription();
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams nonConstDeserializeDataParams);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void deserializeData$(struct DeserializeDataParams nonConstDeserializeDataParams);
+
+    MCAPI char const* getJsonName$() const;
 
     // NOLINTEND
 };

@@ -24,4 +24,13 @@ public:
     MCAPI ~ItemStackResponseContainerInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::ContainerEnumName openContainerNetId);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

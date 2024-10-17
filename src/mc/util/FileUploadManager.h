@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/UploadError.h"
+#include "mc/util/UploadError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,6 +29,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~MultiPartStreamHelper();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -88,15 +95,20 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const CHUNK_UPLOAD_SIZE;
+    MCAPI static void** vftable();
 
-    // NOLINTEND
+    MCAPI void* ctor$(class TaskGroup& taskGroup, std::shared_ptr<class IFileChunkUploader> fileUploader);
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::string const BOUNDARY;
+    MCAPI void dtor$();
+
+    MCAPI float getUploadProgress$() const;
+
+    MCAPI static std::string const& BOUNDARY();
+
+    MCAPI static int const& CHUNK_UPLOAD_SIZE();
 
     // NOLINTEND
 };

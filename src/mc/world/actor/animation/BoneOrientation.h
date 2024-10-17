@@ -19,4 +19,11 @@ public:
     MCAPI class Vec3 const& getPivot() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

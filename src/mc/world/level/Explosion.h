@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/level/block/LevelEvent.h"
 
 class Explosion {
 public:
@@ -21,29 +21,31 @@ public:
 
     MCAPI class Vec3 getPosition() const;
 
-    MCAPI void overrideInWater(bool);
+    MCAPI void overrideInWater(bool inWater);
 
     MCAPI void setAllowUnderwater(bool val);
 
     MCAPI void setBreaking(bool val);
 
-    MCAPI void setCanToggleBlocks(bool);
+    MCAPI void setCanToggleBlocks(bool toggleBlocks);
 
-    MCAPI void setCustomKnockbackCalculation(class Vec3 (*)(class Explosion const&, class Actor const&, float));
+    MCAPI void setCustomKnockbackCalculation(
+        class Vec3 (*customKnockbackCalculation)(class Explosion const&, class Actor const&, float)
+    );
 
-    MCAPI void setExplosionParticleType(::LevelEvent);
+    MCAPI void setExplosionParticleType(::LevelEvent particlesExplosionType);
 
-    MCAPI void setExplosionSound(::Puv::Legacy::LevelSoundEvent);
+    MCAPI void setExplosionSound(::Puv::Legacy::LevelSoundEvent soundExplosionType);
 
     MCAPI void setFire(bool val);
 
-    MCAPI void setIgnoreBlockResistance(bool);
+    MCAPI void setIgnoreBlockResistance(bool shouldIgnore);
 
-    MCAPI void setKnockbackScaling(float);
+    MCAPI void setKnockbackScaling(float scaling);
 
     MCAPI void setMaxResistance(float resistance);
 
-    MCAPI void setShouldTakeDamage(bool);
+    MCAPI void setShouldTakeDamage(bool takeDamage);
 
     MCAPI ~Explosion();
 
@@ -53,13 +55,31 @@ public:
     // NOLINTBEGIN
     MCAPI std::vector<gsl::not_null<class Actor*>> _getActorsInRange(class Actor* optSource, float range) const;
 
-    MCAPI class Vec3 getEyePos(class Actor&) const;
+    MCAPI class Vec3 getEyePos(class Actor& actor) const;
 
-    MCAPI static void
-    _addOrMergeItemStack(class ItemStack const&, class BlockPos, std::vector<std::pair<class ItemStack, class BlockPos>>&);
+    MCAPI static void _addOrMergeItemStack(
+        class ItemStack const&                                   newItemStack,
+        class BlockPos                                           pos,
+        std::vector<std::pair<class ItemStack, class BlockPos>>& itemStacks
+    );
 
-    MCAPI static void
-    _spawnExtraResourcesAndMergeItemDropsForBlock(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&, std::vector<std::pair<class ItemStack, class BlockPos>>&);
+    MCAPI static void _spawnExtraResourcesAndMergeItemDropsForBlock(
+        class BlockSource&                                       region,
+        class BlockPos const&                                    blockPos,
+        class Block const&                                       block,
+        class Randomize&                                         randomize,
+        struct ResourceDropsContext const&                       resourceDropsContext,
+        std::vector<std::pair<class ItemStack, class BlockPos>>& itemStacks
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockSource& region, class Actor* optSource, class Vec3 const& pos, float radius);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

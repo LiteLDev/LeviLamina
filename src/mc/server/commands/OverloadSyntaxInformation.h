@@ -14,4 +14,11 @@ public:
     MCAPI OverloadSyntaxInformation(std::string const& _text, uint _start, uint _end);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& _text, uint _start, uint _end);
+
+    // NOLINTEND
 };

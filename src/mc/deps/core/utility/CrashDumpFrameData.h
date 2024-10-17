@@ -13,7 +13,14 @@ public:
     // NOLINTBEGIN
     MCAPI CrashDumpFrameData(int, int, uint64, float, float, float, float);
 
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int, int, uint64, float, float, float, float);
+
+    MCAPI static ::ll::CArrayT<struct CrashDumpFormatEntryImpl const>& kFormat();
 
     // NOLINTEND
 };

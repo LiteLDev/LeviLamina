@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 struct WebSocketPacketData {
 public:
@@ -19,6 +19,13 @@ public:
     MCAPI explicit WebSocketPacketData(std::string const& ip);
 
     MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& ip);
 
     // NOLINTEND
 };

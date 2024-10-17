@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class DaylightDetectorBlockActor : public ::BlockActor {
@@ -20,6 +20,15 @@ public:
 
     // vIndex: 7
     virtual void tick(class BlockSource& region);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

@@ -1,12 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/resources/PackType.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/resource/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +36,18 @@ public:
 
     MCAPI ~PackIdVersion();
 
-    MCAPI static struct PackIdVersion fromString(std::string const&);
+    MCAPI static struct PackIdVersion fromString(std::string const& inputStr);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class mce::UUID const& id, class SemVersion const& version, ::PackType packType);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -15,4 +15,11 @@ public:
     MCAPI struct MoveInputComponent& operator=(struct MoveInputComponent&&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

@@ -21,4 +21,13 @@ public:
     virtual bool travel(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool travel$(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
+
+    // NOLINTEND
 };

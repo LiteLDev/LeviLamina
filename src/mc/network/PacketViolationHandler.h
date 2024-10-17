@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
 
 class PacketViolationHandler {
 public:
@@ -15,8 +15,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI ::PacketViolationResponse
-    _handleViolation(::MinecraftPacketIds, std::error_code const&, class NetworkIdentifier const&, bool*);
+    MCAPI ::PacketViolationResponse _handleViolation(
+        ::MinecraftPacketIds           packetId,
+        std::error_code const&         result,
+        class NetworkIdentifier const& netId,
+        bool*                          outIsNewOrUpdatedViolation
+    );
 
     // NOLINTEND
 };

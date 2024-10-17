@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/world/item/components/ItemAcquisitionMethod.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/item/ItemAcquisitionMethod.h"
 
 class ItemAcquisitionMethodMap {
 public:
@@ -13,9 +13,10 @@ public:
     ItemAcquisitionMethodMap(ItemAcquisitionMethodMap const&);
     ItemAcquisitionMethodMap();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemAcquisitionMethod, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemAcquisitionMethod, std::string> const& mMap();
 
     // NOLINTEND
 };

@@ -94,12 +94,29 @@ public:
     MCAPI static ::SemVersion::MatchType
     fromString(std::string const& src, class SemVersion& output, ::SemVersion::ParseOption parseOption);
 
-    MCAPI static struct any_version_constructor const AnyVersionConstructor;
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _parseVersionToString();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(ushort major, ushort minor, ushort patch, std::string const& preRelease, std::string const& buildMeta);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct SemVersion::any_version_constructor);
+
+    MCAPI void* ctor$(class SemVersion const&);
+
+    MCAPI void dtor$();
+
+    MCAPI static struct SemVersion::any_version_constructor const& AnyVersionConstructor();
 
     // NOLINTEND
 };

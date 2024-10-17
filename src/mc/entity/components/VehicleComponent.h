@@ -17,4 +17,13 @@ public:
     MCAPI ~VehicleComponent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct VehicleComponent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

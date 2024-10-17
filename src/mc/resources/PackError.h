@@ -40,6 +40,17 @@ public:
     MCAPI void serialize(class Json::Value& out);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::PackErrorType packErrorType, std::vector<std::string> const& errorParam);
+
+    MCAPI std::string getLocErrorMessage$() const;
+
+    // NOLINTEND
 };
 
 using PackErrors = std::vector<std::shared_ptr<PackError>>;

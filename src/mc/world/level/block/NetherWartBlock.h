@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,8 +36,12 @@ public:
         const;
 
     // vIndex: 9
-    virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    virtual class AABB const& getOutline(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
 
     // vIndex: 57
     virtual bool canContainLiquid() const;
@@ -55,6 +59,36 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     MCAPI NetherWartBlock(std::string const& nameId, int id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI class AABB const& getOutline$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const& pos,
+        class AABB&           bufferValue
+    ) const;
+
+    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

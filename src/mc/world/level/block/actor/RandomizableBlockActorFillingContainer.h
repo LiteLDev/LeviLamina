@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerType.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/ContainerType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class RandomizableBlockActorFillingContainer {
 public:
@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     MCVAPI void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
-    MCVAPI void dropSlotContent(class BlockSource&, class Vec3 const&, bool, int);
+    MCVAPI void dropSlotContent(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
 
     MCVAPI void initializeContainerContents(class BlockSource& region);
 
@@ -36,6 +36,37 @@ public:
         int                   numTotalSlots,
         ::ContainerType       containerType
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForFillingContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void* ctor$(
+        ::BlockActorType      blockEntityType,
+        std::string const&    id,
+        class BlockPos const& pos,
+        int                   numTotalSlots,
+        ::ContainerType       containerType
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI void dropContents$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
+
+    MCAPI void dropSlotContent$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
+
+    MCAPI void initializeContainerContents$(class BlockSource& region);
+
+    MCAPI void onRemoved$(class BlockSource&);
+
+    MCAPI void setContainerChanged$(int slot);
+
+    MCAPI void startOpen$(class Player& player);
 
     // NOLINTEND
 };

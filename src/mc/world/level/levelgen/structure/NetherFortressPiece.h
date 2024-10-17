@@ -89,4 +89,19 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(int genDepth);
+
+    MCAPI void dtor$();
+
+    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

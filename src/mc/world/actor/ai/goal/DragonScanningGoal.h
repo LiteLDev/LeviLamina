@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class DragonScanningGoal : public ::Goal {
@@ -40,13 +40,30 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float SITTING_ATTACK_VIEW_RANGE;
+    MCAPI static void** vftable();
 
-    MCAPI static float SITTING_CHARGE_VIEW_RANGE;
+    MCAPI void* ctor$(class EnderDragon& mob);
 
-    MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static float& SITTING_ATTACK_VIEW_RANGE();
+
+    MCAPI static float& SITTING_CHARGE_VIEW_RANGE();
+
+    MCAPI static int& SITTING_SCANNING_IDLE_TICKS();
 
     // NOLINTEND
 };

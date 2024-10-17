@@ -61,4 +61,13 @@ public:
     MCAPI static class ChunkBlockPos fromLegacyIndex(ushort idx);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(uchar _x, class ChunkLocalHeight _y, uchar _z);
+
+    MCAPI void* ctor$(class BlockPos const& pos, short minDimensionHeight);
+
+    // NOLINTEND
 };

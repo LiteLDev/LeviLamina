@@ -26,7 +26,28 @@ public:
     // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float minChance, float maxChance, int, int, uchar axis);
+    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(
+        float minChance,
+        float maxChance,
+        int   mMinDistance,
+        int   mMaxDistance,
+        uchar axis
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(float minChance, float maxChance, int mMinDistance, int mMaxDistance, uchar axis);
+
+    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+
+    MCAPI bool test$(class Block const& block, class Randomize& randomize) const;
+
+    MCAPI bool test$(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
     // NOLINTEND
 };

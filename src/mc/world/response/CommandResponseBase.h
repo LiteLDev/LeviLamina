@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/common/CommandOriginSystem.h"
+#include "mc/world/level/CommandOriginSystem.h"
 
 class CommandResponseBase {
 public:
@@ -18,8 +18,6 @@ public:
 
     MCVAPI ~CommandResponseBase();
 
-    MCAPI static std::string const NameID;
-
     // NOLINTEND
 
     // protected:
@@ -33,6 +31,17 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _compileCommands(class ILevel& level) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI ::CommandOriginSystem _getCommandOriginSystem$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

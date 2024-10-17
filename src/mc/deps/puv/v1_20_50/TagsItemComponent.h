@@ -21,7 +21,16 @@ public:
 
     MCAPI ~TagsItemComponent();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Puv::v1_20_50::TagsItemComponent const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

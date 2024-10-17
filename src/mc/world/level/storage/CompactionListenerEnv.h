@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CompactionStatus.h"
+#include "mc/common/CompactionStatus.h"
 
 class CompactionListenerEnv {
 public:
@@ -23,6 +23,17 @@ public:
     MCAPI explicit CompactionListenerEnv(leveldb::Env* env);
 
     MCAPI void setCompactionCallback(std::function<void(::CompactionStatus)> callback);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(leveldb::Env* env);
+
+    MCAPI void Schedule$(void (*function)(void*), void* arg);
 
     // NOLINTEND
 };

@@ -18,6 +18,15 @@ public:
     MCAPI ~Event();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& name);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Util::CodeBuilder

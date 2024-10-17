@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/OceanTempCategory.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/biome/OceanTempCategory.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
@@ -55,6 +55,35 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void* ctor$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            ::Rotation                                          rotation,
+            float                                               integrity,
+            bool                                                isLarge,
+            ::OceanTempCategory                                 type
+        );
+
+        MCAPI void _handleDataMarker$(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
+
+        MCAPI ::StructurePieceType getType$() const;
+
+        MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        // NOLINTEND
     };
 
 public:
@@ -102,37 +131,38 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string_view BIG_RUIN_LOOT;
+    MCAPI static std::string_view& BIG_RUIN_LOOT();
 
-    MCAPI static std::string_view RUIN_LOOT;
+    MCAPI static std::string_view& RUIN_LOOT();
 
-    MCAPI static std::string_view STRUCTURE_BIG_RUIN1_BRICK;
+    MCAPI static std::string_view& STRUCTURE_BIG_RUIN1_BRICK();
 
-    MCAPI static std::string_view STRUCTURE_BIG_RUIN8_BRICK;
+    MCAPI static std::string_view& STRUCTURE_BIG_RUIN8_BRICK();
 
-    MCAPI static std::string_view STRUCTURE_RUIN_2_BRICK;
+    MCAPI static std::string_view& STRUCTURE_RUIN_2_BRICK();
 
-    MCAPI static std::string_view STRUCTURE_RUIN_3_BRICK;
+    MCAPI static std::string_view& STRUCTURE_RUIN_3_BRICK();
 
-    MCAPI static std::string_view bigRuinsBrick[];
+    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsBrick();
 
-    MCAPI static std::string_view bigRuinsCracked[];
+    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsCracked();
 
-    MCAPI static std::string_view bigRuinsMossy[];
+    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsMossy();
 
-    MCAPI static std::string_view bigWarmRuins[];
+    MCAPI static ::ll::CArrayT<std::string_view>& bigWarmRuins();
 
-    MCAPI static class LegacyStructureSettings mSettings;
+    MCAPI static class LegacyStructureSettings& mSettings();
 
-    MCAPI static std::string_view ruinsBrick[];
+    MCAPI static ::ll::CArrayT<std::string_view>& ruinsBrick();
 
-    MCAPI static std::string_view ruinsCracked[];
+    MCAPI static ::ll::CArrayT<std::string_view>& ruinsCracked();
 
-    MCAPI static std::string_view ruinsMossy[];
+    MCAPI static ::ll::CArrayT<std::string_view>& ruinsMossy();
 
-    MCAPI static std::string_view warmRuins[];
+    MCAPI static ::ll::CArrayT<std::string_view>& warmRuins();
 
     // NOLINTEND
 };

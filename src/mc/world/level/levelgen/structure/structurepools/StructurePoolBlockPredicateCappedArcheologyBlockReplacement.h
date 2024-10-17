@@ -24,10 +24,25 @@ public:
     virtual bool finalize(class BlockSource& region, class IRandom& random);
 
     MCAPI StructurePoolBlockPredicateCappedArcheologyBlockReplacement(
-        std::map<class HashedString, class HashedString> const&,
-        uint64,
-        ::BrushableBlockActor::Placement placement
+        std::map<class HashedString, class HashedString> const& blockMappings,
+        uint64                                                  maximumAmount,
+        ::BrushableBlockActor::Placement                        placement
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::map<class HashedString, class HashedString> const& blockMappings,
+        uint64                                                  maximumAmount,
+        ::BrushableBlockActor::Placement                        placement
+    );
+
+    MCAPI bool finalize$(class BlockSource& region, class IRandom& random);
 
     // NOLINTEND
 };

@@ -21,4 +21,13 @@ public:
     MCAPI class EntityContext const& getEntity() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class EntityRegistry& registry);
+
+    // NOLINTEND
 };

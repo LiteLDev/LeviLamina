@@ -24,4 +24,15 @@ public:
     MCAPI void initSchema(std::string const& schemaName, class SemVersion const& version);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

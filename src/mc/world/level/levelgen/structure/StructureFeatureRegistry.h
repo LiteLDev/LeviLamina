@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/chunk/ChunkGeneratorStructureState.h"
-#include "mc/world/level/levelgen/structure/StructureCache.h"
+#include "mc/world/level/levelgen/v2/ChunkGeneratorStructureState.h"
+#include "mc/world/level/levelgen/v2/StructureCache.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
@@ -38,8 +38,16 @@ public:
     // NOLINTBEGIN
     MCAPI StructureFeatureRegistry();
 
-    MCAPI bool
-    findNearestStructureFeature(class Dimension&, class IPreliminarySurfaceProvider&, ::StructureFeatureType, class BlockPos const&, class BlockPos&, class BiomeSource const&, bool, std::optional<class HashedString>);
+    MCAPI bool findNearestStructureFeature(
+        class Dimension&                   dimension,
+        class IPreliminarySurfaceProvider& surfaceProvider,
+        ::StructureFeatureType             feature,
+        class BlockPos const&              origin,
+        class BlockPos&                    pos,
+        class BiomeSource const&           biomeSource,
+        bool                               mustBeInNewChunks,
+        std::optional<class HashedString>  biomeTag
+    );
 
     MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
@@ -52,6 +60,15 @@ public:
     MCAPI void waitForBlueprints() const;
 
     MCAPI ~StructureFeatureRegistry();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

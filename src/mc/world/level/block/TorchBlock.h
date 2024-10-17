@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/ShapeType.h"
-#include "mc/enums/TorchFacing.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/TorchFacing.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,7 +38,7 @@ public:
         const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
 
     // vIndex: 56
     virtual bool waterSpreadCausesSpawn() const;
@@ -54,22 +54,17 @@ public:
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    virtual class Block const&
+    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
 
     // vIndex: 118
     virtual int getIconYOffset() const;
 
     // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const&);
+    virtual void _addHardCodedBlockComponents(class Experiments const& experiments);
 
     // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -81,8 +76,7 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 156
-    virtual ::BlockRenderLayer
-    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
+    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
     MCAPI TorchBlock(std::string const& nameId, int id, ::MaterialType mat);
 
@@ -96,11 +90,48 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static ::TorchFacing const DATA_FROM_FACING[];
+    MCAPI static void** vftable();
 
-    MCAPI static ushort const FACING_FROM_DATA[];
+    MCAPI void* ctor$(std::string const& nameId, int id, ::MaterialType mat);
+
+    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+
+    MCAPI void animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getIconYOffset$() const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
+
+    MCAPI ::BlockRenderLayer getRenderLayer$(class Block const&, class BlockSource&, class BlockPos const&) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool waterSpreadCausesSpawn$() const;
+
+    MCAPI static ::ll::CArrayT<::TorchFacing const>& DATA_FROM_FACING();
+
+    MCAPI static ::ll::CArrayT<ushort const>& FACING_FROM_DATA();
 
     // NOLINTEND
 };

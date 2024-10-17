@@ -1,10 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/crafting/MerchantRecipe.h"
+#include "mc/world/item/trading/MerchantRecipe.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 class MerchantRecipeList {
 public:
@@ -48,6 +48,32 @@ public:
     MCAPI std::optional<uint64> getRecipeIndexByNetId(RecipeNetId const& netId) const;
 
     MCAPI bool isRequiredItem(class ItemInstance const& offer, class ItemInstance const& requiredItem);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void addIfNewOrBetter$(class MerchantRecipe* toMatch);
+
+    MCAPI std::unique_ptr<class CompoundTag> createTag$(bool includeNetInfo) const;
+
+    MCAPI class MerchantRecipe* getMatchingRecipeFor$(
+        class ItemInstance const& buyA,
+        class ItemInstance const& buyB,
+        class ItemInstance const& sell
+    );
+
+    MCAPI class MerchantRecipe* getMatchingRecipeFor$(class MerchantRecipe const& recipe);
+
+    MCAPI class MerchantRecipe*
+    getRecipeFor$(class ItemInstance const& buyA, class ItemInstance const& buyB, int selectionHint);
+
+    MCAPI void load$(class CompoundTag const& tag);
 
     // NOLINTEND
 };

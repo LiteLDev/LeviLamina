@@ -23,4 +23,13 @@ public:
     MCAPI ~BasicTimer();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(double timeDelay, std::function<double()> getTimeCallback);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

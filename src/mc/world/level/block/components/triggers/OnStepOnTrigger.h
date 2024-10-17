@@ -20,9 +20,16 @@ public:
     // vIndex: 0
     virtual ~OnStepOnTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOnEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockStepOnEventComponent*> comp);
 
-    MCAPI void onStepOn(struct BlockEvents::BlockStepOnEvent const&) const;
+    MCAPI void onStepOn(struct BlockEvents::BlockStepOnEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

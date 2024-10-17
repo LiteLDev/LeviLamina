@@ -25,8 +25,32 @@ public:
 
     MCVAPI void onRunAsyncJobs();
 
-    MCAPI
-    ScriptTickListener(class Scripting::ScriptEngine&, class ScriptAsyncJobCoordinator&, class ScriptFormPromiseTracker&);
+    MCAPI ScriptTickListener(
+        class Scripting::ScriptEngine&   scriptEngine,
+        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
+        class ScriptFormPromiseTracker&  formPromiseTracker
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForLevelEventListener();
+
+    MCAPI static void** vftableForScriptDeferredEventListener();
+
+    MCAPI void* ctor$(
+        class Scripting::ScriptEngine&   scriptEngine,
+        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
+        class ScriptFormPromiseTracker&  formPromiseTracker
+    );
+
+    MCAPI ::EventResult onLevelRemovedPlayer$(class Level&, class Player& player);
+
+    MCAPI void onLevelTickEnd$();
+
+    MCAPI void onRunAsyncJobs$();
 
     // NOLINTEND
 };

@@ -11,7 +11,16 @@ public:
 
     MCAPI explicit PlayerScoreboardId(int64 actorUniqueId);
 
-    MCAPI static struct PlayerScoreboardId const INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(int64 actorUniqueId);
+
+    MCAPI static struct PlayerScoreboardId const& INVALID();
 
     // NOLINTEND
 };

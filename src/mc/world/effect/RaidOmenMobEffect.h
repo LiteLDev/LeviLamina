@@ -18,10 +18,21 @@ public:
     virtual ~RaidOmenMobEffect() = default;
 
     // vIndex: 1
-    virtual void applyEffects(class Actor&, int, int) const;
+    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
 
     // vIndex: 3
-    virtual void onEffectExpired(class Actor&) const;
+    virtual void onEffectExpired(class Actor& target) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
+
+    MCAPI void onEffectExpired$(class Actor& target) const;
 
     // NOLINTEND
 };

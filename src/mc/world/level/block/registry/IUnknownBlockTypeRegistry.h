@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +24,15 @@ public:
 
     // vIndex: 1
     virtual class Block const& getUnknownBlock(class CompoundTag const& serId) = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

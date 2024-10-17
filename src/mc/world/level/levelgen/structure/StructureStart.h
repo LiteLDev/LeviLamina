@@ -38,7 +38,20 @@ public:
 
     MCAPI void moveInsideHeights(class Random& random, short lowestAllowed, short highestAllowed);
 
-    MCAPI void moveToBelowSeaLevel(short seaLevel, short, class Random& random, int offset);
+    MCAPI void moveToBelowSeaLevel(short seaLevel, short minYPos, class Random& random, int offset);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool isValid$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 };

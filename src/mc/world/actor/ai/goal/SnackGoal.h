@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SnackGoal : public ::Goal {
@@ -59,21 +59,46 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const CHEW_CHANCE;
+    MCAPI static void** vftable();
 
-    MCAPI static int const EATING_TIME;
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        std::vector<class ItemDescriptor> const& itemList,
+        float                                    cooldown,
+        float                                    min,
+        float                                    stopChance
+    );
 
-    MCAPI static float const PATH_RANGE;
+    MCAPI void appendDebugInfo$(std::string& str) const;
 
-    MCAPI static int const RANDOM_EATING_END;
+    MCAPI bool canContinueToUse$();
 
-    MCAPI static int const RANDOM_EATING_START;
+    MCAPI bool canUse$();
 
-    MCAPI static float const SEARCH_SIZE;
+    MCAPI int getRandomEatingEnd$() const;
 
-    MCAPI static float const STOP_DIST_SQRD;
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static int const& CHEW_CHANCE();
+
+    MCAPI static int const& EATING_TIME();
+
+    MCAPI static float const& PATH_RANGE();
+
+    MCAPI static int const& RANDOM_EATING_END();
+
+    MCAPI static int const& RANDOM_EATING_START();
+
+    MCAPI static float const& SEARCH_SIZE();
+
+    MCAPI static float const& STOP_DIST_SQRD();
 
     // NOLINTEND
 };

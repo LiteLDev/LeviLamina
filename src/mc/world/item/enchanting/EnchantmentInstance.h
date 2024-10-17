@@ -28,4 +28,13 @@ public:
     MCAPI void setEnchantType(::Enchant::Type enchantType);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::Enchant::Type enchantType, int level);
+
+    // NOLINTEND
 };

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorRuntimeID.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/world/scores/IdentityDefinition.h"
 #include "mc/world/scores/ScoreboardId.h"
 
@@ -15,6 +15,15 @@ public:
     PlayerScoreboardId       mPlayerId;       // this+0x38
     ActorUniqueID            mEntityId;       // this+0x40
     std::string              mFakePlayerName; // this+0x48
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ScorePacketInfo&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/components/BlockComponentBase.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
 
 struct BlockMaterialInstancesComponent : public ::BlockComponentBase {
 public:
@@ -19,6 +19,13 @@ public:
     virtual ~BlockMaterialInstancesComponent() = default;
 
     MCAPI ::BlockRenderLayer getRenderLayer() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

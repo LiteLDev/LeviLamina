@@ -15,4 +15,11 @@ public:
     MCAPI bool wasCanceled() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

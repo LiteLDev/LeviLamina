@@ -19,4 +19,13 @@ public:
     MCAPI bool isRelative() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float offset, bool relative);
+
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

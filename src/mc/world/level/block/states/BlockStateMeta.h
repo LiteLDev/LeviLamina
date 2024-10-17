@@ -26,11 +26,18 @@ public:
 
     MCAPI class BlockState const& getState() const;
 
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int index) const;
 
     MCAPI ::Tag::Type const getType() const;
 
     MCAPI int indexOf(uint64 const& h) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockState const& blockState, struct BlockStateDefinition const& def);
 
     // NOLINTEND
 };

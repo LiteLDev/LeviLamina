@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/resources/PacketCompressionAlgorithm.h"
+#include "mc/network/PacketCompressionAlgorithm.h"
 
 struct NetworkSettingOptions {
 public:

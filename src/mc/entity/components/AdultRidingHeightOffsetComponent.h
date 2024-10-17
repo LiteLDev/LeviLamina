@@ -11,7 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static float const SITTING_ANIMATION_OFFSET;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static float const& SITTING_ANIMATION_OFFSET();
 
     // NOLINTEND
 };

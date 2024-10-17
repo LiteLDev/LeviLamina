@@ -12,7 +12,13 @@ public:
     // NOLINTBEGIN
     MCAPI SculkSpreader();
 
-    MCAPI SculkSpreader(bool, int, int, int, int);
+    MCAPI SculkSpreader(
+        bool isWorldGen,
+        int  growthSpawnCost,
+        int  noGrowthRadius,
+        int  chargeDecayRate,
+        int  additionalDecayRate
+    );
 
     MCAPI void addCursors(class BlockPos const& pos, int charge);
 
@@ -35,10 +41,22 @@ public:
         class BlockSource*       region,
         class BlockPos const&    origin,
         class Random&            random,
-        bool
+        bool                     spreadVeins
     );
 
     MCAPI ~SculkSpreader();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(bool isWorldGen, int growthSpawnCost, int noGrowthRadius, int chargeDecayRate, int additionalDecayRate);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

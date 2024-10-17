@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/WallConnectionType.h"
+#include "mc/world/level/block/WallConnectionType.h"
 
 namespace StateSerializationUtils {
 // NOLINTBEGIN

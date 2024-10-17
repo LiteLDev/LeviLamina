@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/containers/models/ContainerCategory.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class LevelContainerModel {
 public:
@@ -28,7 +28,7 @@ public:
 
     MCVAPI class ContainerWeakRef getContainerWeakRef() const;
 
-    MCVAPI bool isSlotDisabled(int) const;
+    MCVAPI bool isSlotDisabled(int slot) const;
 
     MCVAPI bool isValid();
 
@@ -65,6 +65,52 @@ public:
     MCAPI class Actor* _getEntity() const;
 
     MCAPI void _refreshSlot(int modelSlot);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainerModel();
+
+    MCAPI static void** vftableForContainerRemovedListener();
+
+    MCAPI void* ctor$(
+        ::ContainerEnumName  containerName,
+        int                  containerSize,
+        class Player&        player,
+        struct ActorUniqueID entityId,
+        ::ContainerCategory  category
+    );
+
+    MCAPI void* ctor$(
+        ::ContainerEnumName   containerName,
+        int                   containerSize,
+        class Player&         player,
+        ::BlockActorType      type,
+        class BlockPos const& blockPos,
+        ::ContainerCategory   category
+    );
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI int _getContainerOffset$() const;
+
+    MCAPI void _onItemChanged$(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI void containerRemoved$();
+
+    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+
+    MCAPI bool isSlotDisabled$(int slot) const;
+
+    MCAPI bool isValid$();
+
+    MCAPI void postInit$();
+
+    MCAPI void releaseResources$();
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FilterParamOption.h"
-#include "mc/enums/FilterParamRequirement.h"
-#include "mc/enums/FilterParamType.h"
+#include "mc/world/filters/FilterParamOption.h"
+#include "mc/world/filters/FilterParamRequirement.h"
+#include "mc/world/filters/FilterParamType.h"
 
 struct FilterParamDefinition {
 public:
@@ -34,6 +34,30 @@ public:
     );
 
     MCAPI ~FilterParamDefinition();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        ::FilterParamType        type,
+        ::FilterParamRequirement requirement,
+        std::string              description,
+        ::FilterParamOption      opt,
+        class FilterInput        def,
+        struct FilterStringMap   stringMap
+    );
+
+    MCAPI void* ctor$(
+        ::FilterParamType        type,
+        ::FilterParamRequirement requirement,
+        std::string              description,
+        class FilterInput        def,
+        struct FilterStringMap   stringMap
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

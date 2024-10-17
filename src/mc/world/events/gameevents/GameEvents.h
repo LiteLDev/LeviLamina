@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
+#include "mc/world/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off

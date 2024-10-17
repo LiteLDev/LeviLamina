@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 struct PendingArea {
 public:
@@ -23,6 +23,13 @@ public:
     MCAPI ~PendingArea();
 
     MCAPI static struct PendingArea load(std::string const& key, class CompoundTag const& tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

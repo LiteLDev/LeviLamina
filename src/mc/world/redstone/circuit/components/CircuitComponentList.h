@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/FacingID.h"
+#include "mc/common/FacingID.h"
 #include "mc/world/level/BlockPos.h"
 
 class CircuitComponentList {
@@ -36,6 +36,13 @@ public:
     MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
 
     MCAPI ~CircuitComponentList();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

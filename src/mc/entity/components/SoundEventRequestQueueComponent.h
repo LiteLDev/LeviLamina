@@ -14,4 +14,11 @@ public:
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent&&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct SoundEventRequestQueueComponent&&);
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/BasicSaver.h"
+#include "mc/external/cereal/BasicSaver.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,6 +25,15 @@ public:
     MCAPI class CompoundTag getSavedCompoundTag();
 
     MCAPI std::unique_ptr<class Tag> getSavedTag();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

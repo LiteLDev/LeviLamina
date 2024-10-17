@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,9 +29,25 @@ public:
 
     MCVAPI class TradeTables* getTradeTables();
 
-    MCAPI void addParticleEffect(class HashedString const&, class Vec3 const&);
+    MCAPI void addParticleEffect(class HashedString const& effect, class Vec3 const& emitterPosition);
 
-    MCAPI class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType);
+    MCAPI class MapItemSavedData&
+    createMapSavedData(struct ActorUniqueID const& uuid, class BlockPos const& origin, DimensionType dimension);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Level* asLevel$();
+
+    MCAPI class MultiPlayerLevel* asMultiPlayerLevel$();
+
+    MCAPI class TradeTables* getTradeTables$();
 
     // NOLINTEND
 };

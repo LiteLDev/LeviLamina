@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BehaviorStatus.h"
 #include "mc/world/Facing.h"
+#include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
 class GetInteractionPositionForBlockNode : public ::BehaviorNode {
@@ -31,6 +31,19 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI ::Facing::Name parseFacingNameFromString(std::string facingString);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void initializeFromDefinition$(class Actor& owner);
+
+    MCAPI ::BehaviorStatus tick$(class Actor& owner);
 
     // NOLINTEND
 };

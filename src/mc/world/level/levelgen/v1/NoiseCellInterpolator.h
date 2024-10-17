@@ -11,17 +11,26 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit NoiseCellInterpolator(gsl::span<float const> noiseBuffer);
+    MCAPI explicit NoiseCellInterpolator(gsl::span<float const>);
 
-    MCAPI NoiseCellInterpolator(gsl::span<float const> noiseBuffer, int, int);
+    MCAPI NoiseCellInterpolator(gsl::span<float const>, int, int);
 
     MCAPI float getLerpedValue() const;
 
-    MCAPI void selectCellXZ(int, int, int, int);
+    MCAPI void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx);
 
     MCAPI void updateForX(uchar x);
 
     MCAPI void updateForZ(uchar z);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(gsl::span<float const>, int, int);
+
+    MCAPI void* ctor$(gsl::span<float const>);
 
     // NOLINTEND
 };

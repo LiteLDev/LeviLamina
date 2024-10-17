@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 
 struct PauseScreenCapabilities {
 public:
@@ -19,6 +19,17 @@ public:
 
     // vIndex: 1
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 
     // NOLINTEND
 };

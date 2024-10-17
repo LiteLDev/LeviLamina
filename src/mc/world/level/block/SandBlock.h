@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/actor/item/FallingBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,21 +35,19 @@ public:
 
     // vIndex: 80
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
     // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
+    virtual bool mayConsumeFertilizer(class BlockSource&) const;
 
     // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
 
     // vIndex: 96
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const&) const;
+    virtual std::string buildDescriptionId(class Block const& block) const;
 
     // vIndex: 120
     virtual bool isAuxValueRelevantForPicking() const;
@@ -64,9 +62,41 @@ public:
     virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 164
-    virtual std::string getDustParticleName(class Block const&) const;
+    virtual std::string getDustParticleName(class Block const& block) const;
 
     MCAPI SandBlock(std::string const& nameId, int id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+
+    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+
+    MCAPI bool canBeOriginalSurface$() const;
+
+    MCAPI class mce::Color getDustColor$(class Block const& block) const;
+
+    MCAPI std::string getDustParticleName$(class Block const& block) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAuxValueRelevantForPicking$() const;
+
+    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+
+    MCAPI bool
+    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
     // NOLINTEND
 };

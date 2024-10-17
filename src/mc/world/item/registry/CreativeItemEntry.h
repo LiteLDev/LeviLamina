@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,6 +32,15 @@ public:
     MCAPI uint getIndex() const;
 
     MCAPI class ItemInstance const& getItemInstance() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class CreativeItemEntry&& rhs);
 
     // NOLINTEND
 };

@@ -1,13 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/SoftEnumUpdateType.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/SoftEnumUpdateType.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/SoftEnumUpdateType.h"
+#include "mc/platform/Result.h"
 
 class UpdateSoftEnumPacket : public ::Packet {
 public:
@@ -43,6 +42,27 @@ public:
         std::string const&              enumName,
         std::vector<std::string> const& values
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::SoftEnumUpdateType type, std::string const& enumName, std::vector<std::string> const& values);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -50,7 +50,7 @@ public:
 
     MCAPI SystemAddress(char const* str, ushort port);
 
-    MCAPI std::string ToString(char = ':') const;
+    MCAPI std::string ToString(char portDelineator = ':') const;
 
     MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
 
@@ -63,6 +63,15 @@ public:
     MCAPI bool operator==(struct RakNet::SystemAddress const& right) const;
 
     MCAPI static ulong ToInteger(struct RakNet::SystemAddress const& sa);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(char const* str, ushort port);
 
     // NOLINTEND
 };

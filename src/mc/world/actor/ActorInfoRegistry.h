@@ -27,4 +27,11 @@ public:
     MCAPI void setSpawnEggAvailable(std::string identifier, bool val);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

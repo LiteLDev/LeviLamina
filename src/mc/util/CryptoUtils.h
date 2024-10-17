@@ -9,9 +9,9 @@ namespace Core { class Path; }
 
 namespace CryptoUtils {
 // NOLINTBEGIN
-MCAPI std::string getDirectroyChecksum(class Core::Path const&);
+MCAPI std::string getDirectroyChecksum(class Core::Path const& path);
 
-MCAPI std::string getFileChecksum(class Core::Path const&);
+MCAPI std::string getFileChecksum(class Core::Path const& path);
 // NOLINTEND
 
 }; // namespace CryptoUtils

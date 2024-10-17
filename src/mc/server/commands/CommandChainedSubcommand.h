@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class CommandChainedSubcommand {
 public:

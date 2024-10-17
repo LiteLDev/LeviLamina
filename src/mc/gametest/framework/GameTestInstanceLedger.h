@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/gametest/framework/IGameTestListener.h"
-#include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,7 +25,7 @@ public:
     virtual ~GameTestInstanceLedger() = default;
 
     // vIndex: 1
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance& testInstance);
 
     // vIndex: 2
     virtual void onTestPassed(class gametest::BaseGameTestInstance&);
@@ -46,9 +46,24 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
+    MCAPI static void** vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance& testInstance);
+
+    MCAPI static std::string const& GAME_TEST_INSTANCE_PREFIX();
 
     // NOLINTEND
 };

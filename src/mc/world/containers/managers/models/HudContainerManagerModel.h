@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 
 class HudContainerManagerModel : public ::ContainerManagerModel {
@@ -38,6 +38,27 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     MCAPI HudContainerManagerModel(::ContainerID containerId, class Player& player);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player);
+
+    MCAPI class ContainerScreenContext _postInit$();
+
+    MCAPI void broadcastChanges$();
+
+    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+
+    MCAPI class ItemStack const& getSlot$(int slot) const;
+
+    MCAPI void setData$(int id, int value);
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
 
     // NOLINTEND
 };

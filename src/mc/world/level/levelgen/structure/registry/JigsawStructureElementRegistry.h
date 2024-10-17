@@ -20,4 +20,13 @@ public:
     MCAPI ~JigsawStructureElementRegistry();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

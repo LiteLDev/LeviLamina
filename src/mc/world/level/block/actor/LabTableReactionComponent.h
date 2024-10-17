@@ -24,4 +24,19 @@ public:
     virtual void _onEnd(class LabTableReaction&, class BlockSource&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void _onEnd$(class LabTableReaction&, class BlockSource&);
+
+    MCAPI void _onStart$(class LabTableReaction& owner, class BlockSource& region);
+
+    MCAPI void _onTick$(class LabTableReaction& owner, class BlockSource& region);
+
+    // NOLINTEND
 };

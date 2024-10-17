@@ -37,4 +37,17 @@ public:
     MCAPI ~ScriptPackConfiguration();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ScriptPackConfiguration&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ScriptPackConfiguration const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

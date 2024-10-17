@@ -5,7 +5,7 @@
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class CircuitSceneGraph {
 public:
@@ -33,6 +33,15 @@ public:
         MCAPI class CircuitSceneGraph::PendingEntry& operator=(class CircuitSceneGraph::PendingEntry&& rhs);
 
         MCAPI ~PendingEntry();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class CircuitSceneGraph::PendingEntry&& entry);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -81,6 +90,15 @@ public:
     MCAPI void removeStaleRelationships();
 
     MCAPI void scheduleRelationshipUpdate(class BlockPos const& pos, class BaseCircuitComponent* component);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

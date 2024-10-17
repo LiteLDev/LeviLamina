@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,15 @@ public:
         MCAPI ~Tracker();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -44,9 +53,16 @@ public:
     // vIndex: 0
     virtual ~NetworkDebugManager() = default;
 
-    MCAPI static int const MAX_NUMBER_OF_SAMPLES;
+    // NOLINTEND
 
-    MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI static int const& MAX_NUMBER_OF_SAMPLES();
+
+    MCAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
 
     // NOLINTEND
 };

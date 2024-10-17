@@ -15,4 +15,13 @@ public:
     MCAPI ~LeverActionEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct LeverActionEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

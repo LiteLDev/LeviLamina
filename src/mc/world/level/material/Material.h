@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class Material {
 public:
@@ -54,11 +54,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static bool mInitialized;
+    MCAPI static bool& mInitialized();
 
-    MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
+    MCAPI static std::vector<std::unique_ptr<class Material>>& mMaterials();
 
     // NOLINTEND
 };

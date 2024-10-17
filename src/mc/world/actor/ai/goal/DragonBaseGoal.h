@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class DragonBaseGoal : public ::Goal {
@@ -17,6 +17,15 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~DragonBaseGoal();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

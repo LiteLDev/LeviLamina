@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class POIInstance {
 public:
@@ -63,13 +63,31 @@ public:
 
     MCAPI void resetArrivalFailureCount();
 
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     MCAPI void setVillage(class Village* value);
 
     MCAPI void trySpawnParticles(class BlockSource& region, class Random& random, int particleType) const;
 
     MCAPI bool useBoundingBox() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class BlockPos const& pos,
+        bool                  useBoundingBox,
+        std::string           name,
+        ::POIType             type,
+        float                 radius,
+        uint64                maxCapacity,
+        uint64                weight,
+        std::string           soundEvent,
+        std::string           initEvent,
+        std::string           endEvent
+    );
 
     // NOLINTEND
 };

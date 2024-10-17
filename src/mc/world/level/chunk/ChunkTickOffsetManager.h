@@ -18,14 +18,23 @@ public:
 
     MCAPI std::vector<class ChunkPos> const& getTickingOffsets() const;
 
-    MCAPI void initialize(uint);
+    MCAPI void initialize(uint serverTickRange);
 
-    MCAPI void shuffleTickingOffsets(class Random&);
+    MCAPI void shuffleTickingOffsets(class Random& random);
 
     MCAPI ~ChunkTickOffsetManager();
 
     MCAPI static std::vector<class ChunkPos>
     getSortedPositionsFromClientOffsets(std::vector<class ChunkPos> const&, std::vector<class ChunkPos> const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

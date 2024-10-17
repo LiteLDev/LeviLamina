@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,11 +36,10 @@ public:
         const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const& block, class AABB&) const;
 
     // vIndex: 62
-    virtual bool
-    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
     // vIndex: 93
     virtual void
@@ -50,7 +49,7 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    virtual int getVariant(class Block const&) const;
 
     // vIndex: 146
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -63,17 +62,47 @@ public:
 
     MCAPI BannerBlock(std::string const& nameId, int id, bool onGround);
 
-    MCAPI static class ItemInstance itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*>);
+    MCAPI static class ItemInstance itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*> banner);
 
-    MCAPI static class AABB EAST_AABB;
+    // NOLINTEND
 
-    MCAPI static class AABB NORTH_AABB;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static class AABB SOUTH_AABB;
+    MCAPI void* ctor$(std::string const& nameId, int id, bool onGround);
 
-    MCAPI static class AABB STANDING_AABB;
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
 
-    MCAPI static class AABB WEST_AABB;
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI class AABB
+    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB&) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI static class AABB& EAST_AABB();
+
+    MCAPI static class AABB& NORTH_AABB();
+
+    MCAPI static class AABB& SOUTH_AABB();
+
+    MCAPI static class AABB& STANDING_AABB();
+
+    MCAPI static class AABB& WEST_AABB();
 
     // NOLINTEND
 };

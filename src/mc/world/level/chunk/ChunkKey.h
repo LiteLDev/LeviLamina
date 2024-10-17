@@ -4,7 +4,7 @@
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class ChunkKey {
 public:
@@ -20,6 +20,15 @@ public:
     MCAPI std::string_view asSpan() const;
 
     MCAPI uint64 hashCode() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class LevelChunk const& lc);
+
+    MCAPI void* ctor$(class ChunkPos const& pos, DimensionType id);
 
     // NOLINTEND
 };

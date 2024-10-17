@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ParticleType.h"
-#include "mc/events/LevelEvent.h"
+#include "mc/world/actor/ParticleType.h"
+#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
+#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,8 +61,11 @@ public:
     );
 
     // vIndex: 14
-    virtual void
-    addBreakingItemParticleEffect(class Vec3 const& pos, ::ParticleType type, struct ResolvedItemIconInfo const&);
+    virtual void addBreakingItemParticleEffect(
+        class Vec3 const&                  pos,
+        ::ParticleType                     type,
+        struct ResolvedItemIconInfo const& textureInfo
+    );
 
     // vIndex: 15
     virtual void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
@@ -83,7 +86,12 @@ public:
     virtual void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
 
     // vIndex: 21
-    virtual void onSubChunkLoaded(class ChunkSource& source, class LevelChunk& lc, short, bool);
+    virtual void onSubChunkLoaded(
+        class ChunkSource& source,
+        class LevelChunk&  lc,
+        short              absoluteSubChunkIndex,
+        bool               subChunkVisibilityChanged
+    );
 
     // vIndex: 22
     virtual void onChunkUnloaded(class LevelChunk& lc);
@@ -107,6 +115,87 @@ public:
 
     // vIndex: 27
     virtual void playerListChanged();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void addBreakingItemParticleEffect$(
+        class Vec3 const&                  pos,
+        ::ParticleType                     type,
+        struct ResolvedItemIconInfo const& textureInfo
+    );
+
+    MCAPI void addParticleEffect$(
+        class HashedString const&      effect,
+        class Actor const&             actor,
+        class HashedString const&      locator,
+        class Vec3 const&              emitterOffset,
+        class MolangVariableMap const& molangVariables
+    );
+
+    MCAPI void addTerrainParticleEffect$(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
+
+    MCAPI void addTerrainSlideEffect$(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
+
+    MCAPI void allChanged$();
+
+    MCAPI void levelEvent$(::LevelEvent type, class Vec3 const& pos, int data);
+
+    MCAPI void levelEvent$(::LevelEvent type, class CompoundTag const& data);
+
+    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onChunkReloaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
+
+    MCAPI void onEntityAdded$(class Actor& entity);
+
+    MCAPI void onEntityRemoved$(class Actor& entity);
+
+    MCAPI void onLevelDestruction$(std::string const& levelId);
+
+    MCAPI void onSubChunkLoaded$(
+        class ChunkSource& source,
+        class LevelChunk&  lc,
+        short              absoluteSubChunkIndex,
+        bool               subChunkVisibilityChanged
+    );
+
+    MCAPI void playMusic$(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
+
+    MCAPI void playStreamingMusic$(std::string const& name, int x, int y, int z);
+
+    MCAPI void playerListChanged$();
+
+    MCAPI void sendServerLegacyParticle$(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+
+    MCAPI void takePicture$(
+        class cg::ImageBuffer&    outImage,
+        class Actor*              camera,
+        class Actor*              target,
+        struct ScreenshotOptions& screenshotOptions
+    );
 
     // NOLINTEND
 };

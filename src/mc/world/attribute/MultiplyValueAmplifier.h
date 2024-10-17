@@ -21,4 +21,13 @@ public:
     virtual float getAmount(int amplification, float scale) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI float getAmount$(int amplification, float scale) const;
+
+    // NOLINTEND
 };

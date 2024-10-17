@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BasePressurePlateBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -74,9 +74,48 @@ public:
 
     MCAPI WeightedPressurePlateBlock(std::string const& nameId, int id, class Material const& material, int maxWeight);
 
-    MCAPI static int const MAX_WEIGHT_HEAVY;
+    // NOLINTEND
 
-    MCAPI static int const MAX_WEIGHT_LIGHT;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material, int maxWeight);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const* getOffBlock$(class Block const* block) const;
+
+    MCAPI class Block const* getOnBlock$(class Block const* block) const;
+
+    MCAPI int getOutputSignal$(class Block const& block) const;
+
+    MCAPI int getRedstoneSignal$(int signal) const;
+
+    MCAPI int getSignalForData$(int data) const;
+
+    MCAPI int getSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getTickDelay$() const;
+
+    MCAPI int getTurnOffDelay$(class Block const& block) const;
+
+    MCAPI int getTurnOnDelay$(class Block const& block) const;
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI void
+    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
+
+    MCAPI static int const& MAX_WEIGHT_HEAVY();
+
+    MCAPI static int const& MAX_WEIGHT_LIGHT();
 
     // NOLINTEND
 };

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/enums/CreativeItemCategory.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/world/item/CreativeItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,6 +34,13 @@ public:
         MCAPI ~BlockResource();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -44,7 +51,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit BlockDefinitionGroup(struct cereal::ReflectionCtx const&);
+    MCAPI explicit BlockDefinitionGroup(struct cereal::ReflectionCtx const& ctx);
 
     MCAPI void buildBlockSchema(class BlockComponentFactory const& factory);
 
@@ -57,17 +64,17 @@ public:
 
     MCAPI std::vector<struct BlockDefinition const*> getBlockDefinitions() const;
 
-    MCAPI void initializeBlockFromDefinition(struct BlockDefinition const&, class Level&);
+    MCAPI void initializeBlockFromDefinition(struct BlockDefinition const& definition, class Level& level);
 
-    MCAPI void initializeBlocks(class Level&);
+    MCAPI void initializeBlocks(class Level& level);
 
     MCAPI std::unique_ptr<struct BlockDefinition> loadResource(
-        std::string,
-        class Core::PathBuffer<std::string> const&,
-        std::string const&,
-        class SemVersion const&,
-        class Experiments const&,
-        bool
+        std::string                                upgradedJsonData,
+        class Core::PathBuffer<std::string> const& res,
+        std::string const&                         resourcePacklocation,
+        class SemVersion const&                    engineVersion,
+        class Experiments const&                   experiments,
+        bool                                       isBaseGamePack
     );
 
     MCAPI void loadResources(
@@ -106,12 +113,12 @@ public:
     );
 
     MCAPI bool _loadBlockDescription(
-        class Json::Value const&,
-        struct BlockDescription&,
-        class SemVersion const&,
-        class SemVersion const&,
-        class Experiments const&,
-        bool
+        class Json::Value const& root,
+        struct BlockDescription& desc,
+        class SemVersion const&  engineVersion,
+        class SemVersion const&  jsonVersion,
+        class Experiments const& experiments,
+        bool                     isBaseGamePack
     );
 
     MCAPI bool _loadComponents(
@@ -123,15 +130,24 @@ public:
     MCAPI bool _loadEvents(class Json::Value const& root, struct BlockDefinition& definition);
 
     MCAPI bool _parseComponents(
-        class Json::Value const&,
-        struct BlockComponentGroupDescription&,
-        std::string const&      blockIdentifier,
-        class SemVersion const& engineVersion,
-        class SemVersion const&,
-        class Experiments const& experiments
+        class Json::Value const&               blockRoot,
+        struct BlockComponentGroupDescription& componentGroupDescription,
+        std::string const&                     blockIdentifier,
+        class SemVersion const&                engineVersion,
+        class SemVersion const&                originalJsonVersion,
+        class Experiments const&               experiments
     );
 
     MCAPI ::CreativeItemCategory _stringToCreativeItemCategory(std::string const& str);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

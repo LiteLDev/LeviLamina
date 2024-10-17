@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/world/events/EventResult.h"
 
 class DebugInfoComponent {
@@ -24,6 +24,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~Listener();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -162,6 +169,21 @@ public:
 
     MCAPI void
     removeListener(class HashedString const&, class NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class DebugInfoComponent const&);
+
+    MCAPI void* ctor$(class DebugInfoComponent&&);
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
 
     // NOLINTEND
 };

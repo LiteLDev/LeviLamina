@@ -4,7 +4,7 @@
 #include "mc/world/inventory/network/ItemStackRequestSlotInfo.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
 class ItemStackRequestActionTransferBase : public ::ItemStackRequestAction {
@@ -27,6 +27,13 @@ public:
     virtual ~ItemStackRequestActionTransferBase();
 
     MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

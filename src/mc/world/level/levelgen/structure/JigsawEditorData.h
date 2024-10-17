@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/JigsawJointType.h"
+#include "mc/world/level/levelgen/structure/JigsawJointType.h"
 
 class JigsawEditorData {
 public:
@@ -19,13 +19,13 @@ public:
     MCAPI JigsawEditorData(class JigsawEditorData const&);
 
     MCAPI JigsawEditorData(
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        ::JigsawJointType,
-        int,
-        int
+        std::string const& name,
+        std::string const& target,
+        std::string const& targetPool,
+        std::string const& finalBlockName,
+        ::JigsawJointType  jointType,
+        int                placement,
+        int                selection
     );
 
     MCAPI std::string const& getFinalBlock() const;
@@ -48,7 +48,7 @@ public:
 
     MCAPI void setFinalBlock(std::string const& finalBlock);
 
-    MCAPI void setJointType(::JigsawJointType const&);
+    MCAPI void setJointType(::JigsawJointType const& jointType);
 
     MCAPI void setName(std::string const& name);
 
@@ -60,9 +60,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<int, std::string> const JOINT_TYPE_TO_NAME;
+    MCAPI void* ctor$(class JigsawEditorData const&);
+
+    MCAPI void* ctor$(class JigsawEditorData&&);
+
+    MCAPI void* ctor$(
+        std::string const& name,
+        std::string const& target,
+        std::string const& targetPool,
+        std::string const& finalBlockName,
+        ::JigsawJointType  jointType,
+        int                placement,
+        int                selection
+    );
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unordered_map<int, std::string> const& JOINT_TYPE_TO_NAME();
 
     // NOLINTEND
 };

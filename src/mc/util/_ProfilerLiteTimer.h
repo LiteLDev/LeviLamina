@@ -19,4 +19,13 @@ public:
     MCAPI ~_ProfilerLiteTimer();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ProfilerLite::ScopedData& scopedData, std::thread::id threadId);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

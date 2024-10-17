@@ -18,4 +18,11 @@ public:
     MCAPI void solve(class Vec3& velA, class Vec3& velB);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float massA, float massB, float desiredDistance);
+
+    // NOLINTEND
 };

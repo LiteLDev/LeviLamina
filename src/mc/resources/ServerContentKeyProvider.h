@@ -18,7 +18,7 @@ public:
     virtual ~ServerContentKeyProvider() = default;
 
     // vIndex: 1
-    virtual std::string getContentKey(class ContentIdentity const&) const;
+    virtual std::string getContentKey(class ContentIdentity const& contentIdentity) const;
 
     // vIndex: 2
     virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
@@ -34,6 +34,25 @@ public:
 
     // vIndex: 6
     virtual bool canAccess(class ContentIdentity const& contentIdentity) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool canAccess$(class ContentIdentity const& contentIdentity) const;
+
+    MCAPI void clearTempContentKeys$();
+
+    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+
+    MCAPI std::string getContentKey$(class ContentIdentity const& contentIdentity) const;
+
+    MCAPI bool requireEncryptedReads$() const;
+
+    MCAPI void setTempContentKeys$(std::unordered_map<class ContentIdentity, std::string> const&);
 
     // NOLINTEND
 };

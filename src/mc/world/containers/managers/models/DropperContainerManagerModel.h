@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 class DropperContainerManagerModel : public ::LevelContainerManagerModel {
@@ -23,6 +23,17 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     MCAPI DropperContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+
+    MCAPI class ContainerScreenContext _postInit$();
 
     // NOLINTEND
 };

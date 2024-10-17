@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ViewT.h"
+#include "mc/deps/ecs/ViewT.h"
 
 class EventingRequestSystem {
 public:
@@ -22,8 +22,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void _eventingRequestSystem(
         class StrictEntityContext const&,
-        struct EventingRequestQueueComponent&,
-        class LevelComponent& levelComponent
+        struct EventingRequestQueueComponent& eventingRequestQueueComponent,
+        class LevelComponent&                 levelComponent
     );
 
     MCAPI static void _tickEventingRequestSystem(

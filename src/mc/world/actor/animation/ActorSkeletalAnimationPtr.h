@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class ActorSkeletalAnimationPtr {
 public:
@@ -14,8 +14,8 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ActorSkeletalAnimationPtr(
-        Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const&,
-        class HashedString const& name
+        Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const& animationGroup,
+        class HashedString const&                                     name
     );
 
     MCAPI class HashedString const& getName() const;
@@ -30,7 +30,17 @@ public:
 
     MCAPI ~ActorSkeletalAnimationPtr();
 
-    MCAPI static class ActorSkeletalAnimationPtr const NONE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const& animationGroup, class HashedString const& name);
+
+    MCAPI void dtor$();
+
+    MCAPI static class ActorSkeletalAnimationPtr const& NONE();
 
     // NOLINTEND
 };

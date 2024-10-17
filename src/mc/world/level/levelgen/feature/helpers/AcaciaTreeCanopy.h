@@ -32,11 +32,22 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _placeLeaf(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        gsl::not_null<class Block const*>,
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        gsl::not_null<class Block const*>    leavesBlock,
         struct TreeHelper::TreeParams const& treeParams
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::optional<class BlockPos>
+    placeCanopy$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, std::vector<class BlockPos> const&)
+        const;
 
     // NOLINTEND
 };

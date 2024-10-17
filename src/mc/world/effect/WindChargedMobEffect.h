@@ -18,7 +18,16 @@ public:
     virtual ~WindChargedMobEffect() = default;
 
     // vIndex: 4
-    virtual void onActorRemovedAfterDeath(class Actor&, int) const;
+    virtual void onActorRemovedAfterDeath(class Actor& target, int amplifier) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void onActorRemovedAfterDeath$(class Actor& target, int amplifier) const;
 
     // NOLINTEND
 };

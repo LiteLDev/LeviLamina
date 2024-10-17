@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/ServerAuthMovementMode.h"
+#include "mc/entity/components/ServerAuthMovementMode.h"
 
 struct SyncedPlayerMovementSettings {
 public:
@@ -18,6 +18,15 @@ public:
     MCAPI SyncedPlayerMovementSettings();
 
     MCAPI explicit SyncedPlayerMovementSettings(struct PlayerMovementSettings const& settings);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct PlayerMovementSettings const& settings);
 
     // NOLINTEND
 };

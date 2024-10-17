@@ -22,20 +22,20 @@ public:
         class Dimension const& dimension,
         class ChunkSource&     source,
         struct Bounds const&   bounds,
-        bool                   isCircle,
+        bool                   isCircleArea,
         struct Tick            currentLevelTick,
-        bool                   allowNonPlayerTicking
+        bool                   allowNonTickingPlayerAndTickingAreaChunks
     );
 
     MCAPI static struct ChunksLoadedInfo calculateChunksLoadedInfo(
         class Dimension const& dimension,
         class ChunkSource&     source,
         struct Bounds const&   bounds,
-        bool                   isCircle,
+        bool                   isCircleArea,
         struct Tick            currentLevelTick,
         bool                   allowUnloadedChunks,
-        bool                   allowNonPlayerTicking,
-        bool
+        bool                   allowNonTickingPlayerAndTickingAreaChunks,
+        bool                   allowPlayerChunks
     );
 
     // NOLINTEND

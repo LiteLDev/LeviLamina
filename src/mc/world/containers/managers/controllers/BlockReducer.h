@@ -22,7 +22,18 @@ public:
 
     MCAPI std::unordered_map<int, std::vector<class ItemStack>> const& getReductionMap() const;
 
-    MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int) const;
+    MCAPI class ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void registerBlock$(class ItemStack const& block, std::vector<class ItemStack>&& elements);
 
     // NOLINTEND
 };

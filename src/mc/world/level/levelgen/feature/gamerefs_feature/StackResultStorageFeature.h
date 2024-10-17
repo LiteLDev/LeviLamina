@@ -33,4 +33,11 @@ public:
     MCAPI bool _hasValue() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class WeakStorageFeature const& weakStorage);
+
+    // NOLINTEND
 };

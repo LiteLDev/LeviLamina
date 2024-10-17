@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/Rotation.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
@@ -69,6 +69,38 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void* ctor$(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            ::Rotation                                          rotation,
+            float                                               integrity,
+            bool                                                isSatellite,
+            class Dimension&                                    dimension
+        );
+
+        MCAPI void _handleDataMarker$(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
+
+        MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
+
+        MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        MCAPI void
+        postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+        // NOLINTEND
     };
 
 public:
@@ -99,15 +131,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::array<std::string_view, 7> MSC_FEATURES;
+    MCAPI static std::array<std::string_view, 7>& MSC_FEATURES();
 
-    MCAPI static std::string_view PILLAGER_LOOT;
+    MCAPI static std::string_view& PILLAGER_LOOT();
 
-    MCAPI static std::string_view STRUCTURE_WATCHTOWER;
+    MCAPI static std::string_view& STRUCTURE_WATCHTOWER();
 
-    MCAPI static std::string_view STRUCTURE_WATCHTOWER_OVERGROWN;
+    MCAPI static std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
 
     // NOLINTEND
 };

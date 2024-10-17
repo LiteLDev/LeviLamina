@@ -38,25 +38,30 @@ public:
 
     MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
 
-    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const&);
+    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const& baseAttribute);
 
     MCAPI ~BaseAttributeMap();
 
-    MCAPI static std::string const DIFF_ATTRIBUTES;
-
-    MCAPI static std::string const DIFF_ATTRIBUTES_SIZE;
-
-    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES;
-
-    MCAPI static std::string const DIFF_DIRTY_ATTRIBUTES_SIZE;
-
-    MCAPI static std::string const DIFF_NO_ATTRIBUTES;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class AttributeInstance mInvalidInstance;
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DIFF_ATTRIBUTES();
+
+    MCAPI static std::string const& DIFF_ATTRIBUTES_SIZE();
+
+    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES();
+
+    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
+
+    MCAPI static std::string const& DIFF_NO_ATTRIBUTES();
+
+    MCAPI static class AttributeInstance& mInvalidInstance();
 
     // NOLINTEND
 };

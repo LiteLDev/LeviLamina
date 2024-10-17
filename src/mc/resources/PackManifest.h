@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ManifestOrigin.h"
-#include "mc/enums/ManifestType.h"
-#include "mc/resources/PackCategory.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/resources/ManifestOrigin.h"
+#include "mc/resources/ManifestType.h"
 #include "mc/resources/PackManifestFormat.h"
-#include "mc/resources/PackOrigin.h"
 #include "mc/resources/PackScope.h"
-#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -128,8 +128,6 @@ public:
 
     MCAPI void setSourceIdentity(class ContentIdentity const& contentIdentity);
 
-    MCAPI static std::string const MarioPackId;
-
     // NOLINTEND
 
     // private:
@@ -144,9 +142,22 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<std::string, ::PackScope> const STRING_TO_PACK_SCOPE;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class PackManifest const&);
+
+    MCAPI void* ctor$(::ManifestType type);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class PackManifest> clone$() const;
+
+    MCAPI static std::string const& MarioPackId();
+
+    MCAPI static std::unordered_map<std::string, ::PackScope> const& STRING_TO_PACK_SCOPE();
 
     // NOLINTEND
 };

@@ -14,4 +14,11 @@ public:
     MCAPI ~GatheringServerInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

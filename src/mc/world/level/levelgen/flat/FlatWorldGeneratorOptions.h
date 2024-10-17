@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
-#include "mc/enums/WorldVersion.h"
+#include "mc/world/level/WorldVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,7 +41,14 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI bool _load(class Json::Value const&, class LevelData const&);
+    MCAPI bool _load(class Json::Value const& root, class LevelData const& levelData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

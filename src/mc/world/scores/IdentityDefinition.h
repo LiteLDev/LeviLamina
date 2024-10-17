@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/world/scores/PlayerScoreboardId.h"
 #include "mc/world/scores/ScoreboardId.h"
 
@@ -62,7 +62,18 @@ public:
 
     MCAPI ~IdentityDefinition();
 
-    MCAPI static class IdentityDefinition const Invalid;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class IdentityDefinition const& o);
+
+    MCAPI void* ctor$(class IdentityDefinition&& o);
+
+    MCAPI void dtor$();
+
+    MCAPI static class IdentityDefinition const& Invalid();
 
     // NOLINTEND
 };

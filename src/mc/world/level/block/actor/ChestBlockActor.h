@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorFillingContainer.h"
-#include "mc/world/level/block/utils/BlockActorRendererId.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
 
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
 public:
@@ -66,7 +66,7 @@ public:
 
     MCVAPI void onPlace(class BlockSource& region);
 
-    MCVAPI void onRemoved(class BlockSource&);
+    MCVAPI void onRemoved(class BlockSource& region);
 
     MCVAPI void openBy(class Player& p);
 
@@ -153,6 +153,111 @@ public:
     MCAPI void _tryToPairWith(class BlockSource& region, class BlockPos const& position);
 
     MCAPI void _unpair();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForFillingContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void* ctor$(
+        ::BlockActorType       type,
+        std::string const&     id,
+        ::BlockActorRendererId renderId,
+        class BlockPos const&  pos,
+        bool                   isTrapped
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canOpenThis$(class BlockSource& region) const;
+
+    MCAPI bool _detectEntityObstruction$(class BlockSource& region) const;
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI void addContentChangeListener$(class ContainerContentChangeListener* listener);
+
+    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
+
+    MCAPI bool canPushInItem$(int, int, class ItemStack const&) const;
+
+    MCAPI void clearCache$();
+
+    MCAPI int clearInventory$(int resizeTo);
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class BlockActor* getCrackEntity$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void getDebugText$(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI class AABB getObstructionAABB$() const;
+
+    MCAPI void initializeContainerContents$(class BlockSource& region);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void loadItems$(class CompoundTag const& base, class Level& level);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI void onMove$();
+
+    MCAPI void onNeighborChanged$(class BlockSource& region, class BlockPos const& position);
+
+    MCAPI void onPlace$(class BlockSource& region);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI void openBy$(class Player& p);
+
+    MCAPI void playCloseSound$(class BlockSource& region);
+
+    MCAPI void playOpenSound$(class BlockSource& region);
+
+    MCAPI void removeContentChangeListener$(class ContainerContentChangeListener* listener);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI bool saveItemInstanceData$(class CompoundTag& base) const;
+
+    MCAPI bool saveItems$(class CompoundTag& base) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setContainerChanged$(int slot);
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+
+    MCAPI void startOpen$(class Player& player);
+
+    MCAPI void stopOpen$(class Player& player);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI void triggerEvent$(int b0, int b1);
 
     // NOLINTEND
 };

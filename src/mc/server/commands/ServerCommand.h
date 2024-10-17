@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/events/TextFilteringEvent.h"
-#include "mc/world/events/TextProcessingEventOrigin.h"
-#include "mc/world/level/Command.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/events/TextProcessingEventOrigin.h"
+#include "mc/server/commands/Command.h"
+#include "mc/server/safety/TextFilteringEvent.h"
 
 class ServerCommand : public ::Command {
 public:
@@ -25,22 +25,29 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI bool tryToFilterTextWithRemoteFilter(
-        class CommandOrigin const&,
-        class CommandOutput&,
-        std::vector<std::string> const&,
-        ::TextProcessingEventOrigin const&,
-        std::function<void(std::vector<std::string> const&, std::vector<::Safety::TextFilteringEvent> const&)>,
-        bool
+        class CommandOrigin const&         origin,
+        class CommandOutput&               output,
+        std::vector<std::string> const&    text,
+        ::TextProcessingEventOrigin const& textOrigin,
+        std::function<void(std::vector<std::string> const&, std::vector<::Safety::TextFilteringEvent> const&)> callback,
+        bool passThrough
     ) const;
 
-    MCAPI static void
-    kickPlayerDueToFlooding(class Bedrock::NonOwnerPointer<class ServerNetworkHandler>, class Player*, class IMinecraftEventing&, std::string const&);
+    MCAPI static void kickPlayerDueToFlooding(
+        class Bedrock::NonOwnerPointer<class ServerNetworkHandler> serverNetworkHandler,
+        class Player*                                              player,
+        class IMinecraftEventing&                                  eventing,
+        std::string const&                                         message
+    );
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Minecraft* mGame;
+    MCAPI void dtor$();
+
+    MCAPI static class Minecraft*& mGame();
 
     // NOLINTEND
 };

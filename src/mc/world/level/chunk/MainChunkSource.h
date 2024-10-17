@@ -51,4 +51,34 @@ public:
     MCAPI explicit MainChunkSource(std::unique_ptr<class ChunkSource> storage);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::unique_ptr<class ChunkSource> storage);
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI bool canCreateViews$() const;
+
+    MCAPI void clearDeletedEntities$();
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& cp);
+
+    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Random& random);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage$() const;
+
+    MCAPI bool isChunkKnown$(class ChunkPos const& chunkPos);
+
+    MCAPI void setLevelChunk$(std::shared_ptr<class LevelChunk> lc);
+
+    // NOLINTEND
 };

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerScreenRequestActionType.h"
-#include "mc/world/containers/ContainerValidationCaller.h"
+#include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
+#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 class ContainerScreenValidation {
 public:
@@ -20,17 +20,21 @@ public:
     virtual ~ContainerScreenValidation() = default;
 
     // vIndex: 1
-    virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
 
     // vIndex: 2
     virtual struct ContainerValidationCraftResult
-        getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
 
     // vIndex: 3
     virtual struct ContainerValidationResult tryActivate();
 
-    MCAPI
-    ContainerScreenValidation(class ContainerScreenContext const& screenContext, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
+    MCAPI ContainerScreenValidation(
+        class ContainerScreenContext const&                                       screenContext,
+        ::ContainerValidationCaller                                               caller,
+        std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>> predictiveContainers
+    );
 
     MCAPI std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(::ContainerEnumName containerEnumName
     );
@@ -41,42 +45,55 @@ public:
 
     MCAPI bool tryCommitActionResults();
 
-    MCAPI struct ContainerValidationResult tryConsume(struct ContainerValidationSlotData const&, int transferAmount);
-
-    MCAPI struct ContainerValidationResult tryDestroy(struct ContainerValidationSlotData const&, int transferAmount);
-
-    MCAPI struct ContainerValidationResult tryDrop(struct ContainerValidationSlotData const&, int transferAmount, bool);
+    MCAPI struct ContainerValidationResult
+    tryConsume(struct ContainerValidationSlotData const& srcSlotData, int transferAmount);
 
     MCAPI struct ContainerValidationResult
-    tryPlaceInItemContainer(struct ContainerValidationSlotData const&, int transferAmount);
+    tryDestroy(struct ContainerValidationSlotData const& srcSlotData, int transferAmount);
 
     MCAPI struct ContainerValidationResult
-    trySwap(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&);
+    tryDrop(struct ContainerValidationSlotData const& srcSlotData, int transferAmount, bool dropRandomly);
 
-    MCAPI struct ContainerValidationResult tryTransfer(
-        struct ContainerValidationSlotData const&,
-        struct ContainerValidationSlotData const&,
-        int transferAmount,
-        bool
+    MCAPI struct ContainerValidationResult
+    tryPlaceInItemContainer(struct ContainerValidationSlotData const& srcSlotData, int transferAmount);
+
+    MCAPI struct ContainerValidationResult trySwap(
+        struct ContainerValidationSlotData const& srcSlotData,
+        struct ContainerValidationSlotData const& dstSlotData
     );
 
-    MCAPI static std::unique_ptr<class ContainerScreenValidation>
-    makeContainerScreenValidation(class ContainerScreenContext const& screenContext, ::ContainerValidationCaller, std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>>);
+    MCAPI struct ContainerValidationResult tryTransfer(
+        struct ContainerValidationSlotData const& srcSlotData,
+        struct ContainerValidationSlotData const& dstSlotData,
+        int                                       transferAmount,
+        bool                                      isAllowingPartialTransfer
+    );
+
+    MCAPI static std::unique_ptr<class ContainerScreenValidation> makeContainerScreenValidation(
+        class ContainerScreenContext const&                                       screenContext,
+        ::ContainerValidationCaller                                               caller,
+        std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>> predictiveContainers
+    );
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI int _tryAddItem(struct ContainerValidationSlotInfo& slotInfo, int addCount, bool);
+    MCAPI int _tryAddItem(struct ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
 
     MCAPI class ItemStack _tryRemoveItem(struct ContainerValidationSlotInfo& slotInfo, int amount);
 
-    MCAPI int _trySetItem(struct ContainerValidationSlotInfo& slotInfo, class ItemStack const& stack, bool, bool);
+    MCAPI int _trySetItem(
+        struct ContainerValidationSlotInfo& slotInfo,
+        class ItemStack const&              stack,
+        bool                                isWholeStackTransfer,
+        bool                                allowPartialSuccess
+    );
 
     MCAPI struct ContainerValidationResult _tryTransferSpecial(
-        struct ContainerValidationSlotData const&,
-        int                                transferAmount,
-        ::ContainerScreenRequestActionType actionType
+        struct ContainerValidationSlotData const& srcSlotData,
+        int                                       transferAmount,
+        ::ContainerScreenRequestActionType        actionType
     );
 
     // NOLINTEND
@@ -86,7 +103,7 @@ public:
     MCAPI void _commit();
 
     MCAPI struct ContainerValidationSlotInfo
-    _createContainerValidatorSlotInfo(struct ContainerValidationSlotData const&);
+    _createContainerValidatorSlotInfo(struct ContainerValidationSlotData const& slotData);
 
     MCAPI bool _dropItems();
 
@@ -94,6 +111,27 @@ public:
           _getOrCreateContainerValidator(::ContainerEnumName containerEnumName);
 
     MCAPI bool _propagateContainers();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class ContainerScreenContext const&                                       screenContext,
+        ::ContainerValidationCaller                                               caller,
+        std::unordered_map<::ContainerEnumName, std::shared_ptr<class Container>> predictiveContainers
+    );
+
+    MCAPI struct ContainerValidationCraftResult
+    getCraftResults$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs);
+
+    MCAPI struct ContainerValidationResult tryActivate$();
+
+    MCAPI struct ContainerValidationResult tryCraft$(std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+    );
 
     // NOLINTEND
 };

@@ -23,4 +23,15 @@ public:
     MCAPI explicit ExhaustionAttributeDelegate(class AttributeInstance const& _attribute);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class AttributeInstance const& _attribute);
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

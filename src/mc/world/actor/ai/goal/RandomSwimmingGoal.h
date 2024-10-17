@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
 class RandomSwimmingGoal : public ::RandomStrollGoal {
@@ -30,7 +30,24 @@ public:
     // vIndex: 10
     virtual bool _setWantedPosition();
 
-    MCAPI RandomSwimmingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool);
+    MCAPI RandomSwimmingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+
+    MCAPI bool _setWantedPosition$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
 
     // NOLINTEND
 };

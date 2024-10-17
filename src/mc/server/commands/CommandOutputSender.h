@@ -30,7 +30,20 @@ public:
         ::CommandPermissionLevel   opPermLevel
     );
 
-    MCAPI static std::vector<std::string> translate(std::vector<std::string> const& in);
+    MCAPI static std::vector<std::string> translate(std::vector<std::string> const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void registerOutputCallback$(std::function<void(class AutomationCmdOutput&)> const& callback);
+
+    MCAPI void send$(class CommandOrigin const& origin, class CommandOutput const& output);
 
     // NOLINTEND
 };

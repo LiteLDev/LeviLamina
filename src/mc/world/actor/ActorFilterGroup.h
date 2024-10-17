@@ -73,4 +73,17 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI std::shared_ptr<class FilterGroup> _createSubgroup$(::FilterGroup::CollectionType type) const;
+
+    MCAPI bool _handleUnknownMember$(std::string const& name, class Json::Value const& jsonVal);
+
+    // NOLINTEND
 };

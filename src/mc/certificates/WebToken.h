@@ -28,8 +28,11 @@ public:
 
     MCAPI ~WebToken();
 
-    MCAPI static std::unique_ptr<class WebToken>
-    createFromData(class Json::Value const&, class PrivateKeyManager const&, std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType>);
+    MCAPI static std::unique_ptr<class WebToken> createFromData(
+        class Json::Value const&                                                               dataInfo,
+        class PrivateKeyManager const&                                                         manager,
+        std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType> signatureType
+    );
 
     // NOLINTEND
 
@@ -40,6 +43,15 @@ public:
     MCAPI std::string _signatureToDER() const;
 
     MCAPI static std::string _DERToBinary(std::string const& derSignature, int outputLength);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string token);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

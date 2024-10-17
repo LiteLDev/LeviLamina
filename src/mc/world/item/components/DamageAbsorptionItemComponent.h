@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/enums/ArmorSlot.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/item/ArmorSlot.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -24,11 +24,20 @@ public:
     // vIndex: 0
     virtual ~DamageAbsorptionItemComponent() = default;
 
-    MCAPI explicit DamageAbsorptionItemComponent(std::vector<::ActorDamageCause> const&);
+    MCAPI explicit DamageAbsorptionItemComponent(std::vector<::ActorDamageCause> const& absorbableDamageCauses);
 
     MCAPI static class HashedString const& getIdentifier();
 
-    MCAPI static std::array<::ArmorSlot, 1> const VALID_SLOTS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::vector<::ActorDamageCause> const& absorbableDamageCauses);
+
+    MCAPI static std::array<::ArmorSlot, 1> const& VALID_SLOTS();
 
     // NOLINTEND
 };

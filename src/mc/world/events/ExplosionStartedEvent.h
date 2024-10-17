@@ -15,4 +15,13 @@ public:
     MCAPI ~ExplosionStartedEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ExplosionStartedEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

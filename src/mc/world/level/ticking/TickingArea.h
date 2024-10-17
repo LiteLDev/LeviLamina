@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/enums/TickingAreaLoadMode.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/ticking/ITickingArea.h"
+#include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -122,6 +122,80 @@ public:
     MCAPI void _center(class LevelStorage& levelStorage);
 
     MCAPI void _save(class LevelStorage& levelStorage);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Dimension&      dimension,
+        class mce::UUID       uniqueId,
+        std::string const&    name,
+        struct ActorUniqueID  entityId,
+        struct Bounds const&  bounds,
+        bool                  isCircle,
+        float                 maxDistToPlayers,
+        bool                  alwaysActive,
+        ::TickingAreaLoadMode loadMode
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool entityHasBeenFound$() const;
+
+    MCAPI class Actor* findOwner$(uchar& pendingChunks);
+
+    MCAPI class WeakRef<class BlockSource> const getBlockSource$() const;
+
+    MCAPI class WeakRef<class BlockSource> getBlockSource$();
+
+    MCAPI struct Bounds const& getBounds$() const;
+
+    MCAPI struct TickingAreaDescription getDescription$() const;
+
+    MCAPI struct ActorUniqueID const& getEntityId$() const;
+
+    MCAPI class mce::UUID const& getId$() const;
+
+    MCAPI ::TickingAreaLoadMode getLoadMode$() const;
+
+    MCAPI float getMaxDistToPlayers$() const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI class ITickingAreaView const& getView$() const;
+
+    MCAPI class ITickingAreaView& getView$();
+
+    MCAPI bool isAlwaysActive$() const;
+
+    MCAPI bool isEntityOwned$() const;
+
+    MCAPI bool isPreloadDone$() const;
+
+    MCAPI bool isRemoved$();
+
+    MCAPI void
+    onComponentChanged$(uint radius, float maxDistToPlayers, bool alwaysActive, class LevelStorage& levelStorage);
+
+    MCAPI void remove$(class LevelStorage& levelStorage);
+
+    MCAPI void setEntityFound$();
+
+    MCAPI void setLoadMode$(::TickingAreaLoadMode loadMode, class LevelStorage& levelStorage);
+
+    MCAPI void tick$(struct Tick const& currentTick, bool randomize);
+
+    MCAPI void tickSeasons$(class Random& random);
+
+    MCAPI void updateAndCenter$(class LevelStorage& levelStorage, struct Tick currentLevelTick);
+
+    MCAPI void updateBlockSourceCurrentTick$(struct Tick const& currentTick);
+
+    MCAPI void updatePosition$(class Vec3 const& pos);
 
     // NOLINTEND
 };

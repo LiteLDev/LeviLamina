@@ -23,10 +23,10 @@ public:
     virtual ~RandomDyeFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext&);
 
     // NOLINTEND
 
@@ -37,6 +37,17 @@ public:
     MCAPI class mce::Color _getRandomArmorColor(class Random& random) const;
 
     MCAPI class mce::Color _getRandomDyeColor(class Random& random) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
 
     // NOLINTEND
 };

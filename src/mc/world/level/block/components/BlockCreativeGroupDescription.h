@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -27,7 +27,16 @@ public:
     // vIndex: 1
     virtual std::string const& getName() const;
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

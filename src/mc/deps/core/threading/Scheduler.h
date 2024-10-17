@@ -5,7 +5,7 @@
 #include "mc/deps/core/threading/WorkerPool.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,7 +41,7 @@ public:
 
     MCAPI Scheduler(std::string name, uint FPS);
 
-    MCAPI void changeThread(std::thread::id newOwner);
+    MCAPI void changeThread(std::thread::id);
 
     MCAPI class WorkerPool& getCoroutinePool();
 
@@ -51,7 +51,16 @@ public:
 
     MCAPI void setTargetFPS(uint FPS);
 
-    MCAPI static float const AVERAGE_TASK_TOLERANCE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string name, uint FPS);
+
+    MCAPI static float const& AVERAGE_TASK_TOLERANCE();
 
     // NOLINTEND
 };

@@ -22,7 +22,14 @@ public:
     // vIndex: 0
     virtual ~BlockUnitCubeComponent() = default;
 
-    MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
 
     // NOLINTEND
 };

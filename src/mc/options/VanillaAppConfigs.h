@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/EducationEditionOffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/options/AppConfigs.h"
+#include "mc/options/EducationEditionOffer.h"
 
 class VanillaAppConfigs : public ::AppConfigs {
 public:
@@ -18,6 +18,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~VanillaAppConfigs() = default;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

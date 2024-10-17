@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/DiodeBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,13 +31,14 @@ public:
     virtual ~RepeaterBlock() = default;
 
     // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    virtual bool
+    shouldConnectToRedstone(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
 
     // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 76
-    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
+    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const* medium) const;
 
     // vIndex: 86
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -50,7 +51,8 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void
+    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
@@ -89,13 +91,57 @@ public:
 
     MCAPI void updateDelay(class BlockSource& region, class BlockPos const& pos, bool doIncrement) const;
 
-    MCAPI static float const DELAY_RENDER_OFFSETS[];
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const DELAYS[];
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, bool on);
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const* getOffBlock$(class Block const* block) const;
+
+    MCAPI class Block const* getOnBlock$(class Block const* block) const;
+
+    MCAPI int getTurnOnDelay$(class Block const& block) const;
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isLocked$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool
+    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+
+    MCAPI static ::ll::CArrayT<int const>& DELAYS();
+
+    MCAPI static ::ll::CArrayT<float const>& DELAY_RENDER_OFFSETS();
 
     // NOLINTEND
 };

@@ -21,18 +21,23 @@ public:
     virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
     MCAPI static void setup(
-        class CommandRegistry& registry,
-        class IScriptDebugger*,
+        class CommandRegistry&                      registry,
+        class IScriptDebugger*                      debugger,
         std::optional<struct ScriptSettings> const& settings
     );
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::optional<ushort> sForcedPort;
+    MCAPI static void** vftable();
 
-    MCAPI static class IScriptDebugger* sServerScriptDebugger;
+    MCAPI void execute$(class CommandOrigin const&, class CommandOutput& output) const;
+
+    MCAPI static std::optional<ushort>& sForcedPort();
+
+    MCAPI static class IScriptDebugger*& sServerScriptDebugger();
 
     // NOLINTEND
 };

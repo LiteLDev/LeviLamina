@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/world/level/block/utils/CompoundBlockVolumeAction.h"
-#include "mc/world/level/block/utils/CompoundBlockVolumePositionRelativity.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/world/level/block/CompoundBlockVolumeAction.h"
+#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -32,6 +32,13 @@ public:
     MCAPI static class Scripting::
         EnumBindingBuilder<::CompoundBlockVolumePositionRelativity, ::CompoundBlockVolumePositionRelativity>
         bindRelativeEnums();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

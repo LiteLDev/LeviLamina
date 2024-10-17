@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,20 @@ public:
 
     MCAPI static class ContentIdentity fromString(std::string const& uuidString);
 
-    MCAPI static class ContentIdentity EMPTY;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class mce::UUID const& uuid);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ContentIdentity&&);
+
+    MCAPI void* ctor$(class ContentIdentity const&);
+
+    MCAPI static class ContentIdentity& EMPTY();
 
     // NOLINTEND
 };

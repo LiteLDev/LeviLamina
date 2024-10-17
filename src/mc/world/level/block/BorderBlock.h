@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/WallBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,11 +31,15 @@ public:
     virtual ~BorderBlock() = default;
 
     // vIndex: 10
-    virtual class AABB const&
-    getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
+    virtual class AABB const& getVisualShapeInWorld(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
+    virtual class AABB const& getVisualShape(class Block const&, class AABB& bufferAABB) const;
 
     // vIndex: 72
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
@@ -44,10 +48,11 @@ public:
     virtual std::string buildDescriptionId(class Block const&) const;
 
     // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    virtual int getVariant(class Block const&) const;
 
     // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void
+    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 143
     virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
@@ -56,6 +61,37 @@ public:
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     MCAPI BorderBlock(std::string const& nameId, int id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI void
+    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI std::string buildDescriptionId$(class Block const&) const;
+
+    MCAPI int getVariant$(class Block const&) const;
+
+    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+
+    MCAPI class AABB const& getVisualShapeInWorld$(
+        class Block const& block,
+        class IConstBlockSource const&,
+        class BlockPos const&,
+        class AABB& bufferAABB
+    ) const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

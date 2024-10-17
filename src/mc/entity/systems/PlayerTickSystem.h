@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create(bool);
+    MCAPI static struct TickingSystemWithInfo create(bool isCatchup);
 
     MCAPI static struct TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
 

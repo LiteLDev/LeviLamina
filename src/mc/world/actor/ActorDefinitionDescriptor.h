@@ -57,7 +57,7 @@ public:
         class VariantParameterList const&                             list
     );
 
-    MCAPI static bool hasEvent(class Actor const&, std::string const&);
+    MCAPI static bool hasEvent(class Actor const& entity, std::string const& name);
 
     // NOLINTEND
 
@@ -76,6 +76,19 @@ public:
         std::vector<std::pair<std::string const, std::string const>>& eventStack,
         class VariantParameterList const&                             list
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ActorDefinitionDescriptor const&);
+
+    MCAPI void* ctor$(class ActorDefinitionDescriptor&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

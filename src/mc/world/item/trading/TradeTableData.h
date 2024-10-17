@@ -14,7 +14,16 @@ public:
 
     MCAPI ~TradeTableData();
 
-    MCAPI static struct TradeTableData parseJson(std::string const&, class ItemRegistryRef);
+    MCAPI static struct TradeTableData parseJson(std::string const& input, class ItemRegistryRef itemRegistry);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

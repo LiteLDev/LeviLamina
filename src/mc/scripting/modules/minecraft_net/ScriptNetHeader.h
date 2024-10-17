@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraftNet {
 
@@ -25,6 +25,15 @@ public:
     MCAPI ~ScriptNetHeader();
 
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHeader> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

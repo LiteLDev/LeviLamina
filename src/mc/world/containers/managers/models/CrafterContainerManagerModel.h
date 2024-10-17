@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 class CrafterContainerManagerModel : public ::LevelContainerManagerModel {
@@ -20,12 +20,25 @@ public:
     virtual ~CrafterContainerManagerModel() = default;
 
     // vIndex: 7
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 17
     virtual class ContainerScreenContext _postInit();
 
-    MCAPI CrafterContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI CrafterContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+
+    MCAPI class ContainerScreenContext _postInit$();
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool fromNetwork);
 
     // NOLINTEND
 };

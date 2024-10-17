@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,15 +48,24 @@ public:
 
     MCAPI static class CompoundTag const* tryGetPatternDataFromTag(class Tag const* tag);
 
-    MCAPI static char const* const BASE_NAME;
+    // NOLINTEND
 
-    MCAPI static char const* const CREEPER_NAME_ID;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static char const* const CURLY_BORDER_NAME_ID;
+    MCAPI void dtor$();
 
-    MCAPI static char const* const SQUARE_TOP_LEFT_NAME_ID;
+    MCAPI static char const* const& BASE_NAME();
 
-    MCAPI static std::vector<class BannerPattern> const mPatterns;
+    MCAPI static char const* const& CREEPER_NAME_ID();
+
+    MCAPI static char const* const& CURLY_BORDER_NAME_ID();
+
+    MCAPI static char const* const& SQUARE_TOP_LEFT_NAME_ID();
+
+    MCAPI static std::vector<class BannerPattern> const& mPatterns();
 
     // NOLINTEND
 };

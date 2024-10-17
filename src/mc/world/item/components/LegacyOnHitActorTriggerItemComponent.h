@@ -31,7 +31,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onHitActor(class ItemStack&, class Actor&, class Mob&);
+    MCAPI void _onHitActor(class ItemStack& item, class Actor& actor, class Mob& attacker);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void _initializeComponent$();
 
     // NOLINTEND
 };

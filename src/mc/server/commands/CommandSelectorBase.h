@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/InvertableFilter.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
@@ -10,11 +9,11 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/common/InvertableFilter.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/enums/GameType.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
 #include "mc/server/commands/CommandSelectionType.h"
+#include "mc/world/actor/selectors/InvertableFilter.h"
+#include "mc/world/level/GameType.h"
 
 class CommandSelectorBase {
 public:
@@ -60,8 +59,11 @@ public:
 
     MCAPI void addHasPermissionFilters(std::vector<struct HasPermissionFilter> const& filters);
 
-    MCAPI void
-    addHasPropertyFilter(class HashedString const&, bool, std::optional<std::variant<class CommandRationalRange, bool, std::string>> const&);
+    MCAPI void addHasPropertyFilter(
+        class HashedString const&                                                         propertyName,
+        bool                                                                              inverted,
+        std::optional<std::variant<class CommandRationalRange, bool, std::string>> const& optionalValue
+    );
 
     MCAPI void addLevelFilter(std::pair<int, int> const& level);
 
@@ -77,7 +79,7 @@ public:
 
     MCAPI void addTypeFilter(struct InvertableFilter<std::string> const& filter);
 
-    MCAPI void addXRotationFilter(std::pair<float, float> const&);
+    MCAPI void addXRotationFilter(std::pair<float, float> const& xRotation);
 
     MCAPI void addYRotationFilter(std::pair<float, float> const& yRotation);
 
@@ -95,11 +97,11 @@ public:
 
     MCAPI void setBox(class Vec3 const& deltas);
 
-    MCAPI void setExcludeAgents(bool);
+    MCAPI void setExcludeAgents(bool excludeAgents);
 
     MCAPI void setExplicitIdSelector(std::string const& playerName);
 
-    MCAPI void setForceDimensionFiltering(bool);
+    MCAPI void setForceDimensionFiltering(bool forceDimensionFiltering);
 
     MCAPI void setIncludeDeadPlayers(bool includeDead);
 
@@ -111,7 +113,7 @@ public:
 
     MCAPI void setRadiusMin(float rm);
 
-    MCAPI void setResultCount(uint64 count, bool);
+    MCAPI void setResultCount(uint64 count, bool setWithSelector);
 
     MCAPI void setType(::CommandSelectionType type);
 
@@ -144,6 +146,15 @@ public:
     MCAPI bool matchTag(class Actor const& entity) const;
 
     MCAPI bool matchType(class Actor const& entity) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(bool forcePlayer);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

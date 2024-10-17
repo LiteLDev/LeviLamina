@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AttributeBuffType.h"
 #include "mc/world/attribute/AttributeBuff.h"
+#include "mc/world/attribute/AttributeBuffType.h"
 
 class TemporalAttributeBuff : public ::AttributeBuff {
 public:
@@ -44,6 +44,29 @@ public:
     MCAPI float getBaseAmount() const;
 
     MCAPI class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(float amount, int duration, ::AttributeBuffType type, bool serialize, std::string const& name);
+
+    MCAPI void* ctor$(class TemporalAttributeBuff const&);
+
+    MCAPI void dtor$();
+
+    MCAPI bool isComplete$() const;
+
+    MCAPI bool isInstantaneous$() const;
+
+    MCAPI bool isSerializable$() const;
+
+    MCAPI void setDurationAmplifier$(std::shared_ptr<class Amplifier> amplifier);
+
+    MCAPI bool shouldBuff$() const;
 
     // NOLINTEND
 };

@@ -22,4 +22,17 @@ public:
     MCAPI MonsterRoomFeature();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

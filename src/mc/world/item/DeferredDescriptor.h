@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -66,6 +66,33 @@ public:
 
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
           _initFromItem(class WeakPtr<class Item>&& item, short aux) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+
+    MCAPI std::string const& getFullName$() const;
+
+    MCAPI uint64 getHash$() const;
+
+    MCAPI ::ItemDescriptor::InternalType getType$() const;
+
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve$() const;
+
+    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const&, bool) const;
+
+    MCAPI std::optional<class CompoundTag> save$() const;
+
+    MCAPI void serialize$(class BinaryStream& stream) const;
+
+    MCAPI bool shouldResolve$() const;
+
+    MCAPI std::map<std::string, std::string> toMap$() const;
 
     // NOLINTEND
 };

@@ -46,7 +46,7 @@ MCAPI class Json::Value createObject(class Block const& val, int aux);
 
 MCAPI class Json::Value createTraderObject(class Actor const& trader);
 
-MCAPI std::vector<std::string> translate(std::vector<std::string> const& in);
+MCAPI std::vector<std::string> translate(std::vector<std::string> const&);
 // NOLINTEND
 
 }; // namespace Util::CodeBuilder

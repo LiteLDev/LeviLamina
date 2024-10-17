@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class ITickingAreaView {
 public:
@@ -21,7 +21,7 @@ public:
     virtual void init(struct Bounds const& bounds, bool isCircle) = 0;
 
     // vIndex: 2
-    virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool, bool randomize) = 0;
+    virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool preload, bool randomize) = 0;
 
     // vIndex: 3
     virtual void tickSeasons(class BlockSource& region, class Random& random) = 0;
@@ -42,7 +42,7 @@ public:
     virtual bool checkInitialLoadDone(struct Tick currentLevelTick) = 0;
 
     // vIndex: 9
-    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool) const = 0;
+    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool useDoneLoading) const = 0;
 
     // vIndex: 10
     virtual void move(struct Bounds const& bounds) = 0;
@@ -52,6 +52,15 @@ public:
 
     // vIndex: 12
     virtual std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const& cp) = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

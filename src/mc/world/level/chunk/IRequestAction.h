@@ -38,4 +38,17 @@ public:
     MCAPI static bool isValidTag(class CompoundTag const& tag);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::IRequestAction::RequestActionType const& actionType);
+
+    MCAPI void dtor$();
+
+    MCAPI void serialize$(class CompoundTag& tag);
+
+    // NOLINTEND
 };

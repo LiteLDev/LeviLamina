@@ -17,7 +17,16 @@ public:
     // vIndex: 1
     virtual void Logv(char const*, char*);
 
-    MCAPI static class NullLogger instance;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void Logv$(char const*, char*);
+
+    MCAPI static class NullLogger& instance();
 
     // NOLINTEND
 };

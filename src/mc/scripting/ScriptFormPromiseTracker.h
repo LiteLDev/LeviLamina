@@ -2,7 +2,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
@@ -32,6 +32,13 @@ public:
         MCAPI ~FromRequest();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -52,11 +59,26 @@ public:
 
     MCAPI ScriptFormPromiseTracker();
 
-    MCAPI void handleFormResponse(uint formId, class Json::Value const&);
+    MCAPI void handleFormResponse(uint formId, class Json::Value const& formResponse);
 
     MCAPI void handlePlayerQuit(class NetworkIdentifier const& playerId);
 
     MCAPI void rejectAllForShutdown();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
+
+    MCAPI void* ctor$();
+
+    MCAPI ::EventResult onEvent$(struct PlayerFormResponseEvent const& formResponseEvent);
+
+    MCAPI ::EventResult onEvent$(struct PlayerFormCloseEvent const& formCloseEvent);
 
     // NOLINTEND
 };

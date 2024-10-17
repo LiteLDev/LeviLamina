@@ -30,11 +30,29 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos>
-    _placeBlockIfPossible(class BlockSource& region, class BlockPos const& pos, class Random& random, std::vector<uchar> const&)
-        const;
+    MCAPI std::optional<class BlockPos> _placeBlockIfPossible(
+        class BlockSource&        region,
+        class BlockPos const&     pos,
+        class Random&             random,
+        std::vector<uchar> const& placementDirections
+    ) const;
 
     MCAPI static std::vector<uchar> _getShuffledDirections(std::vector<uchar> faces);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos>
+    place$(class IBlockWorldGenAPI&, class BlockPos const& pos, class Random& random, class RenderParams& renderParams)
+        const;
 
     // NOLINTEND
 };

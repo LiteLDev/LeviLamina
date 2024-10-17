@@ -5,8 +5,10 @@
 #include "ll/api/command/ParamTraits.h"
 #include "ll/api/command/Runtime/RuntimeEnum.h"
 
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/BlockStateCommandParam.h"
+#include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandFilePath.h"
 #include "mc/server/commands/CommandIntegerRange.h"
@@ -17,11 +19,9 @@
 #include "mc/server/commands/CommandWildcardInt.h"
 #include "mc/server/commands/RelativeFloat.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/effect/MobEffect.h"
-#include "mc/world/level/Command.h"
 
 namespace ll::command {
 

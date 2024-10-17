@@ -3,27 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/CounterFlags.h"
-#include "mc/deps/core/CounterFormat.h"
-#include "mc/deps/core/CrossStorageCopyMode.h"
-#include "mc/deps/core/DirectoryIterationFlags.h"
-#include "mc/deps/core/FileAccessType.h"
-#include "mc/deps/core/FileBufferingMode.h"
-#include "mc/deps/core/FileStorageArea.h"
-#include "mc/deps/core/FileType.h"
-#include "mc/deps/core/LevelStorageState.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/StackString.h"
-#include "mc/deps/core/StorageAreasTree.h"
-#include "mc/deps/core/TransactionFlags.h"
-#include "mc/deps/core/UnzipResult.h"
-#include "mc/deps/core/WriteOperation.h"
-#include "mc/deps/core/ZipResult.h"
-#include "mc/deps/core/common/bedrock/ErrorInfo.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
-#include "mc/deps/core/common/bedrock/UniqueLock.h"
+#include "mc/deps/core/file/DirectoryIterationFlags.h"
+#include "mc/deps/core/file/FileAccessType.h"
+#include "mc/deps/core/file/FileBufferingMode.h"
+#include "mc/deps/core/file/FileStorageArea.h"
+#include "mc/deps/core/file/FileType.h"
+#include "mc/deps/core/file/LevelStorageState.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/file/StorageAreasTree.h"
+#include "mc/deps/core/file/UnzipResult.h"
+#include "mc/deps/core/file/WriteOperation.h"
+#include "mc/deps/core/file/ZipResult.h"
+#include "mc/deps/core/file/file_system/CrossStorageCopyMode.h"
+#include "mc/deps/core/file/file_system/TransactionFlags.h"
+#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/profiler/CounterFlags.h"
+#include "mc/deps/profiler/CounterFormat.h"
+#include "mc/platform/ErrorInfo.h"
+#include "mc/platform/Result.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
+#include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -65,21 +65,9 @@ namespace Core::ZipUtils { class ZipSettings; }
 
 namespace Core {
 // NOLINTBEGIN
-MCAPI extern char const* RESULT_FAILED_MESSAGE;
-
-MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE;
-
-MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE;
-
 MCAPI uint64 operator&(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
 MCAPI ::Core::DirectoryIterationFlags operator|(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
-
-MCAPI extern std::string const sLockBlobName;
-
-MCAPI extern std::string const sMultiChunkTag;
-
-MCAPI extern std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
 
 MCAPI class Core::Result transferDirectory(
     class Core::FileSystemImpl*                                                                pSourceTransaction,
@@ -88,6 +76,21 @@ MCAPI class Core::Result transferDirectory(
     class Core::Path const&                                                                    targetDirectoryPath,
     std::function<class Core::Result(class Core::Path const&, class Core::Path const&)> const& fileTransferFunction
 );
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI char const* const& RESULT_FAILED_MESSAGE();
+
+MCAPI char const* const& RESULT_NOT_IMPLEMENTED_MESSAGE();
+
+MCAPI char const* const& RESULT_SUCCEEDED_MESSAGE();
+
+MCAPI std::string const& sLockBlobName();
+
+MCAPI std::string const& sMultiChunkTag();
+
+MCAPI std::shared_ptr<class Core::FileStorageArea>& sRootStorageArea();
 // NOLINTEND
 
 }; // namespace Core

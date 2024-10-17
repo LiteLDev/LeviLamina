@@ -16,4 +16,13 @@ public:
     MCAPI ~BlockListEventMap();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockListEventMap const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -11,7 +11,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerSwingEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle,
+    &ServerNetworkHandler::handle$,
     void,
     NetworkIdentifier const& id,
     AnimatePacket const&     packet

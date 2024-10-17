@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,13 +23,25 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ScriptEntityRaycastHit(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&,
-        float
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const& actor,
+        float                                                                                     distance
     );
 
     MCAPI ~ScriptEntityRaycastHit();
 
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const& actor,
+        float                                                                                     distance
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

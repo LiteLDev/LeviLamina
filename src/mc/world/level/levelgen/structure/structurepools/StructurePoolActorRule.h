@@ -21,4 +21,14 @@ public:
     MCAPI ~StructurePoolActorRule();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(std::unique_ptr<class IStructurePoolActorPredicate>&& sourceActorPredicate, std::string resultActor);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

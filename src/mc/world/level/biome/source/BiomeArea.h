@@ -24,4 +24,13 @@ public:
     MCAPI ~BiomeArea();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BoundingBox const& area, uint scale);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +26,15 @@ public:
 
     // vIndex: 1
     virtual class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> makePromise();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> makePromise$();
 
     // NOLINTEND
 };

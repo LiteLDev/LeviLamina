@@ -7,8 +7,8 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
 
-#include "mc/deps/core/common/bedrock/Interface.h"
-#include "mc/deps/core/common/debug/LogDetails.h"
+#include "mc/deps/core/debug/bedrock_log/LogDetails.h"
+#include "mc/diagnostics/Interface.h"
 #include "mc/world/level/storage/DBStorage.h"
 
 MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT

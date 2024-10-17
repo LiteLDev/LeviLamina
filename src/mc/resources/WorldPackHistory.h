@@ -23,4 +23,15 @@ public:
     MCAPI ~WorldPackHistory();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class WorldPackHistory const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

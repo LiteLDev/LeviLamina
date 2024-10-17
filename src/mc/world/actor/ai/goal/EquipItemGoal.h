@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -42,6 +42,13 @@ public:
         );
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        // NOLINTEND
     };
 
 public:
@@ -75,7 +82,24 @@ public:
     // NOLINTBEGIN
     MCAPI void _dropItem(class ItemStack const& item) const;
 
-    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;
+    MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket packet) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

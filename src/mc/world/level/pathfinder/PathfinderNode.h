@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/NodeType.h"
+#include "mc/world/level/pathfinder/NodeType.h"
 
 class PathfinderNode {
 public:
@@ -32,6 +32,15 @@ public:
     MCAPI void setCostMalus(float costMalus);
 
     MCAPI void setMoveMalus(float moveMalus);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class PathfinderNode const& node);
+
+    MCAPI void* ctor$(class BlockPos const& pos, ::NodeType type);
 
     // NOLINTEND
 };

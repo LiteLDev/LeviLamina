@@ -62,6 +62,17 @@ public:
     MCAPI static uint RecvFromLoop(void* arguments);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void SetMulticastInterface$(int interfaceIndex);
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

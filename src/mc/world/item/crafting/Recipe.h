@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated inclusion list
-#include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,6 +35,13 @@ public:
         MCAPI ~ConstructionContext();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class Results {
@@ -46,9 +53,18 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI explicit Results(std::vector<class ItemInstance> const&);
+        MCAPI explicit Results(std::vector<class ItemInstance> const& results);
 
         MCAPI ~Results();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(std::vector<class ItemInstance> const& results);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -82,7 +98,7 @@ public:
     virtual int getCraftingSize() const = 0;
 
     // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const = 0;
+    virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
 
     // vIndex: 4
     virtual bool isShapeless() const = 0;
@@ -142,7 +158,36 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI explicit Recipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit Recipe(struct Recipe::ConstructionContext&& context);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct Recipe::ConstructionContext&& context);
+
+    MCAPI void dtor$();
+
+    MCAPI class mce::UUID const& getId$() const;
+
+    MCAPI uint64 getIngredientsHash$() const;
+
+    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+
+    MCAPI bool hasDataDrivenResult$() const;
+
+    MCAPI bool isMultiRecipe$() const;
+
+    MCAPI bool itemValidForRecipe$(class ItemDescriptor const& recipeItem, class ItemStack const& item) const;
+
+    MCAPI bool itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
+
+    MCAPI bool
+    itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs, class CompoundTag const* rhsTag)
+        const;
 
     // NOLINTEND
 };

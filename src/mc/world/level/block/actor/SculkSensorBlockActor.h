@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class SculkSensorBlockActor : public ::BlockActor {
 public:
@@ -33,10 +33,42 @@ public:
 
     MCAPI explicit SculkSensorBlockActor(class BlockPos const& pos);
 
-    MCAPI
-    SculkSensorBlockActor(::BlockActorType type, class BlockPos const& pos, std::string const& id, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
+    MCAPI SculkSensorBlockActor(
+        ::BlockActorType                                    type,
+        class BlockPos const&                               pos,
+        std::string const&                                  id,
+        uint                                                listenerRange,
+        std::unique_ptr<class SculkSensorVibrationConfig>&& vibrationConfig
+    );
 
     MCAPI int getLatestReceivedVibrationFrequency() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        ::BlockActorType                                    type,
+        class BlockPos const&                               pos,
+        std::string const&                                  id,
+        uint                                                listenerRange,
+        std::unique_ptr<class SculkSensorVibrationConfig>&& vibrationConfig
+    );
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI void dtor$();
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

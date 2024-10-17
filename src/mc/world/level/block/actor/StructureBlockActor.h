@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -42,20 +42,12 @@ public:
 
     MCAPI class StructureEditorData const& getStructureData() const;
 
-    MCAPI void setIsWaterlogged(bool);
+    MCAPI void setIsWaterlogged(bool waterlogged);
 
     MCAPI void
     setPowered(class BlockSource& region, class BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCAPI void setStructureData(class StructureEditorData const& data);
-
-    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
-
-    MCAPI static class mce::Color const X_AXIS_COLOR;
-
-    MCAPI static class mce::Color const Y_AXIS_COLOR;
-
-    MCAPI static class mce::Color const Z_AXIS_COLOR;
 
     // NOLINTEND
 
@@ -72,6 +64,33 @@ public:
         class BaseGameVersion const& version,
         bool                         redstoneTriggered
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI static float const& MAX_WIREFRAME_RENDER_DISTANCE();
+
+    MCAPI static class mce::Color const& X_AXIS_COLOR();
+
+    MCAPI static class mce::Color const& Y_AXIS_COLOR();
+
+    MCAPI static class mce::Color const& Z_AXIS_COLOR();
 
     // NOLINTEND
 };

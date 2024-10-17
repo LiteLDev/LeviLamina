@@ -20,17 +20,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static int DEFAULT_DROP_PACKET_CHANCE;
+        // NOLINTEND
 
-        MCAPI static int DEFAULT_SEND_EVERY_N_PACKETS;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static int& DEFAULT_DROP_PACKET_CHANCE();
 
-        MCAPI static int MAX_DROP_PACKET_CHANCE;
+        MCAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
 
-        MCAPI static int MAX_SEND_EVERY_N_PACKETS;
+        MCAPI static int& MAX_DROP_PACKET_CHANCE();
 
-        MCAPI static int MIN_DROP_PACKET_CHANCE;
+        MCAPI static int& MAX_SEND_EVERY_N_PACKETS();
 
-        MCAPI static int MIN_SEND_EVERY_N_PACKETS;
+        MCAPI static int& MIN_DROP_PACKET_CHANCE();
+
+        MCAPI static int& MIN_SEND_EVERY_N_PACKETS();
 
         // NOLINTEND
     };
@@ -89,11 +94,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
+    MCAPI void* ctor$(class Actor& entity);
 
-    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
+    MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers& mDebugSendRateModifiers();
+
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
 
     // NOLINTEND
 };

@@ -23,7 +23,12 @@ public:
     std::chrono::steady_clock::time_point startAtTime;      // this+0x20
 public:
     // NOLINTBEGIN
-    MCAPI static std::thread::id const NoAffinity;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::thread::id const& NoAffinity();
 
     // NOLINTEND
 };

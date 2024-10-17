@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/network/TypedClientNetId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/events/TextProcessingEventOrigin.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerType.h"
-#include "mc/world/events/TextProcessingEventOrigin.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
 
 class ItemStackNetManagerServer : public ::ItemStackNetManagerBase {
 public:
@@ -72,8 +72,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _filterStrings(ItemStackRequestId requestId, std::vector<std::string> const& stringsToFilter, ::TextProcessingEventOrigin const&);
+    MCAPI void _filterStrings(
+        ItemStackRequestId                 requestId,
+        std::vector<std::string> const&    stringsToFilter,
+        ::TextProcessingEventOrigin const& stringsToFilterOrigin
+    );
 
     MCAPI void _handleRequestData(
         std::vector<struct ItemStackResponseInfo>& responses,
@@ -89,6 +92,25 @@ public:
     MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
     MCAPI bool _tryFilterText(class ItemStackRequestData const* requestData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ServerPlayer& serverPlayer, bool isEnabled);
+
+    MCAPI void _initScreen$(class ItemStackNetManagerScreen& screen);
+
+    MCAPI bool allowInventoryTransactionManager$() const;
+
+    MCAPI ItemStackRequestId getRequestId$() const;
+
+    MCAPI void onContainerScreenOpen$(class ContainerScreenContext const& screenContext);
+
+    MCAPI bool retainSetItemStackNetIdVariant$() const;
 
     // NOLINTEND
 };

@@ -24,6 +24,17 @@ public:
     MCAPI ~ScriptActorEventSignalOptions();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions&&);
+
+    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

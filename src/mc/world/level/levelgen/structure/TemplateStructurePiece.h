@@ -52,4 +52,19 @@ public:
     MCAPI void _setBoundingBoxFromTemplate();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(int depth);
+
+    MCAPI void dtor$();
+
+    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

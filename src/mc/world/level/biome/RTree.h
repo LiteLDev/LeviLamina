@@ -36,16 +36,27 @@ public:
 
         MCAPI class RTree::Node& operator=(class RTree::Node&&);
 
-        MCAPI void
-        search(struct ClimateUtils::TargetSpace const& target, std::pair<class RTree::Node const*, int64>&) const;
+        MCAPI void search(
+            struct ClimateUtils::TargetSpace const&     target,
+            std::pair<class RTree::Node const*, int64>& closestLeaf
+        ) const;
 
         MCAPI ~Node();
 
         MCAPI static std::optional<class RTree::Node> branch(std::vector<class RTree::Node>&& children);
 
-        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&& nodes);
+        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&&);
 
-        MCAPI static void sort(std::vector<class RTree::Node>& children, int dimension, bool);
+        MCAPI static void sort(std::vector<class RTree::Node>& children, int dimension, bool absolute);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class RTree::Node const&);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -67,6 +78,13 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static std::optional<class RTree::Node> build(std::vector<class RTree::Node>&& children);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

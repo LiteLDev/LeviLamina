@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -28,11 +28,22 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage&) const;
+    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

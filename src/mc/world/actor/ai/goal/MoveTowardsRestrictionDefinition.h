@@ -20,4 +20,11 @@ public:
     MCAPI void initialize(class EntityContext& entity, class MoveTowardsRestrictionGoal& goal) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

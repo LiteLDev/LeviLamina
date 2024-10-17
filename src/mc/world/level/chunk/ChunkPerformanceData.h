@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,13 @@ public:
         MCAPI uint64 getMemoryAverage() const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -45,7 +52,7 @@ public:
 
     MCAPI ChunkPerformanceData();
 
-    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector&);
+    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCAPI void resetAll();
 
@@ -53,7 +60,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk&, int);
+    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk& levelChunk, int);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

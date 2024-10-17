@@ -11,7 +11,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static struct FogDistanceSetting const ZERO_SETTING;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static struct FogDistanceSetting const& ZERO_SETTING();
 
     // NOLINTEND
 };

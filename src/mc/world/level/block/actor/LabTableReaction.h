@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/LabTableReactionType.h"
+#include "mc/world/level/block/actor/LabTableReactionType.h"
 
 class LabTableReaction {
 public:
@@ -29,6 +29,13 @@ public:
 
     MCAPI static std::unique_ptr<class LabTableReaction>
     createReaction(::LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

@@ -12,7 +12,12 @@ public:
     // NOLINTBEGIN
     MCAPI struct StateVectorComponent& operator=(struct StateVectorComponent const&);
 
-    MCAPI static class Vec3 const ABS_LIMIT;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class Vec3 const& ABS_LIMIT();
 
     // NOLINTEND
 };

@@ -27,7 +27,7 @@ public:
     virtual int getMaxLevel() const;
 
     // vIndex: 8
-    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+    virtual float getDamageBonus(int level, class Actor const& target, class Actor const&) const;
 
     // vIndex: 9
     virtual void doPostAttack(class Actor& attacker, class Actor& victim, int level) const;
@@ -49,9 +49,35 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots
+    );
+
+    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+
+    MCAPI void doPostAttack$(class Actor& attacker, class Actor& victim, int level) const;
+
+    MCAPI float getDamageBonus$(int level, class Actor const& target, class Actor const&) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
+
+    MCAPI bool isMeleeDamageEnchant$() const;
+
+    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
 
     // NOLINTEND
 };

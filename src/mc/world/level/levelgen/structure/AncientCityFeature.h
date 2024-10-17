@@ -18,8 +18,15 @@ public:
     virtual ~AncientCityFeature() = default;
 
     // vIndex: 3
-    virtual bool
-    getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
+    virtual bool getNearestGeneratedFeature(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
 
     // vIndex: 5
     virtual bool
@@ -30,6 +37,31 @@ public:
     createStructureStart(class Dimension& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&);
 
     MCAPI AncientCityFeature(uint seed, class BaseGameVersion const&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(uint seed, class BaseGameVersion const&);
+
+    MCAPI std::unique_ptr<class StructureStart>
+    createStructureStart$(class Dimension& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&);
+
+    MCAPI bool getNearestGeneratedFeature$(
+        class Dimension&                         dimension,
+        class BiomeSource const&                 biomeSource,
+        class BlockPos const&                    origin,
+        class BlockPos&                          pos,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        bool                                     mustBeInNewChunks,
+        std::optional<class HashedString> const& biomeTag
+    );
+
+    MCAPI bool
+    isFeatureChunk$(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, uint levelSeed, class IPreliminarySurfaceProvider const&, class Dimension const&);
 
     // NOLINTEND
 };

@@ -23,11 +23,25 @@ public:
 
     MCAPI ~ComponentItemData_v1_20_80();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static void moveDeprecatedData(struct ComponentItemData_v1_20_60&, struct ComponentItemData_v1_20_80&);
+    MCAPI static void
+    moveDeprecatedData(struct ComponentItemData_v1_20_60& oldData, struct ComponentItemData_v1_20_80& newData);
 
-    MCAPI static class Puv::VersionRange const SUPPORTED_VERSIONS;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ComponentItemData_v1_20_80&&);
+
+    MCAPI void* ctor$(struct ComponentItemData_v1_20_80 const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
 
     // NOLINTEND
 };

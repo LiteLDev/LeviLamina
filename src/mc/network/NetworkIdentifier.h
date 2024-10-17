@@ -36,7 +36,7 @@ public:
 
     MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const& address);
 
-    MCAPI explicit NetworkIdentifier(uint64);
+    MCAPI explicit NetworkIdentifier(uint64 nethernetId);
 
     MCAPI std::string getAddress() const;
 
@@ -54,23 +54,38 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI bool operator==(class NetworkIdentifier const&) const;
+    MCAPI bool operator==(class NetworkIdentifier const& other) const;
 
     MCAPI std::string toString() const;
 
-    MCAPI static std::string calculateCorrelationId(struct RakNet::RakNetGUID const&);
+    MCAPI static std::string calculateCorrelationId(struct RakNet::RakNetGUID const& rakId);
 
-    MCAPI static std::string calculateCorrelationId(uint64);
+    MCAPI static std::string calculateCorrelationId(uint64 netherNetId);
 
-    MCAPI static std::string hyphenateId(uint64);
-
-    MCAPI static class NetworkIdentifier INVALID_ID;
+    MCAPI static std::string hyphenateId(uint64 id);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool equalsTypeData(class NetworkIdentifier const& other) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct RakNet::RakNetGUID const& guid);
+
+    MCAPI void* ctor$(struct sockaddr_in6 const& address);
+
+    MCAPI void* ctor$(struct sockaddr_in const& address);
+
+    MCAPI void* ctor$(uint64 nethernetId);
+
+    MCAPI void* ctor$();
+
+    MCAPI static class NetworkIdentifier& INVALID_ID();
 
     // NOLINTEND
 };

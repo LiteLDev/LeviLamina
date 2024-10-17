@@ -155,7 +155,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T&>>;
         if (has_value()) {
             return std::optional<Ret>{
-                ll::internal::std_optional_construct_from_invoke_tag{},
+                internal::stdOptionalConstructFromInvokeTag{},
                 std::forward<Fn>(fn),
                 static_cast<T&>(mValue)
             };
@@ -169,7 +169,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const&>>;
         if (has_value()) {
             return std::optional<Ret>{
-                ll::internal::std_optional_construct_from_invoke_tag{},
+                internal::stdOptionalConstructFromInvokeTag{},
                 std::forward<Fn>(fn),
                 static_cast<T const&>(mValue)
             };
@@ -183,7 +183,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T>>;
         if (has_value()) {
             return std::optional<Ret>{
-                ll::internal::std_optional_construct_from_invoke_tag{},
+                internal::stdOptionalConstructFromInvokeTag{},
                 std::forward<Fn>(fn),
                 static_cast<T&&>(mValue)
             };
@@ -197,7 +197,7 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const>>;
         if (has_value()) {
             return std::optional<Ret>{
-                ll::internal::std_optional_construct_from_invoke_tag{},
+                internal::stdOptionalConstructFromInvokeTag{},
                 std::forward<Fn>(fn),
                 static_cast<T const&&>(mValue)
             };

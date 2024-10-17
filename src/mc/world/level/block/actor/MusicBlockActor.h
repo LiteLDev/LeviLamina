@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class MusicBlockActor : public ::BlockActor {
@@ -31,6 +31,19 @@ public:
     MCAPI void tune();
 
     MCAPI static std::optional<int> getInstrumentIndex(class BlockSource& region, class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
 
     // NOLINTEND
 };

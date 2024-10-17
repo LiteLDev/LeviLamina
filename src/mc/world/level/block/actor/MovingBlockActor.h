@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class MovingBlockActor : public ::BlockActor {
@@ -43,7 +43,7 @@ public:
     virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -60,9 +60,39 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::pair<class AABB, class AABB> _getWrappedBlockCollisionShapes(class IConstBlockSource const&) const;
+    MCAPI std::pair<class AABB, class AABB> _getWrappedBlockCollisionShapes(class IConstBlockSource const& region
+    ) const;
 
     MCAPI bool _validPistonPos(class IConstBlockSource const& region) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI class AABB getCollisionShape$(class IConstBlockSource const& region) const;
+
+    MCAPI class PistonBlockActor const* getOwningPiston$(class BlockSource& region) const;
+
+    MCAPI class PistonBlockActor* getOwningPiston$(class BlockSource& region);
+
+    MCAPI bool isPreserved$(class BlockSource& region) const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI bool shouldPreserve$(class BlockSource& region);
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

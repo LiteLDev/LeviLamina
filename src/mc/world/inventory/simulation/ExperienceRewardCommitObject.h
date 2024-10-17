@@ -26,7 +26,22 @@ public:
     // vIndex: 3
     virtual void commit(class ContainerScreenContext const& screenContext);
 
-    MCAPI explicit ExperienceRewardCommitObject(int);
+    MCAPI explicit ExperienceRewardCommitObject(int experienceReward);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(int experienceReward);
+
+    MCAPI bool append$(class ContainerValidationCommitObject* other);
+
+    MCAPI bool canCommit$(class ContainerScreenContext const&) const;
+
+    MCAPI void commit$(class ContainerScreenContext const& screenContext);
 
     // NOLINTEND
 };

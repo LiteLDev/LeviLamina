@@ -17,4 +17,11 @@ public:
     MCAPI void setHasBeenActivedByRedstone();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

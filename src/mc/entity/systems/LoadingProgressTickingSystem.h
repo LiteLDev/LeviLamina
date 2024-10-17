@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 class LoadingProgressTickingSystem : public ::ITickingSystem {
 public:
@@ -12,9 +12,10 @@ public:
     LoadingProgressTickingSystem(LoadingProgressTickingSystem const&);
     LoadingProgressTickingSystem();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+    MCAPI static std::vector<class ChunkPos> const& mChunksNeededForLoadOffsets();
 
     // NOLINTEND
 };

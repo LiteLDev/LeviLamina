@@ -27,6 +27,17 @@ public:
     MCAPI explicit NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>()>);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::function<std::optional<struct gametest::GameTestError>()>);
+
+    MCAPI std::optional<struct gametest::GameTestError> run$();
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

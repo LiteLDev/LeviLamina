@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WSConnectionResult.h"
-#include "mc/enums/CloseStatusCode.h"
-#include "mc/enums/OpCode.h"
+#include "mc/websockets/CloseStatusCode.h"
+#include "mc/websockets/OpCode.h"
+#include "mc/websockets/WSConnectionResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,7 +67,7 @@ public:
 
     MCAPI void _fail(std::string const& error, ::CloseStatusCode code);
 
-    MCAPI std::string _generateBase64SHA1Key(std::string const& key);
+    MCAPI std::string _generateBase64SHA1Key(std::string const&);
 
     MCAPI void _invokeOnCloseHandler();
 
@@ -93,6 +93,31 @@ public:
     MCAPI void _validateFields();
 
     MCAPI bool _validateWebSocketURI();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::unique_ptr<class TcpProxy> proxy, bool isServer);
+
+    MCAPI void dtor$();
+
+    MCAPI ::WSConnectionResult connect$(std::string const& uri, std::vector<std::string> const& subProtocols);
+
+    MCAPI ::WSConnectionResult connect$(std::string const& uri);
+
+    MCAPI bool isReady$() const;
+
+    MCAPI void setOnCloseHandler$(std::function<void(::CloseStatusCode, std::string const&)> const& handler);
+
+    MCAPI void setOnConnectedHandler$(std::function<void(std::string const&)> const& handler);
+
+    MCAPI void setOnMessageReceivedHandler$(std::function<void(class RakWebSocketDataFrame const&)> const& handler);
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

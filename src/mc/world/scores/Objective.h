@@ -5,8 +5,8 @@
 #include "mc/world/scores/ScoreboardId.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,6 +64,15 @@ public:
     _modifyPlayerScore(int& result, struct ScoreboardId const& id, int value, ::PlayerScoreSetFunction action);
 
     MCAPI void _resetPlayer(struct ScoreboardId const& id);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, class ObjectiveCriteria const& criteria);
 
     // NOLINTEND
 };

@@ -29,4 +29,21 @@ public:
     MCAPI SnapshotWritableFile(leveldb::WritableFile*&& r, std::shared_mutex& creationAndWriteLock);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(leveldb::WritableFile*&& r, std::shared_mutex& creationAndWriteLock);
+
+    MCAPI leveldb::Status Append$(leveldb::Slice const& data);
+
+    MCAPI leveldb::Status Close$();
+
+    MCAPI leveldb::Status Flush$();
+
+    MCAPI leveldb::Status Sync$();
+
+    // NOLINTEND
 };

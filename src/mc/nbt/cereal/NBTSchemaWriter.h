@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/SchemaWriter.h"
+#include "mc/external/cereal/SchemaWriter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,13 @@ public:
         MCAPI ~StackNode();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -44,25 +51,25 @@ public:
     virtual ~NBTSchemaWriter();
 
     // vIndex: 1
-    virtual bool write(bool, class cereal::PropertyReader const&);
+    virtual bool write(bool value, class cereal::PropertyReader const&);
 
     // vIndex: 2
-    virtual bool write(schar, class cereal::PropertyReader const&);
+    virtual bool write(schar value, class cereal::PropertyReader const&);
 
     // vIndex: 3
-    virtual bool write(uchar, class cereal::PropertyReader const&);
+    virtual bool write(uchar value, class cereal::PropertyReader const&);
 
     // vIndex: 4
-    virtual bool write(short, class cereal::PropertyReader const&);
+    virtual bool write(short value, class cereal::PropertyReader const&);
 
     // vIndex: 5
-    virtual bool write(ushort, class cereal::PropertyReader const&);
+    virtual bool write(ushort value, class cereal::PropertyReader const&);
 
     // vIndex: 6
-    virtual bool write(int, class cereal::PropertyReader const&);
+    virtual bool write(int value, class cereal::PropertyReader const&);
 
     // vIndex: 7
-    virtual bool write(uint, class cereal::PropertyReader const&);
+    virtual bool write(uint value, class cereal::PropertyReader const&);
 
     // vIndex: 8
     virtual bool write(int64, class cereal::PropertyReader const&);
@@ -71,16 +78,16 @@ public:
     virtual bool write(uint64, class cereal::PropertyReader const&);
 
     // vIndex: 10
-    virtual bool write(float, class cereal::PropertyReader const&);
+    virtual bool write(float value, class cereal::PropertyReader const&);
 
     // vIndex: 11
-    virtual bool write(double, class cereal::PropertyReader const&);
+    virtual bool write(double value, class cereal::PropertyReader const&);
 
     // vIndex: 12
-    virtual bool write(std::string_view, class cereal::PropertyReader const&);
+    virtual bool write(std::string_view value, class cereal::PropertyReader const&);
 
     // vIndex: 13
-    virtual bool pushMember(std::string_view, class cereal::PropertyReader const&);
+    virtual bool pushMember(std::string_view memberName, class cereal::PropertyReader const&);
 
     // vIndex: 14
     virtual void popMember();
@@ -104,6 +111,53 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _serializeTag(std::unique_ptr<class Tag> tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void close$();
+
+    MCAPI bool isSequenceWriter$() const;
+
+    MCAPI bool openArray$(uint64, class cereal::PropertyReader const&);
+
+    MCAPI bool openObject$(class cereal::PropertyReader const&);
+
+    MCAPI void popMember$();
+
+    MCAPI bool pushMember$(std::string_view memberName, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(bool value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(schar value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uchar value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(short value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(ushort value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(int value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uint value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(int64, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(uint64, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(float value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(double value, class cereal::PropertyReader const&);
+
+    MCAPI bool write$(std::string_view value, class cereal::PropertyReader const&);
 
     // NOLINTEND
 };

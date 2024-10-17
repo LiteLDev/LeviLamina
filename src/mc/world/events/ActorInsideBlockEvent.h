@@ -15,4 +15,13 @@ public:
     MCAPI ~ActorInsideBlockEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorInsideBlockEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

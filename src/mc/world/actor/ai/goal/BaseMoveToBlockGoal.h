@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class BaseMoveToBlockGoal : public ::BaseMoveToGoal {
@@ -39,6 +39,33 @@ public:
         float      goalRadius,
         float      cooldownTime
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob& mob,
+        float      speedModifier,
+        int        searchRange,
+        int        searchHeight,
+        int        searchCount,
+        float      goalRadius,
+        float      cooldownTime
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool findTargetBlock$();
 
     // NOLINTEND
 };

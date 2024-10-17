@@ -1,13 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/client/services/persona/AnimatedTextureType.h"
-#include "mc/client/services/persona/AnimationExpression.h"
-#include "mc/deps/core/mce/Image.h"
+#include "mc/deps/core/image/Image.h"
 
 // auto generated inclusion list
-#include "mc/client/services/persona/AnimatedTextureType.h"
-#include "mc/client/services/persona/AnimationExpression.h"
+#include "mc/world/actor/player/persona/AnimatedTextureType.h"
+#include "mc/world/actor/player/persona/AnimationExpression.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,6 +33,20 @@ public:
     );
 
     MCAPI class AnimatedImageData& operator=(class AnimatedImageData const& rhs);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        ::persona::AnimatedTextureType type,
+        ::persona::AnimationExpression animationExpression,
+        struct mce::Image const&       animatedImage,
+        float                          frames
+    );
+
+    MCAPI void* ctor$(class AnimatedImageData const& rhs);
 
     // NOLINTEND
 };

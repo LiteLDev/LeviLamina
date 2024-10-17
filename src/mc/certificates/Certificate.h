@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/UnverifiedCertificate.h"
+#include "mc/certificates/UnverifiedCertificate.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,7 +34,7 @@ public:
 
     MCAPI std::string toString() const;
 
-    MCAPI bool validate(int64, bool);
+    MCAPI bool validate(int64 currentTime, bool isSelfSigned);
 
     MCAPI ~Certificate();
 
@@ -65,6 +65,20 @@ public:
         bool                     isCertificateAuthority,
         class Json::Value const* extraData
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Certificate const& other);
+
+    MCAPI void* ctor$(
+        class UnverifiedCertificate const& unverifiedCertificate,
+        std::unique_ptr<class Certificate> parentCertificate
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

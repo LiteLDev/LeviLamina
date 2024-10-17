@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 #include "mc/server/commands/ActorCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,7 +43,24 @@ public:
 
     MCAPI struct ActorUniqueID getTargetOther() const;
 
-    MCAPI void setTargetOther(struct ActorUniqueID);
+    MCAPI void setTargetOther(struct ActorUniqueID targetOther);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI bool isSelectorExpansionAllowed$() const;
+
+    MCAPI class CompoundTag serialize$() const;
 
     // NOLINTEND
 };

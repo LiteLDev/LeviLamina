@@ -26,7 +26,22 @@ public:
     // vIndex: 3
     virtual bool finalize(class BlockSource&, class IRandom&);
 
-    MCAPI StructurePoolBlockPredicateTrueIfFound(std::set<class Block const*> const&, float probability);
+    MCAPI StructurePoolBlockPredicateTrueIfFound(std::set<class Block const*> const& replacable, float probability);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::set<class Block const*> const& replacable, float probability);
+
+    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+
+    MCAPI bool test$(class Block const& block, class Randomize& randomize) const;
+
+    MCAPI bool test$(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 
     // NOLINTEND
 };

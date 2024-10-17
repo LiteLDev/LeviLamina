@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,10 +29,26 @@ public:
 
     MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const& name);
 
-    MCAPI void
-    loadActorAnimation(std::string const&, class Core::Path const&, class PackStats&, class SemVersion const&, ::CurrentCmdVersion, bool, std::string const&);
+    MCAPI void loadActorAnimation(
+        std::string const&      fileData,
+        class Core::Path const& filenameWithExtension,
+        class PackStats&        stats,
+        class SemVersion const& engineVersion,
+        ::CurrentCmdVersion     packCommandVersion,
+        bool                    isPersonaPack,
+        std::string const&      personaPieceId
+    );
 
     MCAPI void loadActorAnimationsSync(class ResourcePackManager& resourcePackManager);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

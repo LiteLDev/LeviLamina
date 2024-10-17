@@ -15,4 +15,13 @@ public:
     MCAPI ~BlockPatternEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct BlockPatternEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

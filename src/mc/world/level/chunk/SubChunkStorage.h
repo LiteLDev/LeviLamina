@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/util/IDataOutput.h"
 #include "mc/world/level/chunk/ISubChunkStoragePaletted.h"
-#include "mc/world/level/chunk/PruneType.h"
-#include "mc/world/level/chunk/Type.h"
+#include "mc/world/level/chunk/sub_chunk_storage_unit/PruneType.h"
+#include "mc/world/level/chunk/sub_chunk_storage_unit/Type.h"
 
 template <typename T>
 class SubChunkStorage {

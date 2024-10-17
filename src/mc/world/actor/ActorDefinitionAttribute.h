@@ -14,4 +14,11 @@ public:
     MCAPI ~ActorDefinitionAttribute();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

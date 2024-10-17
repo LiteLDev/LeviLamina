@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/UniqueLock.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/threading/TaskStartInfoEx.h"
-#include "mc/enums/TaskGroupState.h"
+#include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -96,6 +96,36 @@ public:
     MCAPI void _queueInternal(std::shared_ptr<class BackgroundTaskBase> bgtask);
 
     MCAPI static class IBackgroundTaskOwner* getCurrentTaskGroup();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class WorkerPool& workers, class Scheduler& context, std::string name);
+
+    MCAPI void dtor$();
+
+    MCAPI ::TaskGroupState getState$() const;
+
+    MCAPI void processCoroutines$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue$(
+        struct TaskStartInfoEx<void> const& startInfo,
+        std::function<class TaskResult()>&& task,
+        std::function<void()>&&             callback
+    );
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          queueSync$(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult()>&& task);
+
+    MCAPI void requeueTask$(std::shared_ptr<class BackgroundTaskBase> task, bool queueImmediate);
+
+    MCAPI void taskComplete$(gsl::not_null<class BackgroundTaskBase*> task);
+
+    MCAPI void taskRegister$(std::shared_ptr<class BackgroundTaskBase> task);
 
     // NOLINTEND
 };

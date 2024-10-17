@@ -19,4 +19,13 @@ public:
     MCAPI ~FilterInput();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

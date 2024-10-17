@@ -29,4 +29,21 @@ public:
     MCAPI void start();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void print$(std::string const& prepend);
+
+    MCAPI double stop$();
+
+    MCAPI double stopContinue$();
+
+    // NOLINTEND
 };

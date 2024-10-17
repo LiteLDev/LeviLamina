@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/biome/SpawnBiomeType.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/SpawnBiomeType.h"
 
 struct SpawnSettings {
 public:
@@ -19,6 +19,15 @@ public:
     MCAPI SpawnSettings(struct SpawnSettings const&);
 
     MCAPI ~SpawnSettings();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct SpawnSettings const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

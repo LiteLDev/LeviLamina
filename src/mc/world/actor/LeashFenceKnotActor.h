@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/entity/utilities/ActorFlags.h"
-#include "mc/entity/utilities/ActorInitializationMethod.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/ArmorMaterialType.h"
-#include "mc/enums/ArmorSlot.h"
-#include "mc/enums/HandSlot.h"
-#include "mc/enums/InputMode.h"
-#include "mc/enums/MaterialType.h"
-#include "mc/enums/NewInteractionModel.h"
-#include "mc/events/ActorEvent.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/input/NewInteractionModel.h"
+#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/HangingActor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
+#include "mc/world/item/ArmorSlot.h"
+#include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,10 +36,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10
     virtual ~LeashFenceKnotActor() = default;
@@ -48,19 +48,20 @@ public:
     virtual void remove();
 
     // vIndex: 23
-    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
+    virtual void
+    teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     // vIndex: 38
     virtual float getShadowRadius() const;
 
     // vIndex: 124
-    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+    virtual bool getInteraction(class Player&, class ActorInteraction& interaction, class Vec3 const&);
 
     // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
     // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    virtual void addAdditionalSaveData(class CompoundTag&) const;
 
     // vIndex: 151
     virtual int getWidth() const;
@@ -83,6 +84,44 @@ public:
     MCAPI int numberofAnimalsAttached();
 
     MCAPI void removeAnimals();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
+
+    MCAPI void addAdditionalSaveData$(class CompoundTag&) const;
+
+    MCAPI void dropItem$();
+
+    MCAPI int getHeight$() const;
+
+    MCAPI bool getInteraction$(class Player&, class ActorInteraction& interaction, class Vec3 const&);
+
+    MCAPI float getShadowRadius$() const;
+
+    MCAPI int getWidth$() const;
+
+    MCAPI void readAdditionalSaveData$(class CompoundTag const&, class DataLoadHelper&);
+
+    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+
+    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+
+    MCAPI void remove$();
+
+    MCAPI void
+    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+
+    MCAPI bool wouldSurvive$(class BlockSource& region);
 
     // NOLINTEND
 };

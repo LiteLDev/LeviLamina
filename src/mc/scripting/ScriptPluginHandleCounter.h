@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ILifetimeScopeListener.h"
+#include "mc/external/scripting/lifetime_registry/ILifetimeScopeListener.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,6 +30,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~TypeStats();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -94,6 +101,49 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const& type);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void onDestroyObject$(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
+
+    MCAPI void onMakeObject$(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
+
+    MCAPI void onObjectPromotedToMultipleOwners$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+
+    MCAPI void onObjectReducedToSingleOwner$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+
+    MCAPI void onPostLifetimeScopeDestroy$(class Scripting::LifetimeRegistry&);
+
+    MCAPI void onPreLifetimeScopeDestroy$(class Scripting::LifetimeRegistry&);
+
+    MCAPI void onTrackObject$(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
+
+    MCAPI void onUntrackObject$(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
 
     // NOLINTEND
 };

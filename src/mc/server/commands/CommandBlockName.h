@@ -10,7 +10,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit CommandBlockName(uint64);
+    MCAPI explicit CommandBlockName(uint64 blockNameHash);
 
     MCAPI std::string getDescriptionId() const;
 
@@ -23,6 +23,13 @@ public:
 
     MCAPI class CommandBlockNameResult
     resolveBlock(std::vector<class BlockStateCommandParam> const& states, int data, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(uint64 blockNameHash);
 
     // NOLINTEND
 };

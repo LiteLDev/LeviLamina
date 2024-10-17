@@ -29,6 +29,15 @@ public:
     MCAPI ~ByteQueue();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace DataStructures

@@ -17,11 +17,24 @@ public:
 
     MCAPI ~ActorSelectorArgs();
 
-    MCAPI static std::pair<int, int> const DEFAULT_LEVEL;
+    // NOLINTEND
 
-    MCAPI static std::pair<float, float> const DEFAULT_X_ROTATION;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorSelectorArgs const&);
 
-    MCAPI static std::pair<float, float> const DEFAULT_Y_ROTATION;
+    MCAPI void* ctor$(struct ActorSelectorArgs&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::pair<int, int> const& DEFAULT_LEVEL();
+
+    MCAPI static std::pair<float, float> const& DEFAULT_X_ROTATION();
+
+    MCAPI static std::pair<float, float> const& DEFAULT_Y_ROTATION();
 
     // NOLINTEND
 };

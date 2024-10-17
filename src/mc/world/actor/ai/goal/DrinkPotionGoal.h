@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -49,11 +49,29 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
+    MCAPI static void** vftable();
 
-    MCAPI static int const THROTTLE_COOLDOWN;
+    MCAPI void*
+    ctor$(class Mob& mob, float walkSpeedModifier, std::vector<struct DrinkPotionData> const& drinkPotionData);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static class mce::UUID const& SPEED_MODIFIER_DRINKING_UUID();
+
+    MCAPI static int const& THROTTLE_COOLDOWN();
 
     // NOLINTEND
 };

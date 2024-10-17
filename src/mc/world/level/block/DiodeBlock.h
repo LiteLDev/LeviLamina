@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -93,6 +93,54 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI int getAlternateSignalAt(class BlockSource& region, class BlockPos const& pos, int facing) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, bool on);
+
+    MCAPI void dtor$();
+
+    MCAPI bool canSpawnOn$(class Actor*) const;
+
+    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getDirectSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+
+    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int getOutputSignal$(class Block const& block) const;
+
+    MCAPI int getSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+
+    MCAPI int getTurnOffDelay$(class Block const& block) const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool isAlternateInput$(class Block const& block) const;
+
+    MCAPI bool isLocked$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool isOn$() const;
+
+    MCAPI bool isSameDiode$(class Block const& block) const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI bool shouldPrioritize$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldTurnOn$(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

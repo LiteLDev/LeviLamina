@@ -36,10 +36,10 @@ public:
         virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
         // vIndex: 2
-        virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+        virtual void onTestPassed(class gametest::BaseGameTestInstance& testInstance);
 
         // vIndex: 3
-        virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+        virtual void onTestFailed(class gametest::BaseGameTestInstance& testInstance);
 
         // vIndex: 4
         virtual void onTestStarted(class gametest::BaseGameTestInstance&);
@@ -49,6 +49,25 @@ public:
 
         // vIndex: 6
         virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& testInstance);
+
+        MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& testInstance);
+
+        MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+        MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
 
         // NOLINTEND
     };
@@ -61,14 +80,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit GameTestNetworkAdapter(class MinecraftGameTest&);
+    MCAPI explicit GameTestNetworkAdapter(class MinecraftGameTest& gameTest);
 
     MCAPI void rungametest(
-        gsl::not_null<class PacketSender*> packetSender,
-        std::string const&,
+        gsl::not_null<class PacketSender*>     packetSender,
+        std::string const&                     testName,
         class Dimension&                       dimension,
         struct gametest::TestParameters const& params
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class MinecraftGameTest& gameTest);
 
     // NOLINTEND
 };

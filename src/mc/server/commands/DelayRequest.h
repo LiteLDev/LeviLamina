@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI DelayRequest(std::unique_ptr<class IRequestAction> action, uint64);
+    MCAPI DelayRequest(std::unique_ptr<class IRequestAction> action, uint64 tickToExecuteOn);
 
     MCAPI void executeAction(class ServerLevel& level, class Dimension& dimension);
 
@@ -22,6 +22,15 @@ public:
     MCAPI bool operator>(class DelayRequest const& rhs) const;
 
     MCAPI ~DelayRequest();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::unique_ptr<class IRequestAction> action, uint64 tickToExecuteOn);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

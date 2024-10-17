@@ -20,12 +20,23 @@ public:
         // NOLINTBEGIN
         MCAPI Descriptions();
 
-        MCAPI Descriptions(struct FeatureTerrainAdjustments::Descriptions const&);
+        MCAPI Descriptions(struct FeatureTerrainAdjustments::Descriptions const& other);
 
         MCAPI struct FeatureTerrainAdjustments::Descriptions&
-        operator=(struct FeatureTerrainAdjustments::Descriptions&&);
+        operator=(struct FeatureTerrainAdjustments::Descriptions&& other);
 
         MCAPI ~Descriptions();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(struct FeatureTerrainAdjustments::Descriptions const& other);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -57,7 +68,7 @@ public:
     MCAPI static float calculateContribution(
         struct FeatureTerrainAdjustments::Descriptions const& descriptions,
         class BlockPos const&                                 currentPos,
-        float
+        float                                                 noiseValue
     );
 
     MCAPI static struct BeardKernel& getBeardKernel();
@@ -68,14 +79,19 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::shared_ptr<bool>
-    _insertDescriptions(std::vector<class ChunkPos> const&, std::function<void(struct FeatureTerrainAdjustments::Descriptions&, std::weak_ptr<bool>)>&&);
+    MCAPI std::shared_ptr<bool> _insertDescriptions(
+        std::vector<class ChunkPos> const&                                                          intersectingChunks,
+        std::function<void(struct FeatureTerrainAdjustments::Descriptions&, std::weak_ptr<bool>)>&& modifyFn
+    );
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct BeardKernel mBeardKernel;
+    MCAPI void dtor$();
+
+    MCAPI static struct BeardKernel& mBeardKernel();
 
     // NOLINTEND
 };

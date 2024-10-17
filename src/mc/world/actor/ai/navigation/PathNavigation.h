@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CanJumpIntoNode.h"
-#include "mc/enums/NodeType.h"
+#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
+#include "mc/world/level/pathfinder/NodeType.h"
 
 class PathNavigation {
 public:
@@ -76,6 +76,42 @@ public:
         class BlockPos const&      size,
         ::CanJumpIntoNode          jumpIntoNode
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool canUpdatePath$(class Mob const& mob) const;
+
+    MCAPI std::unique_ptr<class Path>
+          createPath$(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+
+    MCAPI std::unique_ptr<class Path>
+          createPath$(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+
+    MCAPI class Vec3 getTempMobPos$(class Mob const& mob) const;
+
+    MCAPI void initializeInternal$(class Mob& mob, struct NavigationDescription* description);
+
+    MCAPI bool moveTo$(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
+
+    MCAPI bool moveTo$(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);
+
+    MCAPI bool
+    moveTo$(class NavigationComponent& parent, class Mob& mob, std::unique_ptr<class Path> newPath, float speed);
+
+    MCAPI void stop$(class NavigationComponent& parent, class Mob& mob);
+
+    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+
+    MCAPI bool travel$(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
+
+    MCAPI void updatePath$(class NavigationComponent& parent, class Mob& mob);
 
     // NOLINTEND
 };

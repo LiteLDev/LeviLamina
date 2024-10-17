@@ -14,7 +14,16 @@ public:
 
     MCAPI ~ResourceMetadata();
 
-    MCAPI static char const* PRODUCT_TYPE_ADD_ON;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static char const* const& PRODUCT_TYPE_ADD_ON();
 
     // NOLINTEND
 };

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,10 +76,10 @@ public:
     virtual bool isInteractiveBlock() const;
 
     // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 153
-    virtual bool allowStateMismatchOnPlacement(class Block const&, class Block const&) const;
+    virtual bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
 
     // vIndex: 163
     virtual int getTickDelay() const;
@@ -89,14 +89,19 @@ public:
 
     MCAPI DispenserBlock(std::string const& nameId, int id);
 
-    MCAPI static void dropAllItemsFromContainer(class BlockSource&, class BlockPos const&);
+    MCAPI static void dropAllItemsFromContainer(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI static void
-    ejectItem(class BlockSource& region, class Vec3 const& pos, uchar face, class ItemStack const& item, int);
+    MCAPI static void ejectItem(
+        class BlockSource&     region,
+        class Vec3 const&      pos,
+        uchar                  face,
+        class ItemStack const& item,
+        int                    countLimit
+    );
 
-    MCAPI static void openInventoryContainer(class Player&, class BlockPos const&);
+    MCAPI static void openInventoryContainer(class Player& player, class BlockPos const& pos);
 
-    MCAPI static void setupConsumerRedstoneComponent(class BlockSource&, class BlockPos const&);
+    MCAPI static void setupConsumerRedstoneComponent(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
@@ -109,12 +114,64 @@ public:
         class ItemStack const& item,
         class Container&       container,
         int                    slot,
-        int
+        int                    countLimit
     ) const;
 
     MCAPI class Vec3 getDispensePosition(class BlockSource& region, class Vec3 const& pos) const;
 
     MCAPI uchar getFacing(class Block const& block) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI void dtor$();
+
+    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+
+    MCAPI void dispenseFrom$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
+
+    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+
+    MCAPI class Block const& getPlacementBlock$(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
+
+    MCAPI int getTickDelay$() const;
+
+    MCAPI int getVariant$(class Block const& block) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isContainerBlock$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void
+    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
 
     // NOLINTEND
 };

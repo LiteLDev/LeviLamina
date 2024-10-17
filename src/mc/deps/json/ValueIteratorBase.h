@@ -51,6 +51,15 @@ public:
     MCAPI bool isEqual(class Json::ValueIteratorBase const& other) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Json::ValueIteratorBase const& other);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Json

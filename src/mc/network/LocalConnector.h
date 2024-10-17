@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/TransportLayer.h"
 #include "mc/network/Connector.h"
+#include "mc/network/TransportLayer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -77,9 +77,44 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct Connector::ConnectionCallbacks& callbacks, class NetworkIdentifier const& localId);
+
+    MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+
+    MCAPI class Social::GameConnectionInfo const& getConnectedGameInfo$() const;
+
+    MCAPI ushort getIPv4Port$() const;
+
+    MCAPI ushort getIPv6Port$() const;
+
+    MCAPI std::string getLocalIp$();
+
+    MCAPI std::vector<std::string> getLocalIps$() const;
+
+    MCAPI struct Connector::NatPunchInfo getNatPunchInfo$() const;
+
+    MCAPI ::TransportLayer getNetworkType$() const;
+
+    MCAPI ushort getPort$() const;
+
+    MCAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps$() const;
+
+    MCAPI bool isIPv4Supported$() const;
+
+    MCAPI bool isIPv6Supported$() const;
+
+    MCAPI void removeConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+
+    MCAPI void setupNatPunch$(bool connectToClient);
+
+    MCAPI void startNatPunchingClient$(std::string const& address, ushort port);
+
+    MCAPI static class LocalConnectivitySystem& sLocalConnectivitySystem();
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,6 +30,15 @@ public:
     MCAPI class mce::Color const& getColor() const;
 
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGB> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool isValid$() const;
 
     // NOLINTEND
 };

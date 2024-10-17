@@ -28,4 +28,15 @@ public:
     MCAPI ~BiomeDecorationFeature();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct BiomeDecorationFeature const&);
+
+    MCAPI void* ctor$(struct BiomeDecorationFeature&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -34,9 +34,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     TESTAAAA,
     HookPriority::Normal,
     Item,
-    "?appendFormattedHovertext@Item@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@"
-    "V?$"
-    "allocator@D@2@@std@@_N@Z",
+    &Item::appendFormattedHovertext$,
     void,
     class ItemStackBase const& stack,
     Level&                     level,

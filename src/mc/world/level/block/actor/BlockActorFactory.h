@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class BlockActorFactory {
 public:
@@ -21,11 +21,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
     MCAPI static std::vector<
-        std::pair<::BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>
-        mCustomBlockEntityCreation;
+        std::pair<::BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>&
+    mCustomBlockEntityCreation();
 
     // NOLINTEND
 };

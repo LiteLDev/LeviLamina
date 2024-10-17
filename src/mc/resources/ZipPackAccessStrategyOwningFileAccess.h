@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/PackAccessAssetGenerationResult.h"
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
 #include "mc/resources/ZipPackAccessStrategy.h"
 
@@ -26,6 +26,19 @@ public:
     virtual ~ZipPackAccessStrategyOwningFileAccess() = default;
 
     MCAPI ZipPackAccessStrategyOwningFileAccess(
+        std::shared_ptr<class IFileAccess> fileAccess,
+        class ResourceLocation const&      path,
+        class Core::Path const&            subPath
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
         std::shared_ptr<class IFileAccess> fileAccess,
         class ResourceLocation const&      path,
         class Core::Path const&            subPath

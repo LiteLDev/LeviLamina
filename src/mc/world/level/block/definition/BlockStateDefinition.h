@@ -24,4 +24,13 @@ public:
     MCAPI void _copy(struct BlockStateDefinition const& rhs);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct BlockStateDefinition const& rhs);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

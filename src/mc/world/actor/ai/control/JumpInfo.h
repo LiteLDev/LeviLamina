@@ -22,4 +22,11 @@ public:
     MCAPI int getJumpDelay() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float distanceScale, float height, int jumpDelay, int animDuration);
+
+    // NOLINTEND
 };

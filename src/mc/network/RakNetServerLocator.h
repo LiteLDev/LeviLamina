@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ServerConnectivityTestResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/deps/raknet/RakNetServerLANVisibility.h"
-#include "mc/enums/GameType.h"
-#include "mc/enums/LocatorStateChangeRequest.h"
-#include "mc/enums/PermissionIPv6.h"
-#include "mc/enums/PermissionLAN.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/LocatorStateChangeRequest.h"
+#include "mc/network/PermissionIPv6.h"
+#include "mc/network/PermissionLAN.h"
+#include "mc/network/RakNetServerLANVisibility.h"
 #include "mc/network/RakPeerHelper.h"
+#include "mc/network/ServerConnectivityTestResult.h"
 #include "mc/network/ServerLocator.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,6 +45,15 @@ public:
         MCAPI ~AnnounceServerData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct RakNetServerLocator::AnnounceServerData const&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct StateChangeRequestData {
@@ -59,6 +68,13 @@ public:
         MCAPI ~StateChangeRequestData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class SuspendStateData {
@@ -71,6 +87,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~SuspendStateData();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -94,21 +117,21 @@ public:
 
     // vIndex: 3
     virtual void startAnnouncingServer(
-        std::string const&,
-        std::string const&,
-        class Bedrock::NonOwnerPointer<class AppPlatform>,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool
+        std::string const&                                playerName,
+        std::string const&                                worldName,
+        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
+        ::GameType                                        gameType,
+        int                                               numPlayers,
+        int                                               maxNumPlayers,
+        bool                                              isJoinableThroughServerScreen,
+        bool                                              isEditorWorld
     );
 
     // vIndex: 4
     virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
 
     // vIndex: 5
-    virtual void startServerDiscovery(struct PortPair);
+    virtual void startServerDiscovery(struct PortPair ports);
 
     // vIndex: 6
     virtual void stopServerDiscovery();
@@ -138,8 +161,18 @@ public:
         std::function<void(::ServerConnectivityTestResult)> callback
     );
 
-    MCAPI
-    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface& ipInterface, std::vector<std::string>, bool isServer, ::RakNetServerLANVisibility, ::PermissionLAN, ::PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>()>);
+    MCAPI RakNetServerLocator(
+        class RakNetConnector&                                   rakNetConnector,
+        class RakPeerHelper::IPSupportInterface&                 ipInterface,
+        std::vector<std::string>                                 overrideBroadcastAddresses,
+        bool                                                     isServer,
+        ::RakNetServerLANVisibility                              serverLanVisibility,
+        ::PermissionLAN                                          permissionLAN,
+        ::PermissionIPv6                                         permissionIPv6,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
+        std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>()>
+            createUniqueRakPeerFunc
+    );
 
     MCAPI static bool parseUnconnectedPongPacketData(std::string const& data, std::vector<std::string>& extraData);
 
@@ -158,9 +191,9 @@ public:
     MCAPI void _announceServer(struct RakNetServerLocator::AnnounceServerData const& serverData);
 
     MCAPI void _enqueueStateChangeRequest(
-        ::LocatorStateChangeRequest newState,
-        struct RakNetServerLocator::AnnounceServerData,
-        struct PortPair
+        ::LocatorStateChangeRequest                    newState,
+        struct RakNetServerLocator::AnnounceServerData newAnnounceData,
+        struct PortPair                                newPorts
     );
 
     MCAPI std::string _getHostGuid(std::string const& address, int port);
@@ -185,9 +218,9 @@ public:
 
     MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const& serverData);
 
-    MCAPI void _startAnnouncingServer(struct RakNetServerLocator::AnnounceServerData const&);
+    MCAPI void _startAnnouncingServer(struct RakNetServerLocator::AnnounceServerData const& announceData);
 
-    MCAPI void _startServerDiscovery(struct PortPair const&);
+    MCAPI void _startServerDiscovery(struct PortPair const& ports);
 
     MCAPI void _stopAnnouncingServer();
 
@@ -196,6 +229,67 @@ public:
     MCAPI void _updateNetwork();
 
     MCAPI bool _updateQueuedPings();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class RakNetConnector&                                   rakNetConnector,
+        class RakPeerHelper::IPSupportInterface&                 ipInterface,
+        std::vector<std::string>                                 overrideBroadcastAddresses,
+        bool                                                     isServer,
+        ::RakNetServerLANVisibility                              serverLanVisibility,
+        ::PermissionLAN                                          permissionLAN,
+        ::PermissionIPv6                                         permissionIPv6,
+        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
+        std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>()>
+            createUniqueRakPeerFunc
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI void _onDisable$();
+
+    MCAPI void _onEnable$();
+
+    MCAPI void addCustomServer$(class AsynchronousIPResolver const& futureIP, int port);
+
+    MCAPI void addCustomServer$(std::string const& address, int port);
+
+    MCAPI void checkCanConnectToCustomServerAsync$(
+        std::string                                         hostIpAddress,
+        int                                                 port,
+        std::function<void(::ServerConnectivityTestResult)> callback
+    );
+
+    MCAPI void clearServerList$();
+
+    MCAPI float getPingTimeForGUID$(std::string const& guid);
+
+    MCAPI std::vector<struct PingedCompatibleServer> getServerList$() const;
+
+    MCAPI void startAnnouncingServer$(
+        std::string const&                                playerName,
+        std::string const&                                worldName,
+        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
+        ::GameType                                        gameType,
+        int                                               numPlayers,
+        int                                               maxNumPlayers,
+        bool                                              isJoinableThroughServerScreen,
+        bool                                              isEditorWorld
+    );
+
+    MCAPI void startServerDiscovery$(struct PortPair ports);
+
+    MCAPI void stopAnnouncingServer$(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
+
+    MCAPI void stopServerDiscovery$();
+
+    MCAPI void update$();
 
     // NOLINTEND
 };

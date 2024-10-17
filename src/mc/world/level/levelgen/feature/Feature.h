@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
@@ -47,6 +47,26 @@ public:
     MCAPI bool _placeBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     MCAPI void _setManuallyPlaced(class Actor* placer);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Actor* placer);
+
+    MCAPI void dtor$();
+
+    MCAPI bool isValidPlacement$(std::string const&);
+
+    MCAPI std::optional<class BlockPos> place$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // NOLINTEND
 };

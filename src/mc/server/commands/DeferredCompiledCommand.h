@@ -20,7 +20,19 @@ public:
     // vIndex: 1
     virtual void execute(class MinecraftCommands&);
 
-    MCAPI DeferredCompiledCommand(gsl::not_null<class Command*>, std::unique_ptr<class CommandOrigin> origin);
+    MCAPI
+    DeferredCompiledCommand(gsl::not_null<class Command*> compiledCommand, std::unique_ptr<class CommandOrigin> origin);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(gsl::not_null<class Command*> compiledCommand, std::unique_ptr<class CommandOrigin> origin);
+
+    MCAPI void execute$(class MinecraftCommands&);
 
     // NOLINTEND
 };

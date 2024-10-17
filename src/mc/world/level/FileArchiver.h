@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,6 +37,13 @@ public:
         MCAPI ~EduCloudImportInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class IWorldConverter {
@@ -61,6 +68,19 @@ public:
         MCVAPI ~ProgressReporter();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+        MCAPI static void** vftableForCoreZipUtilsZipProgress();
+
+        MCAPI void dtor$();
+
+        MCAPI void clear$();
+
+        // NOLINTEND
     };
 
     struct Result {
@@ -74,6 +94,15 @@ public:
         MCAPI Result();
 
         MCAPI ~Result();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -94,11 +123,11 @@ public:
         class ILevelListCache&                                            levelListCache,
         Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&   pathManager,
         Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& resourcePackRepository,
-        bool,
-        std::unique_ptr<class FileArchiver::IWorldConverter>,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> keyProvider,
-        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                levelDbEnv,
-        std::function<void(std::string const&)>                      displayMessageFunction
+        bool                                                              isEditorModeEnabled,
+        std::unique_ptr<class FileArchiver::IWorldConverter>              worldConverter,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>      keyProvider,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                     levelDbEnv,
+        std::function<void(std::string const&)>                           displayMessageFunction
     );
 
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct FileArchiver::Result>>
@@ -112,25 +141,44 @@ public:
 
     MCAPI void setWorldConverter(std::unique_ptr<class FileArchiver::IWorldConverter>);
 
-    MCAPI static std::string const EXTENSION_ADDON;
-
-    MCAPI static std::string const EXTENSION_EDITOR_ADDON;
-
-    MCAPI static std::string const EXTENSION_PROJECT;
-
-    MCAPI static std::string const EXTENSION_RESOURCEPACK;
-
-    MCAPI static std::string const EXTENSION_TEMPLATE;
-
-    MCAPI static std::string const EXTENSION_VANILLA;
-
-    MCAPI static std::string const IMPORT_LOCK_FILE;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const& result);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Scheduler&                                                  scheduler,
+        class ILevelListCache&                                            levelListCache,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&   pathManager,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& resourcePackRepository,
+        bool                                                              isEditorModeEnabled,
+        std::unique_ptr<class FileArchiver::IWorldConverter>              worldConverter,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>      keyProvider,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                     levelDbEnv,
+        std::function<void(std::string const&)>                           displayMessageFunction
+    );
+
+    MCAPI static std::string const& EXTENSION_ADDON();
+
+    MCAPI static std::string const& EXTENSION_EDITOR_ADDON();
+
+    MCAPI static std::string const& EXTENSION_PROJECT();
+
+    MCAPI static std::string const& EXTENSION_RESOURCEPACK();
+
+    MCAPI static std::string const& EXTENSION_TEMPLATE();
+
+    MCAPI static std::string const& EXTENSION_VANILLA();
+
+    MCAPI static std::string const& IMPORT_LOCK_FILE();
 
     // NOLINTEND
 };

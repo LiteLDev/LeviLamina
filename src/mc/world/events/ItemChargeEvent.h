@@ -15,4 +15,13 @@ public:
     MCAPI ItemChargeEvent(struct ItemChargeEvent const&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ItemChargeEvent const&);
+
+    MCAPI void* ctor$(struct ItemChargeEvent&&);
+
+    // NOLINTEND
 };

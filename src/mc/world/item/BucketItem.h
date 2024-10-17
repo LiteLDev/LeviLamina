@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/BucketFillType.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/item/BucketFillType.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,31 +64,28 @@ public:
     virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const* userData) const;
 
     // vIndex: 87
     virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
 
     // vIndex: 95
-    virtual bool validFishInteraction(int auxValue) const;
+    virtual bool validFishInteraction(int) const;
 
     // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 108
-    virtual struct Brightness getLightEmission(int auxValue) const;
+    virtual struct Brightness getLightEmission(int) const;
 
     // vIndex: 113
     virtual std::string getAuxValuesDescription() const;
 
     // vIndex: 118
     virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
     MCAPI BucketItem(std::string const& name, int id, ::BucketFillType type);
-
-    MCAPI static int const DRINK_DURATION;
 
     // NOLINTEND
 
@@ -96,8 +93,12 @@ public:
     // NOLINTBEGIN
     MCAPI void addBucketEntitySaveData(class Actor& entity, class ItemStack& instance) const;
 
-    MCAPI bool
-    readBucketEntitySaveData(class BlockSource&, class Actor*, class BlockPos, class ItemInstance const&) const;
+    MCAPI bool readBucketEntitySaveData(
+        class BlockSource&        region,
+        class Actor*              placer,
+        class BlockPos            pos,
+        class ItemInstance const& instance
+    ) const;
 
     // NOLINTEND
 
@@ -129,9 +130,53 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const mFillTypeToEntityType;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id, ::BucketFillType type);
+
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const* userData) const;
+
+    MCAPI bool canUseOnSimTick$() const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI std::string getAuxValuesDescription$() const;
+
+    MCAPI struct Brightness getLightEmission$(int) const;
+
+    MCAPI uchar getMaxStackSize$(class ItemDescriptor const&) const;
+
+    MCAPI bool isBucket$() const;
+
+    MCAPI bool isDestructive$(int auxValue) const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI void releaseUsing$(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI bool validFishInteraction$(int) const;
+
+    MCAPI static int const& DRINK_DURATION();
+
+    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
 
     // NOLINTEND
 };

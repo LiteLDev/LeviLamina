@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/server/IJsonSerializable.h"
@@ -18,12 +18,7 @@ public:
     std::string mXuid;               // 56
     bool        mIgnoresPlayerLimit; // 88
 
-    AllowListEntry(
-        std::string name,
-        std::string xuid,
-        mce::UUID   uuid               = mce::UUID::EMPTY,
-        bool        ignoresPlayerLimit = false
-    )
+    AllowListEntry(std::string name, std::string xuid, mce::UUID uuid = {}, bool ignoresPlayerLimit = false)
     : mName(std::move(name)),
       mUuid(uuid),
       mXuid(std::move(xuid)),
@@ -41,6 +36,21 @@ public:
     virtual void deserialize(class Json::Value& root);
 
     MCAPI explicit AllowListEntry(std::string name);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string name);
+
+    MCAPI void dtor$();
+
+    MCAPI void deserialize$(class Json::Value& root);
+
+    MCAPI void serialize$(class Json::Value& root);
 
     // NOLINTEND
 };

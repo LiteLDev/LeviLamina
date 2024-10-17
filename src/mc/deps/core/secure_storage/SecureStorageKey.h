@@ -14,4 +14,11 @@ public:
     MCAPI ~SecureStorageKey();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

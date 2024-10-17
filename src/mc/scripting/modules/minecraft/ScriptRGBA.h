@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptRGB.h"
 
 // auto generated forward declare list
@@ -29,9 +29,20 @@ public:
     // vIndex: 1
     virtual bool isValid() const;
 
-    MCAPI explicit ScriptRGBA(class mce::Color const&);
+    MCAPI explicit ScriptRGBA(class mce::Color const& color);
 
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGBA> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class mce::Color const& color);
+
+    MCAPI bool isValid$() const;
 
     // NOLINTEND
 };

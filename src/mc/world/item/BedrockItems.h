@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/WeakPtr.h"
 
 class BedrockItems {
 public:
@@ -14,11 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI static void registerItems(class ItemRegistryRef);
+    MCAPI static void registerItems(class ItemRegistryRef itemRegistry);
 
-    MCAPI static void unregisterItems(class ItemRegistryRef);
+    MCAPI static void unregisterItems(class ItemRegistryRef itemRegistry);
 
-    MCAPI static class WeakPtr<class Item> mAir;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class WeakPtr<class Item>& mAir();
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Difficulty.h"
+#include "mc/world/Difficulty.h"
 
 class MobSpawnRules {
 public:
@@ -72,7 +72,7 @@ public:
 
     MCAPI class MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
 
-    MCAPI class MobSpawnRules& setBubbleSpawner(bool);
+    MCAPI class MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
 
     MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const& id);
 
@@ -115,13 +115,26 @@ public:
 
     MCAPI ~MobSpawnRules();
 
-    MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
+    // NOLINTEND
 
-    MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class MobSpawnRules const&);
 
-    MCAPI static uint64 const MAX_WORLD_AGE;
+    MCAPI void* ctor$();
 
-    MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+    MCAPI void* ctor$(class MobSpawnRules&&);
+
+    MCAPI void dtor$();
+
+    MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
+
+    MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
+
+    MCAPI static uint64 const& MAX_WORLD_AGE();
+
+    MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
 
     // NOLINTEND
 };

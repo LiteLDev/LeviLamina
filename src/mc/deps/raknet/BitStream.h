@@ -75,6 +75,19 @@ public:
     MCAPI static void ReverseBytes(uchar* inByteArray, uchar* inOutByteArray, uint length);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(uint initialBytesToAllocate);
+
+    MCAPI void* ctor$(uchar* _data, uint lengthInBytes, bool _copyData);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

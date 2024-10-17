@@ -17,7 +17,16 @@ public:
     // vIndex: 0
     virtual ~ShipwreckStart() = default;
 
-    MCAPI ShipwreckStart(class BiomeSource const& source, class Random& random, int x, int z, short seaLevel);
+    MCAPI ShipwreckStart(class BiomeSource const& source, class Random&, int x, int z, short seaLevel);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class BiomeSource const& source, class Random&, int x, int z, short seaLevel);
 
     // NOLINTEND
 };

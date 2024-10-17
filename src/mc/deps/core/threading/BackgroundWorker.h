@@ -66,9 +66,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::string                                       name,
+        bool                                              async,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinity,
+        std::optional<int>                                idealCore,
+        class WorkerPool&                                 workerPool,
+        bool                                              suppressProfiling
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool canTaskRunAgain$() const;
+
+    MCAPI bool isAsync$() const;
+
+    MCAPI static class BackgroundWorker*& gLocalWorkerMappingSingleton();
 
     // NOLINTEND
 };

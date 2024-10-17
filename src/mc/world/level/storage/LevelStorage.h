@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/enums/CompactionStatus.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/enums/d_b_helpers/Category.h"
+#include "mc/common/CompactionStatus.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/world/level/storage/StorageVersion.h"
+#include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -73,7 +73,7 @@ public:
     deleteData(std::string const& key, ::DBHelpers::Category category) = 0;
 
     // vIndex: 12
-    virtual void getStatistics(std::string&, ::LevelStorage::StatsType) const = 0;
+    virtual void getStatistics(std::string& outStats, ::LevelStorage::StatsType statsType) const = 0;
 
     // vIndex: 13
     virtual bool clonePlayerData(std::string_view fromKey, std::string_view toKey);
@@ -97,7 +97,8 @@ public:
     virtual struct Core::LevelStorageResult getState() const = 0;
 
     // vIndex: 20
-    virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&, bool) = 0;
+    virtual std::vector<struct SnapshotFilenameAndLength>
+    createSnapshot(std::string const& filePrefix, bool flushWriteCache) = 0;
 
     // vIndex: 21
     virtual void releaseSnapshot() = 0;
@@ -129,9 +130,9 @@ public:
     // vIndex: 30
     virtual void corruptLevel();
 
-    MCAPI std::string getServerId(struct PlayerStorageIds const&);
+    MCAPI std::string getServerId(struct PlayerStorageIds const& playerId);
 
-    MCAPI std::string getServerId(class Player const&, bool);
+    MCAPI std::string getServerId(class Player const& client, bool isXboxLive);
 
     MCAPI std::vector<std::string> loadAllPlayerIDs(bool includeLocalPlayer = true) const;
 
@@ -139,14 +140,31 @@ public:
 
     MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const& client, bool isXboxLive);
 
-    MCAPI void save(class Player&);
+    MCAPI void save(class Player& player);
 
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
           saveData(std::string const& key, class CompoundTag const& tag, ::DBHelpers::Category category);
 
-    MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
+    // NOLINTEND
 
-    MCAPI static std::string const LOCAL_PLAYER_TAG;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool clonePlayerData$(std::string_view fromKey, std::string_view toKey);
+
+    MCAPI void corruptLevel$();
+
+    MCAPI void freeCaches$();
+
+    MCAPI bool loadData$(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI static std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
+
+    MCAPI static std::string const& LOCAL_PLAYER_TAG();
 
     // NOLINTEND
 };

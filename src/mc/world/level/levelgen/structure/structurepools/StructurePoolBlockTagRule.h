@@ -20,4 +20,15 @@ public:
     MCAPI bool processRule(class Block const& sourceBlock, class CompoundTag& sourceTag) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        std::unique_ptr<class IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
+        std::string                                              resultKey,
+        std::string                                              resultValue
+    );
+
+    // NOLINTEND
 };

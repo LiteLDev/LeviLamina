@@ -30,6 +30,13 @@ public:
         MCAPI ~EnchantmentOption();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -44,18 +51,16 @@ public:
     virtual ~EnchantBookForTradingFunction() = default;
 
     // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
 
     // vIndex: 2
-    virtual int
-    apply(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+    virtual int apply(class ItemStack& item, class Random& random, struct Trade const&, class LootTableContext&);
 
     // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext&);
 
     // vIndex: 4
-    virtual int
-    apply(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+    virtual int apply(class ItemInstance& item, class Random& random, struct Trade const&, class LootTableContext&);
 
     MCAPI static std::unique_ptr<class EnchantBookForTradingFunction>
     deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
@@ -66,10 +71,25 @@ public:
     // NOLINTBEGIN
     MCAPI class EnchantmentInstance _getRandomEnchantInstance(class Random& random) const;
 
-    MCAPI std::optional<class EnchantmentInstance> _trySelectEnchantmentFromOptions(class Random&) const;
+    MCAPI std::optional<class EnchantmentInstance> _trySelectEnchantmentFromOptions(class Random& random) const;
 
     MCAPI static std::optional<struct EnchantBookForTradingFunction::EnchantmentOption>
-    _parseEnchantmentOption(class Json::Value const&);
+    _parseEnchantmentOption(class Json::Value const& enchantOptionData);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+
+    MCAPI int apply$(class ItemStack& item, class Random& random, struct Trade const&, class LootTableContext&);
+
+    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
+
+    MCAPI int apply$(class ItemInstance& item, class Random& random, struct Trade const&, class LootTableContext&);
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorTypeNamespaceRules.h"
+#include "mc/world/actor/ActorTypeNamespaceRules.h"
 
 struct ActorMapping {
 public:
@@ -18,9 +18,20 @@ public:
 
     MCAPI ActorMapping(std::string const& space, std::string const& primary, std::string const& alt);
 
-    MCAPI std::string getMappingName(::ActorTypeNamespaceRules) const;
+    MCAPI std::string getMappingName(::ActorTypeNamespaceRules namespaceRule) const;
 
     MCAPI ~ActorMapping();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& space, std::string const& primary, std::string const& alt);
+
+    MCAPI void* ctor$(std::string const&, std::string const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI CompassSpriteCalculator(
-        std::function<class BlockPos(class BlockSource const*, class Actor*)>,
-        std::function<bool(class BlockSource const*, class Actor*)>,
-        float rot,
-        float
+        std::function<class BlockPos(class BlockSource const*, class Actor*)> targetToPointTo,
+        std::function<bool(class BlockSource const*, class Actor*)>           isPointingAtTarget,
+        float                                                                 rot,
+        float                                                                 rotA
     );
 
     MCAPI int getFrame() const;
@@ -41,6 +41,20 @@ public:
     MCAPI static std::function<class BlockPos(class BlockSource const*, class Actor*)> pointTowardsLastDeathLocation();
 
     MCAPI static std::function<class BlockPos(class BlockSource const*, class Actor*)> pointTowardsSpawnPoint();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        std::function<class BlockPos(class BlockSource const*, class Actor*)> targetToPointTo,
+        std::function<bool(class BlockSource const*, class Actor*)>           isPointingAtTarget,
+        float                                                                 rot,
+        float                                                                 rotA
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

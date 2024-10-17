@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/GameType.h"
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/Closure.h"
-#include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/external/scripting/Future.h"
-#include "mc/external/scripting/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/Promise.h"
-#include "mc/external/scripting/Result.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
-#include "mc/external/scripting/WeakTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/external/scripting/script_engine/Future.h"
+#include "mc/external/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/scripting/modules/minecraft/ScriptFluidType.h"
+#include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/server/sim/LookDuration.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off

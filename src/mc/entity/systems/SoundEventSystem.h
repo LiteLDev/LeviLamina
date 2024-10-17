@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/ViewT.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/entity/components/SoundEventRequest.h"
 
 class SoundEventSystem {
@@ -21,8 +21,11 @@ public:
         struct SoundEventRequest::SynchronizedPlainData const& data
     );
 
-    MCAPI static void
-    _tick(class StrictEntityContext const&, class LevelComponent& level, struct SoundEventRequestQueueComponent&);
+    MCAPI static void _tick(
+        class StrictEntityContext const&,
+        class LevelComponent&                   level,
+        struct SoundEventRequestQueueComponent& requests
+    );
 
     MCAPI static void
         _view(class ViewT<class StrictEntityContext, class LevelComponent, struct SoundEventRequestQueueComponent>);

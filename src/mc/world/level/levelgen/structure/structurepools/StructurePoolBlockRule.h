@@ -20,8 +20,8 @@ public:
     MCAPI StructurePoolBlockRule(
         std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
         std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
-        std::unique_ptr<class IStructurePoolBlockPredicate>&&,
-        class Block const* resultBlock
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& distancePredicate,
+        class Block const*                                    resultBlock
     );
 
     MCAPI bool finalizeRule(class BlockSource& region, class IRandom& random);
@@ -34,6 +34,24 @@ public:
         class BlockPos const& pos,
         class BlockPos const& refPos
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        class Block const*                                    resultBlock
+    );
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& distancePredicate,
+        class Block const*                                    resultBlock
+    );
 
     // NOLINTEND
 };

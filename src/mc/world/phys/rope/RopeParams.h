@@ -16,4 +16,11 @@ public:
     MCAPI void leadInit();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Vec3 const& startPin, class Vec3 const& endPin, float length);
+
+    // NOLINTEND
 };

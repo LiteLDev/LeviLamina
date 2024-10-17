@@ -22,17 +22,31 @@ public:
     // vIndex: 0
     virtual ~EntityComponentFactoryCerealBase();
 
-    MCAPI explicit EntityComponentFactoryCerealBase(struct cereal::ReflectionCtx&);
+    MCAPI explicit EntityComponentFactoryCerealBase(struct cereal::ReflectionCtx& ctx);
 
     MCAPI struct cereal::ReflectionCtx& cerealContext();
 
     MCAPI struct cereal::ReflectionCtx const& cerealContext() const;
 
-    MCAPI void
-    serializeComponentDefinitions(class DefinitionInstanceGroup&, rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&, class SemVersion const&)
-        const;
+    MCAPI void serializeComponentDefinitions(
+        class DefinitionInstanceGroup& outputDefinitions,
+        rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&
+                                input,
+        class SemVersion const& engineVersion
+    ) const;
 
-    MCAPI class ICerealDefinitionSerializer* tryGetDefinitionSerializer(std::string const&) const;
+    MCAPI class ICerealDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct cereal::ReflectionCtx& ctx);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 class TradeContainerManagerModel : public ::LevelContainerManagerModel {
@@ -39,6 +39,27 @@ public:
 
     MCAPI
     TradeContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
+
+    MCAPI class ContainerScreenContext _postInit$();
+
+    MCAPI void broadcastChanges$();
+
+    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+
+    MCAPI class ItemStack const& getSlot$(int slot) const;
+
+    MCAPI bool isValid$(float pickRange);
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
 
     // NOLINTEND
 };

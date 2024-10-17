@@ -20,7 +20,21 @@ public:
     // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    MCAPI bool place(class BlockSource&, class BlockPos const&, class Random&, class HashedString const&) const;
+    MCAPI bool place(
+        class BlockSource&        region,
+        class BlockPos const&     pos,
+        class Random&             random,
+        class HashedString const& plantType
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

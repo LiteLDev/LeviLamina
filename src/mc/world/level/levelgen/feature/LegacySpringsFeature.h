@@ -23,4 +23,15 @@ public:
     MCAPI LegacySpringsFeature(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+
+    // NOLINTEND
 };

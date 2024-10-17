@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class EndermanTakeBlockGoal : public ::Goal {
@@ -31,6 +31,23 @@ public:
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const& centerPos) const;
 
     MCAPI explicit EndermanTakeBlockGoal(class EnderMan& enderman);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class EnderMan& enderman);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI class BlockPos getRandomNearbyBlockPos$(class Vec3 const& centerPos) const;
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

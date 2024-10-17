@@ -9,7 +9,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Puv::Comprehensive {
 // NOLINTBEGIN
-MCAPI void bindItemComponentTypes(struct cereal::ReflectionCtx&);
+MCAPI void bindItemComponentTypes(struct cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 }; // namespace Puv::Comprehensive

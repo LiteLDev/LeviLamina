@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BehaviorStatus.h"
+#include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
 class ConsumeItemNode : public ::BehaviorNode {
@@ -20,6 +20,15 @@ public:
 
     // vIndex: 1
     virtual ::BehaviorStatus tick(class Actor& owner);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI ::BehaviorStatus tick$(class Actor& owner);
 
     // NOLINTEND
 };

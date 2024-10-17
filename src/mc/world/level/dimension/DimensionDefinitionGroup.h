@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
+#include "mc/world/level/GeneratorType.h"
 
 // auto generated inclusion list
 #include "mc/world/level/dimension/DimensionDocument.h"
@@ -33,14 +33,19 @@ public:
     // NOLINTBEGIN
     MCAPI DimensionDefinitionGroup(class DimensionDefinitionGroup const&);
 
-    MCAPI DimensionDefinitionGroup(struct cereal::ReflectionCtx&, class ResourcePackManager* const, bool);
+    MCAPI DimensionDefinitionGroup(
+        struct cereal::ReflectionCtx&    ctx,
+        class ResourcePackManager* const rpm,
+        bool                             cavesAndCliffsExperimentIsEnabled
+    );
 
     MCAPI std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
-          getDimensionDefinition(std::string const&) const;
+          getDimensionDefinition(std::string const& dimensionName) const;
 
     MCAPI bool isEmpty() const;
 
-    MCAPI bool tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx&, std::string const&);
+    MCAPI bool
+    tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx& ctx, std::string const& dimensionDefinitionJSON);
 
     MCAPI ~DimensionDefinitionGroup();
 
@@ -49,6 +54,21 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const& dimension);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        struct cereal::ReflectionCtx&    ctx,
+        class ResourcePackManager* const rpm,
+        bool                             cavesAndCliffsExperimentIsEnabled
+    );
+
+    MCAPI void* ctor$(class DimensionDefinitionGroup const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

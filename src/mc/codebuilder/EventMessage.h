@@ -23,6 +23,15 @@ public:
     MCAPI ~EventMessage();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Util::CodeBuilder::Event const& event);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

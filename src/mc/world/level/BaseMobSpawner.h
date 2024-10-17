@@ -26,11 +26,11 @@ public:
     // vIndex: 4
     virtual class BlockPos const& getPos() = 0;
 
-    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier);
+    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier actorDefId);
 
     MCAPI void removeDisplayEntity();
 
-    MCAPI void setEntityId(struct ActorDefinitionIdentifier);
+    MCAPI void setEntityId(struct ActorDefinitionIdentifier actorDefId);
 
     MCAPI void setNextSpawnData(std::unique_ptr<class SpawnData> nextSpawnData);
 
@@ -39,6 +39,23 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI void _delay(class BlockSource& source);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct ActorDefinitionIdentifier actorDefId);
+
+    MCAPI void dtor$();
+
+    MCAPI void load$(class CompoundTag const& data);
+
+    MCAPI void save$(class CompoundTag& tag);
+
+    MCAPI void tick$(class BlockSource& source);
 
     // NOLINTEND
 };

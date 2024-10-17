@@ -22,7 +22,22 @@ public:
 
     MCAPI ~BehaviorTreeDefinitionPtr();
 
-    MCAPI static class BehaviorTreeDefinitionPtr const NONE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class AutomationBehaviorTreeGroup& group, class BehaviorTreeDefinition& behaviorTreeDefinition);
+
+    MCAPI void* ctor$(class BehaviorTreeDefinitionPtr&& moved);
+
+    MCAPI void* ctor$(class BehaviorTreeDefinitionPtr const& rhs);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class BehaviorTreeDefinitionPtr const& NONE();
 
     // NOLINTEND
 };

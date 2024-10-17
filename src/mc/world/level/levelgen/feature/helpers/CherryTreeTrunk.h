@@ -20,9 +20,15 @@ public:
     virtual ~CherryTreeTrunk() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
-        const;
+    virtual std::optional<class BlockPos> placeTrunk(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
+    ) const;
 
     // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
@@ -32,16 +38,16 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI class BlockPos _generateBranch(
-        class IBlockWorldGenAPI& target,
-        class Block const&,
-        class Block const&,
+        class IBlockWorldGenAPI&             target,
+        class Block const&                   trunkBlock,
+        class Block const&                   sidewaysTrunkBlock,
         class Random&                        random,
         int                                  treeHeight,
         class BlockPos                       origin,
         struct TreeHelper::TreeParams const& treeParams,
-        class BlockPos,
-        int,
-        bool
+        class BlockPos                       branchDirection,
+        int                                  offsetFromOrigin,
+        bool                                 middleContinuesUpwards
     ) const;
 
     MCAPI bool _tryPlaceBlock(
@@ -49,6 +55,25 @@ public:
         class BlockPos const&                pos,
         class Block const&                   block,
         struct TreeHelper::TreeParams const& treeParams
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI int getTreeHeight$(class Random& random) const;
+
+    MCAPI std::optional<class BlockPos> placeTrunk$(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
     ) const;
 
     // NOLINTEND

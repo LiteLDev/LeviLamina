@@ -40,4 +40,11 @@ public:
     MCAPI bool stepping() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float ticksPerSecond, std::function<int64()> getTimeMSCallback);
+
+    // NOLINTEND
 };

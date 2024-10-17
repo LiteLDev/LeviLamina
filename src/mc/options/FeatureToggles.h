@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/world/level/levelgen/feature/FeatureOptionID.h"
-#include "mc/world/level/levelgen/feature/FeatureOptionTabID.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/options/FeatureOptionID.h"
+#include "mc/options/FeatureOptionTabID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,6 +36,15 @@ public:
         MCAPI ~FeatureToggle();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct FeatureToggles::FeatureToggle&&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -59,16 +68,20 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI std::function<void(class Option&)>
-        _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<::FeatureOptionID>, std::vector<::FeatureOptionID>);
+    MCAPI std::function<void(class Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
+        std::vector<::FeatureOptionID> expectedDisabledOptions,
+        std::vector<::FeatureOptionID> expectedEnabledOptions
+    );
 
-    MCAPI std::function<void(bool&)>
-        _getLockIfInGameOrOptionExpectationsNotMetLockCallback(std::vector<::FeatureOptionID>, std::vector<::FeatureOptionID>);
+    MCAPI std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
+        std::vector<::FeatureOptionID> expectedDisabledOptions,
+        std::vector<::FeatureOptionID> expectedEnabledOptions
+    );
 
     MCAPI void _initialize(class AppPlatform& appPlatform);
 
     MCAPI void _registerFeature(
-        ::FeatureOptionTabID,
+        ::FeatureOptionTabID               tabID,
         ::FeatureOptionID                  featureID,
         std::string const&                 locName,
         std::string const&                 saveName,
@@ -84,9 +97,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class AppPlatform& appPlatform);
+
+    MCAPI void dtor$();
+
+    MCAPI static std::unique_ptr<class FeatureToggles>& mFeatureToggles();
 
     // NOLINTEND
 };

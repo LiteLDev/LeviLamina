@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/threading/TaskStartInfoBase.h"
 
 template <typename T0>

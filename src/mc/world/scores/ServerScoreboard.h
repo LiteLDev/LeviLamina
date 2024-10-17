@@ -4,8 +4,8 @@
 #include "mc/deps/core/utility/BasicTimer.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResult.h"
-#include "mc/enums/ObjectiveSortOrder.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/world/scores/ObjectiveSortOrder.h"
 #include "mc/world/scores/Scoreboard.h"
 
 class LevelStorage;
@@ -88,16 +88,19 @@ public:
     // vIndex: 15
     virtual bool isClientSide() const;
 
-    MCAPI
-    ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage*, gsl::not_null<class StackRefResult<class GameplayUserManager>> const&);
+    MCAPI ServerScoreboard(
+        class CommandSoftEnumRegistry                                         registry,
+        class LevelStorage*                                                   levelStorage,
+        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
+    );
 
     MCAPI void deserialize(std::unique_ptr<class CompoundTag> root);
 
     MCAPI void initializeImGui(class Level& level);
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
-    MCAPI void intializeWithActorManager(class ActorManager&);
+    MCAPI void intializeWithActorManager(class ActorManager& actorManager);
 
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
 
@@ -105,15 +108,16 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _clearAllScoreTagsForObjective(std::string const&, class DisplayObjective const&);
+    MCAPI void
+    _clearAllScoreTagsForObjective(std::string const& displaySlotName, class DisplayObjective const& displayObjective);
 
-    MCAPI class Player* _getPlayer(struct ActorUniqueID) const;
+    MCAPI class Player* _getPlayer(struct ActorUniqueID entityID) const;
 
     MCAPI class StackRefResult<class GameplayUserManager> _getValidGameplayUserManager() const;
 
-    MCAPI void _onGameplayUserRemoved(class EntityContext&);
+    MCAPI void _onGameplayUserRemoved(class EntityContext& entity);
 
-    MCAPI void _onRemoveActorEntityReferences(class Actor&);
+    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
 
     MCAPI void _onSaveEvent(class LevelStorage&);
 
@@ -125,9 +129,59 @@ public:
         int                                score
     );
 
-    MCAPI void _updateAllScoreTagsForObjective(std::string const&, class DisplayObjective const&);
+    MCAPI void
+    _updateAllScoreTagsForObjective(std::string const& displaySlotName, class DisplayObjective const& displayObjective);
 
-    MCAPI void _updateScoreTag(struct ScoreboardId const&, bool);
+    MCAPI void _updateScoreTag(struct ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class CommandSoftEnumRegistry                                         registry,
+        class LevelStorage*                                                   levelStorage,
+        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class Objective* clearDisplayObjective$(std::string const& displaySlotName);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Player const& player);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(class Actor const& entity);
+
+    MCAPI struct ScoreboardId const& createScoreboardId$(std::string const& name);
+
+    MCAPI bool isClientSide$() const;
+
+    MCAPI void onObjectiveAdded$(class Objective const& objective);
+
+    MCAPI void onObjectiveRemoved$(class Objective& objective);
+
+    MCAPI void onPlayerIdentityUpdated$(struct PlayerScoreboardId const& playerId);
+
+    MCAPI void onPlayerJoined$(class Player const& player);
+
+    MCAPI void onPlayerScoreRemoved$(struct ScoreboardId const& id, class Objective const& objective);
+
+    MCAPI void onScoreChanged$(struct ScoreboardId const& id, class Objective const& obj);
+
+    MCAPI class DisplayObjective const* setDisplayObjective$(
+        std::string const&     displaySlotName,
+        class Objective const& objective,
+        ::ObjectiveSortOrder   order
+    );
+
+    MCAPI void setPacketSender$(class PacketSender* sender);
+
+    MCAPI void tick$();
+
+    MCAPI void writeToLevelStorage$();
 
     // NOLINTEND
 };

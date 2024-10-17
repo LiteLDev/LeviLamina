@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,8 +23,6 @@ public:
 
     MCAPI ~ResourceSignature();
 
-    MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
-
     // NOLINTEND
 
     // private:
@@ -34,6 +32,15 @@ public:
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const& accessStrategy) const;
 
     MCAPI void _loadSignaturesFile(class Core::Path const& filePath, class PackAccessStrategy const& accessStrategy);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    MCAPI static class Core::PathBuffer<std::string> const& SIGNATURE_FILENAME();
 
     // NOLINTEND
 };

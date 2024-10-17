@@ -27,4 +27,15 @@ public:
     MCAPI void parse(class Json::Value& root, bool isVanilla);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI char const* getJsonName$() const;
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/systems/ITickingSystem.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,7 @@ public:
     virtual ~NpcSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void tick(class EntityRegistry& registry);
@@ -32,9 +32,25 @@ public:
     virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
+    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
 
-    MCAPI static void tickCountdown(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown&);
+    MCAPI static void
+    tickCountdown(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+
+    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+
+    MCAPI void tick$(class EntityRegistry& registry);
 
     // NOLINTEND
 };

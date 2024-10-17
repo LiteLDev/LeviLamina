@@ -11,7 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI DiffListPair(bool, class ActorDefinitionDescriptor* descriptor);
+    MCAPI DiffListPair(bool addIfTrue_SubtractIfFalse, class ActorDefinitionDescriptor* descriptor);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(bool addIfTrue_SubtractIfFalse, class ActorDefinitionDescriptor* descriptor);
 
     // NOLINTEND
 };

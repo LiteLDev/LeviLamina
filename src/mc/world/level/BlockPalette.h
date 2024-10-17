@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
 
@@ -52,10 +52,10 @@ public:
     virtual void appendBlock(class Block const& blockState);
 
     // vIndex: 3
-    virtual class Block const& getBlock(uint const&) const;
+    virtual class Block const& getBlock(uint const& networkId) const;
 
     // vIndex: 4
-    virtual void assignBlockNetworkId(class Block const& block, uint64) const;
+    virtual void assignBlockNetworkId(class Block const& block, uint64 networkId) const;
 
     MCAPI explicit BlockPalette(class Level& level);
 
@@ -71,13 +71,13 @@ public:
 
     MCAPI class Block const& switchBlock(class Block const& oldBlock, class BlockLegacy const& newBlockType) const;
 
-    MCAPI static class Block const& convertLegacyBlock(struct BlockID, ushort);
+    MCAPI static class Block const& convertLegacyBlock(struct BlockID id, ushort data);
 
     MCAPI static bool convertLegacyBlocks(
-        class buffer_span_mut<class Block const*>,
-        class buffer_span<struct BlockID>,
-        class buffer_span<struct NibblePair>,
-        uint64
+        class buffer_span_mut<class Block const*> dst,
+        class buffer_span<struct BlockID>         blockIDs,
+        class buffer_span<struct NibblePair>      data,
+        uint64                                    volume
     );
 
     // NOLINTEND
@@ -85,6 +85,27 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI bool shouldWarnFor(struct NewBlockID id, ushort data) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct BlockPalette::ConstructorToken);
+
+    MCAPI void* ctor$(class Level& level);
+
+    MCAPI void dtor$();
+
+    MCAPI void appendBlock$(class Block const& blockState);
+
+    MCAPI void assignBlockNetworkId$(class Block const& block, uint64 networkId) const;
+
+    MCAPI class Block const& getBlock$(uint const& networkId) const;
+
+    MCAPI ::BlockPalette::PaletteType getPaletteType$();
 
     // NOLINTEND
 };

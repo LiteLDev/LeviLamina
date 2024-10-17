@@ -54,11 +54,26 @@ public:
 
     MCAPI static ::SemVersion::MatchType fromString(std::string const& source, class BaseGameVersion& output);
 
-    MCAPI static class BaseGameVersion const ANY;
+    // NOLINTEND
 
-    MCAPI static class BaseGameVersion const EMPTY;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BaseGameVersion const& rhs);
 
-    MCAPI static class BaseGameVersion const INCOMPATIBLE;
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(ushort major, uint minor, uint patch);
+
+    MCAPI void* ctor$(class SemVersion const& semVersion);
+
+    MCAPI void dtor$();
+
+    MCAPI static class BaseGameVersion const& ANY();
+
+    MCAPI static class BaseGameVersion const& EMPTY();
+
+    MCAPI static class BaseGameVersion const& INCOMPATIBLE();
 
     // NOLINTEND
 };

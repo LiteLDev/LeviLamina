@@ -78,11 +78,11 @@ inline void* symbolAddressCache = symbol.view().resolve();
 
 namespace ll::inline literals::inline memory_literals {
 template <memory::FixedSymbol symbol>
-consteval memory::SymbolView operator""_symv() noexcept {
+consteval memory::SymbolView operator""_sym() noexcept {
     return symbol.view();
 }
 template <memory::FixedSymbol symbol>
-constexpr void* operator""_sym() noexcept {
+constexpr void* operator""_symp() noexcept {
     return memory::symbolAddressCache<symbol>;
 }
 } // namespace ll::inline literals::inline memory_literals

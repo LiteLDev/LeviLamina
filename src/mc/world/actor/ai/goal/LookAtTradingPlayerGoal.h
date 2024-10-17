@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
 class LookAtTradingPlayerGoal : public ::LookAtActorGoal {
@@ -26,6 +26,19 @@ public:
 
     // vIndex: 7
     virtual void appendDebugInfo(std::string& str) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
 
     // NOLINTEND
 };

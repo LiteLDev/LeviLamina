@@ -21,4 +21,11 @@ public:
     MCAPI bool operator>(class TickNextTickData const& tnd) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& pos, class Block const& block, struct Tick const& tick, int pOffset);
+
+    // NOLINTEND
 };

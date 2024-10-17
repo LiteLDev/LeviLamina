@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class LevelChunkPerformanceTelemetry {
 public:
@@ -14,7 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void sendPerformanceTelemetry(class Bedrock::NonOwnerPointer<struct ChunkPerformanceData>);
+    MCAPI void sendPerformanceTelemetry(class Bedrock::NonOwnerPointer<struct ChunkPerformanceData> chunkPerformanceData
+    );
 
     // NOLINTEND
 };

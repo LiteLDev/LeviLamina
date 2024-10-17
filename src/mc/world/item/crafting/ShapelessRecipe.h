@@ -40,7 +40,30 @@ public:
     // vIndex: 6
     virtual int size() const;
 
-    MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&& context);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct Recipe::ConstructionContext&& context);
+
+    MCAPI void dtor$();
+
+    MCAPI std::vector<class ItemInstance> const& assemble$(class CraftingContainer&, class CraftingContext&) const;
+
+    MCAPI int getCraftingSize$() const;
+
+    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+
+    MCAPI bool isShapeless$() const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+
+    MCAPI int size$() const;
 
     // NOLINTEND
 };

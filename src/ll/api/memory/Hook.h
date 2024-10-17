@@ -63,12 +63,6 @@ constexpr FuncPtr resolveIdentifier(T identifier) {
     return toFuncPtr(identifier);
 }
 
-// TODO: remove in release
-template <class T>
-constexpr FuncPtr resolveIdentifier(std::string_view identifier) {
-    return SymbolView{identifier}.resolve();
-}
-
 template <class T>
 constexpr FuncPtr resolveIdentifier(SignatureView identifier) {
     return identifier.resolve();
@@ -165,7 +159,7 @@ struct LL_EBO Hook {};
                 if constexpr (::ll::memory::virtualDetector<T, IDENTIFIER>()) {                                        \
                     static_assert(                                                                                     \
                         ::ll::traits::always_false<T>,                                                                 \
-                        #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."             \
+                        #IDENTIFIER " is a virtual function, you need use suffix $ workaround to hook it."             \
                     );                                                                                                 \
                 }                                                                                                      \
             }                                                                                                          \

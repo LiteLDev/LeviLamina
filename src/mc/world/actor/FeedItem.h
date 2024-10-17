@@ -25,6 +25,13 @@ public:
         MCAPI ~Effect();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -42,6 +49,15 @@ public:
     MCAPI struct FeedItem& operator=(struct FeedItem const&);
 
     MCAPI ~FeedItem();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct FeedItem const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

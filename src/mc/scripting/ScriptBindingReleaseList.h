@@ -22,6 +22,13 @@ public:
         MCAPI ~ReleaseDetails();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -32,7 +39,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
+    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails> releaseList);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::vector<struct ScriptBindingReleaseList::ReleaseDetails> releaseList);
 
     // NOLINTEND
 };

@@ -22,4 +22,11 @@ public:
     create(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

@@ -28,11 +28,20 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI AllowListEntryMatcher(std::string name, std::string xuid);
+        MCAPI AllowListEntryMatcher(std::string, std::string);
 
-        MCAPI bool operator()(class AllowListEntry&);
+        MCAPI bool operator()(class AllowListEntry& entry);
 
         MCAPI ~AllowListEntryMatcher();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(std::string, std::string);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -65,6 +74,17 @@ public:
     MCAPI bool removeByName(std::string const& name);
 
     MCAPI void tryUpdateEntries(class mce::UUID const& uuid, std::string const& xuid, std::string const& name);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void deserialize$(class Json::Value& root);
+
+    MCAPI void serialize$(class Json::Value& root);
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/util/FileUploadManager.h"
 
 // auto generated forward declare list
@@ -52,6 +52,22 @@ public:
         class ResourceLocation const& resourcePackLocation,
         class Core::Path const&       resourceZipPath,
         class Json::Value const&      uploadOptions
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void uploadFileToRealmStorage$(
+        std::string const&      uploadId,
+        class Core::Path const& path,
+        int                     slotIndex,
+        std::string const&      realmsGuid
     );
 
     // NOLINTEND

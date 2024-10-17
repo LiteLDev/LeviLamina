@@ -18,19 +18,36 @@ public:
     virtual ~BreachEnchant() = default;
 
     // vIndex: 2
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int level) const;
 
     // vIndex: 3
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int level) const;
 
     // vIndex: 5
     virtual int getMaxLevel() const;
 
     // vIndex: 7
-    virtual float getAfterBreachArmorFraction(int, float) const;
+    virtual float getAfterBreachArmorFraction(int level, float armorFraction) const;
 
     // vIndex: 8
     virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI float getAfterBreachArmorFraction$(int level, float armorFraction) const;
+
+    MCAPI float getDamageBonus$(int, class Actor const&, class Actor const&) const;
+
+    MCAPI int getMaxCost$(int level) const;
+
+    MCAPI int getMaxLevel$() const;
+
+    MCAPI int getMinCost$(int level) const;
 
     // NOLINTEND
 };

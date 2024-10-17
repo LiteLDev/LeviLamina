@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/services/persona/PieceType.h"
-#include "mc/enums/BuildPlatform.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -120,6 +120,17 @@ public:
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken> rawToken, std::string const& certificateString);
 
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64, bool) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ConnectionRequest const& other);
+
+    MCAPI void* ctor$(std::unique_ptr<class WebToken> rawToken, std::string const& certificateString);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

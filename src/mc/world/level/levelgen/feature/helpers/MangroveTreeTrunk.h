@@ -20,9 +20,15 @@ public:
     virtual ~MangroveTreeTrunk() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, class ITreeCanopy const*)
-        const;
+    virtual std::optional<class BlockPos> placeTrunk(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
+    ) const;
 
     // vIndex: 2
     virtual int getTreeHeight(class Random& random) const;
@@ -31,9 +37,39 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void
-    _placeBranch(class IBlockWorldGenAPI& target, std::vector<class BlockPos>*, class Random& random, int treeHeight, class RenderParams&, struct TreeHelper::TreeParams const& treeParams, class BlockPos&, int, uchar, int branchPos, int, class Block const*)
-        const;
+    MCAPI void _placeBranch(
+        class IBlockWorldGenAPI&     target,
+        std::vector<class BlockPos>* canopyAttachmentPositions,
+        class Random&                random,
+        int                          treeHeight,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams,
+        class BlockPos&                      logPos,
+        int                                  currentHeight,
+        uchar                                branchDir,
+        int                                  branchPos,
+        int                                  branchSteps,
+        class Block const*                   trunkBlock
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI int getTreeHeight$(class Random& random) const;
+
+    MCAPI std::optional<class BlockPos> placeTrunk$(
+        class IBlockWorldGenAPI&             target,
+        class BlockPos const&                pos,
+        class Random&                        random,
+        int                                  treeHeight,
+        class RenderParams&                  renderParams,
+        struct TreeHelper::TreeParams const& treeParams,
+        class ITreeCanopy const*             canopy
+    ) const;
 
     // NOLINTEND
 };

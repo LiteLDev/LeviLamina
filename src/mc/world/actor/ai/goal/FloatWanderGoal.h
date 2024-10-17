@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class FloatWanderGoal : public ::Goal {
@@ -32,6 +32,19 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _canReach(class Vec3 const& targetPos, float dist);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

@@ -20,4 +20,11 @@ public:
     MCAPI class CompoundTag* getNonEmptyTag();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& pos, std::unique_ptr<class CompoundTag> tag, class Block const& block);
+
+    // NOLINTEND
 };

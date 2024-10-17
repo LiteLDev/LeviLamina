@@ -25,6 +25,17 @@ public:
     MCAPI ~ErrorMessage();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& requestId, struct MCRESULT result);
+
+    MCAPI void* ctor$(std::string const& requestId, struct MCRESULT result, std::string const& message);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

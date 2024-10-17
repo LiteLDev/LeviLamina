@@ -22,7 +22,20 @@ public:
 
     MCAPI ~ComponentItemComponentData_v1_20_40();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ComponentItemComponentData_v1_20_40&&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct ComponentItemComponentData_v1_20_40 const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

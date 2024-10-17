@@ -10,19 +10,28 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI LevelChunkMetaData(class LevelChunkMetaData const&);
+    MCAPI LevelChunkMetaData(class LevelChunkMetaData const& otherMetaData);
 
     MCAPI uint64 getCurrentHash() const;
 
     MCAPI ~LevelChunkMetaData();
-
-    MCAPI static uint64 const INVALID_META_DATA;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     MCAPI void _recomputeHash() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class LevelChunkMetaData const& otherMetaData);
+
+    MCAPI void dtor$();
+
+    MCAPI static uint64 const& INVALID_META_DATA();
 
     // NOLINTEND
 };

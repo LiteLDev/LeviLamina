@@ -29,4 +29,11 @@ public:
     MCAPI void _initPackSetting(std::string const& name, class Json::Value const& value);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

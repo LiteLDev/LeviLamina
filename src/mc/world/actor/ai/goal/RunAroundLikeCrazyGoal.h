@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RunAroundLikeCrazyGoal : public ::Goal {
@@ -31,6 +31,23 @@ public:
     virtual void appendDebugInfo(std::string& debugInfo) const;
 
     MCAPI RunAroundLikeCrazyGoal(class Mob& mob, float speedModifier);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float speedModifier);
+
+    MCAPI void appendDebugInfo$(std::string& debugInfo) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
 
     // NOLINTEND
 };

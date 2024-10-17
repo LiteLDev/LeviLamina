@@ -29,6 +29,13 @@ public:
         MCAPI ~BlockInfo();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -45,7 +52,16 @@ public:
 
     MCAPI ~DiggerItemComponent();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Puv::v1_20_50::DiggerItemComponent const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -28,4 +28,15 @@ public:
     MCAPI FlushableStorageAreaEnv(leveldb::Env* env, std::shared_ptr<class Core::FileStorageArea> storageArea);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(leveldb::Env* env, std::shared_ptr<class Core::FileStorageArea> storageArea);
+
+    MCAPI void flushToPermanentStorage$();
+
+    // NOLINTEND
 };

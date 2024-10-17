@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FocusImpact.h"
+#include "mc/deps/input/enums/FocusImpact.h"
 
 class ActionEvent {
 public:
@@ -20,6 +20,14 @@ public:
     // NOLINTBEGIN
     MCAPI
     ActionEvent(int actionId, ::ActionEvent::ActionState actionState, bool isExclusive, ::FocusImpact focusImpact);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(int actionId, ::ActionEvent::ActionState actionState, bool isExclusive, ::FocusImpact focusImpact);
 
     // NOLINTEND
 };

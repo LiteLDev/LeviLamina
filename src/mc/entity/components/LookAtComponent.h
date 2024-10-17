@@ -21,4 +21,11 @@ public:
     MCAPI bool isLookingAtMe(class Actor& owner, class Actor& target);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

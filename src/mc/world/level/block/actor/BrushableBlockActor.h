@@ -34,7 +34,7 @@ public:
 
     MCVAPI void onChanged(class BlockSource& region);
 
-    MCVAPI void onRemoved(class BlockSource& blockSource);
+    MCVAPI void onRemoved(class BlockSource& region);
 
     MCVAPI bool save(class CompoundTag& tag) const;
 
@@ -58,7 +58,7 @@ public:
 
     MCAPI void update(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI static std::string getLootTableFromVariant(::BrushableBlockActor::Placement);
+    MCAPI static std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
 
     MCAPI static class BrushableBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
 
@@ -69,6 +69,46 @@ public:
     MCAPI void _brushingCompleted(class BlockSource& region);
 
     MCAPI void _removeDisplayEntity(class BlockSource& region);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void*
+    ctor$(class HashedString const& name, class BlockPos const& pos, ::BrushableBlockActor::Placement placement);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void stopOpen$(class Player&);
 
     // NOLINTEND
 };

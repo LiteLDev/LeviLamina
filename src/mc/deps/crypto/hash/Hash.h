@@ -2,11 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-#include "ll/api/utils/StringUtils.h"
-
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/HashType.h"
-#include "mc/deps/crypto/hash/IHash.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,51 +12,14 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace Crypto::Hash {
+// NOLINTBEGIN
+MCAPI class mce::UUID generateUUID(std::string const& in, ::Crypto::Hash::HashType type);
 
-class Hash : public ::Crypto::Hash::IHash {
-public:
-    HashType               mHashType;
-    std::unique_ptr<IHash> mHash;
+MCAPI class mce::UUID generateUUID(void const* in, uint size, ::Crypto::Hash::HashType type);
 
-    [[nodiscard]] inline std::string toString() {
-        auto data = std::string(resultSize(), '\0');
-        final((uchar*)data.data());
-        return ll::string_utils::strToHexStr(data);
-    }
+MCAPI std::string hash(::Crypto::Hash::HashType type, std::string const& in);
 
-    inline void update(std::string_view data) {
-        constexpr const auto max = std::numeric_limits<uint>::max();
-        while (data.size() > max) {
-            update(data.data(), max);
-            data.remove_prefix(max);
-        }
-        update(data.data(), (uint)data.size());
-    }
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~Hash() = default;
-
-    // vIndex: 1
-    virtual void reset();
-
-    // vIndex: 2
-    virtual void update(void const* data, uint size);
-
-    // vIndex: 3
-    virtual void final(uchar* result);
-
-    // vIndex: 4
-    virtual uint64 resultSize() const;
-
-    MCAPI explicit Hash(::Crypto::Hash::HashType type);
-
-    MCAPI std::string final();
-
-    MCAPI class mce::UUID getUUID();
-
-    // NOLINTEND
-};
+MCAPI std::string hash(::Crypto::Hash::HashType type, void const* in, uint size);
+// NOLINTEND
 
 }; // namespace Crypto::Hash

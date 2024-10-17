@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/inventory/network/crafting/ItemStackRequestActionCraftBase.h"
 
 class ItemStackRequestActionCraftRecipeOptional : public ::ItemStackRequestActionCraftBase {
@@ -27,6 +27,21 @@ public:
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     MCAPI ItemStackRequestActionCraftRecipeOptional();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void _write$(class BinaryStream& stream) const;
+
+    MCAPI int getFilteredStringIndex$() const;
 
     // NOLINTEND
 };

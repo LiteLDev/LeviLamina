@@ -13,4 +13,11 @@ public:
     MCAPI AppLifecycleContext();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

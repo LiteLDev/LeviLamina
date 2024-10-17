@@ -19,4 +19,15 @@ public:
     MCAPI ~FilterStringMap();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct FilterStringMap const&);
+
+    MCAPI void* ctor$(std::initializer_list<std::pair<std::string const, struct FilterInputDefinition>>);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

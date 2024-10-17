@@ -4,7 +4,7 @@
     "version": "0.13.5",
     "info": {
         "name": "LeviLamina",
-        "description": "A lightweight, modular and versatile mod loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
+        "description": "A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition.",
         "author": "LiteLDev",
         "tags": []
     },
@@ -14,7 +14,7 @@
         "github.com/LiteLDev/CrashLogger": "1.1.x",
         "github.com/LiteLDev/levilamina-loc": "1.5.x",
         "github.com/LiteLDev/PeEditor": "3.7.x",
-        "github.com/LiteLDev/PreLoader": "1.9.x"
+        "github.com/LiteLDev/PreLoader": "1.11.x"
     },
     "files": {
         "place": [

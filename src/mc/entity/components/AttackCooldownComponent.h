@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +27,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void initialize(class EntityContext& entity, class AttackCooldownComponent&) const;
+        MCAPI void initialize(class EntityContext& entity, class AttackCooldownComponent& cooldownComponent) const;
 
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
@@ -45,6 +45,13 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ~AttackCooldownComponent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -25,19 +25,54 @@ public:
 
     // vIndex: 5
     virtual bool isFeatureChunk(
-        class BiomeSource const& biomeSource,
-        class Random&            random,
-        class ChunkPos const&    chunkPos,
-        uint                     levelSeed,
-        class IPreliminarySurfaceProvider const&,
-        class Dimension const& dimension
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    chunkPos,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
     );
 
     // vIndex: 6
-    virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& cp, class IPreliminarySurfaceProvider const&);
+    virtual std::unique_ptr<class StructureStart> createStructureStart(
+        class Dimension&                         generator,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    cp,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
     MCAPI NetherFortressFeature(uint& seed, class BaseGameVersion const& baseGameVersion);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(uint& seed, class BaseGameVersion const& baseGameVersion);
+
+    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
+        class Dimension&                         generator,
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    cp,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
+    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry& spawnAreas);
+
+    MCAPI bool isFeatureChunk$(
+        class BiomeSource const&                 biomeSource,
+        class Random&                            random,
+        class ChunkPos const&                    chunkPos,
+        uint                                     levelSeed,
+        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        class Dimension const&                   dimension
+    );
+
+    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
 
     // NOLINTEND
 };

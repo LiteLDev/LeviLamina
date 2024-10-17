@@ -24,13 +24,22 @@ public:
 
     MCAPI int getValueInclusive(class Random& random) const;
 
-    MCAPI int getValueInclusive(class Randomize&) const;
+    MCAPI int getValueInclusive(class Randomize& randomize) const;
 
     MCAPI bool isInRangeInclusive(int value) const;
 
     MCAPI bool parseJson(class Json::Value node, int minDefault, int maxDefault);
 
-    MCAPI static struct IntRange const ZERO;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int min, int max);
+
+    MCAPI void* ctor$(int value);
+
+    MCAPI static struct IntRange const& ZERO();
 
     // NOLINTEND
 };

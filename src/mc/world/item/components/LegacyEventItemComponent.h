@@ -28,4 +28,13 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void _initializeComponent$();
+
+    // NOLINTEND
 };

@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI bool destroyBlock(class BlockSource&, class BlockPos const&, bool);
+    MCAPI bool destroyBlock(class BlockSource& region, class BlockPos const& pos, bool dropResources);
 
     // NOLINTEND
 };

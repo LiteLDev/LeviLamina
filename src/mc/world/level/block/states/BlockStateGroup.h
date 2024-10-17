@@ -31,7 +31,14 @@ public:
         class Json::Value const&     root
     );
 
-    MCAPI static int const MAX_ENUM_SIZE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI static int const& MAX_ENUM_SIZE();
 
     // NOLINTEND
 };

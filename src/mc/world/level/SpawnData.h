@@ -18,11 +18,24 @@ public:
 
     MCAPI SpawnData(int randomWeight, struct ActorDefinitionIdentifier actorId);
 
-    MCAPI class SpawnData& operator=(class SpawnData const&);
+    MCAPI class SpawnData& operator=(class SpawnData const& rhs);
 
-    MCAPI bool operator==(class SpawnData const&) const;
+    MCAPI bool operator==(class SpawnData const& rhs) const;
 
     MCAPI std::unique_ptr<class CompoundTag> save();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class SpawnData const& rhs);
+
+    MCAPI void* ctor$(int randomWeight, struct ActorDefinitionIdentifier actorId);
+
+    MCAPI void* ctor$(class CompoundTag const& tag);
 
     // NOLINTEND
 };

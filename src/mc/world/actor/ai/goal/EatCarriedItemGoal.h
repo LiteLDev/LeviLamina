@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class EatCarriedItemGoal : public ::Goal {
@@ -40,11 +40,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int const CHEW_CHANCE;
+    MCAPI static void** vftable();
 
-    MCAPI static int const EATING_TIME;
+    MCAPI void* ctor$(class Mob& mob, int startDelay);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static int const& CHEW_CHANCE();
+
+    MCAPI static int const& EATING_TIME();
 
     // NOLINTEND
 };

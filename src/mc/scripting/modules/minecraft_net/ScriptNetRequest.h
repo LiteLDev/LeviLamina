@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ClassBindingBuilder.h"
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,6 +50,17 @@ public:
     MCAPI ~ScriptNetRequest();
 
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetRequest> bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetRequest const&);
+
+    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetRequest&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

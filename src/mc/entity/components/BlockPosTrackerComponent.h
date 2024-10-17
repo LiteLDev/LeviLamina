@@ -16,4 +16,11 @@ public:
     MCAPI void onRemove(class Actor& owner);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(bool onGround, class BlockPos const& pos);
+
+    // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/JumpType.h"
 #include "mc/world/actor/ai/control/JumpControl.h"
+#include "mc/world/actor/ai/control/JumpType.h"
 
 class DynamicJumpControl : public ::JumpControl {
 public:
@@ -42,6 +42,31 @@ public:
     virtual void resetSpeedModifier(class JumpControlComponent const& parent, class Mob& mob);
 
     MCAPI DynamicJumpControl();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI std::unique_ptr<class JumpControl> clone$() const;
+
+    MCAPI int getJumpDelay$(class JumpControlComponent const& parent) const;
+
+    MCAPI float getJumpPower$(class JumpControlComponent const& parent) const;
+
+    MCAPI ::JumpType getJumpType$(class JumpControlComponent const& parent) const;
+
+    MCAPI void initializeInternal$(class Mob& mob, struct JumpControlDescription* description);
+
+    MCAPI void resetSpeedModifier$(class JumpControlComponent const& parent, class Mob& mob);
+
+    MCAPI void setJumpType$(class JumpControlComponent& parent, ::JumpType type);
+
+    MCAPI void tick$(class JumpControlComponent& parent, class Mob& mob);
 
     // NOLINTEND
 };

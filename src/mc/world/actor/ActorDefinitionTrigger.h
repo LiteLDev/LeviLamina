@@ -21,4 +21,13 @@ public:
     MCAPI ~ActorDefinitionTrigger();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ActorDefinitionTrigger&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

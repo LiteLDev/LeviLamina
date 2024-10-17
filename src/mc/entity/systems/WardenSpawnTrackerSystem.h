@@ -14,9 +14,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);
+    MCVAPI ::EventResult onLevelAddedPlayer(class Level&, class Player& player);
 
     MCVAPI void tick(class EntityRegistry& registry);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForITickingSystem();
+
+    MCAPI static void** vftableForLevelEventListener();
+
+    MCAPI ::EventResult onLevelAddedPlayer$(class Level&, class Player& player);
+
+    MCAPI void tick$(class EntityRegistry& registry);
 
     // NOLINTEND
 };

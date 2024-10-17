@@ -16,4 +16,11 @@ public:
     MCAPI struct MoveRequestComponent& operator=(struct MoveRequestComponent&&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct MoveRequestComponent&&);
+
+    // NOLINTEND
 };

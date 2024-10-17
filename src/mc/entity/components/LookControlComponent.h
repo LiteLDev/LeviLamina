@@ -45,4 +45,11 @@ public:
     MCAPI void update(class Mob& owner);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

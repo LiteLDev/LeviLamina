@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,10 +30,19 @@ public:
 
     // vIndex: 2
     virtual class Bedrock::PubSub::Subscription
-        registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)>) = 0;
+    registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)> newCallbackFunction) = 0;
 
     // vIndex: 3
     virtual std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates() const = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

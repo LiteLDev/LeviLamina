@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class FollowOwnerGoal : public ::Goal {
@@ -43,9 +43,30 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool _canReachOwner(class Mob&, class NavigationComponent&) const;
+    MCAPI bool _canReachOwner(class Mob& owner, class NavigationComponent& navigationComponent) const;
 
-    MCAPI std::optional<class Vec3> _tryToGetTeleportPosition(class Mob&) const;
+    MCAPI std::optional<class Vec3> _tryToGetTeleportPosition(class Mob& owner) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void onPlayerDimensionChanged$(class Player* player, DimensionType fromDimension, DimensionType toDimension);
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

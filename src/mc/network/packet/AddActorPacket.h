@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
-#include "mc/network/packet/ActorLink.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/network/packet/SyncedAttribute.h"
-#include "mc/world/ActorRuntimeID.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/network/packet/types/world/actor/ActorLink.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/SynchedActorDataEntityWrapper.h"
 #include "mc/world/actor/state/PropertySyncData.h"
@@ -14,9 +14,9 @@
 
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/AddActorBasePacket.h"
+#include "mc/platform/Result.h"
 
 class AddActorPacket : public ::AddActorBasePacket {
 public:
@@ -59,6 +59,27 @@ public:
     MCAPI AddActorPacket();
 
     MCAPI explicit AddActorPacket(class Actor& e);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class Actor& e);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -12,9 +12,18 @@ public:
     // NOLINTBEGIN
     MCAPI PropertyValues(struct PropertyValues const&);
 
-    MCAPI void resize(uint64, uint64, uint64, uint64);
+    MCAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
 
     MCAPI ~PropertyValues();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct PropertyValues const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

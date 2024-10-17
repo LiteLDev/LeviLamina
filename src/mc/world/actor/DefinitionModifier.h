@@ -15,4 +15,13 @@ public:
     MCAPI ~DefinitionModifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct DefinitionModifier const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

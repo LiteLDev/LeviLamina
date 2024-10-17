@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Color.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec3.h"
 
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class ClientboundDebugRendererPacket : public ::Packet {
 public:
@@ -61,6 +61,34 @@ public:
         class Vec3 const&         position,
         std::chrono::milliseconds duration
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        std::string               text,
+        class mce::Color const&   color,
+        class Vec3 const&         position,
+        std::chrono::milliseconds duration
+    );
+
+    MCAPI void* ctor$(::ClientboundDebugRendererPacket::Type type);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

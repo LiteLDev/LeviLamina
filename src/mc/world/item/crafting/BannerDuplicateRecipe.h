@@ -30,7 +30,7 @@ public:
     virtual int getCraftingSize() const;
 
     // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
+    virtual class RecipeIngredient const& getIngredient(int, int) const;
 
     // vIndex: 5
     virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
@@ -41,9 +41,31 @@ public:
     // vIndex: 8
     virtual std::vector<class ItemInstance> const& getResultItems() const;
 
-    MCAPI BannerDuplicateRecipe(std::string const&, class mce::UUID const&);
+    MCAPI BannerDuplicateRecipe(std::string const& recipeId, class mce::UUID const& uuid);
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& recipeId, class mce::UUID const& uuid);
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftSlots, class CraftingContext&) const;
+
+    MCAPI int getCraftingSize$() const;
+
+    MCAPI class RecipeIngredient const& getIngredient$(int, int) const;
+
+    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+
+    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+
+    MCAPI int size$() const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

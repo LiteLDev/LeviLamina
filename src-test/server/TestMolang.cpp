@@ -1,5 +1,5 @@
-#include "mc/util/molang/MolangScriptArg.h"
-#include "mc/world/level/levelgen/feature/helpers/RenderParams.h"
+#include "mc/util/MolangScriptArg.h"
+#include "mc/world/actor/RenderParams.h"
 
 #include "mc/util/ExpressionNode.h"
 
@@ -9,8 +9,8 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/io/Logger.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandBlockName.h"
-#include "mc/world/AutomaticID.h"
 
 
 namespace {

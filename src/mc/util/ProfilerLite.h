@@ -22,6 +22,13 @@ public:
         MCAPI ~ScopedData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -41,13 +48,18 @@ public:
 
     MCAPI ~ProfilerLite();
 
-    MCAPI static std::thread::id sEmptyThreadID;
-
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class ProfilerLite gProfilerLiteInstance;
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static class ProfilerLite& gProfilerLiteInstance();
+
+    MCAPI static std::thread::id& sEmptyThreadID();
 
     // NOLINTEND
 };

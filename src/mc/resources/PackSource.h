@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class PackSource {
 public:
@@ -43,6 +43,19 @@ public:
         class Pack&                                                         pack,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ::PackOrigin getPackOrigin$() const;
+
+    MCAPI ::PackType getPackType$() const;
 
     // NOLINTEND
 };

@@ -22,11 +22,11 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/standard/FillCommand.h"
 
-#include "mc/deps/core/mce/Color.h"
-#include "mc/deps/core/mce/UUID.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/platform/UUID.h"
 
-#include "mc/math/Vec2.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 
@@ -34,6 +34,8 @@
 
 #include "ll/api/base/Containers.h"
 #include "ll/api/data/IndirectValue.h"
+
+#include "mc/util/MultidimensionalArray.h"
 
 // [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
 
@@ -191,4 +193,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     auto indirect2 = indirect;
     auto indirect3 = indirect;
+
+    auto arr = Util::MultidimensionalArray<int, 2, 3, 4>{};
+
+    static_assert(arr.dim() == 3);
+    static_assert(arr.size() == 2 * 3 * 4);
 }

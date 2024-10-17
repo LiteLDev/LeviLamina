@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/biome/registry/BiomeComponentFactory.h"
 
 class BiomeManager {
@@ -15,8 +15,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI
-    BiomeManager(class OwnerPtr<class BiomeRegistry>, ::BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
+    MCAPI BiomeManager(
+        class OwnerPtr<class BiomeRegistry>          biomes,
+        ::BiomeComponentFactory::FactoryScope        factoryScope,
+        bool                                         clientSideChunkGenerationEnabled,
+        std::unique_ptr<class AutomaticFeatureRules> automaticFeatureRules
+    );
 
     MCAPI class BiomeComponentFactory& getBiomeComponentFactory();
 
@@ -25,21 +29,35 @@ public:
     MCAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
 
     MCAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
-        class Experiments const&,
-        class IWorldRegistriesProvider&,
-        class ResourcePackManager&,
-        class LevelSeed64
+        class Experiments const&        experiments,
+        class IWorldRegistriesProvider& worldRegistries,
+        class ResourcePackManager&      resourcePackManager,
+        class LevelSeed64               levelSeed
     );
 
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
 
-    MCAPI void loadBiomeData(class LevelStorage&);
+    MCAPI void loadBiomeData(class LevelStorage& levelStorage);
 
     MCAPI void sendLevelBiomesRegistered();
 
     MCAPI ~BiomeManager();
 
-    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
+    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const& baseGameVersion);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class OwnerPtr<class BiomeRegistry>          biomes,
+        ::BiomeComponentFactory::FactoryScope        factoryScope,
+        bool                                         clientSideChunkGenerationEnabled,
+        std::unique_ptr<class AutomaticFeatureRules> automaticFeatureRules
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

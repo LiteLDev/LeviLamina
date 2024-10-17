@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,9 +40,15 @@ public:
     virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>>& paths) = 0;
 
     // vIndex: 5
-    virtual class
-        OwnerPtr<class LevelStorage>
-        createLevelStorage(class Scheduler& scheduler, std::string const& levelId, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, std::chrono::nanoseconds const& writeFlushInterval, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv, std::unique_ptr<class LevelStorageEventing>) = 0;
+    virtual class OwnerPtr<class LevelStorage> createLevelStorage(
+        class Scheduler&                                                    scheduler,
+        std::string const&                                                  levelId,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        std::chrono::nanoseconds const&                                     writeFlushInterval,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>                       levelDbEnv,
+        std::unique_ptr<class LevelStorageEventing>                         levelStorageEventing
+    ) = 0;
 
     // vIndex: 6
     virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(
@@ -72,7 +78,7 @@ public:
     virtual bool isLevelPartiallyCopied(class Core::Path const& levelPath) const = 0;
 
     // vIndex: 13
-    virtual class Core::PathBuffer<std::string> getLevelDatFoundPath(class Core::Path const&) const = 0;
+    virtual class Core::PathBuffer<std::string> getLevelDatFoundPath(class Core::Path const& levelPath) const = 0;
 
     // vIndex: 14
     virtual class Core::PathBuffer<std::string> const getBasePath() const = 0;
@@ -87,9 +93,18 @@ public:
     // vIndex: 17
     virtual bool isBetaRetailLevel(std::string const& levelId) const = 0;
 
-    MCAPI static std::chrono::nanoseconds const WORLD_SAVE_FLUSH_INTERVAL;
+    // NOLINTEND
 
-    MCAPI static std::chrono::nanoseconds const WORLD_SAVE_MENU_FLUSH_INTERVAL;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::chrono::nanoseconds const& WORLD_SAVE_FLUSH_INTERVAL();
+
+    MCAPI static std::chrono::nanoseconds const& WORLD_SAVE_MENU_FLUSH_INTERVAL();
 
     // NOLINTEND
 };

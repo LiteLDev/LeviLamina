@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 
 class BoundingBox;
 
@@ -14,9 +14,9 @@ public:
         Vec3 max, y, g, t, z, b, p;
     };
 
-    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0){};
-    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
-    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
+    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0) {};
+    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max) {};
+    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max) {};
 
     inline AABB& merge(AABB const& a) noexcept {
         *this = AABB{ll::math::min(a.min, min), ll::math::max(a.max, max)};
@@ -127,13 +127,25 @@ public:
 
     MCAPI class AABB& translateCenterTo(class Vec3 const&);
 
-    MCAPI static struct ClipCollideResult clipCollide(class AABB const&, class AABB const&, class Vec3 const&);
+    MCAPI static struct ClipCollideResult
+    clipCollide(class AABB const& stationary, class AABB const& moving, class Vec3 const& velocity);
 
     MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
 
-    MCAPI static class AABB const BLOCK_SHAPE;
+    // NOLINTEND
 
-    MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Vec3 const& min, class Vec3 const& max);
+
+    MCAPI void* ctor$(class Vec3 const& min, float side);
+
+    MCAPI void* ctor$(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
+
+    MCAPI static class AABB const& BLOCK_SHAPE();
+
+    MCAPI static class AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
 
     // NOLINTEND
 };

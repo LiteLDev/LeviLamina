@@ -27,8 +27,8 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
     if (!SUCCEEDED(hr)) {
         return result;
     }
-    std::unique_ptr<IDWriteFontFile*[]> fontFiles = std::make_unique_for_overwrite<IDWriteFontFile*[]>(fileCount);
-    hr                                            = fontFace.GetFiles(&fileCount, fontFiles.get());
+    std::unique_ptr<CComPtr<IDWriteFontFile>[]> fontFiles = std::make_unique<CComPtr<IDWriteFontFile>[]>(fileCount);
+    hr = fontFace.GetFiles(&fileCount, reinterpret_cast<IDWriteFontFile**>(fontFiles.get()));
     for (uint i = 0; i < fileCount; i++) {
         IDWriteFontFile* fontFile = fontFiles[i];
 
@@ -64,9 +64,6 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
             hr = localLoader->GetFilePathFromKey(refKey, refKeySize, filePath.data(), pathLen + 1);
         }
         result.push_back(std::move(filePath));
-    }
-    for (uint i = 0; i < fileCount; i++) {
-        fontFiles[i]->Release();
     }
     return result;
 }
@@ -155,9 +152,9 @@ std::vector<std::string> getSystemFontNames() {
     if (SUCCEEDED(hr)) {
         familyCount = pFontCollection->GetFontFamilyCount();
     }
-    std::wstring             localeCode = str2wstr(i18n::getDefaultLocaleCode());
     std::vector<std::string> result;
     result.reserve(familyCount);
+    std::wstring localeCode = str2wstr(i18n::getDefaultLocaleCode());
     for (UINT32 i = 0; i < familyCount; ++i) {
         CComPtr<IDWriteFontFamily> pFontFamily;
         // Get the font family.

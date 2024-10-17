@@ -1,16 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/Pack.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/ResourceSignature.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/resources/PackCategory.h"
-#include "mc/resources/PackOrigin.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -70,7 +70,7 @@ public:
 
     MCAPI int getSubpackCount() const;
 
-    MCAPI std::string const& getSubpackFolderName(int) const;
+    MCAPI std::string const& getSubpackFolderName(int subpackIndex) const;
 
     MCAPI int getSubpackIndex(std::string const& name) const;
 
@@ -96,12 +96,6 @@ public:
 
     MCAPI void unregisterDeleteCallback(void* owner);
 
-    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
-
-    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
-
-    MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
-
     // NOLINTEND
 
     // private:
@@ -111,6 +105,23 @@ public:
     MCAPI void _createSubpacks();
 
     MCAPI void _generateIconPath();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Pack& pack);
+
+    MCAPI void dtor$();
+
+    MCAPI static class Core::PathBuffer<std::string> const& RESOURCE_PACK_BUG_ICON_PATH();
+
+    MCAPI static class Core::PathBuffer<std::string> const& RESOURCE_PACK_ICON_PATH();
+
+    MCAPI static class Core::PathBuffer<std::string> const& TEXTURES_LIST_PATH();
 
     // NOLINTEND
 };

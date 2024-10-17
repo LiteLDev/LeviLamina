@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class ExecuteCommand : public ::Command {
 public:
@@ -20,7 +20,16 @@ public:
     // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static void setup(class CommandRegistry& registry, bool, int);
+    MCAPI static void setup(class CommandRegistry& registry, bool isLegacyActive, int newExecuteStartVersion);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

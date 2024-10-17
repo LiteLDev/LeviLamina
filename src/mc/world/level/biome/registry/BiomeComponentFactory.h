@@ -17,8 +17,11 @@ public:
     // NOLINTBEGIN
     MCAPI void registrationFinished();
 
-    MCAPI void
-    writeComponentsToTag(class Biome const&, class IWorldRegistriesProvider const&, class CompoundTag&) const;
+    MCAPI void writeComponentsToTag(
+        class Biome const&                    biome,
+        class IWorldRegistriesProvider const& lookupProvider,
+        class CompoundTag&                    tag
+    ) const;
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptorCount.h"
 
 // auto generated forward declare list
@@ -34,6 +34,21 @@ public:
     MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     MCAPI void write(class BinaryStream& stream) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ItemStackDescriptor const& descriptor);
+
+    MCAPI void* ctor$(class ItemInstance const& item);
+
+    MCAPI void* ctor$(class NetworkItemInstanceDescriptor&&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

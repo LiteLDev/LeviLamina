@@ -23,20 +23,22 @@ public:
     virtual ~SmithingTrimRecipe() = default;
 
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual std::vector<class ItemInstance> const&
+    assemble(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool
+    matches(class CraftingContainer const& craftingContainer, class CraftingContext const& craftingContext) const;
 
     // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
     MCAPI SmithingTrimRecipe(
-        std::string const& recipeId,
-        class RecipeIngredient const&,
-        class RecipeIngredient const&,
-        class RecipeIngredient const&,
-        class HashedString const& tag
+        std::string const&            recipeId,
+        class RecipeIngredient const& templateIngredient,
+        class RecipeIngredient const& baseIngredient,
+        class RecipeIngredient const& additionIngredient,
+        class HashedString const&     tag
     );
 
     MCAPI class RecipeIngredient const& getAdditionIngredient() const;
@@ -45,7 +47,30 @@ public:
 
     MCAPI class RecipeIngredient const& getTemplateIngredient() const;
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::string const&            recipeId,
+        class RecipeIngredient const& templateIngredient,
+        class RecipeIngredient const& baseIngredient,
+        class RecipeIngredient const& additionIngredient,
+        class HashedString const&     tag
+    );
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;
+
+    MCAPI bool hasDataDrivenResult$() const;
+
+    MCAPI bool
+    matches$(class CraftingContainer const& craftingContainer, class CraftingContext const& craftingContext) const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

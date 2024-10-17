@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 class HurtByTargetGoal : public ::TargetGoal {
@@ -31,6 +31,23 @@ public:
     virtual void alertOther(class Mob* other, class Mob* hurtByMob);
 
     MCAPI HurtByTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
+
+    MCAPI void alertOther$(class Mob* other, class Mob* hurtByMob);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
 
     // NOLINTEND
 };

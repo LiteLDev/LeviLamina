@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 
 class IContainerManager {
 public:
@@ -47,6 +47,15 @@ public:
 
     // vIndex: 10
     virtual void broadcastChanges() = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

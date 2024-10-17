@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/SoftEnumUpdateType.h"
+#include "mc/network/packet/SoftEnumUpdateType.h"
 
 class CommandSoftEnumRegistry {
 public:
@@ -19,6 +19,15 @@ public:
     MCAPI void updateSoftEnum(::SoftEnumUpdateType type, std::string const& enumName, std::vector<std::string> values);
 
     MCAPI ~CommandSoftEnumRegistry();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class CommandRegistry* registry);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -4,8 +4,8 @@
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/Mirror.h"
-#include "mc/enums/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -52,15 +52,30 @@ public:
 
     MCAPI class BlockPos transform(::Rotation rotation, ::Mirror mirror, class Vec3 const& pivot) const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static class BlockPos const MAX;
+    // NOLINTEND
 
-    MCAPI static class BlockPos const MIN;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float x, float y, float z);
 
-    MCAPI static class BlockPos const ONE;
+    MCAPI void* ctor$(class ChunkPos const& cp, int y);
 
-    MCAPI static class BlockPos const ZERO;
+    MCAPI void* ctor$(class Vec3 const& v);
+
+    MCAPI void* ctor$(class SubChunkPos const& subChunkPos);
+
+    MCAPI void* ctor$(class ChunkPos const& cp, class ChunkBlockPos const& offset, short minDimensionHeight);
+
+    MCAPI static class BlockPos const& MAX();
+
+    MCAPI static class BlockPos const& MIN();
+
+    MCAPI static class BlockPos const& ONE();
+
+    MCAPI static class BlockPos const& ZERO();
 
     // NOLINTEND
 };

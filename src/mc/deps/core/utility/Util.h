@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/entity/components/agent/Direction.h"
-#include "mc/enums/BoneTransformType.h"
-#include "mc/enums/LogArea.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+#include "mc/world/actor/agent/agent_components/Direction.h"
+#include "mc/world/actor/animation/BoneTransformType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,16 +26,6 @@ namespace Util::Url { struct ComponentsView; }
 
 namespace Util {
 // NOLINTBEGIN
-MCAPI extern int const COLOR_CODE;
-
-MCAPI extern std::string const EMPTY_GUID;
-
-MCAPI extern std::string const EMPTY_STRING;
-
-MCAPI extern std::string const HEX_CHARS;
-
-MCAPI extern std::string const NEW_LINE;
-
 MCAPI void _breakIntoWordsAndFindProfanity(
     std::string&                                str,
     std::vector<std::pair<int, int>> const&     originalStrIndexes,
@@ -57,25 +47,25 @@ MCAPI void _recordProfanityLocationInWord(
     std::unordered_set<std::string> const&      containsSet
 );
 
-MCAPI std::string base64_decode(std::string const& encoded_string);
+MCAPI std::string base64_decode(std::string const&);
 
 MCAPI std::string base64_encode(std::string const& str, bool pad);
 
-MCAPI std::string base64_encode(uchar const*, uint64, bool);
+MCAPI std::string base64_encode(uchar const* bytes_to_encode, uint64 in_len, bool pad);
 
-MCAPI std::string base64url_decode(std::string encoded);
+MCAPI std::string base64url_decode(std::string);
 
-MCAPI std::string base64url_encode(std::string str);
+MCAPI std::string base64url_encode(std::string);
 
 MCAPI char const* boolToString(bool value);
 
-MCAPI std::string& clearAndReturn(std::string& s);
+MCAPI std::string& clearAndReturn(std::string&);
 
 MCAPI bool compareNoCase(std::string_view lhs, std::string_view rhs);
 
-MCAPI std::string cp1252ToUTF8(std::string const& content);
+MCAPI std::string cp1252ToUTF8(std::string const&);
 
-MCAPI std::string cp437ToUTF8(std::string const& content);
+MCAPI std::string cp437ToUTF8(std::string const&);
 
 MCAPI void crashOnPurpose();
 
@@ -87,9 +77,9 @@ MCAPI bool endsWith(std::string_view s, std::string_view ends);
 
 MCAPI bool endsWithCaseInsensitive(std::string const& s, std::string const& ends);
 
-MCAPI std::string ensureNamespace(std::string const& id);
+MCAPI std::string ensureNamespace(std::string const&);
 
-MCAPI std::string ensureNamespace(std::string_view);
+MCAPI std::string ensureNamespace(std::string_view id);
 
 MCAPI std::string filterProfanityFromString(
     std::string const&                          inputStr,
@@ -107,15 +97,15 @@ MCAPI std::string format(char const*, ...);
 
 MCAPI void freeStringMemory(std::string& toFree);
 
-MCAPI std::string fromHex(std::string_view);
+MCAPI std::string fromHex(std::string_view input);
 
 MCAPI class BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(class ListTag const& enumValues);
 
-MCAPI std::string getNameWithoutNamespace(std::string const& name);
+MCAPI std::string getNameWithoutNamespace(std::string const&);
 
-MCAPI std::string getNamespace(std::string const& name);
+MCAPI std::string getNamespace(std::string const&);
 
-MCAPI uint hashCodeAsUtf16(std::string_view);
+MCAPI uint hashCodeAsUtf16(std::string_view sv);
 
 MCAPI bool isAlphaNumeric(char c);
 
@@ -125,7 +115,7 @@ MCAPI bool isDigit(char c);
 
 MCAPI bool isIdentifierChar(char c);
 
-MCAPI bool isIntegral(std::string const& str, bool);
+MCAPI bool isIntegral(std::string const& str, bool allowPlusSign);
 
 MCAPI bool isNumber(std::string const& str);
 
@@ -135,7 +125,7 @@ MCAPI bool isUpperCaseAlphabetic(char c);
 
 MCAPI bool isValidNamespaceFormat(std::string const& name);
 
-MCAPI bool isValidPfid(std::string const&);
+MCAPI bool isValidPfid(std::string const& inputStr);
 
 MCAPI bool isValidUTF8(std::string const& content);
 
@@ -147,27 +137,27 @@ MCAPI void loadGameVersion(class SemVersion& version, class Json::Value const& v
 
 MCAPI void normalizeLineEndings(std::string& str);
 
-MCAPI std::string removeChars(std::string str, std::string const& characters);
+MCAPI std::string removeChars(std::string, std::string const&);
 
-MCAPI std::string removeIllegalChars(std::string str);
+MCAPI std::string removeIllegalChars(std::string);
 
-MCAPI std::string removeTrailingSpaces(std::string const& str);
+MCAPI std::string removeTrailingSpaces(std::string const&);
 
-MCAPI std::istream& safeGetline(std::istream&, std::string&);
+MCAPI std::istream& safeGetline(std::istream& inputStream, std::string& outString);
 
-MCAPI std::vector<std::string> split(std::string_view, char);
+MCAPI std::vector<std::string> split(std::string_view view, char delim);
 
 MCAPI std::vector<std::string> splitAndDiscardEmpty(std::string const& str, char delim);
 
 MCAPI std::vector<std::string> splitLines(
-    std::string const&              str,
-    std::vector<std::string> const& delims,
-    bool                            includeDelimCharsInResult,
-    bool                            includeEmptyLines,
-    std::istream& (*fnGetline)(std::istream&, std::string&)
+    std::string const&,
+    std::vector<std::string> const&,
+    bool,
+    bool,
+    std::istream& (*)(std::istream&, std::string&)
 );
 
-MCAPI std::vector<std::string>& splitString(std::string_view s, char delim, std::vector<std::string>& elems);
+MCAPI std::vector<std::string>& splitString(std::string_view, char, std::vector<std::string>&);
 
 MCAPI std::vector<std::string_view>&
       splitStringAsViews(std::string_view s, char delim, std::vector<std::string_view>& elems);
@@ -176,9 +166,9 @@ MCAPI bool startsWith(std::string_view s, std::string_view start);
 
 MCAPI bool stringContains(std::string const& s, char character);
 
-MCAPI std::string& stringReplace(std::string& s, std::string const& src, std::string const& dst, int maxCount);
+MCAPI std::string& stringReplace(std::string&, std::string const&, std::string const&, int);
 
-MCAPI std::string stringTrim(std::string const& s);
+MCAPI std::string stringTrim(std::string const&);
 
 MCAPI std::string stringTrim(std::string const& s, std::string const& chars);
 
@@ -190,13 +180,13 @@ MCAPI bool toBool(std::string const& input, bool& destination);
 
 MCAPI std::string toCamelCase(std::string const& src, char delimiter);
 
-MCAPI std::string toHex(std::string_view);
+MCAPI std::string toHex(std::string_view input);
 
 MCAPI ::Util::NumberConversionResult toIntWithMinMax(std::string_view inputStr, int& destination, int min, int max);
 
-MCAPI std::string toLower(char const*);
+MCAPI std::string toLower(char const* inString);
 
-MCAPI std::string toLower(std::string_view const&);
+MCAPI std::string toLower(std::string_view const& inString);
 
 MCAPI void toLowerInPlace(std::string& str);
 
@@ -204,15 +194,15 @@ MCAPI std::string toPascalCase(std::string const& src, char delimiter);
 
 MCAPI char const* toString(::BoneTransformType boneTransformType);
 
-MCAPI std::string toString(std::string const& inputStr);
+MCAPI std::string toString(std::string const&);
 
 MCAPI std::string toString(std::wstring const& inputStr);
 
-MCAPI std::string toString(float, int);
+MCAPI std::string toString(float f, int precision);
 
-MCAPI std::string toStringWithPaddedZeroes(uint, uchar);
+MCAPI std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
 
-MCAPI std::string toUpper(std::string_view const&);
+MCAPI std::string toUpper(std::string_view const& inString);
 
 MCAPI std::wstring toWideString(std::string const& inputStr);
 
@@ -230,6 +220,19 @@ MCAPI bool validateIdentifier(
 );
 
 MCAPI bool validateIdentifierChunk(std::string const& chunk, ::LogArea logArea);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI int const& COLOR_CODE();
+
+MCAPI std::string const& EMPTY_GUID();
+
+MCAPI std::string const& EMPTY_STRING();
+
+MCAPI std::string const& HEX_CHARS();
+
+MCAPI std::string const& NEW_LINE();
 // NOLINTEND
 
 }; // namespace Util

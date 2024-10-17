@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
 
 class ScreenHandlerBase {
 public:
@@ -29,7 +29,26 @@ public:
     // vIndex: 4
     virtual void postRequest(bool wasSuccess);
 
-    MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler&);
+    MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler& requestHandler);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ItemStackRequestActionHandler& requestHandler);
+
+    MCAPI void dtor$();
+
+    MCAPI ::ItemStackNetResult endRequest$();
+
+    MCAPI void endRequestBatch$();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+
+    MCAPI void postRequest$(bool wasSuccess);
 
     // NOLINTEND
 };

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/GlobalRead.h"
-#include "mc/common/GlobalWrite.h"
-#include "mc/common/StrictExecutionContext.h"
-#include "mc/common/wrapper/AddRemove.h"
-#include "mc/deps/core/data/Filter.h"
-#include "mc/deps/core/data/Read.h"
-#include "mc/deps/core/data/Write.h"
-#include "mc/entity/EntityFactoryT.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/AddRemove.h"
+#include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/Filter.h"
+#include "mc/deps/ecs/strict/GlobalRead.h"
+#include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/Read.h"
+#include "mc/deps/ecs/strict/StrictExecutionContext.h"
+#include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class VerticalCollisionSystem {
 public:
@@ -26,7 +26,7 @@ public:
     virtual ~VerticalCollisionSystem() = default;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher&);
+    virtual void registerEvents(entt::dispatcher& dispatcher);
 
     // vIndex: 2
     virtual void __unk_vfn_2();
@@ -53,18 +53,100 @@ public:
                       struct AddRemove<struct BounceComponent>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& strictContext);
 
     // vIndex: 6
-    virtual void
-    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct DimensionTypeComponent, struct StateVectorComponent, struct ActorDataFlagComponent, struct MoveRequestComponent, struct AABBShapeComponent>, struct Write<struct StateVectorComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    virtual void singleTick(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct MinecartFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct VerticalCollisionFlag>>,
+            struct Read<
+                struct DimensionTypeComponent,
+                struct StateVectorComponent,
+                struct ActorDataFlagComponent,
+                struct MoveRequestComponent,
+                struct AABBShapeComponent>,
+            struct Write<struct StateVectorComponent>,
+            struct AddRemove<struct BounceComponent>,
+            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& strictContext,
+        class StrictEntityContext&    entity
+    );
 
     MCAPI static struct TickingSystemWithInfo create();
 
-    MCAPI static class AABB getMaxCollisionVolume(class Vec3 const&, class AABB const&);
+    MCAPI static class AABB getMaxCollisionVolume(class Vec3 const& speed, class AABB const& shape);
 
-    MCAPI static void
-    tickVerticalCollisionSystem(class StrictEntityContext const&, struct AABBShapeComponent const&, struct MoveRequestComponent const&, class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct DimensionTypeComponent, struct StateVectorComponent, struct ActorDataFlagComponent, struct MoveRequestComponent, struct AABBShapeComponent>, struct Write<struct StateVectorComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&);
+    MCAPI static void tickVerticalCollisionSystem(
+        class StrictEntityContext const&   context,
+        struct AABBShapeComponent const&   aabb,
+        struct MoveRequestComponent const& request,
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct MinecartFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct VerticalCollisionFlag>>,
+            struct Read<
+                struct DimensionTypeComponent,
+                struct StateVectorComponent,
+                struct ActorDataFlagComponent,
+                struct MoveRequestComponent,
+                struct AABBShapeComponent>,
+            struct Write<struct StateVectorComponent>,
+            struct AddRemove<struct BounceComponent>,
+            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+
+    MCAPI void singleTick$(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct MinecartFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct VerticalCollisionFlag>>,
+            struct Read<
+                struct DimensionTypeComponent,
+                struct StateVectorComponent,
+                struct ActorDataFlagComponent,
+                struct MoveRequestComponent,
+                struct AABBShapeComponent>,
+            struct Write<struct StateVectorComponent>,
+            struct AddRemove<struct BounceComponent>,
+            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& strictContext,
+        class StrictEntityContext&    entity
+    );
+
+    MCAPI void tick$(class StrictExecutionContext<
+                     struct Filter<
+                         class FlagComponent<struct MinecartFlag>,
+                         class FlagComponent<struct PlayerComponentFlag>,
+                         class FlagComponent<struct VerticalCollisionFlag>>,
+                     struct Read<
+                         struct DimensionTypeComponent,
+                         struct StateVectorComponent,
+                         struct ActorDataFlagComponent,
+                         struct MoveRequestComponent,
+                         struct AABBShapeComponent>,
+                     struct Write<struct StateVectorComponent>,
+                     struct AddRemove<struct BounceComponent>,
+                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
+                     struct GlobalWrite<>,
+                     struct EntityFactoryT<>>& strictContext);
 
     // NOLINTEND
 };

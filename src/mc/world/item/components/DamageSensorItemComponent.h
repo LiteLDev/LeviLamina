@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ParticleType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ParticleType.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -24,9 +24,26 @@ public:
     // vIndex: 0
     virtual ~DamageSensorItemComponent() = default;
 
-    MCAPI DamageSensorItemComponent(std::vector<int> const&, ::Puv::Legacy::LevelSoundEvent, ::ParticleType);
+    MCAPI DamageSensorItemComponent(
+        std::vector<int> const&        damageThresholds,
+        ::Puv::Legacy::LevelSoundEvent onDamageSound,
+        ::ParticleType                 onDamageParticle
+    );
 
     MCAPI static class HashedString const& getIdentifier();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::vector<int> const&        damageThresholds,
+        ::Puv::Legacy::LevelSoundEvent onDamageSound,
+        ::ParticleType                 onDamageParticle
+    );
 
     // NOLINTEND
 };

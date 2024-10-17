@@ -20,4 +20,15 @@ public:
     MCAPI ~DefinitionEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class DefinitionEvent&&);
+
+    MCAPI void* ctor$(class DefinitionEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

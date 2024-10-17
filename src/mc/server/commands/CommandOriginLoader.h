@@ -25,4 +25,17 @@ public:
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const& tag, class ServerLevel& level);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ServerLevel& level);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CommandOrigin> load$(class CompoundTag const& tag);
+
+    // NOLINTEND
 };

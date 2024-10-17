@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -28,10 +28,10 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage&) const;
+    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 5
-    virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+    virtual void initializeComponentFromCode(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 7
     virtual bool isNetworkComponent() const;
@@ -40,15 +40,40 @@ public:
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
 
     MCAPI explicit BlockCollisionBoxDescription(bool enabled);
 
     MCAPI BlockCollisionBoxDescription(class Vec3 const& origin, class Vec3 const& size);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::string const NameID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Vec3 const& origin, class Vec3 const& size);
+
+    MCAPI void* ctor$(bool enabled);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeComponentFromCode$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

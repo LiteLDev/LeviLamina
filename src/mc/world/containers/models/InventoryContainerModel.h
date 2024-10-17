@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerExpandStatus.h"
+#include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 class InventoryContainerModel : public ::ContainerModel {
@@ -50,6 +50,31 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _refreshSlot(int modelSlot);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerEnumName containerName, int size, class Player& player);
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI int _getContainerOffset$() const;
+
+    MCAPI void _onItemChanged$(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+
+    MCAPI bool isValid$();
+
+    MCAPI void postInit$();
+
+    MCAPI void releaseResources$();
 
     // NOLINTEND
 };

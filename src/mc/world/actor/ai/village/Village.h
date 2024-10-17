@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/DwellerRole.h"
-#include "mc/enums/POIType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/entity/components_json_legacy/DwellerRole.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,17 +38,22 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static int const GOLEM_DEATH_PENALTY;
+        // NOLINTEND
 
-        MCAPI static int const LARGE_PENALTY;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static int const& GOLEM_DEATH_PENALTY();
 
-        MCAPI static int const LARGE_REWARD;
+        MCAPI static int const& LARGE_PENALTY();
 
-        MCAPI static int const MEDIUM_PENALTY;
+        MCAPI static int const& LARGE_REWARD();
 
-        MCAPI static int const SMALL_PENALTY;
+        MCAPI static int const& MEDIUM_PENALTY();
 
-        MCAPI static int const SMALL_REWARD;
+        MCAPI static int const& SMALL_PENALTY();
+
+        MCAPI static int const& SMALL_REWARD();
 
         // NOLINTEND
     };
@@ -69,7 +74,7 @@ public:
 
     MCAPI bool addPOI(std::weak_ptr<class POIInstance> pi);
 
-    MCAPI void addVillager(struct ActorUniqueID const&);
+    MCAPI void addVillager(struct ActorUniqueID const& villagerID);
 
     MCAPI bool checkNeedMoreVillagers() const;
 
@@ -131,7 +136,7 @@ public:
 
     MCAPI void tick(struct Tick tick, class BlockSource& region);
 
-    MCAPI void tickRaid(struct Tick);
+    MCAPI void tickRaid(struct Tick gameTick);
 
     MCAPI void triggerRaid();
 
@@ -149,20 +154,6 @@ public:
 
     MCAPI static bool isVillagePOI(class VillageManager const& villageManager, class Block const& block);
 
-    MCAPI static bool DEBUG_DRAWING;
-
-    MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
-
-    MCAPI static int const MAX_VILLAGE_STANDING;
-
-    MCAPI static int const MIN_VILLAGE_STANDING;
-
-    MCAPI static std::string const STORAGE_KEY_PREFIX;
-
-    MCAPI static char const STORAGE_KEY_SEPARATOR;
-
-    MCAPI static int const VILLAGE_START_XZ_BOUNDS;
-
     // NOLINTEND
 
     // private:
@@ -175,7 +166,7 @@ public:
 
     MCAPI void _createRaid();
 
-    MCAPI void _deleteOldDataIfNeeded(class LevelStorage&, std::string const&) const;
+    MCAPI void _deleteOldDataIfNeeded(class LevelStorage& levelStorage, std::string const& key) const;
 
     MCAPI bool _findAvailablePOI(uint64 index, class Level& level, class Random& random, struct ActorUniqueID id);
 
@@ -206,23 +197,23 @@ public:
 
     MCAPI void _loadVillagePOIs(class CompoundTag const& tag);
 
-    MCAPI void _playSoundFrom(class Vec3 const&, ::Puv::Legacy::LevelSoundEvent);
+    MCAPI void _playSoundFrom(class Vec3 const& soundOrigin, ::Puv::Legacy::LevelSoundEvent sound);
 
     MCAPI void _readyRaidGroup(std::unordered_set<struct ActorUniqueID>& spawnedMobs);
 
     MCAPI void _ringBells(class BlockSource& region, class Random& random) const;
 
-    MCAPI void _saveVillageData(class LevelStorage&) const;
+    MCAPI void _saveVillageData(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageDwellers(class LevelStorage&) const;
+    MCAPI void _saveVillageDwellers(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePOIs(class LevelStorage&) const;
+    MCAPI void _saveVillagePOIs(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePOIsToTag(class CompoundTag&) const;
+    MCAPI void _saveVillagePOIsToTag(class CompoundTag& tag) const;
 
-    MCAPI void _saveVillagePlayerStanding(class LevelStorage&) const;
+    MCAPI void _saveVillagePlayerStanding(class LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageRaid(class LevelStorage&) const;
+    MCAPI void _saveVillageRaid(class LevelStorage& levelStorage) const;
 
     MCAPI void _spawnPassiveDwellers(class BlockSource& region, int);
 
@@ -230,7 +221,7 @@ public:
     _spawnRaidGroup(class Vec3 spawnPosition, uchar groupNumber, std::unordered_set<struct ActorUniqueID>& spawnedMobs)
         const;
 
-    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const&, std::weak_ptr<class POIInstance>);
+    MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const& villager, std::weak_ptr<class POIInstance> pi);
 
     MCAPI void _tryShiftStandingsTowardNeutral(struct Tick& updateTick, uint64 updateInterval, bool positiveShift);
 
@@ -244,61 +235,78 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
+    MCAPI void* ctor$(class Dimension& dimension, class mce::UUID id, class BlockPos const& origin);
 
-    MCAPI static std::string const CELEBRATION_EVENT;
+    MCAPI static float const& ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE();
 
-    MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
+    MCAPI static std::string const& CELEBRATION_EVENT();
 
-    MCAPI static std::string const RAID_EXPIRY_EVENT;
+    MCAPI static bool& DEBUG_DRAWING();
 
-    MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
+    MCAPI static float const& DWELLER_REMOVAL_TOLERANCE();
 
-    MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
+    MCAPI static int const& MAX_VILLAGE_STANDING();
 
-    MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
+    MCAPI static int const& MIN_VILLAGE_STANDING();
 
-    MCAPI static uchar const RAID_MAX_SPAWN_FAILURES;
+    MCAPI static class Vec3 const& RAID_BOUNDS_PADDING();
 
-    MCAPI static int const RAID_PREP_TIME_IN_TICKS;
+    MCAPI static std::string const& RAID_EXPIRY_EVENT();
 
-    MCAPI static struct Tick const RAID_TIMEOUT_IN_TICKS;
+    MCAPI static int const& RAID_FINISHED_DELAY_IN_TICKS();
 
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_BAD;
+    MCAPI static int const& RAID_GROUP_COMPLETE_DELAY_IN_TICKS();
 
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_GOOD;
+    MCAPI static int const& RAID_LOCATION_HELP_DELAY_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_DWELLERS;
+    MCAPI static uchar const& RAID_MAX_SPAWN_FAILURES();
 
-    MCAPI static std::string const STORAGE_KEY_PLAYERS;
+    MCAPI static int const& RAID_PREP_TIME_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_POI;
+    MCAPI static struct Tick const& RAID_TIMEOUT_IN_TICKS();
 
-    MCAPI static std::string const STORAGE_KEY_RAID;
+    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_BAD();
 
-    MCAPI static std::string const STORAGE_KEY_VILLAGE;
+    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_GOOD();
 
-    MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
+    MCAPI static std::string const& STORAGE_KEY_DWELLERS();
 
-    MCAPI static int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
+    MCAPI static std::string const& STORAGE_KEY_PLAYERS();
 
-    MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
+    MCAPI static std::string const& STORAGE_KEY_POI();
 
-    MCAPI static uint64 const VILLAGE_POI_PURGE_TIME;
+    MCAPI static std::string const& STORAGE_KEY_PREFIX();
 
-    MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
+    MCAPI static std::string const& STORAGE_KEY_RAID();
 
-    MCAPI static uint64 const VILLAGE_SAVE_TICK_DELAY;
+    MCAPI static char const& STORAGE_KEY_SEPARATOR();
 
-    MCAPI static int const VILLAGE_START_HEIGHT;
+    MCAPI static std::string const& STORAGE_KEY_VILLAGE();
 
-    MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
+    MCAPI static int const& UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS();
 
-    MCAPI static uint64 const VILLAGE_UPDATE_TICK_DELAY;
+    MCAPI static int64 const& VILLAGER_EXPECTED_WORK_INTERVAL();
 
-    MCAPI static uchar const VILLAGE_VERSION_CURRENT;
+    MCAPI static int const& VILLAGE_HERO_BESTOW_TIME();
+
+    MCAPI static uint64 const& VILLAGE_POI_PURGE_TIME();
+
+    MCAPI static float const& VILLAGE_RADIUS_APPROX_SCALAR();
+
+    MCAPI static uint64 const& VILLAGE_SAVE_TICK_DELAY();
+
+    MCAPI static int const& VILLAGE_START_HEIGHT();
+
+    MCAPI static int const& VILLAGE_START_XZ_BOUNDS();
+
+    MCAPI static int const& VILLAGE_UNCLAIMED_POI_CAP();
+
+    MCAPI static uint64 const& VILLAGE_UPDATE_TICK_DELAY();
+
+    MCAPI static uchar const& VILLAGE_VERSION_CURRENT();
 
     // NOLINTEND
 };

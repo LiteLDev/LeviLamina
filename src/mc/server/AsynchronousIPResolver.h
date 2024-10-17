@@ -28,4 +28,13 @@ public:
     MCAPI void _resolve();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string url);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

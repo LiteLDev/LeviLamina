@@ -8,10 +8,10 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
 #include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/deps/raknet/PacketReliability.h"
 #include "mc/deps/raknet/StartupResult.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/resources/PacketPriority.h"
-#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,6 +67,15 @@ public:
         MCAPI RemoteSystemStruct();
 
         MCAPI ~RemoteSystemStruct();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -236,7 +245,7 @@ public:
 
     MCVAPI uint IncrementNextSendReceipt();
 
-    MCVAPI void InitializeConfiguration(std::unique_ptr<class RakNet::ShadowBanList>);
+    MCVAPI void InitializeConfiguration(std::unique_ptr<class RakNet::ShadowBanList> banList);
 
     MCVAPI bool InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
 
@@ -313,7 +322,7 @@ public:
 
     MCVAPI void SendTTL(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
 
-    MCVAPI bool SetApplicationHandshakeCompleted(struct RakNet::AddressOrGUID);
+    MCVAPI bool SetApplicationHandshakeCompleted(struct RakNet::AddressOrGUID systemIdentifier);
 
     MCVAPI void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(struct RakNet::RNS2RecvStruct*));
 
@@ -519,6 +528,280 @@ public:
     );
 
     MCAPI void ShiftIncomingTimestamp(uchar* data, struct RakNet::SystemAddress const& systemAddress) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForRakNetRNS2EventHandler();
+
+    MCAPI static void** vftableForRakNetRakPeerInterface();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void AddToBanList$(char const* IP, uint milliseconds);
+
+    MCAPI void AddToSecurityExceptionList$(char const* ip);
+
+    MCAPI bool
+    AdvertiseSystem$(char const* host, ushort remotePort, char const* data, int dataLength, uint connectionSocketIndex);
+
+    MCAPI struct RakNet::RNS2RecvStruct* AllocRNS2RecvStruct$(char const* file, uint line);
+
+    MCAPI struct RakNet::Packet* AllocatePacket$(uint dataSize);
+
+    MCAPI void AllowConnectionResponseIPMigration$(bool allow);
+
+    MCAPI void ApplyNetworkSimulator$(float packetloss, ushort minExtraPing, ushort extraPingVariance);
+
+    MCAPI void AttachPlugin$(class RakNet::PluginInterface2* plugin);
+
+    MCAPI void CancelConnectionAttempt$(struct RakNet::SystemAddress target);
+
+    MCAPI void ChangeSystemAddress$(struct RakNet::RakNetGUID guid, struct RakNet::SystemAddress const& systemAddress);
+
+    MCAPI void ClearBanList$();
+
+    MCAPI void CloseConnection$(
+        struct RakNet::AddressOrGUID target,
+        bool                         sendDisconnectionNotification,
+        uchar                        orderingChannel,
+        ::PacketPriority             disconnectionNotificationPriority
+    );
+
+    MCAPI ::RakNet::ConnectionAttemptResult Connect$(
+        char const*               host,
+        ushort                    remotePort,
+        char const*               passwordData,
+        int                       passwordDataLength,
+        struct RakNet::PublicKey* publicKey,
+        uint                      connectionSocketIndex,
+        uint                      sendConnectionAttemptCount,
+        uint                      timeBetweenSendConnectionAttemptsMS,
+        uint                      timeoutTime
+    );
+
+    MCAPI ::RakNet::ConnectionAttemptResult ConnectWithSocket$(
+        char const*                  host,
+        ushort                       remotePort,
+        char const*                  passwordData,
+        int                          passwordDataLength,
+        class RakNet::RakNetSocket2* socket,
+        struct RakNet::PublicKey*    publicKey,
+        uint                         sendConnectionAttemptCount,
+        uint                         timeBetweenSendConnectionAttemptsMS,
+        uint                         timeoutTime
+    );
+
+    MCAPI void DeallocRNS2RecvStruct$(struct RakNet::RNS2RecvStruct* s, char const* file, uint line);
+
+    MCAPI void DeallocatePacket$(struct RakNet::Packet* packet);
+
+    MCAPI void DetachPlugin$(class RakNet::PluginInterface2* plugin);
+
+    MCAPI void DisableSecurity$();
+
+    MCAPI int GetAveragePing$(struct RakNet::AddressOrGUID systemIdentifier);
+
+    MCAPI bool GetClientPublicKeyFromSystemAddress$(struct RakNet::SystemAddress input, char* client_public_key) const;
+
+    MCAPI uint64 GetClockDifferential$(struct RakNet::AddressOrGUID systemIdentifier);
+
+    MCAPI bool GetConnectionList$(struct RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
+
+    MCAPI ::RakNet::ConnectionState GetConnectionState$(struct RakNet::AddressOrGUID systemIdentifier);
+
+    MCAPI struct RakNet::SystemAddress GetExternalID$(struct RakNet::SystemAddress target) const;
+
+    MCAPI struct RakNet::RakNetGUID GetGUIDFromIndex$(uint index);
+
+    MCAPI struct RakNet::RakNetGUID const& GetGuidFromSystemAddress$(struct RakNet::SystemAddress input) const;
+
+    MCAPI void GetIncomingPassword$(char* passwordData, int* passwordDataLength);
+
+    MCAPI int GetIndexFromSystemAddress$(struct RakNet::SystemAddress systemAddress) const;
+
+    MCAPI struct RakNet::SystemAddress GetInternalID$(struct RakNet::SystemAddress systemAddress, int index) const;
+
+    MCAPI int GetLastPing$(struct RakNet::AddressOrGUID systemIdentifier) const;
+
+    MCAPI struct RakNet::NetworkAdapter& GetLocalAdapter$(uint index);
+
+    MCAPI char const* GetLocalIP$(uint index);
+
+    MCAPI int GetLowestPing$(struct RakNet::AddressOrGUID systemIdentifier) const;
+
+    MCAPI int GetMTUSize$(struct RakNet::SystemAddress target) const;
+
+    MCAPI uint GetMaximumIncomingConnections$() const;
+
+    MCAPI uint GetMaximumNumberOfPeers$() const;
+
+    MCAPI struct RakNet::SystemAddress GetMyBoundAddress$(int socketIndex);
+
+    MCAPI struct RakNet::RakNetGUID const GetMyGUID$() const;
+
+    MCAPI uint GetNextSendReceipt$();
+
+    MCAPI uint GetNumberOfAdapters$();
+
+    MCAPI uint GetNumberOfAddresses$();
+
+    MCAPI void GetOfflinePingResponse$(char** data, uint* length);
+
+    MCAPI uint GetReceiveBufferSize$();
+
+    MCAPI class RakNet::RakNetSocket2* GetSocket$(struct RakNet::SystemAddress target);
+
+    MCAPI void GetSockets$(class DataStructures::List<class RakNet::RakNetSocket2*>& sockets);
+
+    MCAPI int GetSplitMessageProgressInterval$() const;
+
+    MCAPI bool GetStatistics$(uint index, struct RakNet::RakNetStatistics* rns);
+
+    MCAPI struct RakNet::RakNetStatistics*
+    GetStatistics$(struct RakNet::SystemAddress systemAddress, struct RakNet::RakNetStatistics* rns);
+
+    MCAPI void GetStatisticsList$(
+        class DataStructures::List<struct RakNet::SystemAddress>&    addresses,
+        class DataStructures::List<struct RakNet::RakNetGUID>&       guids,
+        class DataStructures::List<struct RakNet::RakNetStatistics>& statistics
+    );
+
+    MCAPI struct RakNet::SystemAddress GetSystemAddressFromGuid$(struct RakNet::RakNetGUID input) const;
+
+    MCAPI struct RakNet::SystemAddress GetSystemAddressFromIndex$(uint index);
+
+    MCAPI void GetSystemList$(
+        class DataStructures::List<struct RakNet::SystemAddress>& addresses,
+        class DataStructures::List<struct RakNet::RakNetGUID>&    guids
+    ) const;
+
+    MCAPI uint GetTimeoutTime$(struct RakNet::SystemAddress target);
+
+    MCAPI uint IncrementNextSendReceipt$();
+
+    MCAPI void InitializeConfiguration$(std::unique_ptr<class RakNet::ShadowBanList> banList);
+
+    MCAPI bool InitializeSecurity$(char const* public_key, char const* private_key, bool bRequireClientKey);
+
+    MCAPI bool IsActive$() const;
+
+    MCAPI bool IsBanned$(char const* IP);
+
+    MCAPI bool IsInSecurityExceptionList$(char const* ip);
+
+    MCAPI bool IsLocalIP$(char const* ip);
+
+    MCAPI bool IsNetworkSimulatorActive$();
+
+    MCAPI ushort NumberOfConnections$() const;
+
+    MCAPI void OnRNS2Recv$(struct RakNet::RNS2RecvStruct* recvStruct);
+
+    MCAPI void Ping$(struct RakNet::SystemAddress target);
+
+    MCAPI bool
+    Ping$(char const* host, ushort remotePort, bool onlyReplyOnAcceptingConnections, uint connectionSocketIndex);
+
+    MCAPI void PushBackPacket$(struct RakNet::Packet* packet, bool pushAtHead);
+
+    MCAPI struct RakNet::Packet* Receive$();
+
+    MCAPI void ReleaseSockets$(class DataStructures::List<class RakNet::RakNetSocket2*>& sockets);
+
+    MCAPI void RemoveFromBanList$(char const* IP);
+
+    MCAPI void RemoveFromSecurityExceptionList$(char const* ip);
+
+    MCAPI bool RunUpdateCycle$(class RakNet::BitStream& updateBitStream);
+
+    MCAPI uint Send$(
+        class RakNet::BitStream const* bitStream,
+        ::PacketPriority               priority,
+        ::PacketReliability            reliability,
+        char                           orderingChannel,
+        struct RakNet::AddressOrGUID   systemIdentifier,
+        bool                           broadcast,
+        uint                           forceReceiptNumber
+    );
+
+    MCAPI uint Send$(
+        char const*                  data,
+        int                          length,
+        ::PacketPriority             priority,
+        ::PacketReliability          reliability,
+        char                         orderingChannel,
+        struct RakNet::AddressOrGUID systemIdentifier,
+        bool                         broadcast,
+        uint                         forceReceiptNumber
+    );
+
+    MCAPI uint SendList$(
+        char const**                 data,
+        int const*                   lengths,
+        int                          numParameters,
+        ::PacketPriority             priority,
+        ::PacketReliability          reliability,
+        char                         orderingChannel,
+        struct RakNet::AddressOrGUID systemIdentifier,
+        bool                         broadcast,
+        uint                         forceReceiptNumber
+    );
+
+    MCAPI void SendLoopback$(char const* data, int length);
+
+    MCAPI void SendNatTraversalMessage$(struct RakNet::SystemAddress target);
+
+    MCAPI bool
+    SendOutOfBand$(char const* host, ushort remotePort, char const* data, uint dataLength, uint connectionSocketIndex);
+
+    MCAPI void SendTTL$(char const* host, ushort remotePort, int ttl, uint connectionSocketIndex);
+
+    MCAPI bool SetApplicationHandshakeCompleted$(struct RakNet::AddressOrGUID systemIdentifier);
+
+    MCAPI void SetIncomingDatagramEventHandler$(bool (*_incomingDatagramEventHandler)(struct RakNet::RNS2RecvStruct*));
+
+    MCAPI void SetIncomingPassword$(char const* passwordData, int passwordDataLength);
+
+    MCAPI void SetInternalID$(struct RakNet::SystemAddress systemAddress, int index);
+
+    MCAPI void SetLimitIPConnectionFrequency$(bool b);
+
+    MCAPI void SetMaximumIncomingConnections$(ushort numberAllowed);
+
+    MCAPI void SetOccasionalPing$(bool doPing);
+
+    MCAPI void SetOfflinePingResponse$(char const* data, uint length);
+
+    MCAPI void SetPerConnectionOutgoingBandwidthLimit$(uint maxBitsPerSecond);
+
+    MCAPI void SetSplitMessageProgressInterval$(int interval);
+
+    MCAPI void SetTimeoutTime$(uint timeMS, struct RakNet::SystemAddress target);
+
+    MCAPI void SetUnreliableTimeout$(uint timeoutMS);
+
+    MCAPI void SetUserUpdateThread$(
+        void (*_userUpdateThreadPtr)(class RakNet::RakPeerInterface*, void*),
+        void* _userUpdateThreadData
+    );
+
+    MCAPI void Shutdown$(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
+
+    MCAPI ::RakNet::StartupResult Startup$(
+        uint                             maxConnections,
+        struct RakNet::SocketDescriptor* socketDescriptors,
+        uint                             socketDescriptorCount,
+        int                              threadPriority
+    );
+
+    MCAPI void WriteOutOfBandHeader$(class RakNet::BitStream* bitStream);
+
+    MCAPI void resetMyGUID$();
 
     // NOLINTEND
 };

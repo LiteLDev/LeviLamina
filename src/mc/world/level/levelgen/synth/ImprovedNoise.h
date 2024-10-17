@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/levelgen/synth/YBlendingBugSettings.h"
 
 class ImprovedNoise {
@@ -37,7 +37,7 @@ public:
         float&            vv3
     ) const;
 
-    MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings);
+    MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings yBlendingSettings);
 
     // NOLINTEND
 };

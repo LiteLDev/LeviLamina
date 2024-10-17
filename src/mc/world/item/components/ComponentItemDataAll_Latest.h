@@ -17,4 +17,15 @@ public:
     MCAPI ~ComponentItemDataAll_Latest();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct ComponentItemDataAll_Latest&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

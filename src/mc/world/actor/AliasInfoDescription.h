@@ -16,4 +16,13 @@ public:
     MCAPI ~AliasInfoDescription();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct AliasInfoDescription const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

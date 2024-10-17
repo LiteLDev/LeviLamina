@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
+#include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
@@ -17,6 +17,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BarrelContainerScreenValidator() = default;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

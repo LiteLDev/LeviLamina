@@ -114,7 +114,20 @@ public:
     virtual void __unk_vfn_32();
 
     // vIndex: 33
-    virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const&);
+    virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const& actorEquippedArmorEvent);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+
+    MCAPI ::EventResult onEvent$(struct ActorEquippedArmorEvent const& actorEquippedArmorEvent);
 
     // NOLINTEND
 };

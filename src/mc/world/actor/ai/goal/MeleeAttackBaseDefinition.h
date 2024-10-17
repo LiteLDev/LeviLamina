@@ -18,7 +18,18 @@ public:
 
     MCAPI MeleeAttackBaseDefinition();
 
-    MCAPI void initialize(class EntityContext&, class MeleeAttackBaseGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class MeleeAttackBaseGoal& goal) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

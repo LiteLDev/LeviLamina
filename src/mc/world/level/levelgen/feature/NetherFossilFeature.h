@@ -22,9 +22,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
+    MCAPI static void** vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+
+    MCAPI static ::ll::CArrayT<std::string const>& STRUCTURE_LOCATION_FOSSIL();
 
     // NOLINTEND
 };

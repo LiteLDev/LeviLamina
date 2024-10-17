@@ -4,11 +4,11 @@
 #include "mc/world/level/chunk/DirtyTicksCounter.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/LockGuard.h"
-#include "mc/world/level/block/utils/BlockDataFetchResult.h"
-#include "mc/world/level/chunk/PruneType.h"
+#include "mc/platform/threading/LockGuard.h"
+#include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
+#include "mc/world/level/chunk/sub_chunk_storage_unit/PruneType.h"
 
 class Block;
 class SpinLock;
@@ -58,15 +58,25 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI SubChunk(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar);
+    MCAPI SubChunk(
+        class Block const* initBlock,
+        bool               maxSkyLight,
+        bool               fullyLit,
+        class SpinLock&    spinLock,
+        schar              absoluteIndex
+    );
 
-    MCAPI void
-    deserialize(class IDataInput& stream, class BlockPalette const& palette, class SubChunkPos const& subChunkPos, std::optional<struct DeserializationChanges*>);
+    MCAPI void deserialize(
+        class IDataInput&                             stream,
+        class BlockPalette const&                     palette,
+        class SubChunkPos const&                      subChunkPos,
+        std::optional<struct DeserializationChanges*> deserializationChanges
+    );
 
     MCAPI void fetchBlocks(
         class BlockPos const& subChunkOrigin,
         class BlockPos const& volumeOrigin,
-        short                 minHeight,
+        short                 dimensionMinHeight,
         class BlockVolume&    volume
     ) const;
 
@@ -96,8 +106,13 @@ public:
 
     MCAPI ::SubChunk::SubChunkState getSubChunkState() const;
 
-    MCAPI void
-    initialize(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar);
+    MCAPI void initialize(
+        class Block const* initBlock,
+        bool               maxSkyLight,
+        bool               fullyLit,
+        class SpinLock&    spinLock,
+        schar              absoluteIndex
+    );
 
     MCAPI bool isEmpty() const;
 
@@ -107,9 +122,9 @@ public:
 
     MCAPI struct SubChunk& operator=(struct SubChunk&& rhs);
 
-    MCAPI void prune(::SubChunkStorageUnit::PruneType);
+    MCAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
 
-    MCAPI std::string recalculateHashAndSerialize(bool);
+    MCAPI std::string recalculateHashAndSerialize(bool network);
 
     MCAPI void reset(class Block const* resetBlock, bool maxSkyLight, bool fullyLit);
 
@@ -117,13 +132,13 @@ public:
 
     MCAPI void serialize(class IDataOutput& stream, bool network) const;
 
-    MCAPI void setBlock(ushort, class Block const&);
+    MCAPI void setBlock(ushort index, class Block const& block);
 
     MCAPI void setBlockLight(ushort index, uchar lightValue);
 
     MCAPI void setFromBlockVolume(class BlockVolume const& box, short height);
 
-    MCAPI void setSkyLight(ushort, uchar);
+    MCAPI void setSkyLight(ushort index, uchar lightValue);
 
     MCAPI ~SubChunk();
 
@@ -141,6 +156,16 @@ public:
     MCAPI void _resetLight(bool maxSkyLight, bool maxLight);
 
     MCAPI void _setBlock(uchar layer, ushort index, class Block const& block);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(class Block const* initBlock, bool maxSkyLight, bool fullyLit, class SpinLock& spinLock, schar absoluteIndex);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

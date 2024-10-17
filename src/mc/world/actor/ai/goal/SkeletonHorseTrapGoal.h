@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Difficulty.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/Difficulty.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SkeletonHorseTrapGoal : public ::Goal {
@@ -40,6 +40,23 @@ public:
     MCAPI class Horse* _createHorse(::Difficulty const& difficulty);
 
     MCAPI class Skeleton* _createSkeleton(::Difficulty const& difficulty, class Horse const& otherHorse);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Horse& mob, int trapLifeTicks, float triggerDistance);
+
+    MCAPI void appendDebugInfo$(std::string& debugInfo) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

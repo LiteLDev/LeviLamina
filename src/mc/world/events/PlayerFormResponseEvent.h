@@ -14,4 +14,11 @@ public:
     MCAPI ~PlayerFormResponseEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

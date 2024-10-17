@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
 class DelayedAttackGoal : public ::MeleeAttackGoal {
@@ -38,7 +38,7 @@ public:
 
     MCAPI explicit DelayedAttackGoal(class Mob& mob);
 
-    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
+    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const& mob, class Actor const& target);
 
     // NOLINTEND
 
@@ -50,9 +50,26 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
+
+    MCAPI static class BaseGameVersion const& mMinLineOfSightFixVersion();
 
     // NOLINTEND
 };

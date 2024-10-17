@@ -13,4 +13,11 @@ public:
     MCAPI ActorParticleEffect();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

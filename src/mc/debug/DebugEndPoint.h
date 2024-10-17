@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
-#include "mc/enums/LogArea.h"
-#include "mc/enums/LogLevel.h"
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/resources/ResourcePackListener.h"
 
 // auto generated forward declare list
@@ -42,6 +42,19 @@ public:
         MCAPI void checkWorldData(class Core::Path const& levelPath);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI void dtor$();
+
+        MCAPI void onActiveResourcePacksChanged$(class ResourcePackManager& mgr);
+
+        MCAPI void onResourceManagerDestroyed$(class ResourcePackManager& mgr);
+
+        // NOLINTEND
     };
 
 public:
@@ -64,15 +77,34 @@ public:
 
     MCVAPI void setEnabled(bool newState);
 
-    MCAPI explicit DebugEndPoint(std::optional<::LogLevel>);
+    MCAPI explicit DebugEndPoint(std::optional<::LogLevel> minLogLevel);
 
     MCAPI void initializeContentLogging(class ResourcePackManager& mgr, class Core::Path const& levelPath);
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<::LogArea, bool> const mAssertAreas;
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForBedrockLogEndPoint();
+
+    MCAPI void* ctor$(std::optional<::LogLevel> minLogLevel);
+
+    MCAPI void contentAssert$(::LogArea area, ::LogLevel level, char const* message);
+
+    MCAPI void flush$();
+
+    MCAPI bool isEnabled$() const;
+
+    MCAPI void log$(::LogArea area, ::LogLevel level, char const* message);
+
+    MCAPI bool logOnlyOnce$() const;
+
+    MCAPI void setEnabled$(bool newState);
+
+    MCAPI static std::unordered_map<::LogArea, bool> const& mAssertAreas();
 
     // NOLINTEND
 };

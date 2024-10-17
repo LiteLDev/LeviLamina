@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,6 +37,15 @@ public:
         MCAPI ~ComponentMetadata();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct CerealItemComponentFactory::ComponentMetadata const&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -48,38 +57,53 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI static std::shared_ptr<class ItemComponent>
-    constructItemComponent(std::string const&, struct cereal::ReflectionCtx const&);
+    constructItemComponent(std::string const& name, struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void
-    deprecateComponentStartingFromVersion(std::string const&, class SemVersion, struct cereal::ReflectionCtx const&);
+    MCAPI static void deprecateComponentStartingFromVersion(
+        std::string const&                  name,
+        class SemVersion                    deprecatedVersion,
+        struct cereal::ReflectionCtx const& ctx
+    );
 
     MCAPI static std::optional<class SemVersion>
-    getReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const&);
+    getReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI static bool
-    isComponentBasedItemSchema(class SemVersion const&, class Json::Value const&, struct cereal::ReflectionCtx const&);
+    MCAPI static bool isComponentBasedItemSchema(
+        class SemVersion const&             formatVersion,
+        class Json::Value const&            itemData,
+        struct cereal::ReflectionCtx const& ctx
+    );
 
-    MCAPI static bool
-    validateCerealComponent(std::string, class SemVersion const&, bool, class Experiments const&, struct cereal::ReflectionCtx const&);
+    MCAPI static bool validateCerealComponent(
+        std::string                         componentName,
+        class SemVersion const&             engineVersion,
+        bool                                isBaseGamePack,
+        class Experiments const&            experiments,
+        struct cereal::ReflectionCtx const& ctx
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static std::vector<::AllExperiments>
-    getComponentMissingToggles(struct CerealItemComponentFactory::ComponentMetadata const&, class Experiments const&);
+    MCAPI static std::vector<::AllExperiments> getComponentMissingToggles(
+        struct CerealItemComponentFactory::ComponentMetadata const& data,
+        class Experiments const&                                    experiments
+    );
 
     MCAPI static std::optional<
         std::reference_wrapper<std::unordered_map<std::string, struct CerealItemComponentFactory::ComponentMetadata>>>
-    getPropRegisteredComponents(struct cereal::ReflectionCtx const&);
+    getPropRegisteredComponents(struct cereal::ReflectionCtx const& ctx);
 
     MCAPI static std::optional<std::reference_wrapper<class SemVersion>>
-    getPropReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const&);
+    getPropReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx&);
+    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
-    updateReleasedMinFormatVersionForAnyComponentIfLower(class SemVersion, struct cereal::ReflectionCtx const&);
+    MCAPI static void updateReleasedMinFormatVersionForAnyComponentIfLower(
+        class SemVersion                    version,
+        struct cereal::ReflectionCtx const& ctx
+    );
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
 
 class ServerInstanceEventListener {
@@ -31,6 +31,28 @@ public:
     MCVAPI ::EventResult onServerUpdateEnd(class ServerInstance& instance);
 
     MCVAPI ::EventResult onStartLeaveGame(class ServerInstance& instance);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI ::EventResult onServerInitializeEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerInitializeStart$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerMinecraftInitialized$(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
+
+    MCAPI ::EventResult onServerResume$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerSuspend$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onServerUpdateEnd$(class ServerInstance& instance);
+
+    MCAPI ::EventResult onStartLeaveGame$(class ServerInstance& instance);
 
     // NOLINTEND
 };

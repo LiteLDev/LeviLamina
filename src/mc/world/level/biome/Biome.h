@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/world/level/biome/VanillaBiomeTypes.h"
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
+#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -62,7 +62,7 @@ public:
 
     MCAPI int getMapEvergreenFoliageColor(class BlockPos const& pos) const;
 
-    MCAPI int getMapFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapFoliageColor(class BlockPos const&) const;
 
     MCAPI int getMapGrassColor(class BlockPos const& pos) const;
 
@@ -109,17 +109,26 @@ public:
 
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk& chunk);
 
-    MCAPI static std::string_view const BACKCOMPAT_FOG_NAME;
+    // NOLINTEND
 
-    MCAPI static class mce::Color const DEFAULT_FOG_COLOR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static std::string_view const DEFAULT_FOG_ID;
+    MCAPI void* ctor$(int id);
 
-    MCAPI static class mce::Color const DEFAULT_UNDERWATER_COLOR;
+    MCAPI static std::string_view const& BACKCOMPAT_FOG_NAME();
 
-    MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
+    MCAPI static class mce::Color const& DEFAULT_FOG_COLOR();
 
-    MCAPI static float const RAIN_TEMP_THRESHOLD;
+    MCAPI static std::string_view const& DEFAULT_FOG_ID();
+
+    MCAPI static class mce::Color const& DEFAULT_UNDERWATER_COLOR();
+
+    MCAPI static class mce::Color const& DEFAULT_WATER_COLOR();
+
+    MCAPI static float const& RAIN_TEMP_THRESHOLD();
 
     // NOLINTEND
 };

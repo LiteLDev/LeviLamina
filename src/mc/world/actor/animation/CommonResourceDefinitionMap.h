@@ -28,4 +28,11 @@ public:
     MCAPI static std::recursive_mutex& _getAnimationResourceDefinitionLock();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

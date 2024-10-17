@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/LevelEventCoordinator.h"
+#include "mc/world/events/LevelEventCoordinator.h"
 
 class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
@@ -16,6 +16,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ClientLevelEventCoordinator() = default;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

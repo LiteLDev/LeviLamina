@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
 
 struct SynchedActorDataComponent;
 struct ActorDataFlagComponent;
@@ -38,7 +38,7 @@ public:
 
     MCAPI short getShort(ushort id) const;
 
-    MCAPI std::string const& getString(ushort) const;
+    MCAPI std::string const& getString(ushort id) const;
 
     MCAPI class Vec3 getVec3(ushort id) const;
 
@@ -65,6 +65,15 @@ public:
     MCAPI gsl::not_null<class SynchedActorData*> _get();
 
     MCAPI gsl::not_null<class SynchedActorData const*> _get() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class EntityContext& entity);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -23,4 +23,15 @@ public:
     MCAPI ~CallbackToken();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::weak_ptr<class CallbackTokenCancelState> cancelState);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

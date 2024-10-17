@@ -56,9 +56,56 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class LevelDbEnv* sSingleton;
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForleveldbEnv();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI leveldb::Status CreateDir$(std::string const& path);
+
+    MCAPI leveldb::Status DeleteDir$(std::string const& name);
+
+    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+
+    MCAPI bool FileExists$(std::string const& fname);
+
+    MCAPI leveldb::Status GetChildren$(std::string const& dir, std::vector<std::string>* pChildrenOut);
+
+    MCAPI leveldb::Status GetFileSize$(std::string const& fname, uint64* size);
+
+    MCAPI leveldb::Status GetTestDirectory$(std::string* result);
+
+    MCAPI leveldb::Status LockFile$(std::string const& fname, leveldb::FileLock** lock);
+
+    MCAPI leveldb::Status NewAppendableFile$(std::string const& fname, leveldb::WritableFile** result);
+
+    MCAPI leveldb::Status NewLogger$(std::string const& fname, leveldb::Logger** result);
+
+    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& fname, leveldb::RandomAccessFile** result);
+
+    MCAPI leveldb::Status NewSequentialFile$(std::string const& fname, leveldb::SequentialFile** result);
+
+    MCAPI leveldb::Status NewWritableFile$(std::string const& fname, leveldb::WritableFile** result);
+
+    MCAPI uint64 NowMicros$();
+
+    MCAPI leveldb::Status RenameFile$(std::string const& src, std::string const& target);
+
+    MCAPI void Schedule$(void (*function)(void*), void* arg);
+
+    MCAPI void SleepForMicroseconds$(int microseconds);
+
+    MCAPI void StartThread$(void (*function)(void*), void* arg);
+
+    MCAPI leveldb::Status UnlockFile$(leveldb::FileLock* lock);
+
+    MCAPI static class LevelDbEnv*& sSingleton();
 
     // NOLINTEND
 };

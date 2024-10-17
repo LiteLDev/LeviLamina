@@ -36,4 +36,11 @@ public:
     virtual void writeBytes(void const* data, uint64 bytes) = 0;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

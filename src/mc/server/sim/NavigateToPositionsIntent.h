@@ -16,6 +16,13 @@ public:
     MCAPI ~NavigateToPositionsIntent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace sim

@@ -40,6 +40,13 @@ public:
         MCAPI ~BlockCustomComponentAfterEventQueueHandle();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -60,36 +67,47 @@ public:
 
     MCAPI bool onFlushBlockCustomComponentsAfterEvents() const;
 
-    MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const&) const;
+    MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
 
     MCAPI void onPostFlushAfterEvents() const;
 
     MCAPI void onPreFlushAfterEvents() const;
 
-    MCAPI static void
-    generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
+    MCAPI static void generateOrderDocumentationForVersion(
+        struct Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        class Json::Value&                        eventOrderArray
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _beforeOnPlayerPlace(struct BlockEvents::BlockPlayerPlacingEvent&) const;
+    MCAPI void _beforeOnPlayerPlace(struct BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
-    MCAPI void _onFallOn(struct BlockEvents::BlockFallOnEvent&) const;
+    MCAPI void _onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
 
-    MCAPI void _onPlace(struct BlockEvents::BlockPlaceEvent const&) const;
+    MCAPI void _onPlace(struct BlockEvents::BlockPlaceEvent const& eventData) const;
 
-    MCAPI void _onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const&) const;
+    MCAPI void _onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
 
-    MCAPI void _onPlayerInteract(struct BlockEvents::BlockPlayerInteractEvent&) const;
+    MCAPI void _onPlayerInteract(struct BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
-    MCAPI void _onQueuedTick(struct BlockEvents::BlockQueuedTickEvent const&) const;
+    MCAPI void _onQueuedTick(struct BlockEvents::BlockQueuedTickEvent const& eventData) const;
 
-    MCAPI void _onRandomTick(struct BlockEvents::BlockRandomTickEvent const&) const;
+    MCAPI void _onRandomTick(struct BlockEvents::BlockRandomTickEvent const& eventData) const;
 
-    MCAPI void _onStepOff(struct BlockEvents::BlockStepOffEvent const&) const;
+    MCAPI void _onStepOff(struct BlockEvents::BlockStepOffEvent const& eventData) const;
 
-    MCAPI void _onStepOn(struct BlockEvents::BlockStepOnEvent const&) const;
+    MCAPI void _onStepOn(struct BlockEvents::BlockStepOnEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

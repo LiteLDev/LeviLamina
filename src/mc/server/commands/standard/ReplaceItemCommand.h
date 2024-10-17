@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,7 +32,17 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void
-    _outputError(class CommandOutput& output, struct Util::ReplacementResults, std::string const& itemName) const;
+    _outputError(class CommandOutput& output, struct Util::ReplacementResults errorDetails, std::string const& itemName)
+        const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

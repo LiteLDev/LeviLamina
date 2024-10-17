@@ -31,4 +31,13 @@ public:
     MCAPI bool _fetchAllAvailableTasks();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

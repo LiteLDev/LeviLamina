@@ -30,9 +30,23 @@ public:
     // vIndex: 12
     virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
-    MCAPI explicit ShulkerBoxRecipe(struct Recipe::ConstructionContext&&);
+    MCAPI explicit ShulkerBoxRecipe(struct Recipe::ConstructionContext&& context);
 
-    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct Recipe::ConstructionContext&& context);
+
+    MCAPI std::vector<class ItemInstance> const&
+          assemble$(class CraftingContainer& craftSlots, class CraftingContext&) const;
+
+    MCAPI bool itemsMatch$(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
+
+    MCAPI static class mce::UUID const& ID();
 
     // NOLINTEND
 };

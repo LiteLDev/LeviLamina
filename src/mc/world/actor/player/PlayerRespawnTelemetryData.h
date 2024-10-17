@@ -33,9 +33,12 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const mEventName;
+    MCAPI void* ctor$();
+
+    MCAPI static std::string const& mEventName();
 
     // NOLINTEND
 };

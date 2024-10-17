@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI CommandBlockNameResult(class HashedString const& originalName, class Block const* block, bool);
+    MCAPI CommandBlockNameResult(class HashedString const& originalName, class Block const* block, bool isComplexAlias);
 
     MCAPI class Block const* getBlock() const;
 
@@ -35,9 +35,18 @@ public:
 
     MCAPI bool isComplexAlias() const;
 
-    MCAPI bool isSameBlock(class Block const& block, bool compareBlockLegacyPtr = true) const;
+    MCAPI bool isSameBlock(class Block const& rhs, bool onlyCompareBlockLegacy = false) const;
 
     MCAPI ~CommandBlockNameResult();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class HashedString const& originalName, class Block const* block, bool isComplexAlias);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

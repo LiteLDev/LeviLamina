@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,8 +50,10 @@ public:
 
     MCAPI void sendQueuedChunks();
 
-    MCAPI void
-    setServerSettings(class ServerNetworkSystem& network, class ClientBlobCache::Server::ActiveTransfersManager&);
+    MCAPI void setServerSettings(
+        class ServerNetworkSystem&                             network,
+        class ClientBlobCache::Server::ActiveTransfersManager& cacheManager
+    );
 
     // NOLINTEND
 
@@ -69,6 +71,15 @@ public:
         class ClientBlobCache::Server::TransferBuilder& transfer,
         std::function<void(class VarIntDataOutput&)>&&  serialize
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Level& level, class NetworkIdentifier const& owner, ::SubClientId subClientId);
 
     // NOLINTEND
 };

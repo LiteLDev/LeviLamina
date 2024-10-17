@@ -26,18 +26,19 @@ public:
 
     MCAPI std::vector<std::string> const& getAllTestTags() const;
 
-    MCAPI std::function<void()> getBeforeBatchFunction(std::string const&);
+    MCAPI std::function<void()> getBeforeBatchFunction(std::string const& batchName);
 
-    MCAPI std::shared_ptr<class gametest::BaseGameTestFunction> getTestFunction(std::string const&);
+    MCAPI std::shared_ptr<class gametest::BaseGameTestFunction> getTestFunction(std::string const& testName);
 
     MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>
           getTestFunctionsWithTag(std::string const& tag);
 
     MCAPI bool isTestTag(std::string const& tag) const;
 
-    MCAPI bool registerBeforeBatchFunction(std::string const&, std::function<void()> fn);
+    MCAPI bool registerBeforeBatchFunction(std::string const& batchName, std::function<void()> fn);
 
-    MCAPI bool registerTestMethod(std::string const&, std::shared_ptr<class gametest::BaseGameTestFunction> fn);
+    MCAPI bool
+    registerTestMethod(std::string const& className, std::shared_ptr<class gametest::BaseGameTestFunction> fn);
 
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ParticleType.h"
-#include "mc/events/LevelEvent.h"
+#include "mc/world/actor/ParticleType.h"
+#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
+#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,21 @@ public:
     virtual void onChunkUnloaded(class LevelChunk& lc);
 
     MCAPI BlockActorLevelListener();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+
+    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/DividedPos2d.h"
+#include "mc/world/level/DividedPos2d.h"
 
 class ChunkLocalNoiseCache {
 public:
@@ -39,13 +39,25 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkLocalNoiseCache();
 
-    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
+    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4> worldQuartPos, int cellCountXZ);
 
-    MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const&) const;
+    MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const& quartPos) const;
 
-    MCAPI void setCacheEntry(class DividedPos2d<4> const&, struct ChunkLocalNoiseCache::CacheEntry const&);
+    MCAPI void
+    setCacheEntry(class DividedPos2d<4> const& quartPos, struct ChunkLocalNoiseCache::CacheEntry const& cacheEntry);
 
     MCAPI ~ChunkLocalNoiseCache();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class DividedPos2d<4> worldQuartPos, int cellCountXZ);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

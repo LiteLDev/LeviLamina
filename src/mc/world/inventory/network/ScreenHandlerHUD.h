@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
@@ -20,6 +20,15 @@ public:
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
 
     // NOLINTEND
 };

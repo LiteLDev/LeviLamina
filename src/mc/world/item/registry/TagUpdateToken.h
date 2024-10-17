@@ -16,4 +16,13 @@ public:
     MCAPI ~TagUpdateToken();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::weak_ptr<std::atomic<int>>);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

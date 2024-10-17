@@ -24,4 +24,15 @@ public:
     MCAPI void resolveTransitionStateIndices();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class HashedString const& name,
+        class SemVersion const&   version,
+        std::string const&        sourceFilePathWithExtension
+    );
+
+    // NOLINTEND
 };

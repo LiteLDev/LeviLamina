@@ -28,6 +28,13 @@ public:
         MCAPI ~Impl();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -72,6 +79,17 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _updatePropertyVector(std::vector<std::pair<std::string, std::string>>& propertyVector, std::string const& value);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void load$(std::map<std::string, std::string>& propertyMap);
+
+    MCAPI void load$(class Json::Value const& valueJson);
 
     // NOLINTEND
 };

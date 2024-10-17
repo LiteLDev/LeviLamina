@@ -26,20 +26,20 @@ public:
     MCAPI static void clearMarkers(class Level& level);
 
     MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(
-        class gametest::GameTestRegistry& registry,
-        std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const&,
-        int
+        class gametest::GameTestRegistry&                                         registry,
+        std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const& testFunctions,
+        int                                                                       maxTestsPerBatch
     );
 
     MCAPI static void
-    runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker&);
+    runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
 
     MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(
-        class Dimension&                  dimension,
-        class gametest::GameTestRegistry& registry,
-        std::unique_ptr<class gametest::IGameTestHelperProvider>,
-        class gametest::GameTestTicker&,
-        struct gametest::TestParameters&& params
+        class Dimension&                                         dimension,
+        class gametest::GameTestRegistry&                        registry,
+        std::unique_ptr<class gametest::IGameTestHelperProvider> helperProvider,
+        class gametest::GameTestTicker&                          testTicker,
+        struct gametest::TestParameters&&                        params
     );
 
     // NOLINTEND
@@ -47,7 +47,7 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static std::vector<std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>>
-    _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>& batch, int);
+    _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>& batch, int maxTestsPerBatch);
 
     // NOLINTEND
 };

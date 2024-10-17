@@ -20,9 +20,16 @@ public:
     // vIndex: 0
     virtual ~OnPlayerDestroyedTrigger() = default;
 
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerDestroyEventComponent*>);
+    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerDestroyEventComponent*> comp);
 
-    MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const&) const;
+    MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,6 +40,13 @@ public:
         MCAPI ~ValidatorRegistryValidators();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -71,6 +78,13 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI static class Bedrock::NonOwnerPointer<class ValidatorRegistry> _get();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

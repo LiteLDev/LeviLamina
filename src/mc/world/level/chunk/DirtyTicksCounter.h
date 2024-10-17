@@ -24,4 +24,11 @@ public:
     MCAPI static struct DirtyTicksCounter max();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

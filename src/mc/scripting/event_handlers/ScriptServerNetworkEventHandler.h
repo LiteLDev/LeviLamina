@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/common/wrapper/GameplayHandlerResult.h"
-#include "mc/events/MutableServerNetworkGameplayEvent.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/world/events/MutableServerNetworkGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +27,7 @@ public:
     virtual ~ScriptServerNetworkEventHandler() = default;
 
     // vIndex: 1
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ChatEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ChatEvent& chatEvent);
 
     // vIndex: 2
     virtual struct GameplayHandlerResult<::CoordinatorResult>
@@ -37,9 +37,24 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _handleChat(struct ChatEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
-        const;
+    MCAPI bool _handleChat(
+        struct ChatEvent&                         chatEvent,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
+            scriptLevelEventsHandle
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct ChatEvent& chatEvent);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableServerNetworkGameplayEvent<::CoordinatorResult>& event);
 
     // NOLINTEND
 };

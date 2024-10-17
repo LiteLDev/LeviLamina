@@ -17,7 +17,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerDieEventHook,
     HookPriority::Normal,
     Player,
-    "?die@Player@@UEAAXAEBVActorDamageSource@@@Z",
+    &Player::die$,
     void,
     ActorDamageSource const& source
 ) {

@@ -29,4 +29,15 @@ public:
     MCAPI void _initializePieceSet(class Random& random);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Dimension& dimension, class Random& random, int chunkX, int chunkZ);
+
+    MCAPI bool isValid$() const;
+
+    // NOLINTEND
 };

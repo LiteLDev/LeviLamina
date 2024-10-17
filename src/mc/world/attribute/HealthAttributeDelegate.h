@@ -32,4 +32,21 @@ public:
     MCAPI HealthAttributeDelegate(class AttributeInstance const& attribute, class Mob* mob);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class AttributeInstance const& attribute, class Mob* mob);
+
+    MCAPI float change$(float oldValue, float newValue, class AttributeBuff const& buff);
+
+    MCAPI float getBuffValueWithModifiers$(class AttributeBuff const& buff) const;
+
+    MCAPI void tick$();
+
+    MCAPI bool willChange$(float oldValue, float newValue, class AttributeBuff const& buff);
+
+    // NOLINTEND
 };

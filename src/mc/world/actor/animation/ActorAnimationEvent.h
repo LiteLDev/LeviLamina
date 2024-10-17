@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CurrentCmdVersion.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 class ActorAnimationEvent {
 public:
@@ -27,6 +27,18 @@ public:
     MCAPI void fire(class RenderParams& renderParams, class Actor* actor) const;
 
     MCAPI ~ActorAnimationEvent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ActorAnimationEvent&&);
+
+    MCAPI void*
+    ctor$(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

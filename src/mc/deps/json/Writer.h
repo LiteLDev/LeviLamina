@@ -17,7 +17,16 @@ public:
     virtual ~Writer();
 
     // vIndex: 1
-    virtual std::string write(class Json::Value const&) = 0;
+    virtual std::string write(class Json::Value const& root) = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

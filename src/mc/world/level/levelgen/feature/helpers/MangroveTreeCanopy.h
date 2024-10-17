@@ -30,6 +30,13 @@ public:
         MCAPI ~WeightedBlockReference();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -43,11 +50,34 @@ public:
     virtual ~MangroveTreeCanopy() = default;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    placeCanopy(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams& renderParams, struct TreeHelper::TreeParams const& treeParams, std::vector<class BlockPos> const&)
-        const;
+    virtual std::optional<class BlockPos> placeCanopy(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&,
+        class Random& random,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams,
+        std::vector<class BlockPos> const&   attachmentPositions
+    ) const;
 
     MCAPI MangroveTreeCanopy();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI std::optional<class BlockPos> placeCanopy$(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&,
+        class Random& random,
+        class RenderParams&,
+        struct TreeHelper::TreeParams const& treeParams,
+        std::vector<class BlockPos> const&   attachmentPositions
+    ) const;
 
     // NOLINTEND
 };

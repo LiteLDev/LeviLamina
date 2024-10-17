@@ -4,7 +4,7 @@
 #include "mc/world/scores/Objective.h"
 
 // auto generated inclusion list
-#include "mc/enums/ObjectiveSortOrder.h"
+#include "mc/world/scores/ObjectiveSortOrder.h"
 
 class DisplayObjective {
 public:
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     MCAPI DisplayObjective(class Objective const& obj, ::ObjectiveSortOrder order);
 
-    MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const&) const;
+    MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const& scoreboardId) const;
 
     MCAPI class Objective const& getObjective() const;
 
@@ -32,6 +32,13 @@ public:
     MCAPI static class DisplayObjective deserialize(class CompoundTag const& dataTag, class Scoreboard const& owner);
 
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const& toSave);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Objective const& obj, ::ObjectiveSortOrder order);
 
     // NOLINTEND
 };

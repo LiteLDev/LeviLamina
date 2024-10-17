@@ -11,7 +11,7 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/data/CancellableCallback.h"
 
-#include "mc/common/wrapper/optional_ref.h"
+#include "mc/deps/core/utility/optional_ref.h"
 
 namespace ll::coro {
 class Executor {

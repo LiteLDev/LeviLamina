@@ -27,6 +27,13 @@ public:
         MCAPI ~Definition();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -69,6 +76,21 @@ public:
     MCAPI bool _testValuesWithOperator(float a, float b) const;
 
     MCAPI bool _testValuesWithOperator(int a, int b) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI class Json::Value _serializeDomain$() const;
+
+    MCAPI void finalizeParsedValue$(class IWorldRegistriesProvider& registries);
+
+    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
     // NOLINTEND
 };

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
-#include "mc/resources/PackType.h"
 
 class InPackagePackSource : public ::PackSource {
 public:
@@ -39,6 +39,28 @@ public:
     );
 
     MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const& packs, ::PackType packType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::shared_ptr<class IInPackagePacks> const& packs, ::PackType packType);
+
+    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+
+    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+
+    MCAPI ::PackOrigin getPackOrigin$() const;
+
+    MCAPI ::PackType getPackType$() const;
+
+    MCAPI class PackSourceReport load$(
+        class IPackManifestFactory&                                         manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
 
     // NOLINTEND
 };

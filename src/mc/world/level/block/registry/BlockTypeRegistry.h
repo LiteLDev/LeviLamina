@@ -5,8 +5,8 @@
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/SharedPtr.h"
-#include "mc/common/wrapper/WeakPtr.h"
+#include "mc/common/SharedPtr.h"
+#include "mc/common/WeakPtr.h"
 
 class BlockTypeRegistry {
 public:
@@ -39,6 +39,13 @@ public:
         MCAPI ~BlockComplexAliasBlockState();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class BlockComplexAliasContent {
@@ -53,6 +60,13 @@ public:
         MCAPI class Block const* operator()(int data) const;
 
         MCAPI ~BlockComplexAliasContent();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -77,12 +91,23 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI LookupByNameImplReturnType(class Block const* block, bool);
+        MCAPI LookupByNameImplReturnType(class Block const* block, bool resolveBlockLegacy);
 
         MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
 
         MCAPI
         LookupByNameImplReturnType(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class Block const* block, bool resolveBlockLegacy);
+
+        MCAPI void* ctor$(class WeakPtr<class BlockLegacy const> blockLegacy, class Block const* block);
+
+        MCAPI void* ctor$(class WeakPtr<class BlockLegacy const> blockLegacy, int data, bool resolveBlock);
 
         // NOLINTEND
     };
@@ -101,20 +126,20 @@ public:
 
     MCAPI static void finalizeBlockComponentStorage();
 
-    MCAPI static void finalizeBlockCustomComponentEvents(class ServerScriptManager const&);
+    MCAPI static void finalizeBlockCustomComponentEvents(class ServerScriptManager const& scriptManager);
 
     MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)> callback);
 
     MCAPI static class HashedString const& getBlockNameFromNameHash(uint64 hash);
 
     MCAPI static std::vector<std::reference_wrapper<class HashedString const>> const&
-    getComplexAliasPostSplitBlockNames(class HashedString const&);
+    getComplexAliasPostSplitBlockNames(class HashedString const& oldName);
 
     MCAPI static class Block const& getDefaultBlockState(class HashedString const& name, bool logNotFound = false);
 
     MCAPI static struct BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
 
-    MCAPI static void initHardCodedBlockComponents(class Experiments const&);
+    MCAPI static void initHardCodedBlockComponents(class Experiments const& experiments);
 
     MCAPI static void initRWLock();
 
@@ -135,8 +160,12 @@ public:
 
     MCAPI static void registerAlias(class HashedString const& alias, class HashedString const& name);
 
-    MCAPI static void
-    registerComplexAlias(class HashedString const& alias, std::function<class Block const*(int)> callback, std::vector<std::reference_wrapper<class HashedString const>> const&, class BaseGameVersion const&);
+    MCAPI static void registerComplexAlias(
+        class HashedString const&                                            alias,
+        std::function<class Block const*(int)>                               callback,
+        std::vector<std::reference_wrapper<class HashedString const>> const& postSplitBlockNames,
+        class BaseGameVersion const&                                         minRequiredVersion
+    );
 
     MCAPI static void setupDirectAccessBlocks();
 
@@ -161,27 +190,28 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<class HashedString, class HashedString> mBlockAliasLookupMap;
+    MCAPI static std::unordered_map<class HashedString, class HashedString>& mBlockAliasLookupMap();
 
-    MCAPI static entt::dense_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>
-        mBlockComplexAliasLookupMap;
+    MCAPI static entt::dense_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>&
+    mBlockComplexAliasLookupMap();
 
-    MCAPI static std::vector<std::vector<std::reference_wrapper<class HashedString const>>>
-        mBlockComplexAliasPostSplitBlockNamesList;
+    MCAPI static std::vector<std::vector<std::reference_wrapper<class HashedString const>>>&
+    mBlockComplexAliasPostSplitBlockNamesList();
 
-    MCAPI static entt::dense_map<uint64, uint64> mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    MCAPI static entt::dense_map<uint64, uint64>& mBlockComplexAliasPostSplitBlockNamesLookupMap();
 
-    MCAPI static std::map<class HashedString, class SharedPtr<class BlockLegacy>> mBlockLookupMap;
+    MCAPI static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& mBlockLookupMap();
 
-    MCAPI static entt::dense_map<uint64, class HashedString> mBlockNameHashToStringMap;
+    MCAPI static entt::dense_map<uint64, class HashedString>& mBlockNameHashToStringMap();
 
-    MCAPI static std::unique_ptr<struct BlockTypeRegistry::DirectAccessBlocks> mDirectAccessBlocks;
+    MCAPI static std::unique_ptr<struct BlockTypeRegistry::DirectAccessBlocks>& mDirectAccessBlocks();
 
-    MCAPI static std::set<std::string> mKnownNamespaces;
+    MCAPI static std::set<std::string>& mKnownNamespaces();
 
-    MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
+    MCAPI static std::shared_ptr<class BlockTypeRegistryRWLock>& mRWLock();
 
     // NOLINTEND
 };

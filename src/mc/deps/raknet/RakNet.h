@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"
 #include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/deps/raknet/PacketReliability.h"
 #include "mc/deps/raknet/RNS2BindResult.h"
 #include "mc/deps/raknet/RNS2Type.h"
 #include "mc/deps/raknet/RakPeer.h"
@@ -13,8 +15,6 @@
 #include "mc/deps/raknet/StartupResult.h"
 #include "mc/deps/raknet/data_structures/LinkedList.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/resources/PacketPriority.h"
-#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -80,10 +80,6 @@ MCAPI bool ProcessOfflineNetworkPacket(
 
 MCAPI int SplitPacketChannelComp(ushort const& key, struct RakNet::SplitPacketChannel* const& data);
 
-MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
-
-MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
-
 MCAPI uint UpdateNetworkLoop(void* arguments);
 
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
@@ -105,6 +101,13 @@ MCAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 MCAPI void* _RakRealloc(void* p, uint64 size);
 
 MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI struct RakNet::RakNetGUID const& UNASSIGNED_RAKNET_GUID();
+
+MCAPI struct RakNet::SystemAddress const& UNASSIGNED_SYSTEM_ADDRESS();
 // NOLINTEND
 
 }; // namespace RakNet

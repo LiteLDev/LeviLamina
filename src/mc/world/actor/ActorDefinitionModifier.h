@@ -18,4 +18,13 @@ public:
     MCAPI ~ActorDefinitionModifier();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorDefinitionModifier const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

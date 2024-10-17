@@ -27,4 +27,15 @@ public:
     MCAPI bool updateAverageGroundHeight(class BlockSource& region, class BoundingBox const& chunkBB, int offset);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(int west, int floor, int north, int width, int height, int depth);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

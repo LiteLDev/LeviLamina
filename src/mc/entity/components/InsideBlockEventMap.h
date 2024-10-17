@@ -36,13 +36,31 @@ public:
 
     MCAPI class InsideBlockEventMap& operator=(class InsideBlockEventMap const&);
 
-    MCAPI void setCurrentlyInside(bool);
+    MCAPI void setCurrentlyInside(bool isInside);
 
     MCAPI void setWasInside(bool wasInside);
 
     MCAPI bool wasActorInsideLastTick() const;
 
     MCAPI ~InsideBlockEventMap();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class Block const&                  block,
+        bool                                watchEnter,
+        bool                                watchExit,
+        bool                                ignoreStates,
+        class ActorDefinitionTrigger const& enteredEvent,
+        class ActorDefinitionTrigger const& exitedEvent
+    );
+
+    MCAPI void* ctor$(class InsideBlockEventMap const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

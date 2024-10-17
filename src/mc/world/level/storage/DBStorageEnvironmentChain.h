@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -58,6 +58,19 @@ public:
         std::shared_ptr<class Core::FileStorageArea> storageAreaForLevel,
         class Core::Path const&                      dbPath
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        struct DBStorageConfig const&                 config,
+        class Core::Path const&                       dbPath,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

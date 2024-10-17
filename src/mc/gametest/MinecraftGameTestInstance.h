@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/gametest/framework/BaseGameTestInstance.h"
-#include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -58,6 +58,37 @@ public:
 
     // vIndex: 14
     virtual class BlockSource& getBlockSource() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI int _getLevelTick$() const;
+
+    MCAPI bool _isTestReady$();
+
+    MCAPI void clearStructure$();
+
+    MCAPI class BlockSource& getBlockSource$() const;
+
+    MCAPI std::optional<class Vec3> getStructureBlockPivot$() const;
+
+    MCAPI std::optional<class Vec3> getStructureBlockPosPivot$() const;
+
+    MCAPI class BoundingBox getStructureBoundingBox$() const;
+
+    MCAPI std::optional<class AABB> getStructureBounds$() const;
+
+    MCAPI DimensionType getStructureDimension$() const;
+
+    MCAPI bool hasStructureBlock$() const;
+
+    MCAPI void initialize$();
+
+    MCAPI void spawnStructure$();
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,6 +25,15 @@ public:
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const;
 
     MCVAPI bool requireEncryptedReads() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+
+    MCAPI bool requireEncryptedReads$() const;
 
     // NOLINTEND
 };

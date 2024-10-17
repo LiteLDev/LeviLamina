@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/enums/AttributeBuffType.h"
+#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/attribute/AttributeBuffType.h"
 
 class AttributeBuff {
 public:
@@ -56,6 +56,21 @@ public:
     MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
     MCAPI AttributeBuff(float amount, int operand, class ActorDamageSource const& source, ::AttributeBuffType type);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(float amount, int operand, ::AttributeBuffType type);
+
+    MCAPI void* ctor$(float amount, int operand, class ActorDamageSource const& source, ::AttributeBuffType type);
+
+    MCAPI void dtor$();
+
+    MCAPI void setDurationAmplifier$(std::shared_ptr<class Amplifier> amplifier);
 
     // NOLINTEND
 };

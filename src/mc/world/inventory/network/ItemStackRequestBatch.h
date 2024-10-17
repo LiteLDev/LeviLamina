@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class ItemStackRequestBatch {
 public:
@@ -24,6 +24,13 @@ public:
 
     MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>>
     read(class ReadOnlyBinaryStream& stream);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

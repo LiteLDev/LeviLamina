@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/world/actor/ActorDamageCause.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/entity/utilities/ActorDamageCause.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/world/actor/ActorDamageCause.h"
 
 class HurtArmorPacket : public ::Packet {
 public:
@@ -39,6 +39,27 @@ public:
     MCAPI HurtArmorPacket();
 
     MCAPI HurtArmorPacket(::ActorDamageCause cause, int dmg, std::bitset<4> armorSlots);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ActorDamageCause cause, int dmg, std::bitset<4> armorSlots);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -29,6 +29,13 @@ public:
         MCAPI ~VolumeDescription();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -42,13 +49,22 @@ public:
 
     MCAPI ~VolumeDefinition();
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static class SemVersion const& getMaxSupportedVersion();
 
     MCAPI static class SemVersion const& getMinSupportedVersion();
 
-    MCAPI static std::string const NAME;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& NAME();
 
     // NOLINTEND
 };

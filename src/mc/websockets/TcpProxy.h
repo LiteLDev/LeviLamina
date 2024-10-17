@@ -21,7 +21,7 @@ public:
     virtual ~TcpProxy();
 
     // vIndex: 1
-    virtual bool start(ushort port, ushort, ushort) = 0;
+    virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) = 0;
 
     // vIndex: 2
     virtual struct RakNet::SystemAddress connect(std::string const& host, ushort port) = 0;
@@ -49,6 +49,15 @@ public:
 
     // vIndex: 10
     virtual struct RakNet::SystemAddress nextLostConnection() = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

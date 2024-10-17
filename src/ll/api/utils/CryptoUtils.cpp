@@ -1,5 +1,5 @@
 #include "ll/api/utils/CryptoUtils.h"
-#include "mc/deps/crypto/hash/Hash.h"
+#include "mc/deps/crypto/Hash.h"
 
 
 namespace ll::inline utils::crypto_utils {

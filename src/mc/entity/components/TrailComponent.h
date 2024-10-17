@@ -15,4 +15,11 @@ public:
     MCAPI void initFromDefinition(class Actor& actor);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

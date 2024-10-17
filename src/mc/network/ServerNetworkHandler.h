@@ -4,16 +4,16 @@
 #include "mc/server/ServerPlayer.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtr.h"
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/ParticleType.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
-#include "mc/events/ServerTextEvent.h"
-#include "mc/services/ServiceReference.h"
-#include "mc/world/actor/player/PlayerPermissionLevel.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/ServiceReference.h"
+#include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/server/ServerTextEvent.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/actor/ParticleType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -75,7 +75,7 @@ public:
 
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
 
-    MCVAPI void completeHandshake(class NetworkIdentifier const&);
+    MCVAPI void completeHandshake(class NetworkIdentifier const& source);
 
     MCVAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
 
@@ -190,7 +190,7 @@ public:
     MCVAPI void
     handle(class NetworkIdentifier const& source, class PositionTrackingDBClientRequestPacket const& packet);
 
-    MCVAPI void handle(class NetworkIdentifier const&, class PlayerToggleCrafterSlotRequestPacket const&);
+    MCVAPI void handle(class NetworkIdentifier const& source, class PlayerToggleCrafterSlotRequestPacket const& packet);
 
     MCVAPI void handle(class NetworkIdentifier const& source, class SetPlayerGameTypePacket const& packet);
 
@@ -212,7 +212,7 @@ public:
 
     MCVAPI void handle(class NetworkIdentifier const& source, class NetworkStackLatencyPacket const& packet);
 
-    MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class InventoryTransactionPacket>);
+    MCVAPI void handle(class NetworkIdentifier const& source, std::shared_ptr<class InventoryTransactionPacket> packet);
 
     MCVAPI void handle(class NetworkIdentifier const& source, class SubClientLoginPacket const& packet);
 
@@ -228,10 +228,15 @@ public:
 
     MCVAPI void handle(class NetworkIdentifier const& source, class SetDefaultGameTypePacket const& packet);
 
-    MCVAPI void onConnect(class NetworkIdentifier const&);
+    MCVAPI void onConnect(class NetworkIdentifier const& id);
 
-    MCVAPI void
-    onDisconnect(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool, std::string const&);
+    MCVAPI void onDisconnect(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 message,
+        bool                               skipMessage,
+        std::string const&                 telemetryOverride
+    );
 
     MCVAPI void onInvalidPlayerJoinedLobby(class mce::UUID const& uuid, std::string const& xuid);
 
@@ -255,10 +260,34 @@ public:
 
     MCVAPI ~ServerNetworkHandler();
 
-    MCAPI
-    ServerNetworkHandler(class GameCallbacks&, class Bedrock::NonOwnerPointer<class ILevel> const&, class ServerNetworkSystem&, class PrivateKeyManager&, class ServerLocator&, class PacketSender&, class AllowList&, class PermissionsFile*, class mce::UUID const&, int, std::vector<std::string> const&, std::string, int, class MinecraftCommands&, class IMinecraftApp&, std::unordered_map<struct PackIdVersion, std::string> const&, class Scheduler&, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>, class optional_ref<class MinecraftGameTest>, class ServiceReference<class AppConfigs>, class ServiceReference<class Social::MultiplayerServiceManager>, struct NetworkPermissions const&, struct ServerNetworkHandler::HandlerToggles const&);
+    MCAPI ServerNetworkHandler(
+        class GameCallbacks&                                            gameCallbacks,
+        class Bedrock::NonOwnerPointer<class ILevel> const&             level,
+        class ServerNetworkSystem&                                      network,
+        class PrivateKeyManager&                                        serverKeys,
+        class ServerLocator&                                            serverLocator,
+        class PacketSender&                                             packetSender,
+        class AllowList&                                                allowList,
+        class PermissionsFile*                                          permissionsFile,
+        class mce::UUID const&                                          hostPlayerId,
+        int                                                             maxChunkRadius,
+        std::vector<std::string> const&                                 extraTrustedKeys,
+        std::string                                                     serverType,
+        int                                                             maxNumPlayers,
+        class MinecraftCommands&                                        commandHandler,
+        class IMinecraftApp&                                            app,
+        std::unordered_map<struct PackIdVersion, std::string> const&    packIdToContentKey,
+        class Scheduler&                                                scheduler,
+        class Bedrock::NonOwnerPointer<class TextFilteringProcessor>    textFilteringProcessor,
+        class optional_ref<class MinecraftGameTest>                     gameTest,
+        class ServiceReference<class AppConfigs>                        appConfigs,
+        class ServiceReference<class Social::MultiplayerServiceManager> multiplayerServiceManager,
+        struct NetworkPermissions const&                                networkPermissions,
+        struct ServerNetworkHandler::HandlerToggles const&              handlerToggles
+    );
 
-    MCAPI void SetServerIdentifiers(std::string const&, std::string const&, std::string const&);
+    MCAPI void
+    SetServerIdentifiers(std::string const& serverId, std::string const& worldId, std::string const& scenarioId);
 
     MCAPI void activateAllowList();
 
@@ -275,17 +304,17 @@ public:
 
     MCAPI void disconnectClient(
         class NetworkIdentifier const&     id,
-        ::Connection::DisconnectFailReason subId,
+        ::Connection::DisconnectFailReason discoReason,
         std::string const&                 message,
         bool                               skipMessage
     );
 
     MCAPI void disconnectClient(
-        class NetworkIdentifier const&,
-        ::SubClientId,
-        ::Connection::DisconnectFailReason,
-        std::string const&,
-        bool
+        class NetworkIdentifier const&     id,
+        ::SubClientId                      subId,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 message,
+        bool                               skipMessage
     );
 
     MCAPI void engineCancelResponseHelper(
@@ -316,8 +345,8 @@ public:
     MCAPI void onStartShutdown();
 
     MCAPI void persistPlayerPermissionsToDisk(
-        class UserEntityIdentifierComponent const&,
-        ::PlayerPermissionLevel playerPermission
+        class UserEntityIdentifierComponent const& userIdentifier,
+        ::PlayerPermissionLevel                    playerPermission
     );
 
     MCAPI void removeFromDenyList(class mce::UUID const& uuid, std::string const& xuid);
@@ -346,9 +375,9 @@ public:
         class NetworkIdentifier const&     source,
         class ServerPlayer const*          player,
         class SubChunkRequestPacket const& packet,
-        class SubChunkPacket&,
-        uint,
-        bool
+        class SubChunkPacket&              responsePacket,
+        uint                               requestCount,
+        bool                               clientCacheEnabled
     );
 
     MCAPI class ServerPlayer& _createNewPlayer(
@@ -357,9 +386,9 @@ public:
         ::SubClientId                           subid
     );
 
-    MCAPI void _displayGameMessage(class Player const& sender, struct ChatEvent&);
+    MCAPI void _displayGameMessage(class Player const& sender, struct ChatEvent& chatEvent);
 
-    MCAPI std::string _extractFirstConnectionData(class NetworkIdentifier const&);
+    MCAPI std::string _extractFirstConnectionData(class NetworkIdentifier const& source);
 
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID excludePlayer) const;
 
@@ -373,11 +402,14 @@ public:
         class CommandBlockUpdatePacket const& packet
     );
 
-    MCAPI void _handleSetDefaultGameType(class ServerPlayer const&, class SetDefaultGameTypePacket const&) const;
+    MCAPI void _handleSetDefaultGameType(
+        class ServerPlayer const&             playerSettingGameType,
+        class SetDefaultGameTypePacket const& packet
+    ) const;
 
     MCAPI void _handleSetDifficulty(class ServerPlayer const& player, class SetDifficultyPacket const& packet) const;
 
-    MCAPI bool _isServerTextEnabled(::ServerTextEvent const&) const;
+    MCAPI bool _isServerTextEnabled(::ServerTextEvent const& textEvent) const;
 
     MCAPI bool _isValidThirdPartyName(class Certificate const& certificate, std::string const& thirdPartyName) const;
 
@@ -398,12 +430,242 @@ public:
     MCAPI void _sendLevelData(class ServerPlayer& newPlayer, class NetworkIdentifier const& source);
 
     MCAPI bool _updatePermissions(
-        class ServerPlayer const&,
+        class ServerPlayer const&             requester,
         class RequestPermissionsPacket const& packet,
         class Abilities&                      abilities,
         class PermissionsHandler&             permissions,
         class Player*                         player
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockThreadingEnableQueueForMainThread();
+
+    MCAPI static void** vftableForLevelListener();
+
+    MCAPI static void** vftableForNetEventCallback();
+
+    MCAPI static void** vftableForSocialMultiplayerServiceObserver();
+
+    MCAPI static void** vftableForSocialXboxLiveUserObserver();
+
+    MCAPI void* ctor$(
+        class GameCallbacks&                                            gameCallbacks,
+        class Bedrock::NonOwnerPointer<class ILevel> const&             level,
+        class ServerNetworkSystem&                                      network,
+        class PrivateKeyManager&                                        serverKeys,
+        class ServerLocator&                                            serverLocator,
+        class PacketSender&                                             packetSender,
+        class AllowList&                                                allowList,
+        class PermissionsFile*                                          permissionsFile,
+        class mce::UUID const&                                          hostPlayerId,
+        int                                                             maxChunkRadius,
+        std::vector<std::string> const&                                 extraTrustedKeys,
+        std::string                                                     serverType,
+        int                                                             maxNumPlayers,
+        class MinecraftCommands&                                        commandHandler,
+        class IMinecraftApp&                                            app,
+        std::unordered_map<struct PackIdVersion, std::string> const&    packIdToContentKey,
+        class Scheduler&                                                scheduler,
+        class Bedrock::NonOwnerPointer<class TextFilteringProcessor>    textFilteringProcessor,
+        class optional_ref<class MinecraftGameTest>                     gameTest,
+        class ServiceReference<class AppConfigs>                        appConfigs,
+        class ServiceReference<class Social::MultiplayerServiceManager> multiplayerServiceManager,
+        struct NetworkPermissions const&                                networkPermissions,
+        struct ServerNetworkHandler::HandlerToggles const&              handlerToggles
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class ServerPlayer* _getServerPlayer$(class NetworkIdentifier const& source, ::SubClientId subId);
+
+    MCAPI bool allowIncomingPacketId$(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
+
+    MCAPI void completeHandshake$(class NetworkIdentifier const& source);
+
+    MCAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback$();
+
+    MCAPI void handle$(class NetworkIdentifier const&, class ChangeMobPropertyPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PhotoTransferPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class CreatePhotoPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class EditorNetworkPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PurchaseReceiptPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class CompletedUsingItemPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ItemStackRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerActionPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class GameTestRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SetPlayerInventoryOptionsPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MovePlayerPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerSkinPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class CodeBuilderSourcePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class NpcRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LabTablePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ClientCacheStatusPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class BossEventPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ResourcePackChunkRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class BookEditPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MultiplayerSettingsPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MapCreateLockedCopyPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class BlockPickRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class UpdatePlayerGameTypePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LevelSoundEventPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LevelSoundEventPacketV2 const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class RequestAbilityPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerHotbarPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ActorEventPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class DisconnectPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ModalFormResponsePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PassengerJumpPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class EmotePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SubChunkRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ClientCacheBlobStatusPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MobEquipmentPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class CommandRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class InteractPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SetDifficultyPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MapInfoRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class EmoteListPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SetLocalPlayerAsInitializedPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SimpleEventPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, std::shared_ptr<class BlockActorDataPacket> packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ScriptMessagePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class RequestPermissionsPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class RequestChunkRadiusPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ContainerClosePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class TextPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class RespawnPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class AnvilDamagePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerAuthInputPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SpawnExperienceOrbPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SettingsCommandPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class RequestNetworkSettingsPacket const& packet);
+
+    MCAPI void
+    handle$(class NetworkIdentifier const& source, class PositionTrackingDBClientRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerToggleCrafterSlotRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SetPlayerGameTypePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class MoveActorAbsolutePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class DebugInfoPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LevelSoundEventPacketV1 const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class StructureBlockUpdatePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ActorPickRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LoginPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class PlayerInputPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class StructureTemplateDataRequestPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class NetworkStackLatencyPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, std::shared_ptr<class InventoryTransactionPacket> packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SubClientLoginPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class AnimatePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class CommandBlockUpdatePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ClientToServerHandshakePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ShowCreditsPacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class LecternUpdatePacket const& packet);
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class SetDefaultGameTypePacket const& packet);
+
+    MCAPI void onConnect$(class NetworkIdentifier const& id);
+
+    MCAPI void onDisconnect$(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 message,
+        bool                               skipMessage,
+        std::string const&                 telemetryOverride
+    );
+
+    MCAPI void onInvalidPlayerJoinedLobby$(class mce::UUID const& uuid, std::string const& xuid);
+
+    MCAPI void onPlayerReady$(class Player& player);
+
+    MCAPI void onTick$();
+
+    MCAPI void onTransferRequest$(class NetworkIdentifier const& id, std::string const& serverAddress, int serverPort);
+
+    MCAPI void onWebsocketRequest$(
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
+    );
+
+    MCAPI void onXboxUserBlocked$(std::string const& xuid);
+
+    MCAPI void onXboxUserUnblocked$(std::string const& xuid);
+
+    MCAPI void sendServerLegacyParticle$(::ParticleType name, class Vec3 const& pos, class Vec3 const&, int data);
 
     // NOLINTEND
 };

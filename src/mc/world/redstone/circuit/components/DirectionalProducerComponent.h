@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/ProducerComponent.h"
 
 class DirectionalProducerComponent : public ::ProducerComponent {
@@ -23,7 +23,19 @@ public:
 
     MCAPI DirectionalProducerComponent();
 
-    MCAPI void setAllowedConnections(std::bitset<6>);
+    MCAPI void setAllowedConnections(std::bitset<6> allowedConnections);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     // NOLINTEND
 };

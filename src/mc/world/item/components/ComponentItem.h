@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/pubsub/Connector.h"
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,13 +33,18 @@ public:
     virtual ~ComponentItem();
 
     // vIndex: 1
-    virtual bool initServer(class Json::Value const&, class SemVersion const&, bool, class Experiments const&);
+    virtual bool initServer(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
 
     // vIndex: 2
     virtual void tearDown();
 
     // vIndex: 3
-    virtual class ComponentItem& setDescriptionId(std::string const&);
+    virtual class ComponentItem& setDescriptionId(std::string const& descriptionId);
 
     // vIndex: 4
     virtual std::string const& getDescriptionId() const;
@@ -93,7 +98,7 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const& tag);
 
     // vIndex: 28
-    virtual std::vector<std::string> validateFromNetwork(class CompoundTag const&);
+    virtual std::vector<std::string> validateFromNetwork(class CompoundTag const& tag);
 
     // vIndex: 29
     virtual ::BlockShape getBlockShape() const;
@@ -171,8 +176,12 @@ public:
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
     // vIndex: 73
-    virtual class Actor*
-    createProjectileActor(class BlockSource&, class ItemStack const&, class Vec3 const&, class Vec3 const&) const;
+    virtual class Actor* createProjectileActor(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
 
     // vIndex: 74
     virtual bool
@@ -200,13 +209,13 @@ public:
         const;
 
     // vIndex: 82
-    virtual std::string buildDescriptionName(class ItemStackBase const&) const;
+    virtual std::string buildDescriptionName(class ItemStackBase const& stack) const;
 
     // vIndex: 83
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 84
-    virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
+    virtual std::string buildEffectDescriptionName(class ItemStackBase const& stack) const;
 
     // vIndex: 87
     virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
@@ -224,16 +233,22 @@ public:
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
 
     // vIndex: 102
-    virtual void initClient(class Json::Value const&, class SemVersion const&, bool, class Experiments const&);
+    virtual void initClient(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
 
     // vIndex: 103
     virtual class Item& setIconInfo(std::string const& name, int frame);
 
     // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool inInventoryPane) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     // vIndex: 105
-    virtual std::string getInteractText(class Player const&) const;
+    virtual std::string getInteractText(class Player const& player) const;
 
     // vIndex: 106
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -273,9 +288,9 @@ public:
     // vIndex: 121
     virtual bool shouldUseJsonForRenderMatrix() const;
 
-    MCAPI ComponentItem(std::string const&, short, struct cereal::ReflectionCtx const&);
+    MCAPI ComponentItem(std::string const& nameId, short id, struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     MCAPI bool checkComponentDataForContentErrors() const;
 
@@ -284,7 +299,7 @@ public:
 
     MCAPI float getMovementModifier() const;
 
-    MCAPI void init(struct ComponentItemDataAll_Latest&&, class SemVersion const&);
+    MCAPI void init(struct ComponentItemDataAll_Latest&& data, class SemVersion const& engineVersion);
 
     MCAPI class Bedrock::PubSub::Connector<void(int&, class ItemStack&, class Actor&, class Mob&)>&
     onBeforeDurabilityDamage();
@@ -311,20 +326,24 @@ public:
         void(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&)>&
     onUseTimeDepleted();
 
-    MCAPI void setCanDestroyInCreative(bool);
+    MCAPI void setCanDestroyInCreative(bool canDestroyInCreative);
 
-    MCAPI static void initializeJsonUpgrades(struct cereal::ReflectionCtx const&);
+    MCAPI static void initializeJsonUpgrades(struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerItemComponentTypes(struct cereal::ReflectionCtx&);
+    MCAPI static void registerItemComponentTypes(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::pair<bool, class SemVersion>
-    upgradeJson(struct cereal::ReflectionCtx const&, std::string&, class Core::Path const&, std::optional<class SemVersion>);
+    MCAPI static std::pair<bool, class SemVersion> upgradeJson(
+        struct cereal::ReflectionCtx const& ctx,
+        std::string&                        document,
+        class Core::Path const&             resourceName,
+        std::optional<class SemVersion>     minVersion
+    );
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _initializeLoadedComponents(class SemVersion const&);
+    MCAPI void _initializeLoadedComponents(class SemVersion const& engineVersion);
 
     // NOLINTEND
 
@@ -332,23 +351,229 @@ public:
     // NOLINTBEGIN
     MCAPI void _addCerealItemsToMap();
 
-    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag(struct cereal::ReflectionCtx const&) const;
+    MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag(struct cereal::ReflectionCtx const& ctx
+    ) const;
 
-    MCAPI void
-    _loadComponentsFromNetworkTag(std::string const&, class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    MCAPI void _loadComponentsFromNetworkTag(
+        std::string const&                  componentName,
+        class CompoundTag const&            componentTag,
+        struct cereal::ReflectionCtx const& ctx
+    );
 
-    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     MCAPI void _loadItemTagsNetworkTag(class ListTag const& listTag);
 
+    MCAPI bool _validateSchemaAndInitItem(
+        class Json::Value const&            itemData,
+        class SemVersion const&             engineVersion,
+        bool                                isBaseGamePack,
+        bool                                isServer,
+        class Experiments const&            experiments,
+        struct cereal::ReflectionCtx const& ctx
+    );
+
+    MCAPI static void _moveDataToComponentItem(class ComponentItem& item, struct ComponentItemData_Legacy& data);
+
+    MCAPI static class CerealDocumentUpgrader& getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, short id, struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI void dtor$();
+
     MCAPI bool
-    _validateSchemaAndInitItem(class Json::Value const&, class SemVersion const&, bool, bool, class Experiments const&, struct cereal::ReflectionCtx const&);
+    _calculatePlacePos$(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
-    MCAPI static void _moveDataToComponentItem(class ComponentItem&, struct ComponentItemData_Legacy&);
+    MCAPI bool _checkUseOnPermissions$(
+        class Actor&          entity,
+        class ItemStackBase&  item,
+        uchar const&          face,
+        class BlockPos const& pos
+    ) const;
 
-    MCAPI static class CerealDocumentUpgrader& getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx const&);
+    MCAPI bool _shouldAutoCalculatePlacePos$() const;
 
-    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx&);
+    MCAPI class InteractionResult
+    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
+
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+
+    MCAPI std::string buildDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& stack) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$() const;
+
+    MCAPI bool canBeCharged$() const;
+
+    MCAPI bool canBeDepleted$() const;
+
+    MCAPI bool canDestroyInCreative$() const;
+
+    MCAPI bool canDestroySpecial$(class Block const& block) const;
+
+    MCAPI void clearColor$(class ItemStackBase&) const;
+
+    MCAPI class Actor* createProjectileActor$(
+        class BlockSource&     region,
+        class ItemStack const& stack,
+        class Vec3 const&      pos,
+        class Vec3 const&      direction
+    ) const;
+
+    MCAPI bool
+    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+
+    MCAPI void executeEvent$(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
+
+    MCAPI int getAnimationFrameFor$(class Mob*, bool, class ItemStack const*, bool) const;
+
+    MCAPI int getArmorValue$() const;
+
+    MCAPI int getAttackDamage$() const;
+
+    MCAPI std::string getAuxValuesDescription$() const;
+
+    MCAPI ::BlockShape getBlockShape$() const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
+
+    MCAPI class ItemComponent* getComponent$(class HashedString const& id) const;
+
+    MCAPI int getCooldownTime$() const;
+
+    MCAPI class HashedString const& getCooldownType$() const;
+
+    MCAPI int getDamageChance$(int unbreaking) const;
+
+    MCAPI std::string const& getDescriptionId$() const;
+
+    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+
+    MCAPI int getEnchantSlot$() const;
+
+    MCAPI int getEnchantValue$() const;
+
+    MCAPI ::ActorLocation getEquipLocation$() const;
+
+    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+
+    MCAPI class IFoodItemComponent* getFood$() const;
+
+    MCAPI struct ResolvedItemIconInfo
+    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+
+    MCAPI std::string getInteractText$(class Player const& player) const;
+
+    MCAPI int getLevelDataForAuxValue$(int) const;
+
+    MCAPI short getMaxDamage$() const;
+
+    MCAPI uchar getMaxStackSize$(class ItemDescriptor const&) const;
+
+    MCAPI int getVariant$(int, int, bool) const;
+
+    MCAPI bool hasCustomColor$(class ItemStackBase const&) const;
+
+    MCAPI void hitActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI void
+    hitBlock$(class ItemStack& item, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
+        const;
+
+    MCAPI void hurtActor$(class ItemStack& item, class Actor& actor, class Mob& attacker) const;
+
+    MCAPI void initClient$(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
+
+    MCAPI bool initServer$(
+        class Json::Value const& data,
+        class SemVersion const&  engineVersion,
+        bool                     isBaseGamePack,
+        class Experiments const& experiments
+    );
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag);
+
+    MCAPI bool isBlockPlanterItem$() const;
+
+    MCAPI bool isComponentBased$() const;
+
+    MCAPI bool isDamageable$() const;
+
+    MCAPI bool isDestructive$(int) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool isEmissive$(int) const;
+
+    MCAPI bool isFood$() const;
+
+    MCAPI bool isGlint$(class ItemStackBase const& stack) const;
+
+    MCAPI bool isHumanoidArmor$() const;
+
+    MCAPI bool isLiquidClipItem$() const;
+
+    MCAPI bool isMusicDisk$() const;
+
+    MCAPI bool isThrowable$() const;
+
+    MCAPI bool isTrimAllowed$() const;
+
+    MCAPI bool isUseable$() const;
+
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
+
+    MCAPI bool requiresInteract$() const;
+
+    MCAPI void setColor$(class ItemStackBase&, class mce::Color const&) const;
+
+    MCAPI class ComponentItem& setDescriptionId$(std::string const& descriptionId);
+
+    MCAPI class Item& setIconInfo$(std::string const& name, int frame);
+
+    MCAPI class Item& setMaxDamage$(int maxDamage);
+
+    MCAPI bool shouldUseJsonForRenderMatrix$() const;
+
+    MCAPI void tearDown$();
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI bool useVariant$(int, int, bool) const;
+
+    MCAPI std::vector<std::string> validateFromNetwork$(class CompoundTag const& tag);
 
     // NOLINTEND
 };

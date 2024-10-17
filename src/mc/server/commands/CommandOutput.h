@@ -107,4 +107,15 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class CommandOutput const& rhs);
+
+    MCAPI void* ctor$(::CommandOutputType type);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

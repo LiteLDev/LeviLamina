@@ -20,4 +20,11 @@ public:
     MCAPI void setOutput(int successCount, std::string&& messages);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& commandString);
+
+    // NOLINTEND
 };

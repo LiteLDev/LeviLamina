@@ -22,4 +22,11 @@ public:
     MCAPI bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

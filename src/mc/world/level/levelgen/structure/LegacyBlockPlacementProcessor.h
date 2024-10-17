@@ -25,4 +25,13 @@ public:
     MCAPI ~LegacyBlockPlacementProcessor();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class LegacyStructureSettings const& settings);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

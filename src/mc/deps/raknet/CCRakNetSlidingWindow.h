@@ -72,7 +72,7 @@ public:
 
     MCAPI void OnSendBytes(uint64 curTime, uint numBytes);
 
-    MCAPI bool ShouldSendACKs(uint64, uint64);
+    MCAPI bool ShouldSendACKs(uint64 curTime, uint64 estimatedTimeToNextTick);
 
     MCAPI void Update(uint64 curTime, bool hasDataToSendOrResend);
 
@@ -85,6 +85,15 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI bool IsInSlowStart() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

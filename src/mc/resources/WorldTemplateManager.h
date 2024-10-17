@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/interface/IWorldTemplateManager.h"
 
 // auto generated forward declare list
@@ -32,7 +32,7 @@ public:
 
     // vIndex: 2
     virtual class Bedrock::PubSub::Subscription
-        registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)>);
+    registerModifiedCallback(std::function<void(std::pair<std::string, bool> const&)> newCallbackFunction);
 
     // vIndex: 3
     virtual std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates() const;
@@ -59,6 +59,31 @@ public:
     MCAPI void _initializePackSources();
 
     MCAPI void _onDiscoverWorldTemplate(class Pack const& pack);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class PackManifestFactory&                                          packManifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        class PackSourceFactory&                                            packSourceFactory,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
+        bool                                                                initAsync
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI struct WorldTemplateInfo const*
+    findInstalledWorldTemplateByUUID$(std::vector<class mce::UUID> const& packUUIDs) const;
+
+    MCAPI std::vector<std::unique_ptr<struct WorldTemplateInfo>> const& getLocalTemplates$() const;
+
+    MCAPI class Bedrock::PubSub::Subscription
+    registerModifiedCallback$(std::function<void(std::pair<std::string, bool> const&)> newCallbackFunction);
 
     // NOLINTEND
 };

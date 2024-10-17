@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
@@ -29,7 +29,7 @@ public:
     virtual void tick(class BlockSource& region);
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -40,6 +40,23 @@ public:
 
     MCAPI bool
     ring(::Direction::Type direction, class BlockSource& region, class Actor* sourceActor, bool alarmNearbyDwellers);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
 
     // NOLINTEND
 };

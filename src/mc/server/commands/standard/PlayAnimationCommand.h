@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/molang/MolangVersion.h"
-#include "mc/world/level/Command.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/server/commands/Command.h"
 
 class PlayAnimationCommand : public ::Command {
 public:
@@ -25,9 +25,16 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static ::MolangVersion const mStopExpressionVersion;
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+
+    MCAPI static ::MolangVersion const& mStopExpressionVersion();
 
     // NOLINTEND
 };

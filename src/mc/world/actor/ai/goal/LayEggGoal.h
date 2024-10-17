@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/MaterialType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
+#include "mc/world/level/material/MaterialType.h"
 
 class LayEggGoal : public ::BaseMoveToBlockGoal {
 public:
@@ -43,8 +43,21 @@ public:
     // vIndex: 17
     virtual bool findTargetBlock();
 
-    MCAPI
-    LayEggGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius, std::vector<class ItemDescriptor> const& targetBlocks, std::vector<::MaterialType> const&, bool, bool, float, class ItemDescriptor const&, class ActorDefinitionTrigger const& onLay, std::string const&);
+    MCAPI LayEggGoal(
+        class Mob&                               mob,
+        float                                    speedModifier,
+        int                                      searchRange,
+        int                                      searchHeight,
+        float                                    goalRadius,
+        std::vector<class ItemDescriptor> const& targetBlocks,
+        std::vector<::MaterialType> const&       targetMaterialsAboveBlock,
+        bool                                     allowLayingFromBelow,
+        bool                                     useDefaultAnimation,
+        float                                    laySeconds,
+        class ItemDescriptor const&              eggType,
+        class ActorDefinitionTrigger const&      onLay,
+        std::string const&                       layEggSound
+    );
 
     // NOLINTEND
 
@@ -53,6 +66,45 @@ public:
     MCAPI bool _isTargetBlock(class BlockLegacy const& block) const;
 
     MCAPI void _layEgg(class BlockPos const& pos);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        float                                    speedModifier,
+        int                                      searchRange,
+        int                                      searchHeight,
+        float                                    goalRadius,
+        std::vector<class ItemDescriptor> const& targetBlocks,
+        std::vector<::MaterialType> const&       targetMaterialsAboveBlock,
+        bool                                     allowLayingFromBelow,
+        bool                                     useDefaultAnimation,
+        float                                    laySeconds,
+        class ItemDescriptor const&              eggType,
+        class ActorDefinitionTrigger const&      onLay,
+        std::string const&                       layEggSound
+    );
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI bool findTargetBlock$();
+
+    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void start$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

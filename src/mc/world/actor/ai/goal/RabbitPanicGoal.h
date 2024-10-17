@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/PanicGoal.h"
 
 class RabbitPanicGoal : public ::PanicGoal {
@@ -17,6 +17,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~RabbitPanicGoal() = default;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

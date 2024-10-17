@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/AllExperiments.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 class Experiments {
 public:
@@ -39,9 +39,18 @@ public:
 
     MCAPI ~Experiments();
 
-    MCAPI static std::string const& getExperimentTextID(::AllExperiments);
+    MCAPI static std::string const& getExperimentTextID(::AllExperiments experiment);
 
     MCAPI static std::vector<std::string> const& getToggleNames();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

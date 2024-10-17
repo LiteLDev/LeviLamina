@@ -30,28 +30,31 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     // vIndex: 7
     virtual bool
     _canUseOn(class ItemStack const& instance, class Actor& entity, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 8
-    virtual bool
-    _useOn(class ItemStack& instance, class Actor&, class BlockPos const& pos, uchar face, class Vec3 const& clickPos)
-        const;
+    virtual bool _useOn(
+        class ItemStack&      instance,
+        class Actor&          usingActor,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
 
     // vIndex: 9
     virtual void _initializeComponent();
 
-    MCAPI void
-    appendFormattedHovertext(class ItemStackBase const& item, std::string& hovertext, bool advancedToolTops) const;
+    MCAPI void appendFormattedHovertext(class ItemStackBase const& item, std::string& hovertext, bool) const;
 
     MCAPI void clearColor(class ItemStackBase& instance) const;
 
@@ -63,9 +66,39 @@ public:
 
     MCAPI static class HashedString const& getIdentifier();
 
-    MCAPI static class mce::Color DEFAULT_HORSE_LEATHER_COLOR;
+    // NOLINTEND
 
-    MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool
+    _canUseOn$(class ItemStack const& instance, class Actor& entity, class BlockPos const& pos, uchar face) const;
+
+    MCAPI void _initializeComponent$();
+
+    MCAPI bool _useOn$(
+        class ItemStack&      instance,
+        class Actor&          usingActor,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI bool checkComponentDataForContentErrors$() const;
+
+    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+
+    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI void writeSettings$();
+
+    MCAPI static class mce::Color& DEFAULT_HORSE_LEATHER_COLOR();
+
+    MCAPI static class mce::Color& DEFAULT_LEATHER_COLOR();
 
     // NOLINTEND
 };

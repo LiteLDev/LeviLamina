@@ -29,19 +29,19 @@ public:
 
     // vIndex: 2
     virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
-    run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const = 0;
+    run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext& fnContext) const = 0;
 
     MCAPI BaseGameTestFunction(
-        std::string,
-        std::string,
-        std::string structureName,
-        int,
-        int,
-        int,
-        bool rotate,
-        bool required,
-        int,
-        int,
+        std::string              batchName,
+        std::string              testName,
+        std::string              structureName,
+        int                      maxTicks,
+        int                      setupTicks,
+        int                      padding,
+        bool                     rotate,
+        bool                     required,
+        int                      requiredSuccesses,
+        int                      attempts,
         std::vector<std::string> tags
     );
 
@@ -56,6 +56,29 @@ public:
     // protected:
     // NOLINTBEGIN
     MCAPI void _addTag(std::string tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::string              batchName,
+        std::string              testName,
+        std::string              structureName,
+        int                      maxTicks,
+        int                      setupTicks,
+        int                      padding,
+        bool                     rotate,
+        bool                     required,
+        int                      requiredSuccesses,
+        int                      attempts,
+        std::vector<std::string> tags
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

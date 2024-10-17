@@ -19,6 +19,13 @@ public:
     MCAPI LocklessUint32_t();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

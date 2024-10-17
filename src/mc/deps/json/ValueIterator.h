@@ -21,6 +21,17 @@ public:
     MCAPI ~ValueIterator();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Json::ValueIterator const& other);
+
+    MCAPI void* ctor$(class Json::ValueConstIterator const& other);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Json

@@ -18,7 +18,18 @@ public:
     virtual ~InfestedMobEffect() = default;
 
     // vIndex: 5
-    virtual void onActorHurt(class Actor&, int, class ActorDamageSource const&, float) const;
+    virtual void
+    onActorHurt(class Actor& target, int amplifier, class ActorDamageSource const& source, float damage) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void
+    onActorHurt$(class Actor& target, int amplifier, class ActorDamageSource const& source, float damage) const;
 
     // NOLINTEND
 };

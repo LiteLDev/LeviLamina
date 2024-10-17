@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifier.h"
-#include "mc/world/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/entity/components/FlagComponent.h"
 
 class RemovePassengersWithoutSeatSystem {
 public:
@@ -21,8 +21,8 @@ public:
 
     MCAPI static void removePassengersWithoutSeat(
         class StrictEntityContext&,
-        class RideableComponent const&,
-        struct VehicleComponent&,
+        class RideableComponent const&                                           rideableComponent,
+        struct VehicleComponent&                                                 vehicleComponent,
         class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>>& modifier
     );
 

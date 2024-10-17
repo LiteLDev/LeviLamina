@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,13 +29,13 @@ public:
     virtual void initializeComponent(class EntityContext& entity) const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage&) const;
+    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 4
-    virtual void initializeComponentFromCode(class EntityContext&) const;
+    virtual void initializeComponentFromCode(class EntityContext& entity) const;
 
     // vIndex: 5
-    virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+    virtual void initializeComponentFromCode(class BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 6
     virtual void buildSchema(
@@ -49,27 +49,65 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
 
     // vIndex: 10
-    virtual void handleVersionBasedInitialization(class SemVersion const&);
+    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
 
     MCAPI BlockGeometryDescription();
 
-    MCAPI explicit BlockGeometryDescription(class HashedString const&);
+    MCAPI explicit BlockGeometryDescription(class HashedString const& geometryName);
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
-    MCAPI static class HashedString const CROSS_GEO_NAME;
+    // NOLINTEND
 
-    MCAPI static class HashedString const FULL_BLOCK_GEO_NAME;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static std::string const GEO_NAME_CONSTRAINT;
+    MCAPI void* ctor$();
 
-    MCAPI static std::string const NameID;
+    MCAPI void* ctor$(class HashedString const& geometryName);
+
+    MCAPI void dtor$();
+
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI void buildSchema$(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
+                                           componentSchema,
+        class BlockComponentFactory const& factory
+    ) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+
+    MCAPI void initializeComponent$(class EntityContext& entity) const;
+
+    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeComponentFromCode$(class EntityContext& entity) const;
+
+    MCAPI void initializeComponentFromCode$(class BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+
+    MCAPI bool isNetworkComponent$() const;
+
+    MCAPI static class HashedString const& CROSS_GEO_NAME();
+
+    MCAPI static class HashedString const& FULL_BLOCK_GEO_NAME();
+
+    MCAPI static std::string const& GEO_NAME_CONSTRAINT();
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

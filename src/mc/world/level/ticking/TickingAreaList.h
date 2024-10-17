@@ -25,4 +25,19 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool removeDistantEntityAreasAndCheckForRemoved$(
+        std::vector<class Vec3> const&                 playerPositions,
+        std::function<void(class ITickingArea const&)> requeue,
+        class LevelStorage&                            levelStorage
+    );
+
+    // NOLINTEND
 };

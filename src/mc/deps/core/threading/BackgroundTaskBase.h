@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/TaskGroupState.h"
+#include "mc/deps/core/threading/TaskGroupState.h"
 
 class BackgroundTaskBase {
 public:
@@ -26,6 +26,15 @@ public:
         MCAPI explicit CurrentTaskAutoScope(class BackgroundTaskBase* curr);
 
         MCAPI ~CurrentTaskAutoScope();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class BackgroundTaskBase* curr);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -64,7 +73,7 @@ public:
         bool                                       isAsync
     );
 
-    MCAPI bool canBeRunBy(std::thread::id workerId) const;
+    MCAPI bool canBeRunBy(std::thread::id) const;
 
     MCAPI class IBackgroundTaskOwner* getGroup();
 
@@ -88,9 +97,17 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BackgroundTaskBase* gCurrentTask;
+    MCAPI static void** vftable();
+
+    MCAPI void*
+    ctor$(gsl::not_null<class IBackgroundTaskOwner*> group, struct TaskStartInfoBase const& startInfo, bool isAsync);
+
+    MCAPI void dtor$();
+
+    MCAPI static class BackgroundTaskBase*& gCurrentTask();
 
     // NOLINTEND
 };

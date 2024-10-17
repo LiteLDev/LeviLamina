@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class LodestoneCompassComponent {
 public:
@@ -16,16 +16,19 @@ public:
     // NOLINTBEGIN
     MCAPI LodestoneCompassComponent(class LodestoneCompassComponent&&);
 
-    MCAPI int
-    getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId, class BlockPos const&, DimensionType const&);
+    MCAPI int getAnimationFrame(
+        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
+        class BlockPos const&                                                               lookFromPosition,
+        DimensionType const&                                                                lookFromDimension
+    );
 
-    MCAPI void initialize(class PositionTrackingId const&);
+    MCAPI void initialize(class PositionTrackingId const& trackingHandle);
 
     MCAPI class LodestoneCompassComponent& operator=(class LodestoneCompassComponent&&);
 
     MCAPI void setTrackOnlyInSameDimension(
         std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
-        bool
+        bool                                                                                trackOnlyInSameDimension
     );
 
     MCAPI ~LodestoneCompassComponent();
@@ -46,9 +49,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class CompassSpriteCalculator mSpinningLodestone;
+    MCAPI void* ctor$(class LodestoneCompassComponent&&);
+
+    MCAPI void dtor$();
+
+    MCAPI static class CompassSpriteCalculator& mSpinningLodestone();
 
     // NOLINTEND
 };

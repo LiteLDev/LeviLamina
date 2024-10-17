@@ -45,9 +45,28 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _say(std::string const& text, std::string const&) const;
+    MCAPI void _say(std::string const& text, std::string const& chatColor) const;
 
     MCAPI void _showTestSummaryIfAllDone() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+
+    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
 
     // NOLINTEND
 };

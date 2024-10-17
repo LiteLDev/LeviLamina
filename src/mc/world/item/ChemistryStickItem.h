@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -74,7 +74,7 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI std::string _getColorName(int) const;
+    MCAPI std::string _getColorName(int data) const;
 
     // NOLINTEND
 
@@ -84,21 +84,52 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
+    MCAPI static void** vftable();
 
-    MCAPI static int const ACTIVE_BIT;
+    MCAPI void* ctor$(std::string const& name, short id);
 
-    MCAPI static int const COLOR_BITS;
+    MCAPI void dtor$();
 
-    MCAPI static int const COLOR_MASK;
+    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
 
-    MCAPI static int const DAMAGE_BITS;
+    MCAPI void hurtActor$(class ItemStack& instance, class Actor& actor, class Mob& attacker) const;
 
-    MCAPI static int const DAMAGE_MASK;
+    MCAPI bool
+    inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
 
-    MCAPI static int const DAMAGE_START_BIT;
+    MCAPI bool isValidRepairItem$(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI class Item& setMaxDamage$(int maxDamage);
+
+    MCAPI bool showsDurabilityInCreative$() const;
+
+    MCAPI bool uniqueAuxValues$() const;
+
+    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+
+    MCAPI ::ItemUseMethod
+    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+
+    MCAPI static std::string const& ACTIVATION_TIMESTAMP_TAG();
+
+    MCAPI static int const& ACTIVE_BIT();
+
+    MCAPI static int const& COLOR_BITS();
+
+    MCAPI static int const& COLOR_MASK();
+
+    MCAPI static int const& DAMAGE_BITS();
+
+    MCAPI static int const& DAMAGE_MASK();
+
+    MCAPI static int const& DAMAGE_START_BIT();
 
     // NOLINTEND
 };

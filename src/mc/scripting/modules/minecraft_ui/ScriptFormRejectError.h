@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/ErrorBindingBuilder.h"
+#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
 #include "mc/scripting/modules/minecraft_ui/ScriptFormRejectReason.h"
 
 namespace ScriptModuleMinecraftServerUI {
@@ -23,6 +23,15 @@ public:
 
     MCAPI static class Scripting::ErrorBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptFormRejectError>
     bind();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

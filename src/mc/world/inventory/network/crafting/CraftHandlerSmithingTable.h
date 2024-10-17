@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
-#include "mc/world/item/components/ItemStackNetResult.h"
-#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class CraftHandlerSmithingTable : public ::CraftHandlerBase {
 public:
@@ -25,6 +25,17 @@ public:
 
     // vIndex: 6
     virtual class Recipes const* _getLevelRecipes() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI class Recipes const* _getLevelRecipes$() const;
+
+    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
 
     // NOLINTEND
 };

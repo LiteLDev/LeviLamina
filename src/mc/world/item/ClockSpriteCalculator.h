@@ -17,4 +17,11 @@ public:
     MCAPI int update(class BlockSource const& region, class Vec3 const& pos, bool instant);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

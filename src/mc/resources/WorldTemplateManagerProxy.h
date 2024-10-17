@@ -16,4 +16,13 @@ public:
     MCAPI ~WorldTemplateManagerProxy();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct WorldTemplateManagerProxyCallbacks const& callbacks);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ThermalState.h"
+#include "mc/platform/thermal/ThermalState.h"
 
 class ThermalMonitorInterface {
 public:
@@ -25,6 +25,13 @@ public:
 
     // vIndex: 3
     virtual bool isLowBatteryModeEnabled() const = 0;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

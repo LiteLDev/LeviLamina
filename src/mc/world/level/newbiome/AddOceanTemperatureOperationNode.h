@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
-#include "mc/world/level/newbiome/WorkingData.h"
+#include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 
 class AddOceanTemperatureOperationNode {
 public:
@@ -26,10 +26,25 @@ public:
 
     // vIndex: 3
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>&,
-        class Pos2d const& origin,
-        class Pos2d const& size
+        class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
+        class Pos2d const&                                                         origin,
+        class Pos2d const&                                                         size
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void _fillArea$(
+        class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
+        class Pos2d const&                                                         origin,
+        class Pos2d const&                                                         size
+    ) const;
+
+    MCAPI void init$(int64 seed);
 
     // NOLINTEND
 };

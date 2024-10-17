@@ -25,7 +25,9 @@ public:
     ) const;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const& screenContext, int slot, class ItemStackBase const&, int)
+        const;
 
     // vIndex: 3
     virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
@@ -47,7 +49,39 @@ public:
     virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
 
     // vIndex: 9
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool canDestroy$(class ContainerScreenContext const& screenContext) const;
+
+    MCAPI bool canItemMoveToContainer$(class ItemStackBase const& item) const;
+
+    MCAPI int getAvailableSetCount$(int slot, class ItemStackBase const& item) const;
+
+    MCAPI int getContainerOffset$(class ContainerScreenContext const& screenContext) const;
+
+    MCAPI int getContainerSize$(class ContainerScreenContext const&, class Container const& container) const;
+
+    MCAPI bool
+    isItemAllowedInSlot$(class ContainerScreenContext const& screenContext, int slot, class ItemStackBase const&, int)
+        const;
+
+    MCAPI bool isItemAllowedToAdd$(class ItemStack const& item) const;
+
+    MCAPI bool
+    isItemAllowedToRemove$(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
+
+    MCAPI bool isValidSlotForContainer$(
+        class ContainerScreenContext const& screenContext,
+        class Container const&              container,
+        int                                 slot
+    ) const;
 
     // NOLINTEND
 };

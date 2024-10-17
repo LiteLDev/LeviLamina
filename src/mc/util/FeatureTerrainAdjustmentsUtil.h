@@ -4,7 +4,7 @@
 
 namespace FeatureTerrainAdjustmentsUtil {
 // NOLINTBEGIN
-MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const&, class BlockPos const&);
+MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const& bbMin, class BlockPos const& bbMax);
 // NOLINTEND
 
 }; // namespace FeatureTerrainAdjustmentsUtil

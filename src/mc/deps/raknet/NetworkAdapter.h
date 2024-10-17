@@ -17,6 +17,13 @@ public:
     MCAPI NetworkAdapter();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };
 
 }; // namespace RakNet

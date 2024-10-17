@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,11 +22,16 @@ public:
     // vIndex: 0
     virtual ~EditorBootstrapper() = default;
 
-    MCAPI static class PackCapability getPackCapability(std::optional<bool>);
+    MCAPI static class PackCapability getPackCapability(std::optional<bool> creator_editor_override);
 
-    MCAPI static std::string const EDITOR_MODE_ARGUMENT_KEY;
+    // NOLINTEND
 
-    MCAPI static std::string const EDITOR_MODE_ARGUMENT_VALUE;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::string const& EDITOR_MODE_ARGUMENT_KEY();
+
+    MCAPI static std::string const& EDITOR_MODE_ARGUMENT_VALUE();
 
     // NOLINTEND
 };

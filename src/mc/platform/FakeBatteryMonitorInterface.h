@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/BatteryStatus.h"
 #include "mc/platform/battery/BatteryMonitorInterface.h"
+#include "mc/platform/battery/BatteryStatus.h"
 
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
@@ -24,6 +24,19 @@ public:
     virtual float getBatteryLevel() const;
 
     MCAPI FakeBatteryMonitorInterface();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI float getBatteryLevel$() const;
+
+    MCAPI ::BatteryStatus getBatteryStatus$() const;
 
     // NOLINTEND
 };

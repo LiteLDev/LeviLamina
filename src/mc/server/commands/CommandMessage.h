@@ -28,6 +28,17 @@ public:
         MCAPI MessageComponent(struct CommandMessage::MessageComponent&& m);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(std::string&& s);
+
+        MCAPI void* ctor$(std::unique_ptr<class CommandSelector<class Actor>>&& s);
+
+        MCAPI void* ctor$(struct CommandMessage::MessageComponent&& m);
+
+        // NOLINTEND
     };
 
 public:
@@ -35,7 +46,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const&, int) const;
+    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const& origin, int maxLength) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

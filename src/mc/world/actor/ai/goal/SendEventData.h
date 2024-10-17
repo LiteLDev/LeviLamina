@@ -16,4 +16,13 @@ public:
     MCAPI ~SendEventData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct SendEventData const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

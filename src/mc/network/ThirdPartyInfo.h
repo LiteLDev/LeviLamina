@@ -16,4 +16,15 @@ public:
     MCAPI ~ThirdPartyInfo();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class ThirdPartyInfo const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

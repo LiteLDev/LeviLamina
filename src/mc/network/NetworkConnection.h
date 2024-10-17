@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/network/BatchedNetworkPeer.h"
 #include "mc/network/CompressedNetworkPeer.h"
 #include "mc/network/EncryptedNetworkPeer.h"
-#include "mc/network/NetworkConnectionType.h"
 #include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/NetworkPeer.h"
 
 class NetworkConnection {
@@ -32,6 +32,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~PausedPacket();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -61,20 +68,40 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI NetworkConnection(
-        class NetworkIdentifier const&,
-        std::shared_ptr<class NetworkPeer>,
-        std::chrono::steady_clock::time_point,
-        bool,
-        class Bedrock::NonOwnerPointer<class IPacketObserver>,
-        class Scheduler&,
-        bool,
-        bool
+        class NetworkIdentifier const&                        id,
+        std::shared_ptr<class NetworkPeer>                    peer,
+        std::chrono::steady_clock::time_point                 lastPacketTime,
+        bool                                                  isSafeAndFast,
+        class Bedrock::NonOwnerPointer<class IPacketObserver> packetObserver,
+        class Scheduler&                                      mainThread,
+        bool                                                  isRawRecordingEnabled,
+        bool                                                  encryptionDisabled
     );
 
-    MCAPI ::NetworkPeer::DataStatus
-    receivePacket(std::string&, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+    MCAPI ::NetworkPeer::DataStatus receivePacket(
+        std::string&                                                  receiveBuffer,
+        std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr
+    );
 
     MCAPI ~NetworkConnection();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        class NetworkIdentifier const&                        id,
+        std::shared_ptr<class NetworkPeer>                    peer,
+        std::chrono::steady_clock::time_point                 lastPacketTime,
+        bool                                                  isSafeAndFast,
+        class Bedrock::NonOwnerPointer<class IPacketObserver> packetObserver,
+        class Scheduler&                                      mainThread,
+        bool                                                  isRawRecordingEnabled,
+        bool                                                  encryptionDisabled
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 class Localization {
 public:
@@ -49,7 +49,7 @@ public:
 
     MCAPI static class Core::PathBuffer<std::string> getLangFilePath(std::string const& langCode);
 
-    MCAPI static std::string getLanguageCode(std::string const& fullCode);
+    MCAPI static std::string getLanguageCode(std::string const&);
 
     // NOLINTEND
 
@@ -66,6 +66,15 @@ public:
     MCAPI static std::string _getDigitGroupSeparator(std::string const&);
 
     MCAPI static bool _isCommaSeperatedLanguage(std::string const& langCode);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& code, class Localization* fallbackLocale);
+
+    MCAPI void* ctor$(std::string const& code);
 
     // NOLINTEND
 };

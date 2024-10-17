@@ -14,4 +14,11 @@ public:
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent&&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ParticleEventRequestQueueComponent&&);
+
+    // NOLINTEND
 };

@@ -53,4 +53,13 @@ public:
     MCAPI void unSet();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(bool value, ::Ability::Options ops);
+
+    // NOLINTEND
 };

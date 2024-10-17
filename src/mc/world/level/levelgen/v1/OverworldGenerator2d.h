@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/surface/PerlinNoise.h"
-#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 #include "mc/world/level/levelgen/v1/BeardKernel.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
 class Biome;
@@ -73,7 +73,8 @@ public:
     // vIndex: 49
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 
-    MCAPI OverworldGenerator2d(class Dimension&, uint, bool, class Biome const*);
+    MCAPI
+    OverworldGenerator2d(class Dimension& dimension, uint seed, bool isLegacyWorld, class Biome const* biomeOverride);
 
     // NOLINTEND
 
@@ -81,6 +82,50 @@ public:
     // NOLINTBEGIN
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
     _generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForChunkSource();
+
+    MCAPI static void** vftableForIPreliminarySurfaceProvider();
+
+    MCAPI void* ctor$(class Dimension& dimension, uint seed, bool isLegacyWorld, class Biome const* biomeOverride);
+
+    MCAPI void _prepareHeights$(
+        class BlockVolume&                                                    box,
+        class ChunkPos const&                                                 chunkPos,
+        class WorldGenCache const&                                            worldGenCache,
+        class Aquifer*                                                        aquiferPtr,
+        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
+        bool                                                                  factorInBeardsAndShavers,
+        std::vector<short>*                                                   ZXheights,
+        int                                                                   skipTopN
+    );
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const& biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
+    generateDensityCellsForChunk$(class ChunkPos const& chunkPos) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI int getLevelGenHeight$() const;
+
+    MCAPI std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise$() const;
+
+    MCAPI class PerlinSimplexNoise const& getSurfaceNoise$();
+
+    MCAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory$() const;
 
     // NOLINTEND
 };

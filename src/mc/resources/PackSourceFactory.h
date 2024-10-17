@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/resources/PackOrigin.h"
-#include "mc/resources/PackType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackOrigin.h"
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,12 +76,64 @@ public:
     virtual class InPackagePackSource* getDynamicPackagePackSource(::PackType packType);
 
     // vIndex: 13
-    virtual void setDynamicPackagePacks(std::shared_ptr<class IDynamicPackagePacks> const&);
+    virtual void setDynamicPackagePacks(std::shared_ptr<class IDynamicPackagePacks> const& dynamicPackagePacks);
 
     // vIndex: 14
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string> path);
 
     MCAPI explicit PackSourceFactory(std::shared_ptr<class IInPackagePacks> const& inPackagePacks);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::shared_ptr<class IInPackagePacks> const& inPackagePacks);
+
+    MCAPI void dtor$();
+
+    MCAPI class DirectoryPackSource& createDirectoryPackSource$(
+        class Core::Path const& path,
+        ::PackType              packType,
+        ::PackOrigin            packOrigin,
+        bool                    isDevDirectory
+    );
+
+    MCAPI class InPackagePackSource& createDynamicPackagePackSource$(::PackType packType);
+
+    MCAPI class InPackagePackSource& createInPackagePackSource$(::PackType packType);
+
+    MCAPI class WorldHistoryPackSource&
+    createWorldHistoryPackSource$(class Core::Path const& pathToWorld, ::PackType packType);
+
+    MCAPI class WorldTemplatePackSource& createWorldTemplatePackSource$(
+        Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const& worldTemplateManager,
+        class mce::UUID const&                                               worldTemplateId,
+        ::PackType                                                           packType,
+        ::PackOrigin                                                         packOrigin
+    );
+
+    MCAPI class DirectoryPackSource* getDirectoryPackSource$(class Core::Path const& path, ::PackType packType) const;
+
+    MCAPI class DirectoryPackSource* getDirectoryPackSourceContaining$(struct PackIdVersion const& packId) const;
+
+    MCAPI class InPackagePackSource* getDynamicPackagePackSource$(::PackType packType);
+
+    MCAPI class InPackagePackSource* getInPackagePackSource$(::PackType packType);
+
+    MCAPI class WorldHistoryPackSource*
+    getWorldHistoryPackSource$(class Core::Path const& pathToWorld, ::PackType packType) const;
+
+    MCAPI class WorldTemplatePackSource*
+    getWorldTemplatePackSource$(class mce::UUID const& worldTemplateId, ::PackType packType) const;
+
+    MCAPI void removeFromDirectoryPackSource$(class Core::Path const& fullPathToPack);
+
+    MCAPI void setDynamicPackagePacks$(std::shared_ptr<class IDynamicPackagePacks> const& dynamicPackagePacks);
+
+    MCAPI void setDynamicPackageRoot$(class Core::PathBuffer<std::string> path);
 
     // NOLINTEND
 };

@@ -18,6 +18,7 @@ add_requires("entt 41aab920b083aa424ac1d27666ce287eeaff6ceb") -- master
 add_requires("expected-lite v0.8.0")
 add_requires("fmt 10.2.1")
 add_requires("gsl v4.0.0")
+add_requires("glm 1.0.1")
 add_requires("leveldb 1.23")
 add_requires("magic_enum v0.9.5")
 add_requires("nlohmann_json v3.11.3")
@@ -88,7 +89,7 @@ if is_windows and not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-if is_linux then 
+if is_linux then
     set_runtimes("c++_shared")
 end
 
@@ -112,6 +113,7 @@ target("LeviLamina")
         "expected-lite",
         "fmt",
         "gsl",
+        "glm",
         "leveldb",
         "magic_enum",
         "nlohmann_json",

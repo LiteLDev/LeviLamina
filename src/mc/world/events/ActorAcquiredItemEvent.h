@@ -15,4 +15,13 @@ public:
     MCAPI ~ActorAcquiredItemEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorAcquiredItemEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

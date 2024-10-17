@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/CircuitComponentType.h"
-#include "mc/enums/FacingID.h"
+#include "mc/common/FacingID.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class BaseCircuitComponent {
 public:
@@ -44,7 +44,7 @@ public:
     virtual void setDirection(uchar direction);
 
     // vIndex: 5
-    virtual void setConsumePowerAnyDirection(bool);
+    virtual void setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 
     // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const;
@@ -117,8 +117,78 @@ public:
 
     // protected:
     // NOLINTBEGIN
+    MCAPI bool trackPowerSource(
+        class CircuitTrackingInfo const& info,
+        int                              dampening,
+        bool                             directlyPowered,
+        int                              data,
+        bool                             isDirectional
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI bool addSource$(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
+
     MCAPI bool
-    trackPowerSource(class CircuitTrackingInfo const& info, int dampening, bool directlyPowered, int data, bool);
+    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI bool allowIndirect$() const;
+
+    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool canConsumePowerAnyDirection$() const;
+
+    MCAPI bool canConsumerPower$() const;
+
+    MCAPI bool canStopPower$() const;
+
+    MCAPI void checkLock$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentGroupType$() const;
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI int getDirection$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI bool hasChildrenSource$() const;
+
+    MCAPI bool hasSource$(class BaseCircuitComponent const& source) const;
+
+    MCAPI bool isHalfPulse$() const;
+
+    MCAPI bool isSecondaryPowered$() const;
+
+    MCAPI void removeFromAnySourceList$(class BaseCircuitComponent const* component);
+
+    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+
+    MCAPI void setConsumePowerAnyDirection$(bool canConsumePowerAnyDirection);
+
+    MCAPI void setDirection$(uchar direction);
+
+    MCAPI void setStopPower$(bool bPower);
+
+    MCAPI void setStrength$(int strength);
+
+    MCAPI void updateDependencies$(class CircuitSceneGraph& system, class BlockPos const& pos);
 
     // NOLINTEND
 };

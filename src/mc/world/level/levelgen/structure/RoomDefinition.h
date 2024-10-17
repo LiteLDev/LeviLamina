@@ -21,4 +21,15 @@ public:
     MCAPI ~RoomDefinition();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int roomIndex);
+
+    MCAPI void* ctor$(class RoomDefinition const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

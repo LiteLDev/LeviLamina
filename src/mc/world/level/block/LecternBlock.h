@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,8 +53,13 @@ public:
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 101
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
@@ -87,6 +92,53 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI bool _dropBook(class Player& player, class BlockPos const& pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+
+    MCAPI class Block const& getPlacementBlock$(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI bool isSignalSource$() const;
+
+    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+
+    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
 };

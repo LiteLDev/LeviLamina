@@ -4,7 +4,7 @@
 #include "mc/world/level/biome/MobSpawnerData.h"
 
 // auto generated inclusion list
-#include "mc/enums/HardcodedSpawnAreaType.h"
+#include "mc/world/level/levelgen/v1/HardcodedSpawnAreaType.h"
 
 class HardcodedSpawnAreaRegistry {
 public:
@@ -24,6 +24,13 @@ public:
 
     MCAPI void
     initMobSpawnsForType(::HardcodedSpawnAreaType type, std::vector<std::shared_ptr<class MobSpawnerData>>&& mobList);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

@@ -35,4 +35,21 @@ public:
     _placeSupportPillar(class BlockSource& region, class BoundingBox const& chunkBB, int x, int y0, int z, int y1);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void addChildren$(
+        class StructurePiece&                               startPiece,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random
+    );
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

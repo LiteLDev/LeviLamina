@@ -22,11 +22,22 @@ public:
     // NOLINTBEGIN
     MCAPI VersionRange(class Puv::VersionRange const&);
 
-    MCAPI VersionRange(class SemVersion, class SemVersion, ::Puv::RangeType);
+    MCAPI VersionRange(class SemVersion min, class SemVersion max, ::Puv::RangeType type);
 
-    MCAPI bool contains(class SemVersion const&) const;
+    MCAPI bool contains(class SemVersion const& v) const;
 
     MCAPI ~VersionRange();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Puv::VersionRange const&);
+
+    MCAPI void* ctor$(class SemVersion min, class SemVersion max, ::Puv::RangeType type);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

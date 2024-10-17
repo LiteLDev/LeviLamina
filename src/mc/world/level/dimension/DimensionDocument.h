@@ -37,7 +37,14 @@ public:
 
             MCAPI ~Components();
 
-            MCAPI static void bindType(struct cereal::ReflectionCtx&);
+            MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+            // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
 
             // NOLINTEND
         };
@@ -52,6 +59,13 @@ public:
         public:
             // NOLINTBEGIN
             MCAPI ~Description();
+
+            // NOLINTEND
+
+            // thunks
+        public:
+            // NOLINTBEGIN
+            MCAPI void dtor$();
 
             // NOLINTEND
         };
@@ -69,7 +83,14 @@ public:
 
         MCAPI ~Dimension();
 
-        MCAPI static void bindType(struct cereal::ReflectionCtx&);
+        MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -82,9 +103,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit DimensionDocument(struct cereal::ReflectionCtx&);
+    MCAPI explicit DimensionDocument(struct cereal::ReflectionCtx& ctx);
 
     MCAPI ~DimensionDocument();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct cereal::ReflectionCtx& ctx);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

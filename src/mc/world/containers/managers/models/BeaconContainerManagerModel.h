@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerID.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerID.h"
+#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 class BeaconContainerManagerModel : public ::LevelContainerManagerModel {
@@ -33,13 +33,30 @@ public:
 
     MCAPI BeaconContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
-    MCAPI static int const PAYMENT_SLOT;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _resetSelectionState();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+
+    MCAPI class ContainerScreenContext _postInit$();
+
+    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+
+    MCAPI class ItemStack const& getSlot$(int slot) const;
+
+    MCAPI void setSlot$(int slot, class ItemStack const& item, bool fromNetwork);
+
+    MCAPI static int const& PAYMENT_SLOT();
 
     // NOLINTEND
 };

@@ -16,9 +16,16 @@ public:
 
     MCAPI void readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag);
 
-    MCAPI static void convertFromLegacyData(class CompoundTag const& tag, class CompoundTag&);
+    MCAPI static void convertFromLegacyData(class CompoundTag const& tag, class CompoundTag& outTag);
 
     MCAPI static bool needsLegacyConversion(class CompoundTag const& tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

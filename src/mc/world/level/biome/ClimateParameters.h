@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/Parameter.h"
+#include "mc/world/level/biome/climate_utils/Parameter.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,6 +33,21 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ClimateParameters(
+        struct ClimateUtils::Parameter temperature,
+        struct ClimateUtils::Parameter humidity,
+        struct ClimateUtils::Parameter continentalness,
+        struct ClimateUtils::Parameter erosion,
+        struct ClimateUtils::Parameter depth,
+        struct ClimateUtils::Parameter weirdness,
+        float                          offset
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
         struct ClimateUtils::Parameter temperature,
         struct ClimateUtils::Parameter humidity,
         struct ClimateUtils::Parameter continentalness,

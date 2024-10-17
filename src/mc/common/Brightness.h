@@ -16,11 +16,20 @@ public:
 
     MCAPI struct Brightness& operator=(struct Brightness const&);
 
-    MCAPI static struct Brightness const INVALID;
+    // NOLINTEND
 
-    MCAPI static struct Brightness const MAX;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Brightness const&);
 
-    MCAPI static struct Brightness const MIN;
+    MCAPI void* ctor$(uchar const&);
+
+    MCAPI static struct Brightness const& INVALID();
+
+    MCAPI static struct Brightness const& MAX();
+
+    MCAPI static struct Brightness const& MIN();
 
     // NOLINTEND
 };

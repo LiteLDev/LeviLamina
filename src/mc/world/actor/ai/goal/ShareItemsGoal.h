@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class ShareItemsGoal : public ::Goal {
@@ -50,6 +50,33 @@ public:
     // NOLINTBEGIN
     MCAPI std::pair<int, class ItemStack>
           selectEntityToShareWith(std::vector<std::pair<int, class ItemStack>> const& shareableItems);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        std::vector<struct MobDescriptor> const& mobFilters,
+        float                                    speedModifier,
+        int                                      searchRange,
+        float                                    goalRadius
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

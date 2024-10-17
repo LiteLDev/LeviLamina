@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/deps/core/utility/typeid_t.h"
 
 class IEntitySystems {
 public:
@@ -23,6 +23,13 @@ public:
         struct SystemInfo const&,
         struct EntitySystemTickingMode
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

@@ -24,9 +24,18 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<std::string, int> mControlFlagMap;
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool validate$(class Mob&) const;
+
+    MCAPI bool validateMobType$(class Mob&) const;
+
+    MCAPI static std::unordered_map<std::string, int>& mControlFlagMap();
 
     // NOLINTEND
 };

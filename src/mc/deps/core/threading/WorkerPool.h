@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/data/SmallSet.h"
+#include "mc/deps/core/container/SmallSet.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -58,11 +58,27 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class SmallSet<class WorkerPool*> sAllPools;
+    MCAPI static void** vftable();
 
-    MCAPI static class Bedrock::Threading::Mutex sAllPoolsMutex;
+    MCAPI void* ctor$(std::string name, class Scheduler& owner);
+
+    MCAPI void* ctor$(
+        std::string                                       name,
+        uint64                                            threadCount,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinityMask,
+        bool                                              suppressWorkerProfiling,
+        std::optional<int>                                idealCore
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI static class SmallSet<class WorkerPool*>& sAllPools();
+
+    MCAPI static class Bedrock::Threading::Mutex& sAllPoolsMutex();
 
     // NOLINTEND
 };

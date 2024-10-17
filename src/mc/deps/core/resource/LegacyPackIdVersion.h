@@ -18,4 +18,13 @@ public:
     MCAPI ~LegacyPackIdVersion();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& id, std::string const& version);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

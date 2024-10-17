@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class RollGoal : public ::Goal {
@@ -46,6 +46,29 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _handleRoll(int rollCounter, class Vec3& positionDelta, float& rollX, float& rollZ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float probability);
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canBeInterrupted$();
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

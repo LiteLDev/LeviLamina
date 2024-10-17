@@ -30,7 +30,7 @@ public:
     virtual ~StyledWriter();
 
     // vIndex: 1
-    virtual std::string write(class Json::Value const&);
+    virtual std::string write(class Json::Value const& root);
 
     MCAPI StyledWriter();
 
@@ -49,6 +49,19 @@ public:
     MCAPI void writeValue(class Json::Value const& value);
 
     MCAPI void writeWithIndent(std::string const& value);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI std::string write$(class Json::Value const& root);
 
     // NOLINTEND
 };

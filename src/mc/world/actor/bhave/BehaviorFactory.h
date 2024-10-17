@@ -33,4 +33,11 @@ public:
     MCAPI void _initNodes();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

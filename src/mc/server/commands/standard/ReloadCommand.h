@@ -20,7 +20,16 @@ public:
     // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static void setup(class CommandRegistry&, bool, bool);
+    MCAPI static void setup(class CommandRegistry& registry, bool isEditorWorld, bool isDedicatedServer);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

@@ -44,6 +44,23 @@ public:
     MCAPI void const* _body(void const* data, uint size);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void final$(uchar* result);
+
+    MCAPI void reset$();
+
+    MCAPI uint64 resultSize$() const;
+
+    MCAPI void update$(void const* data, uint size);
+
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Hash

@@ -19,4 +19,11 @@ public:
     MCAPI ~MaterialReducerDataEntry();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

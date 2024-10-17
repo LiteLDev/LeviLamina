@@ -27,4 +27,13 @@ public:
     MCAPI bool readChunk(int x, int z, class RakNet::BitStream** destChunkData);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Core::Path const& basePath);
+
+    // NOLINTEND
 };

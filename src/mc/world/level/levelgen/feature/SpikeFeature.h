@@ -44,6 +44,13 @@ public:
         MCAPI bool startsInChunk(class BlockPos const& chunkOrigin) const;
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(int centerX, int centerZ, int radius, int height, bool guarded);
+
+        // NOLINTEND
     };
 
 public:
@@ -75,6 +82,19 @@ public:
     MCAPI void setCrystalBeamTarget(class BlockPos const& target);
 
     MCAPI void setCrystalInvulnerable(bool invulnerable);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class SpikeFeature::EndSpike const& spike);
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

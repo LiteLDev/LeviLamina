@@ -16,7 +16,14 @@ public:
     // NOLINTBEGIN
     MCAPI ContainerValidationSlotData(::ContainerEnumName containerEnumName, int slotIndex);
 
-    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::ContainerEnumName containerEnumName, int slotIndex);
+
+    MCAPI static struct ContainerValidationSlotData const& AUTOPLACE();
 
     // NOLINTEND
 };

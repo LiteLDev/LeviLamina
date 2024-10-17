@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/ReplayStateMode.h"
+#include "mc/entity/components/ReplayStateMode.h"
 
 struct ReplayStateConfig {
 public:
@@ -18,7 +18,14 @@ public:
 
     MCAPI uint64 getSanitizedHistorySize() const;
 
-    MCAPI void setReplayStateConfigThresholds(float);
+    MCAPI void setReplayStateConfigThresholds(float baseThreshold);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::ReplayStateMode mode);
 
     // NOLINTEND
 };

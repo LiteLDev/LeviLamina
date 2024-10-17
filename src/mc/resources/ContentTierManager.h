@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/server/IContentTierManager.h"
+#include "mc/resources/IContentTierManager.h"
 
 class ContentTierManager : public ::IContentTierManager {
 public:
@@ -20,7 +20,20 @@ public:
     // vIndex: 1
     virtual class ContentTierInfo getContentTierInfo() const;
 
-    MCAPI explicit ContentTierManager(std::function<bool()>);
+    MCAPI explicit ContentTierManager(std::function<bool()> isHardwareRayTracingCompatible);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::function<bool()> isHardwareRayTracingCompatible);
+
+    MCAPI void dtor$();
+
+    MCAPI class ContentTierInfo getContentTierInfo$() const;
 
     // NOLINTEND
 };

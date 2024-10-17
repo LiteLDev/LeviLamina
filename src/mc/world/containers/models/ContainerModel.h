@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerContentChangeListener.h"
-#include "mc/world/containers/ContainerCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/containers/ContainerExpandStatus.h"
+#include "mc/world/containers/models/ContainerCategory.h"
+#include "mc/world/containers/models/ContainerExpandStatus.h"
 
 class ContainerModel : public ::ContainerContentChangeListener {
 public:
@@ -72,7 +72,7 @@ public:
     virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
 
     // vIndex: 18
-    virtual std::string const& getItemGroupName(int) const;
+    virtual std::string const& getItemGroupName(int itemId) const;
 
     // vIndex: 19
     virtual void switchItemExpando(int itemId);
@@ -133,6 +133,70 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _onClientUIItemNetworkChanged(int containerSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::ContainerCategory containerCategory,
+        bool                isClientSide
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI class Container* _getContainer$() const;
+
+    MCAPI int _getContainerOffset$() const;
+
+    MCAPI void _init$();
+
+    MCAPI void _onItemChanged$(int modelSlot, class ItemStack const& oldItem, class ItemStack const& newItem);
+
+    MCAPI void containerContentChanged$(int slot);
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+
+    MCAPI int getFilteredContainerSize$() const;
+
+    MCAPI ::ContainerExpandStatus getItemExpandStatus$(int itemId) const;
+
+    MCAPI std::string const& getItemGroupName$(int itemId) const;
+
+    MCAPI class ItemInstance const& getItemInstance$(int modelSlot) const;
+
+    MCAPI class ItemStack const& getItemStack$(int modelSlot) const;
+
+    MCAPI class ItemStackBase const& getItemStackBase$(int modelSlot) const;
+
+    MCAPI std::vector<class ItemStack> const& getItems$() const;
+
+    MCAPI bool isExpanableItemFiltered$(int index) const;
+
+    MCAPI bool isItemFiltered$(class ItemStackBase const& item) const;
+
+    MCAPI bool isItemInstanceBased$() const;
+
+    MCAPI bool isSlotDisabled$(int) const;
+
+    MCAPI bool isValid$();
+
+    MCAPI void postInit$();
+
+    MCAPI void releaseResources$();
+
+    MCAPI void setItem$(int modelSlot, class ItemStack const& item);
+
+    MCAPI void switchItemExpando$(int itemId);
+
+    MCAPI void tick$(int selectedSlot);
 
     // NOLINTEND
 };

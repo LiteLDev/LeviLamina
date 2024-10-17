@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorFlags.h"
+#include "mc/world/actor/ActorFlags.h"
 
 class SynchedActorDataWriter {
 public:

@@ -13,4 +13,11 @@ public:
     MCAPI CrashDump_AllData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

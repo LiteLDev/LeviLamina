@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemColor.h"
+#include "mc/world/item/ItemColor.h"
 
 class DyeColorUtil {
 public:
@@ -20,13 +20,18 @@ public:
 
     MCAPI static ::ItemColor getRandomItemColor(class Random& random);
 
-    MCAPI static std::array<short, 16> const COLOR_TO_AUX;
+    // NOLINTEND
 
-    MCAPI static std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static std::array<short, 16> const& COLOR_TO_AUX();
 
-    MCAPI static std::array<short, 16> const DYE_AUX_VALUES;
+    MCAPI static std::array<short, 4> const& DEPRECATED_DYE_AUX_VALUES();
 
-    MCAPI static std::array<::ItemColor, 20> const mColorMap;
+    MCAPI static std::array<short, 16> const& DYE_AUX_VALUES();
+
+    MCAPI static std::array<::ItemColor, 20> const& mColorMap();
 
     // NOLINTEND
 };

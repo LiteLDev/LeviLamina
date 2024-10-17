@@ -22,4 +22,12 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void*
+    ctor$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& item, uchar amountOverride);
+
+    // NOLINTEND
 };

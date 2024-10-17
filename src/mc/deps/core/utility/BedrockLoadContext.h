@@ -16,4 +16,13 @@ public:
     MCAPI ~BedrockLoadContext();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class SemVersion const& engineVersion);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

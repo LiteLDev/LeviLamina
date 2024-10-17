@@ -20,13 +20,22 @@ public:
 
     MCAPI class Vec3 toBlockSpaceVec3(float y) const;
 
-    MCAPI static class ChunkPos const INVALID;
+    // NOLINTEND
 
-    MCAPI static class ChunkPos const MAX;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BlockPos const& pos);
 
-    MCAPI static class ChunkPos const MIN;
+    MCAPI void* ctor$(class Vec3 const& pos);
 
-    MCAPI static class ChunkPos const ONE;
+    MCAPI static class ChunkPos const& INVALID();
+
+    MCAPI static class ChunkPos const& MAX();
+
+    MCAPI static class ChunkPos const& MIN();
+
+    MCAPI static class ChunkPos const& ONE();
 
     // NOLINTEND
 };

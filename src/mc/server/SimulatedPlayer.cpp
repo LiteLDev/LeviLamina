@@ -1,8 +1,8 @@
 #include "mc/server/SimulatedPlayer.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/RandomUtils.h"
-#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
 

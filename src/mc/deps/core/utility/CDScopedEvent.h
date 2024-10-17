@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
 class CDScopedEvent {
 public:
@@ -17,6 +17,15 @@ public:
     MCAPI CDScopedEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
 
     MCAPI ~CDScopedEvent();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

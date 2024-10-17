@@ -18,11 +18,11 @@ public:
     // NOLINTBEGIN
     MCAPI static class mce::UUID getIdentity(class Certificate const& cert);
 
-    MCAPI static std::string getIdentityName(class Certificate const&);
+    MCAPI static std::string getIdentityName(class Certificate const& cert);
 
     MCAPI static std::string getTitleID(class Certificate const& cert);
 
-    MCAPI static std::string getXuid(class Certificate const&, bool);
+    MCAPI static std::string getXuid(class Certificate const& cert, bool trustSelfSigned);
 
     // NOLINTEND
 };

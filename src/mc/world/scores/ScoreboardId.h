@@ -33,7 +33,18 @@ public:
 
     MCAPI bool operator==(struct ScoreboardId const& rhs) const;
 
-    MCAPI static struct ScoreboardId INVALID;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int64 bytes);
+
+    MCAPI void* ctor$(struct ScoreboardId const& scoreboardId);
+
+    MCAPI void* ctor$();
+
+    MCAPI static struct ScoreboardId& INVALID();
 
     // NOLINTEND
 };

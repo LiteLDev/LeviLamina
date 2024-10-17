@@ -33,6 +33,15 @@ public:
         MCAPI ~ComponentMetadata();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct BlockComponentFactory::ComponentMetadata const&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -48,15 +57,22 @@ public:
     MCAPI void initializeFactory(class Experiments const& experiments);
 
     MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::ComponentMetadata>&
-    getPropRegisteredCerealComponents(struct cereal::ReflectionCtx const&);
+    getPropRegisteredCerealComponents(struct cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx&);
+    MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx& ctx);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI static entt::meta_type initEnTTMetaType(struct cereal::ReflectionCtx&);
+    MCAPI static entt::meta_type initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Experiments const& experiments);
 
     // NOLINTEND
 };

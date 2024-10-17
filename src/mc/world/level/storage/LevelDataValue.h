@@ -29,6 +29,19 @@ public:
         MCAPI ~Tag();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(struct LevelDataValue::Tag&& tag);
+
+        MCAPI void* ctor$(class CompoundTag&& tag);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -40,6 +53,13 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI ~LevelDataValue();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

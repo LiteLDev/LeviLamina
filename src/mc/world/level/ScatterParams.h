@@ -30,6 +30,13 @@ public:
         MCAPI ~ChanceInformation();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     struct CoordinateRange {
@@ -71,6 +78,19 @@ public:
         MCAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, class Random& random) const;
 
         MCAPI ~CoordinateRange();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$();
+
+        MCAPI void* ctor$(struct ScatterParams::CoordinateRange const&);
+
+        MCAPI void* ctor$(struct ScatterParams::CoordinateRange&&);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -138,10 +158,19 @@ public:
     MCAPI void _parseExpressionNodeFloat(
         class CompoundTag const& tag,
         std::string const&       tagName,
-        std::string const&,
-        class ExpressionNode& node,
-        float                 defaultValue
+        std::string const&       tagNameType,
+        class ExpressionNode&    node,
+        float                    defaultValue
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

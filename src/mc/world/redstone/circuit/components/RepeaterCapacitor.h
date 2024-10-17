@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/SidePoweredComponent.h"
 
 class RepeaterCapacitor : public ::SidePoweredComponent {
@@ -61,6 +61,36 @@ public:
     MCAPI RepeaterCapacitor();
 
     MCAPI void setDelay(int delay);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool addSource$(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
+
+    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI void checkLock$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI int getStrength$() const;
+
+    MCAPI void setStrength$(int strength);
+
+    MCAPI void updateDependencies$(class CircuitSceneGraph& system, class BlockPos const& pos);
 
     // NOLINTEND
 };

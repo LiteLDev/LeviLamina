@@ -29,4 +29,23 @@ public:
     virtual void writeLongLong(int64 v);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI void writeDouble$(double v);
+
+    MCAPI void writeFloat$(float v);
+
+    MCAPI void writeInt$(int v);
+
+    MCAPI void writeLongLong$(int64 v);
+
+    MCAPI void writeShort$(short v);
+
+    // NOLINTEND
 };

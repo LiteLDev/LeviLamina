@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ErrorInfo.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/MinecraftPacketIds.h"
-#include "mc/enums/SubClientId.h"
-#include "mc/enums/TransportLayer.h"
-#include "mc/enums/connection/DisconnectFailReason.h"
-#include "mc/resources/PacketViolationResponse.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
+#include "mc/network/TransportLayer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/platform/ErrorInfo.h"
 
 class NetworkSystem {
 public:
@@ -31,6 +31,13 @@ public:
         MCAPI ~Dependencies();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -49,18 +56,31 @@ public:
 
     MCVAPI ushort getDefaultGamePortv6() const;
 
-    MCVAPI void onAllConnectionsClosed(::Connection::DisconnectFailReason, std::string const&, bool);
+    MCVAPI void onAllConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
 
-    MCVAPI void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, std::string const&, bool);
+    MCVAPI void onAllRemoteConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
 
-    MCVAPI void
-    onConnectionClosed(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool);
+    MCVAPI void onConnectionClosed(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
 
     MCVAPI bool onNewIncomingConnection(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
 
     MCVAPI bool onNewOutgoingConnection(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
 
-    MCVAPI void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, std::string const&);
+    MCVAPI void
+    onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, std::string const& reasonMessage);
 
     MCVAPI void onWebsocketRequest(
         std::string const&    serverAddress,
@@ -118,11 +138,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI explicit NetworkSystem(struct NetworkSystem::Dependencies&&);
+    MCAPI explicit NetworkSystem(struct NetworkSystem::Dependencies&& deps);
 
     MCAPI ::TransportLayer _getTransportLayer() const;
 
-    MCAPI void _initNetworkStatistics(std::unique_ptr<class NetworkStatistics>&&);
+    MCAPI void _initNetworkStatistics(std::unique_ptr<class NetworkStatistics>&& stats);
 
     MCAPI bool _isUsingNetherNetTransportLayer() const;
 
@@ -133,18 +153,77 @@ public:
     MCAPI class NetworkConnection* _getConnectionFromId(class NetworkIdentifier const& id) const;
 
     MCAPI void _handlePacketViolation(
-        struct Bedrock::ErrorInfo<std::error_code> const&,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        class NetworkIdentifier const&,
-        class NetworkConnection&,
-        ::SubClientId
+        struct Bedrock::ErrorInfo<std::error_code> const& error,
+        ::PacketViolationResponse                         violationResponse,
+        ::MinecraftPacketIds                              violatingPacketId,
+        class NetworkIdentifier const&                    netId,
+        class NetworkConnection&                          connection,
+        ::SubClientId                                     clientSubId
     );
 
     MCAPI void _sendInternal(class NetworkIdentifier const& id, class Packet const& packet, std::string const& data);
 
     MCAPI bool
     _sortAndPacketizeEvents(class NetworkConnection& connection, std::chrono::steady_clock::time_point endTime);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForNetworkEnableDisableListener();
+
+    MCAPI static void** vftableForRakNetConnectorConnectionCallbacks();
+
+    MCAPI static void** vftableForRakPeerHelperIPSupportInterface();
+
+    MCAPI void* ctor$(struct NetworkSystem::Dependencies&& deps);
+
+    MCAPI void dtor$();
+
+    MCAPI void _onDisable$();
+
+    MCAPI void _onEnable$();
+
+    MCAPI ushort getDefaultGamePort$() const;
+
+    MCAPI ushort getDefaultGamePortv6$() const;
+
+    MCAPI void onAllConnectionsClosed$(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI void onAllRemoteConnectionsClosed$(
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI void onConnectionClosed$(
+        class NetworkIdentifier const&     id,
+        ::Connection::DisconnectFailReason discoReason,
+        std::string const&                 reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI bool onNewIncomingConnection$(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
+
+    MCAPI bool onNewOutgoingConnection$(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
+
+    MCAPI void
+    onOutgoingConnectionFailed$(::Connection::DisconnectFailReason discoReason, std::string const& reasonMessage);
+
+    MCAPI void onWebsocketRequest$(
+        std::string const&    serverAddress,
+        std::string const&    payload,
+        std::function<void()> errorCallback
+    );
+
+    MCAPI bool useIPv4Only$() const;
+
+    MCAPI bool useIPv6Only$() const;
 
     // NOLINTEND
 };

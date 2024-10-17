@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class TagCommand : public ::Command {
 public:
@@ -41,6 +41,15 @@ public:
         class CommandOutput&                                    output,
         std::vector<std::reference_wrapper<class Actor>> const& selectorResults
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

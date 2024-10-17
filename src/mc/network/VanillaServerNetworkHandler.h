@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerInstance.h"
 
@@ -25,6 +25,15 @@ public:
 
     // vIndex: 1
     virtual void handle(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void handle$(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
 
     // NOLINTEND
 };

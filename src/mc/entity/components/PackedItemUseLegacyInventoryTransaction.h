@@ -19,4 +19,15 @@ public:
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(struct PackedItemUseLegacyInventoryTransaction&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class TickingAreaCommand : public ::Command {
 public:
@@ -20,7 +20,7 @@ public:
     // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static std::string formatTickingAreaList(std::vector<struct TickingAreaDescription> const&);
+    MCAPI static std::string formatTickingAreaList(std::vector<struct TickingAreaDescription> const& tickingAreas);
 
     MCAPI static void setup(class CommandRegistry& registry);
 
@@ -59,6 +59,15 @@ public:
         class Level&               level,
         class Dimension&           dimension
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

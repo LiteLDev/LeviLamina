@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class HideGoal : public ::MoveToPOIGoal {
 public:
@@ -39,6 +39,27 @@ public:
 
     // vIndex: 17
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::weak_ptr<class POIInstance> _getOwnedPOI$(::POIType type) const;
+
+    MCAPI uint64 _getRepathTime$() const;
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
 
     // NOLINTEND
 };

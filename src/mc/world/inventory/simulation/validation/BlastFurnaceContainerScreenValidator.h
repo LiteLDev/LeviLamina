@@ -20,4 +20,13 @@ public:
     MCAPI BlastFurnaceContainerScreenValidator();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

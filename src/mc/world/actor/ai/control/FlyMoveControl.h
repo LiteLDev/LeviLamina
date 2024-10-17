@@ -22,4 +22,15 @@ public:
     MCAPI FlyMoveControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     MCAPI KeyFrameTransform(class KeyFrameTransform const&);
 
-    MCAPI explicit KeyFrameTransform(float);
+    MCAPI explicit KeyFrameTransform(float keyFrameTimeStamp);
 
     MCAPI class KeyFrameLerpMode& getLerpMode();
 
@@ -38,6 +38,17 @@ public:
         class KeyFrameTransform& p2,
         class KeyFrameTransform* p3
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class KeyFrameTransform const&);
+
+    MCAPI void* ctor$(float keyFrameTimeStamp);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

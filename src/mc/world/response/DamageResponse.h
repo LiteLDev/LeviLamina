@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/data/Factory.h"
-#include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/util/Factory.h"
 #include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
@@ -37,13 +37,30 @@ public:
         class Factory<class EventResponse> const&                                                              factory
     ) const;
 
-    MCAPI static std::string const NameID;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void repairOrHurtItem(int const& amount, class RenderParams& params) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void buildSchema$(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>& root,
+        class Factory<class EventResponse> const&                                                              factory
+    ) const;
+
+    MCAPI void executeAction$(class RenderParams& params) const;
+
+    MCAPI std::string const& getName$() const;
+
+    MCAPI static std::string const& NameID();
 
     // NOLINTEND
 };

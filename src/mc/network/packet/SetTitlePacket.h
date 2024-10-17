@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class SetTitlePacket : public ::Packet {
 public:
@@ -64,6 +64,35 @@ public:
     MCAPI SetTitlePacket(int fadeInTime, int stayTime, int fadeOutTime);
 
     MCAPI class SetTitlePacket& operator=(class SetTitlePacket&&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type);
+
+    MCAPI void* ctor$(int fadeInTime, int stayTime, int fadeOutTime);
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
+
+    MCAPI void* ctor$(class SetTitlePacket const&);
+
+    MCAPI void* ctor$(::SetTitlePacket::TitleType type, std::string const& titleText);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

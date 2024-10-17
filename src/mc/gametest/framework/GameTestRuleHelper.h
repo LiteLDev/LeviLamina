@@ -17,13 +17,26 @@ public:
     virtual ~GameTestRuleHelper() = default;
 
     // vIndex: 1
-    virtual void addRuleToClear(int);
+    virtual void addRuleToClear(int ruleID);
 
     // vIndex: 2
     virtual void clearRules();
 
     // vIndex: 3
     virtual void restoreRules();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void addRuleToClear$(int ruleID);
+
+    MCAPI void clearRules$();
+
+    MCAPI void restoreRules$();
 
     // NOLINTEND
 };

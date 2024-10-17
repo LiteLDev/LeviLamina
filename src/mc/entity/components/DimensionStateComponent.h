@@ -15,7 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit DimensionStateComponent(std::chrono::steady_clock::time_point);
+    MCAPI explicit DimensionStateComponent(std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
 
     // NOLINTEND
 };

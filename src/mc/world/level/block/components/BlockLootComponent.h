@@ -20,4 +20,11 @@ public:
     MCAPI std::string const& getLootTable() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    // NOLINTEND
 };

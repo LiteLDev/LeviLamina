@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/deps/core/common/bedrock/ThreadOwner.h"
-#include "mc/math/Random.h"
+#include "mc/deps/application/common/utility/ThreadOwner.h"
+#include "mc/deps/core/math/Random.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/platform/threading/ThreadLocalObject.h"
 
 class Random : public IRandom, public Bedrock::EnableNonOwnerReferences {
 public:
@@ -56,9 +56,38 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random> mThreadLocalRandom;
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForIRandom();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(uint seed, bool onlyUsedDeterministically);
+
+    MCAPI void dtor$();
+
+    MCAPI void consumeCount$(uint count);
+
+    MCAPI std::unique_ptr<class IRandom> fork$();
+
+    MCAPI bool nextBoolean$();
+
+    MCAPI double nextDouble$();
+
+    MCAPI float nextFloat$();
+
+    MCAPI double nextGaussianDouble$();
+
+    MCAPI int nextInt$();
+
+    MCAPI int nextInt$(int n);
+
+    MCAPI int64 nextLong$();
+
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random>& mThreadLocalRandom();
 
     // NOLINTEND
 };

@@ -22,9 +22,20 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static char const* const WHAT;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(char const* desc, char const* arg, int line, char const* file, char const* function);
+
+    MCAPI void* ctor$(class DebugAssertException const& e);
+
+    MCAPI void dtor$();
+
+    MCAPI char const* what$() const;
+
+    MCAPI static char const* const& WHAT();
 
     // NOLINTEND
 };

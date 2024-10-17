@@ -15,4 +15,13 @@ public:
     MCAPI ~PlayerUseNameTagEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct PlayerUseNameTagEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

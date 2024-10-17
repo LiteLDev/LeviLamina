@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,10 +47,10 @@ public:
     virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string buildDescriptionId(class ItemDescriptor const& item, class CompoundTag const* userData) const;
 
     // vIndex: 105
-    virtual std::string getInteractText(class Player const&) const;
+    virtual std::string getInteractText(class Player const& player) const;
 
     MCAPI static bool canBeCopied(class CompoundTag const* tag);
 
@@ -60,31 +60,55 @@ public:
 
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const& book);
 
-    MCAPI static int const MAX_GENERATION;
+    // NOLINTEND
 
-    MCAPI static int const MAX_PAGES;
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
-    MCAPI static int const MAX_PAGE_LENGTH;
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
-    MCAPI static int const MAX_TITLE_LENGTH;
+    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& item, class CompoundTag const* userData) const;
 
-    MCAPI static std::string_view const TAG_AUTHOR;
+    MCAPI std::string getInteractText$(class Player const& player) const;
 
-    MCAPI static std::string_view const TAG_GENERATION;
+    MCAPI bool isGlint$(class ItemStackBase const& stack) const;
 
-    MCAPI static std::string_view const TAG_ID;
+    MCAPI bool requiresInteract$() const;
 
-    MCAPI static std::string_view const TAG_PAGES;
+    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
 
-    MCAPI static std::string_view const TAG_PAGE_PHOTO_NAME;
+    MCAPI static int const& MAX_GENERATION();
 
-    MCAPI static std::string_view const TAG_PAGE_TEXT;
+    MCAPI static int const& MAX_PAGES();
 
-    MCAPI static std::string_view const TAG_RESOLVED;
+    MCAPI static int const& MAX_PAGE_LENGTH();
 
-    MCAPI static std::string_view const TAG_TITLE;
+    MCAPI static int const& MAX_TITLE_LENGTH();
 
-    MCAPI static std::string_view const TAG_XUID;
+    MCAPI static std::string_view const& TAG_AUTHOR();
+
+    MCAPI static std::string_view const& TAG_GENERATION();
+
+    MCAPI static std::string_view const& TAG_ID();
+
+    MCAPI static std::string_view const& TAG_PAGES();
+
+    MCAPI static std::string_view const& TAG_PAGE_PHOTO_NAME();
+
+    MCAPI static std::string_view const& TAG_PAGE_TEXT();
+
+    MCAPI static std::string_view const& TAG_RESOLVED();
+
+    MCAPI static std::string_view const& TAG_TITLE();
+
+    MCAPI static std::string_view const& TAG_XUID();
 
     // NOLINTEND
 };

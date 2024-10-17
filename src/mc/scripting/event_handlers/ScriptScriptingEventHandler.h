@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/common/wrapper/GameplayHandlerResult.h"
-#include "mc/events/MutableScriptingGameplayEvent.h"
-#include "mc/external/scripting/ScriptingGameplayEvent.h"
-#include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/world/events/MutableScriptingGameplayEvent.h"
+#include "mc/world/events/ScriptingGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,15 +39,35 @@ public:
     virtual void __unk_vfn_3();
 
     // vIndex: 4
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent&);
+    virtual struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(struct BeforeWatchdogTerminateEvent& beforeWatchdogTerminateEvent);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI bool
-    _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>)
-        const;
+    MCAPI bool _handleWatchdogTerminateEvent(
+        struct BeforeWatchdogTerminateEvent&      beforeWatchdogTerminateEvent,
+        class Scripting::WeakLifetimeScope const& scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemBeforeEvents>
+            scriptSystemBeforeEventsHandle
+    ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct MutableScriptingGameplayEvent<::CoordinatorResult>& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct ScriptingGameplayEvent<::CoordinatorResult> const& event);
+
+    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
+    handleEvent$(struct BeforeWatchdogTerminateEvent& beforeWatchdogTerminateEvent);
 
     // NOLINTEND
 };

@@ -34,13 +34,40 @@ public:
 
     MCAPI RecipeIngredient(class ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI RecipeIngredient(struct ItemTag const&, ushort stackSize);
+    MCAPI RecipeIngredient(struct ItemTag const& itemTag, ushort stackSize);
 
     MCAPI RecipeIngredient(class Item const& item, int auxValue, ushort stackSize);
 
     MCAPI RecipeIngredient(std::string_view item, int auxValue, ushort stackSize);
 
-    MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ItemDescriptor const& descriptor, ushort stackSize);
+
+    MCAPI void* ctor$(class Block const& block, ushort stackSize);
+
+    MCAPI void* ctor$(class RecipeIngredient const&);
+
+    MCAPI void* ctor$(struct ItemTag const& itemTag, ushort stackSize);
+
+    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void* ctor$(class BlockLegacy const& block, ushort stackSize);
+
+    MCAPI void* ctor$(class RecipeIngredient&&);
+
+    MCAPI void* ctor$(std::string_view item, int auxValue, ushort stackSize);
+
+    MCAPI void dtor$();
+
+    MCAPI static class RecipeIngredient& EMPTY_INGREDIENT();
 
     // NOLINTEND
 };

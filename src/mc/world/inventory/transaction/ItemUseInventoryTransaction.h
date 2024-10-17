@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
-#include "mc/enums/InventoryTransactionError.h"
+#include "mc/platform/Result.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
+#include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
 class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
@@ -50,7 +50,7 @@ public:
     // vIndex: 5
     virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
+    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const& transaction);
 
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
 
@@ -60,14 +60,31 @@ public:
 
     MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const& item);
 
-    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const&);
+    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const& targetBlock);
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const
-        actionTypeMap;
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class ItemUseInventoryTransaction const& transaction);
+
+    MCAPI void dtor$();
+
+    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+
+    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError error) const;
+
+    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void write$(class BinaryStream& stream) const;
+
+    MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const&
+    actionTypeMap();
 
     // NOLINTEND
 };

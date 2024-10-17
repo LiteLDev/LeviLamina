@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Projection.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
 
 class StructureTemplatePool {
 public:
@@ -20,8 +20,13 @@ public:
         std::vector<std::pair<class StructurePoolElement const*, int>> const& templates
     );
 
-    MCAPI
-    StructureTemplatePool(struct StructureTemplateRegistrationContext, std::string_view, std::string_view, ::Projection, std::initializer_list<struct WeightedStructureTemplateRegistration>);
+    MCAPI StructureTemplatePool(
+        struct StructureTemplateRegistrationContext                         context,
+        std::string_view                                                    name,
+        std::string_view                                                    fallback,
+        ::Projection                                                        projection,
+        std::initializer_list<struct WeightedStructureTemplateRegistration> pieces
+    );
 
     MCAPI std::string const& getFallback() const;
 
@@ -42,11 +47,30 @@ public:
     MCAPI uint64 size() const;
 
     MCAPI static std::unique_ptr<class StructureTemplatePool> create(
-        struct StructureTemplateRegistrationContext,
-        std::string_view,
-        std::string_view,
-        std::initializer_list<struct WeightedStructureTemplateRegistration>,
-        ::Projection
+        struct StructureTemplateRegistrationContext                         context,
+        std::string_view                                                    name,
+        std::string_view                                                    fallback,
+        std::initializer_list<struct WeightedStructureTemplateRegistration> pieces,
+        ::Projection                                                        projection
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        struct StructureTemplateRegistrationContext                         context,
+        std::string_view                                                    name,
+        std::string_view                                                    fallback,
+        ::Projection                                                        projection,
+        std::initializer_list<struct WeightedStructureTemplateRegistration> pieces
+    );
+
+    MCAPI void* ctor$(
+        std::string                                                           name,
+        std::string                                                           fallback,
+        std::vector<std::pair<class StructurePoolElement const*, int>> const& templates
     );
 
     // NOLINTEND

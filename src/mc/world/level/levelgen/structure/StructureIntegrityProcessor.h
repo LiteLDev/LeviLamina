@@ -16,4 +16,11 @@ public:
     MCAPI std::vector<bool> generateFlagsForIndices(int startIndex, int endIndex) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(float integrity, uint startSeed);
+
+    // NOLINTEND
 };

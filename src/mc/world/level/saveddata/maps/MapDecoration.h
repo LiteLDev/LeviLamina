@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/math/Color.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -83,6 +83,24 @@ public:
     MCAPI void save(class CompoundTag& tag);
 
     MCAPI ~MapDecoration();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(
+        ::MapDecoration::Type   img,
+        schar                   x,
+        schar                   y,
+        schar                   rot,
+        std::string const&      label,
+        class mce::Color const& color
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

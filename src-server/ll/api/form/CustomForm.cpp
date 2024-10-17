@@ -118,7 +118,14 @@ public:
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
-        return mOptions[data.get<int>()];
+        if (!data.is_number_integer()) {
+            return std::string{};
+        }
+        int index = data.get<int>();
+        if (index < 0 || index >= static_cast<int>(mOptions.size())) {
+            return std::string{};
+        }
+        return mOptions[index];
     }
 };
 
@@ -220,7 +227,14 @@ public:
     }
 
     [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
-        return mSteps[data.get<int>()];
+        if (!data.is_number_integer()) {
+            return std::string{};
+        }
+        int index = data.get<int>();
+        if (index < 0 || index >= static_cast<int>(mSteps.size())) {
+            return std::string{};
+        }
+        return mSteps[index];
     }
 };
 

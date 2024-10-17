@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SneezeGoal : public ::Goal {
@@ -48,6 +48,38 @@ public:
         std::vector<struct MobDescriptor> const& reactMobFilters,
         float                                    reactWithin
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                               mob,
+        float                                    cooldownTime,
+        float                                    probability,
+        float                                    dropItemChance,
+        std::string const&                       lootTable,
+        std::string const&                       sneezeSound,
+        std::string const&                       preSneezeSound,
+        float                                    prepareTime,
+        std::vector<struct MobDescriptor> const& reactMobFilters,
+        float                                    reactWithin
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool canUse$();
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

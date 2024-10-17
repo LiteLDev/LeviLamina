@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CompoundTagUpdaterResult.h"
+#include "mc/util/CompoundTagUpdaterResult.h"
 
 class CompoundTagUpdaterContext {
 public:
@@ -18,6 +18,13 @@ public:
     MCAPI class CompoundTagUpdaterNodeBuilder addUpdater(uchar major, uchar minor, uchar patch);
 
     MCAPI ::CompoundTagUpdaterResult update(class CompoundTag& tag, uint version) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
 
     // NOLINTEND
 };

@@ -18,7 +18,18 @@ public:
     virtual ~EndGatewayFeature();
 
     // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random&) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random&) const;
 
     // NOLINTEND
 };

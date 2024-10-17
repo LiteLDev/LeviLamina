@@ -30,6 +30,16 @@ public:
     MCAPI bool shouldBeSent() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void*
+    ctor$(class ClientBlobCache::Server::ActiveTransfersManager& cache, class NetworkIdentifier const& client);
+
+    // NOLINTEND
 };
 
 }; // namespace ClientBlobCache::Server

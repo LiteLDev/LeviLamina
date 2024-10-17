@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void finalize(class Block const&, ::BlockComponentDirectData::LayerBitMask);
+    MCAPI void finalize(class Block const& block, ::BlockComponentDirectData::LayerBitMask layersToFinalize);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _finalizeInit(class Block const&);
+    MCAPI void _finalizeInit(class Block const& block);
 
     // NOLINTEND
 };

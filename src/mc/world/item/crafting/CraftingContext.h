@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class CraftingContext {
 public:
@@ -25,6 +25,13 @@ public:
         MCAPI explicit Impl(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
+
+        // NOLINTEND
     };
 
 public:
@@ -38,6 +45,15 @@ public:
     MCAPI explicit CraftingContext(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
 
     MCAPI ~CraftingContext();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class ILevel> level);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

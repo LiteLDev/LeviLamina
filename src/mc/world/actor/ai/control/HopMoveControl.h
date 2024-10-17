@@ -26,4 +26,18 @@ public:
     MCAPI HopMoveControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void
+    setWantedPosition$(class MoveControlComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

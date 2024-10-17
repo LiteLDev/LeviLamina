@@ -40,4 +40,13 @@ public:
     MCAPI ~WorldChangeTransaction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class IBlockWorldGenAPI& target);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

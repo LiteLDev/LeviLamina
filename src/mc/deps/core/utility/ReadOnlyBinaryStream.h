@@ -4,7 +4,7 @@
 #include "mc/network/serialize/serialize.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class ReadOnlyBinaryStream {
 public:
@@ -78,9 +78,9 @@ public:
 
     MCAPI class Bedrock::Result<short> getSignedShort();
 
-    MCAPI class Bedrock::Result<std::string> getString(uint64);
+    MCAPI class Bedrock::Result<std::string> getString(uint64 maxLength);
 
-    MCAPI class Bedrock::Result<void> getString(std::string&, uint64);
+    MCAPI class Bedrock::Result<void> getString(std::string& outStringStream, uint64 maxLength);
 
     MCAPI class Bedrock::Result<uchar> getUnsignedChar();
 
@@ -100,7 +100,22 @@ public:
 
     MCAPI bool hasOverflowed() const;
 
-    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>&);
+    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>& list);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string&& buffer);
+
+    MCAPI void* ctor$(std::string const& buffer, bool copyBuffer);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> read$(void* target, uint64 num);
 
     // NOLINTEND
 };

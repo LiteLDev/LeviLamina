@@ -15,4 +15,13 @@ public:
     MCAPI ~ActorCarriedItemChangedEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorCarriedItemChangedEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

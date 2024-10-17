@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +20,17 @@ public:
 public:
     // NOLINTBEGIN
     MCAPI LevelLooseFileStorage(
+        class Core::Path const&                                             levelDirectory,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
         class Core::Path const&                                             levelDirectory,
         class ContentIdentity const&                                        contentIdentity,
         Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider

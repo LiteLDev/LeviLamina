@@ -59,21 +59,45 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static int mGridroomLeftWingConnectIndex;
+    MCAPI static void** vftable();
 
-    MCAPI static int mGridroomRightWingConnectIndex;
+    MCAPI void* ctor$(int& orientation, class BoundingBox& boundingBox);
 
-    MCAPI static int mGridroomSourceIndex;
+    MCAPI void* ctor$(
+        int                                   genDepth,
+        int&                                  orientation,
+        std::shared_ptr<class RoomDefinition> roomDefinition,
+        int                                   roomWidth,
+        int                                   roomHeight,
+        int                                   roomDepth
+    );
 
-    MCAPI static int mGridroomTopConnectIndex;
+    MCAPI void dtor$();
 
-    MCAPI static int const mLeftWingIndex;
+    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
 
-    MCAPI static int const mPenthouseIndex;
+    MCAPI int getWorldX$(int x, int z);
 
-    MCAPI static int const mRightWingIndex;
+    MCAPI int getWorldZ$(int x, int z);
+
+    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    MCAPI static int& mGridroomLeftWingConnectIndex();
+
+    MCAPI static int& mGridroomRightWingConnectIndex();
+
+    MCAPI static int& mGridroomSourceIndex();
+
+    MCAPI static int& mGridroomTopConnectIndex();
+
+    MCAPI static int const& mLeftWingIndex();
+
+    MCAPI static int const& mPenthouseIndex();
+
+    MCAPI static int const& mRightWingIndex();
 
     // NOLINTEND
 };

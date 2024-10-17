@@ -13,9 +13,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI void add(uint64 id, std::string& blob, bool);
+    MCAPI void add(uint64 id, std::string& blob, bool isChunkInTickRange);
 
     MCAPI ~TransferBuilder();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -9,11 +9,14 @@ namespace mce { class Color; }
 
 namespace CopperUtil {
 // NOLINTBEGIN
-MCAPI extern class mce::Color const WAX_OFF_COLOR;
-
-MCAPI extern class mce::Color const WAX_ON_COLOR;
-
 MCAPI void trySendWaxingTelemetryEventToClient(class Player& player, class BlockLegacy const& block);
+// NOLINTEND
+
+// thunks
+// NOLINTBEGIN
+MCAPI class mce::Color const& WAX_OFF_COLOR();
+
+MCAPI class mce::Color const& WAX_ON_COLOR();
 // NOLINTEND
 
 }; // namespace CopperUtil

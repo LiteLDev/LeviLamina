@@ -17,6 +17,15 @@ public:
     MCAPI ~BlockDescriptorProxy();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Puv::v1_20_50::BlockDescriptorSerializer::BlockDescriptorProxy const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace Puv::v1_20_50::BlockDescriptorSerializer

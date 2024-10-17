@@ -16,4 +16,11 @@ public:
     MCAPI ~PlayerStorageIds();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

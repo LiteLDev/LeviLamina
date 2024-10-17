@@ -82,14 +82,14 @@ public:
     ) const;
 
     MCAPI class Biome* _pickBadlandsBiome(
-        int                                   humidityIdx,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
 
     MCAPI class Biome* _pickShatteredCoastBiome(
-        int                                   temperatureIdx,
-        int                                   humidityIdx,
+        int                                   temperatureIndex,
+        int                                   humidityIndex,
         struct ClimateUtils::Parameter const& weirdness,
         class BiomeRegistry const&            biomeRegistry
     ) const;
@@ -98,35 +98,40 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
+    MCAPI void* ctor$(class BaseGameVersion const& baseGameVersion);
 
-    MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
+    MCAPI void dtor$();
 
-    MCAPI static struct ClimateUtils::Parameter const HUMIDITIES[];
+    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& EROSIONS();
 
-    MCAPI static struct ClimateUtils::Parameter const TEMPERATURES[];
+    MCAPI static struct ClimateUtils::Parameter const& FULL_RANGE();
 
-    MCAPI static struct ClimateUtils::Parameter const coastContinentalness;
+    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& HUMIDITIES();
 
-    MCAPI static struct ClimateUtils::Parameter const deepOceanContinentalness;
+    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& TEMPERATURES();
 
-    MCAPI static struct ClimateUtils::Parameter const dripstoneCavesContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& coastContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const farInlandContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& deepOceanContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const inlandContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& dripstoneCavesContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const lushCavesHumidity;
+    MCAPI static struct ClimateUtils::Parameter const& farInlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const midInlandContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& inlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const mushroomFieldsContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& lushCavesHumidity();
 
-    MCAPI static struct ClimateUtils::Parameter const nearInlandContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& midInlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
+    MCAPI static struct ClimateUtils::Parameter const& mushroomFieldsContinentalness();
+
+    MCAPI static struct ClimateUtils::Parameter const& nearInlandContinentalness();
+
+    MCAPI static struct ClimateUtils::Parameter const& oceanContinentalness();
 
     // NOLINTEND
 };

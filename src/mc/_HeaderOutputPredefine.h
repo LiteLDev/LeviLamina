@@ -65,6 +65,7 @@
 
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
+#include "glm/glm.hpp"   // OpenGL Mathematics Library
 #include "gsl/gsl"       // Guideline Support Library
 
 // LevelDB C++ Library
@@ -97,11 +98,12 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
+#include "ll/api/base/Alias.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
 
-#include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
-#include "mc/math/vector/Vecs.h"            // for vector types
+#include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
+#include "mc/math/vector/Vecs.h"               // for vector types
 
 // clang-format off
 template <typename T0, typename T1>

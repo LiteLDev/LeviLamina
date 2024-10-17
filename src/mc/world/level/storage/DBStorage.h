@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/deps/core/common/bedrock/IAsyncResult.h"
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/CompactionStatus.h"
-#include "mc/enums/StorageVersion.h"
-#include "mc/enums/d_b_helpers/Category.h"
+#include "mc/common/CompactionStatus.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/storage/LevelStorage.h"
 #include "mc/world/level/storage/LevelStorageWriteBatch.h"
+#include "mc/world/level/storage/StorageVersion.h"
+#include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,6 +40,13 @@ public:
         MCAPI ~CommitOperation();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
     class DBStorageToken {
@@ -52,6 +59,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~DBStorageToken();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -68,6 +82,15 @@ public:
         MCAPI PendingWriteResult(std::shared_ptr<std::string const>, bool);
 
         MCAPI ~PendingWriteResult();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(std::shared_ptr<std::string const>, bool);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -125,7 +148,7 @@ public:
     deleteData(std::string const& key, ::DBHelpers::Category category);
 
     // vIndex: 12
-    virtual void getStatistics(std::string&, ::LevelStorage::StatsType) const;
+    virtual void getStatistics(std::string& outStats, ::LevelStorage::StatsType statsType) const;
 
     // vIndex: 14
     virtual struct Core::LevelStorageResult getLevelStorageState() const;
@@ -146,7 +169,8 @@ public:
     virtual struct Core::LevelStorageResult getState() const;
 
     // vIndex: 20
-    virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&, bool);
+    virtual std::vector<struct SnapshotFilenameAndLength>
+    createSnapshot(std::string const& filePrefix, bool flushWriteCache);
 
     // vIndex: 21
     virtual void releaseSnapshot();
@@ -209,7 +233,7 @@ public:
     // NOLINTBEGIN
     MCAPI class TaskResult _flushWriteCacheToLevelDB();
 
-    MCAPI std::string _getTelemetryMessage(leveldb::Status const&) const;
+    MCAPI std::string _getTelemetryMessage(leveldb::Status const& status) const;
 
     MCAPI void _markAsCorrupted(std::string_view message) const;
 
@@ -218,6 +242,82 @@ public:
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(std::function<class TaskResult()> action, std::function<void()> callback);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct DBStorageConfig config, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv> levelDbEnv);
+
+    MCAPI void dtor$();
+
+    MCAPI void addStorageObserver$(std::unique_ptr<class LevelStorageObserver> observer);
+
+    MCAPI bool checkShutdownDone$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> compactStorage$();
+
+    MCAPI std::unique_ptr<class ChunkSource>
+          createChunkStorage$(std::unique_ptr<class ChunkSource> generator, ::StorageVersion);
+
+    MCAPI std::vector<struct SnapshotFilenameAndLength>
+          createSnapshot$(std::string const& filePrefix, bool flushWriteCache);
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          deleteData$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI void flushToPermanentStorage$();
+
+    MCAPI void forEachKeyWithPrefix$(
+        std::string_view                                               prefix,
+        ::DBHelpers::Category                                          category,
+        std::function<void(std::string_view, std::string_view)> const& callback
+    ) const;
+
+    MCAPI void freeCaches$();
+
+    MCAPI std::unique_ptr<class CompoundTag> getCompoundTag$(std::string const& key, ::DBHelpers::Category category);
+
+    MCAPI class Core::PathBuffer<std::string> const& getFullPath$() const;
+
+    MCAPI struct Core::LevelStorageResult getLevelStorageState$() const;
+
+    MCAPI struct Core::LevelStorageResult getState$() const;
+
+    MCAPI void getStatistics$(std::string& outStats, ::LevelStorage::StatsType statsType) const;
+
+    MCAPI bool hasKey$(std::string_view key, ::DBHelpers::Category category) const;
+
+    MCAPI bool isShuttingDown$() const;
+
+    MCAPI bool loadData$(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
+
+    MCAPI bool loadLevelData$(class LevelData& data);
+
+    MCAPI void releaseSnapshot$();
+
+    MCAPI void resumeStorage$();
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          saveData$(std::string const& key, std::string&& data, ::DBHelpers::Category category);
+
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          saveData$(class LevelStorageWriteBatch const& batch);
+
+    MCAPI void saveLevelData$(class LevelData const& levelData);
+
+    MCAPI void setCompactionCallback$(std::function<void(::CompactionStatus)> callback);
+
+    MCAPI void setCriticalSyncSaveCallback$(std::function<void()> callback);
+
+    MCAPI void setFlushAllowed$(bool flushAllowed);
+
+    MCAPI void startShutdown$();
+
+    MCAPI void syncAndSuspendStorage$();
 
     // NOLINTEND
 };

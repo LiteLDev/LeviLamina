@@ -32,4 +32,19 @@ public:
     MCAPI bool _canSurvive(class Block const& belowBlock) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(int forcedType);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+
+    // NOLINTEND
 };

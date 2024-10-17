@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class AgentCommand : public ::Command {
 public:
@@ -47,6 +47,15 @@ public:
     MCAPI void setItem(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     MCAPI void tpAgent(class Player& player, class CommandOrigin const& origin, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

@@ -14,4 +14,11 @@ public:
     MCAPI ~ServerNetworkGameplayNotificationEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

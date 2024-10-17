@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/item/BoatItem.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/InHandUpdateType.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,12 +31,27 @@ public:
     virtual ~ChestBoatItem() = default;
 
     // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual std::string
+    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // vIndex: 119
     virtual ::ActorType _getActorType() const;
 
     MCAPI ChestBoatItem(std::string const& name, int id, int woodType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id, int woodType);
+
+    MCAPI ::ActorType _getActorType$() const;
+
+    MCAPI std::string
+          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
 
     // NOLINTEND
 };

@@ -19,13 +19,24 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
+    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const& input);
 
-    MCAPI AddressOrGUID(struct RakNet::RakNetGUID const&);
+    MCAPI AddressOrGUID(struct RakNet::RakNetGUID const& input);
 
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI AddressOrGUID(struct RakNet::SystemAddress const& input);
 
     MCAPI bool IsUndefined() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct RakNet::RakNetGUID const& input);
+
+    MCAPI void* ctor$(struct RakNet::SystemAddress const& input);
+
+    MCAPI void* ctor$(struct RakNet::AddressOrGUID const& input);
 
     // NOLINTEND
 };

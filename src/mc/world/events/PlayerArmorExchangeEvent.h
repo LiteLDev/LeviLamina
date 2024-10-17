@@ -15,4 +15,13 @@ public:
     MCAPI ~PlayerArmorExchangeEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct PlayerArmorExchangeEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

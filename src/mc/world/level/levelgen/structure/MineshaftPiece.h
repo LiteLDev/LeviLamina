@@ -46,7 +46,20 @@ public:
         int                                                 depth
     );
 
-    MCAPI void setPlanksBlock(class BlockSource& region, class Block const&, int x, int y, int z);
+    MCAPI void setPlanksBlock(class BlockSource& region, class Block const& planksBlock, int x, int y, int z);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    MCAPI bool canBeReplaced$(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
+
+    MCAPI bool isInInvalidLocation$(class BlockSource& region, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 };

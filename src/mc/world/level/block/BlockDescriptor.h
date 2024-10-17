@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/v1_20_50/BlockDescriptor.h"
-#include "mc/util/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,7 +35,7 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI void resolve(bool);
+        MCAPI void resolve(bool logInvalidBlocks);
 
         // NOLINTEND
     };
@@ -49,13 +49,26 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI State(class HashedString, std::string const&);
+        MCAPI State(class HashedString name, std::string const& stringState);
 
-        MCAPI State(class HashedString, int);
+        MCAPI State(class HashedString name, int intState);
 
-        MCAPI State(class HashedString, struct Puv::v1_20_50::BlockDescriptor::Compound);
+        MCAPI State(class HashedString name, struct Puv::v1_20_50::BlockDescriptor::Compound state);
 
         MCAPI ~State();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class HashedString name, struct Puv::v1_20_50::BlockDescriptor::Compound state);
+
+        MCAPI void* ctor$(class HashedString name, int intState);
+
+        MCAPI void* ctor$(class HashedString name, std::string const& stringState);
+
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -70,7 +83,7 @@ public:
 
     MCAPI explicit BlockDescriptor(class HashedString const& fullName);
 
-    MCAPI explicit BlockDescriptor(struct Puv::v1_20_50::BlockDescriptor);
+    MCAPI explicit BlockDescriptor(struct Puv::v1_20_50::BlockDescriptor desc);
 
     MCAPI BlockDescriptor(std::string const& name, std::vector<struct BlockDescriptor::State>&& states);
 
@@ -88,7 +101,7 @@ public:
 
     MCAPI bool matches(class Block const& block) const;
 
-    MCAPI bool matches(class BlockDescriptor const&) const;
+    MCAPI bool matches(class BlockDescriptor const& otherDescriptor) const;
 
     MCAPI void operator=(class BlockDescriptor&& rhs);
 
@@ -96,7 +109,7 @@ public:
 
     MCAPI bool operator==(class BlockDescriptor const& rhs) const;
 
-    MCAPI void setContentLogOnError(bool) const;
+    MCAPI void setContentLogOnError(bool value) const;
 
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
 
@@ -113,18 +126,37 @@ public:
         class BlockDescriptor const&              otherBlockDescriptor
     );
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx&);
+    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
 
     MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const& tag);
 
     MCAPI static class BlockDescriptor
     fromTagExpression(std::string const& tagExpression, ::MolangVersion molangVersion);
 
-    MCAPI static char const JSON_NAME_FIELD[];
+    // NOLINTEND
 
-    MCAPI static char const JSON_STATES_FIELD[];
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct Puv::v1_20_50::BlockDescriptor desc);
 
-    MCAPI static char const JSON_TAGS_FIELD[];
+    MCAPI void* ctor$(class BlockDescriptor const& rhs);
+
+    MCAPI void* ctor$(std::string const& name, std::vector<struct BlockDescriptor::State>&& states);
+
+    MCAPI void* ctor$(class BlockDescriptor&& rhs);
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(class HashedString const& fullName);
+
+    MCAPI void dtor$();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_NAME_FIELD();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_STATES_FIELD();
+
+    MCAPI static ::ll::CArrayT<char const>& JSON_TAGS_FIELD();
 
     // NOLINTEND
 };

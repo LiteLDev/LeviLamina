@@ -14,7 +14,16 @@ public:
 
     MCAPI ~SlotData();
 
-    MCAPI static struct SlotData UNKNOWN_LOCATION;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static struct SlotData& UNKNOWN_LOCATION();
 
     // NOLINTEND
 };

@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,6 +76,43 @@ public:
     getSeasonsColor(class BlockSource& region, class BlockPos const& pos, int startColumn, int endColumn) const;
 
     MCAPI static void runDecay(class BlockSource& region, class BlockPos const& pos, int range);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id, class WeakPtr<class BlockLegacy const> sapling);
+
+    MCAPI void dtor$();
+
+    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideMultifaceSupport$(class Block const&, uchar) const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI class mce::Color getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+
+    MCAPI class Block const&
+    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
+
+    MCAPI ::BlockRenderLayer
+    getRenderLayer$(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI bool isSeasonTinted$(class Block const& block, class BlockSource& region, class BlockPos const& p) const;
+
+    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // NOLINTEND
 };

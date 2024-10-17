@@ -32,6 +32,17 @@ public:
     virtual std::optional<struct gametest::GameTestError> getError();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::optional<struct gametest::GameTestError> getError$();
+
+    MCAPI bool isComplete$() const;
+
+    // NOLINTEND
 };
 
 }; // namespace gametest

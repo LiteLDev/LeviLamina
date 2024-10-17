@@ -29,9 +29,9 @@ public:
     MCAPI BlockStateCommandParam(std::string state, std::string value, ::BlockStateCommandParam::Type type);
 
     MCAPI std::optional<std::pair<class HashedString, int>>
-          getNameAndValue(class CommandOutput& output, class Block const&) const;
+          getNameAndValue(class CommandOutput& output, class Block const& defaultNewBlock) const;
 
-    MCAPI bool setBlockState(class Block const**, class CommandOutput& output) const;
+    MCAPI bool setBlockState(class Block const** inputBlock, class CommandOutput& output) const;
 
     // NOLINTEND
 
@@ -40,6 +40,15 @@ public:
     MCAPI bool _createCompoundTag(class CompoundTag& tag, class CommandOutput& output) const;
 
     MCAPI class BlockState const* _getBlockState(class Block const& block) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string state, std::string value, ::BlockStateCommandParam::Type type);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

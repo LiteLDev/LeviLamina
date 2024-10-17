@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/surface/PerlinNoise.h"
-#include "mc/world/level/biome/surface/PerlinSimplexNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
 class NetherGenerator : public ::WorldGenerator {
@@ -91,7 +91,7 @@ public:
     // vIndex: 37
     virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCAPI NetherGenerator(class Dimension&, uint, class Biome const*);
+    MCAPI NetherGenerator(class Dimension& dimension, uint seed, class Biome const* biomeOverride);
 
     MCAPI void buildSurfaces(class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos);
 
@@ -109,6 +109,54 @@ public:
         std::vector<short>*   ZXheights,
         int                   skipTopN
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForChunkSource();
+
+    MCAPI static void** vftableForIPreliminarySurfaceProvider();
+
+    MCAPI void* ctor$(class Dimension& dimension, uint seed, class Biome const* biomeOverride);
+
+    MCAPI void decorateWorldGenLoadChunk$(
+        class Biome const&       biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
+
+    MCAPI void decorateWorldGenPostProcess$(
+        class Biome const& biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
+
+    MCAPI class BlockPos findSpawnPosition$() const;
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+
+    MCAPI class BiomeSource const& getBiomeSource$() const;
+
+    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
+
+    MCAPI void loadChunk$(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
+
+    MCAPI void prepareAndComputeHeights$(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
+
+    MCAPI void prepareHeights$(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // NOLINTEND
 };

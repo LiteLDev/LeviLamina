@@ -7,8 +7,8 @@
 
 #include "ll/api/service/Bedrock.h"
 
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandBlockName.h"
-#include "mc/world/AutomaticID.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/command/runtime/RuntimeOverload.h"

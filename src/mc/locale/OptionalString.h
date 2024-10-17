@@ -14,4 +14,11 @@ public:
     MCAPI ~OptionalString();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

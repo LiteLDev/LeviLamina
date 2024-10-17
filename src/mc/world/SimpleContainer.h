@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/containers/ContainerType.h"
+#include "mc/world/ContainerType.h"
 
 class SimpleContainer : public ::Container {
 public:
@@ -44,6 +44,35 @@ public:
     virtual void stopOpen(class Player&);
 
     MCAPI SimpleContainer(std::string const& name, bool customName, int size, ::ContainerType containerType);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, bool customName, int size, ::ContainerType containerType);
+
+    MCAPI void dtor$();
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player&);
+
+    MCAPI void stopOpen$(class Player&);
 
     // NOLINTEND
 };

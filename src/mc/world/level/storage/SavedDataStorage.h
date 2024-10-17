@@ -29,4 +29,15 @@ public:
     MCAPI void set(std::string const& id, class SavedData& data);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class LevelStorage* levelStorage);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

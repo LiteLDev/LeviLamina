@@ -20,13 +20,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI ScriptChunkValidator(std::set<class ChunkPos> const&, class BlockSource&);
+    MCAPI ScriptChunkValidator(std::set<class ChunkPos> const& chunkPositions, class BlockSource& region);
 
-    MCAPI bool operator()(class BlockPos const&) const;
+    MCAPI bool operator()(class BlockPos const& blockPos) const;
 
     MCAPI uint64 size() const;
 
     MCAPI ~ScriptChunkValidator();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::set<class ChunkPos> const& chunkPositions, class BlockSource& region);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

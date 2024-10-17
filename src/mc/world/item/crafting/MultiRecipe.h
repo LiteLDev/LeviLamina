@@ -31,7 +31,22 @@ public:
     // vIndex: 10
     virtual bool hasDataDrivenResult() const;
 
-    MCAPI MultiRecipe(std::string const&, class HashedString);
+    MCAPI MultiRecipe(std::string const& recipeId, class HashedString tag);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& recipeId, class HashedString tag);
+
+    MCAPI bool hasDataDrivenResult$() const;
+
+    MCAPI bool isMultiRecipe$() const;
+
+    MCAPI bool isShapeless$() const;
 
     // NOLINTEND
 };

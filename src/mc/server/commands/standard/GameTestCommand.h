@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/Rotation.h"
 #include "mc/server/commands/ServerCommand.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,7 +26,7 @@ public:
     // vIndex: 2
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    MCAPI static void addGameTestNameEnums(class MinecraftGameTest&, class CommandRegistry& commandRegistry);
+    MCAPI static void addGameTestNameEnums(class MinecraftGameTest& gameTest, class CommandRegistry& commandRegistry);
 
     MCAPI static void setup(class CommandRegistry& registry);
 
@@ -41,29 +41,29 @@ public:
     _handleCreateTest(class BlockSource& region, class CommandOrigin const& origin, class CommandOutput& output) const;
 
     MCAPI void _handleRun(
-        class MinecraftGameTest&,
+        class MinecraftGameTest&   gameTest,
         class BlockSource&         region,
         class CommandOrigin const& origin,
         class CommandOutput&       output
     ) const;
 
     MCAPI void _handleRunNearbyTests(
-        class MinecraftGameTest&,
+        class MinecraftGameTest&   gameTest,
         class BlockSource&         region,
         class CommandOrigin const& origin,
         class CommandOutput&       output
     ) const;
 
     MCAPI void _handleRunSet(
-        class MinecraftGameTest&,
+        class MinecraftGameTest&   gameTest,
         class BlockSource&         region,
         class CommandOrigin const& origin,
         class CommandOutput&       output,
-        bool
+        bool                       stopOtherTestsOnFailure
     ) const;
 
     MCAPI void _handleRunThis(
-        class MinecraftGameTest&,
+        class MinecraftGameTest&   gameTest,
         class BlockSource&         region,
         class CommandOrigin const& origin,
         class CommandOutput&       output
@@ -74,12 +74,21 @@ public:
         const;
 
     MCAPI void _runTestAt(
-        class MinecraftGameTest&,
-        class BlockSource&   region,
-        class CommandOutput* output,
-        class BlockPos const&,
+        class MinecraftGameTest&  gameTest,
+        class BlockSource&        region,
+        class CommandOutput*      output,
+        class BlockPos const&     structureBlockPos,
         std::optional<::Rotation> rotation
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

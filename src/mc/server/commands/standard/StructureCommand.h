@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class StructureCommand : public ::Command {
 public:
@@ -37,6 +37,15 @@ public:
     MCAPI void _load(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     MCAPI void _save(class CommandOrigin const& origin, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

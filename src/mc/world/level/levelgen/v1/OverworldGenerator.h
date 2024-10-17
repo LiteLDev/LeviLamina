@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/feature/CanyonFeature.h"
 #include "mc/world/level/levelgen/feature/MonsterRoomFeature.h"
 #include "mc/world/level/levelgen/feature/UnderwaterCanyonFeature.h"
@@ -85,13 +85,8 @@ public:
     virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
     // vIndex: 51
-    virtual std::unique_ptr<class Aquifer> tryMakeAquifer(
-        class ChunkPos const&          chunkPos,
-        class SurfaceLevelCache const& surfaceLevelCache,
-        short                          minHeight,
-        short                          levelGenHeight,
-        short                          seaLevel
-    ) const;
+    virtual std::unique_ptr<class Aquifer>
+    tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
 
     // vIndex: 52
     virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
@@ -119,7 +114,7 @@ public:
 
     virtual ~OverworldGenerator();
 
-    MCAPI OverworldGenerator(class Dimension&, bool);
+    MCAPI OverworldGenerator(class Dimension& dimension, bool isLegacyWorld);
 
     MCAPI void buildSurfaces(
         struct OverworldGenerator::ThreadData& thread,
@@ -128,6 +123,52 @@ public:
         class ChunkPos const&                  chunkPos,
         class SurfaceLevelCache const&         surfaceLevelCache
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForChunkSource();
+
+    MCAPI static void** vftableForIPreliminarySurfaceProvider();
+
+    MCAPI void* ctor$(class Dimension& dimension, bool isLegacyWorld);
+
+    MCAPI void dtor$();
+
+    MCAPI class ChunkLocalNoiseCache createNoiseCache$(class ChunkPos) const;
+
+    MCAPI class WorldGenCache createWorldGenCache$(class ChunkPos chunkPos) const;
+
+    MCAPI void decorateWorldGenLoadChunk$(
+        class Biome const&       biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
+
+    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+
+    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
+
+    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool postProcess$(class ChunkViewSource& neighborhoodIn);
+
+    MCAPI void prepareAndComputeHeights$(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
+
+    MCAPI void prepareHeights$(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+
+    MCAPI std::unique_ptr<class Aquifer>
+          tryMakeAquifer$(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
 
     // NOLINTEND
 };

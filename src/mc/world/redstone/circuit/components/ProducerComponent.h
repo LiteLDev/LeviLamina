@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 class ProducerComponent : public ::BaseCircuitComponent {
 public:
@@ -39,6 +39,27 @@ public:
     MCAPI ProducerComponent();
 
     MCAPI void allowAttachments(bool bAttached);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+
+    MCAPI bool canStopPower$() const;
+
+    MCAPI bool evaluate$(class CircuitSystem&, class BlockPos const&);
+
+    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+
+    MCAPI void setStopPower$(bool bPower);
+
+    MCAPI void setStrength$(int strength);
 
     // NOLINTEND
 };

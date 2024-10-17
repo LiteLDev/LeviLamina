@@ -1,15 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/HudElement.h"
-#include "mc/enums/HudVisibility.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/HudElement.h"
-#include "mc/enums/HudVisibility.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
+#include "mc/util/HudElement.h"
+#include "mc/util/HudVisibility.h"
 
 class SetHudPacket : public ::Packet {
 public:
@@ -32,14 +30,35 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 4
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     MCAPI SetHudPacket();
 
-    MCAPI SetHudPacket(std::vector<::HudElement>, ::HudVisibility);
+    MCAPI SetHudPacket(std::vector<::HudElement> hudElement, ::HudVisibility hudVisible);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(std::vector<::HudElement> hudElement, ::HudVisibility hudVisible);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

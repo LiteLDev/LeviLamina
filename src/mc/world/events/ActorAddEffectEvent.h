@@ -15,4 +15,13 @@ public:
     MCAPI ~ActorAddEffectEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ActorAddEffectEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

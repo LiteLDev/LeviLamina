@@ -26,6 +26,15 @@ public:
         virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static void** vftable();
+
+        MCAPI bool getInteraction$(class Actor&, class Player&, class ActorInteraction&);
+
+        // NOLINTEND
     };
 
 public:

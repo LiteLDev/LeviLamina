@@ -23,7 +23,18 @@ public:
     // vIndex: 2
     virtual void tick(class Mob& mob);
 
-    MCAPI static float sBaseYMax;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void initializeInternal$(class Mob& mob);
+
+    MCAPI void tick$(class Mob& mob);
+
+    MCAPI static float& sBaseYMax();
 
     // NOLINTEND
 };

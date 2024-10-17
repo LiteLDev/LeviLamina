@@ -32,6 +32,17 @@ public:
         MCAPI ~Entry();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct DenyList::Entry const&);
+
+        MCAPI void* ctor$(class mce::UUID const& uuid, std::string const& xuid);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -46,7 +57,7 @@ public:
 
     MCAPI ::DenyList::Duration getDuration(struct DenyList::Entry const& entry) const;
 
-    MCAPI std::string const& getMessage(struct DenyList::Entry const&) const;
+    MCAPI std::string const& getMessage(struct DenyList::Entry const& entry) const;
 
     MCAPI bool isBlocked(struct DenyList::Entry const& entry) const;
 
@@ -61,6 +72,13 @@ public:
     MCAPI bool
     isBlocked(struct DenyList::Entry const&, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct DenyList::Entry>>>&)
         const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

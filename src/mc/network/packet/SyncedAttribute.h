@@ -19,4 +19,11 @@ public:
     MCAPI ~SyncedAttribute();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

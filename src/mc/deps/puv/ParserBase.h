@@ -22,11 +22,22 @@ public:
     // vIndex: 0
     virtual ~ParserBase();
 
-    MCAPI ParserBase(class SemVersion, class Puv::VersionRange);
+    MCAPI ParserBase(class SemVersion parserVersion, class Puv::VersionRange supportedVersions);
 
     MCAPI class SemVersion const& parserVersion() const;
 
     MCAPI class Puv::VersionRange const& supportedVersions() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class SemVersion parserVersion, class Puv::VersionRange supportedVersions);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/components/ItemStackLegacyRequestIdTag.h"
-#include "mc/world/item/components/ItemStackNetIdTag.h"
-#include "mc/world/item/components/ItemStackRequestIdTag.h"
+#include "mc/world/inventory/network/ItemStackLegacyRequestIdTag.h"
+#include "mc/world/inventory/network/ItemStackNetIdTag.h"
+#include "mc/world/inventory/network/ItemStackRequestIdTag.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/TypedClientNetId.h"
-#include "mc/network/TypedServerNetId.h"
+#include "mc/platform/Result.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 
 struct ItemStackNetIdVariant {
 public:
@@ -44,6 +44,19 @@ public:
     MCAPI ItemStackNetId const* tryGetServerNetId() const;
 
     MCAPI ~ItemStackNetIdVariant();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ItemStackNetIdVariant&&);
+
+    MCAPI void* ctor$(struct ItemStackNetIdVariant const&);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

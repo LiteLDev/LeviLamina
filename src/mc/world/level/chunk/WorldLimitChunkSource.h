@@ -41,4 +41,24 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::unique_ptr<class ChunkSource> storage, class BlockPos const& center, int width, int depth);
+
+    MCAPI bool canCreateViews$() const;
+
+    MCAPI std::shared_ptr<class LevelChunk>
+          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+
+    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap$();
+
+    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& cp);
+
+    MCAPI bool isWithinWorldLimit$(class ChunkPos const& cp) const;
+
+    // NOLINTEND
 };

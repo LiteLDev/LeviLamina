@@ -40,4 +40,21 @@ public:
     MCAPI leveldb::Status SyncDirIfManifest();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string filename, class Core::File&& file);
+
+    MCAPI leveldb::Status Append$(leveldb::Slice const& slice);
+
+    MCAPI leveldb::Status Close$();
+
+    MCAPI leveldb::Status Flush$();
+
+    MCAPI leveldb::Status Sync$();
+
+    // NOLINTEND
 };

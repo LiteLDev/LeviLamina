@@ -5,10 +5,10 @@
 #include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/platform/Result.h"
 
 class SubChunkPacket : public ::Packet {
 public:
@@ -49,9 +49,14 @@ public:
 
     public:
         // NOLINTBEGIN
-        MCAPI static schar const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
+        // NOLINTEND
 
-        MCAPI static schar const HEIGHT_COLUMN_BELOW_SUBCHUNK;
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+
+        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
 
         // NOLINTEND
     };
@@ -88,6 +93,15 @@ public:
         MCAPI ~SubChunkPacketData();
 
         // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(struct SubChunkPacket::SubChunkPacketData&&);
+
+        MCAPI void dtor$();
+
+        // NOLINTEND
     };
 
 public:
@@ -120,6 +134,27 @@ public:
     MCAPI SubChunkPacket();
 
     MCAPI SubChunkPacket(DimensionType const& dimension, class SubChunkPos const& centerPos, bool cacheEnabled);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void* ctor$(DimensionType const& dimension, class SubChunkPos const& centerPos, bool cacheEnabled);
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

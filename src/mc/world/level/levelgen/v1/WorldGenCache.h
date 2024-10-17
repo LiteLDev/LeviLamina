@@ -11,13 +11,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
+    MCAPI WorldGenCache(class ChunkLocalNoiseCache chunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
 
     MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;
 
     MCAPI class SurfaceLevelCache const& getSurfaceLevelCache() const;
 
     MCAPI ~WorldGenCache();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ChunkLocalNoiseCache chunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
-#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
 
 class BlockSourceHandle : public ::BlockSourceListener {
 public:
@@ -20,6 +20,15 @@ public:
 
     // vIndex: 2
     virtual void onSourceDestroyed(class BlockSource& source);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void onSourceDestroyed$(class BlockSource& source);
 
     // NOLINTEND
 };

@@ -11,15 +11,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI Cavifier(class CavifierNoises const&, float, float);
+    MCAPI Cavifier(class CavifierNoises const& cavifierNoises, float minCellY, float densityBoost);
 
-    MCAPI float cavify(class Vec3 pos, int, float) const;
+    MCAPI float cavify(class Vec3 pos, int, float density) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI float _getSpaghetti2d(class Vec3 pos) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class CavifierNoises const& cavifierNoises, float minCellY, float densityBoost);
 
     // NOLINTEND
 };

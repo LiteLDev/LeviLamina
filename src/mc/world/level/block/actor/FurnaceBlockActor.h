@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelSoundEvent.h"
-#include "mc/world/containers/ContainerType.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/ContainerType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 class FurnaceBlockActor {
 public:
@@ -106,10 +106,6 @@ public:
 
     MCAPI static bool isItemAllowedInFuelSlot(int slot, class ItemStackBase const& item, int amount);
 
-    MCAPI static int const BURN_INTERVAL;
-
-    MCAPI static float const DEFAULT_SMELTING_TIME;
-
     // NOLINTEND
 
     // protected:
@@ -141,25 +137,97 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const BURN_DURATION_KEY;
+    MCAPI static void** vftableForBlockActor();
 
-    MCAPI static std::string const BURN_TIME_KEY;
+    MCAPI static void** vftableForContainer();
 
-    MCAPI static std::string const COOK_TIME_KEY;
+    MCAPI void* ctor$(class BlockPos const& pos);
 
-    MCAPI static std::string const CUSTOM_NAME_KEY;
+    MCAPI void* ctor$(
+        ::BlockActorType               blockActorType,
+        class BlockPos const&          pos,
+        class HashedString const&      recipeTag,
+        ::Puv::Legacy::LevelSoundEvent smeltSound,
+        ::ContainerType                containerType,
+        int                            burnInterval,
+        class Block const&             unlitFurnace,
+        class Block const&             litFurnace
+    );
 
-    MCAPI static std::string const ITEMS_LIST_KEY;
+    MCAPI void dtor$();
 
-    MCAPI static std::string const LAST_FUEL_KEY;
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
 
-    MCAPI static std::string const SLOT_KEY;
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
 
-    MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
+    MCAPI bool canPullOutItem$(int slot, int face, class ItemStack const& item) const;
 
-    MCAPI static std::string const STORED_XP_KEY;
+    MCAPI bool canPushInItem$(int slot, int face, class ItemStack const& item) const;
+
+    MCAPI void fixupOnLoad$(class LevelChunk& lc);
+
+    MCAPI class Container* getContainer$();
+
+    MCAPI class Container const* getContainer$() const;
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int slot) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onCustomTagLoadDone$(class BlockSource& region);
+
+    MCAPI void onMove$();
+
+    MCAPI void onNeighborChanged$(class BlockSource& region, class BlockPos const& position);
+
+    MCAPI void onRemoved$(class BlockSource&);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void serverInitItemStackIds$(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
+
+    MCAPI void setItem$(int slot, class ItemStack const& item);
+
+    MCAPI void startOpen$(class Player& player);
+
+    MCAPI void stopOpen$(class Player& player);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static std::string const& BURN_DURATION_KEY();
+
+    MCAPI static int const& BURN_INTERVAL();
+
+    MCAPI static std::string const& BURN_TIME_KEY();
+
+    MCAPI static std::string const& COOK_TIME_KEY();
+
+    MCAPI static std::string const& CUSTOM_NAME_KEY();
+
+    MCAPI static float const& DEFAULT_SMELTING_TIME();
+
+    MCAPI static std::string const& ITEMS_LIST_KEY();
+
+    MCAPI static std::string const& LAST_FUEL_KEY();
+
+    MCAPI static std::string const& SLOT_KEY();
+
+    MCAPI static std::string const& STORED_XP_DEPRECATED_KEY();
+
+    MCAPI static std::string const& STORED_XP_KEY();
 
     // NOLINTEND
 };

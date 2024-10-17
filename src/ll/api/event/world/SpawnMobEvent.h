@@ -3,10 +3,10 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/world/WorldEvent.h"
 
-#include "mc/math/Vec3.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/registry/ItemStack.h"
+#include "mc/world/item/ItemStack.h"
 
 namespace ll::event::inline world {
 

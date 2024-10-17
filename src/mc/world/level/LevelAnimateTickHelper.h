@@ -9,9 +9,10 @@ public:
     LevelAnimateTickHelper(LevelAnimateTickHelper const&);
     LevelAnimateTickHelper();
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const MIN_TIME_LIMITED_JAVA_PARITY_VERSION;
+    MCAPI static class BaseGameVersion const& MIN_TIME_LIMITED_JAVA_PARITY_VERSION();
 
     // NOLINTEND
 };

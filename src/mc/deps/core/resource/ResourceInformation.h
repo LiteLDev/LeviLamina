@@ -45,7 +45,34 @@ public:
 
     MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(std::string const& value);
 
-    MCAPI static std::string const& StringFromResourceType(::ResourceInformation::ResourceType);
+    MCAPI static std::string const& StringFromResourceType(::ResourceInformation::ResourceType value);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(
+        std::string const&                  description,
+        class SemVersion const&             version,
+        class mce::UUID const&              uuid,
+        ::ResourceInformation::ResourceType type,
+        std::string const&                  language,
+        std::string const&                  entry
+    );
+
+    MCAPI void* ctor$(class ResourceInformation const&);
+
+    MCAPI void* ctor$(
+        std::string const&      description,
+        class SemVersion const& version,
+        class mce::UUID const&  uuid,
+        std::string const&      type,
+        std::string const&      language,
+        std::string const&      entry
+    );
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

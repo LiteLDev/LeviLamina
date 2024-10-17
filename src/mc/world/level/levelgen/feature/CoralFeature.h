@@ -54,12 +54,12 @@ public:
     ) const;
 
     MCAPI void _buildSmallClump(
-        class BlockSource&                             region,
-        class BlockPos const&                          pos,
-        class Random&                                  random,
-        std::vector<class BlockPos>&                   topDec,
-        std::vector<std::pair<class BlockPos, uchar>>& sideDec,
-        gsl::not_null<class Block const*>              block
+        class BlockSource&           region,
+        class BlockPos const&        pos,
+        class Random&                random,
+        std::vector<class BlockPos>& topDec,
+        std::vector<std::pair<class BlockPos, uchar>>&,
+        gsl::not_null<class Block const*> block
     ) const;
 
     MCAPI void _buildSpire(
@@ -108,6 +108,15 @@ public:
         int                               iteration,
         bool                              negateChance
     ) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

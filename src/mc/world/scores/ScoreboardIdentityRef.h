@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/player/PlayerScoreSetFunction.h"
 #include "mc/world/scores/IdentityDefinition.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 class ScoreboardIdentityRef {
 public:
@@ -28,7 +28,12 @@ public:
 
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const& toSave);
 
-    MCAPI static class ScoreboardIdentityRef const Undefined;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static class ScoreboardIdentityRef const& Undefined();
 
     // NOLINTEND
 };

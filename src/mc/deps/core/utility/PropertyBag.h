@@ -28,7 +28,16 @@ public:
 
     MCAPI std::string toString() const;
 
-    MCAPI static class PropertyBag EMPTY;
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Json::Value const& jsonValue);
+
+    MCAPI void* ctor$();
+
+    MCAPI static class PropertyBag& EMPTY();
 
     // NOLINTEND
 };

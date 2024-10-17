@@ -14,4 +14,11 @@ public:
     MCAPI ~ScriptingNotificationEvent();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

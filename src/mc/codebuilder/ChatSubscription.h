@@ -18,6 +18,15 @@ public:
     MCAPI ~ChatSubscription();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct CodeBuilder::ChatSubscription&&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

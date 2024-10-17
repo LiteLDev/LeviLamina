@@ -1,11 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/systems/common/ResourceFileSystem.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/PathBuffer.h"
-#include "mc/entity/systems/common/ResourceFileSystem.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,6 +44,19 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _computeHashes();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class Core::Path const& path, ::ResourceFileSystem fileSystem);
+
+    MCAPI void* ctor$(class Core::Path const& path);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

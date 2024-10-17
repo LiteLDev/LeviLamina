@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/POIType.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 class MoveToPOIGoal : public ::BaseMoveToGoal {
 public:
@@ -58,6 +58,33 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _updatePOIBooking();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
+
+    MCAPI void dtor$();
+
+    MCAPI std::weak_ptr<class POIInstance> _getOwnedPOI$(::POIType type) const;
+
+    MCAPI class Vec3 _getTargetPosition$() const;
+
+    MCAPI void _moveToBlock$();
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canUse$();
+
+    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

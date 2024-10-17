@@ -28,41 +28,76 @@ public:
 
     MCVAPI bool save(class CompoundTag& tag) const;
 
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void
+    serverInitItemStackIds(int containerSlot, int, std::function<void(int, class ItemStack const&)> onNetIdChanged);
 
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int, class ItemStack const& item);
 
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
     MCAPI explicit DecoratedPotBlockActor(class BlockPos const& pos);
 
     MCAPI std::array<std::string, 4> const& getSherdNames() const;
 
-    MCAPI void tryAddItem(class Player&);
+    MCAPI void tryAddItem(class Player& player);
 
-    MCAPI static void removeDefaultSherdsFromUserData(class ItemStackBase&);
+    MCAPI static void removeDefaultSherdsFromUserData(class ItemStackBase& itemInstance);
 
-    MCAPI static void saveSherdsToTag(class CompoundTag&, std::array<std::string, 4> const&, bool);
+    MCAPI static void
+    saveSherdsToTag(class CompoundTag& tag, std::array<std::string, 4> const& sherds, bool forceSaveDefaultSherds);
 
     MCAPI static class DecoratedPotBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
 
-    MCAPI static std::optional<std::array<std::string, 4>> tryGetSherdsFromTag(class CompoundTag const&);
-
-    MCAPI static std::array<std::string, 4> const DEFAULT_SHERD_LIST;
+    MCAPI static std::optional<std::array<std::string, 4>> tryGetSherdsFromTag(class CompoundTag const& tag);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onInsertFeedback(class BlockSource&, class ItemStack const&, class Player&);
+    MCAPI void
+    _onInsertFeedback(class BlockSource& region, class ItemStack const& newContainedItem, class Player& player);
 
     MCAPI void _resetSherdItemNames();
 
-    MCAPI void _setContainedItem(class ItemStack const&);
+    MCAPI void _setContainedItem(class ItemStack const& item);
 
-    MCAPI static bool _areDefaultSherds(std::array<std::string, 4> const&);
+    MCAPI static bool _areDefaultSherds(std::array<std::string, 4> const& sherds);
 
-    MCAPI static std::optional<std::array<std::string, 4>> _tryGetSherdsFromItem(class ItemStackBase const&);
+    MCAPI static std::optional<std::array<std::string, 4>> _tryGetSherdsFromItem(class ItemStackBase const& item);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+
+    MCAPI int getContainerSize$() const;
+
+    MCAPI class ItemStack const& getItem$(int) const;
+
+    MCAPI int getMaxStackSize$() const;
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void
+    serverInitItemStackIds$(int containerSlot, int, std::function<void(int, class ItemStack const&)> onNetIdChanged);
+
+    MCAPI void setItem$(int, class ItemStack const& item);
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static std::array<std::string, 4> const& DEFAULT_SHERD_LIST();
 
     // NOLINTEND
 };

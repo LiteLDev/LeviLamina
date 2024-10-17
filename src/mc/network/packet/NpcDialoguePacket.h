@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/ActorUniqueID.h"
+#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/platform/Result.h"
 
 class NpcDialoguePacket : public ::Packet {
 public:
@@ -47,16 +47,40 @@ public:
 
     MCAPI NpcDialoguePacket();
 
-    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
+    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID npcID);
 
-    MCAPI static bool
-    initializePacket(class NpcDialoguePacket&, class NpcDialogueStorage const* storage, std::string const&);
+    MCAPI static bool initializePacket(
+        class NpcDialoguePacket&        outPacket,
+        class NpcDialogueStorage const* storage,
+        std::string const&              sceneName
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    MCAPI class Bedrock::Result<void> _verifyJson(std::string const&) const;
+    MCAPI class Bedrock::Result<void> _verifyJson(std::string const& actionJSON) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(struct ActorUniqueID npcID);
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI ::MinecraftPacketIds getId$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void write$(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

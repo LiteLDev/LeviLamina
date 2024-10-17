@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/BasicLoader.h"
+#include "mc/external/cereal/BasicLoader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,18 @@ public:
     // vIndex: 0
     virtual ~NBTLoader();
 
-    MCAPI NBTLoader(gsl::not_null<class Tag const*>, struct cereal::ReflectionCtx const&);
+    MCAPI NBTLoader(gsl::not_null<class Tag const*> tag, struct cereal::ReflectionCtx const& reflectionCtx);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(gsl::not_null<class Tag const*> tag, struct cereal::ReflectionCtx const& reflectionCtx);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

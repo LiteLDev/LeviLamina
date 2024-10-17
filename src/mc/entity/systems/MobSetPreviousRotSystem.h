@@ -17,8 +17,12 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI static void
-    _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&);
+    MCAPI static void _setPreviousRotation(
+        class StrictEntityContext&,
+        struct ActorHeadRotationComponent& actorHeadRotation,
+        struct ActorRotationComponent&     actorRotation,
+        struct MobBodyRotationComponent&   mobBodyRotation
+    );
 
     // NOLINTEND
 };

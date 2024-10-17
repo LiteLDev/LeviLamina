@@ -26,7 +26,21 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    MCAPI void _dispatch(bool&, class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&);
+    MCAPI void _dispatch(
+        bool&                          result,
+        class ItemStackBase&           item,
+        class DefinitionTrigger const& trigger,
+        class RenderParams&            params
+    );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

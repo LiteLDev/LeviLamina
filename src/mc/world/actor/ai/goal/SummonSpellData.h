@@ -16,4 +16,13 @@ public:
     MCAPI ~SummonSpellData();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct SummonSpellData const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

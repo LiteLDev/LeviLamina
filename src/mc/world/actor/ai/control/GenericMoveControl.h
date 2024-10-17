@@ -25,4 +25,19 @@ public:
     MCAPI GenericMoveControl();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI void initializeInternal$(class Mob& mob, struct MoveControlDescription* description);
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

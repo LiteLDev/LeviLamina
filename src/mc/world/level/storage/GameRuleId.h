@@ -11,4 +11,11 @@ public:
     MCAPI explicit GameRuleId(int value);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(int value);
+
+    // NOLINTEND
 };

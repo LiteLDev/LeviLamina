@@ -26,4 +26,17 @@ public:
     MCAPI HungerAttributeDelegate(class AttributeInstance const& attribute, class Player* player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class AttributeInstance const& attribute, class Player* player);
+
+    MCAPI void notify$(int64 type);
+
+    MCAPI void tick$();
+
+    // NOLINTEND
 };

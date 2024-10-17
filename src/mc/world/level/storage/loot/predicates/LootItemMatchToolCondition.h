@@ -50,4 +50,20 @@ public:
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        struct IntRange                                                    count,
+        struct IntRange                                                    durability,
+        std::string                                                        itemName,
+        std::vector<struct LootItemMatchToolCondition::EnchantInfo> const& enchantments
+    );
+
+    MCAPI bool applies$(class Random& random, class LootTableContext& context);
+
+    // NOLINTEND
 };

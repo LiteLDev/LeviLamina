@@ -13,4 +13,11 @@ public:
     MCAPI SkinAdjustments();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

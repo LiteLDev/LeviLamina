@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/server/commands/CommandBlockMode.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/CommandBlockMode.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 class CommandBlockActor : public ::BlockActor {
@@ -45,7 +45,8 @@ public:
     virtual std::string const& getCustomName() const;
 
     // vIndex: 25
-    virtual std::string const& getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const&);
+    virtual std::string const&
+    getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context);
 
     // vIndex: 27
     virtual void setCustomName(std::string const& str);
@@ -110,6 +111,41 @@ public:
     // private:
     // NOLINTBEGIN
     MCAPI void _setAutomatic(class BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+
+    MCAPI void _onUpdatePacket$(class CompoundTag const& tag, class BlockSource& region);
+
+    MCAPI bool _playerCanUpdate$(class Player const& player) const;
+
+    MCAPI std::string const& getCustomName$() const;
+
+    MCAPI std::string const& getFilteredCustomName$(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context
+    );
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void
+    loadBlockData$(class CompoundTag const& tag, class BlockSource& region, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onChanged$(class BlockSource& region);
+
+    MCAPI void onCustomTagLoadDone$(class BlockSource& region);
+
+    MCAPI void onPlace$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void saveBlockData$(class CompoundTag& tag, class BlockSource& region) const;
+
+    MCAPI void setCustomName$(std::string const& str);
 
     // NOLINTEND
 };

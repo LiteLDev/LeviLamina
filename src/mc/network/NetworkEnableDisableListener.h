@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 class NetworkEnableDisableListener {
 public:
@@ -32,6 +32,17 @@ public:
     MCAPI bool isEnabled() const;
 
     MCAPI void tryEnable();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

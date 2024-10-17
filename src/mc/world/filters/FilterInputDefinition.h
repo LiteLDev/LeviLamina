@@ -11,9 +11,18 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI FilterInputDefinition(class FilterInput f, std::string const& d);
+    MCAPI FilterInputDefinition(class FilterInput, std::string const&);
 
     MCAPI ~FilterInputDefinition();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class FilterInput, std::string const&);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

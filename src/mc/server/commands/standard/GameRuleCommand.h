@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,6 +28,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI explicit InitProxy(class Level& level);
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void* ctor$(class Level& level);
 
         // NOLINTEND
     };
@@ -62,6 +69,15 @@ public:
         class Json::Value&    json,
         std::string*          value
     );
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

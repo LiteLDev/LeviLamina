@@ -14,4 +14,11 @@ public:
     MCAPI BeardingDescriptionCache(class BoundingBox const& bb, int deltaY);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class BoundingBox const& bb, int deltaY);
+
+    // NOLINTEND
 };

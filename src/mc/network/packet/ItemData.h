@@ -18,7 +18,14 @@ public:
     // NOLINTBEGIN
     MCAPI ~ItemData();
 
-    MCAPI static std::vector<struct ItemData> fromItemRegistry(class ItemRegistryRef);
+    MCAPI static std::vector<struct ItemData> fromItemRegistry(class ItemRegistryRef itemRegistry);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

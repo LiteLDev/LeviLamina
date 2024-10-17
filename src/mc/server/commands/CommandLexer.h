@@ -73,4 +73,11 @@ public:
     MCAPI static bool isDigit(char c);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& commandInput);
+
+    // NOLINTEND
 };

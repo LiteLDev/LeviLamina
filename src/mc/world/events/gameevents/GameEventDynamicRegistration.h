@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 
 class GameEventDynamicRegistration {
 public:
@@ -19,7 +19,8 @@ public:
     MCAPI void
     onActorLoadedIntoChunk(class BlockSource const& region, class ChunkPos chunkPos, DimensionType dimensionId);
 
-    MCAPI void onActorMovedBetweenChunks(class BlockSource const& region, class ChunkPos, DimensionType);
+    MCAPI void
+    onActorMovedBetweenChunks(class BlockSource const& region, class ChunkPos toChunkPos, DimensionType toDimensionId);
 
     MCAPI void onActorRemoved();
 
@@ -27,7 +28,15 @@ public:
 
     // private:
     // NOLINTBEGIN
-    MCAPI void _onActorChangedChunk(class BlockSource const& region, class ChunkPos, DimensionType);
+    MCAPI void
+    _onActorChangedChunk(class BlockSource const& region, class ChunkPos toChunkPos, DimensionType toDimensionId);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::shared_ptr<class GameEventListener> listener);
 
     // NOLINTEND
 };

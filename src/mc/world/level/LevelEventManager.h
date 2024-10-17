@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/pubsub/Connector.h"
-#include "mc/events/LevelEvent.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/world/level/block/LevelEvent.h"
 
 class LevelEventManager {
 public:
@@ -25,9 +25,26 @@ public:
     virtual class Bedrock::PubSub::Connector<void(::LevelEvent, class CompoundTag const&)>&
     getLevelEventCompoundTagConnector();
 
-    MCAPI void broadcastLevelEvent(::LevelEvent, class Vec3 const&, int, class UserEntityIdentifierComponent const*);
+    MCAPI void broadcastLevelEvent(
+        ::LevelEvent                               type,
+        class Vec3 const&                          pos,
+        int                                        data,
+        class UserEntityIdentifierComponent const* userIdentifier
+    );
 
-    MCAPI void broadcastLocalEvent(class IDimension&, ::LevelEvent, class Vec3 const&, int);
+    MCAPI void broadcastLocalEvent(class IDimension& dimension, ::LevelEvent type, class Vec3 const& pos, int data);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI class Bedrock::PubSub::Connector<void(::LevelEvent, class CompoundTag const&)>&
+    getLevelEventCompoundTagConnector$();
+
+    MCAPI class Bedrock::PubSub::Connector<void(::LevelEvent, class Vec3 const&, int)>& getLevelEventDataConnector$();
 
     // NOLINTEND
 };

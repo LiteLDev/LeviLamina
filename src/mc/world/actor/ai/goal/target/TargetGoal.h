@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/AutomaticID.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class TargetGoal : public ::Goal {
@@ -82,6 +82,56 @@ public:
     );
 
     MCAPI bool _withinRange(class Actor const& target);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Mob&                               pathMob,
+        std::vector<struct MobDescriptor> const& targetTypes,
+        bool                                     mustSee,
+        int                                      mustSeeForgetTicks,
+        bool                                     mustReach,
+        float                                    withinDefault,
+        bool                                     attackOwner,
+        int                                      persistTargetTicks
+    );
+
+    MCAPI void* ctor$(
+        class Mob& pathMob,
+        bool       mustSee,
+        int        mustSeeForgetTicks,
+        bool       mustReach,
+        float      withinDefault,
+        bool       attackOwner,
+        int        persistTargetTicks
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool _canAttack$(
+        class Mob*                   testMob,
+        class Actor*                 target,
+        bool                         allowInvulnerable,
+        bool                         mustSee,
+        struct MobDescriptor const** outDescriptorMatch
+    );
+
+    MCAPI void appendDebugInfo$(std::string& str) const;
+
+    MCAPI bool canContinueToUse$();
+
+    MCAPI bool isTargetGoal$() const;
+
+    MCAPI void start$();
+
+    MCAPI void stop$();
+
+    MCAPI void tick$();
 
     // NOLINTEND
 };

@@ -13,11 +13,18 @@ public:
     // NOLINTBEGIN
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent&&);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag&, class ILevel&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class ILevel& level) const;
 
     MCAPI class DynamicProperties& getProperties();
 
     MCAPI class DynamicPropertiesComponent& operator=(class DynamicPropertiesComponent&&);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class DynamicPropertiesComponent&&);
 
     // NOLINTEND
 };

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/InHandUpdateType.h"
-#include "mc/events/LevelSoundEvent.h"
+#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/components/ItemColor.h"
-#include "mc/world/item/components/ItemUseMethod.h"
-#include "mc/world/level/block/utils/BlockShape.h"
+#include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +48,7 @@ public:
     virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 62
-    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
     // vIndex: 101
     virtual bool hasSameRelevantUserData(class ItemStackBase const& stack, class ItemStackBase const& other) const;
@@ -78,18 +78,6 @@ public:
 
     MCAPI static void setColor(class ItemStackBase& instance);
 
-    MCAPI static std::string const TAG_EXPLOSION;
-
-    MCAPI static std::string const TAG_E_COLORS;
-
-    MCAPI static std::string const TAG_E_FADECOLORS;
-
-    MCAPI static std::string const TAG_E_FLICKER;
-
-    MCAPI static std::string const TAG_E_TRAIL;
-
-    MCAPI static std::string const TAG_E_TYPE;
-
     // NOLINTEND
 
     // private:
@@ -104,6 +92,42 @@ public:
     );
 
     MCAPI static void appendColors(std::string& hovertext, std::vector<uchar> const& colorList);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& nameId, int id);
+
+    MCAPI void appendFormattedHovertext$(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       advancedToolTips
+    ) const;
+
+    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
+
+    MCAPI bool hasSameRelevantUserData$(class ItemStackBase const& stack, class ItemStackBase const& other) const;
+
+    MCAPI bool isDyeable$() const;
+
+    MCAPI bool isValidAuxValue$(int auxValue) const;
+
+    MCAPI static std::string const& TAG_EXPLOSION();
+
+    MCAPI static std::string const& TAG_E_COLORS();
+
+    MCAPI static std::string const& TAG_E_FADECOLORS();
+
+    MCAPI static std::string const& TAG_E_FLICKER();
+
+    MCAPI static std::string const& TAG_E_TRAIL();
+
+    MCAPI static std::string const& TAG_E_TYPE();
 
     // NOLINTEND
 };

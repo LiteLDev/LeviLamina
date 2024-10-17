@@ -14,4 +14,11 @@ public:
     MCVAPI bool finalize(class BlockSource&, class IRandom&);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+
+    // NOLINTEND
 };

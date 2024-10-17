@@ -9,7 +9,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Puv::Facing {
 // NOLINTBEGIN
-MCAPI void bindType(struct cereal::ReflectionCtx&);
+MCAPI void bindType(struct cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 }; // namespace Puv::Facing

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class ResourceUriCommand : public ::Command {
 public:
@@ -31,6 +31,15 @@ public:
     MCAPI void _executeNamed(class Level& level, class Player* originPlayer, class CommandOutput& output) const;
 
     MCAPI void _executeUriOnly(class Level& level, class Player* originPlayer, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

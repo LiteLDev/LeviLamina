@@ -58,9 +58,14 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // thunks
+public:
     // NOLINTBEGIN
-    MCAPI static std::string const DefaultCommandBlockName;
+    MCAPI void* ctor$();
+
+    MCAPI void dtor$();
+
+    MCAPI static std::string const& DefaultCommandBlockName();
 
     // NOLINTEND
 };

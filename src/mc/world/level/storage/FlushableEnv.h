@@ -20,4 +20,15 @@ public:
     MCAPI explicit FlushableEnv(leveldb::Env* env);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(leveldb::Env* env);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

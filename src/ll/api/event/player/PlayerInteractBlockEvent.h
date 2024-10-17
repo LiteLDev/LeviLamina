@@ -3,9 +3,9 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerClickEvent.h"
 
-#include "mc/enums/FacingID.h"
-#include "mc/math/Vec3.h"
-#include "mc/world/item/registry/ItemStack.h"
+#include "mc/common/FacingID.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/Block.h"
 

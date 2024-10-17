@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/LevelEventCoordinator.h"
+#include "mc/world/events/LevelEventCoordinator.h"
 
 class ServerLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
@@ -20,6 +20,13 @@ public:
     MCAPI void sendLevelAddedPlayer(class Level& level, class Player& player);
 
     MCAPI void sendLevelRemovedPlayer(class Level& level, class Player& player);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

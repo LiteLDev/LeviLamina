@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/RedefinitionMode.h"
+#include "mc/world/attribute/RedefinitionMode.h"
 
 class Attribute {
 public:
@@ -21,6 +21,13 @@ public:
     MCAPI ::RedefinitionMode getRedefinitionMode() const;
 
     MCAPI static class Attribute& getByName(class HashedString const& attribute);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
 
     // NOLINTEND
 };

@@ -26,4 +26,13 @@ public:
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const& entryJson);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

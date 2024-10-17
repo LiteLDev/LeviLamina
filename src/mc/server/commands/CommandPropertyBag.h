@@ -37,4 +37,15 @@ public:
     MCAPI void set(std::string const& key, class Vec3 size);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class Json::Value const& jsonValue);
+
+    MCAPI void* ctor$();
+
+    // NOLINTEND
 };

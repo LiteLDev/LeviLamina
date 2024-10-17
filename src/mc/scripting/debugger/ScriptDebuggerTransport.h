@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/IDebuggerTransport.h"
+#include "mc/external/scripting/runtime/IDebuggerTransport.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,6 +51,33 @@ public:
 
     // vIndex: 10
     virtual void send(char const* buffer, uint64 length);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void close$();
+
+    MCAPI bool connect$(std::string const& host, ushort port);
+
+    MCAPI bool connected$() const;
+
+    MCAPI bool listen$(ushort port);
+
+    MCAPI bool lostConnection$() const;
+
+    MCAPI bool peek$() const;
+
+    MCAPI bool readyClose$() const;
+
+    MCAPI bool receive$(char* buffer, uint64 length);
+
+    MCAPI bool selectClient$();
+
+    MCAPI void send$(char const* buffer, uint64 length);
 
     // NOLINTEND
 };

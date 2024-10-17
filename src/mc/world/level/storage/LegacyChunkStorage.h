@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/StorageVersion.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 class LegacyChunkStorage : public ::ChunkSource {
 public:
@@ -47,6 +47,26 @@ public:
     MCAPI void _markChunkAsImported(class ChunkPos const& pos);
 
     MCAPI bool _openRegionFile();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        std::unique_ptr<class ChunkSource> parent,
+        class LevelStorage&                levelStorage,
+        ::StorageVersion                   v,
+        class Biome&                       defaultBiome
+    );
+
+    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+
+    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+
+    MCAPI bool saveLiveChunk$(class LevelChunk& lc);
 
     // NOLINTEND
 };

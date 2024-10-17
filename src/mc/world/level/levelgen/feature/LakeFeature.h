@@ -27,13 +27,32 @@ public:
     // vIndex: 3
     virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    MCAPI LakeFeature(class Block const& block, std::optional<class XoroshiroPositionalRandomFactory>);
+    MCAPI LakeFeature(
+        class Block const&                                    block,
+        std::optional<class XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI bool _check(class BlockPos const& pos, gsl::span<bool, 2048> grid) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        class Block const&                                    block,
+        std::optional<class XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
+    );
+
+    MCAPI void dtor$();
+
+    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

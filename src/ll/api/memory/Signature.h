@@ -158,11 +158,11 @@ inline void* signatureAddressCache = signatureCache<signature>.view().resolve();
 
 namespace ll::inline literals::inline memory_literals {
 template <FixedString signature>
-consteval memory::SignatureView operator""_sigv() noexcept {
+consteval memory::SignatureView operator""_sig() noexcept {
     return memory::signatureCache<signature>.view();
 }
 template <FixedString signature>
-constexpr void* operator""_sig() noexcept {
+constexpr void* operator""_sigp() noexcept {
     return memory::signatureAddressCache<signature>;
 }
 } // namespace ll::inline literals::inline memory_literals

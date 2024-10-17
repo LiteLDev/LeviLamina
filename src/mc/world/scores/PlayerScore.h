@@ -16,4 +16,11 @@ public:
     MCAPI struct ScoreboardId const& getId() const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(struct ScoreboardId const& id, int score);
+
+    // NOLINTEND
 };

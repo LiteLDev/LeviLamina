@@ -36,4 +36,15 @@ public:
     MCAPI void _setupBreach(class Mob& mob);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$();
+
+    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+
+    // NOLINTEND
 };

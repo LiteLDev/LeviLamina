@@ -14,7 +14,7 @@ public:
     [[nodiscard]] explicit CommandContext(std::string command, Args&&... args)
     : mCommand(std::move(command)),
       mOrigin(std::make_unique<T>(std::forward<Args>(args)...)),
-      mVersion(CommandVersion::CurrentVersion) {}
+      mVersion(CommandVersion::CurrentVersion()) {}
 
 public:
     // NOLINTBEGIN
@@ -22,12 +22,21 @@ public:
     CommandContext(
         std::string const&                   command,
         std::unique_ptr<class CommandOrigin> origin,
-        int                                  version = CommandVersion::CurrentVersion
+        int                                  version = CommandVersion::CurrentVersion()
     );
 
     MCAPI class CommandOrigin const& getCommandOrigin() const;
 
     MCAPI ~CommandContext();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::string const& cmd, std::unique_ptr<class CommandOrigin> origin, int version);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

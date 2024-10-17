@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/platform/Result.h"
 
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING {
 public:
@@ -21,6 +21,23 @@ public:
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+
+    MCAPI static void** vftableForItemStackRequestAction();
+
+    MCAPI void* ctor$();
+
+    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+
+    MCAPI void _write$(class BinaryStream& stream) const;
+
+    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
 
     // NOLINTEND
 };

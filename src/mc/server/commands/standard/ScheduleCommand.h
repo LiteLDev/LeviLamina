@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/Command.h"
 
 class ScheduleCommand : public ::Command {
 public:
@@ -23,6 +23,13 @@ public:
     public:
         // NOLINTBEGIN
         MCAPI ~FunctionInfo();
+
+        // NOLINTEND
+
+        // thunks
+    public:
+        // NOLINTBEGIN
+        MCAPI void dtor$();
 
         // NOLINTEND
     };
@@ -53,6 +60,15 @@ public:
 
     MCAPI struct ScheduleCommand::FunctionInfo
     _tryGetFunction(class FunctionManager& functionManager, class CommandOutput& output) const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

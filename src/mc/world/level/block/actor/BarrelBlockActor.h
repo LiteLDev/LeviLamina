@@ -27,4 +27,25 @@ public:
     MCVAPI void stopOpen(class Player& player);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForFillingContainer();
+
+    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI std::string getName$() const;
+
+    MCAPI void onPlace$(class BlockSource& region);
+
+    MCAPI void playCloseSound$(class BlockSource& region);
+
+    MCAPI void playOpenSound$(class BlockSource& region);
+
+    MCAPI void startOpen$(class Player& player);
+
+    MCAPI void stopOpen$(class Player& player);
+
+    // NOLINTEND
 };

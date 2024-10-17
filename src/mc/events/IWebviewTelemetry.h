@@ -32,4 +32,19 @@ public:
     MCAPI explicit IWebviewTelemetry(class IMinecraftEventing const& eventing);
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(class IMinecraftEventing const& eventing);
+
+    MCAPI void onDownloadBegin$(struct WebviewDownloadInfo const& downloadInfo);
+
+    MCAPI void onDownloadCanceled$(struct WebviewDownloadInfo const& downloadInfo);
+
+    MCAPI void onDownloadComplete$(struct WebviewDownloadInfo const& downloadInfo);
+
+    // NOLINTEND
 };

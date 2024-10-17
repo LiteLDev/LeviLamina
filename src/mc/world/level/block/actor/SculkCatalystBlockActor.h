@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
-#include "mc/world/level/block/utils/BlockActorType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,15 +44,46 @@ public:
 
     MCAPI class SculkSpreader& getSculkSpreader();
 
-    MCAPI static ::BlockActorType const TypeId;
-
-    MCAPI static std::string const TypeString;
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     MCAPI void _tryConsumeOnDeathExperience(class Level& level, class Actor& actor);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftableForBlockActor();
+
+    MCAPI static void** vftableForGameEventListener();
+
+    MCAPI void* ctor$(class BlockPos const& pos);
+
+    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
+
+    MCAPI class GameEvents::PositionSource const& getPositionSource$() const;
+
+    MCAPI uint getRange$() const;
+
+    MCAPI void handleGameEvent$(
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockSource&             region
+    );
+
+    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+
+    MCAPI void onRemoved$(class BlockSource& region);
+
+    MCAPI bool save$(class CompoundTag& tag) const;
+
+    MCAPI void tick$(class BlockSource& region);
+
+    MCAPI static ::BlockActorType const& TypeId();
+
+    MCAPI static std::string const& TypeString();
 
     // NOLINTEND
 };

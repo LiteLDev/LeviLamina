@@ -51,4 +51,29 @@ public:
     MCAPI void _flushWithTransaction();
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+
+    MCAPI bool FileExists$(std::string const& f);
+
+    MCAPI leveldb::Status GetChildren$(std::string const& dir, std::vector<std::string>* r);
+
+    MCAPI leveldb::Status NewAppendableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& f, leveldb::RandomAccessFile** r);
+
+    MCAPI leveldb::Status NewSequentialFile$(std::string const& f, leveldb::SequentialFile** r);
+
+    MCAPI leveldb::Status NewWritableFile$(std::string const& f, leveldb::WritableFile** r);
+
+    MCAPI leveldb::Status RenameFile$(std::string const& from, std::string const& to);
+
+    MCAPI void flushToPermanentStorage$();
+
+    // NOLINTEND
 };

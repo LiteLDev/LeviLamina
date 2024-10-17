@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy>);
+    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy> playerDeathManagerProxy);
 
     MCAPI void playerDied(class Player& player, class ActorDamageSource const& source);
 
@@ -26,6 +26,15 @@ public:
     MCAPI void setPacketSender(class PacketSender& packetSender);
 
     MCAPI ~PlayerDeathManager();
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(std::unique_ptr<class IPlayerDeathManagerProxy> playerDeathManagerProxy);
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };

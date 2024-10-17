@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
 struct CrashDumpEventData {
 public:
@@ -16,7 +16,14 @@ public:
     // NOLINTBEGIN
     MCAPI CrashDumpEventData(::CrashDumpLogStringID, ::CrashDumpLogStringID);
 
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(::CrashDumpLogStringID, ::CrashDumpLogStringID);
+
+    MCAPI static ::ll::CArrayT<struct CrashDumpFormatEntryImpl const>& kFormat();
 
     // NOLINTEND
 };

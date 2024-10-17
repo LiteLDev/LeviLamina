@@ -39,4 +39,18 @@ public:
     );
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void
+    addChildren$(class StructurePiece& startPiece, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+
+    MCAPI ::StructurePieceType getType$() const;
+
+    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+
+    // NOLINTEND
 };

@@ -28,4 +28,15 @@ public:
     ) const;
 
     // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI void* ctor$(class ActorDefinitionEvent&&);
+
+    MCAPI void* ctor$(class ActorDefinitionEvent const&);
+
+    MCAPI void dtor$();
+
+    // NOLINTEND
 };

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/enums/FertilizerType.h"
-#include "mc/enums/Flip.h"
-#include "mc/enums/ShapeType.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/Flip.h"
+#include "mc/world/item/FertilizerType.h"
+#include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
-#include "mc/world/level/block/utils/BlockProperty.h"
-#include "mc/world/level/block/utils/BlockRenderLayer.h"
-#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,7 +31,7 @@ public:
     virtual ~DecoratedPotBlock() = default;
 
     // vIndex: 17
-    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    virtual void onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
 
     // vIndex: 23
     virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
@@ -53,25 +53,59 @@ public:
     virtual bool hasComparatorSignal() const;
 
     // vIndex: 112
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
 
     // vIndex: 143
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 150
     virtual bool isInteractiveBlock() const;
 
     // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     MCAPI DecoratedPotBlock(std::string const& name, int id);
 
     MCAPI static std::unique_ptr<class CompoundTag>
-        getItemInstanceUserData(gsl::not_null<class DecoratedPotBlockActor const*>);
+    getItemInstanceUserData(gsl::not_null<class DecoratedPotBlockActor const*> pot);
 
-    MCAPI static std::vector<class ItemStack> getSherdItems(class DecoratedPotBlockActor const&);
+    MCAPI static std::vector<class ItemStack> getSherdItems(class DecoratedPotBlockActor const& decoratedPotBlockActor);
 
-    MCAPI static bool isShatteringItem(class ItemStack const&);
+    MCAPI static bool isShatteringItem(class ItemStack const& item);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(std::string const& name, int id);
+
+    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const* blockActor) const;
+
+    MCAPI bool canContainLiquid$() const;
+
+    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+
+    MCAPI int
+    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+
+    MCAPI bool hasComparatorSignal$() const;
+
+    MCAPI bool isInteractiveBlock$() const;
+
+    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+
+    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+
+    MCAPI class Block const*
+    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+
+    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
 
     // NOLINTEND
 };

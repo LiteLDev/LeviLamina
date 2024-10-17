@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/utilities/ActorLocation.h"
-#include "mc/enums/AbilitiesIndex.h"
-#include "mc/enums/SubClientId.h"
+#include "mc/common/SubClientId.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -74,15 +74,15 @@ public:
     virtual bool isValid() const;
 
     MCAPI ExecuteContextCommandOrigin(
-        struct ActorUniqueID,
-        class Vec3 const&,
-        std::optional<class Vec2> const&,
-        struct ActorUniqueID,
-        struct ActorUniqueID,
-        ::ActorLocation,
-        DimensionType,
-        class Level&,
-        int
+        struct ActorUniqueID             executionEntity,
+        class Vec3 const&                position,
+        std::optional<class Vec2> const& rotation,
+        struct ActorUniqueID             rotationActor,
+        struct ActorUniqueID             positionActor,
+        ::ActorLocation                  anchor,
+        DimensionType                    dimensionType,
+        class Level&                     level,
+        int                              version
     );
 
     MCAPI class Actor const* getPositionEntity();
@@ -103,6 +103,55 @@ public:
 
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin>
     load(class CompoundTag const& tag, class ServerLevel& level);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void* ctor$(
+        struct ActorUniqueID             executionEntity,
+        class Vec3 const&                position,
+        std::optional<class Vec2> const& rotation,
+        struct ActorUniqueID             rotationActor,
+        struct ActorUniqueID             positionActor,
+        ::ActorLocation                  anchor,
+        DimensionType                    dimensionType,
+        class Level&                     level,
+        int                              version
+    );
+
+    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+
+    MCAPI class BlockPos getBlockPosition$() const;
+
+    MCAPI class Dimension* getDimension$() const;
+
+    MCAPI class Actor* getEntity$() const;
+
+    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+
+    MCAPI class Level* getLevel$() const;
+
+    MCAPI std::string getName$() const;
+
+    MCAPI ::CommandOriginType getOriginType$() const;
+
+    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+
+    MCAPI std::string const& getRequestId$() const;
+
+    MCAPI std::optional<class Vec2> getRotation$() const;
+
+    MCAPI class Vec3 getWorldPosition$() const;
+
+    MCAPI bool isValid$() const;
+
+    MCAPI class CompoundTag serialize$() const;
+
+    MCAPI void updateValues$();
 
     // NOLINTEND
 };

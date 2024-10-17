@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/events/MutableServerNetworkGameplayEvent.h"
+#include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/EventRef.h"
+#include "mc/world/events/MutableServerNetworkGameplayEvent.h"
 
 class ServerNetworkEventCoordinator {
 public:
@@ -26,7 +26,14 @@ public:
     MCAPI ::CoordinatorResult
     sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI void sendMessage(struct MessageEvent&);
+    MCAPI void sendMessage(struct MessageEvent& messageEvent);
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
 
     // NOLINTEND
 };

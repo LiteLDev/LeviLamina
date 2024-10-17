@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/WeakRef.h"
-#include "mc/enums/TickingAreaLoadMode.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -103,6 +103,15 @@ public:
     virtual void updateBlockSourceCurrentTick(struct Tick const& currentTick) = 0;
 
     MCAPI class CompoundTag serialize() const;
+
+    // NOLINTEND
+
+    // thunks
+public:
+    // NOLINTBEGIN
+    MCAPI static void** vftable();
+
+    MCAPI void dtor$();
 
     // NOLINTEND
 };
