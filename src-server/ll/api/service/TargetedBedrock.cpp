@@ -22,8 +22,6 @@
 
 namespace ll::service::inline bedrock {
 
-using namespace ll::memory;
-
 // PropertiesSettings
 static std::atomic<PropertiesSettings*> propertiesSettings;
 
@@ -33,11 +31,11 @@ LL_TYPE_INSTANCE_HOOK(
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
     DedicatedServer::StartResult,
-    Core::FilePathManager&                  filePathManager,
-    PropertiesSettings&                     properties,
-    LevelSettings&                          settings,
-    AllowListFile&                          allowListFile,
-    std::unique_ptr<class PermissionsFile>& permissionsFile
+    Core::FilePathManager&            filePathManager,
+    PropertiesSettings&               properties,
+    LevelSettings&                    settings,
+    AllowListFile&                    allowListFile,
+    std::unique_ptr<PermissionsFile>& permissionsFile
 ) {
     propertiesSettings               = &properties;
     DedicatedServer::StartResult res = origin(filePathManager, properties, settings, allowListFile, permissionsFile);

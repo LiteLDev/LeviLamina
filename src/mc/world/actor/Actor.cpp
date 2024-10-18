@@ -101,11 +101,11 @@ class HitResult Actor::traceRay(
     Vec3      rayDir{getViewVector()};
     HitResult result{};
     if (includeBlock) {
-        result = getDimensionBlockSource().clip(
+        result = getDimensionBlockSource().clip$(
             origin,
             origin + rayDir * tMax,
             true,
-            ShapeType::All,
+            ShapeType::Outline,
             ((static_cast<int>(tMax) + 1) * 2),
             false,
             false,

@@ -19,8 +19,8 @@ public:
     class ExecuteChainedSubcommand : public ::CommandChainedSubcommand {
     public:
         // ExecuteChainedSubcommand inner types define
-        enum class Subcommand {
-            None       = 0,
+        enum class Subcommand : int {
+            None       = 0x0,
             As         = 0x1,
             At         = 0x2,
             In         = 0x3,

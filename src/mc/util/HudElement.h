@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class HudElement {
+enum class HudElement : int {
     PaperDoll     = 0x0,
     Armor         = 0x1,
     ToolTips      = 0x2,

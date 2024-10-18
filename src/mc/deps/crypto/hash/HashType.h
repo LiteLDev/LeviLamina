@@ -4,7 +4,7 @@
 
 namespace Crypto::Hash {
 
-enum class HashType {
+enum class HashType : int {
     MD5    = 0x0,
     SHA1   = 0x1,
     SHA256 = 0x2,

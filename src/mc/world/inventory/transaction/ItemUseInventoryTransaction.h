@@ -11,10 +11,10 @@
 class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseInventoryTransaction inner types define
-    enum class ActionType {
-        Place   = 0,
-        Use     = 1,
-        Destroy = 2,
+    enum class ActionType : int {
+        Clear   = 0x0,
+        UriOnly = 0x1,
+        Named   = 0x2,
     };
 
     ActionType                 mActionType{};           // this+0x0

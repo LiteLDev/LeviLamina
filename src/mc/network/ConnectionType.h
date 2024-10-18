@@ -4,17 +4,14 @@
 
 namespace Social {
 
-enum class ConnectionType {
-    Success            = 0,
-    CannotReadFromFile = 1,
-    CannotWriteToFile  = 2,
-    FileAlreadyExists  = 3,
-    CleanupFailed      = 4,
-    InvalidStatusCode  = 5,
-    InvalidUrl         = 6,
-    InternalError      = 7,
-    UserNotSignedIn    = 8,
-    NotInitialized     = 9,
-    UnknownError       = 10,
+enum class ConnectionType : short {
+    Undefined                 = -1,
+    Local                     = 0x0,
+    IPv4                      = 0x1,
+    IPv6                      = 0x2,
+    WebSocketsWebRTCSignaling = 0x3,
+    NAT                       = 0x5,
+    UPNP                      = 0x6,
+    UnknownIP                 = 0x7,
 };
 };
