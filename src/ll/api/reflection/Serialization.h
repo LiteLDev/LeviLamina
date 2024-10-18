@@ -39,7 +39,7 @@ inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<1>)
     requires(Reflectable<std::remove_cvref_t<T>>);
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
-    requires(concepts::Require<std::remove_cvref_t<T>, std::is_enum>);
+    requires(std::is_enum_v<std::remove_cvref_t<T>>);
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<0>)
     requires(std::convertible_to<std::remove_cvref_t<T>, J>);
@@ -194,7 +194,7 @@ inline Expected<J> serialize_impl(T&& obj, meta::PriorityTag<1>)
 }
 template <class J, class T>
 inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
-    requires(concepts::Require<std::remove_cvref_t<T>, std::is_enum>)
+    requires(std::is_enum_v<std::remove_cvref_t<T>>)
 {
     return magic_enum::enum_name(std::forward<T>(e));
 }

@@ -7,8 +7,8 @@
 
 namespace ll::traits {
 
-template <class T, template <class> class Z>
-concept Require = Z<T>::value;
+template <class T, template <class...> class Z, class... Ts>
+concept Require = Z<T, Ts...>::value;
 
 template <size_t N, class T, class... Ts>
 struct get_type {
