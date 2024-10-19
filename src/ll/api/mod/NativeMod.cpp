@@ -16,7 +16,7 @@ NativeMod::NativeMod(Manifest manifest, sys_utils::HandleT handle)
 : Mod(std::move(manifest)),
   mImpl(std::make_unique<Impl>(handle)) {}
 
-NativeMod::~NativeMod() = default;
+NativeMod::~NativeMod() { release(); }
 
 sys_utils::DynamicLibrary& NativeMod::getDynamicLibrary() { return mImpl->lib; }
 

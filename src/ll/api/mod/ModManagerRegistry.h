@@ -16,6 +16,8 @@ class ModManagerRegistry {
     ModManagerRegistry();
     ~ModManagerRegistry();
 
+    Expected<> releaseManagers() noexcept;
+
     Expected<> loadMod(Manifest manifest) noexcept;
 
     Expected<> unloadMod(std::string_view name) noexcept;

@@ -259,7 +259,8 @@ std::vector<std::string> ModRegistrar::getSortedModNames() const {
 }
 
 void ModRegistrar::enableAllMods() noexcept try {
-    auto names = getSortedModNames();
+    std::lock_guard lock(impl->mutex);
+    auto            names = getSortedModNames();
     if (names.empty()) {
         return;
     }
@@ -289,7 +290,8 @@ void ModRegistrar::enableAllMods() noexcept try {
     error_utils::printCurrentException(getLogger());
 }
 void ModRegistrar::disableAllMods() noexcept try {
-    auto names = getSortedModNames();
+    std::lock_guard lock(impl->mutex);
+    auto            names = getSortedModNames();
     if (!names.empty()) {
         getLogger().info("Disabling mods..."_tr());
         for (auto& name : std::ranges::reverse_view(names)) {
@@ -302,6 +304,15 @@ void ModRegistrar::disableAllMods() noexcept try {
             }
         }
     }
+} catch (...) {
+    error_utils::printCurrentException(getLogger());
+}
+void ModRegistrar::releaseAllMods() noexcept try {
+    std::lock_guard lock(impl->mutex);
+    if (auto res = ModManagerRegistry::getInstance().releaseManagers(); !res) {
+        res.error().log(getLogger(), io::LogLevel::Warn);
+    }
+    impl->deps.clear();
 } catch (...) {
     error_utils::printCurrentException(getLogger());
 }

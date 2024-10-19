@@ -25,6 +25,15 @@ ModManagerRegistry& ModManagerRegistry::getInstance() {
     return instance;
 }
 
+Expected<> ModManagerRegistry::releaseManagers() noexcept try {
+    std::lock_guard lock(impl->modMtx);
+    impl->loadedMods.clear();
+    impl->managers.clear();
+    return {};
+} catch (...) {
+    return makeExceptionError();
+}
+
 Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
     std::lock_guard lock(impl->modMtx);
     if (hasManager(manifest.type)) {

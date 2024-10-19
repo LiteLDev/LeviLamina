@@ -34,6 +34,8 @@ public:
 
     void disableAllMods() noexcept;
 
+    void releaseAllMods() noexcept;
+
     Expected<> loadMod(std::string_view name) noexcept;
 
     Expected<> unloadMod(std::string_view name) noexcept;

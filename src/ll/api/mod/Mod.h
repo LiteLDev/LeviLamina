@@ -15,7 +15,6 @@ LLAPI std::filesystem::path const& getModsRoot();
 
 class ModManager;
 class Mod {
-
 public:
     enum class State {
         Enabled,
@@ -58,6 +57,8 @@ public:
     LLAPI void onDisable(CallbackFn func) noexcept;
 
 protected:
+    LLAPI void release() noexcept;
+
     LLAPI void setState(State state) const;
 
     // is callback set

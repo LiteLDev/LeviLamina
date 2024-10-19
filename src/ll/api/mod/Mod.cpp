@@ -41,6 +41,8 @@ Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
 }
 Mod::~Mod() = default;
 
+void Mod::release() noexcept { mImpl.reset(); }
+
 Manifest const& Mod::getManifest() const { return mImpl->manifest; }
 
 std::string const& Mod::getName() const { return getManifest().name; }
