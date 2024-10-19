@@ -24,7 +24,7 @@ LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
     Stacktrace res;
     res.entries.reserve(s.size());
     for (auto& entry : s) {
-        res.entries.push_back({entry.native_handle()});
+        res.entries.emplace_back(entry.native_handle());
     }
     res.hash = std::hash<std::stacktrace>{}(s);
     return res;

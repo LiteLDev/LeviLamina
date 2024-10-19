@@ -14,10 +14,11 @@ class Stacktrace;
 class StacktraceEntry {
     friend ::ll::Stacktrace;
     void* address{};
-    StacktraceEntry(void* address) : address(address) {}
 
 public:
     using native_handle_type = void*;
+
+    explicit StacktraceEntry(void* address) : address(address) {}
 
     void* native_handle() const { return address; }
 };

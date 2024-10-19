@@ -50,6 +50,8 @@ enum class HookPriority : int {
     Lowest  = 400,
 };
 
+LLNDAPI bool shouldHookSuspendThreads();
+
 LLAPI int
 hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool suspendThreads = true);
 
@@ -96,11 +98,17 @@ template <class... Ts>
 class HookRegistrar {
 public:
     static void hook() {
-        thread::GlobalThreadPauser pauser;
+        std::optional<thread::GlobalThreadPauser> pauser;
+        if (shouldHookSuspendThreads()) {
+            pauser.emplace();
+        }
         (((++Ts::_AutoHookCount == 1) ? Ts::hook(false) : 0), ...);
     }
     static void unhook() {
-        thread::GlobalThreadPauser pauser;
+        std::optional<thread::GlobalThreadPauser> pauser;
+        if (shouldHookSuspendThreads()) {
+            pauser.emplace();
+        }
         (((--Ts::_AutoHookCount == 0) ? Ts::unhook(false) : 0), ...);
     }
     HookRegistrar() noexcept { hook(); }

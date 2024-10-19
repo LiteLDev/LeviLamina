@@ -308,11 +308,13 @@ void ModRegistrar::disableAllMods() noexcept try {
     error_utils::printCurrentException(getLogger());
 }
 void ModRegistrar::releaseAllMods() noexcept try {
-    std::lock_guard lock(impl->mutex);
-    if (auto res = ModManagerRegistry::getInstance().releaseManagers(); !res) {
-        res.error().log(getLogger(), io::LogLevel::Warn);
-    }
-    impl->deps.clear();
+    // TODO: check lifetime
+    // std::lock_guard lock(impl->mutex);
+    // if (auto res = ModManagerRegistry::getInstance().releaseManagers(); !res) {
+    //     res.error().log(getLogger(), io::LogLevel::Warn);
+    // }
+    // impl->deps.clear();
+    return;
 } catch (...) {
     error_utils::printCurrentException(getLogger());
 }
