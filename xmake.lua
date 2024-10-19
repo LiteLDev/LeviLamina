@@ -33,7 +33,7 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
 add_requires("levibuildscript 0.2.0")
-add_requires("preloader v1.9.0")
+add_requires("preloader v1.12.0")
 add_requires("symbolprovider v1.2.0")
 
 if is_windows then

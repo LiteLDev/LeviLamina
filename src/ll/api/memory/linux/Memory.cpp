@@ -65,19 +65,4 @@ void modify(void* ptr, size_t len, std::function<void()> const& callback) {
     callback();
     mprotect(ptr, len, oldProtect);
 }
-void VirtualMemory::alloc(size_t size, AccessMode mode) {
-    free();
-    memSize = size;
-    int fProtect{};
-    if ((bool)(mode & AccessMode::Read)) fProtect |= PROT_READ;
-    if ((bool)(mode & AccessMode::Write)) fProtect |= PROT_WRITE;
-    if ((bool)(mode & AccessMode::Execute)) fProtect |= PROT_EXEC;
-
-    pointer = mmap(nullptr, memSize, fProtect, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-}
-void VirtualMemory::free() {
-    if (!pointer) return;
-    munmap(pointer, memSize);
-    pointer = nullptr;
-}
 } // namespace ll::memory

@@ -9,6 +9,8 @@
 
 #include "mc/deps/core/memory/IMemoryAllocator.h"
 
+#include "pl/MemoryResource.h"
+
 namespace ll::memory {
 
 LLAPI FuncPtr resolveSymbol(char const* symbol) { // for link
@@ -30,5 +32,18 @@ size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr
     } else {
         throw std::bad_alloc();
     }
+}
+void DualMapping::alloc(size_t size) {
+    free();
+    memSize = size;
+    pointer = pl::DualMappingMemoryResource::getInstance().allocate(size);
+}
+void DualMapping::free() {
+    if (!pointer) return;
+    pl::DualMappingMemoryResource::getInstance().deallocate(std::exchange(pointer, nullptr), std::exchange(memSize, 0));
+}
+void* DualMapping::executable() const {
+    if (!pointer) return nullptr;
+    return pl::DualMappingMemoryResource::getInstance().executable(pointer, memSize);
 }
 } // namespace ll::memory

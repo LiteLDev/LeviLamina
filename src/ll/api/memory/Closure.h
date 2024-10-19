@@ -61,13 +61,12 @@ public:
         uintptr_t  data;
     } stored;
 
-    VirtualMemory closure{};
+    DualMapping closure{};
 
     NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, (void*)closureImpl, implOffset);
     }
-
-    closure_fn* get() const { return closure.get<closure_fn>(); }
+    closure_fn* get() const { return reinterpret_cast<closure_fn*>(closure.executable()); }
 
     ~NativeClosure() { detail::releaseNativeClosure(this); }
 

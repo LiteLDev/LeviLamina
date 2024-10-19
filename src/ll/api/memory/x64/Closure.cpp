@@ -40,19 +40,17 @@ void initNativeClosure(void* self, void* impl, size_t offset) {
     impl       = unwrapFuncAddress(impl);
     auto tSelf = (T*)self;
 
-    tSelf->closure.alloc(size, AccessMode::Execute | AccessMode::Read);
+    tSelf->closure.alloc(size);
 
-    modify(tSelf->closure.get(), size, [&]() {
-        memcpy(tSelf->closure.get(), impl, offset);
+    memcpy(tSelf->closure.writable(), impl, offset);
 
-        new ((char*)(tSelf->closure.get()) + offset) NativeClosurePrologue{
-            .data     = (uintptr_t)&tSelf->stored,
-            .push_rax = 0x50,
-            .mov_rax  = {0x48, 0xB8},
-            .addr     = (uintptr_t)impl + offset + sizeof(uintptr_t) - 1, // -1 for 0x58 in magic
-            .jmp_rax  = {0xFF, 0xE0}
-        };
-    });
+    new ((char*)(tSelf->closure.writable()) + offset) NativeClosurePrologue{
+        .data     = (uintptr_t)&tSelf->stored,
+        .push_rax = 0x50,
+        .mov_rax  = {0x48, 0xB8},
+        .addr     = (uintptr_t)impl + offset + sizeof(uintptr_t) - 1, // -1 for 0x58 in magic
+        .jmp_rax  = {0xFF, 0xE0}
+    };
 }
 void releaseNativeClosure(void* /*self*/) {}
 
