@@ -22,7 +22,7 @@ ServerClock::time_point ServerClock::now() noexcept {
 }
 
 GameTickClock::time_point GameTickClock::now() noexcept {
-    return ll::service::getLevel().transform([](auto& level) { return fromTick(level.getCurrentTick()); }
+    return ll::service::getLevel().transform([](auto& level) { return fromTick(level.getCurrentServerTick()); }
     ).value_or(time_point::min());
 }
 

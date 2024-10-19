@@ -29,7 +29,7 @@ void leviLaminaMain() {
 
     gui::init();
 
-    if (auto res = ::ll::i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
+    if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
         res.error().log(getLogger());
     }
@@ -37,7 +37,7 @@ void leviLaminaMain() {
     auto& config = getLeviConfig();
 
     if (config.language != "system") {
-        ::ll::i18n::defaultLocaleCode() = config.language;
+        i18n::defaultLocaleCode() = config.language;
     }
     CrashLogger::init();
 
@@ -116,17 +116,18 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 } // namespace ll
 
 BOOL APIENTRY DllMain(HMODULE /*hModule*/, DWORD ulReasonForCall, LPVOID /*lpReserved*/) {
+    using namespace ll;
     if (ulReasonForCall == DLL_PROCESS_DETACH) {
         mod::ModRegistrar::getInstance().releaseAllMods();
     }
     if (ulReasonForCall != DLL_PROCESS_ATTACH) return TRUE;
 
-    ::ll::setGamingStatus(::ll::GamingStatus::Default);
+    setGamingStatus(GamingStatus::Default);
     try {
-        ::ll::leviLaminaMain();
+        leviLaminaMain();
     } catch (...) {
-        ::ll::error_utils::printCurrentException(::ll::getLogger());
+        error_utils::printCurrentException(getLogger());
     }
-    ::ll::setGamingStatus(::ll::GamingStatus::Starting);
+    setGamingStatus(GamingStatus::Starting);
     return TRUE;
 }
