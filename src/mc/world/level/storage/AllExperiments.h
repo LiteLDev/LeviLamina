@@ -24,4 +24,4 @@ enum class AllExperiments : int {
     CameraAimAssist                        = 0x12,
     ExperimentalGraphics                   = 0x13,
     NumExperiments                         = 0x14,
-}
+};
