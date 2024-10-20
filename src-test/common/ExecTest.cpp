@@ -2,6 +2,7 @@
 
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/coro/CoroTask.h"
+#include "ll/api/coro/Generator.h"
 #include "ll/api/thread/InplaceExecutor.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
@@ -20,6 +21,12 @@ CoroTask<float> val2() {
     co_return 20;
 }
 
+Generator<size_t> generator(size_t n) {
+    for (size_t i = 0; i < n; i++) {
+        co_yield i;
+    }
+}
+
 CoroTask<Expected<int>> coroutine() {
     for (size_t i = 0;; i++) {
         getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
@@ -36,11 +43,17 @@ CoroTask<Expected<int>> coroutine() {
         std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - parbegin),
         std::this_thread::get_id()
     );
-    parbegin = std::chrono::steady_clock::now();
     std::vector<ll::coro::CoroTask<int>> tasks{};
-    for (size_t i = 0; i < 1000000; i++) {
+    parbegin = std::chrono::steady_clock::now();
+    for (auto&& i : generator(1000000)) {
+        (void)i;
         tasks.emplace_back(val1());
     }
+    getLogger().info(
+        "coroutine: generator use {}",
+        std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - parbegin),
+        std::this_thread::get_id()
+    );
     auto vec = co_await collectAll(std::move(tasks));
     getLogger().info(
         "coroutine: collectAll use {}",

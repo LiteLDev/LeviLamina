@@ -41,14 +41,14 @@ struct CoroPromiseBase {
 
     constexpr ForwardAwaiter<NonNullExecutorRef> await_transform(CurrentExecutor) { return {exec.value()}; }
 
-    constexpr YieldAwaiter await_transform(Yield) { return {exec}; }
+    constexpr YieldAwaiter await_transform(Yield const&) { return {exec}; }
 
     template <class R, class P>
-    constexpr SleepWaiter await_transform(std::chrono::duration<R, P> dur) {
+    constexpr SleepWaiter await_transform(std::chrono::duration<R, P> const& dur) {
         return {dur, exec};
     }
     template <class C, class D>
-    constexpr SleepWaiter await_transform(std::chrono::time_point<C, D> time) {
+    constexpr SleepWaiter await_transform(std::chrono::time_point<C, D> const& time) {
         return {time, exec};
     }
 };
