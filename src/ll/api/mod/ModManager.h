@@ -9,6 +9,7 @@
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/mod/Mod.h"
 
@@ -23,16 +24,18 @@ class ModManager {
 public:
     LLNDAPI std::string const& getType() const;
 
-    LLNDAPI bool hasMod(std::string_view name);
+    LLNDAPI bool hasMod(std::string_view name) const;
 
-    LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name);
+    LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name) const;
 
-    LLNDAPI size_t getModCount();
+    LLNDAPI size_t getModCount() const;
 
-    LLAPI void forEachMod(std::function<bool(std::string_view name, Mod&)> const& fn);
+    [[deprecated]] LLAPI void forEachMod(std::function<bool(std::string_view name, Mod&)> const& fn);
+
+    LLNDAPI coro::Generator<Mod&> mods() const;
 
 protected:
-    LLNDAPI std::lock_guard<std::recursive_mutex> lock();
+    LLNDAPI std::lock_guard<std::recursive_mutex> lock() const;
 
     LLNDAPI explicit ModManager(std::string_view type);
 

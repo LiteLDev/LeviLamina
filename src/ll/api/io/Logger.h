@@ -7,6 +7,7 @@
 
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 #include "ll/api/io/LogLevel.h"
 #include "ll/api/io/Sink.h"
 
@@ -121,6 +122,6 @@ public:
 
     LLAPI std::shared_ptr<SinkBase> getSink(size_t index) const;
 
-    LLAPI void forEachSink(std::function<bool(SinkBase&)> const& fn) const;
+    LLNDAPI coro::Generator<SinkBase&> sinks() const;
 };
 } // namespace ll::io

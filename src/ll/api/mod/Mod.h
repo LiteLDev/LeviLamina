@@ -33,6 +33,8 @@ public:
 
     LLNDAPI std::string const& getName() const;
 
+    LLNDAPI std::string const& getType() const;
+
     LLNDAPI std::filesystem::path const& getModDir() const;
 
     LLNDAPI std::filesystem::path const& getDataDir() const;

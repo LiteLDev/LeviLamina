@@ -13,7 +13,7 @@ ModManager::ModManager(std::string_view type) : impl(std::make_unique<Impl>(std:
 
 ModManager::~ModManager() = default;
 
-std::lock_guard<std::recursive_mutex> ModManager::lock() { return std::lock_guard(impl->mutex); }
+std::lock_guard<std::recursive_mutex> ModManager::lock() const { return std::lock_guard(impl->mutex); }
 
 void ModManager::addMod(std::string_view name, std::shared_ptr<Mod> const& mod) {
     auto l(lock());
@@ -39,12 +39,12 @@ Expected<> ModManager::disable(std::string_view name) {
 
 [[nodiscard]] std::string const& ModManager::getType() const { return impl->type; }
 
-[[nodiscard]] bool ModManager::hasMod(std::string_view name) {
+[[nodiscard]] bool ModManager::hasMod(std::string_view name) const {
     auto l(lock());
     return impl->mods.contains(name);
 }
 
-[[nodiscard]] std::shared_ptr<Mod> ModManager::getMod(std::string_view name) {
+[[nodiscard]] std::shared_ptr<Mod> ModManager::getMod(std::string_view name) const {
     auto l(lock());
     if (auto i = impl->mods.find(name); i != impl->mods.end()) {
         return i->second;
@@ -52,7 +52,7 @@ Expected<> ModManager::disable(std::string_view name) {
     return {};
 }
 
-[[nodiscard]] size_t ModManager::getModCount() {
+[[nodiscard]] size_t ModManager::getModCount() const {
     auto l(lock());
     return impl->mods.size();
 }
@@ -66,4 +66,10 @@ void ModManager::forEachMod(std::function<bool(std::string_view name, Mod&)> con
     }
 }
 
+coro::Generator<Mod&> ModManager::mods() const {
+    auto l(lock());
+    for (auto& p : impl->mods) {
+        co_yield *p.second;
+    }
+}
 } // namespace ll::mod

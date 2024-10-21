@@ -104,11 +104,9 @@ size_t Logger::addSink(std::shared_ptr<SinkBase> sink) const {
 
 std::shared_ptr<SinkBase> Logger::getSink(size_t index) const { return impl->sinks->at(index); }
 
-void Logger::forEachSink(std::function<bool(SinkBase&)> const& fn) const {
+coro::Generator<SinkBase&> Logger::sinks() const {
     for (auto& sink : *impl->sinks) {
-        if (!fn(*sink)) {
-            break;
-        }
+        co_yield *sink;
     }
 }
 

@@ -38,12 +38,11 @@ public:
     }
     Impl() {
         std::lock_guard lock(mutex);
-        storage.iter([this](std::string_view key, std::string_view value) {
+        for (auto&& [key, value] : storage.iter()) {
             auto uuid = mce::UUID(key);
             auto nbt  = CompoundTag::fromBinaryNbt(value).value();
             addPlayer(uuid, nbt["xuid"], nbt["name"]);
-            return true;
-        });
+        }
         listener =
             event::EventBus::getInstance().emplaceListener<event::PlayerJoinEvent>([this](event::PlayerJoinEvent& ev) {
                 if (ev.self().isSimulated()) {

@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 
 namespace ll::data {
 class KeyValueDB {
@@ -47,7 +48,9 @@ public:
 
     LLAPI bool del(std::string_view key);
 
-    LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
+    [[deprecated]] LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
+
+    LLNDAPI coro::Generator<std::pair<std::string_view, std::string_view>> iter() const;
 };
 
 } // namespace ll::data

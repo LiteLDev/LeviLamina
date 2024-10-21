@@ -16,8 +16,7 @@
 
 #include "ll/api/utils/StringUtils.h"
 
-using namespace ll::data;
-
+namespace ll::data {
 class KeyValueDB::KeyValueDBImpl {
 public:
     std::unique_ptr<leveldb::DB> db;
@@ -108,3 +107,15 @@ void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> co
         }
     }
 }
+coro::Generator<std::pair<std::string_view, std::string_view>> KeyValueDB::iter() const {
+    std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
+    for (it->SeekToFirst(); it->Valid(); it->Next()) {
+        auto k = it->key();
+        auto v = it->value();
+        co_yield {
+            {k.data(), k.size()},
+            {v.data(), v.size()}
+        };
+    }
+}
+} // namespace ll::data

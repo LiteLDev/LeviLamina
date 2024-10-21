@@ -127,10 +127,25 @@ bool ModManagerRegistry::eraseManager(std::string_view type) {
     return false;
 }
 
-void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const {
+coro::Generator<ModManager&> ModManagerRegistry::managers() const {
     std::lock_guard lock(impl->modMtx);
-    for (auto& [type, manager] : impl->managers) {
-        if (!fn(type, *manager)) {
+    for (auto& p : impl->managers) {
+        co_yield *p.second;
+    }
+}
+
+coro::Generator<Mod&> ModManagerRegistry::mods() const {
+    std::lock_guard lock(impl->modMtx);
+    for (auto& manager : managers()) {
+        for (auto& mod : manager.mods()) {
+            co_yield mod;
+        }
+    }
+}
+
+void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const {
+    for (auto& manager : managers()) {
+        if (!fn(manager.getType(), manager)) {
             return;
         }
     }
@@ -139,17 +154,11 @@ void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type
 void ModManagerRegistry::forEachModWithType(
     std::function<bool(std::string_view type, std::string_view name, Mod&)> const& fn
 ) const {
-    std::lock_guard lock(impl->modMtx);
-    bool            interrupted = false;
-    forEachManager([&](std::string_view type, ModManager& manager) {
-        manager.forEachMod([&](std::string_view name, Mod& mod) {
-            if (!fn(type, name, mod)) {
-                interrupted = true;
-            }
-            return !interrupted;
-        });
-        return !interrupted;
-    });
+    for (auto& mod : mods()) {
+        if (!fn(mod.getType(), mod.getName(), mod)) {
+            return;
+        }
+    }
 }
 
 bool ModManagerRegistry::hasMod(std::string_view name) const {

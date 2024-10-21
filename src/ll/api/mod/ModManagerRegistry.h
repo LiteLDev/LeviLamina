@@ -2,6 +2,7 @@
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/mod/ModManager.h"
 
@@ -47,10 +48,14 @@ public:
 
     LLNDAPI std::shared_ptr<ModManager> getManagerForMod(std::string_view name) const;
 
-    LLAPI void forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const;
+    [[deprecated]] LLAPI void forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const;
 
-    LLAPI void forEachModWithType(std::function<bool(std::string_view type, std::string_view name, Mod&)> const& fn
-    ) const;
+    [[deprecated]] LLAPI void
+    forEachModWithType(std::function<bool(std::string_view type, std::string_view name, Mod&)> const& fn) const;
+
+    LLNDAPI coro::Generator<ModManager&> managers() const;
+
+    LLNDAPI coro::Generator<Mod&> mods() const;
 
     LLNDAPI bool hasMod(std::string_view name) const;
 

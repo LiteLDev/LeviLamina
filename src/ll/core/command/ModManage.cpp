@@ -164,13 +164,10 @@ void registerModManageCommand() {
     cmd.overload().text("list").execute([](CommandOrigin const&, CommandOutput& output) {
         size_t      amount = 0;
         std::string mods;
-        ll::mod::ModManagerRegistry::getInstance().forEachModWithType(
-            [&amount, &mods](std::string_view, std::string_view name, mod::Mod&) {
-                ++amount;
-                mods = mods.append(name).append(", ");
-                return true;
-            }
-        );
+        for (auto& mod : ll::mod::ModManagerRegistry::getInstance().mods()) {
+            ++amount;
+            mods = mods.append(mod.getName()).append(", ");
+        }
         if (!mods.empty()) {
             mods.resize(mods.size() - 2);
         }
