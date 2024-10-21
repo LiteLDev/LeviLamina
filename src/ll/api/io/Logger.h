@@ -32,7 +32,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
     std::unique_ptr<Impl> impl;
 
-    struct PrivateTag {};
+    struct PrivateTag { explicit PrivateTag() = default; };
 
 public:
     template <typename... Args>
