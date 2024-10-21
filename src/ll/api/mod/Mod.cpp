@@ -1,6 +1,7 @@
 #include "ll/api/mod/Mod.h"
 
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "ll/api/service/GamingStatus.h"
 
@@ -17,7 +18,7 @@ struct Mod::Impl {
 
     State state;
 
-    io::Logger logger;
+    std::shared_ptr<io::Logger> logger;
 
     CallbackFn onLoad;
     CallbackFn onUnload;
@@ -31,9 +32,9 @@ struct Mod::Impl {
 };
 
 Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
-    mImpl->manifest = std::move(manifest);
-    mImpl->state    = State::Disabled;
-    mImpl->logger.setTitle(mImpl->manifest.name);
+    mImpl->manifest  = std::move(manifest);
+    mImpl->state     = State::Disabled;
+    mImpl->logger    = io::LoggerRegistry::getInstance().getOrCreate(mImpl->manifest.name);
     mImpl->modDir    = getModsRoot() / string_utils::sv2u8sv(mImpl->manifest.name);
     mImpl->dataDir   = mImpl->modDir / u8"data";
     mImpl->configDir = mImpl->modDir / u8"config";
@@ -148,6 +149,6 @@ void Mod::setState(State state) const { mImpl->state = state; }
 
 Mod::State Mod::getState() const { return mImpl->state; }
 
-io::Logger& Mod::getLogger() const { return mImpl->logger; }
+io::Logger& Mod::getLogger() const { return *mImpl->logger; }
 
 } // namespace ll::mod

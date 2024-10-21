@@ -1,5 +1,7 @@
 #include "ll/api/io/Logger.h"
 
+#include <mutex>
+
 #include "ll/api/io/DefaultSink.h"
 #include "ll/api/io/LogMessage.h"
 #include "ll/api/io/PatternFormatter.h"
@@ -35,21 +37,19 @@ struct Logger::Impl {
     std::string title;
     LogLevel    level;
 
-    std::shared_ptr<std::vector<std::shared_ptr<SinkBase>>> sinks;
-
     thread::ThreadPoolExecutor& pool;
+
+    std::vector<std::shared_ptr<SinkBase>> sinks;
+    std::mutex                             sinkMutex;
 
     Impl(std::string_view title, thread::ThreadPoolExecutor& pool) : title(title), pool(pool) {}
 };
 Logger::~Logger() = default;
 
-Logger::Logger(std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
+Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>(title, getLogPool())) {
     impl->level = (LogLevel)(std::clamp(pl::pl_log_level - 1, 0, 5));
-    impl->sinks = std::make_shared<std::vector<std::shared_ptr<SinkBase>>>();
-    impl->sinks->push_back(std::make_shared<DefaultSink>());
+    impl->sinks.push_back(std::make_shared<DefaultSink>());
 }
-
-Logger::Logger() : Logger(sys_utils::getCallerModuleFileName()) {}
 
 void Logger::printView(LogLevel level, std::string_view msg) const noexcept {
     if (level > impl->level) {
@@ -62,10 +62,11 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
     if (level > impl->level) {
         return;
     }
-    impl->pool.execute([sinks = impl->sinks,
-                        msg   = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
+    impl->pool.execute([logger = shared_from_this(),
+                        msg    = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
         try {
-            for (auto& sink : *sinks) {
+            std::lock_guard lock{logger->impl->sinkMutex};
+            for (auto& sink : logger->impl->sinks) {
                 sink->append(msg);
             }
         } catch (...) {
@@ -76,38 +77,46 @@ void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
     printLogError(msg);
 }
 
-void Logger::setTitle(std::string_view title) { impl->title.assign(title); }
-
 void Logger::setLevel(LogLevel level) { impl->level = level; }
 
 void Logger::setFlushLevel(LogLevel level) {
-    for (auto& sink : *impl->sinks) {
+    std::lock_guard lock{impl->sinkMutex};
+    for (auto& sink : impl->sinks) {
         sink->setFlushLevel(level);
     }
 }
 void Logger::setFormatter(Polymorphic<Formatter> formatter) {
-    for (auto& sink : *impl->sinks) {
+    std::lock_guard lock{impl->sinkMutex};
+    for (auto& sink : impl->sinks) {
         sink->setFormatter(formatter);
     }
 }
 void Logger::flush() const {
-    for (auto& sink : *impl->sinks) {
+    std::lock_guard lock{impl->sinkMutex};
+    for (auto& sink : impl->sinks) {
         sink->flush();
     }
 }
-void Logger::clearSink() const { impl->sinks->clear(); }
-
-size_t Logger::addSink(std::shared_ptr<SinkBase> sink) const {
-    impl->sinks->emplace_back(std::move(sink));
-    return impl->sinks->size() - 1;
+void Logger::clearSink() const {
+    std::lock_guard lock{impl->sinkMutex};
+    impl->sinks.clear();
 }
 
-std::shared_ptr<SinkBase> Logger::getSink(size_t index) const { return impl->sinks->at(index); }
+size_t Logger::addSink(std::shared_ptr<SinkBase> sink) const {
+    std::lock_guard lock{impl->sinkMutex};
+    impl->sinks.emplace_back(std::move(sink));
+    return impl->sinks.size() - 1;
+}
+
+std::shared_ptr<SinkBase> Logger::getSink(size_t index) const {
+    std::lock_guard lock{impl->sinkMutex};
+    return impl->sinks.at(index);
+}
 
 coro::Generator<SinkBase&> Logger::sinks() const {
-    for (auto& sink : *impl->sinks) {
+    std::lock_guard lock{impl->sinkMutex};
+    for (auto& sink : impl->sinks) {
         co_yield *sink;
     }
 }
-
 } // namespace ll::io

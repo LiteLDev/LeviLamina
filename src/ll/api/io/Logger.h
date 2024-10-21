@@ -1,6 +1,6 @@
 #pragma once
 
-#include <functional>
+#include <memory>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -21,13 +21,18 @@
 
 
 namespace ll::io {
-class Logger {
+class LoggerRegistry;
+class Logger : public std::enable_shared_from_this<Logger> {
     LLAPI void printStr(LogLevel, std::string&&) const noexcept;
     LLAPI void printView(LogLevel, std::string_view) const noexcept;
+
+    friend LoggerRegistry;
 
     struct Impl;
 
     std::unique_ptr<Impl> impl;
+
+    struct PrivateTag {};
 
 public:
     template <typename... Args>
@@ -102,11 +107,7 @@ public:
 
     LLAPI ~Logger();
 
-    LLNDAPI explicit Logger();
-
-    LLNDAPI explicit Logger(std::string_view title);
-
-    LLAPI void setTitle(std::string_view title);
+    explicit Logger(PrivateTag, std::string_view);
 
     LLAPI void setLevel(LogLevel level);
 

@@ -19,6 +19,7 @@
 
 #include "ll/api/Config.h"
 #include "ll/api/io/Logger.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/SystemUtils.h"
@@ -51,8 +52,17 @@ void OutputStream::print(std::string_view s) const noexcept {
         l = io::LogLevel::Fatal;
         break;
     }
+    static ConcurrentDenseMap<std::string, std::shared_ptr<io::Logger>> loggers;
 
-    io::Logger(logger->title).log(l, s);
+    loggers.lazy_emplace_l(
+        logger->title,
+        [&](auto& pair) { pair.second->log(l, s); },
+        [&](auto const& ctor) {
+            auto shared = io::LoggerRegistry::getInstance().getOrCreate(logger->title);
+            ctor(logger->title, shared);
+            shared->log(l, s);
+        }
+    );
 }
 OutputStream::OutputStream(
     Logger&                               logger,

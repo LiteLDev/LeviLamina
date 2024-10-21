@@ -8,6 +8,7 @@
 #include "ll/api/io/FileSink.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/io/Logger.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/io/PatternFormatter.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
@@ -29,7 +30,8 @@ Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t sk
 
 namespace ll {
 using namespace string_utils;
-io::Logger crashLogger("CrashLogger");
+
+auto crashLoggerPtr = io::LoggerRegistry::getInstance().getOrCreate("CrashLogger");
 
 class CrashLoggerNew {
     void* previous{};
@@ -69,7 +71,7 @@ void CrashLogger::init() {
         return;
     }
     if (IsDebuggerPresent()) {
-        crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
+        crashLoggerPtr->warn("Debugger detected, CrashLogger will not be enabled"_tr());
         return;
     }
     if (config.modules.crashLogger.useBuiltin) {
@@ -94,15 +96,15 @@ void CrashLogger::init() {
         ll::getGameVersion().to_string()
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
-        crashLogger.error("Couldn't Create CrashLogger Daemon Process"_tr());
-        error_utils::printException(error_utils::getLastSystemError(), crashLogger);
+        crashLoggerPtr->error("Couldn't Create CrashLogger Daemon Process"_tr());
+        error_utils::printException(error_utils::getLastSystemError(), *crashLoggerPtr);
         return;
     }
 
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 
-    crashLogger.info("CrashLogger enabled successfully"_tr());
+    crashLoggerPtr->info("CrashLogger enabled successfully"_tr());
     return;
 }
 
@@ -112,9 +114,11 @@ static struct CrashInfo {
     DWORD                                             processId{};
     DWORD                                             threadId{};
     std::string                                       date;
-    io::Logger                                        logger{"CrashLogger"};
+    std::shared_ptr<io::Logger>                       loggerPtr;
+    io::Logger&                                       logger;
     std::filesystem::path                             path{};
     decltype(ll::getLeviConfig().modules.crashLogger) settings{};
+    CrashInfo() : loggerPtr(io::LoggerRegistry::getInstance().getOrCreate("CrashLogger")), logger(*loggerPtr) {}
 } crashInfo;
 
 static void dumpSystemInfo() {
@@ -368,7 +372,7 @@ CrashLoggerNew::CrashLoggerNew() {
     AddVectoredExceptionHandler(0, uncatchableExceptionHandler);
 
     previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
-    crashLogger.info("CrashLogger enabled successfully"_tr());
+    crashLoggerPtr->info("CrashLogger enabled successfully"_tr());
 }
 
 CrashLoggerNew::~CrashLoggerNew() { SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)previous); }

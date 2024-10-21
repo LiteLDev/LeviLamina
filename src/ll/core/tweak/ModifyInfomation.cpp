@@ -1,5 +1,6 @@
 #include "ll/core/tweak/ModifyInfomation.h"
 #include "ll/api/base/Containers.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -39,7 +40,7 @@ LL_STATIC_HOOK(
     origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
 }
 
-io::Logger serverLogger("Server");
+auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
 // int _vscprintf(const char* format, va_list pargs) { // TODO: move to predefine
 //     int     retval;
@@ -68,7 +69,7 @@ try {
     va_end(va);
 
     if (!success) {
-        serverLogger.fatal("!!! Unable to format log output message !!!");
+        serverLogger->fatal("!!! Unable to format log output message !!!");
         return;
     }
     if (buffer.ends_with('\n')) {
@@ -106,12 +107,12 @@ try {
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }
-        serverLogger.log(level, string_utils::replaceMcToAnsiCode(line));
+        serverLogger->log(level, string_utils::replaceMcToAnsiCode(line));
     }
 } catch (...) {
     try {
-        serverLogger.fatal("Fail to format [{}] {}", priority, pszFormat);
-        error_utils::printCurrentException(serverLogger, io::LogLevel::Fatal);
+        serverLogger->fatal("Fail to format [{}] {}", priority, pszFormat);
+        error_utils::printCurrentException(*serverLogger, io::LogLevel::Fatal);
     } catch (...) {}
 }
 

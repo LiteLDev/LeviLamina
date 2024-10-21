@@ -42,6 +42,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bool                       showCategory
 ) {
     origin(stack, level, hovertext, showCategory);
+    if (!hovertext.empty()) {
+        hovertext.push_back('\n');
+    }
+    hovertext.append("§8");
+    hovertext.append(stack.getTypeName());
+    hovertext.append("§r");
     uint64_t max = stack.getItem()->getMaxDamage();
     if (max != 0) {
         uint64_t current = max - stack.getDamageValue();

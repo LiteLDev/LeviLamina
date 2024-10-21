@@ -8,6 +8,7 @@
 #include "ll/api/form/ModalForm.h"
 #include "ll/api/form/SimpleForm.h"
 #include "ll/api/io/Logger.h"
+#include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandOrigin.h"
@@ -23,7 +24,7 @@ struct TestFormParam {
 };
 
 void registerFormTestCommand() {
-    static ll::io::Logger logger{"FormTest"};
+    static auto           logptr    = ll::io::LoggerRegistry::getInstance().getOrCreate("FormTest");
     auto&                 cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("formtest", "formtest", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
@@ -45,17 +46,17 @@ void registerFormTestCommand() {
                         *(Player*)ori.getEntity(),
                         [](Player&, ll::form::CustomFormResult const& data, ll::form::FormCancelReason) {
                             if (!data) {
-                                logger.info("CustomForm callback canceled");
+                                logptr->info("CustomForm callback canceled");
                                 return;
                             }
                             for (auto [name, result] : *data) {
                                 static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
                                     if (std::holds_alternative<uint64_t>(var)) {
-                                        logger.info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
+                                        logptr->info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
                                     } else if (std::holds_alternative<double>(var)) {
-                                        logger.info("CustomForm callback {} = {}", name, std::get<double>(var));
+                                        logptr->info("CustomForm callback {} = {}", name, std::get<double>(var));
                                     } else if (std::holds_alternative<std::string>(var)) {
-                                        logger.info("CustomForm callback {} = {}", name, std::get<std::string>(var));
+                                        logptr->info("CustomForm callback {} = {}", name, std::get<std::string>(var));
                                     }
                                 };
                                 logDebugResult(result);
@@ -74,13 +75,13 @@ void registerFormTestCommand() {
                         *(Player*)ori.getEntity(),
                         [](Player&, ll::form::ModalFormResult selected, ll::form::FormCancelReason cancelReason) {
                             if (!selected) {
-                                logger.info("ModalForm callback canceled");
+                                logptr->info("ModalForm callback canceled");
                                 if (cancelReason) {
-                                    logger.info("ModalForm callback cancelReason {}", (int)*cancelReason);
+                                    logptr->info("ModalForm callback cancelReason {}", (int)*cancelReason);
                                 }
                                 return;
                             }
-                            logger.info("ModalForm callback {}", (bool)selected);
+                            logptr->info("ModalForm callback {}", (bool)selected);
                         }
                     );
                 break;
@@ -93,10 +94,10 @@ void registerFormTestCommand() {
                     .appendButton("Button2", "textures/ui/absorption_effect", "path")
                     .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected, ll::form::FormCancelReason) {
                         if (selected == -1) {
-                            logger.info("SimpleForm callback canceled");
+                            logptr->info("SimpleForm callback canceled");
                             return;
                         }
-                        logger.info("SimpleForm callback {}", selected);
+                        logptr->info("SimpleForm callback {}", selected);
                     });
                 break;
             }

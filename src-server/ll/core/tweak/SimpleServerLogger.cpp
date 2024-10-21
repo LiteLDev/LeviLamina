@@ -5,7 +5,7 @@
 #include "ll/api/event/player/PlayerChangePermEvent.h"
 #include "ll/api/event/player/PlayerChatEvent.h"
 #include "ll/api/event/player/ServerPlayerEvent.h"
-#include "ll/api/io/Logger.h"
+#include "ll/core/LeviLamina.h"
 
 #include "magic_enum.hpp"
 
@@ -29,8 +29,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         auto& bus = EventBus::getInstance();
         if (config.playerChat && !impl->playerChat) {
             impl->playerChat = bus.emplaceListener<PlayerChatEvent>([](PlayerChatEvent& ev) {
-                static io::Logger logger("PlayerChat");
-                logger.info("<{}> {}", ev.self().getRealName(), ev.message());
+                getLogger().info("[PlayerChat] <{}> {}", ev.self().getRealName(), ev.message());
             });
         }
         if (config.playerCommand && !impl->playerCommand) {
@@ -39,9 +38,8 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
                 if (context.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
                     return;
                 }
-                static io::Logger logger("PlayerCmd");
-                logger.info(
-                    "<{}> {}",
+                getLogger().info(
+                    "[PlayerCmd] <{}> {}",
                     ((Player*)(context.getCommandOrigin().getEntity()))->getRealName(),
                     context.mCommand
                 );
@@ -49,9 +47,8 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         }
         if (config.playerPermission && !impl->playerPermission) {
             impl->playerPermission = bus.emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
-                static io::Logger logger("PlayerPerm");
-                logger.info(
-                    "<{}> {}({}) -> {}({})",
+                getLogger().info(
+                    "[PlayerPerm] <{}> {}({}) -> {}({})",
                     ev.self().getRealName(),
                     magic_enum::enum_name(ev.self().getCommandPermissionLevel()),
                     fmt::underlying(ev.self().getCommandPermissionLevel()),
