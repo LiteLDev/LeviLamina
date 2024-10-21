@@ -38,7 +38,7 @@ bool LoggerRegistry::erase(std::string_view title) {
     std::lock_guard lock{impl->mutex};
     return impl->loggers.erase(title);
 }
-coro::Generator<Logger&> LoggerRegistry::iter() {
+coro::Generator<Logger&> LoggerRegistry::loggers() {
     std::lock_guard lock{impl->mutex};
     for (auto& p : impl->loggers) {
         auto shared = p.second.lock();

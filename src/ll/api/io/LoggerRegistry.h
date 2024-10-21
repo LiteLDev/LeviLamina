@@ -23,6 +23,6 @@ public:
 
     LLNDAPI bool erase(std::string_view title);
 
-    LLNDAPI coro::Generator<Logger&> iter();
+    LLNDAPI coro::Generator<Logger&> loggers();
 };
 } // namespace ll::io
