@@ -56,7 +56,11 @@ void registerModManageCommand() {
         mod::ModRegistrar::getInstance().getSortedModNames()
     );
     auto& cmd = CommandRegistrar::getInstance()
-                    .getOrCreateCommand(Util::toLower(selfModName), "LeviLamina's main command"_tr(), config.permission)
+                    .getOrCreateCommand(
+                        string_utils::toLowerCase(selfModName),
+                        "LeviLamina's main command"_tr(),
+                        config.permission
+                    )
                     .alias("ll");
     cmd.overload<LeviCommand3>().text("load").required("mod").execute(
         [](CommandOrigin const&, CommandOutput& output, LeviCommand3 const& param) {

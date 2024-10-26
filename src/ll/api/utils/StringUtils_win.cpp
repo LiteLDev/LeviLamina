@@ -15,7 +15,6 @@
 #include "ll/api/base/StdInt.h"
 
 #include "mc/deps/core/math/Color.h"
-#include "mc/deps/core/utility/Util.h"
 #include "mc/util/ColorFormat.h"
 
 #include "Windows.h"
