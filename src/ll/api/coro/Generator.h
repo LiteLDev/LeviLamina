@@ -12,7 +12,7 @@ template <class T>
 struct Generator {
     using value     = std::remove_cvref_t<T>;
     using reference = T&&;
-    using yielded   = std::conditional_t<std::is_reference_v<reference>, reference, reference const&>;
+    using yielded   = reference;
 
 
     struct promise_type {
@@ -60,8 +60,8 @@ struct Generator {
     struct iterator {
         using iterator_category = std::input_iterator_tag;
         using difference_type   = ptrdiff_t;
-        using value_type        = value;
-        using reference         = reference;
+        using value_type        = Generator::value;
+        using reference         = Generator::reference;
         using pointer           = std::add_pointer_t<yielded>;
 
         std::coroutine_handle<promise_type> handle = nullptr;
