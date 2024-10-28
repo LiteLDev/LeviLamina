@@ -28,7 +28,7 @@ constexpr size_t getEncodeLength(std::string_view str) { return getEncodeLength(
 constexpr size_t getDecodeLength(std::string_view in) {
     uchar  count      = 0;
     size_t input_size = in.size();
-    for (auto it = in.rbegin(); *it == '='; ++it) {
+    for (auto it = in.rbegin(); it != in.rend() && *it == '='; ++it) {
         ++count;
     }
     input_size -= count;     // remove padding size
@@ -43,10 +43,8 @@ constexpr size_t getDecodeLength(std::string_view in) {
 constexpr std::string encode(std::string_view str) {
     std::string result;
     result.reserve(getEncodeLength(str));
-
     int32_t i = 0;
     int32_t j = -6;
-
     for (auto& c : str) {
         i  = (i << 8) + static_cast<uint8_t>(c);
         j += 8;
@@ -55,16 +53,12 @@ constexpr std::string encode(std::string_view str) {
             j      -= 6;
         }
     }
-
     if (j > -6) {
         result += detail::encodeLookup(((i << 8) >> (j + 8)) & 0x3F);
     }
-
-    // padding
     while (result.size() % 4) {
         result.push_back('=');
     }
-
     return result;
 }
 
