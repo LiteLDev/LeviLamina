@@ -82,7 +82,7 @@ if is_server then
     set_allowedarchs("windows|x64", "linux|x86_64")
 elseif is_client then
     set_defaultarchs("windows|x64")
-    set_allowedarchs("windows|x64", "android|arm64-v8a", "iphoneos|arm64")
+    set_allowedarchs("windows|x64", "android|arm64-v8a", "android|x86_64", "iphoneos|arm64")
 end
 
 if is_windows and not has_config("vs_runtime") then
