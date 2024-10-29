@@ -171,7 +171,7 @@ public:
 
     MCAPI static struct ArmorStand::Pose const& POSE_ZOMBIE();
 
-    MCAPI static ::ll::CArrayT<struct ArmorStand::Pose const>& STAND_POSES();
+    MCAPI static auto STAND_POSES() -> struct ArmorStand::Pose const* (&)[];
 
     // NOLINTEND
 };

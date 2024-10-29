@@ -16,11 +16,11 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static ::ll::CArrayT<char const>& CAN_ALWAYS_EAT();
+    MCAPI static auto CAN_ALWAYS_EAT() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& NUTRITION();
+    MCAPI static auto NUTRITION() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& SATURATION_MODIFIER();
+    MCAPI static auto SATURATION_MODIFIER() -> char const (&)[];
 
     // NOLINTEND
 };

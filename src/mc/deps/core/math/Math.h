@@ -98,7 +98,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static ::ll::CArrayT<float>& mSin();
+    MCAPI static auto mSin() -> float (&)[];
 
     MCAPI static float const& mSinScale();
 

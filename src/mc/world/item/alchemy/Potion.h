@@ -218,7 +218,7 @@ public:
 
     MCAPI static int& mLastId();
 
-    MCAPI static ::ll::CArrayT<std::shared_ptr<class Potion const>>& mPotionsById();
+    MCAPI static auto mPotionsById() -> std::shared_ptr<class Potion const> (&)[];
 
     MCAPI static std::unordered_map<std::string, int>& mPotionsByName();
 

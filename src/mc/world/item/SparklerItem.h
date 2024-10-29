@@ -87,7 +87,7 @@ public:
 
     MCAPI class Item& setIconInfo$(std::string const& name, int id);
 
-    MCAPI static ::ll::CArrayT<struct SparklerItem::ColorInfo const>& COLORS();
+    MCAPI static auto COLORS() -> struct SparklerItem::ColorInfo const (&)[];
 
     MCAPI static int const& MAX_ACTIVE_TICKS();
 

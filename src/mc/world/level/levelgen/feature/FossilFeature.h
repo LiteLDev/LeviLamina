@@ -29,7 +29,7 @@ public:
 
     MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
-    MCAPI static ::ll::CArrayT<std::string const>& STRUCTURE_LOCATION_FOSSIL();
+    MCAPI static auto STRUCTURE_LOCATION_FOSSIL() -> std::string const (&)[];
 
     // NOLINTEND
 };

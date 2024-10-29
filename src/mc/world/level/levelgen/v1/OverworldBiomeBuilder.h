@@ -105,13 +105,13 @@ public:
 
     MCAPI void dtor$();
 
-    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& EROSIONS();
+    MCAPI static auto EROSIONS() -> struct ClimateUtils::Parameter const (&)[];
 
     MCAPI static struct ClimateUtils::Parameter const& FULL_RANGE();
 
-    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& HUMIDITIES();
+    MCAPI static auto HUMIDITIES() -> struct ClimateUtils::Parameter const (&)[];
 
-    MCAPI static ::ll::CArrayT<struct ClimateUtils::Parameter const>& TEMPERATURES();
+    MCAPI static auto TEMPERATURES() -> struct ClimateUtils::Parameter const (&)[];
 
     MCAPI static struct ClimateUtils::Parameter const& coastContinentalness();
 

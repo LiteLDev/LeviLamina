@@ -139,9 +139,9 @@ public:
 
     MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    MCAPI static ::ll::CArrayT<int const>& DELAYS();
+    MCAPI static auto DELAYS() -> int const (&)[];
 
-    MCAPI static ::ll::CArrayT<float const>& DELAY_RENDER_OFFSETS();
+    MCAPI static auto DELAY_RENDER_OFFSETS() -> float const (&)[];
 
     // NOLINTEND
 };

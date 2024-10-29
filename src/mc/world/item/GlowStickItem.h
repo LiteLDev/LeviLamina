@@ -57,7 +57,7 @@ public:
 
     MCAPI bool isValidAuxValue$(int auxValue) const;
 
-    MCAPI static ::ll::CArrayT<::ItemColor const>& COLORS();
+    MCAPI static auto COLORS() -> ::ItemColor const (&)[];
 
     MCAPI static int const& MAX_ACTIVE_TICKS();
 

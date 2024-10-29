@@ -1889,11 +1889,11 @@ public:
 
     MCAPI bool useMsaGamertagsOnly$() const;
 
-    MCAPI static ::ll::CArrayT<char const>& IS_SLEEPING_POSSIBLE();
+    MCAPI static auto IS_SLEEPING_POSSIBLE() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& OVERWORLD_PLAYER_COUNT_TAG();
+    MCAPI static auto OVERWORLD_PLAYER_COUNT_TAG() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& SLEEPING_PLAYER_COUNT_TAG();
+    MCAPI static auto SLEEPING_PLAYER_COUNT_TAG() -> char const (&)[];
 
     // NOLINTEND
 };

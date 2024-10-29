@@ -70,9 +70,9 @@ public:
         int                   itemValue
     ) const;
 
-    MCAPI static ::ll::CArrayT<int const>& mRotatedX();
+    MCAPI static auto mRotatedX() -> int const (&)[];
 
-    MCAPI static ::ll::CArrayT<int const>& mRotatedZ();
+    MCAPI static auto mRotatedZ() -> int const (&)[];
 
     // NOLINTEND
 };

@@ -129,9 +129,9 @@ public:
 
     MCAPI bool waterSpreadCausesSpawn$() const;
 
-    MCAPI static ::ll::CArrayT<::TorchFacing const>& DATA_FROM_FACING();
+    MCAPI static auto DATA_FROM_FACING() -> ::TorchFacing const (&)[];
 
-    MCAPI static ::ll::CArrayT<ushort const>& FACING_FROM_DATA();
+    MCAPI static auto FACING_FROM_DATA() -> ushort const (&)[];
 
     // NOLINTEND
 };

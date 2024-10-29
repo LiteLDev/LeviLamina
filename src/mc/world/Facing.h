@@ -116,27 +116,27 @@ public:
 
     MCAPI static std::vector<uchar> const& ALL_FACES();
 
-    MCAPI static ::ll::CArrayT<::Facing::Name const>& BY2DDATA();
+    MCAPI static auto BY2DDATA() -> ::Facing::Name const (&)[];
 
-    MCAPI static ::ll::CArrayT<class BlockPos const>& DIRECTION();
+    MCAPI static auto DIRECTION() -> class BlockPos const (&)[];
 
-    MCAPI static ::ll::CArrayT<::Facing::Name const>& DIRECTIONS();
+    MCAPI static auto DIRECTIONS() -> ::Facing::Name const (&)[];
 
-    MCAPI static ::ll::CArrayT<uchar const>& FACINGMASK();
+    MCAPI static auto FACINGMASK() -> uchar const (&)[];
 
-    MCAPI static ::ll::CArrayT<uchar const>& FACINGMASK_INV();
+    MCAPI static auto FACINGMASK_INV() -> uchar const (&)[];
 
     MCAPI static std::unordered_map<std::string, uchar> const& FROM_STRING_MAP();
 
-    MCAPI static ::ll::CArrayT<class Vec3 const>& NORMAL();
+    MCAPI static auto NORMAL() -> class Vec3 const (&)[];
 
-    MCAPI static ::ll::CArrayT<uchar const>& OPPOSITE_FACING();
+    MCAPI static auto OPPOSITE_FACING() -> uchar const (&)[];
 
-    MCAPI static ::ll::CArrayT<int const>& STEP_X();
+    MCAPI static auto STEP_X() -> int const (&)[];
 
-    MCAPI static ::ll::CArrayT<int const>& STEP_Y();
+    MCAPI static auto STEP_Y() -> int const (&)[];
 
-    MCAPI static ::ll::CArrayT<int const>& STEP_Z();
+    MCAPI static auto STEP_Z() -> int const (&)[];
 
     MCAPI static std::array<std::string, 6> const& TO_STRING_ARR();
 

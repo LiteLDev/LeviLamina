@@ -133,7 +133,7 @@ public:
 
     MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
-    MCAPI static ::ll::CArrayT<class BlockPos const>& ARM_DIRECTION_OFFSETS();
+    MCAPI static auto ARM_DIRECTION_OFFSETS() -> class BlockPos const (&)[];
 
     // NOLINTEND
 };

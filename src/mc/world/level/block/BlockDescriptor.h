@@ -149,11 +149,11 @@ public:
 
     MCAPI void dtor$();
 
-    MCAPI static ::ll::CArrayT<char const>& JSON_NAME_FIELD();
+    MCAPI static auto JSON_NAME_FIELD() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& JSON_STATES_FIELD();
+    MCAPI static auto JSON_STATES_FIELD() -> char const (&)[];
 
-    MCAPI static ::ll::CArrayT<char const>& JSON_TAGS_FIELD();
+    MCAPI static auto JSON_TAGS_FIELD() -> char const (&)[];
 
     // NOLINTEND
 };

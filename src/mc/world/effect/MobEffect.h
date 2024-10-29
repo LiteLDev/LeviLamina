@@ -279,7 +279,7 @@ public:
 
     MCAPI static class MobEffect*& WITHER();
 
-    MCAPI static ::ll::CArrayT<std::unique_ptr<class MobEffect>>& mMobEffects();
+    MCAPI static auto mMobEffects() -> std::unique_ptr<class MobEffect> (&)[];
 
     // NOLINTEND
 };

@@ -139,7 +139,7 @@ public:
 
     MCAPI void dtor$();
 
-    MCAPI static ::ll::CArrayT<char const>& NeutralLangCode();
+    MCAPI static auto NeutralLangCode() -> char const (&)[];
 
     // NOLINTEND
 };

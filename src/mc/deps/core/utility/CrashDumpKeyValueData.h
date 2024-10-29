@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* ctor$(::CrashDumpLogStringID, ::CrashDumpLogStringID, int, uint64);
 
-    MCAPI static ::ll::CArrayT<struct CrashDumpFormatEntryImpl const>& kFormat();
+    MCAPI static auto kFormat() -> struct CrashDumpFormatEntryImpl const (&)[];
 
     // NOLINTEND
 };
