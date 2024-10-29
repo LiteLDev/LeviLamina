@@ -46,7 +46,7 @@ public:
 
     MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
-    MCAPI static ::ll::CArrayT<std::string const>& STRUCTURE_SHIPWRECK_TYPES();
+    MCAPI static auto STRUCTURE_SHIPWRECK_TYPES() -> std::string const (&)[];
 
     // NOLINTEND
 };

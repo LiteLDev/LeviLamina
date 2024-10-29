@@ -938,7 +938,8 @@ public:
 
     MCAPI static char const* const& HASPROPERTY_PARAM_PROPERTY_NAME();
 
-    MCAPI static ::ll::CArrayT<std::pair<ParseFn, class CommandRegistry::Symbol> const>& ParseRuleSymbols();
+    MCAPI static auto ParseRuleSymbols()
+        ->std::pair<ParseFn, class CommandRegistry::Symbol> const(& )[];
 
     MCAPI static char const* const& TAG_VALUES_SOFTENUM_NAME();
 

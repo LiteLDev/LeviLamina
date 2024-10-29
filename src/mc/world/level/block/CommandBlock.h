@@ -159,7 +159,7 @@ public:
 
     MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
 
-    MCAPI static ::ll::CArrayT<int>& mCBModeMap();
+    MCAPI static auto mCBModeMap() -> int (&)[];
 
     // NOLINTEND
 };

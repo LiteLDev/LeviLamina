@@ -632,7 +632,7 @@ public:
 
     MCAPI static uint const& LOW_CPU_PACKET_BLOCK_LIMIT();
 
-    MCAPI static ::ll::CArrayT<float const>& MOON_BRIGHTNESS_PER_PHASE();
+    MCAPI static auto MOON_BRIGHTNESS_PER_PHASE() -> float const (&)[];
 
     MCAPI static std::chrono::seconds const& STRUCTURE_PRUNE_INTERVAL();
 

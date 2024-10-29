@@ -131,7 +131,7 @@ public:
 
         MCAPI void dtor$();
 
-        MCAPI static ::ll::CArrayT<char const>& SIGN_PERSIST_FORMATTING_TAG();
+        MCAPI static auto SIGN_PERSIST_FORMATTING_TAG() -> char const (&)[];
 
         // NOLINTEND
     };

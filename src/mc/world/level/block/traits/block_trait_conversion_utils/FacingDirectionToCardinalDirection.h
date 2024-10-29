@@ -17,9 +17,9 @@ MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U3();
 
 MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U4();
 
-MCAPI ::ll::CArrayT<::Direction::Type const>& conversionTable();
+MCAPI auto conversionTable() -> ::Direction::Type const (&)[];
 
-MCAPI ::ll::CArrayT<::Direction::Type const>& furnaceConversionTable();
+MCAPI auto furnaceConversionTable() -> ::Direction::Type const (&)[];
 // NOLINTEND
 
 }; // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection

@@ -220,7 +220,7 @@ public:
 
     MCAPI static class HumanoidArmorItem::ArmorMaterial const& TURTLE();
 
-    MCAPI static ::ll::CArrayT<int const>& mHealthPerSlot();
+    MCAPI static auto mHealthPerSlot() -> int const (&)[];
 
     // NOLINTEND
 };

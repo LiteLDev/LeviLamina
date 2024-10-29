@@ -14,7 +14,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static ::ll::CArrayT<uint const>& table();
+    MCAPI static auto table() -> uint const (&)[];
 
     // NOLINTEND
 };

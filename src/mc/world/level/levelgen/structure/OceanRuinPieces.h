@@ -146,23 +146,23 @@ public:
 
     MCAPI static std::string_view& STRUCTURE_RUIN_3_BRICK();
 
-    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsBrick();
+    MCAPI static auto bigRuinsBrick() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsCracked();
+    MCAPI static auto bigRuinsCracked() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& bigRuinsMossy();
+    MCAPI static auto bigRuinsMossy() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& bigWarmRuins();
+    MCAPI static auto bigWarmRuins() -> std::string_view (&)[];
 
     MCAPI static class LegacyStructureSettings& mSettings();
 
-    MCAPI static ::ll::CArrayT<std::string_view>& ruinsBrick();
+    MCAPI static auto ruinsBrick() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& ruinsCracked();
+    MCAPI static auto ruinsCracked() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& ruinsMossy();
+    MCAPI static auto ruinsMossy() -> std::string_view (&)[];
 
-    MCAPI static ::ll::CArrayT<std::string_view>& warmRuins();
+    MCAPI static auto warmRuins() -> std::string_view (&)[];
 
     // NOLINTEND
 };

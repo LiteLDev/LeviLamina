@@ -98,7 +98,7 @@ public:
 
     MCAPI void setColor$(class ItemStackBase& item, class mce::Color const& color) const;
 
-    MCAPI static ::ll::CArrayT<int const>& mHealthPerTier();
+    MCAPI static auto mHealthPerTier() -> int const (&)[];
 
     // NOLINTEND
 };

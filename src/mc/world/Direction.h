@@ -32,21 +32,21 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_CLOCKWISE();
+    MCAPI static auto DIRECTION_CLOCKWISE() -> ::Direction::Type const (&)[];
 
-    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_COUNTER_CLOCKWISE();
+    MCAPI static auto DIRECTION_COUNTER_CLOCKWISE() -> ::Direction::Type const (&)[];
 
     MCAPI static std::array<uchar, 4> const& DIRECTION_FACING();
 
-    MCAPI static ::ll::CArrayT<::Direction::Type const>& DIRECTION_OPPOSITE();
+    MCAPI static auto DIRECTION_OPPOSITE() -> ::Direction::Type const (&)[];
 
-    MCAPI static ::ll::CArrayT<::Direction::Type const>& FACING_DIRECTION();
+    MCAPI static auto FACING_DIRECTION() -> ::Direction::Type const (&)[];
 
     MCAPI static std::unordered_map<std::string, ::Direction::Type> const& FROM_STRING_MAP();
 
-    MCAPI static ::ll::CArrayT<int const>& STEP_X();
+    MCAPI static auto STEP_X() -> int const (&)[];
 
-    MCAPI static ::ll::CArrayT<int const>& STEP_Z();
+    MCAPI static auto STEP_Z() -> int const (&)[];
 
     MCAPI static std::array<std::string, 4> const& TO_STRING_ARRAY();
 

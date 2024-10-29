@@ -16,7 +16,7 @@ public:
     // thunks
 public:
     // NOLINTBEGIN
-    MCAPI static ::ll::CArrayT<struct CrashDumpFormatEntryImpl const>& kFormat();
+    MCAPI static auto kFormat() -> struct CrashDumpFormatEntryImpl const (&)[];
 
     // NOLINTEND
 };
