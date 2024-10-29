@@ -24,8 +24,8 @@ struct TestFormParam {
 };
 
 void registerFormTestCommand() {
-    static auto           logptr    = ll::io::LoggerRegistry::getInstance().getOrCreate("FormTest");
-    auto&                 cmd =
+    static auto logptr = ll::io::LoggerRegistry::getInstance().getOrCreate("FormTest");
+    auto&       cmd =
         ll::command::CommandRegistrar::getInstance()
             .getOrCreateCommand("formtest", "formtest", CommandPermissionLevel::GameDirectors, CommandFlagValue::None);
     cmd.overload<TestFormParam>().required("type").execute(
