@@ -83,7 +83,7 @@ lip install github.com/LiteLDev/LeviLamina
 
 ## 查找模组
 
-在安装模组之前，您需要找到想要安装的模组。最好的地方是 [Bedrinth](https://bedrinth.com)，即 lip 的官方模组注册表，但您也可以在 [MineBBS](https://www.minebbs.com/) 和其他网站上找到许多模组。
+在安装模组之前，您需要找到想要安装的模组。最好的地方是 [Bedrinth](https://bedrinth.com)，但您也可以在其他网站上找到许多模组。
 
 ## 安装模组
 

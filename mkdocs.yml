@@ -1,37 +1,33 @@
-site_name: LeviLamina
+site_name: LeviLamina Docs
 repo_url: https://github.com/LiteLDev/LeviLamina
 
 nav:
   - Home: index.md
+  - Quickstart: quickstart.md
+  - FAQ: faq.md
 
-  - quickstart.md
-
-  - Install:
-      - install.md
+  - Player Guides:
+    - Install:
+      - player_guides/install.md
       - Install on Docker: https://github.com/LiteLDev/levilamina-docker-server
+    - player_guides/troubleshooting.md
 
-  - faq.md
+  - Developer Guides:
+    - developer_guides/create_your_first_mod.md
+    - developer_guides/publish_your_first_mod.md
+    - developer_guides/publish_your_first_pack.md
 
-  - Tutorials:
-      - tutorials/create_your_first_mod.md
-      - tutorials/publish_your_first_mod.md
-      - tutorials/publish_your_first_pack.md
+    - How-to Guides:
+      - developer_guides/how_to_guides/event_guide.md
+      - developer_guides/how_to_guides/export_interface_guide.md
+      - developer_guides/how_to_guides/find_function_guide.md
+      - developer_guides/how_to_guides/form_guide.md
+      - developer_guides/how_to_guides/hook_guide.md
+      - developer_guides/how_to_guides/i18n_guide.md
+      - developer_guides/how_to_guides/item_guide.md
+      - developer_guides/how_to_guides/permission_guide.md
 
-  - Guides:
-      - guides/event_guide.md
-      - guides/export_interface_guide.md
-      - guides/find_function_guide.md
-      - guides/form_guide.md
-      - guides/hook_guide.md
-      - guides/i18n_guide.md
-      - guides/item_guide.md
-      - guides/permission_guide.md
-
-  - APIs: https://levilamina.liteldev.com/api
-
-  - Mods: https://bedrinth.com
-
-  - links.md
+    - API 🔗: https://levilamina.liteldev.com/api
 
 exclude_docs: |
   api/assets/
@@ -97,11 +93,14 @@ plugins:
           name: 中文
           nav_translations:
             Home: 主页
+            Quickstart: 快速开始
+            FAQ: 常见问题
+            Player Guides: 玩家指南
             Install: 安装
             Install on Docker: 在Docker上安装
+            Developer Guides: 开发者指南
             Tutorials: 教程
-            Guides: 指南
-            APIs: 接口
-            Mods: 模组
+            How-to Guides: 如何做到···
+            API 🔗: 接口 🔗
 
   - search

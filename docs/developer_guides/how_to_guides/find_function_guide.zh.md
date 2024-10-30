@@ -4,7 +4,7 @@
 
 ## 如何开始？
 
-在开始之前，你最好已经阅读了[Hook指南](../guides/hook_guide.md)。并且对 C++ 和底层知识有一定的了解。
+在开始之前，你最好已经阅读了[Hook指南](hook_guide.md)。并且对 C++ 和底层知识有一定的了解。
 
 ### 需要的工具
 
@@ -107,7 +107,7 @@ public: virtual void __cdecl ServerNetworkHandler::handle(class NetworkIdentifie
 //symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
 ```
 
-利用我们在[Hook指南](../guides/hook_guide.md)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
+利用我们在[Hook指南](hook_guide.md)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
 
 好吧，事实上我们遇到第二个问题，这里似乎没有一个 `std::string` 类型的参数，我们似乎无法获取到玩家的聊天内容。
 

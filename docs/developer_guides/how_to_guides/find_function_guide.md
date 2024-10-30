@@ -4,7 +4,7 @@ This article will introduce how to understand the functions in BDS and how to fi
 
 ## How to Start?
 
-Before you begin, it's best if you have already read the [Hook Guide](../guides/hook_guide.md). You should also have some understanding of C++ and low-level knowledge.
+Before you begin, it's best if you have already read the [Hook Guide](hook_guide.md). You should also have some understanding of C++ and low-level knowledge.
 
 ### Tools Needed
 
@@ -106,7 +106,7 @@ public: virtual void __cdecl ServerNetworkHandler::handle(class NetworkIdentifie
 //symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
 ```
 
-Using the knowledge we learned in the [Hook Guide](../guides/hook_guide.md), we can easily hook this function to achieve our functionality. (Right?)
+Using the knowledge we learned in the [Hook Guide](hook_guide.md), we can easily hook this function to achieve our functionality. (Right?)
 
 Well, actually, we encounter a second problem: there doesn't seem to be a `std::string` type parameter here, and we seem unable to get the player's chat content.
 

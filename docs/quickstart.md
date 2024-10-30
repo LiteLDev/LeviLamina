@@ -38,7 +38,7 @@ Don't update LeviLamina in the same location when it comes to data security. Ins
 
 ## Finding Mods
 
-Before installing a mod, you'll need to find what you want to install. The best place to find mods is [Bedrinth](https://bedrinth.com), lip's official mod registry, but you can also find many mods on [MineBBS](https://www.minebbs.com/) and other places around the web.
+Before installing a mod, you'll need to find what you want to install. The best place to find mods is [Bedrinth](https://bedrinth.com), the official mod index, but you can also find many mods elsewhere around the web.
 
 ## Installing Mods
 

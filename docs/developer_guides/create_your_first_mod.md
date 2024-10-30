@@ -673,7 +673,7 @@ Then run the LeviLamina server (`bedrock_server_mod.exe`) and you're done.
 
 ## Next steps?
 
-You can [publicly release your mod](./publish_your_first_mod.zh.md) and let more people use your mod.
+You can [publicly release your mod](./publish_your_first_mod.md) and let more people use your mod.
 
 ## Further exercises
 
@@ -686,11 +686,3 @@ We can add some features to this mod based on this mod to practice more knowledg
 - Count the number of player suicides and display the leaderboard on the sidebar
 - Use more advanced forms to let the player choose the way of suicide
 - Show a custom death message when the player suicide
-
-Here are some references you may need:
-
-- [Event guide](../guides/event_guide.zh.md)
-- [Interface export guide](../guides/export_interface_guide.zh.md)
-- [Form guide](../guides/form_guide.zh.md)
-- [Hook guide](../guides/hook_guide.zh.md)
-- [Find function guide](../guides/find_function_guide.zh.md)
