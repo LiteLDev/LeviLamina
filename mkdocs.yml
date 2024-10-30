@@ -29,6 +29,9 @@ nav:
 
     - API 🔗: https://levilamina.liteldev.com/api
 
+  - Maintainer Guides:
+    - maintainer_guides/cpp_style_guide.md
+
 exclude_docs: |
   api/assets/
 
@@ -102,5 +105,6 @@ plugins:
             Tutorials: 教程
             How-to Guides: 如何做到···
             API 🔗: 接口 🔗
+            Maintainer Guides: 维护者指南
 
   - search
