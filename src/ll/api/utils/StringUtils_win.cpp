@@ -108,6 +108,25 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
     return {};
 }
 
+// clang-format off
+constexpr const std::array formatColorPairs{
+    std::pair{cf::BLACK             , mce::Color(0x000000)}, std::pair{cf::DARK_BLUE        , mce::Color(0x0000AA)},
+    std::pair{cf::DARK_GREEN        , mce::Color(0x00AA00)}, std::pair{cf::DARK_AQUA        , mce::Color(0x00AAAA)},
+    std::pair{cf::DARK_RED          , mce::Color(0xAA0000)}, std::pair{cf::DARK_PURPLE      , mce::Color(0xAA00AA)},
+    std::pair{cf::GOLD              , mce::Color(0xFFAA00)}, std::pair{cf::GRAY             , mce::Color(0xAAAAAA)},
+    std::pair{cf::DARK_GRAY         , mce::Color(0x555555)}, std::pair{cf::BLUE             , mce::Color(0x5555FF)},
+    std::pair{cf::GREEN             , mce::Color(0x55FF55)}, std::pair{cf::AQUA             , mce::Color(0x55FFFF)},
+    std::pair{cf::RED               , mce::Color(0xFF5555)}, std::pair{cf::LIGHT_PURPLE     , mce::Color(0xFF55FF)},
+    std::pair{cf::YELLOW            , mce::Color(0xFFFF55)}, std::pair{cf::MINECOIN_GOLD    , mce::Color(0xDDD605)},
+    std::pair{cf::MATERIAL_QUARTZ   , mce::Color(0xE3D4D1)}, std::pair{cf::MATERIAL_IRON    , mce::Color(0xCECACA)},
+    std::pair{cf::MATERIAL_NETHERITE, mce::Color(0x443A3B)}, std::pair{cf::MATERIAL_REDSTONE, mce::Color(0x971607)},
+    std::pair{cf::MATERIAL_COPPER   , mce::Color(0xB4684D)}, std::pair{cf::MATERIAL_GOLD    , mce::Color(0xDEB12D)},
+    std::pair{cf::MATERIAL_EMERALD  , mce::Color(0x47A036)}, std::pair{cf::MATERIAL_DIAMOND , mce::Color(0x2CBAA8)},
+    std::pair{cf::MATERIAL_LAPIS    , mce::Color(0x21497B)}, std::pair{cf::MATERIAL_AMETHYST, mce::Color(0x9A5CC6)},
+    std::pair{cf::WHITE             , mce::Color(0xFFFFFF)}
+};
+// clang-format on
+
 std::string getMcCodeFromTextStyle(fmt::text_style style) {
     std::string res;
     bool        hasMcStyle = false;
@@ -127,28 +146,10 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
         hasMcStyle = true;
         auto fg    = style.get_foreground();
         if (fg.is_rgb) {
-            auto color = mce::Color(fg.value.rgb_color);
-            // clang-format off
-            constexpr const std::array carr{
-                std::pair{cf::BLACK             , mce::Color(0x000000)}, std::pair{cf::DARK_BLUE        , mce::Color(0x0000AA)},
-                std::pair{cf::DARK_GREEN        , mce::Color(0x00AA00)}, std::pair{cf::DARK_AQUA        , mce::Color(0x00AAAA)},
-                std::pair{cf::DARK_RED          , mce::Color(0xAA0000)}, std::pair{cf::DARK_PURPLE      , mce::Color(0xAA00AA)},
-                std::pair{cf::GOLD              , mce::Color(0xFFAA00)}, std::pair{cf::GRAY             , mce::Color(0xAAAAAA)},
-                std::pair{cf::DARK_GRAY         , mce::Color(0x555555)}, std::pair{cf::BLUE             , mce::Color(0x5555FF)},
-                std::pair{cf::GREEN             , mce::Color(0x55FF55)}, std::pair{cf::AQUA             , mce::Color(0x55FFFF)},
-                std::pair{cf::RED               , mce::Color(0xFF5555)}, std::pair{cf::LIGHT_PURPLE     , mce::Color(0xFF55FF)},
-                std::pair{cf::YELLOW            , mce::Color(0xFFFF55)}, std::pair{cf::MINECOIN_GOLD    , mce::Color(0xDDD605)},
-                std::pair{cf::MATERIAL_QUARTZ   , mce::Color(0xE3D4D1)}, std::pair{cf::MATERIAL_IRON    , mce::Color(0xCECACA)},
-                std::pair{cf::MATERIAL_NETHERITE, mce::Color(0x443A3B)}, std::pair{cf::MATERIAL_REDSTONE, mce::Color(0x971607)},
-                std::pair{cf::MATERIAL_COPPER   , mce::Color(0xB4684D)}, std::pair{cf::MATERIAL_GOLD    , mce::Color(0xDEB12D)},
-                std::pair{cf::MATERIAL_EMERALD  , mce::Color(0x47A036)}, std::pair{cf::MATERIAL_DIAMOND , mce::Color(0x2CBAA8)},
-                std::pair{cf::MATERIAL_LAPIS    , mce::Color(0x21497B)}, std::pair{cf::MATERIAL_AMETHYST, mce::Color(0x9A5CC6)},
-                std::pair{cf::WHITE             , mce::Color(0xFFFFFF)}
-            };
-            // clang-format on
+            auto             color  = mce::Color(fg.value.rgb_color);
             double           minDis = std::numeric_limits<double>::max();
             std::string_view minStr;
-            for (auto& [k, v] : carr) {
+            for (auto& [k, v] : formatColorPairs) {
                 auto dis = v.distanceTo(color);
                 if (dis < minDis) {
                     minDis = dis;
