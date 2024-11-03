@@ -64,7 +64,7 @@ Then, you need to install LeviLamina somewhere. This tutorial is for LeviLamina 
 
 Visit [levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template) and click `Use this template` to use this template to initialize your mod repository.
 
-![Create from template](img/levilamina-mod-template.png)
+![Create from template](levilamina-mod-template.png)
 
 Clone the mod repository to your local machine using Git, and then open it with VSCode. You need to modify some of the files to fill in your mod information.
 

@@ -16,8 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-          cd docs/api/
-          git clone --depth 1 --branch v2.3.4 https://github.com/jothepro/doxygen-awesome-css.git
+          git clone --depth 1 --branch v2.3.4 https://github.com/jothepro/doxygen-awesome-css.git docs/api/doxygen-awesome-css
           
       - run : |
           mkdir -p site/api
@@ -41,10 +40,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-          pip install -r requirements.txt
+          pip install -r docs/main/requirements.txt
 
       - run: |
-          mkdocs build
+          mkdocs build -f docs/main/mkdocs.yml -d ../../site
 
       - run: |
           tar -cvf artifact.tar -C site/ .
