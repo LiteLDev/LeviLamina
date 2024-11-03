@@ -49,7 +49,7 @@ jobs:
       - run: |
           tar -cvf artifact.tar -C site/ .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: mkdocs-pages
           path: |
@@ -61,7 +61,7 @@ jobs:
       - build-mkdocs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           path: artifacts/
 
@@ -71,7 +71,7 @@ jobs:
           tar -xvf artifacts/doxygen-pages/artifact.tar -C site/
           tar -xvf artifacts/mkdocs-pages/artifact.tar -C site/
 
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: site/
 
@@ -84,4 +84,4 @@ jobs:
       pages: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/deploy-pages@v2
+      - uses: actions/deploy-pages@v4
