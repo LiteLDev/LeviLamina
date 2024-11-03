@@ -33,6 +33,7 @@
 *.app
 
 
+
 ## https://github.com/github/gitignore/blob/main/CMake.gitignore
 CMakeLists.txt.user
 CMakeCache.txt
@@ -44,6 +45,7 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+
 
 
 ## https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
@@ -437,6 +439,7 @@ FodyWeavers.xsd
 *.sln.iml
 
 
+
 ## https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 .vscode/*
 !.vscode/settings.json
@@ -450,6 +453,7 @@ FodyWeavers.xsd
 
 # Built Visual Studio Code Extensions
 *.vsix
+
 
 
 ## https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
@@ -532,22 +536,25 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 
-## XMake
+
+## Miscellaneous
+# XMake
 /.xmake/
 /build/
 /CMakeLists.txt
 /vsxmake2022
 
-# MkDocs
+## Documentation
+/docs/api/doxygen-awesome-css/
 /site/
 
-## Project specific
 # IDE
-/.idea/
-/.vscode/
+.idea/
+.vscode/
 
-# Test
-src-test/**/include_all.cpp
+# Testing
+/bin/
+/src/ll/test/include_all.cpp
+/src-test/**/include_all.cpp
 
-bin/
-src/ll/test/include_all.cpp
+

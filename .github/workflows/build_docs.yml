@@ -14,18 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
 
       - run: |
+          cd docs/api/
+          git clone --depth 1 --branch v2.3.4 https://github.com/jothepro/doxygen-awesome-css.git
+          
+      - run : |
           mkdir -p site/api
       
-      - uses: mattnotmitt/doxygen-action@1.9.5
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          doxyfile-path: ./docs/api/Doxyfile
 
       - run: |
           tar -cvf artifact.tar -C site/ .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: doxygen-pages
           path: |
