@@ -2,13 +2,10 @@
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
-[![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)
-](https://discord.gg/v5R5P4vRZk)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)
-](https://t.me/LiteLoader)  
-[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)
-](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024) 
-[![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109) 
+[![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)](https://discord.gg/v5R5P4vRZk)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)  
+[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
+[![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
 [![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
 
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
@@ -72,6 +69,10 @@ LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.o
 This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+
+## End(er)-User License Agreement (EULA)
+
+**As a developer, you should carefully read and adhere to our [EULA](EULA.md) and [usage guidelines](docs/developer_guides/usage_guidelines.md).**
 
 ## License
 
