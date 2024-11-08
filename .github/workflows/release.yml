@@ -99,7 +99,7 @@ jobs:
           path: artifact
 
       - run: |
-          cp CHANGELOG.md COPYING COPYING.LESSER README.md artifact/
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md EULA.md docs/developer_guides/usage_guidelines.md artifact/
 
       - run: |
           zip -r ../levilamina-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}-windows-x64.zip *
