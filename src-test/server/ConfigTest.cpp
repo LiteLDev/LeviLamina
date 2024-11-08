@@ -67,15 +67,15 @@ public:
     int         plain    = 1111;
 
     std::map<std::string, MyPair> amap = {
-        {"key1", {}                 },
+        {"key1",                  {}},
         {"key2", {"a new thing", 42}},
-        {"key3", {}                 },
+        {"key3",                  {}},
     };
     std::map<mce::UUID, int> bmap = {
-        {{},                  4454556  },
-        {{2, 3},              4366     },
-        {{4, 5},              -63556654},
-        {mce::UUID::random(), -5674236 },
+        {                 {},   4454556},
+        {             {2, 3},      4366},
+        {             {4, 5}, -63556654},
+        {mce::UUID::random(),  -5674236},
     };
 
     Vec2        vec2{};

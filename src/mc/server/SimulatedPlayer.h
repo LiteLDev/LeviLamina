@@ -52,12 +52,12 @@ public:
     [[nodiscard]] inline bool simulateSneaking() {
         setSneaking(true);
         return isSneaking();
-    };
+    }
     [[nodiscard]] inline bool simulateStopSneaking() {
         setSneaking(false);
         return !isSneaking();
-    };
-    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); };
+    }
+    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
 
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
 

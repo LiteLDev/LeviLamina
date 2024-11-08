@@ -40,7 +40,7 @@ public:
         mStructureOffset                           = 0;
         mAllowNonTickingPlayerAndTickingAreaChunks = true;
         mIsWaterLogged                             = true;
-    };
+    }
 
 public:
     // prevent constructor by default

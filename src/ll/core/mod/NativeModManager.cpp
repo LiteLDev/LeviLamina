@@ -80,7 +80,7 @@ Expected<> NativeModManager::load(Manifest manifest) {
     auto l(lock());
     currentLoadingMod = std::make_shared<NativeMod>(std::move(manifest));
     struct Remover {
-        ~Remover() { currentLoadingMod = nullptr; };
+        ~Remover() { currentLoadingMod = nullptr; }
     } r;
     std::error_code ec;
     auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName());

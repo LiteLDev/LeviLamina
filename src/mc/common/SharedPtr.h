@@ -14,8 +14,8 @@ public:
         return SharedPtr<T>(new T(std::forward<Args>(args)...));
     }
 
-    [[nodiscard]] SharedPtr() noexcept : counter(nullptr) {}               // NOLINT
-    [[nodiscard]] SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
+    [[nodiscard]] SharedPtr() noexcept : counter(nullptr) {}
+    [[nodiscard]] SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {}
 
     [[nodiscard]] explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 

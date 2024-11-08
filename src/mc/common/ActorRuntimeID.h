@@ -7,9 +7,9 @@ public:
     uint64 id;
 
     [[nodiscard]] constexpr ActorRuntimeID() : id(0) {}
-    [[nodiscard]] constexpr ActorRuntimeID(uint64 x) : id(x) {} // NOLINT
+    [[nodiscard]] constexpr ActorRuntimeID(uint64 x) : id(x) {}
 
-    [[nodiscard]] constexpr operator uint64() const { return id; } // NOLINT
+    [[nodiscard]] constexpr operator uint64() const { return id; }
 };
 
 namespace std {

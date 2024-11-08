@@ -1,4 +1,4 @@
-﻿// #define GENERATE_PACKET
+// #define GENERATE_PACKET
 
 #ifdef GENERATE_PACKET
 

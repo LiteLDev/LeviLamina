@@ -18,9 +18,9 @@ public:
 
     CompoundTag() = default;
 
-    CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
+    CompoundTag(TagMap tags) : mTags(std::move(tags)) {}
 
-    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(tags) {} // NOLINT
+    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(tags) {}
 
     CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;

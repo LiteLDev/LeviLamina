@@ -77,7 +77,7 @@ public:
 
     [[nodiscard]] bool operator==(Tag const& other) const { return equals(other); }
 
-    [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); } // NOLINT
+    [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); }
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
 

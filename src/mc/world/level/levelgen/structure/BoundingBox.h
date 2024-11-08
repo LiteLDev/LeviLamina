@@ -68,7 +68,7 @@ public:
 
     [[nodiscard]] BlockPos getSideLength() const noexcept { return max - min + 1; }
 
-    LLNDAPI operator class AABB() const; // NOLINT
+    LLNDAPI operator class AABB() const;
 
 public:
     // NOLINTBEGIN

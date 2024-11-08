@@ -33,7 +33,7 @@ public:
 
     [[nodiscard]] LL_CONSTEXPR23 Blob() = default;
 
-    [[nodiscard]] LL_CONSTEXPR23 Blob(std::span<value_type> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
+    [[nodiscard]] LL_CONSTEXPR23 Blob(std::span<value_type> s, Deleter deleter = {}) : mSize(s.size()) {
         mBlob = pointer_type(new value_type[mSize], deleter);
         std::copy(s.begin(), s.end(), mBlob.get());
     }

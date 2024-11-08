@@ -9,7 +9,7 @@ public:
     ::MCCATEGORY mCategory;
     ushort       mCode;
 
-    operator bool() const noexcept { return mSuccess; } // NOLINT
+    operator bool() const noexcept { return mSuccess; }
 
 public:
     // NOLINTBEGIN

@@ -46,9 +46,9 @@ protected:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         return {
-            {"type",    "modal"     },
-            {"title",   mTitle      },
-            {"content", mContent    },
+            {   "type",      "modal"},
+            {  "title",       mTitle},
+            {"content",     mContent},
             {"button1", mUpperButton},
             {"button2", mLowerButton}
         };

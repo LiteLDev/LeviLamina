@@ -125,7 +125,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         "testenum",
         {
             {"testenumhhhh", 124144},
-            {"hrshh54w4t4",  67584 }
+            { "hrshh54w4t4",  67584}
     }
     );
 

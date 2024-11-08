@@ -16,7 +16,7 @@ public:
     std::string str;
     int         type;
 
-    operator std::string const&() const { return str; } // NOLINT
+    operator std::string const&() const { return str; }
 
 public:
     // NOLINTBEGIN

@@ -27,13 +27,13 @@ public:
     : floatN4(r, g, b, a) {}
 
     template <ll::math::IsFloatN V, std::floating_point A = double>
-    [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
+    [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept
         requires(V::size() == 3)
     : floatN4(v.r, v.g, v.b, a) {}
 
     [[nodiscard]] constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
 
-    [[nodiscard]] constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) { // NOLINT
+    [[nodiscard]] constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) {
         if (hex[0] == '#') {
             hex = hex.substr(1);
         }
@@ -58,7 +58,7 @@ public:
         default:
             return;
         }
-    };
+    }
 
     [[nodiscard]] constexpr class Vec3 toVec3() const noexcept { return {r, g, b}; }
 

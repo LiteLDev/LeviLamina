@@ -18,20 +18,20 @@ public:
     }
 
     // Constructors
-    [[nodiscard]] constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
+    [[nodiscard]] constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {}
 
     [[nodiscard]] constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
     [[nodiscard]] constexpr HashedString(std::string_view str) noexcept
     : hash(computeHash(str)),
       str(str),
-      lastMatch(nullptr) {} // NOLINT
+      lastMatch(nullptr) {}
 
-    [[nodiscard]] constexpr HashedString(std::string&& s) noexcept // NOLINT
+    [[nodiscard]] constexpr HashedString(std::string&& s) noexcept
     : hash(computeHash(s)),
       str(std::move(s)),
       lastMatch(nullptr) {}
-    [[nodiscard]] constexpr HashedString(char const* str) noexcept : HashedString(std::string{str}) {} // NOLINT
+    [[nodiscard]] constexpr HashedString(char const* str) noexcept : HashedString(std::string{str}) {}
 
     [[nodiscard]] constexpr HashedString(HashedString const& other) noexcept
     : hash(other.hash),
@@ -120,9 +120,9 @@ public:
     }
 
     // Convertors
-    [[nodiscard]] constexpr operator std::string const&() const { return str; } // NOLINT
+    [[nodiscard]] constexpr operator std::string const&() const { return str; }
 
-    [[nodiscard]] constexpr operator std::string_view() const { return std::string_view(str); } // NOLINT
+    [[nodiscard]] constexpr operator std::string_view() const { return std::string_view(str); }
 
 public:
     // NOLINTBEGIN

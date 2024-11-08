@@ -22,7 +22,7 @@ public:
       mToItemDescriptor(toItem) {
         mFromItem = fromItem;
         mToItem   = toItem;
-    };
+    }
 
     InventoryAction(
         InventorySource                   source,

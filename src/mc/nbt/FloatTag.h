@@ -15,7 +15,7 @@ public:
         return *this;
     }
 
-    constexpr operator float() const noexcept { return data; } // NOLINT
+    constexpr operator float() const noexcept { return data; }
 
     [[nodiscard]] constexpr explicit FloatTag(float value = 0) noexcept : data(value) {}
 

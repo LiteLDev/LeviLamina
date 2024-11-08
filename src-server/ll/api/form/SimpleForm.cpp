@@ -103,9 +103,9 @@ protected:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         nlohmann::ordered_json form = {
-            {"title",   mTitle                         },
-            {"type",    "form"                         },
-            {"content", mContent                       },
+            {  "title",                          mTitle},
+            {   "type",                          "form"},
+            {"content",                        mContent},
             {"buttons", nlohmann::ordered_json::array()}
         };
         for (auto& e : mElements) {

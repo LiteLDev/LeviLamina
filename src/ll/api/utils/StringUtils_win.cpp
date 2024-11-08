@@ -287,6 +287,7 @@ std::string tou8str(std::string_view str) {
         return str2str(str, CodePage::DefaultACP, CodePage::UTF8);
     }
 }
+
 std::string toSnakeCase(std::string_view str) {
     std::string res;
     if (str.empty()) {
@@ -304,11 +305,13 @@ std::string toSnakeCase(std::string_view str) {
     }
     return res;
 }
+
 std::string toLowerCase(std::string_view str) {
     std::string res{str};
     std::transform(res.begin(), res.end(), res.begin(), [](char c) { return (char)std::tolower(c); });
     return res;
 }
+
 Expected<bool> svtobool(std::string_view str) {
     if (str.size() <= 4) {
         auto lower = toLowerCase(str);

@@ -46,7 +46,7 @@ public:
 
     CommandFlag() = default;
 
-    CommandFlag(CommandFlagValue value) : value(value) {} // NOLINT
+    CommandFlag(CommandFlagValue value) : value(value) {}
 
     [[nodiscard]] constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     [[nodiscard]] constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }

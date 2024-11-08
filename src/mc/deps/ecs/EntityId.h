@@ -15,7 +15,7 @@ public:
 
     template <std::integral T>
         requires(!std::is_same_v<std::remove_cvref_t<T>, bool>)
-    [[nodiscard]] constexpr EntityId(T rawId) : mRawId(static_cast<entity_type>(rawId)) {} // NOLINT
+    [[nodiscard]] constexpr EntityId(T rawId) : mRawId(static_cast<entity_type>(rawId)) {}
 
     [[nodiscard]] constexpr bool isNull() const { return *this == entt::null; }
 

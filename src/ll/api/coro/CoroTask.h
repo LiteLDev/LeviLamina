@@ -30,7 +30,7 @@ private:
 public:
     struct ExpectedAwaiter : public WaiterBase {
         constexpr ExpectedAwaiter(Handle h) : WaiterBase(h) {}
-        constexpr ExpectedResult await_resume() noexcept { return WaiterBase::getResult(); };
+        constexpr ExpectedResult await_resume() noexcept { return WaiterBase::getResult(); }
     };
 
     struct ValueAwaiter : public WaiterBase {
@@ -53,7 +53,7 @@ public:
         if (handle) {
             std::exchange(handle, nullptr).destroy();
         }
-    };
+    }
 
     constexpr void setExecutor(ExecutorRef ex) { handle.promise().exec = ex; }
 

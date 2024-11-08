@@ -21,7 +21,7 @@ public:
         return (T)data;
     }
 
-    [[nodiscard]] constexpr operator std::byte() const { return (std::byte)data; } // NOLINT
+    [[nodiscard]] constexpr operator std::byte() const { return (std::byte)data; }
 
     template <std::integral T>
     [[nodiscard]] constexpr explicit ByteTag(T value = 0) : data((schar)value) {}

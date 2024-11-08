@@ -14,9 +14,9 @@ public:
 
     [[nodiscard]] constexpr IntArrayTag() = default;
 
-    [[nodiscard]] constexpr IntArrayTag(Array arr) : Array(std::move(arr)) {} // NOLINT
+    [[nodiscard]] constexpr IntArrayTag(Array arr) : Array(std::move(arr)) {}
 
-    [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : Array(val) {} // NOLINT
+    [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : Array(val) {}
 
 public:
     // NOLINTBEGIN

@@ -12,7 +12,7 @@ public:
     ushort debugPort;   // this+0x80
     ushort systemIndex; // this+0x82
 
-    [[nodiscard]] operator std::string() const { return ToString(); } // NOLINT
+    [[nodiscard]] operator std::string() const { return ToString(); }
 
 public:
     // NOLINTBEGIN

@@ -1,7 +1,7 @@
 BasedOnStyle: LLVM
 AccessModifierOffset: -4
 AlignAfterOpenBracket: BlockIndent
-AlignArrayOfStructures: Left
+AlignArrayOfStructures: Right
 AlignConsecutiveDeclarations:
   Enabled: true
   AcrossEmptyLines: false
@@ -44,3 +44,8 @@ PointerAlignment: Left
 TabWidth: 4
 UseTab: Never
 SortIncludes: CaseSensitive
+# RemoveEmptyLinesInUnwrappedLines: true
+RemoveSemicolon: true
+# SeparateDefinitionBlocks: Always
+SortUsingDeclarations: LexicographicNumeric
+Standard: Latest

@@ -14,9 +14,9 @@ public:
 
     [[nodiscard]] constexpr ByteArrayTag() = default;
 
-    [[nodiscard]] constexpr ByteArrayTag(Array arr) : Array(std::move(arr)) {} // NOLINT
+    [[nodiscard]] constexpr ByteArrayTag(Array arr) : Array(std::move(arr)) {}
 
-    [[nodiscard]] constexpr ByteArrayTag(std::initializer_list<uchar> val) : Array(val) {} // NOLINT
+    [[nodiscard]] constexpr ByteArrayTag(std::initializer_list<uchar> val) : Array(val) {}
 
 
 public:

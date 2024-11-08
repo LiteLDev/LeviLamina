@@ -162,8 +162,8 @@ void initExceptionTranslator() { _set_se_translator(error_utils::translateSEHtoC
 
 std::system_error getLastSystemError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
-extern "C" PEXCEPTION_RECORD* __current_exception();         // NOLINT
-extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
+extern "C" PEXCEPTION_RECORD* __current_exception();
+extern "C" PCONTEXT*          __current_exception_context();
 
 optional_ref<::_EXCEPTION_RECORD> current_exception_record() noexcept { return **__current_exception(); }
 optional_ref<_CONTEXT>            current_exception_context() noexcept { return **__current_exception_context(); }

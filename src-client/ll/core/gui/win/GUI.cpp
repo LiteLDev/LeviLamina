@@ -1,4 +1,4 @@
-﻿#include "ll/core/gui/GUI.h"
+#include "ll/core/gui/GUI.h"
 
 #include <cstring>
 #include <string>
@@ -13,10 +13,10 @@
 
 #include "imgui.h"
 
-#include "ll/core/gui/ImGuiAnsiColor.h"
-#include "ll/core/gui/ImGuiHooks.h"
 #include "ll/api/utils/FontUtils.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/gui/ImGuiAnsiColor.h"
+#include "ll/core/gui/ImGuiHooks.h"
 #include "ll/core/gui/ImguiConfig.h"
 #include "ll/core/gui/styles/ImguiSpectrum.h"
 #include "ll/core/io/LogPipe.h"
@@ -131,7 +131,7 @@ void initializeImGui() {
     io.IniFilename = nullptr;
 
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-    
+
     // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     // io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
     // io.BackendFlags |= ImGuiBackendFlags_HasMouseHoveredViewport;

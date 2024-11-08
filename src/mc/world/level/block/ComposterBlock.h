@@ -32,7 +32,7 @@ public:
     virtual ~ComposterBlock() = default;
 
     // vIndex: 4
-    virtual class HitResult // NOLINT
+    virtual class HitResult
     clip(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 

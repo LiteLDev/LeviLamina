@@ -76,7 +76,7 @@ void ForceEnableCheatCommands::call(bool enable) {
     } else {
         impl.reset();
     }
-};
+}
 
 ForceEnableCheatCommands::ForceEnableCheatCommands()  = default;
 ForceEnableCheatCommands::~ForceEnableCheatCommands() = default;

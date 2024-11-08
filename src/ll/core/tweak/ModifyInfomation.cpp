@@ -12,7 +12,7 @@
 #include "mc/diagnostics/Interface.h"
 #include "mc/world/level/storage/DBStorage.h"
 
-MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
+MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...);
 
 namespace ll {
 
@@ -125,10 +125,10 @@ LL_TYPE_INSTANCE_HOOK(
     &::BedrockLog::LogDetails::_appendLogEntryMetadata,
     void,
     std::string&,
-    std::string, // NOLINT
+    std::string,
     ::LogAreaID,
     uint,
-    std::string, // NOLINT
+    std::string,
     int,
     int
 ) {}

@@ -93,7 +93,7 @@ public:
         return sp.get();
     }
 
-    constexpr operator bool() const { return get() != nullptr; } // NOLINT
+    constexpr operator bool() const { return get() != nullptr; }
 
     constexpr T& operator*() const { return *get(); }
 

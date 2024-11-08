@@ -175,7 +175,7 @@ void Statistics::call(bool enable) {
     } else if (!enable) {
         impl.reset();
     }
-};
+}
 
 Statistics::Statistics()  = default;
 Statistics::~Statistics() = default;

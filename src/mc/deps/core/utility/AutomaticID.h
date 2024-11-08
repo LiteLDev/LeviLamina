@@ -11,9 +11,9 @@ public:
 
     [[nodiscard]] constexpr AutomaticID() : id(0) {}
 
-    [[nodiscard]] constexpr AutomaticID(T x) : id(x) {} // NOLINT
+    [[nodiscard]] constexpr AutomaticID(T x) : id(x) {}
 
-    [[nodiscard]] constexpr operator T() const { return id; } // NOLINT
+    [[nodiscard]] constexpr operator T() const { return id; }
 };
 
 namespace std {

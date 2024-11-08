@@ -80,13 +80,13 @@ public:
 
     [[nodiscard]] std::unique_ptr<DataItem> clone() const override;
 
-    [[nodiscard]] constexpr T const& value() const { return mValue; };
+    [[nodiscard]] constexpr T const& value() const { return mValue; }
 
-    [[nodiscard]] constexpr T& value() { return mValue; };
+    [[nodiscard]] constexpr T& value() { return mValue; }
 
-    [[nodiscard]] constexpr explicit operator T const&() const { return mValue; };
+    [[nodiscard]] constexpr explicit operator T const&() const { return mValue; }
 
-    [[nodiscard]] constexpr explicit operator T&() { return mValue; };
+    [[nodiscard]] constexpr explicit operator T&() { return mValue; }
 
     template <class T2>
     constexpr void setData(T2&& value) {

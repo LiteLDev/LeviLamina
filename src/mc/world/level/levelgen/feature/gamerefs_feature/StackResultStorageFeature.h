@@ -17,7 +17,8 @@ public:
         return nullptr;
     }
 
-    [[nodiscard]] inline operator bool() const { return mRegistry.has_value(); } // NOLINT
+    [[nodiscard]] inline operator bool() const { return mRegistry.has_value(); }
+
 public:
     // prevent constructor by default
     StackResultStorageFeature& operator=(StackResultStorageFeature const&);

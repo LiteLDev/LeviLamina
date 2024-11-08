@@ -68,7 +68,7 @@ public:
 
     constexpr void reset() { mHandle.reset(); }
 
-    constexpr operator bool() const { return mHandle != nullptr; } // NOLINT
+    constexpr operator bool() const { return mHandle != nullptr; }
 
     constexpr T* get() const { return mHandle.get(); }
 

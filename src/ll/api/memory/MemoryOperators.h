@@ -19,9 +19,9 @@ void operator delete[](void* p) noexcept { operator delete(p); }
 
 void operator delete[](void* p, std::nothrow_t const&) noexcept { operator delete[](p); }
 
-void operator delete(void* p, std::size_t) noexcept { operator delete(p); };
+void operator delete(void* p, std::size_t) noexcept { operator delete(p); }
 
-void operator delete[](void* p, std::size_t) noexcept { operator delete[](p); };
+void operator delete[](void* p, std::size_t) noexcept { operator delete[](p); }
 
 void operator delete(void* p, std::align_val_t) noexcept { ::ll::memory::getDefaultAllocator().alignedRelease(p); }
 
@@ -33,9 +33,9 @@ void operator delete[](void* p, std::align_val_t alignment) noexcept { operator 
 void operator delete[](void* p, std::align_val_t alignment, std::nothrow_t const&) noexcept {
     operator delete[](p, alignment);
 }
-void operator delete(void* p, std::size_t, std::align_val_t alignment) noexcept { operator delete(p, alignment); };
+void operator delete(void* p, std::size_t, std::align_val_t alignment) noexcept { operator delete(p, alignment); }
 
-void operator delete[](void* p, std::size_t, std::align_val_t alignment) noexcept { operator delete[](p, alignment); };
+void operator delete[](void* p, std::size_t, std::align_val_t alignment) noexcept { operator delete[](p, alignment); }
 
 [[nodiscard]] LL_ALLOCATOR void* operator new(std::size_t size) {
     if (void* const block = ::ll::memory::getDefaultAllocator().allocate(size)) {

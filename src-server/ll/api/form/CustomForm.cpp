@@ -23,7 +23,7 @@ public:
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         return {
             {"type", "label"},
-            {"text", mText  }
+            {"text",   mText}
         };
     }
 
@@ -49,7 +49,7 @@ public:
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         nlohmann::ordered_json input = {
             {"type", "input"},
-            {"text", mText  }
+            {"text",   mText}
         };
         if (!mPlaceholder.empty()) {
             input["placeholder"] = mPlaceholder;
@@ -81,8 +81,8 @@ public:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         return {
-            {"type",    "toggle"},
-            {"text",    mText   },
+            {   "type", "toggle"},
+            {   "text",    mText},
             {"default", mDefault}
         };
     }
@@ -110,10 +110,10 @@ public:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         return {
-            {"type",    "dropdown"},
-            {"text",    mText     },
-            {"options", mOptions  },
-            {"default", mDefault  }
+            {   "type", "dropdown"},
+            {   "text",      mText},
+            {"options",   mOptions},
+            {"default",   mDefault}
         };
     }
 
@@ -173,11 +173,11 @@ public:
             return {};
         }
         return {
-            {"type",    "slider"},
-            {"text",    mText   },
-            {"min",     mMin    },
-            {"max",     mMax    },
-            {"step",    mStep   },
+            {   "type", "slider"},
+            {   "text",    mText},
+            {    "min",     mMin},
+            {    "max",     mMax},
+            {   "step",    mStep},
             {"default", mDefault}
         };
     }
@@ -219,10 +219,10 @@ public:
             return {};
         }
         return {
-            {"type",    "step_slider"},
-            {"text",    mText        },
-            {"steps",   mSteps       },
-            {"default", mDefault     }
+            {   "type", "step_slider"},
+            {   "text",         mText},
+            {  "steps",        mSteps},
+            {"default",      mDefault}
         };
     }
 
@@ -265,8 +265,8 @@ protected:
 
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         nlohmann::ordered_json form = {
-            {"title",   mTitle                         },
-            {"type",    "custom_form"                  },
+            {  "title",                          mTitle},
+            {   "type",                   "custom_form"},
             {"content", nlohmann::ordered_json::array()}
         };
         for (auto& e : mElements) {

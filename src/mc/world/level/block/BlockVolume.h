@@ -46,9 +46,9 @@ public:
 
     BlockVolume() = default;
 
-    Block const*& block(uint index) { return mBlocks[index]; };
+    Block const*& block(uint index) { return mBlocks[index]; }
 
-    Block const*& block(BlockPos const& pos) { return mBlocks[index(pos)]; };
+    Block const*& block(BlockPos const& pos) { return mBlocks[index(pos)]; }
 
 public:
     // NOLINTBEGIN

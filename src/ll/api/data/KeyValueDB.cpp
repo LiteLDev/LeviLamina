@@ -1,4 +1,4 @@
-﻿#include "ll/api/data/KeyValueDB.h"
+#include "ll/api/data/KeyValueDB.h"
 
 #include <filesystem>
 #include <functional>
@@ -59,6 +59,7 @@ KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, boo
         bloomFilterBit
     );
 }
+
 KeyValueDB::KeyValueDB(std::filesystem::path const& path) : KeyValueDB(path, true, true, 0) {}
 
 KeyValueDB::KeyValueDB(KeyValueDB&&) noexcept = default;
@@ -75,11 +76,13 @@ std::optional<std::string> KeyValueDB::get(std::string_view key) const {
     }
     return result;
 }
+
 bool KeyValueDB::set(std::string_view key, std::string_view val) {
     return impl->db
         ->Put(impl->writeOptions, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()))
         .ok();
 }
+
 bool KeyValueDB::has(std::string_view key) const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     auto                               slice = leveldb::Slice(key.data(), key.size());
@@ -89,14 +92,17 @@ bool KeyValueDB::has(std::string_view key) const {
     }
     return false;
 }
+
 bool KeyValueDB::empty() const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     it->SeekToFirst();
     return it->Valid();
 }
+
 bool KeyValueDB::del(std::string_view key) {
     return impl->db->Delete(impl->writeOptions, leveldb::Slice(key.data(), key.size())).ok();
 }
+
 void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
@@ -107,6 +113,7 @@ void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> co
         }
     }
 }
+
 coro::Generator<std::pair<std::string_view, std::string_view>> KeyValueDB::iter() const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     for (it->SeekToFirst(); it->Valid(); it->Next()) {

@@ -78,7 +78,7 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
     template <std::integral T>
-    [[nodiscard]] constexpr CompoundTagVariant(T integer) { // NOLINT
+    [[nodiscard]] constexpr CompoundTagVariant(T integer) {
         constexpr size_t size = sizeof(T);
         if constexpr (size == 1) {
             mTagStorage = ByteTag{integer};
@@ -90,21 +90,18 @@ public:
             mTagStorage = Int64Tag{integer};
         }
     }
-    [[nodiscard]] inline CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(std::string s)
-    : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {}
 
-    [[nodiscard]] inline CompoundTagVariant(std::string_view s)
-    : mTagStorage(std::in_place_type<StringTag>, s) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(std::string_view s) : mTagStorage(std::in_place_type<StringTag>, s) {}
 
     template <size_t N>
-    [[nodiscard]] inline CompoundTagVariant(char const (&str)[N])
-    : CompoundTagVariant(std::string_view{str, N - 1}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(char const (&str)[N]) : CompoundTagVariant(std::string_view{str, N - 1}) {}
 
     [[nodiscard]] Tag::Type index() const noexcept { return (Tag::Type)mTagStorage.index(); }
     [[nodiscard]] Tag::Type getId() const noexcept { return index(); }
@@ -253,7 +250,7 @@ public:
             mTagStorage
         );
     }
-    [[nodiscard]] operator UniqueTagPtr() const { return toUnique(); } // NOLINT
+    [[nodiscard]] operator UniqueTagPtr() const { return toUnique(); }
 
     [[nodiscard]] UniqueTagPtr toUnique() && {
         return std::visit(
@@ -314,18 +311,10 @@ public:
             throw std::runtime_error("tag not hold a number");
         }
     }
-    [[nodiscard]] operator std::string const&() const { // NOLINT
-        return get<StringTag>();
-    }
-    [[nodiscard]] operator std::string&() { // NOLINT
-        return get<StringTag>();
-    }
-    [[nodiscard]] operator std::string&&() && { // NOLINT
-        return std::move(get<StringTag>());
-    }
-    [[nodiscard]] operator std::string_view() const { // NOLINT
-        return get<StringTag>();
-    }
+    [[nodiscard]] operator std::string const&() const { return get<StringTag>(); }
+    [[nodiscard]] operator std::string&() { return get<StringTag>(); }
+    [[nodiscard]] operator std::string&&() && { return std::move(get<StringTag>()); }
+    [[nodiscard]] operator std::string_view() const { return get<StringTag>(); }
     static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
         return CompoundTag{init};
     }

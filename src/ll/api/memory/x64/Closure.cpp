@@ -33,7 +33,7 @@ size_t getVolatileOffset(void* impl) {
     }
     getLogger().fatal("ClosureMagicNumber does not found 0x{}", impl);
     return 0;
-};
+}
 using T = NativeClosure<void*()>;
 void initNativeClosure(void* self, void* impl, size_t offset) {
     auto size  = offset + sizeof(NativeClosurePrologue);

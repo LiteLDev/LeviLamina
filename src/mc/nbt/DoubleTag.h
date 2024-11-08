@@ -15,7 +15,7 @@ public:
         return *this;
     }
 
-    [[nodiscard]] constexpr operator double() const noexcept { return data; } // NOLINT
+    [[nodiscard]] constexpr operator double() const noexcept { return data; }
 
     [[nodiscard]] constexpr explicit DoubleTag(double value = 0) noexcept : data(value) {}
 

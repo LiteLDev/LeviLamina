@@ -20,24 +20,24 @@ public:
         return result;
     }
 
-    [[nodiscard]] T&       top() { return mC.front(); };
-    [[nodiscard]] T const& top() const { return mC.front(); };
+    [[nodiscard]] T&       top() { return mC.front(); }
+    [[nodiscard]] T const& top() const { return mC.front(); }
 
-    [[nodiscard]] bool empty() { return mC.empty(); };
+    [[nodiscard]] bool empty() { return mC.empty(); }
 
-    [[nodiscard]] size_t size() { return mC.size(); };
+    [[nodiscard]] size_t size() { return mC.size(); }
 
-    [[nodiscard]] const_iterator begin() const { return mC.begin(); };
+    [[nodiscard]] const_iterator begin() const { return mC.begin(); }
 
-    [[nodiscard]] const_iterator end() const { return mC.end(); };
+    [[nodiscard]] const_iterator end() const { return mC.end(); }
 
-    [[nodiscard]] iterator begin() { return mC.begin(); };
+    [[nodiscard]] iterator begin() { return mC.begin(); }
 
-    [[nodiscard]] iterator end() { return mC.end(); };
+    [[nodiscard]] iterator end() { return mC.end(); }
 
     [[nodiscard]] Base& getInternalContainer() { return mC; }
 
     void clear() { mC.clear(); }
 
-    void resort() { std::make_heap(mC.begin(), mC.end(), Comparator{}); };
+    void resort() { std::make_heap(mC.begin(), mC.end(), Comparator{}); }
 };
