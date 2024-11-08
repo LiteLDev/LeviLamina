@@ -35,23 +35,24 @@ static constexpr auto makeBracketed(T const& value, bool bracketed) -> Bracketed
 
 void PatternFormatter::format(LogMessageView const& view, std::string& buffer) const noexcept try {
     auto lvlIdx = std::to_underlying(view.lvl);
+    using namespace fmt::literals;
     if (colored) {
         fmt::format_to(
             std::back_inserter(buffer),
             fmt::runtime(pattern),
-            fmt::arg("msg", fmt::styled(makeBracketed(view.msg, bracketed[0]), styles[lvlIdx][0])),
-            fmt::arg("tit", fmt::styled(makeBracketed(view.tit, bracketed[1]), styles[lvlIdx][1])),
-            fmt::arg("lvl", fmt::styled(makeBracketed(levelNames[lvlIdx], bracketed[2]), styles[lvlIdx][2])),
-            fmt::arg("tm", fmt::styled(makeBracketed(view.tm, bracketed[3]), styles[lvlIdx][3]))
+            "msg"_a = fmt::styled(makeBracketed(view.msg, bracketed[0]), styles[lvlIdx][0]),
+            "tit"_a = fmt::styled(makeBracketed(view.tit, bracketed[1]), styles[lvlIdx][1]),
+            "lvl"_a = fmt::styled(makeBracketed(levelNames[lvlIdx], bracketed[2]), styles[lvlIdx][2]),
+            "tm"_a  = fmt::styled(makeBracketed(view.tm, bracketed[3]), styles[lvlIdx][3])
         );
     } else {
         fmt::format_to(
             std::back_inserter(buffer),
             fmt::runtime(pattern),
-            fmt::arg("msg", makeBracketed(string_utils::removeEscapeCode(view.msg), bracketed[0])),
-            fmt::arg("tit", makeBracketed(view.tit, bracketed[1])),
-            fmt::arg("lvl", makeBracketed(levelNames[lvlIdx], bracketed[2])),
-            fmt::arg("tm", makeBracketed(view.tm, bracketed[3]))
+            "msg"_a = makeBracketed(string_utils::removeEscapeCode(view.msg), bracketed[0]),
+            "tit"_a = makeBracketed(view.tit, bracketed[1]),
+            "lvl"_a = makeBracketed(levelNames[lvlIdx], bracketed[2]),
+            "tm"_a  = makeBracketed(view.tm, bracketed[3])
         );
     }
     buffer.push_back('\n');

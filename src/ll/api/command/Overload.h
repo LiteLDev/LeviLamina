@@ -48,7 +48,7 @@ class Overload : private OverloadData {
     }
     explicit Overload(CommandHandle& handle, std::weak_ptr<mod::Mod> mod) : OverloadData(handle, std::move(mod)) {}
 
-    class ParamName : public std::string_view {
+    class ParamName {
         std::string_view str;
         int              idx;
 
