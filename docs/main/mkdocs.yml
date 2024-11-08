@@ -1,5 +1,10 @@
 site_name: LeviLamina Docs
 repo_url: https://github.com/LiteLDev/LeviLamina
+docs_dir: .
+
+exclude_docs: |
+  /mkdocs.yml
+  /requirements.txt
 
 nav:
   - Home: index.md
@@ -32,16 +37,13 @@ nav:
   - Maintainer Guides:
     - maintainer_guides/cpp_style_guide.md
 
-exclude_docs: |
-  api/assets/
-
 theme:
   name: material
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-  favicon: img/favicon.ico
-  logo: img/logo.svg
+  favicon: favicon.ico
+  logo: logo.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

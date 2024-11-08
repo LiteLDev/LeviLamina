@@ -64,7 +64,7 @@
 
 访问[levilamina-mod-template](https://github.com/LiteLDev/levilamina-mod-template)，点击`Use this template`以使用这个模板初始化你的模组仓库。
 
-![Create from template](img/levilamina-mod-template.png)
+![Create from template](levilamina-mod-template.png)
 
 将模组仓库使用Git克隆到本地，然后使用VSCode打开。你需要修改其中的一些文件，填写你的模组信息。
 
