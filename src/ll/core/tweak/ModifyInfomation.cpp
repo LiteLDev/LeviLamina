@@ -42,15 +42,14 @@ LL_STATIC_HOOK(
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
-// int _vscprintf(const char* format, va_list pargs) { // TODO: move to predefine
-//     int     retval;
-//     va_list argcopy;
-//     va_copy(argcopy, pargs);
-//     retval = vsnprintf(nullptr, 0, format, argcopy);
-//     va_end(argcopy);
-//     return retval;
-// }
-// vsnprintf(buffer.data(), buffer.size(), pszFormat, va);
+int printfbufc(const char* format, va_list const& pargs) {
+    int     retval;
+    va_list argcopy;
+    va_copy(argcopy, pargs);
+    retval = vsnprintf(nullptr, 0, format, argcopy);
+    va_end(argcopy);
+    return retval;
+}
 
 LL_STATIC_HOOK(BedrockLogOutHook, HookPriority::Normal, BedrockLogOut, void, uint priority, char const* pszFormat, ...)
 try {
@@ -58,13 +57,13 @@ try {
     std::string buffer;
     va_list     va;
     va_start(va, pszFormat);
-    auto bufferCount = _vscprintf(pszFormat, va);
+    auto bufferCount = printfbufc(pszFormat, va);
     if (bufferCount >= 0) {
         success = true;
     }
     if (success && bufferCount > 0) {
         buffer = std::string(bufferCount, '\0');
-        vsprintf_s(buffer.data(), buffer.size() + 1, pszFormat, va);
+        vsnprintf(buffer.data(), buffer.size() + 1, pszFormat, va);
     }
     va_end(va);
 
