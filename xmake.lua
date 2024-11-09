@@ -35,6 +35,7 @@ add_requires("demangler v17.0.7")
 add_requires("levibuildscript 0.2.0")
 add_requires("preloader v1.12.0")
 add_requires("symbolprovider v1.2.0")
+add_requires("trampoline 2024.11.7")
 
 if is_windows then
 add_requires("libhat 2024.9.22")
@@ -107,7 +108,7 @@ target("LeviLamina")
     add_headerfiles("src/(ll/api/**.h)", "src/(mc/**.h)")
     add_includedirs("src", "$(buildir)/config")
     set_pcxxheader("src/ll/api/Global.h")
-    add_packages("demangler", "mimalloc", "ctre", "cpr", "preloader")
+    add_packages("demangler", "mimalloc", "ctre", "cpr", "trampoline", "preloader")
     add_packages(
         "entt",
         "expected-lite",

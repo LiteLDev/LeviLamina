@@ -104,8 +104,6 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Args&&... args) {
     );
 }
 
-LLNDAPI void* unwrapFuncAddress(void* ptr) noexcept;
-
 LLNDAPI ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
 
 [[noreturn]] LLAPI void throwMemoryException(size_t);
@@ -151,7 +149,8 @@ template <template <class> class P, class T>
 #endif
 
 class DualMapping {
-    void*  pointer{};
+    void*  rw{};
+    void*  rx{};
     size_t memSize{};
 
 public:
@@ -166,7 +165,7 @@ public:
 
     size_t size() const { return memSize; }
 
-    void*       writable() const { return pointer; }
-    LLAPI void* executable() const;
+    void* writable() const { return rw; }
+    void* executable() const { return rx; }
 };
 } // namespace ll::memory

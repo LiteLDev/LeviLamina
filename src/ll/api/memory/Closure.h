@@ -7,73 +7,45 @@
 #include "ll/api/memory/Memory.h"
 
 namespace ll::memory {
-namespace detail {
-static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafull;
+class ClosureBase {
+public:
+    static constexpr size_t jitSize = 48;
+    struct PackedSelf {
+        char         jitfn[jitSize];
+        ClosureBase* self;
+    };
+    DualMapping          storage{};
+    LLNDAPI static void* getClosureData();
+    LLNDAPI              ClosureBase(void const* impl);
 
-LLAPI size_t getVolatileOffset(void*);
-LLAPI void   initNativeClosure(void* self, void* impl, size_t offset);
-LLAPI void   releaseNativeClosure(void* self);
-} // namespace detail
+    ClosureBase(ClosureBase&&)                 = delete;
+    ClosureBase(ClosureBase const&)            = delete;
+    ClosureBase& operator=(ClosureBase&&)      = delete;
+    ClosureBase& operator=(ClosureBase const&) = delete;
+};
 
-//                The principle of NativeClosure
-//--------------------------------------------------------------
-// | First we need an impl function as the actual            |
-// | implementation, and put a volatile variable at the      |
-// | beginning of the function, so that the compiler will    |
-// | theoretically push the value of this variable at the    |
-// | beginning. We set it to a value that should not appear  |
-// | in The number in the assembly, and then find the offset |
-// | of this number from the beginning of the function       |
-// | pointer in the constructor of each closure, then        |
-// | allocate a small piece of memory, copy the Prologue of  |
-// | the function itself, but replace the value of that      |
-// | variable with what we want Incoming data.               |
-//--------------------------------------------------------------
-// |from compiler|         <copy to mem>         >write by hand<
-//--------------------------------------------------------------
-//      |..... pargs .....|            <..... pargs .....>
-//      |mov  rax , [mgic]|            <mov  rax>, [data]<
-// addr |0x58 (magic head)|    --->    >push rax         <
-//      |mov qword ptr    |            >mov  rax , [addr]<
-//      |  [rbp-8], rax   |            >jmp  rax         <
-//      |    ...   ...    |       addr |0x58   (pop  rax)|
-//      |.... orifunc ....|            |    ...   ...    |
-//--------------------------------------------------------------
 template <class... Args>
 class NativeClosure {
     static_assert(sizeof...(Args) < 0, "NativeClosure only accepts function types as template arguments.");
 };
+
 template <class Ret, class... Args>
-class NativeClosure<Ret(Args...)> {
+class NativeClosure<Ret(Args...)> : private ClosureBase {
     static inline Ret closureImpl(Args... args) {
-        volatile uintptr_t data   = detail::closureMagicNumber;
-        auto               stored = (PackedData*)data;
-        return stored->func(stored->data, std::forward<Args>(args)...);
+        auto& self = *static_cast<NativeClosure*>(reinterpret_cast<PackedSelf*>(getClosureData())->self);
+        return (self.func)(self.data, std::forward<Args>(args)...);
     }
-    static inline size_t implOffset = detail::getVolatileOffset((void*)closureImpl);
 
 public:
-    using origin_fn  = Ret(uintptr_t, Args...);
-    using closure_fn = Ret(Args...);
+    using origin  = Ret(uintptr_t, Args...);
+    using closure = Ret(Args...);
 
-    struct PackedData {
-        origin_fn* func;
-        uintptr_t  data;
-    } stored;
+    uintptr_t data;
+    origin*   func;
 
-    DualMapping closure{};
+    [[nodiscard]] NativeClosure(origin* func, uintptr_t data) : ClosureBase(closureImpl), func(func), data(data) {}
 
-    NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
-        detail::initNativeClosure(this, (void*)closureImpl, implOffset);
-    }
-    closure_fn* get() const { return reinterpret_cast<closure_fn*>(closure.executable()); }
-
-    ~NativeClosure() { detail::releaseNativeClosure(this); }
-
-    NativeClosure(NativeClosure&&)                 = delete;
-    NativeClosure(NativeClosure const&)            = delete;
-    NativeClosure& operator=(NativeClosure&&)      = delete;
-    NativeClosure& operator=(NativeClosure const&) = delete;
+    [[nodiscard]] closure* get() const { return reinterpret_cast<closure*>(storage.executable()); }
 };
 template <class Ret, class... Args>
 NativeClosure(Ret (*)(uintptr_t, Args...), uintptr_t) -> NativeClosure<Ret(Args...)>;
@@ -83,18 +55,20 @@ class FunctionalClosure {
     static_assert(sizeof...(Args) < 0, "FunctionalClosure only accepts function types as template arguments.");
 };
 template <class Ret, class... Args>
-class FunctionalClosure<Ret(Args...)> : public NativeClosure<Ret(Args...)> {
-    static inline Ret closureImpl(uintptr_t data, Args... args) {
-        return ((FunctionalClosure*)data)->func(std::forward<Args>(args)...);
+class FunctionalClosure<Ret(Args...)> : private ClosureBase {
+    static inline Ret closureImpl(Args... args) {
+        auto& self = *static_cast<FunctionalClosure*>(reinterpret_cast<PackedSelf*>(getClosureData())->self);
+        return (self.func)(std::forward<Args>(args)...);
     }
 
 public:
     using closure = Ret(Args...);
+
     std::function<closure> func;
 
-    FunctionalClosure(std::function<closure> func)
-    : NativeClosure<Ret(Args...)>(closureImpl, (uintptr_t)this),
-      func(std::move(func)) {}
+    [[nodiscard]] FunctionalClosure(std::function<closure> func) : ClosureBase(closureImpl), func(std::move(func)) {}
+
+    [[nodiscard]] closure* get() const { return reinterpret_cast<closure*>(storage.executable()); }
 };
 template <class Ret, class... Args>
 FunctionalClosure(Ret (*)(Args...)) -> FunctionalClosure<Ret(Args...)>;

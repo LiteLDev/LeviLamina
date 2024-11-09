@@ -35,15 +35,14 @@ size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr
 }
 void DualMapping::alloc(size_t size) {
     free();
-    memSize = size;
-    pointer = pl::DualMappingMemoryResource::getInstance().allocate(size);
+    memSize         = size;
+    auto& allocator = pl::DualMappingMemoryResource::getInstance();
+    rw              = allocator.allocate(size);
+    rx              = allocator.executable(rw, memSize);
 }
 void DualMapping::free() {
-    if (!pointer) return;
-    pl::DualMappingMemoryResource::getInstance().deallocate(std::exchange(pointer, nullptr), std::exchange(memSize, 0));
-}
-void* DualMapping::executable() const {
-    if (!pointer) return nullptr;
-    return pl::DualMappingMemoryResource::getInstance().executable(pointer, memSize);
+    if (!rw) return;
+    rx = nullptr;
+    pl::DualMappingMemoryResource::getInstance().deallocate(std::exchange(rw, nullptr), std::exchange(memSize, 0));
 }
 } // namespace ll::memory
