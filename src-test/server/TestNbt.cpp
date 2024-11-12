@@ -23,7 +23,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
         {     "byte",                                                          (int8)127},
         {     "list",                  ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}},
         { "compound",
-         CompoundTag{
+         {
          {"float", 0.1f},
          {"long", 10000ull},
          {"double", 0.3},

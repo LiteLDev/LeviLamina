@@ -62,9 +62,16 @@ public:
 
     [[nodiscard]] constexpr CompoundTagVariant(std::nullptr_t) {}
 
-    [[nodiscard]] inline bool operator==(CompoundTagVariant const& other) const { return get() == other.get(); }
+    [[nodiscard]] bool operator==(CompoundTagVariant const& other) const { return get() == other.get(); }
 
-    [[nodiscard]] inline CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] constexpr CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
+
+    template <class T, class... Args>
+    [[nodiscard]] constexpr CompoundTagVariant(std::in_place_type_t<T>, Args&&... args)
+    : mTagStorage(std::in_place_type<T>, std::forward<Args>(args)...) {}
+
+    [[nodiscard]] constexpr CompoundTagVariant(std::initializer_list<CompoundTag::TagMap::value_type> tagPairs)
+    : mTagStorage(std::in_place_type<CompoundTag>, tagPairs) {}
 
     [[nodiscard]] CompoundTagVariant(UniqueTagPtr&& tag) {
         if (!tag) {
@@ -90,45 +97,49 @@ public:
             mTagStorage = Int64Tag{integer};
         }
     }
-    [[nodiscard]] inline CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {}
+    [[nodiscard]] constexpr CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {}
+    [[nodiscard]] constexpr CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {}
+    [[nodiscard]] constexpr CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {}
 
-    [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {}
+    [[nodiscard]] constexpr CompoundTagVariant(std::string s)
+    : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {}
 
-    [[nodiscard]] inline CompoundTagVariant(std::string_view s) : mTagStorage(std::in_place_type<StringTag>, s) {}
+    [[nodiscard]] constexpr CompoundTagVariant(std::string_view s) : mTagStorage(std::in_place_type<StringTag>, s) {}
 
     template <size_t N>
-    [[nodiscard]] inline CompoundTagVariant(char const (&str)[N]) : CompoundTagVariant(std::string_view{str, N - 1}) {}
+    [[nodiscard]] constexpr CompoundTagVariant(char const (&str)[N])
+    : CompoundTagVariant(std::string_view{str, N - 1}) {}
 
-    [[nodiscard]] Tag::Type index() const noexcept { return (Tag::Type)mTagStorage.index(); }
-    [[nodiscard]] Tag::Type getId() const noexcept { return index(); }
+    [[nodiscard]] constexpr Tag::Type index() const noexcept { return Tag::Type(mTagStorage.index()); }
+    [[nodiscard]] constexpr Tag::Type getId() const noexcept { return index(); }
 
     template <std::derived_from<Tag> T>
-    [[nodiscard]] bool hold() const noexcept {
+    [[nodiscard]] constexpr bool hold() const noexcept {
         return std::holds_alternative<T>(mTagStorage);
     }
-    [[nodiscard]] bool hold(::Tag::Type type) const noexcept { return getId() == type; }
+    [[nodiscard]] constexpr bool hold(::Tag::Type type) const noexcept { return getId() == type; }
 
     // consistency with json
-    [[nodiscard]] bool is_array() const noexcept { return hold(Tag::List); }
-    [[nodiscard]] bool is_binary() const noexcept { return hold(Tag::ByteArray) || hold(Tag::IntArray); }
-    [[nodiscard]] bool is_boolean() const noexcept { return hold(Tag::Byte); }
-    [[nodiscard]] bool is_null() const noexcept { return hold(Tag::End); }
-    [[nodiscard]] bool is_number_float() const noexcept { return hold(Tag::Float) || hold(Tag::Double); }
-    [[nodiscard]] bool is_number_integer() const noexcept {
+    [[nodiscard]] constexpr bool is_array() const noexcept { return hold(Tag::List); }
+    [[nodiscard]] constexpr bool is_binary() const noexcept { return hold(Tag::ByteArray) || hold(Tag::IntArray); }
+    [[nodiscard]] constexpr bool is_boolean() const noexcept { return hold(Tag::Byte); }
+    [[nodiscard]] constexpr bool is_null() const noexcept { return hold(Tag::End); }
+    [[nodiscard]] constexpr bool is_number_float() const noexcept { return hold(Tag::Float) || hold(Tag::Double); }
+    [[nodiscard]] constexpr bool is_number_integer() const noexcept {
         return hold(Tag::Byte) || hold(Tag::Short) || hold(Tag::Int) || hold(Tag::Int64);
     }
-    [[nodiscard]] bool is_object() const noexcept { return hold(Tag::Compound); }
-    [[nodiscard]] bool is_string() const noexcept { return hold(Tag::String); }
-    [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
-    [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
-    [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
+    [[nodiscard]] constexpr bool is_object() const noexcept { return hold(Tag::Compound); }
+    [[nodiscard]] constexpr bool is_string() const noexcept { return hold(Tag::String); }
+    [[nodiscard]] constexpr bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
+    [[nodiscard]] constexpr bool is_primitive() const noexcept {
+        return is_null() || is_string() || is_number() || is_binary();
+    }
+    [[nodiscard]] constexpr bool is_structured() const noexcept { return is_array() || is_object(); }
 
-    [[nodiscard]] CompoundTag::TagMap const& items() const { return get<CompoundTag>().mTags; }
-    [[nodiscard]] CompoundTag::TagMap&       items() { return get<CompoundTag>().mTags; }
+    [[nodiscard]] constexpr CompoundTag::TagMap const& items() const { return get<CompoundTag>().mTags; }
+    [[nodiscard]] constexpr CompoundTag::TagMap&       items() { return get<CompoundTag>().mTags; }
 
     [[nodiscard]] bool contains(std::string_view key) const noexcept {
         if (is_object()) {
@@ -150,7 +161,7 @@ public:
         return contains(key, (Tag::Type)idx);
     }
 
-    [[nodiscard]] size_t size() const noexcept {
+    [[nodiscard]] constexpr size_t size() const noexcept {
         switch (index()) {
         case Tag::Byte:
         case Tag::Short:
@@ -176,12 +187,12 @@ public:
     }
 
     template <std::derived_from<Tag> T>
-    [[nodiscard]] T& get() {
+    [[nodiscard]] constexpr T& get() {
         return std::get<T>(mTagStorage);
     }
 
     template <std::derived_from<Tag> T>
-    [[nodiscard]] T const& get() const {
+    [[nodiscard]] constexpr T const& get() const {
         return std::get<T>(mTagStorage);
     }
 
@@ -190,7 +201,7 @@ public:
     [[nodiscard]] Tag const& get() const { return reinterpret_cast<Tag const&>(mTagStorage); }
 
     template <std::derived_from<Tag> T>
-    T& emplace() {
+    constexpr T& emplace() {
         return mTagStorage.emplace<T>();
     }
 
@@ -316,9 +327,11 @@ public:
     [[nodiscard]] operator std::string&&() && { return std::move(get<StringTag>()); }
     [[nodiscard]] operator std::string_view() const { return get<StringTag>(); }
     static CompoundTagVariant object(std::initializer_list<CompoundTag::TagMap::value_type> init = {}) {
-        return CompoundTag{init};
+        return CompoundTagVariant{std::in_place_type<CompoundTag>, init};
     }
-    static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) { return ListTag{init}; }
+    static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) {
+        return CompoundTagVariant{std::in_place_type<ListTag>, init};
+    }
 };
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {

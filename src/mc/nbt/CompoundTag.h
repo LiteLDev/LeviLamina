@@ -20,7 +20,7 @@ public:
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {}
 
-    CompoundTag(std::initializer_list<TagMap::value_type> tags) : mTags(tags) {}
+    CompoundTag(std::initializer_list<TagMap::value_type> tagPairs) : mTags(tagPairs) {}
 
     CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;
