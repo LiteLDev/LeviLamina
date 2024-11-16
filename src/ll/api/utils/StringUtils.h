@@ -25,14 +25,12 @@ namespace ll::inline utils::string_utils {
 template <std::invocable<std::string_view> Fn>
 constexpr void splitByPattern(Fn&& fn, std::string_view s, std::string_view pattern, bool keepEmpty = false) {
     if (s.empty()) return;
-    size_t pos  = s.find(pattern);
-    size_t size = s.size();
-    while (pos != std::string::npos) {
+    size_t pos{};
+    while ((pos = s.find(pattern)) != std::string::npos) {
         if (keepEmpty || pos != 0) {
             if (!std::invoke(std::forward<Fn>(fn), s.substr(0, pos))) return;
         }
-        s   = s.substr(pos + pattern.size(), size - pos - pattern.size());
-        pos = s.find(pattern);
+        s = s.substr(pos + pattern.size());
     }
     if (keepEmpty || !s.empty()) std::invoke(std::forward<Fn>(fn), s);
 }
