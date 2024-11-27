@@ -34,7 +34,13 @@ struct virtualCloneCopy {
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
     constexpr virtualCloneCopy(virtualCloneCopy<U> const&) noexcept {}
-    constexpr T* operator()(T const& t) const noexcept { return static_cast<T*>(t.clone().release()); }
+    constexpr T* operator()(T const& t) const noexcept {
+        if constexpr (requires { static_cast<T*>(t.clone()); }) {
+            return static_cast<T*>(t.clone());
+        } else {
+            return static_cast<T*>(t.clone().release());
+        }
+    }
 };
 
 template <class T, class CopyCtor, class Deleter = std::default_delete<T>>

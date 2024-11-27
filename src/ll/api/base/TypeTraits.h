@@ -162,7 +162,9 @@ constexpr bool always_false = false;
 
 template <class T>
 constexpr bool is_virtual_cloneable_v =
-    std::is_polymorphic_v<T> && requires(T const& t) { static_cast<T*>(t.clone().release()); };
+    std::is_polymorphic_v<T> && (requires(std::remove_cv_t<T> const& t) {
+        static_cast<T*>(t.clone());
+    } || requires(std::remove_cv_t<T> const& t) { static_cast<T*>(t.clone().release()); });
 
 template <class T>
 constexpr bool is_awaiter_v = requires(std::remove_cv_t<T>& t) {

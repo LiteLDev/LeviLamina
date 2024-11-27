@@ -46,6 +46,10 @@
 #define LL_NOINLINE __declspec(noinline)
 #endif
 
+#ifndef LL_NO_UNIQUE_ADDRESS
+#define LL_NO_UNIQUE_ADDRESS [[msvc::no_unique_address]]
+#endif
+
 #ifndef LL_CONSTEXPR23
 #define LL_CONSTEXPR23 _CONSTEXPR23
 #endif
@@ -276,6 +280,10 @@ using FileHandleT = void*;
 
 #ifndef LL_NOINLINE
 #define LL_NOINLINE __attribute__((noinline))
+#endif
+
+#ifndef LL_NO_UNIQUE_ADDRESS
+#define LL_NO_UNIQUE_ADDRESS [[no_unique_address]]
 #endif
 
 #ifndef LL_CONSTEXPR23
