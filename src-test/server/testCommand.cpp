@@ -15,6 +15,8 @@
 
 #include "mc/nbt/CompoundTag.h"
 
+#include <ranges>
+
 #include "ll/core/LeviLamina.h"
 
 template <>
