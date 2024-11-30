@@ -254,4 +254,55 @@ template <class Group, class T, auto Id = int64{}>
         return Id;
     }
 }
+
+template <typename FR, typename... PRs>
+    requires std::is_reference_v<FR> && (std::is_reference_v<PRs> && ...)
+class elide {
+    using R = std::invoke_result_t<FR, PRs...>;
+    static_assert(!std::is_reference_v<R>, "F must return by value");
+
+    inline static constexpr bool excepts = noexcept(std::invoke(std::declval<FR>(), std::declval<PRs>()...));
+
+    static constexpr decltype(auto) to_invokable(FR f, PRs... args) noexcept {
+        using F  = std::remove_reference_t<FR>;
+        using DF = std::remove_pointer_t<F>;
+        if constexpr (sizeof...(PRs)) {
+            return [&f, &args...]() noexcept(excepts) -> decltype(auto) {
+                return std::invoke(static_cast<FR>(f), static_cast<PRs>(args)...);
+            };
+        } else if constexpr (std::is_function_v<DF>) {
+            return static_cast<DF*>(f);
+        } else if constexpr (std::is_trivial_v<F> && sizeof(F) <= sizeof(void*)) {
+            return static_cast<F>(f);
+        } else {
+            return static_cast<FR>(f);
+        }
+    }
+    using invokable_t = decltype(to_invokable(std::declval<FR>(), std::declval<PRs>()...));
+    invokable_t invokable;
+
+public:
+    template <typename F, typename... Params>
+    constexpr explicit elide(F&& arg, Params&&... args) noexcept
+    : invokable(to_invokable(std::forward<F>(arg), std::forward<Params>(args)...)) {}
+
+    constexpr operator R() noexcept(excepts) {
+        return std::invoke(
+            static_cast<std::conditional_t<std::is_lvalue_reference_v<FR>, invokable_t&, invokable_t&&>>(invokable)
+        );
+    }
+    constexpr R operator()() noexcept(excepts) { return this->operator R(); }
+
+    constexpr elide()                                = delete;
+    constexpr elide(elide const&)                    = delete;
+    constexpr elide(elide&&)                         = delete;
+    elide&                operator=(elide const&)    = delete;
+    elide&                operator=(elide&&)         = delete;
+    elide const volatile* operator&() const volatile = delete;
+    template <typename U>
+    void operator,(U&&) = delete;
+};
+template <typename F, typename... Params>
+elide(F&&, Params&&...) -> elide<F&&, Params&&...>;
+
 } // namespace ll::meta

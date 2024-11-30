@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <type_traits>
 
-#include "ll/api/base/Macro.h"
+#include "ll/api/base/Meta.h"
 
 template <typename T>
     requires(!std::is_reference_v<T>)
@@ -115,7 +115,6 @@ public:
     [[nodiscard]] constexpr decltype(auto) crend() const { return (value().crend()); }
     [[nodiscard]] constexpr decltype(auto) crbegin() const { return (value().crbegin()); }
 
-#if LL_HAS_CXX23
     template <class Fn>
     constexpr auto and_then(Fn&& fn) const {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -138,11 +137,7 @@ public:
         } else {
             using UnwrapT = std::remove_cv_t<Ret>;
             if (has_value()) {
-                return std::optional<UnwrapT>{
-                    ll::internal::stdOptionalConstructFromInvokeTag{},
-                    std::forward<Fn>(fn),
-                    static_cast<T&>(*mPtr)
-                };
+                return std::optional<UnwrapT>{ll::meta::elide(std::forward<Fn>(fn), static_cast<T&>(*mPtr))};
             } else {
                 return std::optional<UnwrapT>{};
             }
@@ -156,7 +151,6 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
-#endif // LL_HAS_CXX23
 };
 // NOLINTEND
 template <typename T>

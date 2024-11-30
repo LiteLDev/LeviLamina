@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <type_traits>
 
-#include "ll/api/base/Macro.h"
+#include "ll/api/base/Meta.h"
 
 namespace ll::command {
 
@@ -109,7 +109,7 @@ public:
         }
         return static_cast<T&&>(std::forward<U>(right));
     }
-#if LL_HAS_CXX23
+
     template <class Fn>
     constexpr auto and_then(Fn&& fn) & {
         using Ret = std::invoke_result_t<Fn, T&>;
@@ -155,9 +155,8 @@ public:
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T&>>;
         if (has_value()) {
             return std::optional<Ret>{
-                internal::stdOptionalConstructFromInvokeTag{},
-                std::forward<Fn>(fn),
-                static_cast<T&>(mValue)
+
+                meta::elide(std::forward<Fn>(fn), static_cast<T&>(mValue))
             };
         } else {
             return std::optional<Ret>{};
@@ -168,11 +167,7 @@ public:
     constexpr auto transform(Fn&& fn) const& {
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const&>>;
         if (has_value()) {
-            return std::optional<Ret>{
-                internal::stdOptionalConstructFromInvokeTag{},
-                std::forward<Fn>(fn),
-                static_cast<T const&>(mValue)
-            };
+            return std::optional<Ret>{meta::elide(std::forward<Fn>(fn), static_cast<T const&>(mValue))};
         } else {
             return std::optional<Ret>{};
         }
@@ -182,11 +177,7 @@ public:
     constexpr auto transform(Fn&& fn) && {
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T>>;
         if (has_value()) {
-            return std::optional<Ret>{
-                internal::stdOptionalConstructFromInvokeTag{},
-                std::forward<Fn>(fn),
-                static_cast<T&&>(mValue)
-            };
+            return std::optional<Ret>{meta::elide(std::forward<Fn>(fn), static_cast<T&&>(mValue))};
         } else {
             return std::optional<Ret>{};
         }
@@ -196,15 +187,12 @@ public:
     constexpr auto transform(Fn&& fn) const&& {
         using Ret = std::remove_cv_t<std::invoke_result_t<Fn, T const>>;
         if (has_value()) {
-            return std::optional<Ret>{
-                internal::stdOptionalConstructFromInvokeTag{},
-                std::forward<Fn>(fn),
-                static_cast<T const&&>(mValue)
-            };
+            return std::optional<Ret>{meta::elide(std::forward<Fn>(fn), static_cast<T const&&>(mValue))};
         } else {
             return std::optional<Ret>{};
         }
     }
+
     template <std::invocable<> Fn>
         requires std::copy_constructible<T>
     constexpr std::optional<T> or_else(Fn&& fn) const& {
@@ -224,7 +212,6 @@ public:
             return std::invoke(std::forward<Fn>(fn));
         }
     }
-#endif // LL_HAS_CXX23
 
     [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value()); }
     [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value()); }
