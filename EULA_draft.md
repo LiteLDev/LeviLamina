@@ -3,6 +3,7 @@
 ## End(er)-User License Agreement <br> Version 0.1.0 - 2024.11.1 <br> Copyright © LiteLDev. All rights reserved
 
 **This document is only a preliminary draft of the End(er)-User License Agreement and does not formally play a legal role, LiteLDev reserves the right to the highest interpretation of this document.**
+**Note that this document is in draft form until it is officially released and does not play a legal role, but can still be used as a non-draft in lieu of a legal role when necessary.**
 
 ### SUMMARY
 
