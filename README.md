@@ -72,7 +72,7 @@ This project exists thanks to all the people who contribute.
 
 ## End(er)-User License Agreement (EULA)
 
-**As a developer, you should carefully read and adhere to our [EULA](EULA.md) and [usage guidelines](docs/developer_guides/usage_guidelines.md).**
+**As a developer, you should carefully read and adhere to our [EULA](EULA_draft.md) and [usage guidelines](docs/main/developer_guides/usage_guidelines_draft.md).**
 
 ## License
 
