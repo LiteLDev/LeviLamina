@@ -2,6 +2,8 @@
 
 ## End(er)-User License Agreement <br> Version 0.1.0 - 2024.11.1 <br> Copyright © LiteLDev. All rights reserved
 
+**This document is only a preliminary draft of the End(er)-User License Agreement and does not formally play a legal role, LiteLDev reserves the right to the highest interpretation of this document.**
+
 ### SUMMARY
 
 This End(er)-User License Agreement (**"EULA"**) is a legal agreement between you and
@@ -60,7 +62,7 @@ To be clear, when we refer to:
 
 ### WHAT YOU CAN AND CAN'T DO WITH LEVILAMINA SOFTWARE AND CONTENT
 
-We are quite relaxed about what you do-actually, we strongly encourage you to do cool things-but please don't do the things we've said you can't. We've put together detailed [*LeviLamina* usage guidelines](docs/developer_guides/usage_guidelines.md) outlining what you can or cannot do with the content we've created. These [*LeviLamina* usage guidelines](docs/developer_guides/usage_guidelines.md) may change frequently, and we reserve the right to withdraw these permissions.
+We are quite relaxed about what you do-actually, we strongly encourage you to do cool things-but please don't do the things we've said you can't. We've put together detailed [*LeviLamina* usage guidelines](docs/main/developer_guides/usage_guidelines_draft.md) outlining what you can or cannot do with the content we've created. These [*LeviLamina* usage guidelines](docs/main/developer_guides/usage_guidelines_draft.md) may change frequently, and we reserve the right to withdraw these permissions.
 
 ### DEVELOPING MODS
 
@@ -115,8 +117,13 @@ If you violate this EULA, any resulting consequences are **solely your responsib
 
 ## CONTACT INFORMATION
 
-Our Name: LiteLDev (LeviMC)  
+Our Name: [LiteLDev](https://github.com/LiteLDev) (LeviMC)  
 Our Official Website: [https://levimc.org/](https://levimc.org/)  
 Our Official Discord: [https://discord.gg/v5R5P4vRZk](https://discord.gg/v5R5P4vRZk)  
 Our Official GitHub: [https://github.com/LiteLDev](https://github.com/LiteLDev)  
 Our Official Email: contact\@levimc.org
+
+## HISTORICAL CHANGE INFORMATION
+
+- 2024.12.11 corrected the name of the first draft file. @Lovelylavender4
+- 2024.11.03 completed the first draft. @Lovelylavender4
