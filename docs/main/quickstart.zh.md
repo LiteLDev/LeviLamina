@@ -51,8 +51,8 @@ lip config GitHubMirrorURL https://github.bibk.top
 
 当你的服务器的IP归属地是中国大陆时，bdsdown会自动为你配置镜像站，当然，你也可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义镜像站，例如: `https://mcdl.bibk.top`
 
-你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`~/.cache/bdsdown`目录下，如果该目录不存在请手动创建。  
-> `~`指的是你的用户目录，例如`C:\Users\Administrator\`(在Windows上) `/home/Debian`(在Linux上)
+你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`.cache/bdsdown`目录下，如果该目录不存在请手动创建。  
+> 该目录基于您安装BDS的路径，例如`C:\Users\YourName\BDS\.cache\bdsdown`
 
 ## 安装 LeviLamina
 
