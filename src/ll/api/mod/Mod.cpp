@@ -29,6 +29,8 @@ struct Mod::Impl {
     std::filesystem::path dataDir;
     std::filesystem::path configDir;
     std::filesystem::path langDir;
+
+    ~Impl() { io::LoggerRegistry::getInstance().erase(manifest.name); }
 };
 
 Mod::Mod(Manifest manifest) : mImpl(std::make_unique<Impl>()) {

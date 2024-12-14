@@ -140,7 +140,6 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
 }
 
 [[nodiscard]] constexpr std::string strToHexStr(std::string_view value, bool upperCase = false, bool addSpace = false) {
-    constexpr char hexStr[2][17] = {"0123456789abcdef", "0123456789ABCDEF"};
     std::string    hex;
     hex.reserve(value.size() * (addSpace ? 3 : 2));
     for (uchar x : value) {
