@@ -6,37 +6,43 @@
 #include <utility>
 
 namespace ll {
-template <class T, size_t N>
-struct CArray {
-    using type = T[N];
-};
-template <class T>
-struct CArray<T, 0> {
-    using type = T[];
-};
-template <class T, size_t N = 0>
-using CArrayT = typename CArray<T, N>::type;
 
-template <size_t Len, size_t Align = (std::min)((1ull << std::countr_zero(Len)), 8ull)>
+template <size_t Size>
 struct UntypedStorage {
-    alignas(Align) std::byte data[Len];
+    std::byte data[Size];
 
     template <class T>
     [[nodiscard]] T& as() & {
-        return *reinterpret_cast<T*>(this);
+        return *reinterpret_cast<T*>(data);
     }
     template <class T>
     [[nodiscard]] T const& as() const& {
-        return *reinterpret_cast<T const*>(this);
+        return *reinterpret_cast<T const*>(data);
     }
     template <class T>
     [[nodiscard]] T&& as() && {
-        return std::move(*reinterpret_cast<T*>(this));
+        return std::move(*reinterpret_cast<T*>(data));
     }
     template <class T>
     [[nodiscard]] T const&& as() const&& {
-        return std::move(*reinterpret_cast<T const*>(this));
+        return std::move(*reinterpret_cast<T const*>(data));
     }
+};
+
+template <size_t Size, class T>
+struct TypedStorage {
+    std::byte data[Size];
+
+    [[nodiscard]] T*        operator->() { return reinterpret_cast<T*>(data); }
+    [[nodiscard]] T const*  operator->() const { return reinterpret_cast<T const*>(data); }
+    [[nodiscard]] T&        get() & { return *reinterpret_cast<T*>(data); }
+    [[nodiscard]] T const&  get() const& { return *reinterpret_cast<T const*>(data); }
+    [[nodiscard]] T&&       get() && { return std::move(*reinterpret_cast<T*>(data)); }
+    [[nodiscard]] T const&& get() const&& { return std::move(*reinterpret_cast<T const*>(data)); }
+    [[nodiscard]] T&        operator*() & { return get(); }
+    [[nodiscard]] T const&  operator*() const& { return get(); }
+    [[nodiscard]] T&&       operator*() && { return std::move(get()); }
+    [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
 };
 
 } // namespace ll
