@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Core { class PathPart; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -11,36 +17,70 @@ namespace Core {
 
 class Path {
 public:
+    // Path inner types declare
+    // clang-format off
+    struct path_less;
+    // clang-format on
+
+    // Path inner types define
+    struct path_less {
+    public:
+        // prevent constructor by default
+        path_less& operator=(path_less const&);
+        path_less(path_less const&);
+        path_less();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::Core::PathPart> mPathPart;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Path& operator=(Path const&);
     Path(Path const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Path();
 
-    MCAPI explicit Path(char const*);
+    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
 
-    MCAPI bool operator==(class Core::Path const&) const;
+    MCAPI explicit Path(::Core::PathBuffer<::std::string> const&);
 
     MCAPI ~Path();
-
-    MCAPI static class Core::Result makeFailure(char const* format, class Core::Path&& path);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(char const*);
+    MCAPI static ::Core::Result makeFailure(char const* format, ::Core::PathView path);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Core::Path const& EMPTY();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static class Core::Path const& EMPTY();
+    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
 
+    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

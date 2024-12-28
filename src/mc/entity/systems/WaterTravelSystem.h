@@ -6,7 +6,22 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct DolphinFlagComponent;
+struct MobTravelComponent;
+struct MovementAttributesComponent;
+struct MovementSpeedComponent;
+struct OnGroundFlagComponent;
+struct PlayerComponent;
+struct SwimSpeedMultiplierComponent;
+struct TickingSystemWithInfo;
+struct WaterTravelFlagComponent;
+struct WaterWalkSpeedEnchantComponent;
+// clang-format on
 
 class WaterTravelSystem {
 public:
@@ -16,27 +31,22 @@ public:
     WaterTravelSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createWaterTravelSystem();
+    MCAPI static ::TickingSystemWithInfo createWaterTravelSystem();
 
     MCAPI static void tickWaterTravelSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag> const,
-                class FlagComponent<struct WaterTravelFlag> const>,
-            struct MovementAttributesComponent const,
-            struct SwimSpeedMultiplierComponent const,
-            struct WaterWalkSpeedEnchantComponent const,
-            struct MobTravelComponent,
-            class Optional<class FlagComponent<struct DolphinFlag> const>,
-            class Optional<struct OnGroundFlagComponent const>> view,
-        class ViewT<
-            class StrictEntityContext,
-            struct MovementAttributesComponent const,
-            struct MovementSpeedComponent const> speedData,
-        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> players
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent const, ::WaterTravelFlagComponent const>,
+            ::MovementAttributesComponent const,
+            ::MovementSpeedComponent const,
+            ::SwimSpeedMultiplierComponent const,
+            ::WaterWalkSpeedEnchantComponent const,
+            ::MobTravelComponent,
+            ::Optional<::DolphinFlagComponent const>,
+            ::Optional<::OnGroundFlagComponent const>>               view,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players
     );
-
     // NOLINTEND
 };

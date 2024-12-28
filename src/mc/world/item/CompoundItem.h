@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ChemistryItem.h"
 #include "mc/world/item/CompoundType.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class CompoundTag;
+class Experiments;
+class Item;
+class ItemDescriptor;
+class ItemInstance;
+class ItemStackBase;
+class RecipeIngredient;
+struct ResolvedItemIconInfo;
 // clang-format on
 
 class CompoundItem : public ::ChemistryItem {
@@ -26,66 +26,87 @@ public:
     CompoundItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
     // vIndex: 0
-    virtual ~CompoundItem() = default;
+    virtual ~CompoundItem() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CompoundItem(::std::string const& name, int id, ::Experiments const& experiments);
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    MCAPI void _registerSpecialCompounds(::Experiments const& experiments);
+    // NOLINTEND
 
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string _getName(::CompoundType type);
 
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI CompoundItem(std::string const& name, int id, class Experiments const& experiments);
+    MCAPI static ::RecipeIngredient getIngredientForCompound(::CompoundType type);
 
-    MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const& itemDescriptor);
+    MCAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
 
-    MCAPI static class RecipeIngredient getIngredientForCompound(::CompoundType type);
-
-    MCAPI static class ItemInstance getItemForCompound(::CompoundType type, int stackCount);
-
-    MCAPI static bool isCompoundItem(class ItemStackBase const& instance);
+    MCAPI static bool isCompoundItem(::ItemStackBase const& instance);
 
     MCAPI static void unregisterSpecialCompounds();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _registerSpecialCompound(class ItemInstance const& item, ::CompoundType type);
-
-    MCAPI static std::string _getName(::CompoundType type);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unordered_map<int, int>& mIdToSpecialCompound();
 
-    MCAPI void* ctor$(std::string const& name, int id, class Experiments const& experiments);
+    MCAPI static ::std::unordered_map<int, ::ItemInstance>& mTypeToSpecialCompound();
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::Experiments const& experiments);
+    // NOLINTEND
 
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidAuxValue$(int auxValue) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI static std::unordered_map<int, int>& mIdToSpecialCompound();
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI static std::unordered_map<int, class ItemInstance>& mTypeToSpecialCompound();
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,47 +5,88 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class WeightedRandomFeature : public ::IFeature {
+public:
+    // WeightedRandomFeature inner types declare
+    // clang-format off
+    struct WeightedFeatureReference;
+    // clang-format on
+
+    // WeightedRandomFeature inner types define
+    struct WeightedFeatureReference {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk28dbe3;
+        ::ll::UntypedStorage<4, 4>  mUnkc6f26e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WeightedFeatureReference& operator=(WeightedFeatureReference const&);
+        WeightedFeatureReference(WeightedFeatureReference const&);
+        WeightedFeatureReference();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkcbe588;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WeightedRandomFeature& operator=(WeightedRandomFeature const&);
     WeightedRandomFeature(WeightedRandomFeature const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WeightedRandomFeature() = default;
+    virtual ~WeightedRandomFeature() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
-    MCAPI WeightedRandomFeature();
-
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WeightedRandomFeature();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

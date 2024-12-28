@@ -3,27 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/animal/Animal.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Pig : public ::Animal {
@@ -34,37 +23,54 @@ public:
     Pig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Pig() = default;
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    // vIndex: 142
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
-    // vIndex: 149
-    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
-
-    MCAPI
-    Pig(class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext);
-
+    // vIndex: 8
+    virtual ~Pig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    Pig(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,23 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/diagnostics/LogAreaID.h"
-
 namespace BedrockLog {
 
-class LogAreaFilter {
+class LogAreaFilter : public ::std::bitset<49> {
 public:
     // prevent constructor by default
     LogAreaFilter& operator=(LogAreaFilter const&);
     LogAreaFilter(LogAreaFilter const&);
     LogAreaFilter();
-
-public:
-    // NOLINTBEGIN
-    MCAPI void toggleFilter(::LogAreaID);
-
-    // NOLINTEND
 };
 
-}; // namespace BedrockLog
+} // namespace BedrockLog

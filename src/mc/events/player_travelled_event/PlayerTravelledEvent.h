@@ -5,16 +5,24 @@
 // auto generated inclusion list
 #include "mc/events/player_travelled_event/TravelMethod.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class IConstBlockSource;
+struct StateVectorComponent;
+// clang-format on
+
 namespace PlayerTravelledEvent {
+// functions
 // NOLINTBEGIN
 MCAPI ::PlayerTravelledEvent::TravelMethod
-getTravelledMethod(class EntityContext const& entity, class IConstBlockSource const& region);
+getTravelledMethod(::EntityContext const& entity, ::IConstBlockSource const& region);
 
 MCAPI bool onClimbableBlock(
-    struct StateVectorComponent const& stateVector,
-    class IConstBlockSource const&     region,
-    class EntityContext const&         entity
+    ::StateVectorComponent const& stateVector,
+    ::IConstBlockSource const&    region,
+    ::EntityContext const&        entity
 );
 // NOLINTEND
 
-}; // namespace PlayerTravelledEvent
+} // namespace PlayerTravelledEvent

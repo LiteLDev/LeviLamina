@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class AddRiderComponent;
+class AddRiderDefinition;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -15,7 +18,8 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptAddRiderComponent {
+class ScriptAddRiderComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::AddRiderComponent, ::AddRiderDefinition> {
 public:
     // prevent constructor by default
     ScriptAddRiderComponent& operator=(ScriptAddRiderComponent const&);
@@ -23,41 +27,57 @@ public:
     ScriptAddRiderComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptAddRiderComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptAddRiderComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<std::string> getEntityType() const;
-
-    MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptAddRiderComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptAddRiderComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getSpawnEvent() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAddRiderComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

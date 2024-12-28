@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class BoneAnimationRelativeMode {};
+enum class BoneAnimationRelativeMode : int {
+    Parent = 0,
+    Entity = 1,
+};

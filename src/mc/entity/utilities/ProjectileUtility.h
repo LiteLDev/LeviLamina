@@ -6,8 +6,9 @@
 #include "mc/world/actor/ActorType.h"
 
 namespace ProjectileUtility {
+// functions
 // NOLINTBEGIN
-MCAPI bool shouldIgnoreEntity(::ActorType actorType, std::vector<::ActorType> const& entitiesToIgnore);
+MCAPI bool shouldIgnoreEntity(::ActorType actorType, ::std::vector<::ActorType> const& entitiesToIgnore);
 // NOLINTEND
 
-}; // namespace ProjectileUtility
+} // namespace ProjectileUtility

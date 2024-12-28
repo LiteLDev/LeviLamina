@@ -9,21 +9,24 @@ public:
     ScopedAutoreleasePool(ScopedAutoreleasePool const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScopedAutoreleasePool();
 
     MCAPI void drain();
 
     MCAPI ~ScopedAutoreleasePool();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Resources { class MinecraftDocumentInput; }
+namespace SharedTypes::v1_21_30 { struct TradeTableData; }
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class TradeTableDataLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 368> mUnkd1cc7d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TradeTableDataLoader& operator=(TradeTableDataLoader const&);
@@ -13,21 +26,25 @@ public:
     TradeTableDataLoader();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit TradeTableDataLoader(class ItemRegistryRef itemRegistry);
+    MCAPI explicit TradeTableDataLoader(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI class Puv::LoadResult<struct TradeTableData> load(std::string const& input) const;
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCAPI ~TradeTableDataLoader();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ItemRegistryRef itemRegistry);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

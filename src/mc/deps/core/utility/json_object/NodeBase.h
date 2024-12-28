@@ -3,18 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_object/JSONType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class Document; }
-namespace Bedrock::JSONObject { class MemoryPage; }
-namespace Bedrock::JSONObject { class Node; }
-// clang-format on
+#include "mc/deps/core/container/list_standard_operations.h"
 
 namespace Bedrock::JSONObject {
 
-class NodeBase {
+class NodeBase : public ::Bedrock::Intrusive::
+                     list_standard_operations<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase> {
 public:
     // NodeBase inner types declare
     // clang-format off
@@ -24,6 +18,15 @@ public:
     // NodeBase inner types define
     class Offset {
     public:
+        // member variables
+        // NOLINTBEGIN
+        union {
+            ::ll::UntypedStorage<2, 2> mUnkd0ad5a;
+            ::ll::UntypedStorage<2, 2> mUnk5228a0;
+        };
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Offset& operator=(Offset const&);
         Offset(Offset const&);
@@ -31,49 +34,25 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    union {
+        struct {
+            ::ll::UntypedStorage<2, 2> mUnke7d0a5;
+            ::ll::UntypedStorage<2, 2> mUnkab13d6;
+            ::ll::UntypedStorage<2, 2> mUnk78a983;
+            ::ll::UntypedStorage<1, 1> mUnk58fbd6;
+            ::ll::UntypedStorage<1, 1> mUnkfe6bdf;
+        };
+        ::ll::UntypedStorage<8, 8> mUnk58ae72;
+    };
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     NodeBase& operator=(NodeBase const&);
     NodeBase(NodeBase const&);
     NodeBase();
-
-public:
-    // NOLINTBEGIN
-    MCAPI class Bedrock::JSONObject::Document& getOwningDocument() const;
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI NodeBase(class Bedrock::JSONObject::MemoryPage* owningPage, ::Bedrock::JSONObject::JSONType type);
-
-    MCAPI class Bedrock::JSONObject::NodeBase const&
-    _getBase(class Bedrock::JSONObject::NodeBase::Offset offset, uchar page) const;
-
-    MCAPI void
-    _setBase(class Bedrock::JSONObject::NodeBase& to, class Bedrock::JSONObject::NodeBase::Offset& offset, uchar& page);
-
-    MCAPI void _swapCollectionMembership(class Bedrock::JSONObject::NodeBase& other);
-
-    MCAPI class Bedrock::JSONObject::Node* toNode();
-
-    MCAPI class Bedrock::JSONObject::Node const* toNode() const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void list_set_next(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
-
-    MCAPI static void list_set_prev(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage, ::Bedrock::JSONObject::JSONType type);
-
-    // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

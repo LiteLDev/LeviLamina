@@ -6,7 +6,26 @@
 #include "mc/world/level/biome/RTree.h"
 #include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeRegistry;
+class ChunkBlenderFactory;
+class ParameterList;
+struct GetBiomeOptions;
+struct OverworldNoises3d;
+// clang-format on
+
 class BlendedMultiNoiseBiomeProvider {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkc86f8c;
+    ::ll::UntypedStorage<8, 192> mUnkea9b8f;
+    ::ll::UntypedStorage<8, 8>   mUnkd743ad;
+    ::ll::UntypedStorage<8, 8>   mUnk39aca8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlendedMultiNoiseBiomeProvider& operator=(BlendedMultiNoiseBiomeProvider const&);
@@ -14,41 +33,40 @@ public:
     BlendedMultiNoiseBiomeProvider();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlendedMultiNoiseBiomeProvider(
-        struct OverworldNoises3d const& overworldNoises,
-        class ParameterList             parameterList,
-        class ChunkBlenderFactory&      attenuatorFactory,
-        class BiomeRegistry const&      biomeRegistry
+        ::OverworldNoises3d const& overworldNoises,
+        ::ParameterList            parameterList,
+        ::ChunkBlenderFactory&     attenuatorFactory,
+        ::BiomeRegistry const&     biomeRegistry
     );
 
-    MCAPI bool hasBiome(uint64 id) const;
+    MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI bool hasBiomeByHashId(uint64 id) const;
-
-    MCAPI class Biome const* tryGetBiome(struct GetBiomeOptions const& getBiomeOptions) const;
-
-    MCAPI class Biome const* tryGetBiome(
-        struct GetBiomeOptions const&                  getBiomeOptions,
-        struct ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
-        struct RTree::Hint*                            hint
+    MCAPI ::Biome const* tryGetBiome(
+        ::GetBiomeOptions const&                  getBiomeOptions,
+        ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
+        ::RTree::Hint*                            hint
     ) const;
 
     MCAPI ~BlendedMultiNoiseBiomeProvider();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct OverworldNoises3d const& overworldNoises,
-        class ParameterList             parameterList,
-        class ChunkBlenderFactory&      attenuatorFactory,
-        class BiomeRegistry const&      biomeRegistry
+    MCAPI void* $ctor(
+        ::OverworldNoises3d const& overworldNoises,
+        ::ParameterList            parameterList,
+        ::ChunkBlenderFactory&     attenuatorFactory,
+        ::BiomeRegistry const&     biomeRegistry
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

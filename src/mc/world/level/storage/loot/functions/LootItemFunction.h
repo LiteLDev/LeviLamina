@@ -4,10 +4,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
+struct Trade;
 namespace Json { class Value; }
 // clang-format on
 
 class LootItemFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd6cdfe;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LootItemFunction& operator=(LootItemFunction const&);
@@ -15,46 +28,57 @@ public:
     LootItemFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~LootItemFunction();
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context) = 0;
-
-    // vIndex: 2
-    virtual int
-    apply(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) = 0;
 
     // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context) = 0;
+    virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    // vIndex: 4
-    virtual int
-    apply(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
+    // vIndex: 2
+    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) = 0;
 
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value object);
-
+    // vIndex: 1
+    virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI int
-    apply$(class ItemStack& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
-
-    MCAPI int
-    apply$(class ItemInstance& item, class Random& random, struct Trade const& trade, class LootTableContext& context);
-
-    MCAPI static std::unordered_map<
-        class HashedString,
-        std::function<std::unique_ptr<
-            class LootItemFunction>(class Json::Value&, std::vector<std::unique_ptr<class LootItemCondition>>&)>> const&
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<
+        ::HashedString,
+        ::std::function<::std::unique_ptr<
+            ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
     mLootingFunctions();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+
+    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

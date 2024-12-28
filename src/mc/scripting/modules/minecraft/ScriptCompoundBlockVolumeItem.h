@@ -14,37 +14,52 @@ namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolumeItem {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkaf6d04;
+    ::ll::UntypedStorage<4, 8>  mUnka0e799;
+    ::ll::UntypedStorage<4, 8>  mUnk686d88;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptCompoundBlockVolumeItem();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCompoundBlockVolumeItem(class CompoundBlockVolumeItem const& item);
+    MCAPI explicit ScriptCompoundBlockVolumeItem(::CompoundBlockVolumeItem const& item);
 
-    MCAPI ScriptCompoundBlockVolumeItem(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+    MCAPI ScriptCompoundBlockVolumeItem(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
-    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
-    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
+    operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
-    MCAPI class CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
+    MCAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
 
     MCAPI ~ScriptCompoundBlockVolumeItem();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
-    bindInterface();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem>
+    bindInterface();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class CompoundBlockVolumeItem const& item);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CompoundBlockVolumeItem const& item);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

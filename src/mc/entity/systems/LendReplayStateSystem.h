@@ -3,38 +3,64 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntitySystems;
+class ReplayStateComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct PassengerComponent;
+struct PlayerComponent;
+struct ReplayStateLenderFlagComponent;
+struct TickingSystemWithInfo;
+struct VehicleInputIntentComponent;
+// clang-format on
 
 namespace LendReplayStateSystem {
+// functions
 // NOLINTBEGIN
 MCAPI void _addReplayStateIfNoLongerRidingClientPredictedVehicle(
-    class StrictEntityContext const&                                                         player,
-    struct PassengerComponent const&                                                         passengerComponent,
-    std::function<class ReplayStateComponent()> const&                                       createReplayState,
-    class EntityModifier<class ReplayStateComponent, struct ReplayStateLenderFlagComponent>& mod,
-    class ViewT<class StrictEntityContext, struct VehicleInputIntentComponent const>&        vehicleView
+    ::StrictEntityContext const&                                                player,
+    ::PassengerComponent const&                                                 passengerComponent,
+    ::std::function<::ReplayStateComponent()> const&                            createReplayState,
+    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>& mod,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const>&        vehicleView
+);
+
+MCAPI void _cleanupLingeringReplayStateComponentsSystem(
+    ::entt::
+        type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>, ::Exclude<::PlayerComponent>>,
+    ::StrictEntityContext const&                                                entity,
+    ::Optional<::VehicleInputIntentComponent const>                             vehicleInputIntent,
+    ::ViewT<::StrictEntityContext, ::ReplayStateComponent>                      passengerView,
+    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>& mod
 );
 
 MCAPI void _createAndAddReplayStateComponent(
-    class StrictEntityContext const&                                                         entity,
-    std::function<class ReplayStateComponent()> const&                                       createReplayState,
-    class EntityModifier<class ReplayStateComponent, struct ReplayStateLenderFlagComponent>& mod
+    ::StrictEntityContext const&                                                entity,
+    ::std::function<::ReplayStateComponent()> const&                            createReplayState,
+    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>& mod
 );
 
 MCAPI void _lendReplayStateToVehicle(
-    class StrictEntityContext const&                                    vehicle,
-    struct VehicleInputIntentComponent const&                           vehicleInputIntentComponent,
-    class ViewT<class StrictEntityContext, class ReplayStateComponent>& passengerView,
-    std::function<class ReplayStateComponent()> const&                  createReplayState,
-    class EntityModifier<class ReplayStateComponent, struct ReplayStateLenderFlagComponent>& mod
+    ::StrictEntityContext const&                                                vehicle,
+    ::VehicleInputIntentComponent const&                                        vehicleInputIntentComponent,
+    ::ViewT<::StrictEntityContext, ::ReplayStateComponent>&                     passengerView,
+    ::std::function<::ReplayStateComponent()> const&                            createReplayState,
+    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>& mod
 );
 
-MCAPI struct TickingSystemWithInfo createAddBackToPlayerSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createAddBackToPlayerSystem(bool isClientSide);
 
-MCAPI struct TickingSystemWithInfo createLendToVehicleSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createLendToVehicleSystem(bool isClientSide);
 
-MCAPI void registerSystems(class EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}; // namespace LendReplayStateSystem
+} // namespace LendReplayStateSystem

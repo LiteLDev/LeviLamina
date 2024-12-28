@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RotateAndSetVelocitySystem {
+// auto generated forward declare list
+// clang-format off
+struct LocalMoveVelocityComponent;
+struct MoveInputComponent;
+struct PlayerInputModeComponent;
+struct TickingSystemWithInfo;
+struct VRMoveAdjustAngleComponent;
+// clang-format on
+
+struct RotateAndSetVelocitySystem {
 public:
     // prevent constructor by default
     RotateAndSetVelocitySystem& operator=(RotateAndSetVelocitySystem const&);
@@ -10,15 +19,15 @@ public:
     RotateAndSetVelocitySystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void doTick(
-        struct MoveInputComponent const&         input,
-        struct PlayerInputModeComponent const&   inputMode,
-        struct VRMoveAdjustAngleComponent const& adjAngle,
-        struct LocalMoveVelocityComponent&       localVelocity
+        ::MoveInputComponent const&         input,
+        ::PlayerInputModeComponent const&   inputMode,
+        ::VRMoveAdjustAngleComponent const& adjAngle,
+        ::LocalMoveVelocityComponent&       localVelocity
     );
-
     // NOLINTEND
 };

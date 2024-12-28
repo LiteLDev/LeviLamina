@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class RakNetServerLANVisibility {};
+enum class RakNetServerLANVisibility : int {
+    Visible = 0,
+    Hidden  = 1,
+};

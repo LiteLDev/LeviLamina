@@ -4,20 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/property/IScriptBlockProperty.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockState;
-namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
-namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptStringBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProperty {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk98946a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptStringBlockProperty& operator=(ScriptStringBlockProperty const&);
@@ -25,47 +24,40 @@ public:
     ScriptStringBlockProperty();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptStringBlockProperty();
-
-    MCAPI ScriptStringBlockProperty(class ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
-
-    MCAPI ScriptStringBlockProperty(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        std::vector<std::string>                                                                      validValues,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
-
-    MCAPI class Scripting::Result<std::string> getState() const;
-
-    MCAPI class ScriptModuleMinecraft::ScriptStringBlockProperty&
-    operator=(class ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
-
-    MCAPI class Scripting::Result<void> setState(std::string state);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
-
+    virtual ~ScriptStringBlockProperty() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
+    MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
-    MCAPI void* ctor$(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        std::vector<std::string>                                                                      validValues,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+    MCAPI ::Scripting::Result<void> setState(::std::string state);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

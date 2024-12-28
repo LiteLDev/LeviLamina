@@ -30,22 +30,31 @@ public:
         FileSystemFileReadAccess();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~FileSystemFileReadAccess() = default;
-
         // vIndex: 1
-        virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const;
+        virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
 
+        // vIndex: 0
+        virtual ~FileSystemFileReadAccess() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI uint64 fread$(void* buffer, uint64 size, uint64 count, void* file) const;
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -57,24 +66,41 @@ public:
         FileSystemFileWriteAccess();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~FileSystemFileWriteAccess() = default;
-
         // vIndex: 1
-        virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+        virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
 
+        // vIndex: 0
+        virtual ~FileSystemFileWriteAccess() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI uint64 fwrite$(void const* buffer, uint64 size, uint64 count, void* file);
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd7988c;
+    ::ll::UntypedStorage<1, 8> mUnkfe4141;
+    ::ll::UntypedStorage<1, 8> mUnk1845b8;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -83,55 +109,72 @@ public:
     FileSystemFileAccess();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileSystemFileAccess() = default;
+    virtual ~FileSystemFileAccess() /*override*/;
 
     // vIndex: 1
-    virtual void* fopen(class Core::Path const& filePath, std::string const& mode);
+    virtual void* fopen(::Core::Path const& filePath, ::std::string const& mode) /*override*/;
 
     // vIndex: 2
-    virtual int fclose(void* file);
+    virtual int fclose(void* file) /*override*/;
 
     // vIndex: 3
-    virtual int fseek(void* file, int64 offset, int origin);
+    virtual int fseek(void* file, int64 offset, int origin) /*override*/;
 
     // vIndex: 4
-    virtual int64 ftell(void* file);
+    virtual int64 ftell(void* file) /*override*/;
 
     // vIndex: 5
-    virtual class IFileReadAccess const* getReadInterface() const;
+    virtual ::IFileReadAccess const* getReadInterface() const /*override*/;
 
     // vIndex: 6
-    virtual class IFileWriteAccess* getWriteInterface();
+    virtual ::IFileWriteAccess* getWriteInterface() /*override*/;
 
     // vIndex: 7
-    virtual void unload();
-
-    MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
-
+    virtual void unload() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::FileSystemMode mode);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FileSystemMode mode);
+    // NOLINTEND
 
-    MCAPI int fclose$(void* file);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* fopen$(class Core::Path const& filePath, std::string const& mode);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void* $fopen(::Core::Path const& filePath, ::std::string const& mode);
 
-    MCAPI int fseek$(void* file, int64 offset, int origin);
+    MCAPI int $fclose(void* file);
 
-    MCAPI int64 ftell$(void* file);
+    MCAPI int $fseek(void* file, int64 offset, int origin);
 
-    MCAPI class IFileReadAccess const* getReadInterface$() const;
+    MCAPI int64 $ftell(void* file);
 
-    MCAPI class IFileWriteAccess* getWriteInterface$();
+    MCAPI ::IFileReadAccess const* $getReadInterface() const;
 
-    MCAPI void unload$();
+    MCAPI ::IFileWriteAccess* $getWriteInterface();
 
+    MCAPI void $unload();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

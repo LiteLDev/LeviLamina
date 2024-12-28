@@ -10,6 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChunkSource;
+class CompoundTag;
+class ILevel;
+class LevelChunk;
+class Scheduler;
+class Vec3;
+class WorldGenerator;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
@@ -22,71 +29,100 @@ public:
     OverworldDimension();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers);
+    // vIndex: 0
+    virtual ~OverworldDimension() /*override*/;
 
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(
-        std::unique_ptr<class ChunkSource> storageSource,
-        ::StorageVersion                   levelVersion
-    );
+    // vIndex: 9
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
-    MCVAPI std::unique_ptr<class WorldGenerator>
-           createGenerator(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    // vIndex: 15
+    virtual ::std::unique_ptr<::WorldGenerator>
+    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
+    // vIndex: 18
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const& baseColor, float brightness) const;
+    // vIndex: 16
+    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    MCVAPI short getCloudHeight() const;
+    // vIndex: 17
+    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    MCVAPI bool hasPrecipitationFog() const;
+    // vIndex: 22
+    virtual short getCloudHeight() const /*override*/;
 
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc) const;
+    // vIndex: 21
+    virtual bool hasPrecipitationFog() const /*override*/;
 
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
+    // vIndex: 20
+    virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
+        /*override*/;
 
-    MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
+    // vIndex: 39
+    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    MCAPI OverworldDimension(class ILevel& level, class Scheduler& context);
-
+    // vIndex: 40
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
+        ::std::unique_ptr<::ChunkSource> storageSource,
+        ::StorageVersion                 levelVersion
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI OverworldDimension(::ILevel& level, ::Scheduler& context);
+    // NOLINTEND
 
-    MCAPI static void** vftableForIDimension();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ILevel& level, ::Scheduler& context);
+    // NOLINTEND
 
-    MCAPI static void** vftableForLevelListener();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForSavedData();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI void* ctor$(class ILevel& level, class Scheduler& context);
+    MCAPI ::std::unique_ptr<::WorldGenerator>
+    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI void _upgradeOldLimboEntity$(class CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility$(
-        std::unique_ptr<class ChunkSource> storageSource,
-        ::StorageVersion                   levelVersion
-    );
+    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCAPI std::unique_ptr<class WorldGenerator>
-          createGenerator$(class br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void fixWallChunk$(class ChunkSource& source, class LevelChunk& lc);
+    MCAPI short $getCloudHeight() const;
 
-    MCAPI class mce::Color getBrightnessDependentFogColor$(class mce::Color const& baseColor, float brightness) const;
+    MCAPI bool $hasPrecipitationFog() const;
 
-    MCAPI short getCloudHeight$() const;
+    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCAPI bool hasPrecipitationFog$() const;
+    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCAPI bool levelChunkNeedsUpgrade$(class LevelChunk const& lc) const;
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+    // NOLINTEND
 
-    MCAPI class Vec3 translatePosAcrossDimension$(class Vec3 const& originalPos, DimensionType fromId) const;
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI void upgradeLevelChunk$(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
+    MCAPI static void** $vftableForIDimension();
 
+    MCAPI static void** $vftableForLevelListener();
+
+    MCAPI static void** $vftableForSavedData();
     // NOLINTEND
 };

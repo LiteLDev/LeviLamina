@@ -23,25 +23,35 @@ public:
     IPayload();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
+    // vIndex: 0
+    virtual ~IPayload();
 
-    MCVAPI class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
+    // vIndex: 2
+    virtual ::Scripting::ResultAny
+    runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
+    // vIndex: 1
+    virtual ::Scripting::ResultAny
+    runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI class Scripting::ResultAny
-    runOn$(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Scripting::ResultAny
-    runOn$(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::ResultAny
+    $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
+    MCAPI ::Scripting::ResultAny
+    $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

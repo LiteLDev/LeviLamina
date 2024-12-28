@@ -5,6 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+class ITickingSystem;
+struct EntitySystemTickingMode;
+struct SystemCategory;
+struct SystemInfo;
+// clang-format on
+
 class IEntitySystems {
 public:
     // prevent constructor by default
@@ -13,23 +22,41 @@ public:
     IEntitySystems();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEntitySystems() = default;
+    virtual ~IEntitySystems();
 
-    MCAPI void registerTickingSystem(
-        std::initializer_list<class Bedrock::typeid_t<struct SystemCategory>>,
-        std::unique_ptr<class ITickingSystem>,
-        struct SystemInfo const&,
-        struct EntitySystemTickingMode
-    );
+    // vIndex: 1
+    virtual void registerTickingSystem(
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
+        ::std::unique_ptr<::ITickingSystem>,
+        ::SystemInfo const&,
+        ::EntitySystemTickingMode
+    ) = 0;
+
+    // vIndex: 2
+    virtual void tickMovementCatchup(::EntityRegistry&) = 0;
+
+    // vIndex: 3
+    virtual void tickMovementCorrectionReplay(::EntityRegistry&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

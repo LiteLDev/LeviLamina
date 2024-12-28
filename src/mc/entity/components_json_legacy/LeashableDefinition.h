@@ -12,25 +12,38 @@ namespace JsonUtil { class EmptyClass; }
 
 class LeashableDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk3ee13a;
+    ::ll::UntypedStorage<4, 4>   mUnk36113d;
+    ::ll::UntypedStorage<4, 4>   mUnk486c7e;
+    ::ll::UntypedStorage<8, 104> mUnk4ed5a0;
+    ::ll::UntypedStorage<8, 104> mUnk1cf322;
+    ::ll::UntypedStorage<1, 1>   mUnk4b4c40;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LeashableDefinition& operator=(LeashableDefinition const&);
     LeashableDefinition(LeashableDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LeashableDefinition();
-
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>>&
-            root
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/world/item/components/ItemComponent.h"
+
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+class ItemStack;
+class Player;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
-class OnUse {
+class OnUse : public ::ItemComponent,
+              public ::Bedrock::PubSub::
+                  Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
     // prevent constructor by default
     OnUse& operator=(OnUse const&);
@@ -17,21 +25,27 @@ public:
     OnUse();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static class HashedString const& getIdentifier();
-
+    // vIndex: 0
+    virtual ~OnUse() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockPubSubConnector();
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static void** vftableForBedrockPubSubDetailDispatchingPublisherBase();
+    MCAPI static void** $vftableForDispatchingPublisherBase();
 
+    MCAPI static void** $vftableForConnector();
     // NOLINTEND
 };
 
-}; // namespace PublisherItemComponent
+} // namespace PublisherItemComponent

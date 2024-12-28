@@ -4,6 +4,9 @@
 
 namespace CanyonFeatureUtils {
 
-enum class TerrainGenVersion {};
-
+enum class TerrainGenVersion : int {
+    V1_16 = 0,
+    V1_18 = 1,
 };
+
+}

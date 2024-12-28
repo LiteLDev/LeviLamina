@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class OceanMonumentPiece;
+class Random;
+class RoomDefinition;
+// clang-format on
+
 class MonumentRoomFitter {
 public:
     // prevent constructor by default
@@ -10,23 +17,33 @@ public:
     MonumentRoomFitter();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MonumentRoomFitter() = default;
+    virtual ~MonumentRoomFitter();
 
     // vIndex: 1
-    virtual bool fits(class RoomDefinition const& definition) const = 0;
+    virtual bool fits(::RoomDefinition const&) const = 0;
 
     // vIndex: 2
-    virtual std::unique_ptr<class OceanMonumentPiece>
-    create(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random) = 0;
+    virtual ::std::unique_ptr<::OceanMonumentPiece> create(int&, ::std::shared_ptr<::RoomDefinition>, ::Random&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

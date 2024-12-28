@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/Control.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class LookControl : public ::Control {
 public:
     // prevent constructor by default
@@ -12,32 +17,47 @@ public:
     LookControl(LookControl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LookControl();
+    virtual ~LookControl() /*override*/;
 
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob);
+    virtual void initializeInternal(::Mob& mob);
 
     // vIndex: 2
-    virtual void tick(class Mob& mob);
-
-    MCAPI LookControl();
-
+    virtual void tick(::Mob& mob);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LookControl();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initializeInternal$(class Mob& mob);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob);
 
-    MCAPI void tick$(class Mob& mob);
+    MCAPI void $tick(::Mob& mob);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

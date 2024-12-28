@@ -5,7 +5,38 @@
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class PermissionsFile;
+// clang-format on
+
 class PermissionCommand : public ::ServerCommand {
+public:
+    // PermissionCommand inner types define
+    enum class Action : int {
+        List   = 0,
+        Reload = 1,
+        Set    = 2,
+    };
+
+    enum class AvailableCommandPermissionPresets : int {
+        Visitor   = 0,
+        Member    = 1,
+        Operator  = 2,
+        Undefined = 3,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk24ccee;
+    ::ll::UntypedStorage<4, 4>   mUnk2d494e;
+    ::ll::UntypedStorage<8, 200> mUnk62d6b2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PermissionCommand& operator=(PermissionCommand const&);
@@ -13,35 +44,52 @@ public:
     PermissionCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PermissionCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, class PermissionsFile* permissionsFile);
-
+    // vIndex: 0
+    virtual ~PermissionCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void list(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void reload(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void set(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void list(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI void reload(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI static class PermissionsFile*& mPermissionsFile();
+    MCAPI void set(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry, ::PermissionsFile* permissionsFile);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::PermissionsFile*& mPermissionsFile();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

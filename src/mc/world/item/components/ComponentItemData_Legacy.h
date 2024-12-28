@@ -4,31 +4,60 @@
 
 struct ComponentItemData_Legacy {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkffded2;
+    ::ll::UntypedStorage<8, 24> mUnk32ef34;
+    ::ll::UntypedStorage<8, 40> mUnk477935;
+    ::ll::UntypedStorage<8, 40> mUnka90ecd;
+    ::ll::UntypedStorage<4, 8>  mUnk84ee2c;
+    ::ll::UntypedStorage<4, 8>  mUnkfc6298;
+    ::ll::UntypedStorage<4, 8>  mUnkb0eb5d;
+    ::ll::UntypedStorage<4, 8>  mUnk8ee6f4;
+    ::ll::UntypedStorage<4, 8>  mUnk429bf0;
+    ::ll::UntypedStorage<4, 8>  mUnkfed70d;
+    ::ll::UntypedStorage<1, 2>  mUnk98de32;
+    ::ll::UntypedStorage<4, 8>  mUnk97e102;
+    ::ll::UntypedStorage<1, 2>  mUnka9b5f0;
+    ::ll::UntypedStorage<1, 2>  mUnk42a627;
+    ::ll::UntypedStorage<1, 2>  mUnk111268;
+    ::ll::UntypedStorage<1, 2>  mUnkbf1c15;
+    ::ll::UntypedStorage<1, 2>  mUnk754359;
+    ::ll::UntypedStorage<1, 2>  mUnkd10418;
+    ::ll::UntypedStorage<1, 2>  mUnkac9fba;
+    ::ll::UntypedStorage<1, 2>  mUnk7ed0db;
+    ::ll::UntypedStorage<1, 2>  mUnk85e4f4;
+    ::ll::UntypedStorage<1, 2>  mUnkecfff4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ComponentItemData_Legacy& operator=(ComponentItemData_Legacy const&);
     ComponentItemData_Legacy();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_Legacy(struct ComponentItemData_Legacy&&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
 
-    MCAPI ComponentItemData_Legacy(struct ComponentItemData_Legacy const&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
 
-    MCAPI struct ComponentItemData_Legacy& operator=(struct ComponentItemData_Legacy&&);
-
-    MCAPI struct ComponentItemData_Legacy& operator=(struct ComponentItemData_Legacy const&);
+    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
 
     MCAPI ~ComponentItemData_Legacy();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ComponentItemData_Legacy&&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy const&);
 
-    MCAPI void* ctor$(struct ComponentItemData_Legacy const&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

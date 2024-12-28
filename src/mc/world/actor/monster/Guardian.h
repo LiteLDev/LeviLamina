@@ -3,30 +3,40 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class Guardian : public ::Monster {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk57d3d5;
+    ::ll::UntypedStorage<4, 4>  mUnk3decdb;
+    ::ll::UntypedStorage<4, 4>  mUnk347092;
+    ::ll::UntypedStorage<4, 4>  mUnkdf392f;
+    ::ll::UntypedStorage<4, 12> mUnk84296a;
+    ::ll::UntypedStorage<8, 8>  mUnkb833b0;
+    ::ll::UntypedStorage<4, 4>  mUnkeff916;
+    ::ll::UntypedStorage<1, 1>  mUnk880f37;
+    ::ll::UntypedStorage<8, 8>  mUnk3ad402;
+    ::ll::UntypedStorage<1, 1>  mUnk78b2b3;
+    ::ll::UntypedStorage<8, 8>  mUnkfa487a;
+    ::ll::UntypedStorage<8, 8>  mUnkad1f17;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Guardian& operator=(Guardian const&);
@@ -34,48 +44,51 @@ public:
     Guardian();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 8
+    virtual ~Guardian() /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~Guardian() = default;
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 55
-    virtual void setTarget(class Actor* target);
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 52
+    virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 157
+    virtual float getMaxHeadXRot() /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 160
-    virtual bool checkSpawnRules(bool);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 165
-    virtual float getMaxHeadXRot();
+    // vIndex: 182
+    virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 190
-    virtual bool isDarkEnoughToSpawn() const;
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Guardian(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI int getAttackDuration();
 
-    MCAPI class Vec3 getMoveEyeVector();
-
-    MCAPI class Actor* getTargetEntity() const;
+    MCAPI ::Vec3 getMoveEyeVector();
 
     MCAPI bool isElder() const;
 
@@ -83,50 +96,62 @@ public:
 
     MCAPI void preAiStep();
 
+    MCAPI void registerLoopingSounds();
+
     MCAPI void setAttackTime(int time);
 
     MCAPI void setElder(bool value);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void registerLoopingSounds();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
-
-    MCAPI bool checkSpawnRules$(bool);
-
-    MCAPI float getMaxHeadXRot$();
-
-    MCAPI bool isDarkEnoughToSpawn$() const;
-
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    MCAPI void setTarget$(class Actor* target);
-
     MCAPI static int const& ATTACK_TIME();
 
     MCAPI static int const& FIRST_DAMAGE_TIME();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+
+    MCAPI bool $checkSpawnRules(bool);
+
+    MCAPI void $setTarget(::Actor* entity);
+
+    MCAPI float $getMaxHeadXRot();
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $isDarkEnoughToSpawn() const;
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,12 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/crypto/symmetric/ISystemInterface.h"
 #include "mc/deps/crypto/symmetric/OperationMode.h"
 #include "mc/deps/crypto/symmetric/System.h"
 
 namespace Crypto::Symmetric {
 
-class Symmetric {
+class Symmetric : public ::Crypto::Symmetric::ISystemInterface {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk78fd21;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Symmetric& operator=(Symmetric const&);
@@ -16,59 +23,75 @@ public:
     Symmetric();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Symmetric();
+    virtual ~Symmetric() /*override*/;
 
     // vIndex: 1
-    virtual void init(std::string const& key, std::string const& IV);
+    virtual void init(::std::string const& key, ::std::string const& IV) /*override*/;
 
     // vIndex: 2
-    virtual void encrypt(std::string const& plaintext, std::string& output);
+    virtual void encrypt(::std::string const& plaintext, ::std::string& output) /*override*/;
 
     // vIndex: 3
-    virtual void decrypt(std::string const& ciphertext, std::string& output);
+    virtual void decrypt(::std::string const& ciphertext, ::std::string& output) /*override*/;
 
     // vIndex: 4
-    virtual uint64 getKeySize() const;
+    virtual uint64 getKeySize() const /*override*/;
 
     // vIndex: 5
-    virtual uint64 getBlockSize() const;
+    virtual uint64 getBlockSize() const /*override*/;
 
     // vIndex: 6
-    virtual uint64 getEncryptionBufferSize(uint64 inputSize) const;
+    virtual uint64 getEncryptionBufferSize(uint64 inputSize) const /*override*/;
 
     // vIndex: 7
-    virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64&);
-
-    MCAPI Symmetric(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
-
+    virtual bool
+    encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI Symmetric(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void decrypt$(std::string const& ciphertext, std::string& output);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::std::string const& key, ::std::string const& IV);
 
-    MCAPI void encrypt$(std::string const& plaintext, std::string& output);
+    MCAPI void $encrypt(::std::string const& plaintext, ::std::string& output);
 
-    MCAPI bool encryptToBuffer$(gsl::span<char const>, gsl::span<char>, uint64&);
+    MCAPI void $decrypt(::std::string const& ciphertext, ::std::string& output);
 
-    MCAPI uint64 getBlockSize$() const;
+    MCAPI uint64 $getKeySize() const;
 
-    MCAPI uint64 getEncryptionBufferSize$(uint64 inputSize) const;
+    MCAPI uint64 $getBlockSize() const;
 
-    MCAPI uint64 getKeySize$() const;
+    MCAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
-    MCAPI void init$(std::string const& key, std::string const& IV);
+    MCAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Symmetric
+} // namespace Crypto::Symmetric

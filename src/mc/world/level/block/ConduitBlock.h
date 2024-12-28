@@ -3,22 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
 // clang-format on
 
-class ConduitBlock : public ::ActorBlock {
+class ConduitBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     ConduitBlock& operator=(ConduitBlock const&);
@@ -26,30 +20,42 @@ public:
     ConduitBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ConduitBlock() = default;
+    virtual ~ConduitBlock() /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
-
-    MCAPI ConduitBlock(std::string const& nameId, int id);
-
+    // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ConduitBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

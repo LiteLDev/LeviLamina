@@ -15,10 +15,10 @@ public:
     ScriptLiquidContainer();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLiquidContainer> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLiquidContainer> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

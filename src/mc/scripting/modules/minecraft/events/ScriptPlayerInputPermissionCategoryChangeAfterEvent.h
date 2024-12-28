@@ -9,6 +9,14 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerInputPermissionCategoryChangeAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk582b07;
+    ::ll::UntypedStorage<1, 1>  mUnk85edce;
+    ::ll::UntypedStorage<1, 1>  mUnkcfc97a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptPlayerInputPermissionCategoryChangeAfterEvent&
     operator=(ScriptPlayerInputPermissionCategoryChangeAfterEvent const&);
@@ -16,15 +24,12 @@ public:
     ScriptPlayerInputPermissionCategoryChangeAfterEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>
+    MCAPI static ::Scripting::ClassBindingBuilder<
+        ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>
     bind();
-
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

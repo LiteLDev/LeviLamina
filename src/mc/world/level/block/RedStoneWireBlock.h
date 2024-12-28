@@ -5,17 +5,22 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Random;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class RedStoneWireBlock : public ::BlockLegacy {
@@ -26,106 +31,109 @@ public:
     RedStoneWireBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RedStoneWireBlock() = default;
-
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
-    virtual void onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 121
-    virtual int getColor(class Block const& block) const;
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
-    // vIndex: 122
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
+    // vIndex: 119
+    virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 130
-    virtual bool canSpawnOn(class Actor*) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI RedStoneWireBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~RedStoneWireBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RedStoneWireBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canSpawnOn$(class Actor*) const;
-
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI int getColor$(class Block const& block) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
+    MCAPI bool $canSpawnOn(::Actor*) const;
 
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

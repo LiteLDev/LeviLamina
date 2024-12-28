@@ -8,10 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+struct FilterContext;
+struct FilterInputs;
 // clang-format on
 
 class FilterTestHourlyClock : public ::SimpleIntFilterTest {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkde0d1e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FilterTestHourlyClock& operator=(FilterTestHourlyClock const&);
@@ -19,33 +26,40 @@ public:
     FilterTestHourlyClock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FilterTestHourlyClock();
-
     // vIndex: 1
-    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const& context) const;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     // vIndex: 4
-    virtual std::string_view getName() const;
+    virtual ::std::string_view getName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~FilterTestHourlyClock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI bool evaluate$(struct FilterContext const& context) const;
+    MCAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI std::string_view getName$() const;
+    MCAPI ::std::string_view $getName() const;
+    // NOLINTEND
 
-    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

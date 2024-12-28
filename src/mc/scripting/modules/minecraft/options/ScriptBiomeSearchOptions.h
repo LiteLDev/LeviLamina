@@ -15,21 +15,30 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBiomeSearchOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk468d38;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBiomeSearchOptions& operator=(ScriptBiomeSearchOptions const&);
     ScriptBiomeSearchOptions(ScriptBiomeSearchOptions const&);
     ScriptBiomeSearchOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Vec3 getBoundingSize() const;
+    MCAPI ::Vec3 getBoundingSize() const;
 
-    MCAPI class Scripting::Result<void> validate() const;
+    MCAPI ::Scripting::Result<void> validate() const;
+    // NOLINTEND
 
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBiomeSearchOptions>
-    bind();
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeSearchOptions> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

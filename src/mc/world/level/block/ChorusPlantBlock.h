@@ -4,18 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
 // clang-format on
 
 class ChorusPlantBlock : public ::BlockLegacy {
@@ -26,100 +27,105 @@ public:
     ChorusPlantBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChorusPlantBlock() = default;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const&,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
-
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
-
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 57
-    virtual bool canContainLiquid() const;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 9
+    virtual ::AABB const&
+    getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI ChorusPlantBlock(std::string const& nameId, int id);
-
-    MCAPI static bool canGrowChorus(class Block const& block);
-
+    // vIndex: 0
+    virtual ~ChorusPlantBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class AABB const&
-    _getShape(class IConstBlockSource const& region, class BlockPos const& pos, class AABB& bufferValue) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChorusPlantBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI ::AABB const& _getShape(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canGrowChorus(::Block const& block);
+    // NOLINTEND
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& PLANT_ITEM_DIMENSION();
+    // NOLINTEND
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class AABB const& getOutline$(
-        class Block const&,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    MCAPI ::AABB const&
+    $getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI bool isWaterBlocking$() const;
+    MCAPI bool $isLavaBlocking() const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    // NOLINTEND
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
-    MCAPI static float const& PLANT_ITEM_DIMENSION();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

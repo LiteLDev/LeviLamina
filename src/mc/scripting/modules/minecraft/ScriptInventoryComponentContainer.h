@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
 
 // auto generated forward declare list
@@ -13,10 +12,6 @@
 class Container;
 class ItemContext;
 class WeakEntityRef;
-namespace ScriptModuleMinecraft { class ScriptContainer; }
-namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
-namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -24,56 +19,74 @@ namespace ScriptModuleMinecraft {
 
 class ScriptInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptContainer {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk84a036;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptInventoryComponentContainer& operator=(ScriptInventoryComponentContainer const&);
+    ScriptInventoryComponentContainer(ScriptInventoryComponentContainer const&);
     ScriptInventoryComponentContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptInventoryComponentContainer();
+    virtual ~ScriptInventoryComponentContainer() /*override*/;
 
     // vIndex: 2
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    virtual ::Scripting::Result_deprecated<int> getEmptySlotsCount() const /*override*/;
 
     // vIndex: 13
-    virtual class Container* _tryGetContainer() const;
+    virtual ::Container* _tryGetContainer() const /*override*/;
 
     // vIndex: 14
-    virtual class ItemContext _getItemContext(int slot) const;
-
-    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
-
-    MCAPI ScriptInventoryComponentContainer(
-        class WeakEntityRef const&                entityRef,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&
-    operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>
-    bindV010();
-
+    virtual ::ItemContext _getItemContext(int slot) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    ScriptInventoryComponentContainer(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>
+    bindV010();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class WeakEntityRef const& entityRef, class Scripting::WeakLifetimeScope const& scope);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemContext _getItemContext$(int slot) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCAPI class Container* _tryGetContainer$() const;
+    MCAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI class Scripting::Result<int> getEmptySlotsCount$() const;
+    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

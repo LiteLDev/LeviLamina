@@ -4,6 +4,9 @@
 
 namespace ScriptModuleMinecraft {
 
-enum class ScriptObjectiveSortOrderType {};
-
+enum class ScriptObjectiveSortOrderType : int {
+    Ascending  = 0,
+    Descending = 1,
 };
+
+}

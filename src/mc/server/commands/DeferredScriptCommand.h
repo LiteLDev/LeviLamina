@@ -9,6 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandContext;
+class MinecraftCommands;
+class ScriptCommand;
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -16,47 +19,73 @@ namespace Scripting { class WeakLifetimeScope; }
 
 class DeferredScriptCommand : public ::DeferredCommandBase {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkbd43df;
+    ::ll::UntypedStorage<8, 8>  mUnkb39f82;
+    ::ll::UntypedStorage<8, 16> mUnk79b626;
+    ::ll::UntypedStorage<8, 80> mUnkf01e9a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DeferredScriptCommand& operator=(DeferredScriptCommand const&);
     DeferredScriptCommand(DeferredScriptCommand const&);
     DeferredScriptCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeferredScriptCommand() = default;
+    virtual ~DeferredScriptCommand() /*override*/;
 
     // vIndex: 1
-    virtual void execute(class MinecraftCommands& commands);
-
-    MCAPI DeferredScriptCommand(
-        std::unique_ptr<class ScriptCommand>  scriptCommand,
-        std::unique_ptr<class CommandContext> commandContext,
-        class Scripting::WeakLifetimeScope    scope,
-        class Scripting::Promise<
-            class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
-            struct ScriptModuleMinecraft::ScriptCommandError,
-            void> promise
-    );
-
+    virtual void execute(::MinecraftCommands& commands) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::unique_ptr<class ScriptCommand>  scriptCommand,
-        std::unique_ptr<class CommandContext> commandContext,
-        class Scripting::WeakLifetimeScope    scope,
-        class Scripting::Promise<
-            class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
-            struct ScriptModuleMinecraft::ScriptCommandError,
+    MCAPI DeferredScriptCommand(
+        ::std::unique_ptr<::ScriptCommand>  scriptCommand,
+        ::std::unique_ptr<::CommandContext> commandContext,
+        ::Scripting::WeakLifetimeScope      scope,
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
+            ::ScriptModuleMinecraft::ScriptCommandError,
             void> promise
     );
+    // NOLINTEND
 
-    MCAPI void execute$(class MinecraftCommands& commands);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::ScriptCommand>  scriptCommand,
+        ::std::unique_ptr<::CommandContext> commandContext,
+        ::Scripting::WeakLifetimeScope      scope,
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
+            ::ScriptModuleMinecraft::ScriptCommandError,
+            void> promise
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::MinecraftCommands& commands);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

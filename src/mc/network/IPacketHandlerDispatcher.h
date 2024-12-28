@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetEventCallback;
+class NetworkIdentifier;
+class Packet;
+// clang-format on
+
 class IPacketHandlerDispatcher {
 public:
     // prevent constructor by default
@@ -10,16 +17,30 @@ public:
     IPacketHandlerDispatcher();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPacketHandlerDispatcher() = default;
+    virtual ~IPacketHandlerDispatcher();
+
+    // vIndex: 1
+    virtual void handle(::NetworkIdentifier const&, ::NetEventCallback&, ::std::shared_ptr<::Packet>&) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,10 +6,11 @@
 #include "mc/world/filters/FilterTest.h"
 
 namespace FilterList {
+// functions
 // NOLINTBEGIN
-MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const& name);
+MCAPI ::FilterTest::Definition const* findFilterDefinition(::std::string const& name);
 
 MCAPI void initialize();
 // NOLINTEND
 
-}; // namespace FilterList
+} // namespace FilterList

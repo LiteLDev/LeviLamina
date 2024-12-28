@@ -10,13 +10,49 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/entity/systems/play_jump_sound_system/SoundType.h"
+#include "mc/world/actor/ActorLocation.h"
 
-struct PlayJumpSoundSystemImpl {
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct ActorDefinitionIdentifierComponent;
+struct DimensionTypeComponent;
+struct LavaSlimeFlagComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct SoundEventPlayerComponent;
+struct SoundEventRequestQueueComponent;
+struct StateVectorComponent;
+struct TriggerJumpRequestComponent;
+// clang-format on
+
+struct PlayJumpSoundSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                     ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                                     ::Read<
+                                         ::ActorDefinitionIdentifierComponent,
+                                         ::DimensionTypeComponent,
+                                         ::SoundEventPlayerComponent,
+                                         ::ActorDataFlagComponent,
+                                         ::StateVectorComponent,
+                                         ::AABBShapeComponent>,
+                                     ::Write<>,
+                                     ::AddRemove<>,
+                                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                                     ::GlobalWrite<>,
+                                     ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk653c2e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayJumpSoundSystemImpl& operator=(PlayJumpSoundSystemImpl const&);
@@ -24,184 +60,119 @@ public:
     PlayJumpSoundSystemImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayJumpSoundSystemImpl() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          struct TriggerJumpRequestComponent,
-                          class FlagComponent<struct LavaSlimeFlag>,
-                          class FlagComponent<struct HorseFlag>,
-                          class FlagComponent<struct MobFlag>,
-                          class FlagComponent<struct ParrotFlag>,
-                          struct VehicleComponent,
-                          class FlagComponent<struct CamelFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>>,
-                      struct Read<
-                          struct ActorDefinitionIdentifierComponent,
-                          struct DimensionTypeComponent,
-                          struct SoundEventPlayerComponent,
-                          struct ActorDataFlagComponent,
-                          struct StateVectorComponent,
-                          struct AABBShapeComponent,
-                          struct ActorRotationComponent,
-                          struct MobBodyRotationComponent,
-                          struct PassengerComponent,
-                          struct RenderRotationComponent,
-                          struct StandAnimationComponent,
-                          struct OffsetsComponent,
-                          struct VanillaOffsetComponent,
-                          struct PassengerRenderingRidingOffsetComponent>,
-                      struct Write<>,
-                      struct AddRemove<>,
-                      struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                      ::Read<
+                          ::ActorDefinitionIdentifierComponent,
+                          ::DimensionTypeComponent,
+                          ::SoundEventPlayerComponent,
+                          ::ActorDataFlagComponent,
+                          ::StateVectorComponent,
+                          ::AABBShapeComponent>,
+                      ::Write<>,
+                      ::AddRemove<>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                struct TriggerJumpRequestComponent,
-                class FlagComponent<struct LavaSlimeFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            struct Read<
-                struct ActorDefinitionIdentifierComponent,
-                struct DimensionTypeComponent,
-                struct SoundEventPlayerComponent,
-                struct ActorDataFlagComponent,
-                struct StateVectorComponent,
-                struct AABBShapeComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct PassengerComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent>,
-            struct Write<>,
-            struct AddRemove<>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDefinitionIdentifierComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::ActorDataFlagComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~PlayJumpSoundSystemImpl() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void doPlayJumpSoundSystem(
-        class StrictEntityContext const&                 entity,
-        struct ActorDefinitionIdentifierComponent const& actorDefinitionIdentifierComponent,
-        struct SoundEventPlayerComponent const&          soundEventPlayerComponent,
-        struct ActorDataFlagComponent const&             synchedActorDataComponent,
-        struct StateVectorComponent const&               stateVectorComponent,
-        struct AABBShapeComponent const&                 aabbShapeComponent,
-        class ViewT<class StrictEntityContext, struct SoundEventRequestQueueComponent> const& requestQueueView,
-        struct GetAttachPositionViews const&                                                  getAttachPosViews,
-        ::PlayJumpSoundSystem::SoundType                                                      jumpType,
-        class IConstBlockSource const&                                                        region
+        ::StrictEntityContext const&                                      entity,
+        ::ActorDefinitionIdentifierComponent const&                       actorDefinitionIdentifierComponent,
+        ::ActorDataFlagComponent const&                                   synchedActorDataComponent,
+        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
+        ::StateVectorComponent const&                                     stateVectorComponent,
+        ::AABBShapeComponent const&                                       aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView,
+        ::PlayJumpSoundSystem::SoundType                                  jumpType,
+        ::IConstBlockSource const&                                        region
     );
 
     MCAPI static void sendSoundRequest(
-        class IConstBlockSource const&                                         region,
-        struct ActorDataFlagComponent const&                                   synchedActorDataComponent,
-        struct ActorDefinitionIdentifierComponent const&                       actorDefinitionIdentifierComponent,
-        class Vec3 const&                                                      posResult,
-        class OptionalComponentWrapper<struct SoundEventRequestQueueComponent> soundEventRequestQueueComponent,
-        int                                                                    soundData
+        ::StrictEntityContext const&                                  entity,
+        ::IConstBlockSource const&                                    region,
+        ::ActorDataFlagComponent const&                               synchedActorDataComponent,
+        ::ActorDefinitionIdentifierComponent const&                   actorDefinitionIdentifierComponent,
+        ::ActorLocation const&                                        location,
+        ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueueComponent,
+        int                                                           soundData
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+                     ::Read<
+                         ::ActorDefinitionIdentifierComponent,
+                         ::DimensionTypeComponent,
+                         ::SoundEventPlayerComponent,
+                         ::ActorDataFlagComponent,
+                         ::StateVectorComponent,
+                         ::AABBShapeComponent>,
+                     ::Write<>,
+                     ::AddRemove<>,
+                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                struct TriggerJumpRequestComponent,
-                class FlagComponent<struct LavaSlimeFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            struct Read<
-                struct ActorDefinitionIdentifierComponent,
-                struct DimensionTypeComponent,
-                struct SoundEventPlayerComponent,
-                struct ActorDataFlagComponent,
-                struct StateVectorComponent,
-                struct AABBShapeComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct PassengerComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent>,
-            struct Write<>,
-            struct AddRemove<>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entityContext
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
+            ::Read<
+                ::ActorDefinitionIdentifierComponent,
+                ::DimensionTypeComponent,
+                ::SoundEventPlayerComponent,
+                ::ActorDataFlagComponent,
+                ::StateVectorComponent,
+                ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         struct TriggerJumpRequestComponent,
-                         class FlagComponent<struct LavaSlimeFlag>,
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct MobFlag>,
-                         class FlagComponent<struct ParrotFlag>,
-                         struct VehicleComponent,
-                         class FlagComponent<struct CamelFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>>,
-                     struct Read<
-                         struct ActorDefinitionIdentifierComponent,
-                         struct DimensionTypeComponent,
-                         struct SoundEventPlayerComponent,
-                         struct ActorDataFlagComponent,
-                         struct StateVectorComponent,
-                         struct AABBShapeComponent,
-                         struct ActorRotationComponent,
-                         struct MobBodyRotationComponent,
-                         struct PassengerComponent,
-                         struct RenderRotationComponent,
-                         struct StandAnimationComponent,
-                         struct OffsetsComponent,
-                         struct VanillaOffsetComponent,
-                         struct PassengerRenderingRidingOffsetComponent>,
-                     struct Write<>,
-                     struct AddRemove<>,
-                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

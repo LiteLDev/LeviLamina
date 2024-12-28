@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BaseBlockLocationIterator.h"
 
+// auto generated forward declare list
+// clang-format off
+class SimpleBlockVolume;
+// clang-format on
+
 class SimpleBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // prevent constructor by default
@@ -13,25 +18,42 @@ public:
     SimpleBlockVolumeIterator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SimpleBlockVolumeIterator() = default;
+    virtual ~SimpleBlockVolumeIterator() /*override*/;
 
     // vIndex: 2
-    virtual bool isValid() const;
-
-    MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const& vol, bool begin);
-
+    virtual bool isValid() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SimpleBlockVolumeIterator(::SimpleBlockVolume const& vol, bool begin);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class SimpleBlockVolume const& vol, bool begin);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SimpleBlockVolume const& vol, bool begin);
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

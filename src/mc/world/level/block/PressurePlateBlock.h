@@ -3,25 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BasePressurePlateBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockPos;
+class BlockSource;
+class Material;
 // clang-format on
 
 class PressurePlateBlock : public ::BasePressurePlateBlock {
 public:
     // PressurePlateBlock inner types define
-    enum class Sensitivity {};
+    enum class Sensitivity : int {
+        Everything = 0,
+        Mobs       = 1,
+        Players    = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk369271;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -30,45 +34,62 @@ public:
     PressurePlateBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 152
+    virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 153
+    virtual int getSignalForData(int data) const /*override*/;
+
+    // vIndex: 154
+    virtual int getRedstoneSignal(int signal) const /*override*/;
+
     // vIndex: 0
-    virtual ~PressurePlateBlock() = default;
-
-    // vIndex: 164
-    virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 165
-    virtual int getSignalForData(int data) const;
-
-    // vIndex: 166
-    virtual int getRedstoneSignal(int signal) const;
-
-    MCAPI PressurePlateBlock(
-        std::string const&                nameId,
-        int                               id,
-        class Material const&             material,
-        ::PressurePlateBlock::Sensitivity sensitivity
-    );
-
+    virtual ~PressurePlateBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&                nameId,
+    MCAPI PressurePlateBlock(
+        ::std::string const&              nameId,
         int                               id,
-        class Material const&             material,
+        ::Material const&                 material,
         ::PressurePlateBlock::Sensitivity sensitivity
     );
+    // NOLINTEND
 
-    MCAPI int getRedstoneSignal$(int signal) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&              nameId,
+        int                               id,
+        ::Material const&                 material,
+        ::PressurePlateBlock::Sensitivity sensitivity
+    );
+    // NOLINTEND
 
-    MCAPI int getSignalForData$(int data) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI int $getSignalForData(int data) const;
+
+    MCAPI int $getRedstoneSignal(int signal) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

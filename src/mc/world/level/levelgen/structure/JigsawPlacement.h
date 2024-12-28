@@ -5,9 +5,40 @@
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
-#include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BoundingBox;
+class Dimension;
+class JigsawBlockInfo;
+class JigsawStructureRegistry;
+class PoolElementStructurePiece;
+class Random;
+class StructurePiece;
+class StructurePoolElement;
+class StructureTemplatePool;
+struct JigsawJunction;
+// clang-format on
 
 class JigsawPlacement {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkcc2c4f;
+    ::ll::UntypedStorage<4, 4>  mUnk230fb5;
+    ::ll::UntypedStorage<8, 64> mUnk40c5ee;
+    ::ll::UntypedStorage<8, 8>  mUnke0bb10;
+    ::ll::UntypedStorage<8, 8>  mUnk3c1434;
+    ::ll::UntypedStorage<8, 8>  mUnkfa3181;
+    ::ll::UntypedStorage<8, 8>  mUnk2bf1da;
+    ::ll::UntypedStorage<8, 64> mUnk5862e9;
+    ::ll::UntypedStorage<8, 40> mUnkdd8234;
+    ::ll::UntypedStorage<8, 24> mUnkb1b40e;
+    ::ll::UntypedStorage<8, 24> mUnka60e45;
+    ::ll::UntypedStorage<8, 40> mUnk747941;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     JigsawPlacement& operator=(JigsawPlacement const&);
@@ -15,86 +46,77 @@ public:
     JigsawPlacement();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI JigsawPlacement(
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieceList,
-        std::function<std::unique_ptr<
-            class
-            PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>
-                                             factory,
-        class Random&                        random,
-        class JigsawStructureRegistry const& pools,
-        class Dimension&                     dimension
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
+        ::std::function<::std::unique_ptr<
+            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
+                                         factory,
+        ::Random&                        random,
+        ::JigsawStructureRegistry const& pools,
+        ::Dimension&                     dimension
     );
 
-    MCAPI void addPieces(
-        class StructurePoolElement const&              initialElement,
-        class BlockPos const&                          startPosition,
-        ::Rotation const&                              rotation,
-        std::string_view                               startAnchorName,
-        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
-    );
-
-    MCAPI ~JigsawPlacement();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _addPiece(
-        class PoolElementStructurePiece const&         sourcePiece,
-        class BlockPos const&                          position,
-        ::Rotation const&                              rotation,
-        class BlockPos const&                          refPos,
-        uint64                                         contextDepth,
-        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+        ::PoolElementStructurePiece const&         sourcePiece,
+        ::BlockPos const&                          position,
+        ::Rotation const&                          rotation,
+        ::BlockPos const&                          refPos,
+        uint64                                     contextDepth,
+        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
-    MCAPI class BlockPos _findLocalAnchorOffset(
-        class StructurePoolElement const& initialElement,
-        class BlockPos const&             pieceCornerPosition,
-        ::Rotation const&                 rotation,
-        std::string_view                  startAnchorName
-    ) const;
-
-    MCAPI std::shared_ptr<bool> _setTerrainAdjustment(
-        ::AdjustmentEffect           adjustmentEffect,
-        class BoundingBox const&     bb,
-        struct JigsawJunction const& junction
+    MCAPI ::BlockPos _findLocalAnchorOffset(
+        ::StructurePoolElement const& initialElement,
+        ::BlockPos const&             pieceCornerPosition,
+        ::Rotation const&             rotation,
+        ::std::string_view            startAnchorName
     ) const;
 
     MCAPI bool _tryPlacingPiece(
-        class PoolElementStructurePiece const&         sourcePiece,
-        class BoundingBox const&                       sourceBB,
-        class JigsawBlockInfo const&                   sourceJigsaw,
-        class BlockPos const&                          attachPos,
-        class StructureTemplatePool const*             targetPool,
-        class BlockPos const&                          refPos,
-        uint64                                         contextDepth,
-        class PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+        ::PoolElementStructurePiece const&         sourcePiece,
+        ::BoundingBox const&                       sourceBB,
+        ::JigsawBlockInfo const&                   sourceJigsaw,
+        ::BlockPos const&                          attachPos,
+        ::StructureTemplatePool const*             targetPool,
+        ::BlockPos const&                          refPos,
+        uint64                                     contextDepth,
+        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
 
+    MCAPI void addPieces(
+        ::StructurePoolElement const&              initialElement,
+        ::BlockPos const&                          startPosition,
+        ::Rotation const&                          rotation,
+        ::std::string_view                         startAnchorName,
+        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
+    );
+
+    MCAPI ~JigsawPlacement();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
+    MCAPI void* $ctor(
         uint64                                              maxDepth,
         uint64                                              globalContextSize,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieceList,
-        std::function<std::unique_ptr<
-            class
-            PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>
-                                             factory,
-        class Random&                        random,
-        class JigsawStructureRegistry const& pools,
-        class Dimension&                     dimension
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieceList,
+        ::std::function<::std::unique_ptr<
+            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
+                                         factory,
+        ::Random&                        random,
+        ::JigsawStructureRegistry const& pools,
+        ::Dimension&                     dimension
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

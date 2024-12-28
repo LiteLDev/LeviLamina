@@ -9,25 +9,29 @@ namespace cereal { struct ReflectionCtx; }
 
 struct DiggerLegacyBlockInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnkd07f4d;
+    ::ll::UntypedStorage<4, 4>   mUnk293625;
+    ::ll::UntypedStorage<8, 256> mUnk64e707;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    DiggerLegacyBlockInfo(DiggerLegacyBlockInfo const&);
     DiggerLegacyBlockInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DiggerLegacyBlockInfo(struct DiggerLegacyBlockInfo const&);
+    MCAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo const&);
 
-    MCAPI struct DiggerLegacyBlockInfo& operator=(struct DiggerLegacyBlockInfo&&);
-
-    MCAPI struct DiggerLegacyBlockInfo& operator=(struct DiggerLegacyBlockInfo const&);
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI ::DiggerLegacyBlockInfo& operator=(::DiggerLegacyBlockInfo&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct DiggerLegacyBlockInfo const&);
-
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

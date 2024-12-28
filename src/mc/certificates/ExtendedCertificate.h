@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Certificate;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -15,14 +16,14 @@ public:
     ExtendedCertificate();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class mce::UUID getIdentity(class Certificate const& cert);
+    MCAPI static ::mce::UUID getIdentity(::Certificate const& cert);
 
-    MCAPI static std::string getIdentityName(class Certificate const& cert);
+    MCAPI static ::std::string getIdentityName(::Certificate const& cert);
 
-    MCAPI static std::string getTitleID(class Certificate const& cert);
+    MCAPI static ::std::string getTitleID(::Certificate const& cert);
 
-    MCAPI static std::string getXuid(class Certificate const& cert, bool trustSelfSigned);
-
+    MCAPI static ::std::string getXuid(::Certificate const& cert, bool trustSelfSigned);
     // NOLINTEND
 };

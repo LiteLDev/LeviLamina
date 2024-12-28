@@ -3,23 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Player;
+class Random;
 // clang-format on
 
-class FurnaceBlock : public ::ActorBlock {
+class FurnaceBlock : public ::ActorBlockBase<::BlockLegacy> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkb923e6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FurnaceBlock& operator=(FurnaceBlock const&);
@@ -27,87 +32,102 @@ public:
     FurnaceBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FurnaceBlock();
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 31
-    virtual bool isContainerBlock() const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 29
+    virtual bool isContainerBlock() const /*override*/;
 
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    MCAPI FurnaceBlock(std::string const& nameId, int id, bool lit);
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    MCAPI static void setLit(
-        bool                  lit,
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        ::BlockActorType      blockActorType,
-        class Block const&    unlitFurnace,
-        class Block const&    litFurnace
-    );
-
+    // vIndex: 0
+    virtual ~FurnaceBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FurnaceBlock(::std::string const& nameId, int id, bool lit);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool lit);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setLit(
+        bool              lit,
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockActorType  blockActorType,
+        ::Block const&    unlitFurnace,
+        ::Block const&    litFurnace
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
+    // NOLINTEND
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool isContainerBlock$() const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isCraftingBlock$() const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $isContainerBlock() const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $isCraftingBlock() const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI bool $hasComparatorSignal() const;
 
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

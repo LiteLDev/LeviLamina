@@ -7,57 +7,75 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ResolvedTextObject;
+class Scoreboard;
+struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
 
 class TextObjectRoot : public ::ITextObject {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk76d2b9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     TextObjectRoot& operator=(TextObjectRoot const&);
     TextObjectRoot(TextObjectRoot const&);
+    TextObjectRoot();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TextObjectRoot();
-
-    // vIndex: 1
-    virtual std::string asString() const;
-
-    // vIndex: 2
-    virtual class Json::Value asJsonValue() const;
+    virtual ~TextObjectRoot() /*override*/;
 
     // vIndex: 3
-    virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
-    MCAPI TextObjectRoot();
+    // vIndex: 1
+    virtual ::std::string asString() const /*override*/;
 
-    MCAPI void addChild(std::unique_ptr<class ITextObject> childObject);
+    // vIndex: 2
+    virtual ::Json::Value asJsonValue() const /*override*/;
+    // NOLINTEND
 
-    MCAPI std::vector<std::string> asStringVector() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addChild(::std::unique_ptr<::ITextObject> childObject);
+
+    MCAPI ::std::vector<::std::string> asStringVector() const;
 
     MCAPI void clear();
 
     MCAPI bool isEmpty() const;
 
-    MCAPI class ResolvedTextObject resolveRoot(class Actor const& actor, class Scoreboard const& scoreboard) const;
-
+    MCAPI ::ResolvedTextObject resolveRoot(::Actor const& actor, ::Scoreboard const& scoreboard) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
 
-    MCAPI void dtor$();
+    MCAPI ::std::string $asString() const;
 
-    MCAPI class Json::Value asJsonValue$() const;
+    MCAPI ::Json::Value $asJsonValue() const;
+    // NOLINTEND
 
-    MCAPI std::string asString$() const;
-
-    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

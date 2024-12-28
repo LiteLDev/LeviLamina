@@ -2,45 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 class ActorSkeletalAnimationPtr {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk99dc44;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ActorSkeletalAnimationPtr& operator=(ActorSkeletalAnimationPtr const&);
     ActorSkeletalAnimationPtr(ActorSkeletalAnimationPtr const&);
     ActorSkeletalAnimationPtr();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorSkeletalAnimationPtr(
-        Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const& animationGroup,
-        class HashedString const&                                     name
-    );
-
-    MCAPI class HashedString const& getName() const;
-
     MCAPI bool isNull() const;
 
-    MCAPI class ActorSkeletalAnimation* operator->();
-
-    MCAPI class ActorSkeletalAnimation const* operator->() const;
-
-    MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);
-
     MCAPI ~ActorSkeletalAnimationPtr();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void*
-    ctor$(Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> const& animationGroup, class HashedString const& name);
+    MCAPI static ::ActorSkeletalAnimationPtr const& NONE();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI static class ActorSkeletalAnimationPtr const& NONE();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

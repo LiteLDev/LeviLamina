@@ -3,26 +3,40 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BaseGameVersion;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Container;
+class Experiments;
+class IConstBlockSource;
+class Player;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class ChestBlock : public ::ActorBlock {
+class ChestBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // ChestBlock inner types define
-    enum class ChestType {};
+    enum class ChestType : int {
+        Basic = 0,
+        Trap  = 1,
+        Ender = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk957478;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -31,122 +45,137 @@ public:
     ChestBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChestBlock();
-
-    // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    // vIndex: 31
-    virtual bool isContainerBlock() const;
-
-    // vIndex: 47
-    virtual bool isSignalSource() const;
-
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    // vIndex: 64
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+    // vIndex: 125
+    virtual ::BlockLegacy& init() /*override*/;
 
     // vIndex: 67
-    virtual void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
-
-    // vIndex: 68
-    virtual bool detachesOnPistonMove(class BlockSource&, class BlockPos const&) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
-
-    // vIndex: 94
-    virtual bool
-    getSecondPart(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
-    virtual class BlockLegacy& init();
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 62
+    virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 63
+    virtual bool detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    MCAPI ChestBlock(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
+    // vIndex: 88
+    virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
+        /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 29
+    virtual bool isContainerBlock() const /*override*/;
+
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
+
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
+
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+
+    // vIndex: 59
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 0
+    virtual ~ChestBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChestBlock(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void dtor$();
+    MCAPI void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos, int strength) const;
+    // NOLINTEND
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    // NOLINTEND
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool detachesOnPistonMove$(class BlockSource&, class BlockPos const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockLegacy& $init();
+
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
+
+    MCAPI bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $hasComparatorSignal() const;
+
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI bool $isContainerBlock() const;
+
+    MCAPI bool $isSignalSource() const;
 
     MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool
-    getSecondPart$(class IConstBlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
-    MCAPI bool hasComparatorSignal$() const;
-
-    MCAPI class BlockLegacy& init$();
-
-    MCAPI bool isContainerBlock$() const;
-
-    MCAPI bool isInteractiveBlock$() const;
-
-    MCAPI bool isSignalSource$() const;
-
-    MCAPI void onMove$(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

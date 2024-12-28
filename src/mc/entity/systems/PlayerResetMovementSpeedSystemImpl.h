@@ -2,12 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MovementAttributesComponent;
+struct MovementSpeedComponent;
+// clang-format on
+
 namespace PlayerResetMovementSpeedSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void _doPlayerResetMovementSpeedSystem(
-    struct MovementAttributesComponent const& attributesComponent,
-    struct MovementSpeedComponent&            movementSpeedComponent
+    ::MovementAttributesComponent const& attributesComponent,
+    ::MovementSpeedComponent&            movementSpeedComponent
 );
 // NOLINTEND
 
-}; // namespace PlayerResetMovementSpeedSystemImpl
+} // namespace PlayerResetMovementSpeedSystemImpl

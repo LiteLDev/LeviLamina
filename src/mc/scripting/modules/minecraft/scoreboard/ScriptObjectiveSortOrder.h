@@ -5,11 +5,10 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/scoreboard/ScriptObjectiveSortOrderType.h"
-#include "mc/world/scores/ObjectiveSortOrder.h"
 
 namespace ScriptModuleMinecraft {
 
-class ScriptObjectiveSortOrder {
+struct ScriptObjectiveSortOrder {
 public:
     // prevent constructor by default
     ScriptObjectiveSortOrder& operator=(ScriptObjectiveSortOrder const&);
@@ -17,18 +16,13 @@ public:
     ScriptObjectiveSortOrder();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<
+    MCAPI static ::Scripting::EnumBindingBuilder<
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType>
     bind();
-
-    MCAPI static ::ObjectiveSortOrder toObjectiveSortOrder(::ScriptModuleMinecraft::ScriptObjectiveSortOrderType order);
-
-    MCAPI static ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType
-    toScriptObjectiveSortOrder(::ObjectiveSortOrder order);
-
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

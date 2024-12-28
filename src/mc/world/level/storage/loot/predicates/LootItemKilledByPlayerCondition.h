@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
 
+// auto generated forward declare list
+// clang-format off
+class LootTableContext;
+class Random;
+// clang-format on
+
 class LootItemKilledByPlayerCondition : public ::LootItemCondition {
 public:
     // prevent constructor by default
@@ -13,21 +19,30 @@ public:
     LootItemKilledByPlayerCondition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LootItemKilledByPlayerCondition() = default;
+    virtual ~LootItemKilledByPlayerCondition() /*override*/;
 
     // vIndex: 1
-    virtual bool applies(class Random& random, class LootTableContext& context);
-
+    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool applies$(class Random& random, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $applies(::Random& random, ::LootTableContext& context);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

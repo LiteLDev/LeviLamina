@@ -3,29 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/EquipmentSlot.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
 #include "mc/world/item/ArmorSlot.h"
 
-namespace DispensableItemUtils {
-// NOLINTBEGIN
-MCAPI void spawnLoot(class Level& level, class Actor& actor, std::string const& lootTable);
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class Container;
+class Level;
+// clang-format on
 
-MCAPI bool tryDispenseArmor(
-    class BlockSource& region,
-    class Container&   container,
-    int                slot,
-    class BlockPos     pos,
-    ::ArmorSlot        armorSlot
-);
+namespace DispensableItemUtils {
+// functions
+// NOLINTBEGIN
+MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
+
+MCAPI bool
+tryDispenseArmor(::BlockSource& region, ::Container& container, int slot, ::BlockPos pos, ::ArmorSlot armorSlot);
 
 MCAPI bool tryDispenseEquipment(
-    class BlockSource&           region,
-    class Container&             container,
-    int                          slot,
-    class BlockPos               pos,
-    ::Puv::Legacy::EquipmentSlot equipmentSlot,
-    bool                         dispenseToPlayers
+    ::BlockSource&                       region,
+    ::Container&                         container,
+    int                                  slot,
+    ::BlockPos                           pos,
+    ::SharedTypes::Legacy::EquipmentSlot equipmentSlot,
+    bool                                 dispenseToPlayers
 );
 // NOLINTEND
 
-}; // namespace DispensableItemUtils
+} // namespace DispensableItemUtils

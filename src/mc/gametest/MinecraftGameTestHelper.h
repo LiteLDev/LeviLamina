@@ -10,12 +10,31 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Container;
+class Dimension;
+class Item;
+class ItemStack;
+class Mob;
+class SimulatedPlayer;
+class Vec3;
+struct ActorDefinitionIdentifier;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
-namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
 class MinecraftGameTestHelper : public ::gametest::BaseGameTestHelper {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5b6854;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MinecraftGameTestHelper& operator=(MinecraftGameTestHelper const&);
@@ -23,532 +42,529 @@ public:
     MinecraftGameTestHelper();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestHelper() = default;
-
-    // vIndex: 1
-    virtual void succeedWhenEntityPresent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        int                                     x,
-        int                                     y,
-        int                                     z,
-        bool                                    isPresent
-    );
+    virtual ~MinecraftGameTestHelper() /*override*/;
 
     // vIndex: 2
     virtual void succeedWhenEntityPresent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        bool                                    isPresent
-    );
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        int                                x,
+        int                                y,
+        int                                z,
+        bool                               isPresent
+    ) /*override*/;
+
+    // vIndex: 1
+    virtual void succeedWhenEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        bool                               isPresent
+    ) /*override*/;
 
     // vIndex: 3
     virtual void succeedWhenEntityData(
-        class BlockPos const&                   pos,
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::function<bool(class Actor&)>       dataPredicate
-    );
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    ) /*override*/;
 
     // vIndex: 4
     virtual void succeedWhenEntityHasComponent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::string const&                      componentName,
-        class BlockPos const&                   pos,
-        bool                                    hasComponent
-    );
-
-    // vIndex: 5
-    virtual void succeedWhenBlockPresent(class Block const& block, int x, int y, int z, bool isPresent);
-
-    // vIndex: 6
-    virtual void succeedWhenBlockPresent(class Block const& block, class BlockPos const& pos, bool isPresent);
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    ) /*override*/;
 
     // vIndex: 7
+    virtual void succeedWhenBlockPresent(::Block const& block, int x, int y, int z, bool isPresent) /*override*/;
+
+    // vIndex: 6
+    virtual void succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent) /*override*/;
+
+    // vIndex: 5
     virtual void
-    succeedWhenBlockPresent(class BlockLegacy const& block, class BlockPos const& position, bool isPresent);
+    succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent) /*override*/;
 
     // vIndex: 8
-    virtual void setNight();
+    virtual void setNight() /*override*/;
 
     // vIndex: 9
-    virtual void setDayTime(int time);
-
-    // vIndex: 10
-    virtual std::optional<struct gametest::GameTestError>
-    setBlock(int x, int y, int z, class Block const& block, int updateFlags);
+    virtual void setDayTime(int time) /*override*/;
 
     // vIndex: 11
-    virtual std::optional<struct gametest::GameTestError>
-    setBlock(class BlockPos const& pos, class Block const& block, int updateFlags);
+    virtual ::std::optional<::gametest::GameTestError>
+    setBlock(int x, int y, int z, ::Block const& block, int updateFlags) /*override*/;
+
+    // vIndex: 10
+    virtual ::std::optional<::gametest::GameTestError>
+    setBlock(::BlockPos const& pos, ::Block const& block, int updateFlags) /*override*/;
 
     // vIndex: 12
-    virtual std::optional<struct gametest::GameTestError> destroyBlock(class BlockPos const& pos, bool dropResources);
-
-    // vIndex: 13
-    virtual std::optional<struct gametest::GameTestError> pressButton(int x, int y, int z);
+    virtual ::std::optional<::gametest::GameTestError>
+    destroyBlock(::BlockPos const& pos, bool dropResources) /*override*/;
 
     // vIndex: 14
-    virtual std::optional<struct gametest::GameTestError> pressButton(class BlockPos const& buttonPos);
+    virtual ::std::optional<::gametest::GameTestError> pressButton(int x, int y, int z) /*override*/;
 
-    // vIndex: 15
-    virtual std::optional<struct gametest::GameTestError> pullLever(int x, int y, int z);
+    // vIndex: 13
+    virtual ::std::optional<::gametest::GameTestError> pressButton(::BlockPos const& buttonPos) /*override*/;
 
     // vIndex: 16
-    virtual std::optional<struct gametest::GameTestError> pullLever(class BlockPos const& leverPos);
+    virtual ::std::optional<::gametest::GameTestError> pullLever(int x, int y, int z) /*override*/;
+
+    // vIndex: 15
+    virtual ::std::optional<::gametest::GameTestError> pullLever(::BlockPos const& leverPos) /*override*/;
 
     // vIndex: 17
-    virtual std::optional<struct gametest::GameTestError> killAllEntities();
-
-    // vIndex: 18
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawn(struct ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z);
-
-    // vIndex: 19
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawn(struct ActorDefinitionIdentifier const& actorIdentifier, class BlockPos const& pos);
+    virtual ::std::optional<::gametest::GameTestError> killAllEntities() /*override*/;
 
     // vIndex: 20
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawn(struct ActorDefinitionIdentifier const& actorIdentifier, class Vec3 const& pos);
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z) /*override*/;
+
+    // vIndex: 19
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos) /*override*/;
+
+    // vIndex: 18
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 21
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawnItem(class ItemStack const& itemType, class Vec3 const& pos);
-
-    // vIndex: 22
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawnWithoutBehaviors(struct ActorDefinitionIdentifier const& actorIdentifier, class BlockPos const& pos);
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnItem(::ItemStack const& itemType, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 23
-    virtual std::variant<struct gametest::GameTestError, class Actor*>
-    spawnWithoutBehaviors(struct ActorDefinitionIdentifier const& actorIdentifier, class Vec3 const& pos);
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 24
-    virtual std::optional<struct gametest::GameTestError>
-    walkTo(class Mob& mob, class BlockPos const& pos, float speedModifier);
+    // vIndex: 22
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 25
-    virtual std::optional<struct gametest::GameTestError>
-    walkTo(class Mob& mob, class Vec3 const& pos, float speedModifier);
+    virtual ::std::optional<::gametest::GameTestError>
+    walkTo(::Mob& mob, ::BlockPos const& pos, float speedModifier) /*override*/;
+
+    // vIndex: 24
+    virtual ::std::optional<::gametest::GameTestError>
+    walkTo(::Mob& mob, ::Vec3 const& pos, float speedModifier) /*override*/;
 
     // vIndex: 26
-    virtual std::optional<struct gametest::GameTestError> setTntFuse(class Actor& actor, int fuseLength);
-
-    // vIndex: 27
-    virtual std::optional<struct gametest::GameTestError>
-    assertEntityPresent(struct ActorDefinitionIdentifier const& actorIdentifier, bool isPresent);
-
-    // vIndex: 28
-    virtual std::optional<struct gametest::GameTestError>
-    assertEntityPresent(struct ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
-
-    // vIndex: 29
-    virtual std::optional<struct gametest::GameTestError> assertEntityPresent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        bool                                    isPresent
-    );
+    virtual ::std::optional<::gametest::GameTestError> setTntFuse(::Actor& actor, int fuseLength) /*override*/;
 
     // vIndex: 30
-    virtual std::optional<struct gametest::GameTestError> assertEntityPresent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        float                                   distance,
-        bool                                    isPresent
-    );
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, bool isPresent) /*override*/;
 
-    // vIndex: 31
-    virtual std::optional<struct gametest::GameTestError>
-    assertEntityInstancePresent(class Actor const* actor, class BlockPos const& pos, bool expectedPresent);
+    // vIndex: 29
+    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        int                                x,
+        int                                y,
+        int                                z,
+        bool                               isPresent
+    ) /*override*/;
+
+    // vIndex: 28
+    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        bool                               isPresent
+    ) /*override*/;
+
+    // vIndex: 27
+    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        float const                        distance,
+        bool                               isPresent
+    ) /*override*/;
 
     // vIndex: 32
-    virtual std::optional<struct gametest::GameTestError>
-    assertEntityInstancePresent(class Actor const* actor, bool expectedPresent) const;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityInstancePresent(::Actor const* actor, ::BlockPos const& pos, bool expectedPresent) /*override*/;
+
+    // vIndex: 31
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityInstancePresent(::Actor const* actor, bool expectedPresent) const /*override*/;
 
     // vIndex: 33
-    virtual std::optional<struct gametest::GameTestError> assertEntityTouching(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class Vec3 const&                       pos,
-        bool                                    isTouching
-    );
+    virtual ::std::optional<::gametest::GameTestError> assertEntityTouching(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::Vec3 const&                      pos,
+        bool                               isTouching
+    ) /*override*/;
 
     // vIndex: 34
-    virtual std::optional<struct gametest::GameTestError> assertEntityState(
-        class BlockPos const&                   pos,
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::function<bool(class Actor&)>       dataPredicate
-    );
-
-    // vIndex: 35
-    virtual std::optional<struct gametest::GameTestError>
-    assertBlockPresent(class BlockLegacy const& blockType, int x, int y, int z, bool isPresent);
+    virtual ::std::optional<::gametest::GameTestError> assertEntityState(
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    ) /*override*/;
 
     // vIndex: 36
-    virtual std::optional<struct gametest::GameTestError>
-    assertBlockPresent(class BlockLegacy const& blockType, class BlockPos const& pos, bool isPresent);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockPresent(::BlockLegacy const& blockType, int x, int y, int z, bool isPresent) /*override*/;
+
+    // vIndex: 35
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockPresent(::BlockLegacy const& blockType, ::BlockPos const& pos, bool isPresent) /*override*/;
 
     // vIndex: 37
-    virtual std::optional<struct gametest::GameTestError>
-    assertBlockState(class BlockPos const& blockPos, std::function<bool(class Block const&)> predicate);
-
-    // vIndex: 38
-    virtual std::optional<struct gametest::GameTestError>
-    assertItemEntityPresent(class Item const& item, int x, int y, int z, float searchDistance, bool isPresent);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockState(::BlockPos const& blockPos, ::std::function<bool(::Block const&)> predicate) /*override*/;
 
     // vIndex: 39
-    virtual std::optional<struct gametest::GameTestError>
-    assertItemEntityPresent(class Item const& item, class BlockPos const& pos, float searchDistance, bool isPresent);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityPresent(::Item const& item, int x, int y, int z, float searchDistance, bool isPresent) /*override*/;
+
+    // vIndex: 38
+    virtual ::std::optional<::gametest::GameTestError> assertItemEntityPresent(
+        ::Item const&     item,
+        ::BlockPos const& pos,
+        float             searchDistance,
+        bool              isPresent
+    ) /*override*/;
 
     // vIndex: 40
-    virtual std::optional<struct gametest::GameTestError> assertItemEntityCountIs(
-        class Item const&     itemType,
-        class BlockPos const& pos,
-        float                 searchDistance,
-        int                   expectedCount
-    );
+    virtual ::std::optional<::gametest::GameTestError> assertItemEntityCountIs(
+        ::Item const&     itemType,
+        ::BlockPos const& pos,
+        float             searchDistance,
+        int               expectedCount
+    ) /*override*/;
 
     // vIndex: 41
-    virtual std::optional<struct gametest::GameTestError> assertContainerEmpty(class BlockPos const& pos);
+    virtual ::std::optional<::gametest::GameTestError> assertContainerEmpty(::BlockPos const& pos) /*override*/;
 
     // vIndex: 42
-    virtual std::optional<struct gametest::GameTestError>
-    assertContainerContains(class ItemStack const& item, class BlockPos const& pos);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertContainerContains(::ItemStack const& item, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 43
-    virtual std::optional<struct gametest::GameTestError> assertEntityHasComponent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::string const&                      componentName,
-        class BlockPos const&                   pos,
-        bool                                    hasComponent
-    );
+    virtual ::std::optional<::gametest::GameTestError> assertEntityHasComponent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    ) /*override*/;
 
     // vIndex: 44
-    virtual std::optional<struct gametest::GameTestError> assertEntityHasArmor(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        ::ArmorSlot                             armorSlot,
-        std::string const&                      armorName,
-        int                                     dataValue,
-        class BlockPos const&                   pos,
-        bool                                    hasArmor
-    );
+    virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::ArmorSlot                        armorSlot,
+        ::std::string const&               armorName,
+        int                                dataValue,
+        ::BlockPos const&                  pos,
+        bool                               hasArmor
+    ) /*override*/;
 
     // vIndex: 45
-    virtual std::optional<struct gametest::GameTestError> print(std::string const& text);
+    virtual ::std::optional<::gametest::GameTestError> print(::std::string const& text) /*override*/;
 
     // vIndex: 46
-    virtual std::optional<struct gametest::GameTestError>
-    assertRedstonePower(class BlockPos const& pos, int expectedPower);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertRedstonePower(::BlockPos const& pos, int expectedPower) /*override*/;
 
     // vIndex: 47
-    virtual std::optional<struct gametest::GameTestError>
-    assertIsWaterlogged(class BlockPos const& pos, bool expectedWaterlogged);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertIsWaterlogged(::BlockPos const& pos, bool expectedWaterlogged) /*override*/;
 
     // vIndex: 48
-    virtual std::optional<struct gametest::GameTestError> pulseRedstone(class BlockPos const& pos, int duration);
+    virtual ::std::optional<::gametest::GameTestError> pulseRedstone(::BlockPos const& pos, int duration) /*override*/;
 
     // vIndex: 49
-    virtual std::variant<struct gametest::GameTestError, class ScriptModuleGameTest::ScriptGameTestConnectivity>
-    getFenceConnectivity(class BlockPos const& relativePos);
-
-    // vIndex: 50
-    virtual std::variant<struct gametest::GameTestError, class BlockPos> worldPosition(class BlockPos const& relativePos
-    ) const;
-
-    // vIndex: 51
-    virtual std::variant<struct gametest::GameTestError, class Vec3> worldPosition(class Vec3 const& relativePos) const;
-
-    // vIndex: 52
-    virtual std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const& pos
-    ) const;
-
-    // vIndex: 53
-    virtual std::variant<struct gametest::GameTestError, class Vec3> relativePosition(class Vec3 const& pos) const;
+    virtual ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
+    getFenceConnectivity(::BlockPos const& relativePos) /*override*/;
 
     // vIndex: 54
-    virtual std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const& pos, int _fluidType);
+    virtual ::std::optional<::gametest::GameTestError>
+    setFluidContainer(::BlockPos const& pos, int _fluidType) /*override*/;
 
     // vIndex: 55
-    virtual std::optional<struct gametest::GameTestError> triggerInternalBlockEvent(
-        class BlockPos const&     pos,
-        std::string const&        event,
-        std::vector<float> const& parameters
-    );
+    virtual ::std::optional<::gametest::GameTestError> triggerInternalBlockEvent(
+        ::BlockPos const&           pos,
+        ::std::string const&        event,
+        ::std::vector<float> const& parameters
+    ) /*override*/;
+
+    // vIndex: 51
+    virtual ::std::variant<::gametest::GameTestError, ::BlockPos> worldPosition(::BlockPos const& relativePos) const
+        /*override*/;
+
+    // vIndex: 50
+    virtual ::std::variant<::gametest::GameTestError, ::Vec3> worldPosition(::Vec3 const& relativePos) const
+        /*override*/;
+
+    // vIndex: 53
+    virtual ::std::variant<::gametest::GameTestError, ::BlockPos> relativePosition(::BlockPos const& worldPos) const
+        /*override*/;
+
+    // vIndex: 52
+    virtual ::std::variant<::gametest::GameTestError, ::Vec3> relativePosition(::Vec3 const& worldPos) const
+        /*override*/;
 
     // vIndex: 56
-    virtual std::optional<struct gametest::GameTestError>
-    assertCanReachLocation(class Mob& mob, class BlockPos const& pos, bool expectedReach);
+    virtual ::std::optional<::gametest::GameTestError>
+    assertCanReachLocation(::Mob& mob, ::BlockPos const& pos, bool expectedReach) /*override*/;
 
     // vIndex: 57
-    virtual std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(
-        class BlockPos const&                 pos,
+    virtual ::std::optional<::gametest::GameTestError> spreadFromFaceTowardDirection(
+        ::BlockPos const&                     pos,
         ::ScriptModuleMinecraft::ScriptFacing fromFace,
         ::ScriptModuleMinecraft::ScriptFacing direction
-    );
-
-    // vIndex: 58
-    virtual std::variant<struct gametest::GameTestError, class SimulatedPlayer*>
-    spawnSimulatedPlayer(std::string const& name, class BlockPos const& pos, ::GameType gameMode);
-
-    // vIndex: 59
-    virtual void removeSimulatedPlayer(class SimulatedPlayer& simulatedPlayer);
-
-    // vIndex: 60
-    virtual std::variant<struct gametest::GameTestError, class Dimension*> getDimension();
+    ) /*override*/;
 
     // vIndex: 61
-    virtual std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource*& blockSourceResult);
+    virtual ::std::optional<::gametest::GameTestError> getBlockSource(::BlockSource*& blockSourceResult) /*override*/;
+
+    // vIndex: 58
+    virtual ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
+    spawnSimulatedPlayer(::std::string const& name, ::BlockPos const& pos, ::GameType gameMode) /*override*/;
+
+    // vIndex: 59
+    virtual void removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer) /*override*/;
+
+    // vIndex: 60
+    virtual ::std::variant<::gametest::GameTestError, ::Dimension*> getDimension() /*override*/;
 
     // vIndex: 62
-    virtual std::optional<struct gametest::GameTestError> onPlayerJump(class Mob& mob, int jumpAmount);
-
+    virtual ::std::optional<::gametest::GameTestError> onPlayerJump(::Mob& mob, int jumpAmount) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<struct gametest::GameTestError> _assertEntityInstancePresent(
-        class Actor const*    actor,
-        class AABB const&     searchBounds,
-        class BlockPos const& relativeTestPosition,
-        bool                  expectedPresent
-    ) const;
-
-    MCAPI std::optional<struct gametest::GameTestError> _assertEntityPresent(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class AABB const&                       searchBounds,
-        class BlockPos const&                   pos,
-        bool                                    expectedPresent
-    ) const;
-
-    MCAPI class Block const& _getBlock(class BlockPos const& pos);
-
-    MCAPI class Container const* _getContainer(class BlockPos const& pos);
-
-    MCAPI int _getItemEntityCount(class Item const& item, class AABB const& searchBounds);
-
-    MCAPI std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
-
-    MCAPI bool
-    _isEntityPresent(struct ActorDefinitionIdentifier const& actorIdentifier, class AABB const& searchBounds) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertBlockPresent$(class BlockLegacy const& blockType, int x, int y, int z, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertBlockPresent$(class BlockLegacy const& blockType, class BlockPos const& pos, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertBlockState$(class BlockPos const& blockPos, std::function<bool(class Block const&)> predicate);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertCanReachLocation$(class Mob& mob, class BlockPos const& pos, bool expectedReach);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertContainerContains$(class ItemStack const& item, class BlockPos const& pos);
-
-    MCAPI std::optional<struct gametest::GameTestError> assertContainerEmpty$(class BlockPos const& pos);
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityHasArmor$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        ::ArmorSlot                             armorSlot,
-        std::string const&                      armorName,
-        int                                     dataValue,
-        class BlockPos const&                   pos,
-        bool                                    hasArmor
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityHasComponent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::string const&                      componentName,
-        class BlockPos const&                   pos,
-        bool                                    hasComponent
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertEntityInstancePresent$(class Actor const* actor, class BlockPos const& pos, bool expectedPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertEntityInstancePresent$(class Actor const* actor, bool expectedPresent) const;
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertEntityPresent$(struct ActorDefinitionIdentifier const& actorIdentifier, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-    assertEntityPresent$(struct ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityPresent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        bool                                    isPresent
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityPresent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        float                                   distance,
-        bool                                    isPresent
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityState$(
-        class BlockPos const&                   pos,
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::function<bool(class Actor&)>       dataPredicate
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError> assertEntityTouching$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class Vec3 const&                       pos,
-        bool                                    isTouching
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertIsWaterlogged$(class BlockPos const& pos, bool expectedWaterlogged);
-
-    MCAPI std::optional<struct gametest::GameTestError> assertItemEntityCountIs$(
-        class Item const&     itemType,
-        class BlockPos const& pos,
-        float                 searchDistance,
-        int                   expectedCount
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertItemEntityPresent$(class Item const& item, int x, int y, int z, float searchDistance, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-    assertItemEntityPresent$(class Item const& item, class BlockPos const& pos, float searchDistance, bool isPresent);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          assertRedstonePower$(class BlockPos const& pos, int expectedPower);
-
-    MCAPI std::optional<struct gametest::GameTestError> destroyBlock$(class BlockPos const& pos, bool dropResources);
-
-    MCAPI std::optional<struct gametest::GameTestError> getBlockSource$(class BlockSource*& blockSourceResult);
-
-    MCAPI std::variant<struct gametest::GameTestError, class Dimension*> getDimension$();
-
-    MCAPI std::variant<struct gametest::GameTestError, class ScriptModuleGameTest::ScriptGameTestConnectivity>
-          getFenceConnectivity$(class BlockPos const& relativePos);
-
-    MCAPI std::optional<struct gametest::GameTestError> killAllEntities$();
-
-    MCAPI std::optional<struct gametest::GameTestError> onPlayerJump$(class Mob& mob, int jumpAmount);
-
-    MCAPI std::optional<struct gametest::GameTestError> pressButton$(int x, int y, int z);
-
-    MCAPI std::optional<struct gametest::GameTestError> pressButton$(class BlockPos const& buttonPos);
-
-    MCAPI std::optional<struct gametest::GameTestError> print$(std::string const& text);
-
-    MCAPI std::optional<struct gametest::GameTestError> pullLever$(int x, int y, int z);
-
-    MCAPI std::optional<struct gametest::GameTestError> pullLever$(class BlockPos const& leverPos);
-
-    MCAPI std::optional<struct gametest::GameTestError> pulseRedstone$(class BlockPos const& pos, int duration);
-
-    MCAPI std::variant<struct gametest::GameTestError, class BlockPos> relativePosition$(class BlockPos const& pos
+    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityInstancePresent(
+        ::Actor const*    actor,
+        ::AABB const&     searchBounds,
+        ::BlockPos const& relativeTestPosition,
+        bool              expectedPresent
     ) const;
 
-    MCAPI std::variant<struct gametest::GameTestError, class Vec3> relativePosition$(class Vec3 const& pos) const;
+    MCAPI ::std::optional<::gametest::GameTestError> _assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::AABB const&                      searchBounds,
+        ::BlockPos const&                  pos,
+        bool                               expectedPresent
+    ) const;
 
-    MCAPI void removeSimulatedPlayer$(class SimulatedPlayer& simulatedPlayer);
+    MCAPI ::Block const& _getBlock(::BlockPos const& pos);
 
-    MCAPI std::optional<struct gametest::GameTestError>
-          setBlock$(int x, int y, int z, class Block const& block, int updateFlags);
+    MCAPI ::Container const* _getContainer(::BlockPos const& pos);
 
-    MCAPI std::optional<struct gametest::GameTestError>
-          setBlock$(class BlockPos const& pos, class Block const& block, int updateFlags);
+    MCAPI ::std::optional<::gametest::GameTestError> _getStructureBlockMissingError() const;
+    // NOLINTEND
 
-    MCAPI void setDayTime$(int time);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<struct gametest::GameTestError> setFluidContainer$(class BlockPos const& pos, int _fluidType);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $succeedWhenEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
 
-    MCAPI void setNight$();
+    MCAPI void $succeedWhenEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        bool                               isPresent
+    );
 
-    MCAPI std::optional<struct gametest::GameTestError> setTntFuse$(class Actor& actor, int fuseLength);
+    MCAPI void $succeedWhenEntityData(
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    );
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawn$(struct ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z);
+    MCAPI void $succeedWhenEntityHasComponent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    );
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawn$(struct ActorDefinitionIdentifier const& actorIdentifier, class BlockPos const& pos);
+    MCAPI void $succeedWhenBlockPresent(::Block const& block, int x, int y, int z, bool isPresent);
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawn$(struct ActorDefinitionIdentifier const& actorIdentifier, class Vec3 const& pos);
+    MCAPI void $succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent);
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawnItem$(class ItemStack const& itemType, class Vec3 const& pos);
+    MCAPI void $succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent);
 
-    MCAPI std::variant<struct gametest::GameTestError, class SimulatedPlayer*>
-          spawnSimulatedPlayer$(std::string const& name, class BlockPos const& pos, ::GameType gameMode);
+    MCAPI void $setNight();
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawnWithoutBehaviors$(struct ActorDefinitionIdentifier const& actorIdentifier, class BlockPos const& pos);
+    MCAPI void $setDayTime(int time);
 
-    MCAPI std::variant<struct gametest::GameTestError, class Actor*>
-          spawnWithoutBehaviors$(struct ActorDefinitionIdentifier const& actorIdentifier, class Vec3 const& pos);
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $setBlock(int x, int y, int z, ::Block const& block, int updateFlags);
 
-    MCAPI std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection$(
-        class BlockPos const&                 pos,
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $setBlock(::BlockPos const& pos, ::Block const& block, int updateFlags);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $destroyBlock(::BlockPos const& pos, bool dropResources);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $pressButton(int x, int y, int z);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $pressButton(::BlockPos const& buttonPos);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $pullLever(int x, int y, int z);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $pullLever(::BlockPos const& leverPos);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $killAllEntities();
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawn(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawnItem(::ItemStack const& itemType, ::Vec3 const& pos);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Actor*>
+    $spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::BlockPos const& pos, float speedModifier);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $walkTo(::Mob& mob, ::Vec3 const& pos, float speedModifier);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $setTntFuse(::Actor& actor, int fuseLength);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        float const                        distance,
+        bool                               isPresent
+    );
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityInstancePresent(::Actor const* actor, ::BlockPos const& pos, bool expectedPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityInstancePresent(::Actor const* actor, bool expectedPresent) const;
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertEntityTouching(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos, bool isTouching);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityState(
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    );
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertBlockPresent(::BlockLegacy const& blockType, int x, int y, int z, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertBlockPresent(::BlockLegacy const& blockType, ::BlockPos const& pos, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertBlockState(::BlockPos const& blockPos, ::std::function<bool(::Block const&)> predicate);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertItemEntityPresent(::Item const& item, int x, int y, int z, float searchDistance, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertItemEntityPresent(::Item const& item, ::BlockPos const& pos, float searchDistance, bool isPresent);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertItemEntityCountIs(::Item const& itemType, ::BlockPos const& pos, float searchDistance, int expectedCount);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertContainerEmpty(::BlockPos const& pos);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertContainerContains(::ItemStack const& item, ::BlockPos const& pos);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityHasComponent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    );
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertEntityHasArmor(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::ArmorSlot                        armorSlot,
+        ::std::string const&               armorName,
+        int                                dataValue,
+        ::BlockPos const&                  pos,
+        bool                               hasArmor
+    );
+
+    MCAPI ::std::optional<::gametest::GameTestError> $print(::std::string const& text);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $assertRedstonePower(::BlockPos const& pos, int expectedPower);
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertIsWaterlogged(::BlockPos const& pos, bool expectedWaterlogged);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $pulseRedstone(::BlockPos const& pos, int duration);
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
+    $getFenceConnectivity(::BlockPos const& relativePos);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $setFluidContainer(::BlockPos const& pos, int _fluidType);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $triggerInternalBlockEvent(
+        ::BlockPos const&           pos,
+        ::std::string const&        event,
+        ::std::vector<float> const& parameters
+    );
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $worldPosition(::BlockPos const& relativePos) const;
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Vec3> $worldPosition(::Vec3 const& relativePos) const;
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::BlockPos> $relativePosition(::BlockPos const& worldPos) const;
+
+    MCAPI ::std::variant<::gametest::GameTestError, ::Vec3> $relativePosition(::Vec3 const& worldPos) const;
+
+    MCAPI ::std::optional<::gametest::GameTestError>
+    $assertCanReachLocation(::Mob& mob, ::BlockPos const& pos, bool expectedReach);
+
+    MCAPI ::std::optional<::gametest::GameTestError> $spreadFromFaceTowardDirection(
+        ::BlockPos const&                     pos,
         ::ScriptModuleMinecraft::ScriptFacing fromFace,
         ::ScriptModuleMinecraft::ScriptFacing direction
     );
 
-    MCAPI void succeedWhenBlockPresent$(class Block const& block, int x, int y, int z, bool isPresent);
+    MCAPI ::std::optional<::gametest::GameTestError> $getBlockSource(::BlockSource*& blockSourceResult);
 
-    MCAPI void succeedWhenBlockPresent$(class Block const& block, class BlockPos const& pos, bool isPresent);
+    MCAPI ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
+    $spawnSimulatedPlayer(::std::string const& name, ::BlockPos const& pos, ::GameType gameMode);
 
-    MCAPI void succeedWhenBlockPresent$(class BlockLegacy const& block, class BlockPos const& position, bool isPresent);
+    MCAPI void $removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer);
 
-    MCAPI void succeedWhenEntityData$(
-        class BlockPos const&                   pos,
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::function<bool(class Actor&)>       dataPredicate
-    );
+    MCAPI ::std::variant<::gametest::GameTestError, ::Dimension*> $getDimension();
 
-    MCAPI void succeedWhenEntityHasComponent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        std::string const&                      componentName,
-        class BlockPos const&                   pos,
-        bool                                    hasComponent
-    );
+    MCAPI ::std::optional<::gametest::GameTestError> $onPlayerJump(::Mob& mob, int jumpAmount);
+    // NOLINTEND
 
-    MCAPI void succeedWhenEntityPresent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        int                                     x,
-        int                                     y,
-        int                                     z,
-        bool                                    isPresent
-    );
-
-    MCAPI void succeedWhenEntityPresent$(
-        struct ActorDefinitionIdentifier const& actorIdentifier,
-        class BlockPos const&                   pos,
-        bool                                    isPresent
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError> triggerInternalBlockEvent$(
-        class BlockPos const&     pos,
-        std::string const&        event,
-        std::vector<float> const& parameters
-    );
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          walkTo$(class Mob& mob, class BlockPos const& pos, float speedModifier);
-
-    MCAPI std::optional<struct gametest::GameTestError>
-          walkTo$(class Mob& mob, class Vec3 const& pos, float speedModifier);
-
-    MCAPI std::variant<struct gametest::GameTestError, class BlockPos> worldPosition$(class BlockPos const& relativePos
-    ) const;
-
-    MCAPI std::variant<struct gametest::GameTestError, class Vec3> worldPosition$(class Vec3 const& relativePos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

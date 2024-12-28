@@ -9,25 +9,30 @@ namespace Json { class Value; }
 
 class ResolvedTextObject {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkadb123;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ResolvedTextObject& operator=(ResolvedTextObject const&);
     ResolvedTextObject(ResolvedTextObject const&);
     ResolvedTextObject();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::string getAsJsonString() const;
+    MCAPI ::std::string getAsJsonString() const;
 
-    MCAPI class Json::Value const& getJson() const;
+    MCAPI ::Json::Value const& getJson() const;
 
     MCAPI ~ResolvedTextObject();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

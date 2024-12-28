@@ -3,19 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
 // clang-format on
 
 class MelonBlock : public ::BlockLegacy {
@@ -26,25 +18,42 @@ public:
     MelonBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MelonBlock() = default;
-
     // vIndex: 25
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
-    MCAPI MelonBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~MelonBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MelonBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canConnect$(class Block const&, uchar, class Block const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

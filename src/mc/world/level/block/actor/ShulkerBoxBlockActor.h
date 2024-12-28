@@ -7,7 +7,31 @@
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Player;
+class SaveContext;
+class Vec3;
+// clang-format on
+
 class ShulkerBoxBlockActor : public ::ChestBlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkb764b6;
+    ::ll::UntypedStorage<1, 1> mUnk997f90;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ShulkerBoxBlockActor& operator=(ShulkerBoxBlockActor const&);
@@ -15,103 +39,142 @@ public:
     ShulkerBoxBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool _detectEntityObstruction(class BlockSource&) const;
+    // vIndex: 0
+    virtual ~ShulkerBoxBlockActor() /*override*/;
 
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
+    // vIndex: 11
+    virtual void onPlace(::BlockSource& region) /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI class AABB getObstructionAABB() const;
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 29
+    virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
-    MCVAPI void onPlace(class BlockSource& region);
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI void playCloseSound(class BlockSource& region);
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void playOpenSound(class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 49
+    virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    MCVAPI void stopOpen(class Player& player);
+    // vIndex: 50
+    virtual void playCloseSound(::BlockSource& region) /*override*/;
 
-    MCVAPI void tick(class BlockSource& region);
+    // vIndex: 52
+    virtual ::AABB getObstructionAABB() const /*override*/;
 
-    MCAPI ShulkerBoxBlockActor(
-        ::BlockActorType       type,
-        std::string const&     id,
-        ::BlockActorRendererId renderId,
-        class BlockPos const&  pos
-    );
-
-    MCAPI void setFacingDir(uchar facing);
-
-    MCAPI void setupRedstoneComponent(class BlockSource& region) const;
-
-    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const& item, int);
-
+    // vIndex: 53
+    virtual bool _detectEntityObstruction(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _addRedstoneComponent(class BlockSource& region) const;
+    MCAPI ShulkerBoxBlockActor(
+        ::BlockActorType       type,
+        ::std::string const&   id,
+        ::BlockActorRendererId renderId,
+        ::BlockPos const&      pos
+    );
+
+    MCAPI void _addRedstoneComponent(::BlockSource& region) const;
 
     MCAPI void _calculateBB();
 
-    MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource& region, class Actor* actor) const;
+    MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
 
+    MCAPI void setFacingDir(uchar facing);
+
+    MCAPI void setupRedstoneComponent(::BlockSource& region) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForFillingContainer();
+    MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+    // NOLINTEND
 
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
-
-    MCAPI void*
-    ctor$(::BlockActorType type, std::string const& id, ::BlockActorRendererId renderId, class BlockPos const& pos);
-
-    MCAPI bool _detectEntityObstruction$(class BlockSource&) const;
-
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
-
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
-
-    MCAPI bool canPushInItem$(int slot, int face, class ItemStack const& item) const;
-
-    MCAPI int getMaxStackSize$() const;
-
-    MCAPI std::string getName$() const;
-
-    MCAPI class AABB getObstructionAABB$() const;
-
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void onPlace$(class BlockSource& region);
-
-    MCAPI void playCloseSound$(class BlockSource& region);
-
-    MCAPI void playOpenSound$(class BlockSource& region);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void startOpen$(class Player& player);
-
-    MCAPI void stopOpen$(class Player& player);
-
-    MCAPI void tick$(class BlockSource& region);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& ITEMS_SIZE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::BlockActorType type, ::std::string const& id, ::BlockActorRendererId renderId, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
+
+    MCAPI int $getMaxStackSize() const;
+
+    MCAPI void $onPlace(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+
+    MCAPI void $startOpen(::Player& player);
+
+    MCAPI void $stopOpen(::Player& player);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
+    MCAPI void $playOpenSound(::BlockSource& region);
+
+    MCAPI void $playCloseSound(::BlockSource& region);
+
+    MCAPI ::AABB $getObstructionAABB() const;
+
+    MCAPI bool $_detectEntityObstruction(::BlockSource& region) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForFillingContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

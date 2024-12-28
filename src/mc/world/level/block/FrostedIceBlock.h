@@ -3,19 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class ItemInstance;
+class Player;
+class Random;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class FrostedIceBlock : public ::BlockLegacy {
@@ -26,54 +27,75 @@ public:
     FrostedIceBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FrostedIceBlock() = default;
+    // vIndex: 89
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 95
-    virtual class Block const*
-    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI FrostedIceBlock(std::string const& nameId, int id, bool packed);
-
-    MCAPI void
-    _slightlyMelt(class BlockSource& region, class BlockPos const& pos, class Random& random, bool propagate) const;
-
+    // vIndex: 0
+    virtual ~FrostedIceBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FrostedIceBlock(::std::string const& nameId, int id, bool packed);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool packed);
+    MCAPI void _slightlyMelt(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool propagate) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion version) const;
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI class Block const*
-    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_AGE();
 
     MCAPI static int const& MIN_NEIGHBORS();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool packed);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

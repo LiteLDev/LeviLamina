@@ -8,55 +8,103 @@
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ItemStack;
+class NetworkItemStackDescriptor;
+class Player;
+class ReadOnlyBinaryStream;
+struct FullContainerName;
+// clang-format on
+
 class InventoryContentPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::ContainerID>                                mInventoryId;
+    ::ll::TypedStorage<4, 12, ::FullContainerName>                         mFullContainerName;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                mStorageItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemStackDescriptor>> mSlots;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InventoryContentPacket& operator=(InventoryContentPacket const&);
     InventoryContentPacket(InventoryContentPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InventoryContentPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI InventoryContentPacket();
-
-    MCAPI InventoryContentPacket(::ContainerID id, std::vector<class ItemStack> const& items);
-
-    MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID id, class Player& player);
-
+    // vIndex: 0
+    virtual ~InventoryContentPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI InventoryContentPacket();
 
-    MCAPI void* ctor$();
+    MCAPI InventoryContentPacket(
+        ::ContainerID                     id,
+        ::std::vector<::ItemStack> const& items,
+        ::FullContainerName const&        fullContainerName,
+        ::ItemStack const&                storageItem
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ContainerID id, std::vector<class ItemStack> const& items);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::InventoryContentPacket fromPlayerInventoryId(::ContainerID id, ::Player& player);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(
+        ::ContainerID                     id,
+        ::std::vector<::ItemStack> const& items,
+        ::FullContainerName const&        fullContainerName,
+        ::ItemStack const&                storageItem
+    );
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/config/ChatRestrictionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace PlayerCapabilities { struct IPlayerData; }
+class Level;
 namespace PlayerCapabilities { struct ISharedController; }
 // clang-format on
 
 namespace PlayerCapabilities {
+// functions
 // NOLINTBEGIN
-MCAPI std::unique_ptr<struct PlayerCapabilities::ISharedController> createController(class Level const& level);
+MCAPI ::std::unique_ptr<::PlayerCapabilities::ISharedController> createController(::Level const& level);
 // NOLINTEND
 
-}; // namespace PlayerCapabilities
+} // namespace PlayerCapabilities

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/UseAnimation.h"
+#include "mc/deps/shared_types/UseAnimation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,11 +18,11 @@ public:
     UseAnimationUtils();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static std::initializer_list<std::pair<std::string const, ::Puv::Legacy::UseAnimation>> const&
+    MCAPI static ::std::initializer_list<::std::pair<::std::string const, ::SharedTypes::Legacy::UseAnimation>> const&
     getStringMapping();
-
     // NOLINTEND
 };

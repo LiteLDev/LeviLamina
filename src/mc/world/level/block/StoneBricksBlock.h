@@ -3,22 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class HashedString;
+class ItemInstance;
+class Material;
 // clang-format on
 
 class StoneBricksBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk68dcfb;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StoneBricksBlock& operator=(StoneBricksBlock const&);
@@ -26,40 +28,53 @@ public:
     StoneBricksBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 129
+    virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+
     // vIndex: 0
-    virtual ~StoneBricksBlock() = default;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 140
-    virtual class Block const* tryGetInfested(class Block const& block) const;
-
-    MCAPI StoneBricksBlock(std::string const& nameId, int id, class Material const& material);
-
+    virtual ~StoneBricksBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StoneBricksBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::HashedString const& infestedBlockId
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& infestedBlockId);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
 
-    MCAPI bool isAuxValueRelevantForPicking$() const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    // NOLINTEND
 
-    MCAPI class Block const* tryGetInfested$(class Block const& block) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

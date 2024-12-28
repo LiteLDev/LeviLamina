@@ -13,4 +13,4 @@ public:
     Result();
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EntityHost {};
+enum class EntityHost : int {
+    Client = 0,
+    Server = 1,
+};

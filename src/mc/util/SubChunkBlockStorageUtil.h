@@ -6,14 +6,22 @@
 #include "mc/world/level/chunk/SubChunkFormat.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class CompoundTag;
+class IDataInput;
+// clang-format on
+
 namespace SubChunkBlockStorageUtil {
+// functions
 // NOLINTBEGIN
-MCAPI std::unique_ptr<class SubChunkStorage<class Block>> makeDeserialized(
-    class IDataInput&                                                  stream,
-    std::function<class Block const*(uint64)> const&                   runtimeLookUp,
-    std::function<class Block const*(class CompoundTag const&)> const& persistentLookUp,
-    ::SubChunkFormat                                                   format
+MCAPI ::std::unique_ptr<::SubChunkStorage<::Block>> makeDeserialized(
+    ::IDataInput&                                                stream,
+    ::std::function<::Block const*(uint64)> const&               runtimeLookUp,
+    ::std::function<::Block const*(::CompoundTag const&)> const& persistentLookUp,
+    ::SubChunkFormat                                             format
 );
 // NOLINTEND
 
-}; // namespace SubChunkBlockStorageUtil
+} // namespace SubChunkBlockStorageUtil

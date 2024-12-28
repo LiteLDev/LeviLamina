@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/http/HttpInterfaceInternal.h"
+
 namespace Bedrock::Http {
 
-class HttpInterface_windows {
+class HttpInterface_windows : public ::Bedrock::Http::HttpInterfaceInternal {
 public:
     // prevent constructor by default
     HttpInterface_windows& operator=(HttpInterface_windows const&);
@@ -12,18 +15,23 @@ public:
     HttpInterface_windows();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HttpInterface_windows() = default;
-
+    virtual ~HttpInterface_windows() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

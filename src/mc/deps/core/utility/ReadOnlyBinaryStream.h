@@ -7,81 +7,103 @@
 
 class ReadOnlyBinaryStream {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>      mOwnedBuffer;
+    ::ll::TypedStorage<8, 16, ::std::string_view> mView;
+    ::ll::TypedStorage<8, 8, uint64>              mReadPointer;
+    ::ll::TypedStorage<1, 1, bool>                mHasOverflowed;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&);
     ReadOnlyBinaryStream(ReadOnlyBinaryStream const&);
     ReadOnlyBinaryStream();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ReadOnlyBinaryStream();
 
     // vIndex: 1
-    virtual class Bedrock::Result<void> read(void* target, uint64 num);
+    virtual ::Bedrock::Result<void> read(void* target, uint64 num);
+    // NOLINTEND
 
-    MCAPI explicit ReadOnlyBinaryStream(std::string&& buffer);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ReadOnlyBinaryStream(::std::string&& buffer);
 
-    MCAPI ReadOnlyBinaryStream(std::string const& buffer, bool copyBuffer);
+    MCAPI ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
 
     MCAPI bool canReadBool() const;
 
-    MCAPI class Bedrock::Result<void> ensureReadCompleted() const;
+    MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
-    MCAPI class Bedrock::Result<bool> getBool();
+    MCAPI ::Bedrock::Result<bool> getBool();
 
-    MCAPI class Bedrock::Result<uchar> getByte();
+    MCAPI ::Bedrock::Result<uchar> getByte();
 
-    MCAPI class Bedrock::Result<double> getDouble();
+    MCAPI ::Bedrock::Result<double> getDouble();
 
-    MCAPI class Bedrock::Result<float> getFloat();
+    MCAPI ::Bedrock::Result<float> getFloat();
 
-    MCAPI class Bedrock::Result<int> getSignedBigEndianInt();
+    MCAPI ::Bedrock::Result<int> getSignedBigEndianInt();
 
-    MCAPI class Bedrock::Result<int> getSignedInt();
+    MCAPI ::Bedrock::Result<int> getSignedInt();
 
-    MCAPI class Bedrock::Result<int64> getSignedInt64();
+    MCAPI ::Bedrock::Result<int64> getSignedInt64();
 
-    MCAPI class Bedrock::Result<short> getSignedShort();
+    MCAPI ::Bedrock::Result<short> getSignedShort();
 
-    MCAPI class Bedrock::Result<std::string> getString(uint64 maxLength);
+    MCAPI ::Bedrock::Result<::std::string> getString(uint64 maxLength);
 
-    MCAPI class Bedrock::Result<void> getString(std::string& outStringStream, uint64 maxLength);
+    MCAPI ::Bedrock::Result<void> getString(::std::string& outStringStream, uint64 maxLength);
 
-    MCAPI class Bedrock::Result<uchar> getUnsignedChar();
+    MCAPI ::Bedrock::Result<uchar> getUnsignedChar();
 
-    MCAPI class Bedrock::Result<uint> getUnsignedInt();
+    MCAPI ::Bedrock::Result<uint> getUnsignedInt();
 
-    MCAPI class Bedrock::Result<uint64> getUnsignedInt64();
+    MCAPI ::Bedrock::Result<uint64> getUnsignedInt64();
 
-    MCAPI class Bedrock::Result<ushort> getUnsignedShort();
+    MCAPI ::Bedrock::Result<ushort> getUnsignedShort();
 
-    MCAPI class Bedrock::Result<uint> getUnsignedVarInt();
+    MCAPI ::Bedrock::Result<uint> getUnsignedVarInt();
 
-    MCAPI class Bedrock::Result<uint64> getUnsignedVarInt64();
+    MCAPI ::Bedrock::Result<uint64> getUnsignedVarInt64();
 
-    MCAPI class Bedrock::Result<int> getVarInt();
+    MCAPI ::Bedrock::Result<int> getVarInt();
 
-    MCAPI class Bedrock::Result<int64> getVarInt64();
+    MCAPI ::Bedrock::Result<int64> getVarInt64();
 
     MCAPI bool hasOverflowed() const;
-
-    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>& list);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string&& buffer);
 
-    MCAPI void* ctor$(std::string&& buffer);
+    MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& buffer, bool copyBuffer);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $read(void* target, uint64 num);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> read$(void* target, uint64 num);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

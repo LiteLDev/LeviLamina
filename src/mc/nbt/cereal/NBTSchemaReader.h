@@ -3,17 +3,46 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cereal/SchemaReader.h"
-#include "mc/external/cereal/SchemaReaderState.h"
+#include "mc/deps/cereal/schema/SchemaReader.h"
+#include "mc/deps/cereal/schema/SchemaReaderState.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class Tag;
 namespace cereal { class PropertyReader; }
-namespace cereal { struct SchemaReader; }
 // clang-format on
 
 class NBTSchemaReader : public ::cereal::SchemaReader {
+public:
+    // NBTSchemaReader inner types declare
+    // clang-format off
+    struct State;
+    // clang-format on
+
+    // NBTSchemaReader inner types define
+    struct State {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkf5c495;
+        ::ll::UntypedStorage<8, 8> mUnke866d1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        State& operator=(State const&);
+        State(State const&);
+        State();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk52ac22;
+    ::ll::UntypedStorage<8, 8>  mUnkf954e9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NBTSchemaReader& operator=(NBTSchemaReader const&);
@@ -21,132 +50,142 @@ public:
     NBTSchemaReader();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NBTSchemaReader();
-
     // vIndex: 1
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 2
-    virtual ::cereal::SchemaReaderState isObject() const;
+    virtual ::cereal::SchemaReaderState isObject() const /*override*/;
 
     // vIndex: 3
-    virtual ::cereal::SchemaReaderState isArray() const;
+    virtual ::cereal::SchemaReaderState isArray() const /*override*/;
 
     // vIndex: 4
-    virtual class Bedrock::Result<bool> asBool(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<bool> asBool(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<schar> asInt8(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<schar> asInt8(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 6
-    virtual class Bedrock::Result<uchar> asUInt8(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<uchar> asUInt8(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 7
-    virtual class Bedrock::Result<short> asInt16(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<short> asInt16(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<ushort> asUInt16(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<ushort> asUInt16(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 9
-    virtual class Bedrock::Result<int> asInt32(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<int> asInt32(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 10
-    virtual class Bedrock::Result<uint> asUInt32(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<uint> asUInt32(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 11
-    virtual class Bedrock::Result<int64> asInt64(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<int64> asInt64(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 12
-    virtual class Bedrock::Result<uint64> asUInt64(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<uint64> asUInt64(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 13
-    virtual class Bedrock::Result<float> asFloat(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<float> asFloat(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 14
-    virtual class Bedrock::Result<double> asDouble(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<double> asDouble(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 15
-    virtual class Bedrock::Result<std::string> asString(class cereal::PropertyReader const&);
+    virtual ::Bedrock::Result<::std::string> asString(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 16
-    virtual uint64 members();
+    virtual uint64 members() /*override*/;
 
     // vIndex: 17
-    virtual uint64 length();
+    virtual uint64 length() /*override*/;
 
     // vIndex: 18
-    virtual bool pushMember(std::string_view name, class cereal::PropertyReader const&);
+    virtual bool pushMember(::std::string_view const name, ::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 19
-    virtual std::string_view pushNextMember(class cereal::PropertyReader const&);
+    virtual ::std::string_view pushNextMember(::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 20
-    virtual void pushElement(uint64 index, class cereal::PropertyReader const&);
+    virtual void pushElement(uint64 index, ::cereal::PropertyReader const&) /*override*/;
 
     // vIndex: 21
-    virtual void pop();
+    virtual void pop() /*override*/;
 
-    // vIndex: 22
-    virtual bool isSequenceReader() const;
-
-    MCAPI explicit NBTSchemaReader(gsl::not_null<class Tag const*> tag);
-
+    // vIndex: 0
+    virtual ~NBTSchemaReader() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit NBTSchemaReader(::gsl::not_null<::Tag const*> tag);
+    // NOLINTEND
 
-    MCAPI void* ctor$(gsl::not_null<class Tag const*> tag);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gsl::not_null<::Tag const*> tag);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<bool> asBool$(class cereal::PropertyReader const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
 
-    MCAPI class Bedrock::Result<double> asDouble$(class cereal::PropertyReader const&);
+    MCAPI ::cereal::SchemaReaderState $isObject() const;
 
-    MCAPI class Bedrock::Result<float> asFloat$(class cereal::PropertyReader const&);
+    MCAPI ::cereal::SchemaReaderState $isArray() const;
 
-    MCAPI class Bedrock::Result<short> asInt16$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<int> asInt32$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<schar> $asInt8(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<int64> asInt64$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<uchar> $asUInt8(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<schar> asInt8$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<short> $asInt16(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<std::string> asString$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<ushort> $asUInt16(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<ushort> asUInt16$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<int> $asInt32(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<uint> asUInt32$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<uint> $asUInt32(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<uint64> asUInt64$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<int64> $asInt64(::cereal::PropertyReader const&);
 
-    MCAPI class Bedrock::Result<uchar> asUInt8$(class cereal::PropertyReader const&);
+    MCAPI ::Bedrock::Result<uint64> $asUInt64(::cereal::PropertyReader const&);
 
-    MCAPI ::cereal::SchemaReaderState isArray$() const;
+    MCAPI ::Bedrock::Result<float> $asFloat(::cereal::PropertyReader const&);
 
-    MCAPI ::cereal::SchemaReaderState isObject$() const;
+    MCAPI ::Bedrock::Result<double> $asDouble(::cereal::PropertyReader const&);
 
-    MCAPI bool isSequenceReader$() const;
+    MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCAPI bool isValid$() const;
+    MCAPI uint64 $members();
 
-    MCAPI uint64 length$();
+    MCAPI uint64 $length();
 
-    MCAPI uint64 members$();
+    MCAPI bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
 
-    MCAPI void pop$();
+    MCAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const&);
 
-    MCAPI void pushElement$(uint64 index, class cereal::PropertyReader const&);
+    MCAPI void $pushElement(uint64 index, ::cereal::PropertyReader const&);
 
-    MCAPI bool pushMember$(std::string_view name, class cereal::PropertyReader const&);
+    MCAPI void $pop();
+    // NOLINTEND
 
-    MCAPI std::string_view pushNextMember$(class cereal::PropertyReader const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

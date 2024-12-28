@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/network/TransportLayer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
+class NetworkIdentifier;
+class NetworkPeer;
 namespace RakNet { struct SystemAddress; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -16,8 +19,6 @@ public:
     // Connector inner types declare
     // clang-format off
     struct ConnectionCallbacks;
-    class ConnectionStateListener;
-    struct NatPunchInfo;
     // clang-format on
 
     // Connector inner types define
@@ -27,23 +28,46 @@ public:
         ConnectionCallbacks& operator=(ConnectionCallbacks const&);
         ConnectionCallbacks(ConnectionCallbacks const&);
         ConnectionCallbacks();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~ConnectionCallbacks();
+
+        // vIndex: 1
+        virtual bool onNewIncomingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
+
+        // vIndex: 2
+        virtual bool onNewOutgoingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
+
+        // vIndex: 3
+        virtual void onConnectionClosed(
+            ::NetworkIdentifier const&,
+            ::Connection::DisconnectFailReason const,
+            ::std::string const&,
+            bool
+        ) = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
     };
 
-    class ConnectionStateListener {
-    public:
-        // prevent constructor by default
-        ConnectionStateListener& operator=(ConnectionStateListener const&);
-        ConnectionStateListener(ConnectionStateListener const&);
-        ConnectionStateListener();
-    };
-
-    struct NatPunchInfo {
-    public:
-        // prevent constructor by default
-        NatPunchInfo& operator=(NatPunchInfo const&);
-        NatPunchInfo(NatPunchInfo const&);
-        NatPunchInfo();
-    };
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf38309;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -52,97 +76,87 @@ public:
     Connector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Connector();
 
     // vIndex: 1
-    virtual std::vector<std::string> getLocalIps() const;
+    virtual ::std::vector<::std::string> getLocalIps() const;
 
     // vIndex: 2
-    virtual std::string getLocalIp();
+    virtual ::std::string getLocalIp();
 
     // vIndex: 3
     virtual ushort getPort() const;
 
     // vIndex: 4
-    virtual std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
+    virtual ::std::vector<::RakNet::SystemAddress> getRefinedLocalIps() const;
 
     // vIndex: 5
-    virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
+    virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const;
 
     // vIndex: 6
-    virtual void setupNatPunch(bool connectToClient);
-
-    // vIndex: 7
-    virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
-
-    // vIndex: 8
-    virtual void startNatPunchingClient(std::string const&, ushort);
-
-    // vIndex: 9
-    virtual void addConnectionStateListener(class Connector::ConnectionStateListener*);
-
-    // vIndex: 10
-    virtual void removeConnectionStateListener(class Connector::ConnectionStateListener* listener);
-
-    // vIndex: 11
     virtual bool isIPv4Supported() const;
 
-    // vIndex: 12
+    // vIndex: 7
     virtual bool isIPv6Supported() const;
 
-    // vIndex: 13
+    // vIndex: 8
     virtual ushort getIPv4Port() const;
 
-    // vIndex: 14
+    // vIndex: 9
     virtual ushort getIPv6Port() const;
 
-    // vIndex: 15
+    // vIndex: 10
     virtual ::TransportLayer getNetworkType() const;
-
-    MCAPI explicit Connector(struct Connector::ConnectionCallbacks& callbacks);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit Connector(::Connector::ConnectionCallbacks& callbacks);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct Connector::ConnectionCallbacks& callbacks);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener*);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::std::string> $getLocalIps() const;
 
-    MCAPI class Social::GameConnectionInfo const& getConnectedGameInfo$() const;
+    MCAPI ::std::string $getLocalIp();
 
-    MCAPI ushort getIPv4Port$() const;
+    MCAPI ushort $getPort() const;
 
-    MCAPI ushort getIPv6Port$() const;
+    MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
-    MCAPI std::string getLocalIp$();
+    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCAPI std::vector<std::string> getLocalIps$() const;
+    MCAPI bool $isIPv4Supported() const;
 
-    MCAPI struct Connector::NatPunchInfo getNatPunchInfo$() const;
+    MCAPI bool $isIPv6Supported() const;
 
-    MCAPI ::TransportLayer getNetworkType$() const;
+    MCAPI ushort $getIPv4Port() const;
 
-    MCAPI ushort getPort$() const;
+    MCAPI ushort $getIPv6Port() const;
 
-    MCAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps$() const;
+    MCAPI ::TransportLayer $getNetworkType() const;
+    // NOLINTEND
 
-    MCAPI bool isIPv4Supported$() const;
-
-    MCAPI bool isIPv6Supported$() const;
-
-    MCAPI void removeConnectionStateListener$(class Connector::ConnectionStateListener* listener);
-
-    MCAPI void setupNatPunch$(bool connectToClient);
-
-    MCAPI void startNatPunchingClient$(std::string const&, ushort);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

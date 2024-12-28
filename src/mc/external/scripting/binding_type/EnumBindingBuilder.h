@@ -13,4 +13,4 @@ public:
     EnumBindingBuilder();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

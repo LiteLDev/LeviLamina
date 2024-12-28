@@ -12,4 +12,4 @@ public:
     FileWriteError();
 };
 
-}; // namespace Bedrock::DeviceIdErrorType
+} // namespace Bedrock::DeviceIdErrorType

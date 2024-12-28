@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CrashDumpFormatEntryImpl {
+// auto generated inclusion list
+#include "mc/deps/core/utility/CrashDumpLogFieldFormat.h"
+
+struct CrashDumpFormatEntryImpl : public ::CrashDumpLogFieldFormat {
 public:
     // prevent constructor by default
     CrashDumpFormatEntryImpl& operator=(CrashDumpFormatEntryImpl const&);

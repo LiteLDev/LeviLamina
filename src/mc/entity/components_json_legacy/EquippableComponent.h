@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class ItemDescriptor;
+class ItemStack;
+class UpdateEquipPacket;
+// clang-format on
+
 class EquippableComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkca0284;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EquippableComponent& operator=(EquippableComponent const&);
@@ -13,33 +28,36 @@ public:
     EquippableComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI EquippableComponent(class EquippableComponent&& other);
+    MCAPI EquippableComponent(::EquippableComponent&& other);
 
-    MCAPI class UpdateEquipPacket createDataPacket(class Actor& owner, ::ContainerID containerID) const;
+    MCAPI ::UpdateEquipPacket createDataPacket(::Actor& owner, ::ContainerID containerID) const;
 
-    MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor& owner) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
 
     MCAPI int getSlotCount() const;
 
     MCAPI bool hasSlotAllowedItems(int slotNumber) const;
 
-    MCAPI bool onItemChanged(class Actor& owner, uint64 slotIdx, class ItemStack const& item) const;
+    MCAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
 
-    MCAPI class EquippableComponent& operator=(class EquippableComponent&& other);
+    MCAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
 
-    MCAPI std::vector<class ItemDescriptor> const* tryGetSlotAllowedItems(int slotNumber) const;
+    MCAPI ::std::vector<::ItemDescriptor> const* tryGetSlotAllowedItems(int slotNumber) const;
 
     MCAPI ~EquippableComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class EquippableComponent&& other);
+    MCAPI void* $ctor(::EquippableComponent&& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

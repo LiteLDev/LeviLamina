@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/server/commands/DeferredCommandBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class Command;
+class CommandOrigin;
+class MinecraftCommands;
+// clang-format on
+
 class DeferredCompiledCommand : public ::DeferredCommandBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk61084f;
+    ::ll::UntypedStorage<8, 8> mUnk84daa1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DeferredCompiledCommand& operator=(DeferredCompiledCommand const&);
@@ -13,26 +27,43 @@ public:
     DeferredCompiledCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeferredCompiledCommand() = default;
+    virtual ~DeferredCompiledCommand() /*override*/;
 
     // vIndex: 1
-    virtual void execute(class MinecraftCommands&);
-
-    MCAPI
-    DeferredCompiledCommand(gsl::not_null<class Command*> compiledCommand, std::unique_ptr<class CommandOrigin> origin);
-
+    virtual void execute(::MinecraftCommands&) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    DeferredCompiledCommand(::gsl::not_null<::Command*> compiledCommand, ::std::unique_ptr<::CommandOrigin> origin);
+    // NOLINTEND
 
-    MCAPI void* ctor$(gsl::not_null<class Command*> compiledCommand, std::unique_ptr<class CommandOrigin> origin);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gsl::not_null<::Command*> compiledCommand, ::std::unique_ptr<::CommandOrigin> origin);
+    // NOLINTEND
 
-    MCAPI void execute$(class MinecraftCommands&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::MinecraftCommands&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

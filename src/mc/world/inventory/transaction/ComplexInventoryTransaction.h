@@ -7,10 +7,34 @@
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPalette;
+class EntityContext;
+class InventoryTransaction;
+class Player;
+class ReadOnlyBinaryStream;
+struct DepenetrationComponent;
+// clang-format on
+
 class ComplexInventoryTransaction {
 public:
     // ComplexInventoryTransaction inner types define
-    enum class Type {};
+    enum class Type : uint {
+        NormalTransaction          = 0,
+        InventoryMismatch          = 1,
+        ItemUseTransaction         = 2,
+        ItemUseOnEntityTransaction = 3,
+        ItemReleaseTransaction     = 4,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ComplexInventoryTransaction::Type> mType;
+    ::ll::TypedStorage<8, 88, ::InventoryTransaction>             mTransaction;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -19,63 +43,72 @@ public:
     ComplexInventoryTransaction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ComplexInventoryTransaction();
 
     // vIndex: 1
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&);
 
     // vIndex: 2
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const;
 
     // vIndex: 3
-    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
+    virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4
-    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
+    virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const;
 
     // vIndex: 5
-    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
-
-    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
-
-    MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type);
-
-    MCAPI static std::unique_ptr<class ComplexInventoryTransaction>
-    fromType(::ComplexInventoryTransaction::Type type, class InventoryTransaction const& transaction);
-
-    MCAPI static std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
-
+    virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _setDepenetrationOverride(class EntityContext& entity) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _setDepenetrationOverride(::DepenetrationComponent& depenetration);
 
-    MCAPI void* ctor$(::ComplexInventoryTransaction::Type);
+    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
 
-    MCAPI void dtor$();
+    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type);
 
-    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
+    fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
 
-    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError error) const;
+    MCAPI static ::std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
+    // NOLINTEND
 
-    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
-
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream&);
-
-    MCAPI void write$(class BinaryStream& stream) const;
-
-    MCAPI static class BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, std::string> const&
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
     transactionTypeMap();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+
+    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

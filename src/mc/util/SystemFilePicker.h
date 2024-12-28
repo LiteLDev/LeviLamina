@@ -2,55 +2,78 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/IFilePicker.h"
+
 // auto generated forward declare list
 // clang-format off
+struct FileInfo;
 namespace Core { class Path; }
 // clang-format on
 
-class SystemFilePicker {
+class SystemFilePicker : public ::IFilePicker, public ::std::enable_shared_from_this<::SystemFilePicker> {
 public:
     // prevent constructor by default
     SystemFilePicker& operator=(SystemFilePicker const&);
     SystemFilePicker(SystemFilePicker const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SystemFilePicker() = default;
+    virtual ~SystemFilePicker() /*override*/;
 
     // vIndex: 1
-    virtual void initFilePick(class Core::Path const& filePath, std::function<void(bool, struct FileInfo)> callback);
+    virtual void
+    initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) /*override*/;
 
     // vIndex: 2
-    virtual uint64 readBytes(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar>& buffer);
+    virtual uint64
+    readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer) /*override*/;
 
     // vIndex: 3
-    virtual bool
-    writeBytes(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar> const& buffer);
+    virtual bool writeBytes(
+        ::FileInfo const&           file,
+        uint64                      offset,
+        uint64                      bufferSize,
+        ::std::vector<uchar> const& buffer
+    ) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SystemFilePicker();
 
+    MCAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI struct FileInfo _fillFileInfo(class Core::Path const& filePath);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initFilePick$(class Core::Path const& filePath, std::function<void(bool, struct FileInfo)> callback);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback);
 
-    MCAPI uint64 readBytes$(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar>& buffer);
+    MCAPI uint64 $readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer);
 
     MCAPI bool
-    writeBytes$(struct FileInfo const& file, uint64 offset, uint64 bufferSize, std::vector<uchar> const& buffer);
+    $writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

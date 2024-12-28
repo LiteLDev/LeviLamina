@@ -8,10 +8,19 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class NetworkIdentifier;
+class Packet;
+class UserEntityIdentifierComponent;
+struct NetworkIdentifierWithSubId;
 // clang-format on
 
 class PacketSender : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::SubClientId> mSenderSubId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PacketSender& operator=(PacketSender const&);
@@ -19,43 +28,54 @@ public:
     PacketSender();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketSender() = default;
+    virtual ~PacketSender() /*override*/;
 
     // vIndex: 1
-    virtual void send(class Packet& packet) = 0;
+    virtual bool isInitialized() const = 0;
 
     // vIndex: 2
-    virtual void sendToServer(class Packet& packet) = 0;
+    virtual void send(::Packet&) = 0;
 
     // vIndex: 3
-    virtual void
-    sendToClient(class UserEntityIdentifierComponent const* userIdentifier, class Packet const& packet) = 0;
-
-    // vIndex: 4
-    virtual void sendToClient(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId subid) = 0;
+    virtual void sendToServer(::Packet&) = 0;
 
     // vIndex: 5
-    virtual void
-    sendToClients(std::vector<struct NetworkIdentifierWithSubId> const& ids, class Packet const& packet) = 0;
+    virtual void sendToClient(::UserEntityIdentifierComponent const*, ::Packet const&) = 0;
+
+    // vIndex: 4
+    virtual void sendToClient(::NetworkIdentifier const&, ::Packet const&, ::SubClientId) = 0;
 
     // vIndex: 6
-    virtual void sendBroadcast(class Packet const& packet) = 0;
-
-    // vIndex: 7
-    virtual void
-    sendBroadcast(class NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, class Packet const& packet) = 0;
+    virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
 
     // vIndex: 8
-    virtual void flush(class NetworkIdentifier const& id, std::function<void()>&& callback) = 0;
+    virtual void sendBroadcast(::Packet const&) = 0;
+
+    // vIndex: 7
+    virtual void sendBroadcast(::NetworkIdentifier const&, ::SubClientId, ::Packet const&) = 0;
+
+    // vIndex: 9
+    virtual void flush(::NetworkIdentifier const&, ::std::function<void()>&&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

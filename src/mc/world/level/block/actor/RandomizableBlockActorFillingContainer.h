@@ -4,9 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerType.h"
+#include "mc/world/inventory/FillingContainer.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/RandomizableBlockActorContainerBase.h"
 
-class RandomizableBlockActorFillingContainer {
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Player;
+class Vec3;
+// clang-format on
+
+class RandomizableBlockActorFillingContainer : public ::RandomizableBlockActorContainerBase, public ::FillingContainer {
 public:
     // prevent constructor by default
     RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&);
@@ -14,59 +24,81 @@ public:
     RandomizableBlockActorFillingContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
+    // vIndex: 0
+    virtual ~RandomizableBlockActorFillingContainer() /*override*/;
 
-    MCVAPI void dropSlotContent(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
+    // vIndex: 31
+    virtual void setContainerChanged(int slot) /*override*/;
 
-    MCVAPI void initializeContainerContents(class BlockSource& region);
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI void onRemoved(class BlockSource&);
+    // vIndex: 18
+    virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot) /*override*/;
 
-    MCVAPI void setContainerChanged(int slot);
+    // vIndex: 19
+    virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource&) /*override*/;
 
-    MCVAPI ~RandomizableBlockActorFillingContainer();
-
-    MCAPI RandomizableBlockActorFillingContainer(
-        ::BlockActorType      blockEntityType,
-        std::string const&    id,
-        class BlockPos const& pos,
-        int                   numTotalSlots,
-        ::ContainerType       containerType
-    );
-
+    // vIndex: 38
+    virtual void initializeContainerContents(::BlockSource& region) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForFillingContainer();
-
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
-
-    MCAPI void* ctor$(
-        ::BlockActorType      blockEntityType,
-        std::string const&    id,
-        class BlockPos const& pos,
-        int                   numTotalSlots,
-        ::ContainerType       containerType
+    MCAPI RandomizableBlockActorFillingContainer(
+        ::BlockActorType     blockEntityType,
+        ::std::string const& id,
+        ::BlockPos const&    pos,
+        int                  numTotalSlots,
+        ::ContainerType      containerType
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockActorType     blockEntityType,
+        ::std::string const& id,
+        ::BlockPos const&    pos,
+        int                  numTotalSlots,
+        ::ContainerType      containerType
+    );
+    // NOLINTEND
 
-    MCAPI void dropContents$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dropSlotContent$(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop, int slot);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setContainerChanged(int slot);
 
-    MCAPI void initializeContainerContents$(class BlockSource& region);
+    MCAPI void $startOpen(::Player& player);
 
-    MCAPI void onRemoved$(class BlockSource&);
+    MCAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void setContainerChanged$(int slot);
+    MCAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void startOpen$(class Player& player);
+    MCAPI void $onRemoved(::BlockSource&);
 
+    MCAPI void $initializeContainerContents(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForFillingContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

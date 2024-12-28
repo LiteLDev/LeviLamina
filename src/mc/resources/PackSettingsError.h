@@ -13,37 +13,52 @@ public:
     PackSettingsError();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PackSettingsError();
-
     // vIndex: 1
-    virtual std::string getLocErrorMessage() const;
+    virtual ::std::string getLocErrorMessage() const /*override*/;
 
     // vIndex: 2
-    virtual std::unordered_map<int, std::string> const& getLocErrorMessageMap() const;
+    virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
     // vIndex: 3
-    virtual std::unordered_map<int, std::string> const& getEventErrorMessageMap() const;
+    virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
-    MCAPI explicit PackSettingsError(std::vector<std::string> const& errorParam);
-
+    // vIndex: 0
+    virtual ~PackSettingsError() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PackSettingsError(::std::vector<::std::string> const& errorParam);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::vector<std::string> const& errorParam);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::std::string> const& errorParam);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unordered_map<int, std::string> const& getEventErrorMessageMap$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getLocErrorMessage() const;
 
-    MCAPI std::string getLocErrorMessage$() const;
+    MCAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCAPI std::unordered_map<int, std::string> const& getLocErrorMessageMap$() const;
+    MCAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

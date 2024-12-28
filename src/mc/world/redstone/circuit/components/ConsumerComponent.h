@@ -6,71 +6,100 @@
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CircuitSceneGraph;
+class CircuitSystem;
+class CircuitTrackingInfo;
+// clang-format on
+
 class ConsumerComponent : public ::BaseCircuitComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                         mSecondaryPowered;
+    ::ll::TypedStorage<1, 1, bool>                         mPropagatePower;
+    ::ll::TypedStorage<1, 1, bool>                         mPromotedToProducer;
+    ::ll::TypedStorage<1, 1, bool>                         mAcceptHalfPulse;
+    ::ll::TypedStorage<1, 1, bool>                         mAcceptSameDirection;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ConsumerComponent& operator=(ConsumerComponent const&);
     ConsumerComponent(ConsumerComponent const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ConsumerComponent();
-
-    // vIndex: 7
-    virtual bool canConsumerPower() const;
-
-    // vIndex: 11
-    virtual bool addSource(
-        class CircuitSceneGraph&         graph,
-        class CircuitTrackingInfo const& info,
-        int&                             dampening,
-        bool&                            bDirectlyPowered
-    );
+    // vIndex: 14
+    virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 12
     virtual bool
-    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    // vIndex: 14
-    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
+    // vIndex: 11
+    virtual bool addSource(
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
+    ) /*override*/;
 
-    // vIndex: 21
-    virtual bool isSecondaryPowered() const;
+    // vIndex: 7
+    virtual bool canConsumerPower() const /*override*/;
 
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
+    // vIndex: 22
+    virtual bool isSecondaryPowered() const /*override*/;
 
-    MCAPI ConsumerComponent();
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
+    // vIndex: 0
+    virtual ~ConsumerComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ConsumerComponent();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool addSource$(
-        class CircuitSceneGraph&         graph,
-        class CircuitTrackingInfo const& info,
-        int&                             dampening,
-        bool&                            bDirectlyPowered
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool canConsumerPower$() const;
+    MCAPI bool $canConsumerPower() const;
 
-    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+    MCAPI bool $isSecondaryPowered() const;
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    // NOLINTEND
 
-    MCAPI bool isSecondaryPowered$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

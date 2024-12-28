@@ -18,53 +18,80 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItems {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk62a928;
+    ::ll::UntypedStorage<8, 64> mUnk9891fa;
+    ::ll::UntypedStorage<8, 64> mUnkbaa948;
+    ::ll::UntypedStorage<8, 64> mUnkeeba12;
+    ::ll::UntypedStorage<1, 1>  mUnk296fee;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItems& operator=(ScriptItems const&);
-    ScriptItems(ScriptItems const&);
     ScriptItems();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-          get(class Scripting::WeakLifetimeScope& scope, std::string const& itemName);
+    MCAPI ScriptItems(::ScriptModuleMinecraft::ScriptItems const&);
 
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-          getOrAdd(class Scripting::WeakLifetimeScope& scope, std::string const& itemName);
+    MCAPI explicit ScriptItems(::ItemRegistryRef itemRegistry);
 
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder& moduleBuilder, class ItemRegistryRef itemRegistry);
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    _getItemHandleForAlias(::HashedString const& aliasName) const;
 
-    MCAPI static std::unordered_map<std::string, std::string>
-    generateItemPropertyNameToRawNameMap(class ItemRegistryRef itemRegistry);
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    _registerItemType(
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>& registry,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::std::string                                                                       itemName
+    );
 
-    MCAPI static std::vector<std::string> generatetItemCooldownCategories(class ItemRegistryRef itemRegistry);
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    _registerItemTypeAlias(
+        ::std::string                                                                 itemName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemHandle
+    );
 
-    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-    getOrCreateItemTypeHandle(class Scripting::WeakLifetimeScope scope, std::string const& identifier);
+    MCAPI void _registerItems(::Scripting::WeakLifetimeScope& scope);
 
+    MCAPI void _tryRegisterItemTypeAlias(::HashedString const& aliasName);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    getOrAdd(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName);
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-          _getItemHandleForAlias(class HashedString const& aliasName) const;
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    _getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& lookupName);
 
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-          _registerItemType(
-              std::unordered_map<
-                  std::string,
-                  class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>& registry,
-              class Scripting::WeakLifetimeScope                                                          scope,
-              std::string                                                                                 itemName
-          );
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ItemRegistryRef itemRegistry);
 
-    MCAPI void _registerItems(class Scripting::WeakLifetimeScope& scope);
+    MCAPI static ::std::unordered_map<::std::string, ::std::string>
+    generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry);
 
-    MCAPI void _tryRegisterItemTypeAlias(class HashedString const& aliasName);
+    MCAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
 
-    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>>
-    _getOrCreateItemTypeHandle(class Scripting::WeakLifetimeScope scope, std::string const& lookupName);
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItems const&);
+
+    MCAPI void* $ctor(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -3,17 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct WearableItemComponent; }
+class HashedString;
+class ItemStack;
+class Player;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class WearableItemComponent {
+class WearableItemComponent : public ::NetworkedItemComponent<::WearableItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk671605;
+    ::ll::UntypedStorage<4, 4>  mUnkce0421;
+    ::ll::UntypedStorage<8, 16> mUnk18a372;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WearableItemComponent& operator=(WearableItemComponent const&);
@@ -21,93 +32,60 @@ public:
     WearableItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WearableItemComponent() = default;
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
     // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    virtual void _initializeComponent() /*override*/;
 
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI explicit WearableItemComponent(struct Puv::v1_20_50::WearableItemComponent component);
-
-    MCAPI WearableItemComponent(::Puv::Legacy::EquipmentSlot slot, int protection);
-
-    MCAPI bool dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos) const;
-
-    MCAPI int getArmorValue() const;
-
-    MCAPI ::ActorLocation getEquipLocation() const;
-
-    MCAPI ::Puv::Legacy::EquipmentSlot getSlot() const;
-
-    MCAPI bool isHumanoidArmor() const;
-
-    MCAPI bool shouldAllowStacking() const;
-
-    MCAPI bool use(class ItemStack& instance, class Player& player) const;
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet& schemaUpgrades);
-
+    // vIndex: 0
+    virtual ~WearableItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WearableItemComponent(::SharedTypes::Legacy::EquipmentSlot slot, int protection);
 
-    MCAPI void* ctor$(::Puv::Legacy::EquipmentSlot slot, int protection);
+    MCAPI ::SharedTypes::Legacy::EquipmentSlot getSlot() const;
 
-    MCAPI void* ctor$(struct Puv::v1_20_50::WearableItemComponent component);
+    MCAPI bool shouldForceAllowOffHand() const;
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::EquipmentSlot slot, int protection);
+    // NOLINTEND
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
 
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

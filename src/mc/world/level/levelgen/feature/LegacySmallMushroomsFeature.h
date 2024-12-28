@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class FeatureRegistry;
+class Random;
+// clang-format on
+
 class LegacySmallMushroomsFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk6406c0;
+    ::ll::UntypedStorage<8, 24> mUnkf4ceab;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacySmallMushroomsFeature& operator=(LegacySmallMushroomsFeature const&);
@@ -13,25 +28,42 @@ public:
     LegacySmallMushroomsFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacySmallMushroomsFeature() = default;
+    virtual ~LegacySmallMushroomsFeature() /*override*/;
 
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
-    MCAPI explicit LegacySmallMushroomsFeature(class FeatureRegistry const& registry);
-
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit LegacySmallMushroomsFeature(::FeatureRegistry const& registry);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class FeatureRegistry const& registry);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FeatureRegistry const& registry);
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

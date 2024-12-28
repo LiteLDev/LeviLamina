@@ -5,12 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainer; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
@@ -20,40 +19,60 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockInventoryComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkcc943d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockInventoryComponent& operator=(ScriptBlockInventoryComponent const&);
+    ScriptBlockInventoryComponent(ScriptBlockInventoryComponent const&);
     ScriptBlockInventoryComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBlockInventoryComponent() = default;
-
-    MCAPI ScriptBlockInventoryComponent(class ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>>
-    getOrCreateContainer();
-
-    MCAPI class Scripting::Result<std::optional<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
-    getOrCreateContainerV010();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockInventoryComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptBlockInventoryComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>>
+    getOrCreateContainer();
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
+    MCAPI ::Scripting::Result_deprecated<::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
+    getOrCreateContainerV010();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockInventoryComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

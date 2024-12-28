@@ -6,7 +6,21 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataFlagComponent;
+struct AirSpeedComponent;
+struct CanVehicleSprintFlagComponent;
+struct MobTravelComponent;
+struct MovementAttributesComponent;
+struct MovementSpeedComponent;
+struct PlayerComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
 
 class MobTravelUpdateSpeedsSystem {
 public:
@@ -16,28 +30,23 @@ public:
     MobTravelUpdateSpeedsSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createMobTravelUpdateSpeedsSystem();
+    MCAPI static ::TickingSystemWithInfo createMobTravelUpdateSpeedsSystem();
 
     MCAPI static void tickMobTravelUpdateSpeedsSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct MobTravelComponent>,
-            struct ActorDataFlagComponent const,
-            struct ActorDataControllingSeatIndexComponent const,
-            struct VehicleComponent const,
-            struct AirSpeedComponent,
-            struct MovementAttributesComponent const,
-            class Optional<class FlagComponent<struct CanVehicleSprintFlag> const>> view,
-        class ViewT<
-            class StrictEntityContext,
-            struct MovementAttributesComponent const,
-            struct MovementSpeedComponent const> speedData,
-        class ViewT<class StrictEntityContext, struct MovementSpeedComponent, struct LocalMoveVelocityComponent>
-            mutableSpeedData,
-        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> players,
-        class ViewT<class StrictEntityContext, struct ActorDataFlagComponent const> actorDataView
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::MobTravelComponent>,
+            ::ActorDataFlagComponent const,
+            ::ActorDataControllingSeatIndexComponent const,
+            ::VehicleComponent const,
+            ::AirSpeedComponent,
+            ::MovementAttributesComponent const,
+            ::MovementSpeedComponent,
+            ::Optional<::CanVehicleSprintFlagComponent const>>         view,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>>   players,
+        ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView
     );
-
     // NOLINTEND
 };

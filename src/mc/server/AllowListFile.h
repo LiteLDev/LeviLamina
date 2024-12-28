@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/server/FileReadResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class AllowList;
+// clang-format on
+
 class AllowListFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk82b42f;
+    ::ll::UntypedStorage<8, 8>  mUnk1c38b3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AllowListFile& operator=(AllowListFile const&);
@@ -13,23 +25,26 @@ public:
     AllowListFile();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class AllowList& getAllowList() const;
+    MCAPI ::AllowList& getAllowList() const;
 
     MCAPI ::FileReadResult reload();
 
     MCAPI void syncToDisc();
 
     MCAPI ~AllowListFile();
-
-    MCAPI static class AllowListFile loadFromDefaultLocations();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::AllowListFile loadFromDefaultLocations();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

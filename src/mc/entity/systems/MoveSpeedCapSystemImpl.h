@@ -7,61 +7,47 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorIsImmobileFlagComponent;
+struct ActorIsKnockedBackOnDeathFlagComponent;
+struct HorseFlagComponent;
+struct MobAllowStandSlidingFlagComponent;
+struct MobFlagComponent;
+struct MobIsJumpingFlagComponent;
+struct MoveRequestComponent;
+struct MovementAttributesComponent;
+struct OnGroundFlagComponent;
+struct PlayerComponent;
+struct PlayerIsSleepingFlagComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
 
 namespace MoveSpeedCapSystemImpl {
+// functions
 // NOLINTBEGIN
-MCAPI void singleTick(
-    class StrictEntityContext&                                          entity,
-    class ViewT<class StrictEntityContext, struct MoveRequestComponent> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct ActorDataFlagComponent const,
-        class Optional<class FlagComponent<struct ActorIsImmobileFlag> const>> actorView,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct MobFlag>>,
-        struct MovementAttributesComponent const,
-        class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag> const>> mobView,
-    class ViewT<
-        class StrictEntityContext,
-        struct ActorDataFlagComponent const,
-        struct Include<struct OnGroundFlagComponent, class FlagComponent<struct HorseFlag>>,
-        struct Exclude<
-            class FlagComponent<struct MobAllowStandSlidingFlag>,
-            class FlagComponent<struct MobIsJumpingFlag>>>                                        horseView,
-    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct HorseFlag>>> onlyHorseView,
-    class ViewT<
-        class StrictEntityContext,
-        class FlagComponent<struct PlayerIsSleepingFlag> const,
-        class FlagComponent<struct PlayerComponentFlag> const> playerView
-);
-
 MCAPI void tickMoveSpeedCap(
-    class StrictEntityContext&   context,
-    struct MoveRequestComponent& moveRequestComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct ActorDataFlagComponent const,
-        class Optional<class FlagComponent<struct ActorIsImmobileFlag> const>> actorView,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct MobFlag>>,
-        struct MovementAttributesComponent const,
-        class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag> const>> mobView,
-    class ViewT<
-        class StrictEntityContext,
-        struct ActorDataFlagComponent const,
-        struct Include<struct OnGroundFlagComponent, class FlagComponent<struct HorseFlag>>,
-        struct Exclude<
-            class FlagComponent<struct MobAllowStandSlidingFlag>,
-            class FlagComponent<struct MobIsJumpingFlag>>>                                        horseView,
-    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct HorseFlag>>> onlyHorseView,
-    class ViewT<
-        class StrictEntityContext,
-        class FlagComponent<struct PlayerIsSleepingFlag> const,
-        class FlagComponent<struct PlayerComponentFlag> const> playerView
+    ::StrictEntityContext&  context,
+    ::MoveRequestComponent& moveRequestComponent,
+    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>
+        actorView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MobFlagComponent>,
+        ::MovementAttributesComponent const,
+        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorDataFlagComponent const,
+        ::Optional<::VehicleInputIntentComponent const>,
+        ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
+        ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>               horseView,
+    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>                                onlyHorseView,
+    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView
 );
 // NOLINTEND
 
-}; // namespace MoveSpeedCapSystemImpl
+} // namespace MoveSpeedCapSystemImpl

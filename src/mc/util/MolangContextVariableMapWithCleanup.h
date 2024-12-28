@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MolangContextVariableMapWithCleanup {
+struct MolangContextVariableMapWithCleanup {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka53d0c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&);
@@ -10,15 +16,14 @@ public:
     MolangContextVariableMapWithCleanup();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangContextVariableMapWithCleanup();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

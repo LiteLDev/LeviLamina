@@ -2,32 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FilterStringMap {
+// auto generated forward declare list
+// clang-format off
+struct FilterInputDefinition;
+// clang-format on
+
+struct FilterStringMap : public ::std::unordered_map<::std::string, ::FilterInputDefinition> {
 public:
     // prevent constructor by default
     FilterStringMap& operator=(FilterStringMap const&);
+    FilterStringMap(FilterStringMap const&);
     FilterStringMap();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit FilterStringMap(std::initializer_list<std::pair<std::string const, struct FilterInputDefinition>>);
+    MCAPI explicit FilterStringMap(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l
+    );
 
-    MCAPI FilterStringMap(struct FilterStringMap const&);
-
-    MCAPI struct FilterStringMap& operator=(struct FilterStringMap&&);
+    MCAPI ::FilterStringMap& operator=(::FilterStringMap&&);
 
     MCAPI ~FilterStringMap();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct FilterStringMap const&);
+    MCAPI void* $ctor(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::initializer_list<std::pair<std::string const, struct FilterInputDefinition>>);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

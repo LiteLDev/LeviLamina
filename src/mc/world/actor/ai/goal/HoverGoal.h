@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class HoverGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk54f013;
+    ::ll::UntypedStorage<4, 4>  mUnke9f402;
+    ::ll::UntypedStorage<4, 12> mUnk1dcc9f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HoverGoal& operator=(HoverGoal const&);
@@ -14,45 +21,50 @@ public:
     HoverGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HoverGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
-
-    // vIndex: 5
-    virtual void stop();
+    virtual void start() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
+
+    // vIndex: 5
+    virtual void stop() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI HoverGoal(class Mob& mob, float speedMultiplier);
-
+    // vIndex: 0
+    virtual ~HoverGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speedMultiplier);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void $start();
 
-    MCAPI bool canUse$();
+    MCAPI void $tick();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

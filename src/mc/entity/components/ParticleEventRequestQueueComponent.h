@@ -4,21 +4,20 @@
 
 struct ParticleEventRequestQueueComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkc78ed1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ParticleEventRequestQueueComponent& operator=(ParticleEventRequestQueueComponent const&);
     ParticleEventRequestQueueComponent(ParticleEventRequestQueueComponent const&);
     ParticleEventRequestQueueComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent&&);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(struct ParticleEventRequestQueueComponent&&);
-
+    MCAPI ::ParticleEventRequestQueueComponent& operator=(::ParticleEventRequestQueueComponent&&);
     // NOLINTEND
 };

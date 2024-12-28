@@ -5,14 +5,36 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOutput;
+class IScriptDebugger;
+// clang-format on
+
 class ScriptDebugCommand : public ::Command {
 public:
     // ScriptDebugCommand inner types define
-    enum class DebuggerAction {};
+    enum class Mode : int {
+        Unknown  = 0,
+        Debugger = 1,
+        Profiler = 2,
+        Watchdog = 3,
+    };
 
-    enum class ProfilerAction {};
+    enum class DebuggerAction : int {
+        Listen  = 0,
+        Connect = 1,
+        Close   = 2,
+    };
 
-    enum class WatchdogAction {};
+    enum class ProfilerAction : int {
+        Start = 0,
+        Stop  = 1,
+    };
+
+    enum class WatchdogAction : int {
+        ExportStats = 0,
+    };
 
 public:
     // prevent constructor by default
@@ -20,49 +42,56 @@ public:
     ScriptDebugCommand(ScriptDebugCommand const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDebugCommand();
-
-    MCAPI ScriptDebugCommand();
-
+    virtual ~ScriptDebugCommand() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI ScriptDebugCommand();
+
     MCAPI void _handleDebuggerAttach(
-        class IScriptDebugger*               debugger,
-        std::string const&                   locPrefix,
+        ::IScriptDebugger*                   debugger,
+        ::std::string const&                 locPrefix,
         ::ScriptDebugCommand::DebuggerAction action,
-        std::string const&                   host,
+        ::std::string const&                 host,
         ushort                               port,
-        class CommandOutput&                 output
+        ::CommandOutput&                     output
     ) const;
 
     MCAPI void _handleProfilerAction(
-        class IScriptDebugger*               debugger,
-        std::string const&                   locPrefix,
+        ::IScriptDebugger*                   debugger,
+        ::std::string const&                 locPrefix,
         ::ScriptDebugCommand::ProfilerAction action,
-        class CommandOutput&                 output
+        ::CommandOutput&                     output
     ) const;
 
     MCAPI void _handleWatchdogAction(
-        class IScriptDebugger*               debugger,
-        std::string const&                   locPrefix,
+        ::IScriptDebugger*                   debugger,
+        ::std::string const&                 locPrefix,
         ::ScriptDebugCommand::WatchdogAction action,
-        class CommandOutput&                 output
+        ::CommandOutput&                     output
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class AllayVibrationConfig : public ::VibrationListenerConfig {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk24b204;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AllayVibrationConfig& operator=(AllayVibrationConfig const&);
@@ -13,47 +28,55 @@ public:
     AllayVibrationConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AllayVibrationConfig() = default;
-
     // vIndex: 1
     virtual void
-    onSignalReceive(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
+    onSignalReceive(::BlockSource& region, ::BlockPos const& vibrationSourcePos, ::GameEvent const& gameEvent, ::Actor*, float, uint, ::Actor*) /*override*/
+        ;
 
     // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const& gameEvent);
+    virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
     // vIndex: 3
-    virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) /*override*/;
 
-    // vIndex: 4
-    virtual void onSerializableDataChanged(class BlockSource&);
-
-    // vIndex: 5
-    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
-
-    MCAPI AllayVibrationConfig(class Actor& actor, ushort);
-
+    // vIndex: 0
+    virtual ~AllayVibrationConfig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Actor& actor, ushort);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    // NOLINTEND
 
-    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
-
-    MCAPI void onSerializableDataChanged$(class BlockSource&);
-
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI void
-    onSignalReceive$(class BlockSource& region, class BlockPos const& vibrationSourcePos, class GameEvent const& gameEvent, class Actor*, float, uint, class Actor*);
+    $onSignalReceive(::BlockSource& region, ::BlockPos const& vibrationSourcePos, ::GameEvent const& gameEvent, ::Actor*, float, uint, ::Actor*);
 
-    MCAPI bool shouldListen$(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
+    MCAPI bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

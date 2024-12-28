@@ -4,14 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 
-namespace PlayerMoveSystemsImpl {};
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct MoveRequestComponent;
+struct OnGroundFlagComponent;
+struct PlayerLastPosComponent;
+struct StateVectorComponent;
+struct WasOnGroundFlagComponent;
+// clang-format on
+
+namespace PlayerMoveSystemsImpl {
+// functions
+// NOLINTBEGIN
+MCAPI void _doPlayerPreMoveSystem(
+    ::StrictEntityContext const&                  entity,
+    ::MoveRequestComponent const&                 request,
+    ::StateVectorComponent const&                 stateVector,
+    ::PlayerLastPosComponent&                     last,
+    ::Optional<::OnGroundFlagComponent const>     onGround,
+    ::EntityModifier<::WasOnGroundFlagComponent>& modifier
+);
+// NOLINTEND
+
+} // namespace PlayerMoveSystemsImpl

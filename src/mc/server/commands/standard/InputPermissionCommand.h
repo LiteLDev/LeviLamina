@@ -5,7 +5,36 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+// clang-format on
+
 class InputPermissionCommand : public ::Command {
+public:
+    // InputPermissionCommand inner types define
+    enum class CommandActionType : int {
+        Set   = 0,
+        Query = 1,
+    };
+
+    enum class CommandValueType : int {
+        Undefined = 0,
+        Enabled   = 1,
+        Disabled  = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk917993;
+    ::ll::UntypedStorage<8, 200> mUnk5149e7;
+    ::ll::UntypedStorage<1, 1>   mUnk3497ac;
+    ::ll::UntypedStorage<4, 4>   mUnk493fc3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InputPermissionCommand& operator=(InputPermissionCommand const&);
@@ -13,33 +42,46 @@ public:
     InputPermissionCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InputPermissionCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~InputPermissionCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _executeQuery(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void _executeQueryVerbose(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void _executeSet(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _executeQuery(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI void _executeQueryVerbose(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
+    MCAPI void _executeSet(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

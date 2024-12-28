@@ -5,7 +5,30 @@
 // auto generated inclusion list
 #include "mc/world/actor/state/PropertyMetadata.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class HashedString;
+class PropertyGroup;
+class RenderParams;
+class Tag;
+struct MolangScriptArg;
+struct PropertySyncData;
+// clang-format on
+
 class PropertyComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16>  mUnk69cc48;
+    ::ll::UntypedStorage<4, 4>   mUnkc8cddf;
+    ::ll::UntypedStorage<4, 4>   mUnk1e10c4;
+    ::ll::UntypedStorage<4, 4>   mUnkb23db7;
+    ::ll::UntypedStorage<4, 4>   mUnkd8981d;
+    ::ll::UntypedStorage<1, 1>   mUnk4ecda4;
+    ::ll::UntypedStorage<8, 120> mUnk9f800e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PropertyComponent& operator=(PropertyComponent const&);
@@ -13,18 +36,19 @@ public:
     PropertyComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PropertyComponent(class PropertyComponent&&);
+    MCAPI PropertyComponent(::PropertyComponent&&);
 
     MCAPI PropertyComponent(
-        gsl::not_null<std::shared_ptr<class PropertyGroup const>> propertyGroup,
-        class RenderParams&                                       renderParams
+        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
+        ::RenderParams&                                           renderParams
     );
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void
-    applyPendingChanges(std::unordered_map<uint64, std::variant<int, float, bool, uint64>> const& pendingChanges);
+    applyPendingChanges(::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>> const& pendingChanges);
 
     MCAPI bool getBool(uint64 h) const;
 
@@ -32,49 +56,43 @@ public:
 
     MCAPI int getInt(uint64 h) const;
 
-    MCAPI bool getMolangValue(uint64 propertyNameHash, struct MolangScriptArg& out) const;
+    MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
 
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
-    MCAPI class HashedString const& getString(uint64 h) const;
+    MCAPI ::HashedString const& getString(uint64 h) const;
 
     MCAPI bool hasDirtyProperties() const;
 
-    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
+    MCAPI ::PropertyComponent& operator=(::PropertyComponent&&);
 
-    MCAPI struct PropertySyncData packAllSyncData() const;
+    MCAPI ::PropertySyncData packAllSyncData() const;
 
-    MCAPI struct PropertySyncData packDirtySyncData();
+    MCAPI ::PropertySyncData packDirtySyncData();
 
-    MCAPI void readLoadedProperties(class CompoundTag const& loadedPropertyTag);
+    MCAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 
     MCAPI void setAliasProperties(
-        std::unordered_map<class HashedString, std::shared_ptr<class Tag>> const& aliasProperties,
-        std::string const&                                                        aliasName,
-        std::string const&                                                        canonicalName
+        ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
+        ::std::string const&                                                  aliasName,
+        ::std::string const&                                                  canonicalName
     );
 
-    MCAPI std::optional<bool> tryGetBool(uint64 h) const;
+    MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
 
-    MCAPI std::optional<float> tryGetFloat(uint64 h) const;
+    MCAPI ::std::optional<float> tryGetFloat(uint64 h) const;
 
-    MCAPI std::optional<int> tryGetInt(uint64 h) const;
+    MCAPI ::std::optional<int> tryGetInt(uint64 h) const;
 
-    MCAPI class HashedString const* tryGetString(uint64 h) const;
-
-    MCAPI ~PropertyComponent();
-
+    MCAPI ::HashedString const* tryGetString(uint64 h) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::PropertyComponent&&);
+
     MCAPI void*
-    ctor$(gsl::not_null<std::shared_ptr<class PropertyGroup const>> propertyGroup, class RenderParams& renderParams);
-
-    MCAPI void* ctor$(class PropertyComponent&&);
-
-    MCAPI void dtor$();
-
+    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
 };

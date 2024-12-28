@@ -2,7 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ApplyJumpModifierSystem {
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorRotationComponent;
+struct JumpPendingScaleComponent;
+struct MobEffectsComponent;
+struct MobIsJumpingFlagComponent;
+struct MobTravelComponent;
+struct MovementAttributesComponent;
+struct OnGroundFlagComponent;
+struct PowerJumpFlagComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct TriggerJumpRequestComponent;
+// clang-format on
+
+struct ApplyJumpModifierSystem {
 public:
     // prevent constructor by default
     ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&);
@@ -10,19 +31,19 @@ public:
     ApplyJumpModifierSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem();
+    MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();
 
     MCAPI static void tickApplyJumpModifierSystem(
-        class StrictEntityContext const&,
-        struct TriggerJumpRequestComponent const& triggerJumpRequestComponent,
-        struct ActorRotationComponent const&      actorRotationComponent,
-        struct MovementAttributesComponent const& attributesComponent,
-        struct MobEffectsComponent const&         mobEffectsComponent,
-        struct MobTravelComponent const&          mobTravelComponent,
-        struct JumpPendingScaleComponent&         jumpPendingScaleComponent,
-        struct StateVectorComponent&              stateVectorComponent
+        ::StrictEntityContext const&,
+        ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
+        ::ActorRotationComponent const&      actorRotationComponent,
+        ::MovementAttributesComponent const& attributesComponent,
+        ::MobEffectsComponent const&         mobEffectsComponent,
+        ::MobTravelComponent const&          mobTravelComponent,
+        ::JumpPendingScaleComponent&         jumpPendingScaleComponent,
+        ::StateVectorComponent&              stateVectorComponent
     );
-
     // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+class SemVersion;
 // clang-format on
 
 struct VolumeDefinition {
@@ -17,54 +17,41 @@ public:
     // VolumeDefinition inner types define
     struct VolumeDescription {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk98f1e1;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI bool operator==(struct VolumeDefinition::VolumeDescription const&) const;
-
-        MCAPI ~VolumeDescription();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnkc1bc7b;
+    ::ll::UntypedStorage<8, 72>  mUnk344d33;
+    ::ll::UntypedStorage<8, 120> mUnk8a75ea;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     VolumeDefinition& operator=(VolumeDefinition const&);
     VolumeDefinition(VolumeDefinition const&);
+    VolumeDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI VolumeDefinition();
-
-    MCAPI ~VolumeDefinition();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI static class SemVersion const& getMaxSupportedVersion();
-
-    MCAPI static class SemVersion const& getMinSupportedVersion();
-
+    MCAPI static ::SemVersion const& getMaxSupportedVersion();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
-    MCAPI static std::string const& NAME();
-
+    MCAPI static ::std::string const& NAME();
     // NOLINTEND
 };

@@ -7,54 +7,58 @@
 
 class ListBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk32f57d;
+    ::ll::UntypedStorage<8, 8> mUnkf4343d;
+    ::ll::UntypedStorage<8, 8> mUnkeb63cd;
+    ::ll::UntypedStorage<8, 8> mUnkf7eb1b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ListBlockVolumeIterator& operator=(ListBlockVolumeIterator const&);
     ListBlockVolumeIterator(ListBlockVolumeIterator const&);
     ListBlockVolumeIterator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ListBlockVolumeIterator() = default;
+    virtual ~ListBlockVolumeIterator() /*override*/;
 
     // vIndex: 1
-    virtual class BaseBlockLocationIterator& operator++();
+    virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
     // vIndex: 2
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 3
-    virtual void _begin();
+    virtual void _begin() /*override*/;
 
     // vIndex: 4
-    virtual void _end();
-
-    MCAPI ListBlockVolumeIterator(
-        class ListBlockVolume const&,
-        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
-        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
-        bool
-    );
-
+    virtual void _end() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ListBlockVolume const&,
-        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
-        std::_List_const_iterator<std::_List_val<std::_List_simple_types<class BlockPos>>> const&,
-        bool
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
 
-    MCAPI void _begin$();
+    MCAPI void $_begin();
 
-    MCAPI void _end$();
+    MCAPI void $_end();
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

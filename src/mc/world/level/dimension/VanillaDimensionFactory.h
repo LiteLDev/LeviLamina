@@ -5,10 +5,17 @@
 // auto generated inclusion list
 #include "mc/util/OwnerPtrFactory.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class ILevel;
+class Scheduler;
+// clang-format on
+
 namespace VanillaDimensionFactory {
+// functions
 // NOLINTBEGIN
-MCAPI void
-registerDimensionTypes(class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& dimensionFactory);
+MCAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& dimensionFactory);
 // NOLINTEND
 
-}; // namespace VanillaDimensionFactory
+} // namespace VanillaDimensionFactory

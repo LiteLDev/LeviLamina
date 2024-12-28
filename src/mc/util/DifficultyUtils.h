@@ -6,8 +6,9 @@
 #include "mc/world/Difficulty.h"
 
 namespace DifficultyUtils {
+// functions
 // NOLINTBEGIN
 MCAPI float getSpecialMultiplier(::Difficulty base, int totalGameTime, float moonBrightness);
 // NOLINTEND
 
-}; // namespace DifficultyUtils
+} // namespace DifficultyUtils

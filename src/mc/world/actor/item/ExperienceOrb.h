@@ -3,33 +3,45 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Level;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class ExperienceOrb : public ::Actor {
 public:
     // ExperienceOrb inner types define
-    enum class DropType {};
+    enum class DropType : uchar {
+        NoType     = 0,
+        FromBlock  = 1,
+        FromMob    = 2,
+        FromPlayer = 3,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk639d93;
+    ::ll::UntypedStorage<4, 4> mUnk4bc834;
+    ::ll::UntypedStorage<4, 4> mUnk853b57;
+    ::ll::UntypedStorage<4, 4> mUnk6573f5;
+    ::ll::UntypedStorage<4, 4> mUnkdc8fbb;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -38,108 +50,123 @@ public:
     ExperienceOrb();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    // vIndex: 10
-    virtual ~ExperienceOrb() = default;
-
-    // vIndex: 38
-    virtual float getShadowRadius() const;
-
-    // vIndex: 42
-    virtual void playerTouch(class Player& player);
-
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 141
-    virtual void doWaterSplashEffect();
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const&, float damage, bool, bool);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper&);
+    // vIndex: 40
+    virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 149
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
+
+    // vIndex: 135
+    virtual void doWaterSplashEffect() /*override*/;
+
+    // vIndex: 142
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
+
+    // vIndex: 8
+    virtual ~ExperienceOrb() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ExperienceOrb(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+
+    MCAPI void _handleMending(::Player& player);
+
+    MCAPI void _tryMergeExistingOrbs();
 
     MCAPI int getIconIndex() const;
 
     MCAPI void postNormalTick();
+    // NOLINTEND
 
-    MCAPI void setValue(int value);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
+
+    MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
     MCAPI static void spawnOrbs(
-        class BlockSource&        region,
-        class Vec3 const&         pos,
+        ::BlockSource&            region,
+        ::Vec3 const&             pos,
         int                       xpValue,
         ::ExperienceOrb::DropType dropType,
-        class Player*             owner
+        ::Player*                 owner
     );
 
     MCAPI static void spawnOrbs(
-        class BlockSource&        region,
-        class Vec3 const&         pos,
+        ::BlockSource&            region,
+        ::Vec3 const&             pos,
         int                       randValueMin,
         int                       randValueMax,
         ::ExperienceOrb::DropType dropType,
-        class Player*             owner
+        ::Player*                 owner
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _handleMending(class Player& player);
-
-    MCAPI void _tryMergeExistingOrbs();
-
-    MCAPI static void _spawnOrb(class BlockSource& region, class Level& level, class Vec3 const& pos, int orbXPValue);
-
-    MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource& region, class Vec3 const& pos, int xpValue);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const&, float damage, bool, bool);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _playStepSound$(class BlockPos const&, class Block const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void doWaterSplashEffect$();
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI void $playerTouch(::Player& player);
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void playerTouch$(class Player& player);
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $doWaterSplashEffect();
 
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

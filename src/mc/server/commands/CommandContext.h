@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+// clang-format on
+
 class CommandContext {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                     mCommand;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
+    ::ll::TypedStorage<4, 4, int>                                mVersion;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandContext& operator=(CommandContext const&);
@@ -10,21 +23,24 @@ public:
     CommandContext();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CommandContext(std::string const& cmd, std::unique_ptr<class CommandOrigin> origin, int version);
+    MCAPI CommandContext(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
 
-    MCAPI class CommandOrigin const& getCommandOrigin() const;
+    MCAPI ::CommandOrigin const& getCommandOrigin() const;
 
     MCAPI ~CommandContext();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& cmd, std::unique_ptr<class CommandOrigin> origin, int version);
+    MCAPI void* $ctor(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

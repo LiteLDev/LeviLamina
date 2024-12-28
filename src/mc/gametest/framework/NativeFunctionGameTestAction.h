@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/BaseGameTestAction.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { struct GameTestError; }
@@ -9,7 +12,13 @@ namespace gametest { struct GameTestError; }
 
 namespace gametest {
 
-class NativeFunctionGameTestAction {
+class NativeFunctionGameTestAction : public ::gametest::BaseGameTestAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk69d2a1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NativeFunctionGameTestAction& operator=(NativeFunctionGameTestAction const&);
@@ -17,27 +26,32 @@ public:
     NativeFunctionGameTestAction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NativeFunctionGameTestAction() = default;
-
     // vIndex: 1
-    virtual std::optional<struct gametest::GameTestError> run();
+    virtual ::std::optional<::gametest::GameTestError> run() /*override*/;
 
-    MCAPI explicit NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>()>);
-
+    // vIndex: 0
+    virtual ~NativeFunctionGameTestAction() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::function<std::optional<struct gametest::GameTestError>()>);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::gametest::GameTestError> $run();
+    // NOLINTEND
 
-    MCAPI std::optional<struct gametest::GameTestError> run$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

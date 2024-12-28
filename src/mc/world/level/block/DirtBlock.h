@@ -3,18 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class ItemInstance;
+class ItemStack;
+class Player;
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,91 +28,88 @@ public:
     DirtBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 75
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 46
+    virtual bool canBeOriginalSurface() const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 83
+    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
+        /*override*/;
+
+    // vIndex: 148
+    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
-    virtual ~DirtBlock() = default;
-
-    // vIndex: 48
-    virtual bool canBeOriginalSurface() const;
-
-    // vIndex: 50
-    virtual bool isValidAuxValue(int value) const;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
-
-    // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
-
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
-
-    // vIndex: 89
-    virtual bool
-    tryToTill(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const& experiments);
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    // vIndex: 160
-    virtual class mce::Color
-    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI DirtBlock(std::string const& nameId, int id);
-
+    virtual ~DirtBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DirtBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
-
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
-
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
-
-    MCAPI bool canBeOriginalSurface$() const;
-
-    MCAPI class mce::Color
-    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
-
-    MCAPI bool isAuxValueRelevantForPicking$() const;
-
-    MCAPI bool isValidAuxValue$(int value) const;
-
-    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool
-    tryToTill$(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
+    MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
+    MCAPI bool $canBeOriginalSurface() const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+
+    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

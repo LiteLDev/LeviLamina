@@ -3,8 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct MobDescriptor;
+// clang-format on
 
 class HurtByTargetGoal : public ::TargetGoal {
 public:
@@ -14,40 +19,57 @@ public:
     HurtByTargetGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HurtByTargetGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 11
-    virtual void alertOther(class Mob* other, class Mob* hurtByMob);
+    virtual void alertOther(::Mob* other, ::Mob* hurtByMob);
 
-    MCAPI HurtByTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
-
+    // vIndex: 0
+    virtual ~HurtByTargetGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HurtByTargetGoal(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes, bool hurtOwner);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes, bool hurtOwner);
+    // NOLINTEND
 
-    MCAPI void alertOther$(class Mob* other, class Mob* hurtByMob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI void $alertOther(::Mob* other, ::Mob* hurtByMob);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

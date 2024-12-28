@@ -4,6 +4,9 @@
 
 namespace SubChunkStorageUnit {
 
-enum class PruneType {};
-
+enum class PruneType : int {
+    Normal            = 0,
+    RemoveStaleBlocks = 1,
 };
+
+}

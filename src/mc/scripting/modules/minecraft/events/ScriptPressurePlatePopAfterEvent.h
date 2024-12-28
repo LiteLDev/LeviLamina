@@ -4,10 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptPressurePlatePopAfterEvent {
+struct ScriptPressurePlatePopAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd262ca;
+    ::ll::UntypedStorage<4, 4> mUnke83056;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPressurePlatePopAfterEvent& operator=(ScriptPressurePlatePopAfterEvent const&);
@@ -15,14 +23,10 @@ public:
     ScriptPressurePlatePopAfterEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>
-    bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

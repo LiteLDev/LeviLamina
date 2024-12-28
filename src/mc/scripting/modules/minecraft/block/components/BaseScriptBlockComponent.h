@@ -10,45 +10,64 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptBlock; }
-namespace ScriptModuleMinecraft { class ScriptComponent; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class BaseScriptBlockComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk7a4ece;
+    ::ll::UntypedStorage<8, 8>  mUnkd7098b;
+    ::ll::UntypedStorage<4, 12> mUnkd57b5d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BaseScriptBlockComponent& operator=(BaseScriptBlockComponent const&);
+    BaseScriptBlockComponent(BaseScriptBlockComponent const&);
     BaseScriptBlockComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseScriptBlockComponent();
+    virtual ~BaseScriptBlockComponent() /*override*/;
 
     // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI BaseScriptBlockComponent(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);
-
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock> getBlock() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::BaseScriptBlockComponent> bind();
-
+    virtual bool _isValid() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> getBlock() const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::BaseScriptBlockComponent> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

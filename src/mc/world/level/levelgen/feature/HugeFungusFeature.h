@@ -5,7 +5,23 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class HugeFungusFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8c8f26;
+    ::ll::UntypedStorage<8, 8> mUnkf169b2;
+    ::ll::UntypedStorage<8, 8> mUnkc4e379;
+    ::ll::UntypedStorage<1, 1> mUnk3fd593;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HugeFungusFeature& operator=(HugeFungusFeature const&);
@@ -13,27 +29,42 @@ public:
     HugeFungusFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~HugeFungusFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
-    MCAPI explicit HugeFungusFeature(bool isBlue);
-
+    virtual ~HugeFungusFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit HugeFungusFeature(bool isBlue);
+    // NOLINTEND
 
-    MCAPI void* ctor$(bool isBlue);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isBlue);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

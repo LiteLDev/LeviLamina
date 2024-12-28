@@ -20,10 +20,10 @@ public:
     ScriptFeedItem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::FeedItem> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

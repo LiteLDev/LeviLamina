@@ -3,9 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/ItemStackRequestAction.h"
 
-class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING {
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPalette;
+class ReadOnlyBinaryStream;
+// clang-format on
+
+class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING : public ::ItemStackRequestAction,
+                                                                public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk5c8ddd;
+    ::ll::UntypedStorage<8, 24> mUnk77cf9a;
+    ::ll::UntypedStorage<8, 24> mUnk85931f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
@@ -13,31 +31,54 @@ public:
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    // vIndex: 3
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
-    MCVAPI void _write(class BinaryStream& stream) const;
+    // vIndex: 4
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
-    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
+    // vIndex: 5
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-
+    // vIndex: 0
+    virtual ~ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
+    // NOLINTEND
 
-    MCAPI static void** vftableForItemStackRequestAction();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForItemStackRequestAction();
     // NOLINTEND
 };

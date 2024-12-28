@@ -3,22 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class ItemInstance;
+class Player;
+class Random;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class ComparatorBlock : public ::ActorBlock {
+class ComparatorBlock : public ::ActorBlockBase<::BlockLegacy> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkf1d07a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ComparatorBlock& operator=(ComparatorBlock const&);
@@ -26,119 +35,133 @@ public:
     ComparatorBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ComparatorBlock() = default;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 47
-    virtual bool isSignalSource() const;
+    // vIndex: 119
+    virtual bool canSpawnOn(::Actor*) const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 99
+    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const /*override*/;
+
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 52
+    virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
     // vIndex: 54
-    virtual int getDirectSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
-
-    // vIndex: 59
     virtual bool
-    shouldConnectToRedstone(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    // vIndex: 70
+    virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 76
-    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const* medium) const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 105
-    virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 130
-    virtual bool canSpawnOn(class Actor*) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI ComparatorBlock(std::string const& nameId, int id, bool on);
-
+    // vIndex: 0
+    virtual ~ComparatorBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _installCircuit(class BlockSource& region, class BlockPos const& pos, bool loading) const;
-
-    MCAPI void _refreshOutputState(class BlockSource& region, class BlockPos const& pos, int strength) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ComparatorBlock(::std::string const& nameId, int id, bool on);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool on);
+    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength) const;
 
-    MCAPI bool canSpawnOn$(class Actor*) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
+    // NOLINTEND
 
-    MCAPI int getDirectSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool isSignalSource$() const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+
+    MCAPI bool $isSignalSource() const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     MCAPI bool
-    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 
-    MCAPI void triggerEvent$(class BlockSource& region, class BlockPos const& pos, int b0, int b1) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

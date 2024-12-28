@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,36 +17,33 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentTypes {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk419799;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItemEnchantmentTypes& operator=(ScriptItemEnchantmentTypes const&);
     ScriptItemEnchantmentTypes(ScriptItemEnchantmentTypes const&);
+    ScriptItemEnchantmentTypes();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentTypes();
+    MCAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>>
-    get(class Scripting::WeakLifetimeScope& scope, std::string const& enchantmentId);
+    MCAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
-
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _generateAllEnchantmentTypeHandles(class Scripting::WeakLifetimeScope& scope);
-
-    MCAPI void _generateRemainingEnchantmentTypeHandles(class Scripting::WeakLifetimeScope& scope);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypes> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

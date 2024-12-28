@@ -7,27 +7,47 @@
 
 class AncientCityStart : public ::StructureStart {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkda1791;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     AncientCityStart& operator=(AncientCityStart const&);
     AncientCityStart(AncientCityStart const&);
     AncientCityStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AncientCityStart() = default;
+    virtual ~AncientCityStart() /*override*/;
 
     // vIndex: 2
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
 
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

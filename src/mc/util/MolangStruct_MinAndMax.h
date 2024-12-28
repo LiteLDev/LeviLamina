@@ -2,4 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MolangStruct_MinAndMax {};
+enum class MolangStruct_MinAndMax : int {
+    FromArrays = 0,
+};

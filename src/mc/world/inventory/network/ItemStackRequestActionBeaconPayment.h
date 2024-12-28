@@ -6,7 +6,20 @@
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ItemStackRequestActionBeaconPayment : public ::ItemStackRequestAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk4d0b04;
+    ::ll::UntypedStorage<4, 4> mUnk2cb397;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionBeaconPayment& operator=(ItemStackRequestActionBeaconPayment const&);
@@ -14,30 +27,43 @@ public:
     ItemStackRequestActionBeaconPayment();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionBeaconPayment() = default;
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ItemStackRequestActionBeaconPayment() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI int getPrimaryEffectId() const;
 
     MCAPI int getSecondaryEffectId() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InMemoryRandomAccessFile {
+class InMemoryRandomAccessFile : public ::leveldb::RandomAccessFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk59aba8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InMemoryRandomAccessFile& operator=(InMemoryRandomAccessFile const&);
@@ -10,21 +16,30 @@ public:
     InMemoryRandomAccessFile();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InMemoryRandomAccessFile() = default;
+    virtual ~InMemoryRandomAccessFile() /*override*/;
 
     // vIndex: 1
-    virtual leveldb::Status Read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
-
+    virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI leveldb::Status Read$(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::leveldb::Status $Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

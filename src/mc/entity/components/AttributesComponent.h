@@ -4,33 +4,42 @@
 
 struct AttributesComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 88> mUnk299f74;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     AttributesComponent& operator=(AttributesComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI AttributesComponent();
 
-    MCAPI AttributesComponent(struct AttributesComponent&& other);
+    MCAPI AttributesComponent(::AttributesComponent const& other);
 
-    MCAPI AttributesComponent(struct AttributesComponent const& other);
+    MCAPI AttributesComponent(::AttributesComponent&&);
 
-    MCAPI struct AttributesComponent& operator=(struct AttributesComponent&& other);
+    MCAPI ::AttributesComponent& operator=(::AttributesComponent&& other);
 
     MCAPI ~AttributesComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(struct AttributesComponent&& other);
+    MCAPI void* $ctor(::AttributesComponent const& other);
 
-    MCAPI void* ctor$(struct AttributesComponent const& other);
+    MCAPI void* $ctor(::AttributesComponent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

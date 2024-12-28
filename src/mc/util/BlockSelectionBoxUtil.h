@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Vec3;
+// clang-format on
+
 namespace BlockSelectionBoxUtil {
+// functions
 // NOLINTBEGIN
-MCAPI class AABB computeAABBFromOriginAndSize(class Vec3 const& origin, class Vec3 const& size);
+MCAPI ::AABB computeAABBFromOriginAndSize(::Vec3 const& origin, ::Vec3 const& size);
 // NOLINTEND
 
-}; // namespace BlockSelectionBoxUtil
+} // namespace BlockSelectionBoxUtil

@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class ChunkSource;
+class Dimension;
+class ILevelChunkEventManagerConnector;
+class LevelChunk;
+class LevelSettings;
+// clang-format on
+
 class ChunkTickRangeManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkaf70ed;
+    ::ll::UntypedStorage<4, 4>  mUnked1b1f;
+    ::ll::UntypedStorage<4, 4>  mUnkbfc781;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChunkTickRangeManager& operator=(ChunkTickRangeManager const&);
@@ -10,42 +28,39 @@ public:
     ChunkTickRangeManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ChunkTickRangeManager(uint chunkTickRange, uint maxSimRadiusInChunks);
 
-    MCAPI uint getAdjustedChunkTickRange(class LevelSettings const& levelSettings);
+    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCAPI bool isChunkInTickRange(class LevelChunk const& lc, std::optional<int> minDistToPlayer) const;
+    MCAPI uint getAdjustedChunkTickRange(::LevelSettings const& levelSettings);
+
+    MCAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
 
     MCAPI bool isChunkInTickRange(
-        class ChunkPos const&  chunkPos,
-        class Dimension const& dimension,
-        bool                   shouldServerGenerate,
-        float                  serverBuildRatio,
-        int                    chunkViewRadius,
-        int                    numActiveUsers
+        ::ChunkPos const&  chunkPos,
+        ::Dimension const& dimension,
+        bool               shouldServerGenerate,
+        float              serverBuildRatio,
+        int                chunkViewRadius,
+        int                numActiveUsers
     ) const;
 
-    MCAPI void registerForLevelChunkEvents(class ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-
-    MCAPI void setChunkTickRange(uint chunkTickRange);
+    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCAPI ~ChunkTickRangeManager();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _onChunkLoaded(class ChunkSource&, class LevelChunk& levelChunk, int closestPlayerDistanceSquared);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(uint chunkTickRange, uint maxSimRadiusInChunks);
+    MCAPI void* $ctor(uint chunkTickRange, uint maxSimRadiusInChunks);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

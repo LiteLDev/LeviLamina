@@ -16,10 +16,10 @@ public:
     ScriptPaletteColor();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<::PaletteColor, ::PaletteColor> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::PaletteColor, ::PaletteColor> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -3,10 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackBaseGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BaseGameVersion;
+class Mob;
+class Vec3;
+// clang-format on
+
 class MeleeAttackGoal : public ::MeleeAttackBaseGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf598ab;
+    ::ll::UntypedStorage<8, 8> mUnk10ac0c;
+    ::ll::UntypedStorage<4, 4> mUnk8a4661;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MeleeAttackGoal& operator=(MeleeAttackGoal const&);
@@ -14,66 +29,85 @@ public:
     MeleeAttackGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MeleeAttackGoal();
+    virtual ~MeleeAttackGoal() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    MCAPI explicit MeleeAttackGoal(class Mob& mob);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MeleeAttackGoal(::Mob& mob);
 
+    MCAPI float _getAttackReachSqr(::Actor const& target) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static bool _canReachTarget(
-        class Mob const&  mob,
-        class Vec3 const& targetPosition,
-        float             attackReachSq,
-        float             targetMinY,
-        float             targetMaxY,
-        float             targetDistanceSqXZ,
-        int               attackTicks
+        ::Mob const&  mob,
+        ::Vec3 const& targetPosition,
+        float         attackReachSq,
+        float         targetMinY,
+        float         targetMaxY,
+        float         targetDistanceSqXZ,
+        int           attackTicks
     );
 
     MCAPI static bool _canReachTargetLegacy(
-        class Mob const&  mob,
-        class Vec3 const& targetPosition,
-        float             attackReachSq,
-        float             targetMinY,
-        float             targetMaxY,
-        float             targetDistanceSqXZ,
-        int               attackTicks
+        ::Mob const&  mob,
+        ::Vec3 const& targetPosition,
+        float         attackReachSq,
+        float         targetMinY,
+        float         targetMaxY,
+        float         targetDistanceSqXZ,
+        int           attackTicks
     );
 
-    MCAPI static bool _isTargetInLineOfSight(class Mob const& mob, class Actor const& target);
+    MCAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
 
-    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const& mob, class Actor const& target);
-
+    MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI float _getAttackReachSqr(class Actor const& target) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::BaseGameVersion const& min3DAttackVersion();
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI static ::BaseGameVersion const& minHitThroughWallFixVersion();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
 
-    MCAPI static class BaseGameVersion const& min3DAttackVersion();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
-    MCAPI static class BaseGameVersion const& minHitThroughWallFixVersion();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

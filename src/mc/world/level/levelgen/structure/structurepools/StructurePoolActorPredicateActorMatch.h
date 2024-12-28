@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolActorPredicate.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Util { class XXHash; }
+// clang-format on
+
 class StructurePoolActorPredicateActorMatch : public ::IStructurePoolActorPredicate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkcab376;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructurePoolActorPredicateActorMatch& operator=(StructurePoolActorPredicateActorMatch const&);
@@ -13,25 +24,47 @@ public:
     StructurePoolActorPredicateActorMatch();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructurePoolActorPredicateActorMatch() = default;
-
     // vIndex: 1
-    virtual bool test(std::string const& actor) const;
+    virtual bool test(::std::string const& actor) const /*override*/;
 
-    MCAPI explicit StructurePoolActorPredicateActorMatch(std::string actor);
+    // vIndex: 2
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
+    virtual ~StructurePoolActorPredicateActorMatch() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit StructurePoolActorPredicateActorMatch(::std::string actor);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string actor);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string actor);
+    // NOLINTEND
 
-    MCAPI bool test$(std::string const& actor) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $test(::std::string const& actor) const;
+
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

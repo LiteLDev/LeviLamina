@@ -5,6 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/util/SolidityCheckType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Mob;
+class Random;
+class Randomize;
+class Vec3;
+struct IntRange;
+// clang-format on
+
 class RandomPos {
 public:
     // prevent constructor by default
@@ -13,93 +24,49 @@ public:
     RandomPos();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    getPos(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
-
-    MCAPI static bool getPosAvoid(
-        class Vec3&         outPos,
-        class Mob&          mob,
+    MCAPI static ::std::optional<::Vec3> generateRandomPos(
+        ::Randomize&        randomize,
+        ::Mob&              mob,
         int                 xzDist,
         int                 yDist,
-        class Vec3 const&   avoidPos,
-        ::SolidityCheckType blockTest,
-        int                 tries
-    );
-
-    MCAPI static bool
-    getPosTowards(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, class Vec3 const& towardsPos);
-
-    MCAPI static bool getPosTowards(
-        class Random&     random,
-        class Vec3&       outPos,
-        class Mob&        mob,
-        int               xzDist,
-        int               yDist,
-        class Vec3 const& towardsPos
-    );
-
-    MCAPI static bool getSpawnPos(
-        class BlockSource& region,
-        class Random&      random,
-        class Vec3&        outPos,
-        int                xzDist,
-        int                yDist,
-        int                numAttempts
-    );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool generateRandomPos(
-        class Vec3&         outPos,
-        class Mob&          mob,
-        int                 xzDist,
-        int                 yDist,
-        class Vec3 const*   dir,
+        int                 yOffset,
+        ::Vec3 const*       dir,
         bool                canFly,
         bool                canSwim,
+        ::IntRange const&   hoverHeight,
         int                 tries,
         ::SolidityCheckType blockTest
     );
 
-    MCAPI static bool generateRandomPos(
-        class Randomize&       randomize,
-        class Vec3&            outPos,
-        class Mob&             mob,
-        int                    xzDist,
-        int                    yDist,
-        int                    yOffset,
-        class Vec3 const*      dir,
-        bool                   canFly,
-        bool                   canSwim,
-        struct IntRange const& hoverHeight,
-        int                    tries,
-        ::SolidityCheckType    blockTest
+    MCAPI static ::std::optional<::Vec3>
+    getPos(::Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
+
+    MCAPI static ::std::optional<::Vec3>
+    getPosAvoid(::Mob& mob, int xzDist, int yDist, ::Vec3 const& avoidPos, ::SolidityCheckType blockTest, int tries);
+
+    MCAPI static ::std::optional<::Vec3> getPosInDirection(
+        ::Mob&              mob,
+        int                 xzDist,
+        int                 yDist,
+        int                 yOffset,
+        bool                canFly,
+        bool                canSwim,
+        ::Vec3*             direction,
+        ::IntRange const&   hoverHeight,
+        int                 tries,
+        ::SolidityCheckType blockTest
     );
 
-    MCAPI static bool
-    snapToGround(class BlockPos& inOutPos, int minY, int maxY, std::function<bool(class BlockPos&)> solidityChecker);
+    MCAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
-    MCAPI static bool snapToGround(
-        class BlockPos&        inOutPos,
-        class Mob&             mob,
-        int                    yDist,
-        struct IntRange const& hoverHeight,
-        ::SolidityCheckType    blockTest
-    );
+    MCAPI static ::std::optional<::Vec3>
+    getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
-    MCAPI static bool snapToGround(
-        class BlockPos&                      inOutPos,
-        int                                  minY,
-        int                                  maxY,
-        int                                  hoverHeight,
-        std::function<bool(class BlockPos&)> solidityChecker
-    );
+    MCAPI static ::std::optional<::Vec3>
+    getSpawnPos(::BlockSource& region, ::Random& random, ::Vec3 const& inPos, int xzDist, int yDist, int numAttempts);
 
-    MCAPI static bool
-    spawnSnapToGround(class BlockSource& region, class BlockPos& inOutPos, float startingY, int yDist);
-
+    MCAPI static bool spawnSnapToGround(::BlockSource& region, ::BlockPos& inOutPos, float startingY, int yDist);
     // NOLINTEND
 };

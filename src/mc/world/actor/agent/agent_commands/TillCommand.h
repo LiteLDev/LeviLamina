@@ -5,14 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace AgentCommands { class Command; }
-// clang-format on
-
 namespace AgentCommands {
 
 class TillCommand : public ::AgentCommands::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 152> mUnk839b76;
+    ::ll::UntypedStorage<1, 1>   mUnk8482d7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TillCommand& operator=(TillCommand const&);
@@ -20,28 +22,37 @@ public:
     TillCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TillCommand() = default;
-
     // vIndex: 1
-    virtual void execute();
+    virtual void execute() /*override*/;
 
     // vIndex: 2
-    virtual bool isDone();
+    virtual bool isDone() /*override*/;
 
+    // vIndex: 0
+    virtual ~TillCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void execute$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute();
 
-    MCAPI bool isDone$();
+    MCAPI bool $isDone();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace AgentCommands
+} // namespace AgentCommands

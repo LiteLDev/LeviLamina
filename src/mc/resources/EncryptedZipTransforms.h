@@ -6,7 +6,18 @@
 #include "mc/deps/core/file/file_system/FileAccessTransforms.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class IContentKeyProvider;
+// clang-format on
+
 class EncryptedZipTransforms : public ::FileAccessTransforms {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk766005;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EncryptedZipTransforms& operator=(EncryptedZipTransforms const&);
@@ -14,32 +25,48 @@ public:
     EncryptedZipTransforms();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EncryptedZipTransforms() = default;
-
     // vIndex: 1
-    virtual bool readTransform(std::vector<uchar>& stream) const;
+    virtual bool readTransform(::std::vector<uchar>& stream) const /*override*/;
 
     // vIndex: 2
-    virtual bool writeTransform(std::vector<uchar>& stream) const;
+    virtual bool writeTransform(::std::vector<uchar>& stream) const /*override*/;
 
-    MCAPI explicit EncryptedZipTransforms(
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
-
+    // vIndex: 0
+    virtual ~EncryptedZipTransforms() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit EncryptedZipTransforms(::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
+    // NOLINTEND
 
-    MCAPI bool readTransform$(std::vector<uchar>& stream) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool writeTransform$(std::vector<uchar>& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
+    MCAPI bool $writeTransform(::std::vector<uchar>& stream) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

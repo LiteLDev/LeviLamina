@@ -2,16 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+// clang-format on
+
 namespace BiomeIdCompatibility {
+// functions
 // NOLINTBEGIN
-MCAPI uint adjustForReservedRanges(uint defaultId, std::string const& biomeName);
+MCAPI ushort getFixedId(::std::string const& biomeName);
 
-MCAPI bool isReserved(uint id);
+MCAPI bool isReserved(ushort id, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI uint const& MAX_CUSTOM_BIOMES();
+MCAPI ushort const& MAX_CUSTOM_BIOMES();
 // NOLINTEND
 
-}; // namespace BiomeIdCompatibility
+} // namespace BiomeIdCompatibility

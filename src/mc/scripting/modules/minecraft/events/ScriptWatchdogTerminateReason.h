@@ -8,7 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptWatchdogTerminateReason {
+struct ScriptWatchdogTerminateReason {
 public:
     // prevent constructor by default
     ScriptWatchdogTerminateReason& operator=(ScriptWatchdogTerminateReason const&);
@@ -16,10 +16,10 @@ public:
     ScriptWatchdogTerminateReason();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::WatchdogTerminateReason> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::WatchdogTerminateReason> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

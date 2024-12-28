@@ -2,10 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockGeometryComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk6e411c;
+    ::ll::UntypedStorage<8, 16> mUnk9fb2e8;
+    ::ll::UntypedStorage<1, 1>  mUnk124ffe;
+    ::ll::UntypedStorage<1, 1>  mUnk9dda52;
+    ::ll::UntypedStorage<8, 16> mUnka02555;
+    ::ll::UntypedStorage<1, 1>  mUnk2575c2;
+    // NOLINTEND
 
-struct BlockGeometryComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&);
@@ -13,16 +21,14 @@ public:
     BlockGeometryComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockGeometryComponent() = default;
-
+    MCAPI ~BlockGeometryComponent();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

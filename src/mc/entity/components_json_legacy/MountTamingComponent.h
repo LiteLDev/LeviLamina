@@ -2,23 +2,44 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorInteraction;
+class CompoundTag;
+class DataLoadHelper;
+class Player;
+// clang-format on
+
 class MountTamingComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk63f4c5;
+    ::ll::UntypedStorage<4, 4> mUnk11cb63;
+    ::ll::UntypedStorage<4, 4> mUnkf6aa4b;
+    ::ll::UntypedStorage<4, 4> mUnk792c31;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MountTamingComponent& operator=(MountTamingComponent const&);
     MountTamingComponent(MountTamingComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI MountTamingComponent();
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void _feedItem(::Actor& owner, ::Player& player, int temperModifier);
 
-    MCAPI void becomeTame(class Actor& owner, bool tamingParticles);
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
     MCAPI int& getCounter();
 
-    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI int& getTemper();
 
@@ -26,32 +47,14 @@ public:
 
     MCAPI int getWaitCount() const;
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void tameToPlayer(class Actor& owner, class Player& player, bool tamingParticles);
-
+    MCAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _feedItem(class Actor& owner, class Player& player, int temperModifier);
-
-    MCAPI static bool _autoReject(class ItemStack const& item, class MountTameableDefinition const* tameableDefinition);
-
-    MCAPI static bool _canTame(
-        class Actor& owner,
-        class Player&,
-        class ItemStack const&               item,
-        class MountTameableDefinition const* tameableDefinition
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

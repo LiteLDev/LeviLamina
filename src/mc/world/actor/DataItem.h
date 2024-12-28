@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DataItemType.h"
+
 class DataItem {
+public:
+    // DataItem inner types define
+    using ID = ushort;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::DataItemType const> mType;
+    ::ll::TypedStorage<2, 2, ushort const>         mId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DataItem& operator=(DataItem const&);
@@ -10,26 +24,33 @@ public:
     DataItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~DataItem();
 
     // vIndex: 1
-    virtual bool isDataEqual(class DataItem const&) const;
+    virtual bool isDataEqual(::DataItem const& rhs) const;
 
     // vIndex: 2
-    virtual std::unique_ptr<class DataItem> clone() const = 0;
-
+    virtual ::std::unique_ptr<::DataItem> clone() const = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isDataEqual(::DataItem const& rhs) const;
+    // NOLINTEND
 
-    MCAPI bool isDataEqual$(class DataItem const&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

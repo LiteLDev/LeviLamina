@@ -12,23 +12,32 @@ namespace JsonUtil { class EmptyClass; }
 
 class ReflectProjectileDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 216> mUnk77b87e;
+    ::ll::UntypedStorage<8, 216> mUnk5fa002;
+    ::ll::UntypedStorage<8, 216> mUnkafaef4;
+    ::ll::UntypedStorage<8, 24>  mUnk9caa5a;
+    ::ll::UntypedStorage<8, 32>  mUnkd8b3bd;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ReflectProjectileDefinition& operator=(ReflectProjectileDefinition const&);
     ReflectProjectileDefinition(ReflectProjectileDefinition const&);
     ReflectProjectileDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ReflectProjectileDefinition>>& root
-    );
-
+    MCAPI void _addProjectileToReflect(::std::string const& projectileName);
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _addProjectileToReflect(std::string const& projectileName);
-
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ReflectProjectileDefinition>>& root
+    );
     // NOLINTEND
 };

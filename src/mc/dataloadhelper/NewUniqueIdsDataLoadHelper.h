@@ -10,7 +10,23 @@
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class HashedString;
+class ILevel;
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
+
 class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ILevel*>                                               mLevel;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ActorUniqueID>> mOldIDToNewID;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NewUniqueIdsDataLoadHelper& operator=(NewUniqueIdsDataLoadHelper const&);
@@ -18,113 +34,128 @@ public:
     NewUniqueIdsDataLoadHelper();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NewUniqueIdsDataLoadHelper();
-
     // vIndex: 1
-    virtual class Vec3 loadPosition(class Vec3 const& position);
+    virtual ::Vec3 loadPosition(::Vec3 const& position) /*override*/;
 
     // vIndex: 2
-    virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos);
+    virtual ::BlockPos loadBlockPosition(::BlockPos const& blockPos) /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
+    virtual ::BlockPos loadBlockPositionOffset(::BlockPos const& blockPosOffset) /*override*/;
 
     // vIndex: 4
-    virtual float loadRotationDegreesX(float x);
+    virtual float loadRotationDegreesX(float x) /*override*/;
 
     // vIndex: 5
-    virtual float loadRotationDegreesY(float y);
+    virtual float loadRotationDegreesY(float y) /*override*/;
 
     // vIndex: 6
-    virtual float loadRotationRadiansX(float x);
+    virtual float loadRotationRadiansX(float x) /*override*/;
 
     // vIndex: 7
-    virtual float loadRotationRadiansY(float y);
+    virtual float loadRotationRadiansY(float y) /*override*/;
 
     // vIndex: 8
-    virtual uchar loadFacingID(uchar facing);
-
-    // vIndex: 9
-    virtual class Vec3 loadDirection(class Vec3 const& direction);
+    virtual uchar loadFacingID(uchar facing) /*override*/;
 
     // vIndex: 10
-    virtual ::Direction::Type loadDirection(::Direction::Type direction);
+    virtual ::Vec3 loadDirection(::Vec3 const& direction) /*override*/;
+
+    // vIndex: 9
+    virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
     // vIndex: 11
-    virtual ::Rotation loadRotation(::Rotation rotation);
+    virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
     // vIndex: 12
-    virtual ::Mirror loadMirror(::Mirror mirror);
+    virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
     // vIndex: 13
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
+    virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) /*override*/;
 
     // vIndex: 14
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
+    virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) /*override*/;
 
     // vIndex: 15
-    virtual struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
-        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
-        std::string const&                                                                             componentName
-    );
-
-    // vIndex: 16
-    virtual ::DataLoadHelperType getType() const;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    ) /*override*/;
 
     // vIndex: 17
-    virtual bool shouldResetTime();
+    virtual bool shouldResetTime() /*override*/;
 
-    MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel& level);
+    // vIndex: 16
+    virtual ::DataLoadHelperType getType() const /*override*/;
 
+    // vIndex: 0
+    virtual ~NewUniqueIdsDataLoadHelper() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit NewUniqueIdsDataLoadHelper(::ILevel& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ILevel& level);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ILevel& level);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::DataLoadHelperType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Vec3 $loadPosition(::Vec3 const& position);
 
-    MCAPI struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo$(
-        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
-        std::string const&                                                                             componentName
+    MCAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
+
+    MCAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
+
+    MCAPI float $loadRotationDegreesX(float x);
+
+    MCAPI float $loadRotationDegreesY(float y);
+
+    MCAPI float $loadRotationRadiansX(float x);
+
+    MCAPI float $loadRotationRadiansY(float y);
+
+    MCAPI uchar $loadFacingID(uchar facing);
+
+    MCAPI ::Vec3 $loadDirection(::Vec3 const& direction);
+
+    MCAPI ::Direction::Type $loadDirection(::Direction::Type direction);
+
+    MCAPI ::Rotation $loadRotation(::Rotation rotation);
+
+    MCAPI ::Mirror $loadMirror(::Mirror mirror);
+
+    MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
+
+    MCAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
+
+    MCAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
     );
 
-    MCAPI struct ActorUniqueID loadActorUniqueID$(struct ActorUniqueID id);
+    MCAPI bool $shouldResetTime();
 
-    MCAPI class BlockPos loadBlockPosition$(class BlockPos const& blockPos);
+    MCAPI ::DataLoadHelperType $getType() const;
+    // NOLINTEND
 
-    MCAPI class BlockPos loadBlockPositionOffset$(class BlockPos const& blockPosOffset);
-
-    MCAPI class Vec3 loadDirection$(class Vec3 const& direction);
-
-    MCAPI ::Direction::Type loadDirection$(::Direction::Type direction);
-
-    MCAPI uchar loadFacingID$(uchar facing);
-
-    MCAPI ::Mirror loadMirror$(::Mirror mirror);
-
-    MCAPI struct ActorUniqueID loadOwnerID$(struct ActorUniqueID id);
-
-    MCAPI class Vec3 loadPosition$(class Vec3 const& position);
-
-    MCAPI ::Rotation loadRotation$(::Rotation rotation);
-
-    MCAPI float loadRotationDegreesX$(float x);
-
-    MCAPI float loadRotationDegreesY$(float y);
-
-    MCAPI float loadRotationRadiansX$(float x);
-
-    MCAPI float loadRotationRadiansY$(float y);
-
-    MCAPI bool shouldResetTime$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

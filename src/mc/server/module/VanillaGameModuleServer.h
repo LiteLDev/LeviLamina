@@ -8,123 +8,157 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace VanillaSystemsRegistration { struct RegistrationOptions; }
+class BaseGameVersion;
+class CommandRegistry;
+class Experiments;
+class IGameModuleDocumentation;
+class IResourcePackRepository;
+class IWorldRegistriesProvider;
+class ItemRegistryRef;
+class Level;
+class LevelStorage;
+class Player;
+class ResourcePackManager;
+class ResourcePackStack;
+class ServerInstance;
+class ServerNetworkHandler;
+class ServerScriptManager;
+struct SpawnSettings;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class VanillaGameModuleServer : public ::GameModuleServer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk1e51f3;
+    ::ll::UntypedStorage<8, 8>  mUnk2d0737;
+    ::ll::UntypedStorage<8, 16> mUnkf08fc4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VanillaGameModuleServer& operator=(VanillaGameModuleServer const&);
     VanillaGameModuleServer(VanillaGameModuleServer const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VanillaGameModuleServer() = default;
+    virtual ~VanillaGameModuleServer() /*override*/;
 
     // vIndex: 1
-    virtual void init(class ServerInstance& server, Bedrock::NotNullNonOwnerPtr<class Level> const& level);
+    virtual void init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
     // vIndex: 2
     virtual void initializeBehaviorStack(
-        class Experiments const&                                          experiments,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& repo,
-        class ResourcePackStack&                                          stack,
-        class BaseGameVersion const&                                      baseGameVersion,
-        bool                                                              includeEditorPacks
-    );
+        ::Experiments const&                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        bool                                                            includeEditorPacks
+    ) /*override*/;
 
     // vIndex: 3
     virtual void configureLevel(
-        Bedrock::NotNullNonOwnerPtr<class Level> const&                level,
-        class Experiments const&                                       experiments,
-        class ResourcePackManager&                                     resourcePackManager,
-        class BaseGameVersion const&                                   baseGameVersion,
-        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
-    );
+        ::Bedrock::NotNullNonOwnerPtr<::Level> const&                  level,
+        ::Experiments const&                                           experiments,
+        ::ResourcePackManager&                                         resourcePackManager,
+        ::BaseGameVersion const&                                       baseGameVersion,
+        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void configureNewPlayer(class Player& player);
+    virtual void configureNewPlayer(::Player& player) /*override*/;
 
     // vIndex: 5
-    virtual void
-    configureDocumentation(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef docItemRegistry);
+    virtual void configureDocumentation(
+        ::IGameModuleDocumentation& moduleDocumentation,
+        ::ItemRegistryRef const     docItemRegistry
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void setupCommands(class CommandRegistry& commandRegistry);
+    virtual void setupCommands(::CommandRegistry& commandRegistry) /*override*/;
 
     // vIndex: 8
     virtual void configureServerNetworkHandler(
-        class ServerInstance&                                   server,
-        Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> handler
-    );
+        ::ServerInstance&                                     server,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
+    ) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI VanillaGameModuleServer();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _configureEntitySystems(
-        Bedrock::NotNullNonOwnerPtr<class Level> const& level,
-        class ResourcePackManager&                      resourcePackManager,
-        class Experiments const&,
-        struct VanillaSystemsRegistration::RegistrationOptions const& registrationOptions
-    );
-
     MCAPI void _configureWorldGen(
-        class IWorldRegistriesProvider& worldRegistries,
-        struct SpawnSettings const&     spawnSettings,
-        class Experiments const&        experiments,
-        class ResourcePackManager&      resourcePackManager,
-        class BaseGameVersion const&    baseGameVersion
+        ::IWorldRegistriesProvider&    worldRegistries,
+        ::SpawnSettings const&         spawnSettings,
+        ::Experiments const&           experiments,
+        ::ResourcePackManager&         resourcePackManager,
+        ::BaseGameVersion const&       baseGameVersion,
+        ::LevelStorage*                levelStorage,
+        ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI void _registerListeners(Bedrock::NotNullNonOwnerPtr<class Level> const& level, bool realmsStoriesEnabled);
-
+    MCAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+
+    MCAPI void $initializeBehaviorStack(
+        ::Experiments const&                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        bool                                                            includeEditorPacks
+    );
+
+    MCAPI void $configureLevel(
+        ::Bedrock::NotNullNonOwnerPtr<::Level> const&                  level,
+        ::Experiments const&                                           experiments,
+        ::ResourcePackManager&                                         resourcePackManager,
+        ::BaseGameVersion const&                                       baseGameVersion,
+        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+    );
+
+    MCAPI void $configureNewPlayer(::Player& player);
 
     MCAPI void
-    configureDocumentation$(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef docItemRegistry);
+    $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
-    MCAPI void configureLevel$(
-        Bedrock::NotNullNonOwnerPtr<class Level> const&                level,
-        class Experiments const&                                       experiments,
-        class ResourcePackManager&                                     resourcePackManager,
-        class BaseGameVersion const&                                   baseGameVersion,
-        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+    MCAPI void $tick();
+
+    MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
+
+    MCAPI void $configureServerNetworkHandler(
+        ::ServerInstance&                                     server,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     );
+    // NOLINTEND
 
-    MCAPI void configureNewPlayer$(class Player& player);
-
-    MCAPI void configureServerNetworkHandler$(
-        class ServerInstance&                                   server,
-        Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> handler
-    );
-
-    MCAPI void init$(class ServerInstance& server, Bedrock::NotNullNonOwnerPtr<class Level> const& level);
-
-    MCAPI void initializeBehaviorStack$(
-        class Experiments const&                                          experiments,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& repo,
-        class ResourcePackStack&                                          stack,
-        class BaseGameVersion const&                                      baseGameVersion,
-        bool                                                              includeEditorPacks
-    );
-
-    MCAPI void setupCommands$(class CommandRegistry& commandRegistry);
-
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,110 +2,163 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LevelDbEnv {
+// auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
+class LevelDbEnv : public ::Bedrock::EnableNonOwnerReferences, public ::leveldb::Env {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk98e970;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelDbEnv& operator=(LevelDbEnv const&);
     LevelDbEnv(LevelDbEnv const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI leveldb::Status CreateDir(std::string const& path);
+    // vIndex: 0
+    virtual ~LevelDbEnv() /*override*/;
 
-    MCVAPI leveldb::Status DeleteDir(std::string const& name);
+    // vIndex: 1
+    virtual ::leveldb::Status
+    NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result) /*override*/;
 
-    MCVAPI leveldb::Status DeleteFileA(std::string const&);
+    // vIndex: 2
+    virtual ::leveldb::Status
+    NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result) /*override*/;
 
-    MCVAPI bool FileExists(std::string const& fname);
+    // vIndex: 3
+    virtual ::leveldb::Status
+    NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
-    MCVAPI leveldb::Status GetChildren(std::string const& dir, std::vector<std::string>* pChildrenOut);
+    // vIndex: 4
+    virtual ::leveldb::Status
+    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
-    MCVAPI leveldb::Status GetFileSize(std::string const& fname, uint64* size);
+    // vIndex: 5
+    virtual bool FileExists(::std::string const& fname) /*override*/;
 
-    MCVAPI leveldb::Status GetTestDirectory(std::string* result);
+    // vIndex: 6
+    virtual ::leveldb::Status
+    GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut) /*override*/;
 
-    MCVAPI leveldb::Status LockFile(std::string const& fname, leveldb::FileLock** lock);
+    // vIndex: 7
+    virtual ::leveldb::Status DeleteFileA(::std::string const& fname) /*override*/;
 
-    MCVAPI leveldb::Status NewAppendableFile(std::string const& fname, leveldb::WritableFile** result);
+    // vIndex: 8
+    virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
 
-    MCVAPI leveldb::Status NewLogger(std::string const& fname, leveldb::Logger** result);
+    // vIndex: 9
+    virtual ::leveldb::Status DeleteDir(::std::string const& name) /*override*/;
 
-    MCVAPI leveldb::Status NewRandomAccessFile(std::string const& fname, leveldb::RandomAccessFile** result);
+    // vIndex: 10
+    virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
 
-    MCVAPI leveldb::Status NewSequentialFile(std::string const& fname, leveldb::SequentialFile** result);
+    // vIndex: 11
+    virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
 
-    MCVAPI leveldb::Status NewWritableFile(std::string const& fname, leveldb::WritableFile** result);
+    // vIndex: 12
+    virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
 
-    MCVAPI uint64 NowMicros();
+    // vIndex: 13
+    virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
-    MCVAPI leveldb::Status RenameFile(std::string const& src, std::string const& target);
+    // vIndex: 14
+    virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
-    MCVAPI void Schedule(void (*function)(void*), void* arg);
+    // vIndex: 15
+    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
 
-    MCVAPI void SleepForMicroseconds(int microseconds);
+    // vIndex: 16
+    virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
 
-    MCVAPI void StartThread(void (*function)(void*), void* arg);
+    // vIndex: 17
+    virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
 
-    MCVAPI leveldb::Status UnlockFile(leveldb::FileLock* lock);
+    // vIndex: 18
+    virtual uint64 NowMicros() /*override*/;
 
-    MCVAPI ~LevelDbEnv();
+    // vIndex: 19
+    virtual void SleepForMicroseconds(int microseconds) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI bool IsComplete() const;
 
     MCAPI LevelDbEnv();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static ::LevelDbEnv*& sSingleton();
+    // NOLINTEND
 
-    MCAPI static void** vftableForleveldbEnv();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::leveldb::Status $NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result);
 
-    MCAPI leveldb::Status CreateDir$(std::string const& path);
+    MCAPI ::leveldb::Status $NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result);
 
-    MCAPI leveldb::Status DeleteDir$(std::string const& name);
+    MCAPI ::leveldb::Status $NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result);
 
-    MCAPI leveldb::Status DeleteFileA$(std::string const&);
+    MCAPI ::leveldb::Status $NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result);
 
-    MCAPI bool FileExists$(std::string const& fname);
+    MCAPI bool $FileExists(::std::string const& fname);
 
-    MCAPI leveldb::Status GetChildren$(std::string const& dir, std::vector<std::string>* pChildrenOut);
+    MCAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut);
 
-    MCAPI leveldb::Status GetFileSize$(std::string const& fname, uint64* size);
+    MCAPI ::leveldb::Status $DeleteFileA(::std::string const& fname);
 
-    MCAPI leveldb::Status GetTestDirectory$(std::string* result);
+    MCAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCAPI leveldb::Status LockFile$(std::string const& fname, leveldb::FileLock** lock);
+    MCAPI ::leveldb::Status $DeleteDir(::std::string const& name);
 
-    MCAPI leveldb::Status NewAppendableFile$(std::string const& fname, leveldb::WritableFile** result);
+    MCAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 
-    MCAPI leveldb::Status NewLogger$(std::string const& fname, leveldb::Logger** result);
+    MCAPI ::leveldb::Status $RenameFile(::std::string const& src, ::std::string const& target);
 
-    MCAPI leveldb::Status NewRandomAccessFile$(std::string const& fname, leveldb::RandomAccessFile** result);
+    MCAPI ::leveldb::Status $LockFile(::std::string const& fname, ::leveldb::FileLock** lock);
 
-    MCAPI leveldb::Status NewSequentialFile$(std::string const& fname, leveldb::SequentialFile** result);
+    MCAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
 
-    MCAPI leveldb::Status NewWritableFile$(std::string const& fname, leveldb::WritableFile** result);
+    MCAPI void $Schedule(void (*function)(void*), void* arg);
 
-    MCAPI uint64 NowMicros$();
+    MCAPI void $StartThread(void (*function)(void*), void* arg);
 
-    MCAPI leveldb::Status RenameFile$(std::string const& src, std::string const& target);
+    MCAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
 
-    MCAPI void Schedule$(void (*function)(void*), void* arg);
+    MCAPI ::leveldb::Status $NewLogger(::std::string const& fname, ::leveldb::Logger** result);
 
-    MCAPI void SleepForMicroseconds$(int microseconds);
+    MCAPI uint64 $NowMicros();
 
-    MCAPI void StartThread$(void (*function)(void*), void* arg);
+    MCAPI void $SleepForMicroseconds(int microseconds);
+    // NOLINTEND
 
-    MCAPI leveldb::Status UnlockFile$(leveldb::FileLock* lock);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI static class LevelDbEnv*& sSingleton();
-
+    MCAPI static void** $vftableForEnv();
     // NOLINTEND
 };

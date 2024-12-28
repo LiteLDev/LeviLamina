@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangTextureVariable {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+
+struct MolangTextureVariable : public ::MolangHashStringVariable<::MolangTextureVariable> {
 public:
     // prevent constructor by default
     MolangTextureVariable& operator=(MolangTextureVariable const&);
@@ -10,15 +13,14 @@ public:
     MolangTextureVariable();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangTextureVariable();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

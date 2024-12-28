@@ -3,30 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/HangingActor.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class AddActorBasePacket;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Motif;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Painting : public ::HangingActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk189c6c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Painting& operator=(Painting const&);
@@ -34,75 +31,92 @@ public:
     Painting();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Painting() = default;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 23
+    virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
 
-    // vIndex: 25
-    virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
+    // vIndex: 143
+    virtual int getWidth() const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 144
+    virtual int getHeight() const /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 145
+    virtual void dropItem() /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 151
-    virtual int getWidth() const;
+    // vIndex: 146
+    virtual bool placeHangingEntity(::BlockSource& region, int direction) /*override*/;
 
-    // vIndex: 152
-    virtual int getHeight() const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 153
-    virtual void dropItem();
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 154
-    virtual bool placeHangingEntity(class BlockSource& region, int direction);
-
-    MCAPI Painting(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI class Motif const& getCurrentMotif() const;
-
+    // vIndex: 8
+    virtual ~Painting() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Painting(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI ::Motif const& getCurrentMotif() const;
+    // NOLINTEND
 
-    MCAPI void dropItem$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI int getHeight$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getShadowRadius$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI int getWidth$() const;
+    MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
 
-    MCAPI bool placeHangingEntity$(class BlockSource& region, int direction);
+    MCAPI int $getWidth() const;
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI int $getHeight() const;
 
-    MCAPI void remove$();
+    MCAPI void $dropItem();
 
-    MCAPI std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket$();
+    MCAPI void $remove();
 
+    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

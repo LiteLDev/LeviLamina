@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/level/pathfinder/IPathBlockSource.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class PathBlockSource : public ::IPathBlockSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkf4b1d0;
+    ::ll::UntypedStorage<1, 1> mUnka0ab3a;
+    ::ll::UntypedStorage<8, 8> mUnkf2f219;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PathBlockSource& operator=(PathBlockSource const&);
@@ -13,43 +26,50 @@ public:
     PathBlockSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PathBlockSource();
+    virtual ~PathBlockSource() /*override*/;
 
     // vIndex: 1
-    virtual bool isInWater() const;
+    virtual bool isInWater() const /*override*/;
 
     // vIndex: 2
-    virtual bool isInLava() const;
+    virtual bool isInLava() const /*override*/;
 
     // vIndex: 3
-    virtual bool isWaterBlock(class BlockPos const& blockPos) const;
+    virtual bool isWaterBlock(::BlockPos const& blockPos) const /*override*/;
 
     // vIndex: 4
-    virtual bool isLavaBlock(class BlockPos const& blockPos) const;
+    virtual bool isLavaBlock(::BlockPos const& blockPos) const /*override*/;
 
     // vIndex: 5
-    virtual bool isSolidBlock(class BlockPos const& blockPos) const;
-
+    virtual bool isSolidBlock(::BlockPos const& blockPos) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInWater() const;
 
-    MCAPI bool isInLava$() const;
+    MCAPI bool $isInLava() const;
 
-    MCAPI bool isInWater$() const;
+    MCAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
 
-    MCAPI bool isLavaBlock$(class BlockPos const& blockPos) const;
+    MCAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
 
-    MCAPI bool isSolidBlock$(class BlockPos const& blockPos) const;
+    MCAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
+    // NOLINTEND
 
-    MCAPI bool isWaterBlock$(class BlockPos const& blockPos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

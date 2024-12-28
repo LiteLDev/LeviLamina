@@ -5,6 +5,24 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 
+// auto generated forward declare list
+// clang-format off
+class RideableComponent;
+class StrictEntityContext;
+struct ActorDataBoundingBoxComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorDataSeatOffsetComponent;
+struct AdultRidingHeightOffsetComponent;
+struct OffsetsComponent;
+struct PassengerComponent;
+struct PositionPassengerRequestComponent;
+struct RidingHeightComponent;
+struct SynchedActorDataComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
+
 class VehicleServerSeatPositionSystem {
 public:
     // prevent constructor by default
@@ -13,41 +31,47 @@ public:
     VehicleServerSeatPositionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static float _getRidingHeight(
-        class StrictEntityContext const&                                           context,
-        struct OffsetsComponent const&                                             offsetsComponent,
-        struct ActorDataFlagComponent const&                                       actorDataFlagComponent,
-        class ViewT<class StrictEntityContext, struct RidingHeightComponent const> ridingHeightView,
-        class ViewT<class StrictEntityContext, struct AdultRidingHeightOffsetComponent const>
-            adultRidingHeightOffsetView
-    );
-
     MCAPI static void _setSeatDescriptionToActorDataSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct PassengerComponent const,
-            struct PositionPassengerRequestComponent const,
-            struct OffsetsComponent const,
-            struct ActorDataFlagComponent,
-            struct ActorDataSeatOffsetComponent,
-            struct ActorDataDirtyFlagsComponent,
-            struct SynchedActorDataComponent> passengerView,
-        class ViewT<
-            class StrictEntityContext,
-            struct VehicleComponent const,
-            struct ActorDataBoundingBoxComponent const,
-            class RideableComponent const>                                         vehicleView,
-        class ViewT<class StrictEntityContext, struct RidingHeightComponent const> ridingHeightView,
-        class ViewT<class StrictEntityContext, struct AdultRidingHeightOffsetComponent const>
-            adultRidingHeightOffsetView
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::PositionPassengerRequestComponent const,
+            ::OffsetsComponent const,
+            ::ActorDataFlagComponent,
+            ::ActorDataSeatOffsetComponent,
+            ::ActorDataDirtyFlagsComponent,
+            ::SynchedActorDataComponent> passengerView,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::VehicleComponent const,
+            ::ActorDataBoundingBoxComponent const,
+            ::RideableComponent const>                                           vehicleView,
+        ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
+        ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
+    MCAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
+        ::StrictEntityContext const& entityContext,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::PositionPassengerRequestComponent const,
+            ::OffsetsComponent const,
+            ::ActorDataFlagComponent,
+            ::ActorDataSeatOffsetComponent,
+            ::ActorDataDirtyFlagsComponent,
+            ::SynchedActorDataComponent> passengerView,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::VehicleComponent const,
+            ::ActorDataBoundingBoxComponent const,
+            ::RideableComponent const>                                           vehicleView,
+        ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
+        ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
+    );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

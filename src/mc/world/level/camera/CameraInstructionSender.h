@@ -2,15 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace CameraInstructionSender {
-// NOLINTBEGIN
-MCAPI void sendInstruction(
-    class PacketSender&             packetSender,
-    class EntityContext&            entity,
-    struct CameraInstruction const& instruction
-);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class PacketSender;
+struct CameraInstruction;
+// clang-format on
 
-MCAPI void updateCameraComponentsOnEntity(class EntityContext& entity, struct CameraInstruction const& instruction);
+namespace CameraInstructionSender {
+// functions
+// NOLINTBEGIN
+MCAPI void
+sendInstruction(::PacketSender& packetSender, ::EntityContext& entity, ::CameraInstruction const& instruction);
+
+MCAPI void updateCameraComponentsOnEntity(::EntityContext& entity, ::CameraInstruction const& instruction);
 // NOLINTEND
 
-}; // namespace CameraInstructionSender
+} // namespace CameraInstructionSender

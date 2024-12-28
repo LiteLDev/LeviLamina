@@ -11,31 +11,41 @@ namespace CodeBuilder {
 
 struct ErrorMessage {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk61afcd;
+    ::ll::UntypedStorage<8, 16> mUnk5ccd40;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ErrorMessage& operator=(ErrorMessage const&);
     ErrorMessage(ErrorMessage const&);
     ErrorMessage();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ErrorMessage(std::string const& requestId, struct MCRESULT result);
+    MCAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result);
 
-    MCAPI ErrorMessage(std::string const& requestId, struct MCRESULT result, std::string const& message);
+    MCAPI ErrorMessage(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
 
     MCAPI ~ErrorMessage();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& requestId, struct MCRESULT result);
+    MCAPI void* $ctor(::std::string const& requestId, ::MCRESULT result);
 
-    MCAPI void* ctor$(std::string const& requestId, struct MCRESULT result, std::string const& message);
+    MCAPI void* $ctor(::std::string const& requestId, ::MCRESULT result, ::std::string const& message);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace CodeBuilder
+} // namespace CodeBuilder

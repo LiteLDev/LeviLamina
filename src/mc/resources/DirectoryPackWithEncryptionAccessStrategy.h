@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategy.h"
@@ -11,10 +10,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
+class IContentKeyProvider;
+class ResourceLocation;
 namespace Core { class Path; }
 // clang-format on
 
 class DirectoryPackWithEncryptionAccessStrategy : public ::PackAccessStrategy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk7ef9b8;
+    ::ll::UntypedStorage<8, 56> mUnk863770;
+    ::ll::UntypedStorage<8, 32> mUnk689ee8;
+    ::ll::UntypedStorage<8, 56> mUnke45de1;
+    ::ll::UntypedStorage<8, 16> mUnk1b31b5;
+    ::ll::UntypedStorage<8, 24> mUnkdf74db;
+    ::ll::UntypedStorage<8, 8>  mUnkeca0b7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DirectoryPackWithEncryptionAccessStrategy& operator=(DirectoryPackWithEncryptionAccessStrategy const&);
@@ -22,134 +36,149 @@ public:
     DirectoryPackWithEncryptionAccessStrategy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DirectoryPackWithEncryptionAccessStrategy() = default;
+    virtual ~DirectoryPackWithEncryptionAccessStrategy() /*override*/;
 
     // vIndex: 1
-    virtual uint64 getPackSize() const;
+    virtual uint64 getPackSize() const /*override*/;
 
     // vIndex: 2
-    virtual class ResourceLocation const& getPackLocation() const;
+    virtual ::ResourceLocation const& getPackLocation() const /*override*/;
 
     // vIndex: 3
-    virtual std::string const& getPackName() const;
+    virtual ::std::string const& getPackName() const /*override*/;
 
     // vIndex: 4
-    virtual bool isWritable() const;
-
-    // vIndex: 5
-    virtual void setIsTrusted(bool);
+    virtual bool isWritable() const /*override*/;
 
     // vIndex: 6
-    virtual bool isTrusted() const;
+    virtual bool isTrusted() const /*override*/;
+
+    // vIndex: 5
+    virtual void setIsTrusted(bool) /*override*/;
 
     // vIndex: 7
-    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
     // vIndex: 8
-    virtual bool hasFolder(class Core::Path const& packRelativePath) const;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 9
-    virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
     // vIndex: 10
-    virtual bool deleteAsset(class Core::Path const& packRelativePath);
+    virtual bool deleteAsset(::Core::Path const& packRelativePath) /*override*/;
 
     // vIndex: 11
-    virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
+    virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
 
     // vIndex: 12
     virtual void forEachIn(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback,
-        bool                                         recurseAnyways
-    ) const;
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const /*override*/;
 
     // vIndex: 14
-    virtual ::PackAccessStrategyType getStrategyType() const;
-
-    // vIndex: 16
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const;
+    virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
     // vIndex: 17
-    virtual ::PackAccessAssetGenerationResult generateAssetSet();
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 19
-    virtual void unload();
-
-    // vIndex: 20
-    virtual bool hasUpgradeFiles() const;
+    // vIndex: 18
+    virtual ::PackAccessAssetGenerationResult generateAssetSet() /*override*/;
 
     // vIndex: 21
-    virtual class ContentIdentity readContentIdentity() const;
+    virtual void unload() /*override*/;
 
-    MCAPI DirectoryPackWithEncryptionAccessStrategy(
-        class ResourceLocation const&                                       packLocation,
-        class ResourceLocation const&                                       encryptedContentLocation,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
+    // vIndex: 22
+    virtual bool hasUpgradeFiles() const /*override*/;
 
+    // vIndex: 23
+    virtual ::ContentIdentity readContentIdentity() const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _getUnencryptedAsset(class Core::Path const& packRelativePath, std::string& result) const;
-
-    MCAPI bool _hasUnencryptedAsset(class Core::Path const& packRelativePath) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ResourceLocation const&                                       packLocation,
-        class ResourceLocation const&                                       encryptedContentLocation,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    MCAPI DirectoryPackWithEncryptionAccessStrategy(
+        ::ResourceLocation const&                                         packLocation,
+        ::ResourceLocation const&                                         encryptedContentLocation,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
+    MCAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
 
-    MCAPI bool deleteAsset$(class Core::Path const& packRelativePath);
+    MCAPI bool _hasUnencryptedAsset(::Core::Path const& packRelativePath) const;
+    // NOLINTEND
 
-    MCAPI void forEachIn$(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback,
-        bool                                         recurseAnyways
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ResourceLocation const&                                         packLocation,
+        ::ResourceLocation const&                                         encryptedContentLocation,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint64 $getPackSize() const;
+
+    MCAPI ::ResourceLocation const& $getPackLocation() const;
+
+    MCAPI ::std::string const& $getPackName() const;
+
+    MCAPI bool $isWritable() const;
+
+    MCAPI bool $isTrusted() const;
+
+    MCAPI void $setIsTrusted(bool);
+
+    MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+
+    MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+
+    MCAPI bool $deleteAsset(::Core::Path const& packRelativePath);
+
+    MCAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
+
+    MCAPI void $forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
     ) const;
 
-    MCAPI ::PackAccessAssetGenerationResult generateAssetSet$();
+    MCAPI ::PackAccessStrategyType $getStrategyType() const;
 
-    MCAPI bool getAsset$(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI class ResourceLocation const& getPackLocation$() const;
+    MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
 
-    MCAPI std::string const& getPackName$() const;
+    MCAPI void $unload();
 
-    MCAPI uint64 getPackSize$() const;
+    MCAPI bool $hasUpgradeFiles() const;
 
-    MCAPI ::PackAccessStrategyType getStrategyType$() const;
+    MCAPI ::ContentIdentity $readContentIdentity() const;
+    // NOLINTEND
 
-    MCAPI bool hasAsset$(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
-
-    MCAPI bool hasFolder$(class Core::Path const& packRelativePath) const;
-
-    MCAPI bool hasUpgradeFiles$() const;
-
-    MCAPI bool isTrusted$() const;
-
-    MCAPI bool isWritable$() const;
-
-    MCAPI class ContentIdentity readContentIdentity$() const;
-
-    MCAPI void setIsTrusted$(bool);
-
-    MCAPI void unload$();
-
-    MCAPI bool writeAsset$(class Core::Path const& packRelativePath, std::string const& fileContent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

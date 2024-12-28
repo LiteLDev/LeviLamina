@@ -4,6 +4,10 @@
 
 namespace ScriptModuleMinecraft {
 
-enum class ScriptComponentType {};
-
+enum class ScriptComponentType : int {
+    Actor = 0,
+    Block = 1,
+    Item  = 2,
 };
+
+}

@@ -3,18 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Goat;
+class HashedString;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Player;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class GoatHornItem : public ::Item {
@@ -25,57 +24,78 @@ public:
     GoatHornItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GoatHornItem() = default;
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 113
+    virtual bool canBeCharged() const /*override*/;
+
+    // vIndex: 94
+    virtual ::HashedString const& getCooldownType() const /*override*/;
+
+    // vIndex: 95
+    virtual int getCooldownTime() const /*override*/;
+
+    // vIndex: 52
     virtual void appendFormattedHovertext(
-        class ItemStackBase const& instance,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
-
-    // vIndex: 90
-    virtual class HashedString const& getCooldownType() const;
-
-    // vIndex: 91
-    virtual int getCooldownTime() const;
-
-    // vIndex: 110
-    virtual bool canBeCharged() const;
-
-    MCAPI GoatHornItem(std::string const& name, int id);
-
-    MCAPI static void addGoatHornVarationSaveData(class Goat& goat, class ItemStack& instance);
-
+    // vIndex: 0
+    virtual ~GoatHornItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI GoatHornItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& instance,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI bool $canBeCharged() const;
+
+    MCAPI ::HashedString const& $getCooldownType() const;
+
+    MCAPI int $getCooldownTime() const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
+    // NOLINTEND
 
-    MCAPI bool canBeCharged$() const;
-
-    MCAPI int getCooldownTime$() const;
-
-    MCAPI class HashedString const& getCooldownType$() const;
-
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

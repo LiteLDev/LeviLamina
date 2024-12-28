@@ -9,33 +9,42 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorApplyDamageOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk4432bc;
+    ::ll::UntypedStorage<8, 40> mUnkbfc0ea;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorApplyDamageOptions(ScriptActorApplyDamageOptions const&);
     ScriptActorApplyDamageOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
+    operator=(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions const&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
+    operator=(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&&);
 
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions const& other) const;
 
     MCAPI ~ScriptActorApplyDamageOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorApplyDamageOptions> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

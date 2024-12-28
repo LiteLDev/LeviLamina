@@ -3,9 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class DimensionManager;
+class Mob;
+class StrictEntityContext;
+struct ActorUniqueID;
+// clang-format on
 
 class ActorFetcher {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkb1e281;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorFetcher& operator=(ActorFetcher const&);
@@ -13,21 +28,20 @@ public:
     ActorFetcher();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorFetcher(gsl::not_null<class StackRefResult<class DimensionManager>> const& dimensionManager);
+    MCAPI explicit ActorFetcher(::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> dimensionManager);
 
-    MCAPI class Actor* fetchActorAllDimensions(struct ActorUniqueID actorId, bool getRemoved) const;
+    MCAPI ::Actor* fetchActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
 
-    MCAPI class Mob* fetchMobAllDimensions(struct ActorUniqueID mobId) const;
+    MCAPI ::Mob* fetchMobAllDimensions(::ActorUniqueID mobId) const;
 
-    MCAPI class StrictEntityContext fetchStrictActorAllDimensions(struct ActorUniqueID actorId, bool getRemoved) const;
-
+    MCAPI ::StrictEntityContext fetchStrictActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(gsl::not_null<class StackRefResult<class DimensionManager>> const& dimensionManager);
-
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> dimensionManager);
     // NOLINTEND
 };

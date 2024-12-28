@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IPositionalRandomFactory.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IRandom;
+class SimpleRandom;
+// clang-format on
+
 class SimplePositionalRandomFactory : public ::IPositionalRandomFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk264730;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimplePositionalRandomFactory& operator=(SimplePositionalRandomFactory const&);
@@ -13,32 +26,49 @@ public:
     SimplePositionalRandomFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SimplePositionalRandomFactory() = default;
-
     // vIndex: 1
-    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& blockPos) const;
+    virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
     // vIndex: 2
-    virtual std::unique_ptr<class IRandom> forString(std::string const& string) const;
+    virtual ::std::unique_ptr<::IRandom> forString(::std::string const& string) const /*override*/;
 
-    MCAPI explicit SimplePositionalRandomFactory(int64 seed);
-
-    MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const& blockPos) const;
-
+    // vIndex: 0
+    virtual ~SimplePositionalRandomFactory() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SimplePositionalRandomFactory(int64 seed);
 
-    MCAPI void* ctor$(int64 seed);
+    MCAPI ::SimpleRandom forBlockPosImpl(::BlockPos const& blockPos) const;
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class IRandom> forBlockPos$(class BlockPos const& blockPos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int64 seed);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class IRandom> forString$(std::string const& string) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
+
+    MCAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& string) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

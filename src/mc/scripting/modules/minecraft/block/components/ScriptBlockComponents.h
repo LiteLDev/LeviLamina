@@ -18,13 +18,13 @@ public:
     ScriptBlockComponents();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void bind(
-        class Scripting::ModuleBindingBuilder&                       moduleBuilder,
-        class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& blockComponentTypeEnumBuilder
+        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
+        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& blockComponentTypeEnumBuilder
     );
-
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

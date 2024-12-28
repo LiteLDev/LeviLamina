@@ -3,15 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 #include "mc/scripting/modules/gametest/BaseScriptGameTestFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleGameTest { class BaseScriptGameTestFunction; }
-namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }
@@ -21,45 +16,46 @@ namespace ScriptModuleGameTest {
 
 class SyncScriptGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGameTestFunction {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 88> mUnkb88201;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SyncScriptGameTestFunction& operator=(SyncScriptGameTestFunction const&);
     SyncScriptGameTestFunction(SyncScriptGameTestFunction const&);
     SyncScriptGameTestFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SyncScriptGameTestFunction() = default;
-
     // vIndex: 2
-    virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
-    run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext& fnContext) const;
+    virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
+    run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const /*override*/;
 
-    MCAPI SyncScriptGameTestFunction(
-        class Scripting::WeakLifetimeScope scope,
-        class Scripting::Closure<
-            void(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)> functionHandle,
-        std::string const&                                                                               testName
-    );
-
+    // vIndex: 0
+    virtual ~SyncScriptGameTestFunction() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class Scripting::WeakLifetimeScope scope,
-        class Scripting::Closure<
-            void(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)> functionHandle,
-        std::string const&                                                                               testName
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
+    $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class gametest::IGameTestFunctionRunResult>
-          run$(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext& fnContext) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

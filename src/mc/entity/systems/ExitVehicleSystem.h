@@ -2,16 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ExitVehicleSystem {
-public:
-    // prevent constructor by default
-    ExitVehicleSystem& operator=(ExitVehicleSystem const&);
-    ExitVehicleSystem(ExitVehicleSystem const&);
-    ExitVehicleSystem();
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+struct TickingSystemWithInfo;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const& version, bool isClient);
+namespace ExitVehicleSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClient);
+// NOLINTEND
 
-    // NOLINTEND
-};
+} // namespace ExitVehicleSystem

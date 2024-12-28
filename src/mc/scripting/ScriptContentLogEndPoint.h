@@ -7,7 +7,19 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptDebugger;
+// clang-format on
+
 class ScriptContentLogEndPoint : public ::ContentLogEndPoint {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk56e480;
+    ::ll::UntypedStorage<1, 1> mUnk195740;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptContentLogEndPoint& operator=(ScriptContentLogEndPoint const&);
@@ -15,39 +27,64 @@ public:
     ScriptContentLogEndPoint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void flush();
+    // vIndex: 0
+    virtual ~ScriptContentLogEndPoint() /*override*/;
 
-    MCVAPI bool isEnabled() const;
+    // vIndex: 1
+    virtual void log(::LogArea const, ::LogLevel const logLevel, char const* message) /*override*/;
 
-    MCVAPI void log(::LogArea, ::LogLevel logLevel, char const* message);
+    // vIndex: 2
+    virtual bool logOnlyOnce() const /*override*/;
 
-    MCVAPI bool logOnlyOnce() const;
+    // vIndex: 2
+    virtual void flush() /*override*/;
 
-    MCVAPI void setEnabled(bool newState);
+    // vIndex: 3
+    virtual void setEnabled(bool enabled) /*override*/;
 
-    MCAPI explicit ScriptContentLogEndPoint(class ScriptDebugger& debugger);
-
+    // vIndex: 4
+    virtual bool isEnabled() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI explicit ScriptContentLogEndPoint(::ScriptDebugger& debugger);
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockLogEndPoint();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptDebugger& debugger);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptDebugger& debugger);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void flush$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $log(::LogArea const, ::LogLevel const logLevel, char const* message);
 
-    MCAPI bool isEnabled$() const;
+    MCAPI bool $logOnlyOnce() const;
 
-    MCAPI void log$(::LogArea, ::LogLevel logLevel, char const* message);
+    MCAPI void $flush();
 
-    MCAPI bool logOnlyOnce$() const;
+    MCAPI void $setEnabled(bool enabled);
 
-    MCAPI void setEnabled$(bool newState);
+    MCAPI bool $isEnabled() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForLogEndPoint();
+
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

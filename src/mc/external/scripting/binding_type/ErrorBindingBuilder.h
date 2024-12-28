@@ -13,4 +13,4 @@ public:
     ErrorBindingBuilder();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

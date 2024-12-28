@@ -5,8 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 #include "mc/world/level/levelgen/structure/PoolElementStructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class BlockVolume;
+class ChunkPos;
+class Dimension;
+class JigsawStructureRegistry;
+class Random;
+class StructurePiece;
+// clang-format on
 
 class VillagePiece : public ::PoolElementStructurePiece {
 public:
@@ -16,62 +28,75 @@ public:
     VillagePiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VillagePiece() = default;
-
     // vIndex: 13
     virtual int generateHeightAtPosition(
-        class BlockPos const&                                                    pos,
-        class Dimension&                                                         dim,
-        class BlockVolume&                                                       box,
-        std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>& chunkHeightCache
-    ) const;
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+    ) const /*override*/;
 
     // vIndex: 14
-    virtual class Block const*
-    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    virtual ::Block const*
+    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
     // vIndex: 15
-    virtual class Block const& getBeardStabilizeBlock(class Block const& foundationBlock) const;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const /*override*/;
 
     // vIndex: 16
-    virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const;
+    virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
 
     // vIndex: 17
-    virtual bool _needsPostProcessing(class BlockSource& region);
+    virtual bool _needsPostProcessing(::BlockSource& region) /*override*/;
 
-    MCAPI static void addPieces(
-        class BlockPos                                      position,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random,
-        class JigsawStructureRegistry&                      pools,
-        ::VanillaBiomeTypes                                 biomeType,
-        class Dimension&                                    dimension
-    );
-
+    // vIndex: 0
+    virtual ~VillagePiece() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void addPieces(
+        ::BlockPos                                          position,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        ::JigsawStructureRegistry&                          pools,
+        ::VanillaBiomeTypes                                 biomeType,
+        ::Dimension&                                        dimension
+    );
+    // NOLINTEND
 
-    MCAPI bool _needsPostProcessing$(class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int generateHeightAtPosition$(
-        class BlockPos const&                                                    pos,
-        class Dimension&                                                         dim,
-        class BlockVolume&                                                       box,
-        std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>& chunkHeightCache
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $generateHeightAtPosition(
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const;
 
-    MCAPI class Block const& getBeardStabilizeBlock$(class Block const& foundationBlock) const;
+    MCAPI ::Block const*
+    $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI class Block const*
-    getSupportBlock$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCAPI ::AdjustmentEffect getTerrainAdjustmentEffect$() const;
+    MCAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
+    MCAPI bool $_needsPostProcessing(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

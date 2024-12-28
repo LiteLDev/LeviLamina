@@ -5,37 +5,65 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
 struct WaterMovementDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk23a354;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WaterMovementDescription& operator=(WaterMovementDescription const&);
     WaterMovementDescription(WaterMovementDescription const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
-
-    // vIndex: 1
-    virtual ~WaterMovementDescription() = default;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    MCAPI WaterMovementDescription();
-
+    // vIndex: 1
+    virtual ~WaterMovementDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WaterMovementDescription();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
 
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,12 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/world/actor/player/IPlayerDeathManagerConnector.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
+class ActorDamageSource;
+class IPlayerDeathManagerProxy;
+class PacketSender;
+class Player;
 // clang-format on
 
-class PlayerDeathManager {
+class PlayerDeathManager : public ::IPlayerDeathManagerConnector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnk236073;
+    ::ll::UntypedStorage<8, 8>   mUnkbc01aa;
+    ::ll::UntypedStorage<8, 24>  mUnkbddb5a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerDeathManager& operator=(PlayerDeathManager const&);
@@ -15,26 +30,46 @@ public:
     PlayerDeathManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy> playerDeathManagerProxy);
+    // vIndex: 0
+    virtual ~PlayerDeathManager() /*override*/;
 
-    MCAPI void playerDied(class Player& player, class ActorDamageSource const& source);
-
-    MCAPI class Bedrock::PubSub::Subscription registerOnPlayerDeathCallback(std::function<void(class Player&)> callback
-    );
-
-    MCAPI void setPacketSender(class PacketSender& packetSender);
-
-    MCAPI ~PlayerDeathManager();
-
+    // vIndex: 1
+    virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getOnPlayerDeathConnector() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::unique_ptr<class IPlayerDeathManagerProxy> playerDeathManagerProxy);
+    MCAPI explicit PlayerDeathManager(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
 
-    MCAPI void dtor$();
+    MCAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
 
+    MCAPI void setPacketSender(::PacketSender& packetSender);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getOnPlayerDeathConnector();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

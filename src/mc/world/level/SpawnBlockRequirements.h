@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SpawnBlockRequirements {};
+enum class SpawnBlockRequirements : uchar {
+    None       = 0,
+    MustSeeSky = 1,
+};

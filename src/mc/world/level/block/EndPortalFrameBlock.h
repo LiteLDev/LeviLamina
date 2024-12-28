@@ -4,18 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Player;
 // clang-format on
 
 class EndPortalFrameBlock : public ::BlockLegacy {
@@ -26,86 +26,112 @@ public:
     EndPortalFrameBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndPortalFrameBlock() = default;
-
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
     // vIndex: 8
     virtual void addAABBs(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
-    ) const;
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
+
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
+
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    MCAPI EndPortalFrameBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~EndPortalFrameBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void createPortal(class BlockSource& region, class BlockPos const& origin);
-
-    MCAPI static void removePortal(class BlockSource& region, class BlockPos const& origin);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EndPortalFrameBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void createPortal(::BlockSource& region, ::BlockPos const& origin);
 
-    MCAPI void addAABBs$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
+    MCAPI static void removePortal(::BlockSource& region, ::BlockPos const& origin);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI bool
-    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -11,33 +11,45 @@ namespace Scripting {
 
 struct MissingModuleRequest {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 104> mUnke95a67;
+    ::ll::UntypedStorage<8, 104> mUnkf9e291;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MissingModuleRequest& operator=(MissingModuleRequest const&);
     MissingModuleRequest(MissingModuleRequest const&);
     MissingModuleRequest();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI MissingModuleRequest(::Scripting::MissingModuleRequest&&);
+
     MCAPI MissingModuleRequest(
-        struct Scripting::ModuleDescriptor const& missingModule_,
-        struct Scripting::ModuleDescriptor const& requestedBy_
+        ::Scripting::ModuleDescriptor const& missingModule_,
+        ::Scripting::ModuleDescriptor const& requestedBy_
     );
 
     MCAPI ~MissingModuleRequest();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct Scripting::ModuleDescriptor const& missingModule_,
-        struct Scripting::ModuleDescriptor const& requestedBy_
-    );
+    MCAPI void* $ctor(::Scripting::MissingModuleRequest&&);
 
-    MCAPI void dtor$();
+    MCAPI void*
+    $ctor(::Scripting::ModuleDescriptor const& missingModule_, ::Scripting::ModuleDescriptor const& requestedBy_);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

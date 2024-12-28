@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http { class Request; }
-namespace Bedrock::Http { class Response; }
-// clang-format on
+#include "mc/deps/core/http/DispatcherInterface.h"
 
 namespace Bedrock::Http {
 
-class DispatcherProcess {
+class DispatcherProcess : public ::Bedrock::Http::DispatcherInterface,
+                          public ::std::enable_shared_from_this<::Bedrock::Http::DispatcherProcess> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk757a87;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DispatcherProcess& operator=(DispatcherProcess const&);
@@ -21,13 +22,10 @@ public:
     DispatcherProcess();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DispatcherProcess();
-
-    // vIndex: 1
-    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&& request) = 0;
+    virtual ~DispatcherProcess() /*override*/;
 
     // vIndex: 2
     virtual void initialize();
@@ -40,29 +38,43 @@ public:
 
     // vIndex: 5
     virtual void resume();
-
-    MCAPI explicit DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess> childProcess);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit DispatcherProcess(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::shared_ptr<class Bedrock::Http::DispatcherProcess> childProcess);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initialize$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initialize();
 
-    MCAPI void resume$();
+    MCAPI void $shutdown();
 
-    MCAPI void shutdown$();
+    MCAPI void $suspend();
 
-    MCAPI void suspend$();
+    MCAPI void $resume();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

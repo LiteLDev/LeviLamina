@@ -5,14 +5,15 @@
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace AgentCommands { class Command; }
-// clang-format on
-
 namespace AgentCommands {
 
 class DropAllCommand : public ::AgentCommands::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd81ced;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DropAllCommand& operator=(DropAllCommand const&);
@@ -20,28 +21,37 @@ public:
     DropAllCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DropAllCommand() = default;
-
     // vIndex: 1
-    virtual void execute();
+    virtual void execute() /*override*/;
 
     // vIndex: 2
-    virtual bool isDone();
+    virtual bool isDone() /*override*/;
 
+    // vIndex: 0
+    virtual ~DropAllCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void execute$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute();
 
-    MCAPI bool isDone$();
+    MCAPI bool $isDone();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace AgentCommands
+} // namespace AgentCommands

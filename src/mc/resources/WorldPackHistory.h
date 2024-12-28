@@ -9,29 +9,36 @@ namespace Json { class Value; }
 
 class WorldPackHistory {
 public:
-    // prevent constructor by default
-    WorldPackHistory& operator=(WorldPackHistory const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI WorldPackHistory();
-
-    MCAPI WorldPackHistory(class WorldPackHistory const&);
-
-    MCAPI bool initializeFromJson(class Json::Value const& value);
-
-    MCAPI ~WorldPackHistory();
-
+    ::ll::UntypedStorage<8, 136> mUnkf52681;
+    ::ll::UntypedStorage<8, 32>  mUnkcc848e;
+    ::ll::UntypedStorage<8, 64>  mUnk92bfe5;
+    ::ll::UntypedStorage<4, 4>   mUnk7c24db;
+    ::ll::UntypedStorage<1, 1>   mUnke649e8;
+    ::ll::UntypedStorage<8, 16>  mUnk30ef62;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    WorldPackHistory& operator=(WorldPackHistory const&);
+    WorldPackHistory();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WorldPackHistory const&);
+    MCAPI WorldPackHistory(::WorldPackHistory const&);
 
-    MCAPI void* ctor$();
+    MCAPI WorldPackHistory(::WorldPackHistory&&);
 
-    MCAPI void dtor$();
+    MCAPI bool initializeFromJson(::Json::Value const& value);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WorldPackHistory const&);
+
+    MCAPI void* $ctor(::WorldPackHistory&&);
     // NOLINTEND
 };

@@ -5,87 +5,122 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockVolumeBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BoundingBox;
+class ChunkPos;
+class ListBlockVolumeIterator;
+class Vec3;
+// clang-format on
+
 class ListBlockVolume : public ::BlockVolumeBase {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ListBlockVolume() = default;
-
-    // vIndex: 1
-    virtual class BoundingBox getBoundingBox() const;
-
-    // vIndex: 2
-    virtual class BlockPos getMin() const;
-
-    // vIndex: 3
-    virtual class BlockPos getMax() const;
-
-    // vIndex: 4
-    virtual glm::ivec3 getSpan() const;
-
-    // vIndex: 5
-    virtual int getCapacity() const;
-
-    // vIndex: 6
-    virtual bool isInside(class BlockPos const& pos) const;
-
-    // vIndex: 7
-    virtual void translate(class BlockPos const& delta);
-
-    // vIndex: 8
-    virtual void forEach(std::function<bool(class BlockPos const&)> callback) const;
-
-    // vIndex: 9
-    virtual std::set<class ChunkPos> getChunks() const;
-
-    MCAPI ListBlockVolume();
-
-    MCAPI ListBlockVolume(class ListBlockVolume const& rhs);
-
-    MCAPI explicit ListBlockVolume(std::vector<class BlockPos> const& blockPositions);
-
-    MCAPI explicit ListBlockVolume(std::vector<class Vec3> const& blockPositions);
-
-    MCAPI class ListBlockVolumeIterator begin() const;
-
-    MCAPI void erase(std::vector<class Vec3> const& blockPositions);
-
-    MCAPI void insert(std::vector<class Vec3> const& blockPositions);
-
-    MCAPI class ListBlockVolume& operator=(class ListBlockVolume const& rhs);
-
+    ::ll::UntypedStorage<8, 64> mUnkbb5064;
+    ::ll::UntypedStorage<4, 12> mUnk531f0e;
+    ::ll::UntypedStorage<4, 12> mUnk33cf4c;
+    ::ll::UntypedStorage<8, 8>  mUnk7cf3db;
     // NOLINTEND
 
-    // thunks
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 2
+    virtual ::BlockPos getMin() const /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 3
+    virtual ::BlockPos getMax() const /*override*/;
 
-    MCAPI void* ctor$(std::vector<class BlockPos> const& blockPositions);
+    // vIndex: 1
+    virtual ::BoundingBox getBoundingBox() const /*override*/;
 
-    MCAPI void* ctor$(class ListBlockVolume const& rhs);
+    // vIndex: 4
+    virtual ::glm::ivec3 getSpan() const /*override*/;
 
-    MCAPI void* ctor$(std::vector<class Vec3> const& blockPositions);
+    // vIndex: 5
+    virtual int getCapacity() const /*override*/;
 
-    MCAPI void forEach$(std::function<bool(class BlockPos const&)> callback) const;
+    // vIndex: 6
+    virtual bool isInside(::BlockPos const& pos) const /*override*/;
 
-    MCAPI class BoundingBox getBoundingBox$() const;
+    // vIndex: 7
+    virtual void translate(::BlockPos const& delta) /*override*/;
 
-    MCAPI int getCapacity$() const;
+    // vIndex: 8
+    virtual void forEach(::std::function<bool(::BlockPos const&)> callback) const /*override*/;
 
-    MCAPI std::set<class ChunkPos> getChunks$() const;
+    // vIndex: 9
+    virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
-    MCAPI class BlockPos getMax$() const;
+    // vIndex: 0
+    virtual ~ListBlockVolume() /*override*/;
+    // NOLINTEND
 
-    MCAPI class BlockPos getMin$() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ListBlockVolume();
 
-    MCAPI glm::ivec3 getSpan$() const;
+    MCAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
 
-    MCAPI bool isInside$(class BlockPos const& pos) const;
+    MCAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
 
-    MCAPI void translate$(class BlockPos const& delta);
+    MCAPI ListBlockVolume(::ListBlockVolume const& rhs);
 
+    MCAPI ::ListBlockVolumeIterator begin() const;
+
+    MCAPI void erase(::std::vector<::Vec3> const& blockPositions);
+
+    MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
+
+    MCAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
+
+    MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
+
+    MCAPI void* $ctor(::ListBlockVolume const& rhs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPos $getMin() const;
+
+    MCAPI ::BlockPos $getMax() const;
+
+    MCAPI ::BoundingBox $getBoundingBox() const;
+
+    MCAPI ::glm::ivec3 $getSpan() const;
+
+    MCAPI int $getCapacity() const;
+
+    MCAPI bool $isInside(::BlockPos const& pos) const;
+
+    MCAPI void $translate(::BlockPos const& delta);
+
+    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+
+    MCAPI ::std::set<::ChunkPos> $getChunks() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BannerPatternRegistry {
+struct BannerPatternRegistry {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3d7479;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BannerPatternRegistry& operator=(BannerPatternRegistry const&);
@@ -10,15 +16,14 @@ public:
     BannerPatternRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~BannerPatternRegistry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

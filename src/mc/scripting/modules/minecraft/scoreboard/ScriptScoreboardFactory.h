@@ -22,11 +22,11 @@ public:
     ScriptScoreboardFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>
-    getHandle(class Scripting::WeakLifetimeScope& scope, class Level& level);
-
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard>
+    getHandle(::Scripting::WeakLifetimeScope& scope, ::Level& level);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

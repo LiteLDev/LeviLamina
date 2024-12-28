@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-// clang-format on
-
 class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
@@ -18,21 +13,30 @@ public:
     AppPlatformNetworkSettings();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AppPlatformNetworkSettings() = default;
+    virtual ~AppPlatformNetworkSettings() /*override*/;
 
     // vIndex: 1
     virtual bool requiresNetworkOutageMessaging() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool requiresNetworkOutageMessaging$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $requiresNetworkOutageMessaging() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

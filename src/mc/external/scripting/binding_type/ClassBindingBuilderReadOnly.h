@@ -13,4 +13,4 @@ public:
     ClassBindingBuilderReadOnly();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/gametest/framework/IGameTestHelperProvider.h"
+#include "mc/gametest/IGameTestHelperProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class IGameTestHelperProvider; }
 // clang-format on
 
 class MinecraftGameTestHelperProvider : public ::gametest::IGameTestHelperProvider {
@@ -20,28 +19,37 @@ public:
     MinecraftGameTestHelperProvider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MinecraftGameTestHelperProvider() = default;
-
     // vIndex: 1
-    virtual std::unique_ptr<class gametest::BaseGameTestHelper>
-    createGameTestHelper(class gametest::BaseGameTestInstance& testInstance);
+    virtual ::std::unique_ptr<::gametest::BaseGameTestHelper>
+    createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 2
-    virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
+    virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() /*override*/;
 
+    // vIndex: 0
+    virtual ~MinecraftGameTestHelperProvider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class gametest::IGameTestHelperProvider> clone$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::gametest::BaseGameTestHelper>
+    $createGameTestHelper(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI std::unique_ptr<class gametest::BaseGameTestHelper>
-          createGameTestHelper$(class gametest::BaseGameTestInstance& testInstance);
+    MCAPI ::std::unique_ptr<::gametest::IGameTestHelperProvider> $clone();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

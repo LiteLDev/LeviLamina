@@ -9,9 +9,10 @@ class XoroshiroRandom;
 // clang-format on
 
 namespace br::worldgen::WorldGenRandomUtils {
+// functions
 // NOLINTBEGIN
-MCAPI std::variant<class SimpleRandom, class XoroshiroRandom>
-      copySource(std::variant<class SimpleRandom, class XoroshiroRandom> const& source);
+MCAPI ::std::variant<::SimpleRandom, ::XoroshiroRandom>
+copySource(::std::variant<::SimpleRandom, ::XoroshiroRandom> const& source);
 // NOLINTEND
 
-}; // namespace br::worldgen::WorldGenRandomUtils
+} // namespace br::worldgen::WorldGenRandomUtils

@@ -4,10 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class LeashableComponent;
+class LeashableDefinition;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
@@ -16,7 +21,8 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptLeashableComponent {
+class ScriptLeashableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::LeashableComponent, ::LeashableDefinition> {
 public:
     // prevent constructor by default
     ScriptLeashableComponent& operator=(ScriptLeashableComponent const&);
@@ -24,43 +30,73 @@ public:
     ScriptLeashableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptLeashableComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptLeashableComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<float> getSoftDistance() const;
-
-    MCAPI class Scripting::Result<void> leash(class ScriptModuleMinecraft::ScriptActor& scriptLeashHolder) const;
-
-    MCAPI class Scripting::Result<void> unleash() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLeashableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptLeashableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptLeashableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBeStolen() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getHardDistance() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getIsLeashed() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getLeashHolder() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getLeashHolderActorId() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getMaxDistance() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getSoftDistance() const;
+
+    MCAPI ::Scripting::Result<void> leashTo(::ScriptModuleMinecraft::ScriptActor& scriptLeashHolder) const;
+
+    MCAPI ::Scripting::Result<void> unleash() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLeashableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

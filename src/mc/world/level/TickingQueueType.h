@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class TickingQueueType {};
+enum class TickingQueueType : uchar {
+    Internal = 0,
+    Random   = 1,
+};

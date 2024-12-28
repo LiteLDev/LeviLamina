@@ -3,11 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class DoorBlock;
+class Mob;
+class Path;
+// clang-format on
+
 class DoorInteractGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkb3350a;
+    ::ll::UntypedStorage<8, 8>  mUnkd97404;
+    ::ll::UntypedStorage<1, 1>  mUnk1c4b6d;
+    ::ll::UntypedStorage<1, 1>  mUnk4177ac;
+    ::ll::UntypedStorage<1, 1>  mUnkc896cc;
+    ::ll::UntypedStorage<4, 4>  mUnkc19747;
+    ::ll::UntypedStorage<4, 4>  mUnkdb238d;
+    ::ll::UntypedStorage<1, 1>  mUnk153ece;
+    ::ll::UntypedStorage<1, 1>  mUnk611ba8;
+    ::ll::UntypedStorage<8, 8>  mUnkd69cdf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DoorInteractGoal& operator=(DoorInteractGoal const&);
@@ -15,59 +37,74 @@ public:
     DoorInteractGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DoorInteractGoal();
+    virtual ~DoorInteractGoal() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI explicit DoorInteractGoal(class Mob& mob);
-
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class DoorBlock const* _findBlockingDoorAtPos(
-        class BlockPos const& bpos,
-        class Mob const&      mob,
-        class Path*           path,
-        ::Direction::Type&    dirIn,
-        ::Direction::Type&    dirOut
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit DoorInteractGoal(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
+        ::BlockPos const&  bpos,
+        ::Mob const&       mob,
+        ::Path*            path,
+        ::Direction::Type& dirIn,
+        ::Direction::Type& dirOut
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

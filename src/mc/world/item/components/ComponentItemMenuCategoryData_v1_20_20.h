@@ -12,35 +12,48 @@ namespace cereal { struct ReflectionCtx; }
 
 struct ComponentItemMenuCategoryData_v1_20_20 {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>  mUnk6629d6;
+    ::ll::UntypedStorage<8, 40> mUnkc1b1c6;
+    ::ll::UntypedStorage<1, 2>  mUnk6be431;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ComponentItemMenuCategoryData_v1_20_20& operator=(ComponentItemMenuCategoryData_v1_20_20 const&);
     ComponentItemMenuCategoryData_v1_20_20();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemMenuCategoryData_v1_20_20(struct ComponentItemMenuCategoryData_v1_20_20 const&);
+    MCAPI ComponentItemMenuCategoryData_v1_20_20(::ComponentItemMenuCategoryData_v1_20_20 const&);
 
-    MCAPI struct ComponentItemMenuCategoryData_v1_20_20& operator=(struct ComponentItemMenuCategoryData_v1_20_20&&);
-
-    MCAPI struct ComponentItemMenuCategoryData_v1_20_20&
-    operator=(struct ComponentItemMenuCategoryData_v1_20_20 const&);
+    MCAPI ::ComponentItemMenuCategoryData_v1_20_20& operator=(::ComponentItemMenuCategoryData_v1_20_20&&);
 
     MCAPI ~ComponentItemMenuCategoryData_v1_20_20();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI static void upgrade(
-        std::optional<::CreativeItemCategory>&                        oldData,
-        std::optional<struct ComponentItemMenuCategoryData_v1_20_20>& newData
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ComponentItemMenuCategoryData_v1_20_20 const&);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void dtor$();
+    MCAPI static void upgrade(
+        ::std::optional<::CreativeItemCategory>&                   oldData,
+        ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>& newData
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ComponentItemMenuCategoryData_v1_20_20 const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

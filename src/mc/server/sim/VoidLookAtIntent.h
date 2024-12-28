@@ -12,4 +12,4 @@ public:
     VoidLookAtIntent();
 };
 
-}; // namespace sim
+} // namespace sim

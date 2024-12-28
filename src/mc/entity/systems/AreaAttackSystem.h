@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class AreaAttackComponent;
+class EntityRegistry;
+// clang-format on
+
 class AreaAttackSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
@@ -13,43 +20,37 @@ public:
     AreaAttackSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AreaAttackSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~AreaAttackSystem() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _tickComponent(class ActorOwnerComponent& actorOwnerComponent, class AreaAttackComponent& areaAttackComponent);
-
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::AreaAttackComponent& areaAttackComponent);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

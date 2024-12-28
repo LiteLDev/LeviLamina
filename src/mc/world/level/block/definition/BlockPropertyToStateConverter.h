@@ -4,26 +4,33 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Json { class Value; }
 // clang-format on
 
 namespace BlockPropertyToStateConverter {
+// functions
 // NOLINTBEGIN
-MCAPI void _convertPropertyToStateInBoneVisibility(class Json::Value& obj);
+MCAPI void _convertPropertyToStateInBoneVisibility(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInDescription(class Json::Value& root);
+MCAPI void _convertPropertyToStateInDescription(::Json::Value& root);
 
-MCAPI void _convertPropertyToStateInEventSequence(class Json::Value& obj);
+MCAPI void _convertPropertyToStateInEventSequence(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInEvents(class Json::Value& root);
+MCAPI void _convertPropertyToStateInEvents(::Json::Value& root);
 
-MCAPI void _convertPropertyToStateInObjectContainsConditionObject(class Json::Value& obj);
+MCAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value& obj);
 
-MCAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(class Json::Value& obj);
+MCAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
 
-MCAPI void _copyMembers(class Json::Value& from, class Json::Value& to);
+MCAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
 
-MCAPI void checkAndConvertInBlock(class SemVersion const& version, class Json::Value& root);
+MCAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& root);
 // NOLINTEND
 
-}; // namespace BlockPropertyToStateConverter
+// static variables
+// NOLINTBEGIN
+MCAPI ::SemVersion const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
+// NOLINTEND
+
+} // namespace BlockPropertyToStateConverter

@@ -8,10 +8,10 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,16 +20,35 @@ struct AABBShapeComponent;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct DepenetrationComponent;
-struct MinecartFlag;
+struct MinecartFlagComponent;
 struct OffsetsComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
-struct ShulkerFlag;
+struct ShulkerFlagComponent;
 // clang-format on
 
 namespace UpdateBoundingBox {
 
-struct SystemImpl {
+struct SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                        ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+                        ::Read<>,
+                        ::Write<
+                            ::AABBShapeComponent,
+                            ::ActorDataBoundingBoxComponent,
+                            ::ActorDataDirtyFlagsComponent,
+                            ::DepenetrationComponent,
+                            ::OffsetsComponent>,
+                        ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+                        ::GlobalRead<>,
+                        ::GlobalWrite<>,
+                        ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkb4988f;
+    ::ll::UntypedStorage<1, 1> mUnkee2d23;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SystemImpl& operator=(SystemImpl const&);
@@ -37,108 +56,91 @@ public:
     SystemImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SystemImpl() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct MinecartFlag>,
-                          class FlagComponent<struct ShulkerFlag>>,
-                      struct Read<>,
-                      struct Write<
-                          struct AABBShapeComponent,
-                          struct ActorDataBoundingBoxComponent,
-                          struct ActorDataDirtyFlagsComponent,
-                          struct DepenetrationComponent,
-                          struct OffsetsComponent>,
-                      struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& executionContext);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+                      ::Read<>,
+                      ::Write<
+                          ::AABBShapeComponent,
+                          ::ActorDataBoundingBoxComponent,
+                          ::ActorDataDirtyFlagsComponent,
+                          ::DepenetrationComponent,
+                          ::OffsetsComponent>,
+                      ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorDataBoundingBoxComponent,
-                struct ActorDataDirtyFlagsComponent,
-                struct DepenetrationComponent,
-                struct OffsetsComponent>,
-            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~SystemImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+                     ::Read<>,
+                     ::Write<
+                         ::AABBShapeComponent,
+                         ::ActorDataBoundingBoxComponent,
+                         ::ActorDataDirtyFlagsComponent,
+                         ::DepenetrationComponent,
+                         ::OffsetsComponent>,
+                     ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& executionContext);
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorDataBoundingBoxComponent,
-                struct ActorDataDirtyFlagsComponent,
-                struct DepenetrationComponent,
-                struct OffsetsComponent>,
-            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct MinecartFlag>,
-                         class FlagComponent<struct ShulkerFlag>>,
-                     struct Read<>,
-                     struct Write<
-                         struct AABBShapeComponent,
-                         struct ActorDataBoundingBoxComponent,
-                         struct ActorDataDirtyFlagsComponent,
-                         struct DepenetrationComponent,
-                         struct OffsetsComponent>,
-                     struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& executionContext);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace UpdateBoundingBox
+} // namespace UpdateBoundingBox

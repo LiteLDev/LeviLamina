@@ -6,32 +6,41 @@ namespace Bedrock::Threading {
 
 class CountTracker {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkd2fa18;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CountTracker& operator=(CountTracker const&);
     CountTracker(CountTracker const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CountTracker();
 
-    MCAPI std::shared_ptr<void*> acquire();
+    MCAPI ::std::shared_ptr<void*> acquire();
 
     MCAPI void clear();
 
     MCAPI uint get() const;
 
     MCAPI ~CountTracker();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

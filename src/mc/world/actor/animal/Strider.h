@@ -3,27 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/animal/Animal.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Strider : public ::Animal {
@@ -36,17 +24,40 @@ public:
     // Strider inner types define
     class PlayerRideInLavaInOverworldAchievementTracker {
     public:
+        // PlayerRideInLavaInOverworldAchievementTracker inner types define
+        enum class VehicleState : uchar {
+            Riding = 0,
+            Done   = 1,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnk2b541a;
+        ::ll::UntypedStorage<1, 1>  mUnke10c81;
+        ::ll::UntypedStorage<1, 1>  mUnkda17f1;
+        ::ll::UntypedStorage<4, 12> mUnk4982aa;
+        ::ll::UntypedStorage<8, 8>  mUnk75e236;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         PlayerRideInLavaInOverworldAchievementTracker& operator=(PlayerRideInLavaInOverworldAchievementTracker const&);
         PlayerRideInLavaInOverworldAchievementTracker(PlayerRideInLavaInOverworldAchievementTracker const&);
         PlayerRideInLavaInOverworldAchievementTracker();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI void tick(class Strider& strider);
-
+        MCAPI void tick(::Strider& strider);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkcfee51;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -55,53 +66,70 @@ public:
     Strider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Strider() = default;
+    // vIndex: 176
+    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 128
+    virtual float getNextStep(float const moveDist) /*override*/;
 
-    // vIndex: 134
-    virtual float getNextStep(float moveDist);
+    // vIndex: 138
+    virtual bool shouldTryMakeStepSound() /*override*/;
 
-    // vIndex: 145
-    virtual bool shouldTryMakeStepSound();
+    // vIndex: 142
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
-    // vIndex: 149
-    virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 184
-    virtual float _getWalkTargetValue(class BlockPos const& pos);
-
-    MCAPI Strider(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
+    // vIndex: 8
+    virtual ~Strider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Strider(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI void _playStepSound$(class BlockPos const&, class Block const& onBlock);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getNextStep$(float moveDist);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void normalTick$();
+    MCAPI float $getNextStep(float const moveDist);
 
-    MCAPI bool shouldTryMakeStepSound$();
+    MCAPI bool $shouldTryMakeStepSound();
 
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+
+    MCAPI void $normalTick();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

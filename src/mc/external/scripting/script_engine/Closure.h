@@ -13,4 +13,4 @@ public:
     Closure();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

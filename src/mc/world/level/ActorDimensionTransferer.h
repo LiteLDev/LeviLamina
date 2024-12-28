@@ -4,10 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/IActorDimensionTransferer.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorManager;
+class Dimension;
+class IActorDimensionTransferProxy;
+class IDimension;
+class PortalForcer;
+class Vec3;
+// clang-format on
+
 class ActorDimensionTransferer : public ::IActorDimensionTransferer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk35f28b;
+    ::ll::UntypedStorage<8, 24> mUnkab5255;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDimensionTransferer& operator=(ActorDimensionTransferer const&);
@@ -15,65 +33,82 @@ public:
     ActorDimensionTransferer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorDimensionTransferer() = default;
+    virtual ~ActorDimensionTransferer() /*override*/;
 
     // vIndex: 1
-    virtual void setupActorForTransfer(class Actor& actor);
+    virtual void setupActorForTransfer(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual class Vec3 findTargetPositionAndSetPosition(
-        class Actor&                     actor,
-        DimensionType                    toId,
-        DimensionType                    fromId,
-        class IDimension const&          toDimension,
-        class PortalForcer const&        portalForcer,
-        std::optional<class Vec3> const& actorPosition
-    );
+    virtual ::Vec3 findTargetPositionAndSetPosition(
+        ::Actor&                       actor,
+        ::DimensionType                toId,
+        ::DimensionType                fromId,
+        ::IDimension const&            toDimension,
+        ::PortalForcer const&          portalForcer,
+        ::std::optional<::Vec3> const& actorPosition
+    ) /*override*/;
 
     // vIndex: 3
     virtual void transferActor(
-        class Actor&                     actor,
-        class Dimension&                 toDimension,
-        class Vec3 const&                targetPosition,
-        std::optional<class Vec3> const& actorPosition
-    );
-
-    MCAPI ActorDimensionTransferer(
-        std::unique_ptr<class IActorDimensionTransferProxy>            actorDimensionTransferProxy,
-        gsl::not_null<class StackRefResult<class ActorManager>> const& actorManager
-    );
-
+        ::Actor&                       actor,
+        ::Dimension&                   toDimension,
+        ::Vec3 const&                  targetPosition,
+        ::std::optional<::Vec3> const& actorPosition
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorDimensionTransferer(
+        ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        std::unique_ptr<class IActorDimensionTransferProxy>            actorDimensionTransferProxy,
-        gsl::not_null<class StackRefResult<class ActorManager>> const& actorManager
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setupActorForTransfer(::Actor& actor);
+
+    MCAPI ::Vec3 $findTargetPositionAndSetPosition(
+        ::Actor&                       actor,
+        ::DimensionType                toId,
+        ::DimensionType                fromId,
+        ::IDimension const&            toDimension,
+        ::PortalForcer const&          portalForcer,
+        ::std::optional<::Vec3> const& actorPosition
     );
 
-    MCAPI class Vec3 findTargetPositionAndSetPosition$(
-        class Actor&                     actor,
-        DimensionType                    toId,
-        DimensionType                    fromId,
-        class IDimension const&          toDimension,
-        class PortalForcer const&        portalForcer,
-        std::optional<class Vec3> const& actorPosition
+    MCAPI void $transferActor(
+        ::Actor&                       actor,
+        ::Dimension&                   toDimension,
+        ::Vec3 const&                  targetPosition,
+        ::std::optional<::Vec3> const& actorPosition
     );
+    // NOLINTEND
 
-    MCAPI void setupActorForTransfer$(class Actor& actor);
-
-    MCAPI void transferActor$(
-        class Actor&                     actor,
-        class Dimension&                 toDimension,
-        class Vec3 const&                targetPosition,
-        std::optional<class Vec3> const& actorPosition
-    );
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

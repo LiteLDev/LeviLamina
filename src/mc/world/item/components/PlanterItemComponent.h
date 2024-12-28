@@ -3,121 +3,129 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class CompoundTag;
+class HashedString;
+class ItemStack;
+class SemVersion;
+class Vec3;
+namespace SharedTypes::v1_21_40 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class PlanterItemComponent {
+class PlanterItemComponent : public ::NetworkedItemComponent<::PlanterItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkab983d;
+    ::ll::UntypedStorage<8, 24> mUnkf07137;
+    ::ll::UntypedStorage<8, 16> mUnk9103bb;
+    ::ll::UntypedStorage<1, 1>  mUnkb0b7c1;
+    ::ll::UntypedStorage<1, 1>  mUnkd129bf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    PlanterItemComponent& operator=(PlanterItemComponent const&);
     PlanterItemComponent(PlanterItemComponent const&);
     PlanterItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlanterItemComponent() = default;
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     // vIndex: 7
-    virtual bool
-    _canUseOn(class ItemStack const& instance, class Actor& entity, class BlockPos const& pos, uchar face) const;
+    virtual void _initializeComponent() /*override*/;
 
-    // vIndex: 8
-    virtual bool _useOn(
-        class ItemStack&      item,
-        class Actor&          entity,
-        class BlockPos const& blockPos,
-        uchar                 face,
-        class Vec3 const&     clickPos
+    // vIndex: 4
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+
+    // vIndex: 5
+    virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
+
+    // vIndex: 0
+    virtual ~PlanterItemComponent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlanterItemComponent(::Block const& block);
+
+    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
+
+    MCAPI bool _placeBlock(
+        ::ItemStack&      item,
+        ::Actor&          entity,
+        ::Block const&    block,
+        ::BlockPos const& placePos,
+        uchar             face,
+        ::Vec3 const&     clickPos
     ) const;
 
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI explicit PlanterItemComponent(class Block const& block);
-
-    MCAPI bool
-    calculatePlacePos(class ItemStackBase const& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
-
-    MCAPI class PlanterItemComponent& operator=(class PlanterItemComponent&&);
-
-    MCAPI class PlanterItemComponent& operator=(class PlanterItemComponent const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
+    MCAPI void _useOn(
+        bool&              result,
+        ::ItemStack const& initialItemStack,
+        ::ItemStack&       currentItemStack,
+        ::Actor&           entity,
+        ::BlockPos const&  blockPos,
+        uchar              face,
+        ::Vec3 const&      clickPos
     );
 
-    MCAPI static class HashedString const& getIdentifier();
-
+    MCAPI bool isReplacingBlockItem() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _placeBlock(
-        class ItemStack&      item,
-        class Actor&          entity,
-        class Block const&    block,
-        class BlockPos const& placePos,
-        uchar                 face,
-        class Vec3 const&     clickPos
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void* ctor$(class Block const& block);
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool
-    _canUseOn$(class ItemStack const& instance, class Actor& entity, class BlockPos const& pos, uchar face) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block);
 
-    MCAPI void _initializeComponent$();
+    MCAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    // NOLINTEND
 
-    MCAPI bool _useOn$(
-        class ItemStack&      item,
-        class Actor&          entity,
-        class BlockPos const& blockPos,
-        uchar                 face,
-        class Vec3 const&     clickPos
-    ) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
+    MCAPI void $_initializeComponent();
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
 
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

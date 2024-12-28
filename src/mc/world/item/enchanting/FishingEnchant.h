@@ -13,31 +13,40 @@ public:
     FishingEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FishingEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
+    // vIndex: 0
+    virtual ~FishingEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getMaxCost$(int level) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI int $getMaxLevel() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

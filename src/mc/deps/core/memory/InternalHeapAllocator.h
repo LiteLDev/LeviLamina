@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/memory/IMemoryAllocator.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Memory { class IMemoryAllocator; }
-// clang-format on
-
 namespace Bedrock::Memory {
 
 class InternalHeapAllocator : public ::Bedrock::Memory::IMemoryAllocator {
@@ -20,53 +15,62 @@ public:
     InternalHeapAllocator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InternalHeapAllocator() = default;
-
     // vIndex: 1
-    virtual void* allocate(uint64 size);
+    virtual void* allocate(uint64 size) /*override*/;
 
     // vIndex: 2
-    virtual void release(void* ptr);
+    virtual void release(void* ptr) /*override*/;
 
     // vIndex: 3
-    virtual void* alignedAllocate(uint64 size, uint64 alignment);
+    virtual void* alignedAllocate(uint64 size, uint64 alignment) /*override*/;
 
     // vIndex: 4
-    virtual void alignedRelease(void* ptr);
+    virtual void alignedRelease(void* ptr) /*override*/;
 
     // vIndex: 5
-    virtual uint64 getUsableSize(void* ptr);
+    virtual uint64 getUsableSize(void* ptr) /*override*/;
 
     // vIndex: 6
-    virtual void logCurrentState();
+    virtual void logCurrentState() /*override*/;
 
     // vIndex: 7
-    virtual void* _realloc(gsl::not_null<void*> p, uint64 newSize);
+    virtual void* _realloc(::gsl::not_null<void*> p, uint64 newSize) /*override*/;
 
+    // vIndex: 0
+    virtual ~InternalHeapAllocator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* _realloc$(gsl::not_null<void*> p, uint64 newSize);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void* $allocate(uint64 size);
 
-    MCAPI void* alignedAllocate$(uint64 size, uint64 alignment);
+    MCAPI void $release(void* ptr);
 
-    MCAPI void alignedRelease$(void* ptr);
+    MCAPI void* $alignedAllocate(uint64 size, uint64 alignment);
 
-    MCAPI void* allocate$(uint64 size);
+    MCAPI void $alignedRelease(void* ptr);
 
-    MCAPI uint64 getUsableSize$(void* ptr);
+    MCAPI uint64 $getUsableSize(void* ptr);
 
-    MCAPI void logCurrentState$();
+    MCAPI void $logCurrentState();
 
-    MCAPI void release$(void* ptr);
+    MCAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Memory
+} // namespace Bedrock::Memory

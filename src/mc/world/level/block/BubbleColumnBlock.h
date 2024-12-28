@@ -4,21 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class HashedString;
+class IConstBlockSource;
+class Random;
+struct BlockGraphicsModeChangeContext;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class BubbleColumnBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk359b8d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BubbleColumnBlock& operator=(BubbleColumnBlock const&);
@@ -26,124 +36,156 @@ public:
     BubbleColumnBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BubbleColumnBlock() = default;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 70
+    virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 8
-    virtual void
-    addAABBs(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 57
-    virtual bool canContainLiquid() const;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    // vIndex: 58
-    virtual std::optional<class HashedString> getRequiredMedium() const;
+    // vIndex: 77
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    // vIndex: 8
+    virtual void addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
 
-    // vIndex: 76
-    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const* medium) const;
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
-    // vIndex: 84
-    virtual bool mayPick(class BlockSource const&, class Block const&, bool liquid) const;
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 135
+    virtual bool shouldTickOnSetBlock() const /*override*/;
 
-    // vIndex: 126
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
+    // vIndex: 53
+    virtual ::std::optional<::HashedString> getRequiredMedium() const /*override*/;
 
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 115
+    virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 147
-    virtual bool shouldTickOnSetBlock() const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI BubbleColumnBlock(std::string const& nameId, int id);
-
-    MCAPI static bool addBubbleColumnSegment(class BlockSource& region, class BlockPos const& pos);
-
-    MCAPI static bool shouldDragDown(class Block const& block);
-
-    MCAPI static void spawnBubbles(class BlockSource& region, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~BubbleColumnBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void
-    _createParticles(class BlockSource& region, class BlockPos const& pos, class Random& random, bool down);
-
-    MCAPI static bool _getFlowDownward(class Block const& block);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BubbleColumnBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void
-    addAABBs$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _createParticles(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool down);
+
+    MCAPI static bool _getFlowDownward(::Block const& block);
+
+    MCAPI static bool addBubbleColumnSegment(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool shouldDragDown(::Block const& block);
+
+    MCAPI static void spawnBubbles(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const;
+
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI bool
-    addCollisionShapes$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    MCAPI bool $shouldTickOnSetBlock() const;
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI ::std::optional<::HashedString> $getRequiredMedium() const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
-    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI std::optional<class HashedString> getRequiredMedium$() const;
-
-    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
-
-    MCAPI bool mayPick$(class BlockSource const&, class Block const&, bool liquid) const;
-
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool shouldTickOnSetBlock$() const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

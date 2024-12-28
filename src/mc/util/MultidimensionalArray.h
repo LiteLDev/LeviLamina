@@ -13,4 +13,4 @@ public:
     MultidimensionalArray();
 };
 
-}; // namespace Util
+} // namespace Util

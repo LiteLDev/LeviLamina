@@ -20,20 +20,20 @@ public:
     RequestInterpreter();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void process(
-        class CodeBuilder::IRequestHandler&      sender,
-        struct CodeBuilder::RequestHeader const& header,
-        class Json::Value const&                 body
+        ::CodeBuilder::IRequestHandler&     sender,
+        ::CodeBuilder::RequestHeader const& header,
+        ::Json::Value const&                body
     ) const;
-
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool _parse(class Json::Value const& command, struct CodeBuilder::CommandRequest& request);
-
+    MCAPI static bool _parse(::Json::Value const& command, ::CodeBuilder::CommandRequest& request);
     // NOLINTEND
 };
 
-}; // namespace CodeBuilder
+} // namespace CodeBuilder

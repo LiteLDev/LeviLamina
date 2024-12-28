@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
@@ -15,23 +17,36 @@ public:
     LootItemCondition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~LootItemCondition();
 
     // vIndex: 1
-    virtual bool applies(class Random& random, class LootTableContext& context) = 0;
+    virtual bool applies(::Random&, ::LootTableContext&) = 0;
+    // NOLINTEND
 
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

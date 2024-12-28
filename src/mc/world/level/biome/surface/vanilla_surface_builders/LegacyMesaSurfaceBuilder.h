@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
-#include "mc/world/level/block/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
-class PerlinSimplexNoise;
 class Random;
 // clang-format on
 
@@ -18,42 +15,58 @@ namespace VanillaSurfaceBuilders {
 
 class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 64> mUnk25f178;
+    ::ll::UntypedStorage<8, 8>  mUnk80f733;
+    ::ll::UntypedStorage<8, 8>  mUnkc93024;
+    ::ll::UntypedStorage<8, 8>  mUnk71c973;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LegacyMesaSurfaceBuilder& operator=(LegacyMesaSurfaceBuilder const&);
     LegacyMesaSurfaceBuilder(LegacyMesaSurfaceBuilder const&);
     LegacyMesaSurfaceBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyMesaSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome& biome, uint levelSeed);
+    virtual void init(::Biome& biome, uint levelSeed) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
+    virtual ~LegacyMesaSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void generateBands(class Random& random);
-
-    MCAPI ::BlockColor getBand(int worldX, int y, int worldZ, class PerlinSimplexNoise const& noiseBuf) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void generateBands(::Random& random);
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void init$(class Biome& biome, uint levelSeed);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome& biome, uint levelSeed);
 
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

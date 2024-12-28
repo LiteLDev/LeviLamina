@@ -11,25 +11,40 @@ namespace br::worldgen {
 
 class StructureRegistry {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 72> mUnk6b4ac6;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     StructureRegistry& operator=(StructureRegistry const&);
     StructureRegistry(StructureRegistry const&);
     StructureRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::shared_ptr<struct br::worldgen::Structure const> get(std::string_view key) const;
+    MCAPI ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
+        ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
+    begin() const;
+
+    MCAPI ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
+        ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
+    end() const;
+
+    MCAPI ::std::shared_ptr<::br::worldgen::Structure const> get(::std::string_view key) const;
+
+    MCAPI uint64 size() const;
 
     MCAPI ~StructureRegistry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

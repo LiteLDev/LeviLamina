@@ -3,10 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+// clang-format on
+
 class ConduitBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk962339;
+    ::ll::UntypedStorage<1, 1>  mUnk1b58f4;
+    ::ll::UntypedStorage<4, 4>  mUnkdb8f77;
+    ::ll::UntypedStorage<8, 8>  mUnka3d419;
+    ::ll::UntypedStorage<4, 4>  mUnkce0a24;
+    ::ll::UntypedStorage<4, 4>  mUnkf0ec93;
+    ::ll::UntypedStorage<4, 4>  mUnk1b69fa;
+    ::ll::UntypedStorage<4, 4>  mUnk850d9a;
+    ::ll::UntypedStorage<4, 4>  mUnk8a9f45;
+    ::ll::UntypedStorage<8, 8>  mUnk9151ef;
+    ::ll::UntypedStorage<8, 24> mUnk23c819;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ConduitBlockActor& operator=(ConduitBlockActor const&);
@@ -14,56 +40,73 @@ public:
     ConduitBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ConduitBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual ~ConduitBlockActor() /*override*/;
 
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 20
-    virtual bool hasAlphaLayer() const;
+    virtual bool hasAlphaLayer() const /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _animateTick(class BlockSource& region) const;
-
-    MCAPI void _checkShape(class BlockSource& region);
-
-    MCAPI void _updateTarget(class BlockSource& region);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ConduitBlockActor(::BlockPos const& pos);
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+    MCAPI void _animateTick(::BlockSource& region) const;
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void _checkShape(::BlockSource& region);
 
-    MCAPI bool hasAlphaLayer$() const;
+    MCAPI void _updateTarget(::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
 
+    MCAPI bool $hasAlphaLayer() const;
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -17,27 +17,38 @@ public:
     RamGoalItemDropperInterface();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RamGoalItemDropperInterface() = default;
+    virtual ~RamGoalItemDropperInterface();
 
     // vIndex: 1
-    virtual void tryDropHorn(class Vec3 dropPos) const = 0;
+    virtual void tryDropHorn(::Vec3) const = 0;
 
     // vIndex: 2
-    virtual void checkForHornDropOnCollision(class Vec3 collisionPos) = 0;
+    virtual void checkForHornDropOnCollision(::Vec3) = 0;
 
     // vIndex: 3
     virtual void dontDropHorn() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace RamAttackGoalUtils
+} // namespace RamAttackGoalUtils

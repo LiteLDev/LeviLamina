@@ -8,7 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptActorInitializationCause {
+struct ScriptActorInitializationCause {
 public:
     // prevent constructor by default
     ScriptActorInitializationCause& operator=(ScriptActorInitializationCause const&);
@@ -16,10 +16,10 @@ public:
     ScriptActorInitializationCause();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::ActorInitializationMethod> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ActorInitializationMethod> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

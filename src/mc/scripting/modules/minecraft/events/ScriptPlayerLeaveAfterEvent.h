@@ -9,32 +9,33 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerLeaveAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkbba7ed;
+    ::ll::UntypedStorage<8, 32> mUnk7bd1a2;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptPlayerLeaveAfterEvent& operator=(ScriptPlayerLeaveAfterEvent const&);
     ScriptPlayerLeaveAfterEvent(ScriptPlayerLeaveAfterEvent const&);
     ScriptPlayerLeaveAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
-
-    MCAPI ~ScriptPlayerLeaveAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
-    bind();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
-    bindV010();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent> bind();
 
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
+    bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

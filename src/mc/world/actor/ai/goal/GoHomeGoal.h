@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -23,34 +24,71 @@ public:
     // GoHomeGoal inner types define
     class GoHomeDefinition : public ::BaseGoalDefinition {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk87ac53;
+        ::ll::UntypedStorage<4, 4>  mUnk88b2f2;
+        ::ll::UntypedStorage<4, 4>  mUnk98587b;
+        ::ll::UntypedStorage<4, 4>  mUnk3963f1;
+        ::ll::UntypedStorage<8, 24> mUnk7b9d13;
+        ::ll::UntypedStorage<8, 24> mUnk3d6b1b;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         GoHomeDefinition& operator=(GoHomeDefinition const&);
         GoHomeDefinition(GoHomeDefinition const&);
         GoHomeDefinition();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~GoHomeDefinition() = default;
+        virtual ~GoHomeDefinition() /*override*/;
+        // NOLINTEND
 
-        MCAPI void initialize(class EntityContext& entity, class GoHomeGoal& goal) const;
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void initialize(::EntityContext& entity, ::GoHomeGoal& goal) const;
+        // NOLINTEND
 
+    public:
+        // static functions
+        // NOLINTBEGIN
         MCAPI static void buildSchema(
-            std::string const& name,
-            std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoHomeGoal::GoHomeDefinition>>&
+            ::std::string const& name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>&
                 root
         );
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkf5fd4b;
+    ::ll::UntypedStorage<4, 4>  mUnkc19c5f;
+    ::ll::UntypedStorage<4, 4>  mUnk341309;
+    ::ll::UntypedStorage<4, 4>  mUnkcf4a90;
+    ::ll::UntypedStorage<4, 4>  mUnkb66ecf;
+    ::ll::UntypedStorage<8, 24> mUnkb30d33;
+    ::ll::UntypedStorage<8, 24> mUnk5d214f;
+    ::ll::UntypedStorage<4, 12> mUnk44dffb;
+    ::ll::UntypedStorage<4, 4>  mUnkf73769;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -59,60 +97,71 @@ public:
     GoHomeGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GoHomeGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit GoHomeGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~GoHomeGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _hasReachedHome() const;
+    MCAPI explicit GoHomeGoal(::Mob& mob);
 
     MCAPI bool _hasRequiredComponents() const;
 
     MCAPI void _triggerOnFailedEvents();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

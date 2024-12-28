@@ -4,17 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class HashedString;
+class IConstBlockSource;
+class Player;
+class Random;
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,130 +30,122 @@ public:
     AnvilBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AnvilBlock() = default;
-
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
-    // vIndex: 13
-    virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+    // vIndex: 139
+    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
-    // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 135
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
     // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const&) const;
+    // vIndex: 124
+    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const&) const;
+    // vIndex: 153
+    virtual bool falling() const /*override*/;
 
-    // vIndex: 166
-    virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 154
+    virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    MCVAPI bool falling() const;
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
 
-    MCAPI AnvilBlock(std::string const& nameId, int id);
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
+    // vIndex: 13
+    virtual bool
+    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
+        /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+
+    // vIndex: 0
+    virtual ~AnvilBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class AABB const&
-    _getShape(class BlockPos const& pos, class Block const& block, class AABB& bufferValue);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AnvilBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
-    MCAPI void animateTick$(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI static int getDamageForName(::HashedString const& name);
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+    MCAPI static ::HashedString const& getNameForDamage(int damage);
+    // NOLINTEND
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI bool falling$() const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB
+    $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class mce::Color getDustColor$(class Block const&) const;
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI std::string getDustParticleName$(class Block const&) const;
+    MCAPI bool $use(::Player&, ::BlockPos const&, uchar) const;
 
-    MCAPI bool getLiquidClipVolume$(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+    MCAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI class AABB const& getOutline$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool isAuxValueRelevantForPicking$() const;
+    MCAPI bool $falling() const;
 
-    MCAPI bool isCraftingBlock$() const;
+    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $isCraftingBlock() const;
 
-    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+    MCAPI bool
+    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

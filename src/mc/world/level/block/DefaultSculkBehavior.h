@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/level/block/SculkBehavior.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class IBlockWorldGenAPI;
+class Random;
+class SculkSpreader;
+// clang-format on
+
 class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // prevent constructor by default
@@ -13,67 +23,70 @@ public:
     DefaultSculkBehavior();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual int updateDecayDelay(int currentValue) const;
+    virtual int updateDecayDelay(int const currentValue) const /*override*/;
 
     // vIndex: 1
-    virtual int updateFacingData(int currentValue, class Block const&) const;
+    virtual int updateFacingData(int const currentValue, ::Block const&) const /*override*/;
 
     // vIndex: 2
-    virtual bool canChangeBlockOnSpread() const;
+    virtual bool canChangeBlockOnSpread() const /*override*/;
 
     // vIndex: 3
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int facingData, class SculkSpreader&)
-        const;
+    attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int facingData, ::SculkSpreader&)
+        const /*override*/;
 
     // vIndex: 4
     virtual int attemptUseCharge(
-        class IBlockWorldGenAPI&,
-        class BlockSource*,
-        class BlockPos const&,
-        class BlockPos const&,
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
+        ::BlockPos const&,
+        ::BlockPos const&,
         int charge,
         int decayDelay,
-        class Random&,
-        class SculkSpreader&,
-        bool
-    ) const;
+        ::Random&,
+        ::SculkSpreader&,
+        bool const
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
-
+    virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // virtual function thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI int $updateDecayDelay(int const currentValue) const;
+
+    MCAPI int $updateFacingData(int const currentValue, ::Block const&) const;
+
+    MCAPI bool $canChangeBlockOnSpread() const;
 
     MCAPI bool
-    attemptSpreadVeins$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int facingData, class SculkSpreader&)
+    $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int facingData, ::SculkSpreader&)
         const;
 
-    MCAPI int attemptUseCharge$(
-        class IBlockWorldGenAPI&,
-        class BlockSource*,
-        class BlockPos const&,
-        class BlockPos const&,
+    MCAPI int $attemptUseCharge(
+        ::IBlockWorldGenAPI&,
+        ::BlockSource*,
+        ::BlockPos const&,
+        ::BlockPos const&,
         int charge,
         int decayDelay,
-        class Random&,
-        class SculkSpreader&,
-        bool
+        ::Random&,
+        ::SculkSpreader&,
+        bool const
     ) const;
 
-    MCAPI bool canChangeBlockOnSpread$() const;
+    MCAPI void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+    // NOLINTEND
 
-    MCAPI void onDischarged$(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
-
-    MCAPI int updateDecayDelay$(int currentValue) const;
-
-    MCAPI int updateFacingData$(int currentValue, class Block const&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

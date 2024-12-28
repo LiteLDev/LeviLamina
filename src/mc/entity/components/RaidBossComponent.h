@@ -3,10 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
+#include "mc/world/actor/ai/util/BossEventUpdateType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+class Player;
+class Raid;
+class Village;
+struct ActorUniqueID;
+// clang-format on
 
 class RaidBossComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk54a715;
+    ::ll::UntypedStorage<8, 8>  mUnkb278e6;
+    ::ll::UntypedStorage<8, 32> mUnke6f83f;
+    ::ll::UntypedStorage<8, 32> mUnk6c8ed2;
+    ::ll::UntypedStorage<4, 4>  mUnk76ce15;
+    ::ll::UntypedStorage<1, 1>  mUnkace95d;
+    ::ll::UntypedStorage<1, 1>  mUnk6b9171;
+    ::ll::UntypedStorage<1, 1>  mUnk367d90;
+    ::ll::UntypedStorage<4, 4>  mUnkfa9046;
+    ::ll::UntypedStorage<4, 24> mUnkc4a5c3;
+    ::ll::UntypedStorage<8, 8>  mUnk4f7ecc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RaidBossComponent& operator=(RaidBossComponent const&);
@@ -14,69 +40,60 @@ public:
     RaidBossComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI RaidBossComponent(class RaidBossComponent&&);
+    MCAPI void _broadcastBossEvent(::BossEventUpdateType type, ::Actor& owner);
+
+    MCAPI void _sendBossEvent(::BossEventUpdateType type, ::Player& player);
 
     MCAPI ::BossBarColor getColor();
 
     MCAPI float getHealthPercent();
 
-    MCAPI std::string getName();
+    MCAPI ::std::string getName();
 
-    MCAPI struct ActorUniqueID getOwnerUniqueID();
+    MCAPI ::ActorUniqueID getOwnerUniqueID();
 
     MCAPI bool getRaidInProgress();
 
-    MCAPI std::shared_ptr<class Village> getVillage();
+    MCAPI ::std::shared_ptr<::Village> getVillage();
 
     MCAPI bool getWaveStarted();
 
-    MCAPI void initialize(struct ActorUniqueID ownerID);
+    MCAPI void initialize(::ActorUniqueID ownerID);
 
-    MCAPI bool isWithinRange(class Mob const& player);
+    MCAPI bool isWithinRange(::Mob const& player);
 
-    MCAPI class RaidBossComponent& operator=(class RaidBossComponent&&);
+    MCAPI ::RaidBossComponent& operator=(::RaidBossComponent&&);
 
-    MCAPI void registerPlayer(class Player* player);
+    MCAPI void registerPlayer(::Player* player);
 
-    MCAPI void removeBossBar(class Actor& owner);
+    MCAPI void removeBossBar(::Actor& owner);
 
-    MCAPI void resendRaidBossEventData(class Player& player);
+    MCAPI void resendRaidBossEventData(::Player& player);
 
-    MCAPI void sendRegistryMessages(class Actor& owner);
+    MCAPI void sendRegistryMessages(::Actor& owner);
 
-    MCAPI void setVillage(std::weak_ptr<class Village> village);
+    MCAPI void setVillage(::std::weak_ptr<::Village> village);
 
     MCAPI void setWaveStarted(bool val);
 
-    MCAPI void setupBossBarInfo(class Actor& owner, class Village* village);
+    MCAPI void setupBossBarInfo(::Actor& owner, ::Village* village);
 
-    MCAPI bool tryRemoveBoss(class Actor& owner, class Player& player);
+    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCAPI void unRegisterPlayer(class Player* player);
+    MCAPI void unRegisterPlayer(::Player* player);
 
-    MCAPI void updateBossBarStats(class Actor& owner, class Raid const& raid);
+    MCAPI void updateBossBarStats(::Actor& owner, ::Raid const& raid);
 
-    MCAPI void updateHealthBarVisible(bool visible, class Actor& owner);
+    MCAPI void updateHealthBarVisible(bool visible, ::Actor& owner);
 
     MCAPI ~RaidBossComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _broadcastBossEvent(::BossEventUpdateType type, class Actor& owner);
-
-    MCAPI void _sendBossEvent(::BossEventUpdateType type, class Player& player);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(class RaidBossComponent&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

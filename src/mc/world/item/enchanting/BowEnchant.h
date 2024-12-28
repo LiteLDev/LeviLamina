@@ -13,38 +13,51 @@ public:
     BowEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BowEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 16
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
 
+    // vIndex: 0
+    virtual ~BowEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    // NOLINTEND
 
-    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getMaxCost$(int level) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

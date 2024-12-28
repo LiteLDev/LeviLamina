@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class FocusImpact {};
+enum class FocusImpact : schar {
+    Neutral         = 0,
+    ActivateFocus   = 1,
+    DeactivateFocus = 2,
+};

@@ -3,22 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Random;
 // clang-format on
 
 class StemBlock : public ::BushBlock {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk1b138d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StemBlock& operator=(StemBlock const&);
@@ -26,92 +33,86 @@ public:
     StemBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StemBlock() = default;
-
-    // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
-
-    // vIndex: 30
-    virtual bool isStemBlock() const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
-
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 11
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 121
-    virtual int getColor(class Block const& block) const;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 122
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    // vIndex: 123
-    virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 28
+    virtual bool isStemBlock() const /*override*/;
 
-    MCAPI StemBlock(std::string const& nameId, int id, class BlockLegacy const& fruit);
-
-    MCAPI class BlockLegacy const& getFruitBlock() const;
-
+    // vIndex: 0
+    virtual ~StemBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI float getGrowthSpeed(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StemBlock(::std::string const& nameId, int id, ::BlockLegacy const& fruit);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class BlockLegacy const& fruit);
+    MCAPI ::BlockLegacy const& getFruitBlock() const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& fruit);
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getColor$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI int getColorAtPos$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool isStemBlock$() const;
-
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
+    MCAPI bool $isStemBlock() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SendLinkPacketOfPassengersSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct SendLinkPacketOfPassengersSystem {
 public:
     // prevent constructor by default
     SendLinkPacketOfPassengersSystem& operator=(SendLinkPacketOfPassengersSystem const&);
@@ -10,10 +15,10 @@ public:
     SendLinkPacketOfPassengersSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createCleanupSystem();
+    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

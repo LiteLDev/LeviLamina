@@ -11,7 +11,6 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,16 +18,33 @@ struct AABBShapeComponent;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct DepenetrationComponent;
-struct MinecartFlag;
+struct MinecartFlagComponent;
 struct OffsetsComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
-struct ShulkerFlag;
+struct ShulkerFlagComponent;
 // clang-format on
 
 namespace UpdateBoundingBox {
 
 struct SystemParams {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk952047;
+    ::ll::UntypedStorage<8, 48> mUnk1beb5b;
+    ::ll::UntypedStorage<8, 64> mUnk8fd19e;
+    ::ll::UntypedStorage<8, 80> mUnk70b4bc;
+    ::ll::UntypedStorage<8, 64> mUnk99c81f;
+    ::ll::UntypedStorage<8, 56> mUnkcaf84a;
+    ::ll::UntypedStorage<8, 72> mUnk59f3ba;
+    ::ll::UntypedStorage<8, 72> mUnk667de1;
+    ::ll::UntypedStorage<8, 64> mUnk55da99;
+    ::ll::UntypedStorage<8, 8>  mUnkc9eb45;
+    ::ll::UntypedStorage<4, 4>  mUnk2271a3;
+    ::ll::UntypedStorage<1, 1>  mUnkc7b55d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SystemParams& operator=(SystemParams const&);
@@ -36,55 +52,48 @@ public:
     SystemParams();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI SystemParams(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorDataBoundingBoxComponent,
-                struct ActorDataDirtyFlagsComponent,
-                struct DepenetrationComponent,
-                struct OffsetsComponent>,
-            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& c,
-        float                         sneakHeight,
-        bool                          isClientSide
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& c,
+        float                    sneakHeight,
+        bool                     isClientSide
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorDataBoundingBoxComponent,
-                struct ActorDataDirtyFlagsComponent,
-                struct DepenetrationComponent,
-                struct OffsetsComponent>,
-            struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& c,
-        float                         sneakHeight,
-        bool                          isClientSide
+    MCAPI void* $ctor(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& c,
+        float                    sneakHeight,
+        bool                     isClientSide
     );
-
     // NOLINTEND
 };
 
-}; // namespace UpdateBoundingBox
+} // namespace UpdateBoundingBox

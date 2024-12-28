@@ -8,6 +8,14 @@
 #include "mc/network/ServerLocator.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AppPlatform;
+class AsynchronousIPResolver;
+struct PingedCompatibleServer;
+struct PortPair;
+// clang-format on
+
 class StubServerLocator : public ::ServerLocator {
 public:
     // prevent constructor by default
@@ -15,103 +23,120 @@ public:
     StubServerLocator(StubServerLocator const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StubServerLocator();
+    virtual ~StubServerLocator() /*override*/;
 
     // vIndex: 3
     virtual void startAnnouncingServer(
-        std::string const&                                playerName,
-        std::string const&                                worldName,
-        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
-        ::GameType                                        gameType,
-        int                                               numPlayers,
-        int                                               maxNumPlayers,
-        bool                                              isJoinableThroughServerScreen,
-        bool                                              isEditorWorld
-    );
+        ::std::string const&                      playerName,
+        ::std::string const&                      worldName,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
+        ::GameType                                gameType,
+        int                                       numPlayers,
+        int                                       maxNumPlayers,
+        bool                                      isJoinableThroughServerScreen,
+        bool                                      isEditorWorld,
+        bool                                      isHardcore
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
+    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
 
     // vIndex: 5
-    virtual void startServerDiscovery(struct PortPair ports);
-
-    // vIndex: 6
-    virtual void stopServerDiscovery();
-
-    // vIndex: 7
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
+    virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
     // vIndex: 8
-    virtual void addCustomServer(std::string const& address, int port);
+    virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
+
+    // vIndex: 7
+    virtual void addCustomServer(::std::string const& address, int port) /*override*/;
+
+    // vIndex: 6
+    virtual void stopServerDiscovery() /*override*/;
 
     // vIndex: 9
-    virtual std::vector<struct PingedCompatibleServer> getServerList() const;
+    virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
     // vIndex: 10
-    virtual void clearServerList();
+    virtual void clearServerList() /*override*/;
 
     // vIndex: 11
-    virtual void update();
+    virtual void update() /*override*/;
 
     // vIndex: 12
-    virtual float getPingTimeForGUID(std::string const& guid);
+    virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     // vIndex: 13
     virtual void checkCanConnectToCustomServerAsync(
-        std::string                                         hostIpAddress,
-        int                                                 port,
-        std::function<void(::ServerConnectivityTestResult)> callback
-    );
-
-    MCAPI StubServerLocator();
-
+        ::std::string                                         hostIpAddress,
+        int                                                   port,
+        ::std::function<void(::ServerConnectivityTestResult)> callback
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StubServerLocator();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addCustomServer$(class AsynchronousIPResolver const& futureIP, int port);
-
-    MCAPI void addCustomServer$(std::string const& address, int port);
-
-    MCAPI void checkCanConnectToCustomServerAsync$(
-        std::string                                         hostIpAddress,
-        int                                                 port,
-        std::function<void(::ServerConnectivityTestResult)> callback
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $startAnnouncingServer(
+        ::std::string const&                      playerName,
+        ::std::string const&                      worldName,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
+        ::GameType                                gameType,
+        int                                       numPlayers,
+        int                                       maxNumPlayers,
+        bool                                      isJoinableThroughServerScreen,
+        bool                                      isEditorWorld,
+        bool                                      isHardcore
     );
 
-    MCAPI void clearServerList$();
+    MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
-    MCAPI float getPingTimeForGUID$(std::string const& guid);
+    MCAPI void $startServerDiscovery(::PortPair ports);
 
-    MCAPI std::vector<struct PingedCompatibleServer> getServerList$() const;
+    MCAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI void startAnnouncingServer$(
-        std::string const&                                playerName,
-        std::string const&                                worldName,
-        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
-        ::GameType                                        gameType,
-        int                                               numPlayers,
-        int                                               maxNumPlayers,
-        bool                                              isJoinableThroughServerScreen,
-        bool                                              isEditorWorld
+    MCAPI void $addCustomServer(::std::string const& address, int port);
+
+    MCAPI void $stopServerDiscovery();
+
+    MCAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+
+    MCAPI void $clearServerList();
+
+    MCAPI void $update();
+
+    MCAPI float $getPingTimeForGUID(::std::string const& guid);
+
+    MCAPI void $checkCanConnectToCustomServerAsync(
+        ::std::string                                         hostIpAddress,
+        int                                                   port,
+        ::std::function<void(::ServerConnectivityTestResult)> callback
     );
+    // NOLINTEND
 
-    MCAPI void startServerDiscovery$(struct PortPair ports);
-
-    MCAPI void stopAnnouncingServer$(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform);
-
-    MCAPI void stopServerDiscovery$();
-
-    MCAPI void update$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

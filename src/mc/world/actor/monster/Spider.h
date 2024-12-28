@@ -3,30 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Spider : public ::Monster {
+public:
+    // Spider inner types define
+    enum class Type : int {
+        Normal = 0,
+        Cave   = 1,
+    };
+
 public:
     // prevent constructor by default
     Spider& operator=(Spider const&);
@@ -34,53 +29,70 @@ public:
     Spider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Spider() = default;
+    // vIndex: 107
+    virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
-
-    // vIndex: 66
-    virtual bool shouldRender() const;
-
-    // vIndex: 111
-    virtual bool canBeAffected(uint effectId) const;
-
-    // vIndex: 149
-    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
-
-    // vIndex: 191
+    // vIndex: 183
     virtual float getModelScale() const;
 
-    MCAPI Spider(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
+    // vIndex: 63
+    virtual bool shouldRender() const /*override*/;
+
+    // vIndex: 142
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
+
+    // vIndex: 8
+    virtual ~Spider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Spider(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI bool canBeAffected$(uint effectId) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getModelScale$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI float $getModelScale() const;
 
-    MCAPI bool shouldRender$() const;
+    MCAPI float $getShadowRadius() const;
 
+    MCAPI bool $shouldRender() const;
+
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

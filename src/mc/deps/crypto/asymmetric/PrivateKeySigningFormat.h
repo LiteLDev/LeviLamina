@@ -4,6 +4,9 @@
 
 namespace Crypto::Asymmetric {
 
-enum class PrivateKeySigningFormat {};
-
+enum class PrivateKeySigningFormat : int {
+    AutoDetect = 0,
+    Pem        = 1,
 };
+
+}

@@ -7,7 +7,14 @@
 namespace Core { class File; }
 // clang-format on
 
-class LevelDbWritableFile {
+class LevelDbWritableFile : public ::leveldb::WritableFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkb3ea74;
+    ::ll::UntypedStorage<8, 32> mUnk5a9cb8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelDbWritableFile& operator=(LevelDbWritableFile const&);
@@ -15,46 +22,59 @@ public:
     LevelDbWritableFile();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LevelDbWritableFile() = default;
-
     // vIndex: 1
-    virtual leveldb::Status Append(leveldb::Slice const& slice);
+    virtual ::leveldb::Status Append(::leveldb::Slice const& slice) /*override*/;
 
     // vIndex: 2
-    virtual leveldb::Status Close();
+    virtual ::leveldb::Status Close() /*override*/;
 
     // vIndex: 3
-    virtual leveldb::Status Flush();
+    virtual ::leveldb::Status Flush() /*override*/;
 
     // vIndex: 4
-    virtual leveldb::Status Sync();
+    virtual ::leveldb::Status Sync() /*override*/;
 
-    MCAPI LevelDbWritableFile(std::string filename, class Core::File&& file);
-
+    // vIndex: 0
+    virtual ~LevelDbWritableFile() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI leveldb::Status SyncDirIfManifest();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LevelDbWritableFile(::std::string filename, ::Core::File&& file);
 
-    MCAPI void* ctor$(std::string filename, class Core::File&& file);
+    MCAPI ::leveldb::Status SyncDirIfManifest();
+    // NOLINTEND
 
-    MCAPI leveldb::Status Append$(leveldb::Slice const& slice);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string filename, ::Core::File&& file);
+    // NOLINTEND
 
-    MCAPI leveldb::Status Close$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI leveldb::Status Flush$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::leveldb::Status $Append(::leveldb::Slice const& slice);
 
-    MCAPI leveldb::Status Sync$();
+    MCAPI ::leveldb::Status $Close();
 
+    MCAPI ::leveldb::Status $Flush();
+
+    MCAPI ::leveldb::Status $Sync();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

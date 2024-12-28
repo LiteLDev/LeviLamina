@@ -5,10 +5,13 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class TameableComponent;
+class TameableDefinition;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
@@ -18,7 +21,8 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptTameableComponent {
+class ScriptTameableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::TameableComponent, ::TameableDefinition> {
 public:
     // prevent constructor by default
     ScriptTameableComponent& operator=(ScriptTameableComponent const&);
@@ -26,57 +30,73 @@ public:
     ScriptTameableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptTameableComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptTameableComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<float> getProbability() const;
-
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    getTameItems() const;
-
-    MCAPI class Scripting::Result<std::vector<std::string>> getTameItems_010() const;
-
-    MCAPI class Scripting::Result<bool> isTamed() const;
-
-    MCAPI class Scripting::Result<bool> tame(class ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
-
-    MCAPI class Scripting::Result<bool> tame_010() const;
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
-    tamedToPlayer() const;
-
-    MCAPI class Scripting::Result<std::optional<std::string>> tamedToPlayerId() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptTameableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptTameableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptTameableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<float> getProbability() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    getTameItems() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> tame(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> tame_010() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+    tamedToPlayer() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTameableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -3,19 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class PulseCapacitor;
+class Random;
+struct Tick;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class ObserverBlock : public ::BlockLegacy {
@@ -26,114 +27,133 @@ public:
     ObserverBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ObserverBlock() = default;
+    virtual ~ObserverBlock() /*override*/;
 
-    // vIndex: 47
-    virtual bool isSignalSource() const;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 50
-    virtual bool isValidAuxValue(int value) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 59
-    virtual bool
-    shouldConnectToRedstone(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
-
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
-
-    // vIndex: 69
-    virtual void movedByPiston(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 131
-    virtual class Block const& getRenderBlock() const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 133
-    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
+    // vIndex: 64
+    virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
-    // vIndex: 153
-    virtual bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
+    // vIndex: 48
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
-    MCAPI ObserverBlock(std::string const& nameId, int id);
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
 
+    // vIndex: 141
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
+
+    // vIndex: 120
+    virtual ::Block const& getRenderBlock() const /*override*/;
+
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 122
+    virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void
-    _installCircuit(class BlockSource& region, class BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
-
-    MCAPI void
-    _updateState(class BlockSource& region, class BlockPos const& pos, class PulseCapacitor& component, bool turnOn)
-        const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ObserverBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI uchar _getPoweredDirection(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
-
-    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
-
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
-
-    MCAPI class Block const& getRenderBlock$() const;
-
-    MCAPI int getVariant$(class Block const& block) const;
-
-    MCAPI bool isSignalSource$() const;
-
-    MCAPI bool isValidAuxValue$(int value) const;
-
-    MCAPI void movedByPiston$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
 
     MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Tick const& MAX_TICK_DELAY();
+    // NOLINTEND
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCAPI bool
-    shouldConnectToRedstone$(class BlockSource& region, class BlockPos const& pos, ::Direction::Type direction) const;
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $isValidAuxValue(int value) const;
 
-    MCAPI static struct Tick const& MAX_TICK_DELAY();
+    MCAPI bool $isSignalSource() const;
 
+    MCAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+
+    MCAPI ::Block const& $getRenderBlock() const;
+
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,19 +2,61 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DataItem;
+class EntityContext;
+class Vec3;
+// clang-format on
+
 class SynchedActorData {
+public:
+    // SynchedActorData inner types define
+    using TypeInt8 = char;
+
+    using TypeShort = short;
+
+    using TypeString = ::std::string;
+
+    using TypeInt = int;
+
+    using TypeInt64 = int64;
+
+    using TypeFloat = float;
+
+    using TypeVec3 = ::Vec3;
+
+    using DataList = ::std::vector<::std::unique_ptr<::DataItem>>;
+
+    using ID = ushort;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
+    ::ll::TypedStorage<8, 24, ::std::bitset<132>>                           mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<132>>                           mHasComponentData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SynchedActorData& operator=(SynchedActorData const&);
     SynchedActorData(SynchedActorData const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI SynchedActorData();
 
-    MCAPI SynchedActorData(class SynchedActorData&& rhs);
+    MCAPI SynchedActorData(::SynchedActorData&& rhs);
 
-    MCAPI class SynchedActorData _clone() const;
+    MCAPI ::SynchedActorData _clone() const;
+
+    MCAPI ::DataItem* _find(ushort id) const;
+
+    MCAPI ::DataItem& _get(ushort id);
+
+    MCAPI void _resizeToContain(ushort id);
 
     MCAPI float getFloat(ushort id) const;
 
@@ -24,46 +66,40 @@ public:
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCAPI class Vec3 getVec3(ushort id) const;
+    MCAPI ::Vec3 getVec3(ushort id) const;
 
     MCAPI bool hasData(ushort id) const;
 
-    MCAPI class SynchedActorData& operator=(class SynchedActorData&& rhs);
+    MCAPI ::SynchedActorData& operator=(::SynchedActorData&& rhs);
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packAll(class EntityContext const& entity) const;
+    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty(class EntityContext& entity);
+    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
 
     MCAPI ~SynchedActorData();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class DataItem* _find(ushort id) const;
-
-    MCAPI class DataItem& _get(ushort id);
-
-    MCAPI void _resizeToContain(ushort id);
-
-    MCAPI void _setDirty(ushort);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& DIFF_ITEM();
 
-    MCAPI void* ctor$(class SynchedActorData&& rhs);
+    MCAPI static ::std::string const& DIFF_ITEMS_SIZE();
 
-    MCAPI void dtor$();
+    MCAPI static ::std::string const& DIFF_ITEM_NULL();
+    // NOLINTEND
 
-    MCAPI static std::string const& DIFF_ITEM();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static std::string const& DIFF_ITEMS_SIZE();
+    MCAPI void* $ctor(::SynchedActorData&& rhs);
+    // NOLINTEND
 
-    MCAPI static std::string const& DIFF_ITEM_NULL();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,32 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockUtils {
-public:
-    // prevent constructor by default
-    BlockUtils& operator=(BlockUtils const&);
-    BlockUtils(BlockUtils const&);
-    BlockUtils();
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+class BlockPos;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static bool allowsNetherVegetation(class BlockLegacy const& block);
+namespace BlockUtils {
+// functions
+// NOLINTBEGIN
+MCAPI bool allowsNetherVegetation(::BlockLegacy const& block);
 
-    MCAPI static bool canGrowTreeWithBeehive(class Block const& block);
+MCAPI bool canGrowTreeWithBeehive(::Block const& block);
 
-    MCAPI static float getLiquidBlockHeight(class Block const& block, class BlockPos const& blockPos);
+MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 
-    MCAPI static bool isBeehiveBlock(class BlockLegacy const& block);
+MCAPI bool isBeehiveBlock(::BlockLegacy const& block);
 
-    MCAPI static bool isDownwardFlowingLiquid(class Block const& block);
+MCAPI bool isDownwardFlowingLiquid(::Block const& block);
 
-    MCAPI static bool isFullFlowingLiquid(class Block const& block);
+MCAPI bool isFullFlowingLiquid(::Block const& block);
 
-    MCAPI static bool isLiquidSource(class Block const& block);
+MCAPI bool isLiquidSource(::Block const& block);
 
-    MCAPI static bool isThinFenceOrWallBlock(class Block const& block);
+MCAPI bool isThinFenceOrWallBlock(::Block const& block);
 
-    MCAPI static bool isWaterSource(class Block const& block);
+MCAPI bool isWaterSource(::Block const& block);
+// NOLINTEND
 
-    // NOLINTEND
-};
+} // namespace BlockUtils

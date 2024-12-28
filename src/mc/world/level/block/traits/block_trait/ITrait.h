@@ -18,27 +18,38 @@ public:
     ITrait();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITrait() = default;
+    virtual ~ITrait();
 
     // vIndex: 1
-    virtual void applyToBlockLegacy(class BlockLegacy& blockLegacy) const = 0;
+    virtual void applyToBlockLegacy(::BlockLegacy&) const = 0;
 
     // vIndex: 2
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const = 0;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag() const = 0;
 
     // vIndex: 3
-    virtual void initializeFromNetwork(class CompoundTag const& tag) = 0;
+    virtual void initializeFromNetwork(::CompoundTag const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace BlockTrait
+} // namespace BlockTrait

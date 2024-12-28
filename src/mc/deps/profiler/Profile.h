@@ -12,15 +12,12 @@ namespace Core::Profile { class CounterTokenMarker; }
 // clang-format on
 
 namespace Core::Profile {
+// functions
 // NOLINTBEGIN
-MCAPI void counterSet(class Core::Profile::CounterTokenMarker token, int64 amount);
+MCAPI void counterSet(::Core::Profile::CounterTokenMarker, int64);
 
-MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(
-    char const*                    label,
-    ::Core::Profile::CounterFormat format,
-    int64                          limit,
-    ::Core::Profile::CounterFlags  flags
-);
+MCAPI ::Core::Profile::CounterTokenMarker
+generateCounterTokenWithConfig(char const*, ::Core::Profile::CounterFormat, int64, ::Core::Profile::CounterFlags);
 
 MCAPI void initializeProfile();
 
@@ -41,4 +38,9 @@ MCAPI void profileFlip();
 MCAPI void shutdownProfile();
 // NOLINTEND
 
-}; // namespace Core::Profile
+// static variables
+// NOLINTBEGIN
+MCAPI bool& ProfilerInitialized();
+// NOLINTEND
+
+} // namespace Core::Profile

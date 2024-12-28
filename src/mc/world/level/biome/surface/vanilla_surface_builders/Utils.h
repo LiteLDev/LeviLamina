@@ -12,7 +12,6 @@ class Block;
 class BlockPos;
 class BlockVolume;
 class HeightmapWrapper;
-class Pos;
 class Random;
 struct SurfaceMaterialAdjustmentEvaluated;
 struct SurfaceMaterialAttributes;
@@ -20,40 +19,38 @@ struct SurfaceMaterialBlocks;
 // clang-format on
 
 namespace VanillaSurfaceBuilders::Utils {
+// functions
 // NOLINTBEGIN
 MCAPI void _buildSurface(
-    struct SurfaceMaterialBlocks const&              initialBlockPalette,
-    class Block const*                               steepBlock,
-    struct SurfaceMaterialAdjustmentEvaluated const& evaluatedAdjustments,
-    class Random&                                    random,
-    class BlockVolume&                               blocks,
-    class BlockPos const&                            pos,
-    short                                            seaLevel,
-    int                                              runDepth,
-    bool                                             coldEnoughForIce,
-    ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
-    int                                              lowerLimit,
-    class HeightmapWrapper const&                    preWorldGenHeightmap,
-    bool                                             useCCOrLater
+    ::SurfaceMaterialBlocks const&              initialBlockPalette,
+    ::Block const*                              steepBlock,
+    ::SurfaceMaterialAdjustmentEvaluated const& evaluatedAdjustments,
+    ::Random&                                   random,
+    ::BlockVolume&                              blocks,
+    ::BlockPos const&                           pos,
+    short                                       seaLevel,
+    int                                         runDepth,
+    bool                                        coldEnoughForIce,
+    ::ISurfaceBuilder::WaterLevelStrategy       waterLevelStrategy,
+    int                                         lowerLimit,
+    ::HeightmapWrapper const&                   preWorldGenHeightmap,
+    bool                                        useCCOrLater
 );
 
-MCAPI void buildSurface(struct ISurfaceBuilder::BuildParameters const& buildParameters);
+MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
 
-MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes& surfaceMaterials);
-
-MCAPI short
-findGroundHeight(class BlockVolume const& blocks, class Pos p, class HeightmapWrapper const& preWorldGenHeightmap);
+MCAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
 
 MCAPI bool isSteepTerrain(
-    class BlockVolume const&                        blocks,
-    class BlockPos const&                           pos,
-    struct MountainAttributes::SteepMaterial const& steepMaterial,
-    class HeightmapWrapper const&                   preWorldGenHeightmap
+    ::BlockVolume const&                       blocks,
+    ::BlockPos const&                          pos,
+    ::MountainAttributes::SteepMaterial const& steepMaterial,
+    ::HeightmapWrapper const&                  preWorldGenHeightmap
 );
 
-MCAPI void placeBedrockCeiling(class Random& random, class BlockVolume& blocks, class BlockPos const& pos);
+MCAPI void placeBedrockCeiling(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
 
-MCAPI void placeBedrockFloor(class Random& random, class BlockVolume& blocks, class BlockPos const& pos);
+MCAPI void placeBedrockFloor(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
 // NOLINTEND
 
-}; // namespace VanillaSurfaceBuilders::Utils
+} // namespace VanillaSurfaceBuilders::Utils

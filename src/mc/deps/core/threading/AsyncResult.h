@@ -3,19 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/AsyncStatus.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
-struct XAsyncBlock;
-struct XTaskQueueObject;
-// clang-format on
-
 namespace Bedrock::Threading::AsyncResult {
+// functions
 // NOLINTBEGIN
-MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> done();
+MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> done();
 // NOLINTEND
 
-}; // namespace Bedrock::Threading::AsyncResult
+} // namespace Bedrock::Threading::AsyncResult

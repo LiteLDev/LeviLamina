@@ -5,32 +5,43 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
+#include "mc/world/level/block/block_serialization_utils/NbtToBlockCache.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class CompoundTag;
+class HashedString;
+class IUnknownBlockTypeRegistry;
 namespace BlockSerializationUtils { struct NbtToBlockCache; }
 // clang-format on
 
 namespace BlockSerializationUtils {
+// functions
 // NOLINTBEGIN
+MCAPI void addToCache(
+    ::BlockSerializationUtils::NbtToBlockCache&            cache,
+    ::BlockSerializationUtils::NbtToBlockCache::Key const& key,
+    ::BlockSerializationUtils::NBTState                    nbtState,
+    ::Block const*                                         block
+);
+
 MCAPI void clearBlockReplaceDataMap();
 
 MCAPI void clearNBTToBlockCache();
 
-MCAPI class Block const& getBlockFromNBT(
-    class CompoundTag const&                                        tag,
-    class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> unknownBlockRegistry
-);
+MCAPI ::Block const&
+getBlockFromNBT(::CompoundTag const& tag, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
 MCAPI void initBlockReplaceDataMap();
 
-MCAPI std::pair<::BlockSerializationUtils::NBTState, class Block const*>
-      tryGetBlockFromNBT(class CompoundTag const& tag, struct BlockSerializationUtils::NbtToBlockCache* localCache);
+MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>
+tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlockCache* localCache);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::unordered_map<class HashedString, std::function<void(int, class CompoundTag&)>>& BLOCK_REPLACE_DATA_MAP();
+MCAPI ::std::unordered_map<::HashedString, ::std::function<void(int, ::CompoundTag&)>>& BLOCK_REPLACE_DATA_MAP();
 // NOLINTEND
 
-}; // namespace BlockSerializationUtils
+} // namespace BlockSerializationUtils

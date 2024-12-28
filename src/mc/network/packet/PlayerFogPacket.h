@@ -7,7 +7,19 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PlayerFogPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mFogStack;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerFogPacket& operator=(PlayerFogPacket const&);
@@ -15,42 +27,57 @@ public:
     PlayerFogPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerFogPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI explicit PlayerFogPacket(std::vector<std::string> fogStack);
-
+    // vIndex: 0
+    virtual ~PlayerFogPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PlayerFogPacket(::std::vector<::std::string> fogStack);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::vector<std::string> fogStack);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::std::string> fogStack);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

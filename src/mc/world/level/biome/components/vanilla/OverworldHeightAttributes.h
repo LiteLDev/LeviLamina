@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OverworldHeightAttributes {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+class OverworldHeightAttributes : public ::BiomeComponentBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnk498230;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OverworldHeightAttributes& operator=(OverworldHeightAttributes const&);
@@ -10,16 +19,15 @@ public:
     OverworldHeightAttributes();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OverworldHeightAttributes() = default;
-
+    virtual ~OverworldHeightAttributes() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

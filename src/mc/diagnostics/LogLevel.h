@@ -4,6 +4,12 @@
 
 namespace Bedrock {
 
-enum class LogLevel {};
-
+enum class LogLevel : int {
+    // bitfield representation
+    Verbose = 1 << 0,
+    Info    = 1 << 1,
+    Warning = 1 << 2,
+    Error   = 1 << 3,
 };
+
+}

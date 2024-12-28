@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PushActorsSystem {
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct PushActorsSystem {
 public:
     // prevent constructor by default
     PushActorsSystem& operator=(PushActorsSystem const&);
@@ -10,10 +16,10 @@ public:
     PushActorsSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void pushActors(class ActorOwnerComponent& actorOwnerComponent);
-
+    MCAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };

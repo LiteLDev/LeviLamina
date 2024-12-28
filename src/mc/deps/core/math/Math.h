@@ -12,12 +12,37 @@ namespace mce {
 
 class Math {
 public:
+    // Math inner types declare
+    // clang-format off
+    struct PairHash;
+    struct TupleHash;
+    // clang-format on
+
+    // Math inner types define
+    struct PairHash {
+    public:
+        // prevent constructor by default
+        PairHash& operator=(PairHash const&);
+        PairHash(PairHash const&);
+        PairHash();
+    };
+
+    struct TupleHash {
+    public:
+        // prevent constructor by default
+        TupleHash& operator=(TupleHash const&);
+        TupleHash(TupleHash const&);
+        TupleHash();
+    };
+
+public:
     // prevent constructor by default
     Math& operator=(Math const&);
     Math(Math const&);
     Math();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static float absMax(float a, float b);
 
@@ -25,15 +50,15 @@ public:
 
     MCAPI static float approachDegrees(float current, float target, float increment);
 
-    MCAPI static struct mce::Radian atan(float x);
+    MCAPI static ::mce::Radian atan(float x);
 
-    MCAPI static struct mce::Radian atan2(float dy, float dx);
+    MCAPI static ::mce::Radian atan2(float dy, float dx);
 
     MCAPI static int ceil(float v);
 
-    MCAPI static float clamp(float, float, float);
+    MCAPI static float clamp(float v, float low, float high);
 
-    MCAPI static int clamp(int, int, int);
+    MCAPI static int clamp(int v, int low, int high);
 
     MCAPI static float clampRotate(float current, float target, float maxDelta);
 
@@ -45,7 +70,7 @@ public:
 
     MCAPI static float cos(float f);
 
-    MCAPI static float cos(struct mce::Radian x);
+    MCAPI static float cos(::mce::Radian x);
 
     MCAPI static float degreesDifferenceAbs(float angleA, float angleB);
 
@@ -60,8 +85,6 @@ public:
     MCAPI static int floor(float v);
 
     MCAPI static float hermiteBlend(float t);
-
-    MCAPI static float invSqrt(float x);
 
     MCAPI static float inverseLerp(float min, float max, float value);
 
@@ -81,7 +104,7 @@ public:
 
     MCAPI static float sin(float f);
 
-    MCAPI static float sin(struct mce::Radian x);
+    MCAPI static float sin(::mce::Radian x);
 
     MCAPI static float snapRotationToCardinal(float deg);
 
@@ -89,20 +112,18 @@ public:
 
     MCAPI static float wrapDegrees(float input);
 
-    MCAPI static struct mce::Degree wrapDegrees(struct mce::Degree input);
+    MCAPI static ::mce::Degree wrapDegrees(::mce::Degree input);
 
     MCAPI static float wrapRadians(float angle);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static auto mSin() -> float (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<float[]> mSin();
 
     MCAPI static float const& mSinScale();
-
     // NOLINTEND
 };
 
-}; // namespace mce
+} // namespace mce

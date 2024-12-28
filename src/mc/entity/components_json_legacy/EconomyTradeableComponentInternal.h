@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct TradeItem;
+// clang-format on
+
 namespace EconomyTradeableComponentInternal {
+// functions
 // NOLINTBEGIN
-MCAPI int _filterTrades(class Actor& owner, std::vector<struct TradeItem>& tradeItems);
+MCAPI int _filterTrades(::Actor& owner, ::std::vector<::TradeItem>& tradeItems);
 // NOLINTEND
 
-}; // namespace EconomyTradeableComponentInternal
+} // namespace EconomyTradeableComponentInternal

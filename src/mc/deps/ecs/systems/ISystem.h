@@ -10,15 +10,24 @@ public:
     ISystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void registerEvents(entt::dispatcher& dispatcher);
+    // vIndex: 0
+    virtual ~ISystem();
 
+    // vIndex: 1
+    virtual void registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 };

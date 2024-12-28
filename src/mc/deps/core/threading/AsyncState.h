@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AsyncState {
+struct AsyncState {
 public:
     // prevent constructor by default
     AsyncState& operator=(AsyncState const&);
@@ -10,8 +10,8 @@ public:
     AsyncState();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void Release();
-
     // NOLINTEND
 };

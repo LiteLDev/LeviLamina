@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+// clang-format on
+
 class UnlockedRecipesServerComponent {
 public:
     // UnlockedRecipesServerComponent inner types declare
@@ -15,55 +22,81 @@ public:
     // UnlockedRecipesServerComponent inner types define
     struct UnlockingInstruction {
     public:
+        // UnlockingInstruction inner types define
+        enum class Instruction : int {
+            UnlockRecipe     = 0,
+            UnlockAllRecipes = 1,
+            RemoveRecipe     = 2,
+            RemoveAllRecipes = 3,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnkf225ff;
+        ::ll::UntypedStorage<8, 32> mUnk231057;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         UnlockingInstruction& operator=(UnlockingInstruction const&);
         UnlockingInstruction(UnlockingInstruction const&);
         UnlockingInstruction();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~UnlockingInstruction();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk4330a0;
+    ::ll::UntypedStorage<1, 1>  mUnk3a575d;
+    ::ll::UntypedStorage<4, 4>  mUnk4095d0;
+    ::ll::UntypedStorage<8, 64> mUnkf90bdd;
+    ::ll::UntypedStorage<8, 64> mUnkeeb8e1;
+    ::ll::UntypedStorage<8, 24> mUnk82a12d;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     UnlockedRecipesServerComponent& operator=(UnlockedRecipesServerComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI UnlockedRecipesServerComponent();
 
-    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent&&);
+    MCAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent&&);
 
-    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const&);
+    MCAPI UnlockedRecipesServerComponent(::UnlockedRecipesServerComponent const&);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void addChangedInventorySlot(int slot);
 
-    MCAPI void addUnlockedRecipe(std::string const& recipeId);
+    MCAPI void addUnlockedRecipe(::std::string const& recipeId);
 
-    MCAPI void addUnlockingInstruction(struct UnlockedRecipesServerComponent::UnlockingInstruction instruction);
+    MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
     MCAPI void clearChangedInventorySlots();
 
     MCAPI void clearUnlockingInstructions();
 
-    MCAPI std::unordered_set<int> const& getChangedInventorySlots() const;
+    MCAPI ::std::unordered_set<int> const& getChangedInventorySlots() const;
 
-    MCAPI std::unordered_set<std::string> const& getUnlockedRecipes() const;
+    MCAPI ::std::unordered_set<::std::string> const& getUnlockedRecipes() const;
 
-    MCAPI std::vector<struct UnlockedRecipesServerComponent::UnlockingInstruction> const&
-          getUnlockingInstructions() const;
+    MCAPI ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction> const& getUnlockingInstructions() const;
 
     MCAPI bool hasContextBeenUsed(::RecipeUnlockingRequirement::UnlockingContext context) const;
 
@@ -75,38 +108,40 @@ public:
 
     MCAPI bool hasUnlockingInstructions() const;
 
-    MCAPI bool isRecipeUnlocked(std::string const& recipeId) const;
+    MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
 
     MCAPI void markContextAsUsed(::RecipeUnlockingRequirement::UnlockingContext context);
 
     MCAPI void markInitialDataAsSent();
 
-    MCAPI class UnlockedRecipesServerComponent& operator=(class UnlockedRecipesServerComponent&&);
+    MCAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void removeAllUnlockedRecipes();
 
-    MCAPI void removeUnlockedRecipe(std::string const& recipeId);
+    MCAPI void removeUnlockedRecipe(::std::string const& recipeId);
 
     MCAPI void resetUsedContexts();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& COMPONENT_TAG();
 
-    MCAPI void* ctor$(class UnlockedRecipesServerComponent const&);
+    MCAPI static ::std::string const& UNLOCKED_RECIPES_TAG();
 
-    MCAPI void* ctor$(class UnlockedRecipesServerComponent&&);
+    MCAPI static ::std::string const& USED_CONTEXTS_TAG();
+    // NOLINTEND
 
-    MCAPI static std::string const& COMPONENT_TAG();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static std::string const& UNLOCKED_RECIPES_TAG();
+    MCAPI void* $ctor(::UnlockedRecipesServerComponent&&);
 
-    MCAPI static std::string const& USED_CONTEXTS_TAG();
-
+    MCAPI void* $ctor(::UnlockedRecipesServerComponent const&);
     // NOLINTEND
 };

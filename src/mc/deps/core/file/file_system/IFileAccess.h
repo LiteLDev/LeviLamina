@@ -7,7 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class IFileReadAccess;
+class IFileWriteAccess;
 namespace Core { class Path; }
 // clang-format on
 
@@ -16,45 +17,51 @@ public:
     // prevent constructor by default
     IFileAccess& operator=(IFileAccess const&);
     IFileAccess(IFileAccess const&);
+    IFileAccess();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFileAccess();
+    virtual ~IFileAccess() /*override*/;
 
     // vIndex: 1
-    virtual void* fopen(class Core::Path const& filePath, std::string const& mode) = 0;
+    virtual void* fopen(::Core::Path const&, ::std::string const&) = 0;
 
     // vIndex: 2
-    virtual int fclose(void* file) = 0;
+    virtual int fclose(void*) = 0;
 
     // vIndex: 3
-    virtual int fseek(void* file, int64 offset, int origin) = 0;
+    virtual int fseek(void*, int64, int) = 0;
 
     // vIndex: 4
-    virtual int64 ftell(void* file) = 0;
+    virtual int64 ftell(void*) = 0;
 
     // vIndex: 5
-    virtual class IFileReadAccess const* getReadInterface() const = 0;
+    virtual ::IFileReadAccess const* getReadInterface() const = 0;
 
     // vIndex: 6
-    virtual class IFileWriteAccess* getWriteInterface() = 0;
+    virtual ::IFileWriteAccess* getWriteInterface() = 0;
 
     // vIndex: 7
     virtual void unload() = 0;
+    // NOLINTEND
 
-    MCAPI IFileAccess();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

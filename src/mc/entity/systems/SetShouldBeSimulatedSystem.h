@@ -5,17 +5,25 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntitySystems;
+class StrictEntityContext;
+struct ShouldBeSimulatedComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
 
 namespace SetShouldBeSimulatedSystem {
+// functions
 // NOLINTBEGIN
-MCAPI void registerSystems(class EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 
 MCAPI void setShouldBeSimulatedIfClientPredicted(
-    class StrictEntityContext const&                                         entity,
-    class optional_ref<struct VehicleInputIntentComponent const>             vehicleInputIntent,
-    class EntityModifier<class FlagComponent<struct ShouldBeSimulatedFlag>>& modifier
+    ::StrictEntityContext const&                        entity,
+    ::optional_ref<::VehicleInputIntentComponent const> vehicleInputIntent,
+    ::EntityModifier<::ShouldBeSimulatedComponent>&     modifier
 );
 // NOLINTEND
 
-}; // namespace SetShouldBeSimulatedSystem
+} // namespace SetShouldBeSimulatedSystem

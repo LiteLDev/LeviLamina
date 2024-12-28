@@ -13,4 +13,4 @@ public:
     IAsyncResult();
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

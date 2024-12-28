@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/network/IPacketObserver.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetworkIdentifier;
+class Packet;
+// clang-format on
+
 class PacketObserver : public ::IPacketObserver {
 public:
     // PacketObserver inner types declare
@@ -15,24 +21,40 @@ public:
     // PacketObserver inner types define
     struct PacketStats {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk8e1033;
+        ::ll::UntypedStorage<4, 4> mUnk1b3300;
+        ::ll::UntypedStorage<4, 4> mUnk5d3915;
+        ::ll::UntypedStorage<4, 4> mUnkc76f5b;
+        ::ll::UntypedStorage<4, 4> mUnkf9db13;
+        ::ll::UntypedStorage<4, 4> mUnkc40279;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         PacketStats& operator=(PacketStats const&);
         PacketStats(PacketStats const&);
         PacketStats();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI explicit PacketStats(uint id);
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(uint id);
-
+        MCAPI void* $ctor(uint id);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 24> mUnk78c417;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -41,43 +63,50 @@ public:
     PacketObserver();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PacketObserver();
-
     // vIndex: 1
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint size);
+    virtual void packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
 
     // vIndex: 2
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint size);
+    virtual void packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
 
     // vIndex: 3
-    virtual void dataSentTo(class NetworkIdentifier const&, std::string_view);
+    virtual void dataSentTo(::NetworkIdentifier const&, ::std::string_view) /*override*/;
 
     // vIndex: 4
-    virtual void dataReceivedFrom(class NetworkIdentifier const&, std::string const&);
+    virtual void dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&) /*override*/;
 
     // vIndex: 5
     virtual void reset();
 
+    // vIndex: 0
+    virtual ~PacketObserver() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size);
 
-    MCAPI void dataReceivedFrom$(class NetworkIdentifier const&, std::string const&);
+    MCAPI void $packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size);
 
-    MCAPI void dataSentTo$(class NetworkIdentifier const&, std::string_view);
+    MCAPI void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
 
-    MCAPI void packetReceivedFrom$(class NetworkIdentifier const&, class Packet const&, uint size);
+    MCAPI void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
 
-    MCAPI void packetSentTo$(class NetworkIdentifier const&, class Packet const&, uint size);
+    MCAPI void $reset();
+    // NOLINTEND
 
-    MCAPI void reset$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

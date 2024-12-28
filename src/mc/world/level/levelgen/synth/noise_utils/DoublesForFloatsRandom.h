@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/synth/noise_utils/DelegatingRandom.h"
 
-// auto generated forward declare list
-// clang-format off
-class IPositionalRandomFactory;
-class IRandom;
-namespace NoiseUtils { class DelegatingRandom; }
-// clang-format on
-
 namespace NoiseUtils {
 
 class DoublesForFloatsRandom : public ::NoiseUtils::DelegatingRandom {
@@ -22,25 +15,32 @@ public:
     DoublesForFloatsRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DoublesForFloatsRandom();
-
     // vIndex: 5
-    virtual float nextFloat();
+    virtual float nextFloat() /*override*/;
 
+    // vIndex: 0
+    virtual ~DoublesForFloatsRandom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $nextFloat();
+    // NOLINTEND
 
-    MCAPI float nextFloat$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace NoiseUtils
+} // namespace NoiseUtils

@@ -10,28 +10,39 @@ namespace cereal { struct ReflectionCtx; }
 
 struct ComponentItemData_v1_20 {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkafbe72;
+    ::ll::UntypedStorage<8, 16> mUnk7a10de;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ComponentItemData_v1_20& operator=(ComponentItemData_v1_20 const&);
     ComponentItemData_v1_20(ComponentItemData_v1_20 const&);
+    ComponentItemData_v1_20();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_20();
-
     MCAPI ~ComponentItemData_v1_20();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    // NOLINTEND
 
-    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

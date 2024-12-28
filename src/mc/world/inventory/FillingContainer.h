@@ -6,136 +6,176 @@
 #include "mc/world/Container.h"
 #include "mc/world/ContainerType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class ListTag;
+class Player;
+class SaveContext;
+// clang-format on
+
 class FillingContainer : public ::Container {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkcb7e75;
+    ::ll::UntypedStorage<8, 8>  mUnk3a7f59;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    FillingContainer(FillingContainer const&);
+    FillingContainer& operator=(FillingContainer const&);
     FillingContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FillingContainer();
+    virtual ~FillingContainer() /*override*/;
+
+    // vIndex: 41
+    virtual int removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
+
+    // vIndex: 42
+    virtual void swapSlots(int from, int to);
+
+    // vIndex: 43
+    virtual bool add(::ItemStack& item);
+
+    // vIndex: 44
+    virtual bool canAdd(::ItemStack const& item) const;
+
+    // vIndex: 14
+    virtual void removeItem(int slot, int count) /*override*/;
+
+    // vIndex: 45
+    virtual void clearSlot(int slot);
+
+    // vIndex: 46
+    virtual int clearInventory(int resizeTo);
+
+    // vIndex: 47
+    virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const;
+
+    // vIndex: 48
+    virtual void loadFromTag(::ListTag const& inventoryList);
+
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+
+    // vIndex: 13
+    virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
+
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
+
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
+
+    // vIndex: 22
+    virtual void startOpen(::Player&) /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
-    // vIndex: 7
-    virtual class ItemStack const& getItem(int slot) const;
-
-    // vIndex: 12
-    virtual void setItem(int slot, class ItemStack const& item);
-
-    // vIndex: 13
-    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
-
-    // vIndex: 14
-    virtual void removeItem(int slot, int count);
-
-    // vIndex: 20
-    virtual int getContainerSize() const;
-
-    // vIndex: 21
-    virtual int getMaxStackSize() const;
-
-    // vIndex: 22
-    virtual void startOpen(class Player&);
-
-    // vIndex: 41
-    virtual bool add(class ItemStack& item);
-
-    // vIndex: 42
-    virtual bool canAdd(class ItemStack const& item) const;
-
-    // vIndex: 43
-    virtual void clearSlot(int slot);
-
-    // vIndex: 44
-    virtual int clearInventory(int resizeTo);
-
-    // vIndex: 45
-    virtual void load(class ListTag const& inventoryList, class SemVersion const&, class Level& level);
-
-    MCAPI FillingContainer(class Player* player, int numTotalSlots, ::ContainerType containerType);
-
-    MCAPI int getHotbarSize() const;
-
-    MCAPI int getSlotWithItem(class ItemStack const& item, bool checkAux, bool checkData) const;
-
-    MCAPI bool hasResource(int type);
-
-    MCAPI class FillingContainer& operator=(class FillingContainer const&);
-
-    MCAPI bool removeResource(int type);
-
-    MCAPI int removeResource(class ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
-
-    MCAPI std::unique_ptr<class ListTag> save() const;
-
-    MCAPI void swapSlots(int from, int to);
-
+    // vIndex: 49
+    virtual void _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI int _addResource(class ItemStack const& item);
+    MCAPI FillingContainer(::FillingContainer const&);
 
-    MCAPI void _doDrop(class ItemStack& item, bool randomly);
+    MCAPI FillingContainer(::Player* player, int numTotalSlots, ::ContainerType containerType);
+
+    MCAPI int _addResource(::ItemStack const& item);
+
+    MCAPI void _doDrop(::ItemStack& item, bool randomly);
 
     MCAPI int _getFreeSlot() const;
 
-    MCAPI int _getSlot(int blockId) const;
-
-    MCAPI int _getSlotWithRemainingSpace(class ItemStack const& newItem) const;
+    MCAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
 
     MCAPI bool _isCreative() const;
 
     MCAPI void _release(int slot);
 
+    MCAPI int getHotbarSize() const;
+
+    MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
+
+    MCAPI bool hasResource(int type);
+
+    MCAPI bool removeResource(int type);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::FillingContainer const&);
 
-    MCAPI void* ctor$(class Player* player, int numTotalSlots, ::ContainerType containerType);
+    MCAPI void* $ctor(::Player* player, int numTotalSlots, ::ContainerType containerType);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool add$(class ItemStack& item);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
-    MCAPI bool canAdd$(class ItemStack const& item) const;
+    MCAPI void $swapSlots(int from, int to);
 
-    MCAPI int clearInventory$(int resizeTo);
+    MCAPI bool $add(::ItemStack& item);
 
-    MCAPI void clearSlot$(int slot);
+    MCAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCAPI int getContainerSize$() const;
+    MCAPI void $removeItem(int slot, int count);
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI void $clearSlot(int slot);
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI int $clearInventory(int resizeTo);
 
-    MCAPI void load$(class ListTag const& inventoryList, class SemVersion const&, class Level& level);
+    MCAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
 
-    MCAPI void removeItem$(int slot, int count);
+    MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI int $getMaxStackSize() const;
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI void $startOpen(::Player&);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
+    // NOLINTEND
 
-    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
-
-    MCAPI void startOpen$(class Player&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

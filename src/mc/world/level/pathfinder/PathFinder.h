@@ -10,10 +10,56 @@
 #include "mc/world/level/pathfinder/NodeType.h"
 #include "mc/world/level/pathfinder/PathCompletionType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class BreakBlocksComponent;
+class IPathBlockSource;
+class NavigationComponent;
+class Path;
+class PathfinderNode;
+class Vec3;
+struct ActorPathingData;
+struct ActorUniqueID;
+struct PreferredPathDescription;
+// clang-format on
+
 class PathFinder {
 public:
     // PathFinder inner types define
-    enum class ExtractionPurpose {};
+    enum class ExtractionPurpose : uchar {
+        Pathing = 0,
+        IsFree  = 1,
+    };
+
+    enum class NeighborDiagonalType : int {
+        Default = 0,
+        Liquid  = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48>  mUnk1b481f;
+    ::ll::UntypedStorage<8, 32>  mUnk1a9e34;
+    ::ll::UntypedStorage<8, 64>  mUnk863704;
+    ::ll::UntypedStorage<8, 256> mUnkb761b0;
+    ::ll::UntypedStorage<1, 1>   mUnkd69a6c;
+    ::ll::UntypedStorage<1, 1>   mUnkce9cdc;
+    ::ll::UntypedStorage<1, 1>   mUnk89a671;
+    ::ll::UntypedStorage<1, 1>   mUnke6666a;
+    ::ll::UntypedStorage<1, 1>   mUnka84388;
+    ::ll::UntypedStorage<1, 1>   mUnk945f15;
+    ::ll::UntypedStorage<1, 1>   mUnkcf66c9;
+    ::ll::UntypedStorage<1, 1>   mUnk4842e4;
+    ::ll::UntypedStorage<1, 1>   mUnk682bf3;
+    ::ll::UntypedStorage<1, 1>   mUnk149e4d;
+    ::ll::UntypedStorage<1, 1>   mUnk90bdf5;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -22,184 +68,172 @@ public:
     PathFinder();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PathFinder(class BlockSource& region, class NavigationComponent const& navigation);
+    MCAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
 
-    MCAPI std::unique_ptr<class Path> findPath(class Actor& from, class Actor& to, float maxDist);
-
-    MCAPI std::unique_ptr<class Path> findPath(class Actor& from, int x, int y, int z, float maxDist);
-
-    MCAPI ::NodeType isFree(
-        class Actor&          actor,
-        class BlockPos const& fromPos,
-        class BlockPos const& testPos,
-        class BlockPos const& size,
-        ::CanJumpIntoNode     jumpIntoNode,
-        ::CanClimbIntoNode    climbIntoNode
-    );
-
-    MCAPI ::NodeType isFree(
-        struct ActorPathingData const& data,
-        class BlockPos const&          lastPathPos,
-        class BlockPos const&          testPos,
-        class BlockPos const&          size,
-        ::CanJumpIntoNode              jumpIntoNode,
-        ::CanClimbIntoNode             climbIntoNode
-    );
-
-    MCAPI ~PathFinder();
-
-    MCAPI static class BlockPos _getStartPositionFlyingActor(
-        class IPathBlockSource const& pathBlockSource,
-        class BlockPos                originalStartPos,
-        bool                          canFloat,
-        bool                          canPathOverLava,
-        float                         yFeetPosition
-    );
-
-    MCAPI static struct ActorPathingData
-    extractPathingData(class Actor& mutableActor, ::PathFinder::ExtractionPurpose purpose);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI bool _checkBlockAndNeighborsProperty(
-        struct ActorPathingData const&                                 data,
-        class BlockPos const&                                          pos,
-        class Block const&                                             block,
-        ::BlockProperty                                                testProperty,
-        int                                                            radius,
-        class BreakBlocksComponent const*                              breakBlocksComponent,
-        std::function<bool(class Block const&, class BlockPos const&)> extraCondition
+        ::ActorPathingData const&                                data,
+        ::BlockPos const&                                        pos,
+        ::Block const&                                           block,
+        ::BlockProperty                                          testProperty,
+        int                                                      radius,
+        ::BreakBlocksComponent const*                            breakBlocksComponent,
+        ::std::function<bool(::Block const&, ::BlockPos const&)> extraCondition
     );
 
     MCAPI bool _checkForDamagingBlock(
-        struct ActorPathingData const&    data,
-        class BlockPos const&             pos,
-        class Block const&                block,
-        int                               radius,
-        class BreakBlocksComponent const* breakBlocksComponent
+        ::ActorPathingData const&     data,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        int                           radius,
+        ::BreakBlocksComponent const* breakBlocksComponent
     );
 
     MCAPI ::NodeType _classifyDoorNode(
-        struct ActorPathingData const& data,
-        class Block const&             testBlock,
-        class BlockPos const&          testPos,
-        class BlockPos const&          lastPathPos
+        ::ActorPathingData const& data,
+        ::Block const&            testBlock,
+        ::BlockPos const&         testPos,
+        ::BlockPos const&         lastPathPos
     );
 
     MCAPI ::NodeType _classifyNode(
-        struct ActorPathingData const& data,
-        class BlockPos const&          lastPathPos,
-        class Block const&             testBlock,
-        class BlockPos const&          testPos,
-        ::CanJumpIntoNode              jumpIntoNode,
-        ::CanClimbIntoNode             climbIntoNode
+        ::ActorPathingData const& data,
+        ::BlockPos const&         lastPathPos,
+        ::Block const&            testBlock,
+        ::BlockPos const&         testPos,
+        ::CanJumpIntoNode         jumpIntoNode,
+        ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI bool _findNearestPathableNeighbor(
-        class BlockPos&                outPos,
-        struct ActorPathingData const& data,
-        class BlockPos const&          testPos
+    MCAPI bool
+    _findNearestPathableNeighbor(::BlockPos& outPos, ::ActorPathingData const& data, ::BlockPos const& testPos);
+
+    MCAPI ::std::unique_ptr<::Path>
+    _findPath(::ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
+
+    MCAPI ::std::unique_ptr<::Path> _findPath(
+        ::ActorPathingData const& data,
+        ::PathfinderNode*         from,
+        ::PathfinderNode*         to,
+        ::PathfinderNode const&   size,
+        float                     maxDist
     );
 
-    MCAPI std::unique_ptr<class Path> _findPath(
-        struct ActorPathingData const& data,
-        class PathfinderNode*          from,
-        class PathfinderNode*          to,
-        class PathfinderNode const&    size,
-        float                          maxDist
-    );
-
-    MCAPI std::unique_ptr<class Path>
-          _findPath(struct ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
-
-    MCAPI class AABB _getAABBForPathfinding(class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI std::optional<class BlockPos> _getHighestReachablePosByJumping(
-        class BlockPos const& originalTargetPos,
-        float                 maxReachableHeight,
-        class BlockPos const& actorSize
+    MCAPI ::std::optional<::BlockPos> _getHighestReachablePosByJumping(
+        ::BlockPos const& originalTargetPos,
+        float             maxReachableHeight,
+        ::BlockPos const& actorSize
     ) const;
 
-    MCAPI struct ActorPathingData::MinMaxHeightCacheEntry
-    _getMinAndMaxHeightAroundBlock(struct ActorPathingData const& data, class BlockPos const& blockPos, float mobHeight)
-        const;
+    MCAPI ::ActorPathingData::MinMaxHeightCacheEntry
+    _getMinAndMaxHeightAroundBlock(::ActorPathingData const& data, ::BlockPos const& blockPos, float mobHeight) const;
 
-    MCAPI int _getNeighbors(
-        struct ActorPathingData const& data,
-        class PathfinderNode&          pos,
-        class PathfinderNode const&    size,
-        class PathfinderNode const&    target,
-        uint                           maxDistSqr,
-        std::bitset<18> const&         validPositions
+    MCAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
+
+    MCAPI ::PathfinderNode* _getNode(
+        ::ActorPathingData const& data,
+        ::BlockPos const&         fromPos,
+        ::BlockPos const&         blockPos,
+        ::PathfinderNode const&   size,
+        float                     jumpHeight,
+        ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI class PathfinderNode* _getNode(class BlockPos const& pos, ::NodeType nodeType);
-
-    MCAPI class PathfinderNode* _getNode(
-        struct ActorPathingData const& data,
-        class BlockPos const&          fromPos,
-        class BlockPos const&          blockPos,
-        class PathfinderNode const&    size,
-        float                          jumpHeight,
-        ::CanClimbIntoNode             climbIntoNode
+    MCAPI ::std::optional<::NodeType> _getPartialBlockNodeType(
+        ::BlockPos const&         currentBlockPos,
+        ::BlockPos const&         lastBlockPos,
+        ::ActorPathingData const& data
     );
 
-    MCAPI std::optional<::NodeType> _getPartialBlockNodeType(
-        class BlockPos const&          currentBlockPos,
-        class BlockPos const&          lastBlockPos,
-        struct ActorPathingData const& data
+    MCAPI float _getPathfindingMalus(::ActorPathingData const& data, ::NodeType nodeType, ::BlockPos const& blockPos);
+
+    MCAPI ::PathfinderNode* _getUnderneathSupportedNode(
+        ::PathfinderNode*         node,
+        ::ActorPathingData const& data,
+        ::BlockPos const&         fromPos,
+        ::PathfinderNode const&   size,
+        ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCAPI float
-    _getPathfindingMalus(struct ActorPathingData const& data, ::NodeType nodeType, class BlockPos const& blockPos);
-
-    MCAPI class PathfinderNode* _getUnderneathSupportedNode(
-        class PathfinderNode*          node,
-        struct ActorPathingData const& data,
-        class BlockPos const&          fromPos,
-        class PathfinderNode const&    size,
-        ::CanClimbIntoNode             climbIntoNode
-    );
-
-    MCAPI class PathfinderNode*
-    _getWaterNode(struct ActorPathingData const& data, class BlockPos const& lastPos, class BlockPos const& blockPos);
+    MCAPI ::PathfinderNode*
+    _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
     MCAPI ::NodeType _isFreeStartNode(
-        struct ActorPathingData const& data,
-        class AABB const&              entityAABB,
-        class BlockPos const&          testPos,
-        class BlockPos const&          size
-    );
-
-    MCAPI ::NodeType _isFreeWaterNode(
-        struct ActorPathingData const& data,
-        class BlockPos const&          lastPos,
-        class BlockPos const&          blockPos
+        ::ActorPathingData const& data,
+        ::AABB const&             entityAABB,
+        ::BlockPos const&         testPos,
+        ::BlockPos const&         size
     );
 
     MCAPI bool _isNeighborPotentiallyValid(
-        class PathfinderNode const& node,
-        class PathfinderNode const& target,
-        class BlockPos const&       offset,
-        uint                        maxDistSqr
+        ::PathfinderNode const& node,
+        ::PathfinderNode const& target,
+        ::BlockPos const&       offset,
+        uint                    maxDistSqr
     );
 
-    MCAPI std::unique_ptr<class Path>
-          _reconstructPath(class PathfinderNode* to, ::PathCompletionType completionType, struct ActorUniqueID actorId);
+    MCAPI ::std::unique_ptr<::Path>
+    _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID actorId);
 
+    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
+
+    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, int x, int y, int z, float maxDist);
+
+    MCAPI ::NodeType isFree(
+        ::Actor&           actor,
+        ::BlockPos const&  fromPos,
+        ::BlockPos const&  testPos,
+        ::BlockPos const&  size,
+        ::CanJumpIntoNode  jumpIntoNode,
+        ::CanClimbIntoNode climbIntoNode
+    );
+
+    MCAPI ::NodeType isFree(
+        ::ActorPathingData const& data,
+        ::BlockPos const&         lastPathPos,
+        ::BlockPos const&         testPos,
+        ::BlockPos const&         size,
+        ::CanJumpIntoNode         jumpIntoNode,
+        ::CanClimbIntoNode        climbIntoNode
+    );
+
+    MCAPI ~PathFinder();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockSource& region, class NavigationComponent const& navigation);
+    MCAPI static ::BlockPos _getStartPositionFlyingActor(
+        ::IPathBlockSource const& pathBlockSource,
+        ::BlockPos                originalStartPos,
+        bool                      canFloat,
+        bool                      canPathOverLava,
+        float                     yFeetPosition
+    );
 
-    MCAPI void dtor$();
+    MCAPI static ::ActorPathingData extractPathingData(
+        ::Actor&                        mutableActor,
+        ::PathFinder::ExtractionPurpose purpose,
+        ::std::optional<::Vec3>         targetPos
+    );
+    // NOLINTEND
 
-    MCAPI static struct PreferredPathDescription const& DEFAULT_DESC();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::PreferredPathDescription const& DEFAULT_DESC();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -15,38 +15,51 @@ namespace Bedrock::Threading {
 
 class EnableQueueForThread {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk30ed11;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     EnableQueueForThread& operator=(EnableQueueForThread const&);
     EnableQueueForThread(EnableQueueForThread const&);
     EnableQueueForThread();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~EnableQueueForThread();
-
-    MCAPI EnableQueueForThread(class WorkerPool& workerPool, class Scheduler& scheduler, std::string name);
-
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI EnableQueueForThread(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
+
     MCAPI void flushThreadTasks();
 
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(std::function<void()>&& callback);
-
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(::std::function<void()>&& callback);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string name);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class WorkerPool& workerPool, class Scheduler& scheduler, std::string name);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

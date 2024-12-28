@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace SetMoveSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createClientSystem();
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createCommonSystem();
+namespace SetMoveSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createClientSystem();
+
+MCAPI ::TickingSystemWithInfo createCommonSystem();
 // NOLINTEND
 
-}; // namespace SetMoveSystem
+} // namespace SetMoveSystem

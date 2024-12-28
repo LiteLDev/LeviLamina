@@ -4,24 +4,42 @@
 
 // auto generated forward declare list
 // clang-format off
+class PrivateKeyManager;
+class UnverifiedCertificate;
+class WebToken;
 namespace Json { class Value; }
 // clang-format on
 
 class Certificate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 136, ::UnverifiedCertificate>        mUnverifiedCertificate;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mParentCertificate;
+    ::ll::TypedStorage<1, 1, bool>                             mIsValid;
+    ::ll::TypedStorage<1, 1, bool>                             mIsSelfSigned;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Certificate& operator=(Certificate const&);
     Certificate();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI Certificate(class Certificate const& other);
+    MCAPI Certificate(::Certificate const& other);
+
+    MCAPI Certificate(
+        ::UnverifiedCertificate const&   unverifiedCertificate,
+        ::std::unique_ptr<::Certificate> parentCertificate
+    );
 
     MCAPI int64 getExpirationDate() const;
 
-    MCAPI class Json::Value getExtraData(std::string const& key, class Json::Value const& defaultValue) const;
+    MCAPI ::Json::Value getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
 
-    MCAPI std::string getIdentityPublicKey() const;
+    MCAPI ::std::string getIdentityPublicKey() const;
 
     MCAPI int64 getNotBeforeDate() const;
 
@@ -29,53 +47,48 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCAPI bool validate(int64 currentTime, bool isSelfSigned);
+    MCAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 
     MCAPI ~Certificate();
-
-    MCAPI static std::unique_ptr<class Certificate> createWrappedCertificate(
-        class PrivateKeyManager&           signer,
-        int64                              notBeforeDate,
-        int64                              expirationDate,
-        std::string const&                 identityPublicKey,
-        bool                               isCertificateAuthority,
-        class Json::Value const*           extraData,
-        std::unique_ptr<class Certificate> parentCertificate
-    );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI Certificate(
-        class UnverifiedCertificate const& unverifiedCertificate,
-        std::unique_ptr<class Certificate> parentCertificate
-    );
-
-    MCAPI static std::unique_ptr<class WebToken> createWebToken(
-        class PrivateKeyManager& signer,
-        int64                    notBeforeDate,
-        int64                    expirationDate,
-        std::string const&       identityPublicKey,
-        bool                     isCertificateAuthority,
-        class Json::Value const* extraData
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Certificate const& other);
-
-    MCAPI void* ctor$(
-        class UnverifiedCertificate const& unverifiedCertificate,
-        std::unique_ptr<class Certificate> parentCertificate
+    MCAPI static ::std::unique_ptr<::WebToken> createWebToken(
+        ::PrivateKeyManager& signer,
+        int64                notBeforeDate,
+        int64                expirationDate,
+        ::std::string const& identityPublicKey,
+        bool                 isCertificateAuthority,
+        ::Json::Value const* extraData
     );
 
-    MCAPI void dtor$();
+    MCAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
+        ::PrivateKeyManager&             signer,
+        int64                            notBeforeDate,
+        int64                            expirationDate,
+        ::std::string const&             identityPublicKey,
+        bool                             isCertificateAuthority,
+        ::Json::Value const*             extraData,
+        ::std::unique_ptr<::Certificate> parentCertificate
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Certificate const& other);
+
+    MCAPI void*
+    $ctor(::UnverifiedCertificate const& unverifiedCertificate, ::std::unique_ptr<::Certificate> parentCertificate);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

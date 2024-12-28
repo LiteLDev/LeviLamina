@@ -3,22 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Player;
+class Random;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CrafterBlock : public ::ActorBlock {
+class CrafterBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     CrafterBlock& operator=(CrafterBlock const&);
@@ -26,114 +28,136 @@ public:
     CrafterBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CrafterBlock() = default;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 31
-    virtual bool isContainerBlock() const;
-
-    // vIndex: 66
-    virtual void onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 131
-    virtual class Block const& getRenderBlock() const;
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 133
-    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 29
+    virtual bool isContainerBlock() const /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 153
-    virtual bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    MCAPI CrafterBlock(std::string const& nameId, int id);
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    MCAPI static int getAttachedFace(int facing);
+    // vIndex: 120
+    virtual ::Block const& getRenderBlock() const /*override*/;
 
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 122
+    virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 141
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 0
+    virtual ~CrafterBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void dispenseFrom(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CrafterBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+    MCAPI uchar getFacing(::Block const& block) const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getAttachedFace(int facing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI class Block const& getRenderBlock$() const;
+    MCAPI bool $isContainerBlock() const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI bool isContainerBlock$() const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

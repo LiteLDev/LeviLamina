@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class SuspectTrackingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -18,13 +20,16 @@ public:
     SuspectTrackingDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, class SuspectTrackingComponent&) const;
+    MCAPI void initialize(::EntityContext&, ::SuspectTrackingComponent&) const;
+    // NOLINTEND
 
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SuspectTrackingDefinition>>& root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SuspectTrackingDefinition>>& root
     );
-
     // NOLINTEND
 };

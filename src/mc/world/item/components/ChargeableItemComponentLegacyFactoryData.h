@@ -3,48 +3,58 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct ChargeableItemComponentLegacyFactoryData {
+struct ChargeableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChargeableItemComponentLegacyFactoryData();
-
-    MCAPI ChargeableItemComponentLegacyFactoryData();
-
-    MCAPI ChargeableItemComponentLegacyFactoryData(struct ChargeableItemComponentLegacyFactoryData const&);
-
-    MCAPI struct ChargeableItemComponentLegacyFactoryData& operator=(struct ChargeableItemComponentLegacyFactoryData&&);
-
-    MCAPI struct ChargeableItemComponentLegacyFactoryData&
-    operator=(struct ChargeableItemComponentLegacyFactoryData const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    ::ll::UntypedStorage<8, 256> mUnkbe7d0d;
+    ::ll::UntypedStorage<4, 4>   mUnkf044a1;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ChargeableItemComponentLegacyFactoryData& operator=(ChargeableItemComponentLegacyFactoryData const&);
+    ChargeableItemComponentLegacyFactoryData(ChargeableItemComponentLegacyFactoryData const&);
+    ChargeableItemComponentLegacyFactoryData();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~ChargeableItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ChargeableItemComponentLegacyFactoryData const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void* ctor$();
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

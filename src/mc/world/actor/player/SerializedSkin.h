@@ -4,30 +4,82 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/world/actor/player/TrustedSkinFlag.h"
 #include "mc/world/actor/player/persona/AnimatedTextureType.h"
+#include "mc/world/actor/player/persona/ArmSize.h"
+#include "mc/world/actor/player/persona/PieceType.h"
+
+// auto generated forward declare list
+// clang-format off
+class AnimatedImageData;
+class BinaryStream;
+class ConnectionRequest;
+class LevelData;
+class MinEngineVersion;
+class ReadOnlyBinaryStream;
+class SerializedPersonaPieceHandle;
+class SubClientConnectionRequest;
+class TintMapColor;
+namespace Json { class Value; }
+namespace mce { class Color; }
+namespace mce { struct Image; }
+// clang-format on
 
 class SerializedSkin {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mPlayFabId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mFullId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mResourcePatch;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mDefaultGeometryName;
+    ::ll::TypedStorage<8, 48, ::mce::Image>                                               mSkinImage;
+    ::ll::TypedStorage<8, 48, ::mce::Image>                                               mCapeImage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AnimatedImageData>>                         mSkinAnimatedImages;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryData;
+    ::ll::TypedStorage<8, 120, ::MinEngineVersion>                                        mGeometryDataMinEngineVersion;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryDataMutable;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mAnimationData;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mCapeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SerializedPersonaPieceHandle>>              mPersonaPieces;
+    ::ll::TypedStorage<8, 8, ::persona::ArmSize::Type>                                    mArmSizeType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::persona::PieceType, ::TintMapColor>> mPieceTintColors;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                               mSkinColor;
+    ::ll::TypedStorage<1, 1, ::TrustedSkinFlag>                                           mIsTrustedSkin;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPremium;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersona;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPersonaCapeOnClassicSkin;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPrimaryUser;
+    ::ll::TypedStorage<1, 1, bool>                                                        mOverridesPlayerAppearance;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI SerializedSkin();
 
-    MCAPI explicit SerializedSkin(class ConnectionRequest const& request);
+    MCAPI SerializedSkin(::SerializedSkin&&);
 
-    MCAPI SerializedSkin(class SerializedSkin&& rhs);
+    MCAPI explicit SerializedSkin(::ConnectionRequest const& request);
 
-    MCAPI SerializedSkin(class SerializedSkin const& rhs);
+    MCAPI explicit SerializedSkin(::SubClientConnectionRequest const& request);
 
-    MCAPI explicit SerializedSkin(class SubClientConnectionRequest const& request);
+    MCAPI SerializedSkin(::SerializedSkin const& rhs);
 
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
-    MCAPI std::string const& getName() const;
+    MCAPI ::std::string const& getName() const;
 
     MCAPI bool isTrustedSkin() const;
 
-    MCAPI class SerializedSkin& operator=(class SerializedSkin const& rhs);
+    MCAPI ::SerializedSkin& operator=(::SerializedSkin&&);
 
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    MCAPI ::SerializedSkin& operator=(::SerializedSkin const& rhs);
+
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
 
     MCAPI void setIsTrustedSkin(bool isTrustedSkin);
 
@@ -35,30 +87,36 @@ public:
 
     MCAPI bool useBlinkingAnimation() const;
 
-    MCAPI void write(class BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~SerializedSkin();
-
-    MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
-
-    MCAPI static bool isSkinDisabled(class SerializedSkin const& skin, class LevelData const& levelData);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class SubClientConnectionRequest const& request);
+    MCAPI static ::SerializedSkin createTrustedDefaultSerializedSkin();
 
-    MCAPI void* ctor$();
+    MCAPI static bool isSkinDisabled(::SerializedSkin const& skin, ::LevelData const& levelData);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class SerializedSkin const& rhs);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class SerializedSkin&& rhs);
+    MCAPI void* $ctor(::SerializedSkin&&);
 
-    MCAPI void* ctor$(class ConnectionRequest const& request);
+    MCAPI void* $ctor(::ConnectionRequest const& request);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
 
+    MCAPI void* $ctor(::SerializedSkin const& rhs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

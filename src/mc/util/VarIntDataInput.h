@@ -6,7 +6,18 @@
 #include "mc/platform/Result.h"
 #include "mc/util/BytesDataInput.h"
 
+// auto generated forward declare list
+// clang-format off
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class VarIntDataInput : public ::BytesDataInput {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&> mStream;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VarIntDataInput& operator=(VarIntDataInput const&);
@@ -14,68 +25,75 @@ public:
     VarIntDataInput();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VarIntDataInput();
-
     // vIndex: 1
-    virtual class Bedrock::Result<std::string> readStringResult();
+    virtual ::Bedrock::Result<::std::string> readStringResult() /*override*/;
 
     // vIndex: 2
-    virtual class Bedrock::Result<std::string> readLongStringResult();
+    virtual ::Bedrock::Result<::std::string> readLongStringResult() /*override*/;
 
     // vIndex: 3
-    virtual class Bedrock::Result<float> readFloatResult();
+    virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
 
     // vIndex: 4
-    virtual class Bedrock::Result<double> readDoubleResult();
+    virtual ::Bedrock::Result<double> readDoubleResult() /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<uchar> readByteResult();
+    virtual ::Bedrock::Result<uchar> readByteResult() /*override*/;
 
     // vIndex: 6
-    virtual class Bedrock::Result<short> readShortResult();
+    virtual ::Bedrock::Result<short> readShortResult() /*override*/;
 
     // vIndex: 7
-    virtual class Bedrock::Result<int> readIntResult();
+    virtual ::Bedrock::Result<int> readIntResult() /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<int64> readLongLongResult();
+    virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
 
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     // vIndex: 10
-    virtual uint64 numBytesLeft() const;
+    virtual uint64 numBytesLeft() const /*override*/;
 
+    // vIndex: 0
+    virtual ~VarIntDataInput() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<::std::string> $readStringResult();
 
-    MCAPI uint64 numBytesLeft$() const;
+    MCAPI ::Bedrock::Result<::std::string> $readLongStringResult();
 
-    MCAPI class Bedrock::Result<uchar> readByteResult$();
+    MCAPI ::Bedrock::Result<float> $readFloatResult();
 
-    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+    MCAPI ::Bedrock::Result<double> $readDoubleResult();
 
-    MCAPI class Bedrock::Result<double> readDoubleResult$();
+    MCAPI ::Bedrock::Result<uchar> $readByteResult();
 
-    MCAPI class Bedrock::Result<float> readFloatResult$();
+    MCAPI ::Bedrock::Result<short> $readShortResult();
 
-    MCAPI class Bedrock::Result<int> readIntResult$();
+    MCAPI ::Bedrock::Result<int> $readIntResult();
 
-    MCAPI class Bedrock::Result<int64> readLongLongResult$();
+    MCAPI ::Bedrock::Result<int64> $readLongLongResult();
 
-    MCAPI class Bedrock::Result<std::string> readLongStringResult$();
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
-    MCAPI class Bedrock::Result<short> readShortResult$();
+    MCAPI uint64 $numBytesLeft() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<std::string> readStringResult$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

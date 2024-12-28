@@ -5,15 +5,33 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataDirtyFlagsComponent;
+struct AttributesComponent;
+struct PlayerActionAcceptanceComponent;
+struct PlayerActionComponent;
+struct ServerPlayerCurrentMovementComponent;
+// clang-format on
+
 namespace ValidateClientPlayerActionSystemImpl {
+// functions
 // NOLINTBEGIN
+MCAPI void compareAntiCheatPlayerActionComponent(
+    ::PlayerActionComponent const&                serverPlayerAction,
+    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovement,
+    ::ActorDataDirtyFlagsComponent&               actorDataDirtyFlags,
+    ::AttributesComponent&                        attributes
+);
+
 MCAPI void filterPlayerActionComparison(
-    class StrictEntityContext const&                             entity,
-    struct PlayerActionComponent const&                          serverPlayerAction,
-    struct ServerPlayerCurrentMovementComponent&                 serverPlayerCurrentMovement,
-    class EntityModifier<struct PlayerActionAcceptanceComponent> mod,
-    bool                                                         skipComparison
+    ::StrictEntityContext const&                        entity,
+    ::PlayerActionComponent const&                      serverPlayerAction,
+    ::ServerPlayerCurrentMovementComponent&             serverPlayerCurrentMovement,
+    ::EntityModifier<::PlayerActionAcceptanceComponent> mod,
+    bool                                                skipComparison
 );
 // NOLINTEND
 
-}; // namespace ValidateClientPlayerActionSystemImpl
+} // namespace ValidateClientPlayerActionSystemImpl

@@ -3,9 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/resources/IPackLoadScoped.h"
 #include "mc/util/EventResponseFactory.h"
 
-class ItemEventResponseFactory : public ::EventResponseFactory {
+// auto generated forward declare list
+// clang-format off
+class IPackLoadContext;
+// clang-format on
+
+class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
     // prevent constructor by default
     ItemEventResponseFactory& operator=(ItemEventResponseFactory const&);
@@ -13,28 +19,49 @@ public:
     ItemEventResponseFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemEventResponseFactory();
+    virtual ~ItemEventResponseFactory() /*override*/;
 
     // vIndex: 1
-    virtual void initializeFactory(class Experiments const& experiments);
+    virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
 
     // vIndex: 2
-    virtual void initSchema();
-
+    virtual void initSchema() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ItemEventResponseFactory(::IPackLoadContext const& packLoadContext);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IPackLoadContext const& packLoadContext);
+    // NOLINTEND
 
-    MCAPI void initSchema$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initializeFactory$(class Experiments const& experiments);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
 
+    MCAPI void $initSchema();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEventResponseFactory();
+
+    MCAPI static void** $vftableForIPackLoadScoped();
     // NOLINTEND
 };

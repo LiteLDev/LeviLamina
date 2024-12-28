@@ -4,40 +4,55 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
 struct BlockGeometryDescription;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockGeometrySerializer {
 
 struct Proxy {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk225951;
+    ::ll::UntypedStorage<8, 48> mUnk284a47;
+    ::ll::UntypedStorage<8, 16> mUnk854b50;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Proxy& operator=(Proxy const&);
     Proxy();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI Proxy(struct BlockGeometrySerializer::Proxy const&);
+    MCAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
     MCAPI ~Proxy();
-
-    MCAPI static void bindTypes(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI static void from(struct BlockGeometryDescription& desc, struct BlockGeometrySerializer::Proxy proxy);
-
-    MCAPI static struct BlockGeometrySerializer::Proxy to(struct BlockGeometryDescription const& desc);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct BlockGeometrySerializer::Proxy const&);
+    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void dtor$();
+    MCAPI static void from(::BlockGeometryDescription& desc, ::BlockGeometrySerializer::Proxy proxy);
 
+    MCAPI static ::BlockGeometrySerializer::Proxy to(::BlockGeometryDescription const& desc);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace BlockGeometrySerializer
+} // namespace BlockGeometrySerializer

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/GenericMoveControl.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class MoveControlComponent;
+// clang-format on
+
 class AmphibiousMoveControl : public ::GenericMoveControl {
 public:
     // prevent constructor by default
@@ -12,25 +18,42 @@ public:
     AmphibiousMoveControl(AmphibiousMoveControl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AmphibiousMoveControl() = default;
-
     // vIndex: 2
-    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
+    virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
-    MCAPI AmphibiousMoveControl();
-
+    // vIndex: 0
+    virtual ~AmphibiousMoveControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AmphibiousMoveControl();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

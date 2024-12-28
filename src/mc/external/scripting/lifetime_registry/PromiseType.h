@@ -12,4 +12,4 @@ public:
     PromiseType();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

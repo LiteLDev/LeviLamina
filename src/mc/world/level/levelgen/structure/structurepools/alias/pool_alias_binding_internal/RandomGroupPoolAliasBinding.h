@@ -8,12 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-class PoolAliasBinding;
 // clang-format on
 
 namespace PoolAliasBindingInternal {
 
 class RandomGroupPoolAliasBinding : public ::PoolAliasBinding {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkb4c9c3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomGroupPoolAliasBinding& operator=(RandomGroupPoolAliasBinding const&);
@@ -21,30 +26,41 @@ public:
     RandomGroupPoolAliasBinding();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual void
-    appendResolvedAliases(class IRandom& random, class PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
+    appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const
+        /*override*/;
 
     // vIndex: 1
-    virtual void forAllTargets(std::function<void(std::string const&, std::string const&)> const& fn) const;
+    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const
+        /*override*/;
 
     // vIndex: 2
-    virtual ~RandomGroupPoolAliasBinding() = default;
-
+    virtual ~RandomGroupPoolAliasBinding() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI void
-    appendResolvedAliases$(class IRandom& random, class PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
+    $appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
 
-    MCAPI void forAllTargets$(std::function<void(std::string const&, std::string const&)> const& fn) const;
+    MCAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PoolAliasBindingInternal
+} // namespace PoolAliasBindingInternal

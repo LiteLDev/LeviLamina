@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class GameplayUserManager;
+// clang-format on
+
 class GameplayUserManagerProxy {
 public:
     // prevent constructor by default
@@ -10,33 +16,40 @@ public:
     GameplayUserManagerProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~GameplayUserManagerProxy();
 
     // vIndex: 1
-    virtual std::optional<std::string> validatePlayerName(std::string const&, class GameplayUserManager const&) const;
+    virtual ::std::optional<::std::string> validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
 
     // vIndex: 2
     virtual bool shouldGeneratePlayerIndex() const;
 
     // vIndex: 3
-    virtual void reloadActor(class Actor& actor) const;
-
+    virtual void reloadActor(::Actor& actor) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
 
-    MCAPI void reloadActor$(class Actor& actor) const;
+    MCAPI bool $shouldGeneratePlayerIndex() const;
 
-    MCAPI bool shouldGeneratePlayerIndex$() const;
+    MCAPI void $reloadActor(::Actor& actor) const;
+    // NOLINTEND
 
-    MCAPI std::optional<std::string> validatePlayerName$(std::string const&, class GameplayUserManager const&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

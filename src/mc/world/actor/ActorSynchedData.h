@@ -7,48 +7,53 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class EntityContext;
+class SynchedActorDataEntityWrapper;
+struct ActorUniqueID;
 namespace mce { class Color; }
 // clang-format on
 
 namespace ActorSynchedData {
+// functions
 // NOLINTBEGIN
-MCAPI void updateAction(class Actor& actor);
+MCAPI void updateAction(::Actor& actor);
 
-MCAPI void updateAlwaysShowNameTag(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
+MCAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateAmbientSound(class EntityContext& entity);
+MCAPI void updateAmbientSound(::EntityContext& entity);
 
-MCAPI void updateBoundingBox(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
+MCAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateBuoyancyData(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
+MCAPI void updateBuoyancyData(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateCommandBlock(class Actor& actor, int dataId, std::string& filteredNameTag);
+MCAPI void updateCommandBlock(::Actor& actor, int dataId, ::std::string& filteredNameTag);
 
-MCAPI void updateContainer(class Actor& actor);
+MCAPI void updateContainer(::Actor& actor);
 
-MCAPI void updateHasNPC(class Actor& actor);
+MCAPI void updateHasNPC(::Actor& actor);
 
-MCAPI void updateHeartbeat(class EntityContext& entity);
+MCAPI void updateHeartbeat(::EntityContext& entity);
 
-MCAPI void updateHitbox(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
+MCAPI void updateHitbox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateInteractText(class Actor& actor);
+MCAPI void updateInteractText(::Actor& actor);
 
-MCAPI void updateIsBuoyant(class EntityContext& entity, class SynchedActorDataEntityWrapper& entityData);
+MCAPI void updateIsBuoyant(::EntityContext& entity, ::SynchedActorDataEntityWrapper& entityData);
 
-MCAPI void updateNPCData(class Actor& actor);
+MCAPI void updateNPCData(::Actor& actor);
 
-MCAPI void updateNameTag(class Actor& actor);
+MCAPI void updateNameTag(::Actor& actor);
 
-MCAPI void updateRawNameText(class Actor& actor);
+MCAPI void updateRawNameText(::Actor& actor);
 
-MCAPI void updateRuntimeID(class Actor& actor);
+MCAPI void updateRuntimeID(::Actor& actor);
 
-MCAPI void updateSize(class Actor& actor);
+MCAPI void updateSize(::Actor& actor);
 
-MCAPI void updateTarget(class Actor& actor, struct ActorUniqueID& target);
+MCAPI void updateTarget(::Actor& actor, ::ActorUniqueID& target);
 
-MCAPI void updateTintColor(class mce::Color& tintColor, ::PaletteColor const& paletteColor);
+MCAPI void updateTintColor(::mce::Color& tintColor, ::PaletteColor const& paletteColor);
 // NOLINTEND
 
-}; // namespace ActorSynchedData
+} // namespace ActorSynchedData

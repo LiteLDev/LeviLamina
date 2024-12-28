@@ -10,8 +10,14 @@
 #include "mc/world/level/chunk/SubChunkFormat.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class GameVersion;
+class SemVersion;
+// clang-format on
+
 namespace SharedConstants {
-// thunks
+// static variables
 // NOLINTBEGIN
 MCAPI ::CodeBuilder::ProtocolVersion const& CodeBuilderProtocolVersion();
 
@@ -19,7 +25,7 @@ MCAPI ::ActorDigestFormat const& CurrentActorDigestFormat();
 
 MCAPI ::BlendVersion const& CurrentBlendVersion();
 
-MCAPI class SemVersion const& CurrentGameSemVersion();
+MCAPI ::SemVersion const& CurrentGameSemVersion();
 
 MCAPI ::LevelChunkFormat const& CurrentLevelChunkFormat();
 
@@ -41,11 +47,17 @@ MCAPI bool const& IsCreatorEditorBuild();
 
 MCAPI bool const& IsDevBuild();
 
+MCAPI bool const& IsNxPlatform();
+
 MCAPI bool const& IsPS4Platform();
+
+MCAPI bool const& IsPS5Platform();
 
 MCAPI bool const& IsPlaytest();
 
 MCAPI bool const& IsPreviewApp();
+
+MCAPI bool const& IsSonyPlatform();
 
 MCAPI bool const& IsWin32Platform();
 
@@ -55,13 +67,17 @@ MCAPI int const& LevelDBCompressorID();
 
 MCAPI int const& MajorVersion();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> MajorVersionStringFormated();
+
 MCAPI int const& MaxChatLength();
 
 MCAPI uint const& MinTickingChunksRadius();
 
-MCAPI class GameVersion const& MinimumCompatibleGameVersionForLevelData();
+MCAPI ::GameVersion const& MinimumCompatibleGameVersionForLevelData();
 
 MCAPI int const& MinorVersion();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> MinorVersionStringFormated();
 
 MCAPI ushort const& NetworkDefaultGamePort();
 
@@ -77,9 +93,15 @@ MCAPI int const& NetworkProtocolVersion();
 
 MCAPI int const& PatchVersion();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> PatchVersionStringFormated();
+
 MCAPI int const& RevisionVersion();
 
+MCAPI ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
+
 MCAPI int const& StoreVersion();
+
+MCAPI int const& TicksPerSecond();
 // NOLINTEND
 
-}; // namespace SharedConstants
+} // namespace SharedConstants

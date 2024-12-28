@@ -7,6 +7,12 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ClientboundCloseFormPacket : public ::Packet {
 public:
     // prevent constructor by default
@@ -15,38 +21,45 @@ public:
     ClientboundCloseFormPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClientboundCloseFormPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream&) const;
+    virtual void write(::BinaryStream&) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
+    // vIndex: 0
+    virtual ~ClientboundCloseFormPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream&);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream&) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

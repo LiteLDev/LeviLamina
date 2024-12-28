@@ -3,22 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/RotatedPillarBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+struct LogBlockMapColors;
 namespace mce { class Color; }
 // clang-format on
 
 class StrippedLogBlock : public ::RotatedPillarBlock {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 36> mUnkb42501;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StrippedLogBlock& operator=(StrippedLogBlock const&);
@@ -26,32 +28,48 @@ public:
     StrippedLogBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 148
+    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~StrippedLogBlock() = default;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const&) const;
-
-    // vIndex: 160
-    virtual class mce::Color
-    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI StrippedLogBlock(std::string const& nameId, int id, std::optional<struct LogBlockMapColors> mapColors);
-
+    virtual ~StrippedLogBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StrippedLogBlock(::std::string const& nameId, int id, ::std::optional<::LogBlockMapColors> mapColors);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, std::optional<struct LogBlockMapColors> mapColors);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::std::optional<::LogBlockMapColors> mapColors);
+    // NOLINTEND
 
-    MCAPI class mce::Color
-    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
 
+    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

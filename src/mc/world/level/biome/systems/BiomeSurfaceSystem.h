@@ -6,8 +6,9 @@
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
 
 namespace BiomeSurfaceSystem {
+// functions
 // NOLINTBEGIN
-MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters);
+MCAPI void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters);
 // NOLINTEND
 
-}; // namespace BiomeSurfaceSystem
+} // namespace BiomeSurfaceSystem

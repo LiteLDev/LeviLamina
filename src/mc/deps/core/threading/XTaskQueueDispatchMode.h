@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class XTaskQueueDispatchMode {};
+enum class XTaskQueueDispatchMode : uint {};

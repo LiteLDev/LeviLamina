@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/binding_type/TaggedBinding.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ConstantFactory; }
@@ -9,7 +12,7 @@ namespace Scripting { struct ConstantFactory; }
 
 namespace Scripting {
 
-struct EnumBinding {
+struct EnumBinding : public ::Scripting::TaggedBinding {
 public:
     // EnumBinding inner types declare
     // clang-format off
@@ -19,63 +22,86 @@ public:
     // EnumBinding inner types define
     struct EnumValue {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32>  mUnkcdb13f;
+        ::ll::UntypedStorage<8, 32>  mUnk1082a9;
+        ::ll::UntypedStorage<8, 192> mUnka386bd;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         EnumValue& operator=(EnumValue const&);
         EnumValue(EnumValue const&);
         EnumValue();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI EnumValue(struct Scripting::EnumBinding::EnumValue&&);
-
         MCAPI ~EnumValue();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct Scripting::EnumBinding::EnumValue&&);
-
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
-    // prevent constructor by default
-    EnumBinding& operator=(EnumBinding const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI EnumBinding();
-
-    MCAPI EnumBinding(struct Scripting::EnumBinding&&);
-
-    MCAPI EnumBinding(struct Scripting::EnumBinding const&);
-
-    MCAPI
-    EnumBinding(std::string, entt::meta_type, bool, std::vector<struct Scripting::ConstantFactory>, std::vector<struct Scripting::EnumBinding::EnumValue>);
-
-    MCAPI ~EnumBinding();
-
+    ::ll::UntypedStorage<8, 32>  mUnk34df93;
+    ::ll::UntypedStorage<8, 144> mUnkf0e553;
+    ::ll::UntypedStorage<1, 1>   mUnk4e5d4f;
+    ::ll::UntypedStorage<8, 24>  mUnk2cdc0c;
+    ::ll::UntypedStorage<8, 24>  mUnk274594;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    EnumBinding& operator=(EnumBinding const&);
+    EnumBinding();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI EnumBinding(::Scripting::EnumBinding const&);
 
-    MCAPI void* ctor$(struct Scripting::EnumBinding const&);
+    MCAPI EnumBinding(::Scripting::EnumBinding&&);
 
-    MCAPI void* ctor$(struct Scripting::EnumBinding&&);
+    MCAPI EnumBinding(
+        ::std::string                                      name_,
+        ::entt::meta_type                                  type_,
+        bool                                               isStringEnum_,
+        ::std::vector<::Scripting::ConstantFactory>        constants_,
+        ::std::vector<::Scripting::EnumBinding::EnumValue> valueMap_
+    );
 
-    MCAPI void*
-    ctor$(std::string, entt::meta_type, bool, std::vector<struct Scripting::ConstantFactory>, std::vector<struct Scripting::EnumBinding::EnumValue>);
+    MCAPI ~EnumBinding();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::EnumBinding const&);
 
+    MCAPI void* $ctor(::Scripting::EnumBinding&&);
+
+    MCAPI void* $ctor(
+        ::std::string                                      name_,
+        ::entt::meta_type                                  type_,
+        bool                                               isStringEnum_,
+        ::std::vector<::Scripting::ConstantFactory>        constants_,
+        ::std::vector<::Scripting::EnumBinding::EnumValue> valueMap_
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

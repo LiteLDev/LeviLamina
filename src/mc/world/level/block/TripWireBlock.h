@@ -4,18 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Player;
+class Random;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class TripWireBlock : public ::BlockLegacy {
@@ -26,84 +31,94 @@ public:
     TripWireBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TripWireBlock() = default;
-
-    // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 95
-    virtual class Block const*
-    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 89
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const
+        /*override*/;
 
-    // vIndex: 102
-    virtual bool
-    shouldTriggerEntityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    // vIndex: 150
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 162
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
-
-    MCAPI TripWireBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~TripWireBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _checkPressed(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool
-    _isEntityInsideTriggerable(class BlockSource const& region, class BlockPos const& pos, class Actor& entity) const;
-
-    MCAPI void _updateSource(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TripWireBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI void _updateSource(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void entityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI class Block const*
-    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI bool
-    shouldTriggerEntityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

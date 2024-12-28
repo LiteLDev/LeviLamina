@@ -3,13 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class ILevel;
+class Level;
+class Player;
+class SaveContext;
+class TextObjectRoot;
 namespace mce { class Color; }
 // clang-format on
 
@@ -18,64 +27,89 @@ public:
     // SignBlockActor inner types declare
     // clang-format off
     struct CachedLineData;
-    class CachedMessageData;
+    struct CachedMessageData;
     class Text;
     // clang-format on
 
     // SignBlockActor inner types define
     struct CachedLineData {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk91ce4f;
+        ::ll::UntypedStorage<4, 4>  mUnk35f0f1;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         CachedLineData& operator=(CachedLineData const&);
         CachedLineData(CachedLineData const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI CachedLineData();
 
-        MCAPI CachedLineData(struct SignBlockActor::CachedLineData&&);
+        MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
 
         MCAPI ~CachedLineData();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
 
-        MCAPI void* ctor$(struct SignBlockActor::CachedLineData&&);
+        MCAPI void* $ctor(::SignBlockActor::CachedLineData&&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    class CachedMessageData {
+    struct CachedMessageData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 160> mUnkbfd50f;
+        ::ll::UntypedStorage<4, 4>   mUnkf1d1da;
+        ::ll::UntypedStorage<8, 32>  mUnk7dddfe;
+        ::ll::UntypedStorage<8, 8>   mUnkeb613c;
+        ::ll::UntypedStorage<1, 1>   mUnk6a42b3;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         CachedMessageData& operator=(CachedMessageData const&);
         CachedMessageData(CachedMessageData const&);
         CachedMessageData();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~CachedMessageData();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
 
     class Text {
     public:
         // Text inner types define
-        enum class LoadMode {};
+        enum class LoadMode : int {
+            TextOnly = 0,
+            AllData  = 1,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32>  mUnk88dc11;
+        ::ll::UntypedStorage<8, 32>  mUnkaa8b5f;
+        ::ll::UntypedStorage<8, 32>  mUnk5885e2;
+        ::ll::UntypedStorage<8, 216> mUnk5f1573;
+        ::ll::UntypedStorage<4, 16>  mUnke0f953;
+        ::ll::UntypedStorage<1, 1>   mUnkf0c705;
+        ::ll::UntypedStorage<1, 1>   mUnkd4ffb0;
+        ::ll::UntypedStorage<1, 1>   mUnkd39979;
+        ::ll::UntypedStorage<8, 32>  mUnk96a516;
+        ::ll::UntypedStorage<8, 32>  mUnk293de5;
+        // NOLINTEND
 
     public:
         // prevent constructor by default
@@ -83,58 +117,62 @@ public:
         Text(Text const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI Text();
 
-        MCAPI class mce::Color const& getColor() const;
+        MCAPI Text(::SignBlockActor::Text&&);
 
-        MCAPI std::string const& getMessage() const;
+        MCAPI void _parseOldVersionText(::CompoundTag const& tag);
 
-        MCAPI class TextObjectRoot const& getTextObject() const;
+        MCAPI void _parseOtherAttributes(::CompoundTag const& tag);
 
-        MCAPI bool const isGlowing() const;
+        MCAPI void _parseText(::CompoundTag const& tag);
 
-        MCAPI void load(class CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
+        MCAPI ::std::string const& getMessage() const;
 
-        MCAPI bool save(class CompoundTag& tag) const;
+        MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
 
-        MCAPI void setColor(class mce::Color const& color);
+        MCAPI bool save(::CompoundTag& tag) const;
 
-        MCAPI void setEditedBy(std::string const& playerXuid);
+        MCAPI void setMessage(::TextObjectRoot message);
 
-        MCAPI void setGlowing(bool glowing);
-
-        MCAPI void setHideGlowOutline(bool hideGlowOutline);
-
-        MCAPI void setMessage(class TextObjectRoot message);
-
-        MCAPI void setMessage(std::string message);
+        MCAPI void setMessage(::std::string message);
 
         MCAPI ~Text();
-
         // NOLINTEND
 
-        // private:
-        // NOLINTBEGIN
-        MCAPI void _parseOldVersionText(class CompoundTag const& tag);
-
-        MCAPI void _parseOtherAttributes(class CompoundTag const& tag);
-
-        MCAPI void _parseText(class CompoundTag const& tag);
-
-        // NOLINTEND
-
-        // thunks
     public:
+        // static variables
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI static ::std::add_lvalue_reference_t<char const[]> SIGN_PERSIST_FORMATTING_TAG();
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
 
-        MCAPI static auto SIGN_PERSIST_FORMATTING_TAG() -> char const (&)[];
+        MCAPI void* $ctor(::SignBlockActor::Text&&);
+        // NOLINTEND
 
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk17e2a6;
+    ::ll::UntypedStorage<8, 8> mUnkf38200;
+    ::ll::UntypedStorage<1, 1> mUnkc6da31;
+    ::ll::UntypedStorage<8, 8> mUnkc7f7fd;
+    ::ll::UntypedStorage<1, 1> mUnk41879d;
+    ::ll::UntypedStorage<1, 1> mUnk27d1e9;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -143,113 +181,136 @@ public:
     SignBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SignBlockActor();
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual ~SignBlockActor() /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource& region) const;
+    virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
     // vIndex: 28
-    virtual std::string getImmersiveReaderText(class BlockSource& region);
+    virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
-    // vIndex: 37
-    virtual std::vector<std::string> getUgcStrings(class CompoundTag const& tag) const;
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 38
-    virtual void setUgcStrings(class CompoundTag& tag, std::vector<std::string> const& list) const;
+    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
+
+    // vIndex: 39
+    virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
     // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 42
-    virtual bool _playerCanUpdate(class Player const& fromPlayer) const;
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI SignBlockActor(class BlockPos const& pos, ::BlockActorType blockActorType, std::string const& typeString);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    // vIndex: 45
+    virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+
+    MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
     MCAPI bool getIsGlowing(::SignTextSide side) const;
 
-    MCAPI bool getIsLockedForEditing(class ILevel& level);
+    MCAPI bool getIsLockedForEditing(::ILevel& level);
 
     MCAPI bool getIsWaxed() const;
 
-    MCAPI std::string const& getMessage(::SignTextSide side) const;
+    MCAPI ::std::string const& getMessage(::SignTextSide side) const;
 
-    MCAPI ::SignTextSide getSideFacingPlayer(class Player const& player) const;
+    MCAPI ::std::string const& getRawMessage(::SignTextSide side) const;
 
-    MCAPI class mce::Color const& getSignTextColor(::SignTextSide side) const;
+    MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCAPI class TextObjectRoot const& getTextObject(::SignTextSide side) const;
+    MCAPI ::mce::Color const& getSignTextColor(::SignTextSide side) const;
+
+    MCAPI ::TextObjectRoot const& getTextObject(::SignTextSide side) const;
 
     MCAPI bool isStringMessage(::SignTextSide side) const;
 
-    MCAPI void serverOnlySetIsLockedForEditing(class Player& player);
+    MCAPI void serverOnlySetIsLockedForEditing(::Player& player);
 
     MCAPI void setHideGlowOutline(::SignTextSide side, bool hideGlowOutline);
 
     MCAPI void setIsGlowing(::SignTextSide side, bool isGlowing);
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, class TextObjectRoot message, std::string ownerID);
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, std::string message, std::string ownerID);
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
 
-    MCAPI void setSignTextColor(::SignTextSide side, class mce::Color const& color);
+    MCAPI void setSignTextColor(::SignTextSide side, ::mce::Color const& color);
 
     MCAPI void setWaxed(bool waxed);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _updateTextFromClient(class CompoundTag const& data, class BlockSource const& region);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos, ::BlockActorType blockActorType, std::string const& typeString);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI bool _playerCanUpdate$(class Player const& fromPlayer) const;
+    MCAPI float $getShadowRadius(::BlockSource& region) const;
 
-    MCAPI std::string getImmersiveReaderText$(class BlockSource& region);
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCAPI float getShadowRadius$(class BlockSource& region) const;
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const& tag) const;
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI void onChanged$(class BlockSource& region);
+    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI void setUgcStrings$(class CompoundTag& tag, std::vector<std::string> const& list) const;
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
+    MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

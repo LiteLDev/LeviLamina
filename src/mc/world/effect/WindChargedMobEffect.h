@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class WindChargedMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,21 +18,30 @@ public:
     WindChargedMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WindChargedMobEffect() = default;
-
     // vIndex: 4
-    virtual void onActorRemovedAfterDeath(class Actor& target, int amplifier) const;
+    virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
 
+    // vIndex: 0
+    virtual ~WindChargedMobEffect() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onActorRemovedAfterDeath$(class Actor& target, int amplifier) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/components/FlagComponent.h"
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct PlayerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class SendPlayerAuthInputReceivedEventSystem {
 public:
@@ -13,14 +18,14 @@ public:
     SendPlayerAuthInputReceivedEventSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doSendPlayerAuthInputReceivedEvent(
-        class StrictEntityContext&,
-        class FlagComponent<struct PlayerComponentFlag> const& playerComponent,
-        class ActorOwnerComponent&                             actorOwnerComponent
+        ::StrictEntityContext&,
+        ::PlayerComponent const& playerComponent,
+        ::ActorOwnerComponent&   actorOwnerComponent
     );
 
-    MCAPI static struct TickingSystemWithInfo create();
-
+    MCAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

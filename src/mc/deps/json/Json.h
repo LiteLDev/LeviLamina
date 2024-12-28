@@ -2,30 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/json/Reader.h"
-#include "mc/deps/json/Value.h"
-#include "mc/deps/json/ValueType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Features; }
-namespace Json { class Value; }
-namespace Json { class ValueConstIterator; }
-namespace Json { class ValueIterator; }
-namespace Json { class ValueIteratorBase; }
-namespace Json { class Writer; }
-// clang-format on
-
 namespace Json {
+// inner types
+enum : int {
+    UintToStringBufferSize = 25,
+};
+
+// functions
 // NOLINTBEGIN
-MCAPI std::string valueToQuotedString(char const* value);
+MCAPI ::std::string valueToQuotedString(char const* value);
 
-MCAPI std::string valueToString(int64 value);
+MCAPI ::std::string valueToString(uint64 value);
 
-MCAPI std::string valueToString(double value);
+MCAPI ::std::string valueToString(int64 value);
 
-MCAPI std::string valueToString(uint64 value);
+MCAPI ::std::string valueToString(double value);
 // NOLINTEND
 
-}; // namespace Json
+} // namespace Json

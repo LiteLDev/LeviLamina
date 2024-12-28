@@ -7,20 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class Vec3;
 namespace Scripting { class ResultAny; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
 namespace ScriptResultUtil {
+// functions
 // NOLINTBEGIN
-MCAPI class Scripting::Result<class Vec3, struct gametest::GameTestError>
-GametestResultToScriptingValueResult(std::variant<struct gametest::GameTestError, class BlockPos> const& result);
+MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::Vec3> const& result);
 
-MCAPI class Scripting::Result<class Vec3, struct gametest::GameTestError>
-GametestResultToScriptingValueResult(std::variant<struct gametest::GameTestError, class Vec3> const& result);
+MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::BlockPos> const& result);
 
-MCAPI std::optional<struct gametest::GameTestError>
-      ScriptingResultToGameTestResult(class Scripting::ResultAny const& result);
+MCAPI ::std::optional<::gametest::GameTestError> ScriptingResultToGameTestResult(::Scripting::ResultAny const& result);
 // NOLINTEND
 
-}; // namespace ScriptResultUtil
+} // namespace ScriptResultUtil

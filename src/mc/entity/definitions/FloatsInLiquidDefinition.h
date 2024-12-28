@@ -18,11 +18,10 @@ public:
     FloatsInLiquidDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FloatsInLiquidDefinition>>& root
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FloatsInLiquidDefinition>>& root
     );
-
     // NOLINTEND
 };

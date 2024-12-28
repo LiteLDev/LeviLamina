@@ -4,10 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft_ui/BaseScriptFormResponse.h"
 
 namespace ScriptModuleMinecraftServerUI {
 
-class ScriptMessageFormResponse {
+class ScriptMessageFormResponse : public ::ScriptModuleMinecraftServerUI::BaseScriptFormResponse {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 2> mUnk343671;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptMessageFormResponse& operator=(ScriptMessageFormResponse const&);
@@ -15,11 +22,10 @@ public:
     ScriptMessageFormResponse();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>
-    bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftServerUI
+} // namespace ScriptModuleMinecraftServerUI

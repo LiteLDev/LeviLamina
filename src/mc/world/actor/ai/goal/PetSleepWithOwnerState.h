@@ -4,31 +4,46 @@
 
 class PetSleepWithOwnerState {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk6df5f9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PetSleepWithOwnerState& operator=(PetSleepWithOwnerState const&);
     PetSleepWithOwnerState(PetSleepWithOwnerState const&);
     PetSleepWithOwnerState();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void start();
+    // vIndex: 0
+    virtual ~PetSleepWithOwnerState();
 
-    MCVAPI void stop();
+    // vIndex: 1
+    virtual void tick();
 
+    // vIndex: 2
+    virtual void start();
+
+    // vIndex: 3
+    virtual void stop();
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void dampenSpeed();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void start$();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void stop$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
 
+    MCAPI void $start();
+
+    MCAPI void $stop();
     // NOLINTEND
 };

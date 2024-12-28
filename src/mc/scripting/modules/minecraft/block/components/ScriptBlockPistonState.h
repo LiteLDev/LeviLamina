@@ -8,7 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockPistonState {
+struct ScriptBlockPistonState {
 public:
     // prevent constructor by default
     ScriptBlockPistonState& operator=(ScriptBlockPistonState const&);
@@ -16,10 +16,10 @@ public:
     ScriptBlockPistonState();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::PistonState> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::PistonState> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

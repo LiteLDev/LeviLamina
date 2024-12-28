@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkLocalNoiseCache;
+class SurfaceLevelCache;
+// clang-format on
+
 class WorldGenCache {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkcf4614;
+    ::ll::UntypedStorage<8, 56> mUnkce6009;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WorldGenCache& operator=(WorldGenCache const&);
@@ -10,23 +23,22 @@ public:
     WorldGenCache();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI WorldGenCache(class ChunkLocalNoiseCache chunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
-
-    MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;
-
-    MCAPI class SurfaceLevelCache const& getSurfaceLevelCache() const;
+    MCAPI WorldGenCache(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
 
     MCAPI ~WorldGenCache();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ChunkLocalNoiseCache chunkLocalNoiseCache, class SurfaceLevelCache surfaceLevelCache);
+    MCAPI void* $ctor(::ChunkLocalNoiseCache chunkLocalNoiseCache, ::SurfaceLevelCache surfaceLevelCache);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

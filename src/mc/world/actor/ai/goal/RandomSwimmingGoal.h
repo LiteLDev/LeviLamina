@@ -3,10 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomSwimmingGoal : public ::RandomStrollGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke9487b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomSwimmingGoal& operator=(RandomSwimmingGoal const&);
@@ -14,40 +24,57 @@ public:
     RandomSwimmingGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RandomSwimmingGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 10
-    virtual bool _setWantedPosition();
+    virtual bool _setWantedPosition() /*override*/;
 
-    MCAPI RandomSwimmingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
-
+    // vIndex: 0
+    virtual ~RandomSwimmingGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RandomSwimmingGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+    // NOLINTEND
 
-    MCAPI bool _setWantedPosition$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI bool $_setWantedPosition();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

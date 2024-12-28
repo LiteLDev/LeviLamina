@@ -6,6 +6,15 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class NavigationComponent;
+class StrictEntityContext;
+struct MobTravelComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class NavigationTravelSystem {
 public:
     // prevent constructor by default
@@ -14,17 +23,13 @@ public:
     NavigationTravelSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem();
+    MCAPI static ::TickingSystemWithInfo createNavigationTravelSystem();
 
     MCAPI static void tickNavigationTravelSystem(
-        class ViewT<
-            class StrictEntityContext,
-            class ActorOwnerComponent,
-            struct MobTravelComponent,
-            class NavigationComponent>                  view,
-        class EntityModifier<struct MobTravelComponent> mod
+        ::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::MobTravelComponent, ::NavigationComponent> view,
+        ::EntityModifier<::MobTravelComponent>                                                             mod
     );
-
     // NOLINTEND
 };

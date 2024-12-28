@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TravelMoveRequestSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct TravelMoveRequestSystem {
 public:
     // prevent constructor by default
     TravelMoveRequestSystem& operator=(TravelMoveRequestSystem const&);
@@ -10,8 +15,8 @@ public:
     TravelMoveRequestSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

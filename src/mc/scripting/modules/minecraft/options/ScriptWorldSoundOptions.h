@@ -15,31 +15,41 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptWorldSoundOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnkd3ea43;
+    ::ll::UntypedStorage<4, 8> mUnk816ed2;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptWorldSoundOptions& operator=(ScriptWorldSoundOptions const&);
     ScriptWorldSoundOptions(ScriptWorldSoundOptions const&);
     ScriptWorldSoundOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptWorldSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
+    MCAPI explicit ScriptWorldSoundOptions(::ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
 
     MCAPI float getPitch() const;
 
     MCAPI float getVolume() const;
 
-    MCAPI std::optional<struct Scripting::Error> validate() const;
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldSoundOptions> bind();
-
+    MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptWorldSoundOptions> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

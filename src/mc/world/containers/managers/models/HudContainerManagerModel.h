@@ -3,11 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+class ItemStack;
+class Player;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+// clang-format on
+
 class HudContainerManagerModel : public ::ContainerManagerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk6ffa22;
+    ::ll::UntypedStorage<8, 128> mUnk17cd07;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HudContainerManagerModel& operator=(HudContainerManagerModel const&);
@@ -15,50 +30,67 @@ public:
     HudContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HudContainerManagerModel() = default;
-
-    // vIndex: 6
-    virtual std::vector<class ItemStack> getItemCopies() const;
+    virtual ~HudContainerManagerModel() /*override*/;
 
     // vIndex: 7
-    virtual void setSlot(int slot, class ItemStack const& item, bool);
+    virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
     // vIndex: 8
-    virtual class ItemStack const& getSlot(int slot) const;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     // vIndex: 9
-    virtual void setData(int id, int value);
+    virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
     // vIndex: 10
-    virtual void broadcastChanges();
+    virtual void setData(int id, int value) /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
+    // vIndex: 13
+    virtual void broadcastChanges() /*override*/;
 
-    MCAPI HudContainerManagerModel(::ContainerID containerId, class Player& player);
-
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void broadcastChanges$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCAPI class ItemStack const& getSlot$(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void setData$(int id, int value);
+    MCAPI void $setData(int id, int value);
 
-    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
+    MCAPI void $broadcastChanges();
 
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,25 +4,36 @@
 
 // auto generated forward declare list
 // clang-format off
+class DynamicProperties;
+class ItemStackBase;
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ItemDynamicPropertiesHelper {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>> getDynamicProperty(
-    class ItemStackBase const&          item,
-    std::string const&                  key,
-    std::string const&                  collectionName,
-    struct cereal::ReflectionCtx const& ctx
+MCAPI bool clearAllDynamicProperties(::ItemStackBase& item, ::std::string const& collection);
+
+MCAPI ::std::unique_ptr<::DynamicProperties>
+getDynamicProperties(::ItemStackBase const& item, ::cereal::ReflectionCtx const& ctx);
+
+MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(
+    ::ItemStackBase const&         item,
+    ::std::string const&           key,
+    ::std::string const&           collectionName,
+    ::cereal::ReflectionCtx const& ctx
 );
 
+MCAPI bool removeDynamicProperty(::ItemStackBase& item, ::std::string const& key, ::std::string const& collectionName);
+
 MCAPI void setDynamicProperty(
-    class ItemStackBase&                                              item,
-    std::string const&                                                key,
-    std::variant<double, float, bool, std::string, class Vec3> const& value,
-    std::string const&                                                collectionName,
-    struct cereal::ReflectionCtx const&                               ctx
+    ::ItemStackBase&                                                  item,
+    ::std::string const&                                              key,
+    ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
+    ::std::string const&                                              collectionName,
+    ::cereal::ReflectionCtx const&                                    ctx
 );
 // NOLINTEND
 
-}; // namespace ItemDynamicPropertiesHelper
+} // namespace ItemDynamicPropertiesHelper

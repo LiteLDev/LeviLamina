@@ -3,21 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/BlockItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class HashedString;
+class InteractionResult;
+class ItemStack;
+class ItemStackBase;
+class Vec3;
 // clang-format on
 
 class SlabBlockItem : public ::BlockItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk68d536;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SlabBlockItem& operator=(SlabBlockItem const&);
@@ -25,43 +30,53 @@ public:
     SlabBlockItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SlabBlockItem() = default;
-
-    // vIndex: 116
-    virtual bool
-    _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
-    MCAPI SlabBlockItem(std::string const& name, int id);
-
+    // vIndex: 0
+    virtual ~SlabBlockItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    _canConvertToDoubleBlock(class ItemStackBase& instance, class Actor&, uchar& face, class Block const& block) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI void* ctor$(std::string const& name, int id);
+    MCAPI void setDoubleSlabId(::HashedString const& doubleSlabId);
+    // NOLINTEND
 
-    MCAPI bool
-    _calculatePlacePos$(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

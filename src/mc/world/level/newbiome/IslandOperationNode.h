@@ -3,10 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/newbiome/RootOperationNode.h"
 #include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 #include "mc/world/level/newbiome/operation_node_values/Terrain.h"
 
-class IslandOperationNode {
+// auto generated forward declare list
+// clang-format off
+class Pos2d;
+// clang-format on
+
+class IslandOperationNode : public ::RootOperationNode<::OperationNodeValues::Terrain, ::Pos2d> {
 public:
     // prevent constructor by default
     IslandOperationNode& operator=(IslandOperationNode const&);
@@ -14,37 +20,38 @@ public:
     IslandOperationNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~IslandOperationNode() = default;
-
-    // vIndex: 1
-    virtual void init(int64 seed);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
     // vIndex: 3
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
-        class Pos2d const&                                                             origin,
-        class Pos2d const&                                                             size
-    ) const;
+        ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
+        ::Pos2d const&                                                             origin,
+        ::Pos2d const&                                                             size
+    ) const /*override*/;
 
+    // vIndex: 0
+    virtual ~IslandOperationNode() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _fillArea$(
-        class OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
-        class Pos2d const&                                                             origin,
-        class Pos2d const&                                                             size
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_fillArea(
+        ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
+        ::Pos2d const&                                                             origin,
+        ::Pos2d const&                                                             size
     ) const;
+    // NOLINTEND
 
-    MCAPI void init$(int64 seed);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

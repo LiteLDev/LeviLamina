@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class EntityContext;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class UpdateBoundingBoxSystem {
 public:
     // prevent constructor by default
@@ -10,11 +17,11 @@ public:
     UpdateBoundingBoxSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(class BaseGameVersion const& version, bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClientSide);
 
     MCAPI static void
-    synchronousUpdateSize(class EntityContext& entity, class BaseGameVersion const& version, bool isClientSide);
-
+    synchronousUpdateSize(::EntityContext& entity, ::BaseGameVersion const& version, bool isClientSide);
     // NOLINTEND
 };

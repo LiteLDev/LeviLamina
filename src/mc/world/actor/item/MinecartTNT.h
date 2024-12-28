@@ -3,28 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/item/Minecart.h"
 #include "mc/world/actor/item/MinecartType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MinecartTNT : public ::Minecart {
@@ -35,67 +25,88 @@ public:
     MinecartTNT();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~MinecartTNT() = default;
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 143
+    virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents) /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent eventId, int data);
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 98
-    virtual float causeFallDamageToActor(float distance, float, class ActorDamageSource);
+    // vIndex: 144
+    virtual ::MinecartType getType() /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 145
+    virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    // vIndex: 151
-    virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 152
-    virtual ::MinecartType getType();
+    // vIndex: 94
+    virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
 
-    // vIndex: 153
-    virtual class Block const* getDefaultDisplayBlock() const;
+    // vIndex: 8
+    virtual ~MinecartTNT() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI MinecartTNT(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI void primeFuse(::ActorDamageCause cause);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI float causeFallDamageToActor$(float distance, float, class ActorDamageSource);
-
-    MCAPI void destroy$(class ActorDamageSource const& source, bool dropMinecartComponents);
-
-    MCAPI class Block const* getDefaultDisplayBlock$() const;
-
-    MCAPI ::MinecartType getType$();
-
-    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
-
-    MCAPI void normalTick$();
-
     MCAPI static int const& DEFAULT_FUSE_LENGTH();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $normalTick();
+
+    MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
+    MCAPI ::MinecartType $getType();
+
+    MCAPI ::Block const* $getDefaultDisplayBlock() const;
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

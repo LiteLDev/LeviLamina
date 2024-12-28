@@ -3,33 +3,54 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
 #include "mc/world/actor/agent/AgentTravelType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/GameType.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class BodyControl;
+class EntityContext;
+class ItemStack;
+class Player;
+class Vec2;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct AgentRenderData;
+struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
 
 class Agent : public ::Mob {
+public:
+    // Agent inner types define
+    enum class AnimState : int {
+        Idle     = 0,
+        Moving   = 1,
+        ArmSwing = 2,
+        Shrug    = 3,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk618b0a;
+    ::ll::UntypedStorage<4, 8>  mUnka894c6;
+    ::ll::UntypedStorage<4, 4>  mUnkb25082;
+    ::ll::UntypedStorage<4, 4>  mUnk8eff9b;
+    ::ll::UntypedStorage<1, 1>  mUnk666d92;
+    ::ll::UntypedStorage<1, 1>  mUnkb09f58;
+    ::ll::UntypedStorage<8, 16> mUnk306c02;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Agent& operator=(Agent const&);
@@ -37,83 +58,89 @@ public:
     Agent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
-    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    // vIndex: 10
-    virtual ~Agent() = default;
-
-    // vIndex: 23
-    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
-
-    // vIndex: 26
-    virtual void normalTick();
-
-    // vIndex: 27
-    virtual void baseTick();
-
-    // vIndex: 34
-    virtual bool isInvisible() const;
-
     // vIndex: 35
-    virtual bool canShowNameTag() const;
+    virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
-    // vIndex: 37
-    virtual class mce::Color getNameTagTextColor() const;
+    // vIndex: 33
+    virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 53
-    virtual bool isTargetable() const;
+    // vIndex: 98
+    virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 59
-    virtual void setOwner(struct ActorUniqueID id);
+    // vIndex: 107
+    virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    // vIndex: 143
+    virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    // vIndex: 82
-    virtual void setCarriedItem(class ItemStack const& item);
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 102
-    virtual bool canBePulledIntoVehicle() const;
+    // vIndex: 4
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 111
-    virtual bool canBeAffected(uint) const;
+    // vIndex: 172
+    virtual bool createAIGoals() /*override*/;
 
-    // vIndex: 130
-    virtual void kill();
+    // vIndex: 79
+    virtual void setCarriedItem(::ItemStack const& item) /*override*/;
 
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 25
+    virtual void baseTick() /*override*/;
 
-    // vIndex: 151
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    // vIndex: 21
+    virtual void
+    teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
-    // vIndex: 180
-    virtual bool createAIGoals();
+    // vIndex: 177
+    virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    // vIndex: 185
-    virtual bool canExistWhenDisallowMob() const;
+    // vIndex: 51
+    virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 186
-    virtual std::unique_ptr<class BodyControl> initBodyControl();
+    // vIndex: 32
+    virtual bool isInvisible() const /*override*/;
 
+    // vIndex: 124
+    virtual void kill() /*override*/;
+
+    // vIndex: 56
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
+
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+
+    // vIndex: 178
+    virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
+
+    // vIndex: 8
+    virtual ~Agent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Agent(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI ::AgentTravelType checkTravelType();
 
-    MCAPI void doClientTravel(class AABB const& aabb);
+    MCAPI void doClientTravel(::AABB const& aabb);
 
-    MCAPI class Vec3 doServerTravel(class AABB const& aabb, ::AgentTravelType travelType);
+    MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
     MCAPI float getMoveSpeedScalar() const;
+
+    MCAPI ::AgentRenderData& getRenderData();
 
     MCAPI int getSelectedSlot() const;
 
@@ -121,17 +148,21 @@ public:
 
     MCAPI void handleAnimationEvent(::AgentAnimation anim);
 
-    MCAPI bool isEmoting() const;
+    MCAPI bool isArmSwinging() const;
+
+    MCAPI bool isIdling();
+
+    MCAPI bool isShrugging() const;
 
     MCAPI bool isValidSlotNum(int slotNum);
 
     MCAPI void setGameType(::GameType gameType);
 
-    MCAPI void setMoveTarget(class Vec2 target);
-
     MCAPI void setMoveTarget(float target);
 
-    MCAPI void setNameTagFromOwner(class Player const& player);
+    MCAPI void setMoveTarget(::Vec2 target);
+
+    MCAPI void setNameTagFromOwner(::Player const& player);
 
     MCAPI void shrug();
 
@@ -141,70 +172,78 @@ public:
 
     MCAPI void swingArm();
 
-    MCAPI void tryFireCreateEvent(class Player& player);
-
-    MCAPI static class Vec3 roundTeleportPos(class Vec3 const& pos);
-
-    MCAPI static class Agent* tryGetFromEntity(class EntityContext& entity, bool includeRemoved);
-
+    MCAPI void tryFireCreateEvent(::Player& player);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isOnGround(class AABB const& aabb);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Vec3 roundTeleportPos(::Vec3 const& pos);
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void baseTick$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCAPI bool canBeAffected$(uint) const;
+    MCAPI bool $canShowNameTag() const;
 
-    MCAPI bool canBePulledIntoVehicle$() const;
+    MCAPI bool $canBePulledIntoVehicle() const;
 
-    MCAPI bool canExistWhenDisallowMob$() const;
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI bool canShowNameTag$() const;
+    MCAPI void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI bool createAIGoals$();
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI class mce::Color getNameTagTextColor$() const;
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+    MCAPI bool $createAIGoals();
 
-    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+    MCAPI void $setCarriedItem(::ItemStack const& item);
 
-    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $normalTick();
 
-    MCAPI bool isInvisible$() const;
+    MCAPI void $baseTick();
 
-    MCAPI bool isTargetable$() const;
+    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
 
-    MCAPI void kill$();
+    MCAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI void knockback$(class Actor*, int, float, float, float, float, float);
+    MCAPI bool $isTargetable() const;
 
-    MCAPI void normalTick$();
+    MCAPI bool $isInvisible() const;
 
-    MCAPI void setCarriedItem$(class ItemStack const& item);
+    MCAPI void $kill();
 
-    MCAPI void setOwner$(struct ActorUniqueID id);
+    MCAPI void $setOwner(::ActorUniqueID const id);
 
-    MCAPI void teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

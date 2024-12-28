@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangMemberAccessor {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+
+struct MolangMemberAccessor : public ::MolangHashStringVariable<::MolangMemberAccessor> {
 public:
     // prevent constructor by default
     MolangMemberAccessor& operator=(MolangMemberAccessor const&);
@@ -10,15 +13,14 @@ public:
     MolangMemberAccessor();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangMemberAccessor();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

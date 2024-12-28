@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerTickSystem {
+// auto generated forward declare list
+// clang-format off
+struct PlayerTickComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct PlayerTickSystem {
 public:
     // prevent constructor by default
     PlayerTickSystem& operator=(PlayerTickSystem const&);
@@ -10,12 +16,10 @@ public:
     PlayerTickSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create(bool isCatchup);
+    MCAPI static ::TickingSystemWithInfo create(bool isCatchup);
 
-    MCAPI static struct TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
-
-    MCAPI static void onTickAdded(struct PlayerTickComponent& component, uint64 tick);
-
+    MCAPI static ::TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
     // NOLINTEND
 };

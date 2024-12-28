@@ -2,46 +2,77 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/network/TypedServerNetId.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class CompoundTag;
+class ItemInstance;
+class SaveContext;
+struct RecipeNetIdTag;
+// clang-format on
+
 class MerchantRecipe {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mBuyA;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mBuyB;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mSell;
+    ::ll::TypedStorage<4, 4, int>              mTier;
+    ::ll::TypedStorage<4, 4, int>              mUses;
+    ::ll::TypedStorage<4, 4, int>              mMaxUses;
+    ::ll::TypedStorage<4, 4, uint>             mTraderExp;
+    ::ll::TypedStorage<1, 1, bool>             mRewardExp;
+    ::ll::TypedStorage<4, 4, int>              mDemand;
+    ::ll::TypedStorage<4, 4, int>              mBuyCountA;
+    ::ll::TypedStorage<4, 4, int>              mBuyCountB;
+    ::ll::TypedStorage<4, 4, float>            mPriceMultiplierA;
+    ::ll::TypedStorage<4, 4, float>            mPriceMultiplierB;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId>    mRecipeNetId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MerchantRecipe();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI MerchantRecipe(class MerchantRecipe const&);
+    MCAPI MerchantRecipe(::MerchantRecipe const&);
 
-    MCAPI MerchantRecipe(class ItemInstance const& buy, class ItemInstance const& sell);
+    MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCAPI
-    MerchantRecipe(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
+    MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
     MCAPI void calculateDemandPrices(
-        int                   minorPositiveGossip,
-        int                   majorPositiveGossip,
-        int                   nearbyCuredDiscount,
-        int                   heroEffectAmplifier,
-        bool                  hasHeroOfTheVillage,
-        class BaseGameVersion baseGameVersion
+        int               minorPositiveGossip,
+        int               majorPositiveGossip,
+        int               nearbyCuredDiscount,
+        int               heroEffectAmplifier,
+        bool              hasHeroOfTheVillage,
+        ::BaseGameVersion baseGameVersion
     );
 
     MCAPI void calculateDemandPricesDefaults();
 
-    MCAPI std::unique_ptr<class CompoundTag> createTag(bool includeNetInfo) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
 
     MCAPI int getBaseCountA() const;
 
     MCAPI int getBaseCountB() const;
 
-    MCAPI class ItemInstance const& getBuyAItem() const;
+    MCAPI ::ItemInstance const& getBuyAItem() const;
 
-    MCAPI class ItemInstance const& getBuyBItem() const;
+    MCAPI ::ItemInstance const& getBuyBItem() const;
 
     MCAPI int getDemand() const;
 
     MCAPI int getMaxUses() const;
 
-    MCAPI class ItemInstance const& getSellItem() const;
+    MCAPI ::ItemInstance const& getSellItem() const;
 
     MCAPI int getTier() const;
 
@@ -53,19 +84,19 @@ public:
 
     MCAPI void increaseMaxUses(int amount);
 
-    MCAPI void increaseUses();
+    MCAPI void increaseUses(int count);
 
-    MCAPI void init(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
+    MCAPI void init(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
     MCAPI bool isOutOfUses() const;
 
-    MCAPI bool isSame(class MerchantRecipe const& lhs) const;
+    MCAPI bool isSame(::MerchantRecipe const& lhs) const;
 
     MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
 
-    MCAPI void load(class CompoundTag const* tag);
+    MCAPI void load(::CompoundTag const* tag);
 
-    MCAPI class MerchantRecipe& operator=(class MerchantRecipe const&);
+    MCAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
 
     MCAPI void setDemand(int demand);
 
@@ -86,19 +117,21 @@ public:
     MCAPI bool shouldRewardExp() const;
 
     MCAPI ~MerchantRecipe();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ItemInstance const& buy, class ItemInstance const& sell);
+    MCAPI void* $ctor(::MerchantRecipe const&);
 
-    MCAPI void* ctor$(class MerchantRecipe const&);
+    MCAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
 
-    MCAPI void* ctor$(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
+    MCAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

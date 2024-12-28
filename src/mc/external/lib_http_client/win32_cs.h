@@ -4,7 +4,7 @@
 
 namespace xbox::httpclient {
 
-class win32_cs {
+struct win32_cs {
 public:
     // prevent constructor by default
     win32_cs& operator=(win32_cs const&);
@@ -12,17 +12,16 @@ public:
     win32_cs();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~win32_cs();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

@@ -2,12 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefintionDescription.h"
+
 // auto generated forward declare list
 // clang-format off
+struct AliasInfoDescription;
 namespace Json { class Value; }
 // clang-format on
 
-class ActorAliasDescription {
+struct ActorAliasDescription : public ::DefintionDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8ea846;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorAliasDescription& operator=(ActorAliasDescription const&);
@@ -15,27 +25,38 @@ public:
     ActorAliasDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorAliasDescription();
-
     // vIndex: 1
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
-    MCAPI struct AliasInfoDescription const* getAliasInfo(std::string const& name) const;
-
-    MCAPI void parse(class Json::Value& root, bool isVanilla);
-
+    // vIndex: 0
+    virtual ~ActorAliasDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
-    MCAPI void dtor$();
+    MCAPI void parse(::Json::Value& root, bool isVanilla);
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

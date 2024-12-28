@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/structure/StrongholdPiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+class StructurePiece;
+// clang-format on
+
 class SHLibrary : public ::StrongholdPiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk76f366;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SHLibrary& operator=(SHLibrary const&);
@@ -14,36 +28,49 @@ public:
     SHLibrary();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SHLibrary() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random,
+    // vIndex: 0
+    virtual ~SHLibrary() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
         int                                                 footX,
         int                                                 footY,
         int                                                 footZ,
         int                                                 direction,
         int                                                 genDepth
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

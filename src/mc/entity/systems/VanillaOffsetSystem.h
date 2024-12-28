@@ -8,12 +8,41 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-struct VanillaOffsetSystem {
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Vec3;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct BaseGameVersionComponent;
+struct IsHorizontalPoseFlagComponent;
+struct OffsetsComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerComponent;
+struct PlayerIsSleepingFlagComponent;
+struct TickingSystemWithInfo;
+struct VanillaOffsetComponent;
+// clang-format on
+
+struct VanillaOffsetSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                 ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+                                 ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
+                                 ::Write<::VanillaOffsetComponent>,
+                                 ::AddRemove<::IsHorizontalPoseFlagComponent>,
+                                 ::GlobalRead<::BaseGameVersionComponent>,
+                                 ::GlobalWrite<>,
+                                 ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk98f57d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VanillaOffsetSystem& operator=(VanillaOffsetSystem const&);
@@ -21,68 +50,59 @@ public:
     VanillaOffsetSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VanillaOffsetSystem() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                      struct Read<
-                          struct OffsetsComponent,
-                          struct ActorDataFlagComponent,
-                          class FlagComponent<struct PlayerIsSleepingFlag>>,
-                      struct Write<struct VanillaOffsetComponent>,
-                      struct AddRemove<struct IsHorizontalPoseFlagComponent>,
-                      struct GlobalRead<struct BaseGameVersionComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+                      ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
+                      ::Write<::VanillaOffsetComponent>,
+                      ::AddRemove<::IsHorizontalPoseFlagComponent>,
+                      ::GlobalRead<::BaseGameVersionComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
-    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
-
-    MCAPI static class Vec3 getCameraPosition(class Actor const& actor, float alpha);
-
-    MCAPI static class Vec3 getCameraPosition(
-        class Vec3 const&                                     interpolatedRidingPosition,
-        struct PassengerRenderingRidingOffsetComponent const* passengerOffset,
-        struct VanillaOffsetComponent const*                  cameraOffset,
-        float                                                 alpha
-    );
-
+    // vIndex: 0
+    virtual ~VanillaOffsetSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                     struct Read<
-                         struct OffsetsComponent,
-                         struct ActorDataFlagComponent,
-                         class FlagComponent<struct PlayerIsSleepingFlag>>,
-                     struct Write<struct VanillaOffsetComponent>,
-                     struct AddRemove<struct IsHorizontalPoseFlagComponent>,
-                     struct GlobalRead<struct BaseGameVersionComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+    MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
 
+    MCAPI static ::Vec3 getCameraPosition(
+        ::Vec3 const&                                    interpolatedRidingPosition,
+        ::PassengerRenderingRidingOffsetComponent const* passengerOffset,
+        ::VanillaOffsetComponent const*                  cameraOffset,
+        float                                            alpha
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+                     ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
+                     ::Write<::VanillaOffsetComponent>,
+                     ::AddRemove<::IsHorizontalPoseFlagComponent>,
+                     ::GlobalRead<::BaseGameVersionComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class WorkerPoolHandleInterface; }
-namespace Bedrock { class WorkerPoolManager; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
@@ -24,24 +23,37 @@ public:
     // WorkerPoolManagerImpl inner types define
     struct PoolEntry {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkc189dd;
+        ::ll::UntypedStorage<8, 16> mUnke865a9;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         PoolEntry& operator=(PoolEntry const&);
         PoolEntry(PoolEntry const&);
         PoolEntry();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~PoolEntry();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk53d969;
+    ::ll::UntypedStorage<8, 80> mUnkf15882;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -49,47 +61,70 @@ public:
     WorkerPoolManagerImpl(WorkerPoolManagerImpl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::shared_ptr<class Bedrock::WorkerPoolHandleInterface> createWorkerPool(
-        std::string                                       name,
-        uint64                                            threadCount,
-        class Bedrock::Threading::OSThreadPriority const& priority,
-        std::optional<uint64>                             coreAffinityMask,
-        bool                                              suppressWorkerProfiling,
-        std::optional<int>                                idealCore
-    );
+    // vIndex: 1
+    virtual void init() /*override*/;
 
-    MCVAPI void init();
+    // vIndex: 2
+    virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
+        ::std::string                                 name,
+        uint64                                        threadCount,
+        ::Bedrock::Threading::OSThreadPriority const& priority,
+        ::std::optional<uint64> const                 coreAffinityMask,
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int> const                    idealCore
+    ) /*override*/;
 
-    MCVAPI void tick();
+    // vIndex: 3
+    virtual void tick() /*override*/;
 
-    MCAPI WorkerPoolManagerImpl();
-
+    // vIndex: 0
+    virtual ~WorkerPoolManagerImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI WorkerPoolManagerImpl();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockImplBase();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::shared_ptr<class Bedrock::WorkerPoolHandleInterface> createWorkerPool$(
-        std::string                                       name,
-        uint64                                            threadCount,
-        class Bedrock::Threading::OSThreadPriority const& priority,
-        std::optional<uint64>                             coreAffinityMask,
-        bool                                              suppressWorkerProfiling,
-        std::optional<int>                                idealCore
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init();
+
+    MCAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
+        ::std::string                                 name,
+        uint64                                        threadCount,
+        ::Bedrock::Threading::OSThreadPriority const& priority,
+        ::std::optional<uint64> const                 coreAffinityMask,
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int> const                    idealCore
     );
 
-    MCAPI void init$();
+    MCAPI void $tick();
+    // NOLINTEND
 
-    MCAPI void tick$();
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForImplBase();
 
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

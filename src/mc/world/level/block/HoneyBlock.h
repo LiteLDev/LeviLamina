@@ -4,19 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { struct BlockFallOnEvent; }
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class EntityContext;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Material;
+namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class HoneyBlock : public ::BlockLegacy {
@@ -27,54 +28,74 @@ public:
     HoneyBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HoneyBlock() = default;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const&, class AABB& bufferAABB) const;
-
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const&);
+    // vIndex: 134
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 145
-    virtual void onStandOn(class EntityContext& entity, class BlockPos const&) const;
+    virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 157
-    virtual int getExtraRenderLayers() const;
+    // vIndex: 11
+    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
-    MCAPI HoneyBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
-
-    MCAPI static void
-    triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const& honeyBlock);
-
+    // vIndex: 0
+    virtual ~HoneyBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HoneyBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void triggerSlidingDownEffects(::Actor& entity, ::BlockPos const& pos, ::Block const& honeyBlock);
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI int getExtraRenderLayers$() const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const&, class AABB& bufferAABB) const;
+    MCAPI int $getExtraRenderLayers() const;
 
-    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

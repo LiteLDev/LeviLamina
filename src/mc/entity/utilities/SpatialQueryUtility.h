@@ -5,9 +5,23 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class SpatialQueryUtility {
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Block;
+class BlockPos;
+class IConstBlockSource;
+class LocalSpatialEntityFetcher;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorUniqueID;
+struct CollidableMobFlagComponent;
+struct CollisionShapes;
+struct FallingBlockFlagComponent;
+// clang-format on
+
+struct SpatialQueryUtility {
 public:
     // prevent constructor by default
     SpatialQueryUtility& operator=(SpatialQueryUtility const&);
@@ -15,27 +29,25 @@ public:
     SpatialQueryUtility();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool forEachBlockInAABB(
-        class IConstBlockSource const&                                        region,
-        class AABB const&                                                     aabb,
-        float                                                                 grow,
-        std::function<void(class Block const&, class BlockPos const&)> const& callback
+        ::IConstBlockSource const&                                      region,
+        ::AABB const&                                                   aabb,
+        float                                                           grow,
+        ::std::function<void(::Block const&, ::BlockPos const&)> const& callback
     );
 
     MCAPI static void testForCollidableMobs(
-        class StrictEntityContext const& except,
-        class LocalSpatialEntityFetcher& fetcher,
-        class AABB const&                actorAABB,
-        class AABB const&                intersectTestBox,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct CollidableMobFlag>>,
-            struct AABBShapeComponent const> view,
-        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>
-                                fallingBlockView,
-        struct CollisionShapes& collisionShapes
+        ::StrictEntityContext const& except,
+        ::LocalSpatialEntityFetcher& fetcher,
+        ::AABB const&                actorAABB,
+        ::AABB const&                intersectTestBox,
+        ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> view,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
+        ::CollisionShapes&                                                     collisionShapes
     );
 
+    MCAPI static ::StrictEntityContext tryFetchEntity(::LocalSpatialEntityFetcher& fetcher, ::ActorUniqueID const& id);
     // NOLINTEND
 };

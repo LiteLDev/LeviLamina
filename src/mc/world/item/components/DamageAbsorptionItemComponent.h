@@ -4,40 +4,69 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/item/ArmorSlot.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+class HashedString;
+namespace SharedTypes::v1_21_10 { struct DamageAbsorptionItemComponent; }
 // clang-format on
 
 class DamageAbsorptionItemComponent : public ::ItemComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkbcf3e5;
+    ::ll::UntypedStorage<1, 1>  mUnkfcb71a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DamageAbsorptionItemComponent& operator=(DamageAbsorptionItemComponent const&);
     DamageAbsorptionItemComponent(DamageAbsorptionItemComponent const&);
-    DamageAbsorptionItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DamageAbsorptionItemComponent() = default;
-
-    MCAPI explicit DamageAbsorptionItemComponent(std::vector<::ActorDamageCause> const& absorbableDamageCauses);
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~DamageAbsorptionItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DamageAbsorptionItemComponent();
 
-    MCAPI void* ctor$(std::vector<::ActorDamageCause> const& absorbableDamageCauses);
+    MCAPI explicit DamageAbsorptionItemComponent(::std::vector<::ActorDamageCause> const& absorbableDamageCauses);
 
-    MCAPI static std::array<::ArmorSlot, 1> const& VALID_SLOTS();
+    MCAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::vector<::ActorDamageCause> const& absorbableDamageCauses);
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

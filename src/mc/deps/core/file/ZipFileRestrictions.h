@@ -11,28 +11,26 @@ namespace Core::ZipUtils {
 
 class ZipFileRestrictions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk9d4e1a;
+    ::ll::UntypedStorage<8, 16> mUnk405812;
+    ::ll::UntypedStorage<8, 16> mUnk43c397;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ZipFileRestrictions& operator=(ZipFileRestrictions const&);
     ZipFileRestrictions(ZipFileRestrictions const&);
+    ZipFileRestrictions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ZipFileRestrictions();
+    MCAPI void addRestrictedExtensions(::std::vector<::std::string> const& extensions);
 
-    MCAPI bool allowFile(class Core::Path const& file) const;
-
-    MCAPI ~ZipFileRestrictions();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
+    MCAPI bool allowFile(::Core::Path const& file) const;
     // NOLINTEND
 };
 
-}; // namespace Core::ZipUtils
+} // namespace Core::ZipUtils

@@ -2,7 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class JigsawEditorData;
+// clang-format on
+
 class JigsawBlockInfo {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12>  mUnkb6feaf;
+    ::ll::UntypedStorage<8, 8>   mUnkb33309;
+    ::ll::UntypedStorage<8, 8>   mUnk8a6e0e;
+    ::ll::UntypedStorage<8, 144> mUnk88f9d8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     JigsawBlockInfo& operator=(JigsawBlockInfo const&);
@@ -10,37 +26,24 @@ public:
     JigsawBlockInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI JigsawBlockInfo(class JigsawBlockInfo&&);
+    MCAPI JigsawBlockInfo(::JigsawBlockInfo&&);
 
     MCAPI JigsawBlockInfo(
-        class BlockPos const&  pos,
-        class Block const*     block,
-        class Block const*     finalBlock,
-        class JigsawEditorData editorData
+        ::BlockPos const&  pos,
+        ::Block const*     block,
+        ::Block const*     finalBlock,
+        ::JigsawEditorData editorData
     );
-
-    MCAPI uchar getFrontFacing() const;
-
-    MCAPI class JigsawBlockInfo& operator=(class JigsawBlockInfo&&);
-
-    MCAPI ~JigsawBlockInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class BlockPos const&  pos,
-        class Block const*     block,
-        class Block const*     finalBlock,
-        class JigsawEditorData editorData
-    );
+    MCAPI void* $ctor(::JigsawBlockInfo&&);
 
-    MCAPI void* ctor$(class JigsawBlockInfo&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void*
+    $ctor(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
     // NOLINTEND
 };

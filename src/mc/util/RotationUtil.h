@@ -5,17 +5,24 @@
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Random;
+// clang-format on
+
 namespace RotationUtil {
+// functions
 // NOLINTBEGIN
-MCAPI ::Rotation getRandomRotation(class Random& random);
+MCAPI ::Rotation getRandomRotation(::Random& random);
 
 MCAPI ::Rotation getRotated(::Rotation original, ::Rotation rotation);
 
-MCAPI std::vector<::Rotation> getShuffledRotations(class Random& random);
+MCAPI ::std::vector<::Rotation> getShuffledRotations(::Random& random);
 
-MCAPI class BlockPos rotate(class BlockPos const& source, ::Rotation rotation);
+MCAPI ::BlockPos rotate(::BlockPos const& source, ::Rotation rotation);
 
 MCAPI uchar rotate(::Rotation source, uchar direction);
 // NOLINTEND
 
-}; // namespace RotationUtil
+} // namespace RotationUtil

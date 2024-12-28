@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class HashedString;
+class Random;
+// clang-format on
+
 class DoublePlantFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,28 +21,37 @@ public:
     DoublePlantFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~DoublePlantFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool place(
-        class BlockSource&        region,
-        class BlockPos const&     pos,
-        class Random&             random,
-        class HashedString const& plantType
-    ) const;
-
+    virtual ~DoublePlantFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool
+    place(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::HashedString const& plantType) const;
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

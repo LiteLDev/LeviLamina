@@ -2,6 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct IllagerBeastFlagComponent;
+struct StateVectorComponent;
+struct SubBBsComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class IllagerBeastPostAIStepSystem {
 public:
     // prevent constructor by default
@@ -10,18 +24,14 @@ public:
     IllagerBeastPostAIStepSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doIllagerBeastPostAIStepSystem(
-        class StrictEntityContext const&,
-        struct StateVectorComponent const& stateVectorComponent,
-        struct SubBBsComponent&            subBBsComponent
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const& stateVectorComponent,
+        ::SubBBsComponent&            subBBsComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

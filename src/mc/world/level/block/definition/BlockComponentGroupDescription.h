@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BlockComponentDescription;
+// clang-format on
+
 struct BlockComponentGroupDescription {
 public:
     // BlockComponentGroupDescription inner types declare
@@ -12,65 +17,71 @@ public:
     // BlockComponentGroupDescription inner types define
     struct Components {
     public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI Components();
-
-        MCAPI Components(struct BlockComponentGroupDescription::Components const&);
-
-        MCAPI struct BlockComponentGroupDescription::Components&
-        operator=(struct BlockComponentGroupDescription::Components&&);
-
-        MCAPI struct BlockComponentGroupDescription::Components&
-        operator=(struct BlockComponentGroupDescription::Components const&);
-
-        MCAPI ~Components();
-
+        ::ll::UntypedStorage<8, 64> mUnka139a3;
         // NOLINTEND
 
-        // thunks
     public:
+        // prevent constructor by default
+        Components(Components const&);
+        Components();
+
+    public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI ::BlockComponentGroupDescription::Components&
+        operator=(::BlockComponentGroupDescription::Components const&);
 
-        MCAPI void* ctor$(struct BlockComponentGroupDescription::Components const&);
+        MCAPI ~Components();
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI BlockComponentGroupDescription();
-
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription&&);
-
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const&);
-
-    MCAPI void addComponentDescription(std::shared_ptr<struct BlockComponentDescription>);
-
-    MCAPI void foreachDescription(std::function<void(struct BlockComponentDescription const&)>) const;
-
-    MCAPI struct BlockComponentDescription* getComponentDescription(std::string const& name) const;
-
-    MCAPI struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription&&);
-
-    MCAPI struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const&);
-
-    MCAPI ~BlockComponentGroupDescription();
-
+    ::ll::UntypedStorage<8, 64> mUnke08dc0;
+    ::ll::UntypedStorage<8, 24> mUnkd8d4e6;
+    ::ll::UntypedStorage<8, 24> mUnkd642d2;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    BlockComponentGroupDescription();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
 
-    MCAPI void* ctor$(struct BlockComponentGroupDescription const&);
+    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
 
-    MCAPI void* ctor$(struct BlockComponentGroupDescription&&);
+    MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCAPI void dtor$();
+    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
+    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
+
+    MCAPI ~BlockComponentGroupDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockComponentGroupDescription&&);
+
+    MCAPI void* $ctor(::BlockComponentGroupDescription const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

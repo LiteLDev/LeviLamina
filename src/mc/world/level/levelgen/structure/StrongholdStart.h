@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class Random;
+// clang-format on
+
 class StrongholdStart : public ::StructureStart {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke64a2a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StrongholdStart& operator=(StrongholdStart const&);
@@ -13,31 +25,49 @@ public:
     StrongholdStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StrongholdStart() = default;
+    virtual ~StrongholdStart() /*override*/;
 
     // vIndex: 2
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI StrongholdStart(class Dimension& dimension, class Random& random, int chunkX, int chunkZ);
-
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initializePieceSet(class Random& random);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StrongholdStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
 
-    MCAPI void* ctor$(class Dimension& dimension, class Random& random, int chunkX, int chunkZ);
+    MCAPI void _initializePieceSet(::Random& random);
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

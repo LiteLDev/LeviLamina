@@ -6,37 +6,57 @@
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class LookAtActorNode : public ::BehaviorNode {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2222ee;
+    ::ll::UntypedStorage<4, 4> mUnk652ac4;
+    ::ll::UntypedStorage<4, 4> mUnkb90fbd;
+    ::ll::UntypedStorage<4, 4> mUnkf1bc2e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LookAtActorNode& operator=(LookAtActorNode const&);
     LookAtActorNode(LookAtActorNode const&);
+    LookAtActorNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LookAtActorNode() = default;
-
     // vIndex: 1
-    virtual ::BehaviorStatus tick(class Actor& owner);
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     // vIndex: 2
-    virtual void initializeFromDefinition(class Actor& owner);
+    virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    MCAPI LookAtActorNode();
-
+    // vIndex: 0
+    virtual ~LookAtActorNode() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void initializeFromDefinition$(class Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
+    // NOLINTEND
 
-    MCAPI ::BehaviorStatus tick$(class Actor& owner);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

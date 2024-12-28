@@ -9,24 +9,30 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCameraSetPositionOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkdde20e;
+    ::ll::UntypedStorage<4, 16> mUnkfcef57;
+    ::ll::UntypedStorage<4, 20> mUnkce9ea6;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptCameraSetPositionOptions& operator=(ScriptCameraSetPositionOptions const&);
     ScriptCameraSetPositionOptions(ScriptCameraSetPositionOptions const&);
     ScriptCameraSetPositionOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions&&);
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetPositionOptions const& other) const;
+    // NOLINTEND
 
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions const&);
-
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions const& other) const;
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions>
-    bind();
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetPositionOptions> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

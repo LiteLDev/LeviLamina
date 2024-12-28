@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class NetherFossilFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd22c91;
+    ::ll::UntypedStorage<1, 1>  mUnkaf6255;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NetherFossilFeature& operator=(NetherFossilFeature const&);
@@ -13,23 +27,36 @@ public:
     NetherFossilFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~NetherFossilFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
+    virtual ~NetherFossilFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static auto STRUCTURE_LOCATION_FOSSIL() -> std::string const (&)[];
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,53 +7,83 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPos;
+class NetworkBlockPosition;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class OpenSignPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<1, 1, bool>                    mIsFrontSide;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OpenSignPacket& operator=(OpenSignPacket const&);
     OpenSignPacket(OpenSignPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OpenSignPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI OpenSignPacket();
-
-    MCAPI OpenSignPacket(class BlockPos const& pos, bool isFrontSide);
-
+    // vIndex: 0
+    virtual ~OpenSignPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OpenSignPacket();
 
-    MCAPI void* ctor$();
+    MCAPI OpenSignPacket(::BlockPos const& pos, bool isFrontSide);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos, bool isFrontSide);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BlockPos const& pos, bool isFrontSide);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

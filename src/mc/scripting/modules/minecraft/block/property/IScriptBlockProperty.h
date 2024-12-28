@@ -4,17 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockState;
-namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class IScriptBlockProperty {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc4eb82;
+    ::ll::UntypedStorage<8, 32> mUnkaddf92;
+    ::ll::UntypedStorage<8, 8>  mUnk6af17c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IScriptBlockProperty& operator=(IScriptBlockProperty const&);
@@ -22,41 +23,35 @@ public:
     IScriptBlockProperty();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IScriptBlockProperty();
-
-    MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&);
-
-    MCAPI IScriptBlockProperty(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
-
-    MCAPI class ScriptModuleMinecraft::IScriptBlockProperty&
-    operator=(class ScriptModuleMinecraft::IScriptBlockProperty&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::IScriptBlockProperty&&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

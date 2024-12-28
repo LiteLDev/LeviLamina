@@ -7,7 +7,50 @@
 #include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/material/MaterialType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorSpawnRuleGroup;
+class BlockPos;
+class BlockSource;
+class ChunkPos;
+class Experiments;
+class IWorldRegistriesProvider;
+class ItemActor;
+class ItemStack;
+class Level;
+class LevelChunk;
+class LevelChunkVolumeData;
+class Mob;
+class MobSpawnRules;
+class Random;
+class ResourcePackManager;
+class SpawnConditions;
+class SpawnGroupRegistry;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct SpawnSettings;
+namespace br::spawn { class EntityTypeCache; }
+// clang-format on
+
 class Spawner {
+public:
+    // Spawner inner types define
+    using MobSpawnedCallback = ::std::function<void(::Mob&)>;
+
+    using SpawnMobClusterCallback = ::std::function<void(::BlockPos const&, ::SpawnConditions&)>;
+
+    using SpawnStructureMobCallback =
+        ::std::function<void(::BlockPos const&, ::LevelChunk::SpawningArea const&, ::SpawnConditions const&)>;
+
+    using GetSpawningAreasCallback =
+        ::std::function<::gsl::span<::LevelChunk::SpawningArea const>(::LevelChunk const&)>;
+
+    using AncientCityPredicate = ::std::function<bool(::BlockSource const&, ::BlockPos)>;
+
+    using SpawnTickCallback = ::std::function<void(::BlockPos, ::SpawnConditions)>;
+
 public:
     // prevent constructor by default
     Spawner& operator=(Spawner const&);
@@ -15,162 +58,98 @@ public:
     Spawner();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI explicit Spawner(class Level& level);
+    // vIndex: 0
+    virtual ~Spawner();
 
-    MCAPI class ActorSpawnRuleGroup const* getSpawnRules() const;
+    // vIndex: 1
+    virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) = 0;
 
-    MCAPI class ActorSpawnRuleGroup* getSpawnRulesMutable() const;
+    // vIndex: 2
+    virtual ::SpawnSettings const& getSpawnSettings() const = 0;
 
-    MCAPI struct SpawnSettings const& getSpawnSettings() const;
+    // vIndex: 3
+    virtual void setSpawnSettings(::SpawnSettings const&) = 0;
 
-    MCAPI void incrementSpawnableTickedMob();
+    // vIndex: 4
+    virtual ::ActorSpawnRuleGroup const* getSpawnRules() const = 0;
 
-    MCAPI void initializeServerSide(class ResourcePackManager& rpm, class IWorldRegistriesProvider& registries);
+    // vIndex: 5
+    virtual ::ActorSpawnRuleGroup* getSpawnRulesMutable() const = 0;
 
-    MCAPI void postProcessSpawnMobs(class BlockSource& region, int xo, int zo, class Random& random);
+    // vIndex: 6
+    virtual ::SpawnGroupRegistry const* getSpawnGroupRegistry() const = 0;
 
-    MCAPI void setSpawnSettings(struct SpawnSettings const& spawnSettings);
+    // vIndex: 7
+    virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const = 0;
 
-    MCAPI class ItemActor* spawnItem(
-        class BlockSource&     region,
-        class ItemStack const& inst,
-        class Actor*           spawner,
-        class Vec3 const&      pos,
-        int                    throwTime
-    );
+    // vIndex: 8
+    virtual ::Mob*
+    spawnMob(::BlockSource&, ::ActorDefinitionIdentifier const&, ::Actor*, ::Vec3 const&, bool, bool, bool) = 0;
 
-    MCAPI class Mob* spawnMob(
-        class BlockSource&                      region,
-        struct ActorDefinitionIdentifier const& id,
-        class Actor*                            spawner,
-        class Vec3 const&                       pos,
-        bool                                    naturalSpawn,
-        bool                                    surface,
-        bool                                    fromSpawner
-    );
+    // vIndex: 9
+    virtual ::ItemActor* spawnItem(::BlockSource&, ::ItemStack const&, ::Actor*, ::Vec3 const&, int) = 0;
 
-    MCAPI std::unordered_set<struct ActorUniqueID> spawnMobGroup(
-        class BlockSource&                region,
-        std::string const&                spawnGroupId,
-        class Vec3 const&                 pos,
-        bool                              doScatter,
-        bool                              validateDistToPlayer,
-        std::function<void(class Mob&)>&& spawnedCallback
-    );
+    // vIndex: 10
+    virtual ::Actor*
+    spawnProjectile(::BlockSource&, ::ActorDefinitionIdentifier const&, ::Actor*, ::Vec3 const&, ::Vec3 const&) = 0;
 
-    MCAPI class Actor* spawnProjectile(
-        class BlockSource&                      region,
-        struct ActorDefinitionIdentifier const& id,
-        class Actor*                            spawner,
-        class Vec3 const&                       position,
-        class Vec3 const&                       direction
-    );
+    // vIndex: 11
+    virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) = 0;
 
-    MCAPI void tick(class BlockSource& region, class LevelChunk const& chunk);
+    // vIndex: 12
+    virtual void tick(::BlockSource&, ::LevelChunkVolumeData const&, ::ChunkPos const) = 0;
 
-    MCAPI void tickMobCount();
+    // vIndex: 13
+    virtual void tickMobCount() = 0;
 
-    MCAPI ~Spawner();
+    // vIndex: 14
+    virtual void incrementSpawnableTickedMob() = 0;
 
+    // vIndex: 15
+    virtual uint getSpawnableTickedMobCountPrevious() const = 0;
+
+    // vIndex: 16
+    virtual ::std::unordered_set<::ActorUniqueID>
+    spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) = 0;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static bool findNextSpawnBlockUnder(
-        class BlockSource const& region,
-        class BlockPos&          pos,
-        ::MaterialType           canSpawnIn,
-        ::SpawnBlockRequirements spawnBlockRequirements
+        ::BlockSource const&            region,
+        ::BlockPos&                     pos,
+        ::std::optional<::MaterialType> materialToSpawnIn,
+        ::SpawnBlockRequirements        spawnBlockRequirements
     );
+
+    MCAPI static ::std::unique_ptr<::Spawner> from(::Level& level, ::Experiments const&);
 
     MCAPI static bool isSpawnPositionOk(
-        class MobSpawnRules const& rules,
-        class BlockSource&         region,
-        class BlockPos const&      pos,
-        bool                       validateDistToPlayer
+        ::MobSpawnRules const& rules,
+        ::BlockSource&         region,
+        ::BlockPos const&      pos,
+        bool                   validateDistToPlayer
     );
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _postProcessSpawnMobs(
-        class BlockSource&                                                        region,
-        int                                                                       xo,
-        int                                                                       zo,
-        class Randomize&                                                          randomize,
-        bool                                                                      doMobSpawning,
-        std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback,
-        std::function<bool(class BlockSource const&, class BlockPos)> const&      hardcodedAllowStructureMobSpawns
-    );
-
-    MCAPI void _spawnMobInCluster(
-        class BlockSource&                      region,
-        struct ActorDefinitionIdentifier const& id,
-        class BlockPos const&                   pos,
-        class SpawnConditions const&            conditions,
-        std::vector<class Mob*>&                spawnGroup
-    );
-
-    MCAPI void _spawnStructureMob(
-        class BlockSource&                              region,
-        class BlockPos const&                           pos,
-        struct LevelChunk::HardcodedSpawningArea const& spawnArea,
-        class SpawnConditions const&                    structureConditions
-    );
-
-    MCAPI void _tickSpawnMobClusters(
-        class BlockSource&                                                        region,
-        class LevelChunk const&                                                   chunk,
-        class BlockPos                                                            pos,
-        std::function<void(class BlockPos const&, class SpawnConditions&)> const& spawnMobClusterCallback,
-        std::function<bool(class BlockSource const&, class BlockPos)> const&      hardcodedAllowStructureMobSpawns
-    );
-
-    MCAPI void _tickSpawnStructureMobs(
-        class BlockSource&      region,
-        class LevelChunk const& chunk,
-        class BlockPos          pos,
-        std::function<
-            void(class BlockPos const&, struct LevelChunk::HardcodedSpawningArea const&, class SpawnConditions const&)> const&
-            spawnStructureMobCallback,
-        std::function<gsl::span<struct LevelChunk::HardcodedSpawningArea const>(class LevelChunk const&)> const&
-            getSpawningAreasCallback
-    );
-
-    MCAPI void _updateBaseTypeCount(class BlockSource& region, class ChunkPos const& center);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI int _handlePopulationCap(
-        class MobSpawnerData const*  mobType,
-        class SpawnConditions const& conditions,
-        int                          inSpawnCount
-    );
-
-    MCAPI void
-    _permuteId(struct ActorDefinitionIdentifier& actualId, class MobSpawnRules const& spawnRules, class Random& random)
-        const;
-
-    MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const& herdInfo, std::vector<class Mob*>& spawnGroup) const;
-
-    MCAPI void
-    _spawnMobCluster(class BlockSource& region, class BlockPos const& pos, class SpawnConditions& conditions);
-
-    MCAPI void
-    _updateMobCounts(struct ActorDefinitionIdentifier const& actualId, class SpawnConditions const& conditions);
-
-    MCAPI static bool _hardcodedAllowStructureMobSpawns(class BlockSource const& region, class BlockPos pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Level& level);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
-    MCAPI static std::unordered_set<class ChunkPos> const& SPAWN_RING_OFFSETS();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

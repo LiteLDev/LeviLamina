@@ -2,42 +2,51 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class PathfinderNode;
+// clang-format on
+
 class BinaryHeap {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3dbce0;
+    ::ll::UntypedStorage<4, 4>  mUnkb6697e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BinaryHeap& operator=(BinaryHeap const&);
     BinaryHeap(BinaryHeap const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BinaryHeap();
 
-    MCAPI void changeCost(class PathfinderNode* node, float newCost);
+    MCAPI void changeCost(::PathfinderNode* node, float newCost);
 
     MCAPI void clear();
 
-    MCAPI class PathfinderNode* insert(class PathfinderNode* node);
+    MCAPI ::PathfinderNode* insert(::PathfinderNode* node);
 
     MCAPI bool isEmpty();
 
-    MCAPI class PathfinderNode* pop();
+    MCAPI ::PathfinderNode* pop();
 
     MCAPI ~BinaryHeap();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void downHeap(int idx);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ItemTag {
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
+struct ItemTag : public ::HashedString {
 public:
     // prevent constructor by default
     ItemTag& operator=(ItemTag const&);
@@ -10,15 +13,14 @@ public:
     ItemTag();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ItemTag();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -6,7 +6,22 @@
 #include "mc/platform/Result.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class EnchantmentInstance;
+class ListTag;
+class ReadOnlyBinaryStream;
+struct EnchantResult;
+// clang-format on
+
 class ItemEnchants {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnka53d8f;
+    ::ll::UntypedStorage<8, 72> mUnk5ecf08;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemEnchants& operator=(ItemEnchants const&);
@@ -14,26 +29,29 @@ public:
     ItemEnchants();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit ItemEnchants(int slot);
 
-    MCAPI ItemEnchants(int slot, class ListTag const& tag);
+    MCAPI ItemEnchants(int slot, ::ListTag const& tag);
 
-    MCAPI bool addEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
+    MCAPI ::std::unique_ptr<::ListTag> _toList() const;
 
-    MCAPI int addEnchants(class ItemEnchants const& enchants, bool allowNonVanilla);
+    MCAPI bool addEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
-    MCAPI struct EnchantResult canEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
+    MCAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
+
+    MCAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
     MCAPI int count() const;
 
-    MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
+    MCAPI ::std::vector<::EnchantmentInstance> getAllEnchants() const;
 
-    MCAPI std::vector<std::string> getEnchantNames() const;
+    MCAPI ::std::vector<::std::string> getEnchantNames() const;
 
-    MCAPI class EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
+    MCAPI ::EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
 
-    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int activationType) const;
+    MCAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
 
     MCAPI int getSlot() const;
 
@@ -43,28 +61,24 @@ public:
 
     MCAPI bool isEmpty() const;
 
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI void removeEnchantment(::Enchant::Type enchantType);
 
     MCAPI ~ItemEnchants();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::unique_ptr<class ListTag> _toList() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(int slot);
+    MCAPI void* $ctor(int slot);
 
-    MCAPI void* ctor$(int slot, class ListTag const& tag);
+    MCAPI void* $ctor(int slot, ::ListTag const& tag);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

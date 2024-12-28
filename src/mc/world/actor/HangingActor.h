@@ -3,30 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class IConstBlockSource;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class HangingActor : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkfac361;
+    ::ll::UntypedStorage<4, 4> mUnkf92ba7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HangingActor& operator=(HangingActor const&);
@@ -34,114 +35,122 @@ public:
     HangingActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    // vIndex: 10
-    virtual ~HangingActor();
-
-    // vIndex: 26
-    virtual void normalTick();
-
-    // vIndex: 41
-    virtual float getBrightness(float, class IConstBlockSource const& region) const;
-
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
-
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    // vIndex: 151
+    // vIndex: 143
     virtual int getWidth() const = 0;
 
-    // vIndex: 152
+    // vIndex: 144
     virtual int getHeight() const = 0;
 
-    // vIndex: 153
+    // vIndex: 145
     virtual void dropItem() = 0;
 
-    // vIndex: 154
-    virtual bool placeHangingEntity(class BlockSource& region, int direction);
+    // vIndex: 39
+    virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 155
-    virtual bool wouldSurvive(class BlockSource& region);
+    // vIndex: 146
+    virtual bool placeHangingEntity(::BlockSource& region, int direction);
 
-    MCAPI HangingActor(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
+    // vIndex: 147
+    virtual bool wouldSurvive(::BlockSource& region);
 
-    MCAPI int getDirection() const;
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
+
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+
+    // vIndex: 8
+    virtual ~HangingActor() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI HangingActor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+
+    MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+
     MCAPI void _calculateAABB();
 
-    MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const& blockPos);
+    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 
-    MCAPI bool _wouldSurvive(class BlockSource& region, class BlockPos const& blockPos, bool beingPlaced);
+    MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 
+    MCAPI int getDirection() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _blockContainsObstruction(class BlockSource const& region, class BlockPos const& blockPos) const;
-
-    MCAPI bool _blockIsObstruction(class BlockSource const& region, class BlockPos const& blockPos) const;
-
-    MCAPI bool
-    _canSurviveOnBlock(class BlockSource const& region, class BlockPos const& blockPos, bool beingPlaced) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI void dtor$();
-
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
-
-    MCAPI float getBrightness$(float, class IConstBlockSource const& region) const;
-
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
-
-    MCAPI void normalTick$();
-
-    MCAPI bool placeHangingEntity$(class BlockSource& region, int direction);
-
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    MCAPI bool wouldSurvive$(class BlockSource& region);
-
     MCAPI static float const& HANGING_OFFSET();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $normalTick();
+
+    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+
+    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+
+    MCAPI bool $wouldSurvive(::BlockSource& region);
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod);
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

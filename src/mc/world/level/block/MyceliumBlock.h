@@ -3,19 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockPos;
+class BlockSource;
+class Random;
+struct Brightness;
 // clang-format on
 
 class MyceliumBlock : public ::BlockLegacy {
@@ -26,42 +21,56 @@ public:
     MyceliumBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~MyceliumBlock() = default;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI MyceliumBlock(std::string const& nameId, int id);
-
+    virtual ~MyceliumBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canSpreadToBlock(class BlockSource const& region, class BlockPos const& blockPos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MyceliumBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
+    // NOLINTEND
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI static struct Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static struct Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

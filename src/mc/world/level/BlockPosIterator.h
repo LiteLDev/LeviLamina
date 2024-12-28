@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class BlockPosIterator {
 public:
     // BlockPosIterator inner types declare
@@ -13,36 +18,55 @@ public:
     // BlockPosIterator inner types define
     class FromCenter {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnke77ff1;
+        ::ll::UntypedStorage<4, 12> mUnka91ee5;
+        ::ll::UntypedStorage<4, 4>  mUnk17b8ba;
+        ::ll::UntypedStorage<4, 12> mUnk7b4ad6;
+        ::ll::UntypedStorage<4, 4>  mUnk7e4212;
+        ::ll::UntypedStorage<4, 4>  mUnkdf6d11;
+        ::ll::UntypedStorage<4, 4>  mUnkc161ae;
+        ::ll::UntypedStorage<1, 1>  mUnk89cbf6;
+        ::ll::UntypedStorage<1, 1>  mUnk4c5f40;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         FromCenter& operator=(FromCenter const&);
         FromCenter(FromCenter const&);
         FromCenter();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI FromCenter(class BlockPos const& pos, class BlockPos const& reach);
+        MCAPI FromCenter(::BlockPos const& pos, ::BlockPos const& reach);
 
-        MCAPI class BlockPosIterator::FromCenter begin() const;
+        MCAPI ::BlockPosIterator::FromCenter begin() const;
 
-        MCAPI class BlockPosIterator::FromCenter end() const;
+        MCAPI ::BlockPosIterator::FromCenter end() const;
 
-        MCAPI bool operator!=(class BlockPosIterator::FromCenter const& other) const;
+        MCAPI bool operator!=(::BlockPosIterator::FromCenter const& other) const;
 
-        MCAPI class BlockPos const& operator*();
+        MCAPI ::BlockPos const& operator*();
 
-        MCAPI class BlockPosIterator::FromCenter& operator++();
-
+        MCAPI ::BlockPosIterator::FromCenter& operator++();
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class BlockPos const& pos, class BlockPos const& reach);
-
+        MCAPI void* $ctor(::BlockPos const& pos, ::BlockPos const& reach);
         // NOLINTEND
     };
 
     class ManhattanDistance {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 56> mUnk2c5c9b;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ManhattanDistance& operator=(ManhattanDistance const&);
@@ -50,28 +74,36 @@ public:
         ManhattanDistance();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI ManhattanDistance(class BlockPos const& pos, int distance);
+        MCAPI ManhattanDistance(::BlockPos const& pos, int distance);
 
-        MCAPI class BlockPosIterator::ManhattanDistance begin() const;
+        MCAPI ::BlockPosIterator::ManhattanDistance begin() const;
 
-        MCAPI class BlockPosIterator::ManhattanDistance end() const;
+        MCAPI ::BlockPosIterator::ManhattanDistance end() const;
 
-        MCAPI bool operator!=(class BlockPosIterator::ManhattanDistance const& other) const;
+        MCAPI bool operator!=(::BlockPosIterator::ManhattanDistance const& other) const;
 
-        MCAPI class BlockPos const& operator*();
+        MCAPI ::BlockPos const& operator*();
 
-        MCAPI class BlockPosIterator::ManhattanDistance& operator++();
-
+        MCAPI ::BlockPosIterator::ManhattanDistance& operator++();
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class BlockPos const& pos, int distance);
-
+        MCAPI void* $ctor(::BlockPos const& pos, int distance);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk23564d;
+    ::ll::UntypedStorage<4, 12> mUnk402960;
+    ::ll::UntypedStorage<4, 12> mUnkac9ddc;
+    ::ll::UntypedStorage<1, 1>  mUnk962628;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -80,25 +112,24 @@ public:
     BlockPosIterator();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI BlockPosIterator(class BlockPos const& a, class BlockPos const& b);
+    MCAPI BlockPosIterator(::BlockPos const& a, ::BlockPos const& b);
 
-    MCAPI class BlockPosIterator begin() const;
+    MCAPI ::BlockPosIterator begin() const;
 
-    MCAPI class BlockPosIterator end() const;
+    MCAPI ::BlockPosIterator end() const;
 
-    MCAPI bool operator!=(class BlockPosIterator const& other) const;
+    MCAPI bool operator!=(::BlockPosIterator const& other) const;
 
-    MCAPI class BlockPos const& operator*();
+    MCAPI ::BlockPos const& operator*();
 
-    MCAPI class BlockPosIterator& operator++();
-
+    MCAPI ::BlockPosIterator& operator++();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockPos const& a, class BlockPos const& b);
-
+    MCAPI void* $ctor(::BlockPos const& a, ::BlockPos const& b);
     // NOLINTEND
 };

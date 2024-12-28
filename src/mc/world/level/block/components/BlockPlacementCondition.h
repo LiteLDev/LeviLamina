@@ -4,24 +4,27 @@
 
 struct BlockPlacementCondition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk164653;
+    ::ll::UntypedStorage<8, 24> mUnkaf5ea0;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    BlockPlacementCondition& operator=(BlockPlacementCondition const&);
     BlockPlacementCondition(BlockPlacementCondition const&);
     BlockPlacementCondition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct BlockPlacementCondition& operator=(struct BlockPlacementCondition&&);
-
-    MCAPI struct BlockPlacementCondition& operator=(struct BlockPlacementCondition const&);
-
     MCAPI ~BlockPlacementCondition();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

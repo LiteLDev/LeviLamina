@@ -2,35 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class OwnerStorageEntity;
+class WeakStorageEntity;
+// clang-format on
+
 class StackResultStorageEntity {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::optional<::EntityContext>> mContext;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StackResultStorageEntity& operator=(StackResultStorageEntity const&);
     StackResultStorageEntity(StackResultStorageEntity const&);
     StackResultStorageEntity();
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit StackResultStorageEntity(class OwnerStorageEntity const& ownerStorage);
+    MCAPI StackResultStorageEntity(::StackResultStorageEntity&& other);
 
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity&& other);
+    MCAPI explicit StackResultStorageEntity(::OwnerStorageEntity const& ownerStorage);
 
-    MCAPI explicit StackResultStorageEntity(class WeakStorageEntity const& weakStorage);
+    MCAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);
 
-    MCAPI class EntityContext& _getStackRef() const;
+    MCAPI ::EntityContext& _getStackRef() const;
 
     MCAPI bool _hasValue() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class StackResultStorageEntity&& other);
+    MCAPI void* $ctor(::StackResultStorageEntity&& other);
 
-    MCAPI void* ctor$(class WeakStorageEntity const& weakStorage);
+    MCAPI void* $ctor(::OwnerStorageEntity const& ownerStorage);
 
-    MCAPI void* ctor$(class OwnerStorageEntity const& ownerStorage);
-
+    MCAPI void* $ctor(::WeakStorageEntity const& weakStorage);
     // NOLINTEND
 };

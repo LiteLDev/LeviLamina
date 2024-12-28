@@ -5,44 +5,54 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct IsHorizontalPoseFlagComponent;
+struct OffsetsComponent;
+struct PlayerIsSleepingFlagComponent;
+struct VanillaOffsetComponent;
+// clang-format on
 
 namespace VanillaOffsetSystemUtil {
+// functions
 // NOLINTBEGIN
 MCAPI void _clientTick(
-    class StrictEntityContext&                                             entity,
-    struct VanillaOffsetComponent&                                         vanillaOffsetComponent,
-    struct OffsetsComponent const&                                         offsetComponent,
-    struct ActorDataFlagComponent const&                                   actorDataFlag,
-    class Optional<class FlagComponent<struct PlayerIsSleepingFlag> const> isSleepingFlag,
-    class Optional<struct IsHorizontalPoseFlagComponent const>             isHorizontalFlag,
-    float                                                                  sneakHeight,
-    class EntityModifier<struct IsHorizontalPoseFlagComponent>             modifier
+    ::StrictEntityContext&                            entity,
+    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
+    ::OffsetsComponent const&                         offsetComponent,
+    ::ActorDataFlagComponent const&                   actorDataFlag,
+    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
+    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
+    float                                             sneakHeight,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
 MCAPI void _serverTick(
-    class StrictEntityContext&                                             entity,
-    struct VanillaOffsetComponent&                                         vanillaOffsetComponent,
-    struct OffsetsComponent const&                                         offsetComponent,
-    struct ActorDataFlagComponent const&                                   actorDataFlag,
-    class Optional<class FlagComponent<struct PlayerIsSleepingFlag> const> isSleepingFlag,
-    class Optional<struct IsHorizontalPoseFlagComponent const>             isHorizontalFlag,
-    float                                                                  sneakHeight,
-    class EntityModifier<struct IsHorizontalPoseFlagComponent>             modifier
+    ::StrictEntityContext&                            entity,
+    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
+    ::OffsetsComponent const&                         offsetComponent,
+    ::ActorDataFlagComponent const&                   actorDataFlag,
+    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
+    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
+    float                                             sneakHeight,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
 MCAPI void _updateHorizontalFlagComponent(
-    class StrictEntityContext&                                 entity,
-    struct ActorDataFlagComponent const&                       actorDataFlag,
-    class EntityModifier<struct IsHorizontalPoseFlagComponent> modifier
+    ::StrictEntityContext&                            entity,
+    ::ActorDataFlagComponent const&                   actorDataFlag,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier
 );
 
 MCAPI float getCameraOffset(
-    struct ActorDataFlagComponent const&                                   actorDataFlag,
-    class Optional<class FlagComponent<struct PlayerIsSleepingFlag> const> isSleepingFlag,
-    class Optional<struct IsHorizontalPoseFlagComponent const>             isHorizontalFlag,
-    float                                                                  sneakHeight
+    ::ActorDataFlagComponent const&                   actorDataFlag,
+    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
+    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
+    float                                             sneakHeight
 );
 // NOLINTEND
 
-}; // namespace VanillaOffsetSystemUtil
+} // namespace VanillaOffsetSystemUtil

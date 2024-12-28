@@ -2,7 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class IGameplayUserManagerConnector;
+class IServerPlayerSleepManagerConnector;
+class ITickTimeManagerProxy;
+class PacketSender;
+// clang-format on
+
 class TickTimeManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk5276d2;
+    ::ll::UntypedStorage<8, 8>  mUnk2e2b89;
+    ::ll::UntypedStorage<8, 24> mUnkf1c29a;
+    ::ll::UntypedStorage<8, 8>  mUnkda5959;
+    ::ll::UntypedStorage<8, 16> mUnk27d19c;
+    ::ll::UntypedStorage<8, 16> mUnkcc65d5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TickTimeManager& operator=(TickTimeManager const&);
@@ -10,37 +29,35 @@ public:
     TickTimeManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI TickTimeManager(bool isClientSide, std::unique_ptr<class ITickTimeManagerProxy> tickTimeManagerProxy);
+    MCAPI TickTimeManager(bool isClientSide, ::std::unique_ptr<::ITickTimeManagerProxy> tickTimeManagerProxy);
+
+    MCAPI void _onWakeUpAllPlayers();
 
     MCAPI void incrementCurrentTick();
 
-    MCAPI void registerForGameplayUserManagerEvents(class GameplayUserManager& gameplayUserManager);
+    MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void registerForPlayerSleepManagerEvents(class ServerPlayerSleepManager& serverPlayerSleepManager);
+    MCAPI void
+    registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCAPI void setPacketSender(class PacketSender& packetSender);
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
     MCAPI void update();
 
     MCAPI ~TickTimeManager();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _onWakeUpAllPlayers();
-
-    MCAPI void _syncTime(int64 currentTick);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(bool isClientSide, std::unique_ptr<class ITickTimeManagerProxy> tickTimeManagerProxy);
+    MCAPI void* $ctor(bool isClientSide, ::std::unique_ptr<::ITickTimeManagerProxy> tickTimeManagerProxy);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

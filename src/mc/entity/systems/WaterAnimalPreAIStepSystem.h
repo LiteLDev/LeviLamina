@@ -5,7 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct TickingSystemWithInfo;
+struct WaterAnimalFlagComponent;
+// clang-format on
 
 class WaterAnimalPreAIStepSystem {
 public:
@@ -15,22 +23,17 @@ public:
     WaterAnimalPreAIStepSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doWaterAnimalPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent& actorOwnerComponent);
+    _doWaterAnimalPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCAPI static void _tickWaterAnimalPreAIStepSystem(class ViewT<
-                                                      class StrictEntityContext,
-                                                      struct Include<
-                                                          class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                                          class FlagComponent<struct WaterAnimalFlag>>,
-                                                      class ActorOwnerComponent> view);
+    MCAPI static void
+    _tickWaterAnimalPreAIStepSystem(::ViewT<
+                                    ::StrictEntityContext,
+                                    ::Include<::ActorMovementTickNeededComponent, ::WaterAnimalFlagComponent>,
+                                    ::ActorOwnerComponent> view);
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

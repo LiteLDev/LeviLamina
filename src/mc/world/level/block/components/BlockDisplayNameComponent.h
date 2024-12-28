@@ -2,27 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockDisplayNameComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk4ab293;
+    // NOLINTEND
 
-struct BlockDisplayNameComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&);
     BlockDisplayNameComponent(BlockDisplayNameComponent const&);
     BlockDisplayNameComponent();
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockDisplayNameComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    // NOLINTEND
 };

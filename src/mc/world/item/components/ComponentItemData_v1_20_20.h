@@ -10,28 +10,46 @@ namespace cereal { struct ReflectionCtx; }
 
 struct ComponentItemData_v1_20_20 {
 public:
-    // prevent constructor by default
-    ComponentItemData_v1_20_20& operator=(ComponentItemData_v1_20_20 const&);
-    ComponentItemData_v1_20_20(ComponentItemData_v1_20_20 const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_20_20();
-
-    MCAPI ~ComponentItemData_v1_20_20();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    ::ll::UntypedStorage<8, 96> mUnk3f7dc1;
+    ::ll::UntypedStorage<8, 16> mUnk576cbb;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ComponentItemData_v1_20_20& operator=(ComponentItemData_v1_20_20 const&);
+    ComponentItemData_v1_20_20();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI ComponentItemData_v1_20_20(::ComponentItemData_v1_20_20 const&);
 
-    MCAPI void dtor$();
+    MCAPI ~ComponentItemData_v1_20_20();
+    // NOLINTEND
 
-    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ComponentItemData_v1_20_20 const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

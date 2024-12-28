@@ -4,6 +4,6 @@
 
 namespace br::worldgen {
 
-enum class JigsawSectionDataKey {};
+enum class JigsawSectionDataKey : uint64 {};
 
-};
+}

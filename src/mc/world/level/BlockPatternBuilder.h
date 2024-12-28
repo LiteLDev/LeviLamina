@@ -2,7 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+struct BuildMatch;
+// clang-format on
+
 class BlockPatternBuilder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkc90572;
+    ::ll::UntypedStorage<8, 24> mUnkdf8196;
+    ::ll::UntypedStorage<8, 16> mUnk1300cd;
+    ::ll::UntypedStorage<1, 1>  mUnk59c3f0;
+    ::ll::UntypedStorage<4, 4>  mUnk64f13f;
+    ::ll::UntypedStorage<4, 4>  mUnk612a6e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockPatternBuilder& operator=(BlockPatternBuilder const&);
@@ -10,39 +29,38 @@ public:
     BlockPatternBuilder();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class BlockPatternBuilder& aisle(int, ...);
+    MCAPI bool _fitsBlockPatternEntry(int subPattern, int rowIndex, ::BlockPos const& pos, ::Block const& block);
 
-    MCAPI class BlockPatternBuilder& build();
+    MCAPI ::BlockPatternBuilder& aisle(int, ...);
 
-    MCAPI class BlockPatternBuilder& define(char pattern, class Block const& block);
+    MCAPI ::BlockPatternBuilder& build();
 
-    MCAPI class BlockPatternBuilder&
-    define(char pattern, std::function<bool(class BlockSource&, class BlockPos const&, class Block const&)> tester);
+    MCAPI ::BlockPatternBuilder& define(char pattern, ::Block const& block);
+
+    MCAPI ::BlockPatternBuilder&
+    define(char pattern, ::std::function<bool(::BlockSource&, ::BlockPos const&, ::Block const&)> tester);
 
     MCAPI bool isReadyForMatch();
 
-    MCAPI struct BuildMatch match(class BlockPos const& pos);
+    MCAPI ::BuildMatch match(::BlockPos const& pos);
 
-    MCAPI struct BuildMatch match(class BlockPos const& pos, int subPattern, int rowIndex);
+    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex);
 
-    MCAPI struct BuildMatch match(class BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
+    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
 
     MCAPI void replaceBlocks(
-        char                                                           subPattern,
-        struct BuildMatch                                              buildMatch,
-        class Block const&                                             block,
-        std::function<void(class Block const&, class BlockPos const&)> preReplaceCallback
+        char                                                     subPattern,
+        ::BuildMatch                                             buildMatch,
+        ::Block const&                                           block,
+        ::std::function<void(::Block const&, ::BlockPos const&)> preReplaceCallback
     );
-
-    MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource& region);
-
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool
-    _fitsBlockPatternEntry(int subPattern, int rowIndex, class BlockPos const& pos, class Block const& block);
-
+    MCAPI static ::std::unique_ptr<::BlockPatternBuilder> start(::BlockSource& region);
     // NOLINTEND
 };

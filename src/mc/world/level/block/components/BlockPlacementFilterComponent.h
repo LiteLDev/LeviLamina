@@ -2,10 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+// clang-format on
 
-struct BlockPlacementFilterComponent : public ::BlockComponentBase {
+struct BlockPlacementFilterComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3b53af;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockPlacementFilterComponent& operator=(BlockPlacementFilterComponent const&);
@@ -13,20 +22,10 @@ public:
     BlockPlacementFilterComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockPlacementFilterComponent() = default;
+    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
 };

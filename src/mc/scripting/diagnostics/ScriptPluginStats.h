@@ -4,24 +4,30 @@
 
 struct ScriptPluginStats {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd6b514;
+    ::ll::UntypedStorage<8, 24> mUnke29972;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptPluginStats(ScriptPluginStats const&);
     ScriptPluginStats();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats&&);
+    MCAPI ::ScriptPluginStats& operator=(::ScriptPluginStats&&);
 
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats const&);
+    MCAPI ::ScriptPluginStats& operator=(::ScriptPluginStats const&);
 
     MCAPI ~ScriptPluginStats();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

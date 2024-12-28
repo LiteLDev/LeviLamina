@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class EntityContext;
+// clang-format on
+
 namespace ActorOwnerUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class ActorOwnerComponent const* constActorOwnerComponentOrAssert(class EntityContext const& entity);
+MCAPI ::ActorOwnerComponent const* constActorOwnerComponentOrAssert(::EntityContext const& entity);
 // NOLINTEND
 
-}; // namespace ActorOwnerUtils
+} // namespace ActorOwnerUtils

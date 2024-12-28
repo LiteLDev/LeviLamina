@@ -12,17 +12,21 @@ namespace JsonUtil { class EmptyClass; }
 
 struct VariantDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk48dbb7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VariantDefinition& operator=(VariantDefinition const&);
     VariantDefinition(VariantDefinition const&);
     VariantDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VariantDefinition>>&
-            root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::VariantDefinition>>& root);
     // NOLINTEND
 };

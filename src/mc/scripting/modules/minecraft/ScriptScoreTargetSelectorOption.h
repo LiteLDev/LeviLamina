@@ -10,33 +10,39 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptScoreTargetSelectorOption {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk385a3c;
+    ::ll::UntypedStorage<4, 8>  mUnkbc73f6;
+    ::ll::UntypedStorage<4, 8>  mUnkc71f5d;
+    ::ll::UntypedStorage<1, 2>  mUnk324102;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptScoreTargetSelectorOption& operator=(ScriptScoreTargetSelectorOption const&);
     ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptScoreTargetSelectorOption();
-
-    MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV010();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV1();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption> bindV010();
 
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
+    bindV1();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

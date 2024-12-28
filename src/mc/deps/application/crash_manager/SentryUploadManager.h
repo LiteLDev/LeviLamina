@@ -1,0 +1,59 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/Copyable.h"
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+class TaskGroup;
+namespace Bedrock { class SessionInfo; }
+namespace Bedrock { struct PlatformRuntimeInfo; }
+namespace Core { class Path; }
+// clang-format on
+
+namespace Bedrock {
+
+class SentryUploadManager : public ::Bedrock::EnableNonOwnerReferences,
+                            public ::Bedrock::ImplBase<::Bedrock::SentryUploadManager> {
+public:
+    // prevent constructor by default
+    SentryUploadManager& operator=(SentryUploadManager const&);
+    SentryUploadManager(SentryUploadManager const&);
+    SentryUploadManager();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const = 0;
+
+    // vIndex: 2
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<void>>>>
+    uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
+
+    // vIndex: 3
+    virtual ::std::string const& getMinidumpUploadUri() const = 0;
+
+    // vIndex: 0
+    virtual ~SentryUploadManager() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
+
+} // namespace Bedrock

@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class SemVersion;
+// clang-format on
+
 namespace Helpers {
+// functions
 // NOLINTBEGIN
-MCAPI class HashedString const& getUseDurationComponentForVersion(class SemVersion const& version);
+MCAPI ::HashedString const& getUseDurationComponentForVersion(::SemVersion const& version);
 // NOLINTEND
 
-}; // namespace Helpers
+} // namespace Helpers

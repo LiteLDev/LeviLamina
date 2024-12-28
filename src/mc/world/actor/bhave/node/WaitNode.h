@@ -6,37 +6,55 @@
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class WaitNode : public ::BehaviorNode {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkc8a228;
+    ::ll::UntypedStorage<8, 8> mUnk46f932;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WaitNode& operator=(WaitNode const&);
     WaitNode(WaitNode const&);
+    WaitNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WaitNode() = default;
-
     // vIndex: 1
-    virtual ::BehaviorStatus tick(class Actor& owner);
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     // vIndex: 2
-    virtual void initializeFromDefinition(class Actor& owner);
+    virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    MCAPI WaitNode();
-
+    // vIndex: 0
+    virtual ~WaitNode() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void initializeFromDefinition$(class Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
+    // NOLINTEND
 
-    MCAPI ::BehaviorStatus tick$(class Actor& owner);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

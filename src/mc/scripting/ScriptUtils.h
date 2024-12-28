@@ -8,12 +8,13 @@ namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptUtils {
+// functions
 // NOLINTBEGIN
-MCAPI struct Scripting::Error functionError(std::string_view functionName);
+MCAPI ::Scripting::Error functionError(::std::string_view functionName);
 
-MCAPI struct Scripting::Error getPropertyError(std::string_view propertyName);
+MCAPI ::Scripting::Error getPropertyError(::std::string_view propertyName);
 
-MCAPI struct Scripting::Error setPropertyError(std::string_view propertyName);
+MCAPI ::Scripting::Error setPropertyError(::std::string_view propertyName);
 // NOLINTEND
 
-}; // namespace ScriptUtils
+} // namespace ScriptUtils

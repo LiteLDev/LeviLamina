@@ -3,21 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class ActorInfoRegistry;
+class Agent;
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Container;
+class HashedString;
+class InteractionResult;
+class ItemDescriptor;
+class ItemRegistryRef;
+class ItemStack;
+class ItemStackBase;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ResolvedItemIconInfo;
 namespace mce { class Color; }
 // clang-format on
 
 class ActorPlacerItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnk535ff0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorPlacerItem& operator=(ActorPlacerItem const&);
@@ -25,122 +42,143 @@ public:
     ActorPlacerItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorPlacerItem() = default;
-
     // vIndex: 2
-    virtual void tearDown();
+    virtual void tearDown() /*override*/;
 
-    // vIndex: 45
-    virtual bool isLiquidClipItem() const;
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
-    // vIndex: 46
-    virtual bool shouldInteractionWithBlockBypassLiquid(class Block const& block) const;
+    // vIndex: 73
+    virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const /*override*/;
 
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
+    // vIndex: 87
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+
+    // vIndex: 48
+    virtual bool isLiquidClipItem() const /*override*/;
+
+    // vIndex: 49
+    virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const /*override*/;
+
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
     // vIndex: 60
-    virtual bool isActorPlacerItem() const;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 61
-    virtual bool isMultiColorTinted(class ItemStack const&) const;
+    // vIndex: 65
+    virtual bool isMultiColorTinted(::ItemStack const&) const /*override*/;
 
-    // vIndex: 67
-    virtual class mce::Color getBaseColor(class ItemStack const&) const;
+    // vIndex: 71
+    virtual ::mce::Color getBaseColor(::ItemStack const&) const /*override*/;
 
-    // vIndex: 68
-    virtual class mce::Color getSecondaryColor(class ItemStack const&) const;
+    // vIndex: 72
+    virtual ::mce::Color getSecondaryColor(::ItemStack const&) const /*override*/;
 
-    // vIndex: 69
-    virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
+    // vIndex: 64
+    virtual bool isActorPlacerItem() const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    // vIndex: 0
+    virtual ~ActorPlacerItem() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
 
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+    MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
-    MCAPI ActorPlacerItem(std::string const& name, int id, struct ActorDefinitionIdentifier const& actorID);
+    MCAPI ::Actor* _spawnActorAt(
+        ::BlockSource&     region,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      playerFeetPos,
+        ::ItemStack const& item,
+        ::Actor*           spawner
+    ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
 
     MCAPI static void
-    forEachCustomEgg(class ItemRegistryRef itemRegistry, std::function<void(class Item const&)> const& callback);
+    forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
-    MCAPI static std::string getCustomSpawnEggName(int runtimeId);
+    MCAPI static ::std::string getCustomSpawnEggName(int runtimeId);
 
-    MCAPI static void registerCustomEggs(class ItemRegistryRef itemRegistry, class ActorInfoRegistry const& registry);
+    MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
-    MCAPI static class Actor* spawnOrMoveAgent(class Vec3 const& pos, class Actor& owner);
-
+    MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource& region) const;
-
-    MCAPI class Actor* _spawnActorAt(
-        class BlockSource&     region,
-        class Vec3 const&      pos,
-        class Vec3 const&      playerFeetPos,
-        class ItemStack const& item,
-        class Actor*           spawner
-    ) const;
-
-    MCAPI static void _setAgentOwner(class Player& owner, class Agent& agent);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(std::string const& name, int id, struct ActorDefinitionIdentifier const& actorID);
-
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
-
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
-
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
-
-    MCAPI struct ActorDefinitionIdentifier getActorIdentifier$(class ItemStack const&) const;
-
-    MCAPI class mce::Color getBaseColor$(class ItemStack const&) const;
-
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
-
-    MCAPI class mce::Color getSecondaryColor$(class ItemStack const&) const;
-
-    MCAPI bool isActorPlacerItem$() const;
-
-    MCAPI bool isLiquidClipItem$() const;
-
-    MCAPI bool isMultiColorTinted$(class ItemStack const&) const;
-
-    MCAPI bool isValidAuxValue$(int auxValue) const;
-
-    MCAPI bool shouldInteractionWithBlockBypassLiquid$(class Block const& block) const;
-
-    MCAPI void tearDown$();
-
     MCAPI static int const& EGG_MASK_ID();
 
     MCAPI static int const& NUM_SPAWN_EGG_TEXTURES();
 
-    MCAPI static std::unordered_map<uint, std::string>& mCustomSpawnEggs();
+    MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
-    MCAPI static std::unordered_map<class HashedString, struct ResolvedItemIconInfo>& mEggTextureInfoMap();
+    MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tearDown();
+
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+
+    MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+    MCAPI bool $isLiquidClipItem() const;
+
+    MCAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI bool $isValidAuxValue(int auxValue) const;
+
+    MCAPI bool $isMultiColorTinted(::ItemStack const&) const;
+
+    MCAPI ::mce::Color $getBaseColor(::ItemStack const&) const;
+
+    MCAPI ::mce::Color $getSecondaryColor(::ItemStack const&) const;
+
+    MCAPI bool $isActorPlacerItem() const;
+
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

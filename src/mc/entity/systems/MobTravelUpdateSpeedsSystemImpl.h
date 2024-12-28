@@ -6,27 +6,35 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataFlagComponent;
+struct AirSpeedComponent;
+struct CanVehicleSprintFlagComponent;
+struct MovementAttributesComponent;
+struct MovementSpeedComponent;
+struct PlayerComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace MobTravelUpdateSpeedsSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doUpdateMovementSpeed(
-    class StrictEntityContext const&                                       context,
-    struct ActorDataFlagComponent const&                                   actorDataFlagComponent,
-    struct ActorDataControllingSeatIndexComponent const&                   controllingSeatIndexComponent,
-    struct VehicleComponent const&                                         vehicleComponent,
-    struct AirSpeedComponent&                                              flySpeedComponent,
-    struct MovementAttributesComponent const&                              movementAttributesComponent,
-    class Optional<class FlagComponent<struct CanVehicleSprintFlag> const> canVehicleSprintFlag,
-    class ViewT<
-        class StrictEntityContext,
-        struct MovementAttributesComponent const,
-        struct MovementSpeedComponent const> speedData,
-    class ViewT<class StrictEntityContext, struct MovementSpeedComponent, struct LocalMoveVelocityComponent>
-        mutableSpeedData,
-    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> players,
-    class ViewT<class StrictEntityContext, struct ActorDataFlagComponent const> actorDataView
+    ::StrictEntityContext const&                                   context,
+    ::ActorDataFlagComponent const&                                actorDataFlagComponent,
+    ::ActorDataControllingSeatIndexComponent const&                controllingSeatIndexComponent,
+    ::VehicleComponent const&                                      vehicleComponent,
+    ::AirSpeedComponent&                                           flySpeedComponent,
+    ::MovementAttributesComponent const&                           movementAttributesComponent,
+    ::MovementSpeedComponent&                                      movementSpeedComponent,
+    ::Optional<::CanVehicleSprintFlagComponent const>              canVehicleSprintFlag,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>>   players,
+    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView
 );
 // NOLINTEND
 
-}; // namespace MobTravelUpdateSpeedsSystemImpl
+} // namespace MobTravelUpdateSpeedsSystemImpl

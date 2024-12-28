@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ProductSku {
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
+struct ProductSku : public ::NewType<::std::string> {
 public:
     // prevent constructor by default
     ProductSku& operator=(ProductSku const&);

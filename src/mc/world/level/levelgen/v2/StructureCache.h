@@ -17,11 +17,18 @@ public:
     // StructureCache inner types declare
     // clang-format off
     struct StructurePair;
-    class StructureTempOwner;
+    struct StructureTempOwner;
     // clang-format on
 
     // StructureCache inner types define
     struct StructurePair {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>                                              mStructure;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::br::worldgen::StructureInstance>> mInstance;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         StructurePair& operator=(StructurePair const&);
@@ -29,39 +36,48 @@ public:
         StructurePair();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~StructurePair();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    class StructureTempOwner {
+    using StructureMap = ::std::unordered_map<::ChunkPos, ::std::vector<::br::worldgen::StructureCache::StructurePair>>;
+
+    struct StructureTempOwner {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<int>>                                                  mTimers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance>>> mInstances;
+        ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                                  mMutex;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         StructureTempOwner& operator=(StructureTempOwner const&);
         StructureTempOwner(StructureTempOwner const&);
         StructureTempOwner();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~StructureTempOwner();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ChunkPos, ::std::vector<::br::worldgen::StructureCache::StructurePair>>>
+                                                                                  mCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                 mCacheMutex;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureCache::StructureTempOwner> mWaitingToBeClaimed;
+    ::ll::TypedStorage<4, 4, int>                                                 mGcTimer;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -69,30 +85,29 @@ public:
     StructureCache(StructureCache const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI StructureCache();
 
-    MCAPI std::shared_ptr<class br::worldgen::StructureInstance const> at(class BlockPos pos) const;
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
 
-    MCAPI std::vector<std::vector<std::shared_ptr<class br::worldgen::StructureInstance const>>>
-          collectGroupByStep() const;
+    MCAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
+    collectGroupByStep() const;
 
     MCAPI void setInstanceForStructure(
-        struct br::worldgen::Structure const&                    structure,
-        std::shared_ptr<class br::worldgen::StructureInstance>&& instance,
-        class ChunkPos                                           chunkPos
+        ::br::worldgen::Structure const&                       structure,
+        ::std::shared_ptr<::br::worldgen::StructureInstance>&& instance,
+        ::ChunkPos                                             chunkPos
     );
 
     MCAPI void tick();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

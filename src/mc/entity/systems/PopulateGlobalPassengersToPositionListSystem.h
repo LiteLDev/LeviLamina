@@ -9,7 +9,17 @@
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
 
-class PopulateGlobalPassengersToPositionListSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct PassengerComponent;
+struct PassengersToPositionComponent;
+struct PositionPassengerRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
+
+struct PopulateGlobalPassengersToPositionListSystem {
 public:
     // prevent constructor by default
     PopulateGlobalPassengersToPositionListSystem& operator=(PopulateGlobalPassengersToPositionListSystem const&);
@@ -17,37 +27,32 @@ public:
     PopulateGlobalPassengersToPositionListSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool _populateList(
-        class ViewT<class StrictEntityContext, struct VehicleComponent const, struct Exclude<struct PassengerComponent>>
-                                                                              rootVehicles,
-        class ViewT<class StrictEntityContext, struct VehicleComponent const> vehicles,
-        class ViewT<class StrictEntityContext, struct Include<struct PositionPassengerRequestComponent>>
-                                                                                flaggedPassengers,
-        class ViewT<class StrictEntityContext, struct PassengerComponent const> passengers,
-        struct PassengersToPositionComponent&                                   destination
+        ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::Exclude<::PassengerComponent>> rootVehicles,
+        ::ViewT<::StrictEntityContext, ::VehicleComponent const>                                  vehicles,
+        ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>>            flaggedPassengers,
+        ::ViewT<::StrictEntityContext, ::PassengerComponent const>                                passengers,
+        ::PassengersToPositionComponent&                                                          destination
     );
 
     MCAPI static void _removeRequestsFromBrokenLinks(
-        class ViewT<class StrictEntityContext, struct VehicleComponent const> vehicles,
-        class ViewT<class StrictEntityContext, struct Include<struct PositionPassengerRequestComponent>>
-                                                                                flaggedPassengers,
-        class ViewT<class StrictEntityContext, struct PassengerComponent const> passengers,
-        class EntityModifier<struct PositionPassengerRequestComponent>          modifier
+        ::ViewT<::StrictEntityContext, ::VehicleComponent const>                       vehicles,
+        ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>> flaggedPassengers,
+        ::ViewT<::StrictEntityContext, ::PassengerComponent const>                     passengers,
+        ::EntityModifier<::PositionPassengerRequestComponent>                          modifier
     );
 
     MCAPI static void _tick(
-        class ViewT<class StrictEntityContext, struct VehicleComponent const, struct Exclude<struct PassengerComponent>>
-                                                                              rootVehicles,
-        class ViewT<class StrictEntityContext, struct VehicleComponent const> vehicles,
-        class ViewT<class StrictEntityContext, struct Include<struct PositionPassengerRequestComponent>>
-                                                                                flaggedPassengers,
-        class ViewT<class StrictEntityContext, struct PassengerComponent const> passengers,
-        class OptionalGlobal<struct PassengersToPositionComponent>              optionalDestination,
-        class EntityModifier<struct PositionPassengerRequestComponent>          modifier
+        ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::Exclude<::PassengerComponent>> rootVehicles,
+        ::ViewT<::StrictEntityContext, ::VehicleComponent const>                                  vehicles,
+        ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>>            flaggedPassengers,
+        ::ViewT<::StrictEntityContext, ::PassengerComponent const>                                passengers,
+        ::OptionalGlobal<::PassengersToPositionComponent>                                         optionalDestination,
+        ::EntityModifier<::PositionPassengerRequestComponent>                                     modifier
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

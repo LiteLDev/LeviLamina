@@ -7,10 +7,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class Certificate;
+class EntityContext;
+class NetworkIdentifier;
 namespace mce { class UUID; }
 // clang-format on
 
 class UserEntityIdentifierComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>            mNetworkId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                    mClientSubId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                     mClientUUID;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mPlayFabIdUnverified;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mCertificate;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&);
@@ -18,41 +31,36 @@ public:
     UserEntityIdentifierComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent&&);
-
     MCAPI UserEntityIdentifierComponent(
-        class NetworkIdentifier const&     networkId,
-        ::SubClientId                      clientSubId,
-        class mce::UUID                    clientUUID,
-        std::string const&                 playFabID,
-        std::unique_ptr<class Certificate> certificate
+        ::NetworkIdentifier const&       networkId,
+        ::SubClientId                    clientSubId,
+        ::mce::UUID                      clientUUID,
+        ::std::string const&             playFabID,
+        ::std::unique_ptr<::Certificate> certificate
     );
 
     MCAPI bool isPrimaryClient() const;
 
-    MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&);
-
-    MCAPI ~UserEntityIdentifierComponent();
-
-    MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext& entity);
-
+    MCAPI ::UserEntityIdentifierComponent& operator=(::UserEntityIdentifierComponent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class UserEntityIdentifierComponent&&);
+    MCAPI static ::UserEntityIdentifierComponent* tryGetFromEntity(::EntityContext& entity);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class NetworkIdentifier const&     networkId,
-        ::SubClientId                      clientSubId,
-        class mce::UUID                    clientUUID,
-        std::string const&                 playFabID,
-        std::unique_ptr<class Certificate> certificate
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::NetworkIdentifier const&       networkId,
+        ::SubClientId                    clientSubId,
+        ::mce::UUID                      clientUUID,
+        ::std::string const&             playFabID,
+        ::std::unique_ptr<::Certificate> certificate
     );
-
-    MCAPI void dtor$();
-
     // NOLINTEND
 };

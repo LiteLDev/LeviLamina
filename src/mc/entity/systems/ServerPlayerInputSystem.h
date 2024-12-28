@@ -5,36 +5,44 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class InteractPacket;
+class InventoryTransactionPacket;
+class PlayerAuthInputPacket;
+class StrictEntityContext;
+struct ServerPlayerCurrentMovementComponent;
+struct ServerPlayerInteractComponent;
+struct ServerPlayerInventoryTransactionComponent;
+struct ServerPlayerMovementComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace ServerPlayerInputSystem {
+// functions
 // NOLINTBEGIN
 MCAPI void _tickPlayerMovement(
-    class StrictEntityContext&               entity,
-    struct PlayerCurrentTickComponent const& playerTickComponent,
-    struct ServerPlayerMovementComponent&    serverPlayerMovement,
-    class EntityModifier<
-        struct ServerPlayerCurrentMovementComponent,
-        struct ServerPlayerMoveAbsoluteComponent,
-        struct ServerPlayerInventoryTransactionComponent,
-        struct ServerPlayerInteractComponent> modifier
+    ::StrictEntityContext&           entity,
+    ::ServerPlayerMovementComponent& serverPlayerMovement,
+    ::EntityModifier<
+        ::ServerPlayerCurrentMovementComponent,
+        ::ServerPlayerInventoryTransactionComponent,
+        ::ServerPlayerInteractComponent> modifier
 );
 
-MCAPI struct TickingSystemWithInfo create();
+MCAPI ::TickingSystemWithInfo create();
 
-MCAPI bool onInteractPacket(struct ServerPlayerMovementComponent& component, class InteractPacket const& packet);
+MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
 
 MCAPI bool onInventoryTransactionPacket(
-    struct ServerPlayerMovementComponent&             component,
-    std::shared_ptr<class InventoryTransactionPacket> packet
+    ::ServerPlayerMovementComponent&                component,
+    ::std::shared_ptr<::InventoryTransactionPacket> packet
 );
 
-MCAPI bool
-onMoveActorAbsolutePacket(struct ServerPlayerMovementComponent& component, class MoveActorAbsolutePacket const& packet);
+MCAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
 
-MCAPI bool
-onPlayerAuthInputPacket(struct ServerPlayerMovementComponent& component, class PlayerAuthInputPacket const& packet);
-
-MCAPI void
-transferInteractPackets(struct ServerPlayerMovementComponent& movementComponent, class EntityContext& entity);
+MCAPI void transferInteractPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
-}; // namespace ServerPlayerInputSystem
+} // namespace ServerPlayerInputSystem

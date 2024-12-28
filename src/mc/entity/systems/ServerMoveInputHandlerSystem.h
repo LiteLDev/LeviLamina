@@ -2,7 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerMoveInputHandlerSystem {
+// auto generated forward declare list
+// clang-format off
+class PlayerAuthInputPacket;
+struct MoveInputComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ServerMoveInputHandlerSystem {
 public:
     // prevent constructor by default
     ServerMoveInputHandlerSystem& operator=(ServerMoveInputHandlerSystem const&);
@@ -10,11 +17,10 @@ public:
     ServerMoveInputHandlerSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
-    MCAPI static void
-    digestPlayerInputPacket(struct MoveInputComponent& input, class PlayerAuthInputPacket const& packet);
-
+    MCAPI static void digestPlayerInputPacket(::MoveInputComponent& input, ::PlayerAuthInputPacket const& packet);
     // NOLINTEND
 };

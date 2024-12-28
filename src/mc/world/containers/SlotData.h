@@ -4,26 +4,40 @@
 
 struct SlotData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke0182b;
+    ::ll::UntypedStorage<4, 4>  mUnkb1376b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SlotData& operator=(SlotData const&);
     SlotData(SlotData const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI SlotData();
 
     MCAPI ~SlotData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::SlotData& UNKNOWN_LOCATION();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static struct SlotData& UNKNOWN_LOCATION();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

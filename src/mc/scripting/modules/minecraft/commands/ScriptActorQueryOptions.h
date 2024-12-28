@@ -5,52 +5,47 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlockAreaSize; }
-// clang-format on
+#include "mc/scripting/modules/minecraft/ScriptActorFilter.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptActorQueryOptions {
+struct ScriptActorQueryOptions : public ::ScriptModuleMinecraft::ScriptActorFilter {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk20dab8;
+    ::ll::UntypedStorage<4, 8>  mUnk772d97;
+    ::ll::UntypedStorage<4, 8>  mUnkc74b8d;
+    ::ll::UntypedStorage<4, 8>  mUnkc554cd;
+    ::ll::UntypedStorage<4, 8>  mUnke0846d;
+    ::ll::UntypedStorage<4, 16> mUnk6de076;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    ScriptActorQueryOptions& operator=(ScriptActorQueryOptions const&);
+    ScriptActorQueryOptions(ScriptActorQueryOptions const&);
     ScriptActorQueryOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions&&);
-
-    MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorQueryOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorQueryOptions&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorQueryOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
-
-    MCAPI void setVolumeV010(std::optional<class ScriptModuleMinecraft::ScriptBlockAreaSize> const& volumeParam);
-
     MCAPI ~ScriptActorQueryOptions();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions> bindV010();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions>
-    bindV1();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorQueryOptions&&);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorQueryOptions> bindV010();
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorQueryOptions> bindV1();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

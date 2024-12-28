@@ -3,19 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CropBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class IConstBlockSource;
+class ItemInstance;
 // clang-format on
 
 class TorchflowerCropBlock : public ::CropBlock {
@@ -26,69 +25,77 @@ public:
     TorchflowerCropBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TorchflowerCropBlock() = default;
+    // vIndex: 153
+    virtual ::ItemInstance const getBaseSeed() const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 152
+    virtual ::Block const&
+    setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags)
+        const /*override*/;
+
+    // vIndex: 74
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 164
-    virtual class Block const& setGrowth(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    baseBlock,
-        ushort                newGrowth,
-        int                   updateFlags
-    ) const;
-
-    // vIndex: 165
-    virtual class ItemInstance const getBaseSeed() const;
-
-    MCAPI TorchflowerCropBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~TorchflowerCropBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TorchflowerCropBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class ItemInstance const getBaseSeed$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB const& getOutline$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemInstance const $getBaseSeed() const;
+
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const;
+
+    MCAPI ::Block const& $setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
     ) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
 
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType fType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    // NOLINTEND
 
-    MCAPI class Block const& setGrowth$(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    baseBlock,
-        ushort                newGrowth,
-        int                   updateFlags
-    ) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

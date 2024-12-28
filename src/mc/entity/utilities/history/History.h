@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MovementEffect;
+struct IReplayableActorInput;
+// clang-format on
+
 namespace History {
+// functions
 // NOLINTBEGIN
-MCAPI void runExtractors(class EntityContext const& fromLive, class EntityContext& toHistory, bool removeIfMissing);
+MCAPI ::std::unique_ptr<::IReplayableActorInput> createAddMovementEffectReplay(::MovementEffect const& effect);
 // NOLINTEND
 
-}; // namespace History
+} // namespace History

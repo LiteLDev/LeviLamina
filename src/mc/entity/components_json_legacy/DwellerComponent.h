@@ -7,13 +7,43 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ActorDamageSource;
+class BlockPos;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+class Mob;
+class Village;
 namespace mce { class UUID; }
 // clang-format on
 
 class DwellerComponent {
 public:
     // DwellerComponent inner types define
-    enum class DwellingType {};
+    enum class DwellingType : int {
+        VillageDwelling = 0,
+        Count           = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk660a6a;
+    ::ll::UntypedStorage<1, 1>  mUnkf674f0;
+    ::ll::UntypedStorage<1, 1>  mUnkf07d14;
+    ::ll::UntypedStorage<1, 1>  mUnkb37ecd;
+    ::ll::UntypedStorage<1, 1>  mUnk9b4fd0;
+    ::ll::UntypedStorage<8, 48> mUnk2e55d2;
+    ::ll::UntypedStorage<4, 4>  mUnk47c4dd;
+    ::ll::UntypedStorage<4, 4>  mUnk8076a1;
+    ::ll::UntypedStorage<8, 8>  mUnk79352c;
+    ::ll::UntypedStorage<8, 8>  mUnk4e6f5e;
+    ::ll::UntypedStorage<4, 4>  mUnk39d5b8;
+    ::ll::UntypedStorage<4, 4>  mUnk3c946f;
+    ::ll::UntypedStorage<4, 4>  mUnk499c22;
+    ::ll::UntypedStorage<8, 16> mUnk339202;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -21,104 +51,100 @@ public:
     DwellerComponent(DwellerComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void DecrementDwellingUpdateInterval();
 
     MCAPI DwellerComponent();
 
-    MCAPI DwellerComponent(class DwellerComponent&&);
+    MCAPI bool _isLockedInToProfession(::Actor const& owner) const;
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class Actor const& owner) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
-    MCAPI void checkandUpdateDwellingStatus(class Actor const& owner, class Village* myVillage);
+    MCAPI void checkandUpdateDwellingStatus(::Actor const& owner, ::Village* myVillage);
 
     MCAPI void clearPreferredProfession();
 
-    MCAPI void fixupProfession(class Actor const& owner, class Village* village);
+    MCAPI void fixupProfession(::Actor const& owner, ::Village* village);
 
     MCAPI bool getCanFindPOI() const;
 
     MCAPI ::DwellerRole getDwellerRole() const;
 
-    MCAPI class mce::UUID getDwellingUniqueID() const;
+    MCAPI ::mce::UUID getDwellingUniqueID() const;
 
     MCAPI uint64 getDwellingUpdateInterval() const;
 
     MCAPI bool getFixUpRole() const;
 
-    MCAPI class HashedString const& getPreferredProfession() const;
+    MCAPI ::HashedString const& getPreferredProfession() const;
 
     MCAPI uint64 getUpdateIntervalBase() const;
 
     MCAPI int getUpdateIntervalVariant() const;
 
-    MCAPI std::weak_ptr<class Village> const getVillage(class Actor const& owner) const;
+    MCAPI ::std::weak_ptr<::Village> const getVillage(::Actor const& owner) const;
 
-    MCAPI class BlockPos getVillageCenter(class Actor const& owner) const;
+    MCAPI ::BlockPos getVillageCenter(::Actor const& owner) const;
 
     MCAPI bool hasDwelling() const;
 
-    MCAPI bool hasPreferredProfession(class Actor const& owner) const;
+    MCAPI bool hasPreferredProfession(::Actor const& owner) const;
 
-    MCAPI void initFromDefinition(class Actor& owner);
+    MCAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI bool isWithinRestriction(class Actor const& owner) const;
+    MCAPI bool isWithinRestriction(::Actor const& owner) const;
 
-    MCAPI bool needsToFixupJobSite(class Actor const& owner) const;
+    MCAPI bool needsToFixupJobSite(::Actor const& owner) const;
 
-    MCAPI bool needsToFixupProfession(class Actor const& owner) const;
+    MCAPI bool needsToFixupProfession(::Actor const& owner) const;
 
-    MCAPI bool needsToFixupVillageRole(class Actor const& owner, class Village* myVillage) const;
+    MCAPI bool needsToFixupVillageRole(::Actor const& owner, ::Village* myVillage) const;
 
-    MCAPI void onDeath(class Actor& owner, class ActorDamageSource const& source);
+    MCAPI void onDeath(::Actor& owner, ::ActorDamageSource const& source);
 
-    MCAPI void onDimensionChange(class Actor& owner);
+    MCAPI void onDimensionChange(::Actor& owner);
 
-    MCAPI void onRemove(class Actor& owner);
+    MCAPI void onRemove(::Actor& owner);
 
-    MCAPI class DwellerComponent& operator=(class DwellerComponent&&);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID id);
+    MCAPI void setDwellingUniqueID(::Actor& owner, ::mce::UUID id);
 
     MCAPI void setDwellingUpdateInterval(uint64 updateInterval);
 
     MCAPI void setFixUpRole(bool fixUpRole);
 
-    MCAPI void setLastHurtByMob(class Actor& owner, class Mob* mob);
+    MCAPI void setLastHurtByMob(::Actor& owner, ::Mob* mob);
 
-    MCAPI bool trySetPreferredProfession(class Actor const& owner, class HashedString const& poi);
+    MCAPI bool trySetPreferredProfession(::Actor const& owner, ::HashedString const& poi);
 
-    MCAPI bool tryToFixupRole(class Actor const& owner, class Village* village);
+    MCAPI bool tryToFixupRole(::Actor const& owner, ::Village* village);
 
-    MCAPI bool tryToMigrate(class Actor& owner, class Village* oldVillage, class Village* newVillage);
+    MCAPI bool tryToMigrate(::Actor& owner, ::Village* oldVillage, ::Village* newVillage);
 
-    MCAPI bool wantsToMigrate(class Actor const& owner, class Village* myVillage) const;
+    MCAPI bool wantsToMigrate(::Actor const& owner, ::Village* myVillage) const;
 
     MCAPI ~DwellerComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isLockedInToProfession(class Actor const& owner) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::unordered_map<::std::string, ::DwellerRole> const& DWELLING_ROLES();
 
-    MCAPI void* ctor$(class DwellerComponent&&);
+    MCAPI static ::std::unordered_map<::std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static std::unordered_map<std::string, ::DwellerRole> const& DWELLING_ROLES();
-
-    MCAPI static std::unordered_map<std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

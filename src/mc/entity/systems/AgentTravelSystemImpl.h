@@ -5,18 +5,27 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct AbilitiesComponent;
+struct MoveRequestComponent;
+struct StateVectorComponent;
+// clang-format on
+
 namespace AgentTravelSystemImpl {
+// functions
 // NOLINTBEGIN
-MCAPI void
-doClientAgentTravel(class ActorOwnerComponent& actorOwnerComponent, struct AbilitiesComponent& abilitiesComponent);
+MCAPI void doClientAgentTravel(::ActorOwnerComponent& actorOwnerComponent, ::AbilitiesComponent& abilitiesComponent);
 
 MCAPI void doServerAgentTravel(
-    class StrictEntityContext const&                  entity,
-    class ActorOwnerComponent&                        actorOwnerComponent,
-    struct AbilitiesComponent&                        abilitiesComponent,
-    struct StateVectorComponent&                      stateVectorComponent,
-    class EntityModifier<struct MoveRequestComponent> mod
+    ::StrictEntityContext const&             entity,
+    ::ActorOwnerComponent&                   actorOwnerComponent,
+    ::AbilitiesComponent&                    abilitiesComponent,
+    ::StateVectorComponent&                  stateVectorComponent,
+    ::EntityModifier<::MoveRequestComponent> mod
 );
 // NOLINTEND
 
-}; // namespace AgentTravelSystemImpl
+} // namespace AgentTravelSystemImpl

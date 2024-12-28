@@ -9,23 +9,33 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemReleaseUseAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkcdbc04;
+    ::ll::UntypedStorage<8, 32> mUnka6d463;
+    ::ll::UntypedStorage<4, 4>  mUnk118490;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&);
     ScriptItemReleaseUseAfterEvent(ScriptItemReleaseUseAfterEvent const&);
     ScriptItemReleaseUseAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
+    // NOLINTEND
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>
-    bind();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent> bind();
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>
-    bindV010();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

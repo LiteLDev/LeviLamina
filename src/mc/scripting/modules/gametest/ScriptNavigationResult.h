@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Vec3;
 // clang-format on
 
@@ -14,27 +15,37 @@ namespace ScriptModuleGameTest {
 
 struct ScriptNavigationResult {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                       mIsFullPath;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mPath;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptNavigationResult& operator=(ScriptNavigationResult const&);
     ScriptNavigationResult(ScriptNavigationResult const&);
     ScriptNavigationResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::vector<class Vec3> getPath() const;
+    MCAPI ::std::vector<::Vec3> getPath() const;
 
     MCAPI ~ScriptNavigationResult();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleGameTest::ScriptNavigationResult> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptNavigationResult> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

@@ -3,10 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+struct ActorDefinitionIdentifier;
+struct SummonSpellData;
+// clang-format on
+
 class SummonActorGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkb28d85;
+    ::ll::UntypedStorage<8, 24> mUnkd143ea;
+    ::ll::UntypedStorage<4, 4>  mUnk8f7480;
+    ::ll::UntypedStorage<4, 4>  mUnk805e10;
+    ::ll::UntypedStorage<4, 4>  mUnkf29a82;
+    ::ll::UntypedStorage<4, 4>  mUnke3bf05;
+    ::ll::UntypedStorage<4, 4>  mUnk26f7b2;
+    ::ll::UntypedStorage<8, 8>  mUnk915b14;
+    ::ll::UntypedStorage<4, 12> mUnk22a024;
+    ::ll::UntypedStorage<4, 12> mUnkc66e0d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SummonActorGoal& operator=(SummonActorGoal const&);
@@ -14,66 +36,80 @@ public:
     SummonActorGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SummonActorGoal() = default;
+    // vIndex: 7
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
-    // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI SummonActorGoal(class Mob& caster, std::vector<struct SummonSpellData> const& spellTypes);
-
+    // vIndex: 0
+    virtual ~SummonActorGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI SummonActorGoal(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
+
     MCAPI void _createSpellEntity(
         float x,
         float z,
         float minY,
         float maxY,
         float,
-        int                              lifespan,
-        struct ActorDefinitionIdentifier summonType
+        int                         lifespan,
+        ::ActorDefinitionIdentifier summonType,
+        ::std::string const&        summonEvent
     ) const;
 
-    MCAPI int _selectBestSpell(class Actor& target) const;
-
+    MCAPI int _selectBestSpell(::Actor& target) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& caster, std::vector<struct SummonSpellData> const& spellTypes);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $stop();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

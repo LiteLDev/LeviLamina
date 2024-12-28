@@ -6,11 +6,6 @@
 #include "mc/deps/core/http/LoggingInterface.h"
 #include "mc/external/lib_http_client/HCTraceLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http { class LoggingInterface; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {
@@ -21,28 +16,37 @@ public:
     LoggingInterfaceGeneric();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoggingInterfaceGeneric() = default;
+    virtual ~LoggingInterfaceGeneric() /*override*/;
 
     // vIndex: 1
-    virtual uint64 threadId();
+    virtual uint64 threadId() /*override*/;
 
     // vIndex: 2
-    virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
-
+    virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI uint64 threadId$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint64 $threadId();
 
-    MCAPI void writeToDebugger$(char const* area, ::HCTraceLevel level, char const* message);
+    MCAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

@@ -3,19 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
 // clang-format on
 
 class ClayBlock : public ::BlockLegacy {
@@ -26,46 +22,61 @@ public:
     ClayBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 75
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 46
+    virtual bool canBeOriginalSurface() const /*override*/;
+
     // vIndex: 0
-    virtual ~ClayBlock() = default;
-
-    // vIndex: 48
-    virtual bool canBeOriginalSurface() const;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
-
-    // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
-
-    // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
-
-    MCAPI ClayBlock(std::string const& nameId, int id);
-
+    virtual ~ClayBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ClayBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI bool
-    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool canBeOriginalSurface$() const;
+    MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI bool mayConsumeFertilizer$(class BlockSource& region) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
+    MCAPI bool $canBeOriginalSurface() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

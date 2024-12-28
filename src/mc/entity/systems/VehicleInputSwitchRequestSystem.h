@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VehicleInputSwitchRequestSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct VehicleInputSwitchRequestSystem {
 public:
     // prevent constructor by default
     VehicleInputSwitchRequestSystem& operator=(VehicleInputSwitchRequestSystem const&);
@@ -10,8 +15,8 @@ public:
     VehicleInputSwitchRequestSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

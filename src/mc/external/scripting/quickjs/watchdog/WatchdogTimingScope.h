@@ -4,7 +4,14 @@
 
 namespace Scripting::QuickJS {
 
-class WatchdogTimingScope {
+struct WatchdogTimingScope {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk9a2355;
+    ::ll::UntypedStorage<1, 1> mUnk37d998;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WatchdogTimingScope& operator=(WatchdogTimingScope const&);
@@ -12,17 +19,16 @@ public:
     WatchdogTimingScope();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~WatchdogTimingScope();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting::QuickJS
+} // namespace Scripting::QuickJS

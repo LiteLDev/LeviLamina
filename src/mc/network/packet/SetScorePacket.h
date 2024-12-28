@@ -8,7 +8,23 @@
 #include "mc/network/packet/ScorePacketType.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class Objective;
+class ReadOnlyBinaryStream;
+struct ScorePacketInfo;
+struct ScoreboardId;
+// clang-format on
+
 class SetScorePacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::ScorePacketType>                 mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScorePacketInfo>> mScoreInfo;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SetScorePacket& operator=(SetScorePacket const&);
@@ -16,52 +32,67 @@ public:
     SetScorePacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetScorePacket();
+    virtual ~SetScorePacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo> info);
-
-    MCAPI static class SetScorePacket change(struct ScoreboardId const& id, class Objective const& objective);
-
-    MCAPI static class SetScorePacket remove(struct ScoreboardId const& id, class Objective const& objective);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI SetScorePacket(::ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SetScorePacket(::ScorePacketType type, ::ScoreboardId const& id, ::Objective const& objective);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::SetScorePacket change(::std::vector<::ScorePacketInfo> info);
 
-    MCAPI void dtor$();
+    MCAPI static ::SetScorePacket change(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI static ::SetScorePacket remove(::ScoreboardId const& id, ::Objective const& objective);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScorePacketType type, ::ScoreboardId const& id, ::Objective const& objective);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

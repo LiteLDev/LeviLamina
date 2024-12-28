@@ -7,13 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class GenericModuleBindingFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct UUID; }
-namespace Scripting { struct Version; }
 // clang-format on
 
 namespace Scripting {
@@ -26,34 +22,43 @@ public:
     CommonModuleFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommonModuleFactory() = default;
-
+    virtual ~CommonModuleFactory() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void _addVersions();
 
-    MCAPI struct Scripting::ModuleBinding _generateBindings(
-        class Scripting::ModuleBindingBuilder& moduleBuilder,
-        bool                                   allowUntagged,
-        std::vector<std::string> const&        allowedTags
+    MCAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static char const*& ModuleName();
 
-    MCAPI static char const* const& ModuleName();
+    MCAPI static ::Scripting::UUID const& ModuleUUID();
+    // NOLINTEND
 
-    MCAPI static struct Scripting::UUID const& ModuleUUID();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

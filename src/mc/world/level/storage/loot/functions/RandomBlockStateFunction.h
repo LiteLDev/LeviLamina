@@ -7,13 +7,30 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class RandomBlockStateFunction : public ::LootItemFunction {
 public:
     // RandomBlockStateFunction inner types define
-    enum class RemapComplexAliasBlockResult {};
+    enum class RemapComplexAliasBlockResult : int {
+        NotComplexAlias = 0,
+        Succeed         = 1,
+        Fail            = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>  mUnk5b09a9;
+    ::ll::UntypedStorage<8, 32> mUnk8dfae0;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -22,50 +39,63 @@ public:
     RandomBlockStateFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomBlockStateFunction() = default;
+    virtual ~RandomBlockStateFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    MCAPI static std::unique_ptr<class LootItemFunction>
-    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _remapComplexAliasBlock(int randomInt, class Block const*& inOutItemBlock, std::string const& originalNameStr);
+    _remapComplexAliasBlock(int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalNameStr);
 
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        class ItemInstance& item,
-        int                 randomInt,
-        class Block const*& inOutItemBlock,
-        std::string const&  originalName
+        ::ItemStack&         item,
+        int                  randomInt,
+        ::Block const*&      inOutItemBlock,
+        ::std::string const& originalName
     );
 
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        class ItemStack&    item,
-        int                 randomInt,
-        class Block const*& inOutItemBlock,
-        std::string const&  originalName
+        ::ItemInstance&      item,
+        int                  randomInt,
+        ::Block const*&      inOutItemBlock,
+        ::std::string const& originalName
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

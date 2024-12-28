@@ -4,18 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Material;
+class Random;
+class Vec3;
 // clang-format on
 
 class BushBlock : public ::BlockLegacy {
@@ -26,84 +28,95 @@ public:
     BushBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BushBlock();
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
+
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 151
+    virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    // vIndex: 152
+    virtual ::Block const&
+    setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags)
         const;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
-
-    // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 163
-    virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 164
-    virtual class Block const& setGrowth(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    baseBlock,
-        ushort                newGrowth,
-        int                   updateFlags
-    ) const;
-
-    MCAPI BushBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI bool growCrops(class BlockSource& region, class BlockPos const& pos, ::FertilizerType fType) const;
-
+    // vIndex: 0
+    virtual ~BushBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BushBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+    MCAPI bool growCrops(::BlockSource& region, ::BlockPos const& pos, ::FertilizerType fType) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 const& BUSH_VISUAL_SHAPE_MAX();
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI static ::Vec3 const& BUSH_VISUAL_SHAPE_MIN();
+    // NOLINTEND
 
-    MCAPI void checkAlive$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI class Block const& setGrowth$(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    baseBlock,
-        ushort                newGrowth,
-        int                   updateFlags
+    MCAPI ::Block const& $setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
     ) const;
+    // NOLINTEND
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
-    MCAPI static class Vec3 const& BUSH_VISUAL_SHAPE_MAX();
-
-    MCAPI static class Vec3 const& BUSH_VISUAL_SHAPE_MIN();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

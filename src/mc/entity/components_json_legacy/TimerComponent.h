@@ -2,45 +2,59 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+// clang-format on
+
 class TimerComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkb4fff2;
+    ::ll::UntypedStorage<8, 8>  mUnkeb854b;
+    ::ll::UntypedStorage<1, 1>  mUnke61b8b;
+    ::ll::UntypedStorage<1, 1>  mUnkc17464;
+    ::ll::UntypedStorage<4, 4>  mUnk6e4789;
+    ::ll::UntypedStorage<1, 1>  mUnk9d6738;
+    ::ll::UntypedStorage<4, 4>  mUnk38df3b;
+    ::ll::UntypedStorage<4, 4>  mUnke1c772;
+    ::ll::UntypedStorage<8, 24> mUnk13f9a4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TimerComponent& operator=(TimerComponent const&);
     TimerComponent(TimerComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TimerComponent();
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI bool getHasExecuted() const;
 
     MCAPI bool getLooping() const;
 
-    MCAPI uint64 getTimeStamp(class Level const& level);
+    MCAPI int getRandomTime(::Actor& actor);
 
-    MCAPI class TimerComponent& operator=(class TimerComponent&&);
+    MCAPI uint64 getTimeStamp(::Level const& level);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void restartTimer(class Actor& actor);
+    MCAPI void restartTimer(::Actor& actor);
 
     MCAPI void setHasExecuted(bool hasExecuted);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI int getRandomTime(class Actor& actor);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

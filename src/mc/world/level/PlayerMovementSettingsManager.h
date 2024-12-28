@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+struct PlayerMovementSettings;
+// clang-format on
+
 class PlayerMovementSettingsManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk59c78a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerMovementSettingsManager& operator=(PlayerMovementSettingsManager const&);
@@ -13,21 +25,20 @@ public:
     PlayerMovementSettingsManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerMovementSettingsManager(
-        gsl::not_null<class StackRefResult<class EntityRegistry>> const& entityRegistry
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry
     );
 
-    MCAPI struct PlayerMovementSettings const& getPlayerMovementSettings() const;
+    MCAPI ::PlayerMovementSettings const& getPlayerMovementSettings() const;
 
-    MCAPI void setPlayerMovementSettings(struct PlayerMovementSettings const& settings);
-
+    MCAPI void setPlayerMovementSettings(::PlayerMovementSettings const& settings);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(gsl::not_null<class StackRefResult<class EntityRegistry>> const& entityRegistry);
-
+    MCAPI void* $ctor(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry);
     // NOLINTEND
 };

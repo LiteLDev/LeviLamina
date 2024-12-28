@@ -8,41 +8,65 @@
 
 class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk85e53a;
+    ::ll::UntypedStorage<4, 8>  mUnk3dc6be;
+    ::ll::UntypedStorage<8, 8>  mUnkc9b411;
+    ::ll::UntypedStorage<8, 24> mUnk64de65;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SurfaceLevelCache& operator=(SurfaceLevelCache const&);
     SurfaceLevelCache(SurfaceLevelCache const&);
     SurfaceLevelCache();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SurfaceLevelCache();
-
     // vIndex: 1
-    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldQuartPos) const;
+    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
 
-    MCAPI SurfaceLevelCache(
-        class DividedPos2d<4>                    startPos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
-        uint64                                   bufferSizeXZ
-    );
-
+    // vIndex: 0
+    virtual ~SurfaceLevelCache() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class DividedPos2d<4>                    startPos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
-        uint64                                   bufferSizeXZ
+    MCAPI SurfaceLevelCache(
+        ::DividedPos2d<4>                    startPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
+        uint64                               bufferSizeXZ
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::DividedPos2d<4>                    startPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
+        uint64                               bufferSizeXZ
+    );
+    // NOLINTEND
 
-    MCAPI std::optional<short> getPreliminarySurfaceLevel$(class DividedPos2d<4> worldQuartPos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

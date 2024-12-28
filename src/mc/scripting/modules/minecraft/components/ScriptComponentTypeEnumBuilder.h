@@ -16,33 +16,43 @@ namespace ScriptModuleMinecraft {
 
 class ScriptComponentTypeEnumBuilder {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnka1fc59;
+    ::ll::UntypedStorage<8, 280> mUnk1f98b8;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptComponentTypeEnumBuilder& operator=(ScriptComponentTypeEnumBuilder const&);
     ScriptComponentTypeEnumBuilder(ScriptComponentTypeEnumBuilder const&);
     ScriptComponentTypeEnumBuilder();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
 
-    MCAPI class Scripting::EnumBindingBuilder<std::string, std::string>
-    bind(std::optional<struct Scripting::Version> releaseVersion);
+    MCAPI ::Scripting::EnumBindingBuilder<::std::string, ::std::string>
+    bind(::std::optional<::Scripting::Version> releaseVersion);
 
-    MCAPI struct Scripting::ConstantFactory&
-    bindComponentId(std::string const& componentName, std::string const& componentId);
+    MCAPI ::Scripting::ConstantFactory&
+    bindComponentId(::std::string const& componentName, ::std::string const& componentId);
 
     MCAPI ~ScriptComponentTypeEnumBuilder();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

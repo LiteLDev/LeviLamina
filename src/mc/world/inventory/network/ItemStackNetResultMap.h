@@ -14,15 +14,14 @@ public:
     ItemStackNetResultMap();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::string const& getItemStackNetResultName(::ItemStackNetResult result);
-
+    MCAPI static ::std::string const& getItemStackNetResultName(::ItemStackNetResult result);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemStackNetResult, std::string> const& mMap();
-
+    MCAPI static ::BidirectionalUnorderedMap<::ItemStackNetResult, ::std::string> const& mMap();
     // NOLINTEND
 };

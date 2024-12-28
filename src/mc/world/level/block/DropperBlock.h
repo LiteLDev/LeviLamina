@@ -3,19 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/DispenserBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockPos;
+class BlockSource;
 // clang-format on
 
 class DropperBlock : public ::DispenserBlock {
@@ -26,27 +19,48 @@ public:
     DropperBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 152
+    virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
     // vIndex: 0
-    virtual ~DropperBlock() = default;
-
-    // vIndex: 164
-    virtual void dispenseFrom(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI DropperBlock(std::string const& nameId, int id);
-
-    MCAPI static int getAttachedFace(int facing);
-
+    virtual ~DropperBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DropperBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getAttachedFace(int facing);
+    // NOLINTEND
 
-    MCAPI void dispenseFrom$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

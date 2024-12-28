@@ -3,19 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/DoublePlantBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
 // clang-format on
 
 class DoubleVegetationBlock : public ::DoublePlantBlock {
@@ -26,35 +22,51 @@ public:
     DoubleVegetationBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~DoubleVegetationBlock() = default;
-
-    // vIndex: 80
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
-
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
-
-    // vIndex: 122
-    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
-
-    MCAPI DoubleVegetationBlock(std::string const& nameId, int id);
-
+    virtual ~DoubleVegetationBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DoubleVegetationBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool onFertilized$(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

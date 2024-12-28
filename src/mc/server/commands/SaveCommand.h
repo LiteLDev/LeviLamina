@@ -7,13 +7,33 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+struct SnapshotFilenameAndLength;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class SaveCommand : public ::ServerCommand {
 public:
     // SaveCommand inner types define
-    enum class State {};
+    enum class Mode : int {
+        Hold   = 0,
+        Resume = 1,
+        Query  = 2,
+    };
+
+    enum class State : int {
+        Idle     = 0,
+        Saving   = 1,
+        Complete = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbdbb95;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -22,39 +42,52 @@ public:
     SaveCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SaveCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~SaveCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void saveHold(class CommandOutput& output);
-
-    MCAPI static void saveResume(class CommandOutput& output);
-
-    MCAPI static void saveState(class CommandOutput& output);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void saveHold(::CommandOutput& output);
 
-    MCAPI void execute$(class CommandOrigin const&, class CommandOutput& output) const;
+    MCAPI static void saveResume(::CommandOutput& output);
 
-    MCAPI static std::vector<struct SnapshotFilenameAndLength>& mSaveAllFileList();
+    MCAPI static void saveState(::CommandOutput& output);
 
-    MCAPI static class Bedrock::Threading::Mutex& mSaveAllMutex();
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
+
+    MCAPI static ::Bedrock::Threading::Mutex& mSaveAllMutex();
 
     MCAPI static ::SaveCommand::State& mState();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

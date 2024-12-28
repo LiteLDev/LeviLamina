@@ -3,21 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/BlockItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Block;
+class CompoundTag;
+class ItemDescriptor;
 // clang-format on
 
 class AuxDataBlockItem : public ::BlockItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8e24ed;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AuxDataBlockItem& operator=(AuxDataBlockItem const&);
@@ -25,32 +26,49 @@ public:
     AuxDataBlockItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 33
+    virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
     // vIndex: 0
-    virtual ~AuxDataBlockItem() = default;
-
-    // vIndex: 32
-    virtual int getLevelDataForAuxValue(int auxValue) const;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    MCAPI AuxDataBlockItem(std::string const& name, int id, class Block const* parentBlock);
-
+    virtual ~AuxDataBlockItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AuxDataBlockItem(::std::string const& name, int id, ::Block const* parentBlock);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, class Block const* parentBlock);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::Block const* parentBlock);
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
 
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

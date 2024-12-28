@@ -6,8 +6,9 @@
 #include "mc/world/level/block/WallConnectionType.h"
 
 namespace StateSerializationUtils {
+// functions
 // NOLINTBEGIN
-MCAPI ::WallConnectionType fromJavaNbtString(std::string const& tag);
+MCAPI ::WallConnectionType fromJavaNbtString(::std::string const& tag);
 // NOLINTEND
 
-}; // namespace StateSerializationUtils
+} // namespace StateSerializationUtils

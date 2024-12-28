@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class GameRules;
 class Level;
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
@@ -12,16 +13,22 @@ namespace ScriptModuleMinecraft {
 
 class ScriptGameRules {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk6dc759;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptGameRules& operator=(ScriptGameRules const&);
     ScriptGameRules(ScriptGameRules const&);
     ScriptGameRules();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder& moduleBuilder, class Level const& level);
-
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

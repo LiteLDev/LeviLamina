@@ -9,7 +9,6 @@
 // clang-format off
 class NetworkIdentifier;
 class ServerNetworkSystem;
-namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ClientBlobCache::Server { class Blob; }
 namespace ClientBlobCache::Server { class TransferBuilder; }
 // clang-format on
@@ -26,26 +25,40 @@ public:
     // ActiveTransfersManager inner types define
     class TransferTracker {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnkc08afa;
+        ::ll::UntypedStorage<8, 160> mUnk5f7bcd;
+        ::ll::UntypedStorage<8, 24>  mUnkc52da5;
+        ::ll::UntypedStorage<4, 4>   mUnk38be62;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         TransferTracker& operator=(TransferTracker const&);
         TransferTracker(TransferTracker const&);
         TransferTracker();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI void onAckReceived(uint64 acked);
-
         MCAPI ~TransferTracker();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkd2bbe6;
+    ::ll::UntypedStorage<8, 16> mUnk63af4d;
+    ::ll::UntypedStorage<8, 8>  mUnk4953ed;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -53,48 +66,57 @@ public:
     ActiveTransfersManager(ActiveTransfersManager const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActiveTransfersManager();
+    virtual ~ActiveTransfersManager() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ActiveTransfersManager();
 
     MCAPI void collectTrackingData() const;
 
-    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob>
-          dropBlobFor(class NetworkIdentifier const& client, uint64 id);
+    MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
-    MCAPI void enableCacheFor(class NetworkIdentifier const& client);
+    MCAPI void enableCacheFor(::NetworkIdentifier const& client);
 
-    MCAPI bool isCacheEnabledFor(class NetworkIdentifier const& client) const;
+    MCAPI ::ClientBlobCache::Server::ActiveTransfersManager::TransferTracker*
+    getTrackerFor(::NetworkIdentifier const& client) const;
 
-    MCAPI void onPeerDisconnected(class NetworkIdentifier const& client);
+    MCAPI bool isCacheEnabledFor(::NetworkIdentifier const& client) const;
 
-    MCAPI class ClientBlobCache::Server::TransferBuilder startTransfer(class NetworkIdentifier const& client) const;
+    MCAPI void onPeerDisconnected(::NetworkIdentifier const& client);
 
-    MCAPI class ClientBlobCache::Server::TransferBuilder tryStartTransfer(class NetworkIdentifier const& client) const;
+    MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
+    rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
 
-    MCAPI void updateNetworkConditions(class ServerNetworkSystem& handler);
+    MCAPI ::ClientBlobCache::Server::TransferBuilder startTransfer(::NetworkIdentifier const& client) const;
 
+    MCAPI ::ClientBlobCache::Server::TransferBuilder tryStartTransfer(::NetworkIdentifier const& client) const;
+
+    MCAPI void updateNetworkConditions(::ServerNetworkSystem& handler);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob>
-          rememberBlob(uint64 id, std::string& data, bool isChunkInTickRange);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ClientBlobCache::Server
+} // namespace ClientBlobCache::Server

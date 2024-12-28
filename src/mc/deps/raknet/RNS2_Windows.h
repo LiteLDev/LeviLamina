@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/RNS2BindResult.h"
+#include "mc/deps/raknet/RNS2_Berkley.h"
+#include "mc/deps/raknet/RNS2_Windows_Linux_360.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +16,13 @@ namespace RakNet { struct RNS2_SendParameters; }
 
 namespace RakNet {
 
-class RNS2_Windows {
+class RNS2_Windows : public ::RakNet::RNS2_Berkley, public ::RakNet::RNS2_Windows_Linux_360 {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka92e53;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RNS2_Windows& operator=(RNS2_Windows const&);
@@ -22,35 +30,45 @@ public:
     RNS2_Windows();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RNS2_Windows() = default;
-
-    // vIndex: 1
-    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, uint);
-
-    // vIndex: 2
-    virtual void SetMulticastInterface(int interfaceIndex);
+    virtual ~RNS2_Windows() /*override*/;
 
     // vIndex: 3
-    virtual ::RakNet::RNS2BindResult Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);
+    virtual ::RakNet::RNS2BindResult
+    Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line) /*override*/;
 
-    MCAPI class RakNet::SocketLayerOverride* GetSocketLayerOverride();
-
+    // vIndex: 1
+    virtual int Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::RakNet::SocketLayerOverride* GetSocketLayerOverride();
+    // NOLINTEND
 
-    MCAPI ::RakNet::RNS2BindResult Bind$(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int Send$(struct RakNet::RNS2_SendParameters*, char const*, uint);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::RakNet::RNS2BindResult
+    $Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
-    MCAPI void SetMulticastInterface$(int interfaceIndex);
+    MCAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

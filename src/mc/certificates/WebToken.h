@@ -4,10 +4,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class PrivateKeyManager;
+struct CertificateSNIType;
+struct PublicKeySignatureType;
 namespace Json { class Value; }
 // clang-format on
 
 class WebToken {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mHeader;
+    ::ll::TypedStorage<8, 16, ::Json::Value> mHeaderInfo;
+    ::ll::TypedStorage<8, 32, ::std::string> mData;
+    ::ll::TypedStorage<8, 16, ::Json::Value> mDataInfo;
+    ::ll::TypedStorage<8, 32, ::std::string> mSignature;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WebToken& operator=(WebToken const&);
@@ -15,39 +28,42 @@ public:
     WebToken();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit WebToken(std::string token);
+    MCAPI explicit WebToken(::std::string token);
 
-    MCAPI std::string toString() const;
+    MCAPI void _parse(::Json::Value& value, ::std::string const& data);
 
-    MCAPI bool verifyWithIncludedKey(std::vector<std::string> const& trustedKeys) const;
+    MCAPI ::std::string _signatureToDER() const;
+
+    MCAPI ::std::string toString() const;
+
+    MCAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
     MCAPI ~WebToken();
-
-    MCAPI static std::unique_ptr<class WebToken> createFromData(
-        class Json::Value const&                                                               dataInfo,
-        class PrivateKeyManager const&                                                         manager,
-        std::variant<struct PublicKeySignatureType, struct CertificateThumbprintSignatureType> signatureType
-    );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _parse(class Json::Value& value, std::string const& data);
-
-    MCAPI std::string _signatureToDER() const;
-
-    MCAPI static std::string _DERToBinary(std::string const& derSignature, int outputLength);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string token);
+    MCAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
 
-    MCAPI void dtor$();
+    MCAPI static ::std::unique_ptr<::WebToken> createFromData(
+        ::Json::Value const&                                           dataInfo,
+        ::PrivateKeyManager const&                                     manager,
+        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string token);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

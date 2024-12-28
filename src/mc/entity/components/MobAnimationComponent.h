@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MobAnimationComponent {
+// auto generated inclusion list
+#include "mc/entity/components/FloatComponent.h"
+
+struct MobAnimationComponent : public ::FloatComponent {
 public:
     // prevent constructor by default
     MobAnimationComponent& operator=(MobAnimationComponent const&);

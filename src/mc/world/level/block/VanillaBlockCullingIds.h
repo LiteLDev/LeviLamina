@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace VanillaBlockCullingIds {
-// thunks
-// NOLINTBEGIN
-MCAPI class HashedString const& EnchantingTable();
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
 
-MCAPI class HashedString const& Lectern();
+namespace VanillaBlockCullingIds {
+// static variables
+// NOLINTBEGIN
+MCAPI ::HashedString const& EnchantingTable();
+
+MCAPI ::HashedString const& Lectern();
 // NOLINTEND
 
-}; // namespace VanillaBlockCullingIds
+} // namespace VanillaBlockCullingIds

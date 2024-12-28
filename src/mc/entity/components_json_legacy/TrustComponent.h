@@ -2,38 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+struct ActorUniqueID;
+// clang-format on
+
 class TrustComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk8f05b8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TrustComponent& operator=(TrustComponent const&);
     TrustComponent(TrustComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TrustComponent();
 
-    MCAPI TrustComponent(class TrustComponent&&);
+    MCAPI TrustComponent(::TrustComponent&&);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void assignTrustedPlayer(struct ActorUniqueID playerID);
+    MCAPI void assignTrustedPlayer(::ActorUniqueID playerID);
 
-    MCAPI std::unordered_set<struct ActorUniqueID> const& getTrustedPlayerIDs() const;
+    MCAPI ::std::unordered_set<::ActorUniqueID> const& getTrustedPlayerIDs() const;
 
-    MCAPI void initFromDefinition(class Actor& owner);
+    MCAPI ::TrustComponent& operator=(::TrustComponent&&);
 
-    MCAPI class TrustComponent& operator=(class TrustComponent&&);
-
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
-
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class TrustComponent&&);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor(::TrustComponent&&);
     // NOLINTEND
 };

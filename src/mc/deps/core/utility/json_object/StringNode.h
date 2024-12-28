@@ -2,14 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class MemoryPage; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/utility/json_object/Node.h"
 
 namespace Bedrock::JSONObject {
 
-class StringNode {
+class StringNode : public ::Bedrock::JSONObject::Node {
+public:
+    // member variables
+    // NOLINTBEGIN
+    union {
+        struct {
+            ::ll::UntypedStorage<4, 4> mUnk8c1446;
+            ::ll::UntypedStorage<4, 4> mUnk383b08;
+            union {
+                ::ll::UntypedStorage<8, 8> mUnk45b062;
+                ::ll::UntypedStorage<8, 8> mUnkd4ba40;
+            };
+        };
+        ::ll::UntypedStorage<1, 16> mUnkac85df;
+    };
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StringNode& operator=(StringNode const&);
@@ -17,29 +31,10 @@ public:
     StringNode();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI char const* getCString(uint64* outputLength) const;
-
-    MCAPI bool set(std::string_view str, bool copy);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI explicit StringNode(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    MCAPI bool _isConst() const;
-
-    MCAPI bool _isSSO() const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage);
-
+    MCAPI bool set(::std::string_view str, bool copy);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

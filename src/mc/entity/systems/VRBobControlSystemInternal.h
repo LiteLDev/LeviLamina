@@ -2,16 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct MovementAbilitiesComponent;
+struct PlayerInputModeComponent;
+struct StateVectorComponent;
+// clang-format on
+
 namespace VRBobControlSystemInternal {
+// functions
 // NOLINTBEGIN
 MCAPI void tickVRBobControl(
-    class StrictEntityContext const&,
-    struct AABBShapeComponent const&         aabbShapeComponent,
-    struct MovementAbilitiesComponent const& abilitiesComponent,
-    struct PlayerInputModeComponent const&   playerInputModeComponent,
-    struct StateVectorComponent&             stateVectorComponent,
-    class IConstBlockSource const&           region
+    ::StrictEntityContext const&,
+    ::AABBShapeComponent const&         aabbShapeComponent,
+    ::MovementAbilitiesComponent const& abilitiesComponent,
+    ::PlayerInputModeComponent const&   playerInputModeComponent,
+    ::StateVectorComponent&             stateVectorComponent,
+    ::IConstBlockSource const&          region
 );
 // NOLINTEND
 
-}; // namespace VRBobControlSystemInternal
+} // namespace VRBobControlSystemInternal

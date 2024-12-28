@@ -6,38 +6,67 @@
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
+// auto generated forward declare list
+// clang-format off
+class Player;
+class SubscribedObjectives;
+struct ScoreboardId;
+// clang-format on
+
 class PlayerScoreboardEventListener : public ::ScoreboardEventListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, ::SubscribedObjectives>> mSubscribedObjectives;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerScoreboardEventListener& operator=(PlayerScoreboardEventListener const&);
     PlayerScoreboardEventListener(PlayerScoreboardEventListener const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerScoreboardEventListener();
-
     // vIndex: 4
-    virtual ::EventResult onScoreChanged(struct ScoreboardId const& id, std::string const& objective, int score);
+    virtual ::EventResult
+    onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score) /*override*/;
 
-    MCAPI PlayerScoreboardEventListener();
-
-    MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const& id, class Player const& player);
-
-    MCAPI void removePlayerSubscriptions(struct ScoreboardId const& id);
-
+    // vIndex: 0
+    virtual ~PlayerScoreboardEventListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PlayerScoreboardEventListener();
 
-    MCAPI void* ctor$();
+    MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
 
-    MCAPI void dtor$();
+    MCAPI void removePlayerSubscriptions(::ScoreboardId const& id);
+    // NOLINTEND
 
-    MCAPI ::EventResult onScoreChanged$(struct ScoreboardId const& id, std::string const& objective, int score);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

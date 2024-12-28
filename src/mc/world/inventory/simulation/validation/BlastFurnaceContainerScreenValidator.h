@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/simulation/validation/FurnaceContainerScreenValidator.h"
 
 class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenValidator {
@@ -11,22 +10,24 @@ public:
     // prevent constructor by default
     BlastFurnaceContainerScreenValidator& operator=(BlastFurnaceContainerScreenValidator const&);
     BlastFurnaceContainerScreenValidator(BlastFurnaceContainerScreenValidator const&);
+    BlastFurnaceContainerScreenValidator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlastFurnaceContainerScreenValidator() = default;
-
-    MCAPI BlastFurnaceContainerScreenValidator();
-
+    virtual ~BlastFurnaceContainerScreenValidator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

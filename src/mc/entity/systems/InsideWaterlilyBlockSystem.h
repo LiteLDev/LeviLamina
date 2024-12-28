@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InsideWaterlilyBlockSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct InsideWaterlilyBlockSystem {
 public:
     // prevent constructor by default
     InsideWaterlilyBlockSystem& operator=(InsideWaterlilyBlockSystem const&);
@@ -10,8 +15,8 @@ public:
     InsideWaterlilyBlockSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
-
+    MCAPI static ::TickingSystemWithInfo createDestroyWaterlilySystem();
     // NOLINTEND
 };

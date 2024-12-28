@@ -6,7 +6,20 @@
 #include "mc/network/packet/PlayerActionType.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct PlayerBlockActionData;
+// clang-format on
+
 class PlayerBlockActions {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::PlayerBlockActionData>> mActions;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerBlockActions& operator=(PlayerBlockActions const&);
@@ -14,25 +27,28 @@ public:
     PlayerBlockActions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct PlayerBlockActionData const* findFirstOfType(::PlayerActionType type) const;
+    MCAPI ::PlayerBlockActionData const* findFirstOfType(::PlayerActionType type) const;
 
-    MCAPI gsl::span<struct PlayerBlockActionData const> get() const;
+    MCAPI ::gsl::span<::PlayerBlockActionData const> get() const;
 
-    MCAPI class PlayerBlockActions& operator=(class PlayerBlockActions&&);
+    MCAPI ::PlayerBlockActions& operator=(::PlayerBlockActions&&);
 
     MCAPI ~PlayerBlockActions();
-
-    MCAPI static class Bedrock::Result<class PlayerBlockActions> read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI static void write(class PlayerBlockActions const& val, class BinaryStream& stream);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Bedrock::Result<::PlayerBlockActions> read(::ReadOnlyBinaryStream& stream);
 
+    MCAPI static void write(::PlayerBlockActions const& val, ::BinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

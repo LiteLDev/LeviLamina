@@ -8,38 +8,64 @@
 
 // auto generated forward declare list
 // clang-format off
+class DelayedAttackGoal;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DelayedAttackDefinition : public ::MeleeAttackDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk3dfb91;
+    ::ll::UntypedStorage<4, 4> mUnkba6f16;
+    ::ll::UntypedStorage<4, 4> mUnkfe2157;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DelayedAttackDefinition& operator=(DelayedAttackDefinition const&);
     DelayedAttackDefinition(DelayedAttackDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DelayedAttackDefinition() = default;
-
-    MCAPI DelayedAttackDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class DelayedAttackGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>>& root
-    );
-
+    virtual ~DelayedAttackDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DelayedAttackDefinition();
 
-    MCAPI void* ctor$();
+    MCAPI void initialize(::EntityContext& entity, ::DelayedAttackGoal& goal) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                    name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DelayedAttackDefinition>>& root
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

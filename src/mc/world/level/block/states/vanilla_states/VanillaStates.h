@@ -25,6 +25,7 @@
 #include "mc/world/level/block/NewLogType.h"
 #include "mc/world/level/block/OldLeavesType.h"
 #include "mc/world/level/block/OldLogType.h"
+#include "mc/world/level/block/PaleMossCarpetSide.h"
 #include "mc/world/level/block/PillarAxis.h"
 #include "mc/world/level/block/PortalAxis.h"
 #include "mc/world/level/block/PrismarineBlockType.h"
@@ -50,284 +51,303 @@
 #include "mc/world/level/block/WoodType.h"
 #include "mc/world/level/block/states/BlockStateVariant.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockState;
+class HashedString;
+// clang-format on
+
 namespace VanillaStates {
+// functions
 // NOLINTBEGIN
-MCAPI class BlockState const* getState(class HashedString const& name);
+MCAPI ::BlockState const* getState(::HashedString const& name);
 
 MCAPI void registerStates();
 
 MCAPI void unregisterStates();
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class BlockStateVariant<bool> const& Active();
+MCAPI ::BlockStateVariant<bool> const& Active();
 
-MCAPI class BlockStateVariant<int> const& Age();
+MCAPI ::BlockStateVariant<int> const& Age();
 
-MCAPI class BlockStateVariant<bool> const& AgeBit();
+MCAPI ::BlockStateVariant<bool> const& AgeBit();
 
-MCAPI class BlockStateVariant<bool> const& AllowUnderwaterBit();
+MCAPI ::BlockStateVariant<bool> const& AttachedBit();
 
-MCAPI class BlockStateVariant<bool> const& AttachedBit();
+MCAPI ::BlockStateVariant<::AttachmentType> const& Attachment();
 
-MCAPI class BlockStateVariant<::AttachmentType> const& Attachment();
+MCAPI ::BlockStateVariant<::LeafSize> const& BambooLeafSize();
 
-MCAPI class BlockStateVariant<::LeafSize> const& BambooLeafSize();
+MCAPI ::BlockStateVariant<::StalkThickness> const& BambooThickness();
 
-MCAPI class BlockStateVariant<::StalkThickness> const& BambooThickness();
+MCAPI ::BlockStateVariant<int> const& BeehiveHoneyLevel();
 
-MCAPI class BlockStateVariant<int> const& BeehiveHoneyLevel();
+MCAPI ::BlockStateVariant<bool> const& BigDripleafHead();
 
-MCAPI class BlockStateVariant<bool> const& BigDripleafHead();
+MCAPI ::BlockStateVariant<::BigDripleafTilt> const& BigDripleafTilt();
 
-MCAPI class BlockStateVariant<::BigDripleafTilt> const& BigDripleafTilt();
+MCAPI ::BlockStateVariant<int> const& BiteCounter();
 
-MCAPI class BlockStateVariant<int> const& BiteCounter();
+MCAPI ::BlockStateVariant<bool> const& Bloom();
 
-MCAPI class BlockStateVariant<int> const& BlockLightLevel();
+MCAPI ::BlockStateVariant<int> const& BookshelfOccupiedSlots();
 
-MCAPI class BlockStateVariant<bool> const& Bloom();
+MCAPI ::BlockStateVariant<bool> const& BrewingStandSlotABit();
 
-MCAPI class BlockStateVariant<int> const& BookshelfOccupiedSlots();
+MCAPI ::BlockStateVariant<bool> const& BrewingStandSlotBBit();
 
-MCAPI class BlockStateVariant<bool> const& BrewingStandSlotABit();
+MCAPI ::BlockStateVariant<bool> const& BrewingStandSlotCBit();
 
-MCAPI class BlockStateVariant<bool> const& BrewingStandSlotBBit();
+MCAPI ::BlockStateVariant<int> const& BrushedProgress();
 
-MCAPI class BlockStateVariant<bool> const& BrewingStandSlotCBit();
+MCAPI ::BlockStateVariant<bool> const& ButtonPressedBit();
 
-MCAPI class BlockStateVariant<int> const& BrushedProgress();
+MCAPI ::BlockStateVariant<bool> const& CanSummon();
 
-MCAPI class BlockStateVariant<bool> const& ButtonPressedBit();
+MCAPI ::BlockStateVariant<int> const& Candles();
 
-MCAPI class BlockStateVariant<bool> const& CanSummon();
+MCAPI ::BlockStateVariant<::CauldronLiquidType> const& CauldronLiquid();
 
-MCAPI class BlockStateVariant<int> const& Candles();
+MCAPI ::BlockStateVariant<int> const& ClusterCount();
 
-MCAPI class BlockStateVariant<::CauldronLiquidType> const& CauldronLiquid();
+MCAPI ::BlockStateVariant<int> const& ComposterFillLevel();
 
-MCAPI class BlockStateVariant<::ChemistryTableType> const& ChemistryTableType();
+MCAPI ::BlockStateVariant<bool> const& ConditionalBit();
 
-MCAPI class BlockStateVariant<::ChiselType> const& ChiselType();
+MCAPI ::BlockStateVariant<int> const& CoralDirection();
 
-MCAPI class BlockStateVariant<int> const& ClusterCount();
+MCAPI ::BlockStateVariant<int> const& CoralFanDirection();
 
-MCAPI class BlockStateVariant<bool> const& ColorBit();
+MCAPI ::BlockStateVariant<bool> const& CoveredBit();
 
-MCAPI class BlockStateVariant<int> const& ComposterFillLevel();
+MCAPI ::BlockStateVariant<::HatchLevel> const& CrackedState();
 
-MCAPI class BlockStateVariant<bool> const& ConditionalBit();
+MCAPI ::BlockStateVariant<bool> const& Crafting();
 
-MCAPI class BlockStateVariant<::CoralColor> const& CoralColor();
+MCAPI ::BlockStateVariant<int> const& DEPRECATED();
 
-MCAPI class BlockStateVariant<int> const& CoralDirection();
+MCAPI ::BlockStateVariant<bool> const& DEPRECATED_AllowUnderwaterBit();
 
-MCAPI class BlockStateVariant<int> const& CoralFanDirection();
+MCAPI ::BlockStateVariant<int> const& DEPRECATED_BlockLightLevel();
 
-MCAPI class BlockStateVariant<bool> const& CoralHangTypeBit();
+MCAPI ::BlockStateVariant<::ChemistryTableType> const& DEPRECATED_ChemistryTableType();
 
-MCAPI class BlockStateVariant<bool> const& CoveredBit();
+MCAPI ::BlockStateVariant<::ChiselType> const& DEPRECATED_ChiselType();
 
-MCAPI class BlockStateVariant<::HatchLevel> const& CrackedState();
+MCAPI ::BlockStateVariant<::BlockColor> const& DEPRECATED_Color();
 
-MCAPI class BlockStateVariant<bool> const& Crafting();
+MCAPI ::BlockStateVariant<bool> const& DEPRECATED_ColorBit();
 
-MCAPI class BlockStateVariant<int> const& DEPRECATED();
+MCAPI ::BlockStateVariant<::CoralColor> const& DEPRECATED_CoralColor();
 
-MCAPI class BlockStateVariant<::BlockColor> const& DEPRECATED_Color();
+MCAPI ::BlockStateVariant<bool> const& DEPRECATED_CoralHangTypeBit();
 
-MCAPI class BlockStateVariant<::DoublePlantType> const& DEPRECATED_DoublePlantType();
+MCAPI ::BlockStateVariant<::AnvilDamage> const& DEPRECATED_Damage();
 
-MCAPI class BlockStateVariant<::AnvilDamage> const& Damage();
+MCAPI ::BlockStateVariant<::DirtType> const& DEPRECATED_DirtType();
 
-MCAPI class BlockStateVariant<bool> const& DeadBit();
+MCAPI ::BlockStateVariant<::DoublePlantType> const& DEPRECATED_DoublePlantType();
 
-MCAPI class BlockStateVariant<int> const& Direction();
+MCAPI ::BlockStateVariant<::FlowerType> const& DEPRECATED_FlowerType();
 
-MCAPI class BlockStateVariant<::DirtType> const& DirtType();
+MCAPI ::BlockStateVariant<::MonsterEggStoneType> const& DEPRECATED_MonsterEggStoneType();
 
-MCAPI class BlockStateVariant<bool> const& DisarmedBit();
+MCAPI ::BlockStateVariant<::NewLeavesType> const& DEPRECATED_NewLeavesType();
 
-MCAPI class BlockStateVariant<bool> const& DoorHingeBit();
+MCAPI ::BlockStateVariant<::NewLogType> const& DEPRECATED_NewLogType();
 
-MCAPI class BlockStateVariant<bool> const& DragDown();
+MCAPI ::BlockStateVariant<bool> const& DEPRECATED_NoDropBit();
 
-MCAPI class BlockStateVariant<::DripstoneThickness> const& DripstoneThickness();
+MCAPI ::BlockStateVariant<::OldLeavesType> const& DEPRECATED_OldLeavesType();
 
-MCAPI class BlockStateVariant<bool> const& EndPortalEyeBit();
+MCAPI ::BlockStateVariant<::OldLogType> const& DEPRECATED_OldLogType();
 
-MCAPI class BlockStateVariant<bool> const& ExplodeBit();
+MCAPI ::BlockStateVariant<::PrismarineBlockType> const& DEPRECATED_PrismarineBlockType();
 
-MCAPI class BlockStateVariant<bool> const& Extinguished();
+MCAPI ::BlockStateVariant<::SandType> const& DEPRECATED_SandType();
 
-MCAPI class BlockStateVariant<int> const& FacingDirection();
+MCAPI ::BlockStateVariant<::SandstoneType> const& DEPRECATED_SandstoneType();
 
-MCAPI class BlockStateVariant<int> const& FillLevel();
+MCAPI ::BlockStateVariant<::SaplingType> const& DEPRECATED_SaplingType();
 
-MCAPI class BlockStateVariant<::FlowerType> const& FlowerType();
+MCAPI ::BlockStateVariant<::SpongeType> const& DEPRECATED_SpongeType();
 
-MCAPI class BlockStateVariant<int> const& GrowingPlantAge();
+MCAPI ::BlockStateVariant<::StoneBrickType> const& DEPRECATED_StoneBrickType();
 
-MCAPI class BlockStateVariant<int> const& Growth();
+MCAPI ::BlockStateVariant<::StoneSlabType> const& DEPRECATED_StoneSlabType();
 
-MCAPI class BlockStateVariant<bool> const& HangingBit();
+MCAPI ::BlockStateVariant<::StoneSlabType2> const& DEPRECATED_StoneSlabType2();
 
-MCAPI class BlockStateVariant<bool> const& HeadPieceBit();
+MCAPI ::BlockStateVariant<::StoneSlabType3> const& DEPRECATED_StoneSlabType3();
 
-MCAPI class BlockStateVariant<int> const& Height();
+MCAPI ::BlockStateVariant<::StoneSlabType4> const& DEPRECATED_StoneSlabType4();
 
-MCAPI class BlockStateVariant<int> const& HugeMushroomBits();
+MCAPI ::BlockStateVariant<::StoneType> const& DEPRECATED_StoneType();
 
-MCAPI class BlockStateVariant<bool> const& InWallBit();
+MCAPI ::BlockStateVariant<bool> const& DEPRECATED_StrippedBit();
 
-MCAPI class BlockStateVariant<bool> const& InfiniburnBit();
+MCAPI ::BlockStateVariant<::StructureVoidType> const& DEPRECATED_StructureVoidType();
 
-MCAPI class BlockStateVariant<bool> const& ItemFrameMapBit();
+MCAPI ::BlockStateVariant<::TallGrassType> const& DEPRECATED_TallGrassType();
 
-MCAPI class BlockStateVariant<bool> const& ItemFramePhotoBit();
+MCAPI ::BlockStateVariant<::WallBlockType> const& DEPRECATED_WallBlockType();
 
-MCAPI class BlockStateVariant<int> const& KelpAge();
+MCAPI ::BlockStateVariant<::WoodType> const& DEPRECATED_WoodType();
 
-MCAPI class BlockStateVariant<::LeverDirection> const& LeverDirection();
+MCAPI ::BlockStateVariant<bool> const& DeadBit();
 
-MCAPI class BlockStateVariant<int> const& LiquidDepth();
+MCAPI ::BlockStateVariant<int> const& Direction();
 
-MCAPI class BlockStateVariant<bool> const& Lit();
+MCAPI ::BlockStateVariant<bool> const& DisarmedBit();
 
-MCAPI class BlockStateVariant<int> const& MoisturizedAmount();
+MCAPI ::BlockStateVariant<bool> const& DoorHingeBit();
 
-MCAPI class BlockStateVariant<::MonsterEggStoneType> const& MonsterEggStoneType();
+MCAPI ::BlockStateVariant<bool> const& DragDown();
 
-MCAPI class BlockStateVariant<int> const& MultiFaceDirectionBits();
+MCAPI ::BlockStateVariant<::DripstoneThickness> const& DripstoneThickness();
 
-MCAPI class BlockStateVariant<::NewLeavesType> const& NewLeavesType();
+MCAPI ::BlockStateVariant<bool> const& EndPortalEyeBit();
 
-MCAPI class BlockStateVariant<::NewLogType> const& NewLogType();
+MCAPI ::BlockStateVariant<bool> const& ExplodeBit();
 
-MCAPI class BlockStateVariant<bool> const& NoDropBit();
+MCAPI ::BlockStateVariant<bool> const& Extinguished();
 
-MCAPI class BlockStateVariant<bool> const& OccupiedBit();
+MCAPI ::BlockStateVariant<int> const& FacingDirection();
 
-MCAPI class BlockStateVariant<::OldLeavesType> const& OldLeavesType();
+MCAPI ::BlockStateVariant<int> const& FillLevel();
 
-MCAPI class BlockStateVariant<::OldLogType> const& OldLogType();
+MCAPI ::BlockStateVariant<int> const& GrowingPlantAge();
 
-MCAPI class BlockStateVariant<bool> const& Ominous();
+MCAPI ::BlockStateVariant<int> const& Growth();
 
-MCAPI class BlockStateVariant<bool> const& OpenBit();
+MCAPI ::BlockStateVariant<bool> const& HangingBit();
 
-MCAPI class BlockStateVariant<::FrontAndTop> const& Orientation();
+MCAPI ::BlockStateVariant<bool> const& HeadPieceBit();
 
-MCAPI class BlockStateVariant<bool> const& OutputLitBit();
+MCAPI ::BlockStateVariant<int> const& Height();
 
-MCAPI class BlockStateVariant<bool> const& OutputSubtractBit();
+MCAPI ::BlockStateVariant<int> const& HugeMushroomBits();
 
-MCAPI class BlockStateVariant<bool> const& PersistentBit();
+MCAPI ::BlockStateVariant<bool> const& InWallBit();
 
-MCAPI class BlockStateVariant<::PillarAxis> const& PillarAxis();
+MCAPI ::BlockStateVariant<bool> const& InfiniburnBit();
 
-MCAPI class BlockStateVariant<::PortalAxis> const& PortalAxis();
+MCAPI ::BlockStateVariant<bool> const& ItemFrameMapBit();
 
-MCAPI class BlockStateVariant<bool> const& PoweredBit();
+MCAPI ::BlockStateVariant<bool> const& ItemFramePhotoBit();
 
-MCAPI class BlockStateVariant<::PrismarineBlockType> const& PrismarineBlockType();
+MCAPI ::BlockStateVariant<int> const& KelpAge();
 
-MCAPI class BlockStateVariant<int> const& PropaguleStage();
+MCAPI ::BlockStateVariant<::LeverDirection> const& LeverDirection();
 
-MCAPI class BlockStateVariant<bool> const& RailDataBit();
+MCAPI ::BlockStateVariant<int> const& LiquidDepth();
 
-MCAPI class BlockStateVariant<int> const& RailDirection();
+MCAPI ::BlockStateVariant<bool> const& Lit();
 
-MCAPI class BlockStateVariant<int> const& RedstoneSignal();
+MCAPI ::BlockStateVariant<int> const& MoisturizedAmount();
 
-MCAPI class BlockStateVariant<int> const& RepeaterDelay();
+MCAPI ::BlockStateVariant<int> const& MultiFaceDirectionBits();
 
-MCAPI class BlockStateVariant<int> const& RespawnAnchorCharge();
+MCAPI ::BlockStateVariant<bool> const& Natural();
 
-MCAPI class BlockStateVariant<int> const& Rotation();
+MCAPI ::BlockStateVariant<bool> const& OccupiedBit();
 
-MCAPI class BlockStateVariant<::SandType> const& SandType();
+MCAPI ::BlockStateVariant<bool> const& Ominous();
 
-MCAPI class BlockStateVariant<::SandstoneType> const& SandstoneType();
+MCAPI ::BlockStateVariant<bool> const& OpenBit();
 
-MCAPI class BlockStateVariant<::SaplingType> const& SaplingType();
+MCAPI ::BlockStateVariant<::FrontAndTop> const& Orientation();
 
-MCAPI class BlockStateVariant<int> const& SculkSensorPhase();
+MCAPI ::BlockStateVariant<bool> const& OutputLitBit();
 
-MCAPI class BlockStateVariant<::SeagrassType> const& SeagrassType();
+MCAPI ::BlockStateVariant<bool> const& OutputSubtractBit();
 
-MCAPI class BlockStateVariant<::SpongeType> const& SpongeType();
+MCAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideEast();
 
-MCAPI class BlockStateVariant<int> const& Stability();
+MCAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideNorth();
 
-MCAPI class BlockStateVariant<bool> const& StabilityCheckBit();
+MCAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideSouth();
 
-MCAPI class BlockStateVariant<int> const& StandingRotation();
+MCAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideWest();
 
-MCAPI class BlockStateVariant<::StoneBrickType> const& StoneBrickType();
+MCAPI ::BlockStateVariant<bool> const& PersistentBit();
 
-MCAPI class BlockStateVariant<::StoneSlabType> const& StoneSlabType();
+MCAPI ::BlockStateVariant<::PillarAxis> const& PillarAxis();
 
-MCAPI class BlockStateVariant<::StoneSlabType2> const& StoneSlabType2();
+MCAPI ::BlockStateVariant<::PortalAxis> const& PortalAxis();
 
-MCAPI class BlockStateVariant<::StoneSlabType3> const& StoneSlabType3();
+MCAPI ::BlockStateVariant<bool> const& PoweredBit();
 
-MCAPI class BlockStateVariant<::StoneSlabType4> const& StoneSlabType4();
+MCAPI ::BlockStateVariant<int> const& PropaguleStage();
 
-MCAPI class BlockStateVariant<::StoneType> const& StoneType();
+MCAPI ::BlockStateVariant<bool> const& RailDataBit();
 
-MCAPI class BlockStateVariant<bool> const& StrippedBit();
+MCAPI ::BlockStateVariant<int> const& RailDirection();
 
-MCAPI class BlockStateVariant<::StructureBlockType> const& StructureBlockType();
+MCAPI ::BlockStateVariant<int> const& RedstoneSignal();
 
-MCAPI class BlockStateVariant<::StructureVoidType> const& StructureVoidType();
+MCAPI ::BlockStateVariant<int> const& RepeaterDelay();
 
-MCAPI class BlockStateVariant<bool> const& SuspendedBit();
+MCAPI ::BlockStateVariant<int> const& RespawnAnchorCharge();
 
-MCAPI class BlockStateVariant<::TallGrassType> const& TallGrassType();
+MCAPI ::BlockStateVariant<int> const& Rotation();
 
-MCAPI class BlockStateVariant<bool> const& ToggleBit();
+MCAPI ::BlockStateVariant<int> const& SculkSensorPhase();
 
-MCAPI class BlockStateVariant<bool> const& TopSlotBit();
+MCAPI ::BlockStateVariant<::SeagrassType> const& SeagrassType();
 
-MCAPI class BlockStateVariant<::TorchFacing> const& TorchFacingDirection();
+MCAPI ::BlockStateVariant<int> const& Stability();
 
-MCAPI class BlockStateVariant<int> const& TrialSpawnerState();
+MCAPI ::BlockStateVariant<bool> const& StabilityCheckBit();
 
-MCAPI class BlockStateVariant<bool> const& TriggeredBit();
+MCAPI ::BlockStateVariant<int> const& StandingRotation();
 
-MCAPI class BlockStateVariant<::EggCount> const& TurtleEggCount();
+MCAPI ::BlockStateVariant<::StructureBlockType> const& StructureBlockType();
 
-MCAPI class BlockStateVariant<int> const& TwistingVinesAge();
+MCAPI ::BlockStateVariant<bool> const& SuspendedBit();
 
-MCAPI class BlockStateVariant<bool> const& UpdateBit();
+MCAPI ::BlockStateVariant<bool> const& Tip();
 
-MCAPI class BlockStateVariant<bool> const& UpperBlockBit();
+MCAPI ::BlockStateVariant<bool> const& ToggleBit();
 
-MCAPI class BlockStateVariant<bool> const& UpsideDownBit();
+MCAPI ::BlockStateVariant<bool> const& TopSlotBit();
 
-MCAPI class BlockStateVariant<::VaultBlockState> const& VaultState();
+MCAPI ::BlockStateVariant<::TorchFacing> const& TorchFacingDirection();
 
-MCAPI class BlockStateVariant<int> const& VineDirectionBits();
+MCAPI ::BlockStateVariant<int> const& TrialSpawnerState();
 
-MCAPI class BlockStateVariant<::WallBlockType> const& WallBlockType();
+MCAPI ::BlockStateVariant<bool> const& TriggeredBit();
 
-MCAPI class BlockStateVariant<::WallConnectionType> const& WallConnectionTypeEast();
+MCAPI ::BlockStateVariant<::EggCount> const& TurtleEggCount();
 
-MCAPI class BlockStateVariant<::WallConnectionType> const& WallConnectionTypeNorth();
+MCAPI ::BlockStateVariant<int> const& TwistingVinesAge();
 
-MCAPI class BlockStateVariant<::WallConnectionType> const& WallConnectionTypeSouth();
+MCAPI ::BlockStateVariant<bool> const& UpdateBit();
 
-MCAPI class BlockStateVariant<::WallConnectionType> const& WallConnectionTypeWest();
+MCAPI ::BlockStateVariant<bool> const& UpperBlockBit();
 
-MCAPI class BlockStateVariant<bool> const& WallPostBit();
+MCAPI ::BlockStateVariant<bool> const& UpsideDownBit();
 
-MCAPI class BlockStateVariant<int> const& WeepingVinesAge();
+MCAPI ::BlockStateVariant<::VaultBlockState> const& VaultState();
 
-MCAPI class BlockStateVariant<int> const& WeirdoDirection();
+MCAPI ::BlockStateVariant<int> const& VineDirectionBits();
 
-MCAPI class BlockStateVariant<::WoodType> const& WoodType();
+MCAPI ::BlockStateVariant<::WallConnectionType> const& WallConnectionTypeEast();
+
+MCAPI ::BlockStateVariant<::WallConnectionType> const& WallConnectionTypeNorth();
+
+MCAPI ::BlockStateVariant<::WallConnectionType> const& WallConnectionTypeSouth();
+
+MCAPI ::BlockStateVariant<::WallConnectionType> const& WallConnectionTypeWest();
+
+MCAPI ::BlockStateVariant<bool> const& WallPostBit();
+
+MCAPI ::BlockStateVariant<int> const& WeepingVinesAge();
+
+MCAPI ::BlockStateVariant<int> const& WeirdoDirection();
 // NOLINTEND
 
-}; // namespace VanillaStates
+} // namespace VanillaStates

@@ -4,21 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Material;
 // clang-format on
 
 class ThinFenceBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk53e190;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ThinFenceBlock& operator=(ThinFenceBlock const&);
@@ -26,144 +33,167 @@ public:
     ThinFenceBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ThinFenceBlock() = default;
+    // vIndex: 8
+    virtual void addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
+
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
+
+    // vIndex: 10
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
-        class AABB&                    outAABB,
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos
-    ) const;
-
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    // vIndex: 8
-    virtual void addAABBs(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          blockPos,
-        class AABB const*              intersectTestBox,
-        std::vector<class AABB>&       inoutBoxes
-    ) const;
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
-
-    // vIndex: 10
-    virtual class AABB const& getVisualShapeInWorld(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferAABB
-    ) const;
-
-    // vIndex: 13
-    virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 25
-    virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
+    virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
-    // vIndex: 36
-    virtual bool isThinFenceBlock() const;
+    // vIndex: 34
+    virtual bool isThinFenceBlock() const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 13
+    virtual bool
+    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
+        /*override*/;
 
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    MCAPI ThinFenceBlock(
-        std::string const&    nameId,
-        int                   id,
-        class Material const& material,
-        bool                  singleSide,
-        bool                  doesNotCollideWithCamera
-    );
-
+    // vIndex: 0
+    virtual ~ThinFenceBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&    nameId,
-        int                   id,
-        class Material const& material,
-        bool                  singleSide,
-        bool                  doesNotCollideWithCamera
+    MCAPI ThinFenceBlock(
+        ::std::string const& nameId,
+        int                  id,
+        ::Material const&    material,
+        bool                 singleSide,
+        bool                 doesNotCollideWithCamera
     );
+    // NOLINTEND
 
-    MCAPI void addAABBs$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          blockPos,
-        class AABB const*              intersectTestBox,
-        std::vector<class AABB>&       inoutBoxes
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const& nameId,
+        int                  id,
+        ::Material const&    material,
+        bool                 singleSide,
+        bool                 doesNotCollideWithCamera
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
     ) const;
+
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI bool $getCollisionShapeForCamera(
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+
+    MCAPI bool $isThinFenceBlock() const;
 
     MCAPI bool
-    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    // NOLINTEND
 
-    MCAPI bool canConnect$(class Block const& otherBlock, uchar, class Block const&) const;
-
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI bool getCollisionShapeForCamera$(
-        class AABB&                    outAABB,
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos
-    ) const;
-
-    MCAPI bool getLiquidClipVolume$(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
-
-    MCAPI class AABB const& getOutline$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
-
-    MCAPI class AABB const& getVisualShapeInWorld$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferAABB
-    ) const;
-
-    MCAPI bool isThinFenceBlock$() const;
-
-    MCAPI static class BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DamageCondition;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class HurtOnConditionDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk553feb;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HurtOnConditionDefinition& operator=(HurtOnConditionDefinition const&);
@@ -18,13 +25,16 @@ public:
     HurtOnConditionDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addDamageCondition(struct DamageCondition const& damageCondition);
+    MCAPI void addDamageCondition(::DamageCondition const& damageCondition);
+    // NOLINTEND
 
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition>>& root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HurtOnConditionDefinition>>& root
     );
-
     // NOLINTEND
 };

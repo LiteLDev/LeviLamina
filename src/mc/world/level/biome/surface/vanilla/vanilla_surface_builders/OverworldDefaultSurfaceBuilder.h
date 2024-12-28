@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -21,28 +20,37 @@ public:
     OverworldDefaultSurfaceBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OverworldDefaultSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome& biome, uint);
+    virtual void init(::Biome& biome, uint) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
+    virtual ~OverworldDefaultSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome& biome, uint);
 
-    MCAPI void init$(class Biome& biome, uint);
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

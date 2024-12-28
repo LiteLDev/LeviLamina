@@ -7,51 +7,88 @@
 #include "mc/network/packet/AddActorBasePacket.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class Painting;
+class ReadOnlyBinaryStream;
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
+
 class AddPaintingPacket : public ::AddActorBasePacket {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<4, 12, ::Vec3>          mPos;
+    ::ll::TypedStorage<4, 4, int>              mDir;
+    ::ll::TypedStorage<8, 32, ::std::string>   mMotif;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AddPaintingPacket& operator=(AddPaintingPacket const&);
     AddPaintingPacket(AddPaintingPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AddPaintingPacket() = default;
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI AddPaintingPacket();
-
-    MCAPI explicit AddPaintingPacket(class Painting const& painting);
-
+    // vIndex: 0
+    virtual ~AddPaintingPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AddPaintingPacket();
 
-    MCAPI void* ctor$();
+    MCAPI explicit AddPaintingPacket(::Painting const& painting);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Painting const& painting);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::Painting const& painting);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

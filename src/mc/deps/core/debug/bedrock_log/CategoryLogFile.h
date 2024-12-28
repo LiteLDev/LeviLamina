@@ -9,28 +9,39 @@ namespace BedrockLog {
 
 struct CategoryLogFile {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk98d468;
+    ::ll::UntypedStorage<4, 4>  mUnkd3b10f;
+    ::ll::UntypedStorage<4, 4>  mUnkf08fde;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CategoryLogFile& operator=(CategoryLogFile const&);
     CategoryLogFile(CategoryLogFile const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void AddChannel(::BedrockLog::LogChannel channel);
 
     MCAPI CategoryLogFile();
 
     MCAPI ~CategoryLogFile();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace BedrockLog
+} // namespace BedrockLog

@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class ContentTierIncompatibleReason;
+class ContentTierInfo;
+class PackInstance;
+struct SubpackInfo;
 // clang-format on
 
 class ValidatorRegistry : public ::Bedrock::EnableNonOwnerReferences {
@@ -30,24 +33,36 @@ public:
 
     class ValidatorRegistryValidators {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnk25ba02;
+        ::ll::UntypedStorage<8, 64> mUnk317db0;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ValidatorRegistryValidators();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkdc1378;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -56,35 +71,37 @@ public:
     ValidatorRegistry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ValidatorRegistry() = default;
+    virtual ~ValidatorRegistry() /*override*/;
+    // NOLINTEND
 
-    MCAPI static bool findValidators(
-        std::string const&                                    validatorName,
-        class ValidatorRegistry::ValidatorRegistryValidators& validatorPair
-    );
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
+
+    MCAPI static bool
+    findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
 
     MCAPI static void registerValidators(
-        std::string_view validatorName,
-        std::function<class ContentTierIncompatibleReason(class PackInstance const&, class ContentTierInfo const&)>
-            packValidator,
-        std::function<class ContentTierIncompatibleReason(struct SubpackInfo const&, class ContentTierInfo const&)>
+        ::std::string_view                                                                                validatorName,
+        ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)> packValidator,
+        ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
             subpackValidator
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class Bedrock::NonOwnerPointer<class ValidatorRegistry> _get();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

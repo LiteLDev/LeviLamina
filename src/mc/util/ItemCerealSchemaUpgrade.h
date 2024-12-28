@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/util/CerealSchemaUpgrade.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+// clang-format on
+
 class ItemCerealSchemaUpgrade : public ::CerealSchemaUpgrade {
 public:
     // prevent constructor by default
@@ -13,27 +18,38 @@ public:
     ItemCerealSchemaUpgrade();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemCerealSchemaUpgrade();
-
-    MCAPI ItemCerealSchemaUpgrade(
-        class SemVersion   targetVersion,
-        std::string const& mSchemaKey,
-        std::string const& mJsonMemberName
-    );
-
+    virtual ~ItemCerealSchemaUpgrade() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemCerealSchemaUpgrade(
+        ::SemVersion         targetVersion,
+        ::std::string const& mSchemaKey,
+        ::std::string const& mJsonMemberName
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class SemVersion targetVersion, std::string const& mSchemaKey, std::string const& mJsonMemberName);
+    $ctor(::SemVersion targetVersion, ::std::string const& mSchemaKey, ::std::string const& mJsonMemberName);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,7 +7,24 @@
 #include "mc/world/filters/FilterParamRequirement.h"
 #include "mc/world/filters/FilterParamType.h"
 
+// auto generated forward declare list
+// clang-format off
+class FilterInput;
+struct FilterStringMap;
+// clang-format on
+
 struct FilterParamDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk4b4f37;
+    ::ll::UntypedStorage<4, 4>  mUnk3c8bc4;
+    ::ll::UntypedStorage<8, 32> mUnk29a8f8;
+    ::ll::UntypedStorage<8, 48> mUnk87f316;
+    ::ll::UntypedStorage<8, 64> mUnked9a86;
+    ::ll::UntypedStorage<1, 1>  mUnk87e752;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FilterParamDefinition& operator=(FilterParamDefinition const&);
@@ -15,49 +32,54 @@ public:
     FilterParamDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI FilterParamDefinition(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
-        std::string              description,
-        class FilterInput        def,
-        struct FilterStringMap   stringMap
+        ::std::string            description,
+        ::FilterInput            def,
+        ::FilterStringMap        stringMap
     );
 
     MCAPI FilterParamDefinition(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
-        std::string              description,
+        ::std::string            description,
         ::FilterParamOption      opt,
-        class FilterInput        def,
-        struct FilterStringMap   stringMap
+        ::FilterInput            def,
+        ::FilterStringMap        stringMap
     );
+
+    MCAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
 
     MCAPI ~FilterParamDefinition();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
+    MCAPI void* $ctor(
         ::FilterParamType        type,
         ::FilterParamRequirement requirement,
-        std::string              description,
+        ::std::string            description,
+        ::FilterInput            def,
+        ::FilterStringMap        stringMap
+    );
+
+    MCAPI void* $ctor(
+        ::FilterParamType        type,
+        ::FilterParamRequirement requirement,
+        ::std::string            description,
         ::FilterParamOption      opt,
-        class FilterInput        def,
-        struct FilterStringMap   stringMap
+        ::FilterInput            def,
+        ::FilterStringMap        stringMap
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        std::string              description,
-        class FilterInput        def,
-        struct FilterStringMap   stringMap
-    );
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

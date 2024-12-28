@@ -22,14 +22,14 @@ public:
     ScriptLocation();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::InterfaceBindingBuilder<class Vec3> bindVec3();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::Vec3> bindVec3();
 
-    MCAPI static class Scripting::ClassBindingBuilder<class Vec3> bindVec3_V010();
+    MCAPI static ::Scripting::ClassBindingBuilder<::Vec3> bindVec3_V010();
 
-    MCAPI static class Scripting::InterfaceBindingBuilder<class VecXZ> bindVecXZ();
-
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::VecXZ> bindVecXZ();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

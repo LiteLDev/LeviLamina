@@ -13,4 +13,4 @@ public:
     ConcreteFeatureHolder();
 };
 
-}; // namespace FeatureLoading
+} // namespace FeatureLoading

@@ -4,51 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-class Player;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemCompleteUseEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk5ba2ff;
+    ::ll::UntypedStorage<8, 32> mUnk775e66;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptItemCompleteUseEvent& operator=(ScriptItemCompleteUseEvent const&);
     ScriptItemCompleteUseEvent(ScriptItemCompleteUseEvent const&);
     ScriptItemCompleteUseEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCompleteUseEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> item,
-        class Player const&                                                                    player,
-        class Scripting::WeakLifetimeScope const&                                              scope
-    );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemCompleteUseEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemCompleteUseEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemCompleteUseEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemCompleteUseEvent> bind();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> item,
-        class Player const&                                                                    player,
-        class Scripting::WeakLifetimeScope const&                                              scope
-    );
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCompleteUseEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

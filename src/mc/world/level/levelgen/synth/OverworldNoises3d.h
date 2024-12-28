@@ -6,69 +6,92 @@
 #include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-#include "mc/world/level/levelgen/synth/ParityImprovedNoiseImpl.h"
 #include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class XoroshiroPositionalRandomFactory;
+struct TargetPoint;
+struct TerrainInfo;
+// clang-format on
+
 struct OverworldNoises3d {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 56>  mUnk366e4b;
+    ::ll::UntypedStorage<8, 56>  mUnk36ae34;
+    ::ll::UntypedStorage<8, 56>  mUnk26a2db;
+    ::ll::UntypedStorage<8, 56>  mUnk2f028d;
+    ::ll::UntypedStorage<8, 56>  mUnk8a04ce;
+    ::ll::UntypedStorage<8, 56>  mUnkd30937;
+    ::ll::UntypedStorage<8, 56>  mUnkd61cf8;
+    ::ll::UntypedStorage<8, 512> mUnk8c808d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OverworldNoises3d& operator=(OverworldNoises3d const&);
     OverworldNoises3d();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI OverworldNoises3d(struct OverworldNoises3d const&);
+    MCAPI OverworldNoises3d(::OverworldNoises3d const&);
 
-    MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const& worldQuartPos) const;
+    MCAPI OverworldNoises3d(
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> erosionNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> weirdnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> offsetNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
+    );
 
-    MCAPI struct TerrainInfo computeOffsetAndFactor(class DividedPos2d<4> const& worldQuartPos) const;
+    MCAPI ::ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos
+    ) const;
 
-    MCAPI struct TargetPoint sample(class BlockPos position) const;
+    MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
 
-    MCAPI struct TargetPoint sample(int blockY, struct ChunkLocalNoiseCache::CacheEntry const& cachedNoises) const;
+    MCAPI ::TerrainInfo computeOffsetAndFactor(::DividedPos2d<4> const& worldQuartPos) const;
+
+    MCAPI ::TargetPoint sample(::BlockPos position) const;
+
+    MCAPI ::TargetPoint sample(int blockY, ::ChunkLocalNoiseCache::CacheEntry const& cachedNoises) const;
 
     MCAPI ~OverworldNoises3d();
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static float
     computeInitialDensity(int blockY, float biomeDensityOffset, float biomeDensityFactor, float biomeDensityJaggedness);
 
-    MCAPI static struct OverworldNoises3d make(class XoroshiroPositionalRandomFactory const& randomFactory);
-
+    MCAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI OverworldNoises3d(
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> temperatureNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> humidityNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> continentalnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> erosionNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> weirdnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> offsetNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> jaggedNoise
-    );
-
-    MCAPI struct ChunkLocalNoiseCache::CacheEntry
-    _computeBaseValueSetForCacheEntry(class DividedPos2d<4> const& worldQuartPos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct OverworldNoises3d const&);
+    MCAPI void* $ctor(::OverworldNoises3d const&);
 
-    MCAPI void* ctor$(
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> temperatureNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> humidityNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> continentalnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> erosionNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> weirdnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> offsetNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> jaggedNoise
+    MCAPI void* $ctor(
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> humidityNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> continentalnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> erosionNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> weirdnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> offsetNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

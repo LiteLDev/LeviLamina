@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
+class IContentKeyProvider;
 namespace Core { class Path; }
 // clang-format on
 
 class LevelLooseFileStorage {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnked6009;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelLooseFileStorage& operator=(LevelLooseFileStorage const&);
@@ -18,23 +26,22 @@ public:
     LevelLooseFileStorage();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LevelLooseFileStorage(
-        class Core::Path const&                                             levelDirectory,
-        class ContentIdentity const&                                        contentIdentity,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+        ::Core::Path const&                                               levelDirectory,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Core::Path const&                                             levelDirectory,
-        class ContentIdentity const&                                        contentIdentity,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    MCAPI void* $ctor(
+        ::Core::Path const&                                               levelDirectory,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
-
     // NOLINTEND
 };

@@ -8,9 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptLiveEventsUtilities::Betas {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& CURRENT();
+MCAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}; // namespace ScriptLiveEventsUtilities::Betas
+} // namespace ScriptLiveEventsUtilities::Betas

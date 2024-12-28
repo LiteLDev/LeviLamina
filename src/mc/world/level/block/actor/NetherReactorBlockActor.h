@@ -3,10 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+// clang-format on
+
 class NetherReactorBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk5234bc;
+    ::ll::UntypedStorage<1, 1> mUnk1b4bc5;
+    ::ll::UntypedStorage<2, 2> mUnk26882d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NetherReactorBlockActor& operator=(NetherReactorBlockActor const&);
@@ -14,30 +29,35 @@ public:
     NetherReactorBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NetherReactorBlockActor() = default;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
-    MCAPI explicit NetherReactorBlockActor(class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~NetherReactorBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

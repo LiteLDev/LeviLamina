@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class PartiallyExposedBlobFeature : public ::IFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnkb31f0c;
+    ::ll::UntypedStorage<4, 4>   mUnk603a72;
+    ::ll::UntypedStorage<4, 4>   mUnk32f433;
+    ::ll::UntypedStorage<8, 184> mUnke9275c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PartiallyExposedBlobFeature& operator=(PartiallyExposedBlobFeature const&);
@@ -13,42 +30,39 @@ public:
     PartiallyExposedBlobFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PartiallyExposedBlobFeature() = default;
-
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    origin,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    // vIndex: 0
+    virtual ~PartiallyExposedBlobFeature() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool canBePlaced(::IBlockWorldGenAPI const& target, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    origin,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

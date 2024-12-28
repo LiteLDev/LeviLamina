@@ -3,30 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class BlockPos;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class EnderCrystal : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk387000;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EnderCrystal& operator=(EnderCrystal const&);
@@ -34,65 +30,85 @@ public:
     EnderCrystal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~EnderCrystal() = default;
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    MCAPI EnderCrystal(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI void setBeamTarget(class BlockPos const& target);
-
-    MCAPI void
-    setCrystalDamagedCallback(std::function<void(class EnderCrystal&, class ActorDamageSource const&)> onDamaged);
-
+    // vIndex: 8
+    virtual ~EnderCrystal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI EnderCrystal(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void setBeamTarget(::BlockPos const& target);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void setCrystalDamagedCallback(::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)> onDamaged);
+    // NOLINTEND
 
-    MCAPI float getShadowRadius$() const;
-
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
-
-    MCAPI void normalTick$();
-
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static float const& HEAL_DISTANCE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $normalTick();
+
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

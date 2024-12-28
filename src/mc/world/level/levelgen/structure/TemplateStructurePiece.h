@@ -4,9 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class LegacyStructureSettings;
+class LegacyStructureTemplate;
+class Random;
+// clang-format on
 
 class TemplateStructurePiece : public ::StructurePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkd29f6b;
+    ::ll::UntypedStorage<8, 192> mUnkfd6081;
+    ::ll::UntypedStorage<4, 12>  mUnkf95a50;
+    ::ll::UntypedStorage<1, 1>   mUnk678ed7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TemplateStructurePiece& operator=(TemplateStructurePiece const&);
@@ -14,57 +32,59 @@ public:
     TemplateStructurePiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TemplateStructurePiece();
+    // vIndex: 4
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 1
-    virtual void moveBoundingBox(int dx, int dy, int dz);
-
-    // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 13
-    virtual void _handleDataMarker(
-        std::string const&       markerId,
-        class BlockPos const&    position,
-        class BlockSource&       region,
-        class Random&            random,
-        class BoundingBox const& chunkBB
-    ) = 0;
+    virtual void
+    _handleDataMarker(::std::string const&, ::BlockPos const&, ::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
 
+    // vIndex: 0
+    virtual ~TemplateStructurePiece() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit TemplateStructurePiece(int depth);
 
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _setup(
-        class LegacyStructureTemplate&       structTemplate,
-        class LegacyStructureSettings const& settings,
-        class BlockPos const&                templatePosition
-    );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _setBoundingBoxFromTemplate();
 
+    MCAPI void _setup(
+        ::LegacyStructureTemplate&       structTemplate,
+        ::LegacyStructureSettings const& settings,
+        ::BlockPos const&                templatePosition
+    );
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(int depth);
+    // NOLINTEND
 
-    MCAPI void* ctor$(int depth);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
+    // NOLINTEND
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

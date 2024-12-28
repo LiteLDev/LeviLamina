@@ -2,41 +2,61 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct ActorDefinitionModifier;
+struct VariantParameterListConst;
+// clang-format on
+
 class ActorDefinitionEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnkee8172;
+    ::ll::UntypedStorage<8, 64>  mUnk814d59;
+    ::ll::UntypedStorage<8, 32>  mUnk6f8f5b;
+    ::ll::UntypedStorage<4, 4>   mUnka0a5b3;
+    ::ll::UntypedStorage<8, 24>  mUnk79a6b0;
+    ::ll::UntypedStorage<8, 24>  mUnke1d144;
+    ::ll::UntypedStorage<8, 104> mUnkcaf7b5;
+    ::ll::UntypedStorage<8, 24>  mUnk144c88;
+    ::ll::UntypedStorage<8, 24>  mUnk987f0a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDefinitionEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent&&);
+    MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
-    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const&);
+    MCAPI ActorDefinitionEvent(::ActorDefinitionEvent&&);
 
-    MCAPI class ActorDefinitionEvent& operator=(class ActorDefinitionEvent const&);
-
-    MCAPI ~ActorDefinitionEvent();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _evaluateGroups(
-        class Actor&                                 entity,
-        std::vector<struct ActorDefinitionModifier>& modifications,
-        class VariantParameterList const&            list
+        ::Actor&                                  entity,
+        ::std::vector<::ActorDefinitionModifier>& modifications,
+        ::VariantParameterListConst const&        list
     ) const;
 
+    MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
+
+    MCAPI ~ActorDefinitionEvent();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ActorDefinitionEvent&&);
+    MCAPI void* $ctor(::ActorDefinitionEvent const&);
 
-    MCAPI void* ctor$(class ActorDefinitionEvent const&);
+    MCAPI void* $ctor(::ActorDefinitionEvent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

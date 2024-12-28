@@ -7,51 +7,89 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+namespace mce { class UUID; }
+// clang-format on
+
 class EmoteListPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>            mRuntimeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>> mEmotePieceIds;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EmoteListPacket& operator=(EmoteListPacket const&);
     EmoteListPacket(EmoteListPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EmoteListPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI EmoteListPacket();
-
+    // vIndex: 0
+    virtual ~EmoteListPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EmoteListPacket();
 
-    MCAPI void* ctor$();
+    MCAPI explicit EmoteListPacket(::ActorRuntimeID runtimeId);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
-
-    MCAPI ::MinecraftPacketIds getId$() const;
-
-    MCAPI std::string getName$() const;
-
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_EMOTE_PIECE_IDS();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ActorRuntimeID runtimeId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

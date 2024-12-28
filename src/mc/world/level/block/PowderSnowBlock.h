@@ -4,19 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { struct BlockFallOnEvent; }
-namespace mce { class Color; }
+class AABB;
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Level;
+class Material;
+namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class PowderSnowBlock : public ::BlockLegacy {
@@ -27,88 +32,99 @@ public:
     PowderSnowBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PowderSnowBlock() = default;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB getCollisionShape(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+    virtual ::AABB getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
-    // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
-
-    // vIndex: 25
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
-
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
-
-    // vIndex: 55
-    virtual bool canBeDestroyedByWaterSpread() const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 111
+    virtual bool causesFreezeEffect() const /*override*/;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 117
-    virtual bool causesFreezeEffect() const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const&);
+    // vIndex: 25
+    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
-    MCAPI PowderSnowBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
-
-    MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const& actor);
-
-    MCAPI static void clearFire(class BlockSource& region, class BlockPos const& pos, class Block const& block);
-
-    MCAPI static void spawnPowderSnowParticles(class Level& level, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~PowderSnowBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PowderSnowBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canWalkOnTop(::GetCollisionShapeInterface const& actor);
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI static void clearFire(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+    MCAPI static void spawnPowderSnowParticles(::Level& level, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI bool canBeDestroyedByWaterSpread$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI bool canConnect$(class Block const&, uchar, class Block const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool causesFreezeEffect$() const;
-
-    MCAPI class AABB getCollisionShape$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool isWaterBlocking$() const;
+    MCAPI bool $causesFreezeEffect() const;
 
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI bool $isLavaBlocking() const;
+
+    MCAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

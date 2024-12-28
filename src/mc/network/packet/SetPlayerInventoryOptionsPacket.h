@@ -7,55 +7,83 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct InventoryOptions;
+// clang-format on
+
 class SetPlayerInventoryOptionsPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 20, ::InventoryOptions> mInventoryOptions;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SetPlayerInventoryOptionsPacket& operator=(SetPlayerInventoryOptionsPacket const&);
     SetPlayerInventoryOptionsPacket(SetPlayerInventoryOptionsPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SetPlayerInventoryOptionsPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI SetPlayerInventoryOptionsPacket();
-
-    MCAPI explicit SetPlayerInventoryOptionsPacket(struct InventoryOptions const& inventoryOptions);
-
-    MCAPI struct InventoryOptions const& getInventoryOptions() const;
-
+    // vIndex: 0
+    virtual ~SetPlayerInventoryOptionsPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SetPlayerInventoryOptionsPacket();
 
-    MCAPI void* ctor$(struct InventoryOptions const& inventoryOptions);
+    MCAPI explicit SetPlayerInventoryOptionsPacket(::InventoryOptions const& inventoryOptions);
 
-    MCAPI void* ctor$();
+    MCAPI ::InventoryOptions const& getInventoryOptions() const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::InventoryOptions const& inventoryOptions);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

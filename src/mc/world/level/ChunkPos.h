@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Vec3;
+// clang-format on
+
 class ChunkPos {
+public:
+    // member variables
+    // NOLINTBEGIN
+    union {
+        ::ll::TypedStorage<8, 8, int64> packed;
+        struct {
+            ::ll::TypedStorage<4, 4, int> x;
+            ::ll::TypedStorage<4, 4, int> z;
+        };
+    };
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChunkPos& operator=(ChunkPos const&);
@@ -10,31 +28,34 @@ public:
     ChunkPos();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChunkPos(class BlockPos const& pos);
+    MCAPI explicit ChunkPos(::BlockPos const& pos);
 
-    MCAPI explicit ChunkPos(class Vec3 const& pos);
+    MCAPI explicit ChunkPos(::Vec3 const& pos);
 
-    MCAPI bool isWithinBounds(class ChunkPos const& min, class ChunkPos const& max) const;
+    MCAPI bool isWithinBounds(::ChunkPos const& min, ::ChunkPos const& max) const;
 
-    MCAPI class Vec3 toBlockSpaceVec3(float y) const;
-
+    MCAPI ::Vec3 toBlockSpaceVec3(float y) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockPos const& pos);
+    MCAPI static ::ChunkPos const& INVALID();
 
-    MCAPI void* ctor$(class Vec3 const& pos);
+    MCAPI static ::ChunkPos const& MAX();
 
-    MCAPI static class ChunkPos const& INVALID();
+    MCAPI static ::ChunkPos const& MIN();
 
-    MCAPI static class ChunkPos const& MAX();
+    MCAPI static ::ChunkPos const& ONE();
+    // NOLINTEND
 
-    MCAPI static class ChunkPos const& MIN();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
 
-    MCAPI static class ChunkPos const& ONE();
-
+    MCAPI void* $ctor(::Vec3 const& pos);
     // NOLINTEND
 };

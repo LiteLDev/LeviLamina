@@ -4,10 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class Container;
+class DataLoadHelper;
+class Dimension;
+class Level;
+class SaveContext;
+// clang-format on
+
 class RandomizableBlockActorContainerBase : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk4eae51;
+    ::ll::UntypedStorage<4, 4>  mUnk7a2f42;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomizableBlockActorContainerBase& operator=(RandomizableBlockActorContainerBase const&);
@@ -15,38 +32,48 @@ public:
     RandomizableBlockActorContainerBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomizableBlockActorContainerBase();
+    virtual ~RandomizableBlockActorContainerBase() /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 34
-    virtual void eraseLootTable();
-
-    MCAPI void setLootTable(std::string const& lootTable, int lootTableSeed);
-
-    MCAPI void
-    unPackLootTable(class Level& level, class Container& container, DimensionType dimensionId, class Actor* actor);
-
+    virtual void eraseLootTable() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void setLootTable(::std::string const& lootTable, int lootTableSeed);
 
-    MCAPI void dtor$();
+    MCAPI void unPackLootTable(::Level& level, ::Container& container, ::DimensionType dimensionId, ::Actor* actor);
+    // NOLINTEND
 
-    MCAPI void eraseLootTable$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
+    MCAPI void $eraseLootTable();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Attribute;
+class HashedString;
+// clang-format on
+
 class AttributeCollection {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk75a432;
+    ::ll::UntypedStorage<4, 4>  mUnkc2b9c0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AttributeCollection& operator=(AttributeCollection const&);
@@ -10,14 +23,16 @@ public:
     AttributeCollection();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static bool hasAttribute(class HashedString const& name);
-
+    MCAPI ::Attribute& getAttribute(::HashedString const& name);
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class AttributeCollection& instance();
+    MCAPI static bool hasAttribute(::HashedString const& name);
 
+    MCAPI static ::AttributeCollection& instance();
     // NOLINTEND
 };

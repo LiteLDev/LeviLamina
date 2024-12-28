@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/AmethystBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Material;
+class Random;
 // clang-format on
 
 class BuddingAmethystBlock : public ::AmethystBlock {
@@ -26,37 +24,58 @@ public:
     BuddingAmethystBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 47
+    virtual bool isSilentWhenJumpingOff() const /*override*/;
+
     // vIndex: 0
-    virtual ~BuddingAmethystBlock() = default;
-
-    // vIndex: 49
-    virtual bool isSilentWhenJumpingOff() const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI BuddingAmethystBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI static bool canBudGrowAtPos(class BlockSource& region, class BlockPos const& pos);
-
+    virtual ~BuddingAmethystBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BuddingAmethystBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canBudGrowAtPos(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI bool isSilentWhenJumpingOff$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI bool $isSilentWhenJumpingOff() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

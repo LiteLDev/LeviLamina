@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class InteractComponent;
+class Interaction;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class InteractDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkc1876e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InteractDefinition& operator=(InteractDefinition const&);
@@ -18,15 +27,18 @@ public:
     InteractDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addInteraction(class Interaction const& interaction);
+    MCAPI void addInteraction(::Interaction const& interaction);
 
-    MCAPI void initialize(class EntityContext&, class InteractComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::InteractComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::InteractDefinition>>& root
     );
-
     // NOLINTEND
 };

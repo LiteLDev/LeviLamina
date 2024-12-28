@@ -6,27 +6,37 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct MobFlagComponent;
+struct PassengerComponent;
+struct PlayerComponent;
+struct ShouldBeSimulatedComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
 
 namespace SetVehicleInputIntentSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doSetVehicleInputIntent(
-    entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>,
-    class StrictEntityContext const&                     context,
-    struct VehicleComponent const&                       vehicle,
-    struct ActorDataFlagComponent const&                 actorDataFlag,
-    struct ActorDataControllingSeatIndexComponent const& controllingSeatIndex,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<struct PassengerComponent, class FlagComponent<struct MobFlag>>> const& passengerView,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct PlayerComponentFlag>>,
-        class FlagComponent<struct ShouldBeSimulatedFlag>> const& playerView,
-    class EntityModifier<struct VehicleInputIntentComponent>      modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                                                               context,
+    ::VehicleComponent const&                                                                  vehicle,
+    ::ActorDataFlagComponent const&                                                            actorDataFlag,
+    ::ActorDataControllingSeatIndexComponent const&                                            controllingSeatIndex,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>> const& passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ShouldBeSimulatedComponent> const& playerView,
+    ::EntityModifier<::VehicleInputIntentComponent>                                                   modifier
 );
 // NOLINTEND
 
-}; // namespace SetVehicleInputIntentSystem
+} // namespace SetVehicleInputIntentSystem

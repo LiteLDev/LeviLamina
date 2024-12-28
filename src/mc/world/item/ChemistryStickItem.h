@@ -3,21 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BaseGameVersion;
+class Item;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Mob;
+class Player;
 // clang-format on
 
 class ChemistryStickItem : public ::ChemistryItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk1ceb63;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChemistryStickItem& operator=(ChemistryStickItem const&);
@@ -25,99 +33,69 @@ public:
     ChemistryStickItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChemistryStickItem();
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 24
-    virtual class Item& setMaxDamage(int maxDamage);
+    // vIndex: 79
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
-    // vIndex: 41
-    virtual bool showsDurabilityInCreative() const;
-
-    // vIndex: 49
-    virtual bool isValidRepairItem(
-        class ItemStackBase const&   source,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
-    ) const;
-
-    // vIndex: 59
-    virtual bool uniqueAuxValues() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
-
-    // vIndex: 75
-    virtual ::ItemUseMethod
-    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
-
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack& instance, class Actor& actor, class Mob& attacker) const;
-
-    // vIndex: 88
-    virtual bool
-    inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
+    // vIndex: 63
+    virtual bool uniqueAuxValues() const /*override*/;
 
     // vIndex: 92
-    virtual void fixupCommon(class ItemStackBase& stack) const;
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
+        /*override*/;
 
-    MCAPI ChemistryStickItem(std::string const& name, short id);
+    // vIndex: 25
+    virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const /*override*/;
+
+    // vIndex: 53
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
+
+    // vIndex: 44
+    virtual bool showsDurabilityInCreative() const /*override*/;
+
+    // vIndex: 97
+    virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
+
+    // vIndex: 0
+    virtual ~ChemistryStickItem() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChemistryStickItem(::std::string const& name, short id);
+
+    MCAPI ::std::string _getColorName(int data) const;
+
+    MCAPI void _storeActivationTimestamp(::ItemStack& item, uint64 curTime, int desiredPercent) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static ::ItemColor getColorType(int data);
 
     MCAPI static bool isActive(int data);
 
-    MCAPI static bool isChemistryStick(class ItemStackBase const& item);
-
+    MCAPI static bool isChemistryStick(::ItemStackBase const& item);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI std::string _getColorName(int data) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _storeActivationTimestamp(class ItemStack& item, uint64 curTime, int desiredPercent) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(std::string const& name, short id);
-
-    MCAPI void dtor$();
-
-    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
-
-    MCAPI void hurtActor$(class ItemStack& instance, class Actor& actor, class Mob& attacker) const;
-
-    MCAPI bool
-    inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int slot, bool selected) const;
-
-    MCAPI bool isValidRepairItem$(
-        class ItemStackBase const&   source,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
-    ) const;
-
-    MCAPI class Item& setMaxDamage$(int maxDamage);
-
-    MCAPI bool showsDurabilityInCreative$() const;
-
-    MCAPI bool uniqueAuxValues$() const;
-
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
-
-    MCAPI ::ItemUseMethod
-    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
-
-    MCAPI static std::string const& ACTIVATION_TIMESTAMP_TAG();
+    MCAPI static ::std::string const& ACTIVATION_TIMESTAMP_TAG();
 
     MCAPI static int const& ACTIVE_BIT();
 
@@ -130,6 +108,49 @@ public:
     MCAPI static int const& DAMAGE_MASK();
 
     MCAPI static int const& DAMAGE_START_BIT();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
+    MCAPI bool $uniqueAuxValues() const;
+
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
+
+    MCAPI ::Item& $setMaxDamage(int maxDamage);
+
+    MCAPI void $hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const;
+
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI bool $showsDurabilityInCreative() const;
+
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

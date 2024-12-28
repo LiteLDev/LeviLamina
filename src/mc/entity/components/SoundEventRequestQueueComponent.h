@@ -4,21 +4,14 @@
 
 struct SoundEventRequestQueueComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk372e9b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SoundEventRequestQueueComponent& operator=(SoundEventRequestQueueComponent const&);
     SoundEventRequestQueueComponent(SoundEventRequestQueueComponent const&);
     SoundEventRequestQueueComponent();
-
-public:
-    // NOLINTBEGIN
-    MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent&&);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(struct SoundEventRequestQueueComponent&&);
-
-    // NOLINTEND
 };

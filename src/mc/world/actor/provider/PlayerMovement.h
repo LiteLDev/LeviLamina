@@ -6,44 +6,64 @@
 #include "mc/deps/input/InputMode.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
 
-namespace PlayerMovement {
-// NOLINTBEGIN
-MCAPI void applyInputLocks(struct ClientInputLockComponent const& lockComponent, struct MoveInputState& inputState);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class Vec2;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorUniqueID;
+struct ClientInputLockComponent;
+struct MoveInputComponent;
+struct MoveInputState;
+struct PlayerInputModeComponent;
+struct SneakingComponent;
+struct StrictActorIDEntityContextPair;
+struct Tick;
+struct VanillaClientGameplayComponent;
+// clang-format on
 
-MCAPI class Vec2 calculateMoveVector(
-    struct MoveInputState const&         inputState,
-    bool                                 playerIsFlying,
-    struct ActorDataFlagComponent const& playerData,
-    bool                                 playerIsInWater,
-    struct SneakingComponent const*      sneakComponent
+namespace PlayerMovement {
+// functions
+// NOLINTBEGIN
+MCAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
+
+MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
+
+MCAPI ::Vec2 calculateMoveVector(
+    ::MoveInputState const&         inputState,
+    bool                            playerIsFlying,
+    ::ActorDataFlagComponent const& playerData,
+    bool                            playerIsInWater,
+    ::SneakingComponent const*      sneakComponent
 );
 
-MCAPI void clearInputState(struct MoveInputComponent& input);
+MCAPI void clearInputState(::MoveInputComponent& input);
 
-MCAPI struct ActorUniqueID
-getControllingPassengerID(std::vector<struct StrictActorIDEntityContextPair> const& passengers, int controllingSeat);
+MCAPI ::ActorUniqueID
+getControllingPassengerID(::std::vector<::StrictActorIDEntityContextPair> const& passengers, int controllingSeat);
 
-MCAPI ::InputMode getInputMode(class EntityContext const& provider);
+MCAPI ::InputMode getInputMode(::EntityContext const& provider);
 
-MCAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(class EntityContext const& provider);
+MCAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(::EntityContext const& provider);
 
-MCAPI void initializePlayer(class EntityContext& provider);
+MCAPI void initializePlayer(::EntityContext& provider);
 
-MCAPI bool isGamepadOrMotionController(struct PlayerInputModeComponent const& playerInputModeComponent);
+MCAPI bool isGamepadOrMotionController(::PlayerInputModeComponent const& playerInputModeComponent);
 
-MCAPI bool isHoloRealityMode(struct PlayerInputModeComponent const& playerInputModeComponent);
+MCAPI bool isHoloRealityMode(::PlayerInputModeComponent const& playerInputModeComponent);
 
-MCAPI void setElytraFlightTimeTicks(class EntityContext& provider, struct Tick const& value);
+MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
-MCAPI void setPositionMode(class EntityContext& provider, ::PlayerPositionModeComponent::PositionMode positionMode);
+MCAPI void setPositionMode(::EntityContext& provider, ::PlayerPositionModeComponent::PositionMode positionMode);
 
 MCAPI bool shouldStopEmoting(
-    class Vec2                             rawMove,
-    struct ActorDataFlagComponent&         actorDataFlag,
-    struct ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,
-    struct ClientInputLockComponent&       lockComponent,
-    struct VanillaClientGameplayComponent& vanillaClientGameplayComponent
+    ::Vec2                            rawMove,
+    ::ActorDataFlagComponent&         actorDataFlag,
+    ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,
+    ::ClientInputLockComponent&       lockComponent,
+    ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
 );
 // NOLINTEND
 
-}; // namespace PlayerMovement
+} // namespace PlayerMovement

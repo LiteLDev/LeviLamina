@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class EndPodiumFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkb86daf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EndPodiumFeature& operator=(EndPodiumFeature const&);
@@ -13,39 +26,58 @@ public:
     EndPodiumFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~EndPodiumFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
-    MCAPI explicit EndPodiumFeature(bool active);
-
+    virtual ~EndPodiumFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit EndPodiumFeature(bool active);
+    // NOLINTEND
 
-    MCAPI void* ctor$(bool active);
-
-    MCAPI void dtor$();
-
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static float const& CORNER_ROUNDING();
 
-    MCAPI static class BlockPos const& END_PODIUM_CHUNK_POSITION();
+    MCAPI static ::BlockPos const& END_PODIUM_CHUNK_POSITION();
 
-    MCAPI static class BlockPos const& END_PODIUM_LOCATION();
+    MCAPI static ::BlockPos const& END_PODIUM_LOCATION();
 
     MCAPI static int const& PODIUM_PILLAR_HEIGHT();
 
     MCAPI static int const& PODIUM_RADIUS();
 
     MCAPI static int const& RIM_RADIUS();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool active);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

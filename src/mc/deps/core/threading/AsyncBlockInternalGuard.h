@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AsyncBlockInternalGuard {
+// auto generated forward declare list
+// clang-format off
+struct XAsyncBlock;
+// clang-format on
+
+struct AsyncBlockInternalGuard {
 public:
     // prevent constructor by default
     AsyncBlockInternalGuard& operator=(AsyncBlockInternalGuard const&);
@@ -10,15 +15,14 @@ public:
     AsyncBlockInternalGuard();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncBlockInternalGuard(struct XAsyncBlock*);
-
+    MCAPI explicit AsyncBlockInternalGuard(::XAsyncBlock*);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct XAsyncBlock*);
-
+    MCAPI void* $ctor(::XAsyncBlock*);
     // NOLINTEND
 };

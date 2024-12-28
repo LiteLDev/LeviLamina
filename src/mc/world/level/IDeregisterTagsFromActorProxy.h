@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class IDeregisterTagsFromActorProxy {
 public:
     // prevent constructor by default
@@ -10,19 +15,30 @@ public:
     IDeregisterTagsFromActorProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDeregisterTagsFromActorProxy() = default;
+    virtual ~IDeregisterTagsFromActorProxy();
 
     // vIndex: 1
-    virtual void deregisterTagsFromActor(class Actor& actor) = 0;
+    virtual void deregisterTagsFromActor(::Actor&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

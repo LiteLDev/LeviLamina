@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
+
 struct EnvironmentRequirement {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8c8d8e;
+    ::ll::UntypedStorage<4, 4>  mUnkf24b2c;
+    ::ll::UntypedStorage<4, 4>  mUnkaa15da;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EnvironmentRequirement& operator=(EnvironmentRequirement const&);
@@ -10,17 +23,16 @@ public:
     EnvironmentRequirement();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addBlockDescriptor(class BlockDescriptor const& blockDescriptor);
+    MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
     MCAPI ~EnvironmentRequirement();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/MultifaceBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Material;
 // clang-format on
 
 class GlowLichenBlock : public ::MultifaceBlock {
@@ -26,51 +24,56 @@ public:
     GlowLichenBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 125
+    virtual ::BlockLegacy& init() /*override*/;
+
     // vIndex: 0
-    virtual ~GlowLichenBlock() = default;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
-
-    // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
-
-    // vIndex: 136
-    virtual class BlockLegacy& init();
-
-    // vIndex: 163
-    virtual class Block const& getMultifaceBlock() const;
-
-    // vIndex: 164
-    virtual class MultifaceSpreader const& getMultifaceSpreader() const;
-
-    MCAPI GlowLichenBlock(std::string const& nameId, int id, class Material const& material);
-
+    virtual ~GlowLichenBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI GlowLichenBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI bool
-    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
-    MCAPI class Block const& getMultifaceBlock$() const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI class MultifaceSpreader const& getMultifaceSpreader$() const;
+    MCAPI ::BlockLegacy& $init();
+    // NOLINTEND
 
-    MCAPI class BlockLegacy& init$();
-
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

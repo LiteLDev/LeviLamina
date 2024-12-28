@@ -6,7 +6,18 @@
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+// clang-format on
+
 class BlockSourceComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk8b503a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockSourceComponent& operator=(BlockSourceComponent const&);
@@ -14,17 +25,16 @@ public:
     BlockSourceComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockSourceComponent(class WeakRef<class BlockSource> weakBlockSource);
+    MCAPI explicit BlockSourceComponent(::WeakRef<::BlockSource> weakBlockSource);
 
-    MCAPI class StackRefResult<class BlockSource> tryGetBlockSource() const;
-
+    MCAPI ::StackRefResult<::BlockSource> tryGetBlockSource() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakRef<class BlockSource> weakBlockSource);
-
+    MCAPI void* $ctor(::WeakRef<::BlockSource> weakBlockSource);
     // NOLINTEND
 };

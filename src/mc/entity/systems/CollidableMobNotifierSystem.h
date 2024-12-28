@@ -8,9 +8,25 @@
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class CollidableMobNotifierSystem {
+// auto generated forward declare list
+// clang-format off
+class LocalSpatialEntityFetcher;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorIsFirstTickFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct ActorRemovedFlagComponent;
+struct CollidableMobFlagComponent;
+struct CollidableMobNearFlagComponent;
+struct DimensionTypeComponent;
+struct FallingBlockFlagComponent;
+struct LocalSpatialEntityFetcherFactoryComponent;
+struct MobFlagComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct CollidableMobNotifierSystem {
 public:
     // prevent constructor by default
     CollidableMobNotifierSystem& operator=(CollidableMobNotifierSystem const&);
@@ -18,42 +34,34 @@ public:
     CollidableMobNotifierSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void tickNotifier(
-        class StrictEntityContext const&,
-        struct AABBShapeComponent const&     aabbShapeComponent,
-        struct DimensionTypeComponent const& dimensionComponent,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct MobFlag>>,
-            struct Exclude<class FlagComponent<struct ActorFirstTick>>> mobView,
-        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>
-                                                                                fallingBlockView,
-        class EntityModifier<class FlagComponent<struct CollidableMobNearFlag>> mod,
-        struct LocalSpatialEntityFetcherFactoryComponent&                       spatialEntityFetcherFactory,
-        class LocalSpatialEntityFetcher&                                        spatialEntityFetcher
+        ::StrictEntityContext const&,
+        ::AABBShapeComponent const&     aabbShapeComponent,
+        ::DimensionTypeComponent const& dimensionComponent,
+        ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
+                                                                               mobView,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
+        ::EntityModifier<::CollidableMobNearFlagComponent>                     mod,
+        ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcherFactory,
+        ::LocalSpatialEntityFetcher&                                           spatialEntityFetcher
     );
 
     MCAPI static void tickSystem(
-        class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent> factory,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct CollidableMobFlag>>,
-            struct Exclude<class FlagComponent<struct ActorRemovedFlag>>,
-            struct AABBShapeComponent const,
-            struct DimensionTypeComponent const> view,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct MobFlag>>,
-            struct Exclude<class FlagComponent<struct ActorFirstTick>>> mobView,
-        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>
-                                                                                fallingBlockView,
-        class EntityModifier<class FlagComponent<struct CollidableMobNearFlag>> mod
+        ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::CollidableMobFlagComponent>,
+            ::Exclude<::ActorRemovedFlagComponent>,
+            ::AABBShapeComponent const,
+            ::DimensionTypeComponent const> view,
+        ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
+                                                                               mobView,
+        ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
+        ::EntityModifier<::CollidableMobNearFlagComponent>                     mod
     );
-
     // NOLINTEND
 };

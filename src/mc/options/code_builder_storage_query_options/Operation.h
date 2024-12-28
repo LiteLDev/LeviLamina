@@ -4,6 +4,11 @@
 
 namespace CodeBuilderStorageQueryOptions {
 
-enum class Operation {};
-
+enum class Operation : uchar {
+    None  = 0,
+    Get   = 1,
+    Set   = 2,
+    Reset = 3,
 };
+
+}

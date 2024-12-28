@@ -9,34 +9,32 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptServerMessageAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk8b5a6f;
+    ::ll::UntypedStorage<8, 32> mUnke2bc8e;
+    ::ll::UntypedStorage<8, 32> mUnk7c27ea;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptServerMessageAfterEvent& operator=(ScriptServerMessageAfterEvent const&);
     ScriptServerMessageAfterEvent(ScriptServerMessageAfterEvent const&);
     ScriptServerMessageAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptServerMessageAfterEvent(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
-
-    MCAPI ~ScriptServerMessageAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<
-        struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
-
-    MCAPI void dtor$();
-
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
+    bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

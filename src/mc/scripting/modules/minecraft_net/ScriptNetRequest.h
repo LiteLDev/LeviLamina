@@ -5,64 +5,61 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Method; }
+namespace Bedrock::Http { struct Method; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
-namespace ScriptModuleMinecraftServerAdmin { class ScriptSecretString; }
+namespace ScriptModuleServerAdmin { class ScriptSecretString; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
 
-struct ScriptNetRequest {
+struct ScriptNetRequest : public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraftNet::ScriptNetRequest> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc85689;
+    ::ll::UntypedStorage<8, 24> mUnkb5ef2f;
+    ::ll::UntypedStorage<8, 32> mUnkf73a25;
+    ::ll::UntypedStorage<4, 4>  mUnk807e94;
+    ::ll::UntypedStorage<1, 2>  mUnke5dba2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptNetRequest& operator=(ScriptNetRequest const&);
+    ScriptNetRequest(ScriptNetRequest const&);
     ScriptNetRequest();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetRequest(struct ScriptModuleMinecraftNet::ScriptNetRequest&&);
-
-    MCAPI ScriptNetRequest(struct ScriptModuleMinecraftNet::ScriptNetRequest const&);
-
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
-        std::string const&                                                                           key,
-        std::variant<std::string, class ScriptModuleMinecraftServerAdmin::ScriptSecretString> const& value
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
+        ::std::string const&                                                                key,
+        ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> const& value
     );
 
-    MCAPI struct ScriptModuleMinecraftNet::ScriptNetRequest&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetRequest&&);
+    MCAPI ::ScriptModuleMinecraftNet::ScriptNetRequest& operator=(::ScriptModuleMinecraftNet::ScriptNetRequest&&);
 
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setBody(std::string const& body);
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    setBody(::std::string const& body);
 
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setHeaders(std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const& headers);
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    setHeaders(::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const& headers);
 
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setMethod(class Bedrock::Http::Method method);
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest>
+    setMethod(::Bedrock::Http::Method method);
 
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
-    setTimeout(uint timeout);
-
-    MCAPI ~ScriptNetRequest();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetRequest> bind();
-
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint timeout);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetRequest const&);
-
-    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetRequest&&);
-
-    MCAPI void dtor$();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetRequest> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftNet
+} // namespace ScriptModuleMinecraftNet

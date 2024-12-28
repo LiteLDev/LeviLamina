@@ -2,47 +2,60 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+// clang-format on
+
 class CerealDocumentUpgradeStep {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnkdb1730;
+    ::ll::UntypedStorage<8, 24>  mUnkca76f1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CerealDocumentUpgradeStep& operator=(CerealDocumentUpgradeStep const&);
     CerealDocumentUpgradeStep();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~CerealDocumentUpgradeStep();
-
-    MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const&);
-
-    MCAPI explicit CerealDocumentUpgradeStep(class SemVersion const& targetVersion);
-
-    MCAPI void addUpgrade(std::shared_ptr<class CerealSchemaUpgrade> upgrade);
-
-    MCAPI bool apply(
-        rapidjson::GenericDocument<
-            rapidjson::UTF8<char>,
-            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-            rapidjson::CrtAllocator>& document,
-        class SemVersion const&       documentVersion
-    ) const;
-
-    MCAPI bool canUpgrade(class SemVersion const& version) const;
-
-    MCAPI class SemVersion const& getTargetVersion() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CerealDocumentUpgradeStep(::CerealDocumentUpgradeStep const&);
 
-    MCAPI void* ctor$(class SemVersion const& targetVersion);
+    MCAPI bool apply(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentVersion
+    ) const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class CerealDocumentUpgradeStep const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CerealDocumentUpgradeStep const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

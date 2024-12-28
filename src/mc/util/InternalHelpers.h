@@ -6,13 +6,14 @@
 #include "mc/entity/components/MovePredictionType.h"
 
 namespace InternalHelpers {
+// functions
 // NOLINTBEGIN
-MCAPI std::string toString(::MovePredictionType type);
+MCAPI ::std::string toString(::MovePredictionType type);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::chrono::steady_clock::time_point& lastRenderTime();
+MCAPI ::std::chrono::steady_clock::time_point& lastRenderTime();
 // NOLINTEND
 
-}; // namespace InternalHelpers
+} // namespace InternalHelpers

@@ -4,21 +4,26 @@
 
 struct ActorDefinitionIdentifierComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnk5cd7ba;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActorDefinitionIdentifierComponent& operator=(ActorDefinitionIdentifierComponent const&);
     ActorDefinitionIdentifierComponent(ActorDefinitionIdentifierComponent const&);
     ActorDefinitionIdentifierComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ActorDefinitionIdentifierComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

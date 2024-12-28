@@ -12,53 +12,63 @@ public:
     // BlockDescription inner types define
     struct BlockTraits {
     public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI BlockTraits();
-
-        MCAPI BlockTraits(struct BlockDescription::BlockTraits const&);
-
-        MCAPI struct BlockDescription::BlockTraits& operator=(struct BlockDescription::BlockTraits&&);
-
-        MCAPI struct BlockDescription::BlockTraits& operator=(struct BlockDescription::BlockTraits const&);
-
+        ::ll::UntypedStorage<8, 64> mUnkc4f4fa;
         // NOLINTEND
 
-        // thunks
     public:
+        // prevent constructor by default
+        BlockTraits(BlockTraits const&);
+        BlockTraits();
+
+    public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct BlockDescription::BlockTraits const&);
-
-        MCAPI void* ctor$();
-
+        MCAPI ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
         // NOLINTEND
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk620f6f;
+    ::ll::UntypedStorage<4, 8>  mUnkf130a3;
+    ::ll::UntypedStorage<8, 24> mUnk4b74ac;
+    ::ll::UntypedStorage<8, 40> mUnkb8bc1e;
+    ::ll::UntypedStorage<8, 64> mUnk8565cf;
+    ::ll::UntypedStorage<1, 1>  mUnk19d2ef;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockDescription();
 
-    MCAPI BlockDescription(struct BlockDescription&&);
+    MCAPI BlockDescription(::BlockDescription const&);
 
-    MCAPI BlockDescription(struct BlockDescription const&);
+    MCAPI BlockDescription(::BlockDescription&&);
 
-    MCAPI struct BlockDescription& operator=(struct BlockDescription&&);
+    MCAPI ::BlockDescription& operator=(::BlockDescription&&);
 
-    MCAPI struct BlockDescription& operator=(struct BlockDescription const&);
+    MCAPI ::BlockDescription& operator=(::BlockDescription const&);
 
     MCAPI ~BlockDescription();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct BlockDescription&&);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::BlockDescription const&);
 
-    MCAPI void* ctor$(struct BlockDescription const&);
+    MCAPI void* $ctor(::BlockDescription&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

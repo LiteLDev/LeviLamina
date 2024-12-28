@@ -9,40 +9,40 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptRawMessageScoreInterface {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkf9185b;
+    ::ll::UntypedStorage<8, 40> mUnkdfcdfc;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptRawMessageScoreInterface& operator=(ScriptRawMessageScoreInterface const&);
+    ScriptRawMessageScoreInterface(ScriptRawMessageScoreInterface const&);
     ScriptRawMessageScoreInterface();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
 
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
-
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
     MCAPI ~ScriptRawMessageScoreInterface();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawMessageScoreInterface> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

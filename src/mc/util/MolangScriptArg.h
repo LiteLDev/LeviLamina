@@ -5,75 +5,131 @@
 // auto generated inclusion list
 #include "mc/util/MolangScriptArgType.h"
 
+// auto generated forward declare list
+// clang-format off
+class MaterialVariants;
+struct MolangActorArrayPtr;
+struct MolangActorIdArrayPtr;
+struct MolangArrayVariable;
+struct MolangClientTextureSet;
+struct MolangContextVariable;
+struct MolangDataDrivenGeometry;
+struct MolangEntityVariable;
+struct MolangGeometryVariable;
+struct MolangMaterialVariable;
+struct MolangMatrix;
+struct MolangMemberAccessor;
+struct MolangMemberArray;
+struct MolangQueryFunctionPtr;
+struct MolangTempVariable;
+struct MolangTextureVariable;
+union MolangScriptArgPOD;
+// clang-format on
+
 struct MolangScriptArg {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::MolangScriptArgType> mType;
+    ::ll::TypedStorage<8, 8, ::MolangScriptArgPOD>  mPOD;
+    ::ll::TypedStorage<
+        8,
+        72,
+        ::std::variant<
+            ::MolangMatrix,
+            ::MaterialVariants,
+            ::MolangActorArrayPtr,
+            ::MolangActorIdArrayPtr,
+            ::MolangArrayVariable,
+            ::MolangClientTextureSet,
+            ::MolangContextVariable,
+            ::MolangDataDrivenGeometry,
+            ::MolangEntityVariable,
+            ::MolangGeometryVariable,
+            ::MolangMaterialVariable,
+            ::MolangMemberAccessor,
+            ::MolangMemberArray,
+            ::MolangQueryFunctionPtr,
+            ::MolangTempVariable,
+            ::MolangTextureVariable>>
+        mData;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI MolangScriptArg();
 
+    MCAPI explicit MolangScriptArg(::MolangMatrix const&);
+
+    MCAPI MolangScriptArg(::MolangScriptArg&&);
+
+    MCAPI MolangScriptArg(::MolangScriptArg const&);
+
     MCAPI explicit MolangScriptArg(float value);
 
-    MCAPI explicit MolangScriptArg(int value);
+    MCAPI explicit MolangScriptArg(::MolangActorIdArrayPtr const&);
 
-    MCAPI MolangScriptArg(struct MolangScriptArg&&);
+    MCAPI explicit MolangScriptArg(::MolangMemberArray const&);
 
-    MCAPI MolangScriptArg(struct MolangScriptArg const&);
-
-    MCAPI void clear();
-
-    MCAPI struct MolangMemberArray* getAsNonConstIfMolangMemberArray();
-
-    MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();
+    MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
     MCAPI ::MolangScriptArgType getBaseType() const;
 
-    MCAPI struct MolangMemberArray const* getIfMolangMemberArray() const;
+    MCAPI bool isEqual(::MolangScriptArg const& rhs) const;
 
-    MCAPI bool isEqual(struct MolangScriptArg const& rhs) const;
+    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const&);
 
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
 
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const&);
+    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&&);
+
+    MCAPI void reportGetFailure() const;
 
     MCAPI void setType(::MolangScriptArgType type);
 
     MCAPI ~MolangScriptArg();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void reportGetFailure() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct MolangScriptArg const&);
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_break();
 
-    MCAPI void* ctor$();
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
 
-    MCAPI void* ctor$(int value);
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
 
-    MCAPI void* ctor$(struct MolangScriptArg&&);
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
 
-    MCAPI void* ctor$(float value);
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_floatNeg1();
 
-    MCAPI void dtor$();
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_break();
+    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_structUV0();
+    // NOLINTEND
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_float0();
+    MCAPI void* $ctor(::MolangMatrix const&);
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_float1();
+    MCAPI void* $ctor(::MolangScriptArg&&);
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_floatNeg1();
+    MCAPI void* $ctor(::MolangScriptArg const&);
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
+    MCAPI void* $ctor(float value);
 
-    MCAPI static struct MolangScriptArg const& mDefaultReturnValue_structUV0();
+    MCAPI void* $ctor(::MolangActorIdArrayPtr const&);
 
+    MCAPI void* $ctor(::MolangMemberArray const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

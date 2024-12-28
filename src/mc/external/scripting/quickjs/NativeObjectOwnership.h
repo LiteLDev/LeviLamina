@@ -4,6 +4,10 @@
 
 namespace Scripting::QuickJS {
 
-enum class NativeObjectOwnership {};
-
+enum class NativeObjectOwnership : int {
+    Empty  = 0,
+    Weak   = 1,
+    Strong = 2,
 };
+
+}

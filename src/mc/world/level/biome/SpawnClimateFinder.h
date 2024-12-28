@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class DimensionHeightRange;
+struct ClimateParameters;
+struct OverworldNoises3d;
+// clang-format on
+
 class SpawnClimateFinder {
 public:
     // SpawnClimateFinder inner types declare
@@ -12,11 +20,27 @@ public:
     // SpawnClimateFinder inner types define
     struct ResultDetails {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk51c2d9;
+        ::ll::UntypedStorage<4, 4>  mUnkee84af;
+        ::ll::UntypedStorage<8, 8>  mUnkddab9c;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         ResultDetails& operator=(ResultDetails const&);
         ResultDetails(ResultDetails const&);
         ResultDetails();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk9e17ef;
+    ::ll::UntypedStorage<8, 8>  mUnk849964;
+    ::ll::UntypedStorage<8, 24> mUnk31f9ef;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -25,38 +49,36 @@ public:
     SpawnClimateFinder();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI SpawnClimateFinder(
-        std::vector<struct ClimateParameters> targetClimates,
-        struct OverworldNoises3d const&       noiseSampler,
-        class DimensionHeightRange const&     dimensionHeightRange
+        ::std::vector<::ClimateParameters> targetClimates,
+        ::OverworldNoises3d const&         noiseSampler,
+        ::DimensionHeightRange const&      dimensionHeightRange
     );
 
-    MCAPI class BlockPos findSpawnPosition() const;
+    MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
+
+    MCAPI ::std::pair<::BlockPos, int64> _getSpawnPositionAndFitness(::BlockPos samplePos) const;
+
+    MCAPI ::BlockPos findSpawnPosition() const;
 
     MCAPI ~SpawnClimateFinder();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI int64 _calculateClimateFitness(class BlockPos pos) const;
-
-    MCAPI struct SpawnClimateFinder::ResultDetails
-    _radialSearch(struct SpawnClimateFinder::ResultDetails workingData, int maxRadius, int radiusIncrement) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::vector<struct ClimateParameters> targetClimates,
-        struct OverworldNoises3d const&       noiseSampler,
-        class DimensionHeightRange const&     dimensionHeightRange
+    MCAPI void* $ctor(
+        ::std::vector<::ClimateParameters> targetClimates,
+        ::OverworldNoises3d const&         noiseSampler,
+        ::DimensionHeightRange const&      dimensionHeightRange
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

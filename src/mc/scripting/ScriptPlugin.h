@@ -3,19 +3,43 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/resource/ResourceInformation.h"
 #include "mc/external/scripting/runtime/IDependencyLoader.h"
+#include "mc/scripting/PluginExecutionGroup.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IDependencyLoader; }
+class IScriptPluginSource;
+class MinEngineVersion;
+struct PackIdVersion;
 namespace Scripting { class ScriptContext; }
 namespace Scripting { struct Capabilities; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptData; }
+namespace mce { class UUID; }
 // clang-format on
 
 class ScriptPlugin : public ::Scripting::IDependencyLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16>  mUnk677bbf;
+    ::ll::UntypedStorage<8, 104> mUnk510e2b;
+    ::ll::UntypedStorage<8, 16>  mUnka5fd90;
+    ::ll::UntypedStorage<8, 24>  mUnkde6a3d;
+    ::ll::UntypedStorage<1, 1>   mUnk1dd446;
+    ::ll::UntypedStorage<8, 120> mUnk67c5dc;
+    ::ll::UntypedStorage<8, 136> mUnk55c0d6;
+    ::ll::UntypedStorage<8, 32>  mUnk210ffe;
+    ::ll::UntypedStorage<4, 4>   mUnkedd7b3;
+    ::ll::UntypedStorage<8, 32>  mUnkfa4080;
+    ::ll::UntypedStorage<8, 32>  mUnk9b4f34;
+    ::ll::UntypedStorage<8, 24>  mUnk6cbe98;
+    ::ll::UntypedStorage<8, 32>  mUnk553bc3;
+    ::ll::UntypedStorage<1, 1>   mUnk48ffe9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPlugin& operator=(ScriptPlugin const&);
@@ -23,61 +47,102 @@ public:
     ScriptPlugin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPlugin();
+    virtual ~ScriptPlugin() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<struct Scripting::ScriptData>
-    onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>> moduleBindings);
+    virtual ::std::optional<::Scripting::ScriptData> onLoadScript(
+        ::std::string const&                                       name,
+        ::std::optional<::std::vector<::Scripting::ModuleBinding>> moduleBindings
+    ) /*override*/;
+    // NOLINTEND
 
-    MCAPI ScriptPlugin(class ScriptPlugin&& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlugin(::ScriptPlugin&&);
 
     MCAPI ScriptPlugin(
-        std::shared_ptr<class IScriptPluginSource>        pluginSource,
-        struct Scripting::ModuleDescriptor&&              moduleDesc,
-        std::vector<struct Scripting::ModuleDescriptor>&& moduleDependencies,
-        struct Scripting::Capabilities&&                  capabilities,
-        std::string const&                                engineVersion,
-        struct PackIdVersion const&                       packId,
-        std::string const&                                runtimeName,
-        std::string const&                                mainScriptFilePath
+        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
+        ::Scripting::ModuleDescriptor&&                moduleDesc,
+        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
+        ::Scripting::Capabilities&&                    capabilities,
+        ::MinEngineVersion const&                      minEngineVersion,
+        ::PackIdVersion const&                         packId,
+        ::std::string const&                           runtimeName,
+        ::std::string const&                           mainScriptFilePath,
+        ::ResourceInformation::ResourceType            pluginType,
+        ::PluginExecutionGroup                         executionGroup
     );
 
-    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
-    MCAPI class Scripting::ScriptContext& getScriptContext();
+    MCAPI ::Scripting::Capabilities const& getCapabilities() const;
 
+    MCAPI ::PluginExecutionGroup getExecutionGroup() const;
+
+    MCAPI ::std::string const& getMainScriptFilePath() const;
+
+    MCAPI ::MinEngineVersion const& getMinEngineVersion() const;
+
+    MCAPI ::std::vector<::Scripting::ModuleDescriptor> const& getModuleDependencies() const;
+
+    MCAPI ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+
+    MCAPI ::mce::UUID getModuleUUID() const;
+
+    MCAPI ::PackIdVersion const& getPackId() const;
+
+    MCAPI ::std::string const& getRuntimeName() const;
+
+    MCAPI ::Scripting::ScriptContext& getScriptContext();
+
+    MCAPI ::std::vector<::std::string> const& getScriptFilePaths() const;
+
+    MCAPI bool hasValidScriptContext() const;
+
+    MCAPI ::std::optional<::Scripting::ScriptData> loadScriptMain();
+
+    MCAPI void setScriptContext(::Scripting::ScriptContext&& context);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<struct Scripting::ScriptData> _loadScript(std::string const& fileName);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::ScriptPlugin&&);
 
-    MCAPI void* ctor$(
-        std::shared_ptr<class IScriptPluginSource>        pluginSource,
-        struct Scripting::ModuleDescriptor&&              moduleDesc,
-        std::vector<struct Scripting::ModuleDescriptor>&& moduleDependencies,
-        struct Scripting::Capabilities&&                  capabilities,
-        std::string const&                                engineVersion,
-        struct PackIdVersion const&                       packId,
-        std::string const&                                runtimeName,
-        std::string const&                                mainScriptFilePath
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
+        ::Scripting::ModuleDescriptor&&                moduleDesc,
+        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
+        ::Scripting::Capabilities&&                    capabilities,
+        ::MinEngineVersion const&                      minEngineVersion,
+        ::PackIdVersion const&                         packId,
+        ::std::string const&                           runtimeName,
+        ::std::string const&                           mainScriptFilePath,
+        ::ResourceInformation::ResourceType            pluginType,
+        ::PluginExecutionGroup                         executionGroup
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptPlugin&& rhs);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::ScriptData>
+    $onLoadScript(::std::string const& name, ::std::optional<::std::vector<::Scripting::ModuleBinding>> moduleBindings);
+    // NOLINTEND
 
-    MCAPI std::optional<struct Scripting::ScriptData>
-    onLoadScript$(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>> moduleBindings);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

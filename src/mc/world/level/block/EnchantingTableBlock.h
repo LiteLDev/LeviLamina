@@ -3,22 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class Player;
 // clang-format on
 
-class EnchantingTableBlock : public ::ActorBlock {
+class EnchantingTableBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     EnchantingTableBlock& operator=(EnchantingTableBlock const&);
@@ -26,47 +23,63 @@ public:
     EnchantingTableBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EnchantingTableBlock() = default;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
+
+    // vIndex: 57
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
-
-    // vIndex: 62
-    virtual bool
-    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI EnchantingTableBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~EnchantingTableBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EnchantingTableBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool
-    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool isCraftingBlock$() const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $isCraftingBlock() const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

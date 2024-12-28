@@ -8,38 +8,66 @@
 
 // auto generated forward declare list
 // clang-format off
+class DragonStrafePlayerGoal;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DragonStrafePlayerDefinition : public ::DragonBaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk9a6d5d;
+    ::ll::UntypedStorage<4, 4> mUnk621e17;
+    ::ll::UntypedStorage<4, 4> mUnk46f52c;
+    ::ll::UntypedStorage<4, 4> mUnk3da9f4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DragonStrafePlayerDefinition& operator=(DragonStrafePlayerDefinition const&);
     DragonStrafePlayerDefinition(DragonStrafePlayerDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DragonStrafePlayerDefinition() = default;
-
-    MCAPI DragonStrafePlayerDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class DragonStrafePlayerGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonStrafePlayerDefinition>>& root
-    );
-
+    virtual ~DragonStrafePlayerDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DragonStrafePlayerDefinition();
 
-    MCAPI void* ctor$();
+    MCAPI void initialize(::EntityContext& entity, ::DragonStrafePlayerGoal& goal) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const& name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DragonStrafePlayerDefinition>>&
+            root
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VanillaFeatures {
-public:
-    // prevent constructor by default
-    VanillaFeatures& operator=(VanillaFeatures const&);
-    VanillaFeatures(VanillaFeatures const&);
-    VanillaFeatures();
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Experiments;
+class FeatureRegistry;
+class FeatureTypeFactory;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static void registerFeatureTypes(class FeatureTypeFactory& typeFactories);
+namespace VanillaFeatures {
+// functions
+// NOLINTBEGIN
+MCAPI void registerFeatureTypes(::FeatureTypeFactory& typeFactories);
 
-    MCAPI static void
-    registerFeatures(class FeatureRegistry& registry, class BaseGameVersion const& baseGameVersion, class Experiments const&);
+MCAPI void
+registerFeatures(::FeatureRegistry& registry, ::BaseGameVersion const& baseGameVersion, ::Experiments const&);
+// NOLINTEND
 
-    // NOLINTEND
-};
+} // namespace VanillaFeatures

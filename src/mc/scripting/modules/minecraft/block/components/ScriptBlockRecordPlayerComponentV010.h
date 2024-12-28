@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 // clang-format on
 
@@ -23,33 +23,45 @@ public:
     ScriptBlockRecordPlayerComponentV010();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBlockRecordPlayerComponentV010() = default;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>
-    bind();
-
+    virtual ~ScriptBlockRecordPlayerComponentV010() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Scripting::Result<void> clearRecord();
-
-    MCAPI class Scripting::Result<bool> isPlaying();
-
-    MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const& itemType);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result<void> clearRecord();
 
-    MCAPI static char const* const& ComponentId();
+    MCAPI ::Scripting::Result_deprecated<bool> isPlaying();
 
+    MCAPI ::Scripting::Result<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010> bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MovementTickResetTemporaryComponentsSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct MovementTickResetTemporaryComponentsSystem {
 public:
     // prevent constructor by default
     MovementTickResetTemporaryComponentsSystem& operator=(MovementTickResetTemporaryComponentsSystem const&);
@@ -10,8 +15,8 @@ public:
     MovementTickResetTemporaryComponentsSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

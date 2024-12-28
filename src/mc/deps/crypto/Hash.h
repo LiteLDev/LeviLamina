@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Crypto::Hash { class IHash; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -16,54 +15,76 @@ namespace Crypto::Hash {
 
 class Hash : public ::Crypto::Hash::IHash {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::Crypto::Hash::HashType>                 mHashType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Hash::IHash>> mHash;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Hash& operator=(Hash const&);
     Hash(Hash const&);
     Hash();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Hash();
+    virtual ~Hash() /*override*/;
 
     // vIndex: 1
-    virtual void reset();
+    virtual void reset() /*override*/;
 
     // vIndex: 2
-    virtual void update(void const* data, uint size);
+    virtual void update(void const* data, uint size) /*override*/;
 
     // vIndex: 3
-    virtual void final(uchar* result);
+    virtual void final(uchar* result) /*override*/;
 
     // vIndex: 4
-    virtual uint64 resultSize() const;
-
-    MCAPI explicit Hash(::Crypto::Hash::HashType type);
-
-    MCAPI std::string final();
-
-    MCAPI class mce::UUID getUUID();
-
+    virtual uint64 resultSize() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit Hash(::Crypto::Hash::HashType type);
 
-    MCAPI void* ctor$(::Crypto::Hash::HashType type);
+    MCAPI ::std::string final();
 
-    MCAPI void dtor$();
+    MCAPI ::mce::UUID getUUID();
+    // NOLINTEND
 
-    MCAPI void final$(uchar* result);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Crypto::Hash::HashType type);
+    // NOLINTEND
 
-    MCAPI void reset$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI uint64 resultSize$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reset();
 
-    MCAPI void update$(void const* data, uint size);
+    MCAPI void $update(void const* data, uint size);
 
+    MCAPI void $final(uchar* result);
+
+    MCAPI uint64 $resultSize() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Hash
+} // namespace Crypto::Hash

@@ -3,30 +3,39 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class EntityContext;
+class HitResult;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct VariantParameterList;
 // clang-format on
 
 class FishingHook : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkcf4e6f;
+    ::ll::UntypedStorage<4, 4>  mUnk76505b;
+    ::ll::UntypedStorage<4, 4>  mUnk7c8b78;
+    ::ll::UntypedStorage<4, 12> mUnk924a7e;
+    ::ll::UntypedStorage<4, 4>  mUnk492d84;
+    ::ll::UntypedStorage<4, 4>  mUnk2f83bf;
+    ::ll::UntypedStorage<4, 4>  mUnkecddce;
+    ::ll::UntypedStorage<4, 4>  mUnke90b0a;
+    ::ll::UntypedStorage<4, 4>  mUnk860015;
+    ::ll::UntypedStorage<4, 4>  mUnk5d4d06;
+    ::ll::UntypedStorage<4, 4>  mUnk345281;
+    ::ll::UntypedStorage<4, 4>  mUnkdbb449;
+    ::ll::UntypedStorage<1, 1>  mUnkc2f77f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FishingHook& operator=(FishingHook const&);
@@ -34,52 +43,39 @@ public:
     FishingHook();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 8
+    virtual ~FishingHook() /*override*/;
 
-    // vIndex: 10
-    virtual ~FishingHook() = default;
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent eventId, int data);
+    // vIndex: 86
+    virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 87
-    virtual bool save(class CompoundTag&) const;
+    // vIndex: 126
+    virtual bool shouldDropDeathLoot() const /*override*/;
 
-    // vIndex: 90
-    virtual struct ActorUniqueID getSourceUniqueID() const;
-
-    // vIndex: 94
-    virtual bool canChangeDimensionsUsingPortal() const;
-
-    // vIndex: 132
-    virtual bool shouldDropDeathLoot() const;
-
-    MCAPI FishingHook(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI class Actor* getFishingTarget();
-
-    MCAPI class Actor* getOwner();
-
-    MCAPI void postNormalTick();
-
-    MCAPI int retrieve();
-
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI FishingHook(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void _fishPosEvent();
 
     MCAPI void _fishTeaseEvent();
@@ -88,9 +84,9 @@ public:
 
     MCAPI float _getWaterPercentage();
 
-    MCAPI class HitResult _hitCheck();
+    MCAPI ::HitResult _hitCheck();
 
-    MCAPI void _pullCloser(class Actor& inEntity, float inSpeed);
+    MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
 
     MCAPI bool _serverHooked();
 
@@ -100,36 +96,54 @@ public:
 
     MCAPI void _updateServer();
 
+    MCAPI ::Actor* getOwner();
+
+    MCAPI void postNormalTick();
+
+    MCAPI int retrieve();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI bool canChangeDimensionsUsingPortal$() const;
-
-    MCAPI float getShadowRadius$() const;
-
-    MCAPI struct ActorUniqueID getSourceUniqueID$() const;
-
-    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
-
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    MCAPI void remove$();
-
-    MCAPI bool save$(class CompoundTag&) const;
-
-    MCAPI bool shouldDropDeathLoot$() const;
-
     MCAPI static float const& BOBBER_SIZE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $remove();
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
+    MCAPI float $getShadowRadius() const;
+
+    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+
+    MCAPI bool $shouldDropDeathLoot() const;
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

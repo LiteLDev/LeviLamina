@@ -13,4 +13,4 @@ public:
     ThreadLocalObject();
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

@@ -6,7 +6,25 @@
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+class ItemStackRequestAction;
+class ItemStackRequestActionBeaconPayment;
+class ItemStackRequestActionHandler;
+// clang-format on
+
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkeb402e;
+    ::ll::UntypedStorage<1, 1> mUnk808e7a;
+    ::ll::UntypedStorage<4, 4> mUnk1cc159;
+    ::ll::UntypedStorage<4, 4> mUnk2bd231;
+    ::ll::UntypedStorage<8, 8> mUnk3df537;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScreenHandlerBeacon& operator=(ScreenHandlerBeacon const&);
@@ -14,46 +32,55 @@ public:
     ScreenHandlerBeacon();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScreenHandlerBeacon() = default;
+    virtual ~ScreenHandlerBeacon() /*override*/;
 
     // vIndex: 1
-    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     // vIndex: 2
-    virtual ::ItemStackNetResult endRequest();
+    virtual ::ItemStackNetResult endRequest() /*override*/;
 
     // vIndex: 4
-    virtual void postRequest(bool wasSuccess);
-
-    MCAPI ScreenHandlerBeacon(
-        class ContainerScreenContext const&  screenContext,
-        class ItemStackRequestActionHandler& requestHandler
-    );
-
+    virtual void postRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const& requestAction
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    ScreenHandlerBeacon(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
 
-    MCAPI void*
-    ctor$(class ContainerScreenContext const& screenContext, class ItemStackRequestActionHandler& requestHandler);
+    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
+    // NOLINTEND
 
-    MCAPI ::ItemStackNetResult endRequest$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
+    // NOLINTEND
 
-    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void postRequest$(bool wasSuccess);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
+    MCAPI ::ItemStackNetResult $endRequest();
+
+    MCAPI void $postRequest(bool const wasSuccess);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

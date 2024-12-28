@@ -6,9 +6,9 @@
 #include "mc/world/level/material/MaterialType.h"
 
 namespace GeodeFeatureInternal {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::vector<::MaterialType>& geodeInvalidMaterials();
+MCAPI ::std::vector<::MaterialType>& geodeInvalidMaterials();
 // NOLINTEND
 
-}; // namespace GeodeFeatureInternal
+} // namespace GeodeFeatureInternal

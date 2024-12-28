@@ -12,4 +12,4 @@ public:
     EqualPropertyBinding();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

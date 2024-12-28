@@ -19,7 +19,6 @@ class LevelChunk;
 class Mob;
 class Player;
 namespace CodeBuilder { class IClient; }
-namespace CodeBuilder { class IMessenger; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -27,264 +26,311 @@ namespace CodeBuilder {
 
 class Messenger : public ::CodeBuilder::IMessenger {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CodeBuilder::IClient>> mCodeBuilderClient;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Messenger& operator=(Messenger const&);
     Messenger(Messenger const&);
     Messenger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void
-    blockBroken(class Player const* player, class Block const& block, int method, int variantData, ushort auxType)
-        const;
+    // vIndex: 0
+    virtual ~Messenger() /*override*/;
 
-    MCVAPI void
-    blockPlaced(class Player const* player, class Block const& block, bool underWater, ushort auxType) const;
+    // vIndex: 1
+    virtual void
+    onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const
+        /*override*/;
 
-    MCVAPI void cameraUsed(bool isSelfie) const;
+    // vIndex: 2
+    virtual void onCommand(::CommandOrigin const& origin, ::CommandOutput const& output) /*override*/;
 
-    MCVAPI void chunkChanged(class LevelChunk& chunk) const;
+    // vIndex: 2
+    virtual void
+    blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const
+        /*override*/;
 
-    MCVAPI void chunkLoaded(class LevelChunk& chunk) const;
+    // vIndex: 3
+    virtual void blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const
+        /*override*/;
 
-    MCVAPI void chunkUnloaded(class LevelChunk& chunk) const;
+    // vIndex: 4
+    virtual void cameraUsed(bool isSelfie) const /*override*/;
 
-    MCVAPI void codeBuilderRuntimeAction(std::string const& action) const;
+    // vIndex: 5
+    virtual void codeBuilderRuntimeAction(::std::string const& action) const /*override*/;
 
-    MCVAPI void codeBuilderScoreChanged(std::string const& objective, int score) const;
+    // vIndex: 6
+    virtual void codeBuilderScoreChanged(::std::string const& objective, int const score) const /*override*/;
 
-    MCVAPI void endOfDay(class Player const* player) const;
+    // vIndex: 7
+    virtual void chunkChanged(::LevelChunk& chunk) const /*override*/;
 
-    MCVAPI void entitySpawned(class Player const* player, int mobType, uint spawnMethod) const;
+    // vIndex: 8
+    virtual void chunkLoaded(::LevelChunk& chunk) const /*override*/;
 
-    MCVAPI void itemAcquired(
-        class Player const*         player,
-        class ItemDescriptor const& item,
-        int,
-        uint amountAcquired,
-        int  acquisitionMethod
-    ) const;
+    // vIndex: 9
+    virtual void chunkUnloaded(::LevelChunk& chunk) const /*override*/;
 
-    MCVAPI void itemCrafted(
-        class Player const*       player,
-        bool                      craftingTable,
-        class ItemInstance const& item,
-        bool                      recipeBook,
-        bool                      hadSearchString,
-        bool                      craftedAutomatically,
-        int                       startingTabId,
-        int                       endingTabId,
-        int                       numTabsChanged,
-        bool                      filterOn,
-        bool                      recipeBookShown
-    ) const;
+    // vIndex: 10
+    virtual void endOfDay(::Player const* player) const /*override*/;
 
-    MCVAPI void itemDropped(class Player const* player, class ItemDescriptor const& item) const;
+    // vIndex: 11
+    virtual void entitySpawned(::Player const* player, int mobType, uint spawnMethod) const /*override*/;
 
-    MCVAPI void itemEquipped(class Player const* player, class ItemInstance const& item, int slot) const;
+    // vIndex: 12
+    virtual void
+    itemAcquired(::Player const* player, ::ItemDescriptor const& item, int, uint amountAcquired, int acquisitionMethod)
+        const /*override*/;
 
-    MCVAPI void itemInteracted(class Player const* player, class ItemInstance const& item, int method) const;
+    // vIndex: 13
+    virtual void itemCrafted(
+        ::Player const*       player,
+        bool                  craftingTable,
+        ::ItemInstance const& item,
+        bool                  recipeBook,
+        bool                  hadSearchString,
+        bool                  craftedAutomatically,
+        int                   startingTabId,
+        int                   endingTabId,
+        int                   numTabsChanged,
+        bool                  filterOn,
+        bool                  recipeBookShown
+    ) const /*override*/;
 
-    MCVAPI void
-    itemSmelted(class Player const* player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem)
-        const;
+    // vIndex: 14
+    virtual void itemDropped(::Player const* player, ::ItemDescriptor const& item) const /*override*/;
 
-    MCVAPI void itemUsed(class Player const* player, class ItemDescriptor const& item, int useMethod) const;
+    // vIndex: 15
+    virtual void itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const /*override*/;
 
-    MCVAPI void mobInteracted(
-        class Player const* player,
-        int                 legacyInteractedEntityType,
-        int                 interactionType,
-        int                 interactedEntityVariant,
-        uchar               interactedEntityColor
-    ) const;
+    // vIndex: 16
+    virtual void itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const /*override*/;
 
-    MCVAPI void mobKilled(
-        class Player const* player,
-        class Actor*        entKiller,
-        class Mob&          mobKilled,
-        uint                method,
-        std::string const&,
+    // vIndex: 17
+    virtual void
+    itemSmelted(::Player const* player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem) const
+        /*override*/;
+
+    // vIndex: 18
+    virtual void itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const /*override*/;
+
+    // vIndex: 19
+    virtual void mobInteracted(
+        ::Player const* player,
+        int             legacyInteractedEntityType,
+        int             interactionType,
+        int             interactedEntityVariant,
+        uchar           interactedEntityColor
+    ) const /*override*/;
+
+    // vIndex: 20
+    virtual void mobKilled(
+        ::Player const* player,
+        ::Actor*        entKiller,
+        ::Mob&          mobKilled,
+        uint            method,
+        ::std::string const&,
         int traderTier
-    ) const;
+    ) const /*override*/;
 
-    MCVAPI void
-    onAgentAction(::AgentActionType actionType, std::string const& requestId, class Json::Value const& result) const;
+    // vIndex: 21
+    virtual void
+    piglinBarter(::Player const* player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer) const
+        /*override*/;
 
-    MCVAPI void onCommand(class CommandOrigin const& origin, class CommandOutput const& output);
+    // vIndex: 22
+    virtual void playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const
+        /*override*/;
 
-    MCVAPI void
-    piglinBarter(class Player const* player, std::string const& itemUsed, bool wasTargetingBarteringPlayer) const;
+    // vIndex: 23
+    virtual void playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const
+        /*override*/;
 
-    MCVAPI void
-    playerBounced(class Player const* player, class Block const& block, int bounceHeight, int auxType) const;
+    // vIndex: 24
+    virtual void playerJoined(::Player const* player) const /*override*/;
 
-    MCVAPI void playerDied(class Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;
+    // vIndex: 25
+    virtual void playerLeave(::Player const* player) const /*override*/;
 
-    MCVAPI void playerJoined(class Player const* player) const;
+    // vIndex: 26
+    virtual void playerMessage(
+        ::std::string const& fromName,
+        ::std::string const& toName,
+        ::std::string const& message,
+        ::std::string const& messageType
+    ) const /*override*/;
 
-    MCVAPI void playerLeave(class Player const* player) const;
+    // vIndex: 27
+    virtual void playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const
+        /*override*/;
 
-    MCVAPI void playerMessage(
-        std::string const& fromName,
-        std::string const& toName,
-        std::string const& message,
-        std::string const& messageType
-    ) const;
+    // vIndex: 28
+    virtual void playerTransform(::Player const* player) const /*override*/;
 
-    MCVAPI void playerTeleported(class Player const* player, float metersTravelled, int cause, int sourceType) const;
+    // vIndex: 29
+    virtual void
+    playerTravelled(::Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
+        const /*override*/;
 
-    MCVAPI void playerTransform(class Player const* player) const;
+    // vIndex: 30
+    virtual void targetBlockHit(::Player const* player, int const redstoneLevel) const /*override*/;
 
-    MCVAPI void
-    playerTravelled(class Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
-        const;
-
-    MCVAPI void targetBlockHit(class Player const* player, int redstoneLevel) const;
-
-    MCVAPI void tradeCompleted(
-        class Player const*         player,
-        class Actor*                trader,
-        class ItemDescriptor const& itemA,
-        class ItemDescriptor const& itemB,
-        class ItemInstance const&   tradedFor,
-        int                         traderEmeraldCount
-    ) const;
-
-    MCAPI explicit Messenger(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient> codeBuilderClient);
-
+    // vIndex: 31
+    virtual void tradeCompleted(
+        ::Player const*         player,
+        ::Actor*                trader,
+        ::ItemDescriptor const& itemA,
+        ::ItemDescriptor const& itemB,
+        ::ItemInstance const&   tradedFor,
+        int                     traderEmeraldCount
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI explicit Messenger(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
+    // NOLINTEND
 
-    MCAPI static void** vftableForCodeBuilderCommandOutputObserver();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class CodeBuilder::IClient> codeBuilderClient);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const;
+
+    MCAPI void $onCommand(::CommandOrigin const& origin, ::CommandOutput const& output);
 
     MCAPI void
-    blockBroken$(class Player const* player, class Block const& block, int method, int variantData, ushort auxType)
+    $blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const;
+
+    MCAPI void $blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const;
+
+    MCAPI void $cameraUsed(bool isSelfie) const;
+
+    MCAPI void $codeBuilderRuntimeAction(::std::string const& action) const;
+
+    MCAPI void $codeBuilderScoreChanged(::std::string const& objective, int const score) const;
+
+    MCAPI void $chunkChanged(::LevelChunk& chunk) const;
+
+    MCAPI void $chunkLoaded(::LevelChunk& chunk) const;
+
+    MCAPI void $chunkUnloaded(::LevelChunk& chunk) const;
+
+    MCAPI void $endOfDay(::Player const* player) const;
+
+    MCAPI void $entitySpawned(::Player const* player, int mobType, uint spawnMethod) const;
+
+    MCAPI void
+    $itemAcquired(::Player const* player, ::ItemDescriptor const& item, int, uint amountAcquired, int acquisitionMethod)
         const;
 
-    MCAPI void
-    blockPlaced$(class Player const* player, class Block const& block, bool underWater, ushort auxType) const;
-
-    MCAPI void cameraUsed$(bool isSelfie) const;
-
-    MCAPI void chunkChanged$(class LevelChunk& chunk) const;
-
-    MCAPI void chunkLoaded$(class LevelChunk& chunk) const;
-
-    MCAPI void chunkUnloaded$(class LevelChunk& chunk) const;
-
-    MCAPI void codeBuilderRuntimeAction$(std::string const& action) const;
-
-    MCAPI void codeBuilderScoreChanged$(std::string const& objective, int score) const;
-
-    MCAPI void endOfDay$(class Player const* player) const;
-
-    MCAPI void entitySpawned$(class Player const* player, int mobType, uint spawnMethod) const;
-
-    MCAPI void itemAcquired$(
-        class Player const*         player,
-        class ItemDescriptor const& item,
-        int,
-        uint amountAcquired,
-        int  acquisitionMethod
+    MCAPI void $itemCrafted(
+        ::Player const*       player,
+        bool                  craftingTable,
+        ::ItemInstance const& item,
+        bool                  recipeBook,
+        bool                  hadSearchString,
+        bool                  craftedAutomatically,
+        int                   startingTabId,
+        int                   endingTabId,
+        int                   numTabsChanged,
+        bool                  filterOn,
+        bool                  recipeBookShown
     ) const;
 
-    MCAPI void itemCrafted$(
-        class Player const*       player,
-        bool                      craftingTable,
-        class ItemInstance const& item,
-        bool                      recipeBook,
-        bool                      hadSearchString,
-        bool                      craftedAutomatically,
-        int                       startingTabId,
-        int                       endingTabId,
-        int                       numTabsChanged,
-        bool                      filterOn,
-        bool                      recipeBookShown
-    ) const;
+    MCAPI void $itemDropped(::Player const* player, ::ItemDescriptor const& item) const;
 
-    MCAPI void itemDropped$(class Player const* player, class ItemDescriptor const& item) const;
+    MCAPI void $itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const;
 
-    MCAPI void itemEquipped$(class Player const* player, class ItemInstance const& item, int slot) const;
-
-    MCAPI void itemInteracted$(class Player const* player, class ItemInstance const& item, int method) const;
+    MCAPI void $itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const;
 
     MCAPI void
-    itemSmelted$(class Player const* player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem)
-        const;
+    $itemSmelted(::Player const* player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem) const;
 
-    MCAPI void itemUsed$(class Player const* player, class ItemDescriptor const& item, int useMethod) const;
+    MCAPI void $itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const;
 
-    MCAPI void mobInteracted$(
-        class Player const* player,
-        int                 legacyInteractedEntityType,
-        int                 interactionType,
-        int                 interactedEntityVariant,
-        uchar               interactedEntityColor
+    MCAPI void $mobInteracted(
+        ::Player const* player,
+        int             legacyInteractedEntityType,
+        int             interactionType,
+        int             interactedEntityVariant,
+        uchar           interactedEntityColor
     ) const;
 
-    MCAPI void mobKilled$(
-        class Player const* player,
-        class Actor*        entKiller,
-        class Mob&          mobKilled,
-        uint                method,
-        std::string const&,
+    MCAPI void $mobKilled(
+        ::Player const* player,
+        ::Actor*        entKiller,
+        ::Mob&          mobKilled,
+        uint            method,
+        ::std::string const&,
         int traderTier
     ) const;
 
     MCAPI void
-    onAgentAction$(::AgentActionType actionType, std::string const& requestId, class Json::Value const& result) const;
+    $piglinBarter(::Player const* player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer) const;
 
-    MCAPI void onCommand$(class CommandOrigin const& origin, class CommandOutput const& output);
+    MCAPI void $playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const;
+
+    MCAPI void $playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;
+
+    MCAPI void $playerJoined(::Player const* player) const;
+
+    MCAPI void $playerLeave(::Player const* player) const;
+
+    MCAPI void $playerMessage(
+        ::std::string const& fromName,
+        ::std::string const& toName,
+        ::std::string const& message,
+        ::std::string const& messageType
+    ) const;
+
+    MCAPI void $playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const;
+
+    MCAPI void $playerTransform(::Player const* player) const;
 
     MCAPI void
-    piglinBarter$(class Player const* player, std::string const& itemUsed, bool wasTargetingBarteringPlayer) const;
+    $playerTravelled(::Player const* player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
+        const;
 
-    MCAPI void
-    playerBounced$(class Player const* player, class Block const& block, int bounceHeight, int auxType) const;
+    MCAPI void $targetBlockHit(::Player const* player, int const redstoneLevel) const;
 
-    MCAPI void playerDied$(class Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;
-
-    MCAPI void playerJoined$(class Player const* player) const;
-
-    MCAPI void playerLeave$(class Player const* player) const;
-
-    MCAPI void playerMessage$(
-        std::string const& fromName,
-        std::string const& toName,
-        std::string const& message,
-        std::string const& messageType
+    MCAPI void $tradeCompleted(
+        ::Player const*         player,
+        ::Actor*                trader,
+        ::ItemDescriptor const& itemA,
+        ::ItemDescriptor const& itemB,
+        ::ItemInstance const&   tradedFor,
+        int                     traderEmeraldCount
     ) const;
+    // NOLINTEND
 
-    MCAPI void playerTeleported$(class Player const* player, float metersTravelled, int cause, int sourceType) const;
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
 
-    MCAPI void playerTransform$(class Player const* player) const;
-
-    MCAPI void playerTravelled$(
-        class Player const* player,
-        float               metersTravelledSinceLastEvent,
-        int                 travelMethodType,
-        int                 newBiome
-    ) const;
-
-    MCAPI void targetBlockHit$(class Player const* player, int redstoneLevel) const;
-
-    MCAPI void tradeCompleted$(
-        class Player const*         player,
-        class Actor*                trader,
-        class ItemDescriptor const& itemA,
-        class ItemDescriptor const& itemB,
-        class ItemInstance const&   tradedFor,
-        int                         traderEmeraldCount
-    ) const;
-
+    MCAPI static void** $vftableForCommandOutputObserver();
     // NOLINTEND
 };
 
-}; // namespace CodeBuilder
+} // namespace CodeBuilder

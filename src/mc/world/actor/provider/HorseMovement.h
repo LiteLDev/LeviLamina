@@ -2,19 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+struct HorseStandCounterComponent;
+// clang-format on
+
 namespace HorseMovement {
+// functions
 // NOLINTBEGIN
-MCAPI bool allowStandSliding(class EntityContext const& provider);
+MCAPI bool allowStandSliding(::EntityContext const& provider);
 
-MCAPI void initializeHorse(class EntityContext& provider);
+MCAPI void initializeHorse(::EntityContext& provider);
 
-MCAPI void resetStandCounter(struct HorseStandCounterComponent& horseStandCounter);
+MCAPI void resetStandCounter(::HorseStandCounterComponent& horseStandCounter);
 
-MCAPI void setAllowStandSliding(class EntityContext& provider, bool value);
+MCAPI void setAllowStandSliding(::EntityContext& provider, bool value);
 
-MCAPI void startStandCounter(struct HorseStandCounterComponent& horseStandCounter);
+MCAPI void startStandCounter(::HorseStandCounterComponent& horseStandCounter);
 
-MCAPI bool tickStandCounter(struct HorseStandCounterComponent& horseStandCounter, int maxValue);
+MCAPI bool tickStandCounter(::HorseStandCounterComponent& horseStandCounter, int maxValue);
 // NOLINTEND
 
-}; // namespace HorseMovement
+} // namespace HorseMovement

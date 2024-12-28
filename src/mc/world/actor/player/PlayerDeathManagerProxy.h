@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/actor/player/IPlayerDeathManagerProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ServerLevel;
+struct ActorUniqueID;
+// clang-format on
+
 class PlayerDeathManagerProxy : public ::IPlayerDeathManagerProxy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka315bc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerDeathManagerProxy& operator=(PlayerDeathManagerProxy const&);
@@ -13,30 +26,52 @@ public:
     PlayerDeathManagerProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerDeathManagerProxy() = default;
+    virtual ~PlayerDeathManagerProxy() /*override*/;
 
     // vIndex: 1
-    virtual class Actor* fetchActor(struct ActorUniqueID actorUniqueID) const;
+    virtual ::Actor* fetchActor(::ActorUniqueID actorUniqueID) const /*override*/;
 
     // vIndex: 2
-    virtual bool shouldShowDeathMessages() const;
+    virtual bool shouldShowDeathMessages() const /*override*/;
 
-    MCAPI explicit PlayerDeathManagerProxy(class ServerLevel& serverLevel);
-
+    // vIndex: 3
+    virtual void onWorldOwnerHasDied() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PlayerDeathManagerProxy(::ServerLevel& serverLevel);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ServerLevel& serverLevel);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerLevel& serverLevel);
+    // NOLINTEND
 
-    MCAPI class Actor* fetchActor$(struct ActorUniqueID actorUniqueID) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool shouldShowDeathMessages$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Actor* $fetchActor(::ActorUniqueID actorUniqueID) const;
 
+    MCAPI bool $shouldShowDeathMessages() const;
+
+    MCAPI void $onWorldOwnerHasDied();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,10 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-
 struct PlayerDamageEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf93c60;
+    ::ll::UntypedStorage<8, 8>  mUnk22f1ba;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerDamageEvent& operator=(PlayerDamageEvent const&);
@@ -13,19 +17,14 @@ public:
     PlayerDamageEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PlayerDamageEvent(class WeakRef<class EntityContext>, std::unique_ptr<class ActorDamageSource>);
-
     MCAPI ~PlayerDamageEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakRef<class EntityContext>, std::unique_ptr<class ActorDamageSource>);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

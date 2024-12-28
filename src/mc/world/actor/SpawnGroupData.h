@@ -2,7 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobSpawnRules;
+// clang-format on
+
 class SpawnGroupData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                  mIdentifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobSpawnRules>> mSpawnRules;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SpawnGroupData& operator=(SpawnGroupData const&);
@@ -10,21 +22,20 @@ public:
     SpawnGroupData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI SpawnGroupData(std::string const& identifier, class MobSpawnRules& spawnRules);
+    MCAPI SpawnGroupData(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
-    MCAPI void addSpawnRules(class MobSpawnRules& spawnRules);
+    MCAPI void addSpawnRules(::MobSpawnRules& spawnRules);
 
-    MCAPI std::string const& getIdentifier() const;
+    MCAPI ::std::string const& getIdentifier() const;
 
-    MCAPI std::vector<class MobSpawnRules> const& getSpawnRules() const;
-
+    MCAPI ::std::vector<::MobSpawnRules> const& getSpawnRules() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& identifier, class MobSpawnRules& spawnRules);
-
+    MCAPI void* $ctor(::std::string const& identifier, ::MobSpawnRules& spawnRules);
     // NOLINTEND
 };

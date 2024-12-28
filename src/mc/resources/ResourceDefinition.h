@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ResourceDefinition {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::string const& VANILLA_NAMESPACE();
+MCAPI ::std::string const& VANILLA_NAMESPACE();
 // NOLINTEND
 
-}; // namespace ResourceDefinition
+} // namespace ResourceDefinition

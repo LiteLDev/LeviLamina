@@ -3,12 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
-#include "mc/world/actor/ActorType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+// clang-format on
 
 class ActorDamageByBlockSource : public ::ActorDamageSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDamageByBlockSource& operator=(ActorDamageByBlockSource const&);
@@ -16,37 +26,54 @@ public:
     ActorDamageByBlockSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorDamageByBlockSource() = default;
-
     // vIndex: 3
-    virtual bool isBlockSource() const;
+    virtual bool isBlockSource() const /*override*/;
 
     // vIndex: 10
-    virtual std::pair<std::string, std::vector<std::string>>
-    getDeathMessage(std::string deadName, class Actor* dead) const;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 21
-    virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
-    MCAPI ActorDamageByBlockSource(class Block const& block, ::ActorDamageCause cause);
-
+    // vIndex: 0
+    virtual ~ActorDamageByBlockSource() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorDamageByBlockSource(::Block const& block, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block, ::ActorDamageCause cause);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::pair<std::string, std::vector<std::string>>
-          getDeathMessage$(std::string deadName, class Actor* dead) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isBlockSource() const;
 
-    MCAPI bool isBlockSource$() const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

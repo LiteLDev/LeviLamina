@@ -4,7 +4,7 @@
 
 namespace xbox::httpclient {
 
-class win32_cs_autolock {
+struct win32_cs_autolock {
 public:
     // prevent constructor by default
     win32_cs_autolock& operator=(win32_cs_autolock const&);
@@ -12,17 +12,16 @@ public:
     win32_cs_autolock();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~win32_cs_autolock();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

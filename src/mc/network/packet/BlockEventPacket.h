@@ -7,53 +7,84 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPos;
+class NetworkBlockPosition;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class BlockEventPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 4, int>                     mB0;
+    ::ll::TypedStorage<4, 4, int>                     mB1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockEventPacket& operator=(BlockEventPacket const&);
     BlockEventPacket(BlockEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI BlockEventPacket();
-
-    MCAPI BlockEventPacket(class BlockPos pos, int b0, int b1);
-
+    // vIndex: 0
+    virtual ~BlockEventPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BlockEventPacket();
 
-    MCAPI void* ctor$(class BlockPos pos, int b0, int b1);
+    MCAPI BlockEventPacket(::BlockPos pos, int b0, int b1);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BlockPos pos, int b0, int b1);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

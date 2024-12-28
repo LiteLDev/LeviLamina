@@ -7,10 +7,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class AgeableComponent;
+class EntityContext;
+class ItemDescriptor;
+struct ActorDefinitionFeedItem;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class AgeableDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk207183;
+    ::ll::UntypedStorage<8, 64>  mUnk1793dc;
+    ::ll::UntypedStorage<8, 24>  mUnk655e2d;
+    ::ll::UntypedStorage<8, 24>  mUnk6f2e03;
+    ::ll::UntypedStorage<8, 104> mUnka52bbd;
+    ::ll::UntypedStorage<8, 16>  mUnkdc85de;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AgeableDefinition& operator=(AgeableDefinition const&);
@@ -18,22 +33,33 @@ public:
     AgeableDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addDropItem(class ItemDescriptor const& itemDescriptor);
+    MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const& feedItem);
+    MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
-    MCAPI void addFeedItemByName(std::string const& itemName);
+    MCAPI void addFeedItemByName(::std::string const& itemName);
 
     MCAPI bool canGrowUp() const;
 
     MCAPI int getTicksAsBaby() const;
 
-    MCAPI void initialize(class EntityContext& entity, class AgeableComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>& root
-    );
+    MCAPI ~AgeableDefinition();
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

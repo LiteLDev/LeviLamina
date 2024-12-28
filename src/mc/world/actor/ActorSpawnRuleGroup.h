@@ -2,10 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorSpawnRuleBase.h"
+// auto generated forward declare list
+// clang-format off
+class BiomeFilterGroup;
+class IWorldRegistriesProvider;
+class MobSpawnRules;
+class MobSpawnerData;
+class Random;
+class ResourcePackManager;
+class SemVersion;
+struct ActorDefinitionIdentifier;
+struct ActorSpawnRuleData;
+struct Tick;
+// clang-format on
 
-class ActorSpawnRuleGroup : public ::ActorSpawnRuleBase {
+class ActorSpawnRuleGroup {
+public:
+    // ActorSpawnRuleGroup inner types define
+    using SpawnRulesHandler =
+        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>>                                 mCategoryLookup;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::MobSpawnerData>>> mSpawnData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mSpawnDelayStartMap;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&);
@@ -13,57 +37,60 @@ public:
     ActorSpawnRuleGroup();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorSpawnRuleGroup() = default;
-
-    // vIndex: 1
-    virtual std::string const& getRootKey();
-
-    // vIndex: 2
-    virtual std::string const& getFileType();
-
-    // vIndex: 3
-    virtual bool processPopulationControl(std::string const& id, std::string const& populationControl);
-
-    // vIndex: 4
-    virtual void readResourceFiles(
-        class ResourcePackManager&                                  resourcePackManager,
-        class MobSpawnRules const&                                  baseSpawnRules,
-        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
-    );
-
-    MCAPI
-    ActorSpawnRuleGroup(class ResourcePackManager& resourcePackManager, class IWorldRegistriesProvider& registries);
-
-    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const& id) const;
-
-    MCAPI int getDelayEnd(std::string const& id) const;
-
-    MCAPI void offSetDelayByCurrentTick(struct Tick const& currentTick);
-
-    MCAPI void resetDelayEnd(class MobSpawnRules spawnRules, uint64 age, class Random& random);
-
+    virtual ~ActorSpawnRuleGroup();
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorSpawnRuleGroup(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries);
 
-    MCAPI void* ctor$(class ResourcePackManager& resourcePackManager, class IWorldRegistriesProvider& registries);
-
-    MCAPI std::string const& getFileType$();
-
-    MCAPI std::string const& getRootKey$();
-
-    MCAPI bool processPopulationControl$(std::string const& id, std::string const& populationControl);
-
-    MCAPI void readResourceFiles$(
-        class ResourcePackManager&                                  resourcePackManager,
-        class MobSpawnRules const&                                  baseSpawnRules,
-        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    MCAPI void _getResources(
+        ::ResourcePackManager& resourcePackManager,
+        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
+            callback
     );
 
+    MCAPI bool _readJson(::std::string data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
+
+    MCAPI void _registerSpawnRules(
+        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
+                              callback,
+        ::ActorSpawnRuleData& spawnRuleData
+    );
+
+    MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
+
+    MCAPI int getDelayEnd(::std::string const& id) const;
+
+    MCAPI void offSetDelayByCurrentTick(::Tick const& currentTick);
+
+    MCAPI void readResourceFiles(
+        ::ResourcePackManager&                                     resourcePackManager,
+        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
+    );
+
+    MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

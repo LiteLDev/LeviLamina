@@ -2,25 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class StrictEntityContext;
-// clang-format on
-
 namespace FireworksMovementSystems {
 
-class IsRocketNotAttachedToThis {
+struct IsRocketNotAttachedToThis {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5fb435;
+    ::ll::UntypedStorage<8, 8> mUnk32076d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IsRocketNotAttachedToThis& operator=(IsRocketNotAttachedToThis const&);
     IsRocketNotAttachedToThis(IsRocketNotAttachedToThis const&);
     IsRocketNotAttachedToThis();
-
-public:
-    // NOLINTBEGIN
-    MCAPI bool operator()(class StrictEntityContext const& entity) const;
-
-    // NOLINTEND
 };
 
-}; // namespace FireworksMovementSystems
+} // namespace FireworksMovementSystems

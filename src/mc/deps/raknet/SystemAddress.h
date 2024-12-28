@@ -6,16 +6,29 @@ namespace RakNet {
 
 struct SystemAddress {
 public:
+    // member variables
+    // NOLINTBEGIN
+    union {
+        ::ll::UntypedStorage<8, 128> mUnk4ff9d4;
+        ::ll::UntypedStorage<4, 128> mUnk3a39ae;
+        ::ll::UntypedStorage<2, 128> mUnkff0e2b;
+    } address;
+    ::ll::TypedStorage<2, 2, ushort> debugPort;
+    ::ll::TypedStorage<2, 2, ushort> systemIndex;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SystemAddress(SystemAddress const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void CopyPort(struct RakNet::SystemAddress const& right);
+    MCAPI void CopyPort(::RakNet::SystemAddress const& right);
 
-    MCAPI bool EqualsExcludingPort(struct RakNet::SystemAddress const& right) const;
+    MCAPI bool EqualsExcludingPort(::RakNet::SystemAddress const& right) const;
 
-    MCAPI void FixForIPVersion(struct RakNet::SystemAddress const& boundAddressToSocket);
+    MCAPI void FixForIPVersion(::RakNet::SystemAddress const& boundAddressToSocket);
 
     MCAPI bool FromString(char const* str, char portDelineator, int ipVersion);
 
@@ -23,7 +36,7 @@ public:
 
     MCAPI uint GetIPPROTO() const;
 
-    MCAPI std::string GetIPString() const;
+    MCAPI ::std::string GetIPString() const;
 
     MCAPI uchar GetIPVersion() const;
 
@@ -43,32 +56,30 @@ public:
 
     MCAPI SystemAddress();
 
-    MCAPI SystemAddress(char const* str, ushort port);
-
-    MCAPI std::string ToString(char portDelineator) const;
+    MCAPI ::std::string ToString(char portDelineator) const;
 
     MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
 
-    MCAPI bool operator!=(struct RakNet::SystemAddress const& right) const;
+    MCAPI bool operator!=(::RakNet::SystemAddress const& right) const;
 
-    MCAPI bool operator<(struct RakNet::SystemAddress const& right) const;
+    MCAPI bool operator<(::RakNet::SystemAddress const& right) const;
 
-    MCAPI struct RakNet::SystemAddress& operator=(struct RakNet::SystemAddress const& input);
+    MCAPI ::RakNet::SystemAddress& operator=(::RakNet::SystemAddress const& input);
 
-    MCAPI bool operator==(struct RakNet::SystemAddress const& right) const;
-
-    MCAPI static ulong ToInteger(struct RakNet::SystemAddress const& sa);
-
+    MCAPI bool operator==(::RakNet::SystemAddress const& right) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ulong ToInteger(::RakNet::SystemAddress const& sa);
+    // NOLINTEND
 
-    MCAPI void* ctor$(char const* str, ushort port);
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

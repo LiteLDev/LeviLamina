@@ -13,4 +13,4 @@ public:
     LoadResult();
 };
 
-}; // namespace Puv
+} // namespace Puv

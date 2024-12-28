@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class EntityRegistry;
+// clang-format on
+
 class IDefinitionInstance {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk32d71a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IDefinitionInstance& operator=(IDefinitionInstance const&);
@@ -10,41 +24,54 @@ public:
     IDefinitionInstance();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void __unk_vfn_0() = 0;
+    virtual void _initialize(::EntityRegistry&, ::EntityContext&) const = 0;
 
     // vIndex: 1
-    virtual void __unk_vfn_1() = 0;
+    virtual void _uninitialize(::EntityRegistry&, ::EntityContext&) const = 0;
 
     // vIndex: 2
-    virtual void __unk_vfn_2() = 0;
+    virtual void _save(::EntityRegistry const&, ::EntityContext const&, ::CompoundTag&) const = 0;
 
     // vIndex: 3
-    virtual void __unk_vfn_3() = 0;
+    virtual void _load(::EntityRegistry&, ::EntityContext&, ::CompoundTag const&, ::DataLoadHelper&) const = 0;
 
     // vIndex: 4
-    virtual void __unk_vfn_4() = 0;
+    virtual void _reload(::EntityRegistry&, ::EntityContext&) const = 0;
 
     // vIndex: 5
     virtual ~IDefinitionInstance();
 
     // vIndex: 6
-    virtual void __unk_vfn_6() = 0;
+    virtual ushort getDefinitionTypeId() const = 0;
 
     // vIndex: 7
     virtual ushort getRuntimeTypeId() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void save(::EntityRegistry const& registry, ::EntityContext const& context, ::CompoundTag& tag) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ushort getRuntimeTypeId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ushort $getRuntimeTypeId() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

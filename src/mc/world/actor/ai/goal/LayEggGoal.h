@@ -3,11 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/level/material/MaterialType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionTrigger;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class ItemDescriptor;
+class Mob;
+// clang-format on
+
 class LayEggGoal : public ::BaseMoveToBlockGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnka30e8b;
+    ::ll::UntypedStorage<8, 24>  mUnk307053;
+    ::ll::UntypedStorage<1, 1>   mUnkc1bf78;
+    ::ll::UntypedStorage<1, 1>   mUnk92b228;
+    ::ll::UntypedStorage<4, 4>   mUnk361df5;
+    ::ll::UntypedStorage<8, 16>  mUnka29b3d;
+    ::ll::UntypedStorage<8, 104> mUnk7af222;
+    ::ll::UntypedStorage<4, 4>   mUnk803e4a;
+    ::ll::UntypedStorage<4, 4>   mUnk4682c4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LayEggGoal& operator=(LayEggGoal const&);
@@ -15,96 +38,109 @@ public:
     LayEggGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LayEggGoal() = default;
+    // vIndex: 17
+    virtual bool findTargetBlock() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 14
-    virtual void _moveToBlock();
+    virtual void _moveToBlock() /*override*/;
 
-    // vIndex: 17
-    virtual bool findTargetBlock();
-
-    MCAPI LayEggGoal(
-        class Mob&                               mob,
-        float                                    speedModifier,
-        int                                      searchRange,
-        int                                      searchHeight,
-        float                                    goalRadius,
-        std::vector<class ItemDescriptor> const& targetBlocks,
-        std::vector<::MaterialType> const&       targetMaterialsAboveBlock,
-        bool                                     allowLayingFromBelow,
-        bool                                     useDefaultAnimation,
-        float                                    laySeconds,
-        class ItemDescriptor const&              eggType,
-        class ActorDefinitionTrigger const&      onLay,
-        std::string const&                       layEggSound
-    );
-
+    // vIndex: 0
+    virtual ~LayEggGoal() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _isTargetBlock(class BlockLegacy const& block) const;
-
-    MCAPI void _layEgg(class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob&                               mob,
-        float                                    speedModifier,
-        int                                      searchRange,
-        int                                      searchHeight,
-        float                                    goalRadius,
-        std::vector<class ItemDescriptor> const& targetBlocks,
-        std::vector<::MaterialType> const&       targetMaterialsAboveBlock,
-        bool                                     allowLayingFromBelow,
-        bool                                     useDefaultAnimation,
-        float                                    laySeconds,
-        class ItemDescriptor const&              eggType,
-        class ActorDefinitionTrigger const&      onLay,
-        std::string const&                       layEggSound
+    MCAPI LayEggGoal(
+        ::Mob&                                 mob,
+        float                                  speedModifier,
+        int                                    searchRange,
+        int                                    searchHeight,
+        float                                  goalRadius,
+        ::std::vector<::ItemDescriptor> const& targetBlocks,
+        ::std::vector<::MaterialType> const&   targetMaterialsAboveBlock,
+        bool                                   allowLayingFromBelow,
+        bool                                   useDefaultAnimation,
+        float                                  laySeconds,
+        ::ItemDescriptor const&                eggType,
+        ::ActorDefinitionTrigger const&        onLay,
+        ::std::string const&                   layEggSound
     );
 
-    MCAPI void _moveToBlock$();
+    MCAPI bool _isTargetBlock(::BlockLegacy const& block) const;
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void _layEgg(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                 mob,
+        float                                  speedModifier,
+        int                                    searchRange,
+        int                                    searchHeight,
+        float                                  goalRadius,
+        ::std::vector<::ItemDescriptor> const& targetBlocks,
+        ::std::vector<::MaterialType> const&   targetMaterialsAboveBlock,
+        bool                                   allowLayingFromBelow,
+        bool                                   useDefaultAnimation,
+        float                                  laySeconds,
+        ::ItemDescriptor const&                eggType,
+        ::ActorDefinitionTrigger const&        onLay,
+        ::std::string const&                   layEggSound
+    );
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool findTargetBlock$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $findTargetBlock();
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI bool $canUse();
 
-    MCAPI void start$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void tick$();
+    MCAPI void $start();
 
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI void $_moveToBlock();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

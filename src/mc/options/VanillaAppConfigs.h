@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/options/AppConfigs.h"
-#include "mc/options/EducationEditionOffer.h"
 
 class VanillaAppConfigs : public ::AppConfigs {
 public:
@@ -15,16 +13,21 @@ public:
     VanillaAppConfigs();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VanillaAppConfigs() = default;
-
+    virtual ~VanillaAppConfigs() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

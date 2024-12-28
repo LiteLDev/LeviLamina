@@ -6,13 +6,17 @@
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/util/Factory.h"
 #include "mc/world/level/CommandOriginSystem.h"
+#include "mc/world/response/ActorEventResponse.h"
+#include "mc/world/response/CommandResponseBase.h"
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
+struct ActorEventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class ActorQueueCommandResponse {
+class ActorQueueCommandResponse : public ::CommandResponseBase, public ::ActorEventResponse {
 public:
     // prevent constructor by default
     ActorQueueCommandResponse& operator=(ActorQueueCommandResponse const&);
@@ -20,43 +24,61 @@ public:
     ActorQueueCommandResponse();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::CommandOriginSystem _getCommandOriginSystem() const;
+    // vIndex: 1
+    virtual ::std::string const& getName() const /*override*/;
 
-    MCVAPI void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&
-                                                       root,
-        class Factory<class ActorEventResponse> const& factory
-    ) const;
+    // vIndex: 2
+    virtual void executeAction(::RenderParams& params) const /*override*/;
 
-    MCVAPI void executeAction(class RenderParams& params) const;
+    // vIndex: 3
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
+                                               schema,
+        ::Factory<::ActorEventResponse> const& factory
+    ) const /*override*/;
 
-    MCVAPI std::string const& getName() const;
+    // vIndex: 1
+    virtual ::CommandOriginSystem _getCommandOriginSystem() const /*override*/;
 
+    // vIndex: 0
+    virtual ~ActorQueueCommandResponse() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForActorEventResponse();
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI static void** vftableForCommandResponseBase();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::CommandOriginSystem _getCommandOriginSystem$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI void buildSchema$(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&
-                                                       root,
-        class Factory<class ActorEventResponse> const& factory
+    MCAPI void $executeAction(::RenderParams& params) const;
+
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
+                                               schema,
+        ::Factory<::ActorEventResponse> const& factory
     ) const;
 
-    MCAPI void executeAction$(class RenderParams& params) const;
+    MCAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForActorEventResponse();
 
-    MCAPI static std::string const& NameID();
-
+    MCAPI static void** $vftableForCommandResponseBase();
     // NOLINTEND
 };

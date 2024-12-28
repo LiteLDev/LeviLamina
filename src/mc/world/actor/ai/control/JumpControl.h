@@ -6,6 +6,13 @@
 #include "mc/world/actor/ai/control/Control.h"
 #include "mc/world/actor/ai/control/JumpType.h"
 
+// auto generated forward declare list
+// clang-format off
+class JumpControlComponent;
+class Mob;
+struct JumpControlDescription;
+// clang-format on
+
 class JumpControl : public ::Control {
 public:
     // prevent constructor by default
@@ -13,60 +20,77 @@ public:
     JumpControl(JumpControl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~JumpControl() = default;
+    virtual ~JumpControl() /*override*/;
 
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob, struct JumpControlDescription* description);
+    virtual void initializeInternal(::Mob& mob, ::JumpControlDescription* description);
 
     // vIndex: 2
-    virtual std::unique_ptr<class JumpControl> clone() const;
+    virtual ::std::unique_ptr<::JumpControl> clone() const;
 
     // vIndex: 3
-    virtual void tick(class JumpControlComponent& parent, class Mob& mob);
+    virtual void tick(::JumpControlComponent& parent, ::Mob& mob);
 
     // vIndex: 4
-    virtual int getJumpDelay(class JumpControlComponent const&) const;
+    virtual int getJumpDelay(::JumpControlComponent const&) const;
 
     // vIndex: 5
-    virtual float getJumpPower(class JumpControlComponent const& parent) const;
+    virtual float getJumpPower(::JumpControlComponent const& parent) const;
 
     // vIndex: 6
-    virtual ::JumpType getJumpType(class JumpControlComponent const&) const;
+    virtual ::JumpType getJumpType(::JumpControlComponent const&) const;
 
     // vIndex: 7
-    virtual void setJumpType(class JumpControlComponent&, ::JumpType);
+    virtual void setJumpType(::JumpControlComponent&, ::JumpType);
 
     // vIndex: 8
-    virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
-
-    MCAPI JumpControl();
-
+    virtual void resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI JumpControl();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class JumpControl> clone$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getJumpDelay$(class JumpControlComponent const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
 
-    MCAPI float getJumpPower$(class JumpControlComponent const& parent) const;
+    MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 
-    MCAPI ::JumpType getJumpType$(class JumpControlComponent const&) const;
+    MCAPI void $tick(::JumpControlComponent& parent, ::Mob& mob);
 
-    MCAPI void initializeInternal$(class Mob& mob, struct JumpControlDescription* description);
+    MCAPI int $getJumpDelay(::JumpControlComponent const&) const;
 
-    MCAPI void resetSpeedModifier$(class JumpControlComponent const&, class Mob&);
+    MCAPI float $getJumpPower(::JumpControlComponent const& parent) const;
 
-    MCAPI void setJumpType$(class JumpControlComponent&, ::JumpType);
+    MCAPI ::JumpType $getJumpType(::JumpControlComponent const&) const;
 
-    MCAPI void tick$(class JumpControlComponent& parent, class Mob& mob);
+    MCAPI void $setJumpType(::JumpControlComponent&, ::JumpType);
 
+    MCAPI void $resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

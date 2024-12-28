@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityRegistry;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -18,40 +19,38 @@ public:
     FreezingSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FreezingSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~FreezingSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
-    MCAPI static class mce::UUID const& FREEZE_EFFECT_UUID();
+    MCAPI static ::mce::UUID const& FREEZE_EFFECT_UUID();
 
     MCAPI static int const& VULNERABLE_MOB_FREEZE_DAMAGE();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

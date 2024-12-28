@@ -12,17 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FrictionModifierDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkdaaecd;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FrictionModifierDefinition& operator=(FrictionModifierDefinition const&);
     FrictionModifierDefinition(FrictionModifierDefinition const&);
     FrictionModifierDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FrictionModifierDefinition>>& root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FrictionModifierDefinition>>& root
     );
-
     // NOLINTEND
 };

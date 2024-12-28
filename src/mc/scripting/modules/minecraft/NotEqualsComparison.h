@@ -9,25 +9,36 @@ namespace ScriptModuleMinecraft {
 
 struct NotEqualsComparison {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk90e2fe;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     NotEqualsComparison& operator=(NotEqualsComparison const&);
     NotEqualsComparison(NotEqualsComparison const&);
     NotEqualsComparison();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI bool operator==(::ScriptModuleMinecraft::NotEqualsComparison const& other) const;
+
     MCAPI ~NotEqualsComparison();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::NotEqualsComparison> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::NotEqualsComparison> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

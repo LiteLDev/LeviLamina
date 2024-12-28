@@ -5,39 +5,64 @@
 // auto generated inclusion list
 #include "mc/world/level/ticking/TickingAreaListBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITickingArea;
+class LevelStorage;
+class Vec3;
+// clang-format on
+
 class TickingAreaList : public ::TickingAreaListBase {
 public:
     // prevent constructor by default
     TickingAreaList& operator=(TickingAreaList const&);
-    TickingAreaList(TickingAreaList const&);
     TickingAreaList();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TickingAreaList();
-
     // vIndex: 1
     virtual bool removeDistantEntityAreasAndCheckForRemoved(
-        std::vector<class Vec3> const&                 playerPositions,
-        std::function<void(class ITickingArea const&)> requeue,
-        class LevelStorage&                            levelStorage
-    );
+        ::std::vector<::Vec3> const&                 playerPositions,
+        ::std::function<void(::ITickingArea const&)> requeue,
+        ::LevelStorage&                              levelStorage
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~TickingAreaList() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TickingAreaList(::TickingAreaList const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TickingAreaList const&);
+    // NOLINTEND
 
-    MCAPI bool removeDistantEntityAreasAndCheckForRemoved$(
-        std::vector<class Vec3> const&                 playerPositions,
-        std::function<void(class ITickingArea const&)> requeue,
-        class LevelStorage&                            levelStorage
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+        ::std::vector<::Vec3> const&                 playerPositions,
+        ::std::function<void(::ITickingArea const&)> requeue,
+        ::LevelStorage&                              levelStorage
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

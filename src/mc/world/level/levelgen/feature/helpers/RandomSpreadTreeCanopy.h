@@ -7,6 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
 namespace TreeHelper { struct TreeParams; }
 // clang-format on
 
@@ -20,24 +24,39 @@ public:
     // RandomSpreadTreeCanopy inner types define
     struct WeightedBlockReference {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 184> mUnkcfe7ff;
+        ::ll::UntypedStorage<4, 4>   mUnk732e3f;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&);
         WeightedBlockReference(WeightedBlockReference const&);
         WeightedBlockReference();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~WeightedBlockReference();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>  mUnk616e41;
+    ::ll::UntypedStorage<4, 8>  mUnkcb02c6;
+    ::ll::UntypedStorage<4, 4>  mUnke19657;
+    ::ll::UntypedStorage<8, 24> mUnk654fad;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -45,39 +64,56 @@ public:
     RandomSpreadTreeCanopy(RandomSpreadTreeCanopy const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomSpreadTreeCanopy() = default;
+    virtual ~RandomSpreadTreeCanopy() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> placeCanopy(
-        class IBlockWorldGenAPI&             target,
-        class BlockPos const&                pos,
-        class Random&                        random,
-        class RenderParams&                  renderParams,
-        struct TreeHelper::TreeParams const& treeParams,
-        std::vector<class BlockPos> const&   attachmentPositions
-    ) const;
-
-    MCAPI RandomSpreadTreeCanopy();
-
+    virtual ::std::optional<::BlockPos> placeCanopy(
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::Random&                        random,
+        ::RenderParams&                  renderParams,
+        ::TreeHelper::TreeParams const&  treeParams,
+        ::std::vector<::BlockPos> const& attachmentPositions
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RandomSpreadTreeCanopy();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> placeCanopy$(
-        class IBlockWorldGenAPI&             target,
-        class BlockPos const&                pos,
-        class Random&                        random,
-        class RenderParams&                  renderParams,
-        struct TreeHelper::TreeParams const& treeParams,
-        std::vector<class BlockPos> const&   attachmentPositions
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::Random&                        random,
+        ::RenderParams&                  renderParams,
+        ::TreeHelper::TreeParams const&  treeParams,
+        ::std::vector<::BlockPos> const& attachmentPositions
     ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

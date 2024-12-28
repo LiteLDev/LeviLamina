@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+// clang-format on
+
 class DwellerSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
@@ -13,36 +18,35 @@ public:
     DwellerSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DwellerSystem() = default;
+    // vIndex: 2
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& eventDispatcher);
+    virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
 
-    // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
-
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~DwellerSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& eventDispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

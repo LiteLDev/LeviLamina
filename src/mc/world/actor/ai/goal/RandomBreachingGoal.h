@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomBreachingGoal : public ::RandomStrollGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkb38fb2;
+    ::ll::UntypedStorage<4, 4> mUnk1a915b;
+    ::ll::UntypedStorage<4, 4> mUnka7e8ea;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomBreachingGoal& operator=(RandomBreachingGoal const&);
@@ -14,55 +26,72 @@ public:
     RandomBreachingGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RandomBreachingGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
-
-    // vIndex: 3
-    virtual bool canBeInterrupted();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
+
+    // vIndex: 3
+    virtual bool canBeInterrupted() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 10
-    virtual bool _setWantedPosition();
+    virtual bool _setWantedPosition() /*override*/;
 
-    MCAPI RandomBreachingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
-
+    // vIndex: 0
+    virtual ~RandomBreachingGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RandomBreachingGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
+    // NOLINTEND
 
-    MCAPI bool _setWantedPosition$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canBeInterrupted$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI void $start();
 
-    MCAPI bool canUse$();
+    MCAPI void $stop();
 
-    MCAPI void start$();
+    MCAPI bool $canBeInterrupted();
 
-    MCAPI void stop$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI bool $_setWantedPosition();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

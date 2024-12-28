@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockLegacy;
+struct BreakBlocksDescription;
+// clang-format on
+
 class BreakBlocksComponent {
 public:
     // prevent constructor by default
@@ -10,12 +17,14 @@ public:
     BreakBlocksComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void breakNearbyBlocks(class Actor& actor);
+    MCAPI void breakNearbyBlocks(::Actor& actor);
+    // NOLINTEND
 
-    MCAPI void initFromDefinition(class Actor&);
-
-    MCAPI static bool isBreakable(struct BreakBlocksDescription const* description, class BlockLegacy const& block);
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isBreakable(::BreakBlocksDescription const* description, ::BlockLegacy const& block);
     // NOLINTEND
 };

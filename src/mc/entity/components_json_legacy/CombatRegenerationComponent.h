@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CombatRegenerationDefinition;
+// clang-format on
+
 class CombatRegenerationComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkc4a785;
+    ::ll::UntypedStorage<8, 8> mUnk9df321;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CombatRegenerationComponent& operator=(CombatRegenerationComponent const&);
@@ -10,16 +23,12 @@ public:
     CombatRegenerationComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void tick(class Actor& owner);
+    MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
-    // NOLINTEND
+    MCAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _applyCombatBuffsToMob(class Actor& owner, class Actor& mob);
-
-    MCAPI class CombatRegenerationDefinition const* _getDefinition(class Actor& actor) const;
-
+    MCAPI void tick(::Actor& owner);
     // NOLINTEND
 };

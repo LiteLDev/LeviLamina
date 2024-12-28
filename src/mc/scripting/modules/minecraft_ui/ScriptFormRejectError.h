@@ -4,11 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 #include "mc/scripting/modules/minecraft_ui/ScriptFormRejectReason.h"
 
 namespace ScriptModuleMinecraftServerUI {
 
-class ScriptFormRejectError {
+class ScriptFormRejectError : public ::Scripting::Error {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk6a5531;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptFormRejectError& operator=(ScriptFormRejectError const&);
@@ -16,24 +23,30 @@ public:
     ScriptFormRejectError();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
 
     MCAPI ~ScriptFormRejectError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptFormRejectError>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptFormRejectError> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftServerUI
+} // namespace ScriptModuleMinecraftServerUI

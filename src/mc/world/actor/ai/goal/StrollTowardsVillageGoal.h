@@ -3,10 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToVillageGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Mob;
+// clang-format on
+
 class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk187816;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StrollTowardsVillageGoal& operator=(StrollTowardsVillageGoal const&);
@@ -14,43 +25,60 @@ public:
     StrollTowardsVillageGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StrollTowardsVillageGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 17
-    virtual class BlockPos _selectRandomPosInVillage();
+    virtual ::BlockPos _selectRandomPosInVillage() /*override*/;
 
-    MCAPI StrollTowardsVillageGoal(
-        class Mob& mob,
-        float      speedModifier,
-        float      goalRadius,
-        float      cooldown,
-        int        searchRange,
-        float      startChance
-    );
-
+    // vIndex: 0
+    virtual ~StrollTowardsVillageGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StrollTowardsVillageGoal(
+        ::Mob& mob,
+        float  speedModifier,
+        float  goalRadius,
+        float  cooldown,
+        int    searchRange,
+        float  startChance
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange, float startChance);
+    $ctor(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange, float startChance);
+    // NOLINTEND
 
-    MCAPI class BlockPos _selectRandomPosInVillage$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI ::BlockPos $_selectRandomPosInVillage();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

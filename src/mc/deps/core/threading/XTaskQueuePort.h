@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class XTaskQueuePort {};
+enum class XTaskQueuePort : uint {};

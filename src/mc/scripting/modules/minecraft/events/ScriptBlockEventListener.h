@@ -3,26 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
-#include "mc/world/level/block/actor/PistonState.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
+class BlockEventListener;
 class BlockPos;
 class Dimension;
 class ItemStackBase;
-class Level;
 class Player;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
-namespace Scripting { class WeakLifetimeScope; }
-struct BlockNotificationEvent;
 struct ButtonPushEvent;
 struct ExplosionStartedEvent;
 struct LeverActionEvent;
-struct NewBlockID;
 struct PistonActionEvent;
 struct PressurePlatePopEvent;
 struct PressurePlatePushEvent;
@@ -32,7 +27,14 @@ struct TripWireTripEvent;
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockEventListener {
+class ScriptBlockEventListener : public ::EventListenerDispatcher<::BlockEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk535dcd;
+    ::ll::UntypedStorage<8, 16> mUnkf27d63;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptBlockEventListener& operator=(ScriptBlockEventListener const&);
@@ -40,174 +42,121 @@ public:
     ScriptBlockEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptBlockEventListener() = default;
+    // vIndex: 22
+    virtual ::EventResult onEvent(::PistonActionEvent const& pistonActionEvent) /*override*/;
 
-    // vIndex: 1
-    virtual ::EventResult onBlockPlacedByPlayer(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
-    );
+    // vIndex: 21
+    virtual ::EventResult onEvent(::LeverActionEvent const& leverActionEvent) /*override*/;
 
-    // vIndex: 2
-    virtual ::EventResult onBlockDestroyedByPlayer(
-        class Player&              player,
-        class Block const&         destroyedBlock,
-        class BlockPos const&      pos,
-        class ItemStackBase const& currentItem,
-        class ItemStackBase const& itemBeforeBlockBreak
-    );
+    // vIndex: 20
+    virtual ::EventResult onEvent(::ButtonPushEvent const& buttonPushEvent) /*override*/;
 
-    // vIndex: 3
-    virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player& player, class BlockPos const& pos);
+    // vIndex: 19
+    virtual ::EventResult onEvent(::PressurePlatePushEvent const& pressurePlatePushEvent) /*override*/;
 
-    // vIndex: 4
-    virtual ::EventResult
-    onBlockMovedByPiston(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
+    // vIndex: 18
+    virtual ::EventResult onEvent(::PressurePlatePopEvent const& pressurePlatePopEvent) /*override*/;
 
-    // vIndex: 5
-    virtual ::EventResult onBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
+    // vIndex: 16
+    virtual ::EventResult onEvent(::TripWireTripEvent const& tripWireTripEvent) /*override*/;
 
-    // vIndex: 6
-    virtual ::EventResult
-    onBlockDestructionStarted(class Player& player, class BlockPos const& pos, class Block const& hitBlock, uchar face);
+    // vIndex: 17
+    virtual ::EventResult onEvent(::TargetBlockHitEvent const& targetBlockHitEvent) /*override*/;
 
-    // vIndex: 7
-    virtual ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
+    // vIndex: 13
+    virtual ::EventResult onEvent(::ExplosionStartedEvent const& explosionStartedEvent) /*override*/;
 
     // vIndex: 8
     virtual ::EventResult onBlockExploded(
-        class Dimension&      dimension,
-        class BlockPos const& blockPos,
-        class Block const&    explodedBlock,
-        class Actor*          source
-    );
+        ::Dimension&      dimension,
+        ::BlockPos const& blockPos,
+        ::Block const&    destroyedBlock,
+        ::Actor*          source
+    ) /*override*/;
 
-    // vIndex: 9
-    virtual ::EventResult
-    onBlockModified(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+    // vIndex: 1
+    virtual ::EventResult onBlockPlacedByPlayer(
+        ::Player&         player,
+        ::Block const&    placedBlock,
+        ::BlockPos const& pos,
+        bool              isUnderwater
+    ) /*override*/;
 
-    // vIndex: 10
-    virtual ::EventResult onUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
+    // vIndex: 2
+    virtual ::EventResult onBlockDestroyedByPlayer(
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
+    ) /*override*/;
 
-    // vIndex: 11
-    virtual ::EventResult onEvent(struct BlockNotificationEvent const& event);
+    // vIndex: 6
+    virtual ::EventResult onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face
+    ) /*override*/;
 
-    // vIndex: 12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13
-    virtual ::EventResult onEvent(struct ExplosionStartedEvent const& explosionStartedEvent);
-
-    // vIndex: 14
-    virtual void __unk_vfn_14();
-
-    // vIndex: 15
-    virtual void __unk_vfn_15();
-
-    // vIndex: 16
-    virtual ::EventResult onEvent(struct PistonActionEvent const& pistonActionEvent);
-
-    // vIndex: 17
-    virtual ::EventResult onEvent(struct LeverActionEvent const& leverActionEvent);
-
-    // vIndex: 18
-    virtual ::EventResult onEvent(struct ButtonPushEvent const& buttonPushEvent);
-
-    // vIndex: 19
-    virtual ::EventResult onEvent(struct PressurePlatePushEvent const& pressurePlatePushEvent);
-
-    // vIndex: 20
-    virtual ::EventResult onEvent(struct PressurePlatePopEvent const& pressurePlatePopEvent);
-
-    // vIndex: 21
-    virtual ::EventResult onEvent(struct TargetBlockHitEvent const& targetBlockHitEvent);
-
-    // vIndex: 22
-    virtual ::EventResult onEvent(struct TripWireTripEvent const& tripWireTripEvent);
-
-    MCAPI ScriptBlockEventListener(
-        class Scripting::WeakLifetimeScope const&                                                 scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
-    );
-
+    // vIndex: 0
+    virtual ~ScriptBlockEventListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class Scripting::WeakLifetimeScope const&                                                 scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::PistonActionEvent const& pistonActionEvent);
+
+    MCAPI ::EventResult $onEvent(::LeverActionEvent const& leverActionEvent);
+
+    MCAPI ::EventResult $onEvent(::ButtonPushEvent const& buttonPushEvent);
+
+    MCAPI ::EventResult $onEvent(::PressurePlatePushEvent const& pressurePlatePushEvent);
+
+    MCAPI ::EventResult $onEvent(::PressurePlatePopEvent const& pressurePlatePopEvent);
+
+    MCAPI ::EventResult $onEvent(::TripWireTripEvent const& tripWireTripEvent);
+
+    MCAPI ::EventResult $onEvent(::TargetBlockHitEvent const& targetBlockHitEvent);
+
+    MCAPI ::EventResult $onEvent(::ExplosionStartedEvent const& explosionStartedEvent);
+
+    MCAPI ::EventResult $onBlockExploded(
+        ::Dimension&      dimension,
+        ::BlockPos const& blockPos,
+        ::Block const&    destroyedBlock,
+        ::Actor*          source
     );
-
-    MCAPI ::EventResult onBlockDestroyedByPlayer$(
-        class Player&              player,
-        class Block const&         destroyedBlock,
-        class BlockPos const&      pos,
-        class ItemStackBase const& currentItem,
-        class ItemStackBase const& itemBeforeBlockBreak
-    );
-
-    MCAPI ::EventResult onBlockDestructionStarted$(
-        class Player&         player,
-        class BlockPos const& pos,
-        class Block const&    hitBlock,
-        uchar                 face
-    );
-
-    MCAPI ::EventResult onBlockDestructionStopped$(class Player& player, class BlockPos const& blockPos, int progress);
-
-    MCAPI ::EventResult onBlockExploded$(
-        class Dimension&      dimension,
-        class BlockPos const& blockPos,
-        class Block const&    explodedBlock,
-        class Actor*          source
-    );
-
-    MCAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer$(class Player& player, class BlockPos const& pos);
-
-    MCAPI ::EventResult onBlockInteractedWith$(class Player& player, class BlockPos const& blockPos);
 
     MCAPI ::EventResult
-    onBlockModified$(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCAPI ::EventResult
-    onBlockMovedByPiston$(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
-
-    MCAPI ::EventResult onBlockPlacedByPlayer$(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
+    MCAPI ::EventResult $onBlockDestroyedByPlayer(
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
     );
 
-    MCAPI ::EventResult onEvent$(struct BlockNotificationEvent const& event);
+    MCAPI ::EventResult
+    $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ExplosionStartedEvent const& explosionStartedEvent);
-
-    MCAPI ::EventResult onEvent$(struct PistonActionEvent const& pistonActionEvent);
-
-    MCAPI ::EventResult onEvent$(struct LeverActionEvent const& leverActionEvent);
-
-    MCAPI ::EventResult onEvent$(struct ButtonPushEvent const& buttonPushEvent);
-
-    MCAPI ::EventResult onEvent$(struct PressurePlatePushEvent const& pressurePlatePushEvent);
-
-    MCAPI ::EventResult onEvent$(struct PressurePlatePopEvent const& pressurePlatePopEvent);
-
-    MCAPI ::EventResult onEvent$(struct TargetBlockHitEvent const& targetBlockHitEvent);
-
-    MCAPI ::EventResult onEvent$(struct TripWireTripEvent const& tripWireTripEvent);
-
-    MCAPI ::EventResult onUnknownBlockReceived$(class Level& level, struct NewBlockID const& blockId, ushort data);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

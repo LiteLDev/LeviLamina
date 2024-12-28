@@ -8,9 +8,9 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 // clang-format on
 
 namespace BlockTraitConversionUtils::TopSlotBitToVerticalHalf {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U2();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
-}; // namespace BlockTraitConversionUtils::TopSlotBitToVerticalHalf
+} // namespace BlockTraitConversionUtils::TopSlotBitToVerticalHalf

@@ -8,7 +8,24 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
+// auto generated forward declare list
+// clang-format off
+class IContentKeyProvider;
+class IPackManifestFactory;
+class Pack;
+class PackSourceReport;
+// clang-format on
+
 class RealmsUnknownPackSource : public ::PackSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkac394c;
+    ::ll::UntypedStorage<1, 1>  mUnk1bfb8f;
+    ::ll::UntypedStorage<8, 24> mUnk50ff23;
+    ::ll::UntypedStorage<8, 64> mUnk7ccdc2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RealmsUnknownPackSource& operator=(RealmsUnknownPackSource const&);
@@ -16,47 +33,56 @@ public:
     RealmsUnknownPackSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsUnknownPackSource() = default;
+    virtual ~RealmsUnknownPackSource() /*override*/;
 
     // vIndex: 1
-    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
+    virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
 
     // vIndex: 2
-    virtual void forEachPack(std::function<void(class Pack&)> callback);
+    virtual void forEachPack(::std::function<void(::Pack&)> callback) /*override*/;
 
     // vIndex: 3
-    virtual ::PackOrigin getPackOrigin() const;
+    virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     // vIndex: 4
-    virtual ::PackType getPackType() const;
+    virtual ::PackType getPackType() const /*override*/;
 
     // vIndex: 5
-    virtual class PackSourceReport load(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
-
+    virtual ::PackSourceReport load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCAPI ::PackOrigin getPackOrigin$() const;
+    MCAPI ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackType getPackType$() const;
+    MCAPI ::PackType $getPackType() const;
 
-    MCAPI class PackSourceReport load$(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    MCAPI ::PackSourceReport $load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

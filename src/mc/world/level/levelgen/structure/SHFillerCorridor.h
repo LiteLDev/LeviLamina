@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/structure/StrongholdPiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+class StructurePiece;
+// clang-format on
+
 class SHFillerCorridor : public ::StrongholdPiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk85234d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SHFillerCorridor& operator=(SHFillerCorridor const&);
@@ -14,35 +28,48 @@ public:
     SHFillerCorridor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SHFillerCorridor() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
 
-    MCAPI static class BoundingBox findPieceBox(
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&,
+    // vIndex: 0
+    virtual ~SHFillerCorridor() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BoundingBox findPieceBox(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&,
         int footX,
         int footY,
         int footZ,
         int direction
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

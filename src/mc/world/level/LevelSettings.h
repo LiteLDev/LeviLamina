@@ -16,74 +16,166 @@
 #include "mc/world/level/NetherWorldType.h"
 #include "mc/world/level/WorldVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class BlockPos;
+class CloudSaveLevelInfo;
+class Dimension;
+class EducationEditionOfferValue;
+class ExperimentStorage;
+class Experiments;
+class GameRules;
+class LevelData;
+class LevelSeed64;
+class PermissionsHandler;
+struct EduSharedUriResource;
+struct EducationLevelSettings;
+struct PackInstanceId;
+struct SpawnSettings;
+// clang-format on
+
 class LevelSettings {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::LevelSeed64>                               mSeed;
+    ::ll::TypedStorage<4, 4, ::GameType>                                  mGameType;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsHardcore;
+    ::ll::TypedStorage<4, 4, ::Difficulty>                                mGameDifficulty;
+    ::ll::TypedStorage<1, 1, bool>                                        mForceGameType;
+    ::ll::TypedStorage<4, 4, ::GeneratorType>                             mGenerator;
+    ::ll::TypedStorage<1, 1, ::WorldVersion>                              mWorldVersion;
+    ::ll::TypedStorage<1, 1, ::NetherWorldType>                           mNetherType;
+    ::ll::TypedStorage<8, 48, ::SpawnSettings>                            mSpawnSettings;
+    ::ll::TypedStorage<1, 1, bool>                                        mAchievementsDisabled;
+    ::ll::TypedStorage<4, 4, ::Editor::WorldType>                         mEditorWorldType;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsCreatedInEditor;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsExportedFromEditor;
+    ::ll::TypedStorage<4, 4, int>                                         mTime;
+    ::ll::TypedStorage<4, 4, ::EducationEditionOfferValue>                mEducationEditionOffer;
+    ::ll::TypedStorage<1, 1, bool>                                        mEducationFeaturesEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mImmutableWorld;
+    ::ll::TypedStorage<4, 4, float>                                       mRainLevel;
+    ::ll::TypedStorage<4, 4, float>                                       mLightningLevel;
+    ::ll::TypedStorage<1, 1, bool>                                        mConfirmedPlatformLockedContent;
+    ::ll::TypedStorage<1, 1, bool>                                        mMultiplayerGameIntent;
+    ::ll::TypedStorage<1, 1, bool>                                        mLANBroadcastIntent;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                mXBLBroadcastIntent;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                mPlatformBroadcastIntent;
+    ::ll::TypedStorage<1, 1, ::DaylightCycle>                             mDaylightCycle;
+    ::ll::TypedStorage<1, 1, bool>                                        mDisablePlayerInteractions;
+    ::ll::TypedStorage<1, 1, bool>                                        mCheatsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mAdventureModeOverridesEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mCommandsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mTexturePacksRequired;
+    ::ll::TypedStorage<1, 1, bool>                                        mHasLockedBehaviorPack;
+    ::ll::TypedStorage<1, 1, bool>                                        mHasLockedResourcePack;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsFromLockedTemplate;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsRandomSeedAllowed;
+    ::ll::TypedStorage<1, 1, bool>                                        mUseMsaGamertagsOnly;
+    ::ll::TypedStorage<1, 1, bool>                                        mOverrideSettings;
+    ::ll::TypedStorage<1, 1, bool>                                        mBonusChestEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mStartWithMapEnabled;
+    ::ll::TypedStorage<4, 4, int>                                         mServerChunkTickRange;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsFromWorldTemplate;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsWorldTemplateOptionLocked;
+    ::ll::TypedStorage<1, 1, bool>                                        mSpawnV1Villagers;
+    ::ll::TypedStorage<1, 1, bool>                                        mPersonaDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mCustomSkinsDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                        mEmoteChatMuted;
+    ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldWidth;
+    ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldDepth;
+    ::ll::TypedStorage<1, 2, ::PermissionsHandler>                        mDefaultPermissions;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mDefaultSpawn;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>>            mNewWorldBehaviorPackIdentities;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>>            mNewWorldResourcePackIdentities;
+    ::ll::TypedStorage<8, 192, ::GameRules>                               mGameRules;
+    ::ll::TypedStorage<8, 72, ::ExperimentStorage>                        mExperiments;
+    ::ll::TypedStorage<8, 120, ::BaseGameVersion>                         mBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mEducationProductID;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mBiomeOverride;
+    ::ll::TypedStorage<8, 64, ::EduSharedUriResource>                     mEduSharedUriResource;
+    ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                      mChatRestrictionLevel;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mServerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mWorldId;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mScenarioId;
+    ::ll::TypedStorage<8, 328, ::std::optional<::EducationLevelSettings>> mEducationLevelSettings;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                       mOverrideForceExperimentalGameplayFlag;
+    ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>>     mCloudSaveInfo;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mExcludedScriptModules;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelSettings& operator=(LevelSettings const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::string const& GetScenarioId() const;
+    MCAPI ::std::string const& GetScenarioId() const;
 
-    MCAPI std::string const& GetServerId() const;
+    MCAPI ::std::string const& GetServerId() const;
 
-    MCAPI std::string const& GetWorldId() const;
+    MCAPI ::std::string const& GetWorldId() const;
 
     MCAPI LevelSettings();
 
-    MCAPI LevelSettings(class LevelSettings&&);
+    MCAPI LevelSettings(::LevelSettings const&);
 
-    MCAPI LevelSettings(class LevelSettings const&);
+    MCAPI LevelSettings(::LevelSettings&&);
 
-    MCAPI LevelSettings(class LevelData const& data, DimensionType dimension);
+    MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
+
+    MCAPI ::LevelSettings& addExcludedScriptModule(::std::string const& moduleUUID);
 
     MCAPI bool cloudSaveForWorldIsEnabled() const;
 
     MCAPI bool educationFeaturesEnabled() const;
 
-    MCAPI std::string const& educationProductID() const;
+    MCAPI ::std::string const& educationProductID() const;
 
     MCAPI bool forceGameType() const;
 
     MCAPI bool getAdventureModeOverridesEnabled() const;
 
-    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
+    MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI std::string const& getBiomeOverride() const;
+    MCAPI ::std::string const& getBiomeOverride() const;
 
     MCAPI ::ChatRestrictionLevel getChatRestrictionLevel() const;
 
-    MCAPI class CloudSaveLevelInfo const& getCloudSaveInfo() const;
+    MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
     MCAPI bool getCustomSkinsDisabled() const;
 
     MCAPI ::DaylightCycle getDaylightCycle() const;
 
-    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
+    MCAPI ::PermissionsHandler const& getDefaultPermissions() const;
 
-    MCAPI class BlockPos const& getDefaultSpawn() const;
+    MCAPI ::BlockPos const& getDefaultSpawn() const;
 
     MCAPI bool getDisablePlayerInteractions() const;
 
     MCAPI ::Editor::WorldType getEditorWorldType() const;
 
-    MCAPI struct EduSharedUriResource const& getEduSharedUriResource() const;
+    MCAPI ::EduSharedUriResource const& getEduSharedUriResource() const;
 
     MCAPI ::EducationEditionOffer getEducationEditionOffer() const;
 
-    MCAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
+    MCAPI ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const;
 
     MCAPI bool getEmoteChatMuted() const;
 
-    MCAPI std::vector<std::string> const& getExcludedScriptModules() const;
+    MCAPI ::std::vector<::std::string> const& getExcludedScriptModules() const;
 
-    MCAPI class Experiments const& getExperiments() const;
+    MCAPI ::Experiments const& getExperiments() const;
 
     MCAPI ::Difficulty getGameDifficulty() const;
 
-    MCAPI class GameRules const& getGameRules() const;
+    MCAPI ::GameRules const& getGameRules() const;
 
     MCAPI ::GameType getGameType() const;
 
@@ -111,11 +203,11 @@ public:
 
     MCAPI float getRainLevel() const;
 
-    MCAPI class LevelSeed64 getSeed() const;
+    MCAPI ::LevelSeed64 getSeed() const;
 
     MCAPI uint getServerChunkTickRange() const;
 
-    MCAPI struct SpawnSettings getSpawnSettings() const;
+    MCAPI ::SpawnSettings getSpawnSettings() const;
 
     MCAPI int getTime() const;
 
@@ -157,92 +249,100 @@ public:
 
     MCAPI bool isWorldTemplateOptionLocked() const;
 
-    MCAPI class LevelSettings& operator=(class LevelSettings&&);
+    MCAPI ::LevelSettings& operator=(::LevelSettings&&);
 
-    MCAPI void overrideSavedSettings(class LevelData& data) const;
+    MCAPI ::LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
 
-    MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
+    MCAPI ::LevelSettings& setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
-    MCAPI class LevelSettings& setBaseGameVersion(class BaseGameVersion const& baseGameVersion);
+    MCAPI ::LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
 
-    MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
+    MCAPI ::LevelSettings& setCommandsEnabled(bool commandsEnabled);
 
-    MCAPI class LevelSettings& setCommandsEnabled(bool commandsEnabled);
+    MCAPI ::LevelSettings& setCustomSkinsDisabled(bool val);
 
-    MCAPI class LevelSettings& setCustomSkinsDisabled(bool val);
+    MCAPI ::LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel playerPermissionLevel);
 
-    MCAPI class LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel playerPermissionLevel);
+    MCAPI ::LevelSettings& setDifficulty(::Difficulty difficulty);
 
-    MCAPI class LevelSettings& setDifficulty(::Difficulty difficulty);
+    MCAPI ::LevelSettings& setDisablePlayerInteractions(bool disableInteractions);
 
-    MCAPI class LevelSettings& setDisablePlayerInteractions(bool disableInteractions);
+    MCAPI ::LevelSettings& setEditorWorldType(::Editor::WorldType editorWorldType);
 
-    MCAPI class LevelSettings& setEduSharedUriResource(struct EduSharedUriResource const& eduSharedUriResource);
+    MCAPI ::LevelSettings& setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
 
-    MCAPI class LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
+    MCAPI ::LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
 
-    MCAPI class LevelSettings& setEducationFeaturesEnabled(bool enabled);
+    MCAPI ::LevelSettings& setEducationFeaturesEnabled(bool enabled);
 
-    MCAPI class LevelSettings& setEducationProductID(std::string id);
+    MCAPI ::LevelSettings& setEducationProductID(::std::string id);
 
-    MCAPI class LevelSettings& setEmoteChatMuted(bool val);
+    MCAPI ::LevelSettings& setEmoteChatMuted(bool val);
 
-    MCAPI class LevelSettings& setExperiments(class ExperimentStorage const& experiments);
+    MCAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
 
-    MCAPI class LevelSettings& setForceGameType(bool value);
+    MCAPI ::LevelSettings& setForceGameType(bool value);
 
-    MCAPI class LevelSettings& setGameRules(class GameRules gameRules);
+    MCAPI ::LevelSettings& setGameRules(::GameRules gameRules);
 
-    MCAPI class LevelSettings& setGameType(::GameType gameType);
+    MCAPI ::LevelSettings& setGameType(::GameType gameType);
 
-    MCAPI class LevelSettings& setGeneratorType(::GeneratorType generatorType);
+    MCAPI ::LevelSettings& setGeneratorType(::GeneratorType generatorType);
+
+    MCAPI ::LevelSettings& setIsHardcore(bool isHardcore);
 
     MCAPI void setOnlySpawnV1Villagers(bool spawnV1Villagers);
 
-    MCAPI class LevelSettings& setOverrideSavedSettings(bool overrideSaved);
+    MCAPI ::LevelSettings& setOverrideSavedSettings(bool overrideSaved);
 
-    MCAPI class LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
+    MCAPI ::LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
 
-    MCAPI class LevelSettings& setRandomSeed(class LevelSeed64 seed);
+    MCAPI ::LevelSettings& setRandomSeed(::LevelSeed64 seed);
 
-    MCAPI class LevelSettings& setScenarioId(std::string scenarioId);
+    MCAPI ::LevelSettings& setScenarioId(::std::string scenarioId);
 
-    MCAPI class LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
+    MCAPI ::LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
 
-    MCAPI class LevelSettings& setServerId(std::string serverId);
+    MCAPI ::LevelSettings& setServerId(::std::string serverId);
 
-    MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings spawnSettings);
+    MCAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
 
-    MCAPI class LevelSettings& setTexturePackRequired(bool texturePackRequired);
+    MCAPI ::LevelSettings& setTexturePackRequired(bool texturePackRequired);
 
-    MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
+    MCAPI ::LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
 
-    MCAPI class LevelSettings& setWorldId(std::string worldId);
+    MCAPI ::LevelSettings& setWorldId(::std::string worldId);
 
-    MCAPI class LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);
+    MCAPI ::LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);
 
     MCAPI bool shouldOverrideSavedSettings() const;
 
     MCAPI bool useMsaGamertagsOnly() const;
 
     MCAPI ~LevelSettings();
-
-    MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const& seedInput);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class LevelSettings&&);
+    MCAPI static ::std::optional<::LevelSeed64> parseSeedString(::std::string const& seedInput);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class LevelSettings const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class LevelData const& data, DimensionType dimension);
+    MCAPI void* $ctor(::LevelSettings const&);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::LevelSettings&&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::LevelData const& data, ::DimensionType dimension);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

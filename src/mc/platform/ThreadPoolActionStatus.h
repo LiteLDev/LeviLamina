@@ -12,4 +12,4 @@ public:
     ThreadPoolActionStatus();
 };
 
-}; // namespace OS
+} // namespace OS

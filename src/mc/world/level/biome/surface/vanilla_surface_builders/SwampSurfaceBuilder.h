@@ -8,12 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
 
 class SwampSurfaceBuilder : public ::ISurfaceBuilder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk47460c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SwampSurfaceBuilder& operator=(SwampSurfaceBuilder const&);
@@ -21,28 +26,37 @@ public:
     SwampSurfaceBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SwampSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome& biome, uint);
+    virtual void init(::Biome& biome, uint) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
+    virtual ~SwampSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome& biome, uint);
 
-    MCAPI void init$(class Biome& biome, uint);
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

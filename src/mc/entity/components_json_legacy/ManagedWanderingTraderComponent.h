@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class ManagedWanderingTraderComponent {
 public:
     // prevent constructor by default
@@ -10,10 +15,8 @@ public:
     ManagedWanderingTraderComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(class Actor&);
-
-    MCAPI void reloadComponent(class Actor& actor);
-
+    MCAPI void reloadComponent(::Actor& actor);
     // NOLINTEND
 };

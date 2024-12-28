@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 class WeakEntityRef {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mWeakEntity;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WeakEntityRef& operator=(WeakEntityRef const&);
@@ -13,27 +24,32 @@ public:
     WeakEntityRef();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit WeakEntityRef(class WeakRef<class EntityContext> entityRef);
+    MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
 
-    MCAPI bool operator!=(class WeakEntityRef entityRef) const;
+    MCAPI explicit operator ::WeakRef<::EntityContext>() const;
 
-    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
+    MCAPI bool operator!=(::WeakEntityRef entityRef) const;
 
-    MCAPI bool operator==(class WeakEntityRef entityRef) const;
+    MCAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
 
-    MCAPI bool operator==(class WeakRef<class EntityContext> entityRef) const;
+    MCAPI bool operator==(::WeakEntityRef entityRef) const;
+
+    MCAPI bool operator==(::WeakRef<::EntityContext>) const;
 
     MCAPI ~WeakEntityRef();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakRef<class EntityContext> entityRef);
+    MCAPI void* $ctor(::WeakRef<::EntityContext> entityRef);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

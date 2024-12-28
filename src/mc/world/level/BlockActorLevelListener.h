@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
-#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cg { class ImageBuffer; }
+class ChunkSource;
+class LevelChunk;
 // clang-format on
 
 class BlockActorLevelListener : public ::LevelListener {
@@ -20,32 +18,58 @@ public:
     BlockActorLevelListener(BlockActorLevelListener const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockActorLevelListener();
+    virtual ~BlockActorLevelListener() /*override*/;
 
     // vIndex: 19
-    virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+
+    // vIndex: 21
+    virtual void onSubChunkLoaded(
+        ::ChunkSource&,
+        ::LevelChunk& lc,
+        short         absoluteSubChunkIndex,
+        bool          subChunkVisibilityChanged
+    ) /*override*/;
 
     // vIndex: 22
-    virtual void onChunkUnloaded(class LevelChunk& lc);
-
-    MCAPI BlockActorLevelListener();
-
+    virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BlockActorLevelListener();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
+    MCAPI void
+    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
+    MCAPI void $onChunkUnloaded(::LevelChunk& lc);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

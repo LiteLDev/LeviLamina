@@ -7,7 +7,18 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class RideableComponent;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorMovementTickNeededComponent;
+struct KeepRidingEvenIfTooLargeForVehicleFlagComponent;
+struct PassengerComponent;
+struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class RemovePassengersTooLargeForVehicleSystem {
 public:
@@ -17,31 +28,27 @@ public:
     RemovePassengersTooLargeForVehicleSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _removePassengersTooLargeForVehicle(
-        class StrictEntityContext&                                                   strictEntityContext,
-        struct PassengerComponent const&                                             passengerComponent,
-        struct AABBShapeComponent const&                                             aabbShapeComponent,
-        class ViewT<class StrictEntityContext, class RideableComponent const> const& vehicleView,
-        class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>>&     modifier
+        ::StrictEntityContext&                                           strictEntityContext,
+        ::PassengerComponent const&                                      passengerComponent,
+        ::AABBShapeComponent const&                                      aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView,
+        ::EntityModifier<::StopRidingRequestComponent>&                  modifier
     );
 
     MCAPI static void _tickRemovePassengersTooLargeForVehicle(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            struct PassengerComponent const,
-            struct Exclude<class FlagComponent<struct KeepPassengersTooLargeForVehicleFlag>>,
-            struct AABBShapeComponent const>                                    view,
-        class ViewT<class StrictEntityContext, class RideableComponent const>   vehicleView,
-        class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>> modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::PassengerComponent const,
+            ::Exclude<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>,
+            ::AABBShapeComponent const>                           view,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const> vehicleView,
+        ::EntityModifier<::StopRidingRequestComponent>            modifier
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

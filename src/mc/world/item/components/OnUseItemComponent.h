@@ -3,47 +3,64 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class OnUseItemComponent {
+class OnUseItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OnUseItemComponent();
-
-    MCAPI OnUseItemComponent();
-
-    MCAPI OnUseItemComponent(class OnUseItemComponent const&);
-
-    MCAPI class OnUseItemComponent& operator=(class OnUseItemComponent&&);
-
-    MCAPI class OnUseItemComponent& operator=(class OnUseItemComponent const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    ::ll::UntypedStorage<8, 256> mUnk1dd064;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    OnUseItemComponent(OnUseItemComponent const&);
+    OnUseItemComponent();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~OnUseItemComponent() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class OnUseItemComponent const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
 
-    MCAPI void* ctor$();
+    MCAPI ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

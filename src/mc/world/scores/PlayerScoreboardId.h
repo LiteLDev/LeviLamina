@@ -4,26 +4,35 @@
 
 struct PlayerScoreboardId {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, int64> mActorUniqueId;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerScoreboardId& operator=(PlayerScoreboardId const&);
     PlayerScoreboardId(PlayerScoreboardId const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PlayerScoreboardId();
 
     MCAPI explicit PlayerScoreboardId(int64 actorUniqueId);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::PlayerScoreboardId const& INVALID();
+    // NOLINTEND
 
-    MCAPI void* ctor$(int64 actorUniqueId);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static struct PlayerScoreboardId const& INVALID();
-
+    MCAPI void* $ctor(int64 actorUniqueId);
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/Connector.h"
@@ -10,9 +11,14 @@
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
+class NetworkIdentifier;
+class RakPeerHelper;
+struct ConnectionDefinition;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct RakPeerConfiguration; }
@@ -24,31 +30,12 @@ class RakNetConnector : public ::RemoteConnector {
 public:
     // RakNetConnector inner types declare
     // clang-format off
-    class AtomicNatPunchInfo;
     struct ConnectionCallbacks;
     struct PingCallbackData;
     class RakNetNetworkPeer;
     // clang-format on
 
     // RakNetConnector inner types define
-    enum class NATState {};
-
-    class AtomicNatPunchInfo {
-    public:
-        // prevent constructor by default
-        AtomicNatPunchInfo& operator=(AtomicNatPunchInfo const&);
-        AtomicNatPunchInfo(AtomicNatPunchInfo const&);
-        AtomicNatPunchInfo();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct Connector::NatPunchInfo get() const;
-
-        MCAPI void set(struct Connector::NatPunchInfo);
-
-        // NOLINTEND
-    };
-
     struct ConnectionCallbacks : public ::Connector::ConnectionCallbacks {
     public:
         // prevent constructor by default
@@ -57,38 +44,40 @@ public:
         ConnectionCallbacks();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~ConnectionCallbacks() = default;
+        virtual ~ConnectionCallbacks() /*override*/;
+
+        // vIndex: 4
+        virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
+
+        // vIndex: 5
+        virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
+
+        // vIndex: 6
+        virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, ::std::string const&) = 0;
+
+        // vIndex: 7
+        virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>) = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
 
         // NOLINTEND
 
-        // thunks
     public:
+        // vftables
         // NOLINTBEGIN
-        MCAPI static void** vftable();
-
-        // NOLINTEND
-    };
-
-    struct PingCallbackData {
-    public:
-        // prevent constructor by default
-        PingCallbackData& operator=(PingCallbackData const&);
-        PingCallbackData(PingCallbackData const&);
-        PingCallbackData();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~PingCallbackData();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -102,24 +91,42 @@ public:
         // RakNetNetworkPeer inner types define
         struct ReadBufferData {
         public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimepoint;
+            ::ll::TypedStorage<8, 32, ::std::string>                          mReadBuffer;
+            // NOLINTEND
+
+        public:
             // prevent constructor by default
             ReadBufferData& operator=(ReadBufferData const&);
             ReadBufferData(ReadBufferData const&);
             ReadBufferData();
 
         public:
+            // member functions
             // NOLINTBEGIN
             MCAPI ~ReadBufferData();
-
             // NOLINTEND
 
-            // thunks
         public:
+            // destructor thunk
             // NOLINTBEGIN
-            MCAPI void dtor$();
-
+            MCAPI void $dtor();
             // NOLINTEND
         };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::RakNet::RakPeerInterface&>                                          mRakPeer;
+        ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                                                mId;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                       mSendBuffer;
+        ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::RakNetNetworkPeer::ReadBufferData>> mReadBufferDatas;
+        ::ll::TypedStorage<4, 4, int> mApproximateMaxBps;
+        ::ll::TypedStorage<4, 4, int> mLastPing;
+        ::ll::TypedStorage<4, 4, int> mAveragePing;
+        // NOLINTEND
 
     public:
         // prevent constructor by default
@@ -128,55 +135,122 @@ public:
         RakNetNetworkPeer();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~RakNetNetworkPeer() = default;
-
         // vIndex: 1
-        virtual void sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+        virtual void
+        sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
         // vIndex: 2
-        virtual ::NetworkPeer::DataStatus
-        receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+        virtual ::NetworkPeer::DataStatus receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        ) /*override*/;
 
         // vIndex: 3
-        virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
+        virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
         // vIndex: 4
-        virtual void update();
+        virtual void update() /*override*/;
 
         // vIndex: 6
-        virtual bool isLocal() const;
+        virtual bool isLocal() const /*override*/;
 
         // vIndex: 7
-        virtual bool isEncrypted() const;
+        virtual bool isEncrypted() const /*override*/;
 
-        MCAPI void newData(std::string);
-
+        // vIndex: 0
+        virtual ~RakNetNetworkPeer() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
 
-        MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+        MCAPI void newData(::std::string data);
+        // NOLINTEND
 
-        MCAPI bool isEncrypted$() const;
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
+        // NOLINTEND
 
-        MCAPI bool isLocal$() const;
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI ::NetworkPeer::DataStatus receivePacket$(
-            std::string&                                                  outData,
-            std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+
+        MCAPI ::NetworkPeer::DataStatus $receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         );
 
-        MCAPI void sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+        MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-        MCAPI void update$();
+        MCAPI void $update();
 
+        MCAPI bool $isLocal() const;
+
+        MCAPI bool $isEncrypted() const;
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+    struct PingCallbackData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
+        ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PingCallbackData& operator=(PingCallbackData const&);
+        PingCallbackData(PingCallbackData const&);
+        PingCallbackData();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>          mNATPunchServerId;
+    ::ll::TypedStorage<8, 416, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
+    ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
+                                                                   mRakPeer;
+    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                mServerId;
+    ::ll::TypedStorage<8, 24, ::RakPeerHelper>                     mPeerHelper;
+    ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsAwaitingNatClient;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
+    ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
+    ::ll::TypedStorage<8, 416, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::NetworkIdentifier, ::std::weak_ptr<::RakNetConnector::RakNetNetworkPeer>>>
+                                                                                      mPeers;
+    ::ll::TypedStorage<1, 1, bool>                                                    mWasHostWhenSuspended;
+    ::ll::TypedStorage<4, 20, ::ConnectionDefinition>                                 mPreviousConnectionDefinition;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mResolvedIP;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::PingCallbackData>>     mPingTimeCallbacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MPMCQueue<::std::function<void()>>>> mOwnedThreadWork;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -185,173 +259,176 @@ public:
     RakNetConnector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void _onDisable();
+    // vIndex: 0
+    virtual ~RakNetConnector() /*override*/;
 
-    MCVAPI void _onEnable();
+    // vIndex: 11
+    virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener* listener);
+    // vIndex: 12
+    virtual bool connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    ) /*override*/;
 
-    MCVAPI void closeNetworkConnection(class NetworkIdentifier const& id);
+    // vIndex: 13
+    virtual void disconnect() /*override*/;
 
-    MCVAPI bool connect(
-        class Social::GameConnectionInfo const& primaryConnection,
-        class Social::GameConnectionInfo const& backupConnection
-    );
+    // vIndex: 14
+    virtual void tick() /*override*/;
 
-    MCVAPI void disconnect();
+    // vIndex: 15
+    virtual void runEvents() /*override*/;
 
-    MCVAPI class Social::GameConnectionInfo const& getConnectedGameInfo() const;
+    // vIndex: 17
+    virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
 
-    MCVAPI ushort getIPv4Port() const;
+    // vIndex: 19
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
 
-    MCVAPI ushort getIPv6Port() const;
+    // vIndex: 16
+    virtual bool isServer() const /*override*/;
 
-    MCVAPI std::string getLocalIp();
+    // vIndex: 1
+    virtual ::std::vector<::std::string> getLocalIps() const /*override*/;
 
-    MCVAPI std::vector<std::string> getLocalIps() const;
+    // vIndex: 2
+    virtual ::std::string getLocalIp() /*override*/;
 
-    MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
+    // vIndex: 3
+    virtual ushort getPort() const /*override*/;
 
-    MCVAPI class NetworkIdentifier getNetworkIdentifier() const;
+    // vIndex: 4
+    virtual ::std::vector<::RakNet::SystemAddress> getRefinedLocalIps() const /*override*/;
 
-    MCVAPI ::TransportLayer getNetworkType() const;
+    // vIndex: 5
+    virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
-    MCVAPI class RakNet::RakPeerInterface* getPeer();
+    // vIndex: 6
+    virtual bool isIPv4Supported() const /*override*/;
 
-    MCVAPI class RakNet::RakPeerInterface const* getPeer() const;
+    // vIndex: 7
+    virtual bool isIPv6Supported() const /*override*/;
 
-    MCVAPI ushort getPort() const;
+    // vIndex: 8
+    virtual ushort getIPv4Port() const /*override*/;
 
-    MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
+    // vIndex: 9
+    virtual ushort getIPv6Port() const /*override*/;
 
-    MCVAPI bool host(struct ConnectionDefinition const& definition);
+    // vIndex: 18
+    virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
-    MCVAPI bool isConnected(class NetworkIdentifier const& id) const;
+    // vIndex: 21
+    virtual ::RakNet::RakPeerInterface* getPeer();
 
-    MCVAPI bool isIPv4Supported() const;
+    // vIndex: 20
+    virtual ::RakNet::RakPeerInterface const* getPeer() const;
 
-    MCVAPI bool isIPv6Supported() const;
+    // vIndex: 10
+    virtual ::TransportLayer getNetworkType() const /*override*/;
 
-    MCVAPI bool isServer() const;
+    // vIndex: 1
+    virtual void _onDisable() /*override*/;
 
-    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener* listener);
-
-    MCVAPI void runEvents();
-
-    MCVAPI bool setApplicationHandshakeCompleted(class NetworkIdentifier const& id);
-
-    MCVAPI void setupNatPunch(bool connectToClient);
-
-    MCVAPI void startNatPunchingClient(std::string const& address, ushort port);
-
-    MCVAPI void tick();
-
-    MCVAPI ~RakNetConnector();
-
-    MCAPI RakNetConnector(
-        struct RakNetConnector::ConnectionCallbacks&             callbacks,
-        class RakPeerHelper::IPSupportInterface&                 ipInterface,
-        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
-        struct RakNet::RakPeerConfiguration const&               rakPeerConfig
-    );
-
-    MCAPI bool getStatistics(struct RakNet::RakNetStatistics& rns);
-
+    // vIndex: 2
+    virtual void _onEnable() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _changeNatState(::RakNetConnector::NATState newState, int port, std::string const& statusDescription);
-
-    MCAPI std::shared_ptr<class RakNetConnector::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const& id);
-
-    MCAPI void _openNatConnection(struct RakNet::SystemAddress const& remoteAddress);
-
-    MCAPI void _pingNatService(bool isInitialPing);
+    MCAPI RakNetConnector(
+        ::RakNetConnector::ConnectionCallbacks&          callbacks,
+        ::RakPeerHelper::IPSupportInterface&             ipInterface,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
+        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+    );
 
     MCAPI void _storeLocalIP();
 
+    MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI void* $ctor(
+        ::RakNetConnector::ConnectionCallbacks&          callbacks,
+        ::RakPeerHelper::IPSupportInterface&             ipInterface,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
+        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+    );
+    // NOLINTEND
 
-    MCAPI static void** vftableForConnector();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForNetworkEnableDisableListener();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI void* ctor$(
-        struct RakNetConnector::ConnectionCallbacks&             callbacks,
-        class RakPeerHelper::IPSupportInterface&                 ipInterface,
-        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform,
-        struct RakNet::RakPeerConfiguration const&               rakPeerConfig
+    MCAPI bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
     );
 
-    MCAPI void dtor$();
+    MCAPI void $disconnect();
 
-    MCAPI void _onDisable$();
+    MCAPI void $tick();
 
-    MCAPI void _onEnable$();
+    MCAPI void $runEvents();
 
-    MCAPI void addConnectionStateListener$(class Connector::ConnectionStateListener* listener);
+    MCAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
 
-    MCAPI void closeNetworkConnection$(class NetworkIdentifier const& id);
+    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCAPI bool connect$(
-        class Social::GameConnectionInfo const& primaryConnection,
-        class Social::GameConnectionInfo const& backupConnection
-    );
+    MCAPI bool $isServer() const;
 
-    MCAPI void disconnect$();
+    MCAPI ::std::vector<::std::string> $getLocalIps() const;
 
-    MCAPI class Social::GameConnectionInfo const& getConnectedGameInfo$() const;
+    MCAPI ::std::string $getLocalIp();
 
-    MCAPI ushort getIPv4Port$() const;
+    MCAPI ushort $getPort() const;
 
-    MCAPI ushort getIPv6Port$() const;
+    MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
-    MCAPI std::string getLocalIp$();
+    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCAPI std::vector<std::string> getLocalIps$() const;
+    MCAPI bool $isIPv4Supported() const;
 
-    MCAPI struct Connector::NatPunchInfo getNatPunchInfo$() const;
+    MCAPI bool $isIPv6Supported() const;
 
-    MCAPI class NetworkIdentifier getNetworkIdentifier$() const;
+    MCAPI ushort $getIPv4Port() const;
 
-    MCAPI ::TransportLayer getNetworkType$() const;
+    MCAPI ushort $getIPv6Port() const;
 
-    MCAPI class RakNet::RakPeerInterface* getPeer$();
+    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCAPI class RakNet::RakPeerInterface const* getPeer$() const;
+    MCAPI ::RakNet::RakPeerInterface* $getPeer();
 
-    MCAPI ushort getPort$() const;
+    MCAPI ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps$() const;
+    MCAPI ::TransportLayer $getNetworkType() const;
 
-    MCAPI bool host$(struct ConnectionDefinition const& definition);
+    MCAPI void $_onDisable();
 
-    MCAPI bool isConnected$(class NetworkIdentifier const& id) const;
+    MCAPI void $_onEnable();
+    // NOLINTEND
 
-    MCAPI bool isIPv4Supported$() const;
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForConnector();
 
-    MCAPI bool isIPv6Supported$() const;
+    MCAPI static void** $vftableForNetworkEnableDisableListener();
 
-    MCAPI bool isServer$() const;
-
-    MCAPI void removeConnectionStateListener$(class Connector::ConnectionStateListener* listener);
-
-    MCAPI void runEvents$();
-
-    MCAPI bool setApplicationHandshakeCompleted$(class NetworkIdentifier const& id);
-
-    MCAPI void setupNatPunch$(bool connectToClient);
-
-    MCAPI void startNatPunchingClient$(std::string const& address, ushort port);
-
-    MCAPI void tick$();
-
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -12,32 +12,30 @@ namespace RakNet {
 
 struct AddressOrGUID {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     rakNetGuid;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     AddressOrGUID& operator=(AddressOrGUID const&);
     AddressOrGUID();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const& input);
-
-    MCAPI explicit AddressOrGUID(struct RakNet::RakNetGUID const& input);
-
-    MCAPI explicit AddressOrGUID(struct RakNet::SystemAddress const& input);
+    MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
 
     MCAPI bool IsUndefined() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct RakNet::RakNetGUID const& input);
-
-    MCAPI void* ctor$(struct RakNet::SystemAddress const& input);
-
-    MCAPI void* ctor$(struct RakNet::AddressOrGUID const& input);
-
+    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

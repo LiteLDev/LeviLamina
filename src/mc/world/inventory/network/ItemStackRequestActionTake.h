@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestActionTransferBase.h"
 
 class ItemStackRequestActionTake : public ::ItemStackRequestActionTransferBase {
@@ -14,16 +13,21 @@ public:
     ItemStackRequestActionTake();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackRequestActionTake() = default;
-
+    virtual ~ItemStackRequestActionTake() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

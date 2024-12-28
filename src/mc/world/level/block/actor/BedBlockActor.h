@@ -3,10 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+struct ActorUniqueID;
+// clang-format on
+
 class BedBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnka5dd35;
+    ::ll::UntypedStorage<1, 1> mUnkfdf8e3;
+    ::ll::UntypedStorage<8, 8> mUnkbf5619;
+    ::ll::UntypedStorage<8, 8> mUnk257722;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BedBlockActor& operator=(BedBlockActor const&);
@@ -14,76 +34,93 @@ public:
     BedBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BedBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
-    // vIndex: 3
-    virtual bool saveItemInstanceData(class CompoundTag& tag) const;
-
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
-
-    // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 11
-    virtual void onPlace(class BlockSource& region);
+    virtual void onPlace(::BlockSource& region) /*override*/;
+
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
+
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+
+    // vIndex: 3
+    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 21
-    virtual class BlockActor* getCrackEntity(class BlockSource& region, class BlockPos const& pos);
+    virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 26
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI explicit BedBlockActor(class BlockPos const& pos);
+    // vIndex: 0
+    virtual ~BedBlockActor() /*override*/;
+    // NOLINTEND
 
-    MCAPI bool claimPetSleepOnBed(struct ActorUniqueID petId);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BedBlockActor(::BlockPos const& pos);
+
+    MCAPI bool claimPetSleepOnBed(::ActorUniqueID petId);
 
     MCAPI void startSleepingOn();
 
-    MCAPI void stopSleepingOn(class BlockSource& region, bool forcefulAwake);
-
+    MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
-    MCAPI class BlockActor* getCrackEntity$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI std::string getName$() const;
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void onChanged$(class BlockSource& region);
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void onPlace$(class BlockSource& region);
+    MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI bool saveItemInstanceData$(class CompoundTag& tag) const;
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

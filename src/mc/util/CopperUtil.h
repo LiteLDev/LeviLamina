@@ -4,19 +4,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockLegacy;
+class HashedString;
+class Player;
 namespace mce { class Color; }
 // clang-format on
 
 namespace CopperUtil {
+// functions
 // NOLINTBEGIN
-MCAPI void trySendWaxingTelemetryEventToClient(class Player& player, class BlockLegacy const& block);
+MCAPI void trySendWaxingTelemetryEventToClient(::Player& player, ::BlockLegacy const& block);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class mce::Color const& WAX_OFF_COLOR();
+MCAPI ::mce::Color const& WAX_OFF_COLOR();
 
-MCAPI class mce::Color const& WAX_ON_COLOR();
+MCAPI ::mce::Color const& WAX_ON_COLOR();
+
+MCAPI ::HashedString const& nullname();
 // NOLINTEND
 
-}; // namespace CopperUtil
+} // namespace CopperUtil

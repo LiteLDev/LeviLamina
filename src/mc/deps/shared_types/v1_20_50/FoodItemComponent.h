@@ -1,0 +1,49 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_20_50 {
+
+struct FoodItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk31eb62;
+    ::ll::UntypedStorage<4, 4>  mUnk321bb7;
+    ::ll::UntypedStorage<4, 4>  mUnkda6002;
+    ::ll::UntypedStorage<1, 1>  mUnk2b3e4a;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FoodItemComponent& operator=(FoodItemComponent const&);
+    FoodItemComponent(FoodItemComponent const&);
+    FoodItemComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_20_50::FoodItemComponent& operator=(::SharedTypes::v1_20_50::FoodItemComponent&&);
+
+    MCAPI ~FoodItemComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_20_50

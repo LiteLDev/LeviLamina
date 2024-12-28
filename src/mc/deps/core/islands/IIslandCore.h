@@ -17,6 +17,7 @@ public:
     IIslandCore();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IIslandCore();
@@ -40,18 +41,26 @@ public:
     virtual void mainUpdate() = 0;
 
     // vIndex: 7
-    virtual void processActivationArguments(class Bedrock::ActivationArguments const& args) = 0;
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

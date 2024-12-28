@@ -4,11 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActor;
+class BlockPos;
+class Container;
+class ContainerScreenContext;
+class ItemStack;
+class Player;
+struct ActorUniqueID;
+// clang-format on
+
 class LevelContainerManagerModel : public ::ContainerManagerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk6fc970;
+    ::ll::UntypedStorage<8, 8>  mUnkeb138a;
+    ::ll::UntypedStorage<4, 4>  mUnk4952b7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelContainerManagerModel& operator=(LevelContainerManagerModel const&);
@@ -16,79 +34,90 @@ public:
     LevelContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelContainerManagerModel();
-
-    // vIndex: 6
-    virtual std::vector<class ItemStack> getItemCopies() const;
+    virtual ~LevelContainerManagerModel() /*override*/;
 
     // vIndex: 7
-    virtual void setSlot(int slot, class ItemStack const& item, bool);
+    virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
     // vIndex: 8
-    virtual class ItemStack const& getSlot(int slot) const;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     // vIndex: 9
-    virtual void setData(int id, int value);
+    virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
     // vIndex: 10
-    virtual void broadcastChanges();
+    virtual void setData(int id, int value) /*override*/;
 
-    // vIndex: 16
-    virtual bool isValid(float pickRange);
+    // vIndex: 13
+    virtual void broadcastChanges() /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
+    // vIndex: 19
+    virtual bool isValid(float pickRange) /*override*/;
 
-    MCAPI LevelContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LevelContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
     MCAPI LevelContainerManagerModel(
-        ::ContainerID         containerId,
-        class Player&         player,
-        class BlockPos const& pos,
-        ::BlockActorType      blockEntityType
+        ::ContainerID     containerId,
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::BlockActorType  blockEntityType
     );
 
-    MCAPI class BlockPos const& getBlockPos() const;
+    MCAPI ::BlockActor* _getBlockEntity();
 
-    MCAPI struct ActorUniqueID getEntityUniqueID() const;
+    MCAPI ::Container* _getRawContainer();
 
+    MCAPI ::BlockPos const& getBlockPos() const;
+
+    MCAPI ::ActorUniqueID getEntityUniqueID() const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class BlockActor* _getBlockEntity();
-
-    MCAPI class Container* _getRawContainer();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
     MCAPI void*
-    ctor$(::ContainerID containerId, class Player& player, class BlockPos const& pos, ::BlockActorType blockEntityType);
+    $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& pos, ::BlockActorType blockEntityType);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void broadcastChanges$();
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI class ItemStack const& getSlot$(int slot) const;
+    MCAPI void $setData(int id, int value);
 
-    MCAPI bool isValid$(float pickRange);
+    MCAPI void $broadcastChanges();
 
-    MCAPI void setData$(int id, int value);
+    MCAPI bool $isValid(float pickRange);
 
-    MCAPI void setSlot$(int slot, class ItemStack const& item, bool);
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

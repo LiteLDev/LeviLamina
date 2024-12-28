@@ -2,7 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+// clang-format on
+
 class ItemGroup {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnkbedaf1;
+    ::ll::UntypedStorage<4, 4>   mUnk968ea9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemGroup& operator=(ItemGroup const&);
@@ -10,21 +22,24 @@ public:
     ItemGroup();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemGroup(class ItemInstance const& itemInstance);
+    MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
     MCAPI bool isEmpty() const;
 
     MCAPI ~ItemGroup();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ItemInstance const& itemInstance);
+    MCAPI void* $ctor(::ItemInstance const& itemInstance);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

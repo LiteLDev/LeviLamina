@@ -13,28 +13,35 @@ public:
     EducationMetadataError();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EducationMetadataError();
-
     // vIndex: 2
-    virtual std::unordered_map<int, std::string> const& getLocErrorMessageMap() const;
+    virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
     // vIndex: 3
-    virtual std::unordered_map<int, std::string> const& getEventErrorMessageMap() const;
+    virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
+    // vIndex: 0
+    virtual ~EducationMetadataError() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCAPI std::unordered_map<int, std::string> const& getEventErrorMessageMap$() const;
+    MCAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+    // NOLINTEND
 
-    MCAPI std::unordered_map<int, std::string> const& getLocErrorMessageMap$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

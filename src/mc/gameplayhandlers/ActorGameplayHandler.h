@@ -2,10 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorGameplayHandler {
+// auto generated inclusion list
+#include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/GameplayHandler.h"
+#include "mc/gameplayhandlers/GameplayHandlerResult.h"
+#include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/world/events/ActorGameplayEvent.h"
+#include "mc/world/events/MutableActorGameplayEvent.h"
+
+class ActorGameplayHandler : public ::GameplayHandler {
 public:
     // prevent constructor by default
     ActorGameplayHandler& operator=(ActorGameplayHandler const&);
     ActorGameplayHandler(ActorGameplayHandler const&);
     ActorGameplayHandler();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ActorGameplayHandler() /*override*/;
+
+    // vIndex: 3
+    virtual ::HandlerResult handleEvent(::ActorGameplayEvent<void> const&) = 0;
+
+    // vIndex: 2
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorGameplayEvent<::CoordinatorResult> const&) = 0;
+
+    // vIndex: 1
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::MutableActorGameplayEvent<::CoordinatorResult>&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

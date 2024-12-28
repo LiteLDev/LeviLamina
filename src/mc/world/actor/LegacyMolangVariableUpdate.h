@@ -2,16 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace LegacyMolangVariableUpdate {
-// NOLINTBEGIN
-MCAPI void updateEntitySpecificMolangVariables(
-    class Mob&                                  mob,
-    struct LegacyMolangVariableComponent const& molangVariableComponent,
-    class RenderParams&                         renderParams
-);
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class Mob;
+class RenderParams;
+struct LegacyMolangVariableComponent;
+// clang-format on
 
-MCAPI void
-updateMobVariables(class Mob& mob, class MolangVariableMap& molangVariables, class RenderParams& renderParams);
+namespace LegacyMolangVariableUpdate {
+// functions
+// NOLINTBEGIN
+MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
+
+MCAPI void updateEntitySpecificMolangVariables(
+    ::Mob&                                 mob,
+    ::LegacyMolangVariableComponent const& molangVariableComponent,
+    ::RenderParams&                        renderParams
+);
 // NOLINTEND
 
-}; // namespace LegacyMolangVariableUpdate
+} // namespace LegacyMolangVariableUpdate

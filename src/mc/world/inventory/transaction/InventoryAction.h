@@ -2,27 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InventorySource;
+class ItemStack;
+class NetworkItemStackDescriptor;
+// clang-format on
+
 class InventoryAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::InventorySource>            mSource;
+    ::ll::TypedStorage<4, 4, uint>                          mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFromItemDescriptor;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mToItemDescriptor;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mFromItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mToItem;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InventoryAction();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI InventoryAction(class InventoryAction const&);
+    MCAPI InventoryAction(::InventoryAction const&);
 
-    MCAPI class InventoryAction& operator=(class InventoryAction const&);
+    MCAPI ::InventoryAction& operator=(::InventoryAction const&);
 
     MCAPI ~InventoryAction();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class InventoryAction const&);
+    MCAPI void* $ctor(::InventoryAction const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,15 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
 
-// auto generated forward declare list
-// clang-format off
-class IPositionalRandomFactory;
-class IRandom;
-// clang-format on
-
 namespace NoiseUtils {
 
 class DelegatingRandom : public ::IRandom {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk9d98e9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DelegatingRandom& operator=(DelegatingRandom const&);
@@ -21,11 +21,66 @@ public:
     DelegatingRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DelegatingRandom() = default;
+    // vIndex: 2
+    virtual int nextInt() /*override*/;
 
+    // vIndex: 1
+    virtual int nextInt(int const bound) /*override*/;
+
+    // vIndex: 3
+    virtual int64 nextLong() /*override*/;
+
+    // vIndex: 4
+    virtual bool nextBoolean() /*override*/;
+
+    // vIndex: 5
+    virtual float nextFloat() /*override*/;
+
+    // vIndex: 6
+    virtual double nextDouble() /*override*/;
+
+    // vIndex: 7
+    virtual double nextGaussianDouble() /*override*/;
+
+    // vIndex: 8
+    virtual void consumeCount(uint count) /*override*/;
+
+    // vIndex: 9
+    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
+
+    // vIndex: 0
+    virtual ~DelegatingRandom() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $nextInt();
+
+    MCAPI int $nextInt(int const bound);
+
+    MCAPI int64 $nextLong();
+
+    MCAPI bool $nextBoolean();
+
+    MCAPI float $nextFloat();
+
+    MCAPI double $nextDouble();
+
+    MCAPI double $nextGaussianDouble();
+
+    MCAPI void $consumeCount(uint count);
+
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
 };
 
-}; // namespace NoiseUtils
+} // namespace NoiseUtils

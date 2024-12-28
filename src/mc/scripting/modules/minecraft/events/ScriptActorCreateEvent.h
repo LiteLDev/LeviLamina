@@ -9,16 +9,22 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorCreateEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk8ed79a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorCreateEvent& operator=(ScriptActorCreateEvent const&);
     ScriptActorCreateEvent(ScriptActorCreateEvent const&);
     ScriptActorCreateEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent> bindV010();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorCreateEvent> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

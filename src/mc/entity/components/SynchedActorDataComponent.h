@@ -4,21 +4,26 @@
 
 struct SynchedActorDataComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 72> mUnkc8f498;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SynchedActorDataComponent& operator=(SynchedActorDataComponent const&);
     SynchedActorDataComponent(SynchedActorDataComponent const&);
     SynchedActorDataComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~SynchedActorDataComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

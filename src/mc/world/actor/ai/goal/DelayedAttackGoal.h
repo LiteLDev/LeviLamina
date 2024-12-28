@@ -3,10 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BaseGameVersion;
+class Mob;
+// clang-format on
+
 class DelayedAttackGoal : public ::MeleeAttackGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd1bfcf;
+    ::ll::UntypedStorage<4, 4> mUnk411d70;
+    ::ll::UntypedStorage<4, 4> mUnkf4e0a0;
+    ::ll::UntypedStorage<4, 4> mUnk2ad552;
+    ::ll::UntypedStorage<4, 4> mUnk10be41;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DelayedAttackGoal& operator=(DelayedAttackGoal const&);
@@ -14,62 +30,81 @@ public:
     DelayedAttackGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DelayedAttackGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit DelayedAttackGoal(class Mob& mob);
-
-    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const& mob, class Actor const& target);
-
+    // vIndex: 0
+    virtual ~DelayedAttackGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _attemptStartAttacking(class Actor* target) const;
-
-    MCAPI void _manageAttackTime();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit DelayedAttackGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI void _attemptStartAttacking(::Actor* target) const;
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void stop$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void tick$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI static class BaseGameVersion const& mMinLineOfSightFixVersion();
+    MCAPI void $start();
 
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/AsyncStatus.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/AsyncResultBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +13,14 @@ struct XTaskQueueObject;
 
 namespace Bedrock::Threading::AsyncResult {
 
-class ToXAsyncBlock {
+class ToXAsyncBlock : public ::Bedrock::Threading::AsyncResultBase<::XAsyncBlock*> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkaed0d7;
+    ::ll::UntypedStorage<8, 8> mUnkacb2bd;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ToXAsyncBlock& operator=(ToXAsyncBlock const&);
@@ -22,56 +28,45 @@ public:
     ToXAsyncBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ToXAsyncBlock() = default;
-
-    // vIndex: 1
-    virtual ::Bedrock::Threading::AsyncStatus getStatus() const;
-
-    // vIndex: 2
-    virtual std::error_code getError() const;
-
-    // vIndex: 3
-    virtual void cancel();
-
-    // vIndex: 4
-    virtual struct XAsyncBlock* getResult() const;
-
-    // vIndex: 5
-    virtual void
-    addOnComplete(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);
-
-    MCAPI static std::shared_ptr<class Bedrock::Threading::AsyncResult::ToXAsyncBlock>
-    create(struct XTaskQueueObject* queue);
-
+    virtual ~ToXAsyncBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct XAsyncBlock* _getAsyncBlock();
-
-    MCAPI void _handleResult(long);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
 
-    MCAPI void
-    addOnComplete$(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)> callback);
+    MCAPI ::XAsyncBlock* _getAsyncBlock();
 
-    MCAPI void cancel$();
+    MCAPI void _handleResult(long hr);
+    // NOLINTEND
 
-    MCAPI std::error_code getError$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(::XTaskQueueObject* queue);
+    // NOLINTEND
 
-    MCAPI struct XAsyncBlock* getResult$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::XTaskQueueObject* queue);
+    // NOLINTEND
 
-    MCAPI ::Bedrock::Threading::AsyncStatus getStatus$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading::AsyncResult
+} // namespace Bedrock::Threading::AsyncResult

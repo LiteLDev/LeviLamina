@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
 class RepeatUntilSuccessDefinition : public ::DecoratorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk3cbfb8;
+    ::ll::UntypedStorage<8, 32> mUnk519e19;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RepeatUntilSuccessDefinition& operator=(RepeatUntilSuccessDefinition const&);
@@ -18,21 +26,30 @@ public:
     RepeatUntilSuccessDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RepeatUntilSuccessDefinition() = default;
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~RepeatUntilSuccessDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,7 +8,18 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct MoveRequestComponent;
+struct OnGroundFlagComponent;
+struct RailMovementComponent;
+struct SnapOnRailComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class MinecartComeOffRailSystem {
 public:
@@ -18,31 +29,27 @@ public:
     MinecartComeOffRailSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _minecartComeOffRailSystem(
-        class StrictEntityContext&                         context,
-        class RailMovementComponent const&                 railMovementComponent,
-        struct StateVectorComponent&                       stateVectorComponent,
-        class Optional<struct OnGroundFlagComponent const> onGroundFlagComponent,
-        class EntityModifier<struct MoveRequestComponent>  mod
+        ::StrictEntityContext&                    context,
+        ::RailMovementComponent const&            railMovementComponent,
+        ::StateVectorComponent&                   stateVectorComponent,
+        ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
+        ::EntityModifier<::MoveRequestComponent>  mod
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI static void _tickMinecartComeOffRailSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Exclude<struct SnapOnRailComponent>,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            class RailMovementComponent const,
-            struct StateVectorComponent,
-            class Optional<struct OnGroundFlagComponent const>> view,
-        class EntityModifier<struct MoveRequestComponent>       mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<::SnapOnRailComponent>,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::RailMovementComponent const,
+            ::StateVectorComponent,
+            ::Optional<::OnGroundFlagComponent const>> view,
+        ::EntityModifier<::MoveRequestComponent>       mod
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

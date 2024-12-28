@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/server/commands/standard/MessagingCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+// clang-format on
+
 class MeCommand : public ::MessagingCommand {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka847a8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MeCommand& operator=(MeCommand const&);
@@ -13,23 +26,36 @@ public:
     MeCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MeCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~MeCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,47 +3,77 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct WeaponItemComponent {
+struct WeaponItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WeaponItemComponent();
-
-    MCAPI WeaponItemComponent();
-
-    MCAPI WeaponItemComponent(struct WeaponItemComponent const&);
-
-    MCAPI struct WeaponItemComponent& operator=(struct WeaponItemComponent&&);
-
-    MCAPI struct WeaponItemComponent& operator=(struct WeaponItemComponent const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    ::ll::UntypedStorage<8, 256> mUnkec044b;
+    ::ll::UntypedStorage<8, 256> mUnkc8a0f0;
+    ::ll::UntypedStorage<8, 256> mUnk38ff7b;
     // NOLINTEND
 
-    // thunks
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~WeaponItemComponent() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct WeaponItemComponent const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WeaponItemComponent();
 
-    MCAPI void* ctor$();
+    MCAPI WeaponItemComponent(::WeaponItemComponent&&);
 
-    MCAPI void dtor$();
+    MCAPI WeaponItemComponent(::WeaponItemComponent const&);
 
+    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
+
+    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::WeaponItemComponent&&);
+
+    MCAPI void* $ctor(::WeaponItemComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

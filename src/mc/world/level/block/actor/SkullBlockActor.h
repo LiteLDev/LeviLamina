@@ -3,13 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/SkullBlock.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+// clang-format on
 
 class SkullBlockActor : public ::BlockActor {
 public:
-    // SkullBlockActor inner types define
-    enum class SkullType {};
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkddf065;
+    ::ll::UntypedStorage<1, 1> mUnk87c936;
+    ::ll::UntypedStorage<4, 4> mUnk336dc4;
+    ::ll::UntypedStorage<4, 4> mUnkca3744;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -18,59 +34,73 @@ public:
     SkullBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SkullBlockActor() = default;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
-    // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    MCAPI explicit SkullBlockActor(class BlockPos const& pos);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI ::SkullBlockActor::SkullType getSkullType() const;
-
-    MCAPI void setRotation(float rot);
-
-    MCAPI void setSkullType(int type);
-
-    MCAPI static std::optional<::SkullBlockActor::SkullType>
-    getSkullType(class BlockSource& region, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~SkullBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SkullBlockActor(::BlockPos const& pos);
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+    MCAPI float getRotation() const;
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+    MCAPI ::SkullBlock::SkullType getSkullType() const;
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void setRotation(float rot);
+    // NOLINTEND
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void onChanged$(class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

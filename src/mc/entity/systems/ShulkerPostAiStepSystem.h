@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorRotationComponent;
+struct MobBodyRotationComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class ShulkerPostAiStepSystem {
 public:
     // prevent constructor by default
@@ -10,19 +19,15 @@ public:
     ShulkerPostAiStepSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doShulkerPostAiStepSystem(
-        class StrictEntityContext const&,
-        struct ActorRotationComponent&   actorRotationComponent,
-        struct MobBodyRotationComponent& mobBodyRotationComponent,
-        struct StateVectorComponent&     stateVectorComponent
+        ::StrictEntityContext const&,
+        ::ActorRotationComponent&   actorRotationComponent,
+        ::MobBodyRotationComponent& mobBodyRotationComponent,
+        ::StateVectorComponent&     stateVectorComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

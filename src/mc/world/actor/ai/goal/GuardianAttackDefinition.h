@@ -8,43 +8,78 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GuardianAttackGoal;
+class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GuardianAttackDefinition : public ::BaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk6326c4;
+    ::ll::UntypedStorage<4, 4> mUnk26cedf;
+    ::ll::UntypedStorage<4, 4> mUnkb4f3cd;
+    ::ll::UntypedStorage<4, 4> mUnk6dc843;
+    ::ll::UntypedStorage<4, 4> mUnk1c79c3;
+    ::ll::UntypedStorage<4, 4> mUnkf1d257;
+    ::ll::UntypedStorage<4, 4> mUnkd1de50;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GuardianAttackDefinition& operator=(GuardianAttackDefinition const&);
     GuardianAttackDefinition(GuardianAttackDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GuardianAttackDefinition() = default;
-
     // vIndex: 1
-    virtual bool validateMobType(class Mob& mob) const;
+    virtual bool validateMobType(::Mob& mob) const /*override*/;
 
-    MCAPI GuardianAttackDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class GuardianAttackGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>>& root
-    );
-
+    // vIndex: 0
+    virtual ~GuardianAttackDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI GuardianAttackDefinition();
 
-    MCAPI void* ctor$();
+    MCAPI void initialize(::EntityContext& entity, ::GuardianAttackGoal& goal) const;
+    // NOLINTEND
 
-    MCAPI bool validateMobType$(class Mob& mob) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                     name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $validateMobType(::Mob& mob) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

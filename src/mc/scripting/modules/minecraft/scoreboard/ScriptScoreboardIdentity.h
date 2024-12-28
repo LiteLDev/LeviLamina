@@ -5,20 +5,24 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class IdentityDefinition;
-class Level;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace Scripting { class WeakLifetimeScope; }
-struct ScoreboardId;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardIdentity {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk786da7;
+    ::ll::UntypedStorage<8, 80> mUnkc4058d;
+    ::ll::UntypedStorage<8, 8>  mUnk782009;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptScoreboardIdentity& operator=(ScriptScoreboardIdentity const&);
@@ -26,41 +30,28 @@ public:
     ScriptScoreboardIdentity();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptScoreboardIdentity(
-        class IdentityDefinition const&           identity,
-        class Level const&                        level,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getActor() const;
 
-    MCAPI std::string getName() const;
-
-    MCAPI struct ScoreboardId const& getScoreboardId() const;
-
-    MCAPI bool isValid() const;
+    MCAPI ::std::string getName() const;
 
     MCAPI ~ScriptScoreboardIdentity();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class IdentityDefinition const&           identity,
-        class Level const&                        level,
-        class Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

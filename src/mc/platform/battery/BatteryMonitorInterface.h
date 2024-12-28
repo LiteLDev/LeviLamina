@@ -13,22 +13,33 @@ public:
     BatteryMonitorInterface();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BatteryMonitorInterface() = default;
+    virtual ~BatteryMonitorInterface();
 
     // vIndex: 1
     virtual ::BatteryStatus getBatteryStatus() const = 0;
 
     // vIndex: 2
     virtual float getBatteryLevel() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,10 +4,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Level;
+class Mob;
+class OnHitSubcomponent;
+class Vec3;
+struct ActorDefinitionIdentifier;
 namespace Json { class Value; }
 // clang-format on
 
 class ProjectileFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk87b5c0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ProjectileFactory& operator=(ProjectileFactory const&);
@@ -15,36 +27,43 @@ public:
     ProjectileFactory();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProjectileFactory(class Level& level);
+    MCAPI explicit ProjectileFactory(::Level& level);
 
-    MCAPI class Actor* shootProjectileFromDefinition(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Mob*                              owner,
-        class Vec3                              targetDir,
-        int                                     auxValue,
-        float                                   throwPower,
-        bool                                    useUnmodifiedDirection,
-        bool                                    overrideSpawnPosition,
-        class Vec3                              spawnPosition
+    MCAPI ::Actor* shootProjectileFromDefinition(
+        ::ActorDefinitionIdentifier const& identifier,
+        ::Mob*                             owner,
+        ::Vec3                             targetDir,
+        int                                auxValue,
+        float                              throwPower,
+        bool                               useUnmodifiedDirection,
+        bool                               overrideSpawnPosition,
+        ::Vec3                             spawnPosition
     );
+    // NOLINTEND
 
-    MCAPI static std::unique_ptr<class OnHitSubcomponent>
-    createSubcomponent(class Json::Value& trigger, class SemVersion const& engineVersion, std::string const& name);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::OnHitSubcomponent>
+    createSubcomponent(::Json::Value& trigger, ::std::string const& name);
 
     MCAPI static void initFactory();
 
     MCAPI static void shutdown();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Level& level);
-
-    MCAPI static std::unordered_map<std::string, std::function<std::unique_ptr<class OnHitSubcomponent>()>>&
+    MCAPI static ::std::unordered_map<::std::string, ::std::function<::std::unique_ptr<::OnHitSubcomponent>()>>&
     mSubcomponentMap();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 };

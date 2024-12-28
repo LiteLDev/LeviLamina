@@ -3,22 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Player;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class StructureBlock : public ::ActorBlock {
+class StructureBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     StructureBlock& operator=(StructureBlock const&);
@@ -26,52 +23,70 @@ public:
     StructureBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 45
+    virtual bool isConsumerComponent() const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~StructureBlock() = default;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI StructureBlock(std::string const& nameId, int id);
-
+    virtual ~StructureBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StructureBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool isInteractiveBlock$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI bool $isConsumerComponent() const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

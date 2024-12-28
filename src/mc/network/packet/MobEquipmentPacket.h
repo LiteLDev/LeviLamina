@@ -8,85 +8,117 @@
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ItemStack;
+class NetworkItemStackDescriptor;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class MobEquipmentPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>              mRuntimeId;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
+    ::ll::TypedStorage<4, 4, int>                           mSlot;
+    ::ll::TypedStorage<4, 4, int>                           mSelectedSlot;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                 mContainerId;
+    ::ll::TypedStorage<1, 1, uchar>                         mSlotByte;
+    ::ll::TypedStorage<1, 1, uchar>                         mSelectedSlotByte;
+    ::ll::TypedStorage<1, 1, uchar>                         mContainerIdByte;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MobEquipmentPacket& operator=(MobEquipmentPacket const&);
     MobEquipmentPacket(MobEquipmentPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MobEquipmentPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI MobEquipmentPacket();
-
-    MCAPI MobEquipmentPacket(class MobEquipmentPacket&&);
-
-    MCAPI MobEquipmentPacket(
-        class ActorRuntimeID   runtimeId,
-        class ItemStack const& item,
-        int                    slot,
-        int                    selectedSlot,
-        ::ContainerID          containerId
-    );
-
-    MCAPI MobEquipmentPacket(
-        class ActorRuntimeID                    runtimeId,
-        class NetworkItemStackDescriptor const& item,
-        int                                     slot,
-        int                                     selectedSlot,
-        ::ContainerID                           containerId
-    );
-
+    // vIndex: 0
+    virtual ~MobEquipmentPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MobEquipmentPacket();
 
-    MCAPI void* ctor$(class MobEquipmentPacket&&);
+    MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
-    MCAPI void* ctor$(
-        class ActorRuntimeID   runtimeId,
-        class ItemStack const& item,
-        int                    slot,
-        int                    selectedSlot,
-        ::ContainerID          containerId
+    MCAPI MobEquipmentPacket(
+        ::ActorRuntimeID                    runtimeId,
+        ::NetworkItemStackDescriptor const& item,
+        int                                 slot,
+        int                                 selectedSlot,
+        ::ContainerID                       containerId
     );
 
-    MCAPI void* ctor$(
-        class ActorRuntimeID                    runtimeId,
-        class NetworkItemStackDescriptor const& item,
-        int                                     slot,
-        int                                     selectedSlot,
-        ::ContainerID                           containerId
+    MCAPI MobEquipmentPacket(
+        ::ActorRuntimeID   runtimeId,
+        ::ItemStack const& item,
+        int                slot,
+        int                selectedSlot,
+        ::ContainerID      containerId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::MobEquipmentPacket&&);
+
+    MCAPI void* $ctor(
+        ::ActorRuntimeID                    runtimeId,
+        ::NetworkItemStackDescriptor const& item,
+        int                                 slot,
+        int                                 selectedSlot,
+        ::ContainerID                       containerId
     );
 
-    MCAPI void* ctor$();
+    MCAPI void*
+    $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

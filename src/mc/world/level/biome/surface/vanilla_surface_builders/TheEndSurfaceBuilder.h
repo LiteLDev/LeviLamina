@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -21,28 +20,37 @@ public:
     TheEndSurfaceBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TheEndSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome&, uint);
+    virtual void init(::Biome&, uint) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
+    virtual ~TheEndSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome&, uint);
 
-    MCAPI void init$(class Biome&, uint);
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

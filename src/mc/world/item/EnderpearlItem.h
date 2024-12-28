@@ -3,18 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class HashedString;
+class ItemStack;
+class Player;
 // clang-format on
 
 class EnderpearlItem : public ::Item {
@@ -25,42 +20,63 @@ public:
     EnderpearlItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+
+    // vIndex: 20
+    virtual bool isThrowable() const /*override*/;
+
+    // vIndex: 94
+    virtual ::HashedString const& getCooldownType() const /*override*/;
+
+    // vIndex: 95
+    virtual int getCooldownTime() const /*override*/;
+
     // vIndex: 0
-    virtual ~EnderpearlItem() = default;
-
-    // vIndex: 19
-    virtual bool isThrowable() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
-
-    // vIndex: 90
-    virtual class HashedString const& getCooldownType() const;
-
-    // vIndex: 91
-    virtual int getCooldownTime() const;
-
-    MCAPI EnderpearlItem(std::string const& nameId, int id);
-
+    virtual ~EnderpearlItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EnderpearlItem(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& ENDER_PEARL_COOLDOWN();
+    // NOLINTEND
 
-    MCAPI int getCooldownTime$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class HashedString const& getCooldownType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isThrowable$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+    MCAPI bool $isThrowable() const;
 
-    MCAPI static class HashedString const& ENDER_PEARL_COOLDOWN();
+    MCAPI ::HashedString const& $getCooldownType() const;
 
+    MCAPI int $getCooldownTime() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

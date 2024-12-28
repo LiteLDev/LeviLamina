@@ -3,22 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Container;
+class Experiments;
+class ItemInstance;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class PumpkinBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkceb273;
+    ::ll::UntypedStorage<1, 1> mUnk63601d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PumpkinBlock& operator=(PumpkinBlock const&);
@@ -26,65 +34,91 @@ public:
     PumpkinBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PumpkinBlock() = default;
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 59
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
     // vIndex: 25
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
-    // vIndex: 64
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const&) const;
-
-    // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI PumpkinBlock(std::string const& nameId, int id, bool lit, bool carved);
-
+    // vIndex: 0
+    virtual ~PumpkinBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canDispense(class BlockSource& region, class Vec3 const& pos, uchar) const;
-
-    MCAPI bool _canSpawnGolem(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PumpkinBlock(::std::string const& nameId, int id, bool lit, bool carved);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool lit, bool carved);
+    MCAPI bool _canDispense(::BlockSource& region, ::Vec3 const& pos, uchar) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI bool _canSpawnGolem(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool canConnect$(class Block const&, uchar, class Block const&) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isGolemHeadBlock(::BlockSource& region, ::BlockPos const&, ::Block const& block);
+    // NOLINTEND
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& GOLEM_ONLY_FROM_CARVED_PUMPKINS_VERSION();
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit, bool carved);
+    // NOLINTEND
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,10 +8,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class CreativeGroupInfo;
+class HashedString;
+class ItemInstance;
 // clang-format on
 
 class CreativeItemGroupCategory : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkde0cd1;
+    ::ll::UntypedStorage<4, 4>  mUnkb1fac7;
+    ::ll::UntypedStorage<8, 8>  mUnk90b560;
+    ::ll::UntypedStorage<8, 64> mUnk249d7d;
+    ::ll::UntypedStorage<8, 24> mUnk1e1068;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CreativeItemGroupCategory& operator=(CreativeItemGroupCategory const&);
@@ -19,28 +31,35 @@ public:
     CreativeItemGroupCategory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CreativeItemGroupCategory();
+    virtual ~CreativeItemGroupCategory() /*override*/;
+    // NOLINTEND
 
-    MCAPI class CreativeGroupInfo* addAnonymousGroup();
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::CreativeGroupInfo* addAnonymousGroup();
 
-    MCAPI class CreativeGroupInfo* addChildGroup(class HashedString const& name, class ItemInstance const& icon);
+    MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
 
-    MCAPI class CreativeGroupInfo* getChildGroup(class HashedString const& name);
+    MCAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
 
     MCAPI ::CreativeItemCategory getCreativeCategory();
 
-    MCAPI class CreativeGroupInfo* getOrAddTailAnonymousGroup();
-
+    MCAPI ::CreativeGroupInfo* getOrAddTailAnonymousGroup();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

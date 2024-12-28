@@ -5,39 +5,68 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
 struct PreferredPathDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk761312;
+    ::ll::UntypedStorage<4, 4>  mUnk6123b9;
+    ::ll::UntypedStorage<4, 4>  mUnkaf5690;
+    ::ll::UntypedStorage<8, 24> mUnk402455;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PreferredPathDescription& operator=(PreferredPathDescription const&);
     PreferredPathDescription(PreferredPathDescription const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
-
-    // vIndex: 1
-    virtual ~PreferredPathDescription();
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    MCAPI PreferredPathDescription();
-
+    // vIndex: 1
+    virtual ~PreferredPathDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PreferredPathDescription();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
 
-    MCAPI char const* getJsonName$() const;
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

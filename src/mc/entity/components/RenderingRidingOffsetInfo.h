@@ -4,25 +4,37 @@
 
 struct RenderingRidingOffsetInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk81f77f;
+    ::ll::UntypedStorage<8, 48> mUnk95c72e;
+    ::ll::UntypedStorage<4, 4>  mUnkab7ce9;
+    ::ll::UntypedStorage<8, 8>  mUnk6782f5;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RenderingRidingOffsetInfo& operator=(RenderingRidingOffsetInfo const&);
     RenderingRidingOffsetInfo(RenderingRidingOffsetInfo const&);
     RenderingRidingOffsetInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI RenderingRidingOffsetInfo(std::string const& baseLocator, std::string const& seatLocator);
+    MCAPI RenderingRidingOffsetInfo(::std::string const& baseLocator, ::std::string const& seatLocator);
 
     MCAPI ~RenderingRidingOffsetInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& baseLocator, std::string const& seatLocator);
+    MCAPI void* $ctor(::std::string const& baseLocator, ::std::string const& seatLocator);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

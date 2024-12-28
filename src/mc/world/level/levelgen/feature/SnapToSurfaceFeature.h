@@ -5,10 +5,33 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class SnapToSurfaceFeature : public ::IFeature {
 public:
     // SnapToSurfaceFeature inner types define
-    enum class Surface {};
+    enum class Surface : int {
+        Ceiling          = 0,
+        Floor            = 1,
+        RandomHorizontal = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkcc3148;
+    ::ll::UntypedStorage<4, 4>  mUnkd9cc9e;
+    ::ll::UntypedStorage<4, 4>  mUnk32934f;
+    ::ll::UntypedStorage<8, 24> mUnkee9932;
+    ::ll::UntypedStorage<1, 1>  mUnk9d4a1e;
+    ::ll::UntypedStorage<1, 1>  mUnk936b03;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -16,50 +39,49 @@ public:
     SnapToSurfaceFeature(SnapToSurfaceFeature const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SnapToSurfaceFeature() = default;
+    virtual ~SnapToSurfaceFeature() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
+    // NOLINTEND
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SnapToSurfaceFeature();
 
+    MCAPI ::std::optional<::BlockPos>
+    _findSnapPos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::SnapToSurfaceFeature::Surface targetSurface)
+        const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos> _findSnapPos(
-        class IBlockWorldGenAPI&        target,
-        class BlockPos const&           pos,
-        ::SnapToSurfaceFeature::Surface targetSurface
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

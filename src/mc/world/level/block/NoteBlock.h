@@ -3,22 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Level;
+class Player;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class NoteBlock : public ::ActorBlock {
+class NoteBlock : public ::ActorBlockBase<::BlockLegacy> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk5c0ef6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NoteBlock& operator=(NoteBlock const&);
@@ -26,65 +31,80 @@ public:
     NoteBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 95
+    virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 99
+    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~NoteBlock() = default;
-
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 101
-    virtual bool attack(class Player* player, class BlockPos const& pos) const;
-
-    // vIndex: 105
-    virtual void triggerEvent(class BlockSource& region, class BlockPos const& pos, int instrument, int note) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI NoteBlock(std::string const& nameId, int id);
-
-    MCAPI class NoteBlock& enableSkullPlacement(bool enabled);
-
+    virtual ~NoteBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _triggerNoteParticle(class Level& level, class Vec3 const& vPos, int note) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NoteBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
 
-    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+    MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI void triggerEvent$(class BlockSource& region, class BlockPos const& pos, int instrument, int note) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

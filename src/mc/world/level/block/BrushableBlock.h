@@ -3,22 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class HashedString;
+class ItemInstance;
+class Random;
 namespace mce { class Color; }
 // clang-format on
 
 class BrushableBlock : public ::FallingBlock {
+public:
+    // BrushableBlock inner types define
+    enum class Type : int {
+        Sand   = 0,
+        Gravel = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk4271a4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BrushableBlock& operator=(BrushableBlock const&);
@@ -26,74 +41,97 @@ public:
     BrushableBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BrushableBlock() = default;
+    // vIndex: 125
+    virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+    // vIndex: 154
+    virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
-
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const* blockActor) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
     // vIndex: 136
-    virtual class BlockLegacy& init();
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const&) const;
+    // vIndex: 152
+    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const&) const;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 166
-    virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    MCAPI BrushableBlock(std::string const& nameID, int id);
+    // vIndex: 75
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 0
+    virtual ~BrushableBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BrushableBlock(::std::string const& nameID, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameID, int id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& EmptyBrushedBlock();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const* blockActor) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameID, int id);
+    // NOLINTEND
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class mce::Color getDustColor$(class Block const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockLegacy& $init();
 
-    MCAPI std::string getDustParticleName$(class Block const&) const;
+    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
-    MCAPI class BlockLegacy& init$();
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+    MCAPI ::mce::Color $getDustColor(::Block const&) const;
+
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+
+    MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    // NOLINTEND
 
-    MCAPI static class HashedString const& EmptyBrushedBlock();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

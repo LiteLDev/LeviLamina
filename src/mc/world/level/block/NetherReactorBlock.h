@@ -3,22 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockLegacy;
+class Material;
 // clang-format on
 
-class NetherReactorBlock : public ::ActorBlock {
+class NetherReactorBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     NetherReactorBlock& operator=(NetherReactorBlock const&);
@@ -26,20 +19,33 @@ public:
     NetherReactorBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetherReactorBlock() = default;
-
-    MCAPI NetherReactorBlock(std::string const& nameId, int id, class Material const& material);
-
+    virtual ~NetherReactorBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NetherReactorBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

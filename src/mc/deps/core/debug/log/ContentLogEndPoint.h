@@ -2,34 +2,63 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ContentLogEndPoint {
+// auto generated inclusion list
+#include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/core/debug/log/LogEndPoint.h"
+#include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
+class ContentLogEndPoint : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::LogEndPoint {
 public:
     // prevent constructor by default
     ContentLogEndPoint& operator=(ContentLogEndPoint const&);
     ContentLogEndPoint(ContentLogEndPoint const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void log(char const* message);
+    // vIndex: 0
+    virtual ~ContentLogEndPoint() /*override*/;
 
-    MCVAPI ~ContentLogEndPoint();
+    // vIndex: 1
+    virtual void log(::LogArea const, ::LogLevel const, char const*) = 0;
 
-    MCAPI ContentLogEndPoint();
+    // vIndex: 1
+    virtual void log(char const* message) /*override*/;
 
+    // vIndex: 2
+    virtual bool logOnlyOnce() const = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI ContentLogEndPoint();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockLogEndPoint();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $log(char const* message);
+    // NOLINTEND
 
-    MCAPI void log$(char const* message);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForLogEndPoint();
 
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

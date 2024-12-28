@@ -10,9 +10,10 @@ public:
     Amplifier();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Amplifier() = default;
+    virtual ~Amplifier();
 
     // vIndex: 1
     virtual float getAmount(int amplification, float scale) const;
@@ -22,19 +23,27 @@ public:
 
     // vIndex: 3
     virtual int getTickInterval(int amplification) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getAmount$(int amplification, float scale) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getAmount(int amplification, float scale) const;
 
-    MCAPI int getTickInterval$(int amplification) const;
+    MCAPI bool $shouldBuff(int remainingDuration, int amplification) const;
 
-    MCAPI bool shouldBuff$(int remainingDuration, int amplification) const;
+    MCAPI int $getTickInterval(int amplification) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

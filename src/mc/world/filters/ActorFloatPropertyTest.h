@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+struct FilterContext;
+struct FilterInputs;
 namespace Json { class Value; }
 // clang-format on
 
 class ActorFloatPropertyTest : public ::FilterTest {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk7e2e92;
+    ::ll::UntypedStorage<8, 48> mUnkb1187d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorFloatPropertyTest& operator=(ActorFloatPropertyTest const&);
@@ -18,43 +27,50 @@ public:
     ActorFloatPropertyTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorFloatPropertyTest();
-
     // vIndex: 1
-    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const& context) const;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     // vIndex: 4
-    virtual std::string_view getName() const;
-
-    // vIndex: 5
-    virtual class Json::Value _serializeDomain() const;
+    virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 6
-    virtual class Json::Value _serializeValue() const;
+    virtual ::Json::Value _serializeValue() const /*override*/;
 
+    // vIndex: 5
+    virtual ::Json::Value _serializeDomain() const /*override*/;
+
+    // vIndex: 0
+    virtual ~ActorFloatPropertyTest() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI class Json::Value _serializeDomain$() const;
+    MCAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI class Json::Value _serializeValue$() const;
+    MCAPI ::std::string_view $getName() const;
 
-    MCAPI bool evaluate$(struct FilterContext const& context) const;
+    MCAPI ::Json::Value $_serializeValue() const;
 
-    MCAPI std::string_view getName$() const;
+    MCAPI ::Json::Value $_serializeDomain() const;
+    // NOLINTEND
 
-    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,10 +12,10 @@ public:
     RakThread();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static int Create(uint (*)(void*), void*, int);
-
+    MCAPI static int Create(uint (*start_address)(void*), void* arglist, int priority);
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

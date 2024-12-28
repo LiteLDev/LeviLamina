@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class JigsawBlockInfo;
+class Player;
+class Vec3;
 // clang-format on
 
 class JigsawBlock : public ::FaceDirectionalActorBlock {
@@ -26,69 +24,77 @@ public:
     JigsawBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 120
+    virtual ::Block const& getRenderBlock() const /*override*/;
+
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 122
+    virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~JigsawBlock() = default;
-
-    // vIndex: 61
-    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
-
-    // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
-
-    // vIndex: 131
-    virtual class Block const& getRenderBlock() const;
-
-    // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
-
-    // vIndex: 133
-    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI JigsawBlock(std::string const& nameId, int id);
-
-    MCAPI static bool canAttach(class JigsawBlockInfo const& block1, class JigsawBlockInfo const& block2);
-
+    virtual ~JigsawBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI JigsawBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
+    // NOLINTEND
 
-    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const& requiredBaseGameVersion) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI class Block const& getPlacementBlock$(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI class Block const& getRenderBlock$() const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

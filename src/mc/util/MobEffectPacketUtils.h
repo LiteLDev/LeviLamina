@@ -5,13 +5,21 @@
 // auto generated inclusion list
 #include "mc/network/packet/MobEffectPacket.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class MobEffectInstance;
+class MobEffectPacket;
+// clang-format on
+
 namespace MobEffectPacketUtils {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<class MobEffectPacket> createPacket(
-    ::MobEffectPacket::Event       eventType,
-    class MobEffectInstance const& effect,
-    class EntityContext const&     sourceEntity
+MCAPI ::std::optional<::MobEffectPacket> createPacket(
+    ::MobEffectPacket::Event   eventType,
+    ::MobEffectInstance const& effect,
+    ::EntityContext const&     sourceEntity
 );
 // NOLINTEND
 
-}; // namespace MobEffectPacketUtils
+} // namespace MobEffectPacketUtils

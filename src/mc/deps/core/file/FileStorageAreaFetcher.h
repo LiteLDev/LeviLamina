@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
-namespace Core { class IFileStorageAreaFetcher; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on
@@ -23,29 +22,35 @@ public:
     FileStorageAreaFetcher();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FileStorageAreaFetcher() = default;
-
     // vIndex: 1
-    virtual class Core::Result getStorageAreaForPath(
-        std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,
-        class Core::Path const&                       path
-    ) const;
+    virtual ::Core::Result
+    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path) const
+        /*override*/;
 
+    // vIndex: 0
+    virtual ~FileStorageAreaFetcher() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Core::Result getStorageAreaForPath$(
-        std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,
-        class Core::Path const&                       path
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Core::Result
+    $getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

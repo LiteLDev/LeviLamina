@@ -5,25 +5,40 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct CollidableMobNearFlagComponent;
+struct CollisionFlagComponent;
+struct HorizontalCollisionFlagComponent;
+struct MoveRequestComponent;
+struct MovementAbilitiesComponent;
+struct OffsetsComponent;
+struct OnGroundFlagComponent;
+struct StateVectorComponent;
+struct VerticalCollisionFlagComponent;
+// clang-format on
 
 namespace FinalizeMoveSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void tickFinalizeMoveSystem(
-    class StrictEntityContext&                              context,
-    struct AABBShapeComponent const&                        aabb,
-    struct MoveRequestComponent const&                      moveRequest,
-    struct OffsetsComponent const&                          offsets,
-    struct StateVectorComponent&                            state,
-    class Optional<struct OnGroundFlagComponent const>      onGround,
-    class Optional<struct MovementAbilitiesComponent const> abilities,
-    class EntityModifier<
-        struct OnGroundFlagComponent,
-        class FlagComponent<struct CollisionFlag>,
-        class FlagComponent<struct HorizontalCollisionFlag>,
-        class FlagComponent<struct VerticalCollisionFlag>,
-        class FlagComponent<struct CollidableMobNearFlag>>& mod
+    ::StrictEntityContext&                         context,
+    ::AABBShapeComponent const&                    aabb,
+    ::MoveRequestComponent const&                  moveRequest,
+    ::OffsetsComponent const&                      offsets,
+    ::StateVectorComponent&                        state,
+    ::Optional<::OnGroundFlagComponent const>      onGround,
+    ::Optional<::MovementAbilitiesComponent const> abilities,
+    ::EntityModifier<
+        ::OnGroundFlagComponent,
+        ::CollisionFlagComponent,
+        ::HorizontalCollisionFlagComponent,
+        ::VerticalCollisionFlagComponent,
+        ::CollidableMobNearFlagComponent>& mod
 );
 // NOLINTEND
 
-}; // namespace FinalizeMoveSystemImpl
+} // namespace FinalizeMoveSystemImpl

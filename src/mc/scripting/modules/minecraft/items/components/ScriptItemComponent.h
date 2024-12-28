@@ -6,45 +6,54 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptComponent; }
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 class ScriptItemComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk5e0c70;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItemComponent& operator=(ScriptItemComponent const&);
+    ScriptItemComponent(ScriptItemComponent const&);
     ScriptItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemComponent();
+    virtual ~ScriptItemComponent() /*override*/;
 
     // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptItemComponent(class ScriptModuleMinecraft::ScriptItemComponent const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemComponent> bind();
-
+    virtual bool _isValid() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemComponent> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptItemComponent const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SpawnPositionType {};
+enum class SpawnPositionType : int {
+    PlayerRespawn = 0,
+    WorldSpawn    = 1,
+};

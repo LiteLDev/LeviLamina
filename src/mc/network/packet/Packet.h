@@ -4,10 +4,34 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/raknet/PacketPriority.h"
+#include "mc/network/Compressibility.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/NetworkPeer.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class IPacketHandlerDispatcher;
+class NetEventCallback;
+class NetworkIdentifier;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::PacketPriority>                        mPriority;
+    ::ll::TypedStorage<4, 4, ::NetworkPeer::Reliability>              mReliability;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                           mClientSubId;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsHandled;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mReceiveTimepoint;
+    ::ll::TypedStorage<8, 8, ::IPacketHandlerDispatcher const*>       mHandler;
+    ::ll::TypedStorage<4, 4, ::Compressibility>                       mCompressible;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Packet& operator=(Packet const&);
@@ -15,6 +39,7 @@ public:
     Packet();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Packet();
@@ -23,16 +48,16 @@ public:
     virtual ::MinecraftPacketIds getId() const = 0;
 
     // vIndex: 2
-    virtual std::string getName() const = 0;
+    virtual ::std::string getName() const = 0;
 
     // vIndex: 3
-    virtual class Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
+    virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const = 0;
+    virtual void write(::BinaryStream&) const = 0;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& bitStream);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
 
     // vIndex: 6
     virtual bool disallowBatching() const;
@@ -41,34 +66,39 @@ public:
     virtual bool isValid() const;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
-
-    MCAPI void handle(
-        class NetworkIdentifier const& source,
-        class NetEventCallback&        callback,
-        std::shared_ptr<class Packet>& packet
-    );
-
-    MCAPI class Bedrock::Result<void> readNoHeader(class ReadOnlyBinaryStream& bitstream, ::SubClientId const& subid);
-
-    MCAPI void writeWithHeader(::SubClientId subClientId, class BinaryStream& bitstream) const;
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void
+    handle(::NetworkIdentifier const& source, ::NetEventCallback& callback, ::std::shared_ptr<::Packet>& packet);
 
-    MCAPI void dtor$();
+    MCAPI ::Bedrock::Result<void> readNoHeader(::ReadOnlyBinaryStream& bitstream, ::SubClientId const& subid);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> checkSize$(uint64 packetSize, bool receiverIsServer) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool disallowBatching$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $checkSize(uint64 packetSize, bool receiverIsServer) const;
 
-    MCAPI bool isValid$() const;
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& bitStream);
+    MCAPI bool $disallowBatching() const;
 
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

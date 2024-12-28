@@ -3,30 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class EntityContext;
+class IConstBlockSource;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Blaze : public ::Monster {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk8bbde8;
+    ::ll::UntypedStorage<4, 4> mUnk54d31f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Blaze& operator=(Blaze const&);
@@ -34,60 +29,77 @@ public:
     Blaze();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 10
-    virtual ~Blaze() = default;
+    // vIndex: 39
+    virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 150
+    virtual void aiStep() /*override*/;
 
-    // vIndex: 41
-    virtual float getBrightness(float, class IConstBlockSource const&) const;
+    // vIndex: 49
+    virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 51
-    virtual bool isOnFire() const;
+    // vIndex: 182
+    virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 158
-    virtual void aiStep();
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 190
-    virtual bool isDarkEnoughToSpawn() const;
+    // vIndex: 8
+    virtual ~Blaze() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Blaze(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI void preTravel();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void aiStep$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getBrightness$(float, class IConstBlockSource const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool isDarkEnoughToSpawn$() const;
+    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI bool isOnFire$() const;
+    MCAPI void $aiStep();
 
-    MCAPI void normalTick$();
+    MCAPI bool $isOnFire() const;
 
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $isDarkEnoughToSpawn() const;
 
+    MCAPI void $normalTick();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

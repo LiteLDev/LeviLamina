@@ -9,11 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDependencyLoader; }
-namespace Scripting { class IPayload; }
 namespace Scripting { class IPrinter; }
 namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class StringBasedRuntime; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct ModuleBindingBundle; }
@@ -23,53 +21,68 @@ namespace Scripting {
 
 class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk79f943;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     NativeFunctionPayload& operator=(NativeFunctionPayload const&);
     NativeFunctionPayload(NativeFunctionPayload const&);
     NativeFunctionPayload();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NativeFunctionPayload();
-
-    // vIndex: 1
-    virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId contextId, class Scripting::NativeRuntime& runtime, std::optional<::Scripting::Privilege>);
+    virtual ~NativeFunctionPayload() /*override*/;
 
     // vIndex: 2
-    virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
-
-    MCAPI explicit NativeFunctionPayload(
-        std::function<
-            class Scripting::
-                ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)>
-            func
-    );
-
+    virtual ::Scripting::ResultAny
+    runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>) /*override*/
+        ;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit NativeFunctionPayload(
+        ::std::function<
+            ::Scripting::
+                ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)>
+            func
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(std::function<
-          class Scripting::
-              ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)>
+    $ctor(::std::function<
+          ::Scripting::
+              ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)>
               func);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Scripting::ResultAny
-    runOn$(struct Scripting::ContextId contextId, class Scripting::NativeRuntime& runtime, std::optional<::Scripting::Privilege>);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::ResultAny
+    $runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>);
+    // NOLINTEND
 
-    MCAPI class Scripting::ResultAny
-    runOn$(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class BaseMoveToBlockGoal : public ::BaseMoveToGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkaac6c1;
+    ::ll::UntypedStorage<4, 4> mUnkfd386c;
+    ::ll::UntypedStorage<4, 4> mUnk582ca0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BaseMoveToBlockGoal& operator=(BaseMoveToBlockGoal const&);
@@ -14,58 +26,73 @@ public:
     BaseMoveToBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BaseMoveToBlockGoal();
-
-    // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
-
-    // vIndex: 14
-    virtual void _moveToBlock();
-
     // vIndex: 17
     virtual bool findTargetBlock();
 
-    MCAPI BaseMoveToBlockGoal(
-        class Mob& mob,
-        float      speedModifier,
-        int        searchRange,
-        int        searchHeight,
-        int        searchCount,
-        float      goalRadius,
-        float      cooldownTime
-    );
+    // vIndex: 1
+    virtual bool canUse() /*override*/;
 
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
+
+    // vIndex: 14
+    virtual void _moveToBlock() /*override*/;
+
+    // vIndex: 0
+    virtual ~BaseMoveToBlockGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob& mob,
-        float      speedModifier,
-        int        searchRange,
-        int        searchHeight,
-        int        searchCount,
-        float      goalRadius,
-        float      cooldownTime
+    MCAPI BaseMoveToBlockGoal(
+        ::Mob& mob,
+        float  speedModifier,
+        int    searchRange,
+        int    searchHeight,
+        int    searchCount,
+        float  goalRadius,
+        float  cooldownTime
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob& mob,
+        float  speedModifier,
+        int    searchRange,
+        int    searchHeight,
+        int    searchCount,
+        float  goalRadius,
+        float  cooldownTime
+    );
+    // NOLINTEND
 
-    MCAPI void _moveToBlock$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $findTargetBlock();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canUse();
 
-    MCAPI bool findTargetBlock$();
+    MCAPI bool $canContinueToUse();
 
+    MCAPI void $_moveToBlock();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

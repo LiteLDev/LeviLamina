@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,55 +19,65 @@ namespace ScriptModuleMinecraft {
 
 class ScriptContainerWrapper {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka2b074;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptContainerWrapper& operator=(ScriptContainerWrapper const&);
     ScriptContainerWrapper(ScriptContainerWrapper const&);
     ScriptContainerWrapper();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer> scriptContainer
-    );
+    MCAPI explicit ScriptContainerWrapper(::std::unique_ptr<::ScriptModuleMinecraft::ScriptContainer> scriptContainer);
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    addItem(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCAPI class Scripting::Result<void> clearAll() const;
+    MCAPI ::Scripting::Result<void> clearAll() const;
 
-    MCAPI class Scripting::Result<int> getEmptySlotsCount() const;
+    MCAPI ::Scripting::Result_deprecated<int> getEmptySlotsCount() const;
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getItem(int slot) const;
 
-    MCAPI class Scripting::Result<int> getSize() const;
+    MCAPI ::Scripting::Result_deprecated<int> getSize() const;
 
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     getSlot(int slot) const;
 
-    MCAPI class Scripting::Result<void>
-    moveItem(int fromSlot, int toSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
+    MCAPI ::Scripting::Result<void>
+    moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
-    MCAPI class Scripting::Result<void>
-    setItem(int slot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
+    MCAPI ::Scripting::Result<void>
+    setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
-    MCAPI class Scripting::Result<void>
-    swapItems(int slot, int otherSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
+    MCAPI ::Scripting::Result<void>
+    swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    transferItem(int fromSlot, class ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
-
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    transferItem(int fromSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer> scriptContainer);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainerWrapper> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::ScriptModuleMinecraft::ScriptContainer> scriptContainer);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/IActorDimensionTransferProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class Dimension;
+class Vec3;
+// clang-format on
+
 class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
     // prevent constructor by default
@@ -12,47 +20,64 @@ public:
     ActorDimensionTransferProxy(ActorDimensionTransferProxy const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorDimensionTransferProxy() = default;
+    virtual ~ActorDimensionTransferProxy() /*override*/;
 
     // vIndex: 1
-    virtual void transferTickingArea(class Actor& actor, class Dimension& dimension) const;
+    virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const /*override*/;
 
     // vIndex: 2
-    virtual void removeActorFromLevelChunk(class Actor& actor) const;
+    virtual void removeActorFromLevelChunk(::Actor& actor) const /*override*/;
 
     // vIndex: 3
     virtual void transferActorToDimension(
-        class Actor const&                 actor,
-        class Dimension&                   dimension,
-        class Vec3 const&                  targetPosition,
-        std::unique_ptr<class CompoundTag> saveTag,
-        bool                               usePortal
-    ) const;
-
-    MCAPI ActorDimensionTransferProxy();
-
+        ::Actor const&                   actor,
+        ::Dimension&                     dimension,
+        ::Vec3 const&                    targetPosition,
+        ::std::unique_ptr<::CompoundTag> saveTag,
+        bool                             usePortal
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorDimensionTransferProxy();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void removeActorFromLevelChunk$(class Actor& actor) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void transferActorToDimension$(
-        class Actor const&                 actor,
-        class Dimension&                   dimension,
-        class Vec3 const&                  targetPosition,
-        std::unique_ptr<class CompoundTag> saveTag,
-        bool                               usePortal
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
+
+    MCAPI void $removeActorFromLevelChunk(::Actor& actor) const;
+
+    MCAPI void $transferActorToDimension(
+        ::Actor const&                   actor,
+        ::Dimension&                     dimension,
+        ::Vec3 const&                    targetPosition,
+        ::std::unique_ptr<::CompoundTag> saveTag,
+        bool                             usePortal
     ) const;
+    // NOLINTEND
 
-    MCAPI void transferTickingArea$(class Actor& actor, class Dimension& dimension) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

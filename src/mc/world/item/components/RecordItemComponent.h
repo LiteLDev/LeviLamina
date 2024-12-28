@@ -3,101 +3,86 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
+namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class RecordItemComponent {
+class RecordItemComponent : public ::NetworkedItemComponent<::RecordItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnke31a3c;
+    ::ll::UntypedStorage<4, 4> mUnk1484e2;
+    ::ll::UntypedStorage<4, 4> mUnk70d250;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RecordItemComponent& operator=(RecordItemComponent const&);
     RecordItemComponent(RecordItemComponent const&);
-    RecordItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RecordItemComponent() = default;
+    virtual ~RecordItemComponent() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RecordItemComponent();
 
-    // vIndex: 2
-    virtual void writeSettings();
+    MCAPI RecordItemComponent(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
 
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
-    // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
-
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI RecordItemComponent(::Puv::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
-
-    MCAPI void appendFormattedHovertext(std::string& hovertext) const;
+    MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
     MCAPI int getComparatorSignal() const;
 
     MCAPI float getDuration() const;
 
-    MCAPI std::string getRecordDescription() const;
+    MCAPI ::std::string getRecordDescription() const;
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent getSound() const;
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
-    MCAPI static std::string getRecordNameNoPrefix(::Puv::Legacy::LevelSoundEvent sound);
-
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void* ctor$(::Puv::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void _initializeComponent$();
+    MCAPI void* $ctor(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
+    // NOLINTEND
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
-
-    MCAPI bool checkComponentDataForContentErrors$() const;
-
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
-
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

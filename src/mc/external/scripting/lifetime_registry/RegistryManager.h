@@ -12,24 +12,32 @@ namespace Scripting {
 
 class RegistryManager {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>   mUnkfe9f34;
+    ::ll::UntypedStorage<8, 4080> mUnk15b833;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RegistryManager& operator=(RegistryManager const&);
     RegistryManager(RegistryManager const&);
-    RegistryManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::unique_ptr<class Scripting::LifetimeRegistry> createLifetimeRegistry();
+    MCAPI RegistryManager();
 
-    MCAPI class Scripting::LifetimeRegistry* getRegistryByContextId(struct Scripting::ContextId contextId);
+    MCAPI ::std::unique_ptr<::Scripting::LifetimeRegistry> createLifetimeRegistry();
 
+    MCAPI ::Scripting::LifetimeRegistry* getRegistryByContextId(::Scripting::ContextId contextId);
     // NOLINTEND
 
-    // private:
+public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void _returnExpiredIdsToFreeList();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

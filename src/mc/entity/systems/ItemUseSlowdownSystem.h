@@ -2,15 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace ItemUseSlowdownSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createAntiCheatSystem();
+MCAPI ::TickingSystemWithInfo createAntiCheatSystem();
 
-MCAPI struct TickingSystemWithInfo createApplySystem();
+MCAPI ::TickingSystemWithInfo createApplySystem();
 
-MCAPI struct TickingSystemWithInfo createClearSystem();
+MCAPI ::TickingSystemWithInfo createClearSystem();
 
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}; // namespace ItemUseSlowdownSystem
+} // namespace ItemUseSlowdownSystem

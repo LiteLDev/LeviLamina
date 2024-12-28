@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 class VariableMaxAutoStepSystem {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     VariableMaxAutoStepSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
     // NOLINTEND
 };

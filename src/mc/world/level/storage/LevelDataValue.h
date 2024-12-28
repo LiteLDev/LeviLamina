@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 struct LevelDataValue {
 public:
     // LevelDataValue inner types declare
@@ -12,37 +17,52 @@ public:
     // LevelDataValue inner types define
     struct Tag {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkfd2e2a;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Tag& operator=(Tag const&);
         Tag(Tag const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI Tag();
 
-        MCAPI explicit Tag(class CompoundTag&& tag);
+        MCAPI Tag(::LevelDataValue::Tag&& tag);
 
-        MCAPI Tag(struct LevelDataValue::Tag&& tag);
+        MCAPI explicit Tag(::CompoundTag&& tag);
 
-        MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&& tag);
+        MCAPI ::LevelDataValue::Tag& operator=(::LevelDataValue::Tag&& tag);
 
         MCAPI ~Tag();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
 
-        MCAPI void* ctor$(struct LevelDataValue::Tag&& tag);
+        MCAPI void* $ctor(::LevelDataValue::Tag&& tag);
 
-        MCAPI void* ctor$(class CompoundTag&& tag);
+        MCAPI void* $ctor(::CompoundTag&& tag);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkfc867e;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -51,15 +71,14 @@ public:
     LevelDataValue();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~LevelDataValue();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

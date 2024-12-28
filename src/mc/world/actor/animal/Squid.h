@@ -3,30 +3,43 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class EntityContext;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
 
 class Squid : public ::Mob {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk7fce78;
+    ::ll::UntypedStorage<4, 4>  mUnk5e9d92;
+    ::ll::UntypedStorage<4, 4>  mUnk50b096;
+    ::ll::UntypedStorage<4, 4>  mUnk62e2ee;
+    ::ll::UntypedStorage<4, 4>  mUnk713e69;
+    ::ll::UntypedStorage<4, 4>  mUnkb67107;
+    ::ll::UntypedStorage<4, 4>  mUnk7592ae;
+    ::ll::UntypedStorage<4, 4>  mUnke10f3c;
+    ::ll::UntypedStorage<4, 4>  mUnkcf3931;
+    ::ll::UntypedStorage<4, 4>  mUnkd1e7d7;
+    ::ll::UntypedStorage<4, 4>  mUnkd41b7e;
+    ::ll::UntypedStorage<4, 4>  mUnk159f78;
+    ::ll::UntypedStorage<4, 4>  mUnk21f29d;
+    ::ll::UntypedStorage<4, 4>  mUnka0bf64;
+    ::ll::UntypedStorage<4, 4>  mUnk586089;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Squid& operator=(Squid const&);
@@ -34,77 +47,87 @@ public:
     Squid();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 10
-    virtual ~Squid();
+    // vIndex: 153
+    virtual bool checkSpawnObstruction() const /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 182
+    virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
-    // vIndex: 160
-    virtual bool checkSpawnRules(bool fromSpawner);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 161
-    virtual bool checkSpawnObstruction() const;
+    // vIndex: 8
+    virtual ~Squid() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 190
-    virtual ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
-
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Squid(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext,
-        class mce::Color const&                 inkParticleColor
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext,
+        ::mce::Color const&                inkParticleColor
     );
+
+    MCAPI ::Vec3 _randomInkDir();
+
+    MCAPI float getTentacleAngle() const;
+
+    MCAPI float getZBodyRot() const;
 
     MCAPI void postAiStep();
 
     MCAPI void spawnInkParticles();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Vec3 _randomInkDir();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext,
-        class mce::Color const&                 inkParticleColor
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext,
+        ::mce::Color const&                inkParticleColor
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI bool checkSpawnObstruction$() const;
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool checkSpawnRules$(bool fromSpawner);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    // NOLINTEND
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

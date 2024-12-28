@@ -3,17 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
-class EntityContext {
+// auto generated forward declare list
+// clang-format off
+class EntityId;
+class EntityRegistry;
+// clang-format on
+
+class EntityContext : public ::EnableGetWeakRef<::EntityContext> {
 public:
     // EntityContext inner types declare
     // clang-format off
-    class Hash;
+    struct Hash;
     // clang-format on
 
     // EntityContext inner types define
-    class Hash {
+    struct Hash {
     public:
         // prevent constructor by default
         Hash& operator=(Hash const&);
@@ -21,11 +28,19 @@ public:
         Hash();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI uint64 operator()(class EntityContext const& entity) const;
-
+        MCAPI uint64 operator()(::EntityContext const& entity) const;
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::EntityRegistry&>                   mRegistry;
+    ::ll::TypedStorage<8, 8, ::entt::basic_registry<::EntityId>&> mEnTTRegistry;
+    ::ll::TypedStorage<4, 4, ::EntityId const>                    mEntity;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -34,31 +49,26 @@ public:
     EntityContext();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI EntityContext(class EntityRegistry& registry, class EntityId entity);
+    MCAPI EntityContext(::EntityRegistry& registry, ::EntityId entity);
 
-    MCAPI class EntityRegistry& _registry() const;
-
-    MCAPI class WeakRef<class EntityContext> getWeakRef() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI bool operator==(class EntityContext const& other) const;
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class EntityId _getEntityId() const;
+    MCAPI ::EntityId _getEntityId() const;
 
     MCAPI uint _getRegistryId() const;
 
+    MCAPI ::EntityRegistry& _registry() const;
+
+    MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
+
+    MCAPI bool isValid() const;
+
+    MCAPI bool operator==(::EntityContext const& other) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class EntityRegistry& registry, class EntityId entity);
-
+    MCAPI void* $ctor(::EntityRegistry& registry, ::EntityId entity);
     // NOLINTEND
 };

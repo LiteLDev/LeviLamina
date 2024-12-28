@@ -2,10 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-
 class LevelCache {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 864> mUnk6a83ab;
+    ::ll::UntypedStorage<8, 16>  mUnk5b972a;
+    ::ll::UntypedStorage<1, 1>   mUnk541c7c;
+    ::ll::UntypedStorage<1, 1>   mUnkebaf06;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelCache& operator=(LevelCache const&);
@@ -13,19 +19,14 @@ public:
     LevelCache();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit LevelCache(class OwnerPtr<class LevelData> data);
-
     MCAPI ~LevelCache();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(class OwnerPtr<class LevelData> data);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

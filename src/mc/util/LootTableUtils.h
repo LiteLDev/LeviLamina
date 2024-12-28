@@ -33,48 +33,48 @@ public:
     LootTableUtils();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::string convertFromJavaLootTableName(std::string const&);
+    MCAPI static ::std::string convertFromJavaLootTableName(::std::string const& lootTableName);
 
     MCAPI static int dropItems(
-        class BlockSource&                  region,
-        class Spawner&                      spawner,
-        class Actor*                        summoner,
-        std::vector<class ItemStack> const& items,
-        class BlockPos const&               position
+        ::BlockSource&                    region,
+        ::Spawner&                        spawner,
+        ::Actor*                          summoner,
+        ::std::vector<::ItemStack> const& items,
+        ::BlockPos const&                 position
     );
 
-    MCAPI static int fillContainer(class Container& container, std::vector<class ItemStack>& items);
+    MCAPI static int fillContainer(::Container& container, ::std::vector<::ItemStack>& items);
 
     MCAPI static void fillContainer(
-        class Level&       level,
-        class Container&   container,
-        class Random&      random,
-        std::string const& tableName,
-        DimensionType      dimensionId,
-        class Actor*       entity
+        ::Level&             level,
+        ::Container&         container,
+        ::Random&            random,
+        ::std::string const& tableName,
+        ::DimensionType      dimensionId,
+        ::Actor*             entity
     );
 
-    MCAPI static std::vector<class ItemStack> generateRandomDeathLoot(
-        class LootTable const&         table,
-        class Actor&                   entity,
-        class ActorDamageSource const* damageSource,
-        class ItemStack const*         tool,
-        class Player*                  killer,
-        float                          luck
+    MCAPI static ::std::vector<::ItemStack> generateRandomDeathLoot(
+        ::LootTable const&         table,
+        ::Actor&                   entity,
+        ::ActorDamageSource const* damageSource,
+        ::ItemStack const*         tool,
+        ::Player*                  killer,
+        float                      luck
     );
 
-    MCAPI static std::vector<class ItemStack>
-    getRandomItems(class LootTable const& table, class Random& random, class LootTableContext& context);
+    MCAPI static ::std::vector<::ItemStack>
+    getRandomItems(::LootTable const& table, ::Random& random, ::LootTableContext& context);
 
-    MCAPI static std::vector<class ItemStack>
-    getRandomItems(std::string const& tableName, class Random& random, class LootTableContext& context);
+    MCAPI static ::std::vector<::ItemStack>
+    getRandomItems(::std::string const& tableName, ::Random& random, ::LootTableContext& context);
 
-    MCAPI static int givePlayer(class Player& player, std::vector<class ItemStack>& items, bool shouldAddWhenFull);
+    MCAPI static int givePlayer(::Player& player, ::std::vector<::ItemStack>& items, bool shouldAddWhenFull);
 
-    MCAPI static class LootTable* lookupLootTable(std::string const& tableName, class ILevel& level);
-
+    MCAPI static ::LootTable* lookupLootTable(::std::string const& tableName, ::ILevel& level);
     // NOLINTEND
 };
 
-}; // namespace Util
+} // namespace Util

@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
+struct ActorEventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -19,33 +21,46 @@ public:
     ActorEventResponse();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorEventResponse() = default;
+    virtual ~ActorEventResponse();
 
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const;
 
     // vIndex: 2
-    virtual void executeAction(class RenderParams& params) const = 0;
+    virtual void executeAction(::RenderParams&) const = 0;
 
     // vIndex: 3
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&, class Factory<class ActorEventResponse> const&)
-        const;
-
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
+                                               schema,
+        ::Factory<::ActorEventResponse> const& factory
+    ) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void
-    buildSchema$(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&, class Factory<class ActorEventResponse> const&)
-        const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI std::string const& getName$() const;
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
+                                               schema,
+        ::Factory<::ActorEventResponse> const& factory
+    ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

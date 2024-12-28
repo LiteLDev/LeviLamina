@@ -13,35 +13,52 @@ public:
     FakeThermalMonitorInterface(FakeThermalMonitorInterface const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FakeThermalMonitorInterface() = default;
+    virtual ~FakeThermalMonitorInterface() /*override*/;
 
     // vIndex: 1
-    virtual ::ThermalState getThermalState() const;
+    virtual ::ThermalState getThermalState() const /*override*/;
 
     // vIndex: 2
-    virtual float getThermalValueCelsius() const;
+    virtual float getThermalValueCelsius() const /*override*/;
 
     // vIndex: 3
-    virtual bool isLowBatteryModeEnabled() const;
-
-    MCAPI FakeThermalMonitorInterface();
-
+    virtual bool isLowBatteryModeEnabled() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FakeThermalMonitorInterface();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI ::ThermalState getThermalState$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getThermalValueCelsius$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ThermalState $getThermalState() const;
 
-    MCAPI bool isLowBatteryModeEnabled$() const;
+    MCAPI float $getThermalValueCelsius() const;
 
+    MCAPI bool $isLowBatteryModeEnabled() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

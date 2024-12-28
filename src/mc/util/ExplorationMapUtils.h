@@ -2,23 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ItemStackBase;
+class Level;
+struct ExplorationMapData;
+// clang-format on
+
 namespace ExplorationMapUtils {
+// functions
 // NOLINTBEGIN
 MCAPI void makeNewExplorationMapFromFeatureName(
-    class ItemStackBase& item,
-    class Level&         level,
-    class Actor*         owner,
-    std::string const&   featureName,
+    ::ItemStackBase&     item,
+    ::Level&             level,
+    ::Actor*             owner,
+    ::std::string const& featureName,
     bool                 markForRegeneration
 );
 
 MCAPI void makeNewExplorationMapFromMapData(
-    class ItemStackBase&             item,
-    class Level&                     level,
-    class Actor*                     owner,
-    struct ExplorationMapData const& explorationMapData,
-    bool                             markForRegeneration
+    ::ItemStackBase&            item,
+    ::Level&                    level,
+    ::Actor*                    owner,
+    ::ExplorationMapData const& explorationMapData,
+    bool                        markForRegeneration
 );
 // NOLINTEND
 
-}; // namespace ExplorationMapUtils
+} // namespace ExplorationMapUtils

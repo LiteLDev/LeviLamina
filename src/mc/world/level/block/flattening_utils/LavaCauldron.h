@@ -8,8 +8,9 @@ class Block;
 // clang-format on
 
 namespace FlatteningUtils::LavaCauldron {
+// functions
 // NOLINTBEGIN
-MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
-}; // namespace FlatteningUtils::LavaCauldron
+} // namespace FlatteningUtils::LavaCauldron

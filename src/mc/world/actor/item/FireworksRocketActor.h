@@ -3,30 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Level;
+class Random;
+class SynchedActorDataEntityWrapper;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
 // clang-format on
 
 class FireworksRocketActor : public ::PredictableProjectile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbd0e89;
+    ::ll::UntypedStorage<4, 4> mUnk917817;
+    ::ll::UntypedStorage<1, 1> mUnke7a725;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FireworksRocketActor& operator=(FireworksRocketActor const&);
@@ -34,90 +36,111 @@ public:
     FireworksRocketActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~FireworksRocketActor() = default;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 24
-    virtual void lerpMotion(class Vec3 const& delta);
+    // vIndex: 22
+    virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent eventId, int data);
+    // vIndex: 95
+    virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 99
-    virtual void onSynchedDataUpdate(int);
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper&);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 8
+    virtual ~FireworksRocketActor() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI FireworksRocketActor(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+
+    MCAPI void checkAchievement() const;
+
+    MCAPI void dealExplosionDamage();
+
+    MCAPI int getLifeTime() const;
 
     MCAPI void init(
-        class Level& level,
-        class Vec3 const&,
-        class CompoundTag const& rocketUserData,
-        class Vec3 const&        dir,
-        struct ActorUniqueID     attachedEntity,
-        bool                     isProjectile
+        ::Level& level,
+        ::Vec3 const&,
+        ::CompoundTag const& rocketUserData,
+        ::Vec3 const&        dir,
+        ::ActorUniqueID      attachedEntity,
+        bool                 isProjectile
     );
+
+    MCAPI void initTagData(::Random& random);
 
     MCAPI bool isAttachedToEntity() const;
 
     MCAPI void postNormalTick();
 
     MCAPI void setDispensed(bool dispensed);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void defineData(::SynchedActorDataEntityWrapper& data);
 
     MCAPI static void initData(
-        class SynchedActorDataEntityWrapper& data,
-        class CompoundTag const&             rocketUserData,
-        class Vec3 const&                    dir,
-        struct ActorUniqueID                 attachedEntity
+        ::SynchedActorDataEntityWrapper& data,
+        ::CompoundTag const&             rocketUserData,
+        ::Vec3 const&                    dir,
+        ::ActorUniqueID                  attachedEntity
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void checkAchievement() const;
-
-    MCAPI void dealExplosionDamage();
-
-    MCAPI void initTagData(class Random& random);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getShadowRadius$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void handleEntityEvent$(::ActorEvent eventId, int data);
+    MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCAPI void lerpMotion$(class Vec3 const& delta);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI void onSynchedDataUpdate$(int);
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

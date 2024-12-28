@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,21 +19,30 @@ public:
     RepeatUntilFailureDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RepeatUntilFailureDefinition() = default;
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~RepeatUntilFailureDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

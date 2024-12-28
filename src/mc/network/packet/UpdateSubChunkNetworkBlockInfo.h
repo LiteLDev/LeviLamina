@@ -2,7 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetworkBlockPosition;
+struct ActorBlockSyncMessage;
+// clang-format on
+
 struct UpdateSubChunkNetworkBlockInfo {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>  mPos;
+    ::ll::TypedStorage<4, 4, uint>                     mRuntimeId;
+    ::ll::TypedStorage<1, 1, uchar>                    mUpdateFlags;
+    ::ll::TypedStorage<8, 16, ::ActorBlockSyncMessage> mSyncMessage;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UpdateSubChunkNetworkBlockInfo& operator=(UpdateSubChunkNetworkBlockInfo const&);
@@ -10,15 +25,14 @@ public:
     UpdateSubChunkNetworkBlockInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~UpdateSubChunkNetworkBlockInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

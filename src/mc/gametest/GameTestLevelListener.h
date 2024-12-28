@@ -4,13 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
+class Level;
+struct LevelNotificationEvent;
 namespace gametest { class GameTestTicker; }
 // clang-format on
 
-class GameTestLevelListener {
+class GameTestLevelListener : public ::LevelEventListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk66625a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameTestLevelListener& operator=(GameTestLevelListener const&);
@@ -18,27 +27,47 @@ public:
     GameTestLevelListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const& event);
+    // vIndex: 7
+    virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
-    MCVAPI void onLevelTickEnd();
+    // vIndex: 9
+    virtual ::EventResult onEvent(::LevelNotificationEvent const& event) /*override*/;
 
-    MCAPI explicit GameTestLevelListener(class gametest::GameTestTicker& testTicker);
-
+    // vIndex: 0
+    virtual ~GameTestLevelListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForLevelEventListener();
+    MCAPI explicit GameTestLevelListener(::gametest::GameTestTicker& testTicker);
+    // NOLINTEND
 
-    MCAPI static void** vftableForScriptDeferredEventListener();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gametest::GameTestTicker& testTicker);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class gametest::GameTestTicker& testTicker);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct LevelNotificationEvent const& event);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCAPI void onLevelTickEnd$();
+    MCAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

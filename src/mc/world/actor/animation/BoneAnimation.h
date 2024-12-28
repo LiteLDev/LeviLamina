@@ -2,22 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/animation/BoneAnimationRelativeMode.h"
-#include "mc/world/actor/animation/BoneTransformType.h"
-
 class BoneAnimation {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk5ae1b5;
+    ::ll::UntypedStorage<8, 24> mUnk7f55de;
+    ::ll::UntypedStorage<4, 4>  mUnkdacf56;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BoneAnimation& operator=(BoneAnimation const&);
-    BoneAnimation(BoneAnimation const&);
     BoneAnimation();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class BoneAnimationChannel& addAnimationChannel(::BoneTransformType boneTransformType);
+    MCAPI BoneAnimation(::BoneAnimation const&);
+    // NOLINTEND
 
-    MCAPI void setRotationRelativeMode(::BoneAnimationRelativeMode rotationRelativeMode);
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BoneAnimation const&);
     // NOLINTEND
 };

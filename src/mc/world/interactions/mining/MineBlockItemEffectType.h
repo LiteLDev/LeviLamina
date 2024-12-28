@@ -4,6 +4,12 @@
 
 namespace Interactions::Mining {
 
-enum class MineBlockItemEffectType {};
-
+enum class MineBlockItemEffectType : int {
+    Default       = 0,
+    DoNothing     = 1,
+    ComponentItem = 2,
+    DiggerItem    = 3,
+    ShearsItem    = 4,
 };
+
+}

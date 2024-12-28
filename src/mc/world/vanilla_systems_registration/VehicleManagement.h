@@ -5,27 +5,26 @@
 // auto generated forward declare list
 // clang-format off
 class EntitySystems;
-namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 struct EntitySystemTickingMode;
+namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
 namespace VanillaSystemsRegistration::VehicleManagement {
+// functions
 // NOLINTBEGIN
-MCAPI void registerExitVehicle(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
-);
+MCAPI void
+registerExitVehicle(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 
 MCAPI void registerPassengerTick(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerRemovePassengerSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options,
-    struct EntitySystemTickingMode                                tickingMode
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options,
+    ::EntitySystemTickingMode                                tickingMode
 );
 // NOLINTEND
 
-}; // namespace VanillaSystemsRegistration::VehicleManagement
+} // namespace VanillaSystemsRegistration::VehicleManagement

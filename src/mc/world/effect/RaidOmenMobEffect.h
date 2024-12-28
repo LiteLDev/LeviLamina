@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct EffectDuration;
+// clang-format on
+
 class RaidOmenMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,26 +19,35 @@ public:
     RaidOmenMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RaidOmenMobEffect() = default;
-
     // vIndex: 1
-    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
+    virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
 
     // vIndex: 3
-    virtual void onEffectExpired(class Actor& target) const;
+    virtual void onEffectExpired(::Actor& target) const /*override*/;
 
+    // vIndex: 0
+    virtual ~RaidOmenMobEffect() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void onEffectExpired$(class Actor& target) const;
+    MCAPI void $onEffectExpired(::Actor& target) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

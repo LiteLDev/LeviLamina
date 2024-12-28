@@ -3,9 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/typeid_t.h"
+#include "mc/config/TypedScreenCapabilities.h"
 
-struct LibraryScreenCapabilities {
+struct LibraryScreenCapabilities : public ::TypedScreenCapabilities<::LibraryScreenCapabilities> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk127e67;
+    ::ll::UntypedStorage<1, 1>  mUnkddf326;
+    ::ll::UntypedStorage<1, 1>  mUnk9285e2;
+    ::ll::UntypedStorage<1, 1>  mUnk680c44;
+    ::ll::UntypedStorage<1, 1>  mUnk7c9d7d;
+    ::ll::UntypedStorage<8, 32> mUnk534eb4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LibraryScreenCapabilities& operator=(LibraryScreenCapabilities const&);
@@ -13,23 +24,21 @@ public:
     LibraryScreenCapabilities();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LibraryScreenCapabilities();
-
-    // vIndex: 1
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+    virtual ~LibraryScreenCapabilities() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

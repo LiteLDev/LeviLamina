@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/file/file_system/FileImpl.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
 namespace Core { class FileSystem_windows; }
 namespace Core { class Path; }
@@ -17,7 +17,14 @@ namespace Core { class Result; }
 
 namespace Core {
 
-class File_c_windows {
+class File_c_windows : public ::Core::FileImpl {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk67f6f1;
+    ::ll::UntypedStorage<8, 32> mUnk849a86;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     File_c_windows& operator=(File_c_windows const&);
@@ -25,102 +32,112 @@ public:
     File_c_windows();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~File_c_windows() = default;
+    virtual ~File_c_windows() /*override*/;
 
     // vIndex: 1
-    virtual class Core::PathBuffer<std::string> _getPath() const;
+    virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
 
     // vIndex: 2
-    virtual uint64 _getBlockSize() const;
+    virtual uint64 _getBlockSize() const /*override*/;
 
     // vIndex: 3
-    virtual bool _isOpen();
+    virtual bool _isOpen() /*override*/;
 
     // vIndex: 4
-    virtual class Core::Result _close();
+    virtual ::Core::Result _close() /*override*/;
 
     // vIndex: 5
-    virtual class Core::Result _read(void*, uint64, uint64*);
+    virtual ::Core::Result _read(void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
     // vIndex: 6
-    virtual class Core::Result _readExactly(void*, uint64);
-
-    // vIndex: 7
-    virtual class Core::Result _skip(uint64);
+    virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) /*override*/;
 
     // vIndex: 8
-    virtual class Core::Result _readAtPosition(uint64, void*, uint64, uint64*);
-
-    // vIndex: 9
-    virtual class Core::Result _getPosition(uint64*);
-
-    // vIndex: 10
-    virtual class Core::Result _setPosition(uint64);
+    virtual ::Core::Result
+    _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
     // vIndex: 11
-    virtual class Core::Result _write(void const*, uint64);
+    virtual ::Core::Result _write(void const* buf, uint64 numBytes) /*override*/;
+
+    // vIndex: 10
+    virtual ::Core::Result _setPosition(uint64 position) /*override*/;
+
+    // vIndex: 9
+    virtual ::Core::Result _getPosition(uint64* pSizeOut) /*override*/;
+
+    // vIndex: 7
+    virtual ::Core::Result _skip(uint64 numBytes) /*override*/;
 
     // vIndex: 12
-    virtual class Core::Result _flush();
+    virtual ::Core::Result _flush() /*override*/;
 
     // vIndex: 13
-    virtual class Core::Result _getSize(uint64*);
+    virtual ::Core::Result _getSize(uint64* pSizeOut) /*override*/;
 
     // vIndex: 14
-    virtual class Core::Result _getRemainingSize(uint64*);
-
-    MCAPI static void initialize();
-
+    virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Core::Result _open(
-        class Core::FileSystem_windows*,
-        std::unique_ptr<class Core::FileImpl>&,
-        class Core::Path const&,
-        class Core::FileOpenMode,
-        ::Core::FileBufferingMode
+    MCAPI static ::Core::Result _open(
+        ::Core::FileSystem_windows*          pTransaction,
+        ::std::unique_ptr<::Core::FileImpl>& uptFile,
+        ::Core::Path const&                  filePath,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
     );
 
+    MCAPI static void initialize();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Core::Result _close$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Core::PathBuffer<::std::string> $_getPath() const;
 
-    MCAPI class Core::Result _flush$();
+    MCAPI uint64 $_getBlockSize() const;
 
-    MCAPI uint64 _getBlockSize$() const;
+    MCAPI bool $_isOpen();
 
-    MCAPI class Core::PathBuffer<std::string> _getPath$() const;
+    MCAPI ::Core::Result $_close();
 
-    MCAPI class Core::Result _getPosition$(uint64*);
+    MCAPI ::Core::Result $_read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI class Core::Result _getRemainingSize$(uint64*);
+    MCAPI ::Core::Result $_readExactly(void* buf, uint64 numBytes);
 
-    MCAPI class Core::Result _getSize$(uint64*);
+    MCAPI ::Core::Result $_readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI bool _isOpen$();
+    MCAPI ::Core::Result $_write(void const* buf, uint64 numBytes);
 
-    MCAPI class Core::Result _read$(void*, uint64, uint64*);
+    MCAPI ::Core::Result $_setPosition(uint64 position);
 
-    MCAPI class Core::Result _readAtPosition$(uint64, void*, uint64, uint64*);
+    MCAPI ::Core::Result $_getPosition(uint64* pSizeOut);
 
-    MCAPI class Core::Result _readExactly$(void*, uint64);
+    MCAPI ::Core::Result $_skip(uint64 numBytes);
 
-    MCAPI class Core::Result _setPosition$(uint64);
+    MCAPI ::Core::Result $_flush();
 
-    MCAPI class Core::Result _skip$(uint64);
+    MCAPI ::Core::Result $_getSize(uint64* pSizeOut);
 
-    MCAPI class Core::Result _write$(void const*, uint64);
+    MCAPI ::Core::Result $_getRemainingSize(uint64* pSizeOut);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

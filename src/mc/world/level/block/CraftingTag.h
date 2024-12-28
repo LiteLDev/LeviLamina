@@ -2,18 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace CraftingTag {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& CARTOGRAPHY_TABLE();
+MCAPI ::HashedString const& CARTOGRAPHY_TABLE();
 
-MCAPI class HashedString const& CRAFTING_TABLE();
+MCAPI ::HashedString const& CRAFTING_TABLE();
 
-MCAPI class HashedString const& DEPRECATED();
+MCAPI ::HashedString const& DEPRECATED();
 
-MCAPI class HashedString const& SMITHING_TABLE();
+MCAPI ::HashedString const& SMITHING_TABLE();
 
-MCAPI class HashedString const& STONECUTTER();
+MCAPI ::HashedString const& STONECUTTER();
 // NOLINTEND
 
-}; // namespace CraftingTag
+} // namespace CraftingTag

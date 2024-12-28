@@ -16,10 +16,10 @@ public:
     ScriptDyeColor();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::ItemColor> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ItemColor> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -17,12 +17,25 @@ namespace Core {
 
 struct DirectoryIterationItem {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk1011ef;
+    ::ll::UntypedStorage<8, 32> mUnk2172c9;
+    ::ll::UntypedStorage<8, 8>  mUnk657388;
+    ::ll::UntypedStorage<8, 8>  mUnk5990e0;
+    ::ll::UntypedStorage<4, 4>  mUnk657618;
+    ::ll::UntypedStorage<8, 8>  mUnkd41f5c;
+    ::ll::UntypedStorage<8, 8>  mUnkf25ac3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DirectoryIterationItem& operator=(DirectoryIterationItem const&);
     DirectoryIterationItem(DirectoryIterationItem const&);
     DirectoryIterationItem();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
 
@@ -30,9 +43,11 @@ public:
 
     MCAPI uint64 getFileSizeAllocationOnDisk() const;
 
-    MCAPI class Core::PathBuffer<std::string> const& getFullPathName() const;
+    MCAPI ::Core::PathBuffer<::std::string> const& getFullPathName() const;
 
-    MCAPI class Core::PathPart const& getName() const;
+    MCAPI int64 getModifyTime() const;
+
+    MCAPI ::Core::PathPart const& getName() const;
 
     MCAPI ::Core::FileType getType() const;
 
@@ -44,26 +59,28 @@ public:
 
     MCAPI void setFileSize(uint64 size);
 
-    MCAPI void setFullPathName(class Core::Path const& fullPathName);
+    MCAPI void setFullPathName(::Core::Path const& fullPathName);
 
     MCAPI void setModifyTime(int64 modifyTime);
 
-    MCAPI void setName(class Core::PathPart const& name);
+    MCAPI void setName(::Core::PathPart const& name);
 
     MCAPI void setType(::Core::FileType type);
 
     MCAPI ~DirectoryIterationItem();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(::Core::DirectoryIterationFlags flags);
+    MCAPI void* $ctor(::Core::DirectoryIterationFlags flags);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

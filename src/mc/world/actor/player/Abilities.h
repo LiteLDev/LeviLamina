@@ -7,28 +7,39 @@
 #include "mc/world/actor/player/AbilitiesIndex.h"
 #include "mc/world/actor/player/Ability.h"
 
+// auto generated forward declare list
+// clang-format off
+class Ability;
+class CompoundTag;
+// clang-format on
+
 class Abilities {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 228, ::std::array<::Ability, 19>> mAbilities;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Abilities();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI Abilities(::Abilities const& rhs);
+
     MCAPI explicit Abilities(bool setToDefaults);
 
-    MCAPI Abilities(class Abilities const& rhs);
-
-    MCAPI void addSaveData(class CompoundTag& parentTag) const;
+    MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
     MCAPI void forEachAbility(
-        std::function<void(class Ability&, ::AbilitiesIndex)> const& callback,
-        ::Ability::Options                                           requiredOptions
+        ::std::function<void(::Ability&, ::AbilitiesIndex)> const& callback,
+        ::Ability::Options                                         requiredOptions
     );
 
-    MCAPI void forEachAbility(
-        std::function<void(class Ability const&, ::AbilitiesIndex)> const& callback,
-        ::Ability::Options                                                 requiredOptions
-    ) const;
+    MCAPI void
+    forEachAbility(::std::function<void(::Ability const&, ::AbilitiesIndex)> const&, ::Ability::Options) const;
 
     MCAPI bool getBool(::AbilitiesIndex ability) const;
 
@@ -36,44 +47,50 @@ public:
 
     MCAPI bool isAnyAbilitySet() const;
 
-    MCAPI bool loadSaveData(class CompoundTag const& parentTag);
+    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI class Abilities& operator=(class Abilities const& rhs);
+    MCAPI ::Abilities& operator=(::Abilities const& rhs);
 
     MCAPI void setAbility(::AbilitiesIndex ability, bool value);
 
-    MCAPI void setAbilityDiff(::AbilitiesIndex ability, bool value, bool& diff);
+    MCAPI void setAbility(::AbilitiesIndex abilityIndex, float value);
 
-    MCAPI void setDefault();
+    MCAPI void setAbilityDiff(::AbilitiesIndex ability, bool value, bool& diff);
 
     MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
 
     MCAPI void unSet();
 
     MCAPI void unSet(::AbilitiesIndex val);
-
-    MCAPI static char const* getAbilityName(::AbilitiesIndex abilityIndex);
-
-    MCAPI static class Ability const& getDefault(::AbilitiesIndex abilityIndex);
-
-    MCAPI static ::AbilitiesIndex nameToAbilityIndex(std::string const& name);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Abilities const& rhs);
+    MCAPI static char const* getAbilityName(::AbilitiesIndex abilityIndex);
 
-    MCAPI void* ctor$(bool setToDefaults);
+    MCAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
 
-    MCAPI static std::array<char const*, 19>& ABILITY_NAMES();
+    MCAPI static ::AbilitiesIndex nameToAbilityIndex(::std::string const& name);
+    // NOLINTEND
 
-    MCAPI static std::string const& DIFF_ABILITIY_AT();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::array<char const*, 19>& ABILITY_NAMES();
 
-    MCAPI static class Ability& INVALID_ABILITY();
+    MCAPI static ::std::string const& DIFF_ABILITIY_AT();
 
-    MCAPI static std::string const& SERIALIZATION_TAG();
+    MCAPI static ::Ability& INVALID_ABILITY();
 
+    MCAPI static ::std::string const& SERIALIZATION_TAG();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Abilities const& rhs);
+
+    MCAPI void* $ctor(bool setToDefaults);
     // NOLINTEND
 };

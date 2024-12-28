@@ -4,25 +4,35 @@
 
 struct PosibleTransformation {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf77487;
+    ::ll::UntypedStorage<8, 64> mUnk6b0cf1;
+    ::ll::UntypedStorage<4, 4>  mUnkeb933f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    PosibleTransformation& operator=(PosibleTransformation const&);
     PosibleTransformation();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PosibleTransformation(struct PosibleTransformation const&);
-
-    MCAPI struct PosibleTransformation& operator=(struct PosibleTransformation const&);
+    MCAPI PosibleTransformation(::PosibleTransformation const&);
 
     MCAPI ~PosibleTransformation();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct PosibleTransformation const&);
+    MCAPI void* $ctor(::PosibleTransformation const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class Level;
+class Minecraft;
+class Player;
+// clang-format on
+
 class KickCommand : public ::ServerCommand {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 200> mUnke1dc0d;
+    ::ll::UntypedStorage<8, 24>  mUnkc1b069;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     KickCommand& operator=(KickCommand const&);
@@ -13,56 +30,72 @@ public:
     KickCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~KickCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~KickCommand() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool
-    _canKickPlayerOrGenerateFailureOutput(class Player const& player, class CommandOutput& output, class Level* level)
-        const;
+    _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
 
-    MCAPI class Player const* _findTarget(
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        class Level&               level,
-        std::string const&         message,
-        std::string const&         reason,
-        std::string const&         idOrName
+    MCAPI ::Player const* _findTarget(
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::Level&               level,
+        ::std::string const&   message,
+        ::std::string const&   reason,
+        ::std::string const&   idOrName
     ) const;
 
     MCAPI void
-    _generateSuccessOutput(class CommandOutput& output, std::string const& playerNameTag, std::string const& reason)
+    _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason)
         const;
 
-    MCAPI class Player const* _loopPlayers(
-        class CommandOrigin const&,
-        class CommandOutput&,
-        class Level& level,
-        std::string const&,
-        std::string const&,
-        std::function<bool(class Player const*)> condition
+    MCAPI ::Player const* _loopPlayers(
+        ::CommandOrigin const&,
+        ::CommandOutput&,
+        ::Level& level,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<bool(::Player const*)> condition
     ) const;
-
-    MCAPI static void
-    _kickPlayer(class Minecraft* game, class Player const& matchingPlayer, std::string const& message);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _kickPlayer(
+        ::Minecraft*                   game,
+        ::Player const&                matchingPlayer,
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage
+    );
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,11 +8,12 @@ class BlockDescriptor;
 // clang-format on
 
 namespace ScriptModuleMinecraft::ScriptBlockUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class BlockDescriptor createBlockDescriptor(
-    std::string                                                                          blockName,
-    std::optional<std::unordered_map<std::string, std::variant<int, std::string, bool>>> properties
+MCAPI ::BlockDescriptor createBlockDescriptor(
+    ::std::string                                                                                  blockName,
+    ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
 );
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraft::ScriptBlockUtils
+} // namespace ScriptModuleMinecraft::ScriptBlockUtils

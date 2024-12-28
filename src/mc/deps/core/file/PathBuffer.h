@@ -13,4 +13,4 @@ public:
     PathBuffer();
 };
 
-}; // namespace Core
+} // namespace Core

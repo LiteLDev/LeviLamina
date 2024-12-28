@@ -11,25 +11,35 @@ namespace CameraPresetsInternals {
 
 struct CameraListFile {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnka4686d;
+    ::ll::UntypedStorage<8, 56> mUnke795b3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CameraListFile& operator=(CameraListFile const&);
     CameraListFile(CameraListFile const&);
     CameraListFile();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~CameraListFile();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace CameraPresetsInternals
+} // namespace CameraPresetsInternals

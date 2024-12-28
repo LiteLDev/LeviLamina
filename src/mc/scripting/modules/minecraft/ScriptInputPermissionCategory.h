@@ -2,9 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/enums/ClientInputLockCategory.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -16,10 +17,10 @@ public:
     ScriptInputPermissionCategory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<::ClientInputLockCategory, ::ClientInputLockCategory> bind();
-
+    MCAPI static ::Scripting::EnumBinding bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

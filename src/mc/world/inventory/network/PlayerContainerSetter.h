@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/inventory/network/IPlayerContainerSetter.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class Player;
+// clang-format on
+
 class PlayerContainerSetter : public ::IPlayerContainerSetter {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk9fc8eb;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerContainerSetter& operator=(PlayerContainerSetter const&);
@@ -13,35 +25,52 @@ public:
     PlayerContainerSetter();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerContainerSetter() = default;
+    virtual ~PlayerContainerSetter() /*override*/;
 
     // vIndex: 1
-    virtual void setArmor(int slot, class ItemStack const& item);
+    virtual void setArmor(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 2
-    virtual void setOffhandSlot(class ItemStack const& item);
+    virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
     // vIndex: 3
-    virtual void setPlayerUIItem(int slot, class ItemStack const& item);
-
-    MCAPI explicit PlayerContainerSetter(class Player& player);
-
+    virtual void setPlayerUIItem(int slot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PlayerContainerSetter(::Player& player);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player& player);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player);
+    // NOLINTEND
 
-    MCAPI void setArmor$(int slot, class ItemStack const& item);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void setOffhandSlot$(class ItemStack const& item);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setArmor(int slot, ::ItemStack const& item);
 
-    MCAPI void setPlayerUIItem$(int slot, class ItemStack const& item);
+    MCAPI void $setOffhandSlot(::ItemStack const& item);
 
+    MCAPI void $setPlayerUIItem(int slot, ::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

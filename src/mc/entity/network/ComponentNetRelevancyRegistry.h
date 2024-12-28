@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class DefinitionInstanceGroup;
+// clang-format on
+
 class ComponentNetRelevancyRegistry {
 public:
     // ComponentNetRelevancyRegistry inner types declare
@@ -12,28 +18,25 @@ public:
     // ComponentNetRelevancyRegistry inner types define
     struct NetSerializationCallbacks {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkd3f8f6;
+        ::ll::UntypedStorage<8, 64> mUnk155c88;
+        ::ll::UntypedStorage<8, 64> mUnk426685;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         NetSerializationCallbacks& operator=(NetSerializationCallbacks const&);
         NetSerializationCallbacks(NetSerializationCallbacks const&);
         NetSerializationCallbacks();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
-
-        MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverServerSide();
-
-        MCAPI ~NetSerializationCallbacks();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkf6cbf4;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -42,28 +45,9 @@ public:
     ComponentNetRelevancyRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class DefinitionInstanceGroup
-    getFilteredDefinitionsForServer(class DefinitionInstanceGroup const& definitionGroup) const;
-
-    MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(
-        class HashedString const&                                                     definitionName,
-        std::function<bool(class DefinitionInstanceGroup const&, class CompoundTag&)> serializationCallback
-    );
-
-    MCAPI bool serializeComponentDefinitionsForClient(
-        class DefinitionInstanceGroup const& definitionGroup,
-        class CompoundTag&                   tag
-    ) const;
-
-    MCAPI ~ComponentNetRelevancyRegistry();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI bool
+    serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
     // NOLINTEND
 };

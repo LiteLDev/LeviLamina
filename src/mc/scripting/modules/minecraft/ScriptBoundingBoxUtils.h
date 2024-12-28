@@ -21,29 +21,24 @@ public:
     ScriptBoundingBoxUtils();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoundingBoxUtils> bind();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBoundingBoxUtils> bind();
 
-    MCAPI static class BoundingBox createValid(class Vec3 const& min, class Vec3 max);
+    MCAPI static ::BoundingBox createValid(::Vec3 const& min, ::Vec3 max);
 
-    MCAPI static class BoundingBox dilate(class BoundingBox const& box, class Vec3 const& size);
+    MCAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
 
-    MCAPI static class BoundingBox expand(class BoundingBox const& box, class BoundingBox const& other);
+    MCAPI static ::BoundingBox expand(::BoundingBox const& box, ::BoundingBox const& other);
 
-    MCAPI static class Vec3 getCenter(class BoundingBox const& box);
+    MCAPI static ::Vec3 getCenter(::BoundingBox const& box);
 
-    MCAPI static std::optional<class BoundingBox>
-    getIntersection(class BoundingBox const& box, class BoundingBox const& other);
+    MCAPI static ::std::optional<::BoundingBox> getIntersection(::BoundingBox const& box, ::BoundingBox const& other);
 
-    MCAPI static class Vec3 getSpan(class BoundingBox const& box);
+    MCAPI static ::Vec3 getSpan(::BoundingBox const& box);
 
-    MCAPI static bool intersects(class BoundingBox const& box, class BoundingBox const& other);
-
-    MCAPI static bool isInside(class BoundingBox const& box, class Vec3 const& pos);
-
-    MCAPI static class BoundingBox translate(class BoundingBox const& box, class Vec3 const& delta);
-
+    MCAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

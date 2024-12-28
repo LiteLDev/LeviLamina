@@ -3,16 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class BlockComponentStorage;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockFlammableDescription : public ::BlockComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk633d01;
+    ::ll::UntypedStorage<4, 4> mUnkeedb42;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockFlammableDescription& operator=(BlockFlammableDescription const&);
@@ -20,34 +26,51 @@ public:
     BlockFlammableDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockFlammableDescription() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
+    // vIndex: 2
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~BlockFlammableDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
-
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& CATCH_CHANCE_DEFAULT();
 
     MCAPI static int const& DESTROY_CHANCE_DEFAULT();
 
-    MCAPI static std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
+
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

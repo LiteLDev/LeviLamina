@@ -4,16 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct MobIsJumpingFlagComponent;
+struct MoveInputComponent;
+struct MovementAbilitiesComponent;
+// clang-format on
 
 namespace JumpInputSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doJumpInputSystem(
-    class StrictEntityContext const&                                   context,
-    struct MovementAbilitiesComponent const&                           abilitiesComponent,
-    struct MoveInputComponent const&                                   moveInputComponent,
-    class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
+    ::StrictEntityContext const&                  context,
+    ::MovementAbilitiesComponent const&           abilitiesComponent,
+    ::MoveInputComponent const&                   moveInputComponent,
+    ::EntityModifier<::MobIsJumpingFlagComponent> mod
 );
 // NOLINTEND
 
-}; // namespace JumpInputSystemImpl
+} // namespace JumpInputSystemImpl

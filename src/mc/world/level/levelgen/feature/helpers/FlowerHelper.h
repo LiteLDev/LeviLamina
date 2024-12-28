@@ -5,22 +5,27 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/helpers/FlowerPlacementType.h"
 
-namespace FlowerHelper {
-// NOLINTBEGIN
-MCAPI class Block const& getRandomFlowerBlock(
-    ::FlowerPlacementType           type,
-    class BlockPos const&           pos,
-    class Random&                   random,
-    class PerlinSimplexNoise const& biomeInfoNoise
-);
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class PerlinSimplexNoise;
+class Random;
+// clang-format on
 
-MCAPI class Block const& getRandomFlowerBlock(
-    class Biome const&              biome,
-    class BlockPos const&           pos,
-    class Random&                   random,
-    class BiomeRegistry&            biomeRegistry,
-    class PerlinSimplexNoise const& biomeInfoNoise
+namespace FlowerHelper {
+// functions
+// NOLINTBEGIN
+MCAPI ::Block const&
+getRandomFlowerBlock(::BlockSource& region, ::BlockPos const& pos, ::PerlinSimplexNoise const& biomeInfoNoise);
+
+MCAPI ::Block const& getRandomFlowerBlock(
+    ::FlowerPlacementType       type,
+    ::BlockPos const&           pos,
+    ::Random&                   random,
+    ::PerlinSimplexNoise const& biomeInfoNoise
 );
 // NOLINTEND
 
-}; // namespace FlowerHelper
+} // namespace FlowerHelper

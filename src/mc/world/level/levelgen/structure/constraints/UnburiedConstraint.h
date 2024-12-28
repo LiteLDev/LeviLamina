@@ -4,8 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/constraints/IStructureConstraint.h"
 
-class UnburiedConstraint {
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class StructureTemplate;
+// clang-format on
+
+class UnburiedConstraint : public ::IStructureConstraint {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk2ab619;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UnburiedConstraint& operator=(UnburiedConstraint const&);
@@ -13,33 +27,46 @@ public:
     UnburiedConstraint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UnburiedConstraint() = default;
+    virtual ~UnburiedConstraint() /*override*/;
 
     // vIndex: 1
-    virtual bool isSatisfied(
-        class IBlockWorldGenAPI const& target,
-        class BlockPos const&          structurePos,
-        ::Rotation const&              structureRot
-    ) const;
-
-    MCAPI explicit UnburiedConstraint(class StructureTemplate& structure);
-
+    virtual bool
+    isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
+        /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit UnburiedConstraint(::StructureTemplate& structure);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class StructureTemplate& structure);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::StructureTemplate& structure);
+    // NOLINTEND
 
-    MCAPI bool isSatisfied$(
-        class IBlockWorldGenAPI const& target,
-        class BlockPos const&          structurePos,
-        ::Rotation const&              structureRot
-    ) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool
+    $isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot)
+        const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

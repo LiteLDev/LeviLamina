@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
 // clang-format on
 
 namespace Bedrock {
@@ -20,18 +20,26 @@ public:
     WorldRecoveryTelemetryHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WorldRecoveryTelemetryHandler();
+    // vIndex: 1
+    virtual void fireWorldRecoveryTelemetryEvent(::Bedrock::WorldRecoveryTelemetryEvent const&) = 0;
 
+    // vIndex: 0
+    virtual ~WorldRecoveryTelemetryHandler() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

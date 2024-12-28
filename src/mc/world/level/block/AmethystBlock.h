@@ -3,19 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class Material;
 // clang-format on
 
 class AmethystBlock : public ::BlockLegacy {
@@ -26,32 +21,47 @@ public:
     AmethystBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AmethystBlock();
-
     // vIndex: 17
-    virtual void onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    // vIndex: 49
-    virtual bool isSilentWhenJumpingOff() const;
+    // vIndex: 47
+    virtual bool isSilentWhenJumpingOff() const /*override*/;
 
-    MCAPI AmethystBlock(std::string const& nameId, int id, class Material const& material);
-
+    // vIndex: 0
+    virtual ~AmethystBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AmethystBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isSilentWhenJumpingOff$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+    MCAPI bool $isSilentWhenJumpingOff() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

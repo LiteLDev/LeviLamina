@@ -5,13 +5,28 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class Player;
+// clang-format on
+
 class Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk89f0ee;
+    ::ll::UntypedStorage<8, 32> mUnk15ba10;
+    ::ll::UntypedStorage<2, 2>  mUnkab6857;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Goal& operator=(Goal const&);
     Goal(Goal const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Goal();
@@ -35,14 +50,18 @@ public:
     virtual void tick();
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const = 0;
+    virtual void appendDebugInfo(::std::string&) const = 0;
 
     // vIndex: 8
     virtual bool isTargetGoal() const;
 
     // vIndex: 9
-    virtual void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
+    virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Goal();
 
     MCAPI int getRequiredControlFlags() const;
@@ -52,31 +71,41 @@ public:
     MCAPI void setRequiredControlFlags(int requiredControlFlags);
 
     MCAPI void setTypeId(ushort typeId);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canBeInterrupted$();
+    MCAPI bool $canBeInterrupted();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI void $start();
 
-    MCAPI bool isTargetGoal$() const;
+    MCAPI void $stop();
 
-    MCAPI void onPlayerDimensionChanged$(class Player* player, DimensionType fromDimension, DimensionType toDimension);
+    MCAPI void $tick();
 
-    MCAPI void start$();
+    MCAPI bool $isTargetGoal() const;
 
-    MCAPI void stop$();
+    MCAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    // NOLINTEND
 
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

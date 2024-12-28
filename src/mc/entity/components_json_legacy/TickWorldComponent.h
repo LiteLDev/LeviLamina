@@ -2,50 +2,69 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ITickingArea;
+// clang-format on
+
 class TickWorldComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk24ecfb;
+    ::ll::UntypedStorage<4, 4>  mUnk2dac6c;
+    ::ll::UntypedStorage<1, 1>  mUnkb86528;
+    ::ll::UntypedStorage<1, 1>  mUnk46359c;
+    ::ll::UntypedStorage<8, 16> mUnk75da0b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TickWorldComponent& operator=(TickWorldComponent const&);
     TickWorldComponent(TickWorldComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TickWorldComponent();
 
-    MCAPI TickWorldComponent(class TickWorldComponent&& other);
+    MCAPI TickWorldComponent(::TickWorldComponent&& other);
 
     MCAPI uint getChunkRadius() const;
 
     MCAPI float getMaxDistToPlayers() const;
 
-    MCAPI std::shared_ptr<class ITickingArea> getTickingArea();
+    MCAPI ::std::shared_ptr<::ITickingArea> getTickingArea();
 
     MCAPI bool hasTickingArea() const;
 
-    MCAPI void initFromDefinition(class Actor& owner);
+    MCAPI void initFromDefinition(::Actor& owner);
 
     MCAPI bool isAlwaysActive() const;
 
-    MCAPI class TickWorldComponent& operator=(class TickWorldComponent&& other);
+    MCAPI ::TickWorldComponent& operator=(::TickWorldComponent&& other);
 
     MCAPI void removeArea();
 
-    MCAPI void setTickingArea(class Actor& owner, std::shared_ptr<class ITickingArea> tickingArea);
+    MCAPI void setTickingArea(::Actor& owner, ::std::shared_ptr<::ITickingArea> tickingArea);
 
-    MCAPI void updateArea(class Actor& owner);
+    MCAPI void updateArea(::Actor& owner);
 
     MCAPI ~TickWorldComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class TickWorldComponent&& other);
+    MCAPI void* $ctor(::TickWorldComponent&& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

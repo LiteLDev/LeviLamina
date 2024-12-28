@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DiagnosticsEvent;
+struct MessageEvent;
+struct ServerNetworkGameplayNotificationEvent;
+// clang-format on
+
 class ServerNetworkEventListener {
 public:
     // prevent constructor by default
@@ -13,26 +20,40 @@ public:
     ServerNetworkEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerNetworkEventListener() = default;
+    virtual ~ServerNetworkEventListener();
 
     // vIndex: 1
-    virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
+    virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
     // vIndex: 2
-    virtual ::EventResult onMessage(struct MessageEvent const&);
+    virtual ::EventResult onMessage(::MessageEvent const&);
 
+    // vIndex: 3
+    virtual ::EventResult onDiagnostics(::DiagnosticsEvent const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ServerNetworkGameplayNotificationEvent const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
-    MCAPI ::EventResult onMessage$(struct MessageEvent const&);
+    MCAPI ::EventResult $onMessage(::MessageEvent const&);
 
+    MCAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Material;
+// clang-format on
+
 class CachedChunkBlockSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk1eca46;
+    ::ll::UntypedStorage<2, 2> mUnk1f64c6;
+    ::ll::UntypedStorage<8, 8> mUnkf0a2ae;
+    ::ll::UntypedStorage<2, 2> mUnk64c813;
+    ::ll::UntypedStorage<8, 8> mUnk9bfa3d;
+    ::ll::UntypedStorage<8, 8> mUnkb1d609;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CachedChunkBlockSource& operator=(CachedChunkBlockSource const&);
@@ -10,31 +29,26 @@ public:
     CachedChunkBlockSource();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit CachedChunkBlockSource(class BlockSource& region);
+    MCAPI explicit CachedChunkBlockSource(::BlockSource& region);
 
-    MCAPI class Block const& getBlock(class BlockPos const& position);
+    MCAPI ushort _updateCacheAndGetIndex(::BlockPos const& position);
 
-    MCAPI class BlockSource& getBlockSource();
+    MCAPI ::Block const& getBlock(::BlockPos const& position);
 
-    MCAPI class Block const& getLiquidBlock(class BlockPos const& position);
+    MCAPI ::BlockSource& getBlockSource();
 
-    MCAPI class Material const& getMaterial(class BlockPos const& pos);
+    MCAPI ::Block const& getLiquidBlock(::BlockPos const& position);
 
-    MCAPI void prefetchForPosition(class BlockPos const& pos);
+    MCAPI ::Material const& getMaterial(::BlockPos const& pos);
 
+    MCAPI void prefetchForPosition(::BlockPos const& pos);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ushort _updateCacheAndGetIndex(class BlockPos const& position);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockSource& region);
-
+    MCAPI void* $ctor(::BlockSource& region);
     // NOLINTEND
 };

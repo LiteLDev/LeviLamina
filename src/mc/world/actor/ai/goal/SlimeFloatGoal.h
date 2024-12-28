@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class SlimeFloatGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkd6dcfc;
+    ::ll::UntypedStorage<4, 4> mUnk925ac8;
+    ::ll::UntypedStorage<4, 4> mUnkdbca88;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SlimeFloatGoal& operator=(SlimeFloatGoal const&);
@@ -14,31 +21,40 @@ public:
     SlimeFloatGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SlimeFloatGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
+    virtual ~SlimeFloatGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

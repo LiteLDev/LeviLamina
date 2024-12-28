@@ -10,31 +10,74 @@ namespace mce { class Color; }
 class MapDecoration {
 public:
     // MapDecoration inner types define
-    enum class Type {};
+    enum class Type : schar {
+        MarkerWhite      = 0,
+        MarkerGreen      = 1,
+        MarkerRed        = 2,
+        MarkerBlue       = 3,
+        XWhite           = 4,
+        TriangleRed      = 5,
+        SquareWhite      = 6,
+        MarkerSign       = 7,
+        MarkerPink       = 8,
+        MarkerOrange     = 9,
+        MarkerYellow     = 10,
+        MarkerTeal       = 11,
+        TriangleGreen    = 12,
+        SmallSquareWhite = 13,
+        Mansion          = 14,
+        Monument         = 15,
+        NoDraw           = 16,
+        VillageDesert    = 17,
+        VillagePlains    = 18,
+        VillageSavanna   = 19,
+        VillageSnowy     = 20,
+        VillageTaiga     = 21,
+        JungleTemple     = 22,
+        WitchHut         = 23,
+        TrialChambers    = 24,
+        Count            = 25,
+        Player           = 0,
+        PlayerOffMap     = 6,
+        PlayerOffLimits  = 13,
+        PlayerHidden     = 16,
+        ItemFrame        = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>        mLabel;
+    ::ll::TypedStorage<1, 1, ::MapDecoration::Type> mImage;
+    ::ll::TypedStorage<1, 1, char>                  mX;
+    ::ll::TypedStorage<1, 1, char>                  mY;
+    ::ll::TypedStorage<1, 1, char>                  mRotation;
+    ::ll::TypedStorage<4, 16, ::mce::Color>         mColor;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     MapDecoration& operator=(MapDecoration const&);
     MapDecoration(MapDecoration const&);
+    MapDecoration();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI MapDecoration();
-
     MCAPI MapDecoration(
-        ::MapDecoration::Type   img,
-        schar                   x,
-        schar                   y,
-        schar                   rot,
-        std::string const&      label,
-        class mce::Color const& color
+        ::MapDecoration::Type img,
+        schar                 x,
+        schar                 y,
+        schar                 rot,
+        ::std::string const&  label,
+        ::mce::Color const&   color
     );
 
-    MCAPI class mce::Color const& getColor() const;
+    MCAPI ::mce::Color const& getColor() const;
 
     MCAPI ::MapDecoration::Type getImg() const;
 
-    MCAPI std::string const& getLabel() const;
+    MCAPI ::std::string const& getLabel() const;
 
     MCAPI schar getRot() const;
 
@@ -42,29 +85,25 @@ public:
 
     MCAPI schar getY() const;
 
-    MCAPI void load(class CompoundTag const& tag);
-
-    MCAPI void save(class CompoundTag& tag);
-
     MCAPI ~MapDecoration();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        ::MapDecoration::Type   img,
-        schar                   x,
-        schar                   y,
-        schar                   rot,
-        std::string const&      label,
-        class mce::Color const& color
+    MCAPI void* $ctor(
+        ::MapDecoration::Type img,
+        schar                 x,
+        schar                 y,
+        schar                 rot,
+        ::std::string const&  label,
+        ::mce::Color const&   color
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

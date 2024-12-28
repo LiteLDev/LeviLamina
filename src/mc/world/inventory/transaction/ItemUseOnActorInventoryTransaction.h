@@ -7,10 +7,37 @@
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class BlockPalette;
+class ItemStack;
+class NetworkItemStackDescriptor;
+class Player;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class ItemUseOnActorInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseOnActorInventoryTransaction inner types define
-    enum class ActionType {};
+    enum class ActionType : int {
+        Interact     = 0,
+        Attack       = 1,
+        ItemInteract = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                                 mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::ItemUseOnActorInventoryTransaction::ActionType> mActionType;
+    ::ll::TypedStorage<4, 4, int>                                              mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                    mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mFromPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mHitPos;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -19,43 +46,56 @@ public:
     ItemUseOnActorInventoryTransaction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemUseOnActorInventoryTransaction() = default;
+    virtual ~ItemUseOnActorInventoryTransaction() /*override*/;
 
     // vIndex: 1
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 2
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 3
-    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
-
-    // vIndex: 4
-    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
+    virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
     // vIndex: 5
-    virtual void onTransactionError(class Player& player, ::InventoryTransactionError) const;
+    virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const /*override*/;
 
-    MCAPI class ItemUseOnActorInventoryTransaction& setSelectedItem(class ItemStack const& item);
-
+    // vIndex: 4
+    virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    // NOLINTEND
 
-    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

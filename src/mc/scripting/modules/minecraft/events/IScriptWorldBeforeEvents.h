@@ -11,6 +11,15 @@
 // clang-format off
 class Actor;
 class Player;
+struct ActorAddEffectEvent;
+struct BlockTryDestroyByPlayerEvent;
+struct BlockTryPlaceByPlayerEvent;
+struct ChatEvent;
+struct ExplosionStartedEvent;
+struct ItemUseEvent;
+struct ItemUseOnEvent;
+struct PlayerInteractWithBlockBeforeEvent;
+struct PlayerInteractWithEntityBeforeEvent;
 namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
@@ -24,15 +33,6 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEven
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
-struct ActorAddEffectEvent;
-struct BlockTryDestroyByPlayerEvent;
-struct BlockTryPlaceByPlayerEvent;
-struct ChatEvent;
-struct ExplosionStartedEvent;
-struct ItemUseEvent;
-struct ItemUseOnEvent;
-struct PlayerInteractWithBlockBeforeEvent;
-struct PlayerInteractWithEntityBeforeEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -45,22 +45,22 @@ public:
     IScriptWorldBeforeEvents();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptWorldBeforeEvents() = default;
+    virtual ~IScriptWorldBeforeEvents();
 
     // vIndex: 1
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
-    onBeforeChat(struct ChatEvent const&, class Player const&);
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    onBeforeChat(::ChatEvent const&, ::Player const&);
 
     // vIndex: 2
     virtual void
-    onBeforeWorldInitialize(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
+    onBeforeWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
 
     // vIndex: 3
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     onBeforeWeatherChangedEvent(
         ::ScriptModuleMinecraft::ScriptWeatherType,
         ::ScriptModuleMinecraft::ScriptWeatherType,
@@ -68,119 +68,122 @@ public:
     );
 
     // vIndex: 4
-    virtual std::optional<class Scripting::StrongTypedObjectHandle<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
-    onBeforePlayerInteractWithEntity(class Player&, class Actor&, struct PlayerInteractWithEntityBeforeEvent const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
+    onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
 
     // vIndex: 5
-    virtual std::optional<class Scripting::StrongTypedObjectHandle<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
-    onBeforePlayerInteractWithBlock(class Player&, struct PlayerInteractWithBlockBeforeEvent const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
+    onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
     // vIndex: 6
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange(class Player const&, ::GameType, ::GameType);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
+    onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
 
     // vIndex: 7
-    virtual void onBeforePlayerLeave(class Player const&);
+    virtual void onBeforePlayerLeave(::Player const&);
 
     // vIndex: 8
-    virtual void onBeforeActorRemove(class Actor const&);
+    virtual void onBeforeActorRemove(::Actor const&);
 
     // vIndex: 9
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
-    onBeforeEffectAddedEventSend(struct ActorAddEffectEvent&, class Actor const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
+    onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
 
     // vIndex: 10
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
-    onBeforeExplosion(struct ExplosionStartedEvent const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
+    onBeforeExplosion(::ExplosionStartedEvent const&);
 
     // vIndex: 11
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
-    onBeforePlayerBreakBlock(class Player const&, struct BlockTryDestroyByPlayerEvent const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
+    onBeforePlayerBreakBlock(::Player const&, ::BlockTryDestroyByPlayerEvent const&);
 
     // vIndex: 12
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
-    onBeforePlayerPlaceBlock(class Player const&, struct BlockTryPlaceByPlayerEvent const&);
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
+    onBeforePlayerPlaceBlock(::Player const&, ::BlockTryPlaceByPlayerEvent const&);
 
     // vIndex: 13
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
-    onBeforeItemUse(class Player const&, struct ItemUseEvent const&);
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    onBeforeItemUse(::Player const&, ::ItemUseEvent const&);
 
     // vIndex: 14
-    virtual std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
-    onBeforeItemUseOn(class Player const&, struct ItemUseOnEvent const&);
-
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onBeforeActorRemove$(class Actor const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    $onBeforeChat(::ChatEvent const&, ::Player const&);
 
-    MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
-    onBeforeChat$(struct ChatEvent const&, class Player const&);
+    MCAPI void
+    $onBeforeWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
 
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
-    onBeforeEffectAddedEventSend$(struct ActorAddEffectEvent&, class Actor const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
-    onBeforeExplosion$(struct ExplosionStartedEvent const&);
-
-    MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
-    onBeforeItemUse$(class Player const&, struct ItemUseEvent const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
-    onBeforeItemUseOn$(class Player const&, struct ItemUseOnEvent const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
-    onBeforePlayerBreakBlock$(class Player const&, struct BlockTryDestroyByPlayerEvent const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange$(class Player const&, ::GameType, ::GameType);
-
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
-          onBeforePlayerInteractWithBlock$(class Player&, struct PlayerInteractWithBlockBeforeEvent const&);
-
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
-    onBeforePlayerInteractWithEntity$(class Player&, class Actor&, struct PlayerInteractWithEntityBeforeEvent const&);
-
-    MCAPI void onBeforePlayerLeave$(class Player const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
-    onBeforePlayerPlaceBlock$(class Player const&, struct BlockTryPlaceByPlayerEvent const&);
-
-    MCAPI std::optional<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
-    onBeforeWeatherChangedEvent$(
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    $onBeforeWeatherChangedEvent(
         ::ScriptModuleMinecraft::ScriptWeatherType,
         ::ScriptModuleMinecraft::ScriptWeatherType,
         int
     );
 
-    MCAPI void
-    onBeforeWorldInitialize$(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
+    $onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
 
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
+    $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
+    $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
+
+    MCAPI void $onBeforePlayerLeave(::Player const&);
+
+    MCAPI void $onBeforeActorRemove(::Actor const&);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
+    $onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
+    $onBeforeExplosion(::ExplosionStartedEvent const&);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
+    $onBeforePlayerBreakBlock(::Player const&, ::BlockTryDestroyByPlayerEvent const&);
+
+    MCAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
+    $onBeforePlayerPlaceBlock(::Player const&, ::BlockTryPlaceByPlayerEvent const&);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    $onBeforeItemUse(::Player const&, ::ItemUseEvent const&);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    $onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

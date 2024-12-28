@@ -12,4 +12,4 @@ public:
     XPlatSecurityInformation();
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

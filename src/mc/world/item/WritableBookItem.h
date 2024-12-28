@@ -3,18 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class ItemStack;
+class Player;
+struct PageContent;
 // clang-format on
 
 class WritableBookItem : public ::Item {
@@ -25,41 +20,61 @@ public:
     WritableBookItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+
+    // vIndex: 50
+    virtual bool requiresInteract() const /*override*/;
+
+    // vIndex: 109
+    virtual ::std::string getInteractText(::Player const& player) const /*override*/;
+
     // vIndex: 0
-    virtual ~WritableBookItem() = default;
-
-    // vIndex: 47
-    virtual bool requiresInteract() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
-
-    // vIndex: 105
-    virtual std::string getInteractText(class Player const& player) const;
-
-    MCAPI static void addPageAt(class ItemStack& book, int index, struct PageContent const& page);
-
-    MCAPI static struct PageContent deletePage(class ItemStack& book, int index);
-
-    MCAPI static void replacePage(class ItemStack& book, int index, struct PageContent const& page);
-
-    MCAPI static void signBook(class ItemStack& book, std::string title, std::string author, std::string xuid);
-
-    MCAPI static void swapPages(class ItemStack& book, int page1, int page2);
-
+    virtual ~WritableBookItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
 
-    MCAPI std::string getInteractText$(class Player const& player) const;
+    MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI bool requiresInteract$() const;
+    MCAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
 
-    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
+    MCAPI static void signBook(
+        ::ItemStack&                   book,
+        ::std::string                  title,
+        ::std::optional<::std::string> filteredTitle,
+        ::std::string                  author,
+        ::std::optional<::std::string> filteredAuthor,
+        ::std::string                  xuid
+    );
 
+    MCAPI static void swapPages(::ItemStack& book, int page1, int page2);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

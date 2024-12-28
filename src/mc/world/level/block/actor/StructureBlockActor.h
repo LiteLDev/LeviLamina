@@ -3,15 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+class StructureEditorData;
 namespace mce { class Color; }
 // clang-format on
 
 class StructureBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkc982b7;
+    ::ll::UntypedStorage<4, 16>  mUnkcb4007;
+    ::ll::UntypedStorage<1, 1>   mUnk7792e2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructureBlockActor& operator=(StructureBlockActor const&);
@@ -19,78 +35,86 @@ public:
     StructureBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructureBlockActor() = default;
-
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI explicit StructureBlockActor(class BlockPos const& pos);
+    // vIndex: 0
+    virtual ~StructureBlockActor() /*override*/;
+    // NOLINTEND
 
-    MCAPI class StructureEditorData const& getStructureData() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit StructureBlockActor(::BlockPos const& pos);
+
+    MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
+
+    MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
+
+    MCAPI ::StructureEditorData const& getStructureData() const;
 
     MCAPI void setIsWaterlogged(bool waterlogged);
 
-    MCAPI void
-    setPowered(class BlockSource& region, class BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
+    MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
-    MCAPI void setStructureData(class StructureEditorData const& data);
-
+    MCAPI void setStructureData(::StructureEditorData const& data);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    _loadStructure(class BlockSource& region, class BlockPos const& position, class BaseGameVersion const& version);
-
-    MCAPI bool _saveStructure(class BlockSource& region, class BlockPos const& position, bool redstoneTriggered);
-
-    MCAPI void _trigger(
-        class BlockSource&           region,
-        class BlockPos const&        pos,
-        class BaseGameVersion const& version,
-        bool                         redstoneTriggered
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(class BlockPos const& pos);
-
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
-
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
-
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void onChanged$(class BlockSource& region);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
     MCAPI static float const& MAX_WIREFRAME_RENDER_DISTANCE();
 
-    MCAPI static class mce::Color const& X_AXIS_COLOR();
+    MCAPI static ::mce::Color const& X_AXIS_COLOR();
 
-    MCAPI static class mce::Color const& Y_AXIS_COLOR();
+    MCAPI static ::mce::Color const& Y_AXIS_COLOR();
 
-    MCAPI static class mce::Color const& Z_AXIS_COLOR();
+    MCAPI static ::mce::Color const& Z_AXIS_COLOR();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,35 +18,44 @@ namespace ScriptModuleMinecraft {
 
 class ScriptPropertyRegistry {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkddaedc;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptPropertyRegistry& operator=(ScriptPropertyRegistry const&);
     ScriptPropertyRegistry(ScriptPropertyRegistry const&);
     ScriptPropertyRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPropertyRegistry(class ServerLevel& level);
+    MCAPI explicit ScriptPropertyRegistry(::ServerLevel& level);
 
-    MCAPI class Scripting::Result<void> registerEntityTypeDynamicProperties(
-        class Scripting::WeakLifetimeScope                                      scope,
-        class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&   dynamicPropertiesDefinition,
-        std::variant<std::string, class ScriptModuleMinecraft::ScriptActorType> entityTypeOrId
+    MCAPI ::Scripting::Result<void> registerEntityTypeDynamicProperties(
+        ::Scripting::WeakLifetimeScope                                          scope,
+        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptActorType> entityTypeOrId
     );
 
-    MCAPI class Scripting::Result<void> registerWorldDynamicProperties(
-        class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
+    MCAPI ::Scripting::Result<void> registerWorldDynamicProperties(
+        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ServerLevel& level);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerLevel& level);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

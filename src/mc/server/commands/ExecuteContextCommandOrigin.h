@@ -3,20 +3,41 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/ActorLocation.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class BlockPos;
+class CommandPositionFloat;
+class CompoundTag;
+class Dimension;
+class Level;
+class ServerLevel;
+class Vec2;
+class Vec3;
+struct ActorUniqueID;
 // clang-format on
 
 class ExecuteContextCommandOrigin : public ::CommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkda6576;
+    ::ll::UntypedStorage<4, 12> mUnk653f48;
+    ::ll::UntypedStorage<4, 12> mUnkef108c;
+    ::ll::UntypedStorage<8, 8>  mUnk7a9c6b;
+    ::ll::UntypedStorage<8, 8>  mUnk537eb8;
+    ::ll::UntypedStorage<4, 4>  mUnk32fbb7;
+    ::ll::UntypedStorage<4, 4>  mUnk6bc1f5;
+    ::ll::UntypedStorage<8, 8>  mUnk5bc335;
+    ::ll::UntypedStorage<4, 4>  mUnkb8eb4f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExecuteContextCommandOrigin& operator=(ExecuteContextCommandOrigin const&);
@@ -24,134 +45,155 @@ public:
     ExecuteContextCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ExecuteContextCommandOrigin() = default;
-
     // vIndex: 1
-    virtual std::string const& getRequestId() const;
+    virtual ::std::string const& getRequestId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos getBlockPosition() const;
+    virtual ::BlockPos getBlockPosition() const /*override*/;
 
     // vIndex: 4
-    virtual class Vec3 getWorldPosition() const;
+    virtual ::Vec3 getWorldPosition() const /*override*/;
 
     // vIndex: 5
-    virtual std::optional<class Vec2> getRotation() const;
-
-    // vIndex: 6
-    virtual class Level* getLevel() const;
-
-    // vIndex: 7
-    virtual class Dimension* getDimension() const;
+    virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const;
+    virtual ::Actor* getEntity() const /*override*/;
 
     // vIndex: 9
-    virtual ::CommandPermissionLevel getPermissionsLevel() const;
-
-    // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
+    virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
-
-    // vIndex: 27
-    virtual void updateValues();
-
-    // vIndex: 28
-    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const& commandPosition) const;
-
-    // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
 
     // vIndex: 30
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI ExecuteContextCommandOrigin(
-        struct ActorUniqueID             executionEntity,
-        class Vec3 const&                position,
-        std::optional<class Vec2> const& rotation,
-        struct ActorUniqueID             rotationActor,
-        struct ActorUniqueID             positionActor,
-        ::ActorLocation                  anchor,
-        DimensionType                    dimensionType,
-        class Level&                     level,
-        int                              version
-    );
+    // vIndex: 10
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
-    MCAPI class Actor const* getPositionEntity();
+    // vIndex: 29
+    virtual ::CompoundTag serialize() const /*override*/;
 
-    MCAPI void setDimension(DimensionType const& dimensionType);
+    // vIndex: 27
+    virtual void updateValues() /*override*/;
 
-    MCAPI void setDimension(class Dimension const& dimension);
+    // vIndex: 28
+    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const
+        /*override*/;
 
-    MCAPI void setExecutionEntity(class Actor const& entity);
+    // vIndex: 6
+    virtual ::Level* getLevel() const /*override*/;
 
-    MCAPI void setPosition(class Vec3 const& position);
+    // vIndex: 7
+    virtual ::Dimension* getDimension() const /*override*/;
 
-    MCAPI void setPositionEntity(class Actor const& entity);
-
-    MCAPI void setRotation(class Vec2 const& rotation);
-
-    MCAPI void setRotationEntity(class Actor const& entity);
-
-    MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin>
-    load(class CompoundTag const& tag, class ServerLevel& level);
-
+    // vIndex: 0
+    virtual ~ExecuteContextCommandOrigin() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        struct ActorUniqueID             executionEntity,
-        class Vec3 const&                position,
-        std::optional<class Vec2> const& rotation,
-        struct ActorUniqueID             rotationActor,
-        struct ActorUniqueID             positionActor,
-        ::ActorLocation                  anchor,
-        DimensionType                    dimensionType,
-        class Level&                     level,
-        int                              version
+    MCAPI ExecuteContextCommandOrigin(
+        ::ActorUniqueID                executionEntity,
+        ::Vec3 const&                  position,
+        ::std::optional<::Vec2> const& rotation,
+        ::ActorUniqueID                rotationActor,
+        ::ActorUniqueID                positionActor,
+        ::ActorLocation                anchor,
+        ::DimensionType                dimensionType,
+        ::Level&                       level,
+        int                            version
     );
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+    MCAPI ::Actor const* getPositionEntity();
 
-    MCAPI class BlockPos getBlockPosition$() const;
+    MCAPI void setDimension(::Dimension const& dimension);
 
-    MCAPI class Dimension* getDimension$() const;
+    MCAPI void setDimension(::DimensionType const& dimensionType);
 
-    MCAPI class Actor* getEntity$() const;
+    MCAPI void setExecutionEntity(::Actor const& entity);
 
-    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+    MCAPI void setPosition(::Vec3 const& position);
 
-    MCAPI class Level* getLevel$() const;
+    MCAPI void setPositionEntity(::Actor const& entity);
 
-    MCAPI std::string getName$() const;
+    MCAPI void setRotation(::Vec2 const& rotation);
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+    MCAPI void setRotationEntity(::Actor const& entity);
+    // NOLINTEND
 
-    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    // NOLINTEND
 
-    MCAPI std::string const& getRequestId$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorUniqueID                executionEntity,
+        ::Vec3 const&                  position,
+        ::std::optional<::Vec2> const& rotation,
+        ::ActorUniqueID                rotationActor,
+        ::ActorUniqueID                positionActor,
+        ::ActorLocation                anchor,
+        ::DimensionType                dimensionType,
+        ::Level&                       level,
+        int                            version
+    );
+    // NOLINTEND
 
-    MCAPI std::optional<class Vec2> getRotation$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Vec3 getWorldPosition$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getRequestId() const;
 
-    MCAPI bool isValid$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI void updateValues$();
+    MCAPI ::Vec3 $getWorldPosition() const;
 
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
+
+    MCAPI ::Actor* $getEntity() const;
+
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+
+    MCAPI ::CommandOriginType $getOriginType() const;
+
+    MCAPI bool $isValid() const;
+
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+
+    MCAPI ::CompoundTag $serialize() const;
+
+    MCAPI void $updateValues();
+
+    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+
+    MCAPI ::Level* $getLevel() const;
+
+    MCAPI ::Dimension* $getDimension() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

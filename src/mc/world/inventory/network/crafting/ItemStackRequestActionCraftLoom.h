@@ -6,37 +6,66 @@
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/crafting/ItemStackRequestActionCraftBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ItemStackRequestActionCraftLoom : public ::ItemStackRequestActionCraftBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk169021;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
     ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionCraftLoom() = default;
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI ItemStackRequestActionCraftLoom();
-
+    // vIndex: 0
+    virtual ~ItemStackRequestActionCraftLoom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemStackRequestActionCraftLoom();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

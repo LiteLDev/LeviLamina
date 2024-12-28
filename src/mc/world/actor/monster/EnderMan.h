@@ -3,31 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class AttributeModifier;
+class Block;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class MobEffectInstance;
+struct ActorDefinitionIdentifier;
 namespace mce { class UUID; }
 // clang-format on
 
 class EnderMan : public ::Monster {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk2aaf59;
+    ::ll::UntypedStorage<8, 8> mUnk6e0dae;
+    ::ll::UntypedStorage<2, 2> mUnk9e5069;
+    ::ll::UntypedStorage<2, 2> mUnkf2775f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EnderMan& operator=(EnderMan const&);
@@ -35,87 +37,112 @@ public:
     EnderMan();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~EnderMan() = default;
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 179
+    virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 66
-    virtual bool shouldRender() const;
+    // vIndex: 149
+    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 68
-    virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
+    // vIndex: 108
+    virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
-    // vIndex: 112
-    virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
+    // vIndex: 65
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 63
+    virtual bool shouldRender() const /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 157
-    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 187
-    virtual void newServerAiStep();
-
-    MCAPI EnderMan(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI class Block const& getCarryingBlock() const;
-
-    MCAPI void setCarryingBlock(class Block const& block);
-
-    MCAPI static void shutdown();
-
+    // vIndex: 8
+    virtual ~EnderMan() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI EnderMan(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::Block const& getCarryingBlock() const;
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void setCarryingBlock(::Block const& block);
+    // NOLINTEND
 
-    MCAPI bool canBeAffectedByArrow$(class MobEffectInstance const&) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void shutdown();
+    // NOLINTEND
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& SPEED_MODIFIER_ATTACKING();
 
-    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACKING_UUID();
 
-    MCAPI void newServerAiStep$();
-
-    MCAPI void normalTick$();
-
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI bool shouldRender$() const;
-
-    MCAPI static std::shared_ptr<class AttributeModifier>& SPEED_MODIFIER_ATTACKING();
-
-    MCAPI static class mce::UUID const& SPEED_MODIFIER_ATTACKING_UUID();
-
-    MCAPI static std::set<class Block const*>& mMayTake();
+    MCAPI static ::std::set<::Block const*>& mMayTake();
 
     MCAPI static bool& mMayTakeIsSetup();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $normalTick();
+
+    MCAPI void $newServerAiStep();
+
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
+    MCAPI bool $shouldRender() const;
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

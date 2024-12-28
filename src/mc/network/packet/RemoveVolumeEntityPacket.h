@@ -3,11 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class Dimension;
+class EntityNetId;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class RemoveVolumeEntityPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
+    ::ll::TypedStorage<4, 4, ::EntityNetId>   mEntityNetId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&);
@@ -15,42 +31,45 @@ public:
     RemoveVolumeEntityPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemoveVolumeEntityPacket();
+    virtual ~RemoveVolumeEntityPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI explicit RemoveVolumeEntityPacket(class EntityContext& entity);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class EntityContext& entity);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void dtor$();
+    MCAPI ::std::string $getName() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
-
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

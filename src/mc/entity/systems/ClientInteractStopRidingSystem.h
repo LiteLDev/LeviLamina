@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ClientInteractStopRidingSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ClientInteractStopRidingSystem {
 public:
     // prevent constructor by default
     ClientInteractStopRidingSystem& operator=(ClientInteractStopRidingSystem const&);
@@ -10,8 +15,8 @@ public:
     ClientInteractStopRidingSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

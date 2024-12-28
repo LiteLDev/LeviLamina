@@ -4,25 +4,28 @@
 
 struct TrimMaterial {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk1da951;
+    ::ll::UntypedStorage<8, 32> mUnkf63464;
+    ::ll::UntypedStorage<8, 48> mUnk52693a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     TrimMaterial& operator=(TrimMaterial const&);
     TrimMaterial(TrimMaterial const&);
     TrimMaterial();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI TrimMaterial(struct TrimMaterial&&);
-
     MCAPI ~TrimMaterial();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct TrimMaterial&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

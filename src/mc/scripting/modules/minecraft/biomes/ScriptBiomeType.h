@@ -16,21 +16,70 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBiomeType {
 public:
+    // ScriptBiomeType inner types declare
+    // clang-format off
+    struct Key;
+    // clang-format on
+
+    // ScriptBiomeType inner types define
+    struct Key {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkb84624;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Key& operator=(Key const&);
+        Key(Key const&);
+        Key();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkb4cea5;
+    ::ll::UntypedStorage<8, 8>  mUnkd2271f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBiomeType& operator=(ScriptBiomeType const&);
-    ScriptBiomeType(ScriptBiomeType const&);
     ScriptBiomeType();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::string getId() const;
+    MCAPI ScriptBiomeType(::ScriptModuleMinecraft::ScriptBiomeType const&);
 
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBiomeType> bind();
+    MCAPI ::std::string getId() const;
 
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBiomeType>
-    getOrCreateHandle(class Biome const& biome, class Scripting::WeakLifetimeScope const& scope);
+    MCAPI ::ScriptModuleMinecraft::ScriptBiomeType& operator=(::ScriptModuleMinecraft::ScriptBiomeType&&);
 
+    MCAPI ~ScriptBiomeType();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeType> bind();
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
+    getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeType const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

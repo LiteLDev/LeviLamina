@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class ItemRegistryRef;
+// clang-format on
+
 struct ItemData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<2, 2, short>           mId;
+    ::ll::TypedStorage<1, 1, bool>            mIsComponentBased;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemData& operator=(ItemData const&);
@@ -10,17 +24,20 @@ public:
     ItemData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ItemData();
-
-    MCAPI static std::vector<struct ItemData> fromItemRegistry(class ItemRegistryRef itemRegistry);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

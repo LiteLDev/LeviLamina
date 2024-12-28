@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class Level;
+class Player;
+// clang-format on
+
 class TransferServerCommand : public ::ServerCommand {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk249017;
+    ::ll::UntypedStorage<8, 32> mUnk3eb83f;
+    ::ll::UntypedStorage<4, 4>  mUnk4a8ed8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TransferServerCommand& operator=(TransferServerCommand const&);
@@ -13,30 +30,42 @@ public:
     TransferServerCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TransferServerCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~TransferServerCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Player const*
-    _findTarget(class CommandOutput& output, class Level& level, std::string const& pfidOrMSA) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

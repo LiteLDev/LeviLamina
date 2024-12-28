@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class DedicatedServer;
+// clang-format on
+
 class ClearRealmEventsCommand : public ::ServerCommand {
 public:
     // prevent constructor by default
@@ -13,25 +21,42 @@ public:
     ClearRealmEventsCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClearRealmEventsCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~ClearRealmEventsCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const&, class CommandOutput&) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::DedicatedServer*& mServer();
+    // NOLINTEND
 
-    MCAPI static class DedicatedServer*& mServer();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 namespace ScriptModuleMinecraft {
 
-class ScriptVector {
+class ScriptVector : public ::Vec3 {
 public:
     // prevent constructor by default
     ScriptVector& operator=(ScriptVector const&);
@@ -21,17 +17,19 @@ public:
     ScriptVector();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class ScriptModuleMinecraft::ScriptVector normalized() const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;
+    // NOLINTEND
 
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptVector const& rhs) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptVector> bind();
 
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptVector> bind();
-
-    MCAPI static class Scripting::Result<class ScriptModuleMinecraft::ScriptVector>
-    divide(class Vec3 const& a, std::variant<float, class Vec3> const& b);
-
+    MCAPI static ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    divide(::Vec3 const& a, ::std::variant<float, ::Vec3> const& b);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

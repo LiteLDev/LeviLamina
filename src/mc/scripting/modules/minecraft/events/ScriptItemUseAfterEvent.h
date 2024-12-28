@@ -4,56 +4,30 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-class Player;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
-struct ItemUseEvent;
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemUseAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk6e57c8;
+    ::ll::UntypedStorage<8, 32> mUnka43c0c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptItemUseAfterEvent& operator=(ScriptItemUseAfterEvent const&);
     ScriptItemUseAfterEvent(ScriptItemUseAfterEvent const&);
     ScriptItemUseAfterEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseAfterEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> item,
-        class Player const&                                                                    player,
-        struct ItemUseEvent const&,
-        class Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseAfterEvent> bind();
 
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseAfterEvent> bind();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseAfterEvent> bindV010();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> item,
-        class Player const&                                                                    player,
-        struct ItemUseEvent const&,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseAfterEvent> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -4,21 +4,26 @@
 
 class LocalConstBlockSource {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 288> mUnk3a4771;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LocalConstBlockSource& operator=(LocalConstBlockSource const&);
     LocalConstBlockSource(LocalConstBlockSource const&);
     LocalConstBlockSource();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~LocalConstBlockSource();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -7,6 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ActorInteraction;
+class CompoundTag;
+class DataLoadHelper;
+class Player;
+struct ActorUniqueID;
 namespace Json { class Value; }
 namespace npc { struct ActionContainer; }
 namespace npc { struct CommandAction; }
@@ -15,45 +21,69 @@ namespace npc { struct UrlAction; }
 
 class NpcComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk354bf2;
+    ::ll::UntypedStorage<4, 36> mUnk49165d;
+    ::ll::UntypedStorage<4, 36> mUnk5afe49;
+    ::ll::UntypedStorage<8, 24> mUnk899cb8;
+    ::ll::UntypedStorage<8, 48> mUnk3b24bb;
+    ::ll::UntypedStorage<8, 64> mUnk26a8e1;
+    ::ll::UntypedStorage<8, 32> mUnk32d0a0;
+    ::ll::UntypedStorage<8, 40> mUnka8d1f7;
+    ::ll::UntypedStorage<8, 64> mUnk6661a6;
+    ::ll::UntypedStorage<8, 8>  mUnk10772e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     NpcComponent& operator=(NpcComponent const&);
     NpcComponent(NpcComponent const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~NpcComponent();
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI NpcComponent();
 
-    MCAPI NpcComponent(class NpcComponent&& rhs);
+    MCAPI NpcComponent(::NpcComponent&& rhs);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class Actor const& owner) const;
+    MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
+
+    MCAPI void _deserializeData(::Json::Value const& npcData);
+
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
     MCAPI void clearSceneStateForAllPlayers();
 
-    MCAPI void executeClosingCommands(class Actor& owner, class Player& sourcePlayer, std::string const& sceneName);
+    MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
     MCAPI void
-    executeCommandAction(class Actor& owner, class Player& sourcePlayer, int actionIndex, std::string const& sceneName);
+    executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
 
-    MCAPI void executeOpeningCommands(class Actor& owner, class Player& sourcePlayer, std::string const& sceneName);
+    MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCAPI struct npc::ActionContainer& getActionsContainer();
+    MCAPI ::npc::ActionContainer& getActionsContainer();
 
-    MCAPI std::vector<int> getCommandCounts() const;
+    MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI std::string const& getDefaultSceneId() const;
+    MCAPI ::std::string const& getDefaultSceneId() const;
 
-    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI std::string const& getInteractiveText(class Actor& owner) const;
+    MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
-    MCAPI std::string const& getName(class Actor const& owner) const;
+    MCAPI ::std::string const& getName(::Actor const& owner) const;
 
-    MCAPI std::string const& getNameRawText(class Actor const& owner) const;
+    MCAPI ::std::string const& getNameRawText(::Actor const& owner) const;
 
-    MCAPI std::string const& getSceneStateForPlayer(struct ActorUniqueID const& playerID) const;
+    MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
 
     MCAPI uint64 getSkinCount() const;
 
@@ -61,77 +91,75 @@ public:
 
     MCAPI int getUrlCount() const;
 
-    MCAPI void initClientOnlyData(class Actor& owner);
+    MCAPI void initClientOnlyData(::Actor& owner);
 
-    MCAPI void initFromDefinition(class Actor& owner);
+    MCAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI void loadActions(class Actor& owner);
+    MCAPI void loadActions(::Actor& owner);
 
-    MCAPI void loadInteractiveRawText(class Actor& owner);
+    MCAPI void loadInteractiveRawText(::Actor& owner);
 
-    MCAPI void loadNPCData(class Actor& owner);
+    MCAPI void loadNPCData(::Actor& owner);
 
-    MCAPI void loadNameRawText(class Actor& owner);
+    MCAPI void loadNameRawText(::Actor& owner);
 
-    MCAPI class NpcComponent& operator=(class NpcComponent&& rhs);
+    MCAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void setActions(
-        class Actor&                                                                  owner,
-        std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&& newActions
-    );
-
-    MCAPI void setDefaultSceneId(std::string sceneId);
-
-    MCAPI bool setDialogueScene(class Actor& owner, std::string const& sceneName);
-
-    MCAPI void setInteractiveText(class Actor& owner, std::string const& text, bool setLocal);
-
-    MCAPI void setName(class Actor& owner, std::string const& name, bool setLocal);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void
-    setSceneStateForPlayer(class Actor& owner, struct ActorUniqueID const& playerID, std::string const& sceneName);
+    setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
 
-    MCAPI bool setSkin(class Actor& owner);
+    MCAPI void setDefaultSceneId(::std::string sceneId);
 
-    MCAPI bool setSkinIndex(class Actor& owner, int skinIndex, bool setLocal);
+    MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
+    MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
+
+    MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
+
+    MCAPI void setSceneStateForPlayer(::Actor& owner, ::ActorUniqueID const& playerID, ::std::string const& sceneName);
+
+    MCAPI bool setSkin(::Actor& owner);
+
+    MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _defineEntityDataString(class Actor& owner, ::ActorDataIDs id);
-
-    MCAPI void _deserializeData(class Json::Value const& npcData);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& ACTIONS_TAG();
 
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& INTERACTIVE_TAG();
 
-    MCAPI void* ctor$(class NpcComponent&& rhs);
+    MCAPI static ::std::string const& NAME_RAW_TEXT_TAG();
 
-    MCAPI void dtor$();
+    MCAPI static ::std::string const& PLAYER_ID_TAG();
 
-    MCAPI static std::string const& ACTIONS_TAG();
+    MCAPI static ::std::string const& PLAYER_SCENE_MAPPING_TAG();
 
-    MCAPI static std::string const& INTERACTIVE_TAG();
+    MCAPI static ::std::string const& SCENE_NAME_TAG();
 
-    MCAPI static std::string const& NAME_RAW_TEXT_TAG();
+    MCAPI static ::std::string const& URL_TAG();
+    // NOLINTEND
 
-    MCAPI static std::string const& PLAYER_ID_TAG();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static std::string const& PLAYER_SCENE_MAPPING_TAG();
+    MCAPI void* $ctor(::NpcComponent&& rhs);
+    // NOLINTEND
 
-    MCAPI static std::string const& SCENE_NAME_TAG();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::string const& URL_TAG();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

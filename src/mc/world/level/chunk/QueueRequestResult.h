@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class QueueRequestResult {};
+enum class QueueRequestResult : uchar {
+    Executed = 0,
+    Queued   = 1,
+};

@@ -2,9 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class ResultAny; }
+// clang-format on
+
 namespace Scripting::Reflection {
 
 class IPropertySetter {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk34d931;
+    ::ll::UntypedStorage<4, 4>  mUnk6122b2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IPropertySetter& operator=(IPropertySetter const&);
@@ -12,32 +24,41 @@ public:
     IPropertySetter();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPropertySetter() = default;
+    virtual ~IPropertySetter();
 
     // vIndex: 1
-    virtual void __unk_vfn_1() = 0;
+    virtual ::Scripting::ResultAny set(::entt::meta_handle, ::entt::meta_any) = 0;
 
     // vIndex: 2
-    virtual void __unk_vfn_2() = 0;
+    virtual ::entt::meta_type type() const = 0;
 
     // vIndex: 3
-    virtual void __unk_vfn_3() = 0;
+    virtual ::std::optional<::entt::meta_type> ownerType() const = 0;
 
     // vIndex: 4
     virtual bool isMemberFunction() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isMemberFunction$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isMemberFunction() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting::Reflection
+} // namespace Scripting::Reflection

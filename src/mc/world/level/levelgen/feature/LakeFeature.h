@@ -5,7 +5,25 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+class XoroshiroPositionalRandomFactory;
+// clang-format on
+
 class LakeFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&> mEmptyBlock;
+    ::ll::TypedStorage<8, 32, ::std::optional<::XoroshiroPositionalRandomFactory> const>
+        mXoroshiroPositionalRandomFactory;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LakeFeature& operator=(LakeFeature const&);
@@ -13,39 +31,46 @@ public:
     LakeFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~LakeFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI LakeFeature(
-        class Block const&                                    block,
-        std::optional<class XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
-    );
-
+    virtual ~LakeFeature() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _check(class BlockPos const& pos, gsl::span<bool, 2048> grid) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Block const&                                    block,
-        std::optional<class XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
+    MCAPI LakeFeature(
+        ::Block const&                                      block,
+        ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

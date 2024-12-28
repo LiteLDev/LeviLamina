@@ -6,42 +6,72 @@
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/crafting/ItemStackRequestActionCraftBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ItemStackRequestActionCraftRecipeOptional : public ::ItemStackRequestActionCraftBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk67cf23;
+    ::ll::UntypedStorage<4, 4> mUnkaaddc8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftRecipeOptional& operator=(ItemStackRequestActionCraftRecipeOptional const&);
     ItemStackRequestActionCraftRecipeOptional(ItemStackRequestActionCraftRecipeOptional const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionCraftRecipeOptional() = default;
-
-    // vIndex: 2
-    virtual int getFilteredStringIndex() const;
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI ItemStackRequestActionCraftRecipeOptional();
+    // vIndex: 2
+    virtual int getFilteredStringIndex() const /*override*/;
 
+    // vIndex: 0
+    virtual ~ItemStackRequestActionCraftRecipeOptional() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemStackRequestActionCraftRecipeOptional();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI int getFilteredStringIndex$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
+    MCAPI int $getFilteredStringIndex() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

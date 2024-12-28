@@ -4,26 +4,44 @@
 
 class ResourceMetadata {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke8d383;
+    ::ll::UntypedStorage<8, 32> mUnkf32c39;
+    ::ll::UntypedStorage<8, 32> mUnka8781f;
+    ::ll::UntypedStorage<8, 32> mUnk7ea2be;
+    ::ll::UntypedStorage<8, 16> mUnk204e24;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    ResourceMetadata& operator=(ResourceMetadata const&);
     ResourceMetadata(ResourceMetadata const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ResourceMetadata();
 
-    MCAPI ~ResourceMetadata();
+    MCAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
+    MCAPI ~ResourceMetadata();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static char const*& PRODUCT_TYPE_ADD_ON();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static char const* const& PRODUCT_TYPE_ADD_ON();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptRGB; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -22,29 +21,50 @@ public:
     ScriptRGBA();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptRGBA() = default;
-
     // vIndex: 1
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI explicit ScriptRGBA(class mce::Color const& color);
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGBA> bind();
-
+    // vIndex: 0
+    virtual ~ScriptRGBA() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ScriptRGBA(::mce::Color const& color);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class mce::Color const& color);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRGBA> bind();
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::mce::Color const& color);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

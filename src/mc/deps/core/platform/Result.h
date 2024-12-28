@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/ErrorInfo.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ namespace Bedrock { class OSError; }
 
 namespace Core {
 
-class Result {
+class Result : public ::Bedrock::Result<void, ::Bedrock::OSError> {
 public:
     // prevent constructor by default
     Result& operator=(Result const&);
@@ -20,14 +21,13 @@ public:
     Result();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI Result(::Core::Result&&);
+
+    MCAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
+
     MCAPI explicit Result(bool success);
-
-    MCAPI Result(class Core::Result&& rhs);
-
-    MCAPI explicit Result(struct Bedrock::ErrorInfo<class Bedrock::OSError>&& error);
-
-    MCAPI explicit Result(struct Bedrock::ErrorInfo<std::error_code>&& error);
 
     MCAPI void architecturalProblem() const;
 
@@ -35,11 +35,11 @@ public:
 
     MCAPI bool failed() const;
 
-    MCAPI std::string message() const;
+    MCAPI ::std::string message() const;
 
     MCAPI explicit operator bool() const;
 
-    MCAPI class Core::Result& operator=(class Core::Result&&);
+    MCAPI ::Core::Result& operator=(::Core::Result&&);
 
     MCAPI bool peekFailed() const;
 
@@ -50,43 +50,43 @@ public:
     MCAPI bool throwFailed() const;
 
     MCAPI ~Result();
-
-    MCAPI static class Core::Result either(class Core::Result&& r1, class Core::Result&& r2);
-
-    MCAPI static class Core::Result makeFailure();
-
-    MCAPI static class Core::Result makeFailureNotImplemented();
-
-    MCAPI static class Core::Result makeFailureWithString(std::string message);
-
-    MCAPI static class Core::Result makeFailureWithStringLiteral(char const* message);
-
-    MCAPI static class Core::Result makeSuccess();
-
-    MCAPI static class Core::Result merge(class Core::Result&& r1, class Core::Result&& r2);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::string format(char const*, ...);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Bedrock::ErrorInfo<class Bedrock::OSError>&& error);
+    MCAPI static ::Core::Result either(::Core::Result&& r1, ::Core::Result&& r2);
 
-    MCAPI void* ctor$(class Core::Result&& rhs);
+    MCAPI static ::std::string format(char const*, ...);
 
-    MCAPI void* ctor$(struct Bedrock::ErrorInfo<std::error_code>&& error);
+    MCAPI static ::Core::Result makeFailure();
 
-    MCAPI void* ctor$(bool success);
+    MCAPI static ::Core::Result makeFailureNotImplemented();
 
-    MCAPI void dtor$();
+    MCAPI static ::Core::Result makeFailureWithString(::std::string message);
 
+    MCAPI static ::Core::Result makeFailureWithStringLiteral(char const* message);
+
+    MCAPI static ::Core::Result makeSuccess();
+
+    MCAPI static ::Core::Result merge(::Core::Result&& r1, ::Core::Result&& r2);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Result&&);
+
+    MCAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
+
+    MCAPI void* $ctor(bool success);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

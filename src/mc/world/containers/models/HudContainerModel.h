@@ -3,10 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/models/ContainerExpandStatus.h"
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
+// auto generated forward declare list
+// clang-format off
+class Container;
+class ContainerWeakRef;
+class Player;
+// clang-format on
+
 class HudContainerModel : public ::ContainerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8707fa;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HudContainerModel& operator=(HudContainerModel const&);
@@ -14,47 +27,62 @@ public:
     HudContainerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual void containerContentChanged(int slot);
-
     // vIndex: 1
-    virtual ~HudContainerModel() = default;
+    virtual ~HudContainerModel() /*override*/;
 
-    // vIndex: 7
-    virtual class ContainerWeakRef getContainerWeakRef() const;
+    // vIndex: 0
+    virtual void containerContentChanged(int slot) /*override*/;
 
     // vIndex: 14
-    virtual bool isValid();
+    virtual bool isValid() /*override*/;
+
+    // vIndex: 7
+    virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
     // vIndex: 21
-    virtual class Container* _getContainer() const;
+    virtual ::Container* _getContainer() const /*override*/;
 
     // vIndex: 23
-    virtual void _init();
-
+    virtual void _init() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _refreshContainer();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HudContainerModel(::ContainerEnumName containerName, ::Player& player);
+    // NOLINTEND
 
-    MCAPI class Container* _getContainer$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+    // NOLINTEND
 
-    MCAPI void _init$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void containerContentChanged$(int slot);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $containerContentChanged(int slot);
 
-    MCAPI class ContainerWeakRef getContainerWeakRef$() const;
+    MCAPI bool $isValid();
 
-    MCAPI bool isValid$();
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
+    MCAPI ::Container* $_getContainer() const;
+
+    MCAPI void $_init();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

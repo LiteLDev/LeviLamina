@@ -2,19 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
 namespace ServerStandInCauldronSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}; // namespace ServerStandInCauldronSystem
+} // namespace ServerStandInCauldronSystem

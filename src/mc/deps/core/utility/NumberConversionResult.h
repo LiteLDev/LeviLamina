@@ -4,6 +4,12 @@
 
 namespace Util {
 
-enum class NumberConversionResult {};
-
+enum class NumberConversionResult : int {
+    Succeed  = 0,
+    Invalid  = 1,
+    TooSmall = 2,
+    TooLarge = 3,
+    Count    = 4,
 };
+
+}

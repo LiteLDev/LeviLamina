@@ -2,13 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct MobTravelComponent;
+struct MovementAttributesComponent;
+// clang-format on
+
 namespace LavaTravelSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void copyLavaSpeedToMobTravel(
-    class StrictEntityContext&,
-    struct MovementAttributesComponent const& attributesComponent,
-    struct MobTravelComponent&                mobTravelComponent
+    ::StrictEntityContext&,
+    ::MovementAttributesComponent const& attributesComponent,
+    ::MobTravelComponent&                mobTravelComponent
 );
 // NOLINTEND
 
-}; // namespace LavaTravelSystemImpl
+} // namespace LavaTravelSystemImpl

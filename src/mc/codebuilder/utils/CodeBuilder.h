@@ -17,36 +17,35 @@ namespace Json { class Value; }
 // clang-format on
 
 namespace Util::CodeBuilder {
+// functions
 // NOLINTBEGIN
-MCAPI class Json::Value createMobObject(int mobType);
+MCAPI ::Json::Value createMobObject(int mobType);
 
-MCAPI class Json::Value createMobObject(int mobType, int variant, uchar color);
+MCAPI ::Json::Value createMobObject(int mobType, int variant, uchar color);
 
-MCAPI class Json::Value createMobObjectWithId(int id, int mobType, int variant);
+MCAPI ::Json::Value createMobObjectWithId(int id, int mobType, int variant);
 
-MCAPI class Json::Value createObject(class Actor const& actor);
+MCAPI ::Json::Value createObject(::ItemStack const& item);
 
-MCAPI class Json::Value createObject(class Block const& val);
+MCAPI ::Json::Value createObject(::ItemDescriptor const& item);
 
-MCAPI class Json::Value createObject(class CommandOutput const& commandOutput);
+MCAPI ::Json::Value createObject(::Player const& player);
 
-MCAPI class Json::Value createObject(class ItemDescriptor const& item);
+MCAPI ::Json::Value createObject(::ItemInstance const&);
 
-MCAPI class Json::Value createObject(class ItemInstance const& item);
+MCAPI ::Json::Value createObject(::Actor const& actor);
 
-MCAPI class Json::Value createObject(class ItemStack const& item);
+MCAPI ::Json::Value createObject(::LevelChunk const& chunk);
 
-MCAPI class Json::Value createObject(class ItemStackBase const& item);
+MCAPI ::Json::Value createObject(::CommandOutput const& commandOutput);
 
-MCAPI class Json::Value createObject(class LevelChunk const& chunk);
+MCAPI ::Json::Value createObject(::ItemStackBase const& item);
 
-MCAPI class Json::Value createObject(class Player const& player);
+MCAPI ::Json::Value createObject(::Block const& val);
 
-MCAPI class Json::Value createObject(class Block const& val, int aux);
+MCAPI ::Json::Value createObject(::Block const& val, int aux);
 
-MCAPI class Json::Value createTraderObject(class Actor const& trader);
-
-MCAPI std::vector<std::string> translate(std::vector<std::string> const&);
+MCAPI ::Json::Value createTraderObject(::Actor const& trader);
 // NOLINTEND
 
-}; // namespace Util::CodeBuilder
+} // namespace Util::CodeBuilder

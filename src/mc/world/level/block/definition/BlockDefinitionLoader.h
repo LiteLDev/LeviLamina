@@ -4,9 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/puv/LoadResult.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockDefinitionGroup;
+class IPackLoadContext;
+// clang-format on
 
 class BlockDefinitionLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 368> mUnkdeb880;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockDefinitionLoader& operator=(BlockDefinitionLoader const&);
@@ -14,35 +25,32 @@ public:
     BlockDefinitionLoader();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockDefinitionLoader(
-        class BlockDefinitionGroup*                group,
-        class Core::PathBuffer<std::string> const* heapPathBuffer,
-        std::string                                resourcePackLocation,
-        class SemVersion                           engineVersion,
-        class Experiments const*                   experiments,
-        bool                                       isBaseGamePack
+        ::gsl::not_null<::BlockDefinitionGroup*>                  group,
+        ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
+        ::std::string                                             resourcePackLocation,
+        ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
     );
-
-    MCAPI class Puv::LoadResult<struct BlockDefinition> load(std::string const& input) const;
 
     MCAPI ~BlockDefinitionLoader();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class BlockDefinitionGroup*                group,
-        class Core::PathBuffer<std::string> const* heapPathBuffer,
-        std::string                                resourcePackLocation,
-        class SemVersion                           engineVersion,
-        class Experiments const*                   experiments,
-        bool                                       isBaseGamePack
+    MCAPI void* $ctor(
+        ::gsl::not_null<::BlockDefinitionGroup*>                  group,
+        ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
+        ::std::string                                             resourcePackLocation,
+        ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

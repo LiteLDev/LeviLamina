@@ -3,26 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/world/Difficulty.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ILevel;
+class IMinecraftEventing;
+class LevelData;
+class LevelSettings;
+class Player;
+// clang-format on
+
 namespace LevelDataHelper {
+// functions
 // NOLINTBEGIN
-MCAPI void setCommandsEnabled(
-    class LevelData&          levelData,
-    bool                      commandsEnabled,
-    class IMinecraftEventing* eventing,
-    class Player*             player
-);
+MCAPI ::Bedrock::UniqueOwnerPointer<::LevelData>
+createLevelDataFromLevelSettings(::LevelSettings const& levelSettings, ::std::string const& levelName);
 
-MCAPI void setDefaultGameType(class LevelData& levelData, ::GameType gameType, class IMinecraftEventing* eventing);
+MCAPI void
+setCommandsEnabled(::LevelData& levelData, bool commandsEnabled, ::IMinecraftEventing* eventing, ::Player* player);
 
-MCAPI void setDifficulty(
-    class LevelData&          levelData,
-    ::Difficulty              difficulty,
-    class IMinecraftEventing* eventing,
-    class ILevel*             level
-);
+MCAPI void setDefaultGameType(::LevelData& levelData, ::GameType gameType, ::IMinecraftEventing* eventing);
+
+MCAPI void
+setDifficulty(::LevelData& levelData, ::Difficulty difficulty, ::IMinecraftEventing* eventing, ::ILevel* level);
 // NOLINTEND
 
-}; // namespace LevelDataHelper
+} // namespace LevelDataHelper

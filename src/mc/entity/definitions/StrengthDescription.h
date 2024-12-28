@@ -2,7 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StrengthDescription {
+// auto generated inclusion list
+#include "mc/world/actor/AttributeDescription.h"
+
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
+struct StrengthDescription : public ::AttributeDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkc495a2;
+    ::ll::UntypedStorage<4, 4> mUnkbaa826;
+    ::ll::UntypedStorage<4, 4> mUnkaddf55;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StrengthDescription& operator=(StrengthDescription const&);
@@ -10,28 +26,35 @@ public:
     StrengthDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
-
-    // vIndex: 1
-    virtual ~StrengthDescription();
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
+    // vIndex: 1
+    virtual ~StrengthDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
 
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

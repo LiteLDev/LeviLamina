@@ -4,30 +4,33 @@
 
 class ItemStackNetManagerScreen {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk7c9902;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ItemStackNetManagerScreen& operator=(ItemStackNetManagerScreen const&);
     ItemStackNetManagerScreen(ItemStackNetManagerScreen const&);
     ItemStackNetManagerScreen();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackNetManagerScreen() = default;
-
-    MCAPI explicit ItemStackNetManagerScreen(class EntityRegistry& registry);
-
-    MCAPI class EntityContext& getEntity();
-
-    MCAPI class EntityContext const& getEntity() const;
-
+    virtual ~ItemStackNetManagerScreen();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

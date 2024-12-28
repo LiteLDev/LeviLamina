@@ -3,19 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class CompoundTag;
+class Item;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Mob;
+class Player;
+struct ResolvedItemIconInfo;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class FishingRodItem : public ::ComponentItem {
@@ -26,85 +27,102 @@ public:
     FishingRodItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FishingRodItem() = default;
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const /*override*/;
 
-    // vIndex: 37
-    virtual bool isHandEquipped() const;
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 47
-    virtual bool requiresInteract() const;
+    // vIndex: 38
+    virtual bool isHandEquipped() const /*override*/;
 
     // vIndex: 50
-    virtual int getEnchantSlot() const;
+    virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 51
-    virtual int getEnchantValue() const;
+    // vIndex: 109
+    virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
+    // vIndex: 110
+    virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 99
-    virtual bool shouldSendInteractionGameEvents() const;
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
+    virtual bool shouldSendInteractionGameEvents() const /*override*/;
 
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int newAnimationFrame, bool) const;
+    // vIndex: 123
+    virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    // vIndex: 105
-    virtual std::string getInteractText(class Player const&) const;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 106
-    virtual int getAnimationFrameFor(class Mob* holder, bool, class ItemStack const*, bool) const;
+    // vIndex: 87
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 121
-    virtual bool shouldUseJsonForRenderMatrix() const;
-
-    MCAPI FishingRodItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~FishingRodItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FishingRodItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const*, bool) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const;
 
-    MCAPI int getEnchantSlot$() const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI int getEnchantValue$() const;
+    MCAPI bool $isHandEquipped() const;
 
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int newAnimationFrame, bool) const;
+    MCAPI bool $requiresInteract() const;
 
-    MCAPI std::string getInteractText$(class Player const&) const;
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCAPI bool isHandEquipped$() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool requiresInteract$() const;
+    MCAPI int $getEnchantValue() const;
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI bool shouldSendInteractionGameEvents$() const;
+    MCAPI bool $shouldSendInteractionGameEvents() const;
 
-    MCAPI bool shouldUseJsonForRenderMatrix$() const;
+    MCAPI bool $shouldUseJsonForRenderMatrix() const;
 
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

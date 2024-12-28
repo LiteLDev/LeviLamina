@@ -7,31 +7,42 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class HomeComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class HomeDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkd42972;
+    ::ll::UntypedStorage<4, 4>  mUnk928fa8;
+    ::ll::UntypedStorage<8, 24> mUnkc7a348;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     HomeDefinition& operator=(HomeDefinition const&);
     HomeDefinition(HomeDefinition const&);
+    HomeDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI HomeDefinition();
+    MCAPI void _finalize() const;
 
-    MCAPI void initialize(class EntityContext&, class HomeComponent& component) const;
+    MCAPI void _setRestrictionRadius(int const& restrictionRadius);
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>>& root
-    );
+    MCAPI void _setRestrictionType(::std::string const& restrictionType);
 
+    MCAPI void initialize(::EntityContext&, ::HomeComponent& component) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HomeDefinition>>& root);
     // NOLINTEND
 };

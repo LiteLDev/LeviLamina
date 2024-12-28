@@ -5,25 +5,37 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class WaterMovementComponent;
+struct ActorDataFlagComponent;
+struct OnGroundFlagComponent;
+struct StateVectorComponent;
+struct SwimSpeedMultiplierComponent;
+struct TickingSystemWithInfo;
+struct WaterTravelFlagComponent;
+struct WaterWalkSpeedEnchantComponent;
+// clang-format on
 
 namespace MobMovementDrag {
+// functions
 // NOLINTBEGIN
-MCAPI void forLiquidDragSystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forNormalDragSystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forWingFlapVerticalDragSystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forWingFlapVerticalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickApplyWaterDrag(
-    entt::type_list<struct Include<class FlagComponent<struct WaterTravelFlag>>>,
-    class Optional<struct OnGroundFlagComponent const> onGroundFlag,
-    class Optional<class WaterMovementComponent const> waterMovement,
-    struct ActorDataFlagComponent const&               actorDataFlagComponent,
-    struct SwimSpeedMultiplierComponent const&         swimSpeedMultiplierComponent,
-    struct WaterWalkSpeedEnchantComponent const&       waterWalkSpeedEnchantComponent,
-    struct StateVectorComponent&                       stateVectorComponent
+    ::entt::type_list<::Include<::WaterTravelFlagComponent>>,
+    ::Optional<::OnGroundFlagComponent const>  onGroundFlag,
+    ::Optional<::WaterMovementComponent const> waterMovement,
+    ::ActorDataFlagComponent const&            actorDataFlagComponent,
+    ::SwimSpeedMultiplierComponent const&      swimSpeedMultiplierComponent,
+    ::WaterWalkSpeedEnchantComponent const&    waterWalkSpeedEnchantComponent,
+    ::StateVectorComponent&                    stateVectorComponent
 );
 // NOLINTEND
 
-}; // namespace MobMovementDrag
+} // namespace MobMovementDrag

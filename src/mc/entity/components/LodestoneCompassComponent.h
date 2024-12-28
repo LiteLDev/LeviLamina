@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CompassSpriteCalculator;
+class Dimension;
+class LodestoneCompassComponentCalculator;
+class PositionTrackingId;
+struct ActorUniqueID;
+// clang-format on
+
 class LodestoneCompassComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkd7217f;
+    ::ll::UntypedStorage<8, 64> mUnkb85952;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LodestoneCompassComponent& operator=(LodestoneCompassComponent const&);
@@ -13,50 +30,55 @@ public:
     LodestoneCompassComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI LodestoneCompassComponent(class LodestoneCompassComponent&&);
+    MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
 
-    MCAPI int getAnimationFrame(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
-        class BlockPos const&                                                               lookFromPosition,
-        DimensionType const&                                                                lookFromDimension
+    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        bool                                                                             createIfNotFound
     );
 
-    MCAPI void initialize(class PositionTrackingId const& trackingHandle);
+    MCAPI int getAnimationFrame(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        ::BlockPos const&                                                                lookFromPosition,
+        ::DimensionType const&                                                           lookFromDimension
+    );
 
-    MCAPI class LodestoneCompassComponent& operator=(class LodestoneCompassComponent&&);
+    MCAPI void initialize(::PositionTrackingId const& trackingHandle);
 
     MCAPI void setTrackOnlyInSameDimension(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
-        bool                                                                                trackOnlyInSameDimension
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        bool                                                                             trackOnlyInSameDimension
     );
 
     MCAPI ~LodestoneCompassComponent();
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static int getSpinningAnimationFrame();
 
-    MCAPI static std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>>
-    makeCalculatorId(struct ActorUniqueID const& id);
-
+    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
+    makeCalculatorId(::ActorUniqueID const& id);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class LodestoneCompassComponentCalculator* _findCalculator(
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& compassId,
-        bool                                                                                createIfNotFound
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class LodestoneCompassComponent&&);
+    MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LodestoneCompassComponent&&);
+    // NOLINTEND
 
-    MCAPI static class CompassSpriteCalculator& mSpinningLodestone();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandStatus {};
+enum class CommandStatus : int {
+    Invalid = 0,
+    Local   = 1,
+    Remote  = 2,
+};

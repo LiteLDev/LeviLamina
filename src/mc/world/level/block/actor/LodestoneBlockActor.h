@@ -3,10 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class PositionTrackingId;
+class SaveContext;
+// clang-format on
+
 class LodestoneBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkf27fdf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LodestoneBlockActor& operator=(LodestoneBlockActor const&);
@@ -14,58 +31,79 @@ public:
     LodestoneBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LodestoneBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 13
-    virtual void onRemoved(class BlockSource& region);
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCAPI explicit LodestoneBlockActor(class BlockPos const& pos);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    MCAPI class PositionTrackingId const& getTrackingHandle() const;
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    // vIndex: 0
+    virtual ~LodestoneBlockActor() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LodestoneBlockActor(::BlockPos const& pos);
+
+    MCAPI ::PositionTrackingId const& getTrackingHandle() const;
 
     MCAPI bool hasTrackingHandle() const;
 
-    MCAPI bool setTrackingHandle(class PositionTrackingId const& h);
-
+    MCAPI bool setTrackingHandle(::PositionTrackingId const& h);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& sTagName_Handle();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void onRemoved$(class BlockSource& region);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI static std::string const& sTagName_Handle();
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

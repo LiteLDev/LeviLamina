@@ -4,6 +4,9 @@
 
 namespace FireworksMovementSystems {
 
-enum class RocketAttached {};
-
+enum class RocketAttached : int {
+    IsAttached  = 0,
+    NotAttached = 1,
 };
+
+}

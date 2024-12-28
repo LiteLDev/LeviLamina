@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/entity/definitions/NavigationDescription.h"
 
-class NavigationSwimDescription : public ::NavigationDescription {
+struct NavigationSwimDescription : public ::NavigationDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkeddfd9;
+    ::ll::UntypedStorage<1, 1> mUnkd523a9;
+    ::ll::UntypedStorage<4, 4> mUnkd83b80;
+    ::ll::UntypedStorage<4, 4> mUnka8bf2d;
+    ::ll::UntypedStorage<4, 4> mUnkaf77de;
+    ::ll::UntypedStorage<4, 4> mUnk3e2dea;
+    ::ll::UntypedStorage<4, 4> mUnkfc6d83;
+    ::ll::UntypedStorage<4, 4> mUnk5d31a0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NavigationSwimDescription& operator=(NavigationSwimDescription const&);
@@ -13,23 +26,30 @@ public:
     NavigationSwimDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 1
-    virtual ~NavigationSwimDescription();
-
+    virtual ~NavigationSwimDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

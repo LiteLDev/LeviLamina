@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ISystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class EntityRegistry;
+class StrictEntityContext;
+// clang-format on
+
 class ITickingSystem : public ::ISystem {
 public:
     // prevent constructor by default
@@ -13,19 +20,32 @@ public:
     ITickingSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+    // vIndex: 0
+    virtual ~ITickingSystem() /*override*/;
 
-    MCVAPI void singleTick(class EntityRegistry& registry, class EntityContext& entity);
+    // vIndex: 2
+    virtual void tick(::EntityRegistry& registry) = 0;
 
+    // vIndex: 4
+    virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity);
+
+    // vIndex: 3
+    virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
+    MCAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
 };

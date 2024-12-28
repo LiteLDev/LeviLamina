@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class SpawnActorComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SpawnActorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkb31eff;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SpawnActorDefinition& operator=(SpawnActorDefinition const&);
@@ -18,13 +26,16 @@ public:
     SpawnActorDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, class SpawnActorComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::SpawnActorComponent& component) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SpawnActorDefinition>>& root
     );
-
     // NOLINTEND
 };

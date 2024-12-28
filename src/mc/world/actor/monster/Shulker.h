@@ -3,27 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class AttributeModifier;
+class BlockPos;
+class BodyControl;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class SynchedActorDataWriter;
+struct ActorDefinitionIdentifier;
+struct ShulkerBounds;
+struct ShulkerBoundsInput;
+struct VariantParameterList;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -35,146 +32,147 @@ public:
     Shulker();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 9
-    virtual void _doInitialMove();
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 10
-    virtual ~Shulker() = default;
-
-    // vIndex: 33
-    virtual bool isInWall() const;
-
-    // vIndex: 38
-    virtual float getShadowRadius() const;
-
-    // vIndex: 54
-    virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 66
-    virtual bool shouldRender() const;
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
-
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 160
-    virtual bool checkSpawnRules(bool);
+    virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 165
-    virtual float getMaxHeadXRot();
+    // vIndex: 63
+    virtual bool shouldRender() const /*override*/;
 
-    // vIndex: 168
-    virtual int getArmorValue() const;
+    // vIndex: 7
+    virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 186
-    virtual std::unique_ptr<class BodyControl> initBodyControl();
+    // vIndex: 178
+    virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
+
+    // vIndex: 157
+    virtual float getMaxHeadXRot() /*override*/;
+
+    // vIndex: 31
+    virtual bool isInWall() const /*override*/;
+
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+
+    // vIndex: 8
+    virtual ~Shulker() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Shulker(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI void postNormalTick();
-
-    MCAPI static void applyShulkerBounds(struct ShulkerBounds const& bounds, class EntityContext& shulker);
-
-    MCAPI static struct ShulkerBounds computeShulkerBounds(struct ShulkerBoundsInput const& input);
-
-    MCAPI static void
-    postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter data, class BlockPos const& newAttachPos);
-
-    MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter data, class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _canOpenLidAt(class BlockPos position, uchar direction) const;
-
-    MCAPI static void _setPeekAmount(class SynchedActorDataWriter data, int amount);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _calculateBB();
 
-    MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos blockPos) const;
-
-    MCAPI bool _isValidAttach(class BlockPos attachPos, uchar direction);
+    MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
 
     MCAPI void _peekAmountTick();
 
-    MCAPI void _setAttachFace(uchar facing);
+    MCAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
 
-    MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos currentPos);
+    MCAPI bool _trySetNewAttachPosition(::BlockPos pos);
 
     MCAPI void _trySpawnShulker();
 
     MCAPI bool _tryTeleportSomewhere();
 
+    MCAPI void postNormalTick();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
+
+    MCAPI static void
+    postSetPosSetShulkerAttachPosAndPeekAmount(::SynchedActorDataWriter data, ::BlockPos const& newAttachPos);
+
+    MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& COVERED_ARMOR_MODIFIER();
+
+    MCAPI static ::mce::UUID const& COVERED_ARMOR_MODIFIER_UUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void _doInitialMove$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool canAttack$(class Actor* actor, bool allowInvulnerable) const;
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool checkSpawnRules$(bool);
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI int getArmorValue$() const;
+    MCAPI bool $checkSpawnRules(bool);
 
-    MCAPI float getMaxHeadXRot$();
+    MCAPI int $getArmorValue() const;
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI bool $shouldRender() const;
 
-    MCAPI std::unique_ptr<class BodyControl> initBodyControl$();
+    MCAPI void $_doInitialMove();
 
-    MCAPI bool isInWall$() const;
+    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI float $getMaxHeadXRot();
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $isInWall() const;
 
-    MCAPI bool shouldRender$() const;
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
-
-    MCAPI static std::shared_ptr<class AttributeModifier>& COVERED_ARMOR_MODIFIER();
-
-    MCAPI static class mce::UUID const& COVERED_ARMOR_MODIFIER_UUID();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

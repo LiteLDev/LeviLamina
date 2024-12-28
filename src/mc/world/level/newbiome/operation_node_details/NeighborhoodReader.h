@@ -13,4 +13,4 @@ public:
     NeighborhoodReader();
 };
 
-}; // namespace OperationNodeDetails
+} // namespace OperationNodeDetails

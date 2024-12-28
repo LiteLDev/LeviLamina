@@ -14,29 +14,62 @@ public:
     BytesDataInput();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BytesDataInput() = default;
-
     // vIndex: 1
-    virtual class Bedrock::Result<std::string> readStringResult();
+    virtual ::Bedrock::Result<::std::string> readStringResult() /*override*/;
 
     // vIndex: 2
-    virtual class Bedrock::Result<std::string> readLongStringResult();
+    virtual ::Bedrock::Result<::std::string> readLongStringResult() /*override*/;
+
+    // vIndex: 3
+    virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
+
+    // vIndex: 4
+    virtual ::Bedrock::Result<double> readDoubleResult() /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<uchar> readByteResult();
+    virtual ::Bedrock::Result<uchar> readByteResult() /*override*/;
 
+    // vIndex: 6
+    virtual ::Bedrock::Result<short> readShortResult() /*override*/;
+
+    // vIndex: 7
+    virtual ::Bedrock::Result<int> readIntResult() /*override*/;
+
+    // vIndex: 8
+    virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
+
+    // vIndex: 9
+    virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
+
+    // vIndex: 0
+    virtual ~BytesDataInput() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI class Bedrock::Result<uchar> readByteResult$();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<std::string> readLongStringResult$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<::std::string> $readStringResult();
 
-    MCAPI class Bedrock::Result<std::string> readStringResult$();
+    MCAPI ::Bedrock::Result<::std::string> $readLongStringResult();
 
+    MCAPI ::Bedrock::Result<float> $readFloatResult();
+
+    MCAPI ::Bedrock::Result<double> $readDoubleResult();
+
+    MCAPI ::Bedrock::Result<uchar> $readByteResult();
+
+    MCAPI ::Bedrock::Result<short> $readShortResult();
+
+    MCAPI ::Bedrock::Result<int> $readIntResult();
+
+    MCAPI ::Bedrock::Result<int64> $readLongLongResult();
     // NOLINTEND
 };

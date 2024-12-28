@@ -5,9 +5,22 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class StandingVehiclePostPositionPassengerSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorSetPositionRequestComponent;
+struct HorseFlagComponent;
+struct PassengerComponent;
+struct PositionPassengerRequestComponent;
+struct RenderPositionComponent;
+struct RenderRotationComponent;
+struct StandAnimationComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
+
+struct StandingVehiclePostPositionPassengerSystem {
 public:
     // prevent constructor by default
     StandingVehiclePostPositionPassengerSystem& operator=(StandingVehiclePostPositionPassengerSystem const&);
@@ -15,36 +28,37 @@ public:
     StandingVehiclePostPositionPassengerSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _impl(
-        class StrictEntityContext&,
-        struct PassengerComponent const&         passengerComponent,
-        struct ActorSetPositionRequestComponent& setPositionRequest,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct HorseFlag>>,
-            struct StandAnimationComponent const,
-            struct RenderRotationComponent const,
-            struct Include<struct VehicleComponent>,
-            struct RenderPositionComponent const> horseView
+        ::StrictEntityContext&,
+        ::PassengerComponent const&         passengerComponent,
+        ::ActorSetPositionRequestComponent& setPositionRequest,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::HorseFlagComponent>,
+            ::StandAnimationComponent const,
+            ::RenderRotationComponent const,
+            ::Include<::VehicleComponent>,
+            ::RenderPositionComponent const> horseView
     );
 
-    MCAPI static void _tick(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct PositionPassengerRequestComponent>,
-            struct PassengerComponent const,
-            struct ActorSetPositionRequestComponent> view,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct HorseFlag>>,
-            struct StandAnimationComponent const,
-            struct RenderRotationComponent const,
-            struct Include<struct VehicleComponent>,
-            struct RenderPositionComponent const> horseView
+    MCAPI static void _tickSingleEntity(
+        ::StrictEntityContext const& entityContext,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PositionPassengerRequestComponent>,
+            ::PassengerComponent const,
+            ::ActorSetPositionRequestComponent> view,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::HorseFlagComponent>,
+            ::StandAnimationComponent const,
+            ::RenderRotationComponent const,
+            ::Include<::VehicleComponent>,
+            ::RenderPositionComponent const> horseView
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

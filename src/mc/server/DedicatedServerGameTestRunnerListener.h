@@ -7,12 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
+struct GameTestReport;
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class IGameTestListener; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
 class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnk783d08;
+    ::ll::UntypedStorage<8, 168> mUnkc8cbaf;
+    ::ll::UntypedStorage<8, 8>   mUnk3c6b68;
+    ::ll::UntypedStorage<8, 8>   mUnkca4f45;
+    ::ll::UntypedStorage<8, 64>  mUnk79a256;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DedicatedServerGameTestRunnerListener& operator=(DedicatedServerGameTestRunnerListener const&);
@@ -20,58 +30,66 @@ public:
     DedicatedServerGameTestRunnerListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DedicatedServerGameTestRunnerListener() = default;
-
-    // vIndex: 1
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    // vIndex: 4
+    virtual void onTestStarted(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 2
-    virtual void onTestPassed(class gametest::BaseGameTestInstance& testInstance);
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 3
-    virtual void onTestFailed(class gametest::BaseGameTestInstance& testInstance);
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    // vIndex: 4
-    virtual void onTestStarted(class gametest::BaseGameTestInstance& testInstance);
-
-    // vIndex: 5
-    virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
-
-    // vIndex: 6
-    virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
-
+    // vIndex: 0
+    virtual ~DedicatedServerGameTestRunnerListener() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _addTestResult(
-        std::string const&                            testName,
-        std::string const&                            result,
-        std::optional<struct gametest::GameTestError> error
+    MCAPI DedicatedServerGameTestRunnerListener(
+        ::GameTestReport&                    report,
+        ::std::unordered_set<::std::string>& failedGameTests,
+        ::std::unordered_set<::std::string>& passedGameTests
     );
 
-    MCAPI static std::string _getTestNameWithRotation(class gametest::BaseGameTestInstance& testInstance);
-
+    MCAPI void _addTestResult(
+        ::std::string const&                       testName,
+        ::std::string const&                       result,
+        ::std::optional<::gametest::GameTestError> error
+    );
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(
+        ::GameTestReport&                    report,
+        ::std::unordered_set<::std::string>& failedGameTests,
+        ::std::unordered_set<::std::string>& passedGameTests
+    );
+    // NOLINTEND
 
-    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance& testInstance);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance& testInstance);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
+    // NOLINTEND
 
-    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance& testInstance);
-
-    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

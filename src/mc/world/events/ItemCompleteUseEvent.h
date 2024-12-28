@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ItemCompleteUseEvent {
+// auto generated inclusion list
+#include "mc/world/events/ItemChargeEvent.h"
+
+struct ItemCompleteUseEvent : public ::ItemChargeEvent {
 public:
     // prevent constructor by default
     ItemCompleteUseEvent& operator=(ItemCompleteUseEvent const&);
@@ -10,15 +13,14 @@ public:
     ItemCompleteUseEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ItemCompleteUseEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

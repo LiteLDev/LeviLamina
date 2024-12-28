@@ -8,71 +8,91 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class ActivationArguments; }
-namespace Bedrock { class IIslandCore; }
 // clang-format on
 
 namespace Bedrock {
 
 class AppIsland : public ::Bedrock::IIslandCore {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5bfdb3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     AppIsland& operator=(AppIsland const&);
     AppIsland(AppIsland const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AppIsland();
+    virtual ~AppIsland() /*override*/;
 
     // vIndex: 1
-    virtual ushort getId();
+    virtual ushort getId() /*override*/;
 
     // vIndex: 2
-    virtual bool start();
+    virtual bool start() /*override*/;
 
     // vIndex: 3
-    virtual bool suspend();
+    virtual bool suspend() /*override*/;
 
     // vIndex: 4
-    virtual bool resume();
+    virtual bool resume() /*override*/;
 
     // vIndex: 5
-    virtual bool stop();
+    virtual bool stop() /*override*/;
 
     // vIndex: 6
-    virtual void mainUpdate();
+    virtual void mainUpdate() /*override*/;
 
     // vIndex: 7
-    virtual void processActivationArguments(class Bedrock::ActivationArguments const& args);
-
-    MCAPI AppIsland();
-
+    virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AppIsland();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ushort getId$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ushort $getId();
 
-    MCAPI void mainUpdate$();
+    MCAPI bool $start();
 
-    MCAPI void processActivationArguments$(class Bedrock::ActivationArguments const& args);
+    MCAPI bool $suspend();
 
-    MCAPI bool resume$();
+    MCAPI bool $resume();
 
-    MCAPI bool start$();
+    MCAPI bool $stop();
 
-    MCAPI bool stop$();
+    MCAPI void $mainUpdate();
 
-    MCAPI bool suspend$();
+    MCAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

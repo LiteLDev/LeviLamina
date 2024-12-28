@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+// clang-format on
+
 class InspectBookshelfGoal : public ::BaseMoveToBlockGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk31e1aa;
+    ::ll::UntypedStorage<1, 1>  mUnk4292be;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InspectBookshelfGoal& operator=(InspectBookshelfGoal const&);
@@ -14,46 +26,55 @@ public:
     InspectBookshelfGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InspectBookshelfGoal() = default;
-
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
-
-    // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
-
-    // vIndex: 13
-    virtual bool _canReach(class BlockPos const& pos);
+    virtual void tick() /*override*/;
 
     // vIndex: 17
-    virtual bool findTargetBlock();
+    virtual bool findTargetBlock() /*override*/;
 
+    // vIndex: 11
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+
+    // vIndex: 7
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    // vIndex: 13
+    virtual bool _canReach(::BlockPos const& pos) /*override*/;
+
+    // vIndex: 0
+    virtual ~InspectBookshelfGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _canReach$(class BlockPos const& pos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void $tick();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $findTargetBlock();
 
-    MCAPI bool findTargetBlock$();
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void tick$();
+    MCAPI bool $_canReach(::BlockPos const& pos);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

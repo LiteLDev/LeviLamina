@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 #include "mc/world/level/block/actor/PistonState.h"
 
@@ -14,7 +14,6 @@
 class BlockPos;
 class BlockSource;
 class Vec3;
-namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -24,53 +23,76 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockPistonComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk93c73e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockPistonComponent& operator=(ScriptBlockPistonComponent const&);
     ScriptBlockPistonComponent(ScriptBlockPistonComponent const&);
     ScriptBlockPistonComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBlockPistonComponent() = default;
-
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>>
-    getAttachedBlocks();
-
-    MCAPI class Scripting::Result<std::vector<class Vec3>> getAttachedBlocksLocations();
-
-    MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks_V010();
-
-    MCAPI class Scripting::Result<bool> isExpanded();
-
-    MCAPI class Scripting::Result<bool> isExpanding();
-
-    MCAPI class Scripting::Result<bool> isMoving();
-
-    MCAPI class Scripting::Result<bool> isRetracted();
-
-    MCAPI class Scripting::Result<bool> isRetracting();
-
-    MCAPI class Scripting::Result<::PistonState> state();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
-    MCAPI static std::optional<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPistonComponent>>
-    tryCreate(class BlockSource& region, class BlockPos position, class Scripting::WeakLifetimeScope const& scope);
-
+    virtual ~ScriptBlockPistonComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
+    getAttachedBlocks();
 
-    MCAPI static char const* const& ComponentId();
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::Vec3>> getAttachedBlocksLocations();
 
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::BlockPos>> getAttachedBlocks_V010();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isExpanded();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isExpanding();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isMoving();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isRetracted();
+
+    MCAPI ::Scripting::Result_deprecated<bool> isRetracting();
+
+    MCAPI ::Scripting::Result_deprecated<::PistonState> state();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+
+    MCAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>>
+    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

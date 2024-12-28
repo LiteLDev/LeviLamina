@@ -2,80 +2,68 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
+namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentPlayerDestroyAfterEvent {
+struct ScriptBlockCustomComponentPlayerDestroyAfterEvent
+: public ::ScriptModuleMinecraft::ScriptBlockEvent,
+  public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
-    // ScriptBlockCustomComponentPlayerDestroyAfterEvent inner types declare
-    // clang-format off
-    struct IntermediateStorage;
-    // clang-format on
-
-    // ScriptBlockCustomComponentPlayerDestroyAfterEvent inner types define
-    struct IntermediateStorage {
-    public:
-        // prevent constructor by default
-        IntermediateStorage& operator=(IntermediateStorage const&);
-        IntermediateStorage(IntermediateStorage const&);
-        IntermediateStorage();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~IntermediateStorage();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkc121be;
+    ::ll::UntypedStorage<8, 32> mUnk6d1488;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentPlayerDestroyAfterEvent&
     operator=(ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
+    ScriptBlockCustomComponentPlayerDestroyAfterEvent(ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
     ScriptBlockCustomComponentPlayerDestroyAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptBlockCustomComponentPlayerDestroyAfterEvent(struct ScriptModuleMinecraft::
-                                                          ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
-
     MCAPI ScriptBlockCustomComponentPlayerDestroyAfterEvent(
-        struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent::IntermediateStorage const&
-                                                  eventData,
-        class Scripting::WeakLifetimeScope const& scope
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                                scope
     );
 
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
-
-    MCAPI static struct Scripting::ClassBinding bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent const&);
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI void* ctor$(
-        struct ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEvent::IntermediateStorage const&
-                                                  eventData,
-        class Scripting::WeakLifetimeScope const& scope
+    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    tryGetComponentsToExecute(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const& eventData
     );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerDestroyAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                                scope
+    );
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

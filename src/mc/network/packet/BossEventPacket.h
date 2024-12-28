@@ -5,60 +5,102 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
+#include "mc/world/actor/ai/util/BossBarOverlay.h"
+#include "mc/world/actor/ai/util/BossEventUpdateType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BossComponent;
+class RaidBossComponent;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
 
 class BossEventPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int const>             FLAG_DARKEN;
+    ::ll::TypedStorage<4, 4, int const>             FLAG_FOG;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mBossID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mPlayerID;
+    ::ll::TypedStorage<4, 4, ::BossEventUpdateType> mEventType;
+    ::ll::TypedStorage<8, 32, ::std::string>        mName;
+    ::ll::TypedStorage<4, 4, float>                 mHealthPercent;
+    ::ll::TypedStorage<4, 4, ::BossBarColor>        mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay>      mOverlay;
+    ::ll::TypedStorage<1, 1, uchar>                 mDarkenScreen;
+    ::ll::TypedStorage<1, 1, uchar>                 mCreateWorldFog;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BossEventPacket& operator=(BossEventPacket const&);
     BossEventPacket(BossEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BossEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI BossEventPacket();
-
-    MCAPI BossEventPacket(::BossEventUpdateType type, class RaidBossComponent& component);
-
-    MCAPI BossEventPacket(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
-
+    // vIndex: 0
+    virtual ~BossEventPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BossEventPacket();
 
-    MCAPI void* ctor$(::BossEventUpdateType type, class RaidBossComponent& component);
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::RaidBossComponent& component);
 
-    MCAPI void* ctor$();
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BossEventUpdateType type, ::RaidBossComponent& component);
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

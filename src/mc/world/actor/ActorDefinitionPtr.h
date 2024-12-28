@@ -2,37 +2,53 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinition;
+class ActorDefinitionGroup;
+// clang-format on
+
 class ActorDefinitionPtr {
 public:
-    // prevent constructor by default
-    ActorDefinitionPtr& operator=(ActorDefinitionPtr const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb8e0f6;
+    ::ll::UntypedStorage<8, 8> mUnk4098dc;
+    // NOLINTEND
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ActorDefinitionPtr();
 
-    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const& rhs);
+    MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
 
-    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup& group, class ActorDefinition& EntityDefinition);
+    MCAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
 
-    MCAPI class ActorDefinitionPtr& operator=(class ActorDefinitionPtr&& moved);
+    MCAPI ::ActorDefinitionPtr& operator=(::ActorDefinitionPtr const& rhs);
 
     MCAPI ~ActorDefinitionPtr();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ActorDefinitionGroup& group, class ActorDefinition& EntityDefinition);
+    MCAPI static ::ActorDefinitionPtr const& NONE();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ActorDefinitionPtr const& rhs);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    // NOLINTEND
 
-    MCAPI static class ActorDefinitionPtr const& NONE();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

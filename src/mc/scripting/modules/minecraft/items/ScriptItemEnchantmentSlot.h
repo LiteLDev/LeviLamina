@@ -8,7 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptItemEnchantmentSlot {
+struct ScriptItemEnchantmentSlot {
 public:
     // prevent constructor by default
     ScriptItemEnchantmentSlot& operator=(ScriptItemEnchantmentSlot const&);
@@ -16,10 +16,10 @@ public:
     ScriptItemEnchantmentSlot();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::Enchant::Slot> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Enchant::Slot> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

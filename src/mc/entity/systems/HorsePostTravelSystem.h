@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace HorsePostTravelSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createJumpResetSystem();
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createPostTravelSystem();
+namespace HorsePostTravelSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createJumpResetSystem();
+
+MCAPI ::TickingSystemWithInfo createPostTravelSystem();
 // NOLINTEND
 
-}; // namespace HorsePostTravelSystem
+} // namespace HorsePostTravelSystem

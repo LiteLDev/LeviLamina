@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class EntityContext;
+class HitResult;
+class IActorManagerConnector;
+class IGameplayUserManagerConnector;
+// clang-format on
+
 class HitResultWrapper {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnk1c34b7;
+    ::ll::UntypedStorage<8, 112> mUnk8defd0;
+    ::ll::UntypedStorage<8, 16>  mUnk41fb9b;
+    ::ll::UntypedStorage<8, 16>  mUnk9429f5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HitResultWrapper& operator=(HitResultWrapper const&);
@@ -10,20 +28,19 @@ public:
     HitResultWrapper();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class HitResult& getHitResult();
+    MCAPI void _onActorRemoved(::Actor const& actor);
 
-    MCAPI class HitResult& getLiquidHitResult();
+    MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
 
-    MCAPI void initialize(class ActorManager& actorManager, class GameplayUserManager& gameplayUserManager);
+    MCAPI ::HitResult& getHitResult();
 
-    // NOLINTEND
+    MCAPI ::HitResult& getLiquidHitResult();
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _onActorRemoved(class Actor const& actor);
-
-    MCAPI void _onGameplayUserRemoved(class EntityContext const& entity);
-
+    MCAPI void initialize(
+        ::IActorManagerConnector&        actorManagerConnector,
+        ::IGameplayUserManagerConnector& gameplayUserManagerConnector
+    );
     // NOLINTEND
 };

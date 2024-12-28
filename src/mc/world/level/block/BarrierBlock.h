@@ -3,19 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
 // clang-format on
 
 class BarrierBlock : public ::BlockLegacy {
@@ -26,35 +18,47 @@ public:
     BarrierBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BarrierBlock() = default;
+    virtual ~BarrierBlock() /*override*/;
 
     // vIndex: 25
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 127
-    virtual float getShadeBrightness(class Block const&) const;
-
-    MCAPI BarrierBlock(std::string const& nameId, int id);
-
+    // vIndex: 116
+    virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BarrierBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canConnect$(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI float getShadeBrightness$(class Block const&) const;
+    MCAPI float $getShadeBrightness(::Block const& block) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

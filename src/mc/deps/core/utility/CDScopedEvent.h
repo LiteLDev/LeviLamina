@@ -5,7 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
-class CDScopedEvent {
+struct CDScopedEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2> mUnk8d1227;
+    ::ll::UntypedStorage<2, 2> mUnk74c789;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CDScopedEvent& operator=(CDScopedEvent const&);
@@ -13,19 +20,22 @@ public:
     CDScopedEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CDScopedEvent(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+    MCAPI CDScopedEvent(::CrashDumpLogStringID tag, ::CrashDumpLogStringID tagStart, ::CrashDumpLogStringID tagEnd);
 
     MCAPI ~CDScopedEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(::CrashDumpLogStringID, ::CrashDumpLogStringID, ::CrashDumpLogStringID);
+    MCAPI void* $ctor(::CrashDumpLogStringID tag, ::CrashDumpLogStringID tagStart, ::CrashDumpLogStringID tagEnd);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

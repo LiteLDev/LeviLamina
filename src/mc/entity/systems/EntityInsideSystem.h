@@ -5,134 +5,176 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 #include "mc/entity/components/InsideBlockWithPosComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorOwnerComponent;
+class Block;
+class BlockPos;
+class FreezingComponent;
+class LocalConstBlockSource;
+class StrictEntityContext;
+class Vec2;
+class Vec3;
+struct AABBShapeComponent;
+struct ActorGameTypeComponent;
+struct BlockMovementSlowdownAppliedComponent;
+struct BlockMovementSlowdownMultiplierComponent;
+struct CactusBlockFlag;
+struct DepenetrationComponent;
+struct DimensionTypeComponent;
+struct EndPortalBlockFlag;
+struct ExternalDataInterface;
+struct FallDistanceComponent;
+struct HoneyBlockFlag;
+struct IgnoresEntityInsideFlagComponent;
+struct InsideBlockComponent;
+struct InsideBubbleColumnBlockComponent;
+struct InsideGenericBlockComponent;
+struct InsideOnewayBlockComponent;
+struct InsideWebBlockComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct MovementAbilitiesComponent;
+struct PowderSnowBlockFlag;
+struct StateVectorComponent;
+struct SweetBerryBushBlockFlag;
+struct TickingSystemWithInfo;
+struct WaterlilyBlockFlag;
+// clang-format on
+
 namespace EntityInsideSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createCleanupSystem();
+MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCAPI struct TickingSystemWithInfo createSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-MCAPI bool isAir(class Block const& block);
+MCAPI bool isAir(::Block const& block);
 
-MCAPI bool isSlidingDown(
-    class BlockPos const& blockPos,
-    class Vec3 const&     entityPos,
-    class Vec3 const&     entityPosDelta,
-    class Vec2 const&     aabbDim
-);
+MCAPI bool
+isSlidingDown(::BlockPos const& blockPos, ::Vec3 const& entityPos, ::Vec3 const& entityPosDelta, ::Vec2 const& aabbDim);
 
-MCAPI void onBoatAboveBubbleColumn(class Actor& actor);
+MCAPI void onBoatAboveBubbleColumn(::Actor& actor);
 
 MCAPI void tickBoatInsideBubbleColumnBlock(
-    struct InsideBubbleColumnBlockComponent const& insideBlocks,
-    struct FallDistanceComponent&                  fallDistanceComponent,
-    struct StateVectorComponent&                   svc,
-    class ActorOwnerComponent&                     actorOwnerComponent
+    ::InsideBubbleColumnBlockComponent const& insideBlocks,
+    ::FallDistanceComponent&                  fallDistanceComponent,
+    ::StateVectorComponent&                   svc,
+    ::ActorOwnerComponent&                    actorOwnerComponent
 );
 
 MCAPI void tickInsideBubbleColumnBlock(
-    struct InsideBubbleColumnBlockComponent const&              insideBlocks,
-    struct FallDistanceComponent&                               fallDistanceComponent,
-    struct StateVectorComponent&                                svc,
-    class optional_ref<struct MovementAbilitiesComponent const> abilitiesComponent
+    ::InsideBubbleColumnBlockComponent const&          insideBlocks,
+    ::FallDistanceComponent&                           fallDistanceComponent,
+    ::StateVectorComponent&                            svc,
+    ::optional_ref<::MovementAbilitiesComponent const> abilitiesComponent
 );
 
 MCAPI void tickInsideCactusBlock(
-    struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag> const& cactus,
-    struct InsideBlockComponent&                                              insideBlock
+    ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag> const& cactus,
+    ::InsideBlockComponent&                                         insideBlock
 );
 
 MCAPI void tickInsideHoneyBlock(
-    struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag> const& insideHoneyBlockComponent,
-    struct AABBShapeComponent const&                                         aabbShapeComponent,
-    struct StateVectorComponent&                                             stateVectorComponent,
-    struct FallDistanceComponent&                                            fallDistanceComponent
+    ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag> const& insideHoneyBlockComponent,
+    ::AABBShapeComponent const&                                    aabbShapeComponent,
+    ::StateVectorComponent&                                        stateVectorComponent,
+    ::FallDistanceComponent&                                       fallDistanceComponent
+);
+
+MCAPI void tickInsideOnewayBlock(
+    ::InsideOnewayBlockComponent const& insideOnewayBlockComponent,
+    ::DepenetrationComponent&           depenetrationComponent
 );
 
 MCAPI void tickInsidePowderSnowBlock(
-    class StrictEntityContext const& entity,
-    class EntityModifier<
-        struct BlockMovementSlowdownAppliedComponent,
-        class FreezingComponent,
-        struct IgnoresEntityInsideFlagComponent,
-        struct InsideBubbleColumnBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-        struct InsideGenericBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-        struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-        class FlagComponent<struct WebBlockTag>> modifier
+    ::StrictEntityContext const& entity,
+    ::EntityModifier<
+        ::BlockMovementSlowdownAppliedComponent,
+        ::FreezingComponent,
+        ::IgnoresEntityInsideFlagComponent,
+        ::InsideBubbleColumnBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+        ::InsideGenericBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+        ::InsideOnewayBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+        ::InsideWebBlockComponent> modifier
 );
 
 MCAPI void tickInsideWaterLilyBlock(
-    struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
-    struct StateVectorComponent&                                         stateVectorComponent
+    ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
+    ::StateVectorComponent&                                    stateVectorComponent
 );
 
 MCAPI void tickMovementSlowdown(
-    class StrictEntityContext const&                 entity,
-    struct BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
-    class EntityModifier<
-        struct BlockMovementSlowdownAppliedComponent,
-        class FreezingComponent,
-        struct IgnoresEntityInsideFlagComponent,
-        struct InsideBubbleColumnBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-        struct InsideGenericBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-        struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-        class FlagComponent<struct WebBlockTag>> modifier,
-    class Vec3                                   multiplicationModifier
+    ::StrictEntityContext const&                entity,
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::EntityModifier<
+        ::BlockMovementSlowdownAppliedComponent,
+        ::FreezingComponent,
+        ::IgnoresEntityInsideFlagComponent,
+        ::InsideBubbleColumnBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+        ::InsideGenericBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+        ::InsideOnewayBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+        ::InsideWebBlockComponent> modifier,
+    ::Vec3                         multiplicationModifier
 );
 
 MCAPI void tickSetEntityInside(
-    class StrictEntityContext const&     entity,
-    struct AABBShapeComponent const&     aabbShape,
-    struct DimensionTypeComponent const& dimension,
-    struct InsideBlockComponent&         insideBlock,
-    class EntityModifier<
-        struct BlockMovementSlowdownAppliedComponent,
-        class FreezingComponent,
-        struct IgnoresEntityInsideFlagComponent,
-        struct InsideBubbleColumnBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-        struct InsideGenericBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-        struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-        class FlagComponent<struct WebBlockTag>>        modifier,
-    struct LocalConstBlockSourceFactoryComponent const& factory,
-    class LocalConstBlockSource&                        localBlockSource
+    ::StrictEntityContext const&    entity,
+    ::AABBShapeComponent const&     aabbShape,
+    ::DimensionTypeComponent const& dimension,
+    ::InsideBlockComponent&         insideBlock,
+    ::EntityModifier<
+        ::BlockMovementSlowdownAppliedComponent,
+        ::FreezingComponent,
+        ::IgnoresEntityInsideFlagComponent,
+        ::InsideBubbleColumnBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+        ::InsideGenericBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+        ::InsideOnewayBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+        ::InsideWebBlockComponent>                 modifier,
+    ::LocalConstBlockSourceFactoryComponent const& factory,
+    ::LocalConstBlockSource&                       localBlockSource
 );
 
 MCAPI void tickSpectatorSkipEntityInside(
-    class StrictEntityContext const&     entity,
-    struct ActorGameTypeComponent const& gameType,
-    class EntityModifier<
-        struct BlockMovementSlowdownAppliedComponent,
-        class FreezingComponent,
-        struct IgnoresEntityInsideFlagComponent,
-        struct InsideBubbleColumnBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-        struct InsideGenericBlockComponent,
-        struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-        struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-        struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-        class FlagComponent<struct WebBlockTag>> modifier,
-    struct ExternalDataInterface const&          externalData
+    ::StrictEntityContext const&    entity,
+    ::ActorGameTypeComponent const& gameType,
+    ::EntityModifier<
+        ::BlockMovementSlowdownAppliedComponent,
+        ::FreezingComponent,
+        ::IgnoresEntityInsideFlagComponent,
+        ::InsideBubbleColumnBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+        ::InsideGenericBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+        ::InsideOnewayBlockComponent,
+        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+        ::InsideWebBlockComponent> modifier,
+    ::ExternalDataInterface const& externalData
 );
 // NOLINTEND
 
-}; // namespace EntityInsideSystem
+} // namespace EntityInsideSystem

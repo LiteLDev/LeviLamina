@@ -4,6 +4,10 @@
 
 namespace br::worldgen::HeightmapProjection {
 
-enum class Type {};
-
+enum class Type : uchar {
+    None           = 0,
+    WorldSurfaceWg = 1,
+    OceanFloorWg   = 2,
 };
+
+}

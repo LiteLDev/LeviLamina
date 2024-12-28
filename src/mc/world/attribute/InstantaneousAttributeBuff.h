@@ -6,6 +6,11 @@
 #include "mc/world/attribute/AttributeBuff.h"
 #include "mc/world/attribute/AttributeBuffType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+// clang-format on
+
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:
     // prevent constructor by default
@@ -14,36 +19,51 @@ public:
     InstantaneousAttributeBuff();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InstantaneousAttributeBuff();
+    virtual ~InstantaneousAttributeBuff() /*override*/;
 
     // vIndex: 1
-    virtual bool isInstantaneous() const;
+    virtual bool isInstantaneous() const /*override*/;
 
     // vIndex: 2
-    virtual bool isSerializable() const;
-
-    MCAPI InstantaneousAttributeBuff(float amount, class ActorDamageSource const& source);
-
-    MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
-
+    virtual bool isSerializable() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI InstantaneousAttributeBuff(float amount, ::ActorDamageSource const& source);
 
-    MCAPI void* ctor$(float amount, ::AttributeBuffType type);
+    MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
+    // NOLINTEND
 
-    MCAPI void* ctor$(float amount, class ActorDamageSource const& source);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(float amount, ::ActorDamageSource const& source);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(float amount, ::AttributeBuffType type);
+    // NOLINTEND
 
-    MCAPI bool isInstantaneous$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isSerializable$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInstantaneous() const;
 
+    MCAPI bool $isSerializable() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

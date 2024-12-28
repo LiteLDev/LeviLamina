@@ -14,32 +14,48 @@ namespace Puv {
 
 class VersionRange {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnk1a868c;
+    ::ll::UntypedStorage<8, 112> mUnk7084e3;
+    ::ll::UntypedStorage<1, 1>   mUnkd68461;
+    ::ll::UntypedStorage<1, 1>   mUnk9d6c21;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VersionRange& operator=(VersionRange const&);
     VersionRange();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI VersionRange(class Puv::VersionRange const&);
+    MCAPI VersionRange(::Puv::VersionRange&&);
 
-    MCAPI VersionRange(class SemVersion min, class SemVersion max, ::Puv::RangeType type);
+    MCAPI VersionRange(::Puv::VersionRange const&);
 
-    MCAPI bool contains(class SemVersion const& v) const;
+    MCAPI VersionRange(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
+
+    MCAPI bool contains(::SemVersion const& v) const;
 
     MCAPI ~VersionRange();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Puv::VersionRange const&);
+    MCAPI void* $ctor(::Puv::VersionRange&&);
 
-    MCAPI void* ctor$(class SemVersion min, class SemVersion max, ::Puv::RangeType type);
+    MCAPI void* $ctor(::Puv::VersionRange const&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::SemVersion const& min, ::SemVersion const& max, ::Puv::RangeType type);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Puv
+} // namespace Puv

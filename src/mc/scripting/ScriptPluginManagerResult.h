@@ -4,10 +4,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptPluginResult;
+struct PackIdVersion;
 namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 class ScriptPluginManagerResult {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3542f8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPluginManagerResult& operator=(ScriptPluginManagerResult const&);
@@ -15,22 +23,23 @@ public:
     ScriptPluginManagerResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class ScriptPluginResult&
-    getOrCreatePluginResults(struct PackIdVersion packId, struct Scripting::ModuleDescriptor const& descriptor);
+    MCAPI ::ScriptPluginResult&
+    getOrCreatePluginResults(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+
+    MCAPI ::std::vector<::ScriptPluginResult> const& getResults() const;
 
     MCAPI void logMessages() const;
 
     MCAPI void logPlugins() const;
 
     MCAPI ~ScriptPluginManagerResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

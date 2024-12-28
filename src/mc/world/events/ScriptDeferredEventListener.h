@@ -10,55 +10,74 @@ public:
     ScriptDeferredEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool onFlushBlockCustomComponentAfterEvents();
+    // vIndex: 0
+    virtual ~ScriptDeferredEventListener();
 
-    MCVAPI bool onFlushEditorDataStoreAfterEvents();
+    // vIndex: 1
+    virtual bool onRunSystemTick();
 
-    MCVAPI bool onFlushEditorExtensionContextAfterEvents();
+    // vIndex: 2
+    virtual bool onFlushWorldAfterEvents();
 
-    MCVAPI bool onFlushItemCustomComponentAfterEvents();
+    // vIndex: 3
+    virtual bool onFlushSystemAfterEvents();
 
-    MCVAPI bool onFlushSystemAfterEvents();
+    // vIndex: 4
+    virtual bool onFlushEditorExtensionContextAfterEvents();
 
-    MCVAPI bool onFlushWorldAfterEvents();
+    // vIndex: 5
+    virtual bool onFlushBlockCustomComponentAfterEvents();
 
-    MCVAPI void onLevelTickEnd();
+    // vIndex: 6
+    virtual bool onFlushEditorDataStoreAfterEvents();
 
-    MCVAPI void onPostFlushAfterEvents();
+    // vIndex: 7
+    virtual bool onFlushItemCustomComponentAfterEvents();
 
-    MCVAPI void onPreFlushAfterEvents();
+    // vIndex: 8
+    virtual void onPreFlushAfterEvents();
 
-    MCVAPI void onRunAsyncJobs();
+    // vIndex: 9
+    virtual void onPostFlushAfterEvents();
 
-    MCVAPI bool onRunSystemTick();
+    // vIndex: 10
+    virtual void onScriptTickStart();
 
+    // vIndex: 11
+    virtual void onScriptTickEnd();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI bool onFlushBlockCustomComponentAfterEvents$();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool onFlushEditorDataStoreAfterEvents$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $onRunSystemTick();
 
-    MCAPI bool onFlushEditorExtensionContextAfterEvents$();
+    MCAPI bool $onFlushWorldAfterEvents();
 
-    MCAPI bool onFlushItemCustomComponentAfterEvents$();
+    MCAPI bool $onFlushSystemAfterEvents();
 
-    MCAPI bool onFlushSystemAfterEvents$();
+    MCAPI bool $onFlushEditorExtensionContextAfterEvents();
 
-    MCAPI bool onFlushWorldAfterEvents$();
+    MCAPI bool $onFlushBlockCustomComponentAfterEvents();
 
-    MCAPI void onLevelTickEnd$();
+    MCAPI bool $onFlushEditorDataStoreAfterEvents();
 
-    MCAPI void onPostFlushAfterEvents$();
+    MCAPI bool $onFlushItemCustomComponentAfterEvents();
 
-    MCAPI void onPreFlushAfterEvents$();
+    MCAPI void $onPreFlushAfterEvents();
 
-    MCAPI void onRunAsyncJobs$();
+    MCAPI void $onPostFlushAfterEvents();
 
-    MCAPI bool onRunSystemTick$();
+    MCAPI void $onScriptTickStart();
 
+    MCAPI void $onScriptTickEnd();
     // NOLINTEND
 };

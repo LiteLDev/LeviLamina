@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class ITreeFeature : public ::IFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnkb57e2f;
+    ::ll::UntypedStorage<8, 8>   mUnka20747;
+    ::ll::UntypedStorage<8, 8>   mUnk986fde;
+    ::ll::UntypedStorage<8, 8>   mUnk4eed88;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ITreeFeature& operator=(ITreeFeature const&);
@@ -13,26 +30,32 @@ public:
     ITreeFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ~ITreeFeature();
+    // vIndex: 0
+    virtual ~ITreeFeature() /*override*/;
 
+    // vIndex: 1
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const = 0;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos> _place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI ::std::optional<::BlockPos>
+    _place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

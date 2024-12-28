@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class IPositionalRandomFactory;
+// clang-format on
+
 class IRandom {
 public:
     // prevent constructor by default
@@ -10,15 +15,16 @@ public:
     IRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IRandom();
 
-    // vIndex: 1
+    // vIndex: 2
     virtual int nextInt() = 0;
 
-    // vIndex: 2
-    virtual int nextInt(int n) = 0;
+    // vIndex: 1
+    virtual int nextInt(int) = 0;
 
     // vIndex: 3
     virtual int64 nextLong() = 0;
@@ -36,24 +42,30 @@ public:
     virtual double nextGaussianDouble() = 0;
 
     // vIndex: 8
-    virtual void consumeCount(uint count) = 0;
+    virtual void consumeCount(uint) = 0;
 
     // vIndex: 9
-    virtual std::unique_ptr<class IRandom> fork() = 0;
+    virtual ::std::unique_ptr<::IRandom> fork() = 0;
 
     // vIndex: 10
-    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-
+    virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

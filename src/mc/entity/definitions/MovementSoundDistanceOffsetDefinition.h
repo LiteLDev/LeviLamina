@@ -12,16 +12,23 @@ namespace JsonUtil { class EmptyClass; }
 
 struct MovementSoundDistanceOffsetDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk869e41;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MovementSoundDistanceOffsetDefinition& operator=(MovementSoundDistanceOffsetDefinition const&);
     MovementSoundDistanceOffsetDefinition(MovementSoundDistanceOffsetDefinition const&);
     MovementSoundDistanceOffsetDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct MovementSoundDistanceOffsetDefinition>>& root);
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<
+                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MovementSoundDistanceOffsetDefinition>>& root
+    );
     // NOLINTEND
 };

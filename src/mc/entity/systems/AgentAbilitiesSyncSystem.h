@@ -6,9 +6,20 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 
-class AgentAbilitiesSyncSystem {
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class LevelComponent;
+class StrictEntityContext;
+struct AbilitiesDirtyComponent;
+struct ActorTickedComponent;
+struct PlayerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+class AgentAbilitiesSyncSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
     AgentAbilitiesSyncSystem& operator=(AgentAbilitiesSyncSystem const&);
@@ -16,20 +27,31 @@ public:
     AgentAbilitiesSyncSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createAgentAbilitiesSyncSystem();
+    // vIndex: 0
+    virtual ~AgentAbilitiesSyncSystem() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
 
     MCAPI static void tick(
-        class ViewT<
-            class StrictEntityContext,
-            class ActorOwnerComponent,
-            class FlagComponent<struct PlayerComponentFlag>,
-            struct Include<
-                class FlagComponent<struct ActorTickedFlag> const,
-                class FlagComponent<struct AbilitiesDirtyFlag>>>             view,
-        class ViewT<class StrictEntityContext, class LevelComponent>         levelView,
-        class EntityModifier<class FlagComponent<struct AbilitiesDirtyFlag>> modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorOwnerComponent,
+            ::PlayerComponent,
+            ::Include<::ActorTickedComponent const, ::AbilitiesDirtyComponent>> view,
+        ::ViewT<::StrictEntityContext, ::LevelComponent>                        levelView,
+        ::EntityModifier<::AbilitiesDirtyComponent>                             modifier
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

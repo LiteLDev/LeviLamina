@@ -5,14 +5,15 @@
 // auto generated inclusion list
 #include "mc/world/actor/agent/agent_commands/Command.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace AgentCommands { class Command; }
-// clang-format on
-
 namespace AgentCommands {
 
 class GetItemDetailsCommand : public ::AgentCommands::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 152> mUnk61b09b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GetItemDetailsCommand& operator=(GetItemDetailsCommand const&);
@@ -20,33 +21,42 @@ public:
     GetItemDetailsCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GetItemDetailsCommand() = default;
-
     // vIndex: 1
-    virtual void execute();
+    virtual void execute() /*override*/;
 
     // vIndex: 2
-    virtual bool isDone();
+    virtual bool isDone() /*override*/;
 
     // vIndex: 4
-    virtual void fireCommandDoneEvent();
+    virtual void fireCommandDoneEvent() /*override*/;
 
+    // vIndex: 0
+    virtual ~GetItemDetailsCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void execute$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute();
 
-    MCAPI void fireCommandDoneEvent$();
+    MCAPI bool $isDone();
 
-    MCAPI bool isDone$();
+    MCAPI void $fireCommandDoneEvent();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace AgentCommands
+} // namespace AgentCommands

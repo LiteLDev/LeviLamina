@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UpdateAttributesSystem {
+// auto generated forward declare list
+// clang-format off
+struct AttributesComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct UpdateAttributesSystem {
 public:
     // prevent constructor by default
     UpdateAttributesSystem& operator=(UpdateAttributesSystem const&);
@@ -10,12 +16,12 @@ public:
     UpdateAttributesSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct AttributesComponent copyMovementAttributes(struct AttributesComponent const& attributes);
+    MCAPI static ::AttributesComponent copyMovementAttributes(::AttributesComponent const& attributes);
 
-    MCAPI static struct TickingSystemWithInfo createProcessRequestSystem();
+    MCAPI static ::TickingSystemWithInfo createProcessRequestSystem();
 
-    MCAPI static struct TickingSystemWithInfo createUpdateSystem();
-
+    MCAPI static ::TickingSystemWithInfo createUpdateSystem();
     // NOLINTEND
 };

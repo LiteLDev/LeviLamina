@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/storage/AllExperiments.h"
+#include "mc/resources/JsonBetaState.h"
 
 // auto generated forward declare list
 // clang-format off
+class CerealDocumentUpgrader;
+class IPackLoadContext;
+class ItemComponent;
+class SemVersion;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -21,32 +25,52 @@ public:
     // CerealItemComponentFactory inner types define
     struct ComponentMetadata {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnkb980e4;
+        ::ll::UntypedStorage<8, 24>  mUnkab866b;
+        ::ll::UntypedStorage<8, 120> mUnk144f3a;
+        ::ll::UntypedStorage<8, 120> mUnkd0f997;
+        ::ll::UntypedStorage<8, 24>  mUnk236f7f;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         ComponentMetadata();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI ComponentMetadata(struct CerealItemComponentFactory::ComponentMetadata const&);
+        MCAPI ComponentMetadata(::CerealItemComponentFactory::ComponentMetadata const&);
 
-        MCAPI struct CerealItemComponentFactory::ComponentMetadata&
-        operator=(struct CerealItemComponentFactory::ComponentMetadata&&);
+        MCAPI ::CerealItemComponentFactory::ComponentMetadata&
+        operator=(::CerealItemComponentFactory::ComponentMetadata&&);
 
-        MCAPI struct CerealItemComponentFactory::ComponentMetadata&
-        operator=(struct CerealItemComponentFactory::ComponentMetadata const&);
+        MCAPI ::CerealItemComponentFactory::ComponentMetadata&
+        operator=(::CerealItemComponentFactory::ComponentMetadata const&);
 
         MCAPI ~ComponentMetadata();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct CerealItemComponentFactory::ComponentMetadata const&);
+        MCAPI void* $ctor(::CerealItemComponentFactory::ComponentMetadata const&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64>  mUnk37c69b;
+    ::ll::UntypedStorage<8, 112> mUnk533ef0;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -55,55 +79,43 @@ public:
     CerealItemComponentFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<class ItemComponent>
-    constructItemComponent(std::string const& name, struct cereal::ReflectionCtx const& ctx);
+    MCAPI static void
+    addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static ::std::shared_ptr<::ItemComponent>
+    constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static ::CerealItemComponentFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static void deprecateComponentStartingFromVersion(
-        std::string const&                  name,
-        class SemVersion                    deprecatedVersion,
-        struct cereal::ReflectionCtx const& ctx
+        ::std::string const&           name,
+        ::SemVersion                   deprecatedVersion,
+        ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static std::optional<class SemVersion>
-    getReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const& ctx);
+    MCAPI static ::std::optional<::SemVersion>
+    getReleasedMinFormatVersionForAnyComponent(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static bool isComponentBasedItemSchema(
-        class SemVersion const&             formatVersion,
-        class Json::Value const&            itemData,
-        struct cereal::ReflectionCtx const& ctx
+        ::SemVersion const&            formatVersion,
+        ::Json::Value const&           itemData,
+        ::cereal::ReflectionCtx const& ctx
     );
+
+    MCAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void
+    updateReleasedMinFormatVersionForAnyComponentIfLower(::CerealItemComponentFactory& instance, ::SemVersion version);
 
     MCAPI static bool validateCerealComponent(
-        std::string                         componentName,
-        class SemVersion const&             engineVersion,
-        bool                                isBaseGamePack,
-        class Experiments const&            experiments,
-        struct cereal::ReflectionCtx const& ctx
+        ::std::string                  componentName,
+        ::SemVersion const&            documentVersion,
+        ::IPackLoadContext const&      packLoadContext,
+        ::cereal::ReflectionCtx const& ctx,
+        bool                           forBetaParsing,
+        ::JsonBetaState                canUseBeta
     );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::vector<::AllExperiments> getComponentMissingToggles(
-        struct CerealItemComponentFactory::ComponentMetadata const& data,
-        class Experiments const&                                    experiments
-    );
-
-    MCAPI static std::optional<
-        std::reference_wrapper<std::unordered_map<std::string, struct CerealItemComponentFactory::ComponentMetadata>>>
-    getPropRegisteredComponents(struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI static std::optional<std::reference_wrapper<class SemVersion>>
-    getPropReleasedMinFormatVersionForAnyComponent(struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI static void initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI static void updateReleasedMinFormatVersionForAnyComponentIfLower(
-        class SemVersion                    version,
-        struct cereal::ReflectionCtx const& ctx
-    );
-
     // NOLINTEND
 };

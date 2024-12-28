@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StartGlidingIntentSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct StartGlidingIntentSystem {
 public:
     // prevent constructor by default
     StartGlidingIntentSystem& operator=(StartGlidingIntentSystem const&);
@@ -10,8 +15,8 @@ public:
     StartGlidingIntentSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

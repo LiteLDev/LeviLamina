@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Level;
+class Player;
+struct LevelNotificationEvent;
+// clang-format on
+
 class LevelEventListener {
 public:
     // prevent constructor by default
@@ -13,43 +21,64 @@ public:
     LevelEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const& event);
+    // vIndex: 0
+    virtual ~LevelEventListener();
 
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);
+    // vIndex: 1
+    virtual ::EventResult onLevelInitialized(::Level& level);
 
-    MCVAPI ::EventResult onLevelInitialized(class Level& level);
+    // vIndex: 2
+    virtual ::EventResult onLevelAddedPlayer(::Player& player);
 
-    MCVAPI ::EventResult onLevelRemovedActor(class Actor& actor);
+    // vIndex: 3
+    virtual ::EventResult onLevelRemovedPlayer(::Player&);
 
-    MCVAPI ::EventResult onLevelRemovedPlayer(class Level& level, class Player& player);
+    // vIndex: 4
+    virtual ::EventResult onLevelRemovedActor(::Actor& actor);
 
-    MCVAPI ::EventResult onLevelTick(class Level&);
+    // vIndex: 5
+    virtual ::EventResult onLevelTick(::Level&);
 
-    MCVAPI ::EventResult onLevelTickStart(class Level&);
+    // vIndex: 6
+    virtual ::EventResult onLevelTickStart(::Level&);
 
-    MCVAPI ::EventResult onLevelWeatherChange(std::string const&, bool, bool, bool, bool);
+    // vIndex: 7
+    virtual ::EventResult onLevelTickEnd(::Level&);
 
+    // vIndex: 8
+    virtual ::EventResult onLevelWeatherChange(::std::string const&, bool, bool, bool, bool);
+
+    // vIndex: 9
+    virtual ::EventResult onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::EventResult onEvent$(struct LevelNotificationEvent const& event);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onLevelAddedPlayer$(class Level& level, class Player& player);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onLevelInitialized(::Level& level);
 
-    MCAPI ::EventResult onLevelInitialized$(class Level& level);
+    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCAPI ::EventResult onLevelRemovedActor$(class Actor& actor);
+    MCAPI ::EventResult $onLevelRemovedPlayer(::Player&);
 
-    MCAPI ::EventResult onLevelRemovedPlayer$(class Level& level, class Player& player);
+    MCAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
-    MCAPI ::EventResult onLevelTick$(class Level&);
+    MCAPI ::EventResult $onLevelTick(::Level&);
 
-    MCAPI ::EventResult onLevelTickStart$(class Level&);
+    MCAPI ::EventResult $onLevelTickStart(::Level&);
 
-    MCAPI ::EventResult onLevelWeatherChange$(std::string const&, bool, bool, bool, bool);
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
 
+    MCAPI ::EventResult $onLevelWeatherChange(::std::string const&, bool, bool, bool, bool);
+
+    MCAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
 };

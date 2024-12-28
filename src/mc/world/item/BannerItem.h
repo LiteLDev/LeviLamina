@@ -3,21 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
+#include "mc/world/item/Rarity.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BannerPattern;
+class BlockPos;
+class CompoundTag;
+class InteractionResult;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Vec3;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BannerItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk11acdc;
+    ::ll::UntypedStorage<8, 8> mUnkb3ce3d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BannerItem& operator=(BannerItem const&);
@@ -25,69 +37,94 @@ public:
     BannerItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BannerItem() = default;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
-    // vIndex: 42
-    virtual bool isWearableThroughLootTable(class CompoundTag const* userData) const;
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 43
+    virtual ::Rarity getRarity(::ItemStackBase const& stack) const /*override*/;
+
+    // vIndex: 52
     virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    // vIndex: 45
+    virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 92
-    virtual void fixupCommon(class ItemStackBase& item) const;
+    // vIndex: 97
+    virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
-
-    MCAPI BannerItem(std::string const& name, int id);
-
-    MCAPI static std::vector<std::pair<gsl::not_null<class BannerPattern const*>, ::ItemColor>>
-    getPatternAndColorPairsFromItemStack(class ItemStackBase const& item);
-
+    // vIndex: 0
+    virtual ~BannerItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BannerItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
+    getPatternAndColorPairsFromItemStack(::ItemStackBase const& item);
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI void fixupCommon$(class ItemStackBase& item) const;
+    MCAPI bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
 
-    MCAPI bool isValidAuxValue$(int auxValue) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+    // NOLINTEND
 
-    MCAPI bool isWearableThroughLootTable$(class CompoundTag const* userData) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

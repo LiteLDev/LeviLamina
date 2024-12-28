@@ -7,7 +7,8 @@
 #include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/FileType.h"
-#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/file/file_system/FileSystemImpl.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,12 +19,11 @@ namespace Core { class FlatFileManifestTracker; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
-namespace Core { struct ExcludedPath; }
 // clang-format on
 
 namespace Core {
 
-class FileSystem_windows {
+class FileSystem_windows : public ::Core::FileSystemImpl {
 public:
     // prevent constructor by default
     FileSystem_windows& operator=(FileSystem_windows const&);
@@ -31,353 +31,150 @@ public:
     FileSystem_windows();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FileSystem_windows() = default;
-
-    // vIndex: 1
-    virtual class Core::Result getLastModificationTime(class Core::Path const& entryPath, int64* lastModificationTime);
-
-    // vIndex: 2
-    virtual class Core::Result
-    copyTimeAndAccessRights(class Core::Path const& sourceFilePath, class Core::Path const& targetFilePath);
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5
-    virtual void __unk_vfn_5();
-
-    // vIndex: 6
-    virtual void __unk_vfn_6();
-
     // vIndex: 7
-    virtual class Core::Result _openFile(
-        std::unique_ptr<class Core::FileImpl>&,
-        class Core::Path const&,
-        class Core::FileOpenMode,
-        ::Core::FileBufferingMode
-    );
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
+        ::Core::Path const&                  filename,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
+    ) /*override*/;
 
     // vIndex: 8
-    virtual bool _fileExists(class Core::Path const&);
+    virtual bool _fileExists(::Core::Path const& filePath) /*override*/;
 
     // vIndex: 9
-    virtual class Core::Result _deleteFile(class Core::Path const&);
+    virtual ::Core::Result _deleteFile(::Core::Path const& path) /*override*/;
 
     // vIndex: 10
-    virtual class Core::Result _getFileSize(class Core::Path const&, uint64*);
+    virtual ::Core::Result _getFileSize(::Core::Path const& filePath, uint64* pFileSizeOut) /*override*/;
 
     // vIndex: 11
-    virtual class Core::Result _renameFile(class Core::Path const&, class Core::Path const&);
-
-    // vIndex: 12
-    virtual class Core::Result _createEmptyFile(class Core::Path const& fileName);
-
-    // vIndex: 13
-    virtual class Core::Result
-    _copyFile(class Core::Path const& sourceFileName, class Core::Path const& targetFileName);
-
-    // vIndex: 14
-    virtual class Core::Result _copyFileWithLimit(
-        class Core::Path const& sourceFileName,
-        class Core::Path const& targetFileName,
-        uint64                  startPosition,
-        uint64&                 outBytesWritten,
-        uint64&                 outBytesRemaining
-    );
-
-    // vIndex: 15
-    virtual class Core::Result _readFileData(class Core::Path const& filePath, std::vector<uchar>& data);
+    virtual ::Core::Result
+    _renameFile(::Core::Path const& sourceFilePath, ::Core::Path const& targetFilePath) /*override*/;
 
     // vIndex: 16
-    virtual class Core::Result _createOneDirectory(class Core::Path const&);
-
-    // vIndex: 17
-    virtual class Core::Result _createOneDirectoryIfNotExisting(class Core::Path const& directoryPath);
-
-    // vIndex: 18
-    virtual class Core::Result _createDirectoryRecursively(class Core::Path const& directoryPath);
-
-    // vIndex: 19
-    virtual bool _directoryExists(class Core::Path const&);
+    virtual ::Core::Result _createOneDirectory(::Core::Path const& directoryPath) /*override*/;
 
     // vIndex: 20
-    virtual class Core::Result _deleteEmptyDirectory(class Core::Path const&);
+    virtual ::Core::Result _deleteEmptyDirectory(::Core::Path const& directoryPath) /*override*/;
 
-    // vIndex: 21
-    virtual class Core::Result _deleteDirectoryAndContentsRecursively(class Core::Path const& directoryPath);
-
-    // vIndex: 22
-    virtual class Core::Result _deleteDirectoryContentsRecursively(class Core::Path const& directoryPath);
-
-    // vIndex: 23
-    virtual class Core::Result
-    _deleteRecursively(class Core::Path const& directoryPath, ::Core::FileType deleteFileType);
+    // vIndex: 19
+    virtual bool _directoryExists(::Core::Path const& directoryPath) /*override*/;
 
     // vIndex: 24
-    virtual class Core::Result _renameDirectory(class Core::Path const&, class Core::Path const&);
+    virtual ::Core::Result
+    _renameDirectory(::Core::Path const& sourceDirectoryPath, ::Core::Path const& targetDirectoryPath) /*override*/;
 
     // vIndex: 25
-    virtual class Core::Result
-    _iterateOverDirectory(class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
-
-    // vIndex: 26
-    virtual class Core::Result
-    _getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>& files, class Core::Path const& directoryPath);
-
-    // vIndex: 27
-    virtual class Core::Result _getDirectoryFilesRecursively(
-        std::vector<class Core::PathBuffer<std::string>>& filesOut,
-        class Core::Path const&                           directoryPath
-    );
-
-    // vIndex: 28
-    virtual class Core::Result
-    _getDirectoryFilesSizeRecursively(uint64& totalSize, class Core::Path const& directoryPath);
-
-    // vIndex: 29
-    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(
-        uint64&                 totalSize,
-        uint64&                 totalSizeAllocated,
-        class Core::Path const& directoryPath
-    );
-
-    // vIndex: 30
-    virtual class Core::Result _copyDirectoryAndContentsRecursively(
-        class Core::Path const& sourceDirectoryPath,
-        class Core::Path const& targetDirectoryPath
-    );
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::Path const&                                                          directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
+    ) /*override*/;
 
     // vIndex: 31
-    virtual bool _fileOrDirectoryExists(class Core::Path const&);
-
-    // vIndex: 32
-    virtual class Core::Result _getFileOrDirectorySize(class Core::Path const& entryName, uint64* pFileSizeOut);
-
-    // vIndex: 33
-    virtual class Core::Result _getEntryType(class Core::Path const&, ::Core::FileType&);
-
-    // vIndex: 34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36
-    virtual class Core::Result
-    _createFlatFile(class Core::Path const& sourceDirectoryPath, class Core::Path const& targetDirectoryPath);
-
-    // vIndex: 37
-    virtual bool _flatFileFileExists(class Core::Path const& filePath, class Core::Path const& manifestPath);
-
-    // vIndex: 38
-    virtual bool _flatFileDirectoryExists(class Core::Path const& directoryPath, class Core::Path const& manifestPath);
-
-    // vIndex: 39
-    virtual class Core::Result _flatFileIterateOverDirectory(
-        class Core::Path const&                                                       directoryPath,
-        class Core::Path const&                                                       manifestPath,
-        ::Core::DirectoryIterationFlags                                               flags,
-        std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
-    );
-
-    // vIndex: 40
-    virtual bool _isDirectoryPathAFlatFile(class Core::Path const& directoryPath);
-
-    // vIndex: 41
-    virtual class Core::Result _copyFlatFile(
-        class Core::Path const&                       sourceDirectoryPath,
-        class Core::Path const&                       targetDirectoryPath,
-        std::vector<struct Core::ExcludedPath> const& excludedDirectories,
-        std::vector<struct Core::ExcludedPath> const& excludedFiles
-    );
-
-    // vIndex: 42
-    virtual class Core::Result _flatFileDeleteFileOrDirectory(
-        class Core::Path const& fileOrDirectoryPath,
-        class Core::Path const& manifestPath,
-        bool                    directoryDeleteEnabled,
-        bool                    deleteRecursively
-    );
-
-    // vIndex: 43
-    virtual class Core::Result
-    _flatFileGetFileSize(class Core::Path const& filePath, class Core::Path const& manifestPath, uint64* pFileSize);
+    virtual bool _fileOrDirectoryExists(::Core::Path const& entryPath) /*override*/;
 
     // vIndex: 44
-    virtual class Core::Result _getLastModificationTime(class Core::Path const&, int64*);
+    virtual ::Core::Result
+    _getLastModificationTime(::Core::Path const& filePath, int64* pModificationTime) /*override*/;
+
+    // vIndex: 33
+    virtual ::Core::Result _getEntryType(::Core::Path const& entryPath, ::Core::FileType& fileTypeOut) /*override*/;
 
     // vIndex: 45
-    virtual class Core::Result _copyTimeAndAccessRights(class Core::Path const&, class Core::Path const&);
+    virtual ::Core::Result
+    _copyTimeAndAccessRights(::Core::Path const& sourceEntryPath, ::Core::Path const& targetEntryPath) /*override*/;
 
-    // vIndex: 46
-    virtual class Core::Result _endTransaction();
-
-    // vIndex: 47
-    virtual class Core::Result _writeOperation(
-        class Core::Path const&                           fullPath,
-        class Core::Result&&                              result,
-        std::function<void(class Core::FileStorageArea*)> observerCallOrNull,
-        uint64                                            numBytesWritten
-    );
-
+    // vIndex: 0
+    virtual ~FileSystem_windows() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI
-    FileSystem_windows(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);
-
-    MCAPI class Core::Result
-    _iterateOverDirectoryWide(std::wstring const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
-
-    MCAPI class Core::Result _makeFailureFromFileSystemResult(std::error_code const&, char const*, char const*);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void*
-        ctor$(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);
-
-    MCAPI class Core::Result _copyDirectoryAndContentsRecursively$(
-        class Core::Path const& sourceDirectoryPath,
-        class Core::Path const& targetDirectoryPath
+    MCAPI FileSystem_windows(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
 
-    MCAPI class Core::Result _copyFile$(class Core::Path const& sourceFileName, class Core::Path const& targetFileName);
-
-    MCAPI class Core::Result _copyFileWithLimit$(
-        class Core::Path const& sourceFileName,
-        class Core::Path const& targetFileName,
-        uint64                  startPosition,
-        uint64&                 outBytesWritten,
-        uint64&                 outBytesRemaining
+    MCAPI ::Core::Result _iterateOverDirectoryWide(
+        ::std::wstring const&                                                        directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     );
 
-    MCAPI class Core::Result _copyFlatFile$(
-        class Core::Path const&                       sourceDirectoryPath,
-        class Core::Path const&                       targetDirectoryPath,
-        std::vector<struct Core::ExcludedPath> const& excludedDirectories,
-        std::vector<struct Core::ExcludedPath> const& excludedFiles
+    MCAPI ::Core::Result
+    _makeFailureFromFileSystemResult(::std::error_code const& errorCode, char const* function, char const* fileContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Core::Result $_openFile(
+        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
+        ::Core::Path const&                  filename,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
     );
 
-    MCAPI class Core::Result _copyTimeAndAccessRights$(class Core::Path const&, class Core::Path const&);
+    MCAPI bool $_fileExists(::Core::Path const& filePath);
 
-    MCAPI class Core::Result _createDirectoryRecursively$(class Core::Path const& directoryPath);
+    MCAPI ::Core::Result $_deleteFile(::Core::Path const& path);
 
-    MCAPI class Core::Result _createEmptyFile$(class Core::Path const& fileName);
+    MCAPI ::Core::Result $_getFileSize(::Core::Path const& filePath, uint64* pFileSizeOut);
 
-    MCAPI class Core::Result
-    _createFlatFile$(class Core::Path const& sourceDirectoryPath, class Core::Path const& targetDirectoryPath);
+    MCAPI ::Core::Result $_renameFile(::Core::Path const& sourceFilePath, ::Core::Path const& targetFilePath);
 
-    MCAPI class Core::Result _createOneDirectory$(class Core::Path const&);
+    MCAPI ::Core::Result $_createOneDirectory(::Core::Path const& directoryPath);
 
-    MCAPI class Core::Result _createOneDirectoryIfNotExisting$(class Core::Path const& directoryPath);
+    MCAPI ::Core::Result $_deleteEmptyDirectory(::Core::Path const& directoryPath);
 
-    MCAPI class Core::Result _deleteDirectoryAndContentsRecursively$(class Core::Path const& directoryPath);
+    MCAPI bool $_directoryExists(::Core::Path const& directoryPath);
 
-    MCAPI class Core::Result _deleteDirectoryContentsRecursively$(class Core::Path const& directoryPath);
+    MCAPI ::Core::Result
+    $_renameDirectory(::Core::Path const& sourceDirectoryPath, ::Core::Path const& targetDirectoryPath);
 
-    MCAPI class Core::Result _deleteEmptyDirectory$(class Core::Path const&);
-
-    MCAPI class Core::Result _deleteFile$(class Core::Path const&);
-
-    MCAPI class Core::Result
-    _deleteRecursively$(class Core::Path const& directoryPath, ::Core::FileType deleteFileType);
-
-    MCAPI bool _directoryExists$(class Core::Path const&);
-
-    MCAPI class Core::Result _endTransaction$();
-
-    MCAPI bool _fileExists$(class Core::Path const&);
-
-    MCAPI bool _fileOrDirectoryExists$(class Core::Path const&);
-
-    MCAPI class Core::Result _flatFileDeleteFileOrDirectory$(
-        class Core::Path const& fileOrDirectoryPath,
-        class Core::Path const& manifestPath,
-        bool                    directoryDeleteEnabled,
-        bool                    deleteRecursively
+    MCAPI ::Core::Result $_iterateOverDirectory(
+        ::Core::Path const&                                                          directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
     );
 
-    MCAPI bool _flatFileDirectoryExists$(class Core::Path const& directoryPath, class Core::Path const& manifestPath);
+    MCAPI bool $_fileOrDirectoryExists(::Core::Path const& entryPath);
 
-    MCAPI bool _flatFileFileExists$(class Core::Path const& filePath, class Core::Path const& manifestPath);
+    MCAPI ::Core::Result $_getLastModificationTime(::Core::Path const& filePath, int64* pModificationTime);
 
-    MCAPI class Core::Result
-    _flatFileGetFileSize$(class Core::Path const& filePath, class Core::Path const& manifestPath, uint64* pFileSize);
+    MCAPI ::Core::Result $_getEntryType(::Core::Path const& entryPath, ::Core::FileType& fileTypeOut);
 
-    MCAPI class Core::Result _flatFileIterateOverDirectory$(
-        class Core::Path const&                                                       directoryPath,
-        class Core::Path const&                                                       manifestPath,
-        ::Core::DirectoryIterationFlags                                               flags,
-        std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
-    );
+    MCAPI ::Core::Result
+    $_copyTimeAndAccessRights(::Core::Path const& sourceEntryPath, ::Core::Path const& targetEntryPath);
+    // NOLINTEND
 
-    MCAPI class Core::Result
-    _getDirectoryFiles$(std::vector<class Core::PathBuffer<std::string>>& files, class Core::Path const& directoryPath);
-
-    MCAPI class Core::Result _getDirectoryFilesAllocatedSizeRecursively$(
-        uint64&                 totalSize,
-        uint64&                 totalSizeAllocated,
-        class Core::Path const& directoryPath
-    );
-
-    MCAPI class Core::Result _getDirectoryFilesRecursively$(
-        std::vector<class Core::PathBuffer<std::string>>& filesOut,
-        class Core::Path const&                           directoryPath
-    );
-
-    MCAPI class Core::Result
-    _getDirectoryFilesSizeRecursively$(uint64& totalSize, class Core::Path const& directoryPath);
-
-    MCAPI class Core::Result _getEntryType$(class Core::Path const&, ::Core::FileType&);
-
-    MCAPI class Core::Result _getFileOrDirectorySize$(class Core::Path const& entryName, uint64* pFileSizeOut);
-
-    MCAPI class Core::Result _getFileSize$(class Core::Path const&, uint64*);
-
-    MCAPI class Core::Result _getLastModificationTime$(class Core::Path const&, int64*);
-
-    MCAPI bool _isDirectoryPathAFlatFile$(class Core::Path const& directoryPath);
-
-    MCAPI class Core::Result
-    _iterateOverDirectory$(class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
-
-    MCAPI class Core::Result _openFile$(
-        std::unique_ptr<class Core::FileImpl>&,
-        class Core::Path const&,
-        class Core::FileOpenMode,
-        ::Core::FileBufferingMode
-    );
-
-    MCAPI class Core::Result _readFileData$(class Core::Path const& filePath, std::vector<uchar>& data);
-
-    MCAPI class Core::Result _renameDirectory$(class Core::Path const&, class Core::Path const&);
-
-    MCAPI class Core::Result _renameFile$(class Core::Path const&, class Core::Path const&);
-
-    MCAPI class Core::Result _writeOperation$(
-        class Core::Path const&                           fullPath,
-        class Core::Result&&                              result,
-        std::function<void(class Core::FileStorageArea*)> observerCallOrNull,
-        uint64                                            numBytesWritten
-    );
-
-    MCAPI class Core::Result
-    copyTimeAndAccessRights$(class Core::Path const& sourceFilePath, class Core::Path const& targetFilePath);
-
-    MCAPI class Core::Result getLastModificationTime$(class Core::Path const& entryPath, int64* lastModificationTime);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

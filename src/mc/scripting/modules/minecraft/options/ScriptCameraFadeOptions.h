@@ -9,30 +9,40 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCameraFadeOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk877077;
+    ::ll::UntypedStorage<4, 32> mUnke0fb75;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptCameraFadeOptions(ScriptCameraFadeOptions const&);
     ScriptCameraFadeOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraFadeOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraFadeOptions&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptCameraFadeOptions&
+    operator=(::ScriptModuleMinecraft::ScriptCameraFadeOptions&&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraFadeOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraFadeOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptCameraFadeOptions&
+    operator=(::ScriptModuleMinecraft::ScriptCameraFadeOptions const&);
 
     MCAPI ~ScriptCameraFadeOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraFadeOptions> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraFadeOptions> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

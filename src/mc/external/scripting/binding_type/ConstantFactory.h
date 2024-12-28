@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/binding_type/TaggedBinding.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class WeakLifetimeScope; }
@@ -9,38 +12,58 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace Scripting {
 
-struct ConstantFactory {
+struct ConstantFactory : public ::Scripting::TaggedBinding {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnk56382c;
+    ::ll::UntypedStorage<8, 144> mUnk2f1d92;
+    ::ll::UntypedStorage<1, 1>   mUnk35e387;
+    ::ll::UntypedStorage<8, 64>  mUnk88f6ea;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ConstantFactory& operator=(ConstantFactory const&);
     ConstantFactory();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ConstantFactory(struct Scripting::ConstantFactory&&);
+    MCAPI ConstantFactory(::Scripting::ConstantFactory&&);
 
-    MCAPI ConstantFactory(struct Scripting::ConstantFactory const&);
+    MCAPI ConstantFactory(::Scripting::ConstantFactory const&);
 
-    MCAPI
-    ConstantFactory(std::string, entt::meta_type, bool, std::function<entt::meta_any(class Scripting::WeakLifetimeScope&)>);
+    MCAPI ConstantFactory(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
 
     MCAPI ~ConstantFactory();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::ConstantFactory&&);
+    MCAPI void* $ctor(::Scripting::ConstantFactory&&);
 
-    MCAPI void* ctor$(struct Scripting::ConstantFactory const&);
+    MCAPI void* $ctor(::Scripting::ConstantFactory const&);
 
-    MCAPI void*
-    ctor$(std::string, entt::meta_type, bool, std::function<entt::meta_any(class Scripting::WeakLifetimeScope&)>);
+    MCAPI void* $ctor(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

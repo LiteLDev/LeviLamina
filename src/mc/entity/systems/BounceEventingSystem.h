@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct ActorUniqueIDComponent;
+struct BounceComponent;
+struct EventingDispatcherComponent;
+struct EventingRequestQueueComponent;
+struct PlayerComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class BounceEventingSystem {
 public:
@@ -15,34 +27,28 @@ public:
     BounceEventingSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static void _tickBounceEventingSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            struct StateVectorComponent const,
-            struct ActorUniqueIDComponent const,
-            struct EventingDispatcherComponent const,
-            struct BounceComponent>                                                  view,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView
-    );
-
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doBounceEventingSystem(
-        class StrictEntityContext const&,
-        struct StateVectorComponent const&                                           stateVectorComponent,
-        struct ActorUniqueIDComponent const&                                         actorUniqueIDComponent,
-        struct EventingDispatcherComponent const&                                    eventingDispatcherComponent,
-        struct BounceComponent&                                                      bounceComponent,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const&                                   stateVectorComponent,
+        ::ActorUniqueIDComponent const&                                 actorUniqueIDComponent,
+        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+        ::BounceComponent&                                              bounceComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
     );
 
+    MCAPI static void _tickBounceEventingSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+            ::StateVectorComponent const,
+            ::ActorUniqueIDComponent const,
+            ::EventingDispatcherComponent const,
+            ::BounceComponent>                                          view,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
+    );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

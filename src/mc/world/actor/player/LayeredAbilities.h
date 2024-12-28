@@ -9,77 +9,89 @@
 #include "mc/world/actor/player/AbilitiesLayer.h"
 #include "mc/world/actor/player/Ability.h"
 
+// auto generated forward declare list
+// clang-format off
+class Abilities;
+class Ability;
+class CompoundTag;
+class PermissionsHandler;
+// clang-format on
+
 class LayeredAbilities {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 2, ::PermissionsHandler>            mPermissions;
+    ::ll::TypedStorage<4, 1368, ::std::array<::Abilities, 6>> mLayers;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LayeredAbilities();
 
-    MCAPI LayeredAbilities(class LayeredAbilities const& other);
+    MCAPI LayeredAbilities(::LayeredAbilities const& other);
 
-    MCAPI void addSaveData(class CompoundTag& parentTag) const;
+    MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
     MCAPI void forEachAbility(
-        std::function<void(class Ability const&, char const*)> const& callback,
-        ::Ability::Options                                            requiredOptions
+        ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
+        ::Ability::Options                                               requiredOptions
     ) const;
 
     MCAPI void forEachAbility(
-        std::function<void(class Ability const&, ::AbilitiesIndex)> const& callback,
-        ::Ability::Options                                                 requiredOptions
+        ::std::function<void(::Ability const&, char const*)> const& callback,
+        ::Ability::Options                                          requiredOptions
     ) const;
 
-    MCAPI void forEachLayer(std::function<void(::AbilitiesLayer, class Abilities&)> const& callback);
+    MCAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
 
-    MCAPI void forEachLayer(std::function<void(::AbilitiesLayer, class Abilities const&)> const& callback) const;
+    MCAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities const&)> const&) const;
 
-    MCAPI class Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
+    MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
 
-    MCAPI class Ability const& getAbility(::AbilitiesIndex val) const;
+    MCAPI ::Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
 
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
-    MCAPI std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex val) const;
+    MCAPI ::std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex val) const;
 
     MCAPI ::CommandPermissionLevel getCommandPermissions() const;
 
-    MCAPI std::pair<float, ::AbilitiesLayer> getFloatWithLayer(::AbilitiesIndex val) const;
+    MCAPI ::std::pair<float, ::AbilitiesLayer> getFloatWithLayer(::AbilitiesIndex val) const;
 
-    MCAPI class Abilities& getLayer(::AbilitiesLayer layer);
+    MCAPI ::Abilities& getLayer(::AbilitiesLayer layer);
 
-    MCAPI class PermissionsHandler& getPermissionsHandler();
+    MCAPI ::PermissionsHandler& getPermissionsHandler();
 
     MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
 
-    MCAPI bool loadSaveData(class CompoundTag const& parentTag);
+    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI class LayeredAbilities& operator=(class LayeredAbilities const& rhs);
-
-    MCAPI void setAbility(::AbilitiesIndex val, bool value);
+    MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
 
     MCAPI void setAbility(::AbilitiesIndex val, float value);
 
+    MCAPI void setAbility(::AbilitiesIndex val, bool value);
+
     MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
 
-    MCAPI void setPermissions(class PermissionsHandler const& permissions);
+    MCAPI void setPermissions(::PermissionsHandler const& permissions);
 
     MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& DIFF_LAYER_AT();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class LayeredAbilities const& other);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static std::string const& DIFF_LAYER_AT();
-
+    MCAPI void* $ctor(::LayeredAbilities const& other);
     // NOLINTEND
 };

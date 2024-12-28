@@ -3,18 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/scripting/commands/ScriptCommandOrigin.h"
-#include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class CommandOrigin;
 // clang-format on
 
 class ScriptActorCommandOrigin : public ::ScriptCommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3b91a7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptActorCommandOrigin& operator=(ScriptActorCommandOrigin const&);
@@ -22,40 +26,55 @@ public:
     ScriptActorCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptActorCommandOrigin();
+    virtual ~ScriptActorCommandOrigin() /*override*/;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const;
+    virtual ::Actor* getEntity() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-
-    MCAPI ScriptActorCommandOrigin(
-        class Actor const&                      actor,
-        std::function<void(int, std::string&&)> outputCallback,
-        std::optional<::CommandPermissionLevel> permissionLevel
-    );
-
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Actor const&                      actor,
-        std::function<void(int, std::string&&)> outputCallback,
-        std::optional<::CommandPermissionLevel> permissionLevel
+    MCAPI ScriptActorCommandOrigin(
+        ::Actor const&                              actor,
+        ::std::function<void(int, ::std::string&&)> outputCallback,
+        ::std::optional<::CommandPermissionLevel>   permissionLevel
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Actor const&                              actor,
+        ::std::function<void(int, ::std::string&&)> outputCallback,
+        ::std::optional<::CommandPermissionLevel>   permissionLevel
+    );
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Actor* getEntity$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Actor* $getEntity() const;
 
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

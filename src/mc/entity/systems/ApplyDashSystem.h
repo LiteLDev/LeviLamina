@@ -5,7 +5,26 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
-class ApplyDashSystem {
+// auto generated forward declare list
+// clang-format off
+class MobEffectInstance;
+class StrictEntityContext;
+class Vec3;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorRotationComponent;
+struct DashComponent;
+struct DashCooldownTimerComponent;
+struct JumpPendingScaleComponent;
+struct JumpPreventionResult;
+struct MobEffectsComponent;
+struct MovementAttributesComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct TriggerJumpRequestComponent;
+// clang-format on
+
+struct ApplyDashSystem {
 public:
     // prevent constructor by default
     ApplyDashSystem& operator=(ApplyDashSystem const&);
@@ -13,38 +32,38 @@ public:
     ApplyDashSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
     MCAPI static void doDash(
-        class StrictEntityContext const&                         context,
-        struct JumpPreventionResult const&                       jumpPreventionResult,
-        struct MovementAttributesComponent const&                attributes,
-        std::vector<class MobEffectInstance> const&              mobEffects,
-        float                                                    yRotationDegrees,
-        float                                                    verticalMomentumMultiplier,
-        float                                                    horizontalMomentumMultiplier,
-        uint                                                     cooldownTime,
-        class Vec3&                                              posDelta,
-        float&                                                   jumpPendingScale,
-        struct ActorDataFlagComponent&                           actorDataFlag,
-        struct ActorDataDirtyFlagsComponent&                     dirtyFlags,
-        class EntityModifier<struct DashCooldownTimerComponent>& mod
+        ::StrictEntityContext const&                    context,
+        ::JumpPreventionResult const&                   jumpPreventionResult,
+        ::MovementAttributesComponent const&            attributes,
+        ::std::vector<::MobEffectInstance> const&       mobEffects,
+        float                                           yRotationDegrees,
+        float                                           verticalMomentumMultiplier,
+        float                                           horizontalMomentumMultiplier,
+        uint                                            cooldownTime,
+        ::Vec3&                                         posDelta,
+        float&                                          jumpPendingScale,
+        ::ActorDataFlagComponent&                       actorDataFlag,
+        ::ActorDataDirtyFlagsComponent&                 dirtyFlags,
+        ::EntityModifier<::DashCooldownTimerComponent>& mod
     );
 
     MCAPI static void tickApplyDashModifierSystem(
-        class StrictEntityContext const&                         context,
-        struct TriggerJumpRequestComponent const&                triggerJumpRequestComponent,
-        class DashComponent const&                               dashComponent,
-        struct MovementAttributesComponent const&                attributesComponent,
-        struct ActorRotationComponent const&                     actorRotationComponent,
-        struct MobEffectsComponent const&                        mobEffectsComponent,
-        struct StateVectorComponent&                             stateVectorComponent,
-        struct JumpPendingScaleComponent&                        jumpPendingScaleComponent,
-        struct ActorDataFlagComponent&                           actorDataFlagComponent,
-        struct ActorDataDirtyFlagsComponent&                     dirtyFlagsComponent,
-        class EntityModifier<struct DashCooldownTimerComponent>& mod
+        ::StrictEntityContext const&                    context,
+        ::TriggerJumpRequestComponent const&            triggerJumpRequestComponent,
+        ::DashComponent const&                          dashComponent,
+        ::MovementAttributesComponent const&            attributesComponent,
+        ::ActorRotationComponent const&                 actorRotationComponent,
+        ::MobEffectsComponent const&                    mobEffectsComponent,
+        ::StateVectorComponent&                         stateVectorComponent,
+        ::JumpPendingScaleComponent&                    jumpPendingScaleComponent,
+        ::ActorDataFlagComponent&                       actorDataFlagComponent,
+        ::ActorDataDirtyFlagsComponent&                 dirtyFlagsComponent,
+        ::EntityModifier<::DashCooldownTimerComponent>& mod
     );
-
     // NOLINTEND
 };

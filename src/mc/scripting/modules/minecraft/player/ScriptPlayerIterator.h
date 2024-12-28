@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptVectorIterator.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,9 @@ namespace ScriptModuleMinecraft { class ScriptPlayer; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptPlayerIterator {
+class ScriptPlayerIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator<
+                                 ::ScriptModuleMinecraft::ScriptPlayerIterator,
+                                 ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> {
 public:
     // prevent constructor by default
     ScriptPlayerIterator& operator=(ScriptPlayerIterator const&);
@@ -21,26 +24,25 @@ public:
     ScriptPlayerIterator();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptPlayerIterator(
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers
     );
-
-    MCAPI class ScriptModuleMinecraft::ScriptPlayerIterator&
-    operator=(class ScriptModuleMinecraft::ScriptPlayerIterator&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayerIterator> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers
-    );
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerIterator> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

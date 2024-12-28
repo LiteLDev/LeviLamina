@@ -6,31 +6,56 @@
 #include "mc/server/commands/CommandOutputMessageType.h"
 #include "mc/server/commands/CommandOutputType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CommandOutputMessage;
+class CommandOutputParameter;
+class CommandPropertyBag;
+// clang-format on
+
 class CommandOutput {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::CommandOutputType>                     mType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandPropertyBag>> mBag;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>>  mMessages;
+    ::ll::TypedStorage<4, 4, int>                                     mSuccessCount;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasPlayerText;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutput(class CommandOutput const& rhs);
+    MCAPI CommandOutput(::CommandOutput const& rhs);
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addToResultList(std::string const& key, class Actor const& element);
+    MCAPI void addMessage(
+        ::std::string const&                           msgId,
+        ::std::vector<::CommandOutputParameter> const& params,
+        ::CommandOutputMessageType                     type
+    );
 
-    MCAPI void addToResultList(std::string const& key, std::string const& element);
+    MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
+
+    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
 
     MCAPI bool empty() const;
 
-    MCAPI void error(std::string const& msgId, std::vector<class CommandOutputParameter> const& params);
+    MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI void forceOutput(std::string const& msgId, std::vector<class CommandOutputParameter> const& params);
+    MCAPI void forceOutput(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI class CommandPropertyBag const& getData() const;
+    MCAPI ::CommandPropertyBag const& getData() const;
 
-    MCAPI std::vector<class CommandOutputMessage> const& getMessages() const;
+    MCAPI ::std::vector<::CommandOutputMessage> const& getMessages() const;
 
     MCAPI int getSuccessCount() const;
 
@@ -39,42 +64,34 @@ public:
     MCAPI bool hasErrorMessage() const;
 
     MCAPI void load(
-        ::CommandOutputType                         type,
-        int                                         successCount,
-        std::vector<class CommandOutputMessage>&&   messages,
-        std::unique_ptr<class CommandPropertyBag>&& data
+        ::CommandOutputType                       type,
+        int                                       successCount,
+        ::std::vector<::CommandOutputMessage>&&   messages,
+        ::std::unique_ptr<::CommandPropertyBag>&& data
     );
 
     MCAPI void setHasPlayerText();
 
     MCAPI void success();
 
-    MCAPI void success(std::string const& msgId, std::vector<class CommandOutputParameter> const& params);
+    MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI bool wantsData() const;
 
     MCAPI ~CommandOutput();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void addMessage(
-        std::string const&                               msgId,
-        std::vector<class CommandOutputParameter> const& params,
-        ::CommandOutputMessageType                       type
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CommandOutput const& rhs);
+    MCAPI void* $ctor(::CommandOutput const& rhs);
 
-    MCAPI void* ctor$(::CommandOutputType type);
+    MCAPI void* $ctor(::CommandOutputType type);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

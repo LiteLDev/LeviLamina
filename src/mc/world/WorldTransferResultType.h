@@ -8,8 +8,9 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace WorldTransferResultType {
+// functions
 // NOLINTBEGIN
-MCAPI void bindType(struct cereal::ReflectionCtx& ctx);
+MCAPI void bindType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}; // namespace WorldTransferResultType
+} // namespace WorldTransferResultType

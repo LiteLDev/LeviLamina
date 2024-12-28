@@ -12,7 +12,14 @@ namespace persona {
 class BodySize {
 public:
     // BodySize inner types define
-    enum class Type {};
+    enum class Type : uint64 {
+        Smaller = 0,
+        Small   = 0,
+        Medium  = 0,
+        Tall    = 0,
+        Count   = 0,
+        Unknown = 0,
+    };
 
 public:
     // prevent constructor by default
@@ -20,12 +27,11 @@ public:
     BodySize(BodySize const&);
     BodySize();
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::unordered_map<::persona::BodySize::Type, struct persona::SizeInfo> const& mInfoList();
-
+    MCAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 
-}; // namespace persona
+} // namespace persona

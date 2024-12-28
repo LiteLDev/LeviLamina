@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/feature/Feature.h"
 #include "mc/world/level/levelgen/feature/helpers/FlowerPlacementType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class LegacyFlowerFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk6a2ff7;
+    ::ll::UntypedStorage<8, 40> mUnk2a37af;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyFlowerFeature& operator=(LegacyFlowerFeature const&);
@@ -14,25 +28,42 @@ public:
     LegacyFlowerFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacyFlowerFeature() = default;
+    virtual ~LegacyFlowerFeature() /*override*/;
 
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType placementType);
-
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType placementType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::FlowerPlacementType placementType);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FlowerPlacementType placementType);
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

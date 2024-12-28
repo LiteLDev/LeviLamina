@@ -5,23 +5,38 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class PlayerMovementSettingsComponent;
+class StrictEntityContext;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ClientInputLockComponent;
+struct MoveInputComponent;
+struct MovementAbilitiesComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct SneakingComponent;
+struct VanillaClientGameplayComponent;
+struct WasInWaterFlagComponent;
+// clang-format on
 
 namespace ServerMoveInputHandlerSystemUtils {
+// functions
 // NOLINTBEGIN
 MCAPI void _tickServerMoveInputHandler(
-    class StrictEntityContext&,
-    struct MovementAbilitiesComponent const&                           abilitiesComponent,
-    struct ServerPlayerCurrentMovementComponent const&                 serverPlayerCurrentMovementComponent,
-    struct ClientInputLockComponent&                                   lockComponent,
-    struct MoveInputComponent&                                         input,
-    struct ActorDataFlagComponent&                                     actorDataFlag,
-    struct ActorDataDirtyFlagsComponent&                               actorDataDirtyFlags,
-    struct VanillaClientGameplayComponent&                             vanillaClientGameplayComponent,
-    class Optional<struct SneakingComponent const>                     sneakingComponent,
-    class Optional<class FlagComponent<struct InWaterFlag> const>      isInWater,
-    class OptionalGlobal<class PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
+    ::StrictEntityContext&,
+    ::MovementAbilitiesComponent const&                        abilitiesComponent,
+    ::ServerPlayerCurrentMovementComponent const&              serverPlayerCurrentMovementComponent,
+    ::ClientInputLockComponent&                                lockComponent,
+    ::MoveInputComponent&                                      input,
+    ::ActorDataFlagComponent&                                  actorDataFlag,
+    ::ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
+    ::VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
+    ::Optional<::SneakingComponent const>                      sneakingComponent,
+    ::Optional<::WasInWaterFlagComponent const>                isInWater,
+    ::OptionalGlobal<::PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
 );
 // NOLINTEND
 
-}; // namespace ServerMoveInputHandlerSystemUtils
+} // namespace ServerMoveInputHandlerSystemUtils

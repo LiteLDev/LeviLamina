@@ -3,17 +3,65 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+class ILevel;
+struct ActorUniqueID;
+// clang-format on
 
 class AngerLevelComponent {
 public:
     // AngerLevelComponent inner types declare
     // clang-format off
     struct ConditionalSound;
+    struct Nuisance;
+    struct NuisanceCompare;
     // clang-format on
 
     // AngerLevelComponent inner types define
+    struct Nuisance {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk87b9a2;
+        ::ll::UntypedStorage<4, 4> mUnk9415a7;
+        ::ll::UntypedStorage<1, 1> mUnka6bff1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Nuisance& operator=(Nuisance const&);
+        Nuisance(Nuisance const&);
+        Nuisance();
+    };
+
+    struct NuisanceCompare {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk927449;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NuisanceCompare& operator=(NuisanceCompare const&);
+        NuisanceCompare(NuisanceCompare const&);
+        NuisanceCompare();
+    };
+
     struct ConditionalSound {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>   mUnk9863dc;
+        ::ll::UntypedStorage<8, 216> mUnkf71226;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ConditionalSound& operator=(ConditionalSound const&);
@@ -21,18 +69,35 @@ public:
         ConditionalSound();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ConditionalSound();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkcebbd5;
+    ::ll::UntypedStorage<4, 4>  mUnkc4f740;
+    ::ll::UntypedStorage<4, 4>  mUnk96ec96;
+    ::ll::UntypedStorage<4, 4>  mUnked907d;
+    ::ll::UntypedStorage<4, 4>  mUnk5c1352;
+    ::ll::UntypedStorage<4, 4>  mUnk3547f6;
+    ::ll::UntypedStorage<1, 1>  mUnk9578e1;
+    ::ll::UntypedStorage<4, 4>  mUnke41be2;
+    ::ll::UntypedStorage<4, 4>  mUnkab1960;
+    ::ll::UntypedStorage<8, 72> mUnk45ba20;
+    ::ll::UntypedStorage<8, 24> mUnkd125da;
+    ::ll::UntypedStorage<4, 4>  mUnkee5906;
+    ::ll::UntypedStorage<8, 24> mUnk55cf36;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -40,53 +105,42 @@ public:
     AngerLevelComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI AngerLevelComponent(class AngerLevelComponent&&);
+    MCAPI AngerLevelComponent(::AngerLevelComponent&&);
 
-    MCAPI AngerLevelComponent(class AngerLevelComponent const&);
+    MCAPI AngerLevelComponent(::AngerLevelComponent const&);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void _createOrModifyAngerLevel(::Actor const& nuisanceSource, ::std::function<int(int)> const& modifyingFn);
 
-    MCAPI bool belowAngryThreshold(struct ActorUniqueID id) const;
+    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
 
-    MCAPI bool canBeNuisance(class Actor* owner, class Actor* target) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI int getAngerForAnimations(class Actor& owner) const;
+    MCAPI bool belowAngryThreshold(::ActorUniqueID id) const;
 
-    MCAPI std::optional<std::pair<class Actor*, int>>
-          getTopActiveNuisance(class Actor* owner, class ILevel const& level) const;
+    MCAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
+
+    MCAPI int getAngerForAnimations(::Actor& owner) const;
+
+    MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
     MCAPI bool isAngry() const;
 
-    MCAPI class AngerLevelComponent& operator=(class AngerLevelComponent&&);
+    MCAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
 
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void tick(class Actor* owner, class ILevel const& level);
+    MCAPI void tick(::Actor* owner, ::ILevel const& level);
 
-    MCAPI void tryIncreaseAngerAt(class Actor& owner, class Actor& nuisance, int anger, bool playSounds);
+    MCAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
 
     MCAPI ~AngerLevelComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _createOrModifyAngerLevel(class Actor const& nuisanceSource, std::function<int(int)> const& modifyingFn);
-
-    MCAPI std::optional<::Puv::Legacy::LevelSoundEvent> _getListeningSoundEvent(class Actor& actor) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class AngerLevelComponent const&);
-
-    MCAPI void* ctor$(class AngerLevelComponent&&);
-
-    MCAPI void dtor$();
-
     MCAPI static float const& DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS();
 
     MCAPI static int const& DEFAULT_ANGRY_BOOST();
@@ -96,6 +150,19 @@ public:
     MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
 
     MCAPI static bool const& DEFAULT_SHOULD_REMOVE_TARGET();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AngerLevelComponent&&);
+
+    MCAPI void* $ctor(::AngerLevelComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

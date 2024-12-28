@@ -2,14 +2,140 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDamageSource;
+class HashedString;
+class ItemInstance;
+struct EnchantSlotEnumHasher;
+// clang-format on
+
 class Enchant {
 public:
     // Enchant inner types define
-    enum class Frequency {};
+    enum class Type : uchar {
+        Protection           = 0,
+        FireProtection       = 1,
+        FeatherFalling       = 2,
+        BlastProtection      = 3,
+        ProjectileProtection = 4,
+        Thorns               = 5,
+        Respiration          = 6,
+        DepthStrider         = 7,
+        AquaAffinity         = 8,
+        Sharpness            = 9,
+        Smite                = 10,
+        BaneOfArthropods     = 11,
+        Knockback            = 12,
+        FireAspect           = 13,
+        Looting              = 14,
+        Efficiency           = 15,
+        SilkTouch            = 16,
+        Unbreaking           = 17,
+        Fortune              = 18,
+        Power                = 19,
+        Punch                = 20,
+        Flame                = 21,
+        Infinity             = 22,
+        LuckOfTheSea         = 23,
+        Lure                 = 24,
+        FrostWalker          = 25,
+        Mending              = 26,
+        CurseOfBinding       = 27,
+        CurseOfVanishing     = 28,
+        Impaling             = 29,
+        Riptide              = 30,
+        Loyalty              = 31,
+        Channeling           = 32,
+        Multishot            = 33,
+        Piercing             = 34,
+        QuickCharge          = 35,
+        SoulSpeed            = 36,
+        SwiftSneak           = 37,
+        WindBurst            = 38,
+        Density              = 39,
+        Breach               = 40,
+        NumEnchantments      = 41,
+        InvalidEnchantment   = 42,
+    };
 
-    enum class Slot {};
+    enum class Frequency : int {
+        Common   = 30,
+        Uncommon = 10,
+        Rare     = 3,
+        VeryRare = 1,
+    };
 
-    enum class Type {};
+    enum class Slot : uint {
+        // bitfield representation
+        None          = 0,
+        ArmorHead     = 1u << 0,
+        ArmorTorso    = 1u << 1,
+        ArmorFeet     = 1u << 2,
+        ArmorLegs     = 1u << 3,
+        Sword         = 1u << 4,
+        Bow           = 1u << 5,
+        Hoe           = 1u << 6,
+        Shears        = 1u << 7,
+        Flintsteel    = 1u << 8,
+        Axe           = 1u << 9,
+        Pickaxe       = 1u << 10,
+        Shovel        = 1u << 11,
+        FishingRod    = 1u << 12,
+        CarrotStick   = 1u << 13,
+        Elytra        = 1u << 14,
+        Spear         = 1u << 15,
+        Crossbow      = 1u << 16,
+        Shield        = 1u << 17,
+        CosmeticHead  = 1u << 18,
+        Compass       = 1u << 19,
+        MushroomStick = 1u << 20,
+        Brush         = 1u << 21,
+        HeavyWeapon   = 1u << 22,
+        GArmor        = ArmorHead | ArmorTorso | ArmorFeet | ArmorLegs,
+        GDigging      = Hoe | Axe | Pickaxe | Shovel,
+        GTool         = Hoe | Shears | Flintsteel | Shield,
+        All           = 4294967295,
+    };
+
+    enum class Activation : int {
+        Equipped       = 0,
+        Held           = 1,
+        Self           = 2,
+        NumActivations = 3,
+        Invalid        = 4,
+    };
+
+    enum class CompatibilityID : int {
+        NonConflict  = 0,
+        Damage       = 1,
+        Gathering    = 2,
+        Protection   = 3,
+        Froststrider = 4,
+        Mendfinity   = 5,
+        Loyalriptide = 6,
+    };
+
+    enum class VillagerTrading : int {
+        NotAvailable = 0,
+        Available    = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::Enchant::Type const>      mEnchantType;
+    ::ll::TypedStorage<4, 4, ::Enchant::Frequency const> mFrequency;
+    ::ll::TypedStorage<1, 1, bool const>                 mIsAvailableInVillagerTrading;
+    ::ll::TypedStorage<4, 4, int const>                  mPrimarySlots;
+    ::ll::TypedStorage<4, 4, int const>                  mSecondarySlots;
+    ::ll::TypedStorage<4, 4, int const>                  mCompatibility;
+    ::ll::TypedStorage<8, 32, ::std::string const>       mDescription;
+    ::ll::TypedStorage<8, 48, ::HashedString const>      mStringId;
+    ::ll::TypedStorage<8, 48, ::HashedString const>      mScriptStringId;
+    ::ll::TypedStorage<1, 1, bool>                       mIsDisabled;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -18,6 +144,7 @@ public:
     Enchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Enchant();
@@ -38,22 +165,22 @@ public:
     virtual int getMaxLevel() const;
 
     // vIndex: 6
-    virtual int getDamageProtection(int level, class ActorDamageSource const& source) const;
+    virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
     // vIndex: 7
     virtual float getAfterBreachArmorFraction(int, float) const;
 
     // vIndex: 8
-    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+    virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
     // vIndex: 9
-    virtual void doPostAttack(class Actor& attacker, class Actor& victim, int level) const;
+    virtual void doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
     // vIndex: 10
-    virtual void doPostItemHurtActor(class Actor&, class Actor&, int) const;
+    virtual void doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
     // vIndex: 11
-    virtual void doPostHurt(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
+    virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
     // vIndex: 12
     virtual bool isMeleeDamageEnchant() const;
@@ -69,126 +196,131 @@ public:
 
     // vIndex: 16
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Enchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
-
-    MCAPI Enchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots,
-        bool                 isLootable
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         scriptStringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
     );
 
     MCAPI bool canEnchant(int slot, bool allowNonVanilla) const;
 
-    MCAPI std::string getDescription() const;
-
-    MCAPI std::string getDescriptionId() const;
+    MCAPI ::std::string getDescriptionId() const;
 
     MCAPI ::Enchant::Type getEnchantType() const;
 
     MCAPI ::Enchant::Frequency getFrequency() const;
 
-    MCAPI class HashedString const& getStringId() const;
+    MCAPI ::HashedString const& getScriptStringId() const;
+
+    MCAPI ::HashedString const& getStringId() const;
 
     MCAPI bool isAvailable() const;
 
     MCAPI bool isDisabled() const;
+    // NOLINTEND
 
-    MCAPI bool isLootable() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static ::Enchant::Slot enchantSlotFromString(std::string_view str);
+    MCAPI static ::Enchant const* getEnchant(::Enchant::Type const& type);
 
-    MCAPI static class Enchant const* getEnchant(::Enchant::Type const& type);
+    MCAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
 
-    MCAPI static class Enchant const* getEnchantFromName(class HashedString const& name);
-
-    MCAPI static ::Enchant::Type getEnchantTypeFromName(class HashedString const& name);
+    MCAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
 
     MCAPI static void initEnchants();
 
     MCAPI static void shutdownEnchants();
 
-    MCAPI static std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
-
+    MCAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unordered_map<::HashedString, ::Enchant::Type>& mEnchantNameToType();
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
+    MCAPI static ::std::
+        unordered_map<::Enchant::Slot, ::std::string, ::EnchantSlotEnumHasher, ::std::equal_to<::Enchant::Slot>>&
+        mEnchantSlotTypeEnumToStringMap();
+
+    MCAPI static ::std::unordered_map<::std::string, ::Enchant::Slot>& mEnchantSlotTypeNameToEnumMap();
+
+    MCAPI static ::std::vector<::std::unique_ptr<::Enchant>>& mEnchants();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         scriptStringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots,
-        bool                 isLootable
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI void doPostAttack$(class Actor& attacker, class Actor& victim, int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI void doPostHurt$(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
+    MCAPI int $getMinLevel() const;
 
-    MCAPI void doPostItemHurtActor$(class Actor&, class Actor&, int) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI float getAfterBreachArmorFraction$(int, float) const;
+    MCAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCAPI float getDamageBonus$(int, class Actor const&, class Actor const&) const;
+    MCAPI float $getAfterBreachArmorFraction(int, float) const;
 
-    MCAPI int getDamageProtection$(int level, class ActorDamageSource const& source) const;
+    MCAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCAPI int getMaxCost$(int level) const;
+    MCAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCAPI int getMinLevel$() const;
+    MCAPI bool $isMeleeDamageEnchant() const;
 
-    MCAPI bool isCompatibleWith$(::Enchant::Type type) const;
+    MCAPI bool $isProtectionEnchant() const;
 
-    MCAPI bool isDiscoverable$() const;
+    MCAPI bool $isTreasureOnly() const;
 
-    MCAPI bool isMeleeDamageEnchant$() const;
+    MCAPI bool $isDiscoverable() const;
 
-    MCAPI bool isProtectionEnchant$() const;
+    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    // NOLINTEND
 
-    MCAPI bool isTreasureOnly$() const;
-
-    MCAPI static std::unordered_map<class HashedString, ::Enchant::Type>& mEnchantNameToType();
-
-    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher>&
-    mEnchantSlotTypeEnumToStringMap();
-
-    MCAPI static std::unordered_map<std::string, ::Enchant::Slot>& mEnchantSlotTypeNameToEnumMap();
-
-    MCAPI static std::vector<std::unique_ptr<class Enchant>>& mEnchants();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

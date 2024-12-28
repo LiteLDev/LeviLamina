@@ -5,7 +5,25 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BiomeSource;
+class BlockPos;
+class ChunkPos;
+class Dimension;
+class HashedString;
+class IPreliminarySurfaceProvider;
+class Random;
+class StructureStart;
+// clang-format on
+
 class EndCityFeature : public ::StructureFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EndCityFeature& operator=(EndCityFeature const&);
@@ -13,72 +31,90 @@ public:
     EndCityFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndCityFeature() = default;
-
-    // vIndex: 2
-    virtual bool shouldPostProcessMobs() const;
-
     // vIndex: 3
     virtual bool getNearestGeneratedFeature(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
-    );
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
+    ) /*override*/;
+
+    // vIndex: 2
+    virtual bool shouldPostProcessMobs() const /*override*/;
+
+    // vIndex: 4
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
+    ) /*override*/;
 
     // vIndex: 5
-    virtual bool isFeatureChunk(
-        class BiomeSource const&,
-        class Random&                            random,
-        class ChunkPos const&                    pos,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
-    );
+    virtual ::std::unique_ptr<::StructureStart>
+    createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&) /*override*/
+        ;
 
-    // vIndex: 6
-    virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension& dimension, class BiomeSource const&, class Random& random, class ChunkPos const& pos, class IPreliminarySurfaceProvider const&);
-
-    MCAPI EndCityFeature(class Dimension& dimension, uint& seed);
-
+    // vIndex: 0
+    virtual ~EndCityFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EndCityFeature(::Dimension& dimension, uint& seed);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension& dimension, uint& seed);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, uint& seed);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class StructureStart>
-    createStructureStart$(class Dimension& dimension, class BiomeSource const&, class Random& random, class ChunkPos const& pos, class IPreliminarySurfaceProvider const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool getNearestGeneratedFeature$(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $getNearestGeneratedFeature(
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool isFeatureChunk$(
-        class BiomeSource const&,
-        class Random&                            random,
-        class ChunkPos const&                    pos,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
+    MCAPI bool $shouldPostProcessMobs() const;
+
+    MCAPI bool $isFeatureChunk(
+        ::BiomeSource const&,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     );
 
-    MCAPI bool shouldPostProcessMobs$() const;
+    MCAPI ::std::unique_ptr<::StructureStart>
+    $createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

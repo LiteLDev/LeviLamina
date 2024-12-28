@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class NetherSpringFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk95b2fc;
+    ::ll::UntypedStorage<1, 1> mUnk4595c4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NetherSpringFeature& operator=(NetherSpringFeature const&);
@@ -13,27 +28,42 @@ public:
     NetherSpringFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~NetherSpringFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI NetherSpringFeature(class Block const& block, bool insideRock);
-
+    virtual ~NetherSpringFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NetherSpringFeature(::Block const& block, bool insideRock);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block, bool insideRock);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, bool insideRock);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,9 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/ServiceReference.h"
+#include "mc/resources/ResourcePackListener.h"
 
-class EducationOptions {
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+class ResourcePackManager;
+// clang-format on
+
+class EducationOptions : public ::Bedrock::EnableNonOwnerReferences, public ::ResourcePackListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkecbd05;
+    ::ll::UntypedStorage<1, 1> mUnke6a413;
+    ::ll::UntypedStorage<8, 8> mUnk3e959f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EducationOptions& operator=(EducationOptions const&);
@@ -13,43 +29,64 @@ public:
     EducationOptions();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager& manager);
+    // vIndex: 0
+    virtual ~EducationOptions() /*override*/;
 
-    MCVAPI ~EducationOptions();
+    // vIndex: 1
+    virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) /*override*/;
+    // NOLINTEND
 
-    MCAPI explicit EducationOptions(class ResourcePackManager* packMan);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EducationOptions(::ResourcePackManager* packMan);
 
-    MCAPI void init(class LevelData const& levelData);
+    MCAPI void init(::LevelData const& levelData);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
 
     MCAPI static bool isBaseCodeBuilderEnabled();
 
     MCAPI static bool isChemistryEnabled();
 
     MCAPI static bool isCodeBuilderEnabled();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static ::EducationOptions& DEFAULT_OPTION();
+    // NOLINTEND
 
-    MCAPI static void** vftableForResourcePackListener();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackManager* packMan);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ResourcePackManager* packMan);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& manager);
+    // NOLINTEND
 
-    MCAPI void onActiveResourcePacksChanged$(class ResourcePackManager& manager);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForResourcePackListener();
 
-    MCAPI static class EducationOptions& DEFAULT_OPTION();
-
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

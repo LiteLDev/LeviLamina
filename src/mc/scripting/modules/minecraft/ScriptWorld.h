@@ -6,6 +6,7 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptGameRules; }
+namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
@@ -37,160 +39,168 @@ namespace ScriptModuleMinecraft {
 
 class ScriptWorld {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkd2684d;
+    ::ll::UntypedStorage<8, 8>  mUnke52bc0;
+    ::ll::UntypedStorage<8, 32> mUnk9fe28f;
+    ::ll::UntypedStorage<8, 32> mUnkbcdaa5;
+    ::ll::UntypedStorage<8, 32> mUnk735be8;
+    ::ll::UntypedStorage<8, 32> mUnk2d1c88;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptWorld& operator=(ScriptWorld const&);
     ScriptWorld(ScriptWorld const&);
     ScriptWorld();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorld(class ScriptModuleMinecraft::ScriptWorld&&);
+    MCAPI ScriptWorld(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::gsl::not_null<::ServerLevel*>                      level,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners
+    );
 
-    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
+    MCAPI ::Scripting::Result<void> _playOrQueueMusic(
+        ::std::string const&                                         trackID,
+        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
+        bool                                                         shouldQueue
+    );
 
-    MCAPI void broadcastClientMessage(std::string const& id, std::string const& value);
+    MCAPI ::Scripting::Result<void> _playSoundInternal(
+        ::std::string const&                                              soundID,
+        ::Vec3 const&                                                     location,
+        ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
+    );
 
-    MCAPI void clearDynamicProperties(struct Scripting::ContextConfig const& contextConfig);
+    MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
+        ::std::string const&                                              key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
+    ) const;
+
+    MCAPI void broadcastClientMessage(::std::string const& id, ::std::string const& value);
 
     MCAPI int getAbsoluteTime() const;
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldAfterEvents>
-    getAfterEvents();
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> getAfterEvents();
 
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getAllPlayers() const;
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldBeforeEvents>
-    getBeforeEvents();
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldBeforeEvents> getBeforeEvents();
 
     MCAPI int getDay() const;
 
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>>
-    getDimension(std::string const& name) const;
+    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+    getDimension(::std::string const& name) const;
 
-    MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>>
-          getDynamicProperty(struct Scripting::ContextConfig const& contextConfig, std::string const& key) const;
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
-    MCAPI std::vector<std::string> getDynamicPropertyIds(struct Scripting::ContextConfig const& contextConfig) const;
+    MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig) const;
 
-    MCAPI int getDynamicPropertyTotalByteCount(struct Scripting::ContextConfig const& contextConfig) const;
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
+    getDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
-    MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>>
-    getDynamicProperty_V010(struct Scripting::ContextConfig const& contextConfig, std::string const& key) const;
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getEntity(::std::string const& id) const;
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
-    getEntity(std::string const& id) const;
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules> getGameRules();
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptGameRules> getGameRules();
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+    getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
-    getPlayers(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
+    MCAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
+    getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>>
-    getPlayers_V010(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
-
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptStructureManager>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager>
     getStructureManager() const;
 
     MCAPI int getTimeOfDay() const;
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events();
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events();
 
-    MCAPI class Scripting::Result<void>
-    playMusic(std::string const& trackID, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
+    MCAPI ::Scripting::Result<void>
+    playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCAPI class Scripting::Result<void> playSound(
-        std::string const&                                                   soundID,
-        class Vec3 const&                                                    location,
-        std::optional<struct ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
+    MCAPI ::Scripting::Result<void> playSound(
+        ::std::string const&                                              soundID,
+        ::Vec3 const&                                                     location,
+        ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
-    MCAPI class Scripting::Result<void> playSound_V010(
-        std::string const&                                              soundID,
-        std::optional<struct ScriptModuleMinecraft::ScriptSoundOptions> soundOptions
+    MCAPI ::Scripting::Result<void> playSound_V010(
+        ::std::string const&                                         soundID,
+        ::std::optional<::ScriptModuleMinecraft::ScriptSoundOptions> soundOptions
     );
 
-    MCAPI class Scripting::Result<void> queueMusic(
-        std::string const&                                              trackID,
-        std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions> musicOptions
+    MCAPI ::Scripting::Result<void>
+    queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
+
+    MCAPI ::Scripting::Result_deprecated<bool>
+    removeDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
+
+    MCAPI ::Scripting::Result<void> sendMessage(
+        ::Scripting::ContextConfig const& contextConfig,
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
     );
 
-    MCAPI class Scripting::Result<bool>
-    removeDynamicProperty_V010(struct Scripting::ContextConfig const& contextConfig, std::string const& key);
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
+    setDefaultSpawnLocation(::Vec3 const& spawnPosition);
 
-    MCAPI class Scripting::Result<void> sendMessage(
-        struct Scripting::ContextConfig const& contextConfig,
-        std::variant<
-            std::string,
-            struct ScriptModuleMinecraft::ScriptRawMessageInterface,
-            std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
+    MCAPI ::Scripting::Result<void> setDynamicProperty(
+        ::Scripting::ContextConfig const&                                                  contextConfig,
+        ::std::string const&                                                               key,
+        ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
-    MCAPI class Scripting::
-        Result<void, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, struct Scripting::Error>
-        setDefaultSpawnLocation(class Vec3 const& spawnPosition);
-
-    MCAPI class Scripting::Result<void> setDynamicProperty(
-        struct Scripting::ContextConfig const&                                           contextConfig,
-        std::string const&                                                               key,
-        std::optional<std::variant<double, float, bool, std::string, class Vec3>> const& value
+    MCAPI ::Scripting::Result<void> setDynamicProperty_V010(
+        ::Scripting::ContextConfig const&                           contextConfig,
+        ::std::string const&                                        key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
     );
 
-    MCAPI class Scripting::Result<void> setDynamicProperty_V010(
-        struct Scripting::ContextConfig const&                      contextConfig,
-        std::string const&                                          key,
-        std::variant<double, float, bool, std::string, class Vec3>& value
+    MCAPI ::Scripting::Result<void> setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay
     );
-
-    MCAPI class Scripting::Result<void>
-    setTimeOfDay(std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay);
 
     MCAPI void stopMusic();
 
     MCAPI ~ScriptWorld();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptWorld> bind();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Scripting::Result<void> _playOrQueueMusic(
-        std::string const&                                              trackID,
-        std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
-        bool                                                            shouldQueue
-    );
-
-    MCAPI class Scripting::Result<void> _playSoundInternal(
-        std::string const&                                                   soundID,
-        class Vec3 const&                                                    location,
-        std::optional<struct ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
-    );
-
-    MCAPI std::optional<struct Scripting::Error> _validateDynamicProperty_V010(
-        std::string const&                                                key,
-        std::variant<double, float, bool, std::string, class Vec3> const* value
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptWorld&&);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWorld> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                scope,
+        ::gsl::not_null<::ServerLevel*>                      level,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,7 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SnapshotWritableFile {
+class SnapshotWritableFile : public ::leveldb::WritableFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkd25792;
+    ::ll::UntypedStorage<8, 8> mUnk3809e9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SnapshotWritableFile& operator=(SnapshotWritableFile const&);
@@ -10,40 +17,45 @@ public:
     SnapshotWritableFile();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SnapshotWritableFile() = default;
+    virtual ~SnapshotWritableFile() /*override*/;
 
     // vIndex: 1
-    virtual leveldb::Status Append(leveldb::Slice const& data);
+    virtual ::leveldb::Status Append(::leveldb::Slice const& data) /*override*/;
 
     // vIndex: 2
-    virtual leveldb::Status Close();
+    virtual ::leveldb::Status Close() /*override*/;
 
     // vIndex: 3
-    virtual leveldb::Status Flush();
+    virtual ::leveldb::Status Flush() /*override*/;
 
     // vIndex: 4
-    virtual leveldb::Status Sync();
-
-    MCAPI SnapshotWritableFile(leveldb::WritableFile*&& r, std::shared_mutex& creationAndWriteLock);
-
+    virtual ::leveldb::Status Sync() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(leveldb::WritableFile*&& r, std::shared_mutex& creationAndWriteLock);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::leveldb::Status $Append(::leveldb::Slice const& data);
 
-    MCAPI leveldb::Status Append$(leveldb::Slice const& data);
+    MCAPI ::leveldb::Status $Close();
 
-    MCAPI leveldb::Status Close$();
+    MCAPI ::leveldb::Status $Flush();
 
-    MCAPI leveldb::Status Flush$();
+    MCAPI ::leveldb::Status $Sync();
+    // NOLINTEND
 
-    MCAPI leveldb::Status Sync$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

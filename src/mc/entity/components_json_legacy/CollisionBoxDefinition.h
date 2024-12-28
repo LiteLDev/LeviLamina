@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class CollisionBoxComponent;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class CollisionBoxDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnke9cf3a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CollisionBoxDefinition& operator=(CollisionBoxDefinition const&);
@@ -18,17 +26,20 @@ public:
     CollisionBoxDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, class CollisionBoxComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::CollisionBoxComponent& component) const;
 
     MCAPI void setHeight(float const& height);
 
     MCAPI void setWidth(float const& width);
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CollisionBoxDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CollisionBoxDefinition>>& root
     );
-
     // NOLINTEND
 };

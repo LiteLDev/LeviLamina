@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/LiquidBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Material;
+class Random;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class LiquidBlockDynamic : public ::LiquidBlock {
@@ -26,72 +24,81 @@ public:
     LiquidBlockDynamic();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 150
+    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~LiquidBlockDynamic() = default;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 162
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
-
-    MCAPI LiquidBlockDynamic(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI std::array<bool, 4> getSpread(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool shouldBecomeStatic(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+    virtual ~LiquidBlockDynamic() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSpreadTo(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class BlockPos const& flowFromPos,
-        uchar                 flowFromDirection
+    MCAPI LiquidBlockDynamic(::std::string const& nameId, int id, ::Material const& material);
+
+    MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
+
+    MCAPI bool _isLiquidBlocking(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
     ) const;
 
-    MCAPI int _getSlopeDistance(class BlockSource& region, class BlockPos const& pos, int pass, int from) const;
+    MCAPI void _setStatic(::BlockSource& region, ::BlockPos const& pos, bool usingExtraData) const;
 
-    MCAPI bool _isWaterBlocking(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class BlockPos const& flowFromPos,
-        uchar                 flowFromDirection
-    ) const;
+    MCAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
 
-    MCAPI void _setStatic(class BlockSource& region, class BlockPos const& pos, bool usingExtraData) const;
-
-    MCAPI bool
-    _tick(class BlockSource& region, class BlockPos const& pos, class Random& random, bool onlyDetectStatic) const;
+    MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
 
     MCAPI void _trySpreadTo(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        int                   neighbor,
-        class BlockPos const& flowFromPos,
-        uchar                 flowFromDirection
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        int               neighbor,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
     ) const;
 
+    MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI bool shouldBecomeStatic(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void entityInside$(class BlockSource&, class BlockPos const&, class Actor& entity) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

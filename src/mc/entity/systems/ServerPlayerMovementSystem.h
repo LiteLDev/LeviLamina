@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerPlayerMovementSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ServerPlayerMovementSystem {
 public:
     // prevent constructor by default
     ServerPlayerMovementSystem& operator=(ServerPlayerMovementSystem const&);
@@ -10,14 +15,14 @@ public:
     ServerPlayerMovementSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createClearPlayerActionComponentSystem();
+    MCAPI static ::TickingSystemWithInfo createClearPlayerActionComponentSystem();
 
-    MCAPI static std::array<struct TickingSystemWithInfo, 3> createPostTravelSystems();
+    MCAPI static ::std::array<::TickingSystemWithInfo, 2> createPostTravelSystems();
 
-    MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem();
+    MCAPI static ::TickingSystemWithInfo createServerPlayerMovementFinalSystem();
 
-    MCAPI static struct TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
-
+    MCAPI static ::TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
     // NOLINTEND
 };

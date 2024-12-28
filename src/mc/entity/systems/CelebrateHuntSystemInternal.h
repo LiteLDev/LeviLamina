@@ -2,14 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace CelebrateHuntSystemInternal {
-// NOLINTBEGIN
-MCAPI void _stopCelebrating(class Actor& actor, class CelebrateHuntComponent& component);
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class CelebrateHuntComponent;
+// clang-format on
 
+namespace CelebrateHuntSystemInternal {
+// functions
+// NOLINTBEGIN
 MCAPI void _tickCelebrateHuntComponent(
-    class ActorOwnerComponent&    actorOwnerComponent,
-    class CelebrateHuntComponent& celebrateHuntComponent
+    ::ActorOwnerComponent&    actorOwnerComponent,
+    ::CelebrateHuntComponent& celebrateHuntComponent
 );
 // NOLINTEND
 
-}; // namespace CelebrateHuntSystemInternal
+} // namespace CelebrateHuntSystemInternal

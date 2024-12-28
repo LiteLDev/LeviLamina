@@ -8,9 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::Betas {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& CURRENT();
+MCAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraft::Betas
+} // namespace ScriptModuleMinecraft::Betas

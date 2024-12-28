@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class HitboxComponent;
+struct HitboxJson;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class HitboxDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk5e2e52;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HitboxDefinition& operator=(HitboxDefinition const&);
@@ -18,14 +27,17 @@ public:
     HitboxDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addAABB(struct HitboxJson const& aabb);
+    MCAPI void addAABB(::HitboxJson const& aabb);
 
-    MCAPI void initialize(class EntityContext&, class HitboxComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::HitboxComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>& root
-    );
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HitboxDefinition>>& root);
     // NOLINTEND
 };

@@ -2,27 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/puv/FilterSubject.h"
+struct VariantParameterList {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk305e2c;
+    ::ll::UntypedStorage<8, 8> mUnk600d04;
+    ::ll::UntypedStorage<8, 8> mUnk3a6258;
+    ::ll::UntypedStorage<8, 8> mUnk2518ff;
+    ::ll::UntypedStorage<8, 8> mUnk4d051c;
+    ::ll::UntypedStorage<8, 8> mUnk1f7f43;
+    ::ll::UntypedStorage<8, 8> mUnk2a0892;
+    ::ll::UntypedStorage<8, 8> mUnkcb5bc4;
+    ::ll::UntypedStorage<8, 8> mUnkbcee5b;
+    // NOLINTEND
 
-class VariantParameterList {
 public:
     // prevent constructor by default
     VariantParameterList& operator=(VariantParameterList const&);
     VariantParameterList(VariantParameterList const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI VariantParameterList();
 
-    MCAPI bool hasParameter(::Puv::Legacy::FilterSubject parameter) const;
-
+    MCAPI explicit operator ::VariantParameterListConst() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

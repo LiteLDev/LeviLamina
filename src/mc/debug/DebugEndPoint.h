@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourcePackManager;
 namespace Core { class Path; }
 // clang-format on
 
@@ -23,39 +24,66 @@ public:
     // DebugEndPoint inner types define
     class VanillaWorldChecker : public ::ResourcePackListener {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnka84c93;
+        ::ll::UntypedStorage<1, 1>  mUnkac0f45;
+        ::ll::UntypedStorage<1, 1>  mUnk6685cb;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         VanillaWorldChecker& operator=(VanillaWorldChecker const&);
         VanillaWorldChecker(VanillaWorldChecker const&);
         VanillaWorldChecker();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~VanillaWorldChecker();
-
         // vIndex: 1
-        virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr);
+        virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
 
         // vIndex: 5
-        virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
+        virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
 
-        MCAPI void checkWorldData(class Core::Path const& levelPath);
-
+        // vIndex: 0
+        virtual ~VanillaWorldChecker() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void checkWorldData(::Core::Path const& levelPath);
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void onActiveResourcePacksChanged$(class ResourcePackManager& mgr);
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
-        MCAPI void onResourceManagerDestroyed$(class ResourcePackManager& mgr);
+        MCAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnk9aec1e;
+    ::ll::UntypedStorage<1, 1>  mUnked2556;
+    ::ll::UntypedStorage<4, 8>  mUnk71077b;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -64,47 +92,77 @@ public:
     DebugEndPoint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void contentAssert(::LogArea area, ::LogLevel level, char const* message);
+    // vIndex: 1
+    virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
 
-    MCVAPI void flush();
+    // vIndex: 2
+    virtual void flush() /*override*/;
 
-    MCVAPI bool isEnabled() const;
+    // vIndex: 3
+    virtual void setEnabled(bool enabled) /*override*/;
 
-    MCVAPI void log(::LogArea area, ::LogLevel level, char const* message);
+    // vIndex: 4
+    virtual bool isEnabled() const /*override*/;
 
-    MCVAPI bool logOnlyOnce() const;
+    // vIndex: 2
+    virtual bool logOnlyOnce() const /*override*/;
 
-    MCVAPI void setEnabled(bool newState);
+    // vIndex: 3
+    virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCAPI explicit DebugEndPoint(std::optional<::LogLevel> minLogLevel);
-
-    MCAPI void initializeContentLogging(class ResourcePackManager& mgr, class Core::Path const& levelPath);
-
+    // vIndex: 0
+    virtual ~DebugEndPoint() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
 
-    MCAPI static void** vftableForBedrockLogEndPoint();
+    MCAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::optional<::LogLevel> minLogLevel);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
+    // NOLINTEND
 
-    MCAPI void contentAssert$(::LogArea area, ::LogLevel level, char const* message);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
+    // NOLINTEND
 
-    MCAPI void flush$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isEnabled$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCAPI void log$(::LogArea area, ::LogLevel level, char const* message);
+    MCAPI void $flush();
 
-    MCAPI bool logOnlyOnce$() const;
+    MCAPI void $setEnabled(bool enabled);
 
-    MCAPI void setEnabled$(bool newState);
+    MCAPI bool $isEnabled() const;
 
-    MCAPI static std::unordered_map<::LogArea, bool> const& mAssertAreas();
+    MCAPI bool $logOnlyOnce() const;
 
+    MCAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForLogEndPoint();
+
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetworkIdentifier;
+class ResourcePackClientResponsePacket;
+// clang-format on
+
 class GameSpecificNetEventCallback {
 public:
     // prevent constructor by default
@@ -10,21 +16,30 @@ public:
     GameSpecificNetEventCallback();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameSpecificNetEventCallback() = default;
+    virtual ~GameSpecificNetEventCallback();
 
     // vIndex: 1
-    virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
-
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void handle$(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

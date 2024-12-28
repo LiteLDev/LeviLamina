@@ -7,7 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class Block;
+class CompoundTag;
 // clang-format on
 
 class IUnknownBlockTypeRegistry : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,21 +19,30 @@ public:
     IUnknownBlockTypeRegistry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IUnknownBlockTypeRegistry();
+    virtual ~IUnknownBlockTypeRegistry() = 0;
 
     // vIndex: 1
-    virtual class Block const& getUnknownBlock(class CompoundTag const& serId) = 0;
+    virtual ::Block const& getUnknownBlock(::CompoundTag const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

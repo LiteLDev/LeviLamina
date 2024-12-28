@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorDataFlagComponent;
+struct AdultRidingHeightOffsetComponent;
+struct RidingHeightComponent;
+// clang-format on
+
 namespace GetRidingHeightUtility {
+// functions
 // NOLINTBEGIN
 MCAPI float getRidingHeight(
-    struct ActorDataFlagComponent const&           data,
-    struct RidingHeightComponent const*            ridingHeightComponent,
-    struct AdultRidingHeightOffsetComponent const* adultRidingHeightOffsetComponent,
-    float                                          heightOffset
+    ::ActorDataFlagComponent const&           data,
+    ::RidingHeightComponent const*            ridingHeightComponent,
+    ::AdultRidingHeightOffsetComponent const* adultRidingHeightOffsetComponent,
+    float                                     heightOffset
 );
 // NOLINTEND
 
-}; // namespace GetRidingHeightUtility
+} // namespace GetRidingHeightUtility

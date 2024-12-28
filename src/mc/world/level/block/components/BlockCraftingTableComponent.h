@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockCraftingTableComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk6cf70c;
+    ::ll::UntypedStorage<8, 32> mUnk8b1187;
+    ::ll::UntypedStorage<8, 24> mUnk4236f4;
+    // NOLINTEND
 
-struct BlockCraftingTableComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&);
@@ -13,16 +18,8 @@ public:
     BlockCraftingTableComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockCraftingTableComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI ::BlockCraftingTableComponent& operator=(::BlockCraftingTableComponent&&);
     // NOLINTEND
 };

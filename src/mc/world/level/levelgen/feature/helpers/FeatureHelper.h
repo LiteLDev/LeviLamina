@@ -2,23 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockDescriptor;
+class BlockPos;
+class BlockSource;
+class IBlockWorldGenAPI;
+class MolangVariableMap;
+class RenderParams;
+// clang-format on
+
 namespace FeatureHelper {
+// functions
 // NOLINTBEGIN
-MCAPI bool isEmptyBlock(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isEmptyBlock(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI class RenderParams
-makeFeatureRenderParams(class BlockSource& source, class BlockPos const& pos, class MolangVariableMap& molangVariables);
+MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
 
-MCAPI bool passesAllowList(class Block const& block, std::vector<class BlockDescriptor> const& allowList);
+MCAPI ::RenderParams
+makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
 
 MCAPI bool passesAllowList(
-    class IBlockWorldGenAPI const&            target,
-    class BlockPos const&                     pos,
-    std::vector<class BlockDescriptor> const& allowList
+    ::IBlockWorldGenAPI const&              target,
+    ::BlockPos const&                       pos,
+    ::std::vector<::BlockDescriptor> const& allowList
 );
 
-MCAPI std::optional<class BlockPos>
-      placeBlock(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block);
+MCAPI ::std::optional<::BlockPos> placeBlock(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block);
 // NOLINTEND
 
-}; // namespace FeatureHelper
+} // namespace FeatureHelper

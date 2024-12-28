@@ -3,9 +3,54 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorType.h"
+#include "mc/deps/ecs/strict/AddRemove.h"
+#include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/Filter.h"
+#include "mc/deps/ecs/strict/GlobalRead.h"
+#include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/Read.h"
+#include "mc/deps/ecs/strict/StrictExecutionContext.h"
+#include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/utilities/GetCollisionShapeEntityProxy.h"
 
-class OwningGetCollisionShapeEntityProxy {
+// auto generated forward declare list
+// clang-format off
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct ActorGameTypeComponent;
+struct ActorTypeComponent;
+struct CanStandOnSnowFlagComponent;
+struct ExternalDataComponent;
+struct FallDistanceComponent;
+struct HasLightweightFamilyFlagComponent;
+struct MovementAbilitiesComponent;
+struct PassengerComponent;
+struct VehicleComponent;
+// clang-format on
+
+class OwningGetCollisionShapeEntityProxy
+: public ::GetCollisionShapeEntityProxy<::StrictExecutionContext<
+      ::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent>,
+      ::Read<
+          ::AABBShapeComponent,
+          ::MovementAbilitiesComponent,
+          ::ActorTypeComponent,
+          ::FallDistanceComponent,
+          ::PassengerComponent,
+          ::ActorGameTypeComponent,
+          ::ActorDataFlagComponent,
+          ::VehicleComponent>,
+      ::Write<>,
+      ::AddRemove<>,
+      ::GlobalRead<::ExternalDataComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk30af3e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OwningGetCollisionShapeEntityProxy& operator=(OwningGetCollisionShapeEntityProxy const&);
@@ -13,68 +58,21 @@ public:
     OwningGetCollisionShapeEntityProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OwningGetCollisionShapeEntityProxy() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual bool canDescendThroughBlock() const;
-
-    // vIndex: 3
-    virtual float getFallDistance() const;
-
-    // vIndex: 4
-    virtual ::ActorType getEntityTypeId() const;
-
-    // vIndex: 5
-    virtual bool isWearingLeatherBoots() const;
-
-    // vIndex: 6
-    virtual bool hasLightWeightFamilyTag() const;
-
-    // vIndex: 7
-    virtual class AABB const& getAABB() const;
-
-    // vIndex: 8
-    virtual bool isWorldBuilder() const;
-
-    // vIndex: 9
-    virtual bool isRiding() const;
-
-    // vIndex: 10
-    virtual bool hasPassenger() const;
-
-    MCAPI explicit OwningGetCollisionShapeEntityProxy(class EntityContext const&);
-
+    virtual ~OwningGetCollisionShapeEntityProxy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class EntityContext const&);
-
-    MCAPI bool canDescendThroughBlock$() const;
-
-    MCAPI class AABB const& getAABB$() const;
-
-    MCAPI ::ActorType getEntityTypeId$() const;
-
-    MCAPI float getFallDistance$() const;
-
-    MCAPI bool hasLightWeightFamilyTag$() const;
-
-    MCAPI bool hasPassenger$() const;
-
-    MCAPI bool isRiding$() const;
-
-    MCAPI bool isWearingLeatherBoots$() const;
-
-    MCAPI bool isWorldBuilder$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

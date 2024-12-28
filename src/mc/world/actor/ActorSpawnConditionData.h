@@ -4,22 +4,28 @@
 
 struct ActorSpawnConditionData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnke7ee7e;
+    ::ll::UntypedStorage<8, 64>  mUnk9bc0ae;
+    ::ll::UntypedStorage<8, 392> mUnk4bca28;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ActorSpawnConditionData& operator=(ActorSpawnConditionData const&);
     ActorSpawnConditionData(ActorSpawnConditionData const&);
     ActorSpawnConditionData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ActorSpawnConditionData& operator=(struct ActorSpawnConditionData const&);
-
     MCAPI ~ActorSpawnConditionData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

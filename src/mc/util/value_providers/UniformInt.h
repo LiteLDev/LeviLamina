@@ -9,7 +9,14 @@ class Random;
 
 namespace ValueProviders {
 
-class UniformInt {
+struct UniformInt {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk46db93;
+    ::ll::UntypedStorage<4, 4> mUnk769dc1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UniformInt& operator=(UniformInt const&);
@@ -17,10 +24,10 @@ public:
     UniformInt();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI int generateNext(class Random& random) const;
-
+    MCAPI int generateNext(::Random& random) const;
     // NOLINTEND
 };
 
-}; // namespace ValueProviders
+} // namespace ValueProviders

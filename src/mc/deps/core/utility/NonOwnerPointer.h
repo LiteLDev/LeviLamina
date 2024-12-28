@@ -13,4 +13,4 @@ public:
     NonOwnerPointer();
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

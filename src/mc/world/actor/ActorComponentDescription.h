@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/Description.h"
 
-class ActorComponentDescription : public ::Description {
+struct ActorComponentDescription : public ::Description {
 public:
     // prevent constructor by default
     ActorComponentDescription& operator=(ActorComponentDescription const&);
@@ -13,16 +13,15 @@ public:
     ActorComponentDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~ActorComponentDescription();
-
+    virtual ~ActorComponentDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

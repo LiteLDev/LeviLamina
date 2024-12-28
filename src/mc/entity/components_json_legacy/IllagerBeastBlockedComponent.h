@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDamageSource;
+// clang-format on
+
 class IllagerBeastBlockedComponent {
 public:
     // prevent constructor by default
@@ -10,10 +16,8 @@ public:
     IllagerBeastBlockedComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(class Actor&);
-
-    MCAPI void onBlocked(class Actor& owner, class ActorDamageSource const& source, class Actor& blocker);
-
+    MCAPI void onBlocked(::Actor& owner, ::ActorDamageSource const& source, ::Actor& blocker);
     // NOLINTEND
 };

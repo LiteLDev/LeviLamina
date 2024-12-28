@@ -3,31 +3,40 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/ParticleType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class MobEffectInstance;
+class Random;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct EffectDuration;
+struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
 
 class AreaEffectCloud : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkce8056;
+    ::ll::UntypedStorage<1, 1>  mUnk156f46;
+    ::ll::UntypedStorage<8, 8>  mUnkdb5778;
+    ::ll::UntypedStorage<4, 4>  mUnkc6f235;
+    ::ll::UntypedStorage<4, 4>  mUnk710b83;
+    ::ll::UntypedStorage<4, 4>  mUnke886ed;
+    ::ll::UntypedStorage<4, 4>  mUnk2cbab8;
+    ::ll::UntypedStorage<8, 24> mUnk92e9be;
+    ::ll::UntypedStorage<8, 64> mUnk66cb21;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AreaEffectCloud& operator=(AreaEffectCloud const&);
@@ -35,57 +44,60 @@ public:
     AreaEffectCloud();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    // vIndex: 10
-    virtual ~AreaEffectCloud() = default;
+    // vIndex: 56
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 59
-    virtual void setOwner(struct ActorUniqueID ownerID);
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 8
+    virtual ~AreaEffectCloud() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI AreaEffectCloud(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI void addAreaEffect(class MobEffectInstance effect);
+    MCAPI void _spawnParticles(::Random& random, uint numParticles, float radius);
 
-    MCAPI int getDuration() const;
+    MCAPI void addAreaEffect(::MobEffectInstance effect);
+
+    MCAPI void calculateAndSetRadiusPerTick();
 
     MCAPI float getEffectiveRadius() const;
 
     MCAPI ::ParticleType getParticle() const;
 
-    MCAPI int getPickupCount() const;
-
     MCAPI void notifyPickup();
 
     MCAPI void setAffectOwner(bool shouldAffect);
 
-    MCAPI void setDuration(int duration);
+    MCAPI void setDuration(::EffectDuration duration);
 
     MCAPI void setInitialRadius(float radius);
 
     MCAPI void setParticle(::ParticleType type);
 
-    MCAPI void setParticleColor(class mce::Color& c);
-
-    MCAPI void setPickupCount(int useCount);
+    MCAPI void setParticleColor(::mce::Color& c);
 
     MCAPI void setPotion(short potionAUX);
 
@@ -93,40 +105,44 @@ public:
 
     MCAPI void setRadiusOnUse(float radiusOnUse);
 
-    MCAPI void setRadiusPerTick(float radiusPerTick);
-
     MCAPI void setReapplicationDelay(int delay);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _spawnParticles(class Random& random, uint numParticles, float radius);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getShadowRadius$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void normalTick$();
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $normalTick();
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void setOwner$(struct ActorUniqueID ownerID);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

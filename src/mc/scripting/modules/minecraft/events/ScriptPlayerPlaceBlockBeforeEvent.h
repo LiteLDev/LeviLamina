@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,50 +18,56 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptPlayerPlaceBlockBeforeEvent {
+struct ScriptPlayerPlaceBlockBeforeEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk61e710;
+    ::ll::UntypedStorage<4, 4>  mUnkacb8dc;
+    ::ll::UntypedStorage<4, 12> mUnk8bfeb8;
+    ::ll::UntypedStorage<1, 1>  mUnk272646;
+    ::ll::UntypedStorage<8, 32> mUnk2632b2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPlayerPlaceBlockBeforeEvent& operator=(ScriptPlayerPlaceBlockBeforeEvent const&);
+    ScriptPlayerPlaceBlockBeforeEvent(ScriptPlayerPlaceBlockBeforeEvent const&);
     ScriptPlayerPlaceBlockBeforeEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
-
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(
-        class Player const&                       player,
-        class Dimension&                          dimension,
-        class BlockPos const&                     pos,
-        uchar                                     face,
-        class Vec3 const&                         faceLocation,
-        class Block const&                        permutationToPlace,
-        class Scripting::WeakLifetimeScope const& scope
+        ::Player const&                       player,
+        ::Dimension&                          dimension,
+        ::BlockPos const&                     pos,
+        uchar                                 face,
+        ::Vec3 const&                         faceLocation,
+        ::Block const&                        permutationToPlace,
+        ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class Player const&                       player,
-        class Dimension&                          dimension,
-        class BlockPos const&                     pos,
-        uchar                                     face,
-        class Vec3 const&                         faceLocation,
-        class Block const&                        permutationToPlace,
-        class Scripting::WeakLifetimeScope const& scope
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Player const&                       player,
+        ::Dimension&                          dimension,
+        ::BlockPos const&                     pos,
+        uchar                                 face,
+        ::Vec3 const&                         faceLocation,
+        ::Block const&                        permutationToPlace,
+        ::Scripting::WeakLifetimeScope const& scope
     );
-
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

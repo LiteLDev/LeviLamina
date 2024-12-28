@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CrashDumpPlayerData {
+// auto generated forward declare list
+// clang-format off
+struct CrashDumpFormatEntryImpl;
+// clang-format on
+
+struct CrashDumpPlayerData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 64> mUnk59f85e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CrashDumpPlayerData& operator=(CrashDumpPlayerData const&);
@@ -10,13 +21,8 @@ public:
     CrashDumpPlayerData();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static auto kFormat() -> struct CrashDumpFormatEntryImpl const (&)[];
-
+    MCAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
     // NOLINTEND
 };

@@ -2,15 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/json_object/Collection.h"
+#include "mc/deps/core/utility/json_object/Node.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::JSONObject { class MemoryPage; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
 
 namespace Bedrock::JSONObject {
 
-class ArrayNode {
+class ArrayNode : public ::Bedrock::JSONObject::Node, public ::Bedrock::JSONObject::Collection {
+public:
+    // ArrayNode inner types declare
+    // clang-format off
+    template<int T0> class iterator_base;
+    // clang-format on
+
+    // ArrayNode inner types define
+    template <int T0>
+    class iterator_base {
+    public:
+        // prevent constructor by default
+        iterator_base& operator=(iterator_base const&);
+        iterator_base(iterator_base const&);
+        iterator_base();
+    };
+
 public:
     // prevent constructor by default
     ArrayNode& operator=(ArrayNode const&);
@@ -18,29 +37,10 @@ public:
     ArrayNode();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void clear();
-
-    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const& contents);
-
-    MCAPI ~ArrayNode();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI explicit ArrayNode(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    MCAPI void dtor$();
-
+    MCAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

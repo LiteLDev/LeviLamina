@@ -7,53 +7,84 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class DeathInfoPacket : public ::Packet {
+public:
+    // DeathInfoPacket inner types define
+    using DeathCauseMessageType = ::std::pair<::std::string, ::std::vector<::std::string>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 56, ::std::pair<::std::string, ::std::vector<::std::string>>> mDeathCauseMessage;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DeathInfoPacket& operator=(DeathInfoPacket const&);
     DeathInfoPacket(DeathInfoPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DeathInfoPacket();
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI DeathInfoPacket();
-
-    MCAPI explicit DeathInfoPacket(std::pair<std::string, std::vector<std::string>> const& deathCauseMessage);
-
+    // vIndex: 0
+    virtual ~DeathInfoPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DeathInfoPacket();
 
-    MCAPI void* ctor$();
+    MCAPI explicit DeathInfoPacket(::std::pair<::std::string, ::std::vector<::std::string>> const& deathCauseMessage);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::pair<std::string, std::vector<std::string>> const& deathCauseMessage);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::pair<::std::string, ::std::vector<::std::string>> const& deathCauseMessage);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InsideEndPortalBlockSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct InsideEndPortalBlockSystem {
 public:
     // prevent constructor by default
     InsideEndPortalBlockSystem& operator=(InsideEndPortalBlockSystem const&);
@@ -10,8 +15,8 @@ public:
     InsideEndPortalBlockSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

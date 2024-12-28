@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ struct MCRESULT;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptCommandError {
+struct ScriptCommandError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptCommandError& operator=(ScriptCommandError const&);
@@ -20,23 +21,30 @@ public:
     ScriptCommandError();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCommandError(std::string messages, struct MCRESULT const& result);
+    MCAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
 
     MCAPI ~ScriptCommandError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptCommandError> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string messages, struct MCRESULT const& result);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptCommandError> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

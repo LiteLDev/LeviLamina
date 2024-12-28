@@ -6,59 +6,81 @@
 #include "mc/nbt/Tag.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class IDataInput;
+class IDataOutput;
+class PrintStream;
+// clang-format on
+
 class ListTag : public ::Tag {
+public:
+    // ListTag inner types define
+    using List = ::std::vector<::std::unique_ptr<::Tag>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Tag>>> mList;
+    ::ll::TypedStorage<1, 1, ::Tag::Type>                              mType;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ListTag& operator=(ListTag const&);
     ListTag(ListTag const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ListTag();
-
-    // vIndex: 1
-    virtual void deleteChildren();
-
     // vIndex: 2
-    virtual void write(class IDataOutput& dos) const;
+    virtual void write(::IDataOutput& dos) const /*override*/;
 
     // vIndex: 3
-    virtual class Bedrock::Result<void> load(class IDataInput& dis);
-
-    // vIndex: 4
-    virtual std::string toString() const;
+    virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 6
-    virtual bool equals(class Tag const& rhs) const;
+    // vIndex: 4
+    virtual ::std::string toString() const /*override*/;
 
-    // vIndex: 8
-    virtual void print(std::string const& prefix_, class PrintStream& out) const;
+    // vIndex: 7
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
     // vIndex: 9
-    virtual std::unique_ptr<class Tag> copy() const;
+    virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
     // vIndex: 10
-    virtual uint64 hash() const;
+    virtual uint64 hash() const /*override*/;
 
+    // vIndex: 6
+    virtual bool equals(::Tag const& rhs) const /*override*/;
+
+    // vIndex: 1
+    virtual void deleteChildren() /*override*/;
+
+    // vIndex: 0
+    virtual ~ListTag() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ListTag();
 
-    MCAPI void add(std::unique_ptr<class Tag> tag);
+    MCAPI void add(::std::unique_ptr<::Tag> tag);
 
-    MCAPI std::unique_ptr<class ListTag> copyList() const;
+    MCAPI ::std::unique_ptr<::ListTag> copyList() const;
 
-    MCAPI void erase(uint64 index);
+    MCAPI void forEachCompoundTag(::std::function<void(::CompoundTag const&)> func) const;
 
-    MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)> func) const;
+    MCAPI ::Tag* get(int index) const;
 
-    MCAPI class Tag* get(int index) const;
+    MCAPI ::CompoundTag const* getCompound(uint64) const;
 
-    MCAPI class CompoundTag* getCompound(uint64 index);
-
-    MCAPI class CompoundTag const* getCompound(uint64 index) const;
+    MCAPI ::CompoundTag* getCompound(uint64 index);
 
     MCAPI double getDouble(int index) const;
 
@@ -68,40 +90,48 @@ public:
 
     MCAPI int64 getInt64(int index) const;
 
-    MCAPI std::string const& getString(int index) const;
-
-    MCAPI void popBack();
+    MCAPI ::std::string const& getString(int index) const;
 
     MCAPI int size() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $write(::IDataOutput& dos) const;
 
-    MCAPI std::unique_ptr<class Tag> copy$() const;
+    MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI void deleteChildren$();
+    MCAPI ::Tag::Type $getId() const;
 
-    MCAPI bool equals$(class Tag const& rhs) const;
+    MCAPI ::std::string $toString() const;
 
-    MCAPI ::Tag::Type getId$() const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
-    MCAPI uint64 hash$() const;
+    MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+    MCAPI uint64 $hash() const;
 
-    MCAPI void print$(std::string const& prefix_, class PrintStream& out) const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI std::string toString$() const;
+    MCAPI void $deleteChildren();
+    // NOLINTEND
 
-    MCAPI void write$(class IDataOutput& dos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

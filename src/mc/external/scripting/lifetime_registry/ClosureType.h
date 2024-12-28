@@ -12,4 +12,4 @@ public:
     ClosureType();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

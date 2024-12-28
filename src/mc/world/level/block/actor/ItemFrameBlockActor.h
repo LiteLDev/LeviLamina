@@ -3,12 +3,41 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/states/BlockStateVariant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+class ItemInstance;
+class Level;
+class SaveContext;
+// clang-format on
+
 class ItemFrameBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12>  mUnk7bfdd1;
+    ::ll::UntypedStorage<8, 32>  mUnk3a63ae;
+    ::ll::UntypedStorage<8, 32>  mUnkfc8efe;
+    ::ll::UntypedStorage<8, 128> mUnk97e0fc;
+    ::ll::UntypedStorage<4, 4>   mUnka12067;
+    ::ll::UntypedStorage<4, 4>   mUnk10930e;
+    ::ll::UntypedStorage<1, 1>   mUnke8a713;
+    ::ll::UntypedStorage<1, 1>   mUnkcb0b81;
+    ::ll::UntypedStorage<1, 1>   mUnk4e6f8c;
+    ::ll::UntypedStorage<8, 24>  mUnk1b0ba3;
+    ::ll::UntypedStorage<1, 1>   mUnk9cbc49;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemFrameBlockActor& operator=(ItemFrameBlockActor const&);
@@ -16,94 +45,106 @@ public:
     ItemFrameBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemFrameBlockActor();
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
-    // vIndex: 7
-    virtual void tick(class BlockSource& region);
-
-    // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
-
-    // vIndex: 13
-    virtual void onRemoved(class BlockSource& region);
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCAPI explicit ItemFrameBlockActor(class BlockPos pos);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI ItemFrameBlockActor(class BlockPos pos, ::BlockActorType type, std::string const& id);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI void actuallyDropItem(class BlockSource& region, bool dropItem, class Actor* entitySource);
+    // vIndex: 0
+    virtual ~ItemFrameBlockActor() /*override*/;
+    // NOLINTEND
 
-    MCAPI void dropFramedItem(class BlockSource& region, bool dropItem, class Actor* entitySource);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ItemFrameBlockActor(::BlockPos pos);
 
-    MCAPI class ItemInstance const& getFramedItem() const;
+    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+
+    MCAPI void
+    _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
+
+    MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
+
+    MCAPI void dropFramedItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
+
+    MCAPI ::ItemInstance const& getFramedItem() const;
 
     MCAPI float getRotation();
 
-    MCAPI void rotateFramedItem(class BlockSource& region, class Actor& entitySource);
+    MCAPI void rotateFramedItem(::BlockSource& region, ::Actor& entitySource);
 
-    MCAPI void setItem(class BlockSource& region, class ItemInstance const& item, class Actor* entitySource);
+    MCAPI void setIgnoreLighting(bool ignoreLighting);
+
+    MCAPI void setItem(::BlockSource& region, ::ItemInstance const& item, ::Actor* entitySource);
 
     MCAPI void updateNameTag();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _checkMapRemoval(class BlockSource& region, class ItemInstance& item);
-
-    MCAPI void _updateBit(
-        class BlockSource&                   region,
-        class BlockStateVariant<bool> const& vanillaState,
-        class HashedString const&            itemName
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(class BlockPos pos, ::BlockActorType type, std::string const& id);
-
-    MCAPI void* ctor$(class BlockPos pos);
-
-    MCAPI void dtor$();
-
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
-
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
-
-    MCAPI float getShadowRadius$(class BlockSource&) const;
-
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void onChanged$(class BlockSource& region);
-
-    MCAPI void onRemoved$(class BlockSource& region);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void tick$(class BlockSource& region);
-
     MCAPI static float const& ROTATION_DEGREES();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
+
+    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI float $getShadowRadius(::BlockSource&) const;
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

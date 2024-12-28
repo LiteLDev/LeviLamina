@@ -1,0 +1,126 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/file/FileAccessType.h"
+#include "mc/deps/core/file/FileStorageArea.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class FileSystemImpl; }
+namespace Core { class Path; }
+namespace Core { class Result; }
+// clang-format on
+
+namespace Core {
+
+class WriteBufferedFileStorageArea : public ::Core::FileStorageArea {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkb8f56f;
+    ::ll::UntypedStorage<8, 16> mUnk847197;
+    ::ll::UntypedStorage<8, 64> mUnk889f10;
+    ::ll::UntypedStorage<8, 80> mUnkba13b1;
+    ::ll::UntypedStorage<8, 24> mUnk7cfba8;
+    ::ll::UntypedStorage<1, 1>  mUnk13aec3;
+    ::ll::UntypedStorage<1, 1>  mUnk61c0ed;
+    ::ll::UntypedStorage<1, 1>  mUnkafc03c;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WriteBufferedFileStorageArea& operator=(WriteBufferedFileStorageArea const&);
+    WriteBufferedFileStorageArea(WriteBufferedFileStorageArea const&);
+    WriteBufferedFileStorageArea();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~WriteBufferedFileStorageArea() /*override*/;
+
+    // vIndex: 2
+    virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
+
+    // vIndex: 3
+    virtual bool supportsSizeQuery() const /*override*/;
+
+    // vIndex: 4
+    virtual uint64 getTotalSize() const /*override*/;
+
+    // vIndex: 5
+    virtual ::Core::Result getUsedSize(uint64&) /*override*/;
+
+    // vIndex: 25
+    virtual uint64 getTransactionWriteSizeLimit() const /*override*/;
+
+    // vIndex: 9
+    virtual bool handlesPendingWrites() const /*override*/;
+
+    // vIndex: 10
+    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack) /*override*/;
+
+    // vIndex: 11
+    virtual void informStorageAreaCopy(uint64 storageAreaSize) /*override*/;
+
+    // vIndex: 26
+    virtual ::Core::Result setSaveDataIcon(::Core::Path const& iconPath) /*override*/;
+
+    // vIndex: 24
+    virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const /*override*/;
+
+    // vIndex: 21
+    virtual void flushImmediately() /*override*/;
+
+    // vIndex: 22
+    virtual void enableFlushToDisk(bool) /*override*/;
+
+    // vIndex: 23
+    virtual bool checkCorrupt(bool handleCorruption) /*override*/;
+
+    // vIndex: 33
+    virtual void _onTeardown() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
+
+    MCAPI bool $supportsSizeQuery() const;
+
+    MCAPI uint64 $getTotalSize() const;
+
+    MCAPI ::Core::Result $getUsedSize(uint64&);
+
+    MCAPI uint64 $getTransactionWriteSizeLimit() const;
+
+    MCAPI bool $handlesPendingWrites() const;
+
+    MCAPI void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+
+    MCAPI void $informStorageAreaCopy(uint64 storageAreaSize);
+
+    MCAPI ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
+
+    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
+
+    MCAPI void $flushImmediately();
+
+    MCAPI void $enableFlushToDisk(bool);
+
+    MCAPI bool $checkCorrupt(bool handleCorruption);
+
+    MCAPI void $_onTeardown();
+    // NOLINTEND
+};
+
+} // namespace Core

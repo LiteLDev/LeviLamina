@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BarterComponent;
+class Mob;
+class Vec3;
+// clang-format on
+
 class BarterGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb318cc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BarterGoal& operator=(BarterGoal const&);
@@ -14,48 +26,61 @@ public:
     BarterGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BarterGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit BarterGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~BarterGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Vec3 _getThrowVector();
-
-    MCAPI void _sendBarterEventPacket(class BarterComponent* barterComponent);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BarterGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI ::Vec3 _getThrowVector();
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void _sendBarterEventPacket(::BarterComponent* barterComponent);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

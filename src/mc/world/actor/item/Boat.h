@@ -3,30 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct VariantParameterList;
 // clang-format on
 
 class Boat : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkc0f659;
+    ::ll::UntypedStorage<4, 4> mUnk93e40b;
+    ::ll::UntypedStorage<4, 4> mUnk700165;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Boat& operator=(Boat const&);
@@ -34,87 +34,105 @@ public:
     Boat();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 10
-    virtual ~Boat() = default;
+    // vIndex: 143
+    virtual void destroy(::Actor* source);
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 31
-    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 29
+    virtual ::std::string getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const
+        /*override*/;
 
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
+    // vIndex: 96
+    virtual bool canAddPassenger(::Actor& passenger) const /*override*/;
 
-    // vIndex: 97
-    virtual struct ActorUniqueID getControllingPlayer() const;
+    // vIndex: 93
+    virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 100
-    virtual bool canAddPassenger(class Actor& passenger) const;
+    // vIndex: 117
+    virtual float getPassengerYRotation(::Actor const& passenger) const /*override*/;
 
-    // vIndex: 121
-    virtual float getPassengerYRotation(class Actor const& passenger) const;
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 151
-    virtual void destroy(class Actor* source);
+    // vIndex: 8
+    virtual ~Boat() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Boat(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI uchar getWoodID() const;
 
     MCAPI void postNormalTick();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canAddPassenger$(class Actor& passenger) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void destroy$(class Actor* source);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+    MCAPI void $destroy(::Actor* source);
 
-    MCAPI std::string getExitTip$(std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+    MCAPI void $normalTick();
 
-    MCAPI float getPassengerYRotation$(class Actor const& passenger) const;
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
-    MCAPI void normalTick$();
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI float $getPassengerYRotation(::Actor const& passenger) const;
 
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

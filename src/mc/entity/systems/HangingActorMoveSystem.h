@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 class HangingActorMoveSystem {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     HangingActorMoveSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::vector<struct TickingSystemWithInfo> createSystems();
-
+    MCAPI static ::std::vector<::TickingSystemWithInfo> createSystems();
     // NOLINTEND
 };

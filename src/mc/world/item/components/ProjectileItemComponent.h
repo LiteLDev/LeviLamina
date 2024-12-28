@@ -4,14 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockSource;
+class Container;
+class HashedString;
+class Player;
+class SemVersion;
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ProjectileItemComponent {
+class ProjectileItemComponent : public ::NetworkedItemComponent<::ProjectileItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk6c13ef;
+    ::ll::UntypedStorage<8, 176> mUnk23fa74;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ProjectileItemComponent& operator=(ProjectileItemComponent const&);
@@ -19,92 +34,51 @@ public:
     ProjectileItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ProjectileItemComponent();
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
-    // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
-
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
-
-    MCAPI class Actor* createProjectileActor(
-        class BlockSource& region,
-        class ItemStack const&,
-        class Vec3 const& pos,
-        class Vec3 const& direction
-    ) const;
-
-    MCAPI class Vec3 getShootDir(class Player const& player, float angleOffset) const;
-
-    MCAPI class Actor* shootProjectile(
-        class BlockSource& region,
-        class Vec3 const&  aimPos,
-        class Vec3 const&  aimDir,
-        float              power,
-        class Player*      player
-    ) const;
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~ProjectileItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCAPI void* ctor$(::ActorType actorType, float minCriticalPower);
+    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI void dtor$();
+    MCAPI ::Actor*
+    shootProjectile(::BlockSource& region, ::Vec3 const& aimPos, ::Vec3 const& aimDir, float power, ::Player* player)
+        const;
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void _initializeComponent$();
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
-
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
-
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

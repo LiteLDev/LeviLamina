@@ -4,41 +4,51 @@
 
 class IndexSet {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8a7aaf;
+    ::ll::UntypedStorage<8, 24> mUnk42b399;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     IndexSet& operator=(IndexSet const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI IndexSet();
 
-    MCAPI IndexSet(class IndexSet&& other);
+    MCAPI IndexSet(::IndexSet const& other);
 
-    MCAPI IndexSet(class IndexSet const& other);
+    MCAPI IndexSet(::IndexSet&& other);
 
     MCAPI bool contains(uint64 index) const;
 
-    MCAPI std::vector<uint64> const& getPacked() const;
+    MCAPI ::std::vector<uint64> const& getPacked() const;
 
     MCAPI void insert(uint64 index);
 
-    MCAPI bool operator==(class IndexSet const& other) const;
+    MCAPI bool operator==(::IndexSet const& other) const;
 
     MCAPI void remove(uint64 index);
 
     MCAPI ~IndexSet();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class IndexSet&& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class IndexSet const& other);
+    MCAPI void* $ctor(::IndexSet const& other);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::IndexSet&& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

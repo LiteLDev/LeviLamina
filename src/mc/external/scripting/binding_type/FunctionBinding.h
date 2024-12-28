@@ -2,34 +2,45 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/binding_type/TaggedBinding.h"
+
 namespace Scripting {
 
-struct FunctionBinding {
+struct FunctionBinding : public ::Scripting::TaggedBinding {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkf6fe7c;
+    ::ll::UntypedStorage<8, 24> mUnkceeb8a;
+    ::ll::UntypedStorage<8, 16> mUnk5d6400;
+    ::ll::UntypedStorage<8, 24> mUnk76729b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FunctionBinding& operator=(FunctionBinding const&);
     FunctionBinding();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI FunctionBinding(struct Scripting::FunctionBinding&&);
-
-    MCAPI FunctionBinding(struct Scripting::FunctionBinding const&);
+    MCAPI FunctionBinding(::Scripting::FunctionBinding const&);
 
     MCAPI ~FunctionBinding();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::FunctionBinding&&);
+    MCAPI void* $ctor(::Scripting::FunctionBinding const&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct Scripting::FunctionBinding const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

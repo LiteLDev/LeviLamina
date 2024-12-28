@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/EquipmentSlot.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
@@ -27,41 +26,62 @@ public:
     ScriptEquippableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptEquippableComponent() = default;
-
     // vIndex: 1
-    virtual bool _isValid() const;
+    virtual bool _isValid() const /*override*/;
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
-    getEquipment(::Puv::Legacy::EquipmentSlot equipmentSlot);
-
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>>
-    getEquipmentSlot(::Puv::Legacy::EquipmentSlot equipmentSlot);
-
-    MCAPI class Scripting::Result<bool> setEquipment(
-        ::Puv::Legacy::EquipmentSlot                                       equipmentSlot,
-        std::optional<class ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack
-    );
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptEquippableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    // vIndex: 0
+    virtual ~ScriptEquippableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    getEquipment(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCAPI bool _isValid$() const;
+    MCAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
+    getEquipmentSlot(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCAPI static char const* const& ComponentId();
+    MCAPI ::Scripting::Result_deprecated<bool> setEquipment(
+        ::SharedTypes::Legacy::EquipmentSlot                             equipmentSlot,
+        ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack
+    );
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEquippableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

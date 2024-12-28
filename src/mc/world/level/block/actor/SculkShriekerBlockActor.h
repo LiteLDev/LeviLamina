@@ -3,10 +3,50 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class Player;
+class SaveContext;
+// clang-format on
+
 class SculkShriekerBlockActor : public ::BlockActor {
+public:
+    // SculkShriekerBlockActor inner types declare
+    // clang-format off
+    struct QueuedResponse;
+    // clang-format on
+
+    // SculkShriekerBlockActor inner types define
+    struct QueuedResponse {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk55c338;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        QueuedResponse& operator=(QueuedResponse const&);
+        QueuedResponse(QueuedResponse const&);
+        QueuedResponse();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 200> mUnkfd4e51;
+    ::ll::UntypedStorage<8, 80>  mUnk8817e1;
+    ::ll::UntypedStorage<4, 8>   mUnk11bb13;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkShriekerBlockActor& operator=(SculkShriekerBlockActor const&);
@@ -14,54 +54,71 @@ public:
     SculkShriekerBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkShriekerBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 13
-    virtual void onRemoved(class BlockSource& region);
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCAPI explicit SculkShriekerBlockActor(class BlockPos const& pos);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCAPI void tryRespond(class BlockSource& region, class BlockPos const& pos);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCAPI bool tryShriek(class BlockSource& region, class BlockPos pos, class Player& provokingPlayer);
-
-    MCAPI static class SculkShriekerBlockActor* tryGet(class BlockSource& region, class BlockPos blockPos);
-
-    MCAPI static class Player* tryGetPlayerInHierarchy(class Actor* actor);
-
+    // vIndex: 0
+    virtual ~SculkShriekerBlockActor() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool _canRespond(class BlockSource const& region, class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+    MCAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+    // NOLINTEND
 
-    MCAPI void onRemoved$(class BlockSource& region);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI static ::SculkShriekerBlockActor* tryGet(::BlockSource& region, ::BlockPos blockPos);
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

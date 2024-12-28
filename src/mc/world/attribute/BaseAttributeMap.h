@@ -2,66 +2,90 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Attribute;
+class AttributeInstance;
+class AttributeInstanceHandle;
+class HashedString;
+// clang-format on
+
 class BaseAttributeMap {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk97db9e;
+    ::ll::UntypedStorage<8, 24> mUnke9dcd1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BaseAttributeMap& operator=(BaseAttributeMap const&);
     BaseAttributeMap(BaseAttributeMap const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BaseAttributeMap();
 
-    MCAPI std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint const, class AttributeInstance>>>>
-          begin();
+    MCAPI ::std::_List_iterator<
+        ::std::_List_val<::std::_List_simple_types<::std::pair<uint const, ::AttributeInstance>>>>
+    begin();
 
     MCAPI void clearDirtyAttributes();
 
-    MCAPI std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<uint const, class AttributeInstance>>>>
-          end();
+    MCAPI ::std::_List_iterator<
+        ::std::_List_val<::std::_List_simple_types<::std::pair<uint const, ::AttributeInstance>>>>
+    end();
 
-    MCAPI std::vector<class AttributeInstanceHandle> const& getDirtyAttributes() const;
+    MCAPI ::std::vector<::AttributeInstanceHandle> const& getDirtyAttributes() const;
 
-    MCAPI class AttributeInstance const& getInstance(class Attribute const& attribute) const;
+    MCAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
 
-    MCAPI class AttributeInstance const& getInstance(uint idValue) const;
+    MCAPI ::AttributeInstance const& getInstance(uint idValue) const;
 
-    MCAPI class AttributeInstance* getMutableInstance(class Attribute const& attribute);
+    MCAPI ::AttributeInstance* getMutableInstance(::Attribute const& attribute);
 
-    MCAPI class AttributeInstance* getMutableInstance(class HashedString const& name);
+    MCAPI ::AttributeInstance* getMutableInstance(::HashedString const& name);
 
-    MCAPI class AttributeInstance* getMutableInstance(uint idValue);
+    MCAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
 
-    MCAPI std::vector<class AttributeInstanceHandle> getSyncableAttributes() const;
+    MCAPI void inheritFrom(::BaseAttributeMap const& other);
 
-    MCAPI void inheritFrom(class BaseAttributeMap const& other);
+    MCAPI void onAttributeModified(::AttributeInstance const& attributeInstance);
 
-    MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
+    MCAPI ::AttributeInstance& registerAttribute(::Attribute const& baseAttribute);
 
-    MCAPI class AttributeInstance& registerNoSyncAttribute(class Attribute const& baseAttribute);
+    MCAPI ::AttributeInstance& registerNoSyncAttribute(::Attribute const& baseAttribute);
 
     MCAPI ~BaseAttributeMap();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& DIFF_ATTRIBUTES();
 
-    MCAPI void dtor$();
+    MCAPI static ::std::string const& DIFF_ATTRIBUTES_SIZE();
 
-    MCAPI static std::string const& DIFF_ATTRIBUTES();
+    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES();
 
-    MCAPI static std::string const& DIFF_ATTRIBUTES_SIZE();
+    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
 
-    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES();
+    MCAPI static ::std::string const& DIFF_NO_ATTRIBUTES();
 
-    MCAPI static std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
+    MCAPI static ::AttributeInstance& mInvalidInstance();
+    // NOLINTEND
 
-    MCAPI static std::string const& DIFF_NO_ATTRIBUTES();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static class AttributeInstance& mInvalidInstance();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

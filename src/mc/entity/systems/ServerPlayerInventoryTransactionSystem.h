@@ -2,20 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPalette;
+class EntityContext;
+class InventoryTransactionPacket;
+class ServerPlayer;
+struct ServerPlayerMovementComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace ServerPlayerInventoryTransactionSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void transactInventoryPacket(
-    class InventoryTransactionPacket const& packet,
-    class ServerPlayer&                     player,
-    class BlockPalette&                     blockPalette
+    ::InventoryTransactionPacket const& packet,
+    ::ServerPlayer&                     player,
+    ::BlockPalette&                     blockPalette
 );
 
-MCAPI void transferInventoryTransactionPackets(
-    struct ServerPlayerMovementComponent& movementComponent,
-    class EntityContext&                  entity
-);
+MCAPI void
+transferInventoryTransactionPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
-}; // namespace ServerPlayerInventoryTransactionSystem
+} // namespace ServerPlayerInventoryTransactionSystem

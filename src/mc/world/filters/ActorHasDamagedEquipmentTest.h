@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/filters/ActorHasEquipmentTest.h"
-#include "mc/world/filters/FilterTest.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class ItemStack;
 // clang-format on
 
 class ActorHasDamagedEquipmentTest : public ::ActorHasEquipmentTest {
@@ -19,28 +18,35 @@ public:
     ActorHasDamagedEquipmentTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorHasDamagedEquipmentTest();
-
     // vIndex: 4
-    virtual std::string_view getName() const;
+    virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 7
-    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const& itemList) const;
+    virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const /*override*/;
 
+    // vIndex: 0
+    virtual ~ActorHasDamagedEquipmentTest() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string_view $getName() const;
 
-    MCAPI bool _isExpectedItem$(std::vector<class ItemStack const*> const& itemList) const;
+    MCAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+    // NOLINTEND
 
-    MCAPI std::string_view getName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

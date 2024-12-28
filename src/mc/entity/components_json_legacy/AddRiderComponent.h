@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class AddRiderComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkd5d64e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AddRiderComponent& operator=(AddRiderComponent const&);
@@ -10,17 +21,16 @@ public:
     AddRiderComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void reloadComponent(class Actor& owner);
+    MCAPI void reloadComponent(::Actor& owner);
 
     MCAPI ~AddRiderComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

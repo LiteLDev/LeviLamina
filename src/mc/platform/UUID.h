@@ -6,33 +6,42 @@ namespace mce {
 
 class UUID {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, uint64[2]> Data;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     UUID& operator=(UUID const&);
     UUID(UUID const&);
     UUID();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::string asString() const;
+    MCAPI ::std::string asString() const;
 
     MCAPI bool isEmpty() const;
 
-    MCAPI bool operator<(class mce::UUID const& rhs) const;
-
-    MCAPI static bool canParse(std::string const& in);
-
-    MCAPI static class mce::UUID fromString(std::string const& in);
-
+    MCAPI bool operator<(::mce::UUID const& rhs) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class mce::UUID& EMPTY();
+    MCAPI static bool canParse(::std::string const& in);
+
+    MCAPI static ::mce::UUID fromString(::std::string const& in);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID& EMPTY();
 
     MCAPI static uint64& STRING_LENGTH();
-
     // NOLINTEND
 };
 
-}; // namespace mce
+} // namespace mce

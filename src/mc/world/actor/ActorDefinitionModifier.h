@@ -4,27 +4,38 @@
 
 struct ActorDefinitionModifier {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke73515;
+    ::ll::UntypedStorage<8, 24> mUnkad59e0;
+    ::ll::UntypedStorage<8, 24> mUnk6c0df0;
+    ::ll::UntypedStorage<8, 24> mUnk1cde44;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ActorDefinitionModifier& operator=(ActorDefinitionModifier const&);
     ActorDefinitionModifier();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const&);
+    MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
-    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier&&);
-
-    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier const&);
+    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
 
     MCAPI ~ActorDefinitionModifier();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ActorDefinitionModifier const&);
+    MCAPI void* $ctor(::ActorDefinitionModifier const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

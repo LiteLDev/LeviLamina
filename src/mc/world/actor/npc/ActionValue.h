@@ -6,27 +6,40 @@ namespace npc {
 
 struct ActionValue {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mRawText;
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActionValue& operator=(ActionValue const&);
     ActionValue(ActionValue const&);
-    ActionValue();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct npc::ActionValue& operator=(std::string_view newName);
+    MCAPI ActionValue();
 
-    MCAPI std::string_view rawValue() const;
+    MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
+
+    MCAPI ::std::string_view rawValue() const;
 
     MCAPI ~ActionValue();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace npc
+} // namespace npc

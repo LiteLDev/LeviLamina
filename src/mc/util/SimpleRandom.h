@@ -2,7 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SimpleRandom {
+// auto generated inclusion list
+#include "mc/deps/core/math/IRandom.h"
+#include "mc/deps/core/math/IRandomSeeded.h"
+
+// auto generated forward declare list
+// clang-format off
+class IPositionalRandomFactory;
+struct Seed128Bit;
+// clang-format on
+
+class SimpleRandom : public ::IRandom, public ::IRandomSeeded {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnke32ad8;
+    ::ll::UntypedStorage<8, 16> mUnk5a2dc7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimpleRandom& operator=(SimpleRandom const&);
@@ -10,79 +27,109 @@ public:
     SimpleRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void consumeCount(uint count);
+    // vIndex: 2
+    virtual int nextInt() /*override*/;
 
-    MCVAPI std::unique_ptr<class IRandom> fork();
+    // vIndex: 1
+    virtual int nextInt(int bound) /*override*/;
 
-    MCVAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+    // vIndex: 3
+    virtual int64 nextLong() /*override*/;
 
-    MCVAPI bool nextBoolean();
+    // vIndex: 4
+    virtual bool nextBoolean() /*override*/;
 
-    MCVAPI double nextDouble();
+    // vIndex: 5
+    virtual float nextFloat() /*override*/;
 
-    MCVAPI float nextFloat();
+    // vIndex: 6
+    virtual double nextDouble() /*override*/;
 
-    MCVAPI double nextGaussianDouble();
+    // vIndex: 7
+    virtual double nextGaussianDouble() /*override*/;
 
-    MCVAPI int nextInt();
+    // vIndex: 8
+    virtual void consumeCount(uint count) /*override*/;
 
-    MCVAPI int nextInt(int bound);
+    // vIndex: 9
+    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
-    MCVAPI int64 nextLong();
+    // vIndex: 10
+    virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
 
-    MCVAPI struct Seed128Bit seed128() const;
+    // vIndex: 2
+    virtual void setSeed(int64 seed) /*override*/;
 
-    MCVAPI int64 seed64() const;
+    // vIndex: 1
+    virtual void setSeed(::Seed128Bit seed) /*override*/;
 
-    MCVAPI void setSeed(struct Seed128Bit seed);
+    // vIndex: 3
+    virtual int64 seed64() const /*override*/;
 
-    MCVAPI void setSeed(int64 seed);
+    // vIndex: 4
+    virtual ::Seed128Bit seed128() const /*override*/;
 
-    MCVAPI ~SimpleRandom();
-
-    MCAPI explicit SimpleRandom(int64 seed);
-
+    // vIndex: 0
+    virtual ~SimpleRandom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForIRandom();
+    MCAPI explicit SimpleRandom(int64 seed);
+    // NOLINTEND
 
-    MCAPI static void** vftableForIRandomSeeded();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int64 seed);
+    // NOLINTEND
 
-    MCAPI void* ctor$(int64 seed);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $nextInt();
 
-    MCAPI void consumeCount$(uint count);
+    MCAPI int $nextInt(int bound);
 
-    MCAPI std::unique_ptr<class IRandom> fork$();
+    MCAPI int64 $nextLong();
 
-    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
+    MCAPI bool $nextBoolean();
 
-    MCAPI bool nextBoolean$();
+    MCAPI float $nextFloat();
 
-    MCAPI double nextDouble$();
+    MCAPI double $nextDouble();
 
-    MCAPI float nextFloat$();
+    MCAPI double $nextGaussianDouble();
 
-    MCAPI double nextGaussianDouble$();
+    MCAPI void $consumeCount(uint count);
 
-    MCAPI int nextInt$();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCAPI int nextInt$(int bound);
+    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI int64 nextLong$();
+    MCAPI void $setSeed(int64 seed);
 
-    MCAPI struct Seed128Bit seed128$() const;
+    MCAPI void $setSeed(::Seed128Bit seed);
 
-    MCAPI int64 seed64$() const;
+    MCAPI int64 $seed64() const;
 
-    MCAPI void setSeed$(struct Seed128Bit seed);
+    MCAPI ::Seed128Bit $seed128() const;
+    // NOLINTEND
 
-    MCAPI void setSeed$(int64 seed);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIRandomSeeded();
 
+    MCAPI static void** $vftableForIRandom();
     // NOLINTEND
 };

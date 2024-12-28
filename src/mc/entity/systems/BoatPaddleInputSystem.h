@@ -7,25 +7,40 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
 
-namespace BoatPaddleInputSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createPassengerSystem();
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorRotationComponent;
+struct BoatPaddleComponent;
+struct MoveInputComponent;
+struct PassengerComponent;
+struct PlayerInputModeComponent;
+struct PlayerInputRequestComponent;
+struct PlayerInteractionModelComponent;
+struct TickingSystemWithInfo;
+struct VehicleInputIntentComponent;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createVehicleSystem();
+namespace BoatPaddleInputSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createPassengerSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleSystem();
 
 MCAPI void doPassengerTick(
-    entt::type_list<struct Include<struct PlayerInputRequestComponent>>,
-    class StrictEntityContext const&                                    context,
-    struct MoveInputComponent const&                                    moveInputComponent,
-    struct PlayerInputModeComponent const&                              playerInputModeComponent,
-    struct PassengerComponent const&                                    passengerComponent,
-    class Optional<struct PlayerInteractionModelComponent const> const& playerInteractionModelComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct ActorRotationComponent const,
-        struct BoatPaddleComponent const,
-        struct VehicleInputIntentComponent> const& vehicleView
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
+    ::StrictEntityContext const&                               context,
+    ::MoveInputComponent const&                                moveInputComponent,
+    ::PlayerInputModeComponent const&                          playerInputModeComponent,
+    ::PassengerComponent const&                                passengerComponent,
+    ::Optional<::PlayerInteractionModelComponent const> const& playerInteractionModelComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorRotationComponent const,
+        ::BoatPaddleComponent const,
+        ::VehicleInputIntentComponent> const& vehicleView
 );
 // NOLINTEND
 
-}; // namespace BoatPaddleInputSystem
+} // namespace BoatPaddleInputSystem

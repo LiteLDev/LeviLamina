@@ -21,12 +21,12 @@ public:
     ScriptDefinitionModifier();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ActorDefinitionModifier> bind();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ActorDefinitionModifier> bind();
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionModifier> bindV010();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionModifier> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

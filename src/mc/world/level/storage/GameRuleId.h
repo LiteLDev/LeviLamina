@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameRuleId {
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
+struct GameRuleId : public ::NewType<int> {
 public:
     // prevent constructor by default
     GameRuleId& operator=(GameRuleId const&);
@@ -10,15 +13,14 @@ public:
     GameRuleId();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit GameRuleId(int value);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(int value);
-
+    MCAPI void* $ctor(int value);
     // NOLINTEND
 };

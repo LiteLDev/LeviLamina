@@ -1,0 +1,92 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
+#include "mc/world/inventory/simulation/ContainerScreenSimulationCrafting.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ContainerScreenActionResult;
+struct ContainerValidationCraftResult;
+struct ContainerValidationSlotData;
+struct ItemTransferAmount;
+// clang-format on
+
+class StonecutterContainerScreenSimulation : public ::ContainerScreenSimulationCrafting {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkddfb68;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StonecutterContainerScreenSimulation& operator=(StonecutterContainerScreenSimulation const&);
+    StonecutterContainerScreenSimulation(StonecutterContainerScreenSimulation const&);
+    StonecutterContainerScreenSimulation();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 4
+    virtual ::ContainerScreenActionResult
+    tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&) /*override*/;
+
+    // vIndex: 5
+    virtual ::ContainerScreenActionResult
+    tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
+
+    // vIndex: 6
+    virtual ::ContainerScreenActionResult
+    tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&) /*override*/;
+
+    // vIndex: 10
+    virtual ::ContainerScreenActionResult tryAutoPlace(
+        ::ContainerValidationSlotData const&,
+        ::ItemTransferAmount,
+        ::ContainerScreenAutoplaceBehaviour
+    ) /*override*/;
+
+    // vIndex: 20
+    virtual ::ContainerValidationCraftResult getCraftPreview() /*override*/;
+
+    // vIndex: 17
+    virtual void _registerCoalesceOrder() /*override*/;
+
+    // vIndex: 18
+    virtual void _registerAutoPlaceOrder() /*override*/;
+
+    // vIndex: 0
+    virtual ~StonecutterContainerScreenSimulation() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ContainerScreenActionResult
+    $tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+
+    MCAPI ::ContainerScreenActionResult
+    $tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+
+    MCAPI ::ContainerScreenActionResult
+    $tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+
+    MCAPI ::ContainerScreenActionResult
+    $tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
+
+    MCAPI ::ContainerValidationCraftResult $getCraftPreview();
+
+    MCAPI void $_registerCoalesceOrder();
+
+    MCAPI void $_registerAutoPlaceOrder();
+    // NOLINTEND
+};

@@ -13,4 +13,4 @@ public:
     Connector();
 };
 
-}; // namespace Bedrock::PubSub
+} // namespace Bedrock::PubSub

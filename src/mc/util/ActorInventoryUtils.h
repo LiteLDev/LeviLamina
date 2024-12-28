@@ -3,55 +3,62 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/EquipmentSlot.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStackBase.h"
 
-namespace ActorInventoryUtils {
-// NOLINTBEGIN
-MCAPI void forEachItemInContainer(
-    class Container const&                      container,
-    class CommandIntegerRange const&            slot,
-    std::function<void(class ItemStack const&)> callback
-);
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CommandIntegerRange;
+class ItemInstance;
+class ItemStack;
+// clang-format on
 
-MCAPI void forEachItemOnActor(class Actor const& actor, std::function<void(class ItemStack const&)> callback);
+namespace ActorInventoryUtils {
+// functions
+// NOLINTBEGIN
+MCAPI void forEachItemOnActor(::Actor const& actor, ::std::function<void(::ItemStack const&)> callback);
 
 MCAPI void forEachItemOnActor(
-    class Actor const&                          actor,
-    ::Puv::Legacy::EquipmentSlot                equipmentSlot,
-    class CommandIntegerRange const&            slot,
-    std::function<void(class ItemStack const&)> callback
+    ::Actor const&                            actor,
+    ::SharedTypes::Legacy::EquipmentSlot      equipmentSlot,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
 );
 
+MCAPI void
+forEachItemOnActorHandSlot(::Actor const& actor, ::HandSlot slot, ::std::function<void(::ItemStack const&)> callback);
+
 MCAPI void forEachItemOnActorHotbar(
-    class Actor const&                          actor,
-    class CommandIntegerRange const&            slot,
-    std::function<void(class ItemStack const&)> callback
+    ::Actor const&                            actor,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
 );
 
 MCAPI void forEachItemOnActorInventory(
-    class Actor const&                          actor,
-    class CommandIntegerRange const&            slot,
-    std::function<void(class ItemStack const&)> callback
+    ::Actor const&                            actor,
+    ::CommandIntegerRange const&              slot,
+    ::std::function<void(::ItemStack const&)> callback
 );
 
-MCAPI class ItemStack const* getItem(class Actor const& actor, ::Puv::Legacy::EquipmentSlot equipmentSlot, int slotId);
+MCAPI ::ItemStack const* getItem(::Actor const& actor, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, int slotId);
 
 MCAPI bool queryActorEquipmentSlotForItem(
-    class Actor const&                             actor,
-    class ItemInstance const&                      item,
-    ::Puv::Legacy::EquipmentSlot                   equipmentSlot,
-    class CommandIntegerRange const&               slot,
-    class CommandIntegerRange const&               quantity,
-    struct ItemStackBase::ComparisonOptions const& options
+    ::Actor const&                            actor,
+    ::ItemInstance const&                     item,
+    ::SharedTypes::Legacy::EquipmentSlot      equipmentSlot,
+    ::CommandIntegerRange const&              slot,
+    ::CommandIntegerRange const&              quantity,
+    ::ItemStackBase::ComparisonOptions const& options
 );
 
 MCAPI bool queryActorForItem(
-    class Actor const&                             actor,
-    class ItemInstance const&                      item,
-    class CommandIntegerRange const&               quantity,
-    struct ItemStackBase::ComparisonOptions const& options
+    ::Actor const&                            actor,
+    ::ItemInstance const&                     item,
+    ::CommandIntegerRange const&              quantity,
+    ::ItemStackBase::ComparisonOptions const& options
 );
 // NOLINTEND
 
-}; // namespace ActorInventoryUtils
+} // namespace ActorInventoryUtils

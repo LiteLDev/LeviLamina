@@ -18,35 +18,47 @@ namespace Scripting {
 
 class DependencyResolver {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk96ed20;
+    ::ll::UntypedStorage<4, 4> mUnkcb02eb;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DependencyResolver& operator=(DependencyResolver const&);
     DependencyResolver(DependencyResolver const&);
     DependencyResolver();
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::unordered_map<struct Scripting::VersionRequestKey, std::vector<struct Scripting::VersionRequestedBy>>
-          _buildVersionRequestTable(
-              struct Scripting::ModuleDescriptor const&              forModule,
-              std::vector<struct Scripting::ModuleDescriptor> const& dependencies
-          ) const;
-
-    MCAPI class Scripting::IModuleBindingFactory* _getModuleBindingFactory(struct Scripting::UUID const& uuid) const;
-
-    MCAPI bool _isVersionMissing(
-        class Scripting::IModuleBindingFactory const& moduleFactory,
-        struct Scripting::Version const&              version
+    MCAPI ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>>
+    _buildVersionRequestTable(
+        ::Scripting::ModuleDescriptor const&                forModule,
+        ::std::vector<::Scripting::ModuleDescriptor> const& dependencies
     ) const;
 
-    MCAPI std::vector<struct Scripting::SupportedBindingModule>
-          _orderModulesByDependency(std::vector<struct Scripting::SupportedBindingModule>&& unorderedModules) const;
+    MCAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactory(::Scripting::UUID const& uuid) const;
 
-    MCAPI struct Scripting::ModuleResolveResult
-    _resolveDependencyRequests(std::unordered_map<
-                               struct Scripting::VersionRequestKey,
-                               std::vector<struct Scripting::VersionRequestedBy>> const& versionRequestTable) const;
+    MCAPI bool _isVersionMissing(
+        ::Scripting::IModuleBindingFactory const& moduleFactory,
+        ::Scripting::Version const&               version
+    ) const;
 
+    MCAPI bool _isVersionSupported(
+        ::Scripting::IModuleBindingFactory const& moduleFactory,
+        ::Scripting::Version const&               version
+    ) const;
+
+    MCAPI ::std::vector<::Scripting::ModuleDescriptor>
+    _orderModulesByDependency(::std::vector<::Scripting::SupportedBindingModule>&& unorderedModules) const;
+
+    MCAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
+        ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
+            versionRequestTable
+    ) const;
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -5,7 +5,27 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+class WorldChangeTransaction;
+struct ActorUniqueID;
+// clang-format on
+
 class Feature : public ::IFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mPlacerID;
+    ::ll::TypedStorage<8, 8, ::WorldChangeTransaction*> mTransaction;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Feature& operator=(Feature const&);
@@ -13,53 +33,52 @@ public:
     Feature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Feature();
+    virtual ~Feature() /*override*/;
+
+    // vIndex: 4
+    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const = 0;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const = 0;
-
-    MCAPI explicit Feature(class Actor* placer);
-
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _placeBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI void _setManuallyPlaced(class Actor* placer);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit Feature(::Actor* placer);
 
-    MCAPI void* ctor$(class Actor* placer);
+    MCAPI bool _placeBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void dtor$();
+    MCAPI void _setManuallyPlaced(::Actor* placer);
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor* placer);
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

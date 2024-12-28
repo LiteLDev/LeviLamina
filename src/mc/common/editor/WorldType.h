@@ -4,6 +4,10 @@
 
 namespace Editor {
 
-enum class WorldType {};
-
+enum class WorldType : int {
+    NonEditor       = 0,
+    EditorProject   = 1,
+    EditorTestLevel = 2,
 };
+
+}

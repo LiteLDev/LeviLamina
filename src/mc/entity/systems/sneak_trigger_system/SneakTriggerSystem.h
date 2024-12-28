@@ -7,44 +7,58 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class StrictEntityContext;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorGameTypeComponent;
+struct ActorMovementTickNeededComponent;
+struct BaseGameVersionComponent;
+struct ExternalDataInterface;
+struct MoveInputComponent;
+struct PassengerComponent;
+struct PlayerActionComponent;
+struct PlayerInputRequestComponent;
+struct ShouldUpdateBoundingBoxRequestComponent;
+struct TickingSystemWithInfo;
+struct WasInWaterFlagComponent;
 namespace SneakTriggerSystem { struct DetermineStatusArgs; }
 namespace SneakTriggerSystem { struct PlayerStatusTransitions; }
 // clang-format on
 
 namespace SneakTriggerSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createActionSystem();
+MCAPI ::TickingSystemWithInfo createActionSystem();
 
-MCAPI struct TickingSystemWithInfo createIntentSystem();
+MCAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCAPI struct SneakTriggerSystem::PlayerStatusTransitions
-determineStatus(struct SneakTriggerSystem::DetermineStatusArgs const& args);
+MCAPI ::SneakTriggerSystem::PlayerStatusTransitions
+determineStatus(::SneakTriggerSystem::DetermineStatusArgs const& args);
 
 MCAPI void doActionTick(
-    entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>,
-    class StrictEntityContext const&                                      entity,
-    struct PlayerActionComponent const&                                   actions,
-    struct ActorDataFlagComponent&                                        actorData,
-    struct ActorDataDirtyFlagsComponent&                                  dirtyFlags,
-    class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent>& modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                                 entity,
+    ::PlayerActionComponent const&                               actions,
+    ::ActorDataFlagComponent&                                    actorData,
+    ::ActorDataDirtyFlagsComponent&                              dirtyFlags,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& modifier
 );
 
 MCAPI void doIntentTick(
-    class StrictEntityContext const&,
-    struct MoveInputComponent const&                              moveInput,
-    struct ActorGameTypeComponent const&                          actorGameType,
-    struct PlayerInputRequestComponent const&                     playerInputRequest,
-    struct ActorDataFlagComponent const&                          actorDataFlag,
-    struct PlayerActionComponent&                                 actions,
-    class Optional<class FlagComponent<struct InWaterFlag> const> wasInWaterFlag,
-    class Optional<struct PassengerComponent const>               passenger,
-    class OptionalGlobal<struct BaseGameVersionComponent const>   baseGameVersion,
-    struct ExternalDataInterface const&                           externalDataInterface
+    ::StrictEntityContext const&,
+    ::MoveInputComponent const&                        moveInput,
+    ::ActorGameTypeComponent const&                    actorGameType,
+    ::PlayerInputRequestComponent const&               playerInputRequest,
+    ::ActorDataFlagComponent const&                    actorDataFlag,
+    ::PlayerActionComponent&                           actions,
+    ::Optional<::WasInWaterFlagComponent const>        wasInWaterFlag,
+    ::Optional<::PassengerComponent const>             passenger,
+    ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion,
+    ::ExternalDataInterface const&                     externalDataInterface
 );
 // NOLINTEND
 
-}; // namespace SneakTriggerSystem
+} // namespace SneakTriggerSystem

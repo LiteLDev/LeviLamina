@@ -9,13 +9,80 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class BiomeComponentStorage;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class HashedString;
+class LevelChunk;
+class MobSpawnerData;
+class WellKnownTagID;
+struct BiomeHeight;
+struct BiomeTagIDType;
+struct BiomeTagSetIDType;
+struct OceanRuinConfiguration;
 namespace mce { class Color; }
 // clang-format on
 
 class Biome {
 public:
+    // Biome inner types declare
+    // clang-format off
+    struct CachedClientComponentData;
+    // clang-format on
+
     // Biome inner types define
-    enum class BiomeTempCategory {};
+    using ColorPolicy = ::std::function<int(::Biome const&)>;
+
+    enum class BiomeTempCategory : int {
+        Ocean  = 0,
+        Cold   = 1,
+        Medium = 2,
+        Warm   = 3,
+    };
+
+    struct CachedClientComponentData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk586aaa;
+        ::ll::UntypedStorage<1, 1> mUnka6d024;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CachedClientComponentData& operator=(CachedClientComponentData const&);
+        CachedClientComponentData(CachedClientComponentData const&);
+        CachedClientComponentData();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::HashedString const>                               mHash;
+    ::ll::TypedStorage<4, 4, float>                                               mTemperature;
+    ::ll::TypedStorage<4, 4, float>                                               mDownfall;
+    ::ll::TypedStorage<4, 4, float>                                               mRedSporeDensity;
+    ::ll::TypedStorage<4, 4, float>                                               mBlueSporeDensity;
+    ::ll::TypedStorage<4, 4, float>                                               mAshDensity;
+    ::ll::TypedStorage<4, 4, float>                                               mWhiteAshDensity;
+    ::ll::TypedStorage<4, 4, float>                                               mSnowAccumulation;
+    ::ll::TypedStorage<4, 4, float>                                               mFoliageSnow;
+    ::ll::TypedStorage<4, 4, float>                                               mMinSnowLevel;
+    ::ll::TypedStorage<4, 4, float>                                               mMaxSnowLevel;
+    ::ll::TypedStorage<4, 4, float>                                               mDepth;
+    ::ll::TypedStorage<4, 4, float>                                               mScale;
+    ::ll::TypedStorage<4, 4, int>                                                 mMapWaterColor;
+    ::ll::TypedStorage<4, 4, float const>                                         mMapWaterTransparency;
+    ::ll::TypedStorage<1, 1, bool>                                                mRain;
+    ::ll::TypedStorage<4, 12, ::OceanRuinConfiguration>                           mOceanRuinConfig;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MobSpawnerData>>> mMobs;
+    ::ll::TypedStorage<8, 192, ::std::array<::std::vector<::std::shared_ptr<::MobSpawnerData>>, 8>> mMobsMap;
+    ::ll::TypedStorage<1, 2, ::Biome::CachedClientComponentData> mCachedClientComponentData;
+    ::ll::TypedStorage<2, 2, ushort const>                       mId;
+    ::ll::TypedStorage<8, 32, ::BiomeComponentStorage>           mBiomeComponentStorage;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -24,104 +91,129 @@ public:
     Biome();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Biome() = default;
+    virtual ~Biome();
+    // NOLINTEND
 
-    MCAPI explicit Biome(int id);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Biome(ushort id, ::std::string_view name);
 
-    MCAPI class Biome& addTag(
-        class HashedString                                                                                tag,
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& tagRegistry
-    );
+    MCAPI ::Biome&
+    addTag(::HashedString tag, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry);
 
     MCAPI void cacheClientComponentData();
 
-    MCAPI bool canHaveSnowfall(class BlockSource const& region, class BlockPos const& pos) const;
+    MCAPI bool canHaveSnowfall(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::VanillaBiomeTypes getBiomeType() const;
-
-    MCAPI int getBirchFoliageColor(class BlockPos const& pos) const;
 
     MCAPI float getDefaultBiomeTemperature() const;
 
     MCAPI float getDownfall() const;
 
-    MCAPI int getEvergreenFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapBirchFoliageColor() const;
 
-    MCAPI int getFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapEvergreenFoliageColor() const;
 
-    MCAPI int getMapBirchFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapFoliageColor() const;
 
-    MCAPI int getMapEvergreenFoliageColor(class BlockPos const& pos) const;
+    MCAPI int getMapGrassColor(::BlockPos const& pos) const;
 
-    MCAPI int getMapFoliageColor(class BlockPos const&) const;
+    MCAPI ::std::array<::std::vector<::std::shared_ptr<::MobSpawnerData>>, 8>& getMobMapMutable();
 
-    MCAPI int getMapGrassColor(class BlockPos const& pos) const;
+    MCAPI ::std::vector<::std::shared_ptr<::MobSpawnerData>> const& getMobs() const;
 
-    MCAPI std::vector<std::shared_ptr<class MobSpawnerData>> const& getMobs() const;
-
-    MCAPI std::vector<std::shared_ptr<class MobSpawnerData>>& getMobsMutable();
+    MCAPI ::std::vector<::std::shared_ptr<::MobSpawnerData>>& getMobsMutable();
 
     MCAPI int getSnowAccumulationLayers() const;
 
-    MCAPI float getTemperature(class BlockSource const& region, class BlockPos const& pos) const;
+    MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
 
-    MCAPI float getTemperatureWorldGen(class BlockPos const& pos, short seaLevel) const;
+    MCAPI float getTemperatureWorldGen(::BlockPos const& pos, short seaLevel) const;
 
-    MCAPI bool hasTag(class WellKnownTagID const& tagID) const;
+    MCAPI bool hasTag(::WellKnownTagID const& tagID) const;
 
     MCAPI bool hasTag(
-        struct IDType<struct BiomeTagIDType> const& tagID,
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
-            tagRegistry
+        uint64                                                                          tagHash,
+        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry
     ) const;
 
     MCAPI bool hasTag(
-        uint64 tagHash,
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
-            tagRegistry
+        ::IDType<::BiomeTagIDType> const&                                               tagID,
+        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry
     ) const;
 
     MCAPI bool isHumid() const;
 
     MCAPI bool isSnowCovered() const;
 
-    MCAPI class Biome& setMapWaterColor(int color);
+    MCAPI ::Biome& setDepthAndScale(::BiomeHeight const& heightData);
 
-    MCAPI class Biome& setNoRain();
+    MCAPI ::Biome& setMapWaterColor(int color);
 
-    MCAPI class Biome& setOceanRuinConfig(struct OceanRuinConfiguration const& config);
+    MCAPI ::Biome& setNoRain();
+
+    MCAPI ::Biome& setOceanRuinConfig(::OceanRuinConfiguration const& config);
+
+    MCAPI ::Biome& setSnowAccumulation(float minSnowLevel, float maxSnowLevel);
 
     MCAPI void writePacketData(
-        class CompoundTag&                                                                                tag,
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& tagRegistry
+        ::CompoundTag&                                                            tag,
+        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry,
+        ::BaseGameVersion const&                                                  baseGameVersion
     ) const;
-
-    MCAPI static void buildCachedTemperatureNoise(class LevelChunk& chunk);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void buildCachedTemperatureNoise(::LevelChunk& chunk);
 
-    MCAPI void* ctor$(int id);
+    MCAPI static ::mce::Color getColorBySamplingSurroundings(
+        ::BlockSource&                              region,
+        ::BlockPos const&                           pos,
+        ::std::vector<::BlockPos> const&            pattern,
+        ::std::function<int(::Biome const&)> const& colorPolicy
+    );
+    // NOLINTEND
 
-    MCAPI static std::string_view const& BACKCOMPAT_FOG_NAME();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::Color const& DEFAULT_UNDERWATER_COLOR();
 
-    MCAPI static class mce::Color const& DEFAULT_FOG_COLOR();
+    MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
-    MCAPI static std::string_view const& DEFAULT_FOG_ID();
-
-    MCAPI static class mce::Color const& DEFAULT_UNDERWATER_COLOR();
-
-    MCAPI static class mce::Color const& DEFAULT_WATER_COLOR();
+    MCAPI static int const& INT_DEFAULT_WATER_COLOR();
 
     MCAPI static float const& RAIN_TEMP_THRESHOLD();
 
+    MCAPI static ::std::vector<::BlockPos> const& SAMPLING_PATTERN_CORNERS_AND_MIDPOINTS_RANGE_4();
+
+    MCAPI static ::std::vector<::BlockPos> const& SAMPLING_PATTERN_GRID_3X3();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(ushort id, ::std::string_view name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

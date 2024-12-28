@@ -4,9 +4,61 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class ActorTerrainInterlockData;
+class Block;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Container;
+class DataLoadHelper;
+class IConstBlockSource;
+class Level;
+class LevelChunk;
+class PistonBlockActor;
+class Player;
+class SaveContext;
+class UIProfanityContext;
+class Vec3;
+// clang-format on
+
 class BlockActor {
+public:
+    // BlockActor inner types define
+    using MapIdType = ::std::map<::std::string, ::BlockActorType>;
+
+    using MapTypeId = ::std::map<::BlockActorType, ::std::string>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                          mTickCount;
+    ::ll::TypedStorage<8, 8, ::Block const*>               mBlock;
+    ::ll::TypedStorage<4, 4, float>                        mDestroyTimer;
+    ::ll::TypedStorage<4, 12, ::Vec3>                      mDestroyDirection;
+    ::ll::TypedStorage<4, 4, float>                        mDestroyProgress;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                  mPosition;
+    ::ll::TypedStorage<4, 24, ::AABB>                      mBB;
+    ::ll::TypedStorage<4, 4, ::BlockActorType const>       mType;
+    ::ll::TypedStorage<4, 4, ::BlockActorRendererId>       mRendererId;
+    ::ll::TypedStorage<8, 32, ::std::string>               mCustomName;
+    ::ll::TypedStorage<8, 32, ::std::string>               mFilteredCustomName;
+    ::ll::TypedStorage<4, 4, int>                          mRepairCost;
+    ::ll::TypedStorage<1, 1, bool>                         mClientSideOnly;
+    ::ll::TypedStorage<1, 1, bool>                         mIsMovable;
+    ::ll::TypedStorage<1, 1, bool>                         mSaveCustomName;
+    ::ll::TypedStorage<1, 1, bool>                         mCanRenderCustomName;
+    ::ll::TypedStorage<4, 4, float const>                  signShadowRadius;
+    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData> mTerrainInterlockData;
+    ::ll::TypedStorage<1, 1, bool>                         mChanged;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockActor& operator=(BlockActor const&);
@@ -14,54 +66,55 @@ public:
     BlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockActor();
 
     // vIndex: 1
-    virtual void load(class Level&, class CompoundTag const& tag, class DataLoadHelper&);
+    virtual void load(::Level&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const;
 
     // vIndex: 3
-    virtual bool saveItemInstanceData(class CompoundTag& tag) const;
+    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     // vIndex: 4
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
+    virtual void saveBlockData(::CompoundTag&, ::BlockSource&) const;
 
     // vIndex: 5
-    virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    virtual void loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
     // vIndex: 6
-    virtual void onCustomTagLoadDone(class BlockSource&);
+    virtual void onCustomTagLoadDone(::BlockSource&);
 
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region);
 
     // vIndex: 8
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(::BlockSource&);
 
     // vIndex: 9
-    virtual bool isMovable(class BlockSource&);
+    virtual bool isMovable(::BlockSource&);
 
     // vIndex: 10
     virtual bool isCustomNameSaved();
 
     // vIndex: 11
-    virtual void onPlace(class BlockSource&);
+    virtual void onPlace(::BlockSource&);
 
     // vIndex: 12
     virtual void onMove();
 
     // vIndex: 13
-    virtual void onRemoved(class BlockSource&);
+    virtual void onRemoved(::BlockSource&);
 
     // vIndex: 14
-    virtual bool isPreserved(class BlockSource&) const;
+    virtual bool isPreserved(::BlockSource&) const;
 
     // vIndex: 15
-    virtual bool shouldPreserve(class BlockSource&);
+    virtual bool shouldPreserve(::BlockSource&);
 
     // vIndex: 16
     virtual void triggerEvent(int, int);
@@ -70,88 +123,103 @@ public:
     virtual void clearCache();
 
     // vIndex: 18
-    virtual void onNeighborChanged(class BlockSource&, class BlockPos const&);
+    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(::BlockSource&) const;
 
     // vIndex: 20
     virtual bool hasAlphaLayer() const;
 
     // vIndex: 21
-    virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
 
     // vIndex: 22
-    virtual class AABB getCollisionShape(class IConstBlockSource const&) const;
+    virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
 
     // vIndex: 23
-    virtual void getDebugText(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
 
     // vIndex: 24
-    virtual std::string const& getCustomName() const;
+    virtual ::std::string const& getCustomName() const;
 
     // vIndex: 25
-    virtual std::string const&
-    getFilteredCustomName(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context);
+    virtual ::std::string const&
+    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context);
 
     // vIndex: 26
-    virtual std::string getName() const;
+    virtual ::std::string getName() const;
 
     // vIndex: 27
-    virtual void setCustomName(std::string const& name);
+    virtual void setCustomName(::std::string const& name);
 
     // vIndex: 28
-    virtual std::string getImmersiveReaderText(class BlockSource&);
+    virtual ::std::string getImmersiveReaderText(::BlockSource&);
 
     // vIndex: 29
     virtual int getRepairCost() const;
 
-    // vIndex: 30
-    virtual class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
-
     // vIndex: 31
-    virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    virtual ::PistonBlockActor* getOwningPiston(::BlockSource&);
 
-    // vIndex: 32
-    virtual class Container const* getContainer() const;
+    // vIndex: 30
+    virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const;
 
     // vIndex: 33
-    virtual class Container* getContainer();
+    virtual ::Container* getContainer();
+
+    // vIndex: 32
+    virtual ::Container const* getContainer() const;
 
     // vIndex: 34
     virtual void eraseLootTable();
 
     // vIndex: 35
-    virtual void onChunkLoaded(class LevelChunk&);
+    virtual void onChunkLoaded(::LevelChunk&);
 
     // vIndex: 36
-    virtual void onChunkUnloaded(class LevelChunk&);
+    virtual void onChunkUnloaded(::LevelChunk&);
 
     // vIndex: 37
-    virtual std::vector<std::string> getUgcStrings(class CompoundTag const&) const;
+    virtual void onSubChunkLoaded(::LevelChunk&, short, bool);
 
     // vIndex: 38
-    virtual void setUgcStrings(class CompoundTag&, std::vector<std::string> const&) const;
+    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const;
 
     // vIndex: 39
-    virtual void fixupOnLoad(class LevelChunk&);
+    virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const&) const;
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
     // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
     // vIndex: 42
-    virtual bool _playerCanUpdate(class Player const&) const;
+    virtual void fixupOnLoad(::LevelChunk&);
 
-    MCAPI BlockActor(::BlockActorType type, class BlockPos const& pos, std::string const&);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
 
-    MCAPI class AABB const& getAABB() const;
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
-    MCAPI class BlockPos const& getPosition() const;
+    // vIndex: 45
+    virtual bool _playerCanUpdate(::Player const&) const;
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> getServerUpdatePacket(class BlockSource& region);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockActor(::BlockActorType type, ::BlockPos const& pos, ::std::string const&);
+
+    MCAPI ::AABB const& getAABB() const;
+
+    MCAPI ::Block const* getBlock() const;
+
+    MCAPI ::BlockPos const& getPosition() const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> getServerUpdatePacket(::BlockSource& region);
 
     MCAPI ::BlockActorType const& getType() const;
 
@@ -159,132 +227,146 @@ public:
 
     MCAPI bool isType(::BlockActorType type) const;
 
-    MCAPI void moveTo(class BlockPos const& newPos);
+    MCAPI void moveTo(::BlockPos const& newPos);
 
-    MCAPI bool onUpdatePacket(class CompoundTag const& data, class BlockSource& region, class Player const* fromPlayer);
+    MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
 
     MCAPI void setChanged();
 
     MCAPI void setCustomNameSaved(bool saveCustomName);
 
     MCAPI void setMovable(bool canMove);
-
-    MCAPI static bool isType(class BlockActor& te, ::BlockActorType type);
-
-    MCAPI static std::shared_ptr<class BlockActor>
-    loadStatic(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _resetAABB();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::map<std::string, ::BlockActorType> _createIdClassMap();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::map<::std::string, ::BlockActorType> _createIdClassMap();
 
-    MCAPI void* ctor$(::BlockActorType type, class BlockPos const& pos, std::string const&);
+    MCAPI static bool isType(::BlockActor& te, ::BlockActorType type);
 
-    MCAPI void dtor$();
+    MCAPI static ::std::shared_ptr<::BlockActor>
+    loadStatic(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::map<::BlockActorType, ::std::string> const& mClassIdMap();
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const&, class BlockSource&);
+    MCAPI static ::std::map<::std::string, ::BlockActorType> const& mIdClassMap();
+    // NOLINTEND
 
-    MCAPI bool _playerCanUpdate$(class Player const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, ::std::string const&);
+    // NOLINTEND
 
-    MCAPI void clearCache$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void eraseLootTable$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Level&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void fixupOnLoad$(class LevelChunk&);
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
 
-    MCAPI class AABB getCollisionShape$(class IConstBlockSource const&) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI class Container const* getContainer$() const;
+    MCAPI void $saveBlockData(::CompoundTag&, ::BlockSource&) const;
 
-    MCAPI class Container* getContainer$();
+    MCAPI void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
-    MCAPI class BlockActor* getCrackEntity$(class BlockSource&, class BlockPos const&);
+    MCAPI void $onCustomTagLoadDone(::BlockSource&);
 
-    MCAPI std::string const& getCustomName$() const;
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void getDebugText$(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
+    MCAPI void $onChanged(::BlockSource&);
 
-    MCAPI std::string const& getFilteredCustomName$(Bedrock::NotNullNonOwnerPtr<class UIProfanityContext> const& context
+    MCAPI bool $isMovable(::BlockSource&);
+
+    MCAPI bool $isCustomNameSaved();
+
+    MCAPI void $onPlace(::BlockSource&);
+
+    MCAPI void $onMove();
+
+    MCAPI void $onRemoved(::BlockSource&);
+
+    MCAPI bool $isPreserved(::BlockSource&) const;
+
+    MCAPI bool $shouldPreserve(::BlockSource&);
+
+    MCAPI void $triggerEvent(int, int);
+
+    MCAPI void $clearCache();
+
+    MCAPI void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
+
+    MCAPI float $getShadowRadius(::BlockSource&) const;
+
+    MCAPI bool $hasAlphaLayer() const;
+
+    MCAPI ::BlockActor* $getCrackEntity(::BlockSource&, ::BlockPos const&);
+
+    MCAPI ::AABB $getCollisionShape(::IConstBlockSource const&) const;
+
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
+
+    MCAPI ::std::string const& $getCustomName() const;
+
+    MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context
     );
 
-    MCAPI std::string getImmersiveReaderText$(class BlockSource&);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $setCustomName(::std::string const& name);
 
-    MCAPI class PistonBlockActor const* getOwningPiston$(class BlockSource&) const;
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource&);
 
-    MCAPI class PistonBlockActor* getOwningPiston$(class BlockSource&);
+    MCAPI int $getRepairCost() const;
 
-    MCAPI int getRepairCost$() const;
+    MCAPI ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 
-    MCAPI float getShadowRadius$(class BlockSource&) const;
+    MCAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const&) const;
+    MCAPI ::Container* $getContainer();
 
-    MCAPI bool hasAlphaLayer$() const;
+    MCAPI ::Container const* $getContainer() const;
 
-    MCAPI bool isCustomNameSaved$();
+    MCAPI void $eraseLootTable();
 
-    MCAPI bool isMovable$(class BlockSource&);
+    MCAPI void $onChunkLoaded(::LevelChunk&);
 
-    MCAPI bool isPreserved$(class BlockSource&) const;
+    MCAPI void $onChunkUnloaded(::LevelChunk&);
 
-    MCAPI void load$(class Level&, class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI void $onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    MCAPI void loadBlockData$(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
 
-    MCAPI void onChanged$(class BlockSource&);
+    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const&) const;
 
-    MCAPI void onChunkLoaded$(class LevelChunk&);
+    MCAPI void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void onChunkUnloaded$(class LevelChunk&);
+    MCAPI void $setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void onCustomTagLoadDone$(class BlockSource&);
+    MCAPI void $fixupOnLoad(::LevelChunk&);
 
-    MCAPI void onMove$();
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void onNeighborChanged$(class BlockSource&, class BlockPos const&);
+    MCAPI void $_onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
-    MCAPI void onPlace$(class BlockSource&);
+    MCAPI bool $_playerCanUpdate(::Player const&) const;
+    // NOLINTEND
 
-    MCAPI void onRemoved$(class BlockSource&);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void saveBlockData$(class CompoundTag&, class BlockSource&) const;
-
-    MCAPI bool saveItemInstanceData$(class CompoundTag& tag) const;
-
-    MCAPI void setCustomName$(std::string const& name);
-
-    MCAPI void setUgcStrings$(class CompoundTag&, std::vector<std::string> const&) const;
-
-    MCAPI bool shouldPreserve$(class BlockSource&);
-
-    MCAPI void tick$(class BlockSource& region);
-
-    MCAPI void triggerEvent$(int, int);
-
-    MCAPI static std::map<::BlockActorType, std::string> const& mClassIdMap();
-
-    MCAPI static std::map<std::string, ::BlockActorType> const& mIdClassMap();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

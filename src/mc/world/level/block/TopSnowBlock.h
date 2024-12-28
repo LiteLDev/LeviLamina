@@ -4,21 +4,38 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockItem;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Player;
+class Random;
+class Vec3;
+struct ActorBlockSyncMessage;
+namespace BlockEvents { class BlockPlaceEvent; }
 namespace mce { class Color; }
 // clang-format on
 
 class TopSnowBlock : public ::FallingBlock {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk5e7032;
+    ::ll::UntypedStorage<1, 1> mUnkdb402e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TopSnowBlock& operator=(TopSnowBlock const&);
@@ -26,231 +43,235 @@ public:
     TopSnowBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TopSnowBlock() = default;
+    // vIndex: 57
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
+
+    // vIndex: 11
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB getCollisionShape(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+    virtual ::AABB getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
-        class AABB&        outAABB,
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos
-    ) const;
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const /*override*/;
 
-    // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    // vIndex: 133
+    virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 55
-    virtual bool canBeDestroyedByWaterSpread() const;
-
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 62
-    virtual bool
-    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
-
-    // vIndex: 76
-    virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const* medium) const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 88
+    // vIndex: 82
     virtual bool tryToPlace(
-        class BlockSource&                  region,
-        class BlockPos const&               pos,
-        class Block const&                  block,
-        struct ActorBlockSyncMessage const* syncMsg
-    ) const;
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Block const&                 block,
+        ::ActorBlockSyncMessage const* syncMsg
+    ) const /*override*/;
 
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion) const;
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    // vIndex: 70
+    virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 95
-    virtual class Block const*
-    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 89
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
+
+    // vIndex: 152
+    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
+
+    // vIndex: 102
+    virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
     // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
+        /*override*/;
 
-    // vIndex: 103
-    virtual bool
-    canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
+    // vIndex: 97
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 104
-    virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
+    virtual bool canHaveExtraData() const /*override*/;
 
-    // vIndex: 108
-    virtual bool shouldStopFalling(class Actor& entity) const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 110
-    virtual bool canHaveExtraData() const;
+    // vIndex: 155
+    virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 144
-    virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const&) const;
-
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const&) const;
-
-    // vIndex: 167
-    virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 168
+    // vIndex: 156
     virtual void
-    startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
-        const;
+    startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
+        /*override*/;
 
-    MCAPI TopSnowBlock(std::string const& nameId, int id, bool usePartialHeight);
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    MCAPI class ItemInstance getResourceItemFromFalling() const;
-
-    MCAPI bool melt(class BlockSource& region, class BlockPos const& pos, int meltHeight) const;
-
-    MCAPI void
-    startFallingIfLostSupport(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI static class Block const&
-    buildSnowBlock(class BlockSource& region, class BlockPos const& pos, int height, bool additive);
-
-    MCAPI static class Block const& getCoveredBlock(class BlockSource const& region, class BlockPos const& pos);
-
-    MCAPI static class Block const&
-    getSnowBlockToBuild(class BlockSource const& region, class BlockPos const& pos, int height, bool additive);
-
+    // vIndex: 0
+    virtual ~TopSnowBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const* item) const;
-
-    MCAPI bool _canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TopSnowBlock(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool usePartialHeight);
+    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const* item) const;
 
-    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion) const;
+    MCAPI ::ItemInstance getResourceItemFromFalling() const;
 
-    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
+    MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
-    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI bool canBeDestroyedByWaterSpread$() const;
+    MCAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Block const& buildSnowBlock(::BlockSource& region, ::BlockPos const& pos, int height, bool additive);
 
-    MCAPI bool canHaveExtraData$() const;
+    MCAPI static ::Block const& getCoveredBlock(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI bool
-    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+    MCAPI static ::Block const&
+    getSnowBlockToBuild(::BlockSource const& region, ::BlockPos const& pos, int height, bool additive);
+    // NOLINTEND
 
-    MCAPI class AABB getCollisionShape$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
-
-    MCAPI bool getCollisionShapeForCamera$(
-        class AABB&        outAABB,
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos
-    ) const;
-
-    MCAPI class mce::Color getDustColor$(class Block const&) const;
-
-    MCAPI std::string getDustParticleName$(class Block const&) const;
-
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
-
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
-
-    MCAPI bool isFreeToFall$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool isPreservingMediumWhenPlaced$(class BlockLegacy const* medium) const;
-
-    MCAPI bool isWaterBlocking$() const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    MCAPI void onExploded$(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
-
-    MCAPI void onPlace$(class BlockSource&, class BlockPos const&) const;
-
-    MCAPI class Block const*
-    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool shouldStopFalling$(class Actor& entity) const;
-
-    MCAPI void
-    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
-        const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool tryToPlace$(
-        class BlockSource&                  region,
-        class BlockPos const&               pos,
-        class Block const&                  block,
-        struct ActorBlockSyncMessage const* syncMsg
-    ) const;
-
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& HALF_HEIGHT();
 
     MCAPI static int const& HEIGHT_IMPASSABLE();
 
     MCAPI static int const& MAX_HEIGHT();
 
-    MCAPI static class BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
+    MCAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
+
+    MCAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
 
     MCAPI static float const& TOP_SNOW_LAYER_HEIGHT();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI bool $getCollisionShapeForCamera(
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const;
+
+    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $tryToPlace(
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Block const&                 block,
+        ::ActorBlockSyncMessage const* syncMsg
+    ) const;
+
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
+
+    MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
+
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI ::mce::Color $getDustColor(::Block const&) const;
+
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+
+    MCAPI bool $shouldStopFalling(::Actor& entity) const;
+
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
+
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $canHaveExtraData() const;
+
+    MCAPI bool $isLavaBlocking() const;
+
+    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void
+    $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

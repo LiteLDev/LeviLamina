@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IPayload; }
-namespace Scripting { class NativeRuntime; }
 namespace Scripting { class ResultAny; }
 namespace Scripting { class StringBasedRuntime; }
 namespace Scripting { struct ContextId; }
@@ -19,50 +17,65 @@ namespace Scripting {
 
 class StringPayload : public ::Scripting::IPayload {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk98b6d3;
+    ::ll::UntypedStorage<8, 32> mUnkea571c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     StringPayload& operator=(StringPayload const&);
     StringPayload(StringPayload const&);
     StringPayload();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StringPayload();
+    virtual ~StringPayload() /*override*/;
 
     // vIndex: 1
-    virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
-
-    // vIndex: 2
-    virtual class Scripting::ResultAny runOn(
-        struct Scripting::ContextId           contextId,
-        class Scripting::StringBasedRuntime&  runtime,
-        std::optional<::Scripting::Privilege> privilege
-    );
-
-    MCAPI StringPayload(std::string scriptName, std::string scriptData);
-
+    virtual ::Scripting::ResultAny runOn(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::StringBasedRuntime&        runtime,
+        ::std::optional<::Scripting::Privilege> privilege
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StringPayload(::std::string scriptName, ::std::string scriptData);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string scriptName, std::string scriptData);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string scriptName, ::std::string scriptData);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Scripting::ResultAny
-    runOn$(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
-
-    MCAPI class Scripting::ResultAny runOn$(
-        struct Scripting::ContextId           contextId,
-        class Scripting::StringBasedRuntime&  runtime,
-        std::optional<::Scripting::Privilege> privilege
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::ResultAny $runOn(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::StringBasedRuntime&        runtime,
+        ::std::optional<::Scripting::Privilege> privilege
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

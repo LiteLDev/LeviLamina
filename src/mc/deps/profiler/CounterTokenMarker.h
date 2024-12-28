@@ -12,4 +12,4 @@ public:
     CounterTokenMarker();
 };
 
-}; // namespace Core::Profile
+} // namespace Core::Profile

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/validation/ContainerValidationBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+class ItemStackBase;
+// clang-format on
+
 class EnchantingInputContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
@@ -13,83 +19,57 @@ public:
     EnchantingInputContainerValidation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EnchantingInputContainerValidation() = default;
-
-    // vIndex: 1
-    virtual bool isValidSlotForContainer(
-        class ContainerScreenContext const& screenContext,
-        class Container const&              container,
-        int                                 slot
-    ) const;
-
     // vIndex: 2
     virtual bool isItemAllowedInSlot(
-        class ContainerScreenContext const& screenContext,
-        int                                 slot,
-        class ItemStackBase const&          item,
-        int                                 amount
-    ) const;
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     // vIndex: 3
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
     // vIndex: 4
-    virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
-
-    // vIndex: 5
-    virtual bool
-    isItemAllowedToRemove(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
-
-    // vIndex: 6
-    virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
-
-    // vIndex: 7
-    virtual bool canDestroy(class ContainerScreenContext const& screenContext) const;
+    virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     // vIndex: 8
-    virtual int getContainerOffset(class ContainerScreenContext const& screenContext) const;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    // vIndex: 9
-    virtual int
-    getContainerSize(class ContainerScreenContext const& screenContext, class Container const& container) const;
-
+    // vIndex: 0
+    virtual ~EnchantingInputContainerValidation() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canDestroy$(class ContainerScreenContext const& screenContext) const;
-
-    MCAPI bool canItemMoveToContainer$(class ItemStackBase const& item) const;
-
-    MCAPI int getAvailableSetCount$(int, class ItemStackBase const&) const;
-
-    MCAPI int getContainerOffset$(class ContainerScreenContext const& screenContext) const;
-
-    MCAPI int
-    getContainerSize$(class ContainerScreenContext const& screenContext, class Container const& container) const;
-
-    MCAPI bool isItemAllowedInSlot$(
-        class ContainerScreenContext const& screenContext,
-        int                                 slot,
-        class ItemStackBase const&          item,
-        int                                 amount
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
     ) const;
 
-    MCAPI bool isItemAllowedToAdd$(class ItemStack const& item) const;
+    MCAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
-    MCAPI bool
-    isItemAllowedToRemove$(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
+    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCAPI bool isValidSlotForContainer$(
-        class ContainerScreenContext const& screenContext,
-        class Container const&              container,
-        int                                 slot
-    ) const;
+    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

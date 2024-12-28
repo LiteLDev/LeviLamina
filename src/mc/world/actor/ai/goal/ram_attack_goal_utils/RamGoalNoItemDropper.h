@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
 namespace RamAttackGoalUtils {
@@ -21,33 +20,42 @@ public:
     RamGoalNoItemDropper();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RamGoalNoItemDropper() = default;
-
     // vIndex: 1
-    virtual void tryDropHorn(class Vec3 dropPos) const;
+    virtual void tryDropHorn(::Vec3 dropPos) const /*override*/;
 
     // vIndex: 2
-    virtual void checkForHornDropOnCollision(class Vec3 collisionPos);
+    virtual void checkForHornDropOnCollision(::Vec3 collisionPos) /*override*/;
 
     // vIndex: 3
-    virtual void dontDropHorn();
+    virtual void dontDropHorn() /*override*/;
 
+    // vIndex: 0
+    virtual ~RamGoalNoItemDropper() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void checkForHornDropOnCollision$(class Vec3 collisionPos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCAPI void dontDropHorn$();
+    MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCAPI void tryDropHorn$(class Vec3 dropPos) const;
+    MCAPI void $dontDropHorn();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace RamAttackGoalUtils
+} // namespace RamAttackGoalUtils

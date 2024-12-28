@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MeleeAttackBaseGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class Mob;
+// clang-format on
+
 class MeleeBoxAttackGoal : public ::MeleeAttackBaseGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk7f036f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MeleeBoxAttackGoal& operator=(MeleeBoxAttackGoal const&);
@@ -14,30 +26,49 @@ public:
     MeleeBoxAttackGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MeleeBoxAttackGoal() = default;
+    virtual ~MeleeBoxAttackGoal() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI explicit MeleeBoxAttackGoal(class Mob& mob);
-
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit MeleeBoxAttackGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI ::AABB _getTargetHitBox(::Actor const& target) const;
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void tick$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

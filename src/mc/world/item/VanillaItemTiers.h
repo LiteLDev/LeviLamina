@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/item/Item.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class ItemStack;
+// clang-format on
+
 class VanillaItemTiers {
 public:
     // prevent constructor by default
@@ -13,26 +19,25 @@ public:
     VanillaItemTiers();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::vector<class ItemStack> const
-    getTierItems(class Item::Tier const& tier, class BaseGameVersion const& baseGameVersion);
-
+    MCAPI static ::std::vector<::ItemStack> const
+    getTierItems(::Item::Tier const& tier, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class Item::Tier const& DIAMOND();
+    MCAPI static ::Item::Tier const& DIAMOND();
 
-    MCAPI static class Item::Tier const& GOLD();
+    MCAPI static ::Item::Tier const& GOLD();
 
-    MCAPI static class Item::Tier const& IRON();
+    MCAPI static ::Item::Tier const& IRON();
 
-    MCAPI static class Item::Tier const& NETHERITE();
+    MCAPI static ::Item::Tier const& NETHERITE();
 
-    MCAPI static class Item::Tier const& STONE();
+    MCAPI static ::Item::Tier const& STONE();
 
-    MCAPI static class Item::Tier const& WOOD();
-
+    MCAPI static ::Item::Tier const& WOOD();
     // NOLINTEND
 };

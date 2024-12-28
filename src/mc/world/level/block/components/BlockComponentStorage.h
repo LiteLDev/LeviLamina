@@ -2,7 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/typeid_t.h"
+
 class BlockComponentStorage {
+public:
+    // BlockComponentStorage inner types declare
+    // clang-format off
+    struct ComponentBase;
+    // clang-format on
+
+    // BlockComponentStorage inner types define
+    struct ComponentBase {
+    public:
+        // prevent constructor by default
+        ComponentBase& operator=(ComponentBase const&);
+        ComponentBase(ComponentBase const&);
+        ComponentBase();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~ComponentBase();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 56> mUnkbd91b3;
+    ::ll::UntypedStorage<8, 40> mUnkce79bc;
+    ::ll::UntypedStorage<1, 1>  mUnk3ed799;
+    ::ll::UntypedStorage<1, 1>  mUnkfe00f1;
+    ::ll::UntypedStorage<1, 1>  mUnkee4bb9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockComponentStorage& operator=(BlockComponentStorage const&);
@@ -10,10 +51,11 @@ public:
     BlockComponentStorage();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCVAPI ~BlockComponentStorage();
+    MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCAPI bool addingComponentsIsAllowed() const;
+    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
 
     MCAPI void allowComponentReplacement();
 
@@ -21,12 +63,14 @@ public:
 
     MCAPI void finalizeComponents();
 
+    MCAPI bool modificationIsAllowed() const;
+
+    MCAPI ~BlockComponentStorage();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,39 +5,65 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
 struct BreakBlocksDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk25213d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BreakBlocksDescription& operator=(BreakBlocksDescription const&);
     BreakBlocksDescription(BreakBlocksDescription const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
-
-    // vIndex: 1
-    virtual ~BreakBlocksDescription();
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
-    MCAPI BreakBlocksDescription();
-
+    // vIndex: 1
+    virtual ~BreakBlocksDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BreakBlocksDescription();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
 
-    MCAPI char const* getJsonName$() const;
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

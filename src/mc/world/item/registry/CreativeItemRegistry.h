@@ -9,73 +9,82 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-namespace Bedrock::Threading { class Mutex; }
+class CreativeGroupInfo;
+class CreativeItemEntry;
+class CreativeItemGroupCategory;
+class HashedString;
+class ItemInstance;
+struct CreativeItemNetIdTag;
 // clang-format on
 
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8a11ed;
+    ::ll::UntypedStorage<8, 24> mUnk8f46aa;
+    ::ll::UntypedStorage<8, 64> mUnk675840;
+    ::ll::UntypedStorage<8, 64> mUnk465b32;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CreativeItemRegistry& operator=(CreativeItemRegistry const&);
     CreativeItemRegistry(CreativeItemRegistry const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CreativeItemRegistry();
+    virtual ~CreativeItemRegistry() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI CreativeItemRegistry();
 
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const& instance);
+    MCAPI ::CreativeItemEntry* findCreativeItemEntry(::ItemInstance const& instance);
 
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const& netId);
+    MCAPI ::CreativeItemEntry* findCreativeItemEntry(::CreativeItemNetId const& netId);
 
-    MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
+    MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
 
-    MCAPI std::vector<class CreativeItemEntry> const& getCreativeItemEntries();
+    MCAPI ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
 
-    MCAPI class CreativeItemEntry* getItemEntry(uint index);
+    MCAPI ::std::vector<::CreativeItemEntry> const& getCreativeItemEntries();
 
-    MCAPI class CreativeItemGroupCategory*
-    newCreativeCategory(std::string const& name, ::CreativeItemCategory category);
+    MCAPI ::CreativeItemEntry* getItemEntry(uint index);
 
-    MCAPI class CreativeGroupInfo*
-    newCreativeGroup(::CreativeItemCategory category, class HashedString const& name, class ItemInstance const& icon);
+    MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
-    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const& creativeNetId, class ItemInstance const& item);
+    MCAPI ::CreativeGroupInfo*
+    newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
+
+    MCAPI ::CreativeItemEntry* newItemEntry(::CreativeItemNetId const& creativeNetId, ::ItemInstance const& item);
 
     MCAPI void resetGroups();
 
-    MCAPI class CreativeItemEntry* updateItemEntry(uint index, class ItemInstance const& item);
+    MCAPI ::CreativeItemEntry* updateItemEntry(uint index, ::ItemInstance const& item);
 
     MCAPI void updateNetIdMap();
-
-    MCAPI static class CreativeItemRegistry* current();
-
-    MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)> func);
-
-    MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&& registry);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _forEachCreativeItemInstance(std::function<bool(class ItemInstance&)> func);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI static class Bedrock::Threading::Mutex& mCreativeListMutex();
-
-    MCAPI static std::unique_ptr<class CreativeItemRegistry>& mCurrentRegistry();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

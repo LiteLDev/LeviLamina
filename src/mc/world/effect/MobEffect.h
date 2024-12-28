@@ -2,8 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ActorDamageSource;
+class Amplifier;
+class Attribute;
+class AttributeBuff;
+class AttributeModifier;
+class BaseAttributeMap;
+class BaseGameVersion;
+class CompoundTag;
+class Experiments;
+class HashedString;
+class TemporalAttributeBuff;
+struct EffectDuration;
 namespace mce { class Color; }
 // clang-format on
 
@@ -15,34 +31,79 @@ public:
     // clang-format on
 
     // MobEffect inner types define
+    using AttributeBuffPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>;
+
+    using AttributeModPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>;
+
     struct FactorCalculationData {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>   mPaddingDuration;
+        ::ll::TypedStorage<4, 4, float> mFactorStart;
+        ::ll::TypedStorage<4, 4, float> mFactorTarget;
+        ::ll::TypedStorage<4, 4, float> mFactorCurrent;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::MobEffect::FactorCalculationData&, ::EffectDuration)>>
+                                        mUpdateFn;
+        ::ll::TypedStorage<4, 4, int>   mTicksActive;
+        ::ll::TypedStorage<4, 4, float> mFactorPreviousFrame;
+        ::ll::TypedStorage<1, 1, bool>  mHadEffectLastTick;
+        ::ll::TypedStorage<1, 1, bool>  mHadApplied;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        FactorCalculationData(FactorCalculationData const&);
         FactorCalculationData();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI FactorCalculationData(struct MobEffect::FactorCalculationData const&);
+        MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
 
-        MCAPI struct MobEffect::FactorCalculationData& operator=(struct MobEffect::FactorCalculationData const&);
-
-        MCAPI std::unique_ptr<class CompoundTag> save() const;
+        MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
         MCAPI ~FactorCalculationData();
-
-        MCAPI static struct MobEffect::FactorCalculationData load(class CompoundTag const* tag);
-
         // NOLINTEND
 
-        // thunks
     public:
+        // static functions
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct MobEffect::FactorCalculationData const&);
+        MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint const>                                              mId;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsHarmful;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                           mColor;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                         mParticleEffectId;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                         mParticleEffectAmbientId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mDescriptionId;
+    ::ll::TypedStorage<4, 4, int>                                                     mIcon;
+    ::ll::TypedStorage<4, 4, float>                                                   mDurationModifier;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsDisabled;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mResourceName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mIconName;
+    ::ll::TypedStorage<1, 1, bool>                                                    mEffectVisible;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mOnApplySound;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                         mComponentName;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>                         mValueAmplifier;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>                         mDurationAmplifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>>>
+        mAttributeBuffs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>>>
+                                                                  mAttributeModifiers;
+    ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -51,235 +112,240 @@ public:
     MobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~MobEffect();
 
     // vIndex: 1
-    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
+    virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
     // vIndex: 2
-    virtual void removeEffects(class BaseAttributeMap& attributeMapToRemoveFrom);
+    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
     // vIndex: 3
-    virtual void onEffectExpired(class Actor&) const;
+    virtual void onEffectExpired(::Actor&) const;
 
     // vIndex: 4
-    virtual void onActorRemovedAfterDeath(class Actor&, int) const;
+    virtual void onActorDied(::Actor&, int) const;
 
     // vIndex: 5
-    virtual void onActorHurt(class Actor&, int, class ActorDamageSource const&, float) const;
+    virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
     // vIndex: 6
-    virtual void applyInstantaneousEffect(
-        class Actor* source,
-        class Actor* owner,
-        class Actor* target,
-        int          amplification,
-        float        scale
-    ) const;
+    virtual void
+    applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
     // vIndex: 7
     virtual bool isInstantaneous() const;
 
     // vIndex: 8
-    virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
+    virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI MobEffect(
-        uint               id,
-        std::string const& resourceName,
-        std::string const& locName,
-        bool               isHarmful,
-        int                color,
-        int                icon,
-        std::string const& iconName,
-        bool               drawParticles
+        uint                 id,
+        ::std::string const& resourceName,
+        ::std::string const& locName,
+        bool                 isHarmful,
+        int                  color,
+        int                  icon,
+        ::std::string const& iconName,
+        bool                 drawParticles
     );
 
-    MCAPI void addAttributeBuff(class Attribute const& attribute, std::shared_ptr<class AttributeBuff> buff);
+    MCAPI ::TemporalAttributeBuff
+    _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
+
+    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
+
+    MCAPI void addAttributeBuff(::Attribute const& attribute, ::std::shared_ptr<::AttributeBuff> buff);
+
+    MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
     MCAPI void
-    addAttributeModifier(class Attribute const& attribute, std::shared_ptr<class AttributeModifier> modifier);
+    applyModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
+        const;
 
-    MCAPI void
-    applyModsAndBuffs(class BaseAttributeMap& attributeMapToRemoveFrom, int durationTicks, int amplification) const;
+    MCAPI ::mce::Color const& getColor() const;
 
-    MCAPI class mce::Color const& getColor() const;
-
-    MCAPI std::string const& getDescriptionId() const;
+    MCAPI ::std::string const& getDescriptionId() const;
 
     MCAPI float getDurationModifier() const;
 
     MCAPI uint getId() const;
 
-    MCAPI class HashedString const& getParticleEffect(bool isAmbient) const;
+    MCAPI ::HashedString const& getParticleEffect(bool isAmbient) const;
 
-    MCAPI std::string const& getResourceName() const;
+    MCAPI ::std::string const& getResourceName() const;
 
     MCAPI bool isHarmful() const;
 
     MCAPI bool isVisible() const;
 
-    MCAPI void setDurationAmplifier(std::shared_ptr<class Amplifier> amplifier);
+    MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
-    MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier> amplifier);
+    MCAPI ::MobEffect& setFactorCalculationData(::MobEffect::FactorCalculationData const& factorCalculationData);
 
-    MCAPI void updateEffects(class Actor* target, int durationTicks, int amplification);
+    MCAPI ::MobEffect& setOnApplySound(::SharedTypes::Legacy::LevelSoundEvent onApplySound);
 
-    MCAPI std::vector<std::pair<class Attribute const*, std::shared_ptr<class AttributeModifier>>> const&
-          viewAttributeModifiers() const;
+    MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
-    MCAPI static class MobEffect* getById(uint effectId);
+    MCAPI void updateEffects(::Actor* target, ::EffectDuration durationTicks, int amplification);
 
-    MCAPI static class MobEffect* getByName(std::string const& name);
-
-    MCAPI static std::string getNameById(uint effectId);
-
-    MCAPI static void initEffects(class BaseGameVersion const& baseGameVersion, class Experiments const& experiments);
-
-    MCAPI static void shutdownEffects();
-
+    MCAPI ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>> const&
+    viewAttributeModifiers() const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class AttributeModifier
-    _createAttributeModifer(class AttributeModifier const& baseMod, int amplification) const;
-
-    MCAPI class InstantaneousAttributeBuff
-    _createInstantBuff(class AttributeBuff const& baseBuff, int amplification, float scale) const;
-
-    MCAPI class TemporalAttributeBuff
-    _createTemporalBuff(class AttributeBuff const& baseBuff, int duration, int amplification) const;
-
-    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
-
-    // NOLINTEND
-
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void
-    darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData& factorCalculationData, int duration);
+    darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
+    MCAPI static ::MobEffect* getById(uint effectId);
+
+    MCAPI static ::MobEffect* getByName(::std::string const& name);
+
+    MCAPI static ::MobEffect::FactorCalculationData getDarknessEffectFactorCalculationData();
+
+    MCAPI static ::std::string getNameById(uint effectId);
+
+    MCAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+
+    MCAPI static void shutdownEffects();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::MobEffect*& ABSORPTION();
 
-    MCAPI void* ctor$(
-        uint               id,
-        std::string const& resourceName,
-        std::string const& locName,
-        bool               isHarmful,
-        int                color,
-        int                icon,
-        std::string const& iconName,
-        bool               drawParticles
+    MCAPI static ::MobEffect*& BAD_OMEN();
+
+    MCAPI static ::MobEffect*& BLINDNESS();
+
+    MCAPI static ::MobEffect*& CONDUIT_POWER();
+
+    MCAPI static ::MobEffect*& CONFUSION();
+
+    MCAPI static ::MobEffect*& DAMAGE_BOOST();
+
+    MCAPI static ::MobEffect*& DAMAGE_RESISTANCE();
+
+    MCAPI static ::MobEffect*& DARKNESS();
+
+    MCAPI static ::mce::Color const& DEFAULT_COLOR();
+
+    MCAPI static ::MobEffect*& DIG_SLOWDOWN();
+
+    MCAPI static ::MobEffect*& DIG_SPEED();
+
+    MCAPI static ::MobEffect*& EMPTY_EFFECT();
+
+    MCAPI static ::MobEffect*& FATAL_POISON();
+
+    MCAPI static ::MobEffect*& FIRE_RESISTANCE();
+
+    MCAPI static ::MobEffect*& HARM();
+
+    MCAPI static ::MobEffect*& HEAL();
+
+    MCAPI static ::MobEffect*& HEALTH_BOOST();
+
+    MCAPI static ::MobEffect*& HERO_OF_THE_VILLAGE();
+
+    MCAPI static ::MobEffect*& HUNGER();
+
+    MCAPI static ::MobEffect*& INFESTED();
+
+    MCAPI static ::MobEffect*& INVISIBILITY();
+
+    MCAPI static ::MobEffect*& JUMP();
+
+    MCAPI static ::MobEffect*& LEVITATION();
+
+    MCAPI static ::MobEffect*& MOVEMENT_SLOWDOWN();
+
+    MCAPI static ::MobEffect*& MOVEMENT_SPEED();
+
+    MCAPI static ::MobEffect*& NIGHT_VISION();
+
+    MCAPI static ::MobEffect*& OOZING();
+
+    MCAPI static ::MobEffect*& POISON();
+
+    MCAPI static ::MobEffect*& RAID_OMEN();
+
+    MCAPI static ::MobEffect*& REGENERATION();
+
+    MCAPI static ::MobEffect*& SATURATION();
+
+    MCAPI static ::MobEffect*& SLOW_FALLING();
+
+    MCAPI static ::MobEffect*& TRIAL_OMEN();
+
+    MCAPI static ::MobEffect*& WATER_BREATHING();
+
+    MCAPI static ::MobEffect*& WEAKNESS();
+
+    MCAPI static ::MobEffect*& WEAVING();
+
+    MCAPI static ::MobEffect*& WIND_CHARGED();
+
+    MCAPI static ::MobEffect*& WITHER();
+
+    MCAPI static ::std::add_lvalue_reference_t<::std::unique_ptr<::MobEffect>[]> mMobEffects();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        uint                 id,
+        ::std::string const& resourceName,
+        ::std::string const& locName,
+        bool                 isHarmful,
+        int                  color,
+        int                  icon,
+        ::std::string const& iconName,
+        bool                 drawParticles
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void applyInstantaneousEffect$(
-        class Actor* source,
-        class Actor* owner,
-        class Actor* target,
-        int          amplification,
-        float        scale
-    ) const;
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    MCAPI float getAttributeModifierValue$(int amplifier, class AttributeModifier const& modifier) const;
+    MCAPI void $onEffectExpired(::Actor&) const;
 
-    MCAPI bool isInstantaneous$() const;
+    MCAPI void $onActorDied(::Actor&, int) const;
 
-    MCAPI void onActorHurt$(class Actor&, int, class ActorDamageSource const&, float) const;
+    MCAPI void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
-    MCAPI void onActorRemovedAfterDeath$(class Actor&, int) const;
+    MCAPI void
+    $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
-    MCAPI void onEffectExpired$(class Actor&) const;
+    MCAPI bool $isInstantaneous() const;
 
-    MCAPI void removeEffects$(class BaseAttributeMap& attributeMapToRemoveFrom);
+    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    // NOLINTEND
 
-    MCAPI static class MobEffect*& ABSORPTION();
-
-    MCAPI static class MobEffect*& BAD_OMEN();
-
-    MCAPI static class MobEffect*& BLINDNESS();
-
-    MCAPI static class MobEffect*& CONDUIT_POWER();
-
-    MCAPI static class MobEffect*& CONFUSION();
-
-    MCAPI static class MobEffect*& DAMAGE_BOOST();
-
-    MCAPI static class MobEffect*& DAMAGE_RESISTANCE();
-
-    MCAPI static class MobEffect*& DARKNESS();
-
-    MCAPI static class mce::Color const& DEFAULT_COLOR();
-
-    MCAPI static class MobEffect*& DIG_SLOWDOWN();
-
-    MCAPI static class MobEffect*& DIG_SPEED();
-
-    MCAPI static class MobEffect*& EMPTY_EFFECT();
-
-    MCAPI static class MobEffect*& FATAL_POISON();
-
-    MCAPI static class MobEffect*& FIRE_RESISTANCE();
-
-    MCAPI static class MobEffect*& HARM();
-
-    MCAPI static class MobEffect*& HEAL();
-
-    MCAPI static class MobEffect*& HEALTH_BOOST();
-
-    MCAPI static class MobEffect*& HERO_OF_THE_VILLAGE();
-
-    MCAPI static class MobEffect*& HUNGER();
-
-    MCAPI static class MobEffect*& INFESTED();
-
-    MCAPI static class MobEffect*& INVISIBILITY();
-
-    MCAPI static class MobEffect*& JUMP();
-
-    MCAPI static class MobEffect*& LEVITATION();
-
-    MCAPI static class MobEffect*& MOVEMENT_SLOWDOWN();
-
-    MCAPI static class MobEffect*& MOVEMENT_SPEED();
-
-    MCAPI static class MobEffect*& NIGHT_VISION();
-
-    MCAPI static class MobEffect*& OOZING();
-
-    MCAPI static class MobEffect*& POISON();
-
-    MCAPI static class MobEffect*& RAID_OMEN();
-
-    MCAPI static class MobEffect*& REGENERATION();
-
-    MCAPI static class MobEffect*& SATURATION();
-
-    MCAPI static class MobEffect*& SLOW_FALLING();
-
-    MCAPI static class MobEffect*& TRIAL_OMEN();
-
-    MCAPI static class MobEffect*& WATER_BREATHING();
-
-    MCAPI static class MobEffect*& WEAKNESS();
-
-    MCAPI static class MobEffect*& WEAVING();
-
-    MCAPI static class MobEffect*& WIND_CHARGED();
-
-    MCAPI static class MobEffect*& WITHER();
-
-    MCAPI static auto mMobEffects() -> std::unique_ptr<class MobEffect> (&)[];
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

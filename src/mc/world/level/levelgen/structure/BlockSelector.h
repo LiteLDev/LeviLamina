@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class Random;
+// clang-format on
+
 class BlockSelector {
 public:
     // prevent constructor by default
@@ -10,21 +16,30 @@ public:
     BlockSelector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockSelector();
 
     // vIndex: 1
-    virtual class Block const& next(class Random& random, int, int, int, bool) const = 0;
+    virtual ::Block const& next(::Random&, int, int, int, bool) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

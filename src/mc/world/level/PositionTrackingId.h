@@ -2,39 +2,53 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Tag;
+// clang-format on
+
 class PositionTrackingId {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkecd528;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PositionTrackingId();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PositionTrackingId(class PositionTrackingId&& id);
+    MCAPI PositionTrackingId(::PositionTrackingId const&);
 
-    MCAPI PositionTrackingId(class PositionTrackingId const& id);
+    MCAPI PositionTrackingId(::PositionTrackingId&&);
 
-    MCAPI void fromTag(class Tag const* tag);
+    MCAPI void fromTag(::Tag const* tag);
 
-    MCAPI std::unique_ptr<class Tag> getTag() const;
+    MCAPI ::std::unique_ptr<::Tag> getTag() const;
 
-    MCAPI class PositionTrackingId& operator=(class PositionTrackingId&& id);
+    MCAPI ::PositionTrackingId& operator=(::PositionTrackingId const&);
 
-    MCAPI class PositionTrackingId& operator=(class PositionTrackingId const& id);
+    MCAPI ::PositionTrackingId& operator=(::PositionTrackingId&&);
 
-    MCAPI std::string const toString() const;
-
+    MCAPI ::std::string const toString() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class PositionTrackingId&& id);
-
-    MCAPI void* ctor$(class PositionTrackingId const& id);
-
-    MCAPI static class PositionTrackingId const& INVALID_ID();
+    MCAPI static ::PositionTrackingId const& INVALID_ID();
 
     MCAPI static uint& sNextId();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PositionTrackingId const&);
+
+    MCAPI void* $ctor(::PositionTrackingId&&);
     // NOLINTEND
 };

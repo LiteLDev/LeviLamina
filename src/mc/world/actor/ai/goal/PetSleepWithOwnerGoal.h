@@ -3,10 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class PetSleepWithOwnerGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk5a046e;
+    ::ll::UntypedStorage<8, 8>  mUnkd10d69;
+    ::ll::UntypedStorage<8, 8>  mUnkd82956;
+    ::ll::UntypedStorage<4, 12> mUnk2699f3;
+    ::ll::UntypedStorage<8, 40> mUnk420ac2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PetSleepWithOwnerGoal& operator=(PetSleepWithOwnerGoal const&);
@@ -14,53 +28,67 @@ public:
     PetSleepWithOwnerGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PetSleepWithOwnerGoal() = default;
+    virtual ~PetSleepWithOwnerGoal() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI
-    PetSleepWithOwnerGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
-
-    MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState> state);
-
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PetSleepWithOwnerGoal(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $stop();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

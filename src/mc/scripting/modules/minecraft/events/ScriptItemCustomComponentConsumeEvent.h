@@ -3,23 +3,62 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/script_engine/Closure.h"
-#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentConnectors.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ComponentItem;
 class ItemStack;
-namespace ScriptModuleMinecraft { struct IScriptItemCustomComponentClosures; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentConsumeEvent {
+struct ScriptItemCustomComponentConsumeEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent {
+public:
+    // ScriptItemCustomComponentConsumeEvent inner types declare
+    // clang-format off
+    struct IntermediateStorage;
+    // clang-format on
+
+    // ScriptItemCustomComponentConsumeEvent inner types define
+    struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 152> mUnk849eea;
+        ::ll::UntypedStorage<8, 24>  mUnk55f5dd;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        IntermediateStorage& operator=(IntermediateStorage const&);
+        IntermediateStorage(IntermediateStorage const&);
+        IntermediateStorage();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~IntermediateStorage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnka924ce;
+    ::ll::UntypedStorage<8, 32> mUnk918613;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptItemCustomComponentConsumeEvent& operator=(ScriptItemCustomComponentConsumeEvent const&);
@@ -27,41 +66,33 @@ public:
     ScriptItemCustomComponentConsumeEvent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentConsumeEvent(
-        class ItemStack const& initialInstance,
-        class ItemStack&,
-        class Actor&                              actor,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent&&);
-
-    MCAPI static struct Scripting::ClassBinding bind();
-
-    MCAPI static std::optional<
-        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
-                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent>)>>
-    getClosure(struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const& closures);
-
-    MCAPI static struct ScriptItemCustomComponentConnectors<
-        void(class ItemStack const&, class ItemStack&, class Actor&)>
-    getConnectors(class ComponentItem& item);
-
+    // vIndex: 0
+    virtual ~ScriptItemCustomComponentConsumeEvent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class ItemStack const& initialInstance,
-        class ItemStack&,
-        class Actor&                              actor,
-        class Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI static ::Scripting::ClassBinding bind();
 
+    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
+        void(::ItemStack const&, ::ItemStack&, ::Actor&)>
+    getConnectors(::ComponentItem& item);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

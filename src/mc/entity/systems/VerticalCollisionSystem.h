@@ -8,12 +8,43 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class VerticalCollisionSystem {
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class StrictEntityContext;
+class Vec3;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct BounceComponent;
+struct DimensionTypeComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct MinecartFlagComponent;
+struct MoveRequestComponent;
+struct PlayerComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct VerticalCollisionFlagComponent;
+// clang-format on
+
+class VerticalCollisionSystem
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+      ::Read<
+          ::DimensionTypeComponent,
+          ::StateVectorComponent,
+          ::ActorDataFlagComponent,
+          ::MoveRequestComponent,
+          ::AABBShapeComponent>,
+      ::Write<::StateVectorComponent>,
+      ::AddRemove<::BounceComponent>,
+      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     VerticalCollisionSystem& operator=(VerticalCollisionSystem const&);
@@ -21,132 +52,116 @@ public:
     VerticalCollisionSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VerticalCollisionSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct MinecartFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct VerticalCollisionFlag>>,
-                      struct Read<
-                          struct DimensionTypeComponent,
-                          struct StateVectorComponent,
-                          struct ActorDataFlagComponent,
-                          struct MoveRequestComponent,
-                          struct AABBShapeComponent>,
-                      struct Write<struct StateVectorComponent>,
-                      struct AddRemove<struct BounceComponent>,
-                      struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& strictContext);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::StateVectorComponent,
+                          ::ActorDataFlagComponent,
+                          ::MoveRequestComponent,
+                          ::AABBShapeComponent>,
+                      ::Write<::StateVectorComponent>,
+                      ::AddRemove<::BounceComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& strictContext) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct VerticalCollisionFlag>>,
-            struct Read<
-                struct DimensionTypeComponent,
-                struct StateVectorComponent,
-                struct ActorDataFlagComponent,
-                struct MoveRequestComponent,
-                struct AABBShapeComponent>,
-            struct Write<struct StateVectorComponent>,
-            struct AddRemove<struct BounceComponent>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& strictContext,
-        class StrictEntityContext&    entity
-    );
+        ::StrictExecutionContext<
+            ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::MoveRequestComponent,
+                ::AABBShapeComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<::BounceComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
+    ) /*override*/;
 
-    MCAPI static struct TickingSystemWithInfo create();
-
-    MCAPI static class AABB getMaxCollisionVolume(class Vec3 const& speed, class AABB const& shape);
-
-    MCAPI static void tickVerticalCollisionSystem(
-        class StrictEntityContext const&   context,
-        struct AABBShapeComponent const&   aabb,
-        struct MoveRequestComponent const& request,
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct VerticalCollisionFlag>>,
-            struct Read<
-                struct DimensionTypeComponent,
-                struct StateVectorComponent,
-                struct ActorDataFlagComponent,
-                struct MoveRequestComponent,
-                struct AABBShapeComponent>,
-            struct Write<struct StateVectorComponent>,
-            struct AddRemove<struct BounceComponent>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext
-    );
-
+    // vIndex: 0
+    virtual ~VerticalCollisionSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::TickingSystemWithInfo create();
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI static ::AABB getMaxCollisionVolume(::Vec3 const& speed, ::AABB const& shape);
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct MinecartFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct VerticalCollisionFlag>>,
-            struct Read<
-                struct DimensionTypeComponent,
-                struct StateVectorComponent,
-                struct ActorDataFlagComponent,
-                struct MoveRequestComponent,
-                struct AABBShapeComponent>,
-            struct Write<struct StateVectorComponent>,
-            struct AddRemove<struct BounceComponent>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& strictContext,
-        class StrictEntityContext&    entity
+    MCAPI static void tickVerticalCollisionSystem(
+        ::StrictEntityContext const&  context,
+        ::AABBShapeComponent const&   aabb,
+        ::MoveRequestComponent const& request,
+        ::StrictExecutionContext<
+            ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::MoveRequestComponent,
+                ::AABBShapeComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<::BounceComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct MinecartFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct VerticalCollisionFlag>>,
-                     struct Read<
-                         struct DimensionTypeComponent,
-                         struct StateVectorComponent,
-                         struct ActorDataFlagComponent,
-                         struct MoveRequestComponent,
-                         struct AABBShapeComponent>,
-                     struct Write<struct StateVectorComponent>,
-                     struct AddRemove<struct BounceComponent>,
-                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& strictContext);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+                     ::Read<
+                         ::DimensionTypeComponent,
+                         ::StateVectorComponent,
+                         ::ActorDataFlagComponent,
+                         ::MoveRequestComponent,
+                         ::AABBShapeComponent>,
+                     ::Write<::StateVectorComponent>,
+                     ::AddRemove<::BounceComponent>,
+                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& strictContext);
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::MoveRequestComponent,
+                ::AABBShapeComponent>,
+            ::Write<::StateVectorComponent>,
+            ::AddRemove<::BounceComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
+    );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

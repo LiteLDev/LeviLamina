@@ -3,69 +3,74 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/chunk/vanilla_level_chunk_upgrade/Axis.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 
-namespace VanillaLevelChunkUpgrade {
-// NOLINTBEGIN
-MCAPI bool _updateBelowZero(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class LevelChunk;
+class ListTag;
+// clang-format on
 
-MCAPI void _upgradeLevelChunkLegacy(class LevelChunk& lc, class BlockSource& region);
+namespace VanillaLevelChunkUpgrade {
+// functions
+// NOLINTBEGIN
+MCAPI bool _updateBelowZero(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
+
+MCAPI void _upgradeLevelChunkLegacy(::LevelChunk& lc, ::BlockSource& region);
+
+MCAPI void _upgradeLevelChunkViaMetaData(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
+
+MCAPI bool addBiomeSpecificVillageSkins(::CompoundTag& tag, ::BlockSource& region);
+
+MCAPI bool convertOcelotTagToCat(::CompoundTag& tag);
+
+MCAPI bool convertVillagerV1TagToV2(::CompoundTag& tag);
+
+MCAPI bool convertVillagerV2TagToV1(::CompoundTag& tag);
+
+MCAPI bool convertZombieVillagerV1TagToV2(::CompoundTag& tag);
+
+MCAPI bool convertZombieVillagerV2TagToV1(::CompoundTag& tag);
+
+MCAPI void fillNegativeSubChunksWithAir(::LevelChunk& lc, ::BlockSource& region);
+
+MCAPI void fillNegativeSubChunksWithGeneration(::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
 MCAPI void
-_upgradeLevelChunkViaMetaData(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
+fillNegativeSubChunksWithGenerationOrAir(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
 
-MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag& tag, class BlockSource& region);
+MCAPI void fixStemBlockStates(::BlockSource& region, ::BlockPos updatePos, ::Block const& block);
 
-MCAPI bool convertOcelotTagToCat(class CompoundTag& tag);
+MCAPI void fixUselessDynamicWater(::LevelChunk& lc, ::BlockSource& region);
 
-MCAPI bool convertVillagerV1TagToV2(class CompoundTag& tag);
+MCAPI void fixWallBlockStates(::BlockSource& region, ::BlockPos updatePos);
 
-MCAPI bool convertVillagerV2TagToV1(class CompoundTag& tag);
+MCAPI void fixWallChunk(::LevelChunk& lc, ::BlockSource& region);
 
-MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag& tag);
+MCAPI ::std::string const& getV1CareerFromDefinitionsList(::ListTag const* definitionsList);
 
-MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag& tag);
+MCAPI bool isWallBlock(::Block const& testBlock);
 
-MCAPI void fillNegativeSubChunksWithAir(class LevelChunk& lc, class BlockSource& region);
+MCAPI bool levelChunkNeedsUpgrade(::LevelChunk const& lc);
 
-MCAPI void fillNegativeSubChunksWithGeneration(class LevelChunk& lc, class LevelChunk& generatedChunk);
+MCAPI void replaceSkullsWithFlattenedVersions(::LevelChunk& levelChunk);
 
-MCAPI void fillNegativeSubChunksWithGenerationOrAir(
-    class LevelChunk&  lc,
-    class LevelChunk&  generatedChunk,
-    class BlockSource& region
-);
+MCAPI bool upgradeArmorStandComponents(::CompoundTag& tag);
 
-MCAPI void fixBlockStatesOnChunkBorderAxis(
-    class BlockSource&               region,
-    class LevelChunk const&          levelChunk,
-    uchar                            chunkAxisPos,
-    class BlockPos                   pos,
-    ::VanillaLevelChunkUpgrade::Axis fixAxis
-);
+MCAPI void upgradeLevelChunk(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
 
-MCAPI void fixStemBlockStates(class BlockSource& region, class BlockPos updatePos, class Block const& block);
-
-MCAPI void fixUselessDynamicWater(class LevelChunk& lc, class BlockSource& region);
-
-MCAPI void fixWallBlockStates(class BlockSource& region, class BlockPos updatePos);
-
-MCAPI void fixWallChunk(class LevelChunk& lc, class BlockSource& region);
-
-MCAPI std::string const& getV1CareerFromDefinitionsList(class ListTag const* definitionsList);
-
-MCAPI bool isWallBlock(class Block const& testBlock);
-
-MCAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc);
-
-MCAPI bool upgradeArmorStandComponents(class CompoundTag& tag);
-
-MCAPI void upgradeLevelChunk(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
-
-MCAPI void upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers, bool isTemplateWorld);
-
-MCAPI void upgradeWorldHeight(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
+MCAPI void upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers, bool isTemplateWorld);
 // NOLINTEND
 
-}; // namespace VanillaLevelChunkUpgrade
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::vector<::std::string> const& V1_VILLAGER_BEHAVIORS();
+
+MCAPI ::std::vector<::std::string> const& V1_VILLAGER_CAREERS();
+// NOLINTEND
+
+} // namespace VanillaLevelChunkUpgrade

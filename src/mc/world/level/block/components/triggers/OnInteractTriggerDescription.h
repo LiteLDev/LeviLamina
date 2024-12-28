@@ -3,15 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/components/triggers/BlockTriggerDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class CompoundTag;
+class OnInteractTrigger;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class OnInteractTriggerDescription {
+class OnInteractTriggerDescription : public ::BlockTriggerDescription<::OnInteractTrigger> {
 public:
     // prevent constructor by default
     OnInteractTriggerDescription& operator=(OnInteractTriggerDescription const&);
@@ -19,78 +20,51 @@ public:
     OnInteractTriggerDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OnInteractTriggerDescription() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
-
-    // vIndex: 2
-    virtual void initializeComponent(class EntityContext& entity) const;
-
-    // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
-
-    // vIndex: 4
-    virtual void initializeComponentFromCode(class EntityContext& entity) const;
-
-    // vIndex: 5
-    virtual void initializeComponentFromCode(class BlockComponentStorage& blockComponentStorage) const;
-
-    // vIndex: 6
-    virtual void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
-                                           componentSchema,
-        class BlockComponentFactory const& factory
-    ) const;
+    virtual ::std::string const& getName() const /*override*/;
 
     // vIndex: 7
-    virtual bool isNetworkComponent() const;
+    virtual bool isNetworkComponent() const /*override*/;
 
     // vIndex: 8
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    // vIndex: 10
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
+    // vIndex: 0
+    virtual ~OnInteractTriggerDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildSchema$(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
-                                           componentSchema,
-        class BlockComponentFactory const& factory
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI std::string const& getName$() const;
+    MCAPI bool $isNetworkComponent() const;
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void initializeComponent$(class EntityContext& entity) const;
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
 
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
-
-    MCAPI void initializeComponentFromCode$(class EntityContext& entity) const;
-
-    MCAPI void initializeComponentFromCode$(class BlockComponentStorage& blockComponentStorage) const;
-
-    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI static std::string const& NameID();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

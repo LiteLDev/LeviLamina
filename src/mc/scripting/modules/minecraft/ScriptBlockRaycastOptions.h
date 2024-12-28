@@ -5,10 +5,19 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/ScriptBlockFilter.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockRaycastOptions {
+struct ScriptBlockRaycastOptions : public ::ScriptModuleMinecraft::ScriptBlockFilter {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnkd33855;
+    ::ll::UntypedStorage<1, 2> mUnke8721f;
+    ::ll::UntypedStorage<1, 2> mUnk11f33b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptBlockRaycastOptions& operator=(ScriptBlockRaycastOptions const&);
@@ -16,26 +25,24 @@ public:
     ScriptBlockRaycastOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockRaycastOptions&&);
-
     MCAPI ~ScriptBlockRaycastOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
-    bind();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions>
-    bindV010();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> bind();
 
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> bindV010();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

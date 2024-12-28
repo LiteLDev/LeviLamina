@@ -9,75 +9,113 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/ContainerType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class UpdateTradePacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::ContainerID>   mContainerId;
+    ::ll::TypedStorage<1, 1, ::ContainerType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>  mDisplayName;
+    ::ll::TypedStorage<4, 4, int>             mSize;
+    ::ll::TypedStorage<4, 4, int>             mTraderTier;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastTradingPlayer;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>  mData;
+    ::ll::TypedStorage<1, 1, bool>            mUseNewTradeScreen;
+    ::ll::TypedStorage<1, 1, bool>            mUsingEconomyTrade;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UpdateTradePacket& operator=(UpdateTradePacket const&);
     UpdateTradePacket(UpdateTradePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UpdateTradePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& bitStream) const;
+    virtual void write(::BinaryStream& bitStream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~UpdateTradePacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI UpdateTradePacket();
 
     MCAPI UpdateTradePacket(
-        ::ContainerID               containerID,
-        ::ContainerType             type,
-        int                         size,
-        std::string const&          displayName,
-        class CompoundTag&&         tag,
-        struct ActorUniqueID const& entityID,
-        struct ActorUniqueID const& playerID,
-        int                         traderTier,
-        bool                        useNewTradeScreen,
-        bool                        usingEconomyTrade
+        ::ContainerID          containerID,
+        ::ContainerType        type,
+        int                    size,
+        ::std::string const&   displayName,
+        ::CompoundTag&&        tag,
+        ::ActorUniqueID const& entityID,
+        ::ActorUniqueID const& playerID,
+        int                    traderTier,
+        bool                   useNewTradeScreen,
+        bool                   usingEconomyTrade
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        ::ContainerID               containerID,
-        ::ContainerType             type,
-        int                         size,
-        std::string const&          displayName,
-        class CompoundTag&&         tag,
-        struct ActorUniqueID const& entityID,
-        struct ActorUniqueID const& playerID,
-        int                         traderTier,
-        bool                        useNewTradeScreen,
-        bool                        usingEconomyTrade
+    MCAPI void* $ctor(
+        ::ContainerID          containerID,
+        ::ContainerType        type,
+        int                    size,
+        ::std::string const&   displayName,
+        ::CompoundTag&&        tag,
+        ::ActorUniqueID const& entityID,
+        ::ActorUniqueID const& playerID,
+        int                    traderTier,
+        bool                   useNewTradeScreen,
+        bool                   usingEconomyTrade
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& bitStream) const;
 
-    MCAPI void write$(class BinaryStream& bitStream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

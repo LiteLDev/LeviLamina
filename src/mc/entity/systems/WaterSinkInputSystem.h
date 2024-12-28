@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct MoveInputComponent;
+struct MovementAbilitiesComponent;
+struct PlayerInputRequestComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct WasInWaterFlagComponent;
+// clang-format on
 
 class WaterSinkInputSystem {
 public:
@@ -15,24 +26,23 @@ public:
     WaterSinkInputSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
+    MCAPI static ::TickingSystemWithInfo createWaterSinkInputSystem();
 
     MCAPI static void doInWaterSinkInputSystem(
-        struct MovementAbilitiesComponent const& abilitiesComponent,
-        struct MoveInputComponent const&         moveInputComponent,
-        struct StateVectorComponent&             stateVectorComponent
+        ::MovementAbilitiesComponent const& abilitiesComponent,
+        ::MoveInputComponent const&         moveInputComponent,
+        ::StateVectorComponent&             stateVectorComponent
     );
 
-    MCAPI static void tickWaterSinkInputSystem(class ViewT<
-                                               class StrictEntityContext,
-                                               struct Include<
-                                                   class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                                   struct PlayerInputRequestComponent,
-                                                   class FlagComponent<struct InWaterFlag>>,
-                                               struct MovementAbilitiesComponent const,
-                                               struct MoveInputComponent const,
-                                               struct StateVectorComponent> view);
-
+    MCAPI static void tickWaterSinkInputSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,
+            ::MovementAbilitiesComponent const,
+            ::MoveInputComponent const,
+            ::StateVectorComponent> view
+    );
     // NOLINTEND
 };

@@ -4,11 +4,44 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/util/IDType.h"
-#include "mc/util/TagRegistry.h"
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeSource;
+class BlockPos;
+class BlockSource;
+class ChunkPos;
+class Dimension;
+class HashedString;
+class IPreliminarySurfaceProvider;
+class LevelChunk;
+class Random;
+class StructureStart;
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
 
 class StructureFeature {
+public:
+    // StructureFeature inner types define
+    using StructureMap = ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::StructureStart>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::HashedString> mStructureFeatureType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::StructureStart>>> mCachedStructures;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                                    mCacheMutex;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>                                      mVisitedPositions;
+    ::ll::TypedStorage<4, 4, uint>                                                                   mRadius;
+    ::ll::TypedStorage<4, 4, int>                                                                    mXScale;
+    ::ll::TypedStorage<4, 4, int>                                                                    mZScale;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCreateBlueprintsAndVisitedPositionsMutex;
+    ::ll::TypedStorage<8, 72, ::std::condition_variable>   mBlueprintWaitVar;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>           mActiveBlueprintCreateCount;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>          mBlueprintsFinished;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructureFeature& operator=(StructureFeature const&);
@@ -16,6 +49,7 @@ public:
     StructureFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~StructureFeature();
@@ -28,154 +62,141 @@ public:
 
     // vIndex: 3
     virtual bool getNearestGeneratedFeature(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
     );
 
     // vIndex: 4
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
+    virtual bool
+    isFeatureChunk(::BiomeSource const&, ::Random&, ::ChunkPos const&, uint, ::IPreliminarySurfaceProvider const&, ::Dimension const&) = 0;
 
     // vIndex: 5
-    virtual bool
-    isFeatureChunk(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, uint levelSeed, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
+    virtual ::std::unique_ptr<::StructureStart>
+    createStructureStart(::Dimension&, ::BiomeSource const&, ::Random&, ::ChunkPos const&, ::IPreliminarySurfaceProvider const&) = 0;
 
     // vIndex: 6
-    virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&) = 0;
+    virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
+    // NOLINTEND
 
-    // vIndex: 7
-    virtual class StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
 
-    MCAPI StructureFeature(uint seed, ::StructureFeatureType structureFeatureType);
+    MCAPI void addFeature(
+        ::Dimension&                         dimension,
+        ::Random&                            random,
+        ::ChunkPos const&                    cp,
+        ::BiomeSource const&                 biomeSource,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
-    MCAPI void addHardcodedSpawnAreas(class LevelChunk& lc);
+    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
-    MCAPI class BlockPos chunkStartAtSurfaceLevel(
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class ChunkPos                           pos,
-        int                                      defaultYLevel
+    MCAPI ::BlockPos chunkStartAtSurfaceLevel(
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::ChunkPos                           pos,
+        int                                  defaultYLevel
     );
 
     MCAPI void createBlueprints(
-        class Dimension&                         dimension,
-        class ChunkPos const&                    cp,
-        class BiomeSource const&                 biomeSource,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+        ::Dimension&                         dimension,
+        ::ChunkPos const&                    cp,
+        ::BiomeSource const&                 biomeSource,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
     MCAPI void debugRender();
 
-    MCAPI std::vector<class ChunkPos>
-          findFarAwayStructures(class buffer_span<class ChunkPos> activeChunks, uint safetyBorder);
+    MCAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCAPI void
-    foreachIntersectingStructureStart(class BoundingBox const& bb, std::function<void(class StructureStart&)> fn);
-
-    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks, uint safetyBorder);
-
-    MCAPI ::StructureFeatureType getType() const;
+    MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
     MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
 
-    MCAPI bool postProcess(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
+    MCAPI bool postProcess(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
-    MCAPI void
-    postProcessMobsAt(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
-
-    MCAPI void waitForFeatureBlueprints();
-
-    MCAPI static bool findNearestFeaturePositionBySpacing(
-        class Dimension&                         dimension,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class StructureFeature&                  feature,
-        std::optional<class HashedString> const& biomeTag,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          result,
-        int                                      featureSpacing,
-        int                                      minFeatureSeparation,
-        int                                      randomSalt,
-        bool                                     tiltedSpacing,
-        int                                      maxSearchRadius,
-        bool                                     mustBeInNewChunks
-    );
-
-    MCAPI static std::pair<class BlockPos const, class Biome const*> getBiomeForFeatureGeneration(
-        class BiomeSource const&                 biomeSource,
-        class ChunkPos const&                    chunkPos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
-    MCAPI static class ChunkPos getChunkPosInSpace(
-        class ChunkPos const& cp,
-        class Random&         random,
-        uint                  levelSeed,
-        int                   spacing,
-        int                   separation,
-        int                   salt,
-        bool                  tiltedSpacing
-    );
-
-    MCAPI static void setRandomSeedFor(class Random& result, int x, int z, int salt, uint levelSeed);
-
+    MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void addFeature(
-        class Dimension&                         dimension,
-        class Random&                            random,
-        class ChunkPos const&                    cp,
-        class BiomeSource const&                 biomeSource,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool _doesBiomeHaveTag(
-        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
-                                                 biomeTagRegistry,
-        class BiomeSource const&                 biomeSource,
-        class ChunkPos const&                    chunkPos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class HashedString const&                biomeTag
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(uint seed, ::StructureFeatureType structureFeatureType);
-
-    MCAPI void dtor$();
-
-    MCAPI bool getNearestGeneratedFeature$(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
+    MCAPI static bool findNearestFeaturePositionBySpacing(
+        ::Dimension&                           dimension,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        ::StructureFeature&                    feature,
+        ::std::optional<::HashedString> const& biomeTag,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            result,
+        int                                    featureSpacing,
+        int                                    minFeatureSeparation,
+        int                                    randomSalt,
+        bool                                   tiltedSpacing,
+        int                                    maxSearchRadius,
+        bool                                   mustBeInNewChunks
     );
 
-    MCAPI class StructureStart* getStructureAt$(int cellX, int cellY, int cellZ);
+    MCAPI static ::std::pair<::BlockPos const, ::Biome const*> getBiomeForFeatureGeneration(
+        ::BiomeSource const&                 biomeSource,
+        ::ChunkPos const&                    chunkPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
 
-    MCAPI void initMobSpawnTypes$(class HardcodedSpawnAreaRegistry&);
+    MCAPI static ::ChunkPos getChunkPosInSpace(
+        ::ChunkPos const& cp,
+        ::Random&         random,
+        uint              levelSeed,
+        int               spacing,
+        int               separation,
+        int               salt,
+        bool              tiltedSpacing
+    );
 
-    MCAPI bool shouldAddHardcodedSpawnAreas$() const;
+    MCAPI static void setRandomSeedFor(::Random& result, int x, int z, int salt, uint levelSeed);
+    // NOLINTEND
 
-    MCAPI bool shouldPostProcessMobs$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint seed, ::HashedString structureFeatureType);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $shouldAddHardcodedSpawnAreas() const;
+
+    MCAPI bool $shouldPostProcessMobs() const;
+
+    MCAPI bool $getNearestGeneratedFeature(
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
+    );
+
+    MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

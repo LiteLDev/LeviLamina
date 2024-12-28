@@ -4,18 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
+class Randomize;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class FireBlock : public ::BlockLegacy {
@@ -26,108 +29,115 @@ public:
     FireBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FireBlock() = default;
-
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB& bufferValue)
-        const;
+    virtual ::AABB const&
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 78
+    virtual bool mayPick() const /*override*/;
+
+    // vIndex: 150
+    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 57
-    virtual bool canContainLiquid() const;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor& entity, class BlockPos const&, class BlockPos const&) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 83
-    virtual bool mayPick() const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 162
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
-
-    MCAPI FireBlock(std::string const& nameId, int id);
-
-    MCAPI void
-    checkBurn(class BlockSource& region, class BlockPos const& pos, int chance, class Randomize& randomize, int age)
-        const;
-
-    MCAPI static bool isSolidToppedBlock(class BlockSource& region, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~FireBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool _trySpawnSoulFire(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI float getFireOdds(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool isValidFireLocation(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FireBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    checkBurn(::BlockSource& region, ::BlockPos const& pos, int chance, ::Randomize& randomize, int age) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI float getFireOdds(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool checkIsPathable$(class Actor& entity, class BlockPos const&, class BlockPos const&) const;
+    MCAPI bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void entityInside$(class BlockSource&, class BlockPos const&, class Actor& entity) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isSolidToppedBlock(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class AABB const&
-    getOutline$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB& bufferValue)
-        const;
+    MCAPI ::AABB const&
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCAPI bool mayPick$() const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    MCAPI bool $mayPick() const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/runtime/Error.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ErrorBinding; }
@@ -9,7 +12,7 @@ namespace Scripting { struct ErrorBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentReloadNewEventError {
+struct ScriptItemCustomComponentReloadNewEventError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptItemCustomComponentReloadNewEventError& operator=(ScriptItemCustomComponentReloadNewEventError const&);
@@ -17,19 +20,22 @@ public:
     ScriptItemCustomComponentReloadNewEventError();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptItemCustomComponentReloadNewEventError();
-
-    MCAPI static struct Scripting::ErrorBinding bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

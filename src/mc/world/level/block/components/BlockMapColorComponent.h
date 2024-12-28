@@ -2,27 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockMapColorComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnkbc4e29;
+    // NOLINTEND
 
-struct BlockMapColorComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockMapColorComponent& operator=(BlockMapColorComponent const&);
     BlockMapColorComponent(BlockMapColorComponent const&);
     BlockMapColorComponent();
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockMapColorComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    // NOLINTEND
 };

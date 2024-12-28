@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPalette.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class Level;
+// clang-format on
+
 class BlockHashPalette : public ::BlockPalette {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk5d6c54;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockHashPalette& operator=(BlockHashPalette const&);
@@ -13,40 +25,57 @@ public:
     BlockHashPalette();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockHashPalette() = default;
-
     // vIndex: 1
-    virtual ::BlockPalette::PaletteType getPaletteType();
+    virtual ::BlockPalette::PaletteType getPaletteType() /*override*/;
 
     // vIndex: 2
-    virtual void appendBlock(class Block const& block);
+    virtual void appendBlock(::Block const& blockState) /*override*/;
 
     // vIndex: 3
-    virtual class Block const& getBlock(uint const& networkId) const;
+    virtual ::Block const& getBlock(uint const& networkId) const /*override*/;
 
     // vIndex: 4
-    virtual void assignBlockNetworkId(class Block const& block, uint64 networkId) const;
+    virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const /*override*/;
 
-    MCAPI explicit BlockHashPalette(class Level& level);
-
+    // vIndex: 0
+    virtual ~BlockHashPalette() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BlockHashPalette(::Level& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Level& level);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level);
+    // NOLINTEND
 
-    MCAPI void appendBlock$(class Block const& block);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void assignBlockNetworkId$(class Block const& block, uint64 networkId) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI class Block const& getBlock$(uint const& networkId) const;
+    MCAPI void $appendBlock(::Block const& blockState);
 
-    MCAPI ::BlockPalette::PaletteType getPaletteType$();
+    MCAPI ::Block const& $getBlock(uint const& networkId) const;
 
+    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

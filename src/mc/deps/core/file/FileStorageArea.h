@@ -14,13 +14,12 @@ namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
 // clang-format on
 
 namespace Core {
 
-class FileStorageArea {
+class FileStorageArea : public ::std::enable_shared_from_this<::Core::FileStorageArea> {
 public:
     // FileStorageArea inner types declare
     // clang-format off
@@ -28,9 +27,21 @@ public:
     // clang-format on
 
     // FileStorageArea inner types define
-    enum class FlushableLevelDbEnvType {};
+    enum class FlushableLevelDbEnvType : int {
+        None        = 0,
+        InMemory    = 1,
+        StorageArea = 2,
+    };
 
     struct StorageAreaSpaceInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnka44c95;
+        ::ll::UntypedStorage<8, 8> mUnk545140;
+        ::ll::UntypedStorage<8, 8> mUnkd44356;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         StorageAreaSpaceInfo& operator=(StorageAreaSpaceInfo const&);
@@ -39,31 +50,54 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnk63cc78;
+    ::ll::UntypedStorage<8, 24>  mUnka56475;
+    ::ll::UntypedStorage<1, 1>   mUnk7f3baf;
+    ::ll::UntypedStorage<1, 1>   mUnk6060c1;
+    ::ll::UntypedStorage<8, 64>  mUnk3e8909;
+    ::ll::UntypedStorage<8, 64>  mUnk6a2388;
+    ::ll::UntypedStorage<8, 16>  mUnk683578;
+    ::ll::UntypedStorage<4, 4>   mUnkd6345d;
+    ::ll::UntypedStorage<8, 32>  mUnke4ae6a;
+    ::ll::UntypedStorage<8, 24>  mUnk3c594a;
+    ::ll::UntypedStorage<8, 32>  mUnkedd4a1;
+    ::ll::UntypedStorage<8, 144> mUnk55245b;
+    ::ll::UntypedStorage<1, 1>   mUnk6e99fd;
+    ::ll::UntypedStorage<8, 88>  mUnk31611b;
+    ::ll::UntypedStorage<1, 1>   mUnkf29ed2;
+    ::ll::UntypedStorage<8, 16>  mUnkecef76;
+    ::ll::UntypedStorage<1, 1>   mUnk949164;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FileStorageArea& operator=(FileStorageArea const&);
     FileStorageArea(FileStorageArea const&);
     FileStorageArea();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~FileStorageArea();
 
+    // vIndex: 2
+    virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) = 0;
+
     // vIndex: 1
-    virtual std::unique_ptr<class Core::FileSystemImpl>
+    virtual ::std::unique_ptr<::Core::FileSystemImpl>
     createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
-    // vIndex: 2
-    virtual void __unk_vfn_2() = 0;
-
     // vIndex: 3
-    virtual void __unk_vfn_3() = 0;
+    virtual bool supportsSizeQuery() const = 0;
 
     // vIndex: 4
-    virtual void __unk_vfn_4() = 0;
+    virtual uint64 getTotalSize() const = 0;
 
     // vIndex: 5
-    virtual void __unk_vfn_5() = 0;
+    virtual ::Core::Result getUsedSize(uint64&) = 0;
 
     // vIndex: 6
     virtual void setUsedSizeOverride(uint64);
@@ -78,7 +112,7 @@ public:
     virtual bool handlesPendingWrites() const;
 
     // vIndex: 10
-    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool fromResourcePack);
+    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
 
     // vIndex: 11
     virtual void informStorageAreaCopy(uint64 storageAreaSize);
@@ -93,16 +127,16 @@ public:
     virtual void resetCanAttemptExtendSize();
 
     // vIndex: 15
-    virtual class Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
     // vIndex: 16
-    virtual void attemptExtendSize(int64 const& currentFreeSpace, std::function<void()> onCompleteCallback);
+    virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
     // vIndex: 17
     virtual void preemptiveExtendSize(
-        uint64                expectedContentSize,
-        std::function<void()> successCallback,
-        std::function<void()> failureCallback
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
     );
 
     // vIndex: 18
@@ -130,166 +164,173 @@ public:
     virtual uint64 getTransactionWriteSizeLimit() const;
 
     // vIndex: 26
-    virtual class Core::Result setSaveDataIcon(class Core::Path const& iconPath);
+    virtual ::Core::Result setSaveDataIcon(::Core::Path const& iconPath);
 
     // vIndex: 27
     virtual bool shouldAllowCommit() const;
 
     // vIndex: 28
     virtual void
-    trackBytesWritten(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    trackBytesWritten(::Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
     // vIndex: 29
-    virtual void trackWriteOperation(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+    virtual void trackWriteOperation(::Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
 
     // vIndex: 30
-    virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
+    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // vIndex: 31
-    virtual class Core::Result _commit();
+    virtual ::Core::Result _commit();
 
     // vIndex: 32
-    virtual class Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
 
     // vIndex: 33
     virtual void _onTeardown();
-
-    MCAPI void checkUserStorage();
-
-    MCAPI class Core::PathBuffer<std::string> const& getRootPath() const;
-
-    MCAPI void removeStateListener(class Core::StorageAreaStateListener*);
-
-    MCAPI static class Core::Result
-    getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>& fileStorageArea, class Core::Path const& path);
-
-    MCAPI static void teardown();
-
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI FileStorageArea(
-        ::Core::FileAccessType                       type,
-        class Core::Path const&                      rootPath,
-        bool                                         usesFlatFiles,
-        bool                                         isAccessedDirectly,
-        std::shared_ptr<class Core::FileStorageArea> parent
+        ::Core::FileAccessType                     type,
+        ::Core::Path const&                        rootPath,
+        bool                                       usesFlatFiles,
+        bool                                       isAccessedDirectly,
+        ::std::shared_ptr<::Core::FileStorageArea> parent
     );
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
     MCAPI void _addReadWriteOperation(bool succeeded, uint64 numBytesRead, uint64 numBytesWritten);
 
     MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
 
-    MCAPI void _beginTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
+    MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI uint64 _calculateAvailableUserStorageSize(uint64 usedSpace, uint64 totalSpace) const;
+    MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
+    MCAPI void _onDeleteFile(::Core::Path const& filePath);
 
-    MCAPI void _onDeleteFile(class Core::Path const& filePath);
+    MCAPI void _onWriteFile(::Core::Path const& filePath);
 
-    MCAPI void _onWriteFile(class Core::Path const& filePath);
+    MCAPI void checkUserStorage();
 
-    MCAPI static class Core::Result _getStorageAreaForPathImpl(
-        std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,
-        class Core::Path const&                       path
-    );
-
+    MCAPI ::Core::PathBuffer<::std::string> const& getRootPath() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Core::Result
+    _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path);
 
-    MCAPI void* ctor$(
-        ::Core::FileAccessType                       type,
-        class Core::Path const&                      rootPath,
-        bool                                         usesFlatFiles,
-        bool                                         isAccessedDirectly,
-        std::shared_ptr<class Core::FileStorageArea> parent
+    MCAPI static ::Core::Result
+    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path);
+
+    MCAPI static void teardown();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::Core::FileStats*>& sStorageAreaFileStats();
+
+    MCAPI static ::std::recursive_mutex& sStorageAreaLock();
+
+    MCAPI static ::Core::StorageAreasTree& sStorageAreas();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Core::FileAccessType                     type,
+        ::Core::Path const&                        rootPath,
+        bool                                       usesFlatFiles,
+        bool                                       isAccessedDirectly,
+        ::std::shared_ptr<::Core::FileStorageArea> parent
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::Core::FileSystemImpl>
+    $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
+
+    MCAPI void $setUsedSizeOverride(uint64);
+
+    MCAPI void $clearUsedSizeOverride();
+
+    MCAPI void $notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
+
+    MCAPI bool $handlesPendingWrites() const;
+
+    MCAPI void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+
+    MCAPI void $informStorageAreaCopy(uint64 storageAreaSize);
+
+    MCAPI bool $supportsExtendSize() const;
+
+    MCAPI bool $canExtendSize() const;
+
+    MCAPI void $resetCanAttemptExtendSize();
+
+    MCAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+
+    MCAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
+
+    MCAPI void $preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
     );
 
-    MCAPI void dtor$();
+    MCAPI uint64 $getAvailableUserStorageSize();
 
-    MCAPI class Core::Result _commit$();
+    MCAPI void $unloadFlatFileManifests(bool shouldClearManifests);
 
-    MCAPI void _onTeardown$();
+    MCAPI void $tick();
 
-    MCAPI class Core::Result _onTransactionsEmpty$(bool fromChild);
+    MCAPI void $flushImmediately();
 
-    MCAPI void attemptExtendSize$(int64 const& currentFreeSpace, std::function<void()> onCompleteCallback);
+    MCAPI void $enableFlushToDisk(bool);
 
-    MCAPI bool canExtendSize$() const;
+    MCAPI bool $checkCorrupt(bool handleCorruption);
 
-    MCAPI bool checkCorrupt$(bool handleCorruption);
+    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
 
-    MCAPI void clearUsedSizeOverride$();
+    MCAPI uint64 $getTransactionWriteSizeLimit() const;
 
-    MCAPI std::unique_ptr<class Core::FileSystemImpl>
-          createTransaction$(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
+    MCAPI ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
 
-    MCAPI void enableFlushToDisk$(bool);
+    MCAPI bool $shouldAllowCommit() const;
 
-    MCAPI void flushImmediately$();
+    MCAPI void $trackBytesWritten(::Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
-    MCAPI uint64 getAvailableUserStorageSize$();
+    MCAPI void $trackWriteOperation(::Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
 
-    MCAPI class Core::Result getExtendSizeThreshold$(uint64& outExtendSizeThreshold) const;
+    MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType$() const;
+    MCAPI ::Core::Result $_commit();
 
-    MCAPI struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo$();
+    MCAPI ::Core::Result $_onTransactionsEmpty(bool fromChild);
 
-    MCAPI uint64 getTransactionWriteSizeLimit$() const;
+    MCAPI void $_onTeardown();
+    // NOLINTEND
 
-    MCAPI bool handlesPendingWrites$() const;
-
-    MCAPI void informPendingWriteSize$(uint64 numBytesWritePending, bool fromResourcePack);
-
-    MCAPI void informStorageAreaCopy$(uint64 storageAreaSize);
-
-    MCAPI void notifyChangeInFileSize$(int64 changeInSize, int64 changeInAllocatedSize);
-
-    MCAPI void preemptiveExtendSize$(
-        uint64                expectedContentSize,
-        std::function<void()> successCallback,
-        std::function<void()> failureCallback
-    );
-
-    MCAPI void resetCanAttemptExtendSize$();
-
-    MCAPI class Core::Result setSaveDataIcon$(class Core::Path const& iconPath);
-
-    MCAPI void setUsedSizeOverride$(uint64);
-
-    MCAPI bool shouldAllowCommit$() const;
-
-    MCAPI bool supportsExtendSize$() const;
-
-    MCAPI void tick$();
-
-    MCAPI void
-    trackBytesWritten$(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
-
-    MCAPI void trackWriteOperation$(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
-
-    MCAPI void unloadFlatFileManifests$(bool shouldClearManifests);
-
-    MCAPI static std::vector<class Core::FileStats*>& sStorageAreaFileStats();
-
-    MCAPI static std::recursive_mutex& sStorageAreaLock();
-
-    MCAPI static class Core::StorageAreasTree& sStorageAreas();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

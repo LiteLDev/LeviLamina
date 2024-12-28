@@ -9,107 +9,134 @@
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class EntitySystems;
+class LocalSpatialEntityFetcher;
+class ReplayStateComponent;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorComponent;
+struct ActorIsFirstTickFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct DimensionTypeComponent;
+struct FallingBlockFlagComponent;
+struct IsSolidMobComponent;
+struct IsSolidMobNearbyComponent;
+struct LocalSpatialEntityFetcherFactoryComponent;
+struct MobFlagComponent;
+struct ServerCatchupMovementTrackerComponent;
+struct ShouldBeSimulatedComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 namespace SolidMobSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
+MCAPI void componentCopySystem(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::ReplayStateComponent&      replay,
+    ::IsSolidMobNearbyComponent& solidNearby
+);
+
+MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 
 MCAPI void flagNearbyMobsForServerMovementCatchup(
-    class StrictEntityContext const&                    player,
-    struct StateVectorComponent const&                  stateVector,
-    struct ServerCatchupMovementTrackerComponent const& tracker,
-    class ViewT<
-        class StrictEntityContext,
-        struct DimensionTypeComponent const,
-        struct AABBShapeComponent const,
-        class Optional<class FlagComponent<struct MobFlag> const>,
-        class Optional<struct IsSolidMobComponent const>> const& fullData,
-    class ViewT<class StrictEntityContext, struct IsSolidMobComponent const, struct AABBShapeComponent const> const&
-                                                            solidMobs,
-    class EntityModifier<struct IsSolidMobNearbyComponent>  modifier,
-    struct LocalSpatialEntityFetcherFactoryComponent const& fetcherFactory,
-    class LocalSpatialEntityFetcher&                        fetcher,
-    std::vector<class StrictEntityContext>&                 buffer
+    ::StrictEntityContext const&                   player,
+    ::StateVectorComponent const&                  stateVector,
+    ::ServerCatchupMovementTrackerComponent const& tracker,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::DimensionTypeComponent const,
+        ::AABBShapeComponent const,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>> const&                                            fullData,
+    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier,
+    ::LocalSpatialEntityFetcherFactoryComponent const&                                             fetcherFactory,
+    ::LocalSpatialEntityFetcher&                                                                   fetcher,
+    ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
 MCAPI void flagNearbyMobsForServerMovementCatchupSystem(
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-        struct StateVectorComponent const,
-        struct ServerCatchupMovementTrackerComponent const> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct DimensionTypeComponent const,
-        struct AABBShapeComponent const,
-        class Optional<class FlagComponent<struct MobFlag> const>,
-        class Optional<struct IsSolidMobComponent const>> const& fullData,
-    class ViewT<class StrictEntityContext, struct IsSolidMobComponent const, struct AABBShapeComponent const> const&
-                                                                                 solidMobs,
-    class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent const> fetcherFactory,
-    class EntityModifier<struct IsSolidMobNearbyComponent>                       modifier
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::StateVectorComponent const,
+        ::ServerCatchupMovementTrackerComponent const> view,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::DimensionTypeComponent const,
+        ::AABBShapeComponent const,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>> const&                                            fullData,
+    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent const>                            fetcherFactory,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
 MCAPI void flagNearbyMobsFromSolidEntity(
-    class StrictEntityContext const&  solidMob,
-    struct IsSolidMobComponent const& solid,
-    struct AABBShapeComponent const&  shape,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class ActorOwnerComponent, struct AABBShapeComponent>,
-        struct Exclude<class FlagComponent<struct ActorFirstTick>>,
-        class Optional<class FlagComponent<struct MobFlag> const>,
-        class Optional<struct IsSolidMobComponent const>,
-        class Optional<class FlagComponent<struct FallingBlockFlag> const>> const& liveEntityView,
-    class LocalSpatialEntityFetcher&                                               fetcher,
-    class EntityModifier<struct IsSolidMobNearbyComponent>                         modifier,
-    std::vector<class StrictEntityContext>&                                        buffer
+    ::StrictEntityContext const& solidMob,
+    ::IsSolidMobComponent const& solid,
+    ::AABBShapeComponent const&  shape,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorOwnerComponent, ::AABBShapeComponent>,
+        ::Exclude<::ActorIsFirstTickFlagComponent>,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>,
+        ::Optional<::FallingBlockFlagComponent const>> const& liveEntityView,
+    ::LocalSpatialEntityFetcher&                              fetcher,
+    ::EntityModifier<::IsSolidMobNearbyComponent>             modifier,
+    ::std::vector<::StrictEntityContext>&                     buffer
 );
 
 MCAPI void flagNearbyMobsFromSolidSystem(
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-        struct DimensionTypeComponent const,
-        struct IsSolidMobComponent const,
-        struct AABBShapeComponent const> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class ActorOwnerComponent, struct AABBShapeComponent>,
-        struct Exclude<class FlagComponent<struct ActorFirstTick>>,
-        class Optional<class FlagComponent<struct MobFlag> const>,
-        class Optional<struct IsSolidMobComponent const>,
-        class Optional<class FlagComponent<struct FallingBlockFlag> const>> const& liveEntityView,
-    class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent const>   fetcherFactory,
-    class EntityModifier<struct IsSolidMobNearbyComponent>                         modifier
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorComponent>,
+        ::DimensionTypeComponent const,
+        ::IsSolidMobComponent const,
+        ::AABBShapeComponent const> view,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorOwnerComponent, ::AABBShapeComponent>,
+        ::Exclude<::ActorIsFirstTickFlagComponent>,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>,
+        ::Optional<::FallingBlockFlagComponent const>> const&           liveEntityView,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent const> fetcherFactory,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                       modifier
 );
 
 MCAPI void flagSolidMobsFromNearbyEntity(
-    class StrictEntityContext const&                          entity,
-    struct AABBShapeComponent const&                          shape,
-    class Optional<class FlagComponent<struct MobFlag> const> isMob,
-    class Optional<struct IsSolidMobComponent const>          isSolid,
-    class ViewT<class StrictEntityContext, struct IsSolidMobComponent const, struct AABBShapeComponent const> const&
-                                                           nearbySolidMobs,
-    class LocalSpatialEntityFetcher&                       fetcher,
-    class EntityModifier<struct IsSolidMobNearbyComponent> modifier,
-    std::vector<class StrictEntityContext>&                buffer
+    ::StrictEntityContext const&                                                                   entity,
+    ::AABBShapeComponent const&                                                                    shape,
+    ::Optional<::MobFlagComponent const>                                                           isMob,
+    ::Optional<::IsSolidMobComponent const>                                                        isSolid,
+    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& nearbySolidMobs,
+    ::LocalSpatialEntityFetcher&                                                                   fetcher,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier,
+    ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void registerSystems(class EntitySystems& systems, bool isClientSide, bool isUsingClientRewind);
-
-MCAPI void storeNearbyMob(
-    struct IsSolidMobNearbyComponent&                                                      storage,
-    class StrictEntityContext const&                                                       solidEntity,
-    std::tuple<struct IsSolidMobComponent const&, struct AABBShapeComponent const&> const& toStore
+MCAPI void flagSolidMobsFromNearbySystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ShouldBeSimulatedComponent, ::ActorMovementTickNeededComponent>,
+        ::DimensionTypeComponent const,
+        ::AABBShapeComponent const,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>>                                                   view,
+    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent const>                            fetcherFactory,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
-MCAPI void storeNearbyMobsOnMoveRequest(
-    struct IsSolidMobNearbyComponent const& nearby,
-    struct DepenetrationComponent&          depenetration,
-    struct MoveRequestComponent&            request
-);
+MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
 // NOLINTEND
 
-}; // namespace SolidMobSystem
+} // namespace SolidMobSystem

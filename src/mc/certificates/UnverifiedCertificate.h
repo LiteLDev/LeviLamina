@@ -4,55 +4,59 @@
 
 // auto generated forward declare list
 // clang-format off
+class Certificate;
+class WebToken;
 namespace Json { class Value; }
 // clang-format on
 
 class UnverifiedCertificate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 128, ::WebToken const>                         mRawToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mParentUnverifiedCertificate;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UnverifiedCertificate& operator=(UnverifiedCertificate const&);
     UnverifiedCertificate();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI UnverifiedCertificate(class UnverifiedCertificate&& other);
+    MCAPI UnverifiedCertificate(::UnverifiedCertificate&& other);
 
-    MCAPI UnverifiedCertificate(class UnverifiedCertificate const& other);
+    MCAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
 
-    MCAPI std::string getIdentityPublicKey() const;
+    MCAPI void addToChain(::Json::Value& chain) const;
 
-    MCAPI std::string toString() const;
+    MCAPI ::std::string getIdentityPublicKey() const;
 
-    MCAPI std::unique_ptr<class Certificate> verify(std::vector<std::string> const& trustedKeys) const;
+    MCAPI ::std::string toString() const;
+
+    MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
 
     MCAPI ~UnverifiedCertificate();
-
-    MCAPI static class UnverifiedCertificate fromString(std::string const& input);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI UnverifiedCertificate(
-        class WebToken const&                        rawToken,
-        std::unique_ptr<class UnverifiedCertificate> parentUnverifiedCertificate
-    );
-
-    MCAPI void addToChain(class Json::Value& chain) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class UnverifiedCertificate const& other);
+    MCAPI static ::UnverifiedCertificate fromString(::std::string const& input);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class UnverifiedCertificate&& other);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UnverifiedCertificate&& other);
 
-    MCAPI void*
-    ctor$(class WebToken const& rawToken, std::unique_ptr<class UnverifiedCertificate> parentUnverifiedCertificate);
+    MCAPI void* $ctor(::UnverifiedCertificate const& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -7,58 +7,88 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ResourcePackChunkDataPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>        mResourceName;
+    ::ll::TypedStorage<4, 4, int>                   mChunkID;
+    ::ll::TypedStorage<8, 8, uint64>                mByteOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ResourcePackChunkDataPacket& operator=(ResourcePackChunkDataPacket const&);
     ResourcePackChunkDataPacket(ResourcePackChunkDataPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ResourcePackChunkDataPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ResourcePackChunkDataPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ResourcePackChunkDataPacket();
 
     MCAPI ResourcePackChunkDataPacket(
-        std::string const&        name,
-        int                       chunkID,
-        uint64                    byteOffset,
-        std::vector<uchar> const& data
+        ::std::string const&        name,
+        int                         chunkID,
+        uint64                      byteOffset,
+        ::std::vector<uchar> const& data
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(std::string const& name, int chunkID, uint64 byteOffset, std::vector<uchar> const& data);
+    MCAPI void* $ctor(::std::string const& name, int chunkID, uint64 byteOffset, ::std::vector<uchar> const& data);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,10 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct MobDescriptor;
+// clang-format on
+
 class OwnerHurtTargetGoal : public ::TargetGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk94ce2e;
+    ::ll::UntypedStorage<8, 8>  mUnk7e52f6;
+    ::ll::UntypedStorage<4, 4>  mUnk1464d1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OwnerHurtTargetGoal& operator=(OwnerHurtTargetGoal const&);
@@ -14,30 +27,47 @@ public:
     OwnerHurtTargetGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OwnerHurtTargetGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
-    MCAPI OwnerHurtTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes);
-
+    // vIndex: 0
+    virtual ~OwnerHurtTargetGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OwnerHurtTargetGoal(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
+    MCAPI void $start();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class ContentTierInfo;
 // clang-format on
 
 class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,16 +18,24 @@ public:
     IContentTierManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IContentTierManager();
+    virtual ~IContentTierManager() /*override*/;
 
+    // vIndex: 1
+    virtual ::ContentTierInfo getContentTierInfo() const = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

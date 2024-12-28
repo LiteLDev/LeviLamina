@@ -11,7 +11,6 @@
 namespace Scripting { class IObjectInspector; }
 namespace Scripting { class IRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class ScriptValue; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct FutureType; }
@@ -21,56 +20,72 @@ namespace Scripting {
 
 class FutureAny : public ::Scripting::ScriptValue {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk3829c0;
+    ::ll::UntypedStorage<8, 8>  mUnkf04544;
+    // NOLINTEND
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FutureAny();
+    virtual ~FutureAny() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI FutureAny();
 
-    MCAPI FutureAny(class Scripting::FutureAny const& rhs);
+    MCAPI FutureAny(::Scripting::FutureAny const& rhs);
 
     MCAPI FutureAny(
-        class Scripting::IRuntime*                                             runtime,
-        struct Scripting::ContextId                                            contextId,
-        class Scripting::WeakLifetimeScope                                     scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::FutureType> futureHandle,
-        class Scripting::IObjectInspector*                                     inspector
+        ::Scripting::IRuntime*                                        runtime,
+        ::Scripting::ContextId                                        contextId,
+        ::Scripting::WeakLifetimeScope                                scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::Scripting::IObjectInspector*                                inspector
     );
 
-    MCAPI class Scripting::ResultAny getResult() const;
+    MCAPI ::Scripting::ResultAny getResult() const;
 
     MCAPI bool isPending() const;
 
     MCAPI bool isRejected() const;
 
-    MCAPI class Scripting::FutureAny& operator=(class Scripting::FutureAny&& rhs);
+    MCAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny const& rhs);
 
-    MCAPI class Scripting::FutureAny& operator=(class Scripting::FutureAny const& rhs);
-
-    MCAPI bool valid() const;
-
+    MCAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Scripting::FutureAny const& rhs);
 
-    MCAPI void* ctor$(class Scripting::FutureAny const& rhs);
-
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*                                             runtime,
-        struct Scripting::ContextId                                            contextId,
-        class Scripting::WeakLifetimeScope                                     scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::FutureType> futureHandle,
-        class Scripting::IObjectInspector*                                     inspector
+    MCAPI void* $ctor(
+        ::Scripting::IRuntime*                                        runtime,
+        ::Scripting::ContextId                                        contextId,
+        ::Scripting::WeakLifetimeScope                                scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::Scripting::IObjectInspector*                                inspector
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

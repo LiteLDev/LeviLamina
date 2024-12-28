@@ -9,16 +9,22 @@ namespace ScriptModuleMinecraft {
 
 struct LessThanComparison {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk6daa68;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LessThanComparison& operator=(LessThanComparison const&);
     LessThanComparison(LessThanComparison const&);
     LessThanComparison();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::LessThanComparison> bind();
-
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::LessThanComparison> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

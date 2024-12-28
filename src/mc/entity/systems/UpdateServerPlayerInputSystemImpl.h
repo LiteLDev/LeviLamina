@@ -2,16 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorHeadRotationComponent;
+struct ActorRotationComponent;
+struct PlayerInputModeComponent;
+struct PlayerInteractionModelComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StateVectorComponent;
+// clang-format on
+
 namespace UpdateServerPlayerInputSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void _handlePlayerAuthInputPacket(
-    struct StateVectorComponent const&           stateVector,
-    struct ActorHeadRotationComponent&           actorHeadRotationComponent,
-    struct ActorRotationComponent&               actorRotationComponent,
-    struct PlayerInputModeComponent&             playerInputModeComponent,
-    struct PlayerInteractionModelComponent&      playerInteractionModelComponent,
-    struct ServerPlayerCurrentMovementComponent& serverPlayerCurrentMovementComponent
+    ::StateVectorComponent const&           stateVector,
+    ::ActorHeadRotationComponent&           actorHeadRotationComponent,
+    ::ActorRotationComponent&               actorRotationComponent,
+    ::PlayerInputModeComponent&             playerInputModeComponent,
+    ::PlayerInteractionModelComponent&      playerInteractionModelComponent,
+    ::ServerPlayerCurrentMovementComponent& serverPlayerCurrentMovementComponent
 );
 // NOLINTEND
 
-}; // namespace UpdateServerPlayerInputSystemImpl
+} // namespace UpdateServerPlayerInputSystemImpl

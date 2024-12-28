@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/entity/factory/EntityComponentFactoryJson.h"
 
+// auto generated forward declare list
+// clang-format off
+class Experiments;
+// clang-format on
+
 class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
     // prevent constructor by default
@@ -13,22 +18,27 @@ public:
     ActorComponentFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorComponentFactory() = default;
-
+    virtual ~ActorComponentFactory() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initialize(class Experiments const& experiments);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _initialize(::Experiments const& experiments);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

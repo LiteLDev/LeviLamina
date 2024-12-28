@@ -4,18 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
 // clang-format on
 
 class MudBlock : public ::BlockLegacy {
@@ -26,66 +26,87 @@ public:
     MudBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MudBlock() = default;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 46
+    virtual bool canBeOriginalSurface() const /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
-        class AABB& outAABB,
-        class Block const&,
-        class IConstBlockSource const&,
-        class BlockPos const& pos
-    ) const;
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const /*override*/;
 
-    // vIndex: 48
-    virtual bool canBeOriginalSurface() const;
-
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI MudBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~MudBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MudBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::AABB& BLOCK_AABB();
+    // NOLINTEND
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canBeOriginalSurface$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $canBeOriginalSurface() const;
+
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI bool getCollisionShapeForCamera$(
-        class AABB& outAABB,
-        class Block const&,
-        class IConstBlockSource const&,
-        class BlockPos const& pos
+    MCAPI bool $getCollisionShapeForCamera(
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
     ) const;
+    // NOLINTEND
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI static class AABB& BLOCK_AABB();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

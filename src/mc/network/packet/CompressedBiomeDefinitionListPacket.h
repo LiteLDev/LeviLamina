@@ -7,51 +7,81 @@
 #include "mc/network/packet/BiomeDefinitionListPacket.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mCompressedBiomeData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CompressedBiomeDefinitionListPacket& operator=(CompressedBiomeDefinitionListPacket const&);
     CompressedBiomeDefinitionListPacket(CompressedBiomeDefinitionListPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CompressedBiomeDefinitionListPacket() = default;
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI CompressedBiomeDefinitionListPacket();
-
-    MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag biomeData);
-
+    // vIndex: 0
+    virtual ~CompressedBiomeDefinitionListPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CompressedBiomeDefinitionListPacket();
 
-    MCAPI void* ctor$();
+    MCAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class CompoundTag biomeData);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void* $ctor(::CompoundTag biomeData);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

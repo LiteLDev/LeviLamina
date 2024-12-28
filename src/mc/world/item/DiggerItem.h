@@ -3,21 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class BaseGameVersion;
+class Block;
+class HashedString;
+class ItemStackBase;
+class Level;
+class RenderParams;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class DiggerItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk449e41;
+    ::ll::UntypedStorage<8, 8> mUnk304e30;
+    ::ll::UntypedStorage<4, 4> mUnkfc3aed;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DiggerItem& operator=(DiggerItem const&);
@@ -25,88 +32,108 @@ public:
     DiggerItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DiggerItem();
+    // vIndex: 36
+    virtual int getAttackDamage() const /*override*/;
 
-    // vIndex: 35
-    virtual int getAttackDamage() const;
+    // vIndex: 38
+    virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 37
-    virtual bool isHandEquipped() const;
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
-
-    // vIndex: 49
+    // vIndex: 53
     virtual bool isValidRepairItem(
-        class ItemStackBase const&,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
-    ) const;
+        ::ItemStackBase const&,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
-    // vIndex: 51
-    virtual int getEnchantValue() const;
+    // vIndex: 52
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 77
-    virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
+    // vIndex: 32
+    virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    MCAPI void setBlocks(std::vector<class Block const*> const& blocks);
+    // vIndex: 81
+    virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
+    // vIndex: 8
+    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+        /*override*/;
+
+    // vIndex: 0
+    virtual ~DiggerItem() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI DiggerItem(
-        std::string const&                     name,
-        short                                  id,
-        int                                    attackDamage,
-        class Item::Tier const&                tier,
-        std::vector<class Block const*> const& blocks
+        ::std::string const&  name,
+        short                 id,
+        int                   attackDamage,
+        ::Item::Tier const&   tier,
+        ::HashedString const& blockDestructionTag
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&                     name,
-        short                                  id,
-        int                                    attackDamage,
-        class Item::Tier const&                tier,
-        std::vector<class Block const*> const& blocks
+    MCAPI void* $ctor(
+        ::std::string const&  name,
+        short                 id,
+        int                   attackDamage,
+        ::Item::Tier const&   tier,
+        ::HashedString const& blockDestructionTag
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getAttackDamage() const;
+
+    MCAPI bool $isHandEquipped() const;
+
+    MCAPI int $getEnchantValue() const;
+
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI int getAttackDamage$() const;
-
-    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
-
-    MCAPI int getEnchantValue$() const;
-
-    MCAPI bool isHandEquipped$() const;
-
-    MCAPI bool isValidRepairItem$(
-        class ItemStackBase const&,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
 
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
+
+    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+
+    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

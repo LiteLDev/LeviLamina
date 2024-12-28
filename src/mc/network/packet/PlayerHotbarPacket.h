@@ -8,53 +8,82 @@
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PlayerHotbarPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint>          mSelectedSlot;
+    ::ll::TypedStorage<1, 1, bool>          mShouldSelectSlot;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerHotbarPacket& operator=(PlayerHotbarPacket const&);
     PlayerHotbarPacket(PlayerHotbarPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerHotbarPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~PlayerHotbarPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI PlayerHotbarPacket();
 
     MCAPI PlayerHotbarPacket(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

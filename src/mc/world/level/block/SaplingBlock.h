@@ -3,24 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 #include "mc/world/level/block/SaplingType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class FeatureRegistry;
+class IFeature;
+class Random;
 // clang-format on
 
 class SaplingBlock : public ::BushBlock {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk9c4ce2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SaplingBlock& operator=(SaplingBlock const&);
@@ -28,116 +34,130 @@ public:
     SaplingBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 144
+    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
+
+    // vIndex: 143
+    virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~SaplingBlock();
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
-
-    // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 155
-    virtual ::BlockRenderLayer getRenderLayer() const;
-
-    // vIndex: 156
-    virtual ::BlockRenderLayer
-    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    MCAPI SaplingBlock(std::string const& nameId, int id);
-
-    MCAPI class SaplingBlock& setSaplingType(::SaplingType type);
-
+    virtual ~SaplingBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool
-    advanceTree(class BlockSource& region, class BlockPos const& pos, class Random& random, class Actor*) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI class WeakRef<class IFeature> _generateJungleTree(
-        int&                         ox,
-        int&                         oz,
-        bool&                        multiblock,
-        class BlockPos const&        pos,
-        class BlockSource&           region,
-        class FeatureRegistry const& registry
-    ) const;
-
-    MCAPI class WeakRef<class IFeature> _generateOakTree(
-        class FeatureRegistry const& registry,
-        class BlockPos const&        pos,
-        class BlockSource&           region,
-        class Random&                random,
-        bool                         useRandom
-    ) const;
-
-    MCAPI class WeakRef<class IFeature> _generateRedwoodTree(
-        int&                         ox,
-        int&                         oz,
-        bool&                        multiblock,
-        class BlockPos const&        pos,
-        class BlockSource&           region,
-        class FeatureRegistry const& registry
-    ) const;
-
-    MCAPI class WeakRef<class IFeature> _generateRoofTree(
-        int&                         ox,
-        int&                         oz,
-        bool&                        multiblock,
-        class BlockPos const&        pos,
-        class BlockSource&           region,
-        class FeatureRegistry const& registry
-    ) const;
-
-    MCAPI bool
-    _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool useRandom) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SaplingBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI ::WeakRef<::IFeature> _generateBirchTree(
+        ::FeatureRegistry const& registry,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::Random&                random,
+        bool                     useRandom
+    ) const;
 
-    MCAPI void dtor$();
+    MCAPI ::WeakRef<::IFeature> _generateJungleTree(
+        int&                     ox,
+        int&                     oz,
+        bool&                    multiblock,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::FeatureRegistry const& registry
+    ) const;
+
+    MCAPI ::WeakRef<::IFeature> _generateOakTree(
+        ::FeatureRegistry const& registry,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::Random&                random,
+        bool                     useRandom
+    ) const;
+
+    MCAPI ::WeakRef<::IFeature> _generatePaleOakTree(
+        int&                     ox,
+        int&                     oz,
+        bool&                    multiblock,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::FeatureRegistry const& registry
+    ) const;
+
+    MCAPI ::WeakRef<::IFeature> _generateRedwoodTree(
+        int&                     ox,
+        int&                     oz,
+        bool&                    multiblock,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::FeatureRegistry const& registry
+    ) const;
+
+    MCAPI ::WeakRef<::IFeature> _generateRoofTree(
+        int&                     ox,
+        int&                     oz,
+        bool&                    multiblock,
+        ::BlockPos const&        pos,
+        ::BlockSource&           region,
+        ::FeatureRegistry const& registry
+    ) const;
+
+    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool useRandom) const;
+
+    MCAPI bool advanceTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Actor*) const;
+
+    MCAPI ::SaplingBlock& setSaplingType(::SaplingType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool
-    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer
-    getRenderLayer$(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer() const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

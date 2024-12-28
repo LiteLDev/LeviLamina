@@ -3,10 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomLookAroundGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk5efd10;
+    ::ll::UntypedStorage<1, 1> mUnkaea323;
+    ::ll::UntypedStorage<4, 4> mUnka4f73a;
+    ::ll::UntypedStorage<4, 4> mUnk6bf9b1;
+    ::ll::UntypedStorage<4, 4> mUnk87f81d;
+    ::ll::UntypedStorage<4, 4> mUnka8beb9;
+    ::ll::UntypedStorage<8, 8> mUnke1a79e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomLookAroundAndSitGoal& operator=(RandomLookAroundAndSitGoal const&);
@@ -14,74 +30,91 @@ public:
     RandomLookAroundAndSitGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RandomLookAroundAndSitGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
+
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI RandomLookAroundAndSitGoal(
-        class Mob& mob,
-        bool       continueSittingOnReload,
-        bool       continueIfLeashed,
-        int        minLookCount,
-        int        maxLookCount,
-        float      minAngleOfView,
-        float      maxAngleOfView,
-        int        minLookTime,
-        int        maxLookTime,
-        float      probability,
-        int        randomLookAroundCooldown
-    );
-
+    // vIndex: 0
+    virtual ~RandomLookAroundAndSitGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob& mob,
-        bool       continueSittingOnReload,
-        bool       continueIfLeashed,
-        int        minLookCount,
-        int        maxLookCount,
-        float      minAngleOfView,
-        float      maxAngleOfView,
-        int        minLookTime,
-        int        maxLookTime,
-        float      probability,
-        int        randomLookAroundCooldown
+    MCAPI RandomLookAroundAndSitGoal(
+        ::Mob& mob,
+        bool   continueSittingOnReload,
+        bool   continueIfLeashed,
+        int    minLookCount,
+        int    maxLookCount,
+        float  minAngleOfView,
+        float  maxAngleOfView,
+        int    minLookTime,
+        int    maxLookTime,
+        float  probability,
+        int    randomLookAroundCooldown
     );
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob& mob,
+        bool   continueSittingOnReload,
+        bool   continueIfLeashed,
+        int    minLookCount,
+        int    maxLookCount,
+        float  minAngleOfView,
+        float  maxAngleOfView,
+        int    minLookTime,
+        int    maxLookTime,
+        float  probability,
+        int    randomLookAroundCooldown
+    );
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $stop();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

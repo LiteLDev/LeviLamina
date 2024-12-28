@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/HeightProvider.h"
+
 // auto generated forward declare list
 // clang-format off
 class IRandom;
@@ -12,7 +15,13 @@ namespace br::worldgen { class WorldGenContext; }
 
 namespace br::worldgen {
 
-class StructureHeightProvider {
+class StructureHeightProvider : public ::br::worldgen::HeightProvider {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk50b369;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructureHeightProvider& operator=(StructureHeightProvider const&);
@@ -20,37 +29,39 @@ public:
     StructureHeightProvider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructureHeightProvider();
-
     // vIndex: 1
-    virtual int sample(class IRandom& randomSource, class br::worldgen::WorldGenContext const& heightAccessor) const;
+    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const
+        /*override*/;
 
-    MCAPI explicit StructureHeightProvider(class br::worldgen::ConstantHeight provider);
-
-    MCAPI StructureHeightProvider(class br::worldgen::StructureHeightProvider&& other);
-
-    MCAPI explicit StructureHeightProvider(class br::worldgen::UniformHeight provider);
-
+    // vIndex: 0
+    virtual ~StructureHeightProvider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::br::worldgen::HeightProvider const* operator->() const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class br::worldgen::UniformHeight provider);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class br::worldgen::StructureHeightProvider&& other);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class br::worldgen::ConstantHeight provider);
-
-    MCAPI void dtor$();
-
-    MCAPI int sample$(class IRandom& randomSource, class br::worldgen::WorldGenContext const& heightAccessor) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

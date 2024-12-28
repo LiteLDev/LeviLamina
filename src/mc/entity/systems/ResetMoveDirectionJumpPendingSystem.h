@@ -6,7 +6,19 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataFlagComponent;
+struct JumpPendingScaleComponent;
+struct MobAllowStandSlidingFlagComponent;
+struct MobTravelComponent;
+struct OnGroundFlagComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
 
 class ResetMoveDirectionJumpPendingSystem {
 public:
@@ -16,19 +28,18 @@ public:
     ResetMoveDirectionJumpPendingSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
+    MCAPI static ::TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
 
-    MCAPI static void
-    tickResetMoveDirectionJumpPendingSystem(class ViewT<
-                                            class StrictEntityContext,
-                                            struct Include<struct OnGroundFlagComponent>,
-                                            struct Exclude<class FlagComponent<struct MobAllowStandSlidingFlag>>,
-                                            struct JumpPendingScaleComponent const,
-                                            struct ActorDataFlagComponent const,
-                                            struct ActorDataControllingSeatIndexComponent const,
-                                            struct VehicleComponent const,
-                                            struct MobTravelComponent> view);
-
+    MCAPI static void tickResetMoveDirectionJumpPendingSystem(::ViewT<
+                                                              ::StrictEntityContext,
+                                                              ::Include<::OnGroundFlagComponent>,
+                                                              ::Exclude<::MobAllowStandSlidingFlagComponent>,
+                                                              ::JumpPendingScaleComponent const,
+                                                              ::ActorDataFlagComponent const,
+                                                              ::ActorDataControllingSeatIndexComponent const,
+                                                              ::VehicleComponent const,
+                                                              ::MobTravelComponent> view);
     // NOLINTEND
 };

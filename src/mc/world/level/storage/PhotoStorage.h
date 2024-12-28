@@ -9,39 +9,53 @@ namespace Core { class Path; }
 
 class PhotoStorage {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk90e915;
+    ::ll::UntypedStorage<8, 32> mUnk735fe6;
+    ::ll::UntypedStorage<8, 32> mUnkba338e;
+    ::ll::UntypedStorage<8, 32> mUnke545fe;
+    ::ll::UntypedStorage<8, 32> mUnka43046;
+    ::ll::UntypedStorage<8, 64> mUnk34296d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PhotoStorage& operator=(PhotoStorage const&);
     PhotoStorage(PhotoStorage const&);
     PhotoStorage();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit PhotoStorage(class Core::Path const& baseDir);
+    MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
-    MCAPI ~PhotoStorage();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _readManifest();
 
+    MCAPI ~PhotoStorage();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Core::Path const& baseDir);
+    MCAPI static ::std::string const& BOOKS_DIR();
 
-    MCAPI void dtor$();
+    MCAPI static ::std::string const& MANIFEST_NAME();
 
-    MCAPI static std::string const& BOOKS_DIR();
+    MCAPI static ::std::string const& PHOTOITEM_DIR();
 
-    MCAPI static std::string const& MANIFEST_NAME();
+    MCAPI static ::std::string const& PHOTO_DIR();
+    // NOLINTEND
 
-    MCAPI static std::string const& PHOTOITEM_DIR();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Path const& baseDir);
+    // NOLINTEND
 
-    MCAPI static std::string const& PHOTO_DIR();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

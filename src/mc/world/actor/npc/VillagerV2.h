@@ -3,27 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/npc/VillagerBase.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class ActorInteraction;
+class EntityContext;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class VillagerV2 : public ::VillagerBase {
@@ -34,63 +27,80 @@ public:
     VillagerV2();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~VillagerV2() = default;
+    // vIndex: 179
+    virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 108
-    virtual void buildDebugInfo(std::string& out) const;
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 124
-    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+    // vIndex: 104
+    virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const& source);
+    // vIndex: 120
+    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
+    // vIndex: 65
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 187
-    virtual void newServerAiStep();
-
-    MCAPI VillagerV2(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
+    // vIndex: 8
+    virtual ~VillagerV2() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI VillagerV2(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void buildDebugInfo$(std::string& out) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI void die$(class ActorDamageSource const& source);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool getInteraction$(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void newServerAiStep$();
+    MCAPI void $newServerAiStep();
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void remove$();
+    MCAPI void $remove();
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+    MCAPI void $buildDebugInfo(::std::string& out) const;
 
+    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

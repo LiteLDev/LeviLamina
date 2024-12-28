@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+class ItemStack;
+class LootTableContext;
+class Random;
+// clang-format on
+
 class SetItemCountFunction : public ::LootItemFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnkb0abea;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SetItemCountFunction& operator=(SetItemCountFunction const&);
@@ -13,26 +27,35 @@ public:
     SetItemCountFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetItemCountFunction() = default;
+    virtual ~SetItemCountFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void apply$(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

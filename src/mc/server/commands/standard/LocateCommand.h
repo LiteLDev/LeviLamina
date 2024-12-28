@@ -5,7 +5,23 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+// clang-format on
+
 class LocateCommand : public ::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk7f3365;
+    ::ll::UntypedStorage<8, 32> mUnk884b8f;
+    ::ll::UntypedStorage<4, 4>  mUnkeec355;
+    ::ll::UntypedStorage<1, 1>  mUnk3b6959;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LocateCommand& operator=(LocateCommand const&);
@@ -13,31 +29,44 @@ public:
     LocateCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LocateCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~LocateCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _executeLocateBiome(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void _executeLocateStructure(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _executeLocateBiome(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI void _executeLocateStructure(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,19 +4,20 @@
 
 struct Tick {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64> tickID;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Tick& operator=(Tick const&);
     Tick(Tick const&);
     Tick();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static struct Tick const& MAX();
-
+    MCAPI static ::Tick const& MAX();
     // NOLINTEND
 };

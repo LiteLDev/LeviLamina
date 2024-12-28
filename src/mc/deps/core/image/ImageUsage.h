@@ -4,6 +4,10 @@
 
 namespace mce {
 
-enum class ImageUsage {};
-
+enum class ImageUsage : uchar {
+    Unknown = 0,
+    SRGB    = 1,
+    Data    = 2,
 };
+
+}

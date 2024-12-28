@@ -3,19 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockPos;
+class Experiments;
+class Player;
 // clang-format on
 
 class CraftingTableBlock : public ::BlockLegacy {
@@ -26,35 +20,52 @@ public:
     CraftingTableBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
-    virtual ~CraftingTableBlock() = default;
-
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
-
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const& experiments);
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI CraftingTableBlock(std::string const& nameId, int id);
-
+    virtual ~CraftingTableBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CraftingTableBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isCraftingBlock$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI bool $isCraftingBlock() const;
 
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

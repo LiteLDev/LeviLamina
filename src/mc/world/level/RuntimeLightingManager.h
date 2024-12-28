@@ -2,15 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Dimension;
+struct Brightness;
+// clang-format on
+
 class RuntimeLightingManager {
 public:
     // RuntimeLightingManager inner types declare
     // clang-format off
+    struct RelightingChunkElement;
     struct RuntimeLightingSubchunkList;
     // clang-format on
 
     // RuntimeLightingManager inner types define
+    struct RelightingChunkElement {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk7fba0a;
+        ::ll::UntypedStorage<8, 8> mUnk3e689f;
+        ::ll::UntypedStorage<8, 8> mUnk5ba057;
+        ::ll::UntypedStorage<8, 8> mUnkda89a1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RelightingChunkElement& operator=(RelightingChunkElement const&);
+        RelightingChunkElement(RelightingChunkElement const&);
+        RelightingChunkElement();
+    };
+
     struct RuntimeLightingSubchunkList {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnkd60eed;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         RuntimeLightingSubchunkList& operator=(RuntimeLightingSubchunkList const&);
@@ -18,18 +49,29 @@ public:
         RuntimeLightingSubchunkList();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~RuntimeLightingSubchunkList();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk8c931b;
+    ::ll::UntypedStorage<8, 24> mUnk7ccccf;
+    ::ll::UntypedStorage<8, 24> mUnkbca36c;
+    ::ll::UntypedStorage<8, 24> mUnk374d9f;
+    ::ll::UntypedStorage<8, 8>  mUnk62ed05;
+    ::ll::UntypedStorage<1, 1>  mUnk3f50c8;
+    ::ll::UntypedStorage<8, 8>  mUnk6ca0a7;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -38,43 +80,50 @@ public:
     RuntimeLightingManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RuntimeLightingManager() = default;
+    virtual ~RuntimeLightingManager();
+    // NOLINTEND
 
-    MCAPI explicit RuntimeLightingManager(class Dimension& dimension);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit RuntimeLightingManager(::Dimension& dimension);
+
+    MCAPI void _getListOfChunksWithPlayerDistance();
+
+    MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
+
+    MCAPI void _removeProcessedSubchunks();
 
     MCAPI void flushRunTimeLighting();
 
     MCAPI void updateBlockLight(
-        class BlockPos const& blockPos,
-        struct Brightness     oldBrightness,
-        struct Brightness     newBrightness,
-        struct Brightness     oldAbsorption,
-        struct Brightness     newAbsorption,
-        bool                  isSkyLight
+        ::BlockPos const& blockPos,
+        ::Brightness      oldBrightness,
+        ::Brightness      newBrightness,
+        ::Brightness      oldAbsorption,
+        ::Brightness      newAbsorption,
+        bool              isSkyLight
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _checkForRelightingTask(std::chrono::nanoseconds timeLimit);
-
-    MCAPI void _getListOfChunksWithPlayerDistance();
-
-    MCAPI void _relightChunks(std::chrono::nanoseconds timeLimit);
-
-    MCAPI void _removeProcessedSubchunks();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension& dimension);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

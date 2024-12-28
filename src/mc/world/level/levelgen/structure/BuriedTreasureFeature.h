@@ -5,7 +5,27 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BiomeSource;
+class BlockPos;
+class ChunkPos;
+class Dimension;
+class HashedString;
+class IPreliminarySurfaceProvider;
+class Random;
+class StructureStart;
+// clang-format on
+
 class BuriedTreasureFeature : public ::StructureFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk1183a0;
+    ::ll::UntypedStorage<4, 4>  mUnk111efd;
+    ::ll::UntypedStorage<8, 24> mUnk6c25e8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BuriedTreasureFeature& operator=(BuriedTreasureFeature const&);
@@ -13,55 +33,74 @@ public:
     BuriedTreasureFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BuriedTreasureFeature() = default;
-
     // vIndex: 3
     virtual bool getNearestGeneratedFeature(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
-    );
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
+    ) /*override*/;
 
     // vIndex: 5
+    virtual ::std::unique_ptr<::StructureStart>
+    createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&) /*override*/
+        ;
+
+    // vIndex: 4
     virtual bool
-    isFeatureChunk(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& pos, uint levelSeed, class IPreliminarySurfaceProvider const& preliminarySurfaceLevel, class Dimension const&);
+    isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&) /*override*/
+        ;
 
-    // vIndex: 6
-    virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension& generator, class BiomeSource const&, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
-
-    MCAPI explicit BuriedTreasureFeature(uint seed);
-
+    // vIndex: 0
+    virtual ~BuriedTreasureFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BuriedTreasureFeature(uint seed);
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint seed);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint seed);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class StructureStart>
-    createStructureStart$(class Dimension& generator, class BiomeSource const&, class Random& random, class ChunkPos const& lc, class IPreliminarySurfaceProvider const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool getNearestGeneratedFeature$(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $getNearestGeneratedFeature(
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool
-    isFeatureChunk$(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& pos, uint levelSeed, class IPreliminarySurfaceProvider const& preliminarySurfaceLevel, class Dimension const&);
+    MCAPI ::std::unique_ptr<::StructureStart>
+    $createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);
 
+    MCAPI bool
+    $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

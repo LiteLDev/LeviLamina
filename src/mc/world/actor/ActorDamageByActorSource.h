@@ -3,12 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockSource;
+struct ActorUniqueID;
+// clang-format on
+
 class ActorDamageByActorSource : public ::ActorDamageSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::BlockSource const&> mRegion;
+    ::ll::TypedStorage<1, 1, bool>                 mIsWorldBuilder;
+    ::ll::TypedStorage<1, 1, bool>                 mIsCreative;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>      mEntityID;
+    ::ll::TypedStorage<4, 4, ::ActorType>          mEntityType;
+    ::ll::TypedStorage<4, 4, ::ActorCategory>      mEntityCategories;
+    ::ll::TypedStorage<8, 32, ::std::string>       mEntityNameTag;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDamageByActorSource& operator=(ActorDamageByActorSource const&);
@@ -16,74 +35,89 @@ public:
     ActorDamageByActorSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorDamageByActorSource();
-
     // vIndex: 1
-    virtual bool isEntitySource() const;
+    virtual bool isEntitySource() const /*override*/;
 
     // vIndex: 10
-    virtual std::pair<std::string, std::vector<std::string>>
-    getDeathMessage(std::string deadName, class Actor* dead) const;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 11
-    virtual bool getIsCreative() const;
+    virtual bool getIsCreative() const /*override*/;
 
     // vIndex: 12
-    virtual bool getIsWorldBuilder() const;
+    virtual bool getIsWorldBuilder() const /*override*/;
 
     // vIndex: 13
-    virtual struct ActorUniqueID getEntityUniqueID() const;
+    virtual ::ActorUniqueID getEntityUniqueID() const /*override*/;
 
     // vIndex: 14
-    virtual ::ActorType getEntityType() const;
+    virtual ::ActorType getEntityType() const /*override*/;
 
     // vIndex: 15
-    virtual ::ActorCategory getEntityCategories() const;
+    virtual ::ActorCategory getEntityCategories() const /*override*/;
 
     // vIndex: 18
-    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    virtual ::ActorUniqueID getDamagingEntityUniqueID() const /*override*/;
 
     // vIndex: 19
-    virtual ::ActorType getDamagingEntityType() const;
+    virtual ::ActorType getDamagingEntityType() const /*override*/;
 
     // vIndex: 21
-    virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
-    MCAPI ActorDamageByActorSource(class Actor const& actor, ::ActorDamageCause cause);
-
+    // vIndex: 0
+    virtual ~ActorDamageByActorSource() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorDamageByActorSource(::Actor const& actor, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Actor const& actor, ::ActorDamageCause cause);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor const& actor, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isEntitySource() const;
 
-    MCAPI ::ActorType getDamagingEntityType$() const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+    MCAPI bool $getIsCreative() const;
 
-    MCAPI std::pair<std::string, std::vector<std::string>>
-          getDeathMessage$(std::string deadName, class Actor* dead) const;
+    MCAPI bool $getIsWorldBuilder() const;
 
-    MCAPI ::ActorCategory getEntityCategories$() const;
+    MCAPI ::ActorUniqueID $getEntityUniqueID() const;
 
-    MCAPI ::ActorType getEntityType$() const;
+    MCAPI ::ActorType $getEntityType() const;
 
-    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+    MCAPI ::ActorCategory $getEntityCategories() const;
 
-    MCAPI bool getIsCreative$() const;
+    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCAPI bool getIsWorldBuilder$() const;
+    MCAPI ::ActorType $getDamagingEntityType() const;
 
-    MCAPI bool isEntitySource$() const;
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -11,10 +10,30 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class BlockPos;
+class CommandPositionFloat;
+class CompoundTag;
+class Dimension;
+class Level;
+class NetworkIdentifier;
+class ServerLevel;
+class Vec2;
+class Vec3;
+struct CommandOriginIdentity;
 // clang-format on
 
 class VirtualCommandOrigin : public ::CommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk9ecdf8;
+    ::ll::UntypedStorage<8, 8>  mUnk66bd43;
+    ::ll::UntypedStorage<8, 8>  mUnkab4e18;
+    ::ll::UntypedStorage<4, 16> mUnk442c5d;
+    ::ll::UntypedStorage<4, 4>  mUnk40df6d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VirtualCommandOrigin& operator=(VirtualCommandOrigin const&);
@@ -22,178 +41,199 @@ public:
     VirtualCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VirtualCommandOrigin() = default;
-
     // vIndex: 1
-    virtual std::string const& getRequestId() const;
+    virtual ::std::string const& getRequestId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos getBlockPosition() const;
+    virtual ::BlockPos getBlockPosition() const /*override*/;
 
     // vIndex: 4
-    virtual class Vec3 getWorldPosition() const;
+    virtual ::Vec3 getWorldPosition() const /*override*/;
 
     // vIndex: 5
-    virtual std::optional<class Vec2> getRotation() const;
+    virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
     // vIndex: 6
-    virtual class Level* getLevel() const;
+    virtual ::Level* getLevel() const /*override*/;
 
     // vIndex: 7
-    virtual class Dimension* getDimension() const;
+    virtual ::Dimension* getDimension() const /*override*/;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const;
+    virtual ::Actor* getEntity() const /*override*/;
 
     // vIndex: 9
-    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+    virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-
-    // vIndex: 13
-    virtual bool hasChatPerms() const;
-
-    // vIndex: 14
-    virtual bool hasTellPerms() const;
-
-    // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
-
-    // vIndex: 17
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-
-    // vIndex: 18
-    virtual bool isSelectorExpansionAllowed() const;
-
-    // vIndex: 19
-    virtual class NetworkIdentifier const& getSourceId() const;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 21
-    virtual class CommandOrigin const& getOutputReceiver() const;
+    virtual ::CommandOrigin const& getOutputReceiver() const /*override*/;
 
-    // vIndex: 22
-    virtual struct CommandOriginIdentity getIdentity() const;
+    // vIndex: 13
+    virtual bool hasChatPerms() const /*override*/;
+
+    // vIndex: 14
+    virtual bool hasTellPerms() const /*override*/;
+
+    // vIndex: 15
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+
+    // vIndex: 17
+    virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
+
+    // vIndex: 18
+    virtual bool isSelectorExpansionAllowed() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
+
+    // vIndex: 19
+    virtual ::NetworkIdentifier const& getSourceId() const /*override*/;
+
+    // vIndex: 22
+    virtual ::CommandOriginIdentity getIdentity() const /*override*/;
 
     // vIndex: 27
-    virtual void updateValues();
+    virtual void updateValues() /*override*/;
 
     // vIndex: 28
-    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const& commandPosition) const;
+    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const
+        /*override*/;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CompoundTag serialize() const /*override*/;
 
     // vIndex: 30
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI VirtualCommandOrigin(
-        class CommandOrigin const&        outputReceiver,
-        class Actor&                      entity,
-        class CommandPositionFloat const& commandPosition,
-        int                               version
-    );
-
-    MCAPI VirtualCommandOrigin(
-        class CommandOrigin const&        outputReceiver,
-        class CommandOrigin const&        source,
-        class CommandPositionFloat const& commandPosition,
-        int                               version
-    );
-
-    MCAPI VirtualCommandOrigin(
-        std::unique_ptr<class CommandOrigin> outputReceiver,
-        std::unique_ptr<class CommandOrigin> source,
-        class CommandPositionFloat const&    commandPosition,
-        int                                  version
-    );
-
-    MCAPI class CommandOrigin* getOrigin() const;
-
-    MCAPI static std::unique_ptr<class VirtualCommandOrigin>
-    load(class CompoundTag const& tag, class ServerLevel& level);
-
+    // vIndex: 0
+    virtual ~VirtualCommandOrigin() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class CommandOrigin const&        outputReceiver,
-        class CommandOrigin const&        source,
-        class CommandPositionFloat const& commandPosition,
-        int                               version
+    MCAPI VirtualCommandOrigin(
+        ::CommandOrigin const&        outputReceiver,
+        ::Actor&                      entity,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
     );
 
-    MCAPI void* ctor$(
-        std::unique_ptr<class CommandOrigin> outputReceiver,
-        std::unique_ptr<class CommandOrigin> source,
-        class CommandPositionFloat const&    commandPosition,
-        int                                  version
+    MCAPI VirtualCommandOrigin(
+        ::std::unique_ptr<::CommandOrigin> outputReceiver,
+        ::std::unique_ptr<::CommandOrigin> source,
+        ::CommandPositionFloat const&      commandPosition,
+        int                                version
     );
 
-    MCAPI void* ctor$(
-        class CommandOrigin const&        outputReceiver,
-        class Actor&                      entity,
-        class CommandPositionFloat const& commandPosition,
-        int                               version
+    MCAPI VirtualCommandOrigin(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
     );
 
-    MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
+    MCAPI ::CommandOrigin* getOrigin() const;
+    // NOLINTEND
 
-    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::VirtualCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::CommandOrigin const&        outputReceiver,
+        ::Actor&                      entity,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
 
-    MCAPI class BlockPos getBlockPosition$() const;
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::CommandOrigin> outputReceiver,
+        ::std::unique_ptr<::CommandOrigin> source,
+        ::CommandPositionFloat const&      commandPosition,
+        int                                version
+    );
 
-    MCAPI class Dimension* getDimension$() const;
+    MCAPI void* $ctor(
+        ::CommandOrigin const&        outputReceiver,
+        ::CommandOrigin const&        source,
+        ::CommandPositionFloat const& commandPosition,
+        int                           version
+    );
+    // NOLINTEND
 
-    MCAPI class Actor* getEntity$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getRequestId() const;
 
-    MCAPI struct CommandOriginIdentity getIdentity$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI class Level* getLevel$() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+    MCAPI ::Level* $getLevel() const;
 
-    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+    MCAPI ::Dimension* $getDimension() const;
 
-    MCAPI std::string const& getRequestId$() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCAPI std::optional<class Vec2> getRotation$() const;
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI class NetworkIdentifier const& getSourceId$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI class Vec3 getWorldPosition$() const;
+    MCAPI ::CommandOrigin const& $getOutputReceiver() const;
 
-    MCAPI bool hasChatPerms$() const;
+    MCAPI bool $hasChatPerms() const;
 
-    MCAPI bool hasTellPerms$() const;
+    MCAPI bool $hasTellPerms() const;
 
-    MCAPI bool isSelectorExpansionAllowed$() const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
-    MCAPI bool isValid$() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCAPI void updateValues$();
+    MCAPI ::CommandOriginType $getOriginType() const;
 
+    MCAPI ::NetworkIdentifier const& $getSourceId() const;
+
+    MCAPI ::CommandOriginIdentity $getIdentity() const;
+
+    MCAPI void $updateValues();
+
+    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+
+    MCAPI ::CompoundTag $serialize() const;
+
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

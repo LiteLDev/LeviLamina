@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MobSpawnerPermutation {
+// auto generated inclusion list
+#include "mc/util/WeightedRandom.h"
+
+class MobSpawnerPermutation : public ::WeightedRandom::WeighedRandomItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkfee09a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MobSpawnerPermutation& operator=(MobSpawnerPermutation const&);
@@ -10,15 +19,14 @@ public:
     MobSpawnerPermutation();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MobSpawnerPermutation();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,32 +5,44 @@
 // auto generated inclusion list
 #include "mc/server/commands/functions/ICommandDispatcher.h"
 
+// auto generated forward declare list
+// clang-format off
+class Command;
+class CommandOrigin;
+// clang-format on
+
 class CommandDispatcher : public ::ICommandDispatcher {
 public:
     // prevent constructor by default
     CommandDispatcher& operator=(CommandDispatcher const&);
     CommandDispatcher(CommandDispatcher const&);
+    CommandDispatcher();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandDispatcher() = default;
+    virtual ~CommandDispatcher() /*override*/;
 
     // vIndex: 1
-    virtual int performCommand(class CommandOrigin const& origin, class Command& command);
-
-    MCAPI CommandDispatcher();
-
+    virtual int performCommand(::CommandOrigin const& origin, ::Command& command) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $performCommand(::CommandOrigin const& origin, ::Command& command);
+    // NOLINTEND
 
-    MCAPI int performCommand$(class CommandOrigin const& origin, class Command& command);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

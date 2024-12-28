@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class SculkSensorVibrationConfig : public ::VibrationListenerConfig {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk7187e1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkSensorVibrationConfig& operator=(SculkSensorVibrationConfig const&);
@@ -13,55 +28,65 @@ public:
     SculkSensorVibrationConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkSensorVibrationConfig() = default;
-
     // vIndex: 1
     virtual void
-    onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const& gameEvent, class Actor* source, float distance, uint listenerRange, class Actor*);
-
-    // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const& gameEvent);
+    onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*) /*override*/
+        ;
 
     // vIndex: 3
     virtual bool shouldListen(
-        class BlockSource&             region,
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext
-    );
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void onSerializableDataChanged(class BlockSource& region);
+    virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 5
-    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const /*override*/;
 
-    MCAPI explicit SculkSensorVibrationConfig(class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~SculkSensorVibrationConfig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SculkSensorVibrationConfig(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
-
-    MCAPI void onSerializableDataChanged$(class BlockSource& region);
-
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI void
-    onSignalReceive$(class BlockSource& region, class BlockPos const&, class GameEvent const& gameEvent, class Actor* source, float distance, uint listenerRange, class Actor*);
+    $onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const& gameEvent, ::Actor* source, float distance, uint listenerRange, ::Actor*);
 
-    MCAPI bool shouldListen$(
-        class BlockSource&             region,
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext
-    );
+    MCAPI bool
+    $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 
+    MCAPI void $onSerializableDataChanged(::BlockSource& region);
+
+    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

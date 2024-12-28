@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct OceanFrozenSurfaceFlag {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct OceanFrozenSurfaceFlag : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     OceanFrozenSurfaceFlag& operator=(OceanFrozenSurfaceFlag const&);
@@ -10,16 +13,21 @@ public:
     OceanFrozenSurfaceFlag();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OceanFrozenSurfaceFlag() = default;
-
+    virtual ~OceanFrozenSurfaceFlag() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

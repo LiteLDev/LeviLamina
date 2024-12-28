@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class LegacyStructureSettings;
+// clang-format on
+
 class LegacyBlockPlacementProcessor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>    mUnkbcf931;
+    ::ll::UntypedStorage<8, 2568> mUnk80a116;
+    ::ll::UntypedStorage<1, 1>    mUnkdb38a5;
+    ::ll::UntypedStorage<8, 8>    mUnka563e9;
+    ::ll::UntypedStorage<8, 8>    mUnke90a00;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyBlockPlacementProcessor& operator=(LegacyBlockPlacementProcessor const&);
@@ -10,28 +28,29 @@ public:
     LegacyBlockPlacementProcessor();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyBlockPlacementProcessor(class LegacyStructureSettings const& settings);
+    MCAPI explicit LegacyBlockPlacementProcessor(::LegacyStructureSettings const& settings);
 
-    MCAPI class Block const* applyBlockRules(
-        class BlockSource&    region,
-        class BlockPos&       pos,
-        class Block const*    blockToPlace,
-        class BlockPos const& refPos
-    );
+    MCAPI ::Block const*
+    applyBlockRules(::BlockSource& region, ::BlockPos& pos, ::Block const* blockToPlace, ::BlockPos const& refPos);
 
-    MCAPI class BlockPos& applyGravity(class BlockSource& region, int yOffset, class BlockPos& pos) const;
+    MCAPI ::BlockPos& applyGravity(::BlockSource& region, int yOffset, ::BlockPos& pos) const;
+
+    MCAPI bool canPlace();
 
     MCAPI ~LegacyBlockPlacementProcessor();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class LegacyStructureSettings const& settings);
+    MCAPI void* $ctor(::LegacyStructureSettings const& settings);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

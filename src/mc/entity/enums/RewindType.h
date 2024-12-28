@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class RewindType {};
+enum class RewindType : uchar {
+    Player  = 0,
+    Vehicle = 1,
+};

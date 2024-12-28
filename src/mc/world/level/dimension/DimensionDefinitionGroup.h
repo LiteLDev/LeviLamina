@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/GeneratorType.h"
 #include "mc/world/level/dimension/DimensionDocument.h"
 
 // auto generated forward declare list
 // clang-format off
+class ResourcePackManager;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,6 +22,14 @@ public:
     // DimensionDefinitionGroup inner types define
     struct DimensionDefinition {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>             mHeightMinimum;
+        ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
+        ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         DimensionDefinition& operator=(DimensionDefinition const&);
         DimensionDefinition(DimensionDefinition const&);
@@ -27,50 +37,53 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::DimensionDefinitionGroup::DimensionDefinition>>
+        mDimensionDefinitions;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
     DimensionDefinitionGroup();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DimensionDefinitionGroup(class DimensionDefinitionGroup const&);
+    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
     MCAPI DimensionDefinitionGroup(
-        struct cereal::ReflectionCtx&    ctx,
-        class ResourcePackManager* const rpm,
-        bool                             cavesAndCliffsExperimentIsEnabled
+        ::cereal::ReflectionCtx&     ctx,
+        ::ResourcePackManager* const rpm,
+        bool                         cavesAndCliffsExperimentIsEnabled
     );
 
-    MCAPI std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
-          getDimensionDefinition(std::string const& dimensionName) const;
+    MCAPI bool _checkValidDimensionBounds(::DimensionDocument::Dimension const& dimension);
+
+    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    getDimensionDefinition(::std::string const& dimensionName) const;
 
     MCAPI bool isEmpty() const;
 
     MCAPI bool
-    tryAddDimensionDefinitionByString(struct cereal::ReflectionCtx& ctx, std::string const& dimensionDefinitionJSON);
+    tryAddDimensionDefinitionByString(::cereal::ReflectionCtx& ctx, ::std::string const& dimensionDefinitionJSON);
 
     MCAPI ~DimensionDefinitionGroup();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const& dimension);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct cereal::ReflectionCtx&    ctx,
-        class ResourcePackManager* const rpm,
-        bool                             cavesAndCliffsExperimentIsEnabled
-    );
+    MCAPI void* $ctor(::DimensionDefinitionGroup const&);
 
-    MCAPI void* ctor$(class DimensionDefinitionGroup const&);
+    MCAPI void*
+    $ctor(::cereal::ReflectionCtx& ctx, ::ResourcePackManager* const rpm, bool cavesAndCliffsExperimentIsEnabled);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

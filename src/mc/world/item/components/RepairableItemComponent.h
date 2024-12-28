@@ -3,107 +3,86 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct RepairableItemComponent; }
+class ExpressionNode;
+class HashedString;
+class ItemStack;
+class ItemStackBase;
+class SemVersion;
+struct RepairItemResult;
+namespace SharedTypes::v1_20_50 { struct RepairableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class RepairableItemComponent {
+class RepairableItemComponent : public ::NetworkedItemComponent<::RepairableItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkb9cd42;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
-    RepairableItemComponent(RepairableItemComponent const&);
+    RepairableItemComponent& operator=(RepairableItemComponent const&);
     RepairableItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RepairableItemComponent() = default;
+    virtual ~RepairableItemComponent() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RepairableItemComponent(::RepairableItemComponent const&);
 
-    // vIndex: 2
-    virtual void writeSettings();
+    MCAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
 
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
+    MCAPI int
+    _repairItem(::ItemStackBase& materialItem, ::ItemStackBase& resultItem, ::ExpressionNode repairAmountExpression)
+        const;
 
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::RepairItemResult
+    handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;
 
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+    MCAPI ::RepairableItemComponent& operator=(::RepairableItemComponent&&);
+    // NOLINTEND
 
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
-    // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
-
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI explicit RepairableItemComponent(struct Puv::v1_20_50::RepairableItemComponent component);
-
-    MCAPI struct RepairItemResult
-    handleItemRepair(class ItemStack& inputItem, class ItemStack& materialItem, bool allowBidirectionalRepair) const;
-
-    MCAPI class RepairableItemComponent& operator=(class RepairableItemComponent&&);
-
-    MCAPI class RepairableItemComponent& operator=(class RepairableItemComponent const&);
-
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
-    MCAPI static class HashedString const& getIdentifier();
-
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const& item) const;
-
-    MCAPI int _repairItem(
-        class ItemStackBase& materialItem,
-        class ItemStackBase& resultItem,
-        class ExpressionNode repairAmountExpression
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::RepairableItemComponent const&);
 
-    MCAPI void* ctor$(struct Puv::v1_20_50::RepairableItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent component);
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
-
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
-
-    MCAPI bool checkComponentDataForContentErrors$() const;
-
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
-
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

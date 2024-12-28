@@ -8,9 +8,9 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace Editor::ScriptModule::EditorServerModule::Betas {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& CURRENT();
+MCAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}; // namespace Editor::ScriptModule::EditorServerModule::Betas
+} // namespace Editor::ScriptModule::EditorServerModule::Betas

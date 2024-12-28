@@ -2,7 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IsSummonableDescription {
+// auto generated inclusion list
+#include "mc/world/actor/DefintionDescription.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
+struct IsSummonableDescription : public ::DefintionDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkbcddf4;
+    ::ll::UntypedStorage<1, 1> mUnk7842db;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IsSummonableDescription& operator=(IsSummonableDescription const&);
@@ -10,21 +25,36 @@ public:
     IsSummonableDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~IsSummonableDescription() = default;
-
     // vIndex: 1
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~IsSummonableDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void parse(::Json::Value const& root);
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

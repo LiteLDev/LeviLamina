@@ -6,30 +6,40 @@ namespace ClimateUtils {
 
 struct Parameter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, int64> mMin;
+    ::ll::TypedStorage<8, 8, int64> mMax;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Parameter& operator=(Parameter const&);
     Parameter(Parameter const&);
     Parameter();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI Parameter(int64 const&, int64 const&);
-
     MCAPI Parameter(float min, float max);
 
-    MCAPI static struct ClimateUtils::Parameter
-    fromParameters(struct ClimateUtils::Parameter const& minParam, struct ClimateUtils::Parameter const& maxParam);
-
+    MCAPI Parameter(int64 const& min, int64 const& max);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(int64 const&, int64 const&);
+    MCAPI static ::ClimateUtils::Parameter
+    fromParameters(::ClimateUtils::Parameter const& minParam, ::ClimateUtils::Parameter const& maxParam);
+    // NOLINTEND
 
-    MCAPI void* ctor$(float min, float max);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(float min, float max);
 
+    MCAPI void* $ctor(int64 const& min, int64 const& max);
     // NOLINTEND
 };
 
-}; // namespace ClimateUtils
+} // namespace ClimateUtils

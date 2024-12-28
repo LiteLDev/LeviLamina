@@ -22,95 +22,148 @@ public:
     // clang-format on
 
     // Value inner types define
+    using Members = ::std::vector<::std::string>;
+
+    using iterator = ::Json::ValueIterator;
+
+    using const_iterator = ::Json::ValueConstIterator;
+
+    using UInt = uint;
+
+    using Int = int;
+
+    using UInt64 = uint64;
+
+    using Int64 = int64;
+
+    using LargestInt = int64;
+
+    using LargestUInt = uint64;
+
+    using ArrayIndex = uint;
+
     class CZString {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, char*> cstr_;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         CZString& operator=(CZString const&);
+        CZString(CZString const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI CZString();
 
         MCAPI explicit CZString(char const* cstr);
 
-        MCAPI CZString(class Json::Value::CZString&& other);
-
-        MCAPI CZString(class Json::Value::CZString const& other);
+        MCAPI CZString(::Json::Value::CZString&& other);
 
         MCAPI CZString(char* cstr, bool duplicate);
 
         MCAPI char const* c_str() const;
 
         MCAPI ~CZString();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
 
-        MCAPI void* ctor$(char const* cstr);
+        MCAPI void* $ctor(char const* cstr);
 
-        MCAPI void* ctor$(class Json::Value::CZString const& other);
+        MCAPI void* $ctor(::Json::Value::CZString&& other);
 
-        MCAPI void* ctor$(class Json::Value::CZString&& other);
+        MCAPI void* $ctor(char* cstr, bool duplicate);
+        // NOLINTEND
 
-        MCAPI void* ctor$(char* cstr, bool duplicate);
-
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
     struct CZStringCompare {
     public:
+        // CZStringCompare inner types define
+        using is_transparent = void;
+
+    public:
         // prevent constructor by default
         CZStringCompare& operator=(CZStringCompare const&);
         CZStringCompare(CZStringCompare const&);
         CZStringCompare();
+    };
 
+    using ObjectValues = ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>;
+
+    using ArrayValues = ::std::vector<::Json::Value*>;
+
+    union ValueHolder {
     public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI bool
-        operator()(class Json::Value::CZString const& czstring1, class Json::Value::CZString const& czstring2) const;
-
+        ::ll::UntypedStorage<8, 8> mUnk4f1c50;
+        ::ll::UntypedStorage<8, 8> mUnk330383;
+        ::ll::UntypedStorage<8, 8> mUnkf4e697;
+        ::ll::UntypedStorage<1, 8> mUnk219d49;
+        ::ll::UntypedStorage<8, 8> mUnkddcfb0;
+        ::ll::UntypedStorage<8, 8> mUnk796975;
+        ::ll::UntypedStorage<8, 8> mUnk835d26;
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Json::Value::ValueHolder> value_;
+    ::ll::TypedStorage<1, 1, ::Json::ValueType>          type_;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     Value();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI Value(::Json::Value const& other);
+
+    MCAPI Value(::Json::Value&& other);
+
+    MCAPI explicit Value(::Json::Value::CZString* str);
+
+    MCAPI explicit Value(::Json::ValueType type);
+
+    MCAPI explicit Value(char const* value);
+
+    MCAPI explicit Value(int value);
+
+    MCAPI explicit Value(uint value);
+
+    MCAPI explicit Value(double value);
+
+    MCAPI explicit Value(::std::string const& value);
+
+    MCAPI explicit Value(uint64 value);
+
     MCAPI explicit Value(int64 value);
 
     MCAPI explicit Value(bool value);
 
-    MCAPI explicit Value(char const* value);
+    MCAPI void _insert(::Json::Value::CZString&& key, ::Json::Value&& value, bool overwrite);
 
-    MCAPI Value(class Json::Value&& other);
+    MCAPI ::Json::Value& _resolveReference(char const* key);
 
-    MCAPI Value(class Json::Value const& other);
+    MCAPI ::Json::Value& append(::Json::Value&& value);
 
-    MCAPI explicit Value(class Json::Value::CZString* str);
-
-    MCAPI explicit Value(std::string const& value);
-
-    MCAPI explicit Value(double value);
-
-    MCAPI explicit Value(::Json::ValueType type);
-
-    MCAPI explicit Value(int value);
-
-    MCAPI explicit Value(uint64 value);
-
-    MCAPI explicit Value(uint value);
-
-    MCAPI class Json::Value& append(class Json::Value&& value);
-
-    MCAPI class Json::Value& append(class Json::Value const& value);
+    MCAPI ::Json::Value& append(::Json::Value const& value);
 
     MCAPI bool asBool(bool defaultValue) const;
 
@@ -128,31 +181,31 @@ public:
 
     MCAPI uint64 asLargestUInt() const;
 
-    MCAPI std::string asString(std::string const&) const;
+    MCAPI ::std::string asString(::std::string const& defaultValue) const;
 
     MCAPI uint asUInt(uint defaultValue) const;
 
     MCAPI uint64 asUInt64(uint64 defaultValue) const;
 
-    MCAPI class Json::ValueConstIterator begin() const;
+    MCAPI ::Json::ValueConstIterator begin() const;
 
-    MCAPI class Json::ValueIterator begin();
+    MCAPI ::Json::ValueIterator begin();
 
     MCAPI void clear();
 
-    MCAPI int compare(class Json::Value const& other) const;
+    MCAPI int compare(::Json::Value const& other) const;
 
     MCAPI bool empty() const;
 
-    MCAPI class Json::ValueConstIterator end() const;
+    MCAPI ::Json::ValueConstIterator end() const;
 
-    MCAPI class Json::ValueIterator end();
+    MCAPI ::Json::ValueIterator end();
 
-    MCAPI class Json::Value get(char const* key, class Json::Value const& defaultValue) const;
+    MCAPI ::Json::Value get(::std::string const& key, ::Json::Value const& defaultValue) const;
 
-    MCAPI class Json::Value get(std::string const& key, class Json::Value const& defaultValue) const;
+    MCAPI ::Json::Value get(char const* key, ::Json::Value const& defaultValue) const;
 
-    MCAPI std::vector<std::string> getMemberNames() const;
+    MCAPI ::std::vector<::std::string> getMemberNames() const;
 
     MCAPI bool isArray() const;
 
@@ -168,7 +221,7 @@ public:
 
     MCAPI bool isMember(char const* key) const;
 
-    MCAPI bool isMember(std::string const& key) const;
+    MCAPI bool isMember(::std::string const& key) const;
 
     MCAPI bool isNull() const;
 
@@ -178,85 +231,54 @@ public:
 
     MCAPI bool isString() const;
 
-    MCAPI bool operator!=(class Json::Value const& other) const;
+    MCAPI bool isUInt() const;
 
-    MCAPI bool operator<(class Json::Value const& other) const;
+    MCAPI bool operator!=(::Json::Value const& other) const;
 
-    MCAPI class Json::Value& operator=(class Json::Value&& other);
+    MCAPI bool operator<(::Json::Value const& other) const;
 
-    MCAPI class Json::Value& operator=(class Json::Value const& other);
+    MCAPI ::Json::Value& operator=(::Json::Value const& other);
 
-    MCAPI bool operator==(class Json::Value const& other) const;
+    MCAPI ::Json::Value& operator=(::Json::Value&& other);
 
-    MCAPI class Json::Value& operator[](char const* key);
+    MCAPI bool operator==(::Json::Value const& other) const;
 
-    MCAPI class Json::Value& operator[](std::string const& key);
+    MCAPI bool operator>(::Json::Value const& other) const;
 
-    MCAPI class Json::Value& operator[](int index);
+    MCAPI ::Json::Value const& operator[](int index) const;
 
-    MCAPI class Json::Value& operator[](uint index);
+    MCAPI ::Json::Value const& operator[](uint index) const;
 
-    MCAPI class Json::Value const& operator[](char const* key) const;
+    MCAPI ::Json::Value const& operator[](char const* key) const;
 
-    MCAPI class Json::Value const& operator[](std::string const& key) const;
+    MCAPI ::Json::Value const& operator[](::std::string const& key) const;
 
-    MCAPI class Json::Value const& operator[](int index) const;
+    MCAPI ::Json::Value& operator[](int index);
 
-    MCAPI class Json::Value const& operator[](uint index) const;
+    MCAPI ::Json::Value& operator[](char const* key);
 
-    MCAPI class Json::Value removeMember(char const* key);
+    MCAPI ::Json::Value& operator[](::std::string const& key);
 
-    MCAPI class Json::Value removeMember(std::string const& key);
+    MCAPI ::Json::Value& operator[](uint);
+
+    MCAPI ::Json::Value removeMember(::std::string const& key);
+
+    MCAPI ::Json::Value removeMember(char const* key);
 
     MCAPI void resize(uint newSize);
 
     MCAPI uint size() const;
 
-    MCAPI std::string toStyledString() const;
+    MCAPI ::std::string toStyledString() const;
 
     MCAPI ::Json::ValueType type() const;
 
     MCAPI ~Value();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _insert(class Json::Value::CZString&& key, class Json::Value&& value, bool overwrite);
-
-    MCAPI class Json::Value& _resolveReference(char const* key);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(bool value);
-
-    MCAPI void* ctor$(uint64 value);
-
-    MCAPI void* ctor$(char const* value);
-
-    MCAPI void* ctor$(double value);
-
-    MCAPI void* ctor$(int64 value);
-
-    MCAPI void* ctor$(class Json::Value const& other);
-
-    MCAPI void* ctor$(std::string const& value);
-
-    MCAPI void* ctor$(::Json::ValueType type);
-
-    MCAPI void* ctor$(class Json::Value::CZString* str);
-
-    MCAPI void* ctor$(class Json::Value&& other);
-
-    MCAPI void* ctor$(int value);
-
-    MCAPI void* ctor$(uint value);
-
-    MCAPI void dtor$();
-
     MCAPI static int const& maxInt();
 
     MCAPI static int64 const& maxInt64();
@@ -275,9 +297,42 @@ public:
 
     MCAPI static int64 const& minLargestInt();
 
-    MCAPI static class Json::Value const& null();
+    MCAPI static ::Json::Value const& null();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Json::Value const& other);
+
+    MCAPI void* $ctor(::Json::Value&& other);
+
+    MCAPI void* $ctor(::Json::Value::CZString* str);
+
+    MCAPI void* $ctor(::Json::ValueType type);
+
+    MCAPI void* $ctor(char const* value);
+
+    MCAPI void* $ctor(int value);
+
+    MCAPI void* $ctor(uint value);
+
+    MCAPI void* $ctor(double value);
+
+    MCAPI void* $ctor(::std::string const& value);
+
+    MCAPI void* $ctor(uint64 value);
+
+    MCAPI void* $ctor(int64 value);
+
+    MCAPI void* $ctor(bool value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

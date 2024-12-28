@@ -9,17 +9,20 @@ public:
     BeardKernel(BeardKernel const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BeardKernel();
-
-    MCAPI static float getContribution(int dx, int dy, int dz);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static float getContribution(int dx, int dy, int dz);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

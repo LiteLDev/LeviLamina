@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class EntityRegistry;
 namespace NpcComponents { struct LeaveMenuCountdown; }
 // clang-format on
 
@@ -18,39 +20,37 @@ public:
     NpcSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NpcSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI static void
-    tickCountdown(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
-
+    // vIndex: 0
+    virtual ~NpcSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void
+    tickCountdown(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NetworkBlockPosition {
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
+class NetworkBlockPosition : public ::BlockPos {
 public:
     // prevent constructor by default
     NetworkBlockPosition& operator=(NetworkBlockPosition const&);

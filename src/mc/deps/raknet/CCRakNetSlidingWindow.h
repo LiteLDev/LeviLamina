@@ -11,21 +11,40 @@ namespace RakNet {
 
 class CCRakNetSlidingWindow {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2e0f9a;
+    ::ll::UntypedStorage<8, 8> mUnk846891;
+    ::ll::UntypedStorage<8, 8> mUnkb39eb2;
+    ::ll::UntypedStorage<8, 8> mUnk8c72c9;
+    ::ll::UntypedStorage<4, 4> mUnkcf834e;
+    ::ll::UntypedStorage<4, 4> mUnkd6b664;
+    ::ll::UntypedStorage<1, 1> mUnk67a9a0;
+    ::ll::UntypedStorage<1, 1> mUnk98f1e3;
+    ::ll::UntypedStorage<4, 4> mUnk6f8553;
+    ::ll::UntypedStorage<1, 1> mUnkc93317;
+    ::ll::UntypedStorage<8, 8> mUnk702c03;
+    ::ll::UntypedStorage<8, 8> mUnkdc0a92;
+    ::ll::UntypedStorage<8, 8> mUnk40bbbc;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CCRakNetSlidingWindow& operator=(CCRakNetSlidingWindow const&);
     CCRakNetSlidingWindow(CCRakNetSlidingWindow const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CCRakNetSlidingWindow();
 
-    MCAPI struct RakNet::uint24_t GetAndIncrementNextDatagramSequenceNumber();
+    MCAPI ::RakNet::uint24_t GetAndIncrementNextDatagramSequenceNumber();
 
     MCAPI uint64 GetBytesPerSecondLimitByCongestionControl() const;
 
     MCAPI uint GetMTU() const;
 
-    MCAPI struct RakNet::uint24_t GetNextDatagramSequenceNumber();
+    MCAPI ::RakNet::uint24_t GetNextDatagramSequenceNumber();
 
     MCAPI uint64 GetRTOForRetransmission(uchar timesSent) const;
 
@@ -41,28 +60,30 @@ public:
 
     MCAPI void Init(uint64 curTime, uint maxDatagramPayload);
 
+    MCAPI bool IsInSlowStart() const;
+
     MCAPI void OnAck(
-        uint64                  curTime,
-        uint64                  rtt,
-        bool                    hasBAndAS,
-        double                  _B,
-        double                  _AS,
-        double                  totalUserDataBytesAcked,
-        bool                    isContinuousSend,
-        struct RakNet::uint24_t sequenceNumber
+        uint64             curTime,
+        uint64             rtt,
+        bool               hasBAndAS,
+        double             _B,
+        double             _AS,
+        double             totalUserDataBytesAcked,
+        bool               isContinuousSend,
+        ::RakNet::uint24_t sequenceNumber
     );
 
     MCAPI bool OnGotPacket(
-        struct RakNet::uint24_t datagramSequenceNumber,
-        bool                    isContinuousSend,
-        uint64                  curTime,
-        uint                    sizeInBytes,
-        uint*                   skippedMessageCount
+        ::RakNet::uint24_t datagramSequenceNumber,
+        bool               isContinuousSend,
+        uint64             curTime,
+        uint               sizeInBytes,
+        uint*              skippedMessageCount
     );
 
-    MCAPI void OnGotPacketPair(struct RakNet::uint24_t datagramSequenceNumber, uint sizeInBytes, uint64 curTime);
+    MCAPI void OnGotPacketPair(::RakNet::uint24_t datagramSequenceNumber, uint sizeInBytes, uint64 curTime);
 
-    MCAPI void OnNAK(uint64 curTime, struct RakNet::uint24_t nakSequenceNumber);
+    MCAPI void OnNAK(uint64 curTime, ::RakNet::uint24_t nakSequenceNumber);
 
     MCAPI void OnResend(uint64 curTime, uint64 nextActionTime);
 
@@ -77,25 +98,25 @@ public:
     MCAPI void Update(uint64 curTime, bool hasDataToSendOrResend);
 
     MCAPI ~CCRakNetSlidingWindow();
-
-    MCAPI static bool LessThan(struct RakNet::uint24_t a, struct RakNet::uint24_t b);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool IsInSlowStart() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static bool LessThan(::RakNet::uint24_t a, ::RakNet::uint24_t b);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

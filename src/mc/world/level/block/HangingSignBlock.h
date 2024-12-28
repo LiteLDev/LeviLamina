@@ -4,18 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/SignBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
 // clang-format on
 
 class HangingSignBlock : public ::SignBlock {
@@ -26,82 +27,98 @@ public:
     HangingSignBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HangingSignBlock() = default;
+    // vIndex: 11
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
+    // vIndex: 57
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+    // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 151
+    virtual float getYRotationInDegrees(::Block const& block) const /*override*/;
 
-    // vIndex: 163
-    virtual float getYRotationInDegrees(class Block const& block) const;
+    // vIndex: 153
+    virtual ::ItemInstance _getItemInstance() const /*override*/;
 
-    // vIndex: 165
-    virtual class ItemInstance _getItemInstance() const;
-
-    MCAPI HangingSignBlock(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-
-    MCAPI static bool isDoubleChainHangingSign(class Block const& block);
-
-    MCAPI static bool isSideAttachedHangingSign(class Block const& block);
-
-    MCAPI static bool isVShapedHangingSign(class Block const& block);
-
+    // vIndex: 0
+    virtual ~HangingSignBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _canAttachTo(class BlockSource& region, class BlockPos attachPos, uchar attachFace, uchar ourFace) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool _isHangingSign(class Block const& block);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HangingSignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
+    MCAPI bool _canAttachTo(::BlockSource& region, ::BlockPos attachPos, uchar attachFace, uchar ourFace) const;
+    // NOLINTEND
 
-    MCAPI class ItemInstance _getItemInstance$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isHangingSign(::Block const& block);
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+    MCAPI static bool _isSideAttached(::Block const& block);
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI static bool isDoubleChainHangingSign(::Block const& block);
 
-    MCAPI bool checkIsPathable$(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
+    MCAPI static bool isSideAttachedHangingSign(::Block const& block);
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const& block, class IConstBlockSource const&, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
+    MCAPI static bool isVShapedHangingSign(::Block const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI float getYRotationInDegrees$(class Block const& block) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI float $getYRotationInDegrees(::Block const& block) const;
+
+    MCAPI ::ItemInstance $_getItemInstance() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

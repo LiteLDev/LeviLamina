@@ -11,9 +11,10 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 // clang-format on
 
 namespace CanyonFeatureUtils {
+// functions
 // NOLINTBEGIN
-MCAPI struct CanyonFeatureUtils::CanyonConfiguration const&
+MCAPI ::CanyonFeatureUtils::CanyonConfiguration const&
 getCurrentConfiguration(::CanyonFeatureUtils::TerrainGenVersion usedVersion);
 // NOLINTEND
 
-}; // namespace CanyonFeatureUtils
+} // namespace CanyonFeatureUtils

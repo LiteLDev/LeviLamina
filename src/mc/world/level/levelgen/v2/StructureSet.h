@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace br::worldgen { struct Structure; }
 namespace br::worldgen { struct StructurePlacement; }
 // clang-format on
@@ -20,24 +21,37 @@ public:
     // StructureSet inner types define
     struct Entry {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk32f414;
+        ::ll::UntypedStorage<4, 4>  mUnk7bbdf1;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Entry& operator=(Entry const&);
         Entry(Entry const&);
         Entry();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Entry();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkfaba15;
+    ::ll::UntypedStorage<8, 32> mUnk7eb7e1;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -46,13 +60,39 @@ public:
     StructureSet();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<struct br::worldgen::StructureSet> create(
-        std::shared_ptr<struct br::worldgen::Structure const> structure,
-        struct br::worldgen::StructurePlacement               placement
+    MCAPI StructureSet(
+        ::std::vector<::br::worldgen::StructureSet::Entry> entries,
+        ::br::worldgen::StructurePlacement                 placement
     );
 
+    MCAPI StructureSet(
+        ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
+        ::br::worldgen::StructurePlacement                           placement
+    );
+
+    MCAPI bool contains(::HashedString type) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
+    create(::std::shared_ptr<::br::worldgen::Structure const> structure, ::br::worldgen::StructurePlacement placement);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
+
+    MCAPI void* $ctor(
+        ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
+        ::br::worldgen::StructurePlacement                           placement
+    );
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

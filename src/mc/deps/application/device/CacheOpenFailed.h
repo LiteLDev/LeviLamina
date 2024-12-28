@@ -12,4 +12,4 @@ public:
     CacheOpenFailed();
 };
 
-}; // namespace Bedrock::DeviceIdErrorType
+} // namespace Bedrock::DeviceIdErrorType

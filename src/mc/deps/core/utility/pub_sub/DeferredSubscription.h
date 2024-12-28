@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/SubscriptionBase.h"
+
 namespace Bedrock::PubSub {
 
-class DeferredSubscription {
+class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {
 public:
     // prevent constructor by default
     DeferredSubscription& operator=(DeferredSubscription const&);
@@ -12,4 +15,4 @@ public:
     DeferredSubscription();
 };
 
-}; // namespace Bedrock::PubSub
+} // namespace Bedrock::PubSub

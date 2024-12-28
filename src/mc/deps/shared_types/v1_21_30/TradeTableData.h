@@ -1,0 +1,51 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+namespace SharedTypes::v1_21_30 {
+
+struct TradeTableData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk42a30f;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TradeTableData& operator=(TradeTableData const&);
+    TradeTableData(TradeTableData const&);
+    TradeTableData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~TradeTableData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersion const& VERSION();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+};
+
+} // namespace SharedTypes::v1_21_30

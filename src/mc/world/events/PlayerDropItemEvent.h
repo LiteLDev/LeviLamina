@@ -4,21 +4,27 @@
 
 struct PlayerDropItemEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk1ef927;
+    ::ll::UntypedStorage<8, 24> mUnk972fa8;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerDropItemEvent& operator=(PlayerDropItemEvent const&);
     PlayerDropItemEvent(PlayerDropItemEvent const&);
     PlayerDropItemEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~PlayerDropItemEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

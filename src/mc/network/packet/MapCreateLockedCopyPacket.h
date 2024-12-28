@@ -7,57 +7,86 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class MapCreateLockedCopyPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOriginalMapId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mNewMapId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&);
     MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MapCreateLockedCopyPacket();
+    // vIndex: 4
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
-
-    // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI MapCreateLockedCopyPacket();
-
-    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID originalMapId, struct ActorUniqueID newMapId);
-
-    MCAPI struct ActorUniqueID getNewMapId() const;
-
-    MCAPI struct ActorUniqueID getOriginalMapId() const;
-
+    // vIndex: 0
+    virtual ~MapCreateLockedCopyPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MapCreateLockedCopyPacket();
 
-    MCAPI void* ctor$(struct ActorUniqueID originalMapId, struct ActorUniqueID newMapId);
+    MCAPI MapCreateLockedCopyPacket(::ActorUniqueID originalMapId, ::ActorUniqueID newMapId);
 
-    MCAPI void* ctor$();
+    MCAPI ::ActorUniqueID getNewMapId() const;
 
-    MCAPI void dtor$();
+    MCAPI ::ActorUniqueID getOriginalMapId() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void* $ctor(::ActorUniqueID originalMapId, ::ActorUniqueID newMapId);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

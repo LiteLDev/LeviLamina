@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItemFunction;
 namespace Json { class Value; }
 // clang-format on
 
@@ -15,8 +16,8 @@ public:
     LootItemFunctions();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value object);
-
+    MCAPI static ::std::vector<::std::unique_ptr<::LootItemFunction>> deserialize(::Json::Value object);
     // NOLINTEND
 };

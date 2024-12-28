@@ -4,21 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockItem;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class HashedString;
+class IConstBlockSource;
+class Material;
+class Player;
+struct ActorBlockSyncMessage;
 // clang-format on
 
 class LightBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnkf43c78;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LightBlock& operator=(LightBlock const&);
@@ -26,111 +37,113 @@ public:
     LightBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LightBlock() = default;
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 71
+    virtual bool isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const /*override*/;
+
+    // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 82
+    virtual bool tryToPlace(
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Block const&                 block,
+        ::ActorBlockSyncMessage const* syncMsg
+    ) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
-
-    // vIndex: 77
-    virtual bool isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
-
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 88
-    virtual bool tryToPlace(
-        class BlockSource&                  region,
-        class BlockPos const&               pos,
-        class Block const&                  block,
-        struct ActorBlockSyncMessage const* syncMsg
-    ) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
+        /*override*/;
 
-    // vIndex: 103
-    virtual bool
-    canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 136
-    virtual class BlockLegacy& init();
-
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    MCAPI LightBlock(std::string const& nameId, int id, class Material const& material);
-
+    // vIndex: 0
+    virtual ~LightBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    LightBlock(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& nextLightLevel);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& nextLightLevel);
+    // NOLINTEND
 
-    MCAPI bool
-    addCollisionShapes$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
-
-    MCAPI bool canBeBuiltOver$(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar, ::BlockSupportType) const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
-
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
-
-    MCAPI class BlockLegacy& init$();
-
-    MCAPI bool isAuxValueRelevantForPicking$() const;
-
-    MCAPI bool isFilteredOut$(::BlockRenderLayer heldItemRenderLayer) const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool tryToPlace$(
-        class BlockSource&                  region,
-        class BlockPos const&               pos,
-        class Block const&                  block,
-        struct ActorBlockSyncMessage const* syncMsg
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
 
+    MCAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $tryToPlace(
+        ::BlockSource&                 region,
+        ::BlockPos const&              pos,
+        ::Block const&                 block,
+        ::ActorBlockSyncMessage const* syncMsg
+    ) const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

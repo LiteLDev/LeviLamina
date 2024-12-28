@@ -3,23 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/BucketFillType.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Container;
+class InteractionResult;
+class ItemDescriptor;
+class ItemInstance;
+class ItemStack;
+class Level;
+class Player;
+class Vec3;
+struct Brightness;
 // clang-format on
 
 class BucketItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2> mUnk6e435a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BucketItem& operator=(BucketItem const&);
@@ -27,156 +41,158 @@ public:
     BucketItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BucketItem() = default;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 11
-    virtual bool isBucket() const;
-
-    // vIndex: 44
-    virtual bool isDestructive(int auxValue) const;
-
-    // vIndex: 45
-    virtual bool isLiquidClipItem() const;
-
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
-
-    // vIndex: 59
-    virtual bool uniqueAuxValues() const;
-
-    // vIndex: 71
-    virtual bool canUseOnSimTick() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
-
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 91
+    virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
     // vIndex: 75
-    virtual ::ItemUseMethod
-    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+    virtual bool canUseOnSimTick() const /*override*/;
 
     // vIndex: 76
-    virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const* userData) const;
+    // vIndex: 80
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
+
+    // vIndex: 79
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
+
+    // vIndex: 63
+    virtual bool uniqueAuxValues() const /*override*/;
+
+    // vIndex: 12
+    virtual bool isBucket() const /*override*/;
+
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
+
+    // vIndex: 48
+    virtual bool isLiquidClipItem() const /*override*/;
 
     // vIndex: 87
-    virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 95
-    virtual bool validFishInteraction(int) const;
+    // vIndex: 99
+    virtual bool validFishInteraction(int) const /*override*/;
 
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
+    // vIndex: 112
+    virtual ::Brightness getLightEmission(int) const /*override*/;
 
-    // vIndex: 108
-    virtual struct Brightness getLightEmission(int) const;
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 113
-    virtual std::string getAuxValuesDescription() const;
+    // vIndex: 47
+    virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
-    MCAPI BucketItem(std::string const& name, int id, ::BucketFillType type);
-
+    // vIndex: 0
+    virtual ~BucketItem() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addBucketEntitySaveData(class Actor& entity, class ItemStack& instance) const;
+    MCAPI BucketItem(::std::string const& name, int id, ::BucketFillType type);
 
-    MCAPI bool readBucketEntitySaveData(
-        class BlockSource&        region,
-        class Actor*              placer,
-        class BlockPos            pos,
-        class ItemInstance const& instance
-    ) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI bool _canEmptyBucketIntoBlock(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Block const&    extraBlock
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Block const&    extraBlock
     ) const;
 
     MCAPI bool _emptyBucket(
-        class BlockSource&     region,
-        class Block const&     contents,
-        class BlockPos const&  pos,
-        class Actor*           placer,
-        class ItemStack const& instance,
-        uchar                  face
+        ::BlockSource&     region,
+        ::Block const&     contents,
+        ::BlockPos const&  pos,
+        ::Actor*           placer,
+        ::ItemStack const& instance,
+        uchar              face
     ) const;
 
-    MCAPI void _removeBubbleColumn(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
 
-    MCAPI bool _takeLiquid(class ItemStack& item, class Actor& entity, class BlockPos const& pos) const;
+    MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
 
-    MCAPI bool _takePowderSnow(class ItemStack& item, class Actor& actor, class BlockPos const& pos) const;
+    MCAPI ::BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
 
-    MCAPI class BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(std::string const& name, int id, ::BucketFillType type);
-
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
-
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const* userData) const;
-
-    MCAPI bool canUseOnSimTick$() const;
+    MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
     MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    readBucketEntitySaveData(::BlockSource& region, ::Actor* placer, ::BlockPos pos, ::ItemInstance const& instance)
+        const;
+    // NOLINTEND
 
-    MCAPI std::string getAuxValuesDescription$() const;
-
-    MCAPI struct Brightness getLightEmission$(int) const;
-
-    MCAPI uchar getMaxStackSize$(class ItemDescriptor const&) const;
-
-    MCAPI bool isBucket$() const;
-
-    MCAPI bool isDestructive$(int auxValue) const;
-
-    MCAPI bool isLiquidClipItem$() const;
-
-    MCAPI bool isValidAuxValue$(int auxValue) const;
-
-    MCAPI void releaseUsing$(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
-
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
-
-    MCAPI bool uniqueAuxValues$() const;
-
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
-
-    MCAPI ::ItemUseMethod
-    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
-
-    MCAPI bool validFishInteraction$(int) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& DRINK_DURATION();
 
-    MCAPI static std::vector<std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
+    MCAPI static ::std::vector<::std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::BucketFillType type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+
+    MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
+
+    MCAPI bool $canUseOnSimTick() const;
+
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
+    MCAPI bool $uniqueAuxValues() const;
+
+    MCAPI bool $isBucket() const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI bool $isLiquidClipItem() const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+
+    MCAPI bool $validFishInteraction(int) const;
+
+    MCAPI ::Brightness $getLightEmission(int) const;
+
+    MCAPI bool $isValidAuxValue(int auxValue) const;
+
+    MCAPI bool $isDestructive(int auxValue) const;
+
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

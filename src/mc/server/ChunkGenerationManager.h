@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetworkChunkPublisherUpdatePacket;
+class NetworkIdentifier;
+// clang-format on
+
 class ChunkGenerationManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd9b47e;
+    ::ll::UntypedStorage<8, 64> mUnk6f57f5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChunkGenerationManager& operator=(ChunkGenerationManager const&);
@@ -13,21 +26,14 @@ public:
     ChunkGenerationManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void addServerChunksToPacket(
-        class NetworkIdentifier const&           player,
-        ::SubClientId                            clientId,
-        class NetworkChunkPublisherUpdatePacket& updatePacket
+        ::NetworkIdentifier const&           player,
+        ::SubClientId                        clientId,
+        ::NetworkChunkPublisherUpdatePacket& updatePacket
     );
 
-    MCAPI ~ChunkGenerationManager();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
     // NOLINTEND
 };

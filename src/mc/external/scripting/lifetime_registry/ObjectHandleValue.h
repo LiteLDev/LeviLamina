@@ -4,6 +4,6 @@
 
 namespace Scripting {
 
-enum class ObjectHandleValue {};
+enum class ObjectHandleValue : uint64 {};
 
-};
+}

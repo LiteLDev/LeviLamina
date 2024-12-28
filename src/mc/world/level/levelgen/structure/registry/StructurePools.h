@@ -16,7 +16,7 @@ class StructureManager;
 
 namespace br::worldgen {
 
-class StructurePools {
+struct StructurePools {
 public:
     // prevent constructor by default
     StructurePools& operator=(StructurePools const&);
@@ -24,16 +24,16 @@ public:
     StructurePools();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void bootstrap(
-        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
-        class FeatureRegistry&                              featureRegistry,
-        class JigsawStructureRegistry&                      jigsawStructureRegistry,
-        class BaseGameVersion const&                        baseGameVersion,
-        class Experiments const&                            experiments
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+        ::FeatureRegistry&                                featureRegistry,
+        ::JigsawStructureRegistry&                        jigsawStructureRegistry,
+        ::BaseGameVersion const&                          baseGameVersion,
+        ::Experiments const&                              experiments
     );
-
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

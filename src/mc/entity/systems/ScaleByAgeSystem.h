@@ -5,22 +5,36 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class AgeableComponent;
+class BaseGameVersion;
+class EntitySystems;
+class ScaleByAgeComponent;
+class StrictEntityContext;
+struct ActorDataBoundingBoxComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorTickedComponent;
+struct ShouldUpdateBoundingBoxRequestComponent;
+// clang-format on
 
 namespace ScaleByAgeSystem {
+// functions
 // NOLINTBEGIN
 MCAPI void _tick(
-    entt::type_list<struct Include<class FlagComponent<struct ActorTickedFlag>>>,
-    class StrictEntityContext const&                                     entity,
-    class AgeableComponent const&                                        ageableComponent,
-    struct ActorDataBoundingBoxComponent&                                actorDataBoundingBox,
-    struct ActorDataDirtyFlagsComponent&                                 actorDataDirtyFlags,
-    class ActorOwnerComponent&                                           actorOwnerComponent,
-    class ScaleByAgeComponent&                                           scaleByAgeComponent,
-    class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent> mod
+    ::entt::type_list<::Include<::ActorTickedComponent>>,
+    ::StrictEntityContext const&                                entity,
+    ::AgeableComponent const&                                   ageableComponent,
+    ::ActorDataBoundingBoxComponent&                            actorDataBoundingBox,
+    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
+    ::ActorOwnerComponent&                                      actorOwnerComponent,
+    ::ScaleByAgeComponent&                                      scaleByAgeComponent,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> mod
 );
 
-MCAPI void registerSystems(class EntitySystems& systemRegistry, class BaseGameVersion const& baseGameVersion);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
-}; // namespace ScaleByAgeSystem
+} // namespace ScaleByAgeSystem

@@ -11,15 +11,15 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 // clang-format on
 
 namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U3();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
 
-MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U4();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U4();
 
-MCAPI auto conversionTable() -> ::Direction::Type const (&)[];
+MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable();
 
-MCAPI auto furnaceConversionTable() -> ::Direction::Type const (&)[];
+MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
 // NOLINTEND
 
-}; // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection
+} // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection

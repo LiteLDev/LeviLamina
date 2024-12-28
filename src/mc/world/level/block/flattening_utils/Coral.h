@@ -12,12 +12,13 @@ namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
 namespace FlatteningUtils::Coral {
+// functions
 // NOLINTBEGIN
-MCAPI struct FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
+MCAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
 
-MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
+MCAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
 // NOLINTEND
 
-}; // namespace FlatteningUtils::Coral
+} // namespace FlatteningUtils::Coral

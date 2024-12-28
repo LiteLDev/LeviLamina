@@ -13,8 +13,8 @@ public:
     MobSpawnInfo();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static int categoryID(::ActorType category);
-
     // NOLINTEND
 };

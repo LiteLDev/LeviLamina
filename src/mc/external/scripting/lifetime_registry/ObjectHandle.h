@@ -14,34 +14,40 @@ namespace Scripting {
 
 struct ObjectHandle {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk94fcd0;
+    ::ll::UntypedStorage<1, 1> mUnka0f03d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ObjectHandle& operator=(ObjectHandle const&);
     ObjectHandle(ObjectHandle const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ObjectHandle();
 
     MCAPI explicit ObjectHandle(uint64 combined);
 
-    MCAPI ObjectHandle(::Scripting::ObjectHandleValue value_, struct Scripting::ContextId contextId_);
+    MCAPI ObjectHandle(::Scripting::ObjectHandleValue value_, ::Scripting::ContextId contextId_);
 
     MCAPI uint64 combine() const;
 
     MCAPI bool empty() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(uint64 combined);
+    MCAPI void* $ctor(uint64 combined);
 
-    MCAPI void* ctor$(::Scripting::ObjectHandleValue value_, struct Scripting::ContextId contextId_);
-
+    MCAPI void* $ctor(::Scripting::ObjectHandleValue value_, ::Scripting::ContextId contextId_);
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

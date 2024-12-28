@@ -20,10 +20,10 @@ public:
     ScriptSeat();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::SeatDescription> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace RemovedVanillaBlockTypeIds {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& LavaCauldron();
+MCAPI ::HashedString const& LavaCauldron();
 // NOLINTEND
 
-}; // namespace RemovedVanillaBlockTypeIds
+} // namespace RemovedVanillaBlockTypeIds

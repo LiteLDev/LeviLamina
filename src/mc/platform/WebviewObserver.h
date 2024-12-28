@@ -2,7 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WebviewObserver {
+// auto generated inclusion list
+#include "mc/deps/core/utility/Observer.h"
+
+// auto generated forward declare list
+// clang-format off
+struct WebviewDownloadInfo;
+struct WebviewError;
+namespace Core { class SingleThreadedLock; }
+// clang-format on
+
+class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::SingleThreadedLock> {
 public:
     // prevent constructor by default
     WebviewObserver& operator=(WebviewObserver const&);
@@ -10,12 +20,10 @@ public:
     WebviewObserver();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebviewObserver();
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
+    virtual ~WebviewObserver() /*override*/;
 
     // vIndex: 2
     virtual void onLoadingBegin();
@@ -24,52 +32,52 @@ public:
     virtual void onLoadingEnd();
 
     // vIndex: 4
-    virtual void onError(struct WebviewError const&);
+    virtual void onError(::WebviewError const&);
 
     // vIndex: 5
     virtual void onWebviewChanged();
 
     // vIndex: 6
-    virtual void onDownloadBegin(struct WebviewDownloadInfo const&);
+    virtual void onDownloadBegin(::WebviewDownloadInfo const&);
 
     // vIndex: 7
-    virtual void onDownloadUpdate(struct WebviewDownloadInfo const&);
+    virtual void onDownloadUpdate(::WebviewDownloadInfo const&);
 
     // vIndex: 8
-    virtual void onDownloadComplete(struct WebviewDownloadInfo const&);
+    virtual void onDownloadComplete(::WebviewDownloadInfo const&);
 
     // vIndex: 9
-    virtual void onDownloadCanceled(struct WebviewDownloadInfo const&);
+    virtual void onDownloadCanceled(::WebviewDownloadInfo const&);
 
     // vIndex: 10
-    virtual void onMessageRecieved(std::string const&);
-
+    virtual void onMessageRecieved(::std::string const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onLoadingBegin();
 
-    MCAPI void onDownloadBegin$(struct WebviewDownloadInfo const&);
+    MCAPI void $onLoadingEnd();
 
-    MCAPI void onDownloadCanceled$(struct WebviewDownloadInfo const&);
+    MCAPI void $onError(::WebviewError const&);
 
-    MCAPI void onDownloadComplete$(struct WebviewDownloadInfo const&);
+    MCAPI void $onWebviewChanged();
 
-    MCAPI void onDownloadUpdate$(struct WebviewDownloadInfo const&);
+    MCAPI void $onDownloadBegin(::WebviewDownloadInfo const&);
 
-    MCAPI void onError$(struct WebviewError const&);
+    MCAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    MCAPI void onLoadingBegin$();
+    MCAPI void $onDownloadComplete(::WebviewDownloadInfo const&);
 
-    MCAPI void onLoadingEnd$();
+    MCAPI void $onDownloadCanceled(::WebviewDownloadInfo const&);
 
-    MCAPI void onMessageRecieved$(std::string const&);
-
-    MCAPI void onWebviewChanged$();
-
+    MCAPI void $onMessageRecieved(::std::string const&);
     // NOLINTEND
 };

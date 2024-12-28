@@ -13,40 +13,45 @@ public:
     IDataInput();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDataInput() = default;
+    virtual ~IDataInput();
 
     // vIndex: 1
-    virtual class Bedrock::Result<std::string> readStringResult() = 0;
+    virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
 
     // vIndex: 2
-    virtual class Bedrock::Result<std::string> readLongStringResult() = 0;
+    virtual ::Bedrock::Result<::std::string> readLongStringResult() = 0;
 
     // vIndex: 3
-    virtual class Bedrock::Result<float> readFloatResult() = 0;
+    virtual ::Bedrock::Result<float> readFloatResult() = 0;
 
     // vIndex: 4
-    virtual class Bedrock::Result<double> readDoubleResult() = 0;
+    virtual ::Bedrock::Result<double> readDoubleResult() = 0;
 
     // vIndex: 5
-    virtual class Bedrock::Result<uchar> readByteResult() = 0;
+    virtual ::Bedrock::Result<uchar> readByteResult() = 0;
 
     // vIndex: 6
-    virtual class Bedrock::Result<short> readShortResult() = 0;
+    virtual ::Bedrock::Result<short> readShortResult() = 0;
 
     // vIndex: 7
-    virtual class Bedrock::Result<int> readIntResult() = 0;
+    virtual ::Bedrock::Result<int> readIntResult() = 0;
 
     // vIndex: 8
-    virtual class Bedrock::Result<int64> readLongLongResult() = 0;
+    virtual ::Bedrock::Result<int64> readLongLongResult() = 0;
 
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) = 0;
+    virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
 
     // vIndex: 10
     virtual uint64 numBytesLeft() const = 0;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI uchar readByte();
 
     MCAPI bool readBytes(void* data, uint64 bytes);
@@ -55,18 +60,28 @@ public:
 
     MCAPI int64 readLongLong();
 
-    MCAPI std::string readLongString();
+    MCAPI ::std::string readLongString();
 
     MCAPI short readShort();
 
-    MCAPI std::string readString();
+    MCAPI ::std::string readString();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

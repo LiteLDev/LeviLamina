@@ -4,21 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class HitResult;
+class IConstBlockSource;
+class ItemInstance;
+class Player;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class HopperBlock : public ::ActorBlock {
+class HopperBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     HopperBlock& operator=(HopperBlock const&);
@@ -26,146 +36,177 @@ public:
     HopperBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HopperBlock() = default;
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 4
-    virtual class HitResult
-    clip(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 29
+    virtual bool isContainerBlock() const /*override*/;
 
     // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
     // vIndex: 8
     virtual void addAABBs(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
-    ) const;
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
+
+    // vIndex: 4
+    virtual ::HitResult
+    clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 31
-    virtual bool isContainerBlock() const;
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
-    // vIndex: 66
-    virtual void onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 73
-    virtual ::BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+    // vIndex: 141
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
 
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
-
-    // vIndex: 153
-    virtual bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
-
-    MCAPI HopperBlock(std::string const& nameId, int id);
-
-    MCAPI static class BlockPos getAttachedOffset(uchar facing);
-
+    // vIndex: 0
+    virtual ~HopperBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class AABB _getSpoutAABB(class Block const& block) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HopperBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
 
-    MCAPI void addAABBs$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
+    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BlockPos getAttachedOffset(uchar facing);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+
+    MCAPI bool $use(::Player&, ::BlockPos const&, uchar) const;
+
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI bool $isContainerBlock() const;
+
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool
-    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const;
+
+    MCAPI ::HitResult
+    $clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI bool allowStateMismatchOnPlacement$(class Block const& clientTarget, class Block const& serverTarget) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
-
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
-
-    MCAPI class HitResult
-    clip$(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI ::BlockProperty getRedstoneProperty$(class BlockSource&, class BlockPos const&) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool isContainerBlock$() const;
+    MCAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
-
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
-
-    MCAPI static class BaseGameVersion const& HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

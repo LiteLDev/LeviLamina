@@ -7,11 +7,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class BoundingBox;
+class ChunkPos;
+class IBlockWorldGenAPI;
+class Random;
+class Vec3;
 namespace CaveFeatureUtils { struct CarverConfiguration; }
 namespace CaveFeatureUtils { struct CarvingParameters; }
 // clang-format on
 
 class UnderwaterCaveFeature : public ::CaveFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkd4ebd0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&);
@@ -19,43 +31,56 @@ public:
     UnderwaterCaveFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UnderwaterCaveFeature() = default;
-
-    // vIndex: 5
+    // vIndex: 6
     virtual bool carveEllipsoidVolume(
-        class IBlockWorldGenAPI&                            target,
-        struct CaveFeatureUtils::CarverConfiguration const& configuration,
-        class Random&                                       random,
-        class ChunkPos const&                               pos,
-        class Vec3 const&                                   startPos,
-        class BoundingBox const&                            volume,
-        float                                               rad,
-        float                                               yRad,
-        struct CaveFeatureUtils::CarvingParameters const&   carveValues
-    ) const;
+        ::IBlockWorldGenAPI&                           target,
+        ::CaveFeatureUtils::CarverConfiguration const& configuration,
+        ::Random&                                      random,
+        ::ChunkPos const&                              pos,
+        ::Vec3 const&                                  startPos,
+        ::BoundingBox const&                           volume,
+        float                                          rad,
+        float                                          yRad,
+        ::CaveFeatureUtils::CarvingParameters const&   carveValues
+    ) const /*override*/;
 
-    MCAPI static bool isDiggable(class Block const& block);
-
+    // vIndex: 0
+    virtual ~UnderwaterCaveFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool isDiggable(::Block const& block);
+    // NOLINTEND
 
-    MCAPI bool carveEllipsoidVolume$(
-        class IBlockWorldGenAPI&                            target,
-        struct CaveFeatureUtils::CarverConfiguration const& configuration,
-        class Random&                                       random,
-        class ChunkPos const&                               pos,
-        class Vec3 const&                                   startPos,
-        class BoundingBox const&                            volume,
-        float                                               rad,
-        float                                               yRad,
-        struct CaveFeatureUtils::CarvingParameters const&   carveValues
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $carveEllipsoidVolume(
+        ::IBlockWorldGenAPI&                           target,
+        ::CaveFeatureUtils::CarverConfiguration const& configuration,
+        ::Random&                                      random,
+        ::ChunkPos const&                              pos,
+        ::Vec3 const&                                  startPos,
+        ::BoundingBox const&                           volume,
+        float                                          rad,
+        float                                          yRad,
+        ::CaveFeatureUtils::CarvingParameters const&   carveValues
     ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

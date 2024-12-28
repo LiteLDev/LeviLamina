@@ -5,46 +5,77 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BaseBlockLocationIterator.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundBlockVolume;
+// clang-format on
+
 class CompoundBlockVolumeIterator : public ::BaseBlockLocationIterator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk2ba183;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&);
-    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&);
     CompoundBlockVolumeIterator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompoundBlockVolumeIterator() = default;
+    virtual ~CompoundBlockVolumeIterator() /*override*/;
 
     // vIndex: 1
-    virtual class BaseBlockLocationIterator& operator++();
+    virtual ::BaseBlockLocationIterator& operator++() /*override*/;
 
     // vIndex: 2
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 3
-    virtual void _begin();
+    virtual void _begin() /*override*/;
 
     // vIndex: 4
-    virtual void _end();
-
-    MCAPI CompoundBlockVolumeIterator(class CompoundBlockVolume const& vol, bool begin);
-
+    virtual void _end() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolumeIterator const& other);
 
-    MCAPI void* ctor$(class CompoundBlockVolume const& vol, bool begin);
+    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
+    // NOLINTEND
 
-    MCAPI void _begin$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CompoundBlockVolumeIterator const& other);
 
-    MCAPI void _end$();
+    MCAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+
+    MCAPI void $_begin();
+
+    MCAPI void $_end();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

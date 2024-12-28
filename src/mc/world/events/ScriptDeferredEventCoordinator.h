@@ -2,13 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/EventCoordinatorNoTracking.h"
+
 // auto generated forward declare list
 // clang-format off
+class ScriptDeferredEventListener;
 namespace Json { class Value; }
 namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
-class ScriptDeferredEventCoordinator {
+class ScriptDeferredEventCoordinator : public ::EventCoordinatorNoTracking<::ScriptDeferredEventListener> {
 public:
     // ScriptDeferredEventCoordinator inner types declare
     // clang-format off
@@ -18,22 +22,28 @@ public:
     // ScriptDeferredEventCoordinator inner types define
     struct DocumentableEventExecution {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkc51bd3;
+        ::ll::UntypedStorage<8, 64> mUnkce87df;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         DocumentableEventExecution& operator=(DocumentableEventExecution const&);
         DocumentableEventExecution(DocumentableEventExecution const&);
         DocumentableEventExecution();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~DocumentableEventExecution();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -44,22 +54,20 @@ public:
     ScriptDeferredEventCoordinator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDeferredEventCoordinator() = default;
-
-    MCAPI void sendAllDeferredEvents();
-
-    MCAPI static void generateOrderDocumentationForVersion(
-        struct Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        class Json::Value&                        eventOrderArray
-    );
-
+    virtual ~ScriptDeferredEventCoordinator() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _sendFlushBlockCustomComponentAfterEvents();
+
+    MCAPI bool _sendFlushEditorDataStoreAfterEvents();
+
+    MCAPI bool _sendFlushEditorExtensionContextAfterEvents();
 
     MCAPI bool _sendFlushItemCustomComponentAfterEvents();
 
@@ -67,15 +75,34 @@ public:
 
     MCAPI bool _sendFlushWorldAfterEvents();
 
+    MCAPI void sendAllDeferredEvents();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+    // NOLINTEND
 
-    MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

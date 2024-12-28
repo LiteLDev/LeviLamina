@@ -4,16 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/item/ArmorSlot.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+class Mob;
+class SimpleContainer;
+// clang-format on
 
 namespace DamageAbsorptionItemComponentUtils {
+// functions
 // NOLINTBEGIN
-MCAPI bool canEquipmentAbsorbDamage(class Mob const& mob, ::ActorDamageCause cause);
+MCAPI bool canEquipmentAbsorbDamage(::Mob const& mob, ::ActorDamageCause cause);
 
-MCAPI bool tryAbsorbDamageWithEquipment(class Mob& mob, class ActorDamageSource const& source, float damage);
+MCAPI bool tryAbsorbDamageWithEquipment(::Mob& mob, ::ActorDamageSource const& source, float damage);
 
-MCAPI bool
-tryAbsorbDamageWithItemInSlot(class Mob& mob, ::ArmorSlot slot, class ActorDamageSource const& source, float damage);
+MCAPI bool tryAbsorbDamageWithItemInSlot(
+    ::Mob&                     mob,
+    ::SimpleContainer const&   armorContainer,
+    int                        slot,
+    ::ActorDamageSource const& source,
+    float                      damage
+);
 // NOLINTEND
 
-}; // namespace DamageAbsorptionItemComponentUtils
+} // namespace DamageAbsorptionItemComponentUtils

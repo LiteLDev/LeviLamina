@@ -7,10 +7,27 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
 
 class FreezeOnHitSubcomponent : public ::OnHitSubcomponent {
+public:
+    // FreezeOnHitSubcomponent inner types define
+    enum class Shape : uchar {
+        Cube   = 0,
+        Sphere = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd762c3;
+    ::ll::UntypedStorage<4, 4> mUnk86fc2a;
+    ::ll::UntypedStorage<1, 1> mUnk52c775;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FreezeOnHitSubcomponent& operator=(FreezeOnHitSubcomponent const&);
@@ -18,36 +35,45 @@ public:
     FreezeOnHitSubcomponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FreezeOnHitSubcomponent() = default;
-
     // vIndex: 1
-    virtual void readfromJSON(class Json::Value& component, class SemVersion const&);
+    virtual void readfromJSON(::Json::Value& component) /*override*/;
 
     // vIndex: 2
-    virtual void writetoJSON(class Json::Value& component) const;
+    virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
     // vIndex: 3
-    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
+    virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName();
+    virtual char const* getName() /*override*/;
 
+    // vIndex: 0
+    virtual ~FreezeOnHitSubcomponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void doOnHitEffect$(class Actor& owner, class ProjectileComponent& component);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $readfromJSON(::Json::Value& component);
 
-    MCAPI char const* getName$();
+    MCAPI void $writetoJSON(::Json::Value& component) const;
 
-    MCAPI void readfromJSON$(class Json::Value& component, class SemVersion const&);
+    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI void writetoJSON$(class Json::Value& component) const;
+    MCAPI char const* $getName();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

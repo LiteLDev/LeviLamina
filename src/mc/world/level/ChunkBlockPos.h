@@ -2,7 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ChunkLocalHeight;
+class Pos;
+// clang-format on
+
 class ChunkBlockPos {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, uchar>              x;
+    ::ll::TypedStorage<1, 1, uchar>              z;
+    ::ll::TypedStorage<2, 2, ::ChunkLocalHeight> y;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChunkBlockPos& operator=(ChunkBlockPos const&);
@@ -10,25 +25,28 @@ public:
     ChunkBlockPos();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ChunkBlockPos(class BlockPos const& pos, short minDimensionHeight);
+    MCAPI ChunkBlockPos(::BlockPos const& pos, short minDimensionHeight);
 
-    MCAPI ChunkBlockPos(uchar _x, class ChunkLocalHeight _y, uchar _z);
+    MCAPI ChunkBlockPos(uchar _x, ::ChunkLocalHeight _y, uchar _z);
 
-    MCAPI class Pos toPos() const;
-
-    MCAPI static class ChunkBlockPos from2D(uchar x, uchar z);
-
-    MCAPI static class ChunkBlockPos fromLegacyIndex(ushort idx);
-
+    MCAPI ::Pos toPos() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(uchar _x, class ChunkLocalHeight _y, uchar _z);
+    MCAPI static ::ChunkBlockPos from2D(uchar x, uchar z);
 
-    MCAPI void* ctor$(class BlockPos const& pos, short minDimensionHeight);
+    MCAPI static ::ChunkBlockPos fromLegacyIndex(ushort idx);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos, short minDimensionHeight);
+
+    MCAPI void* $ctor(uchar _x, ::ChunkLocalHeight _y, uchar _z);
     // NOLINTEND
 };

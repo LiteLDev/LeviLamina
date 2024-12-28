@@ -9,27 +9,30 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockAreaSize {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk4c4b8d;
+    ::ll::UntypedStorage<4, 4> mUnkfe0878;
+    ::ll::UntypedStorage<4, 4> mUnkb31ff1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockAreaSize& operator=(ScriptBlockAreaSize const&);
     ScriptBlockAreaSize(ScriptBlockAreaSize const&);
     ScriptBlockAreaSize();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockAreaSize(float x, float y, float z);
-
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const& other) const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
-
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptBlockAreaSize const& other) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(float x, float y, float z);
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

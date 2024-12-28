@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct InternalSystemInfo {
+// auto generated inclusion list
+#include "mc/deps/ecs/systems/SystemInfo.h"
+
+struct InternalSystemInfo : public ::SystemInfo {
 public:
     // prevent constructor by default
     InternalSystemInfo& operator=(InternalSystemInfo const&);
@@ -10,19 +13,14 @@ public:
     InternalSystemInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI InternalSystemInfo(struct InternalSystemInfo&&);
-
     MCAPI ~InternalSystemInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct InternalSystemInfo&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

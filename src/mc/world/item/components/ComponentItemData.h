@@ -8,8 +8,9 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ComponentItemData {
+// functions
 // NOLINTBEGIN
-MCAPI void bindTypes(struct cereal::ReflectionCtx& ctx);
+MCAPI void bindTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}; // namespace ComponentItemData
+} // namespace ComponentItemData

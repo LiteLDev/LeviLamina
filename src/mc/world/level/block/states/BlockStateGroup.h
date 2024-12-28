@@ -4,41 +4,62 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockLegacy;
+class BlockState;
+class BlockStateMeta;
+struct BlockStateDefinition;
 namespace Json { class Value; }
 // clang-format on
 
 class BlockStateGroup {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk29d861;
+    ::ll::UntypedStorage<8, 128> mUnkbb2a76;
+    ::ll::UntypedStorage<8, 128> mUnk4e0576;
+    ::ll::UntypedStorage<8, 16>  mUnkf888c3;
+    ::ll::UntypedStorage<8, 16>  mUnk4f96a3;
+    ::ll::UntypedStorage<8, 8>   mUnk5c1e3c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockStateGroup& operator=(BlockStateGroup const&);
     BlockStateGroup(BlockStateGroup const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockStateGroup();
 
-    MCAPI class BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
+    MCAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
-    MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const& name) const;
+    MCAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
 
-    MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const& def);
+    MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
-    MCAPI void registerExistingBlockState(class BlockState const& state);
+    MCAPI void registerExistingBlockState(::BlockState const& state);
 
-    MCAPI static bool loadBlockStateFromJson(
-        struct BlockStateDefinition& blockState,
-        std::string const&           name,
-        class Json::Value const&     root
-    );
-
+    MCAPI void registerToBlock(::BlockLegacy& block);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static bool
+    loadBlockStateFromJson(::BlockStateDefinition& blockState, ::std::string const& name, ::Json::Value const& root);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_ENUM_SIZE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

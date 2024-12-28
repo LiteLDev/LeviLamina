@@ -18,55 +18,61 @@ namespace Social::Events {
 
 class AchievementEventing {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd1617b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     AchievementEventing& operator=(AchievementEventing const&);
     AchievementEventing(AchievementEventing const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI AchievementEventing();
 
-    MCAPI void AwardAchievement(class Player& player, ::MinecraftEventing::AchievementIds achievementId);
+    MCAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
-    MCAPI void BlockBroken(
-        class Player const& player,
-        class Block const&  destroyedBlock,
-        int                 method,
-        int                 variantData,
-        ushort              auxType
-    );
+    MCAPI void
+    BlockBroken(::Player const& player, ::Block const& destroyedBlock, int method, int variantData, ushort auxType);
 
-    MCAPI void CaravanChanged(class Mob& mob, int caravanSize);
+    MCAPI void CaravanChanged(::Mob& mob, int caravanSize);
 
-    MCAPI void ItemUsed(class Player const& player, class ItemDescriptor const& item, uint useMethod);
+    MCAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
 
-    MCAPI void JukeboxUsed(class Player const& player, class ItemDescriptor const& disc);
+    MCAPI void JukeboxUsed(::Player const& player, ::ItemDescriptor const& disc);
 
-    MCAPI void MobEffectChanged(class Player const& player, class MobEffectInstance const& effectInstance, int change);
+    MCAPI void MobEffectChanged(::Player const& player, ::MobEffectInstance const& effectInstance, int change);
 
-    MCAPI void PlayerBounced(class Player const& player, class Block const& block, int bounceHeight, int auxType);
+    MCAPI void PlayerBounced(::Player const& player, ::Block const& block, int bounceHeight, int auxType);
 
-    MCAPI void PlayerTeleported(class Player& player, float metersTravelled, int cause, int sourceType);
+    MCAPI void PlayerTeleported(::Player& player, float metersTravelled, int cause, int sourceType);
 
-    MCAPI void PlayerTravelled(
-        class Player const& player,
-        float               metersTravelledSinceLastEvent,
-        int                 travelMethodType,
-        int                 newBiome
-    );
+    MCAPI void
+    PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
 
     MCAPI ~AchievementEventing();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::unordered_map<::std::string, ::std::pair<short, short>>& mLegacyIdMap();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Social::Events
+} // namespace Social::Events

@@ -10,26 +10,35 @@ public:
     FileAccessTransforms();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileAccessTransforms() = default;
+    virtual ~FileAccessTransforms();
 
     // vIndex: 1
-    virtual bool readTransform(std::vector<uchar>& stream) const;
+    virtual bool readTransform(::std::vector<uchar>& stream) const;
 
     // vIndex: 2
-    virtual bool writeTransform(std::vector<uchar>& stream) const;
-
+    virtual bool writeTransform(::std::vector<uchar>& stream) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool readTransform$(std::vector<uchar>& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $readTransform(::std::vector<uchar>& stream) const;
 
-    MCAPI bool writeTransform$(std::vector<uchar>& stream) const;
+    MCAPI bool $writeTransform(::std::vector<uchar>& stream) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

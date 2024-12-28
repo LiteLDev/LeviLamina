@@ -3,23 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CopperType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class BlockPos;
+class BlockSource;
+class CopperBehavior;
+class HashedString;
+class Material;
+class Player;
+class Random;
 // clang-format on
 
 class CopperBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 96> mUnk485520;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CopperBlock& operator=(CopperBlock const&);
@@ -27,74 +31,93 @@ public:
     CopperBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CopperBlock();
+    // vIndex: 27
+    virtual ::CopperBehavior const* tryGetCopperBehavior() const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 18
-    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
+    virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 27
-    virtual class CopperBehavior const* tryGetCopperBehavior() const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI CopperBlock(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        bool                      hasTransparency
-    );
-
-    MCAPI CopperBlock(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant,
-        bool                      hasTransparency
-    );
-
+    // vIndex: 0
+    virtual ~CopperBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant,
-        bool                      hasTransparency
+    MCAPI CopperBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        bool                  hasTransparency
     );
 
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        bool                      hasTransparency
+    MCAPI CopperBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant,
+        bool                  hasTransparency
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        bool                  hasTransparency
     );
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant,
+        bool                  hasTransparency
+    );
+    // NOLINTEND
 
-    MCAPI void onLightningHit$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCAPI class CopperBehavior const* tryGetCopperBehavior$() const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
+    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -12,4 +12,4 @@ public:
     GeneratorType();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

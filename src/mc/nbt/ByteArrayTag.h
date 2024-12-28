@@ -6,7 +6,23 @@
 #include "mc/nbt/Tag.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class IDataInput;
+class IDataOutput;
+// clang-format on
+
 class ByteArrayTag : public ::Tag {
+public:
+    // ByteArrayTag inner types define
+    using ArrayData = ::std::vector<uchar>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ByteArrayTag& operator=(ByteArrayTag const&);
@@ -14,57 +30,60 @@ public:
     ByteArrayTag();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ByteArrayTag();
-
-    // vIndex: 2
-    virtual void write(class IDataOutput& dos) const;
-
-    // vIndex: 3
-    virtual class Bedrock::Result<void> load(class IDataInput& dis);
+    // vIndex: 5
+    virtual ::Tag::Type getId() const /*override*/;
 
     // vIndex: 4
-    virtual std::string toString() const;
-
-    // vIndex: 5
-    virtual ::Tag::Type getId() const;
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(class Tag const& rhs) const;
+    virtual bool equals(::Tag const& rhs) const /*override*/;
 
     // vIndex: 9
-    virtual std::unique_ptr<class Tag> copy() const;
+    virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
+
+    // vIndex: 2
+    virtual void write(::IDataOutput& dos) const /*override*/;
+
+    // vIndex: 3
+    virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     // vIndex: 10
-    virtual uint64 hash() const;
+    virtual uint64 hash() const /*override*/;
 
-    MCAPI explicit ByteArrayTag(std::vector<uchar> data);
-
+    // vIndex: 0
+    virtual ~ByteArrayTag() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::vector<uchar> data);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Tag::Type $getId() const;
 
-    MCAPI void dtor$();
+    MCAPI ::std::string $toString() const;
 
-    MCAPI std::unique_ptr<class Tag> copy$() const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI bool equals$(class Tag const& rhs) const;
+    MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCAPI ::Tag::Type getId$() const;
+    MCAPI void $write(::IDataOutput& dos) const;
 
-    MCAPI uint64 hash$() const;
+    MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+    MCAPI uint64 $hash() const;
+    // NOLINTEND
 
-    MCAPI std::string toString$() const;
-
-    MCAPI void write$(class IDataOutput& dos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

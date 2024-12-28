@@ -3,47 +3,67 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Facing.h"
+#include "mc/common/facing/Name.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class GetInteractionPositionForBlockNode : public ::BehaviorNode {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkf1381e;
+    ::ll::UntypedStorage<4, 12> mUnk1474db;
+    ::ll::UntypedStorage<1, 1>  mUnke71fe1;
+    ::ll::UntypedStorage<4, 4>  mUnk125f19;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GetInteractionPositionForBlockNode& operator=(GetInteractionPositionForBlockNode const&);
     GetInteractionPositionForBlockNode(GetInteractionPositionForBlockNode const&);
+    GetInteractionPositionForBlockNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GetInteractionPositionForBlockNode() = default;
-
     // vIndex: 1
-    virtual ::BehaviorStatus tick(class Actor& owner);
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     // vIndex: 2
-    virtual void initializeFromDefinition(class Actor& owner);
+    virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
-    MCAPI GetInteractionPositionForBlockNode();
-
+    // vIndex: 0
+    virtual ~GetInteractionPositionForBlockNode() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ::Facing::Name parseFacingNameFromString(std::string facingString);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Facing::Name parseFacingNameFromString(::std::string facingString);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initializeFromDefinition$(class Actor& owner);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI ::BehaviorStatus tick$(class Actor& owner);
+    MCAPI void $initializeFromDefinition(::Actor& owner);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

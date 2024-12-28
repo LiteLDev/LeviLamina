@@ -13,4 +13,4 @@ public:
     Promise();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

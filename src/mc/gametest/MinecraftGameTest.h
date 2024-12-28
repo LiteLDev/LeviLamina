@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
-#include "mc/world/actor/ParticleType.h"
-#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cg { class ImageBuffer; }
+class BlockPos;
+class BlockSource;
+class Dimension;
+class Level;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestRegistry; }
@@ -22,69 +22,89 @@ namespace gametest { struct TestParameters; }
 
 class MinecraftGameTest : public ::LevelListener {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkaec2e4;
+    ::ll::UntypedStorage<8, 8>  mUnkfa1348;
+    ::ll::UntypedStorage<8, 8>  mUnk5a5712;
+    ::ll::UntypedStorage<8, 16> mUnk46408e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MinecraftGameTest& operator=(MinecraftGameTest const&);
     MinecraftGameTest(MinecraftGameTest const&);
     MinecraftGameTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTest();
+    virtual ~MinecraftGameTest() /*override*/;
 
     // vIndex: 23
-    virtual void onLevelDestruction(std::string const&);
+    virtual void onLevelDestruction(::std::string const&) /*override*/;
+    // NOLINTEND
 
-    MCAPI explicit MinecraftGameTest(class Level& level);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MinecraftGameTest(::Level& level);
 
-    MCAPI void clearAllTests(class BlockSource& region);
+    MCAPI void _runTestPreparation(::gametest::BaseGameTestFunction const& testFunction);
 
-    MCAPI class gametest::GameTestRegistry& getRegistry();
+    MCAPI void clearAllTests(::BlockSource& region);
 
-    MCAPI class gametest::GameTestTicker& getTicker();
+    MCAPI ::gametest::GameTestRegistry& getRegistry();
 
-    MCAPI void loadExistingTests(class Level& level);
+    MCAPI ::gametest::GameTestTicker& getTicker();
 
-    MCAPI void registerDefaultGameBatches(class Level& level);
+    MCAPI void loadExistingTests(::Level& level);
+
+    MCAPI void registerDefaultGameBatches(::Level& level);
 
     MCAPI void registerNativeGameTests();
 
-    MCAPI std::string
-    runTest(std::string const& testName, class Dimension& dimension, struct gametest::TestParameters const& params);
+    MCAPI ::std::string
+    runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);
 
-    MCAPI std::string runTest(
-        std::string const&                                              testName,
-        class Dimension&                                                dimension,
-        struct gametest::TestParameters const&                          params,
-        std::vector<std::shared_ptr<class gametest::IGameTestListener>> listeners
+    MCAPI ::std::string runTest(
+        ::std::string const&                                            testName,
+        ::Dimension&                                                    dimension,
+        ::gametest::TestParameters const&                               params,
+        ::std::vector<::std::shared_ptr<::gametest::IGameTestListener>> listeners
     );
 
-    MCAPI std::string
-    runTestAt(class BlockSource& region, class BlockPos const& structureBlockPos, std::optional<::Rotation> rotation);
+    MCAPI ::std::string
+    runTestAt(::BlockSource& region, ::BlockPos const& structureBlockPos, ::std::optional<::Rotation> rotation);
 
-    MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&
-          runTests(class Dimension& dimension, struct gametest::TestParameters&& params);
+    MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const&
+    runTests(::Dimension& dimension, ::gametest::TestParameters&& params);
 
     MCAPI void stopAllTests();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const& testFunction);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Level& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Level& level);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onLevelDestruction(::std::string const&);
+    // NOLINTEND
 
-    MCAPI void onLevelDestruction$(std::string const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

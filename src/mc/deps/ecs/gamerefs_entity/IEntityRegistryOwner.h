@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class EntityRegistry;
 // clang-format on
 
 class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,16 +19,27 @@ public:
     IEntityRegistryOwner();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEntityRegistryOwner();
+    virtual ~IEntityRegistryOwner() /*override*/;
 
+    // vIndex: 2
+    virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() = 0;
+
+    // vIndex: 1
+    virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/resources/IContentTierManager.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContentTierInfo;
+// clang-format on
+
 class ContentTierManager : public ::IContentTierManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk44461e;
+    ::ll::UntypedStorage<4, 4>  mUnkb64d13;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ContentTierManager& operator=(ContentTierManager const&);
@@ -13,27 +25,42 @@ public:
     ContentTierManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ContentTierManager();
-
     // vIndex: 1
-    virtual class ContentTierInfo getContentTierInfo() const;
+    virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
 
-    MCAPI explicit ContentTierManager(std::function<bool()> isHardwareRayTracingCompatible);
-
+    // vIndex: 0
+    virtual ~ContentTierManager() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::function<bool()> isHardwareRayTracingCompatible);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ContentTierInfo getContentTierInfo$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ContentTierInfo $getContentTierInfo() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

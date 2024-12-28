@@ -20,10 +20,10 @@ public:
     ScriptDefinitionTrigger();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ActorDefinitionTrigger> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionTrigger> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

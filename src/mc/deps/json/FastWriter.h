@@ -8,47 +8,64 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace Json { class Writer; }
 // clang-format on
 
 namespace Json {
 
 class FastWriter : public ::Json::Writer {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> document_;
+    ::ll::TypedStorage<1, 1, bool>           yamlCompatiblityEnabled_;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FastWriter& operator=(FastWriter const&);
     FastWriter(FastWriter const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FastWriter();
+    virtual ~FastWriter() /*override*/;
 
     // vIndex: 1
-    virtual std::string write(class Json::Value const& root);
+    virtual ::std::string write(::Json::Value const& root) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI FastWriter();
 
+    MCAPI void writeValue(::Json::Value const& value);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void writeValue(class Json::Value const& value);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $write(::Json::Value const& root);
+    // NOLINTEND
 
-    MCAPI std::string write$(class Json::Value const& root);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

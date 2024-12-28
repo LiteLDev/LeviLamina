@@ -3,23 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
-#include "mc/world/level/block/ChemistryTableType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class HashedString;
+class Player;
+class Vec3;
 // clang-format on
 
-class ChemistryTableBlock : public ::ActorBlock {
+class ChemistryTableBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     ChemistryTableBlock& operator=(ChemistryTableBlock const&);
@@ -27,101 +26,93 @@ public:
     ChemistryTableBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChemistryTableBlock() = default;
+    // vIndex: 139
+    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 50
-    virtual bool isValidAuxValue(int value) const;
-
-    // vIndex: 53
-    virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
-
-    // vIndex: 61
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 51
+    virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    // vIndex: 56
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    MCAPI ChemistryTableBlock(std::string const& nameId, int id);
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    MCAPI static class ItemInstance getItemForType(::ChemistryTableType type, int stackCount);
-
-    MCAPI static bool isUIValidForPlayer(
-        class BlockPos const& pos,
-        class Player&         player,
-        float                 pickRange,
-        ::ChemistryTableType  expectedType
-    );
-
+    // vIndex: 0
+    virtual ~ChemistryTableBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChemistryTableBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    isUIValidForPlayer(::BlockPos const& pos, ::Player& player, float pickRange, ::HashedString const& expectedType);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canBeUsedInCommands$(class BaseGameVersion const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $use(::Player&, ::BlockPos const&, uchar) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI bool $isCraftingBlock() const;
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
+    MCAPI bool $isLavaBlocking() const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
 
-    MCAPI bool isAuxValueRelevantForPicking$() const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isCraftingBlock$() const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool isValidAuxValue$(int value) const;
+    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool isWaterBlocking$() const;
+    MCAPI bool $isInteractiveBlock() const;
+    // NOLINTEND
 
-    MCAPI void onFillBlock$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
-
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

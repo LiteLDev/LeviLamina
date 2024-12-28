@@ -2,13 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandPermissionLevel.h"
+
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class CommandSelectorBase;
+class Player;
+struct CommandFlag;
+// clang-format on
+
 class Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                      mVersion;
+    ::ll::TypedStorage<8, 8, ::CommandRegistry const*> mRegistry;
+    ::ll::TypedStorage<4, 4, int>                      mCommandSymbol;
+    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mPermissionLevel;
+    ::ll::TypedStorage<2, 2, ::CommandFlag>            mFlags;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Command& operator=(Command const&);
     Command(Command const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Command();
@@ -17,54 +41,72 @@ public:
     virtual bool collectOptionalArguments();
 
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const = 0;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const = 0;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Command();
 
-    MCAPI std::string getCommandName() const;
+    MCAPI ::std::string getCommandName() const;
 
-    MCAPI bool hasFlag(struct CommandFlag flag) const;
+    MCAPI ::CommandRegistry const& getRegistry() const;
 
-    MCAPI void run(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI bool hasFlag(::CommandFlag flag) const;
 
-    MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const& origin, int version);
+    MCAPI void run(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI static bool validRange(float input, float low, float high, class CommandOutput& output);
+    MCAPI void sendTelemetry(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI static bool validRange(int input, int low, int high, class CommandOutput& output);
-
+    MCAPI bool shouldSendTelemetry(::CommandOrigin const& origin) const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class CommandRegistry const& getRegistry() const;
-
-    MCAPI void sendTelemetry(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI bool shouldSendTelemetry(class CommandOrigin const& origin) const;
-
-    MCAPI static class Player* getPlayerFromOrigin(class CommandOrigin const& origin);
-
-    MCAPI static bool isTemplateLockedAction(class CommandOrigin const& origin);
-
-    MCAPI static bool isWildcard(class CommandSelectorBase const& selector);
-
-    MCAPI static bool validData(int input, ushort& data, class CommandOutput& output);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Player* getPlayerFromOrigin(::CommandOrigin const& origin);
 
-    MCAPI void* ctor$();
+    MCAPI static bool isTemplateLockedAction(::CommandOrigin const& origin);
 
-    MCAPI void dtor$();
+    MCAPI static bool isWildcard(::CommandSelectorBase const& selector);
 
-    MCAPI bool collectOptionalArguments$();
+    MCAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
 
-    MCAPI static std::string const& WILDCARD_TOKEN();
+    MCAPI static bool validData(int input, ushort& data, ::CommandOutput& output);
 
+    MCAPI static bool validRange(float input, float low, float high, ::CommandOutput& output);
+
+    MCAPI static bool validRange(int input, int low, int high, ::CommandOutput& output);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& WILDCARD_TOKEN();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $collectOptionalArguments();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

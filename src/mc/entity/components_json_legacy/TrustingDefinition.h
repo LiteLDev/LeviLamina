@@ -7,34 +7,46 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class TrustingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class TrustingDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk8b60f5;
+    ::ll::UntypedStorage<8, 16>  mUnkc2c83e;
+    ::ll::UntypedStorage<8, 104> mUnk907038;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TrustingDefinition& operator=(TrustingDefinition const&);
     TrustingDefinition(TrustingDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TrustingDefinition();
 
-    MCAPI void addTrustItemByName(std::string const& name);
+    MCAPI void addTrustItemByName(::std::string const& name);
 
-    MCAPI void initialize(class EntityContext&, class TrustingComponent& component) const;
-
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TrustingDefinition>>&
-            root
-    );
-
+    MCAPI void initialize(::EntityContext&, ::TrustingComponent& component) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TrustingDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

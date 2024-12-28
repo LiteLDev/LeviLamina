@@ -3,30 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class BlockPos;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Monster : public ::Mob {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk1a3132;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Monster& operator=(Monster const&);
@@ -34,65 +30,80 @@ public:
     Monster();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Monster();
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
-
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    // vIndex: 160
-    virtual bool checkSpawnRules(bool fromSpawner);
-
-    // vIndex: 184
-    virtual float _getWalkTargetValue(class BlockPos const& pos);
-
-    // vIndex: 190
+    // vIndex: 182
     virtual bool isDarkEnoughToSpawn() const;
 
-    MCAPI Monster(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
+    // vIndex: 176
+    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
+
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+
+    // vIndex: 8
+    virtual ~Monster() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Monster(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $normalTick();
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI bool checkSpawnRules$(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool isDarkEnoughToSpawn$() const;
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void normalTick$();
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

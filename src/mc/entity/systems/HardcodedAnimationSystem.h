@@ -4,37 +4,78 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/entity/components/FlagComponent.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
 
-class HardcodedAnimationSystem {
-public:
-    // prevent constructor by default
-    HardcodedAnimationSystem& operator=(HardcodedAnimationSystem const&);
-    HardcodedAnimationSystem(HardcodedAnimationSystem const&);
-    HardcodedAnimationSystem();
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct ActorWalkAnimationComponent;
+struct BlazeFlagComponent;
+struct DynamicRenderOffsetComponent;
+struct LavaSlimeFlagComponent;
+struct MobAnimationComponent;
+struct MobBodyRotationComponent;
+struct MobFlagComponent;
+struct MobHurtTimeComponent;
+struct MobIsJumpingFlagComponent;
+struct OnFireComponent;
+struct PassengerComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+namespace HardcodedAnimationSystem {
+// functions
+// NOLINTBEGIN
+MCAPI void
+addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::ActorWalkAnimationComponent& walk);
 
-    // NOLINTEND
+MCAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void doHardcodedAnimation(
-        class StrictEntityContext const&,
-        struct MobAnimationComponent&                                      mobAnim,
-        struct MobBodyRotationComponent const&                             bodyRot,
-        struct MobHurtTimeComponent const&                                 mobHurtTime,
-        struct ActorWalkAnimationComponent&                                mobWalkAnimation,
-        struct StateVectorComponent const&                                 stateVector,
-        struct ActorDataFlagComponent const&                               syncedActorData,
-        class Optional<class FlagComponent<struct BlazeFlag> const>        blaze,
-        class Optional<class FlagComponent<struct LavaSlimeFlag> const>    lavaSlime,
-        class Optional<struct OnFireComponent const>                       onFire,
-        class Optional<struct PassengerComponent const>                    passenger,
-        class Optional<class FlagComponent<struct MobIsJumpingFlag> const> isJumping
-    );
+MCAPI ::TickingSystemWithInfo createSystem();
 
-    // NOLINTEND
-};
+MCAPI void doHardcodedAnimation(
+    ::StrictEntityContext const&,
+    ::MobAnimationComponent&                      mobAnim,
+    ::MobBodyRotationComponent const&             bodyRot,
+    ::MobHurtTimeComponent const&                 mobHurtTime,
+    ::ActorWalkAnimationComponent&                mobWalkAnimation,
+    ::ActorDataFlagComponent const&               syncedActorData,
+    ::Optional<::BlazeFlagComponent const>        blaze,
+    ::Optional<::LavaSlimeFlagComponent const>    lavaSlime,
+    ::Optional<::OnFireComponent const>           onFire,
+    ::Optional<::PassengerComponent const>        passenger,
+    ::Optional<::MobIsJumpingFlagComponent const> isJumping
+);
+
+MCAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::StateVectorComponent const,
+        ::ActorWalkAnimationComponent> speedView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::DynamicRenderOffsetComponent const,
+        ::ActorWalkAnimationComponent> offsetView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::MobAnimationComponent,
+        ::MobBodyRotationComponent const,
+        ::MobHurtTimeComponent const,
+        ::ActorWalkAnimationComponent,
+        ::ActorDataFlagComponent const,
+        ::Optional<::BlazeFlagComponent const>,
+        ::Optional<::LavaSlimeFlagComponent const>,
+        ::Optional<::OnFireComponent const>,
+        ::Optional<::PassengerComponent const>,
+        ::Optional<::MobIsJumpingFlagComponent const>> view
+);
+// NOLINTEND
+
+} // namespace HardcodedAnimationSystem

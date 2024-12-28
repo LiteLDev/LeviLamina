@@ -12,4 +12,4 @@ public:
     WinHttpCallbackContext();
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

@@ -3,26 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
 
@@ -34,96 +25,118 @@ public:
     Npc();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+
     // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 6
-    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 179
+    virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 10
-    virtual ~Npc() = default;
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
+
+    // vIndex: 107
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 35
-    virtual bool canShowNameTag() const;
+    virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
-    // vIndex: 37
-    virtual class mce::Color getNameTagTextColor() const;
+    // vIndex: 33
+    virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 53
-    virtual bool isTargetable() const;
+    // vIndex: 51
+    virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 102
-    virtual bool canBePulledIntoVehicle() const;
+    // vIndex: 104
+    virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 108
-    virtual void buildDebugInfo(std::string& out) const;
+    // vIndex: 143
+    virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    // vIndex: 111
-    virtual bool canBeAffected(uint) const;
+    // vIndex: 98
+    virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const&);
+    // vIndex: 177
+    virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
-    // vIndex: 151
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
-
-    // vIndex: 185
-    virtual bool canExistWhenDisallowMob() const;
-
-    // vIndex: 187
-    virtual void newServerAiStep();
-
-    MCAPI
-    Npc(class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext);
-
+    // vIndex: 8
+    virtual ~Npc() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    Npc(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& SKIN_ID_TAG();
+
+    MCAPI static ::std::vector<::std::pair<::std::string, ::std::string>> const& Skins();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float, bool, bool);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildDebugInfo$(std::string& out) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool canBeAffected$(uint) const;
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool canBePulledIntoVehicle$() const;
+    MCAPI void $newServerAiStep();
 
-    MCAPI bool canExistWhenDisallowMob$() const;
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool canShowNameTag$() const;
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI void die$(class ActorDamageSource const&);
+    MCAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCAPI class mce::Color getNameTagTextColor$() const;
+    MCAPI bool $canShowNameTag() const;
 
-    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $isTargetable() const;
 
-    MCAPI bool isTargetable$() const;
+    MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI void knockback$(class Actor*, int, float, float, float, float, float);
+    MCAPI void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI void newServerAiStep$();
+    MCAPI bool $canBePulledIntoVehicle() const;
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI static std::string const& SKIN_ID_TAG();
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    // NOLINTEND
 
-    MCAPI static std::vector<std::pair<std::string, std::string>> const& Skins();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

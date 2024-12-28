@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 namespace StructureEditorDataHelper {
+// functions
 // NOLINTBEGIN
-MCAPI class BlockPos calculateMaxStructureSize(short minHeight, short maxHeight);
+MCAPI ::BlockPos calculateMaxStructureSize(short minHeight, short maxHeight);
 // NOLINTEND
 
-}; // namespace StructureEditorDataHelper
+} // namespace StructureEditorDataHelper

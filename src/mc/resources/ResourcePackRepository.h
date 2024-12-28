@@ -9,10 +9,28 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/IResourcePackRepository.h"
-#include "mc/resources/KnownPackType.h"
 
 // auto generated forward declare list
 // clang-format off
+class CompositePackSource;
+class ContentIdentity;
+class IContentAccessibilityProvider;
+class IContentKeyProvider;
+class IMinecraftEventing;
+class Pack;
+class PackInstance;
+class PackManifestFactory;
+class PackSettingsFactory;
+class PackSourceFactory;
+class PackSourceReport;
+class ResourceLocation;
+class ResourcePack;
+class ResourcePackStack;
+class TaskGroup;
+struct InvalidPacksFilterGroup;
+struct PackIdVersion;
+struct PackInstanceId;
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 namespace mce { class UUID; }
@@ -23,60 +41,65 @@ public:
     // ResourcePackRepository inner types declare
     // clang-format off
     struct KnownPackInfo;
-    struct KnownPackContainer;
     // clang-format on
 
     // ResourcePackRepository inner types define
     struct KnownPackInfo {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                          mDiscoveredOnDisk;
+        ::ll::TypedStorage<8, 56, ::ResourceLocation>           mResourceLocation;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPastHashes;
+        ::ll::TypedStorage<8, 136, ::PackIdVersion>             mIdentity;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        KnownPackInfo& operator=(KnownPackInfo const&);
+        KnownPackInfo(KnownPackInfo const&);
         KnownPackInfo();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI KnownPackInfo(struct ResourcePackRepository::KnownPackInfo const&);
-
-        MCAPI struct ResourcePackRepository::KnownPackInfo&
-        operator=(struct ResourcePackRepository::KnownPackInfo const&);
-
-        MCAPI bool operator==(struct ResourcePackRepository::KnownPackInfo const& rhs) const;
-
-        MCAPI ~KnownPackInfo();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$(struct ResourcePackRepository::KnownPackInfo const&);
-
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
 
-    struct KnownPackContainer {
-    public:
-        // prevent constructor by default
-        KnownPackContainer& operator=(KnownPackContainer const&);
-        KnownPackContainer(KnownPackContainer const&);
-        KnownPackContainer();
+    using EventingCallback = ::std::function<::IMinecraftEventing&()>;
 
-    public:
-        // NOLINTBEGIN
-        MCAPI struct ResourcePackRepository::KnownPackInfo* getPack(class ResourceLocation const& packLocation);
-
-        MCAPI ~KnownPackContainer();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>> mFilePathManager;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ResourcePack>>>       mAllResourcePacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mCachePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mWorldPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mPremiumWorldTemplatePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mTempWorldTemplatePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mDynamicPackageSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>>                   mPackSourceReport;
+    ::ll::TypedStorage<8, 8, ::ResourcePack*>                                         mEditorPack;
+    ::ll::TypedStorage<8, 8, ::ResourcePack*>                                         mVanillaPack;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>>                         mServicePacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                      mInvalidPackLocation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                      mInvalidBehaviorPackLocation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                      mInvalidResourcePackLocation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceLocation>>                      mInvalidTemplatePackLocation;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                   mEventing;
+    ::ll::TypedStorage<8, 8, ::PackManifestFactory&>                                  mManifestFactory;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider>> mContentAccessibility;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                              mCurrentWorldPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                      mCurrentPremiumWorldTemplatePath;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContentIdentity, ::std::string>> mTempCacheContentKeys;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSettingsFactory>>                mPackSettingsFactory;
+    ::ll::TypedStorage<8, 8, ::PackSourceFactory&>                                    mPackSourceFactory;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::ResourcePack*)>>> mRemoveResourcePackCallback;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mInitTaskGroup;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                               mInitializeMutex;
+    ::ll::TypedStorage<1, 1, bool>                                                       mCancelInitialization;
+    ::ll::TypedStorage<1, 1, bool>                                                       mInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                                       mReloadUserPacksRequested;
+    ::ll::TypedStorage<1, 1, bool>               mReloadDynamicPackagePacksRequested;
+    ::ll::TypedStorage<1, 1, bool>               mRefreshPacksRequested;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity> mCurrentPremiumWorldTemplateIdentity;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -85,191 +108,187 @@ public:
     ResourcePackRepository();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ResourcePackRepository();
+    virtual ~ResourcePackRepository() /*override*/;
 
     // vIndex: 1
     virtual void getResourcePacksByPackId(
-        std::vector<struct PackInstanceId> const& packInstanceIds,
-        std::vector<class PackInstance>&          result
-    ) const;
+        ::std::vector<::PackInstanceId> const& packInstanceIds,
+        ::std::vector<::PackInstance>&         result
+    ) const /*override*/;
 
     // vIndex: 2
-    virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const& idAndVersion) const;
+    virtual ::ResourcePack* getResourcePackForPackId(::PackIdVersion const& idAndVersion) const /*override*/;
 
     // vIndex: 3
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const& id) const;
+    virtual ::ResourcePack*
+    getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const
+        /*override*/;
 
     // vIndex: 4
-    virtual class ResourcePack* getResourcePackForPackIdOwned(struct PackIdVersion const& idAndVersion) const;
+    virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const /*override*/;
 
     // vIndex: 5
-    virtual class ResourcePack*
-    getResourcePackSatisfiesPackId(struct PackIdVersion const& idAndVersion, bool requireOwnership) const;
+    virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const /*override*/;
 
     // vIndex: 6
-    virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const& idAndVersion) const;
+    virtual ::ResourcePack*
+    getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const /*override*/;
 
     // vIndex: 7
-    virtual class ResourcePack* getResourcePackInPath(class Core::Path const& path) const;
+    virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const /*override*/;
 
     // vIndex: 8
-    virtual bool isResourcePackLoaded(struct PackIdVersion const& identity, ::PackOrigin const& location);
+    virtual ::ResourcePack* getResourcePackInPath(::Core::Path const& path) const /*override*/;
 
     // vIndex: 9
-    virtual class PackSourceReport const* getPackLoadingReport() const;
+    virtual bool isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location) /*override*/;
 
     // vIndex: 10
-    virtual class ResourcePack* getEditorPack() const;
+    virtual ::PackSourceReport const* getPackLoadingReport() const /*override*/;
 
     // vIndex: 11
-    virtual class ResourcePack* getVanillaPack() const;
+    virtual ::ResourcePack* getEditorPack() const /*override*/;
 
     // vIndex: 12
-    virtual bool setServicePacks(std::vector<struct PackIdVersion> servicePackIds);
+    virtual ::ResourcePack* getVanillaPack() const /*override*/;
 
     // vIndex: 13
-    virtual bool hasServicePacks(std::vector<struct PackIdVersion> const& servicePacksIds) const;
+    virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) /*override*/;
 
     // vIndex: 14
-    virtual std::vector<struct PackIdVersion> const& getServicePacks() const;
+    virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const /*override*/;
 
     // vIndex: 15
-    virtual void addServicePacksToStack(class ResourcePackStack& stack) const;
+    virtual ::std::vector<::PackIdVersion> const& getServicePacks() const /*override*/;
 
     // vIndex: 16
-    virtual void addCachedResourcePacks(std::unordered_map<class ContentIdentity, std::string> const* tempCacheKeys);
+    virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
     // vIndex: 17
-    virtual void addWorldResourcePacks(class Core::Path const& levelPath);
+    virtual void addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys
+    ) /*override*/;
 
     // vIndex: 18
-    virtual void addPremiumWorldTemplateResourcePacks(
-        class Core::Path const&      worldTemplatePath,
-        class ContentIdentity const& premiumWorldIdentity
-    );
+    virtual void addWorldResourcePacks(::Core::Path const& levelPath) /*override*/;
 
     // vIndex: 19
-    virtual void removePacksLoadedFromCache();
+    virtual void addPremiumWorldTemplateResourcePacks(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    ) /*override*/;
 
     // vIndex: 20
-    virtual void removePacksLoadedFromWorld();
+    virtual void addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID) /*override*/;
 
     // vIndex: 21
-    virtual class Core::PathBuffer<std::string> const getResourcePacksPath() const;
+    virtual void removePacksLoadedFromCache() /*override*/;
 
     // vIndex: 22
-    virtual class Core::PathBuffer<std::string> const getBehaviorPacksPath() const;
+    virtual void removePacksLoadedFromWorld() /*override*/;
 
     // vIndex: 23
-    virtual class Core::PathBuffer<std::string> const getSkinPacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getResourcePacksPath() const /*override*/;
 
     // vIndex: 24
-    virtual class Core::PathBuffer<std::string> const getDevelopmentResourcePacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getBehaviorPacksPath() const /*override*/;
 
     // vIndex: 25
-    virtual class Core::PathBuffer<std::string> const getDevelopmentBehaviorPacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const /*override*/;
 
     // vIndex: 26
-    virtual class Core::PathBuffer<std::string> const getDevelopmentSkinPacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const /*override*/;
 
     // vIndex: 27
-    virtual class Core::PathBuffer<std::string> const getTreatmentPacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentBehaviorPacksPath() const /*override*/;
 
     // vIndex: 28
-    virtual class Core::PathBuffer<std::string> const getKnownPacksPath(::KnownPackType type) const;
+    virtual ::Core::PathBuffer<::std::string> const getDevelopmentSkinPacksPath() const /*override*/;
 
     // vIndex: 29
-    virtual class Core::PathBuffer<std::string> const getKnownValidPacksPath() const;
+    virtual ::Core::PathBuffer<::std::string> const getTreatmentPacksPath() const /*override*/;
 
     // vIndex: 30
-    virtual class Core::PathBuffer<std::string> const getKnownInvalidPacksPath() const;
+    virtual void refreshPacks() /*override*/;
 
     // vIndex: 31
-    virtual void refreshPacks();
+    virtual void requestReloadUserPacks() /*override*/;
 
     // vIndex: 32
-    virtual void requestReloadUserPacks();
+    virtual void requestReloadDynamicPackagePacks() /*override*/;
 
     // vIndex: 33
-    virtual void requestReloadDynamicPackagePacks();
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const /*override*/;
 
     // vIndex: 34
-    virtual Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> getKeyProvider() const;
+    virtual ::PackManifestFactory& getPackManifestFactory() /*override*/;
 
     // vIndex: 35
-    virtual class PackManifestFactory& getPackManifestFactory();
+    virtual ::PackSettingsFactory& getPackSettingsFactory() const /*override*/;
 
     // vIndex: 36
-    virtual class PackSettingsFactory& getPackSettingsFactory() const;
+    virtual ::PackSourceFactory& getPackSourceFactory() /*override*/;
 
     // vIndex: 37
-    virtual class PackSourceFactory& getPackSourceFactory();
+    virtual ::CompositePackSource const* getWorldPackSource() const /*override*/;
 
     // vIndex: 38
-    virtual class CompositePackSource const* getWorldPackSource() const;
+    virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const /*override*/;
 
     // vIndex: 39
-    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const;
+    virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const /*override*/;
 
     // vIndex: 40
-    virtual std::vector<class ResourcePack*> getPacksByType(::PackType type) const;
+    virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory category) const /*override*/;
 
     // vIndex: 41
-    virtual std::vector<class ResourcePack*> getPacksByCategory(::PackCategory category) const;
-
-    // vIndex: 42
-    virtual void addKnownPackFromImport(class PackManifest const& pack);
+    virtual void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type) /*override*/;
 
     // vIndex: 43
-    virtual void addInvalidPack(class ResourceLocation const& packLocation, ::PackType type);
+    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
+
+    // vIndex: 42
+    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const
+        /*override*/;
 
     // vIndex: 44
-    virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType type) const;
+    virtual void deletePack(::ResourceLocation const& packLocation) /*override*/;
 
     // vIndex: 45
-    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const& packTypes) const;
+    virtual void deletePackFiles(::ResourceLocation const& packLocation) /*override*/;
 
     // vIndex: 46
-    virtual void deletePack(class ResourceLocation const& packLocation);
+    virtual void postDeletePack(::ResourceLocation const& packLocation) /*override*/;
 
     // vIndex: 47
-    virtual void deletePackFiles(class ResourceLocation const& packLocation);
+    virtual void untrackInvalidPack(::ResourceLocation const& packLocation) /*override*/;
 
     // vIndex: 48
-    virtual void postDeletePack(class ResourceLocation const& packLocation);
+    virtual void
+    registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback) /*override*/;
 
     // vIndex: 49
-    virtual void untrackInvalidPack(class ResourceLocation const& packLocation);
+    virtual void unregisterResourcePackRemovedCallback(void* ptr) /*override*/;
 
     // vIndex: 50
-    virtual void registerResourcePackRemovedCallback(void* ptr, std::function<void(class ResourcePack*)> callback);
-
-    // vIndex: 51
-    virtual void unregisterResourcePackRemovedCallback(void* ptr);
-
-    // vIndex: 52
-    virtual bool isInitialized();
-
-    MCAPI ResourcePackRepository(
-        class IMinecraftEventing&                                               eventing,
-        class PackManifestFactory&                                              manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const& contentAccessibility,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&         pathManager,
-        class PackSourceFactory&                                                packSourceFactory,
-        bool                                                                    initAsync
-    );
-
+    virtual bool isInitialized() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _detectKnownPacksChange(
-        struct ResourcePackRepository::KnownPackContainer&       knownPackLocations,
-        struct ResourcePackRepository::KnownPackContainer const& lastKnownPackLocations,
-        ::KnownPackType                                          type
+    MCAPI ResourcePackRepository(
+        ::IMinecraftEventing&                                                 eventing,
+        ::PackManifestFactory&                                                manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
+        ::PackSourceFactory&                                                  packSourceFactory,
+        bool                                                                  initAsync
     );
+
+    MCAPI bool _addResourcePackIfNotAlreadyAdded(::Pack& pack);
 
     MCAPI void _findVanillaPacks();
 
@@ -281,156 +300,155 @@ public:
 
     MCAPI void _initializeWorldPackSource();
 
-    MCAPI void _loadLastKnownUserPacks(
-        struct ResourcePackRepository::KnownPackContainer& lastKnownPackLocations,
-        ::KnownPackType                                    type
-    );
-
-    MCAPI void _loadPacks(bool updateKnownUserPacksTracking);
-
-    MCAPI bool _packExists(class mce::UUID const& packId, class SemVersion const& version, ::PackOrigin origin) const;
-
-    MCAPI void _reloadDynamicPackagePacks();
+    MCAPI void _loadPacks();
 
     MCAPI void _reloadUserPacks();
 
-    MCAPI bool _removePack(class ResourceLocation const& packLocation, bool unregisterDeleteCallback);
+    MCAPI bool _removePack(::ResourceLocation const& packLocation, bool unregisterDeleteCallback);
 
-    MCAPI void
-    _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer& knownPackLocations, ::KnownPackType type);
-
-    MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack* resourcePack);
-
+    MCAPI void _triggerRemoveResourcePackCallback(::ResourcePack* resourcePack);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::set<::mce::UUID>& CHEMISTRY_PACK_UUIDS();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class IMinecraftEventing&                                               eventing,
-        class PackManifestFactory&                                              manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const& contentAccessibility,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&         pathManager,
-        class PackSourceFactory&                                                packSourceFactory,
-        bool                                                                    initAsync
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IMinecraftEventing&                                                 eventing,
+        ::PackManifestFactory&                                                manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
+        ::PackSourceFactory&                                                  packSourceFactory,
+        bool                                                                  initAsync
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addCachedResourcePacks$(std::unordered_map<class ContentIdentity, std::string> const* tempCacheKeys);
-
-    MCAPI void addInvalidPack$(class ResourceLocation const& packLocation, ::PackType type);
-
-    MCAPI void addKnownPackFromImport$(class PackManifest const& pack);
-
-    MCAPI void addPremiumWorldTemplateResourcePacks$(
-        class Core::Path const&      worldTemplatePath,
-        class ContentIdentity const& premiumWorldIdentity
-    );
-
-    MCAPI void addServicePacksToStack$(class ResourcePackStack& stack) const;
-
-    MCAPI void addWorldResourcePacks$(class Core::Path const& levelPath);
-
-    MCAPI void deletePack$(class ResourceLocation const& packLocation);
-
-    MCAPI void deletePackFiles$(class ResourceLocation const& packLocation);
-
-    MCAPI class Core::PathBuffer<std::string> const getBehaviorPacksPath$() const;
-
-    MCAPI class Core::PathBuffer<std::string> const getDevelopmentBehaviorPacksPath$() const;
-
-    MCAPI class Core::PathBuffer<std::string> const getDevelopmentResourcePacksPath$() const;
-
-    MCAPI class Core::PathBuffer<std::string> const getDevelopmentSkinPacksPath$() const;
-
-    MCAPI class ResourcePack* getEditorPack$() const;
-
-    MCAPI std::vector<class ResourceLocation> const& getInvalidPacks$(::PackType type) const;
-
-    MCAPI std::vector<class ResourceLocation> getInvalidPacks$(struct InvalidPacksFilterGroup const& packTypes) const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> getKeyProvider$() const;
-
-    MCAPI class Core::PathBuffer<std::string> const getKnownInvalidPacksPath$() const;
-
-    MCAPI class Core::PathBuffer<std::string> const getKnownPacksPath$(::KnownPackType type) const;
-
-    MCAPI class Core::PathBuffer<std::string> const getKnownValidPacksPath$() const;
-
-    MCAPI class PackSourceReport const* getPackLoadingReport$() const;
-
-    MCAPI class PackManifestFactory& getPackManifestFactory$();
-
-    MCAPI class PackSettingsFactory& getPackSettingsFactory$() const;
-
-    MCAPI class PackSourceFactory& getPackSourceFactory$();
-
-    MCAPI std::vector<class ResourcePack*> getPacksByCategory$(::PackCategory category) const;
-
-    MCAPI std::vector<class ResourcePack*> getPacksByResourceLocation$(::PackOrigin type) const;
-
-    MCAPI std::vector<class ResourcePack*> getPacksByType$(::PackType type) const;
-
-    MCAPI class ResourcePack* getResourcePackByUUID$(class mce::UUID const& id) const;
-
-    MCAPI class ResourcePack* getResourcePackContainingModule$(struct PackIdVersion const& idAndVersion) const;
-
-    MCAPI class ResourcePack* getResourcePackForPackId$(struct PackIdVersion const& idAndVersion) const;
-
-    MCAPI class ResourcePack* getResourcePackForPackIdOwned$(struct PackIdVersion const& idAndVersion) const;
-
-    MCAPI class ResourcePack* getResourcePackInPath$(class Core::Path const& path) const;
-
-    MCAPI class ResourcePack*
-    getResourcePackSatisfiesPackId$(struct PackIdVersion const& idAndVersion, bool requireOwnership) const;
-
-    MCAPI void getResourcePacksByPackId$(
-        std::vector<struct PackInstanceId> const& packInstanceIds,
-        std::vector<class PackInstance>&          result
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $getResourcePacksByPackId(
+        ::std::vector<::PackInstanceId> const& packInstanceIds,
+        ::std::vector<::PackInstance>&         result
     ) const;
 
-    MCAPI class Core::PathBuffer<std::string> const getResourcePacksPath$() const;
+    MCAPI ::ResourcePack* $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI std::vector<struct PackIdVersion> const& getServicePacks$() const;
+    MCAPI ::ResourcePack*
+    $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
 
-    MCAPI class Core::PathBuffer<std::string> const getSkinPacksPath$() const;
+    MCAPI ::ResourcePack* $getResourcePackByUUID(::mce::UUID const& id) const;
 
-    MCAPI class Core::PathBuffer<std::string> const getTreatmentPacksPath$() const;
+    MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI class ResourcePack* getVanillaPack$() const;
+    MCAPI ::ResourcePack*
+    $getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const;
 
-    MCAPI class CompositePackSource const* getWorldPackSource$() const;
+    MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI bool hasServicePacks$(std::vector<struct PackIdVersion> const& servicePacksIds) const;
+    MCAPI ::ResourcePack* $getResourcePackInPath(::Core::Path const& path) const;
 
-    MCAPI bool isInitialized$();
+    MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
 
-    MCAPI bool isResourcePackLoaded$(struct PackIdVersion const& identity, ::PackOrigin const& location);
+    MCAPI ::PackSourceReport const* $getPackLoadingReport() const;
 
-    MCAPI void postDeletePack$(class ResourceLocation const& packLocation);
+    MCAPI ::ResourcePack* $getEditorPack() const;
 
-    MCAPI void refreshPacks$();
+    MCAPI ::ResourcePack* $getVanillaPack() const;
 
-    MCAPI void registerResourcePackRemovedCallback$(void* ptr, std::function<void(class ResourcePack*)> callback);
+    MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
 
-    MCAPI void removePacksLoadedFromCache$();
+    MCAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
 
-    MCAPI void removePacksLoadedFromWorld$();
+    MCAPI ::std::vector<::PackIdVersion> const& $getServicePacks() const;
 
-    MCAPI void requestReloadDynamicPackagePacks$();
+    MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
-    MCAPI void requestReloadUserPacks$();
+    MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
-    MCAPI bool setServicePacks$(std::vector<struct PackIdVersion> servicePackIds);
+    MCAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
 
-    MCAPI void unregisterResourcePackRemovedCallback$(void* ptr);
+    MCAPI void $addPremiumWorldTemplateResourcePacks(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    );
 
-    MCAPI void untrackInvalidPack$(class ResourceLocation const& packLocation);
+    MCAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
 
-    MCAPI static std::set<class mce::UUID>& CHEMISTRY_PACK_UUIDS();
+    MCAPI void $removePacksLoadedFromCache();
 
+    MCAPI void $removePacksLoadedFromWorld();
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
+
+    MCAPI void $refreshPacks();
+
+    MCAPI void $requestReloadUserPacks();
+
+    MCAPI void $requestReloadDynamicPackagePacks();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+
+    MCAPI ::PackManifestFactory& $getPackManifestFactory();
+
+    MCAPI ::PackSettingsFactory& $getPackSettingsFactory() const;
+
+    MCAPI ::PackSourceFactory& $getPackSourceFactory();
+
+    MCAPI ::CompositePackSource const* $getWorldPackSource() const;
+
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
+
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
+
+    MCAPI ::std::vector<::ResourcePack*> $getPacksByCategory(::PackCategory category) const;
+
+    MCAPI void $addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
+
+    MCAPI ::std::vector<::ResourceLocation> const& $getInvalidPacks(::PackType type) const;
+
+    MCAPI ::std::vector<::ResourceLocation> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+
+    MCAPI void $deletePack(::ResourceLocation const& packLocation);
+
+    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation);
+
+    MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
+
+    MCAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
+
+    MCAPI void $registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback);
+
+    MCAPI void $unregisterResourcePackRemovedCallback(void* ptr);
+
+    MCAPI bool $isInitialized();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

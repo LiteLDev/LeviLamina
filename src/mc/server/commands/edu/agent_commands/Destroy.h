@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Command;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -17,31 +16,51 @@ namespace AgentCommands {
 
 class Destroy : public ::Command {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk117218;
+    ::ll::UntypedStorage<4, 4> mUnk8ea344;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Destroy& operator=(Destroy const&);
     Destroy(Destroy const&);
     Destroy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~Destroy() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~Destroy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace AgentCommands
+} // namespace AgentCommands

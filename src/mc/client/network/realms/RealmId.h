@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
 namespace Realms {
 
-struct RealmId {
+struct RealmId : public ::NewType<int64> {
 public:
     // prevent constructor by default
     RealmId& operator=(RealmId const&);
@@ -12,4 +15,4 @@ public:
     RealmId();
 };
 
-}; // namespace Realms
+} // namespace Realms

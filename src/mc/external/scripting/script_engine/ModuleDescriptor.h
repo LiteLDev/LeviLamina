@@ -6,32 +6,35 @@ namespace Scripting {
 
 struct ModuleDescriptor {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk735c86;
+    ::ll::UntypedStorage<8, 32> mUnkb90b03;
+    ::ll::UntypedStorage<8, 40> mUnk27e2ca;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ModuleDescriptor(ModuleDescriptor const&);
     ModuleDescriptor();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ModuleDescriptor(struct Scripting::ModuleDescriptor&&);
+    MCAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor const&);
 
-    MCAPI struct Scripting::ModuleDescriptor& operator=(struct Scripting::ModuleDescriptor const&);
+    MCAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor&&);
 
-    MCAPI bool operator==(struct Scripting::ModuleDescriptor const&) const;
-
-    MCAPI std::string toString() const;
+    MCAPI ::std::string toString() const;
 
     MCAPI ~ModuleDescriptor();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::ModuleDescriptor&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

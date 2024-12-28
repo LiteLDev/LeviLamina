@@ -17,62 +17,66 @@ public:
     // PerfContextTracker inner types define
     class Duration {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk954db5;
+        ::ll::UntypedStorage<8, 8> mUnk3c6902;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Duration& operator=(Duration const&);
         Duration(Duration const&);
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Duration();
 
         // vIndex: 1
         virtual void reset();
+        // NOLINTEND
 
+    public:
+        // member functions
+        // NOLINTBEGIN
         MCAPI Duration();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI static void** vftable();
-
-        MCAPI void* ctor$();
-
-        MCAPI void dtor$();
-
-        MCAPI void reset$();
-
-        // NOLINTEND
-    };
-
-    class EventScope {
-    public:
-        // prevent constructor by default
-        EventScope& operator=(EventScope const&);
-        EventScope(EventScope const&);
-        EventScope();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI explicit EventScope(::PerfContextEvent eventType);
-
-        MCAPI ~EventScope();
-
+        MCAPI void* $ctor();
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void* ctor$(::PerfContextEvent eventType);
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI void $reset();
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
     class Timer : public ::PerfContextTracker::Duration {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk93228d;
+        ::ll::UntypedStorage<8, 8> mUnk5ef954;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         Timer& operator=(Timer const&);
@@ -80,38 +84,111 @@ public:
         Timer();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Timer() = default;
-
         // vIndex: 1
-        virtual void reset();
+        virtual void reset() /*override*/;
 
+        // vIndex: 0
+        virtual ~Timer() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void reset$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI void $reset();
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+    class EventScope {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkad1144;
+        ::ll::UntypedStorage<8, 40> mUnk7fb3d1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EventScope& operator=(EventScope const&);
+        EventScope(EventScope const&);
+        EventScope();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit EventScope(::PerfContextEvent eventType);
+
+        MCAPI ~EventScope();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::PerfContextEvent eventType);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnk7bb973;
+    ::ll::UntypedStorage<1, 1>   mUnkee6e42;
+    ::ll::UntypedStorage<8, 32>  mUnkc120fe;
+    ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
+    ::ll::UntypedStorage<8, 288> mUnk7e0308;
+    ::ll::UntypedStorage<8, 192> mUnk8e863b;
+    ::ll::UntypedStorage<4, 4>   mUnkf2b035;
+    ::ll::UntypedStorage<4, 4>   mUnke5955e;
+    ::ll::UntypedStorage<4, 4>   mUnk4f5d25;
+    ::ll::UntypedStorage<4, 4>   mUnkaed369;
+    ::ll::UntypedStorage<4, 4>   mUnkccc016;
+    ::ll::UntypedStorage<4, 4>   mUnk66f8d6;
+    ::ll::UntypedStorage<4, 4>   mUnk800a03;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&);
     PerfContextTracker(PerfContextTracker const&);
-    PerfContextTracker();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI PerfContextTracker();
+
     MCAPI void incrementPacketReceivedInfo(uint packetSize);
 
     MCAPI void incrementPacketSentInfo(uint packetSize);
+    // NOLINTEND
 
-    MCAPI static class PerfContextTracker& getInstance();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::PerfContextTracker& getInstance();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

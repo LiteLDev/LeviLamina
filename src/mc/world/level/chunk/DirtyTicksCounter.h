@@ -4,11 +4,19 @@
 
 struct DirtyTicksCounter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> totalTime;
+    ::ll::TypedStorage<4, 4, int> lastChange;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DirtyTicksCounter& operator=(DirtyTicksCounter const&);
     DirtyTicksCounter(DirtyTicksCounter const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI DirtyTicksCounter();
 
@@ -16,20 +24,22 @@ public:
 
     MCAPI int getTotalDirtyTicks() const;
 
-    MCAPI struct DirtyTicksCounter& operator++();
+    MCAPI ::DirtyTicksCounter& operator++();
 
     MCAPI void reset();
 
     MCAPI void touch();
-
-    MCAPI static struct DirtyTicksCounter max();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::DirtyTicksCounter max();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

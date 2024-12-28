@@ -3,30 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class IronGolem : public ::Mob {
+public:
+    // IronGolem inner types define
+    enum class CrackedAmount : uint {
+        High = 0,
+        Med  = 1,
+        Low  = 2,
+        None = 3,
+    };
+
 public:
     // prevent constructor by default
     IronGolem& operator=(IronGolem const&);
@@ -34,68 +35,75 @@ public:
     IronGolem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~IronGolem() = default;
+    // vIndex: 159
+    virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause) /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const& source);
-
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 149
-    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
+    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 157
-    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 142
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
-    // vIndex: 158
-    virtual void aiStep();
-
-    // vIndex: 167
-    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
-
-    MCAPI IronGolem(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
+    // vIndex: 8
+    virtual ~IronGolem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI IronGolem(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void _playStepSound$(class BlockPos const& pos, class Block const& onBlock);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI void aiStep$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void die$(class ActorDamageSource const& source);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
 
-    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams& renderParams);
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

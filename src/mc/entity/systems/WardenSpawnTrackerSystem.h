@@ -3,9 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/systems/ITickingSystem.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
 
-class WardenSpawnTrackerSystem {
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+class Player;
+// clang-format on
+
+class WardenSpawnTrackerSystem : public ::ITickingSystem, public ::LevelEventListener {
 public:
     // prevent constructor by default
     WardenSpawnTrackerSystem& operator=(WardenSpawnTrackerSystem const&);
@@ -13,23 +21,37 @@ public:
     WardenSpawnTrackerSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level&, class Player& player);
+    // vIndex: 2
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    MCVAPI void tick(class EntityRegistry& registry);
+    // vIndex: 2
+    virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
 
+    // vIndex: 0
+    virtual ~WardenSpawnTrackerSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftableForITickingSystem();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForLevelEventListener();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI ::EventResult onLevelAddedPlayer$(class Level&, class Player& player);
+    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+    // NOLINTEND
 
-    MCAPI void tick$(class EntityRegistry& registry);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForLevelEventListener();
 
+    MCAPI static void** $vftableForITickingSystem();
     // NOLINTEND
 };

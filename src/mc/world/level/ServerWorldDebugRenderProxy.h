@@ -1,0 +1,63 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/level/IServerWorldDebugRenderProxy.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class Options;
+class Player;
+// clang-format on
+
+class ServerWorldDebugRenderProxy : public ::IServerWorldDebugRenderProxy {
+public:
+    // prevent constructor by default
+    ServerWorldDebugRenderProxy& operator=(ServerWorldDebugRenderProxy const&);
+    ServerWorldDebugRenderProxy(ServerWorldDebugRenderProxy const&);
+    ServerWorldDebugRenderProxy();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual void renderActorsDebugServerState(::Options const&, ::Dimension const&) /*override*/;
+
+    // vIndex: 2
+    virtual void renderSimulatedPlayerDebugServerState(::Options const&, ::Player&) /*override*/;
+
+    // vIndex: 3
+    virtual void debugRenderDimension(::Dimension&) /*override*/;
+
+    // vIndex: 4
+    virtual void debugRendererStartTick() /*override*/;
+
+    // vIndex: 5
+    virtual void debugRendererEndTick() /*override*/;
+
+    // vIndex: 0
+    virtual ~ServerWorldDebugRenderProxy() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $renderActorsDebugServerState(::Options const&, ::Dimension const&);
+
+    MCAPI void $renderSimulatedPlayerDebugServerState(::Options const&, ::Player&);
+
+    MCAPI void $debugRenderDimension(::Dimension&);
+
+    MCAPI void $debugRendererStartTick();
+
+    MCAPI void $debugRendererEndTick();
+    // NOLINTEND
+};

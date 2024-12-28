@@ -13,4 +13,4 @@ public:
     UniqueLock();
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

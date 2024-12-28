@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToLiquidGoal.h"
 
 class MoveToWaterGoal : public ::MoveToLiquidGoal {
@@ -14,28 +13,21 @@ public:
     MoveToWaterGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MoveToWaterGoal() = default;
-
-    MCAPI MoveToWaterGoal(
-        class Mob& mob,
-        float      speedModifier,
-        int        searchRange,
-        int        searchHeight,
-        int        searchCount,
-        float      goalRadius
-    );
-
+    virtual ~MoveToWaterGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int searchCount, float goalRadius);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

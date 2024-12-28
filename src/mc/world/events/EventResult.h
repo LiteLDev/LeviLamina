@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EventResult {};
+enum class EventResult : int {
+    StopProcessing = 0,
+    KeepGoing      = 1,
+};

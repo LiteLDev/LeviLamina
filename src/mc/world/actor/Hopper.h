@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Container;
+class ItemStack;
+class Vec3;
+// clang-format on
+
 class Hopper {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>  mCooldownTime;
+    ::ll::TypedStorage<1, 1, bool> mTransferedFromChestMinecart;
+    ::ll::TypedStorage<1, 1, bool> mIsEntity;
+    ::ll::TypedStorage<4, 4, int>  mMoveItemSpeed;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Hopper& operator=(Hopper const&);
@@ -10,83 +28,60 @@ public:
     Hopper();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Hopper(int moveItemSpeed, bool isEntity);
+
+    MCAPI bool _addItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int face, int itemCount);
+
+    MCAPI ::Container* _getAttachedContainerInBlock(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
+
+    MCAPI ::std::vector<::Container*>
+    _getAttachedContainers(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
+
+    MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
+
+    MCAPI ::std::vector<::Container*> _getSourceContainers(::BlockSource& region, ::Vec3 const& pos);
+
+    MCAPI bool
+    _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
+
+    MCAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+
+    MCAPI bool
+    _tryMoveInItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int slot, int face, int itemCount);
+
+    MCAPI bool _tryMoveItems(
+        ::BlockSource& region,
+        ::Container&   fromContainer,
+        ::Vec3 const&  pos,
+        int            attachedFace,
+        bool           canPushItems
+    );
+
+    MCAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+
+    MCAPI bool
+    _tryPushToComposter(::BlockSource& region, ::Container& fromContainer, ::BlockPos hopperPos, int facingDirection);
+
+    MCAPI bool _tryTakeInItemFromSlot(
+        ::BlockSource& region,
+        ::Container&   toContainer,
+        ::Container&   fromContainer,
+        int            slot,
+        int            face
+    );
 
     MCAPI int getCooldownTime() const;
 
     MCAPI bool isOnCooldown() const;
 
     MCAPI void setCooldownTime(int time);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool
-    _addItem(class BlockSource& region, class Container& container, class ItemStack& item, int face, int itemCount);
-
-    MCAPI class Container*
-    _getAttachedContainerInBlock(class BlockSource& region, class Vec3 const& pos, int attachedFace);
-
-    MCAPI std::vector<class Container*>
-          _getAttachedContainers(class BlockSource& region, class Vec3 const& pos, int attachedFace);
-
-    MCAPI class Container* _getContainerInBlock(class BlockSource& region, class Vec3 const& pos);
-
-    MCAPI std::vector<class Container*> _getContainersAt(class BlockSource& region, class Vec3 const& pos);
-
-    MCAPI std::vector<class Container*> _getSourceContainers(class BlockSource& region, class Vec3 const& pos);
-
-    MCAPI bool _isEmptyContainer(class Container& container, int face);
-
-    MCAPI bool _isFullContainer(class Container& container, int);
-
-    MCAPI bool _pushOutItems(
-        class BlockSource& region,
-        class Container&   fromContainer,
-        class Vec3 const&  position,
-        int                attachedFace
-    );
-
-    MCAPI bool _tryMoveItems(
-        class BlockSource& region,
-        class Container&   fromContainer,
-        class Vec3 const&  pos,
-        int                attachedFace,
-        bool               canPushItems
-    );
-
-    MCAPI bool
-    _tryPullInItemsFromAboveContainer(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
-
-    MCAPI bool _tryPushToComposter(
-        class BlockSource& region,
-        class Container&   fromContainer,
-        class BlockPos     hopperPos,
-        int                facingDirection
-    );
-
-    MCAPI bool _tryTakeInItemFromSlot(
-        class BlockSource& region,
-        class Container&   toContainer,
-        class Container&   fromContainer,
-        int                slot,
-        int                face
-    );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _tryAddItemsFromPos(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(int moveItemSpeed, bool isEntity);
-
+    MCAPI void* $ctor(int moveItemSpeed, bool isEntity);
     // NOLINTEND
 };

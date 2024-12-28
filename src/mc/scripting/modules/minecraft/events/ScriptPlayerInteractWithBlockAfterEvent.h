@@ -4,68 +4,37 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptFacing.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptBlock; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
-// clang-format on
+#include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptPlayerInteractWithBlockAfterEvent {
+struct ScriptPlayerInteractWithBlockAfterEvent : public ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnke04ec3;
+    ::ll::UntypedStorage<8, 40> mUnk979963;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    ScriptPlayerInteractWithBlockAfterEvent& operator=(ScriptPlayerInteractWithBlockAfterEvent const&);
+    ScriptPlayerInteractWithBlockAfterEvent(ScriptPlayerInteractWithBlockAfterEvent const&);
     ScriptPlayerInteractWithBlockAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptPlayerInteractWithBlockAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
-
-    MCAPI ScriptPlayerInteractWithBlockAfterEvent(struct ScriptModuleMinecraft::
-                                                      ScriptPlayerInteractWithBlockAfterEvent const&);
-
-    MCAPI ScriptPlayerInteractWithBlockAfterEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>                   player,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> item,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>                    block,
-        ::ScriptModuleMinecraft::ScriptFacing                                                                 blockFace,
-        class Vec3 faceLocation
-    );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
-
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent const&);
-
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>                   player,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> item,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>                    block,
-        ::ScriptModuleMinecraft::ScriptFacing                                                                 blockFace,
-        class Vec3 faceLocation
-    );
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>
+    bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

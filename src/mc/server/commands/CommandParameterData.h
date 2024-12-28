@@ -8,20 +8,55 @@
 #include "mc/server/commands/CommandParameterOption.h"
 #include "mc/server/commands/CommandRegistry.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandRegistry;
+// clang-format on
+
 class CommandParameterData {
+public:
+    // CommandParameterData inner types define
+    using ParseFunction =
+        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> mTypeIndex;
+    ::ll::TypedStorage<
+        8,
+        8,
+        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const>
+                                                         mParse;
+    ::ll::TypedStorage<8, 32, ::std::string>             mName;
+    ::ll::TypedStorage<8, 8, char const*>                mEnumNameOrPostfix;
+    ::ll::TypedStorage<4, 4, int>                        mEnumOrPostfixSymbol;
+    ::ll::TypedStorage<8, 8, char const*>                mChainedSubcommand;
+    ::ll::TypedStorage<4, 4, int>                        mChainedSubcommandSymbol;
+    ::ll::TypedStorage<4, 4, ::CommandParameterDataType> mParamType;
+    ::ll::TypedStorage<4, 4, int>                        mOffset;
+    ::ll::TypedStorage<4, 4, int>                        mSetOffset;
+    ::ll::TypedStorage<1, 1, bool>                       mIsOptional;
+    ::ll::TypedStorage<1, 1, ::CommandParameterOption>   mOptions;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandParameterData& operator=(CommandParameterData const&);
     CommandParameterData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CommandParameterData(class CommandParameterData const& p);
+    MCAPI CommandParameterData(::CommandParameterData const& p);
 
     MCAPI CommandParameterData(
-        class Bedrock::typeid_t<class CommandRegistry> typeIndex,
+        ::Bedrock::typeid_t<::CommandRegistry> typeIndex,
         bool (CommandRegistry::*
-                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
             const,
         char const*                name,
         ::CommandParameterDataType paramType,
@@ -32,21 +67,20 @@ public:
         int                        setOffset
     );
 
-    MCAPI class CommandParameterData& addOptions(::CommandParameterOption options);
+    MCAPI ::CommandParameterData& addOptions(::CommandParameterOption options);
 
     MCAPI ~CommandParameterData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CommandParameterData const& p);
+    MCAPI void* $ctor(::CommandParameterData const& p);
 
-    MCAPI void* ctor$(
-        class Bedrock::typeid_t<class CommandRegistry> typeIndex,
+    MCAPI void* $ctor(
+        ::Bedrock::typeid_t<::CommandRegistry> typeIndex,
         bool (CommandRegistry::*
-                  parse)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
             const,
         char const*                name,
         ::CommandParameterDataType paramType,
@@ -56,8 +90,11 @@ public:
         bool                       optional,
         int                        setOffset
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

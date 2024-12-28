@@ -7,45 +7,61 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace mce { class UUID; }
 // clang-format on
 
 struct PackIdVersion {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::mce::UUID>   mId;
+    ::ll::TypedStorage<8, 112, ::SemVersion> mVersion;
+    ::ll::TypedStorage<1, 1, ::PackType>     mPackType;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PackIdVersion& operator=(PackIdVersion const&);
     PackIdVersion(PackIdVersion const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PackIdVersion();
 
-    MCAPI PackIdVersion(class mce::UUID const& id, class SemVersion const& version, ::PackType packType);
+    MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
-    MCAPI std::string asString() const;
+    MCAPI ::std::string asString() const;
 
-    MCAPI bool operator!=(struct PackIdVersion const& rhs) const;
+    MCAPI bool operator!=(::PackIdVersion const& rhs) const;
 
-    MCAPI bool operator<(struct PackIdVersion const& rhs) const;
+    MCAPI bool operator<(::PackIdVersion const& rhs) const;
 
-    MCAPI bool operator==(struct PackIdVersion const& rhs) const;
+    MCAPI bool operator==(::PackIdVersion const& rhs) const;
 
-    MCAPI bool satisfies(struct PackIdVersion const& rhs) const;
+    MCAPI bool satisfies(::PackIdVersion const& rhs) const;
 
     MCAPI ~PackIdVersion();
-
-    MCAPI static struct PackIdVersion fromString(std::string const& inputStr);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class mce::UUID const& id, class SemVersion const& version, ::PackType packType);
+    MCAPI static ::PackIdVersion fromString(::std::string const& inputStr);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

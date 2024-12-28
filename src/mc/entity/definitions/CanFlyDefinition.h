@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -18,14 +19,17 @@ public:
     CanFlyDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity) const;
+    MCAPI void initialize(::EntityContext& entity) const;
 
-    MCAPI void uninitialize(class EntityContext& entity) const;
+    MCAPI void uninitialize(::EntityContext& entity) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>& root
-    );
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CanFlyDefinition>>& root);
     // NOLINTEND
 };

@@ -2,32 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct VariantParameterListConst;
+// clang-format on
+
 class ActorDefinitionTrigger {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkf67777;
+    ::ll::UntypedStorage<2, 2>  mUnk444ddb;
+    ::ll::UntypedStorage<8, 64> mUnk4eb2d9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDefinitionTrigger(ActorDefinitionTrigger const&);
-    ActorDefinitionTrigger();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger&&);
+    MCAPI ActorDefinitionTrigger();
 
-    MCAPI bool canTrigger(class Actor const& entity, class VariantParameterList const& list) const;
+    MCAPI bool canTrigger(::Actor const& entity, ::VariantParameterListConst const& list) const;
 
-    MCAPI class ActorDefinitionTrigger& operator=(class ActorDefinitionTrigger&&);
+    MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
 
-    MCAPI class ActorDefinitionTrigger& operator=(class ActorDefinitionTrigger const&);
+    MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger const&);
 
     MCAPI ~ActorDefinitionTrigger();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ActorDefinitionTrigger&&);
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

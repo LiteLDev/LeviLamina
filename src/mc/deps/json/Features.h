@@ -6,16 +6,23 @@ namespace Json {
 
 class Features {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> allowComments_;
+    ::ll::TypedStorage<1, 1, bool> strictRoot_;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Features& operator=(Features const&);
     Features(Features const&);
     Features();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Json::Features strictMode();
-
+    MCAPI static ::Json::Features strictMode();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

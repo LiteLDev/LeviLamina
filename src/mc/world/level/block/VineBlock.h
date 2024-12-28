@@ -4,17 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
+class Vec3;
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,135 +28,88 @@ public:
     VineBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VineBlock() = default;
+    // vIndex: 10
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const /*override*/;
 
-    // vIndex: 10
-    virtual class AABB const& getVisualShapeInWorld(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferAABB
-    ) const;
-
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
-
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
-
-    // vIndex: 121
-    virtual int getColor(class Block const&) const;
-
-    // vIndex: 122
-    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
 
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 160
-    virtual class mce::Color
-    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    MCAPI VineBlock(std::string const& nameId, int id);
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
-    MCAPI void growDown(class BlockSource& region, class BlockPos const& pos, int spawnFacings) const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    MCAPI void growSideways(class BlockSource& region, class BlockPos const& pos, int testDirection) const;
+    // vIndex: 50
+    virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
 
-    MCAPI void growUp(class BlockSource& region, class BlockPos const& pos, int spawnFacings) const;
-
-    MCAPI static class Block const& getBlockForFace(uchar face);
-
-    MCAPI static bool isAcceptableNeighbour(class Block const& block);
-
+    // vIndex: 0
+    virtual ~VineBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canGrowDown(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool _canGrowUp(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool _canSideSpread(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI int _nextVineDirections(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI VineBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool _canGrowSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    MCAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getColor$(class Block const&) const;
+    MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    MCAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
-    MCAPI class mce::Color getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
-    MCAPI class AABB const& getOutline$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    MCAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+    // NOLINTEND
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const&, class BlockPos const&, uchar face, class Vec3 const&, int) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Block const& getBlockForFace(uchar face);
 
-    MCAPI class AABB const& getVisualShapeInWorld$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferAABB
-    ) const;
+    MCAPI static bool isAcceptableNeighbour(::Block const& block);
+    // NOLINTEND
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& VINE_ALL();
 
     MCAPI static int const& VINE_EAST();
@@ -164,6 +119,60 @@ public:
     MCAPI static int const& VINE_SOUTH();
 
     MCAPI static int const& VINE_WEST();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB const& $getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

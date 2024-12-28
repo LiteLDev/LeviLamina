@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/StackRefResult.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 class VolumeEntityManager : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk4d91e3;
+    ::ll::UntypedStorage<8, 8>  mUnk3ed3b4;
+    ::ll::UntypedStorage<8, 64> mUnk438525;
+    ::ll::UntypedStorage<8, 64> mUnk2b84c0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VolumeEntityManager& operator=(VolumeEntityManager const&);
@@ -22,39 +22,21 @@ public:
     VolumeEntityManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VolumeEntityManager();
-
-    MCAPI uint64 getVolumeInstanceCount() const;
-
-    MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getVolumeInstances(DimensionType dimension) const;
-
-    MCAPI static void registerComponentNetRelevancy(
-        class ComponentNetRelevancyRegistry& registry,
-        struct cereal::ReflectionCtx const&  ctx
-    );
-
+    virtual ~VolumeEntityManager() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI VolumeEntityManager(class StackRefResult<class EntityRegistry> registry, struct cereal::ReflectionCtx& ctx);
-
-    MCAPI class OwnerPtr<class EntityContext> _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(class StackRefResult<class EntityRegistry> registry, struct cereal::ReflectionCtx& ctx);
-
-    MCAPI void dtor$();
-
     MCAPI static bool& isTriggerVolumesEnabled();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

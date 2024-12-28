@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class EntityRegistry;
 namespace AgentComponents { class DetectObstacle; }
 namespace AgentComponents { class DetectRedstone; }
 // clang-format on
@@ -19,42 +21,38 @@ public:
     AgentDetectCommandSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AgentDetectCommandSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI static void
-    initializeObstacle(class EntityContext& entity, class AgentComponents::DetectObstacle& detectComponent);
-
-    MCAPI static void
-    initializeRedstone(class EntityContext& entity, class AgentComponents::DetectRedstone& detectComponent);
-
+    // vIndex: 0
+    virtual ~AgentDetectCommandSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void initializeObstacle(::EntityContext& entity, ::AgentComponents::DetectObstacle& detectComponent);
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI static void initializeRedstone(::EntityContext& entity, ::AgentComponents::DetectRedstone& detectComponent);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

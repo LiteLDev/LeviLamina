@@ -12,42 +12,53 @@ namespace Bedrock::Http {
 
 class Response {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk54228d;
+    ::ll::UntypedStorage<8, 16> mUnk10ece4;
+    ::ll::UntypedStorage<8, 24> mUnk1ee116;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Response& operator=(Response const&);
     Response(Response const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Response();
 
-    MCAPI Response(class Bedrock::Http::Response&&);
+    MCAPI Response(::Bedrock::Http::Response&&);
 
-    MCAPI explicit Response(class Bedrock::Http::Status status);
+    MCAPI explicit Response(::Bedrock::Http::Status status);
 
-    MCAPI gsl::span<uchar const> getBodyAsBytes() const;
+    MCAPI ::gsl::span<uchar const> getBodyAsBytes() const;
 
-    MCAPI std::string getBodyAsUtf8String() const;
+    MCAPI ::std::string getBodyAsUtf8String() const;
 
-    MCAPI class Bedrock::Http::HeaderCollection const& getHeaders() const;
+    MCAPI ::Bedrock::Http::HeaderCollection const& getHeaders() const;
 
-    MCAPI class Bedrock::Http::Status getStatus() const;
+    MCAPI ::Bedrock::Http::Status getStatus() const;
 
     MCAPI ~Response();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Bedrock::Http::Response&&);
+    MCAPI void* $ctor(::Bedrock::Http::Response&&);
 
-    MCAPI void* ctor$(class Bedrock::Http::Status status);
+    MCAPI void* $ctor(::Bedrock::Http::Status status);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

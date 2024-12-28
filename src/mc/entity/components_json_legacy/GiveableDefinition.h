@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GiveableComponent;
+struct GiveableTrigger;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GiveableDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk55a84c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GiveableDefinition& operator=(GiveableDefinition const&);
@@ -18,15 +27,18 @@ public:
     GiveableDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addGiveableTrigger(struct GiveableTrigger const& trigger);
+    MCAPI void addGiveableTrigger(::GiveableTrigger const& trigger);
 
-    MCAPI void initialize(class EntityContext&, class GiveableComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::GiveableComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GiveableDefinition>>& root
     );
-
     // NOLINTEND
 };

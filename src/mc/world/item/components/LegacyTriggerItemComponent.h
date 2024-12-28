@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+class DefinitionTrigger;
+class ItemStackBase;
+class RenderParams;
 // clang-format on
 
 class LegacyTriggerItemComponent : public ::ItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnkff9e52;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyTriggerItemComponent& operator=(LegacyTriggerItemComponent const&);
@@ -18,29 +26,21 @@ public:
     LegacyTriggerItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacyTriggerItemComponent();
-
+    virtual ~LegacyTriggerItemComponent() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _dispatch(
-        bool&                          result,
-        class ItemStackBase&           item,
-        class DefinitionTrigger const& trigger,
-        class RenderParams&            params
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

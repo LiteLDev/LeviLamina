@@ -7,61 +7,91 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class MapItemSavedData;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class MapInfoRequestPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                           mMapId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, ushort>>> mClientPixels;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MapInfoRequestPacket& operator=(MapInfoRequestPacket const&);
     MapInfoRequestPacket(MapInfoRequestPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MapInfoRequestPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI MapInfoRequestPacket();
-
-    MCAPI explicit MapInfoRequestPacket(struct ActorUniqueID mapId);
-
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID mapId, class MapItemSavedData& map);
-
-    MCAPI struct ActorUniqueID getMapId() const;
-
-    MCAPI bool replaceServerPixels(class MapItemSavedData& map) const;
-
+    // vIndex: 0
+    virtual ~MapInfoRequestPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MapInfoRequestPacket();
 
-    MCAPI void* ctor$(struct ActorUniqueID mapId, class MapItemSavedData& map);
+    MCAPI explicit MapInfoRequestPacket(::ActorUniqueID mapId);
 
-    MCAPI void* ctor$(struct ActorUniqueID mapId);
+    MCAPI MapInfoRequestPacket(::ActorUniqueID mapId, ::MapItemSavedData& map);
 
-    MCAPI void* ctor$();
+    MCAPI ::ActorUniqueID getMapId() const;
 
-    MCAPI void dtor$();
+    MCAPI bool replaceServerPixels(::MapItemSavedData& map) const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void* $ctor(::ActorUniqueID mapId);
 
-    MCAPI std::string getName$() const;
+    MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

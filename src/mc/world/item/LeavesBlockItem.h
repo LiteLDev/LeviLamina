@@ -3,21 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/BlockItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class CompoundTag;
+class ItemDescriptor;
+class ItemStackBase;
+class Level;
 // clang-format on
 
 class LeavesBlockItem : public ::BlockItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf9d62c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LeavesBlockItem& operator=(LeavesBlockItem const&);
@@ -25,38 +27,47 @@ public:
     LeavesBlockItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 33
+    virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 97
+    virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
+
+    // vIndex: 96
+    virtual void fixupCommon(::ItemStackBase& stack, ::Level& level) const /*override*/;
+
     // vIndex: 0
-    virtual ~LeavesBlockItem() = default;
-
-    // vIndex: 32
-    virtual int getLevelDataForAuxValue(int auxValue) const;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 92
-    virtual void fixupCommon(class ItemStackBase& stack) const;
-
-    // vIndex: 93
-    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
-
+    virtual ~LeavesBlockItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI void fixupCommon$(class ItemStackBase& stack) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI void fixupCommon$(class ItemStackBase& stack, class Level& level) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
-    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack, ::Level& level) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

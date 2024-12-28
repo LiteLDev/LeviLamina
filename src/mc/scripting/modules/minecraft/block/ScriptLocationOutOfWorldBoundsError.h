@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ class Vec3;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptLocationOutOfWorldBoundsError {
+struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptLocationOutOfWorldBoundsError& operator=(ScriptLocationOutOfWorldBoundsError const&);
@@ -20,28 +21,34 @@ public:
     ScriptLocationOutOfWorldBoundsError();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationOutOfWorldBoundsError(class Vec3 const& pos);
+    MCAPI explicit ScriptLocationOutOfWorldBoundsError(::Vec3 const& pos);
 
-    MCAPI ScriptLocationOutOfWorldBoundsError(std::string const& details, class Vec3 const& pos);
+    MCAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
 
     MCAPI ~ScriptLocationOutOfWorldBoundsError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Vec3 const& pos);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& details, class Vec3 const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Vec3 const& pos);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

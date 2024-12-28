@@ -2,7 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ImportStructureMetaData {
+// auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+class StructureTemplate;
+// clang-format on
+
+struct ImportStructureMetaData : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkcb5cf3;
+    ::ll::UntypedStorage<8, 64> mUnke94435;
+    ::ll::UntypedStorage<8, 64> mUnka6e306;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ImportStructureMetaData& operator=(ImportStructureMetaData const&);
@@ -10,12 +26,25 @@ public:
     ImportStructureMetaData();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI class StructureTemplate const* getStructure(std::string const& name);
+    // vIndex: 0
+    virtual ~ImportStructureMetaData() /*override*/;
+    // NOLINTEND
 
-    MCAPI bool const isSpecificStructureDirty(std::string const& name);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
 
-    MCAPI void setSpecificStructureDirty(std::string const& name, bool dirty);
+    MCAPI bool const isSpecificStructureDirty(::std::string const& name);
 
+    MCAPI void setSpecificStructureDirty(::std::string const& name, bool dirty);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

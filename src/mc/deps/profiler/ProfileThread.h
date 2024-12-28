@@ -12,21 +12,24 @@ public:
     ProfileThread();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProfileThread(char const* name);
+    MCAPI explicit ProfileThread(char const*);
 
     MCAPI ~ProfileThread();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(char const* name);
+    MCAPI void* $ctor(char const*);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core::Profile
+} // namespace Core::Profile

@@ -14,18 +14,28 @@ namespace ScriptModuleMinecraft {
 
 class ScriptColor {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnka089da;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptColor& operator=(ScriptColor const&);
     ScriptColor(ScriptColor const&);
     ScriptColor();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class mce::Color const& getColor() const;
+    MCAPI ::mce::Color const& getColor() const;
+    // NOLINTEND
 
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010();
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptColor> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

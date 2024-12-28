@@ -11,10 +11,26 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentKeyProvider;
+class IPackManifestFactory;
+class Pack;
+class PackSourceReport;
+class WorldPackHistory;
 namespace Core { class Path; }
 // clang-format on
 
 class WorldHistoryPackSource : public ::PackSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkf5b2e1;
+    ::ll::UntypedStorage<1, 1>  mUnke41f05;
+    ::ll::UntypedStorage<8, 24> mUnk9aff05;
+    ::ll::UntypedStorage<8, 24> mUnk4f8c50;
+    ::ll::UntypedStorage<1, 1>  mUnkb16dc9;
+    ::ll::UntypedStorage<1, 1>  mUnk664567;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WorldHistoryPackSource& operator=(WorldHistoryPackSource const&);
@@ -22,66 +38,83 @@ public:
     WorldHistoryPackSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldHistoryPackSource() = default;
+    virtual ~WorldHistoryPackSource() /*override*/;
 
     // vIndex: 1
-    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
+    virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
 
     // vIndex: 2
-    virtual void forEachPack(std::function<void(class Pack&)> callback);
+    virtual void forEachPack(::std::function<void(::Pack&)> callback) /*override*/;
 
     // vIndex: 3
-    virtual ::PackOrigin getPackOrigin() const;
+    virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     // vIndex: 4
-    virtual ::PackType getPackType() const;
+    virtual ::PackType getPackType() const /*override*/;
 
     // vIndex: 5
-    virtual class PackSourceReport load(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
-
-    MCAPI WorldHistoryPackSource(class Core::Path const& pathToWorld, ::PackType type);
-
-    MCAPI class Core::PathBuffer<std::string> const& getPathToWorld() const;
-
-    MCAPI static class Core::PathBuffer<std::string>
-    generateHistoryFilePath(class Core::Path const& pathToWorld, ::PackType type);
-
+    virtual ::PackSourceReport load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    ) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _addPackFromHistoryPack(class WorldPackHistory const& worldPackHistory);
+    MCAPI WorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType type);
 
-    MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const& worldPackHistory);
+    MCAPI void _addPackFromHistoryPack(::WorldPackHistory const& worldPackHistory);
+
+    MCAPI ::std::unique_ptr<::Pack> _createPackFromHistoryPack(::WorldPackHistory const& worldPackHistory);
 
     MCAPI bool _readWorldHistoryFile();
 
+    MCAPI ::Core::PathBuffer<::std::string> const& getPathToWorld() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Core::PathBuffer<::std::string>
+    generateHistoryFilePath(::Core::Path const& pathToWorld, ::PackType type);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Core::Path const& pathToWorld, ::PackType type);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Path const& pathToWorld, ::PackType type);
+    // NOLINTEND
 
-    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCAPI ::PackOrigin getPackOrigin$() const;
+    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCAPI ::PackType getPackType$() const;
+    MCAPI ::PackOrigin $getPackOrigin() const;
 
-    MCAPI class PackSourceReport load$(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    MCAPI ::PackType $getPackType() const;
+
+    MCAPI ::PackSourceReport $load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

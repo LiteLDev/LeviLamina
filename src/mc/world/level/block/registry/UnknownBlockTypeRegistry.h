@@ -3,9 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SharedPtr.h"
 #include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+class CompoundTag;
+// clang-format on
+
 class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnkfa461f;
+    ::ll::UntypedStorage<8, 16> mUnk3ca5c1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UnknownBlockTypeRegistry& operator=(UnknownBlockTypeRegistry const&);
@@ -13,27 +28,36 @@ public:
     UnknownBlockTypeRegistry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UnknownBlockTypeRegistry() = default;
+    virtual ~UnknownBlockTypeRegistry() /*override*/;
 
     // vIndex: 1
-    virtual class Block const& getUnknownBlock(class CompoundTag const& serId);
-
+    virtual ::Block const& getUnknownBlock(::CompoundTag const& serId) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _registerBlock(std::string const& name, uint64 serIdHash);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
+    // NOLINTEND
 
-    MCAPI class Block const& getUnknownBlock$(class CompoundTag const& serId);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

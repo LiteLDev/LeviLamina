@@ -2,42 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace TreeHelper { struct TreeParams; }
+class Block;
+class BlockDescriptor;
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
 // clang-format on
 
 namespace TreeHelper {
+// functions
 // NOLINTBEGIN
-MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI bool isValidTreePosition(
-    class IBlockWorldGenAPI const&       target,
-    class BlockPos const&                pos,
-    struct TreeHelper::TreeParams const& treeParams
-);
-
-MCAPI std::optional<class BlockPos> placeRadialBlockGroup(
-    class IBlockWorldGenAPI& target,
-    class BlockPos const&    pos,
-    class Random&,
-    class Block const&                        block,
-    int                                       radius,
-    int                                       coreWidth,
-    bool                                      simplify,
-    std::vector<class BlockDescriptor> const& mayGrowThrough
+MCAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
+    ::IBlockWorldGenAPI& target,
+    ::BlockPos const&    pos,
+    ::Random&,
+    ::Block const&                          block,
+    int                                     radius,
+    int                                     coreWidth,
+    bool                                    simplify,
+    ::std::vector<::BlockDescriptor> const& mayGrowThrough
 );
 
 MCAPI bool prepareSpawn(
-    class IBlockWorldGenAPI const&            target,
-    class BlockPos const&                     pos,
-    int                                       treeHeight,
-    std::vector<class BlockDescriptor> const& mayGrowOn,
-    std::vector<class BlockDescriptor> const& mayGrowThrough
+    ::IBlockWorldGenAPI const&              target,
+    ::BlockPos const&                       pos,
+    int                                     treeHeight,
+    ::std::vector<::BlockDescriptor> const& mayGrowOn,
+    ::std::vector<::BlockDescriptor> const& mayGrowThrough
 );
 // NOLINTEND
 
-}; // namespace TreeHelper
+} // namespace TreeHelper

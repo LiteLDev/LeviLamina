@@ -2,14 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct Version; }
-// clang-format on
-
 namespace Scripting {
 
 class Release {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkd7338f;
+    ::ll::UntypedStorage<8, 40> mUnkf154f7;
+    ::ll::UntypedStorage<2, 4>  mUnkcc8304;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Release& operator=(Release const&);
@@ -17,19 +20,16 @@ public:
     Release();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool satisfies(struct Scripting::Version const& other) const;
-
     MCAPI ~Release();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

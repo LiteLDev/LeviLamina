@@ -4,10 +4,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
+class ResourcePackManager;
+struct TradeTable;
 namespace Core { class Path; }
 // clang-format on
 
 class TradeTables {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk1d798d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TradeTables& operator=(TradeTables const&);
@@ -15,29 +24,21 @@ public:
     TradeTables();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct TradeTable* fetchTable(std::string const& path);
+    MCAPI void
+    _parseAndStoreTradeTable(::Level& level, ::ResourcePackManager* resourceLoader, ::Core::Path const& tradeTablePath);
 
-    MCAPI void reload(class Level& level);
+    MCAPI ::TradeTable* fetchTable(::std::string const& path);
+
+    MCAPI void reload(::Level& level);
 
     MCAPI ~TradeTables();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _parseAndStoreTradeTable(
-        class ItemRegistryRef      itemRegistry,
-        class ResourcePackManager* resourceLoader,
-        class Core::Path const&    tradeTablePath
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

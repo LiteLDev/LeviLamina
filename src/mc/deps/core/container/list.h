@@ -13,4 +13,4 @@ public:
     list();
 };
 
-}; // namespace Bedrock::Intrusive
+} // namespace Bedrock::Intrusive

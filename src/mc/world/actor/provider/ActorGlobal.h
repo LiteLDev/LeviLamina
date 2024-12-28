@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace ActorGlobal {
-// NOLINTBEGIN
-MCAPI void addActorGlobalComponents(class EntityContext& entity);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
 
-MCAPI void removeActorGlobalComponents(class EntityContext& entity);
+namespace ActorGlobal {
+// functions
+// NOLINTBEGIN
+MCAPI void addActorGlobalComponents(::EntityContext& entity);
+
+MCAPI void removeActorGlobalComponents(::EntityContext& entity);
 // NOLINTEND
 
-}; // namespace ActorGlobal
+} // namespace ActorGlobal

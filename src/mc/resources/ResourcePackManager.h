@@ -8,7 +8,41 @@
 #include "mc/deps/core/resource/ResourcePackStackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class IContentTierManager;
+class LoadedResourceData;
+class PackInstance;
+class PackSourceReport;
+class ResourceGroup;
+class ResourceLocation;
+class ResourceLocationPair;
+class ResourcePackListener;
+class ResourcePackStack;
+namespace Core { class Path; }
+// clang-format on
+
 class ResourcePackManager : public ::ResourceLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64>  mUnkb96c8d;
+    ::ll::UntypedStorage<8, 8>   mUnk4f9819;
+    ::ll::UntypedStorage<8, 8>   mUnk809618;
+    ::ll::UntypedStorage<8, 8>   mUnkd638dd;
+    ::ll::UntypedStorage<8, 8>   mUnk7a20a8;
+    ::ll::UntypedStorage<8, 8>   mUnk296ec8;
+    ::ll::UntypedStorage<8, 8>   mUnk9cce53;
+    ::ll::UntypedStorage<8, 8>   mUnk69ba5b;
+    ::ll::UntypedStorage<8, 32>  mUnk67648f;
+    ::ll::UntypedStorage<1, 1>   mUnk84ade0;
+    ::ll::UntypedStorage<1, 1>   mUnkacc084;
+    ::ll::UntypedStorage<1, 1>   mUnk384e00;
+    ::ll::UntypedStorage<8, 8>   mUnk661f94;
+    ::ll::UntypedStorage<8, 24>  mUnk77052a;
+    ::ll::UntypedStorage<8, 112> mUnk3bf93e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ResourcePackManager& operator=(ResourcePackManager const&);
@@ -16,183 +50,197 @@ public:
     ResourcePackManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ResourcePackManager();
+    virtual ~ResourcePackManager() /*override*/;
 
-    // vIndex: 1
-    virtual bool load(class ResourceLocation const& resourceLocation, std::string& resourceStream) const;
+    // vIndex: 3
+    virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
     // vIndex: 2
     virtual bool load(
-        class ResourceLocation const&   resourceLocation,
-        std::string&                    resourceStream,
-        std::vector<std::string> const& extensionList
-    ) const;
+        ::ResourceLocation const&        resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
-    // vIndex: 3
+    // vIndex: 1
     virtual bool load(
-        class ResourceLocationPair const& resourceLocationPair,
-        std::string&                      resourceStream,
-        std::vector<std::string> const&   extensionList
-    ) const;
+        ::ResourceLocationPair const&    resourceLocationPair,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
     // vIndex: 4
-    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const& resourceLocation
-    ) const;
-
-    // vIndex: 5
-    virtual bool isInStreamableLocation(class ResourceLocation const& resourceLocation) const;
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
+        /*override*/;
 
     // vIndex: 6
-    virtual bool isInStreamableLocation(
-        class ResourceLocation const&   resourceLocation,
-        std::vector<std::string> const& extensionList
-    ) const;
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 7
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const& resourceLocation) const;
+    // vIndex: 5
+    virtual bool isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
     // vIndex: 8
-    virtual class Core::PathBuffer<std::string>
-    getPath(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensionList) const;
+    virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
-    // vIndex: 9
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const& resourceLocation
-    ) const;
+    // vIndex: 7
+    virtual ::Core::PathBuffer<::std::string>
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
+        /*override*/;
 
     // vIndex: 10
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(
-        class ResourceLocation const& resourceLocation,
-        std::vector<std::string>      extensionList
-    ) const;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation
+    ) const /*override*/;
+
+    // vIndex: 9
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
     // vIndex: 11
-    virtual std::pair<int, std::string const&> getPackStackIndexOfResource(
-        class ResourceLocation const&   resourceLocation,
-        std::vector<std::string> const& extensionList
-    ) const;
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
+    ) const /*override*/;
 
     // vIndex: 12
-    virtual bool hasCapability(std::string_view requiredCapability) const;
+    virtual bool hasCapability(::std::string_view requiredCapability) const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ResourcePackManager(
-        std::function<class Core::PathBuffer<std::string>()>                getPath,
-        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
-        bool                                                                needsToInitialize
+        ::std::function<::Core::PathBuffer<::std::string>()>              getPath,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
+        bool                                                              needsToInitialize
     );
+
+    MCAPI void _calculateMinEngineVersionFromFullStack();
+
+    MCAPI void _composeFullStack();
+
+    MCAPI void _getResourcesOfGroup(
+        ::PackInstance const&        packInstance,
+        ::std::string const&         group,
+        ::std::vector<::Core::Path>& resources
+    ) const;
+
+    MCAPI bool _shouldRebuildStack() const;
+
+    MCAPI void _updateLanguageSubpacks();
 
     MCAPI void clearStack(::ResourcePackStackType stackType, bool composeStack);
 
     MCAPI int composeFullStack(
-        class ResourcePackStack&       output,
-        class ResourcePackStack const& globalStack,
-        class ResourcePackStack const& levelStack,
-        class ResourcePackStack const& addonStack
+        ::ResourcePackStack&       output,
+        ::ResourcePackStack const& globalStack,
+        ::ResourcePackStack const& levelStack,
+        ::ResourcePackStack const& addonStack
     ) const;
 
-    MCAPI class SemVersion getFullStackMinEngineVersion() const;
+    MCAPI ::PackSourceReport const* getPackSourceReport() const;
 
-    MCAPI class PackSourceReport const* getPackSourceReport() const;
+    MCAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
-    MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(std::string const& group) const;
+    MCAPI ::ResourceGroup getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group) const;
 
-    MCAPI std::vector<class Core::PathBuffer<std::string>>
-          getResourcesOfGroup(class PackInstance const& packInstance, std::string const& group) const;
-
-    MCAPI class ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
+    MCAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
 
     MCAPI void handlePendingStackChanges();
 
-    MCAPI bool hasResource(class ResourceLocation const& resourceLocation) const;
+    MCAPI bool isAssetExtractionViableForFullStack() const;
 
     MCAPI bool isOnlyBaseGamePacks() const;
 
-    MCAPI void iteratePacks(std::function<void(class PackInstance const&)> const& pred) const;
+    MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
-    MCAPI void registerResourcePackListener(class ResourcePackListener& listener);
+    MCAPI bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-    MCAPI void removeIf(std::function<bool(class PackInstance const&)> const& pred);
+    MCAPI void registerResourcePackListener(::ResourcePackListener& listener);
 
-    MCAPI void setPackSourceReport(class PackSourceReport&& report);
+    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
+
+    MCAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCAPI bool
-    setStack(std::unique_ptr<class ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
+    setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
 
-    MCAPI void unRegisterResourcePackListener(class ResourcePackListener& listener);
-
+    MCAPI void unRegisterResourcePackListener(::ResourcePackListener& listener);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _composeFullStack();
-
-    MCAPI void _getResourcesOfGroup(
-        class PackInstance const&                         packInstance,
-        std::string const&                                group,
-        std::vector<class Core::PathBuffer<std::string>>& resources
-    ) const;
-
-    MCAPI void _updateLanguageSubpacks();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::function<class Core::PathBuffer<std::string>()>                getPath,
-        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
-        bool                                                                needsToInitialize
+    MCAPI void* $ctor(
+        ::std::function<::Core::PathBuffer<::std::string>()>              getPath,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
+        bool                                                              needsToInitialize
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::pair<int, std::string const&> getPackStackIndexOfResource$(
-        class ResourceLocation const&   resourceLocation,
-        std::vector<std::string> const& extensionList
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+
+    MCAPI bool $load(
+        ::ResourceLocation const&        resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCAPI class Core::PathBuffer<std::string> getPath$(class ResourceLocation const& resourceLocation) const;
-
-    MCAPI class Core::PathBuffer<std::string>
-    getPath$(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensionList) const;
-
-    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(class ResourceLocation const& resourceLocation
+    MCAPI bool $load(
+        ::ResourceLocationPair const&    resourceLocationPair,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCAPI class Core::PathBuffer<std::string> getPathContainingResource$(
-        class ResourceLocation const& resourceLocation,
-        std::vector<std::string>      extensionList
+    MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+
+    MCAPI bool $isInStreamableLocation(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCAPI bool hasCapability$(std::string_view requiredCapability) const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCAPI bool isInStreamableLocation$(class ResourceLocation const& resourceLocation) const;
+    MCAPI ::Core::PathBuffer<::std::string>
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
-    MCAPI bool isInStreamableLocation$(
-        class ResourceLocation const&   resourceLocation,
-        std::vector<std::string> const& extensionList
+    MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
     ) const;
 
-    MCAPI bool load$(class ResourceLocation const& resourceLocation, std::string& resourceStream) const;
-
-    MCAPI bool load$(
-        class ResourceLocation const&   resourceLocation,
-        std::string&                    resourceStream,
-        std::vector<std::string> const& extensionList
+    MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCAPI bool load$(
-        class ResourceLocationPair const& resourceLocationPair,
-        std::string&                      resourceStream,
-        std::vector<std::string> const&   extensionList
+    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCAPI std::vector<class LoadedResourceData> loadAllVersionsOf$(class ResourceLocation const& resourceLocation
-    ) const;
+    MCAPI bool $hasCapability(::std::string_view requiredCapability) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

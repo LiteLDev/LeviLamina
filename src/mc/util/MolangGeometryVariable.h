@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangGeometryVariable {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+
+struct MolangGeometryVariable : public ::MolangHashStringVariable<::MolangGeometryVariable> {
 public:
     // prevent constructor by default
     MolangGeometryVariable& operator=(MolangGeometryVariable const&);
@@ -10,15 +13,14 @@ public:
     MolangGeometryVariable();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangGeometryVariable();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

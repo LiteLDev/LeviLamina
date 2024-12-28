@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/buffer_span_mut.h"
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class Pos;
+// clang-format on
 
 class BlockVolume {
 public:
@@ -15,21 +19,52 @@ public:
     // BlockVolume inner types define
     struct BlockVolumeIter {
     public:
+        // BlockVolumeIter inner types define
+        using iterator_category = ::std::forward_iterator_tag;
+
+        using reference = ::std::pair<::Block const*, ::Pos> const&;
+
+        using value_type = ::std::pair<::Block const*, ::Pos> const;
+
+        using pointer = ::std::pair<::Block const*, ::Pos> const*;
+
+        using difference_type = int64;
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 12, ::Pos>                                      pos;
+        ::ll::TypedStorage<4, 12, ::Pos>                                      dims;
+        ::ll::TypedStorage<8, 8, ::buffer_span_mut<::Block const*>::iterator> blockIter;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         BlockVolumeIter& operator=(BlockVolumeIter const&);
         BlockVolumeIter(BlockVolumeIter const&);
         BlockVolumeIter();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const& c) const;
+        MCAPI bool operator!=(::BlockVolume::BlockVolumeIter const& c) const;
 
-        MCAPI std::pair<class Block const*, class Pos> const operator*();
+        MCAPI ::std::pair<::Block const*, ::Pos> const operator*();
 
-        MCAPI struct BlockVolume::BlockVolumeIter& operator++();
-
+        MCAPI ::BlockVolume::BlockVolumeIter& operator++();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::buffer_span_mut<::Block const*>> mBlocks;
+    ::ll::TypedStorage<4, 4, uint>                               mWidth;
+    ::ll::TypedStorage<4, 4, uint>                               mHeight;
+    ::ll::TypedStorage<4, 4, uint>                               mDepth;
+    ::ll::TypedStorage<4, 4, int>                                mDimensionBottom;
+    ::ll::TypedStorage<8, 8, ::Block const*>                     mInitBlock;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -38,57 +73,55 @@ public:
     BlockVolume();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockVolume(
-        class buffer_span_mut<class Block const*> buffer,
-        int                                       width,
-        int                                       height,
-        int                                       depth,
-        class Block const&                        initBlock,
-        int                                       dimensionBottom
+        ::buffer_span_mut<::Block const*> buffer,
+        int                               width,
+        int                               height,
+        int                               depth,
+        ::Block const&                    initBlock,
+        int                               dimensionBottom
     );
 
-    MCAPI struct BlockVolume::BlockVolumeIter begin() const;
+    MCAPI ::BlockVolume::BlockVolumeIter begin() const;
 
-    MCAPI std::unique_ptr<std::vector<short>> computeHeightMap() const;
+    MCAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
 
-    MCAPI struct BlockVolume::BlockVolumeIter end() const;
+    MCAPI ::BlockVolume::BlockVolumeIter end() const;
 
     MCAPI short findHighestNonAirBlock() const;
 
     MCAPI short
-    getAboveTopSolidBlock(class BlockPos const& start, bool dimensionShowsSky, bool includeWater, bool includeLeaves)
-        const;
+    getAboveTopSolidBlock(::BlockPos const& start, bool dimensionShowsSky, bool includeWater, bool includeLeaves) const;
 
-    MCAPI class Pos getDimensions() const;
+    MCAPI ::Pos getDimensions() const;
 
     MCAPI uint getIndexBounds() const;
 
-    MCAPI uint index(class BlockPos const& pos) const;
+    MCAPI uint index(::BlockPos const& pos) const;
 
-    MCAPI uint index(class Pos const& pos) const;
+    MCAPI uint index(::Pos const&) const;
 
-    MCAPI uint indexNoBoundsCheck(class BlockPos const& pos) const;
+    MCAPI uint indexNoBoundsCheck(::Pos const& pos) const;
 
-    MCAPI uint indexNoBoundsCheck(class Pos const& pos) const;
+    MCAPI uint indexNoBoundsCheck(::BlockPos const&) const;
 
-    MCAPI bool isInBounds(class BlockPos const& pos) const;
+    MCAPI bool isInBounds(::BlockPos const& pos) const;
 
-    MCAPI bool isInBounds(class Pos const& pos) const;
-
+    MCAPI bool isInBounds(::Pos const&) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class buffer_span_mut<class Block const*> buffer,
-        int                                       width,
-        int                                       height,
-        int                                       depth,
-        class Block const&                        initBlock,
-        int                                       dimensionBottom
+    MCAPI void* $ctor(
+        ::buffer_span_mut<::Block const*> buffer,
+        int                               width,
+        int                               height,
+        int                               depth,
+        ::Block const&                    initBlock,
+        int                               dimensionBottom
     );
-
     // NOLINTEND
 };

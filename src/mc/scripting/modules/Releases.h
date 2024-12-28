@@ -8,15 +8,17 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleCommon::Releases {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& LATEST();
+MCAPI ::std::add_lvalue_reference_t<::Scripting::Version const[]> ALL_V1_RELEASES();
 
-MCAPI struct Scripting::Version const& V100();
+MCAPI ::Scripting::Version const& LATEST();
 
-MCAPI struct Scripting::Version const& V110();
+MCAPI ::Scripting::Version const& V1_0_0();
 
-MCAPI struct Scripting::Version const& V120();
+MCAPI ::Scripting::Version const& V1_1_0();
+
+MCAPI ::Scripting::Version const& V1_2_0();
 // NOLINTEND
 
-}; // namespace ScriptModuleCommon::Releases
+} // namespace ScriptModuleCommon::Releases

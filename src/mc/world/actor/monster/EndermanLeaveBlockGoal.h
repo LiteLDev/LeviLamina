@@ -3,10 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class EnderMan;
+// clang-format on
+
 class EndermanLeaveBlockGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkbc0f1f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EndermanLeaveBlockGoal& operator=(EndermanLeaveBlockGoal const&);
@@ -14,35 +24,52 @@ public:
     EndermanLeaveBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndermanLeaveBlockGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit EndermanLeaveBlockGoal(class EnderMan& enderman);
-
+    // vIndex: 0
+    virtual ~EndermanLeaveBlockGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit EndermanLeaveBlockGoal(::EnderMan& enderman);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class EnderMan& enderman);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EnderMan& enderman);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -20,10 +20,10 @@ public:
     ScriptBoundingBox();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::InterfaceBindingBuilder<class BoundingBox> bind();
-
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::BoundingBox> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

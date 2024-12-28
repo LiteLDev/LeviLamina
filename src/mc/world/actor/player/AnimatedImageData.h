@@ -13,35 +13,42 @@ namespace mce { struct Image; }
 
 class AnimatedImageData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::persona::AnimatedTextureType> mType;
+    ::ll::TypedStorage<4, 4, ::persona::AnimationExpression> mAnimationExpression;
+    ::ll::TypedStorage<8, 48, ::mce::Image>                  mImage;
+    ::ll::TypedStorage<4, 4, float>                          mFrames;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    AnimatedImageData& operator=(AnimatedImageData const&);
     AnimatedImageData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedImageData(class AnimatedImageData const& rhs);
+    MCAPI AnimatedImageData(::AnimatedImageData const& rhs);
 
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
-        struct mce::Image const&       animatedImage,
+        ::mce::Image const&            animatedImage,
         float                          frames
     );
-
-    MCAPI class AnimatedImageData& operator=(class AnimatedImageData const& rhs);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
+    MCAPI void* $ctor(::AnimatedImageData const& rhs);
+
+    MCAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
-        struct mce::Image const&       animatedImage,
+        ::mce::Image const&            animatedImage,
         float                          frames
     );
-
-    MCAPI void* ctor$(class AnimatedImageData const& rhs);
-
     // NOLINTEND
 };

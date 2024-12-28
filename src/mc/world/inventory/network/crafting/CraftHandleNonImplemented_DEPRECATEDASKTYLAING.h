@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemStackRequestActionCraftBase;
+class ItemStackRequestActionCraftHandler;
+// clang-format on
 
 class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public ::CraftHandlerBase {
 public:
@@ -16,21 +20,44 @@ public:
     CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = default;
-
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
+    // vIndex: 0
+    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit CraftHandleNonImplemented_DEPRECATEDASKTYLAING(
+        ::ItemStackRequestActionCraftHandler& craftRequestHandler
+    );
+    // NOLINTEND
 
-    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackRequestActionCraftHandler& craftRequestHandler);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

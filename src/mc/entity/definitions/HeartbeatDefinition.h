@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct HeartbeatServerComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class HeartbeatDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnkc972be;
+    ::ll::UntypedStorage<8, 216> mUnk6a3f0a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HeartbeatDefinition& operator=(HeartbeatDefinition const&);
@@ -18,13 +27,16 @@ public:
     HeartbeatDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, class HeartbeatServerComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::HeartbeatServerComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HeartbeatDefinition>>& root
     );
-
     // NOLINTEND
 };

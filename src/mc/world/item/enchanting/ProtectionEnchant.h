@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDamageSource;
+class ItemInstance;
+// clang-format on
+
 class ProtectionEnchant : public ::Enchant {
 public:
     // prevent constructor by default
@@ -13,73 +20,68 @@ public:
     ProtectionEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ProtectionEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 6
-    virtual int getDamageProtection(int level, class ActorDamageSource const& source) const;
+    virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 11
-    virtual void doPostHurt(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
+    virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const /*override*/;
 
     // vIndex: 13
-    virtual bool isProtectionEnchant() const;
+    virtual bool isProtectionEnchant() const /*override*/;
 
     // vIndex: 16
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
 
-    MCAPI ProtectionEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
-
+    // vIndex: 0
+    virtual ~ProtectionEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
-
-    MCAPI bool _isValidEnchantmentTypeForCategory$(::Enchant::Type type) const;
-
-    MCAPI void doPostHurt$(class ItemInstance& item, class Actor& victim, class Actor& attacker, int level) const;
-
-    MCAPI int getDamageProtection$(int level, class ActorDamageSource const& source) const;
-
-    MCAPI int getMaxCost$(int level) const;
-
-    MCAPI int getMaxLevel$() const;
-
-    MCAPI int getMinCost$(int level) const;
-
-    MCAPI bool isProtectionEnchant$() const;
-
     MCAPI static float const& THORNS_CHANCE_PER_LEVEL();
 
-    MCAPI static std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
+
+    MCAPI int $getMaxCost(int level) const;
+
+    MCAPI int $getMaxLevel() const;
+
+    MCAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+
+    MCAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+
+    MCAPI bool $isProtectionEnchant() const;
+
+    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

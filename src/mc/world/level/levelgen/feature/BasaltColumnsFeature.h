@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class BasaltColumnsFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,30 +20,36 @@ public:
     BasaltColumnsFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~BasaltColumnsFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+    virtual ~BasaltColumnsFeature() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos>
-          _findSurface(class BlockSource& region, class BlockPos cursor, int limit, int yDirection) const;
-
-    MCAPI void _placeColumnCluster(class BlockSource& region, class BlockPos origin, int columnHeight, int reach) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

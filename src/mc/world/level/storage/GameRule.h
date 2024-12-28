@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+// clang-format on
+
 class GameRule {
 public:
     // GameRule inner types declare
@@ -10,11 +15,31 @@ public:
     // clang-format on
 
     // GameRule inner types define
-    enum class Type {};
+    enum class Type : uchar {
+        Invalid = 0,
+        Bool    = 1,
+        Int     = 2,
+        Float   = 3,
+    };
 
-    union Value {};
-
+    union Value {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 4> mUnk29fff1;
+        ::ll::UntypedStorage<4, 4> mUnk2ab4f3;
+        ::ll::UntypedStorage<4, 4> mUnk768db5;
+        // NOLINTEND
+    };
     class ValidationError {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>                          mSuccess;
+        ::ll::TypedStorage<8, 32, ::std::string>                mErrorDescription;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mErrorParameters;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ValidationError& operator=(ValidationError const&);
@@ -22,30 +47,54 @@ public:
         ValidationError();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ValidationError();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
+    using TagDataNotFoundCallback = ::std::function<void(::GameRule&, ::BaseGameVersion const&)>;
+
+    using ValidateValueCallback = ::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                                                          mShouldSave;
+    ::ll::TypedStorage<1, 1, ::GameRule::Type>                                              mType;
+    ::ll::TypedStorage<4, 4, ::GameRule::Value>                                             mValue;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mName;
+    ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInCommand;
+    ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInScripting;
+    ::ll::TypedStorage<1, 1, bool>                                                          mIsDefaultSet;
+    ::ll::TypedStorage<1, 1, bool>                                                          mRequiresCheats;
+    ::ll::TypedStorage<1, 1, bool>                                                          mCanBeModifiedByPlayer;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::GameRule&, ::BaseGameVersion const&)>> mTagNotFoundCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)>>
+        mValidateValueCallback;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    GameRule(GameRule const&);
     GameRule();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI GameRule(class GameRule&&);
+    MCAPI GameRule(::GameRule&&);
 
-    MCAPI GameRule(class GameRule const&);
+    MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
 
-    MCAPI GameRule(std::string const& name, bool canBeModifiedByPlayer);
+    MCAPI ::GameRule& _setDefaultValue(bool b);
+
+    MCAPI ::GameRule& _setDefaultValue(int i);
 
     MCAPI bool allowUseInCommand() const;
 
@@ -59,62 +108,47 @@ public:
 
     MCAPI int getInt() const;
 
-    MCAPI std::string getLowercaseName() const;
+    MCAPI ::std::string getLowercaseName() const;
 
-    MCAPI std::string const& getName() const;
+    MCAPI ::std::string const& getName() const;
 
     MCAPI ::GameRule::Type getType() const;
 
-    MCAPI union GameRule::Value const& getValue() const;
+    MCAPI ::GameRule::Value const& getValue() const;
 
-    MCAPI class GameRule& operator=(class GameRule&&);
+    MCAPI ::GameRule& operator=(::GameRule&&);
 
-    MCAPI class GameRule& operator=(class GameRule const&);
+    MCAPI ::GameRule& operator=(::GameRule const&);
 
     MCAPI bool requiresCheats() const;
 
     MCAPI void resetType(::GameRule::Type type);
 
-    MCAPI bool setBool(bool value, bool* pValidated, class GameRule::ValidationError* errorOutput);
+    MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI bool setFloat(float value, bool* pValidated, class GameRule::ValidationError* errorOutput);
+    MCAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI bool setInt(int value, bool* pValidated, class GameRule::ValidationError* errorOutput);
+    MCAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI class GameRule&
-    setTagDataNotFoundCallback(std::function<void(class GameRule&, class BaseGameVersion const&)> cb);
+    MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
 
-    MCAPI class GameRule&
-    setValidateValueCallback(std::function<bool(union GameRule::Value const&, class GameRule::ValidationError*)> cb);
+    MCAPI ::GameRule&
+    setValidateValueCallback(::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)> cb);
 
     MCAPI ~GameRule();
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class GameRule& _setDefaultValue(bool b);
-
-    MCAPI class GameRule& _setDefaultValue(int i);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _set(union GameRule::Value const& v, bool* pValidated, class GameRule::ValidationError* errorOutput);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class GameRule&&);
+    MCAPI void* $ctor(::GameRule&&);
 
-    MCAPI void* ctor$(class GameRule const&);
+    MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, bool canBeModifiedByPlayer);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

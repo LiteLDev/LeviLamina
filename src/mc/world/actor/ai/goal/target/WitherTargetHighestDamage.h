@@ -3,10 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+class Player;
+class WitherBoss;
+struct MobDescriptor;
+// clang-format on
+
 class WitherTargetHighestDamage : public ::TargetGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk52787d;
+    ::ll::UntypedStorage<8, 8> mUnk99d285;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WitherTargetHighestDamage& operator=(WitherTargetHighestDamage const&);
@@ -14,63 +29,76 @@ public:
     WitherTargetHighestDamage();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WitherTargetHighestDamage() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
-
-    // vIndex: 4
-    virtual void start();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+
+    // vIndex: 4
+    virtual void start() /*override*/;
 
     // vIndex: 10
     virtual bool _canAttack(
-        class Mob*                   testMob,
-        class Actor*                 target,
-        bool                         allowInvulnerable,
-        bool                         mustSee,
-        struct MobDescriptor const** outDescriptorMatch
-    );
+        ::Mob*                  testMob,
+        ::Actor*                target,
+        bool                    allowInvulnerable,
+        bool                    mustSee,
+        ::MobDescriptor const** outDescriptorMatch
+    ) /*override*/;
 
-    MCAPI WitherTargetHighestDamage(class WitherBoss& witherBoss, std::vector<struct MobDescriptor> const& targetTypes);
-
+    // vIndex: 0
+    virtual ~WitherTargetHighestDamage() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Player* getHighestDamageTarget();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WitherTargetHighestDamage(::WitherBoss& witherBoss, ::std::vector<::MobDescriptor> const& targetTypes);
 
-    MCAPI void* ctor$(class WitherBoss& witherBoss, std::vector<struct MobDescriptor> const& targetTypes);
+    MCAPI ::Player* getHighestDamageTarget();
+    // NOLINTEND
 
-    MCAPI bool _canAttack$(
-        class Mob*                   testMob,
-        class Actor*                 target,
-        bool                         allowInvulnerable,
-        bool                         mustSee,
-        struct MobDescriptor const** outDescriptorMatch
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WitherBoss& witherBoss, ::std::vector<::MobDescriptor> const& targetTypes);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI void $start();
+
+    MCAPI bool $_canAttack(
+        ::Mob*                  testMob,
+        ::Actor*                target,
+        bool                    allowInvulnerable,
+        bool                    mustSee,
+        ::MobDescriptor const** outDescriptorMatch
     );
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
-
-    MCAPI bool canContinueToUse$();
-
-    MCAPI bool canUse$();
-
-    MCAPI void start$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

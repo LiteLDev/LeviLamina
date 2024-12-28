@@ -7,63 +7,97 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class MolangVariableMap;
+class ReadOnlyBinaryStream;
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
+
 class SpawnParticleEffectPacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, uchar>                                 mVanillaDimensionId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                       mActorId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                               mPos;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mEffectName;
+    ::ll::TypedStorage<8, 64, ::std::optional<::MolangVariableMap>> mMolangVariables;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
     SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SpawnParticleEffectPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~SpawnParticleEffectPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SpawnParticleEffectPacket();
 
     MCAPI SpawnParticleEffectPacket(
-        class Vec3 const&                      pos,
-        std::string const&                     name,
-        uchar                                  vanillaDimensionId,
-        std::optional<class MolangVariableMap> molangVariables
+        ::Vec3 const&                        pos,
+        ::std::string const&                 name,
+        uchar                                vanillaDimensionId,
+        ::std::optional<::MolangVariableMap> molangVariables
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(
-        class Vec3 const&                      pos,
-        std::string const&                     name,
-        uchar                                  vanillaDimensionId,
-        std::optional<class MolangVariableMap> molangVariables
+    MCAPI void* $ctor(
+        ::Vec3 const&                        pos,
+        ::std::string const&                 name,
+        uchar                                vanillaDimensionId,
+        ::std::optional<::MolangVariableMap> molangVariables
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

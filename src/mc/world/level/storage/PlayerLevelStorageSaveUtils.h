@@ -2,11 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace PlayerLevelStorageSaveUtils {
-// NOLINTBEGIN
-MCAPI bool canSavePlayerWithLevelStorage(class EntityContext const& entity);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class PlayerSuspendLevelStorageSaveToken;
+// clang-format on
 
-MCAPI class PlayerSuspendLevelStorageSaveToken suspendPlayerLevelStorageSave(class EntityContext& entity);
+namespace PlayerLevelStorageSaveUtils {
+// functions
+// NOLINTBEGIN
+MCAPI bool canSavePlayerWithLevelStorage(::EntityContext const& entity);
+
+MCAPI ::PlayerSuspendLevelStorageSaveToken suspendPlayerLevelStorageSave(::EntityContext& entity);
 // NOLINTEND
 
-}; // namespace PlayerLevelStorageSaveUtils
+} // namespace PlayerLevelStorageSaveUtils

@@ -7,99 +7,102 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorIsBeingDestroyedFlagComponent;
+struct ActorUniqueIDComponent;
+struct PassengerComponent;
+struct PendingRemovePassengersComponent;
+struct RemovePassengersComponent;
+struct StopRidingRequestComponent;
+struct SwitchingVehiclesFlagComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace FlagPassengerRemovalSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void deferredPassengerRemoval(
-    class StrictEntityContext const& vehicleEntity,
-    struct VehicleComponent const&   vehicleComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct StopRidingRequestFlag>>,
-        struct Exclude<
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>,
-        struct PassengerComponent const,
-        struct ActorUniqueIDComponent const>                      passengersToRemove,
-    class EntityModifier<struct PendingRemovePassengersComponent> modifier
+    ::StrictEntityContext const& vehicleEntity,
+    ::VehicleComponent const&    vehicleComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent>,
+        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
+        ::PassengerComponent const,
+        ::ActorUniqueIDComponent const>                  passengersToRemove,
+    ::EntityModifier<::PendingRemovePassengersComponent> modifier
 );
 
 MCAPI void immediatePassengerRemoval(
-    class StrictEntityContext const& vehicleEntity,
-    struct VehicleComponent const&   vehicleComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>>> destroyedPassengersToRemove,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>> switchingVehiclePassengersToRemove,
-    class EntityModifier<struct RemovePassengersComponent>      modifier
+    ::StrictEntityContext const& vehicleEntity,
+    ::VehicleComponent const&    vehicleComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
+        destroyedPassengersToRemove,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
+                                                  switchingVehiclePassengersToRemove,
+    ::EntityModifier<::RemovePassengersComponent> modifier
+);
+
+MCAPI void singleDeferredPassengerRemoval(
+    ::StrictEntityContext const&                         passenger,
+    ::PassengerComponent const&                          passengerComponent,
+    ::ActorUniqueIDComponent const&                      actorUniqueIdComponent,
+    ::EntityModifier<::PendingRemovePassengersComponent> modifier
+);
+
+MCAPI void singleImmediatePassengerRemoval(
+    ::StrictEntityContext const& passenger,
+    ::PassengerComponent const&  passengerComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
+        destroyedPassengers,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
+                                                  switchingVehiclePassengers,
+    ::EntityModifier<::RemovePassengersComponent> modifier
 );
 
 MCAPI void singleTickDeferredPassengerRemoval(
-    class StrictEntityContext const& entity,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct StopRidingRequestFlag>>,
-        struct Exclude<
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>,
-        struct PassengerComponent const,
-        struct ActorUniqueIDComponent const>                      view,
-    class EntityModifier<struct PendingRemovePassengersComponent> modifier
+    ::StrictEntityContext const& entity,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent>,
+        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
+        ::PassengerComponent const,
+        ::ActorUniqueIDComponent const>                  view,
+    ::EntityModifier<::PendingRemovePassengersComponent> modifier
 );
 
 MCAPI void singleTickImmediatePassengerRemoval(
-    class StrictEntityContext const& entity,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct StopRidingRequestFlag>>,
-        struct PassengerComponent const> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>>> destroyedPassengers,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>> switchingVehiclePassengers,
-    class EntityModifier<struct RemovePassengersComponent>      modifier
+    ::StrictEntityContext const&                                                                        entity,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
+        destroyedPassengers,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
+                                                  switchingVehiclePassengers,
+    ::EntityModifier<::RemovePassengersComponent> modifier
 );
 
 MCAPI void tickDeferredPassengerRemoval(
-    class ViewT<class StrictEntityContext, struct VehicleComponent const> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct StopRidingRequestFlag>>,
-        struct Exclude<
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>,
-        struct PassengerComponent const,
-        struct ActorUniqueIDComponent const>                      passengersToRemove,
-    class EntityModifier<struct PendingRemovePassengersComponent> modifier
+    ::ViewT<::StrictEntityContext, ::VehicleComponent const> view,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent>,
+        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
+        ::PassengerComponent const,
+        ::ActorUniqueIDComponent const>                  passengersToRemove,
+    ::EntityModifier<::PendingRemovePassengersComponent> modifier
 );
 
 MCAPI void tickImmediatePassengerRemoval(
-    class ViewT<class StrictEntityContext, struct VehicleComponent const> view,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct ActorIsBeingDestroyedFlag>>> destroyedPassengers,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>> switchingVehiclePassengers,
-    class EntityModifier<struct RemovePassengersComponent>      modifier
+    ::ViewT<::StrictEntityContext, ::VehicleComponent const> view,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
+        destroyedPassengers,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
+                                                  switchingVehiclePassengers,
+    ::EntityModifier<::RemovePassengersComponent> modifier
 );
 // NOLINTEND
 
-}; // namespace FlagPassengerRemovalSystemImpl
+} // namespace FlagPassengerRemovalSystemImpl

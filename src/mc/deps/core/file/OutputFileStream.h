@@ -5,36 +5,44 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/FileStream.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class FileStream; }
-// clang-format on
-
 namespace Core {
 
-class OutputFileStream : public ::Core::FileStream {
+class OutputFileStream : public ::Core::FileStream, public virtual ::std::ios {
 public:
     // prevent constructor by default
     OutputFileStream& operator=(OutputFileStream const&);
     OutputFileStream(OutputFileStream const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OutputFileStream() = default;
-
-    MCAPI OutputFileStream();
-
+    virtual ~OutputFileStream() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OutputFileStream();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

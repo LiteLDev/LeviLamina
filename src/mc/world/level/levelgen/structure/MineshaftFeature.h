@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BiomeSource;
+class ChunkPos;
+class Dimension;
+class IPreliminarySurfaceProvider;
+class Random;
+class StructureStart;
+// clang-format on
+
 class MineshaftFeature : public ::StructureFeature {
 public:
     // prevent constructor by default
@@ -13,57 +23,66 @@ public:
     MineshaftFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MineshaftFeature() = default;
+    virtual ~MineshaftFeature() /*override*/;
+
+    // vIndex: 4
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
+    ) /*override*/;
 
     // vIndex: 2
-    virtual bool shouldPostProcessMobs() const;
+    virtual bool shouldPostProcessMobs() const /*override*/;
 
     // vIndex: 5
-    virtual bool isFeatureChunk(
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    pos,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
-    );
-
-    // vIndex: 6
-    virtual std::unique_ptr<class StructureStart> createStructureStart(
-        class Dimension&                         generator,
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
-        class Dimension&                         generator,
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     );
 
-    MCAPI bool isFeatureChunk$(
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    pos,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
+    MCAPI bool $shouldPostProcessMobs() const;
+
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
+    // NOLINTEND
 
-    MCAPI bool shouldPostProcessMobs$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

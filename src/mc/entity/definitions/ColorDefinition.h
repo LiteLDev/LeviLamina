@@ -12,18 +12,27 @@ namespace JsonUtil { class EmptyClass; }
 
 struct ColorDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk20238a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ColorDefinition& operator=(ColorDefinition const&);
     ColorDefinition(ColorDefinition const&);
     ColorDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void setColorChoice(int const& colorChoice);
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>>& root
-    );
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ColorDefinition>>& root);
     // NOLINTEND
 };

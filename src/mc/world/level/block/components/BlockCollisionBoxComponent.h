@@ -2,24 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockCollisionBoxComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockAABBComponentData.h"
+
+struct BlockCollisionBoxComponent : public ::BlockAABBComponentData {
 public:
     // prevent constructor by default
     BlockCollisionBoxComponent& operator=(BlockCollisionBoxComponent const&);
     BlockCollisionBoxComponent(BlockCollisionBoxComponent const&);
     BlockCollisionBoxComponent();
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockCollisionBoxComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    // NOLINTEND
 };

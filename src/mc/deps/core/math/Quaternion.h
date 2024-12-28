@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Matrix;
+// clang-format on
+
 class Quaternion {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnkc27771;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Quaternion& operator=(Quaternion const&);
@@ -10,15 +21,14 @@ public:
     Quaternion();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit Quaternion(class Matrix const& rot);
-
+    MCAPI explicit Quaternion(::Matrix const& rot);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Matrix const& rot);
-
+    MCAPI void* $ctor(::Matrix const& rot);
     // NOLINTEND
 };

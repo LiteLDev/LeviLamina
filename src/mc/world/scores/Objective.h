@@ -4,14 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class CompoundTag;
+class ObjectiveCriteria;
+class Scoreboard;
+struct ScoreInfo;
+struct ScoreboardId;
 // clang-format on
 
 class Objective : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, int>> mScores;
+    ::ll::TypedStorage<8, 32, ::std::string const>                       mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mDisplayName;
+    ::ll::TypedStorage<8, 8, ::ObjectiveCriteria const&>                 mCriteria;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Objective& operator=(Objective const&);
@@ -19,54 +31,57 @@ public:
     Objective();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Objective() = default;
+    virtual ~Objective() /*override*/;
+    // NOLINTEND
 
-    MCAPI Objective(std::string const& name, class ObjectiveCriteria const& criteria);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Objective(::std::string const& name, ::ObjectiveCriteria const& criteria);
 
-    MCAPI class ObjectiveCriteria const& getCriteria() const;
+    MCAPI ::ObjectiveCriteria const& getCriteria() const;
 
-    MCAPI std::string const& getDisplayName() const;
+    MCAPI ::std::string const& getDisplayName() const;
 
-    MCAPI std::string const& getName() const;
+    MCAPI ::std::string const& getName() const;
 
-    MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const& id) const;
+    MCAPI ::ScoreInfo getPlayerScore(::ScoreboardId const& id) const;
 
-    MCAPI bool getPlayerScoreRef(struct ScoreboardId const& id, struct ScoreInfoRef& scoreInfo);
+    MCAPI ::std::vector<::ScoreboardId> getPlayers() const;
 
-    MCAPI std::vector<struct ScoreboardId> getPlayers() const;
+    MCAPI ::std::unordered_map<::ScoreboardId, int> const& getScores() const;
 
-    MCAPI std::unordered_map<struct ScoreboardId, int> const& getScores() const;
-
-    MCAPI bool hasScore(struct ScoreboardId const& id) const;
+    MCAPI bool hasScore(::ScoreboardId const& id) const;
 
     MCAPI bool hasScores() const;
-
-    MCAPI void setDisplayName(std::string const& displayName);
-
-    MCAPI static std::unique_ptr<class Objective>
-    deserialize(class CompoundTag const& dataTag, class Scoreboard& owner);
-
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const& toSave);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    _modifyPlayerScore(int& result, struct ScoreboardId const& id, int value, ::PlayerScoreSetFunction action);
-
-    MCAPI void _resetPlayer(struct ScoreboardId const& id);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::Objective> deserialize(::CompoundTag const& dataTag, ::Scoreboard& owner);
 
-    MCAPI void* ctor$(std::string const& name, class ObjectiveCriteria const& criteria);
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::Objective const& toSave);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, ::ObjectiveCriteria const& criteria);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

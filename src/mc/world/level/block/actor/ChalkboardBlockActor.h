@@ -3,78 +3,118 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/ChalkboardSize.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class IConstBlockSource;
+class ItemStack;
+class Level;
+class Player;
+class SaveContext;
+class TextObjectRoot;
+// clang-format on
 
 class ChalkboardBlockActor : public ::BlockActor {
 public:
     // ChalkboardBlockActor inner types declare
     // clang-format off
-    class CachedLineData;
-    class CachedMessageData;
+    struct CachedLineData;
+    struct CachedMessageData;
     struct ChalkboardFinder;
     // clang-format on
 
     // ChalkboardBlockActor inner types define
-    class CachedLineData {
+    struct CachedLineData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk8d4369;
+        ::ll::UntypedStorage<4, 4>  mUnk580c82;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         CachedLineData& operator=(CachedLineData const&);
         CachedLineData(CachedLineData const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI CachedLineData();
 
         MCAPI ~CachedLineData();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    class CachedMessageData {
+    struct CachedMessageData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 640> mUnk163d4e;
+        ::ll::UntypedStorage<4, 4>   mUnkb8325f;
+        ::ll::UntypedStorage<8, 32>  mUnk422df7;
+        ::ll::UntypedStorage<8, 8>   mUnk3044e8;
+        ::ll::UntypedStorage<1, 1>   mUnk16bfc2;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         CachedMessageData& operator=(CachedMessageData const&);
         CachedMessageData(CachedMessageData const&);
         CachedMessageData();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~CachedMessageData();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
     };
 
     struct ChalkboardFinder {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk1a5700;
+        ::ll::UntypedStorage<8, 8> mUnk92f7b0;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ChalkboardFinder& operator=(ChalkboardFinder const&);
         ChalkboardFinder(ChalkboardFinder const&);
         ChalkboardFinder();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI bool confirmedBroken(class ChalkboardBlockActor& compare, class BlockSource& region) const;
-
-        // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnk31d74c;
+    ::ll::UntypedStorage<8, 32>  mUnkaf6925;
+    ::ll::UntypedStorage<8, 32>  mUnk6a82f3;
+    ::ll::UntypedStorage<8, 696> mUnk7eb2a8;
+    ::ll::UntypedStorage<8, 24>  mUnk64da1e;
+    ::ll::UntypedStorage<1, 1>   mUnk37a5b0;
+    ::ll::UntypedStorage<4, 12>  mUnk40843d;
+    ::ll::UntypedStorage<1, 1>   mUnk451091;
+    ::ll::UntypedStorage<1, 1>   mUnkf5293e;
+    ::ll::UntypedStorage<1, 1>   mUnkf1b010;
+    ::ll::UntypedStorage<1, 1>   mUnk971ee5;
+    ::ll::UntypedStorage<8, 8>   mUnk949f18;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -83,115 +123,145 @@ public:
     ChalkboardBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ChalkboardBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual ~ChalkboardBlockActor() /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual void onChanged(::BlockSource& region) /*override*/;
+
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 28
-    virtual std::string getImmersiveReaderText(class BlockSource& region);
-
-    // vIndex: 37
-    virtual std::vector<std::string> getUgcStrings(class CompoundTag const& tag) const;
+    virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
     // vIndex: 38
-    virtual void setUgcStrings(class CompoundTag& tag, std::vector<std::string> const& list) const;
+    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
     // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI explicit ChalkboardBlockActor(class BlockPos const& pos);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ChalkboardBlockActor(::BlockPos const& pos);
+
+    MCAPI ::ChalkboardBlockActor const* getBaseChalkboard(::IConstBlockSource const& region) const;
+
+    MCAPI ::ChalkboardBlockActor* getBaseChalkboard(::BlockSource& region) const;
 
     MCAPI ::ChalkboardSize const getChalkboardSize() const;
 
     MCAPI bool getLocked() const;
 
-    MCAPI int getRotation(class BlockSource& region) const;
+    MCAPI int getRotation(::BlockSource& region) const;
 
-    MCAPI std::string const& getText() const;
+    MCAPI ::std::string const& getText() const;
 
     MCAPI int getTextCharCount() const;
 
-    MCAPI void setText(std::string const& text);
+    MCAPI bool isBaseChalkboard() const;
 
-    MCAPI void validate(class BlockSource& region);
+    MCAPI bool isOnGround() const;
 
-    MCAPI static std::vector<class BlockPos>
-    calculateAllBlocks(class BlockPos const& basePos, ::ChalkboardSize boardSize, int dir);
+    MCAPI bool playerMayDestroy(::Player& player) const;
+
+    MCAPI bool playerMayEdit(::Player& player) const;
+
+    MCAPI bool playerMayToggleLock(::Player& player) const;
+
+    MCAPI void setText(::std::string const& text);
+
+    MCAPI void setText(::std::string const& text, ::TextObjectRoot&& root);
+
+    MCAPI void validate(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::BlockPos>
+    calculateAllBlocks(::BlockPos const& basePos, ::ChalkboardSize boardSize, int dir);
 
     MCAPI static bool canCreateChalkboard(
-        class Actor*                 creator,
-        class BlockSource&           region,
-        class BlockPos const&        basePos,
-        ::ChalkboardSize             boardSize,
-        uchar                        face,
-        int                          dir,
-        std::vector<class BlockPos>& occupiedBlocks,
-        class ItemStack const&       instance,
-        bool                         generateParticles
+        ::Actor*                   creator,
+        ::BlockSource&             region,
+        ::BlockPos const&          basePos,
+        ::ChalkboardSize           boardSize,
+        uchar                      face,
+        int                        dir,
+        ::std::vector<::BlockPos>& occupiedBlocks,
+        ::ItemStack const&         instance,
+        bool                       generateParticles
     );
 
-    MCAPI static class ChalkboardBlockActor* convertFromEntity(class BlockSource& region, class CompoundTag const& tag);
+    MCAPI static ::ChalkboardBlockActor* convertFromEntity(::BlockSource& region, ::CompoundTag const& tag);
 
-    MCAPI static class ChalkboardBlockActor* createChalkboard(
-        class Actor*           creator,
-        class BlockSource&     region,
-        class BlockPos const&  basePos,
-        ::ChalkboardSize       boardSize,
-        uchar                  face,
-        int                    dir,
-        bool                   isOnGround,
-        class ItemStack const& instance,
-        std::string            text
+    MCAPI static ::ChalkboardBlockActor* createChalkboard(
+        ::Actor*           creator,
+        ::BlockSource&     region,
+        ::BlockPos const&  basePos,
+        ::ChalkboardSize   boardSize,
+        uchar              face,
+        int                dir,
+        bool               isOnGround,
+        ::ItemStack const& instance,
+        ::std::string      text
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static struct ChalkboardBlockActor::ChalkboardFinder
-    _findChalkboard(class BlockSource& region, class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI std::string getImmersiveReaderText$(class BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI std::vector<std::string> getUgcStrings$(class CompoundTag const& tag) const;
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCAPI void onChanged$(class BlockSource& region);
+    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI void setUgcStrings$(class CompoundTag& tag, std::vector<std::string> const& list) const;
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+// clang-format on
+
 namespace BedrockBlockTypes {
+// functions
 // NOLINTBEGIN
-MCAPI void registerBlocks(class BaseGameVersion const& baseGameVersion);
+MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion);
 
 MCAPI void unregisterBlocks();
 // NOLINTEND
 
-}; // namespace BedrockBlockTypes
+} // namespace BedrockBlockTypes

@@ -4,21 +4,27 @@
 
 class SoundDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnkad52b6;
+    ::ll::UntypedStorage<8, 216> mUnkcb58b5;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SoundDefinition& operator=(SoundDefinition const&);
     SoundDefinition(SoundDefinition const&);
     SoundDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~SoundDefinition();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

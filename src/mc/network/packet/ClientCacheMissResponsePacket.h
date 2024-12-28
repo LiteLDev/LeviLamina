@@ -7,46 +7,78 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+namespace ClientBlobCache::Server { class Blob; }
+// clang-format on
+
 class ClientCacheMissResponsePacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ClientBlobCache::Server::Blob>>> mWriteMissingContent;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>> mReceivedMissingContent;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
     ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
-    ClientCacheMissResponsePacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClientCacheMissResponsePacket();
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ClientCacheMissResponsePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ClientCacheMissResponsePacket();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

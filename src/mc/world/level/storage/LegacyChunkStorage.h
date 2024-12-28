@@ -6,7 +6,33 @@
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class ChunkPos;
+class LevelChunk;
+class LevelStorage;
+struct LevelChunkFinalDeleter;
+// clang-format on
+
 class LegacyChunkStorage : public ::ChunkSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk29a516;
+    ::ll::UntypedStorage<8, 40> mUnk73f4a0;
+    ::ll::UntypedStorage<8, 32> mUnk349e98;
+    ::ll::UntypedStorage<8, 32> mUnk88bfc7;
+    ::ll::UntypedStorage<8, 8>  mUnka9d2ec;
+    ::ll::UntypedStorage<8, 8>  mUnkbb32d3;
+    ::ll::UntypedStorage<4, 4>  mUnkdabb51;
+    ::ll::UntypedStorage<8, 8>  mUnk91261c;
+    ::ll::UntypedStorage<8, 64> mUnk1a2ca8;
+    ::ll::UntypedStorage<8, 64> mUnk715963;
+    ::ll::UntypedStorage<8, 80> mUnk3be0c7;
+    ::ll::UntypedStorage<8, 80> mUnk68190f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyChunkStorage& operator=(LegacyChunkStorage const&);
@@ -14,59 +40,72 @@ public:
     LegacyChunkStorage();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacyChunkStorage() = default;
+    virtual ~LegacyChunkStorage() /*override*/;
 
     // vIndex: 11
-    virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    // vIndex: 13
-    virtual bool saveLiveChunk(class LevelChunk& lc);
+    // vIndex: 14
+    virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
-    // vIndex: 19
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
-
-    MCAPI LegacyChunkStorage(
-        std::unique_ptr<class ChunkSource> parent,
-        class LevelStorage&                levelStorage,
-        ::StorageVersion                   v,
-        class Biome&                       defaultBiome
-    );
-
+    // vIndex: 20
+    virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _isImported(class ChunkPos const& pos);
+    MCAPI LegacyChunkStorage(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::LevelStorage&                  levelStorage,
+        ::StorageVersion                 v,
+        ::Biome&                         defaultBiome
+    );
 
-    MCAPI bool _loadChunk(class LevelChunk& lc);
+    MCAPI bool _isImported(::ChunkPos const& pos);
+
+    MCAPI bool _loadChunk(::LevelChunk& lc);
 
     MCAPI void _loadEntities();
 
-    MCAPI void _markChunkAsImported(class ChunkPos const& pos);
+    MCAPI void _markChunkAsImported(::ChunkPos const& pos);
 
     MCAPI bool _openRegionFile();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::unique_ptr<class ChunkSource> parent,
-        class LevelStorage&                levelStorage,
-        ::StorageVersion                   v,
-        class Biome&                       defaultBiome
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::ChunkSource> parent,
+        ::LevelStorage&                  levelStorage,
+        ::StorageVersion                 v,
+        ::Biome&                         defaultBiome
     );
+    // NOLINTEND
 
-    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool saveLiveChunk$(class LevelChunk& lc);
+    MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
+    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

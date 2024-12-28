@@ -6,7 +6,27 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CompoundTag;
+class Dimension;
+class ServerLevel;
+class StructureAnimationData;
+class StructureSettings;
+// clang-format on
+
 class StructureAnimationAction : public ::IRequestAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureAnimationData>> mStructureAnimationData;
+    ::ll::TypedStorage<8, 104, ::StructureSettings>                       mStructureSettings;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                             mDimensionType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mLoadPosition;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mFullName;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructureAnimationAction& operator=(StructureAnimationAction const&);
@@ -14,56 +34,75 @@ public:
     StructureAnimationAction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructureAnimationAction() = default;
-
     // vIndex: 1
-    virtual void execute(class ServerLevel& level, class Dimension& dimension);
-
-    // vIndex: 2
-    virtual void serialize(class CompoundTag& tag);
+    virtual void execute(::ServerLevel& level, ::Dimension& dimension) /*override*/;
 
     // vIndex: 3
-    virtual bool operator==(class IRequestAction const&) const;
+    virtual bool operator==(::IRequestAction const& action) const /*override*/;
 
-    MCAPI StructureAnimationAction(
-        std::unique_ptr<class StructureAnimationData> structureAnimationData,
-        DimensionType                                 dimensionType
-    );
+    // vIndex: 2
+    virtual void serialize(::CompoundTag& tag) /*override*/;
 
-    MCAPI StructureAnimationAction(
-        class StructureSettings const& structureSettings,
-        DimensionType                  dimensionType,
-        class BlockPos const&          loadPosition,
-        std::string const&             fullName
-    );
-
-    MCAPI static bool isValidTag(class CompoundTag const& tag);
-
-    MCAPI static std::unique_ptr<class StructureAnimationAction>
-    load(class CompoundTag const& tag, std::string const& dimensionPrefix);
-
+    // vIndex: 0
+    virtual ~StructureAnimationAction() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void*
-    ctor$(std::unique_ptr<class StructureAnimationData> structureAnimationData, DimensionType dimensionType);
-
-    MCAPI void* ctor$(
-        class StructureSettings const& structureSettings,
-        DimensionType                  dimensionType,
-        class BlockPos const&          loadPosition,
-        std::string const&             fullName
+    MCAPI StructureAnimationAction(
+        ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
+        ::DimensionType                             dimensionType
     );
 
-    MCAPI void execute$(class ServerLevel& level, class Dimension& dimension);
+    MCAPI StructureAnimationAction(
+        ::StructureSettings const& structureSettings,
+        ::DimensionType            dimensionType,
+        ::BlockPos const&          loadPosition,
+        ::std::string const&       fullName
+    );
+    // NOLINTEND
 
-    MCAPI void serialize$(class CompoundTag& tag);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
+    load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
+
+    MCAPI void* $ctor(
+        ::StructureSettings const& structureSettings,
+        ::DimensionType            dimensionType,
+        ::BlockPos const&          loadPosition,
+        ::std::string const&       fullName
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+
+    MCAPI void $serialize(::CompoundTag& tag);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

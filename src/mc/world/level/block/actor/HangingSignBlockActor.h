@@ -3,8 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/SignBlockActor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+// clang-format on
 
 class HangingSignBlockActor : public ::SignBlockActor {
 public:
@@ -14,25 +19,42 @@ public:
     HangingSignBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HangingSignBlockActor() = default;
-
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
-    MCAPI explicit HangingSignBlockActor(class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~HangingSignBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit HangingSignBlockActor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI float getShadowRadius$(class BlockSource&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getShadowRadius(::BlockSource&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

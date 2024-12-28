@@ -5,51 +5,65 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct BlockMovementSlowdownAppliedComponent;
+struct BlockMovementSlowdownMultiplierComponent;
+struct FallDistanceComponent;
+struct MobEffectsComponent;
+struct MoveRequestComponent;
+struct MovementAbilitiesComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace BlockMovementSlowdownMultiplierSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createAdjustFallDistanceSystem();
+MCAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
 
-MCAPI struct TickingSystemWithInfo createApplySlowdownOnMoveSystem();
+MCAPI ::TickingSystemWithInfo createApplySlowdownOnMoveSystem();
 
-MCAPI struct TickingSystemWithInfo createCleanupSystem();
+MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCAPI struct TickingSystemWithInfo createImmunePlayerSystem();
+MCAPI ::TickingSystemWithInfo createImmunePlayerSystem();
 
-MCAPI struct TickingSystemWithInfo createImmuneSpiderSystem();
+MCAPI ::TickingSystemWithInfo createImmuneSpiderSystem();
 
-MCAPI struct TickingSystemWithInfo createImmuneWitherBossSystem();
+MCAPI ::TickingSystemWithInfo createImmuneWitherBossSystem();
 
-MCAPI struct TickingSystemWithInfo createWeavingMobSystem();
+MCAPI ::TickingSystemWithInfo createWeavingMobSystem();
 
 MCAPI void tickAdjustFallDistance(
-    struct BlockMovementSlowdownAppliedComponent const& applied,
-    struct FallDistanceComponent&                       fallDistanceComponent
+    ::BlockMovementSlowdownAppliedComponent const& applied,
+    ::FallDistanceComponent&                       fallDistanceComponent
 );
 
 MCAPI void tickApplySlowdownOnMove(
-    struct BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
-    struct MoveRequestComponent&                     moveRequestComponent,
-    struct StateVectorComponent&                     stateComponent
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::MoveRequestComponent&                     moveRequestComponent,
+    ::StateVectorComponent&                     stateComponent
 );
 
 MCAPI void tickImmunePlayer(
-    class StrictEntityContext const&                                   entity,
-    struct BlockMovementSlowdownMultiplierComponent&                   blockMovementSlowdownMultiplierComponent,
-    struct MovementAbilitiesComponent const&                           abilitiesComponent,
-    class EntityModifier<struct BlockMovementSlowdownAppliedComponent> modifier
+    ::StrictEntityContext const&                              entity,
+    ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
+    ::MovementAbilitiesComponent const&                       abilitiesComponent,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
 );
 
 MCAPI void tickImmuneSlowdown(
-    class StrictEntityContext const&                                   entity,
-    struct BlockMovementSlowdownMultiplierComponent&                   blockMovementSlowdownMultiplierComponent,
-    class EntityModifier<struct BlockMovementSlowdownAppliedComponent> modifier
+    ::StrictEntityContext const&                              entity,
+    ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
 );
 
 MCAPI void tickWeavingSlowdownOverride(
-    class StrictEntityContext const&,
-    struct BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
-    struct MobEffectsComponent const&                mobEffectsComponent
+    ::StrictEntityContext const&,
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::MobEffectsComponent const&                mobEffectsComponent
 );
 // NOLINTEND
 
-}; // namespace BlockMovementSlowdownMultiplierSystem
+} // namespace BlockMovementSlowdownMultiplierSystem

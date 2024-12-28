@@ -9,10 +9,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
+struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class MobEffectResponse : public ::EventResponse {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk414b8b;
+    ::ll::UntypedStorage<4, 4>  mUnk96fe55;
+    ::ll::UntypedStorage<4, 4>  mUnk15c4b0;
+    ::ll::UntypedStorage<2, 2>  mUnkd4032f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MobEffectResponse& operator=(MobEffectResponse const&);
@@ -20,41 +31,52 @@ public:
     MobEffectResponse();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MobEffectResponse() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const /*override*/;
 
     // vIndex: 2
-    virtual void executeAction(class RenderParams& params) const;
+    virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
     virtual void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>& root,
-        class Factory<class EventResponse> const&                                                              factory
-    ) const;
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const /*override*/;
 
+    // vIndex: 0
+    virtual ~MobEffectResponse() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI void buildSchema$(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>& root,
-        class Factory<class EventResponse> const&                                                              factory
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
+
+    MCAPI void $executeAction(::RenderParams& params) const;
+
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
     ) const;
+    // NOLINTEND
 
-    MCAPI void executeAction$(class RenderParams& params) const;
-
-    MCAPI std::string const& getName$() const;
-
-    MCAPI static std::string const& NameID();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

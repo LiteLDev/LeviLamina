@@ -9,45 +9,59 @@ namespace mce { class UUID; }
 
 class ContentIdentity {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
+    ::ll::TypedStorage<1, 1, bool>         mValid;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ContentIdentity();
 
-    MCAPI ContentIdentity(class ContentIdentity&&);
+    MCAPI ContentIdentity(::ContentIdentity const&);
 
-    MCAPI ContentIdentity(class ContentIdentity const&);
+    MCAPI ContentIdentity(::ContentIdentity&&);
 
-    MCAPI explicit ContentIdentity(class mce::UUID const& uuid);
+    MCAPI explicit ContentIdentity(::mce::UUID const& uuid);
 
-    MCAPI std::string asString() const;
+    MCAPI ::std::string asString() const;
 
-    MCAPI class mce::UUID const& getAsUUID() const;
+    MCAPI ::mce::UUID const& getAsUUID() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI bool operator!=(class ContentIdentity const& rhs) const;
+    MCAPI bool operator!=(::ContentIdentity const& rhs) const;
 
-    MCAPI class ContentIdentity& operator=(class ContentIdentity&& rhs);
+    MCAPI ::ContentIdentity& operator=(::ContentIdentity&&);
 
-    MCAPI class ContentIdentity& operator=(class ContentIdentity const& rhs);
+    MCAPI ::ContentIdentity& operator=(::ContentIdentity const&);
 
-    MCAPI bool operator==(class ContentIdentity const& rhs) const;
-
-    MCAPI static class ContentIdentity fromString(std::string const& uuidString);
-
+    MCAPI bool operator==(::ContentIdentity const& rhs) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class mce::UUID const& uuid);
+    MCAPI static ::ContentIdentity fromString(::std::string const& uuidString);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ContentIdentity& EMPTY();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ContentIdentity&&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class ContentIdentity const&);
+    MCAPI void* $ctor(::ContentIdentity const&);
 
-    MCAPI static class ContentIdentity& EMPTY();
+    MCAPI void* $ctor(::ContentIdentity&&);
 
+    MCAPI void* $ctor(::mce::UUID const& uuid);
     // NOLINTEND
 };

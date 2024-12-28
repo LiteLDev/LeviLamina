@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/agent/agent_components/Direction.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 namespace AgentCommands {
 
 class Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk933fb1;
+    ::ll::UntypedStorage<8, 8> mUnkfc621f;
+    ::ll::UntypedStorage<4, 4> mUnk84ca51;
+    ::ll::UntypedStorage<1, 1> mUnkc9ad03;
+    ::ll::UntypedStorage<1, 1> mUnka8287b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Command& operator=(Command const&);
@@ -20,6 +22,7 @@ public:
     Command();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Command();
@@ -35,29 +38,29 @@ public:
 
     // vIndex: 4
     virtual void fireCommandDoneEvent();
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute();
 
-    MCAPI void execute$();
+    MCAPI void $tick();
 
-    MCAPI void fireCommandDoneEvent$();
+    MCAPI void $fireCommandDoneEvent();
+    // NOLINTEND
 
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace AgentCommands
+} // namespace AgentCommands

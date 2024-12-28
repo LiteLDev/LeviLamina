@@ -8,35 +8,58 @@
 
 class CapacitorComponent : public ::ProducerComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CapacitorComponent& operator=(CapacitorComponent const&);
     CapacitorComponent(CapacitorComponent const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CapacitorComponent() = default;
-
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
-
-    // vIndex: 25
+    // vIndex: 26
     virtual uchar getPoweroutDirection() const;
 
-    MCAPI CapacitorComponent();
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
+    // vIndex: 0
+    virtual ~CapacitorComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CapacitorComponent();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI uchar getPoweroutDirection$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uchar $getPoweroutDirection() const;
 
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,54 +5,89 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class MultifaceFeature : public ::IFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 184> mUnk78b3a5;
+    ::ll::UntypedStorage<4, 4>   mUnk15d416;
+    ::ll::UntypedStorage<1, 1>   mUnk586697;
+    ::ll::UntypedStorage<1, 1>   mUnk9bd694;
+    ::ll::UntypedStorage<1, 1>   mUnk31ba0b;
+    ::ll::UntypedStorage<4, 4>   mUnk953900;
+    ::ll::UntypedStorage<8, 24>  mUnkda9de5;
+    ::ll::UntypedStorage<8, 24>  mUnk696bc6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MultifaceFeature& operator=(MultifaceFeature const&);
     MultifaceFeature(MultifaceFeature const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MultifaceFeature() = default;
-
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const& pos, class Random& random, class RenderParams& renderParams)
-        const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI&, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
+    // vIndex: 0
+    virtual ~MultifaceFeature() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI MultifaceFeature();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<class BlockPos> _placeBlockIfPossible(
-        class BlockSource&        region,
-        class BlockPos const&     pos,
-        class Random&             random,
-        std::vector<uchar> const& placementDirections
+    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        ::Random&                   random,
+        ::std::vector<uchar> const& placementDirections
     ) const;
-
-    MCAPI static std::vector<uchar> _getShuffledDirections(std::vector<uchar> faces);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::vector<uchar> _getShuffledDirections(::std::vector<uchar> faces);
 
-    MCAPI void* ctor$();
+    MCAPI static ::std::vector<uchar> _getShuffledDirectionsExcept(uchar exclude, ::std::vector<uchar> const& faces);
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos>
-    place$(class IBlockWorldGenAPI&, class BlockPos const& pos, class Random& random, class RenderParams& renderParams)
-        const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI&, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

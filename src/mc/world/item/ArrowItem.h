@@ -3,22 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class Arrow;
+class BlockSource;
+class CompoundTag;
+class Container;
+class Item;
+class ItemDescriptor;
+class ItemInstance;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class MobEffectInstance;
+class Potion;
+class Vec3;
+struct ResolvedItemIconInfo;
+namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class ArrowItem : public ::ComponentItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 1344> mUnke74229;
+    ::ll::UntypedStorage<4, 84>   mUnkcfe8ee;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ArrowItem& operator=(ArrowItem const&);
@@ -26,100 +41,102 @@ public:
     ArrowItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ArrowItem() = default;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 77
+    virtual ::Actor*
+    createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
+        const /*override*/;
+
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 52
     virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
+    // vIndex: 88
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 73
-    virtual class Actor* createProjectileActor(
-        class BlockSource&     region,
-        class ItemStack const& stack,
-        class Vec3 const&      pos,
-        class Vec3 const&      direction
-    ) const;
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 84
-    virtual std::string buildEffectDescriptionName(class ItemStackBase const& stack) const;
-
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI ArrowItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
-
-    MCAPI void applyEffect(class Arrow* arrow, class ItemInstance const& slotItem) const;
-
+    // vIndex: 0
+    virtual ~ArrowItem() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI std::vector<class MobEffectInstance> getMobEffects(int auxValue) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::shared_ptr<class Potion const> _potionExistsOrContentError(int aux) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
 
-    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+    MCAPI ::std::shared_ptr<::Potion const> _potionExistsOrContentError(int aux) const;
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+    MCAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
+
+    MCAPI ::std::vector<::MobEffectInstance> getMobEffects(int auxValue) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+
+    MCAPI ::Actor*
+    $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)
+        const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& stack) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI class Actor* createProjectileActor$(
-        class BlockSource&     region,
-        class ItemStack const& stack,
-        class Vec3 const&      pos,
-        class Vec3 const&      direction
-    ) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    // NOLINTEND
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
-
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI bool isValidAuxValue$(int auxValue) const;
-
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

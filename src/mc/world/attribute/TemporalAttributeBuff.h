@@ -6,24 +6,32 @@
 #include "mc/world/attribute/AttributeBuff.h"
 #include "mc/world/attribute/AttributeBuffType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Amplifier;
+struct EffectDuration;
+// clang-format on
+
 class TemporalAttributeBuff : public ::AttributeBuff {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk726ec5;
+    ::ll::UntypedStorage<4, 4> mUnk2255be;
+    ::ll::UntypedStorage<4, 4> mUnk176795;
+    ::ll::UntypedStorage<1, 1> mUnk8e64c0;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    TemporalAttributeBuff& operator=(TemporalAttributeBuff const&);
     TemporalAttributeBuff();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TemporalAttributeBuff();
-
-    // vIndex: 1
-    virtual bool isInstantaneous() const;
-
-    // vIndex: 2
-    virtual bool isSerializable() const;
-
-    // vIndex: 3
-    virtual void setDurationAmplifier(std::shared_ptr<class Amplifier> amplifier);
+    virtual ~TemporalAttributeBuff() /*override*/;
 
     // vIndex: 4
     virtual bool shouldBuff() const;
@@ -31,42 +39,64 @@ public:
     // vIndex: 5
     virtual bool isComplete() const;
 
-    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
+    // vIndex: 1
+    virtual bool isInstantaneous() const /*override*/;
+
+    // vIndex: 2
+    virtual bool isSerializable() const /*override*/;
+
+    // vIndex: 3
+    virtual void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
 
     MCAPI TemporalAttributeBuff(
-        float               amount,
-        int                 duration,
-        ::AttributeBuffType type,
-        bool                serialize,
-        std::string const&  name
+        float                amount,
+        ::EffectDuration     duration,
+        ::AttributeBuffType  type,
+        bool                 serialize,
+        ::std::string const& name
     );
 
     MCAPI float getBaseAmount() const;
-
-    MCAPI class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::TemporalAttributeBuff const&);
 
-    MCAPI void* ctor$(float amount, int duration, ::AttributeBuffType type, bool serialize, std::string const& name);
+    MCAPI void*
+    $ctor(float amount, ::EffectDuration duration, ::AttributeBuffType type, bool serialize, ::std::string const& name);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class TemporalAttributeBuff const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $shouldBuff() const;
 
-    MCAPI bool isComplete$() const;
+    MCAPI bool $isComplete() const;
 
-    MCAPI bool isInstantaneous$() const;
+    MCAPI bool $isInstantaneous() const;
 
-    MCAPI bool isSerializable$() const;
+    MCAPI bool $isSerializable() const;
 
-    MCAPI void setDurationAmplifier$(std::shared_ptr<class Amplifier> amplifier);
+    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    // NOLINTEND
 
-    MCAPI bool shouldBuff$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

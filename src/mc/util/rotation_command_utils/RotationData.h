@@ -12,31 +12,38 @@ namespace RotationCommandUtils {
 
 class RotationData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>          mRotX;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>          mRotY;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mCommandOriginRotation;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RotationData& operator=(RotationData const&);
     RotationData(RotationData const&);
     RotationData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI RotationData(
-        class RelativeFloat const&       rotX,
-        class RelativeFloat const&       rotY,
-        std::optional<class Vec2> const& commandOriginRotation
+        ::RelativeFloat const&         rotX,
+        ::RelativeFloat const&         rotY,
+        ::std::optional<::Vec2> const& commandOriginRotation
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class RelativeFloat const&       rotX,
-        class RelativeFloat const&       rotY,
-        std::optional<class Vec2> const& commandOriginRotation
+    MCAPI void* $ctor(
+        ::RelativeFloat const&         rotX,
+        ::RelativeFloat const&         rotY,
+        ::std::optional<::Vec2> const& commandOriginRotation
     );
-
     // NOLINTEND
 };
 
-}; // namespace RotationCommandUtils
+} // namespace RotationCommandUtils

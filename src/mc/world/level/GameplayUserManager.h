@@ -3,88 +3,162 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/world/level/IGameplayUserManagerConnector.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
+class EntityContext;
+class GameplayUserManagerProxy;
+class ILevelStorageManagerConnector;
+class IServerMapDataManagerConnector;
+class LevelStorage;
+class MapItemSavedData;
+class Player;
+class Random;
+class WeakEntityRef;
 // clang-format on
 
-class GameplayUserManager {
+class GameplayUserManager : public ::IGameplayUserManagerConnector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnkc721ae;
+    ::ll::UntypedStorage<8, 24>  mUnk9fd09f;
+    ::ll::UntypedStorage<8, 24>  mUnk6fd064;
+    ::ll::UntypedStorage<8, 24>  mUnk3bf0f4;
+    ::ll::UntypedStorage<8, 128> mUnk5e4bf4;
+    ::ll::UntypedStorage<8, 128> mUnk50f4c2;
+    ::ll::UntypedStorage<8, 128> mUnkbc53b2;
+    ::ll::UntypedStorage<8, 128> mUnkbe62f5;
+    ::ll::UntypedStorage<8, 128> mUnk196e07;
+    ::ll::UntypedStorage<8, 128> mUnkd905a7;
+    ::ll::UntypedStorage<8, 16>  mUnk123f52;
+    ::ll::UntypedStorage<8, 16>  mUnkb8339f;
+    ::ll::UntypedStorage<8, 16>  mUnke29cfe;
+    ::ll::UntypedStorage<8, 8>   mUnkd3857d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameplayUserManager& operator=(GameplayUserManager const&);
     GameplayUserManager(GameplayUserManager const&);
+    GameplayUserManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI GameplayUserManager();
+    // vIndex: 6
+    virtual ~GameplayUserManager();
 
-    MCAPI void addGameplayUser(class OwnerPtr<class EntityContext> userEntity);
+    // vIndex: 0
+    virtual ::Bedrock::PubSub::Connector<void(::EntityContext&)>& getGameplayUserAddedConnector() /*override*/;
 
-    MCAPI void cleanupRemovedGameplayUsers();
+    // vIndex: 1
+    virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& getGameplayUserResumedConnector() /*override*/;
 
-    MCAPI void forEachActiveGameplayUser(std::function<bool(class EntityContext&)> callback) const;
+    // vIndex: 2
+    virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>&
+    getGameplayUserSuspendedConnector() /*override*/;
 
-    MCAPI void forEachActivePlayer(std::function<bool(class Player&)> callback) const;
+    // vIndex: 3
+    virtual ::Bedrock::PubSub::Connector<void(::Player const&)>& getPlayerRenamedConnector() /*override*/;
 
-    MCAPI void forEachActivePlayerIncludeRemoved(std::function<bool(class Player&)> callback) const;
+    // vIndex: 4
+    virtual ::Bedrock::PubSub::Connector<void(::EntityContext&)>& getGameplayUserRemovedConnector() /*override*/;
 
-    MCAPI std::vector<class WeakEntityRef> const& getActiveGameplayUsers() const;
-
-    MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getGameplayUserEntities() const;
-
-    MCAPI void
-    initializeWithGameplayUserManagerProxy(std::unique_ptr<class GameplayUserManagerProxy> gameplayUserManagerProxy);
-
-    MCAPI bool isGameplayUserSuspended(class WeakEntityRef weakEntityUser) const;
-
-    MCAPI class Bedrock::PubSub::Subscription registerAnyGameplayUsersRemovedCallback(std::function<void()> callback);
-
-    MCAPI class Bedrock::PubSub::Subscription
-    registerGameplayUserAddedCallback(std::function<void(class EntityContext&)> callback);
-
-    MCAPI class Bedrock::PubSub::Subscription
-    registerGameplayUserRemovedCallback(std::function<void(class EntityContext&)> callback);
-
-    MCAPI class Bedrock::PubSub::Subscription
-    registerGameplayUserResumedCallback(std::function<void(class EntityContext const&)> callback);
-
-    MCAPI class Bedrock::PubSub::Subscription
-    registerGameplayUserSuspendedCallback(std::function<void(class EntityContext const&)> callback);
-
-    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager& levelStorageManager);
-
-    MCAPI void registerMapDataManagerListener(class MapDataManager& mapDataManager);
-
-    MCAPI bool shouldStartGameSaveTimer() const;
-
-    MCAPI void tickSuspensions();
-
-    MCAPI ~GameplayUserManager();
-
+    // vIndex: 5
+    virtual ::Bedrock::PubSub::Connector<void()>& getAnyGameplayUsersRemovedConnector() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _addTrackedMapPlayers(class MapItemSavedData& mapItemSavedData);
+    MCAPI explicit GameplayUserManager(::std::unique_ptr<::GameplayUserManagerProxy> gameplayUserManagerProxy);
 
-    MCAPI void _forEachActivePlayer(std::function<bool(class Player&)> callback, bool includeRemovedPlayers) const;
+    MCAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
-    MCAPI class GameplayUserManagerProxy& _getGameplayUserManagerProxy();
+    MCAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
     MCAPI int _getNewPlayerId() const;
 
-    MCAPI void _saveAllPlayers(class LevelStorage& levelStorage);
+    MCAPI void _resumePlayer(::WeakEntityRef weakEntityUser);
 
+    MCAPI void _saveAllPlayers(::LevelStorage& levelStorage);
+
+    MCAPI void _suspendPlayer(::WeakEntityRef weakEntityUser);
+
+    MCAPI void addGameplayUser(::OwnerPtr<::EntityContext> userEntity);
+
+    MCAPI void cleanupRemovedGameplayUsers();
+
+    MCAPI void clearAllGameplayUserEntities();
+
+    MCAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
+
+    MCAPI void forEachActivePlayer(::std::function<bool(::Player&)> callback) const;
+
+    MCAPI void forEachActivePlayerIncludeRemoved(::std::function<bool(::Player&)> callback) const;
+
+    MCAPI uint64 getActiveGameplayUserCount() const;
+
+    MCAPI ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
+
+    MCAPI uint64 getActivePlayerCount() const;
+
+    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
+
+    MCAPI uint64 getGameplayUserEntityCount() const;
+
+    MCAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
+
+    MCAPI void queueResumePlayer(::EntityContext const& playerEntity);
+
+    MCAPI void queueSuspendPlayer(::EntityContext const& playerEntity);
+
+    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
+
+    MCAPI void shuffleActiveUsers(::Random& random);
+
+    MCAPI void startLeaveGame();
+
+    MCAPI void tickSuspensions();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::std::unique_ptr<::GameplayUserManagerProxy> gameplayUserManagerProxy);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserResumedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getAnyGameplayUsersRemovedConnector();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,13 +9,34 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class IAppConfigData;
+class IContentAccessibilityProvider;
+class IEntitlementManager;
+class IMinecraftGame;
+class IScreenCapabilities;
+class LevelData;
+class SceneFactory;
+class SceneStack;
+struct ConnectionDefinition;
+struct PackIdVersion;
 // clang-format on
 
 class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // AppConfigs inner types define
-    enum class MaelstromEduUsabilityStatus {};
+    enum class MaelstromEduUsabilityStatus : uchar {
+        Unknown   = 0,
+        Unallowed = 1,
+        Allowed   = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk9f7098;
+    ::ll::UntypedStorage<8, 8>  mUnke1b346;
+    ::ll::UntypedStorage<8, 64> mUnk5c71b9;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -23,12 +44,13 @@ public:
     AppConfigs(AppConfigs const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AppConfigs();
+    virtual ~AppConfigs() /*override*/;
 
     // vIndex: 1
-    virtual void loadFromData(class IAppConfigData const&);
+    virtual void loadFromData(::IAppConfigData const&);
 
     // vIndex: 2
     virtual bool arePremiumSkinPacksAllowed() const;
@@ -88,7 +110,7 @@ public:
     virtual bool requireEduLevelSettings() const;
 
     // vIndex: 21
-    virtual struct ConnectionDefinition getConnectionDefinition() const;
+    virtual ::ConnectionDefinition getConnectionDefinition() const;
 
     // vIndex: 22
     virtual bool supportsChangingMultiplayerDuringPlay() const;
@@ -115,112 +137,131 @@ public:
     virtual bool isSaveToCloudOn() const;
 
     // vIndex: 30
-    virtual void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
+    virtual bool isEduAIOn() const;
 
     // vIndex: 31
-    virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
+    virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 
     // vIndex: 32
-    virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const& screenName) const;
+    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
     // vIndex: 33
-    virtual std::unique_ptr<class IContentAccessibilityProvider>
-    createContentAccessibility(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager> entitlementManager) const;
+    virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
 
     // vIndex: 34
-    virtual std::string getFeedbackURL() const;
+    virtual ::std::unique_ptr<::IContentAccessibilityProvider>
+    createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
 
     // vIndex: 35
-    virtual std::string getHelpCenterURL() const;
+    virtual ::std::string getFeedbackURL() const;
 
     // vIndex: 36
-    virtual void applyLevelDataOverride(class LevelData&) const;
+    virtual ::std::string getHelpCenterURL() const;
 
-    MCAPI AppConfigs();
-
+    // vIndex: 37
+    virtual void applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AppConfigs();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool allowGameArguments$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $loadFromData(::IAppConfigData const&);
 
-    MCAPI void applyLevelDataOverride$(class LevelData&) const;
+    MCAPI bool $arePremiumSkinPacksAllowed() const;
 
-    MCAPI bool areEmotesSupported$() const;
+    MCAPI bool $areResourcePacksAllowed() const;
 
-    MCAPI bool arePremiumSkinPacksAllowed$() const;
+    MCAPI bool $isPlayScreenAllowed() const;
 
-    MCAPI bool areResourcePacksAllowed$() const;
+    MCAPI bool $isChatScreenAllowed() const;
 
-    MCAPI bool canUseAzureNotebooks$() const;
+    MCAPI bool $isGameTabShownInSettings() const;
 
-    MCAPI ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom$() const;
+    MCAPI bool $areEmotesSupported() const;
 
-    MCAPI std::unique_ptr<class IContentAccessibilityProvider>
-          createContentAccessibility$(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager> entitlementManager) const;
+    MCAPI bool $useNormalizedFontSize() const;
 
-    MCAPI bool gameArgumentsNeedAuthentication$() const;
+    MCAPI bool $useFullScreenByDefault() const;
 
-    MCAPI std::vector<struct PackIdVersion> getAdditionalClientPacks$(bool enteringLevel) const;
+    MCAPI bool $muteByDefault() const;
 
-    MCAPI struct ConnectionDefinition getConnectionDefinition$() const;
+    MCAPI bool $isCoursesCacheEnabled() const;
 
-    MCAPI ::EducationEditionOffer getEducationEditionOffering$() const;
+    MCAPI bool $shouldPromptBeforeExit() const;
 
-    MCAPI std::string getFeedbackURL$() const;
+    MCAPI bool $gameArgumentsNeedAuthentication() const;
 
-    MCAPI std::string getHelpCenterURL$() const;
+    MCAPI bool $worldBuilderDisabled() const;
 
-    MCAPI std::unique_ptr<class IScreenCapabilities> getScreenCapabilities$(std::string const& screenName) const;
+    MCAPI bool $worldsAreSingleUse() const;
 
-    MCAPI bool isChatScreenAllowed$() const;
+    MCAPI ::EducationEditionOffer $getEducationEditionOffering() const;
 
-    MCAPI bool isCoursesCacheEnabled$() const;
+    MCAPI bool $requireTrustedContent() const;
 
-    MCAPI bool isExternalPlayerCommunicationAllowed$() const;
+    MCAPI bool $isExternalPlayerCommunicationAllowed() const;
 
-    MCAPI bool isGameTabShownInSettings$() const;
+    MCAPI bool $supports3DExport() const;
 
-    MCAPI bool isPlayScreenAllowed$() const;
+    MCAPI bool $requireEduLevelSettings() const;
 
-    MCAPI bool isSaveToCloudOn$() const;
+    MCAPI ::ConnectionDefinition $getConnectionDefinition() const;
 
-    MCAPI void loadFromData$(class IAppConfigData const&);
+    MCAPI bool $supportsChangingMultiplayerDuringPlay() const;
 
-    MCAPI bool muteByDefault$() const;
+    MCAPI bool $webSocketsDisabled() const;
 
-    MCAPI bool requireEduLevelSettings$() const;
+    MCAPI bool $sendPermissionsTelemetry() const;
 
-    MCAPI bool requireTrustedContent$() const;
+    MCAPI bool $useEduDemoUpsellDialog() const;
 
-    MCAPI bool sendPermissionsTelemetry$() const;
+    MCAPI bool $allowGameArguments() const;
 
-    MCAPI void setCanAccessWorldCallback$(class IMinecraftGame& minecraftGame);
+    MCAPI bool $canUseAzureNotebooks() const;
 
-    MCAPI bool shouldPromptBeforeExit$() const;
+    MCAPI ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
 
-    MCAPI bool supports3DExport$() const;
+    MCAPI bool $isSaveToCloudOn() const;
 
-    MCAPI bool supportsChangingMultiplayerDuringPlay$() const;
+    MCAPI bool $isEduAIOn() const;
 
-    MCAPI bool useEduDemoUpsellDialog$() const;
+    MCAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 
-    MCAPI bool useFullScreenByDefault$() const;
+    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
-    MCAPI bool useNormalizedFontSize$() const;
+    MCAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
 
-    MCAPI bool webSocketsDisabled$() const;
+    MCAPI ::std::unique_ptr<::IContentAccessibilityProvider>
+    $createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
 
-    MCAPI bool worldBuilderDisabled$() const;
+    MCAPI ::std::string $getFeedbackURL() const;
 
-    MCAPI bool worldsAreSingleUse$() const;
+    MCAPI ::std::string $getHelpCenterURL() const;
 
+    MCAPI void $applyLevelDataOverride(::LevelData&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,17 +13,16 @@ public:
     Easing();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::function<float(float, float, float)> getEasingFunc(::EasingType easingType);
+    MCAPI static ::std::function<float(float, float, float)> getEasingFunc(::EasingType easingType);
 
-    MCAPI static std::string const& getStringFromEasingType(::EasingType easingType);
-
+    MCAPI static ::std::string const& getStringFromEasingType(::EasingType easingType);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::vector<std::function<float(float, float, float)>>& mEasingFuncs();
-
+    MCAPI static ::std::vector<::std::function<float(float, float, float)>>& mEasingFuncs();
     // NOLINTEND
 };

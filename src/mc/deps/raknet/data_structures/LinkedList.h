@@ -13,4 +13,4 @@ public:
     LinkedList();
 };
 
-}; // namespace DataStructures
+} // namespace DataStructures

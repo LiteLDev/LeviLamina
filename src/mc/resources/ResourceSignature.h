@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackAccessStrategy;
 namespace Core { class Path; }
 // clang-format on
 
 class ResourceSignature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk143e26;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ResourceSignature& operator=(ResourceSignature const&);
@@ -18,29 +25,26 @@ public:
     ResourceSignature();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool areKnownFilesValid(class PackAccessStrategy const& accessStrategy);
+    MCAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
+
+    MCAPI bool _checkSignedFiles(::PackAccessStrategy const& accessStrategy) const;
+
+    MCAPI void _loadSignaturesFile(::Core::Path const& filePath, ::PackAccessStrategy const& accessStrategy);
 
     MCAPI ~ResourceSignature();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _areKnownFilesValid(class PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
-
-    MCAPI bool _checkSignedFiles(class PackAccessStrategy const& accessStrategy) const;
-
-    MCAPI void _loadSignaturesFile(class Core::Path const& filePath, class PackAccessStrategy const& accessStrategy);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Core::PathBuffer<::std::string> const& SIGNATURE_FILENAME();
+    // NOLINTEND
 
-    MCAPI static class Core::PathBuffer<std::string> const& SIGNATURE_FILENAME();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

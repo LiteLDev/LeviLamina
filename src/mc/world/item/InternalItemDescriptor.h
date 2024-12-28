@@ -8,10 +8,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class CompoundTag;
+class ReadOnlyBinaryStream;
 // clang-format on
 
 struct InternalItemDescriptor : public ::ItemDescriptor::BaseDescriptor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk6a1627;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InternalItemDescriptor& operator=(InternalItemDescriptor const&);
@@ -19,64 +27,77 @@ public:
     InternalItemDescriptor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
+    virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const /*override*/;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
+    virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const /*override*/;
 
     // vIndex: 3
-    virtual std::string const& getFullName() const;
+    virtual ::std::string const& getFullName() const /*override*/;
 
-    // vIndex: 4
-    virtual struct ItemDescriptor::ItemEntry getItem() const;
-
-    // vIndex: 6
-    virtual std::map<std::string, std::string> toMap() const;
+    // vIndex: 5
+    virtual ::ItemDescriptor::ItemEntry getItem() const /*override*/;
 
     // vIndex: 7
-    virtual std::optional<class CompoundTag> save() const;
+    virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
+
+    // vIndex: 8
+    virtual ::std::optional<::CompoundTag> save() const /*override*/;
 
     // vIndex: 9
-    virtual void serialize(class BinaryStream& stream) const;
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 10
-    virtual ::ItemDescriptor::InternalType getType() const;
+    // vIndex: 11
+    virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
-    // vIndex: 12
-    virtual uint64 getHash() const;
+    // vIndex: 13
+    virtual uint64 getHash() const /*override*/;
 
-    // vIndex: 15
-    virtual ~InternalItemDescriptor() = default;
-
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>
-    deserialize(class ReadOnlyBinaryStream& stream);
-
+    // vIndex: 16
+    virtual ~InternalItemDescriptor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::InternalItemDescriptor>>
+    deserialize(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string const& getFullName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCAPI uint64 getHash$() const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
 
-    MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+    MCAPI ::std::string const& $getFullName() const;
 
-    MCAPI ::ItemDescriptor::InternalType getType$() const;
+    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
-    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCAPI std::optional<class CompoundTag> save$() const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCAPI void serialize$(class BinaryStream& stream) const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCAPI std::map<std::string, std::string> toMap$() const;
+    MCAPI ::ItemDescriptor::InternalType $getType() const;
 
+    MCAPI uint64 $getHash() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

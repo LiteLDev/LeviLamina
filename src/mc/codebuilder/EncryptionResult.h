@@ -6,23 +6,30 @@ namespace CodeBuilder {
 
 struct EncryptionResult {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkfc51c2;
+    ::ll::UntypedStorage<8, 32> mUnk8af72f;
+    ::ll::UntypedStorage<8, 32> mUnk338842;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     EncryptionResult& operator=(EncryptionResult const&);
     EncryptionResult(EncryptionResult const&);
     EncryptionResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~EncryptionResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace CodeBuilder
+} // namespace CodeBuilder

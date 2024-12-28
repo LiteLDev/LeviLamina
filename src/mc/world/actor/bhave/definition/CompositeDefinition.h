@@ -7,41 +7,45 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
+class BehaviorTreeDefinitionPtr;
 namespace Json { class Value; }
 // clang-format on
 
 class CompositeDefinition : public ::BehaviorDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke01eb4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CompositeDefinition& operator=(CompositeDefinition const&);
     CompositeDefinition(CompositeDefinition const&);
+    CompositeDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompositeDefinition() = default;
-
-    MCAPI CompositeDefinition();
-
+    virtual ~CompositeDefinition() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _compositeLoadChildrenBehaviors(
-        class Json::Value                                       value,
-        std::vector<std::unique_ptr<class BehaviorDefinition>>& childList,
-        class BehaviorFactory const&                            factory,
-        class BehaviorTreeDefinitionPtr                         ptr
+        ::Json::Value                                           value,
+        ::std::vector<::std::unique_ptr<::BehaviorDefinition>>& childList,
+        ::BehaviorFactory const&                                factory,
+        ::BehaviorTreeDefinitionPtr                             ptr
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

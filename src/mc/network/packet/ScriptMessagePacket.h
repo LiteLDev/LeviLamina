@@ -7,57 +7,85 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ScriptMessagePacket : public ::Packet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageId;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageValue;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptMessagePacket& operator=(ScriptMessagePacket const&);
     ScriptMessagePacket(ScriptMessagePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptMessagePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI ScriptMessagePacket();
-
-    MCAPI ScriptMessagePacket(std::string const& messageId, std::string const& messageValue);
-
-    MCAPI std::string const& getMessageId() const;
-
-    MCAPI std::string const& getMessageValue() const;
-
+    // vIndex: 0
+    virtual ~ScriptMessagePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptMessagePacket();
 
-    MCAPI void* ctor$();
+    MCAPI ScriptMessagePacket(::std::string const& messageId, ::std::string const& messageValue);
 
-    MCAPI void* ctor$(std::string const& messageId, std::string const& messageValue);
+    MCAPI ::std::string const& getMessageId() const;
 
-    MCAPI void dtor$();
+    MCAPI ::std::string const& getMessageValue() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void* $ctor(::std::string const& messageId, ::std::string const& messageValue);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

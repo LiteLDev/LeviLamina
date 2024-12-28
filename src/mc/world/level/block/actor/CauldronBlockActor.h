@@ -3,14 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Container.h"
 #include "mc/world/item/alchemy/Potion.h"
+#include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class ItemStack;
+class Level;
+class Player;
+class SaveContext;
 namespace mce { class Color; }
 // clang-format on
 
-class CauldronBlockActor {
+class CauldronBlockActor : public ::BlockActor, public ::Container {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>    mUnkad4761;
+    ::ll::UntypedStorage<4, 4>    mUnkcebd8c;
+    ::ll::UntypedStorage<1, 1>    mUnk967285;
+    ::ll::UntypedStorage<4, 4>    mUnkf06d67;
+    ::ll::UntypedStorage<8, 1520> mUnk26b5c2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CauldronBlockActor& operator=(CauldronBlockActor const&);
@@ -18,105 +39,149 @@ public:
     CauldronBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 0
+    virtual ~CauldronBlockActor() /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI class Container* getContainer();
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI class Container const* getContainer() const;
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 22
+    virtual void startOpen(::Player&) /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 33
+    virtual ::Container* getContainer() /*override*/;
 
-    MCVAPI void onChanged(class BlockSource& region);
+    // vIndex: 32
+    virtual ::Container const* getContainer() const /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    MCVAPI void startOpen(class Player&);
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    MCVAPI void stopOpen(class Player&);
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
-    MCVAPI void tick(class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI class mce::Color getColor() const;
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    MCAPI class mce::Color getCustomColor() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
 
-    MCAPI class mce::Color getMixDyeColor();
+    MCAPI ::mce::Color getColor() const;
 
-    MCAPI class mce::Color getPotionColor() const;
+    MCAPI ::mce::Color getCustomColor() const;
+
+    MCAPI ::mce::Color getMixDyeColor();
+
+    MCAPI ::mce::Color getPotionColor() const;
 
     MCAPI ::Potion::PotionType getPotionType() const;
 
     MCAPI void mixDyes();
 
-    MCAPI void setCustomColor(class mce::Color const& color);
+    MCAPI void setCustomColor(::mce::Color const& color);
 
     MCAPI void setPotionType(::Potion::PotionType type);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForBlockActor();
+    MCAPI static ::mce::Color& WATER_COLOR();
+    // NOLINTEND
 
-    MCAPI static void** vftableForContainer();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI class Container* getContainer$();
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI class Container const* getContainer$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI int getContainerSize$() const;
+    MCAPI int $getMaxStackSize() const;
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI int $getContainerSize() const;
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI void $startOpen(::Player&);
 
-    MCAPI std::string getName$() const;
+    MCAPI void $stopOpen(::Player& player);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::Container* $getContainer();
 
-    MCAPI void onChanged$(class BlockSource& region);
+    MCAPI ::Container const* $getContainer() const;
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void startOpen$(class Player&);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI void stopOpen$(class Player&);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
 
-    MCAPI void tick$(class BlockSource& region);
-
-    MCAPI static class mce::Color& WATER_COLOR();
-
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

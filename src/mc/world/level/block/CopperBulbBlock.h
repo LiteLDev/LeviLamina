@@ -3,23 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CopperType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockPos;
+class BlockSource;
+class CopperBehavior;
+class Experiments;
+class HashedString;
+class Player;
+class Random;
+struct Brightness;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class CopperBulbBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 96> mUnka62165;
+    ::ll::UntypedStorage<1, 1>  mUnk64c13e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CopperBulbBlock& operator=(CopperBulbBlock const&);
@@ -27,112 +36,136 @@ public:
     CopperBulbBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CopperBulbBlock() = default;
-
-    // vIndex: 18
-    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
-
     // vIndex: 27
-    virtual class CopperBehavior const* tryGetCopperBehavior() const;
+    virtual ::CopperBehavior const* tryGetCopperBehavior() const /*override*/;
 
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    // vIndex: 66
-    virtual void onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 18
+    virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    MCAPI CopperBulbBlock(
-        std::string const&        nameId,
-        int                       id,
-        struct Brightness         litBrightness,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant
-    );
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    MCAPI CopperBulbBlock(
-        std::string const&        nameId,
-        int                       id,
-        struct Brightness         litBrightness,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant
-    );
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
+
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 0
+    virtual ~CopperBulbBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        struct Brightness         litBrightness,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant
+    MCAPI CopperBulbBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Brightness          litBrightness,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant
     );
 
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        struct Brightness         litBrightness,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant
+    MCAPI CopperBulbBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Brightness          litBrightness,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant
     );
 
-    MCAPI int getComparatorSignal$(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Brightness          litBrightness,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant
+    );
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Brightness          litBrightness,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant
+    );
+    // NOLINTEND
 
-    MCAPI void onLightningHit$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCAPI void onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI class CopperBehavior const* tryGetCopperBehavior$() const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

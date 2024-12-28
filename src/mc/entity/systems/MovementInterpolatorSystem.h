@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MovementInterpolatorSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct MovementInterpolatorSystem {
 public:
     // prevent constructor by default
     MovementInterpolatorSystem& operator=(MovementInterpolatorSystem const&);
@@ -10,10 +15,10 @@ public:
     MovementInterpolatorSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createOnGroundPostTickSystem();
+    MCAPI static ::TickingSystemWithInfo createOnGroundPostTickSystem();
 
-    MCAPI static struct TickingSystemWithInfo createTickSystem(bool isClientSide);
-
+    MCAPI static ::TickingSystemWithInfo createTickSystem(bool isClientSide);
     // NOLINTEND
 };

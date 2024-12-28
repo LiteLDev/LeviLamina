@@ -5,6 +5,17 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class AllowListFile;
+class DedicatedServer;
+class IMinecraftApp;
+class Level;
+class LevelStorage;
+class Minecraft;
+struct ScriptSettings;
+// clang-format on
+
 class DedicatedServerCommands {
 public:
     // prevent constructor by default
@@ -13,23 +24,22 @@ public:
     DedicatedServerCommands();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void setupStandaloneServer(
-        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft,
-        class IMinecraftApp&                                app,
-        class Level&                                        level,
-        class LevelStorage&,
-        class DedicatedServer& dedicatedServer,
-        class AllowListFile&   allowListFile,
-        struct ScriptSettings* scriptSettings
+        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft,
+        ::IMinecraftApp&                                  app,
+        ::Level&                                          level,
+        ::LevelStorage&,
+        ::DedicatedServer& dedicatedServer,
+        ::AllowListFile&   allowListFile,
+        ::ScriptSettings*  scriptSettings
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::vector<std::string>& mSaveAllFileList();
-
+    MCAPI static ::std::vector<::std::string>& mSaveAllFileList();
     // NOLINTEND
 };

@@ -12,24 +12,37 @@ public:
     // ScriptBindingReleaseList inner types define
     struct ReleaseDetails {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk2ba44f;
+        ::ll::UntypedStorage<8, 40> mUnkc74d57;
+        ::ll::UntypedStorage<2, 4>  mUnk417176;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         ReleaseDetails& operator=(ReleaseDetails const&);
         ReleaseDetails(ReleaseDetails const&);
         ReleaseDetails();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ReleaseDetails();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk6ed26c;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -38,15 +51,14 @@ public:
     ScriptBindingReleaseList();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails> releaseList);
-
+    MCAPI explicit ScriptBindingReleaseList(::std::vector<::ScriptBindingReleaseList::ReleaseDetails> releaseList);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::vector<struct ScriptBindingReleaseList::ReleaseDetails> releaseList);
-
+    MCAPI void* $ctor(::std::vector<::ScriptBindingReleaseList::ReleaseDetails> releaseList);
     // NOLINTEND
 };

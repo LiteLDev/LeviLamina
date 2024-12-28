@@ -7,7 +7,23 @@
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
+// auto generated forward declare list
+// clang-format off
+struct NetherNetConnector;
+// clang-format on
+
 class WebRTCNetworkPeer : public ::NetworkPeer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector> const> mNetherNetConnector;
+    ::ll::TypedStorage<8, 8, uint64 const>                                               mPeerId;
+    ::ll::TypedStorage<8, 8, uint64 const>                                               mSessionId;
+    ::ll::TypedStorage<8, 56, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
+    ::ll::TypedStorage<4, 4, uint>                                                       mNumNetworkStatusUpdates;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mPartialData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WebRTCNetworkPeer& operator=(WebRTCNetworkPeer const&);
@@ -15,62 +31,81 @@ public:
     WebRTCNetworkPeer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebRTCNetworkPeer();
+    virtual ~WebRTCNetworkPeer() /*override*/;
 
     // vIndex: 1
-    virtual void sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+    virtual void
+    sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+    virtual ::NetworkPeer::DataStatus receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) /*override*/;
 
     // vIndex: 3
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
     // vIndex: 4
-    virtual void update();
+    virtual void update() /*override*/;
 
     // vIndex: 6
-    virtual bool isLocal() const;
+    virtual bool isLocal() const /*override*/;
 
     // vIndex: 7
-    virtual bool isEncrypted() const;
+    virtual bool isEncrypted() const /*override*/;
+    // NOLINTEND
 
-    MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&& connector, uint64 peerId);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    WebRTCNetworkPeer(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector, uint64 peerId, uint64 sessionId);
+
+    MCAPI void _updateConnectionStatus();
 
     MCAPI uint64 getPeerId() const;
 
+    MCAPI uint64 getSessionId() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _updateConnectionStatus();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector, uint64 peerId, uint64 sessionId);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&& connector, uint64 peerId);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
 
-    MCAPI bool isEncrypted$() const;
+    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI bool isLocal$() const;
+    MCAPI void $update();
 
-    MCAPI ::NetworkPeer::DataStatus
-    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+    MCAPI bool $isLocal() const;
 
-    MCAPI void sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+    MCAPI bool $isEncrypted() const;
+    // NOLINTEND
 
-    MCAPI void update$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

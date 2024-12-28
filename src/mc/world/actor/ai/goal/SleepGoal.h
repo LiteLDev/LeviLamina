@@ -3,11 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
-#include "mc/world/actor/ai/village/POIType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
 
 class SleepGoal : public ::MoveToPOIGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkf6df97;
+    ::ll::UntypedStorage<4, 40> mUnk29e565;
+    ::ll::UntypedStorage<4, 12> mUnkf54053;
+    ::ll::UntypedStorage<4, 12> mUnkbc004b;
+    ::ll::UntypedStorage<4, 12> mUnkdbcb99;
+    ::ll::UntypedStorage<4, 12> mUnkc1740b;
+    ::ll::UntypedStorage<4, 12> mUnkbf7052;
+    ::ll::UntypedStorage<4, 4>  mUnk559658;
+    ::ll::UntypedStorage<4, 4>  mUnk9cc626;
+    ::ll::UntypedStorage<4, 4>  mUnka993fb;
+    ::ll::UntypedStorage<4, 4>  mUnk4b60d8;
+    ::ll::UntypedStorage<4, 4>  mUnk7f22a4;
+    ::ll::UntypedStorage<1, 1>  mUnkd6a436;
+    ::ll::UntypedStorage<8, 8>  mUnkfad98f;
+    ::ll::UntypedStorage<8, 8>  mUnk73dba8;
+    ::ll::UntypedStorage<1, 1>  mUnk6e59b5;
+    ::ll::UntypedStorage<1, 1>  mUnkab98bf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SleepGoal& operator=(SleepGoal const&);
@@ -15,81 +40,92 @@ public:
     SleepGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SleepGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
+
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 16
-    virtual uint64 _getRepathTime() const;
+    virtual uint64 _getRepathTime() const /*override*/;
 
-    MCAPI SleepGoal(
-        class Mob& mob,
-        float      walkSpeed,
-        float      sleepColliderHeight,
-        float      sleepColliderWidth,
-        bool       canSleepWhileRiding,
-        float      sleepYOffset,
-        int        cooldown,
-        float      cooldownTimeout
-    );
-
+    // vIndex: 0
+    virtual ~SleepGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _lockPosToBedPos();
+    MCAPI SleepGoal(
+        ::Mob& mob,
+        float  walkSpeed,
+        float  sleepColliderHeight,
+        float  sleepColliderWidth,
+        bool   canSleepWhileRiding,
+        float  sleepYOffset,
+        int    cooldown,
+        float  cooldownTimeout
+    );
 
     MCAPI void _wakeUp();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob& mob,
-        float      walkSpeed,
-        float      sleepColliderHeight,
-        float      sleepColliderWidth,
-        bool       canSleepWhileRiding,
-        float      sleepYOffset,
-        int        cooldown,
-        float      cooldownTimeout
+    MCAPI void* $ctor(
+        ::Mob& mob,
+        float  walkSpeed,
+        float  sleepColliderHeight,
+        float  sleepColliderWidth,
+        bool   canSleepWhileRiding,
+        float  sleepYOffset,
+        int    cooldown,
+        float  cooldownTimeout
     );
+    // NOLINTEND
 
-    MCAPI uint64 _getRepathTime$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI void $start();
 
-    MCAPI bool canUse$();
+    MCAPI void $stop();
 
-    MCAPI void start$();
+    MCAPI void $tick();
 
-    MCAPI void stop$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI uint64 $_getRepathTime() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

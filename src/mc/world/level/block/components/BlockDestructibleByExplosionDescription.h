@@ -3,16 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class BlockComponentStorage;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructibleByExplosionDescription : public ::BlockComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkae8417;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockDestructibleByExplosionDescription& operator=(BlockDestructibleByExplosionDescription const&);
@@ -20,30 +25,64 @@ public:
     BlockDestructibleByExplosionDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockDestructibleByExplosionDescription() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
+    // vIndex: 2
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
+    // vIndex: 4
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 0
+    virtual ~BlockDestructibleByExplosionDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BlockDestructibleByExplosionDescription(float explosionResistance);
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI static std::string const& NameID();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(float explosionResistance);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
+
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

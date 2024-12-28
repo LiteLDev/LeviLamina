@@ -10,6 +10,37 @@ public:
     IHash& operator=(IHash const&);
     IHash(IHash const&);
     IHash();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~IHash();
+
+    // vIndex: 1
+    virtual void reset() = 0;
+
+    // vIndex: 2
+    virtual void update(void const*, uint) = 0;
+
+    // vIndex: 3
+    virtual void final(uchar*) = 0;
+
+    // vIndex: 4
+    virtual uint64 resultSize() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };
 
-}; // namespace Crypto::Hash
+} // namespace Crypto::Hash

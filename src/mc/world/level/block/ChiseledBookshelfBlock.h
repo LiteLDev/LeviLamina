@@ -3,22 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Player;
+class Vec3;
 // clang-format on
 
 class ChiseledBookshelfBlock : public ::FaceDirectionalActorBlock {
+public:
+    // ChiseledBookshelfBlock inner types define
+    enum class SlotState : int {
+        Free     = 0,
+        Occupied = 1,
+        Invalid  = 2,
+    };
+
 public:
     // prevent constructor by default
     ChiseledBookshelfBlock& operator=(ChiseledBookshelfBlock const&);
@@ -26,54 +32,69 @@ public:
     ChiseledBookshelfBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 140
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3> worldHit) const
+        /*override*/;
+
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
+
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+
     // vIndex: 0
-    virtual ~ChiseledBookshelfBlock() = default;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 151
-    virtual bool
-    use(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3> worldHit) const;
-
-    MCAPI ChiseledBookshelfBlock(std::string const& nameId, int id);
-
+    virtual ~ChiseledBookshelfBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChiseledBookshelfBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3> worldHit) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI bool
-    use$(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3> worldHit) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

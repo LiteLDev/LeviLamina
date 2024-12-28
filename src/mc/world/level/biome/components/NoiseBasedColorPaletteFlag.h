@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NoiseBasedColorPaletteFlag {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct NoiseBasedColorPaletteFlag : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     NoiseBasedColorPaletteFlag& operator=(NoiseBasedColorPaletteFlag const&);
@@ -10,16 +13,21 @@ public:
     NoiseBasedColorPaletteFlag();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NoiseBasedColorPaletteFlag() = default;
-
+    virtual ~NoiseBasedColorPaletteFlag() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

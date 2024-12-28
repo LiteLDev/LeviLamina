@@ -2,36 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CallbackTokenCancelState;
+// clang-format on
+
 class CallbackToken {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk4b0467;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CallbackToken& operator=(CallbackToken const&);
     CallbackToken(CallbackToken const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CallbackToken();
 
-    MCAPI explicit CallbackToken(std::weak_ptr<class CallbackTokenCancelState> cancelState);
+    MCAPI explicit CallbackToken(::std::weak_ptr<::CallbackTokenCancelState> cancelState);
 
     MCAPI void cancelCallback();
 
-    MCAPI class CallbackToken& operator=(class CallbackToken&& rhs);
+    MCAPI ::CallbackToken& operator=(::CallbackToken&& rhs);
 
     MCAPI void release();
 
     MCAPI ~CallbackToken();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::weak_ptr<class CallbackTokenCancelState> cancelState);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::std::weak_ptr<::CallbackTokenCancelState> cancelState);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

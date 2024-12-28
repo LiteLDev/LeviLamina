@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/navigation/PathNavigation.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class NavigationComponent;
+class Vec3;
+struct NavigationDescription;
+// clang-format on
+
 class GenericPathNavigation : public ::PathNavigation {
 public:
     // prevent constructor by default
@@ -13,41 +21,50 @@ public:
     GenericPathNavigation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GenericPathNavigation() = default;
-
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob, struct NavigationDescription* description);
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
 
     // vIndex: 2
-    virtual void tick(class NavigationComponent& parent, class Mob& mob);
+    virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 3
-    virtual class Vec3 getTempMobPos(class Mob const& mob) const;
+    virtual ::Vec3 getTempMobPos(::Mob const& mob) const /*override*/;
 
     // vIndex: 9
-    virtual void stop(class NavigationComponent& parent, class Mob& mob);
+    virtual void stop(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 12
-    virtual void updatePath(class NavigationComponent& parent, class Mob& mob);
+    virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 0
+    virtual ~GenericPathNavigation() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Vec3 getTempMobPos$(class Mob const& mob) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
 
-    MCAPI void initializeInternal$(class Mob& mob, struct NavigationDescription* description);
+    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI void stop$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI void updatePath$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

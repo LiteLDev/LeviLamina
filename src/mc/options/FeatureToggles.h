@@ -9,7 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class AppPlatform;
+class Option;
 // clang-format on
 
 class FeatureToggles : public ::Bedrock::EnableNonOwnerReferences {
@@ -22,30 +23,53 @@ public:
     // FeatureToggles inner types define
     struct FeatureToggle {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk3b50ab;
+        ::ll::UntypedStorage<4, 4>  mUnk886240;
+        ::ll::UntypedStorage<8, 8>  mUnke61e68;
+        ::ll::UntypedStorage<8, 64> mUnkf6f270;
+        ::ll::UntypedStorage<8, 64> mUnk685add;
+        ::ll::UntypedStorage<4, 4>  mUnk101471;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         FeatureToggle& operator=(FeatureToggle const&);
         FeatureToggle(FeatureToggle const&);
         FeatureToggle();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI FeatureToggle(struct FeatureToggles::FeatureToggle&&);
+        MCAPI FeatureToggle(::FeatureToggles::FeatureToggle&&);
 
-        MCAPI struct FeatureToggles::FeatureToggle& operator=(struct FeatureToggles::FeatureToggle&&);
+        MCAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
 
         MCAPI ~FeatureToggle();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct FeatureToggles::FeatureToggle&&);
+        MCAPI void* $ctor(::FeatureToggles::FeatureToggle&&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkdead0b;
+    ::ll::UntypedStorage<8, 24> mUnke6612b;
+    ::ll::UntypedStorage<8, 32> mUnk6a0c6d;
+    ::ll::UntypedStorage<1, 1>  mUnk8d82d8;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -54,59 +78,78 @@ public:
     FeatureToggles();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FeatureToggles();
-
-    MCAPI explicit FeatureToggles(class AppPlatform& appPlatform);
-
-    MCAPI class Option* get(::FeatureOptionID featureID);
-
-    MCAPI bool isEnabled(::FeatureOptionID featureID) const;
-
+    virtual ~FeatureToggles() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::function<void(class Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
-        std::vector<::FeatureOptionID> expectedDisabledOptions,
-        std::vector<::FeatureOptionID> expectedEnabledOptions
+    MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
+
+    MCAPI ::std::function<void(::Option&)>
+    _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
+
+    MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
+        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
+        ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCAPI std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
-        std::vector<::FeatureOptionID> expectedDisabledOptions,
-        std::vector<::FeatureOptionID> expectedEnabledOptions
+    MCAPI ::std::function<void(bool&)> _getLockIfInGameCallback();
+
+    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
+        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
+        ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCAPI void _initialize(class AppPlatform& appPlatform);
+    MCAPI ::std::function<void(bool&)> _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck
+    ) const;
+
+    MCAPI void _initialize(::AppPlatform& appPlatform);
 
     MCAPI void _registerFeature(
-        ::FeatureOptionTabID               tabID,
-        ::FeatureOptionID                  featureID,
-        std::string const&                 locName,
-        std::string const&                 saveName,
-        bool                               defaultValue,
-        ::FeatureOptionID                  dependencyFeatureID,
-        std::function<void(class Option&)> setup,
-        std::function<void(bool&)>         lock
+        ::FeatureOptionTabID             tabID,
+        ::FeatureOptionID                featureID,
+        ::std::string const&             locName,
+        ::std::string const&             saveName,
+        bool                             defaultValue,
+        ::FeatureOptionID                dependencyFeatureID,
+        ::std::function<void(::Option&)> setup,
+        ::std::function<void(bool&)>     lock
     );
 
     MCAPI void _registerFeatures();
 
     MCAPI void _setupDependencies();
 
+    MCAPI ::Option* get(::FeatureOptionID featureID);
+
+    MCAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class AppPlatform& appPlatform);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AppPlatform& appPlatform);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::unique_ptr<class FeatureToggles>& mFeatureToggles();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

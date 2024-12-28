@@ -9,15 +9,27 @@ namespace Social::Events { class Event; }
 
 class PlayerRespawnTelemetryData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk5667ce;
+    ::ll::UntypedStorage<4, 4> mUnk3f14d4;
+    ::ll::UntypedStorage<4, 4> mUnk361052;
+    ::ll::UntypedStorage<8, 8> mUnkc2107a;
+    ::ll::UntypedStorage<4, 4> mUnk6cf02f;
+    ::ll::UntypedStorage<1, 1> mUnkb612bb;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&);
     PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PlayerRespawnTelemetryData();
 
-    MCAPI void WriteEventData(class Social::Events::Event& event) const;
+    MCAPI void WriteEventData(::Social::Events::Event& event) const;
 
     MCAPI void setChangedDimension(bool changed);
 
@@ -30,15 +42,17 @@ public:
     MCAPI void setSearchTime(double seconds);
 
     MCAPI void setShortJumpCount(uint jumps);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& mEventName();
+    // NOLINTEND
 
-    MCAPI static std::string const& mEventName();
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -7,74 +7,127 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class ResolvedTextObject;
+// clang-format on
+
 class SetTitlePacket : public ::Packet {
 public:
     // SetTitlePacket inner types define
-    enum class TitleType {};
+    enum class TitleType : int {
+        Clear               = 0,
+        Reset               = 1,
+        Title               = 2,
+        Subtitle            = 3,
+        Actionbar           = 4,
+        Times               = 5,
+        TitleTextObject     = 6,
+        SubtitleTextObject  = 7,
+        ActionbarTextObject = 8,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SetTitlePacket::TitleType>     mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mTitleText;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredTitleText;
+    ::ll::TypedStorage<4, 4, int>                             mFadeInTime;
+    ::ll::TypedStorage<4, 4, int>                             mStayTime;
+    ::ll::TypedStorage<4, 4, int>                             mFadeOutTime;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mPlatformOnlineId;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     SetTitlePacket& operator=(SetTitlePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SetTitlePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~SetTitlePacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SetTitlePacket();
 
-    MCAPI SetTitlePacket(class SetTitlePacket const&);
+    MCAPI SetTitlePacket(::SetTitlePacket const&);
 
     MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType type);
 
-    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
-
-    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, std::string const& titleText);
+    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
 
     MCAPI SetTitlePacket(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI class SetTitlePacket& operator=(class SetTitlePacket&&);
+    MCAPI SetTitlePacket(
+        ::SetTitlePacket::TitleType    type,
+        ::std::string const&           titleText,
+        ::std::optional<::std::string> filteredTitleText
+    );
 
+    MCAPI ::SetTitlePacket& operator=(::SetTitlePacket&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::SetTitlePacket const&);
 
-    MCAPI void* ctor$(::SetTitlePacket::TitleType type);
+    MCAPI void* $ctor(::SetTitlePacket::TitleType type);
 
-    MCAPI void* ctor$(int fadeInTime, int stayTime, int fadeOutTime);
+    MCAPI void* $ctor(::SetTitlePacket::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
 
-    MCAPI void* ctor$(::SetTitlePacket::TitleType type, class ResolvedTextObject const& resolvedTextObject);
+    MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI void* ctor$(class SetTitlePacket const&);
+    MCAPI void* $ctor(
+        ::SetTitlePacket::TitleType    type,
+        ::std::string const&           titleText,
+        ::std::optional<::std::string> filteredTitleText
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(::SetTitlePacket::TitleType type, std::string const& titleText);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

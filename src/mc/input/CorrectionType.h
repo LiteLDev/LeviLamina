@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CorrectionType {};
+enum class CorrectionType : uchar {
+    ExplicitCorrection = 0,
+    PassiveCorrection  = 1,
+};

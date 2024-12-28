@@ -3,15 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cereal/BasicLoader.h"
+#include "mc/deps/cereal/BasicLoader.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class BasicLoader; }
+class Tag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class NBTLoader : public ::cereal::BasicLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk68138d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NBTLoader& operator=(NBTLoader const&);
@@ -19,22 +25,33 @@ public:
     NBTLoader();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NBTLoader();
-
-    MCAPI NBTLoader(gsl::not_null<class Tag const*> tag, struct cereal::ReflectionCtx const& reflectionCtx);
-
+    virtual ~NBTLoader() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NBTLoader(::gsl::not_null<::Tag const*> tag, ::cereal::ReflectionCtx const& reflectionCtx);
+    // NOLINTEND
 
-    MCAPI void* ctor$(gsl::not_null<class Tag const*> tag, struct cereal::ReflectionCtx const& reflectionCtx);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gsl::not_null<::Tag const*> tag, ::cereal::ReflectionCtx const& reflectionCtx);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

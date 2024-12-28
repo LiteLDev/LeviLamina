@@ -2,7 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class XoroshiroRandom {
+// auto generated inclusion list
+#include "mc/deps/core/math/IRandom.h"
+#include "mc/deps/core/math/IRandomSeeded.h"
+
+// auto generated forward declare list
+// clang-format off
+class IPositionalRandomFactory;
+struct Seed128Bit;
+// clang-format on
+
+class XoroshiroRandom : public ::IRandom, public ::IRandomSeeded {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnka94e01;
+    ::ll::UntypedStorage<8, 16> mUnk7653d1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     XoroshiroRandom& operator=(XoroshiroRandom const&);
@@ -10,75 +27,97 @@ public:
     XoroshiroRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void consumeCount(uint rounds);
+    // vIndex: 2
+    virtual int nextInt() /*override*/;
 
-    MCVAPI std::unique_ptr<class IRandom> fork();
+    // vIndex: 1
+    virtual int nextInt(int bound) /*override*/;
 
-    MCVAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+    // vIndex: 3
+    virtual int64 nextLong() /*override*/;
 
-    MCVAPI bool nextBoolean();
+    // vIndex: 4
+    virtual bool nextBoolean() /*override*/;
 
-    MCVAPI double nextDouble();
+    // vIndex: 5
+    virtual float nextFloat() /*override*/;
 
-    MCVAPI float nextFloat();
+    // vIndex: 6
+    virtual double nextDouble() /*override*/;
 
-    MCVAPI double nextGaussianDouble();
+    // vIndex: 7
+    virtual double nextGaussianDouble() /*override*/;
 
-    MCVAPI int nextInt();
+    // vIndex: 9
+    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
-    MCVAPI int nextInt(int bound);
+    // vIndex: 10
+    virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
 
-    MCVAPI int64 nextLong();
+    // vIndex: 8
+    virtual void consumeCount(uint rounds) /*override*/;
 
-    MCVAPI struct Seed128Bit seed128() const;
+    // vIndex: 2
+    virtual void setSeed(int64 seed) /*override*/;
 
-    MCVAPI int64 seed64() const;
+    // vIndex: 1
+    virtual void setSeed(::Seed128Bit seed) /*override*/;
 
-    MCVAPI void setSeed(struct Seed128Bit seed);
+    // vIndex: 3
+    virtual int64 seed64() const /*override*/;
 
-    MCVAPI void setSeed(int64 seed);
+    // vIndex: 4
+    virtual ::Seed128Bit seed128() const /*override*/;
 
-    MCVAPI ~XoroshiroRandom();
-
+    // vIndex: 0
+    virtual ~XoroshiroRandom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftableForIRandom();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForIRandomSeeded();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $nextInt();
 
-    MCAPI void dtor$();
+    MCAPI int $nextInt(int bound);
 
-    MCAPI void consumeCount$(uint rounds);
+    MCAPI int64 $nextLong();
 
-    MCAPI std::unique_ptr<class IRandom> fork$();
+    MCAPI bool $nextBoolean();
 
-    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
+    MCAPI float $nextFloat();
 
-    MCAPI bool nextBoolean$();
+    MCAPI double $nextDouble();
 
-    MCAPI double nextDouble$();
+    MCAPI double $nextGaussianDouble();
 
-    MCAPI float nextFloat$();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCAPI double nextGaussianDouble$();
+    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCAPI int nextInt$();
+    MCAPI void $consumeCount(uint rounds);
 
-    MCAPI int nextInt$(int bound);
+    MCAPI void $setSeed(int64 seed);
 
-    MCAPI int64 nextLong$();
+    MCAPI void $setSeed(::Seed128Bit seed);
 
-    MCAPI struct Seed128Bit seed128$() const;
+    MCAPI int64 $seed64() const;
 
-    MCAPI int64 seed64$() const;
+    MCAPI ::Seed128Bit $seed128() const;
+    // NOLINTEND
 
-    MCAPI void setSeed$(struct Seed128Bit seed);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIRandom();
 
-    MCAPI void setSeed$(int64 seed);
-
+    MCAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
 };

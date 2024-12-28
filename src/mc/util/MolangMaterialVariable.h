@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangMaterialVariable {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+
+struct MolangMaterialVariable : public ::MolangHashStringVariable<::MolangMaterialVariable> {
 public:
     // prevent constructor by default
     MolangMaterialVariable& operator=(MolangMaterialVariable const&);
@@ -10,15 +13,14 @@ public:
     MolangMaterialVariable();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangMaterialVariable();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

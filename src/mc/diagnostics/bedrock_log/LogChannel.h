@@ -4,6 +4,11 @@
 
 namespace BedrockLog {
 
-enum class LogChannel {};
-
+enum class LogChannel : int {
+    Global         = 0,
+    ClientSide     = 1,
+    ServerSide     = 2,
+    NumLogChannels = 3,
 };
+
+}

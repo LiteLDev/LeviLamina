@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinition;
+struct DynamicPropertyDefinition;
+// clang-format on
+
 class DynamicPropertiesDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk645c3d;
+    ::ll::UntypedStorage<8, 8>  mUnk1a8ad5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DynamicPropertiesDefinition& operator=(DynamicPropertiesDefinition const&);
@@ -13,48 +26,48 @@ public:
     DynamicPropertiesDefinition();
 
 public:
-    // NOLINTBEGIN
-    MCAPI void clear();
-
-    MCAPI std::optional<::DynamicPropertyDefinePropertyError>
-          defineProperty(std::string const& identifier, struct DynamicPropertyDefinition definition);
-
-    MCAPI struct DynamicPropertyDefinition const* tryGetPropertyDefinition(std::string const& identifier) const;
-
-    MCAPI std::optional<std::string> tryMergeDefinitions(
-        class DynamicPropertiesDefinition const& other,
-        std::string const&                       identifier,
-        uint64                                   sizeLimit
-    );
-
-    MCAPI ~DynamicPropertiesDefinition();
-
-    MCAPI static void
-    clearAll(std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const& definitionList);
-
-    // NOLINTEND
-
-    // private:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _canMergeDefinitions(
-        class DynamicPropertiesDefinition const& other,
-        std::string const&                       identifier,
-        uint64                                   sizeLimit,
-        std::string&                             error
+        ::DynamicPropertiesDefinition const& other,
+        ::std::string const&                 identifier,
+        uint64                               sizeLimit,
+        ::std::string&                       error
     ) const;
 
+    MCAPI void clear();
+
+    MCAPI ::std::optional<::DynamicPropertyDefinePropertyError>
+    defineProperty(::std::string const& identifier, ::DynamicPropertyDefinition definition);
+
+    MCAPI ::DynamicPropertyDefinition const* tryGetPropertyDefinition(::std::string const& identifier) const;
+
+    MCAPI ::std::optional<::std::string>
+    tryMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit);
+
+    MCAPI ~DynamicPropertiesDefinition();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static void
+    clearAll(::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& definitionList);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static uint64 const& ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
 
     MCAPI static uint64 const& IDENTIFIER_SIZE_LIMIT();
 
     MCAPI static uint64 const& WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

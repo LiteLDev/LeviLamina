@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace ActorAttribute {
-// NOLINTBEGIN
-MCAPI int getHealth(class EntityContext const& provider);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
 
-MCAPI int getMaxHealth(class EntityContext const& provider);
+namespace ActorAttribute {
+// functions
+// NOLINTBEGIN
+MCAPI int getHealth(::EntityContext const& provider);
+
+MCAPI int getMaxHealth(::EntityContext const& provider);
 // NOLINTEND
 
-}; // namespace ActorAttribute
+} // namespace ActorAttribute

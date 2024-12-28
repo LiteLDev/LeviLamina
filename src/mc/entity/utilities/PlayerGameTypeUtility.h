@@ -6,6 +6,7 @@
 #include "mc/world/level/GameType.h"
 
 namespace PlayerGameTypeUtility {
+// functions
 // NOLINTBEGIN
 MCAPI bool isAdventure(::GameType playerGameType, ::GameType levelGameType);
 
@@ -16,4 +17,4 @@ MCAPI bool isSpectator(::GameType playerGameType, ::GameType levelGameType);
 MCAPI bool isSurvival(::GameType playerGameType, ::GameType levelGameType);
 // NOLINTEND
 
-}; // namespace PlayerGameTypeUtility
+} // namespace PlayerGameTypeUtility

@@ -8,34 +8,48 @@
 
 class StringByteInput : public ::BytesDataInput {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64>              mIdx;
+    ::ll::TypedStorage<8, 16, ::std::string_view> mBuffer;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     StringByteInput& operator=(StringByteInput const&);
     StringByteInput(StringByteInput const&);
     StringByteInput();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StringByteInput();
-
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     // vIndex: 10
-    virtual uint64 numBytesLeft() const;
+    virtual uint64 numBytesLeft() const /*override*/;
 
+    // vIndex: 0
+    virtual ~StringByteInput() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
-    MCAPI uint64 numBytesLeft$() const;
+    MCAPI uint64 $numBytesLeft() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

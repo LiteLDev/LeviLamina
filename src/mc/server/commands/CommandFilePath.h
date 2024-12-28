@@ -4,28 +4,37 @@
 
 class CommandFilePath {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CommandFilePath& operator=(CommandFilePath const&);
     CommandFilePath(CommandFilePath const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CommandFilePath();
 
     MCAPI int findInvalidCharacter() const;
 
-    MCAPI std::string const& getText() const;
+    MCAPI ::std::string const& getText() const;
 
     MCAPI ~CommandFilePath();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

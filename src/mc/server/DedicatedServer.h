@@ -3,19 +3,62 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/IMinecraftApp.h"
+#include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class AllowListFile;
+class FileArchiver;
+class IGameModuleShared;
+class LevelSettings;
+class Minecraft;
+class PermissionsFile;
+class PropertiesSettings;
+class TestConfig;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Core { class FilePathManager; }
 // clang-format on
 
-class DedicatedServer {
+class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
 public:
     // DedicatedServer inner types define
-    enum class StartResult {};
+    enum class StartResult : int {
+        Success           = 0,
+        PortOccupied      = 1,
+        InvalidSettings   = 2,
+        MissingDependency = 3,
+        RuntimeError      = 4,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk68043b;
+    ::ll::UntypedStorage<8, 24> mUnkbdf2c1;
+    ::ll::UntypedStorage<8, 8>  mUnkceb2ec;
+    ::ll::UntypedStorage<1, 1>  mUnk193fee;
+    ::ll::UntypedStorage<4, 4>  mUnkacb014;
+    ::ll::UntypedStorage<8, 8>  mUnka2d04f;
+    ::ll::UntypedStorage<8, 8>  mUnkeefa08;
+    ::ll::UntypedStorage<8, 8>  mUnka4b40a;
+    ::ll::UntypedStorage<8, 8>  mUnkf12457;
+    ::ll::UntypedStorage<8, 16> mUnk7e3932;
+    ::ll::UntypedStorage<8, 8>  mUnk7918f1;
+    ::ll::UntypedStorage<8, 32> mUnk8d1b07;
+    ::ll::UntypedStorage<8, 64> mUnke208cc;
+    ::ll::UntypedStorage<8, 8>  mUnk52b1b9;
+    ::ll::UntypedStorage<8, 8>  mUnk4044be;
+    ::ll::UntypedStorage<8, 8>  mUnka4996b;
+    ::ll::UntypedStorage<8, 8>  mUnk8f0902;
+    ::ll::UntypedStorage<8, 8>  mUnk85bec9;
+    ::ll::UntypedStorage<8, 8>  mUnk5ad410;
+    ::ll::UntypedStorage<8, 8>  mUnk646615;
+    ::ll::UntypedStorage<8, 8>  mUnkdadb88;
+    ::ll::UntypedStorage<8, 8>  mUnk5d6b3b;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -23,76 +66,107 @@ public:
     DedicatedServer(DedicatedServer const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
+    // vIndex: 0
+    virtual ~DedicatedServer() /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class FileArchiver> getFileArchiver() const;
+    // vIndex: 5
+    virtual bool stop() /*override*/;
 
-    MCVAPI class IGameModuleShared& getGameModuleShared();
+    // vIndex: 8
+    virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class Minecraft> getPrimaryMinecraft();
+    // vIndex: 1
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() /*override*/;
 
-    MCVAPI bool isDedicatedServer() const;
+    // vIndex: 2
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const /*override*/;
 
-    MCVAPI bool isEduMode() const;
+    // vIndex: 3
+    virtual bool isEduMode() const /*override*/;
 
-    MCVAPI void onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+    // vIndex: 4
+    virtual bool isDedicatedServer() const /*override*/;
 
-    MCVAPI void requestServerShutdown(std::string const&);
+    // vIndex: 5
+    virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) /*override*/;
 
-    MCVAPI bool stop();
+    // vIndex: 6
+    virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
-    MCVAPI ~DedicatedServer();
+    // vIndex: 7
+    virtual void requestServerShutdown(::std::string const& message) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI DedicatedServer();
 
+    MCAPI void initializeAppConfigs();
+
+    MCAPI void initializeCodeBuilder();
+
+    MCAPI void initializeHttp();
+
+    MCAPI void initializeImguiProfiler();
+
+    MCAPI void initializeLogging(::TestConfig& testConfig);
+
     MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
-        class Core::FilePathManager&            filePathManager,
-        class PropertiesSettings&               properties,
-        class LevelSettings&                    settings,
-        class AllowListFile&                    userAllowList,
-        std::unique_ptr<class PermissionsFile>& permissionsFile
+        ::Core::FilePathManager&              filePathManager,
+        ::PropertiesSettings&                 properties,
+        ::LevelSettings&                      settings,
+        ::AllowListFile&                      userAllowList,
+        ::std::unique_ptr<::PermissionsFile>& permissionsFile,
+        ::Bedrock::ActivationArguments const& args,
+        ::TestConfig&                         testConfig
     );
 
     MCAPI ::DedicatedServer::StartResult
-    start(std::string const& sessionID, class Bedrock::ActivationArguments const& args);
-
+    start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void initializeLogging();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockAppIsland();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForIMinecraftApp();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $stop();
 
-    MCAPI void dtor$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient$() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class FileArchiver> getFileArchiver$() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCAPI class IGameModuleShared& getGameModuleShared$();
+    MCAPI bool $isEduMode() const;
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class Minecraft> getPrimaryMinecraft$();
+    MCAPI bool $isDedicatedServer() const;
 
-    MCAPI bool isDedicatedServer$() const;
+    MCAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
-    MCAPI bool isEduMode$() const;
+    MCAPI ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void onNetworkMaxPlayersChanged$(uint newMaxPlayerCount);
+    MCAPI void $requestServerShutdown(::std::string const& message);
+    // NOLINTEND
 
-    MCAPI void requestServerShutdown$(std::string const&);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForAppIsland();
 
-    MCAPI bool stop$();
-
+    MCAPI static void** $vftableForIMinecraftApp();
     // NOLINTEND
 };

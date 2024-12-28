@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/validation/ContainerValidationBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class Container;
+class ContainerScreenContext;
+class ItemStackBase;
+// clang-format on
+
 class BrewingStandResultContainerValidation : public ::ContainerValidationBase {
 public:
     // prevent constructor by default
@@ -13,73 +20,55 @@ public:
     BrewingStandResultContainerValidation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrewingStandResultContainerValidation() = default;
-
-    // vIndex: 1
-    virtual bool isValidSlotForContainer(
-        class ContainerScreenContext const& screenContext,
-        class Container const&              container,
-        int                                 slot
-    ) const;
+    virtual ~BrewingStandResultContainerValidation() /*override*/;
 
     // vIndex: 2
     virtual bool
-    isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const& item, int) const;
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
+        /*override*/;
 
     // vIndex: 3
-    virtual int getAvailableSetCount(int, class ItemStackBase const& item) const;
+    virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const /*override*/;
 
     // vIndex: 4
-    virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-
-    // vIndex: 5
-    virtual bool
-    isItemAllowedToRemove(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
-
-    // vIndex: 6
-    virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
-
-    // vIndex: 7
-    virtual bool canDestroy(class ContainerScreenContext const& screenContext) const;
+    virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     // vIndex: 8
-    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
-
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canDestroy$(class ContainerScreenContext const& screenContext) const;
-
-    MCAPI bool canItemMoveToContainer$(class ItemStackBase const& item) const;
-
-    MCAPI int getAvailableSetCount$(int, class ItemStackBase const& item) const;
-
-    MCAPI int getContainerOffset$(class ContainerScreenContext const&) const;
-
-    MCAPI int getContainerSize$(class ContainerScreenContext const&, class Container const&) const;
-
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI bool
-    isItemAllowedInSlot$(class ContainerScreenContext const&, int, class ItemStackBase const& item, int) const;
+    $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool)
+        const;
 
-    MCAPI bool isItemAllowedToAdd$(class ItemStack const&) const;
+    MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCAPI bool
-    isItemAllowedToRemove$(class ContainerScreenContext const& screenContext, class ItemStackBase const& item) const;
+    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCAPI bool isValidSlotForContainer$(
-        class ContainerScreenContext const& screenContext,
-        class Container const&              container,
-        int                                 slot
-    ) const;
+    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 namespace xbox::httpclient {
 
-class websocket_message_buffer {
+struct websocket_message_buffer {
 public:
     // prevent constructor by default
     websocket_message_buffer& operator=(websocket_message_buffer const&);
@@ -12,17 +12,16 @@ public:
     websocket_message_buffer();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~websocket_message_buffer();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

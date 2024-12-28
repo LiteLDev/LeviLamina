@@ -4,18 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Random;
 // clang-format on
 
 class CropBlock : public ::BushBlock {
@@ -26,126 +29,129 @@ public:
     CropBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CropBlock();
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
+
+    // vIndex: 9
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
+
+    // vIndex: 100
+    virtual void executeEvent(
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             sourceEntity
+    ) const /*override*/;
 
     // vIndex: 3
     virtual bool
-    hasTag(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
-        const;
+    hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
+        /*override*/;
 
-    // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 153
+    virtual ::ItemInstance const getBaseSeed() const;
 
-    // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 80
+    // vIndex: 74
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
-    // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 106
-    virtual void executeEvent(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    block,
-        std::string const&    eventName,
-        class Actor&          sourceEntity
-    ) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 165
-    virtual class ItemInstance const getBaseSeed() const;
-
-    MCAPI CropBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~CropBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CropBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void executeEvent$(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    block,
-        std::string const&    eventName,
-        class Actor&          sourceEntity
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+
+    MCAPI void $executeEvent(
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             sourceEntity
     ) const;
 
-    MCAPI class ItemInstance const getBaseSeed$() const;
+    MCAPI bool
+    $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI class AABB const& getOutline$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI ::ItemInstance const $getBaseSeed() const;
 
     MCAPI bool
-    hasTag$(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
-        const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    // NOLINTEND
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

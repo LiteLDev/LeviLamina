@@ -4,10 +4,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class Container;
+class ItemStack;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class LootTable {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkf60c26;
+    ::ll::UntypedStorage<8, 24> mUnkcc1980;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LootTable& operator=(LootTable const&);
@@ -15,20 +26,16 @@ public:
     LootTable();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void deserialize(class Json::Value const& table);
+    MCAPI void deserialize(::Json::Value const& table);
 
-    MCAPI void fill(class Container& container, class Random& random, class LootTableContext& context);
+    MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 
-    MCAPI std::vector<class ItemStack> getRandomItems(class Random& random, class LootTableContext& context) const;
+    MCAPI ::std::vector<int> getAvailableSlots(::Container& container, ::Random& random);
 
-    // NOLINTEND
+    MCAPI ::std::vector<::ItemStack> getRandomItems(::Random& random, ::LootTableContext& context) const;
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::vector<int> getAvailableSlots(class Container& container, class Random& random);
-
-    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>& result, int availableSlots, class Random& random);
-
+    MCAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);
     // NOLINTEND
 };

@@ -13,4 +13,4 @@ public:
     LockGuard();
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

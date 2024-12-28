@@ -4,25 +4,27 @@
 
 struct TickingSystemWithInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkabfef5;
+    ::ll::UntypedStorage<8, 192> mUnkc4653d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     TickingSystemWithInfo& operator=(TickingSystemWithInfo const&);
     TickingSystemWithInfo(TickingSystemWithInfo const&);
     TickingSystemWithInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&);
-
     MCAPI ~TickingSystemWithInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct TickingSystemWithInfo&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

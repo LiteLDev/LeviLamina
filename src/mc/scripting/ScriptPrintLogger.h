@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IPrinter; }
 namespace Scripting { struct ContextId; }
 // clang-format on
 
@@ -19,46 +18,56 @@ public:
     ScriptPrintLogger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPrintLogger() = default;
+    virtual ~ScriptPrintLogger() /*override*/;
 
     // vIndex: 1
-    virtual void onInfo(struct Scripting::ContextId, std::string_view message) const;
+    virtual void onInfo(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 2
-    virtual void onWarn(struct Scripting::ContextId, std::string_view message) const;
+    virtual void onWarn(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 3
-    virtual void onError(struct Scripting::ContextId, std::string_view message) const;
+    virtual void onError(::Scripting::ContextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 4
-    virtual void onException(struct Scripting::ContextId, entt::meta_any const& e) const;
+    virtual void onException(::Scripting::ContextId, ::entt::meta_any const& e) const /*override*/;
 
     // vIndex: 5
-    virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const& e) const;
+    virtual bool shouldPrintException(::Scripting::ContextId, ::entt::meta_any const& e) const /*override*/;
 
     // vIndex: 6
-    virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view message, bool isHandled) const;
-
+    virtual void onPromiseRejection(::Scripting::ContextId, ::std::string_view message, bool isHandled) const
+        /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onError$(struct Scripting::ContextId, std::string_view message) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void onException$(struct Scripting::ContextId, entt::meta_any const& e) const;
+    MCAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void onInfo$(struct Scripting::ContextId, std::string_view message) const;
+    MCAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCAPI void onPromiseRejection$(struct Scripting::ContextId, std::string_view message, bool isHandled) const;
+    MCAPI void $onException(::Scripting::ContextId, ::entt::meta_any const& e) const;
 
-    MCAPI void onWarn$(struct Scripting::ContextId, std::string_view message) const;
+    MCAPI bool $shouldPrintException(::Scripting::ContextId, ::entt::meta_any const& e) const;
 
-    MCAPI bool shouldPrintException$(struct Scripting::ContextId, entt::meta_any const& e) const;
+    MCAPI void $onPromiseRejection(::Scripting::ContextId, ::std::string_view message, bool isHandled) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

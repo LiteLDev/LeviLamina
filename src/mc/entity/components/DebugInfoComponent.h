@@ -4,9 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
-class DebugInfoComponent {
+// auto generated forward declare list
+// clang-format off
+class ActorEventListener;
+class HashedString;
+class NetworkIdentifier;
+struct ActorDefinitionTriggeredEvent;
+// clang-format on
+
+class DebugInfoComponent : public ::EventListenerDispatcher<::ActorEventListener> {
 public:
     // DebugInfoComponent inner types declare
     // clang-format off
@@ -16,24 +25,41 @@ public:
     // DebugInfoComponent inner types define
     struct Listener {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 48>  mUnk31d0b2;
+        ::ll::UntypedStorage<8, 160> mUnk26c4f6;
+        ::ll::UntypedStorage<1, 1>   mUnk7f0325;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Listener& operator=(Listener const&);
         Listener(Listener const&);
         Listener();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Listener();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke06071;
+    ::ll::UntypedStorage<8, 64> mUnk7fafc0;
+    ::ll::UntypedStorage<8, 40> mUnka34b10;
+    ::ll::UntypedStorage<1, 1>  mUnk69b71c;
+    ::ll::UntypedStorage<8, 8>  mUnk9cfb9b;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -41,149 +67,54 @@ public:
     DebugInfoComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DebugInfoComponent() = default;
-
-    // vIndex: 1
-    virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5
-    virtual void __unk_vfn_5();
-
-    // vIndex: 6
-    virtual void __unk_vfn_6();
-
-    // vIndex: 7
-    virtual void __unk_vfn_7();
-
-    // vIndex: 8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 9
-    virtual void __unk_vfn_9();
-
-    // vIndex: 10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13
-    virtual void __unk_vfn_13();
-
-    // vIndex: 14
-    virtual void __unk_vfn_14();
-
-    // vIndex: 15
-    virtual void __unk_vfn_15();
-
-    // vIndex: 16
-    virtual void __unk_vfn_16();
-
-    // vIndex: 17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 18
-    virtual void __unk_vfn_18();
-
-    // vIndex: 19
-    virtual void __unk_vfn_19();
-
-    // vIndex: 20
-    virtual void __unk_vfn_20();
-
-    // vIndex: 21
-    virtual void __unk_vfn_21();
-
-    // vIndex: 22
-    virtual void __unk_vfn_22();
-
-    // vIndex: 23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 24
-    virtual void __unk_vfn_24();
-
-    // vIndex: 25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 27
-    virtual void __unk_vfn_27();
-
-    // vIndex: 28
-    virtual void __unk_vfn_28();
-
-    // vIndex: 29
-    virtual void __unk_vfn_29();
-
-    // vIndex: 30
-    virtual void __unk_vfn_30();
-
-    // vIndex: 31
-    virtual void __unk_vfn_31();
-
-    // vIndex: 32
-    virtual void __unk_vfn_32();
-
-    // vIndex: 33
-    virtual void __unk_vfn_33();
-
-    // vIndex: 34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36
-    virtual void __unk_vfn_36();
-
     // vIndex: 37
-    virtual ::EventResult onEvent(struct ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
+    virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
 
-    MCAPI DebugInfoComponent(class DebugInfoComponent&&);
+    // vIndex: 0
+    virtual ~DebugInfoComponent() /*override*/;
+    // NOLINTEND
 
-    MCAPI DebugInfoComponent(class DebugInfoComponent const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DebugInfoComponent(::DebugInfoComponent&&);
 
-    MCAPI void
-    addListener(class HashedString const& messageType, class NetworkIdentifier source, ::SubClientId subClientId);
+    MCAPI DebugInfoComponent(::DebugInfoComponent const&);
+
+    MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
 
     MCAPI bool listenersEmpty() const;
 
-    MCAPI class DebugInfoComponent& operator=(class DebugInfoComponent&&);
+    MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
 
-    MCAPI void
-    removeListener(class HashedString const&, class NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
-
+    MCAPI void removeListener(::HashedString const&, ::NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::DebugInfoComponent&&);
 
-    MCAPI void* ctor$(class DebugInfoComponent const&);
+    MCAPI void* $ctor(::DebugInfoComponent const&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class DebugInfoComponent&&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const& event);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ActorDefinitionTriggeredEvent const& actorDefinitionEvent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

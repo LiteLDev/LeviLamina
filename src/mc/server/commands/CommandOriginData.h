@@ -2,27 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandOriginType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class UUID; }
+// clang-format on
+
 struct CommandOriginData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::CommandOriginType> mType;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>        mUUID;
+    ::ll::TypedStorage<8, 32, ::std::string>      mRequestId;
+    ::ll::TypedStorage<8, 8, int64>               mPlayerId;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CommandOriginData();
 
-    MCAPI CommandOriginData(struct CommandOriginData const& other);
+    MCAPI CommandOriginData(::CommandOriginData const& other);
 
-    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const& rhs);
+    MCAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
 
     MCAPI ~CommandOriginData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct CommandOriginData const& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::CommandOriginData const& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

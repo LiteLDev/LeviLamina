@@ -3,22 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
 // clang-format on
 
 class DiodeBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkbce537;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DiodeBlock& operator=(DiodeBlock const&);
@@ -26,121 +27,143 @@ public:
     DiodeBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DiodeBlock();
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 47
-    virtual bool isSignalSource() const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 54
-    virtual int getDirectSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 52
+    virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    // vIndex: 151
+    virtual int getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    // vIndex: 130
-    virtual bool canSpawnOn(class Actor*) const;
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
+
+    // vIndex: 152
+    virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const;
+
+    // vIndex: 153
+    virtual bool isSameDiode(::Block const& block) const;
 
     // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+    virtual bool shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 163
-    virtual int getSignal(class BlockSource& region, class BlockPos const& pos, int dir) const;
+    // vIndex: 119
+    virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 165
-    virtual bool isSameDiode(class Block const& block) const;
-
-    // vIndex: 166
-    virtual bool shouldPrioritize(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 167
+    // vIndex: 155
     virtual bool isOn() const;
 
-    // vIndex: 168
-    virtual bool shouldTurnOn(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 156
+    virtual bool shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 169
-    virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 157
+    virtual int getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 170
-    virtual bool isAlternateInput(class Block const& block) const;
+    // vIndex: 158
+    virtual bool isAlternateInput(::Block const& block) const;
 
-    // vIndex: 171
-    virtual int getAlternateSignal(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 159
+    virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 172
-    virtual int getOutputSignal(class Block const& block) const;
+    // vIndex: 160
+    virtual int getOutputSignal(::Block const& block) const;
 
-    // vIndex: 173
-    virtual int getTurnOffDelay(class Block const& block) const;
+    // vIndex: 161
+    virtual int getTurnOffDelay(::Block const& block) const;
 
-    MCVAPI bool isLocked(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 162
+    virtual int getTurnOnDelay(::Block const&) const = 0;
 
-    MCAPI DiodeBlock(std::string const& nameId, int id, bool on);
+    // vIndex: 163
+    virtual ::Block const* getOnBlock(::Block const*) const = 0;
 
-    MCAPI static bool isDiode(class Block const& block);
+    // vIndex: 164
+    virtual ::Block const* getOffBlock(::Block const*) const = 0;
 
+    // vIndex: 0
+    virtual ~DiodeBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI int getAlternateSignalAt(class BlockSource& region, class BlockPos const& pos, int facing) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DiodeBlock(::std::string const& nameId, int id, bool on);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool on);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isDiode(::Block const& block);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
+    // NOLINTEND
 
-    MCAPI bool canSpawnOn$(class Actor*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int getDirectSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI int getOutputSignal$(class Block const& block) const;
+    MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCAPI int getSignal$(class BlockSource& region, class BlockPos const& pos, int dir) const;
+    MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCAPI int getTurnOffDelay$(class Block const& block) const;
+    MCAPI bool $isSignalSource() const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isAlternateInput$(class Block const& block) const;
+    MCAPI bool $isSameDiode(::Block const& block) const;
 
-    MCAPI bool isLocked$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isOn$() const;
+    MCAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool isSameDiode$(class Block const& block) const;
+    MCAPI bool $isOn() const;
 
-    MCAPI bool isSignalSource$() const;
+    MCAPI bool $shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI bool $isAlternateInput(::Block const& block) const;
 
-    MCAPI bool shouldPrioritize$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool shouldTurnOn$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getOutputSignal(::Block const& block) const;
 
+    MCAPI int $getTurnOffDelay(::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

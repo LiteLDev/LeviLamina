@@ -5,18 +5,22 @@
 // auto generated inclusion list
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
 #include "mc/gameplayhandlers/HandlerResult.h"
-#include "mc/world/events/LevelGameplayEvent.h"
-#include "mc/world/events/MutableLevelGameplayEvent.h"
+#include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
+class LevelGameplayHandler;
+struct LevelWeatherChangedEvent;
+struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptLevelGameplayHandler {
+class ScriptLevelGameplayHandler : public ::EventHandlerDispatcher<::LevelGameplayHandler>,
+                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // prevent constructor by default
     ScriptLevelGameplayHandler& operator=(ScriptLevelGameplayHandler const&);
@@ -24,56 +28,51 @@ public:
     ScriptLevelGameplayHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptLevelGameplayHandler() = default;
-
-    // vIndex: 1
-    virtual ::HandlerResult handleEvent(struct ScriptingInitializeEvent const& event);
-
-    // vIndex: 2
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct LevelWeatherChangedEvent& event);
-
     // vIndex: 3
-    virtual ::HandlerResult handleEvent(struct LevelGameplayEvent<void> const& event);
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::LevelWeatherChangedEvent& event) /*override*/;
 
     // vIndex: 4
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableLevelGameplayEvent<::CoordinatorResult>& event);
+    virtual ::HandlerResult handleEvent(::ScriptingWorldInitializeEvent const& event) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScriptLevelGameplayHandler() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleScriptingInitializeEvent(
-        struct ScriptingInitializeEvent const&    eventData,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+    MCAPI bool _handleScriptingWorldInitializeEvent(
+        ::ScriptingWorldInitializeEvent const&                                            eventData,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
     MCAPI bool _handleWeatherChangedEvent(
-        struct LevelWeatherChangedEvent&          weatherChangedEvent,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::LevelWeatherChangedEvent&                                                       weatherChangedEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::HandlerResult handleEvent$(struct ScriptingInitializeEvent const& event);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct LevelWeatherChangedEvent& event);
+    MCAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
+    // NOLINTEND
 
-    MCAPI ::HandlerResult handleEvent$(struct LevelGameplayEvent<void> const& event);
-
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct MutableLevelGameplayEvent<::CoordinatorResult>& event);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

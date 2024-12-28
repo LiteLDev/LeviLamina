@@ -6,27 +6,37 @@ namespace Util::CodeBuilder {
 
 struct Event {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd6470d;
+    ::ll::UntypedStorage<8, 16> mUnkd987ee;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Event& operator=(Event const&);
     Event(Event const&);
     Event();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit Event(std::string const& name);
+    MCAPI explicit Event(::std::string const& name);
 
     MCAPI ~Event();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& name);
+    MCAPI void* $ctor(::std::string const& name);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Util::CodeBuilder
+} // namespace Util::CodeBuilder

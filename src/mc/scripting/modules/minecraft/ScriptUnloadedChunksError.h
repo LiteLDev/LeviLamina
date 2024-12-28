@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptUnloadedChunksError {
+struct ScriptUnloadedChunksError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptUnloadedChunksError& operator=(ScriptUnloadedChunksError const&);
@@ -15,23 +16,30 @@ public:
     ScriptUnloadedChunksError();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
 
     MCAPI ~ScriptUnloadedChunksError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(uint64 unloadedChunks, uint64 totalChunks);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptUnloadedChunksError> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

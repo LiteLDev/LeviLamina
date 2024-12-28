@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorInteraction;
+class Player;
+// clang-format on
+
 class PlayerInteractionSystem {
 public:
     // PlayerInteractionSystem inner types declare
@@ -18,24 +25,39 @@ public:
         InteractionMappingBase();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~InteractionMappingBase() = default;
+        virtual ~InteractionMappingBase();
 
         // vIndex: 1
-        virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-
+        virtual bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI bool getInteraction$(class Actor&, class Player&, class ActorInteraction&);
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk84c215;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -44,8 +66,8 @@ public:
     PlayerInteractionSystem();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool getInteraction(class Actor& actor, class Player& player, class ActorInteraction& interaction);
-
+    MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

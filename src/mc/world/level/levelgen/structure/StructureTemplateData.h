@@ -5,69 +5,99 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureLoadResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CompoundTag;
+class StructureBlockPalette;
+// clang-format on
+
 class StructureTemplateData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                                           mFormatVersion;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                   mSize;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                   mStructureWorldOrigin;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                                           mBlockIndices;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                                           mExtraBlockIndices;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureBlockPalette>> mPalettes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTag>>>              mEntityData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructureTemplateData& operator=(StructureTemplateData const&);
     StructureTemplateData(StructureTemplateData const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~StructureTemplateData();
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI StructureTemplateData();
 
-    MCAPI void addEntityData(std::unique_ptr<class CompoundTag> entityData);
+    MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
-    MCAPI class StructureBlockPalette const* getPalette(std::string const& name) const;
+    MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI bool load(class CompoundTag const& tag);
+    MCAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
 
-    MCAPI std::unique_ptr<class CompoundTag> save() const;
+    MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
-    MCAPI void setBlockIndices(std::vector<int> blockIndices);
+    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
 
-    MCAPI void setExtraBlockIndices(std::vector<int> extraBlockIndices);
+    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
 
+    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
+
+    MCAPI void _saveStructureTag(::CompoundTag& tag) const;
+
+    MCAPI ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
+
+    MCAPI ::std::vector<int> const& getBlockIndices() const;
+
+    MCAPI ::std::vector<int> const& getExtraBlockIndices() const;
+
+    MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
+
+    MCAPI ::BlockPos const& getSize() const;
+
+    MCAPI bool load(::CompoundTag const& tag);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+
+    MCAPI void setBlockIndices(::std::vector<int> blockIndices);
+
+    MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI ::StructureLoadResult _parseBlockIndices(class CompoundTag const& structureTag);
-
-    MCAPI ::StructureLoadResult _parseEntities(class CompoundTag const& structureTag);
-
-    MCAPI ::StructureLoadResult _parseFormatVersion(class CompoundTag const& tag);
-
-    MCAPI ::StructureLoadResult _parsePalettes(class CompoundTag const& structureTag);
-
-    MCAPI ::StructureLoadResult _parseSize(class CompoundTag const& tag);
-
-    MCAPI void _saveBlockIndices(class CompoundTag& structureTag) const;
-
-    MCAPI void _savePalettes(class CompoundTag& structureTag) const;
-
-    MCAPI void _saveStructureTag(class CompoundTag& tag) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _contentErrorMissingField(std::string const& tagName) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::string const& DEFAULT_PALETTE_NAME();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

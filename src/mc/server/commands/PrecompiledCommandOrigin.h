@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -11,7 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class BlockPos;
+class CompoundTag;
+class Dimension;
+class Level;
+class Vec2;
+class Vec3;
 // clang-format on
 
 class PrecompiledCommandOrigin : public ::CommandOrigin {
@@ -22,111 +27,120 @@ public:
     PrecompiledCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PrecompiledCommandOrigin() = default;
+    virtual ~PrecompiledCommandOrigin() /*override*/;
 
     // vIndex: 1
-    virtual std::string const& getRequestId() const;
+    virtual ::std::string const& getRequestId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos getBlockPosition() const;
+    virtual ::BlockPos getBlockPosition() const /*override*/;
 
     // vIndex: 4
-    virtual class Vec3 getWorldPosition() const;
+    virtual ::Vec3 getWorldPosition() const /*override*/;
 
     // vIndex: 5
-    virtual std::optional<class Vec2> getRotation() const;
+    virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
     // vIndex: 6
-    virtual class Level* getLevel() const;
+    virtual ::Level* getLevel() const /*override*/;
 
     // vIndex: 7
-    virtual class Dimension* getDimension() const;
+    virtual ::Dimension* getDimension() const /*override*/;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const;
+    virtual ::Actor* getEntity() const /*override*/;
 
     // vIndex: 9
-    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+    virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-
-    // vIndex: 13
-    virtual bool hasChatPerms() const;
-
-    // vIndex: 14
-    virtual bool hasTellPerms() const;
-
-    // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
-
-    // vIndex: 16
-    virtual bool isWorldBuilder() const;
-
-    // vIndex: 17
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-
-    // vIndex: 18
-    virtual bool isSelectorExpansionAllowed() const;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
+
+    // vIndex: 17
+    virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
+
+    // vIndex: 18
+    virtual bool isSelectorExpansionAllowed() const /*override*/;
+
+    // vIndex: 13
+    virtual bool hasChatPerms() const /*override*/;
+
+    // vIndex: 14
+    virtual bool hasTellPerms() const /*override*/;
+
+    // vIndex: 15
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+
+    // vIndex: 16
+    virtual bool isWorldBuilder() const /*override*/;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CompoundTag serialize() const /*override*/;
 
     // vIndex: 30
-    virtual bool isValid() const;
-
+    virtual bool isValid() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUseAbility$(::AbilitiesIndex abilityIndex) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getRequestId() const;
 
-    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI class BlockPos getBlockPosition$() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI class Dimension* getDimension$() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI class Actor* getEntity$() const;
+    MCAPI ::Level* $getLevel() const;
 
-    MCAPI class Level* getLevel$() const;
+    MCAPI ::Dimension* $getDimension() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI std::string const& getRequestId$() const;
+    MCAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI std::optional<class Vec2> getRotation$() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI class Vec3 getWorldPosition$() const;
+    MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCAPI bool hasChatPerms$() const;
+    MCAPI bool $hasChatPerms() const;
 
-    MCAPI bool hasTellPerms$() const;
+    MCAPI bool $hasTellPerms() const;
 
-    MCAPI bool isSelectorExpansionAllowed$() const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
-    MCAPI bool isValid$() const;
+    MCAPI bool $isWorldBuilder() const;
 
-    MCAPI bool isWorldBuilder$() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI bool $isValid() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

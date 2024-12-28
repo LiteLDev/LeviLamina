@@ -10,7 +10,6 @@
 // clang-format off
 namespace Scripting { class IObjectInspector; }
 namespace Scripting { class IRuntime; }
-namespace Scripting { class ScriptValue; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct GeneratorIteratorType; }
@@ -20,50 +19,66 @@ namespace Scripting {
 
 class GeneratorIteratorAny : public ::Scripting::ScriptValue {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkbb8819;
+    ::ll::UntypedStorage<8, 8>  mUnk6eb472;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     GeneratorIteratorAny();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GeneratorIteratorAny();
-
-    MCAPI GeneratorIteratorAny(class Scripting::GeneratorIteratorAny const& rhs);
-
-    MCAPI GeneratorIteratorAny(
-        class Scripting::IRuntime*         runtime,
-        struct Scripting::ContextId        contextId,
-        class Scripting::WeakLifetimeScope scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorIteratorType> const&
-                                           generatorIteratorHandle,
-        class Scripting::IObjectInspector* inspector
-    );
-
-    MCAPI class Scripting::GeneratorIteratorAny& operator=(class Scripting::GeneratorIteratorAny&& rhs);
-
-    MCAPI class Scripting::GeneratorIteratorAny& operator=(class Scripting::GeneratorIteratorAny const& rhs);
-
+    virtual ~GeneratorIteratorAny() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI GeneratorIteratorAny(::Scripting::GeneratorIteratorAny const& rhs);
 
-    MCAPI void* ctor$(class Scripting::GeneratorIteratorAny const& rhs);
-
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*         runtime,
-        struct Scripting::ContextId        contextId,
-        class Scripting::WeakLifetimeScope scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorIteratorType> const&
-                                           generatorIteratorHandle,
-        class Scripting::IObjectInspector* inspector
+    MCAPI GeneratorIteratorAny(
+        ::Scripting::IRuntime*                                                          runtime,
+        ::Scripting::ContextId                                                          contextId,
+        ::Scripting::WeakLifetimeScope                                                  scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle,
+        ::Scripting::IObjectInspector*                                                  inspector
     );
 
-    MCAPI void dtor$();
+    MCAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny const& rhs);
 
+    MCAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::GeneratorIteratorAny const& rhs);
+
+    MCAPI void* $ctor(
+        ::Scripting::IRuntime*                                                          runtime,
+        ::Scripting::ContextId                                                          contextId,
+        ::Scripting::WeakLifetimeScope                                                  scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorIteratorType> const& generatorIteratorHandle,
+        ::Scripting::IObjectInspector*                                                  inspector
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

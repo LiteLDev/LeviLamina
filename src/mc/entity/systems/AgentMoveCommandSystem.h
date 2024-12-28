@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class EntityRegistry;
 namespace AgentComponents { class Move; }
 namespace AgentComponents { struct ActionDetails; }
 // clang-format on
@@ -19,50 +21,42 @@ public:
     AgentMoveCommandSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AgentMoveCommandSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI static void cleanUp(class EntityContext& agent, float cooldownTime);
-
-    MCAPI static void initialize(
-        class EntityContext&                   entity,
-        struct AgentComponents::ActionDetails& details,
-        class AgentComponents::Move&           moveComp
-    );
-
-    MCAPI static void tickMove(
-        class EntityContext&                   entity,
-        struct AgentComponents::ActionDetails& details,
-        class AgentComponents::Move&           moveComp
-    );
-
+    // vIndex: 0
+    virtual ~AgentMoveCommandSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void cleanUp(::EntityContext& agent, float cooldownTime);
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI static void
+    initialize(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+    MCAPI static void
+    tickMove(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class EntityRegistry& registry);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

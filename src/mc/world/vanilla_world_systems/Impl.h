@@ -24,31 +24,34 @@ public:
     Impl();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Impl(
-        class Bedrock::NonOwnerPointer<class Level> const&             level,
-        class Experiments const&                                       experiments,
-        class BaseGameVersion const&                                   baseGameVersion,
-        class ItemRegistryRef                                          itemRegistry,
-        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+        ::Bedrock::NonOwnerPointer<::Level> const&                     level,
+        ::Experiments const&                                           experiments,
+        ::BaseGameVersion const&                                       baseGameVersion,
+        ::ItemRegistryRef                                              itemRegistry,
+        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Bedrock::NonOwnerPointer<class Level> const&             level,
-        class Experiments const&                                       experiments,
-        class BaseGameVersion const&                                   baseGameVersion,
-        class ItemRegistryRef                                          itemRegistry,
-        std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+    MCAPI static ::std::weak_ptr<::VanillaWorldSystems::Impl>& mInstance();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NonOwnerPointer<::Level> const&                     level,
+        ::Experiments const&                                           experiments,
+        ::BaseGameVersion const&                                       baseGameVersion,
+        ::ItemRegistryRef                                              itemRegistry,
+        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
     );
-
-    MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl>& mInstance();
-
     // NOLINTEND
 };
 
-}; // namespace VanillaWorldSystems
+} // namespace VanillaWorldSystems

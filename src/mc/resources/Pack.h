@@ -11,10 +11,30 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class IContentKeyProvider;
+class IPackManifestFactory;
+class PackAccessStrategy;
+class PackManifest;
+class PackMetadata;
+class PackReport;
+class PackSourceReport;
+class ResourceLocation;
+class SubpackInfoCollection;
+namespace Core { class Path; }
 // clang-format on
 
 class Pack : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest>>                  mManifest;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>            mAccessStrategy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>         mSubpackInfoStack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                  mMetadata;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>> mPackUpdatedCallbacks;
+    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>> mPackDeletedCallbacks;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Pack& operator=(Pack const&);
@@ -22,72 +42,98 @@ public:
     Pack();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Pack() = default;
+    virtual ~Pack() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Pack(
-        std::unique_ptr<class PackManifest>          manifest,
-        std::unique_ptr<class PackAccessStrategy>    accessStrategy,
-        std::unique_ptr<class SubpackInfoCollection> subpacks,
-        std::unique_ptr<class PackMetadata>          metadata
+        ::std::unique_ptr<::PackManifest>          manifest,
+        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
+        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
+        ::std::unique_ptr<::PackMetadata>          metadata
     );
 
-    MCAPI class PackAccessStrategy* getAccessStrategy();
+    MCAPI void _loadLocalizationFiles();
 
-    MCAPI class PackManifest& getManifest();
+    MCAPI ::PackAccessStrategy const* getAccessStrategy() const;
 
-    MCAPI class PackManifest const& getManifest() const;
+    MCAPI ::PackAccessStrategy* getAccessStrategy();
 
-    MCAPI class PackManifest* getManifestPtr();
+    MCAPI ::PackManifest const& getManifest() const;
 
-    MCAPI class SubpackInfoCollection* getSubpackInfoStack();
+    MCAPI ::PackManifest& getManifest();
 
-    MCAPI void move(class Pack&& pack);
+    MCAPI ::Bedrock::NonOwnerPointer<::PackManifest> getManifestPtr();
+
+    MCAPI ::SubpackInfoCollection* getSubpackInfoStack();
+
+    MCAPI void move(::Pack&& pack);
 
     MCAPI void notifyDeleted();
 
     MCAPI void notifyUpdated();
 
-    MCAPI void registerPackDeletedCallback(void* ptr, std::function<void(class Pack&)> callback);
+    MCAPI void registerPackDeletedCallback(void* ptr, ::std::function<void(::Pack&)> callback);
 
-    MCAPI void registerPackUpdatedCallback(void* ptr, std::function<void(class Pack&)> callback);
+    MCAPI void registerPackUpdatedCallback(void* ptr, ::std::function<void(::Pack&)> callback);
 
     MCAPI void unregisterPackDeletedCallback(void* ptr);
 
     MCAPI void unregisterPackUpdatedCallback(void* ptr);
-
-    MCAPI static std::unique_ptr<class Pack> createPack(
-        class ResourceLocation const&                                       fileLocation,
-        ::PackType                                                          type,
-        ::PackOrigin                                                        origin,
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
-        class PackSourceReport*                                             report
-    );
-
-    MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(
-        ::PackType                      type,
-        class PackManifest&             manifest,
-        class PackAccessStrategy const& accessStrategy,
-        class PackReport&               report
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::unique_ptr<class PackManifest>          manifest,
-        std::unique_ptr<class PackAccessStrategy>    accessStrategy,
-        std::unique_ptr<class SubpackInfoCollection> subpacks,
-        std::unique_ptr<class PackMetadata>          metadata
+    MCAPI static ::std::unique_ptr<::Pack> createPack(
+        ::ResourceLocation const&                                         fileLocation,
+        ::PackType                                                        type,
+        ::PackOrigin                                                      origin,
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::PackSourceReport*                                               report,
+        ::Core::Path const&                                               zipSubDir
     );
 
-    MCAPI static class Core::PathBuffer<std::string> const& EDUCATION_METADATA_FILE();
+    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+        ::PackType                  type,
+        ::PackManifest&             manifest,
+        ::PackAccessStrategy const& accessStrategy,
+        ::PackReport&               report
+    );
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Core::PathBuffer<::std::string> const& EDUCATION_METADATA_FILE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::PackManifest>          manifest,
+        ::std::unique_ptr<::PackAccessStrategy>    accessStrategy,
+        ::std::unique_ptr<::SubpackInfoCollection> subpacks,
+        ::std::unique_ptr<::PackMetadata>          metadata
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

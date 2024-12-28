@@ -5,7 +5,27 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class WardenVibrationConfig : public ::VibrationListenerConfig {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkc166f7;
+    ::ll::UntypedStorage<2, 2>  mUnk95b4ad;
+    ::ll::UntypedStorage<8, 16> mUnka9290d;
+    ::ll::UntypedStorage<8, 8>  mUnkc03bd6;
+    ::ll::UntypedStorage<4, 4>  mUnk4fdb5c;
+    ::ll::UntypedStorage<4, 4>  mUnk98d6d3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WardenVibrationConfig& operator=(WardenVibrationConfig const&);
@@ -13,63 +33,69 @@ public:
     WardenVibrationConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WardenVibrationConfig() = default;
-
     // vIndex: 1
     virtual void onSignalReceive(
-        class BlockSource&    region,
-        class BlockPos const& vibrationSourcePos,
-        class GameEvent const&,
-        class Actor* vibrationSource,
+        ::BlockSource&    region,
+        ::BlockPos const& vibrationSourcePos,
+        ::GameEvent const&,
+        ::Actor* vibrationSource,
         float,
         uint,
-        class Actor* projectileOwner
-    );
+        ::Actor* projectileOwner
+    ) /*override*/;
 
     // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const& gameEvent);
+    virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
     // vIndex: 3
     virtual bool
-    shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
+    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
-    // vIndex: 4
-    virtual void onSerializableDataChanged(class BlockSource&);
-
-    // vIndex: 5
-    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
-
-    MCAPI WardenVibrationConfig(class Actor& actor, ushort signalThrottlingTicks);
-
+    // vIndex: 0
+    virtual ~WardenVibrationConfig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Actor& actor, ushort signalThrottlingTicks);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
+    // NOLINTEND
 
-    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
-
-    MCAPI void onSerializableDataChanged$(class BlockSource&);
-
-    MCAPI void onSignalReceive$(
-        class BlockSource&    region,
-        class BlockPos const& vibrationSourcePos,
-        class GameEvent const&,
-        class Actor* vibrationSource,
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onSignalReceive(
+        ::BlockSource&    region,
+        ::BlockPos const& vibrationSourcePos,
+        ::GameEvent const&,
+        ::Actor* vibrationSource,
         float,
         uint,
-        class Actor* projectileOwner
+        ::Actor* projectileOwner
     );
 
-    MCAPI bool
-    shouldListen$(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

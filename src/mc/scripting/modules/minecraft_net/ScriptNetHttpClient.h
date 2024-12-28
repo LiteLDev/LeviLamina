@@ -28,7 +28,16 @@ public:
     // clang-format on
 
     // ScriptNetHttpClient inner types define
-    struct RequestProcessor {
+    struct RequestProcessor
+    : public ::std::enable_shared_from_this<::ScriptModuleMinecraftNet::ScriptNetHttpClient::RequestProcessor> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 80> mUnk6ca84e;
+        ::ll::UntypedStorage<8, 8>  mUnk459b0a;
+        ::ll::UntypedStorage<8, 8>  mUnk88f6c5;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         RequestProcessor& operator=(RequestProcessor const&);
@@ -36,81 +45,83 @@ public:
         RequestProcessor();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI
-        RequestProcessor(std::string&& taskGroupName, class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
+        MCAPI RequestProcessor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
 
-        MCAPI class Scripting::Promise<
-            class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
-            struct Scripting::Error,
+        MCAPI ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
+            ::Scripting::Error,
             void>
         process(
-            class Scripting::WeakLifetimeScope const&,
-            class Scripting::ScriptObjectFactory& factory,
-            class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&
-                requestHandle
+            ::Scripting::WeakLifetimeScope const&,
+            ::Scripting::ScriptObjectFactory&                                                         factory,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
         );
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(std::string&& taskGroupName, class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
-
+        MCAPI void* $ctor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
         // NOLINTEND
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk5f1385;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptNetHttpClient& operator=(ScriptNetHttpClient const&);
     ScriptNetHttpClient(ScriptNetHttpClient const&);
     ScriptNetHttpClient();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetHttpClient(
-        std::string const&                              descriptorString,
-        class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler
+    MCAPI
+    ScriptNetHttpClient(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+
+    MCAPI ::Scripting::Promise<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
+        ::Scripting::Error,
+        void>
+    get(::Scripting::WeakLifetimeScope const& scope, ::Scripting::ScriptObjectFactory& factory, ::std::string const& uri
     );
 
-    MCAPI void cancelAll(std::string const& reason);
-
-    MCAPI class Scripting::Promise<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
-        struct Scripting::Error,
-        void>
-    get(class Scripting::WeakLifetimeScope const& scope,
-        class Scripting::ScriptObjectFactory&     factory,
-        std::string const&                        uri);
-
-    MCAPI struct ScriptModuleMinecraftNet::ScriptNetHttpClient&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetHttpClient const&);
-
-    MCAPI class Scripting::Promise<
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
-        struct Scripting::Error,
+    MCAPI ::Scripting::Promise<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
+        ::Scripting::Error,
         void>
     request(
-        class Scripting::WeakLifetimeScope const&                                                          scope,
-        class Scripting::ScriptObjectFactory&                                                              factory,
-        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+        ::Scripting::WeakLifetimeScope const&                                                     scope,
+        ::Scripting::ScriptObjectFactory&                                                         factory,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
     );
 
     MCAPI ~ScriptNetHttpClient();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void*
-    ctor$(std::string const& descriptorString, class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftNet
+} // namespace ScriptModuleMinecraftNet

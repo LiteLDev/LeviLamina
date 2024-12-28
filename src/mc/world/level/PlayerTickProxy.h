@@ -5,6 +5,15 @@
 // auto generated inclusion list
 #include "mc/world/level/IPlayerTickProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class EntityContext;
+class Player;
+class ServerPlayer;
+struct Tick;
+// clang-format on
+
 class PlayerTickProxy : public ::IPlayerTickProxy {
 public:
     // prevent constructor by default
@@ -13,49 +22,55 @@ public:
     PlayerTickProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerTickProxy() = default;
-
     // vIndex: 1
     virtual void preReplicationTick(
-        class ServerPlayer&  serverPlayer,
-        struct Tick const&   currentTick,
-        class EntityContext& userEntity
-    );
+        ::ServerPlayer&  serverPlayer,
+        ::Tick const&    currentTick,
+        ::EntityContext& userEntity
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void playerTick(class Player& player, struct Tick const& currentTick);
+    virtual void playerTick(::Player& player, ::Tick const& currentTick) /*override*/;
 
     // vIndex: 3
-    virtual void clearDimensionPlayerReplicationList(class Dimension& dimension);
+    virtual void clearDimensionPlayerReplicationList(::Dimension& dimension) /*override*/;
 
     // vIndex: 4
-    virtual void processDimensionPlayerReplication(class Dimension& dimension);
+    virtual void processDimensionPlayerReplication(::Dimension& dimension) /*override*/;
 
     // vIndex: 5
-    virtual void postReplicationtick(class ServerPlayer& serverPlayer, struct Tick const& currentTick);
+    virtual void postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick) /*override*/;
 
+    // vIndex: 0
+    virtual ~PlayerTickProxy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void clearDimensionPlayerReplicationList$(class Dimension& dimension);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity);
 
-    MCAPI void playerTick$(class Player& player, struct Tick const& currentTick);
+    MCAPI void $playerTick(::Player& player, ::Tick const& currentTick);
 
-    MCAPI void postReplicationtick$(class ServerPlayer& serverPlayer, struct Tick const& currentTick);
+    MCAPI void $clearDimensionPlayerReplicationList(::Dimension& dimension);
 
-    MCAPI void preReplicationTick$(
-        class ServerPlayer&  serverPlayer,
-        struct Tick const&   currentTick,
-        class EntityContext& userEntity
-    );
+    MCAPI void $processDimensionPlayerReplication(::Dimension& dimension);
 
-    MCAPI void processDimensionPlayerReplication$(class Dimension& dimension);
+    MCAPI void $postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

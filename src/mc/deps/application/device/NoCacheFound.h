@@ -12,4 +12,4 @@ public:
     NoCacheFound();
 };
 
-}; // namespace Bedrock::DeviceIdErrorType
+} // namespace Bedrock::DeviceIdErrorType

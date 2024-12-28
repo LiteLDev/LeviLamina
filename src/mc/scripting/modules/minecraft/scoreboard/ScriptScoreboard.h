@@ -5,7 +5,8 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/scoreboard/ScriptDisplayObjectiveSlotId.h"
 
 // auto generated forward declare list
@@ -15,17 +16,28 @@ class Level;
 class Objective;
 class Scoreboard;
 class ScoreboardIdentityRef;
+struct ScoreboardId;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjective; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjectiveDisplayOptions; }
 namespace Scripting { class WeakLifetimeScope; }
-struct ScoreboardId;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptScoreboard {
+class ScriptScoreboard : public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptScoreboard> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkffe547;
+    ::ll::UntypedStorage<8, 8>  mUnka9b707;
+    ::ll::UntypedStorage<8, 8>  mUnkef434f;
+    ::ll::UntypedStorage<8, 8>  mUnkce2a71;
+    ::ll::UntypedStorage<8, 64> mUnk38e9f0;
+    ::ll::UntypedStorage<8, 64> mUnk58e64b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptScoreboard& operator=(ScriptScoreboard const&);
@@ -33,98 +45,99 @@ public:
     ScriptScoreboard();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptScoreboard() = default;
+    virtual ~ScriptScoreboard();
+    // NOLINTEND
 
-    MCAPI
-    ScriptScoreboard(class Scoreboard& scoreboard, class Level& level, class Scripting::WeakLifetimeScope const& scope);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptScoreboard(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-    addObjective(std::string const& objectiveId, std::optional<std::string> const& displayName);
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
+    _getOrCreateScoreboardObjective(::Objective const& objective);
 
-    MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>
+    addObjective(::std::string const& objectiveId, ::std::optional<::std::string> const& displayName);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>
     clearObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId displaySlotId);
 
-    MCAPI
-    std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-    getObjective(std::string const& objectiveId);
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>
+    getObjective(::std::string const& objectiveId);
 
-    MCAPI std::optional<class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
-          getObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId displaySlotId);
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
+    getObjectiveAtDisplaySlot(::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId displaySlotId);
 
-    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-          getObjectives();
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>
+    getObjectives();
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>
-    getOrCreateScoreboardIdentity(class IdentityDefinition const& identity);
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
+    getOrCreateScoreboardIdentity(::IdentityDefinition const& identity);
 
-    MCAPI class ScoreboardIdentityRef* getOrCreateScoreboardIdentityRef(
-        std::variant<
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-            std::string> const& participant
+    MCAPI ::ScoreboardIdentityRef* getOrCreateScoreboardIdentityRef(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
     );
 
-    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>
-          getParticipants();
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>
+    getParticipants();
 
-    MCAPI class Scoreboard& getScoreboard();
+    MCAPI ::Scripting::Result_deprecated<bool>
+    removeObjective(::std::variant<
+                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>,
+                    ::std::string> const& objectiveId);
 
-    MCAPI void removeIdentityById(struct ScoreboardId const& id);
-
-    MCAPI class Scripting::Result<bool>
-    removeObjective(std::variant<
-                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>,
-                    std::string> const& objectiveId);
-
-    MCAPI void removeObjectiveByName(std::string const& objective);
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>>
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>>
     setObjectiveAtDisplaySlot(
-        ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId                       displaySlotId,
-        class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions const& displaySetting
+        ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId                   displaySlotId,
+        ::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions const& displaySetting
     );
 
-    MCAPI class Objective* tryGetObjective(std::string const& objectiveId) const;
-
-    MCAPI class ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
-        std::variant<
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-            std::string> const& participant
+    MCAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
     ) const;
 
-    MCAPI std::optional<struct ScoreboardId> tryGetScoreboardParticipantScoreboardId(
-        std::variant<
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-            std::string> const& participant
+    MCAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
     ) const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboard> bind();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>
-    _getOrCreateScoreboardObjective(class Objective const& objective);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboard> bind();
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(class Scoreboard& scoreboard, class Level& level, class Scripting::WeakLifetimeScope const& scope);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scoreboard& scoreboard, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -13,4 +13,4 @@ public:
     typeid_t();
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

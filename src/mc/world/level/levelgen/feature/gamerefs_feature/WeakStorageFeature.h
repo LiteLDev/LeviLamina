@@ -2,28 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class FeatureRegistry;
+// clang-format on
+
 class WeakStorageFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::reference_wrapper<::FeatureRegistry>>> mRegistry;
+    ::ll::TypedStorage<8, 8, uint64>                                                        mIndex;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WeakStorageFeature& operator=(WeakStorageFeature const&);
     WeakStorageFeature(WeakStorageFeature const&);
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WeakStorageFeature();
 
-    MCAPI WeakStorageFeature(class WeakStorageFeature&& other);
+    MCAPI WeakStorageFeature(::WeakStorageFeature&& other);
 
-    MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&& other);
-
+    MCAPI ::WeakStorageFeature& operator=(::WeakStorageFeature&& other);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakStorageFeature&& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor(::WeakStorageFeature&& other);
     // NOLINTEND
 };

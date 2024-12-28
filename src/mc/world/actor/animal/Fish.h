@@ -3,27 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/animal/WaterAnimal.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class Fish : public ::WaterAnimal {
@@ -34,50 +23,61 @@ public:
     Fish();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
-    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 27
+    virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 10
-    virtual ~Fish();
+    // vIndex: 172
+    virtual bool createAIGoals() /*override*/;
 
-    // vIndex: 29
-    virtual bool startRiding(class Actor&);
+    // vIndex: 4
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-
-    // vIndex: 180
-    virtual bool createAIGoals();
-
-    MCAPI Fish(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
+    // vIndex: 8
+    virtual ~Fish() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Fish(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI bool createAIGoals$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI bool startRiding$(class Actor&);
+    MCAPI bool $createAIGoals();
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

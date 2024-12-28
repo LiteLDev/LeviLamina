@@ -4,14 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { class ScriptAsyncEventList; }
+namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptTickSignal; }
-namespace ScriptModuleMinecraft { struct ScriptTickEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ModuleDescriptor; }
@@ -19,15 +22,46 @@ namespace Scripting { struct ModuleDescriptor; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptSystemAfterEvents {
+class ScriptSystemAfterEvents
+: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptSystemAfterEvents> {
 public:
     // ScriptSystemAfterEvents inner types declare
     // clang-format off
     class ScriptSystemAfterEventsDeferredEventListener;
+    struct SignalNameSubscriberCount;
     // clang-format on
 
     // ScriptSystemAfterEvents inner types define
-    class ScriptSystemAfterEventsDeferredEventListener {
+    struct SignalNameSubscriberCount {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk27ca05;
+        ::ll::UntypedStorage<8, 8>  mUnkd3521c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SignalNameSubscriberCount& operator=(SignalNameSubscriberCount const&);
+        SignalNameSubscriberCount(SignalNameSubscriberCount const&);
+        SignalNameSubscriberCount();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~SignalNameSubscriberCount();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    class ScriptSystemAfterEventsDeferredEventListener
+    : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
+          ::ScriptModuleMinecraft::ScriptSystemAfterEvents> {
     public:
         // prevent constructor by default
         ScriptSystemAfterEventsDeferredEventListener& operator=(ScriptSystemAfterEventsDeferredEventListener const&);
@@ -35,74 +69,46 @@ public:
         ScriptSystemAfterEventsDeferredEventListener();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~ScriptSystemAfterEventsDeferredEventListener() = default;
-
-        // vIndex: 1
-        virtual void onLevelTickEnd();
-
-        // vIndex: 2
-        virtual void onRunAsyncJobs();
-
         // vIndex: 3
-        virtual bool onRunSystemTick();
+        virtual bool onFlushSystemAfterEvents() /*override*/;
 
-        // vIndex: 4
-        virtual bool onFlushWorldAfterEvents();
-
-        // vIndex: 5
-        virtual bool onFlushSystemAfterEvents();
-
-        // vIndex: 6
-        virtual bool onFlushEditorExtensionContextAfterEvents();
-
-        // vIndex: 7
-        virtual bool onFlushBlockCustomComponentAfterEvents();
-
-        // vIndex: 8
-        virtual bool onFlushEditorDataStoreAfterEvents();
-
-        // vIndex: 9
-        virtual bool onFlushItemCustomComponentAfterEvents();
-
-        // vIndex: 10
-        virtual void onPreFlushAfterEvents();
-
-        // vIndex: 11
-        virtual void onPostFlushAfterEvents();
-
+        // vIndex: 0
+        virtual ~ScriptSystemAfterEventsDeferredEventListener() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI bool onFlushBlockCustomComponentAfterEvents$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI bool $onFlushSystemAfterEvents();
+        // NOLINTEND
 
-        MCAPI bool onFlushEditorDataStoreAfterEvents$();
-
-        MCAPI bool onFlushEditorExtensionContextAfterEvents$();
-
-        MCAPI bool onFlushItemCustomComponentAfterEvents$();
-
-        MCAPI bool onFlushSystemAfterEvents$();
-
-        MCAPI bool onFlushWorldAfterEvents$();
-
-        MCAPI void onLevelTickEnd$();
-
-        MCAPI void onPostFlushAfterEvents$();
-
-        MCAPI void onPreFlushAfterEvents$();
-
-        MCAPI void onRunAsyncJobs$();
-
-        MCAPI bool onRunSystemTick$();
-
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkb3d6fc;
+    ::ll::UntypedStorage<8, 16> mUnkb9210e;
+    ::ll::UntypedStorage<8, 8>  mUnk896b0b;
+    ::ll::UntypedStorage<8, 8>  mUnkb7a2f6;
+    ::ll::UntypedStorage<8, 8>  mUnk316bc2;
+    ::ll::UntypedStorage<8, 56> mUnk470b9c;
+    ::ll::UntypedStorage<8, 24> mUnk85e387;
+    ::ll::UntypedStorage<8, 8>  mUnk2f36a3;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -111,49 +117,58 @@ public:
     ScriptSystemAfterEvents();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCAPI ScriptSystemAfterEvents(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
-    MCAPI
-    ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
+    MCAPI ScriptSystemAfterEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
-    MCAPI class ServerLevel& getLevel() const;
+    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
+    getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
+    MCAPI ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
 
-    MCAPI class ScriptModuleMinecraft::ScriptSystemAfterEvents&
-    operator=(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
 
-    MCAPI void
-    registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents> handle);
+    MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
+    operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
-    MCAPI bool runSystemTick(struct ScriptModuleMinecraft::ScriptTickEvent& tickEvent);
-
-    MCAPI ~ScriptSystemAfterEvents();
-
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCAPI static void generateOrderDocumentationForVersion(
-        struct Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        class Json::Value&                        eventOrderArray
+    MCAPI void registerListener(
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents> handle,
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners&                             listeners
     );
 
+    MCAPI ~ScriptSystemAfterEvents();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
 
-    MCAPI void dtor$();
+    MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
+        ::ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
+    getMetadata();
+    // NOLINTEND
 
-    MCAPI static struct ScriptModuleMinecraft::ScriptAsyncEventMetadata<
-        class ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
-    mMetadata();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

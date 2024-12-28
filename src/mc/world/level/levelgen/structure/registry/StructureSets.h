@@ -6,13 +6,14 @@
 // clang-format off
 class BaseGameVersion;
 class Experiments;
+namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Contents; }
 namespace br::worldgen { class StructureRegistry; }
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 namespace br::worldgen {
 
-class StructureSets {
+struct StructureSets {
 public:
     // prevent constructor by default
     StructureSets& operator=(StructureSets const&);
@@ -20,11 +21,16 @@ public:
     StructureSets();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    bootstrap(class br::worldgen::StructureRegistry const& structures, class br::worldgen::StructureSetRegistry& context, class BaseGameVersion const& baseGameVersion, class Experiments const&);
-
+    MCAPI static void bootstrap(
+        ::br::worldgen::StructureRegistry const&                                    structures,
+        ::br::worldgen::StructureSetRegistry&                                       context,
+        ::BaseGameVersion const&                                                    baseGameVersion,
+        ::Experiments const&                                                        experiments,
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const& structureSetsData
+    );
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

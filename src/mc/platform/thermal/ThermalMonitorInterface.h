@@ -13,9 +13,10 @@ public:
     ThermalMonitorInterface();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ThermalMonitorInterface() = default;
+    virtual ~ThermalMonitorInterface();
 
     // vIndex: 1
     virtual ::ThermalState getThermalState() const = 0;
@@ -25,13 +26,23 @@ public:
 
     // vIndex: 3
     virtual bool isLowBatteryModeEnabled() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

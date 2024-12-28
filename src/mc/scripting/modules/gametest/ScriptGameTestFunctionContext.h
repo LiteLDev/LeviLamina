@@ -5,14 +5,17 @@
 // auto generated inclusion list
 #include "mc/gametest/framework/IGameTestFunctionContext.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace gametest { class IGameTestFunctionContext; }
-// clang-format on
-
 namespace ScriptModuleGameTest {
 
 class ScriptGameTestFunctionContext : public ::gametest::IGameTestFunctionContext {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnka05f6e;
+    ::ll::UntypedStorage<8, 8>  mUnk1e5e56;
+    ::ll::UntypedStorage<8, 32> mUnk14f7e3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptGameTestFunctionContext& operator=(ScriptGameTestFunctionContext const&);
@@ -20,18 +23,23 @@ public:
     ScriptGameTestFunctionContext();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptGameTestFunctionContext() = default;
-
+    virtual ~ScriptGameTestFunctionContext() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

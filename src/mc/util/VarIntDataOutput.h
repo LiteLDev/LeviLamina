@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/util/BytesDataOutput.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+// clang-format on
+
 class VarIntDataOutput : public ::BytesDataOutput {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::BinaryStream&> mStream;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VarIntDataOutput& operator=(VarIntDataOutput const&);
@@ -13,63 +24,70 @@ public:
     VarIntDataOutput();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VarIntDataOutput();
-
     // vIndex: 1
-    virtual void writeString(std::string_view v);
+    virtual void writeString(::std::string_view v) /*override*/;
 
     // vIndex: 2
-    virtual void writeLongString(std::string_view v);
+    virtual void writeLongString(::std::string_view v) /*override*/;
 
     // vIndex: 3
-    virtual void writeFloat(float v);
+    virtual void writeFloat(float v) /*override*/;
 
     // vIndex: 4
-    virtual void writeDouble(double v);
+    virtual void writeDouble(double v) /*override*/;
 
     // vIndex: 5
-    virtual void writeByte(char v);
+    virtual void writeByte(char v) /*override*/;
 
     // vIndex: 6
-    virtual void writeShort(short v);
+    virtual void writeShort(short v) /*override*/;
 
     // vIndex: 7
-    virtual void writeInt(int v);
+    virtual void writeInt(int v) /*override*/;
 
     // vIndex: 8
-    virtual void writeLongLong(int64 v);
+    virtual void writeLongLong(int64 v) /*override*/;
 
     // vIndex: 9
-    virtual void writeBytes(void const* data, uint64 bytes);
+    virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
 
+    // vIndex: 0
+    virtual ~VarIntDataOutput() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $writeString(::std::string_view v);
 
-    MCAPI void writeByte$(char v);
+    MCAPI void $writeLongString(::std::string_view v);
 
-    MCAPI void writeBytes$(void const* data, uint64 bytes);
+    MCAPI void $writeFloat(float v);
 
-    MCAPI void writeDouble$(double v);
+    MCAPI void $writeDouble(double v);
 
-    MCAPI void writeFloat$(float v);
+    MCAPI void $writeByte(char v);
 
-    MCAPI void writeInt$(int v);
+    MCAPI void $writeShort(short v);
 
-    MCAPI void writeLongLong$(int64 v);
+    MCAPI void $writeInt(int v);
 
-    MCAPI void writeLongString$(std::string_view v);
+    MCAPI void $writeLongLong(int64 v);
 
-    MCAPI void writeShort$(short v);
+    MCAPI void $writeBytes(void const* data, uint64 bytes);
+    // NOLINTEND
 
-    MCAPI void writeString$(std::string_view v);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

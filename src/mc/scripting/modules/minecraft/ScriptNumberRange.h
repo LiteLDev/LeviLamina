@@ -20,10 +20,10 @@ public:
     ScriptNumberRange();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct FloatRange> bindV010();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::FloatRange> bindV010();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

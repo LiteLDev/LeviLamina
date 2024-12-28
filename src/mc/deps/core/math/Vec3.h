@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 class Vec3 {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> x;
+    ::ll::TypedStorage<4, 4, float> y;
+    ::ll::TypedStorage<4, 4, float> z;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Vec3& operator=(Vec3 const&);
@@ -10,81 +23,72 @@ public:
     Vec3();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Vec3 abs() const;
+    MCAPI ::Vec3 abs() const;
 
-    MCAPI class Vec3 ceil() const;
+    MCAPI ::Vec3 ceil() const;
 
-    MCAPI float distanceToLineSquared(class Vec3 const& p0, class Vec3 const& p1) const;
+    MCAPI float distanceToLineSquared(::Vec3 const& p0, ::Vec3 const& p1) const;
 
-    MCAPI class Vec3 floor(float offset) const;
+    MCAPI float distanceToSqr(::Vec3 const& p) const;
+
+    MCAPI ::Vec3 floor(float offset) const;
 
     MCAPI bool isNan() const;
 
-    MCAPI bool isNear(class Vec3 const& rhs, float e) const;
-
-    MCAPI float length() const;
+    MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
     MCAPI float maxComponent() const;
 
-    MCAPI class Vec3 normalized() const;
+    MCAPI ::Vec3 normalized() const;
 
-    MCAPI class Vec3& operator*=(float);
+    MCAPI ::std::string toJsonString() const;
 
-    MCAPI class Vec3 operator+(class Vec3 const&) const;
+    MCAPI ::std::string toString() const;
 
-    MCAPI class Vec3& operator+=(class Vec3 const&);
-
-    MCAPI class Vec3 operator-() const;
-
-    MCAPI class Vec3 operator-(class Vec3 const&) const;
-
-    MCAPI bool operator==(class Vec3 const& rhs) const;
-
-    MCAPI std::string toJsonString() const;
-
-    MCAPI std::string toString() const;
-
-    MCAPI class Vec3 xz() const;
-
-    MCAPI static class Vec3 clamp(class Vec3 const& v, class Vec3 const& clipMin, class Vec3 const& clipMax);
-
-    MCAPI static class Vec3 directionFromRotation(class Vec2 const& rot);
-
-    MCAPI static class Vec3 directionFromRotation(float rotX, float rotY);
-
-    MCAPI static class Vec3 fromXZ(class Vec2 const& xz, float y);
-
-    MCAPI static class Vec2 rotationFromDirection(class Vec3 const& dir);
-
+    MCAPI ::Vec3 xz() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Vec3 const& HALF();
+    MCAPI static ::Vec3 clamp(::Vec3 const& v, ::Vec3 const& clipMin, ::Vec3 const& clipMax);
 
-    MCAPI static class Vec3 const& MAX();
+    MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
 
-    MCAPI static class Vec3 const& MIN();
+    MCAPI static ::Vec3 directionFromRotation(float rotX, float rotY);
 
-    MCAPI static class Vec3 const& NEG_UNIT_X();
+    MCAPI static ::Vec3 fromXZ(::Vec2 const& xz, float y);
 
-    MCAPI static class Vec3 const& NEG_UNIT_Y();
+    MCAPI static ::Vec2 rotationFromDirection(::Vec3 const& dir);
+    // NOLINTEND
 
-    MCAPI static class Vec3 const& NEG_UNIT_Z();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 const& HALF();
 
-    MCAPI static class Vec3 const& ONE();
+    MCAPI static ::Vec3 const& MAX();
 
-    MCAPI static class Vec3 const& TWO();
+    MCAPI static ::Vec3 const& MIN();
 
-    MCAPI static class Vec3 const& UNIT_X();
+    MCAPI static ::Vec3 const& NEG_UNIT_X();
 
-    MCAPI static class Vec3 const& UNIT_Y();
+    MCAPI static ::Vec3 const& NEG_UNIT_Y();
 
-    MCAPI static class Vec3 const& UNIT_Z();
+    MCAPI static ::Vec3 const& NEG_UNIT_Z();
 
-    MCAPI static class Vec3 const& ZERO();
+    MCAPI static ::Vec3 const& ONE();
 
+    MCAPI static ::Vec3 const& TWO();
+
+    MCAPI static ::Vec3 const& UNIT_X();
+
+    MCAPI static ::Vec3 const& UNIT_Y();
+
+    MCAPI static ::Vec3 const& UNIT_Z();
+
+    MCAPI static ::Vec3 const& ZERO();
     // NOLINTEND
 };

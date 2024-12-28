@@ -2,20 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace BedrockBlockNames {
+// functions
 // NOLINTBEGIN
 MCAPI void cleanupBedrockBlockNames();
 
 MCAPI void initBedrockBlockNames();
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& Air();
+MCAPI ::HashedString const& Air();
 
-MCAPI class HashedString const& ClientRequestPlaceholderBlock();
+MCAPI ::HashedString const& ClientRequestPlaceholderBlock();
 
-MCAPI class HashedString const& Unknown();
+MCAPI ::HashedString const& Unknown();
 // NOLINTEND
 
-}; // namespace BedrockBlockNames
+} // namespace BedrockBlockNames

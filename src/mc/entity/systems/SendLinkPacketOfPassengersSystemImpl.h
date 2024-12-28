@@ -3,26 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct ActorUniqueIDComponent;
+struct BoatMovementComponent;
+struct PassengerComponent;
+struct PassengersChangedFlagComponent;
+struct SendPacketsComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace SendLinkPacketOfPassengersSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void sendLinkPacketOfPassengers(
-    entt::type_list<struct Include<
-        class FlagComponent<struct ActorMovementTickNeededFlag>,
-        class FlagComponent<struct PassengersChangedFlag>>>,
-    class StrictEntityContext const&                  entity,
-    struct ActorUniqueIDComponent const&              vehicleUniqueIDComponent,
-    struct VehicleComponent&                          vehicleComponent,
-    class EntityModifier<struct SendPacketsComponent> modifier,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<struct PassengerComponent>,
-        struct ActorUniqueIDComponent const> passengersView
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>>,
+    ::StrictEntityContext const&              entity,
+    ::ActorUniqueIDComponent const&           vehicleUniqueIDComponent,
+    ::VehicleComponent&                       vehicleComponent,
+    ::Optional<::BoatMovementComponent const> boatMovement,
+    ::EntityModifier<::SendPacketsComponent>  modifier,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorUniqueIDComponent const> passengersView
 );
 // NOLINTEND
 
-}; // namespace SendLinkPacketOfPassengersSystemImpl
+} // namespace SendLinkPacketOfPassengersSystemImpl

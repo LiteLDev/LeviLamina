@@ -10,8 +10,8 @@ public:
     MarketplaceSkinValidator();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkIfValid(std::string const& geometry);
-
+    MCAPI static bool checkIfValid(::std::string const& geometry);
     // NOLINTEND
 };

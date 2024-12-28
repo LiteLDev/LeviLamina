@@ -2,109 +2,152 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/IRandom.h"
+#include "mc/deps/core/math/IRandomSeeded.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class IPositionalRandomFactory;
-class IRandom;
 struct Seed128Bit;
 // clang-format on
 
 namespace br::worldgen {
 
-struct WorldGenRandom {
+struct WorldGenRandom : public ::IRandom, public ::IRandomSeeded {
 public:
-    // prevent constructor by default
-    WorldGenRandom& operator=(WorldGenRandom const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCVAPI void consumeCount(uint count);
-
-    MCVAPI std::unique_ptr<class IRandom> fork();
-
-    MCVAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-
-    MCVAPI bool nextBoolean();
-
-    MCVAPI double nextDouble();
-
-    MCVAPI float nextFloat();
-
-    MCVAPI double nextGaussianDouble();
-
-    MCVAPI int nextInt();
-
-    MCVAPI int nextInt(int bound);
-
-    MCVAPI int64 nextLong();
-
-    MCVAPI struct Seed128Bit seed128() const;
-
-    MCVAPI int64 seed64() const;
-
-    MCVAPI void setSeed(struct Seed128Bit seed);
-
-    MCVAPI void setSeed(int64 seed);
-
-    MCVAPI ~WorldGenRandom();
-
-    MCAPI WorldGenRandom();
-
-    MCAPI WorldGenRandom(struct br::worldgen::WorldGenRandom const& other);
-
-    MCAPI struct br::worldgen::WorldGenRandom forkPositional(class BlockPos pos);
-
-    MCAPI struct br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
-
-    MCAPI struct br::worldgen::WorldGenRandom& setLargeFeatureWithSalt(int64 seed, int x, int z, int blend);
-
-    MCAPI static struct br::worldgen::WorldGenRandom create(int64 seed);
-
+    ::ll::UntypedStorage<8, 56> mUnka1fd0c;
     // NOLINTEND
 
-    // thunks
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForIRandom();
+    // vIndex: 2
+    virtual int nextInt() /*override*/;
 
-    MCAPI static void** vftableForIRandomSeeded();
+    // vIndex: 1
+    virtual int nextInt(int bound) /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 3
+    virtual int64 nextLong() /*override*/;
 
-    MCAPI void* ctor$(struct br::worldgen::WorldGenRandom const& other);
+    // vIndex: 4
+    virtual bool nextBoolean() /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 5
+    virtual float nextFloat() /*override*/;
 
-    MCAPI void consumeCount$(uint count);
+    // vIndex: 6
+    virtual double nextDouble() /*override*/;
 
-    MCAPI std::unique_ptr<class IRandom> fork$();
+    // vIndex: 7
+    virtual double nextGaussianDouble() /*override*/;
 
-    MCAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional$();
+    // vIndex: 8
+    virtual void consumeCount(uint count) /*override*/;
 
-    MCAPI bool nextBoolean$();
+    // vIndex: 9
+    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
-    MCAPI double nextDouble$();
+    // vIndex: 10
+    virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional() /*override*/;
 
-    MCAPI float nextFloat$();
+    // vIndex: 2
+    virtual void setSeed(int64 seed) /*override*/;
 
-    MCAPI double nextGaussianDouble$();
+    // vIndex: 1
+    virtual void setSeed(::Seed128Bit seed) /*override*/;
 
-    MCAPI int nextInt$();
+    // vIndex: 3
+    virtual int64 seed64() const /*override*/;
 
-    MCAPI int nextInt$(int bound);
+    // vIndex: 4
+    virtual ::Seed128Bit seed128() const /*override*/;
 
-    MCAPI int64 nextLong$();
+    // vIndex: 0
+    virtual ~WorldGenRandom() /*override*/;
+    // NOLINTEND
 
-    MCAPI struct Seed128Bit seed128$() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WorldGenRandom();
 
-    MCAPI int64 seed64$() const;
+    MCAPI WorldGenRandom(::br::worldgen::WorldGenRandom const& other);
 
-    MCAPI void setSeed$(struct Seed128Bit seed);
+    MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
-    MCAPI void setSeed$(int64 seed);
+    MCAPI ::br::worldgen::WorldGenRandom& operator=(::br::worldgen::WorldGenRandom const& other);
 
+    MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
+
+    MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureWithSalt(int64 seed, int x, int z, int blend);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::WorldGenRandom create(int64 seed);
+
+    MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::br::worldgen::WorldGenRandom const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $nextInt();
+
+    MCAPI int $nextInt(int bound);
+
+    MCAPI int64 $nextLong();
+
+    MCAPI bool $nextBoolean();
+
+    MCAPI float $nextFloat();
+
+    MCAPI double $nextDouble();
+
+    MCAPI double $nextGaussianDouble();
+
+    MCAPI void $consumeCount(uint count);
+
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
+
+    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+
+    MCAPI void $setSeed(int64 seed);
+
+    MCAPI void $setSeed(::Seed128Bit seed);
+
+    MCAPI int64 $seed64() const;
+
+    MCAPI ::Seed128Bit $seed128() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIRandom();
+
+    MCAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

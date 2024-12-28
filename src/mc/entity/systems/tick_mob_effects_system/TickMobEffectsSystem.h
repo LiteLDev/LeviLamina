@@ -5,35 +5,34 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntitySystems;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct AttributesComponent;
+struct MobEffectsComponent;
 namespace TickMobEffectsSystem { struct RemoveMobEffectsRequestComponent; }
 // clang-format on
 
 namespace TickMobEffectsSystem {
+// functions
 // NOLINTBEGIN
-MCAPI void _onEffectRemoved(
-    struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest,
-    class ActorOwnerComponent&                                           actorOwnerComponent,
-    struct MobEffectsComponent&                                          mobEffectsComponent
-);
-
 MCAPI void _removeMobEffects(
-    struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest,
-    struct AttributesComponent&                                          attributesComponent,
-    struct MobEffectsComponent&                                          mobEffectsComponent
+    ::TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest,
+    ::AttributesComponent&                                          attributesComponent,
+    ::MobEffectsComponent&                                          mobEffectsComponent
 );
 
 MCAPI void _tickMobEffects(
-    entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>,
-    class StrictEntityContext const&                                                    entity,
-    struct MobEffectsComponent&                                                         mobEffectsComponent,
-    class EntityModifier<struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                                               entity,
+    ::MobEffectsComponent&                                                     mobEffectsComponent,
+    ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod
 );
 
-MCAPI void registerSystems(class EntitySystems& systemRegistry);
+MCAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}; // namespace TickMobEffectsSystem
+} // namespace TickMobEffectsSystem

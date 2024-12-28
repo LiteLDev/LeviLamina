@@ -3,10 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Mob;
+// clang-format on
+
 class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
+public:
+    // HarvestFarmBlockGoal inner types define
+    enum class Task : int {
+        None = 4294967295,
+        Reap = 0,
+        Sow  = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk962876;
+    ::ll::UntypedStorage<4, 4> mUnk5fc437;
+    ::ll::UntypedStorage<4, 4> mUnk36bc3c;
+    ::ll::UntypedStorage<4, 4> mUnk6f9c36;
+    ::ll::UntypedStorage<4, 4> mUnkf9f958;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HarvestFarmBlockGoal& operator=(HarvestFarmBlockGoal const&);
@@ -14,61 +38,74 @@ public:
     HarvestFarmBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HarvestFarmBlockGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    MCAPI explicit HarvestFarmBlockGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~HarvestFarmBlockGoal() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool trySowCrop(class BlockSource& region, class BlockPos const& farmlandPos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit HarvestFarmBlockGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI bool trySowCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $stop();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

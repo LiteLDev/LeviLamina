@@ -2,10 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
+// auto generated forward declare list
+// clang-format off
+struct FullContainerName;
+// clang-format on
 
 struct ContainerValidationSlotData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkb5d9ba;
+    ::ll::UntypedStorage<4, 4>  mUnk1caff5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ContainerValidationSlotData& operator=(ContainerValidationSlotData const&);
@@ -13,17 +22,20 @@ public:
     ContainerValidationSlotData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ContainerValidationSlotData(::ContainerEnumName containerEnumName, int slotIndex);
-
+    MCAPI ContainerValidationSlotData(::FullContainerName const& container, int slotIndex);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(::ContainerEnumName containerEnumName, int slotIndex);
+    MCAPI static ::ContainerValidationSlotData const& AUTOPLACE();
+    // NOLINTEND
 
-    MCAPI static struct ContainerValidationSlotData const& AUTOPLACE();
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FullContainerName const& container, int slotIndex);
     // NOLINTEND
 };

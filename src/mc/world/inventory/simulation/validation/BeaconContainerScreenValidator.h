@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 class BeaconContainerScreenValidator : public ::ContainerScreenValidatorBase {
@@ -11,22 +10,24 @@ public:
     // prevent constructor by default
     BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const&);
     BeaconContainerScreenValidator(BeaconContainerScreenValidator const&);
+    BeaconContainerScreenValidator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BeaconContainerScreenValidator() = default;
-
-    MCAPI BeaconContainerScreenValidator();
-
+    virtual ~BeaconContainerScreenValidator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

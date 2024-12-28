@@ -5,12 +5,15 @@
 // auto generated inclusion list
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class LegacyOnHitActorTriggerItemComponent : public ::LegacyTriggerItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnk6eb2b0;
+    ::ll::UntypedStorage<8, 16>  mUnke8bf7d;
+    ::ll::UntypedStorage<8, 264> mUnk9419a2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyOnHitActorTriggerItemComponent& operator=(LegacyOnHitActorTriggerItemComponent const&);
@@ -18,29 +21,30 @@ public:
     LegacyOnHitActorTriggerItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
+    virtual void _initializeComponent() /*override*/;
+
     // vIndex: 0
-    virtual ~LegacyOnHitActorTriggerItemComponent() = default;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~LegacyOnHitActorTriggerItemComponent() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _onHitActor(class ItemStack& item, class Actor& actor, class Mob& attacker);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

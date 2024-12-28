@@ -3,10 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class DragonBaseGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5480ed;
+    ::ll::UntypedStorage<4, 4> mUnkb034aa;
+    ::ll::UntypedStorage<4, 4> mUnk652307;
+    ::ll::UntypedStorage<4, 4> mUnkd4a64d;
+    ::ll::UntypedStorage<4, 8> mUnkd47736;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DragonBaseGoal& operator=(DragonBaseGoal const&);
@@ -14,18 +23,21 @@ public:
     DragonBaseGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DragonBaseGoal();
-
+    virtual ~DragonBaseGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

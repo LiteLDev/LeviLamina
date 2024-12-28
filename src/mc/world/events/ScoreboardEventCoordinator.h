@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScoreboardEventCoordinator {
+// auto generated inclusion list
+#include "mc/world/events/EventCoordinator.h"
+
+// auto generated forward declare list
+// clang-format off
+class ScoreboardEventListener;
+struct ScoreboardId;
+// clang-format on
+
+class ScoreboardEventCoordinator : public ::EventCoordinator<::ScoreboardEventListener> {
 public:
     // prevent constructor by default
     ScoreboardEventCoordinator& operator=(ScoreboardEventCoordinator const&);
@@ -10,26 +19,33 @@ public:
     ScoreboardEventCoordinator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScoreboardEventCoordinator();
-
-    MCAPI void sendOnObjectiveAdded(std::string const& objective);
-
-    MCAPI void sendOnObjectiveRemoved(std::string const& objective);
-
-    MCAPI void sendOnScoreChanged(struct ScoreboardId const& id, std::string const& objective, int score);
-
-    MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const& id);
-
+    virtual ~ScoreboardEventCoordinator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void sendOnObjectiveAdded(::std::string const& objective);
 
-    MCAPI void dtor$();
+    MCAPI void sendOnObjectiveRemoved(::std::string const& objective);
 
+    MCAPI void sendOnScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+
+    MCAPI void sendOnScoreboardIdentityRemoved(::ScoreboardId const& id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

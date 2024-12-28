@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class TaskGroup;
+class TaskResult;
 namespace Core { class IFileStorageAreaFetcher; }
 // clang-format on
 
 class UserStorageChecker {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8064a4;
+    ::ll::UntypedStorage<8, 8> mUnk2dbcef;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UserStorageChecker& operator=(UserStorageChecker const&);
@@ -18,33 +27,32 @@ public:
     UserStorageChecker();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI UserStorageChecker(
-        std::unique_ptr<class TaskGroup>                     taskGroup,
-        std::unique_ptr<class Core::IFileStorageAreaFetcher> fileStorageFetcher
+        ::std::unique_ptr<::TaskGroup>                     taskGroup,
+        ::std::unique_ptr<::Core::IFileStorageAreaFetcher> fileStorageFetcher
     );
 
-    MCAPI void queueCheckUserStorage(class Core::PathBuffer<std::string> const& storagePath);
+    MCAPI ::TaskResult _checkUserStoragePath(::Core::PathBuffer<::std::string> const& storagePath) const;
+
+    MCAPI void queueCheckUserStorage(::Core::PathBuffer<::std::string> const& storagePath);
 
     MCAPI ~UserStorageChecker();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class TaskResult _checkUserStoragePath(class Core::PathBuffer<std::string> const& storagePath) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::unique_ptr<class TaskGroup>                     taskGroup,
-        std::unique_ptr<class Core::IFileStorageAreaFetcher> fileStorageFetcher
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::TaskGroup>                     taskGroup,
+        ::std::unique_ptr<::Core::IFileStorageAreaFetcher> fileStorageFetcher
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

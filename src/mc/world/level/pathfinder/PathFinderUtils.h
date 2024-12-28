@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace PathFinderUtils {
-// NOLINTBEGIN
-MCAPI float getActorRadius(class Actor const& actor);
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
 
-MCAPI float getMaxJumpHeight(class Actor const& actor);
+namespace PathFinderUtils {
+// functions
+// NOLINTBEGIN
+MCAPI float getMaxJumpHeight(::Actor const& actor);
 // NOLINTEND
 
-}; // namespace PathFinderUtils
+} // namespace PathFinderUtils

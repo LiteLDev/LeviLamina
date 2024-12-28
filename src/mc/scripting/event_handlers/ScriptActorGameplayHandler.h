@@ -5,18 +5,22 @@
 // auto generated inclusion list
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
 #include "mc/gameplayhandlers/HandlerResult.h"
-#include "mc/world/events/ActorGameplayEvent.h"
-#include "mc/world/events/MutableActorGameplayEvent.h"
+#include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorGameplayHandler;
+struct ActorAddEffectEvent;
+struct ActorRemovedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptActorGameplayHandler {
+class ScriptActorGameplayHandler : public ::EventHandlerDispatcher<::ActorGameplayHandler>,
+                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // prevent constructor by default
     ScriptActorGameplayHandler& operator=(ScriptActorGameplayHandler const&);
@@ -24,92 +28,52 @@ public:
     ScriptActorGameplayHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptActorGameplayHandler() = default;
-
-    // vIndex: 1
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct ActorAddEffectEvent& actorEffectAddedEvent);
-
-    // vIndex: 2
-    virtual ::HandlerResult handleEvent(struct ActorGameplayEvent<void> const& event);
-
-    // vIndex: 3
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct ActorGameplayEvent<::CoordinatorResult> const& event);
-
     // vIndex: 4
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableActorGameplayEvent<::CoordinatorResult>& event);
-
-    // vIndex: 5
-    virtual void __unk_vfn_5();
-
-    // vIndex: 6
-    virtual void __unk_vfn_6();
-
-    // vIndex: 7
-    virtual void __unk_vfn_7();
-
-    // vIndex: 8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 9
-    virtual void __unk_vfn_9();
-
-    // vIndex: 10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13
-    virtual void __unk_vfn_13();
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent
+    ) /*override*/;
 
     // vIndex: 14
-    virtual ::HandlerResult handleEvent(struct ActorRemovedEvent const& actorRemovedEvent);
+    virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScriptActorGameplayHandler() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _handleActorEffectAddedEvent(
-        struct ActorAddEffectEvent&               actorEffectAddedEvent,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::ActorAddEffectEvent&                                                            actorEffectAddedEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
     MCAPI bool _handleActorRemoveEvent(
-        struct ActorRemovedEvent const&           actorRemovedEvent,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::ActorRemovedEvent const&                                                        actorRemovedEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct ActorAddEffectEvent& actorEffectAddedEvent);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
 
-    MCAPI ::HandlerResult handleEvent$(struct ActorGameplayEvent<void> const& event);
+    MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    // NOLINTEND
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct ActorGameplayEvent<::CoordinatorResult> const& event);
-
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct MutableActorGameplayEvent<::CoordinatorResult>& event);
-
-    MCAPI ::HandlerResult handleEvent$(struct ActorRemovedEvent const& actorRemovedEvent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

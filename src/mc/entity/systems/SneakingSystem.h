@@ -8,12 +8,29 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class SneakingSystem {
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorTickedComponent;
+struct PlayerComponent;
+struct SneakingComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+class SneakingSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                           ::Filter<::ActorTickedComponent>,
+                           ::Read<::PlayerComponent>,
+                           ::Write<::SneakingComponent, ::ActorOwnerComponent>,
+                           ::AddRemove<>,
+                           ::GlobalRead<>,
+                           ::GlobalWrite<>,
+                           ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     SneakingSystem& operator=(SneakingSystem const&);
@@ -21,56 +38,57 @@ public:
     SneakingSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SneakingSystem() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<class FlagComponent<struct ActorTickedFlag>>,
-                      struct Read<class FlagComponent<struct PlayerComponentFlag>>,
-                      struct Write<struct SneakingComponent, class ActorOwnerComponent>,
-                      struct AddRemove<>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::ActorTickedComponent>,
+                      ::Read<::PlayerComponent>,
+                      ::Write<::SneakingComponent, ::ActorOwnerComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
-    MCAPI static void _tickSneakingSystem(
-        class StrictEntityContext&,
-        class FlagComponent<struct PlayerComponentFlag> const& playerTag,
-        struct SneakingComponent&                              sneaking,
-        class ActorOwnerComponent&                             actorOwner
-    );
-
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    // vIndex: 0
+    virtual ~SneakingSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _tickSneakingSystem(
+        ::StrictEntityContext&,
+        ::PlayerComponent const& playerTag,
+        ::SneakingComponent&     sneaking,
+        ::ActorOwnerComponent&   actorOwner
+    );
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<class FlagComponent<struct ActorTickedFlag>>,
-                     struct Read<class FlagComponent<struct PlayerComponentFlag>>,
-                     struct Write<struct SneakingComponent, class ActorOwnerComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+    MCAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::ActorTickedComponent>,
+                     ::Read<::PlayerComponent>,
+                     ::Write<::SneakingComponent, ::ActorOwnerComponent>,
+                     ::AddRemove<>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

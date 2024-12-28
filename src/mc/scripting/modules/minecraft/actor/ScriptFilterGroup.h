@@ -20,10 +20,10 @@ public:
     ScriptFilterGroup();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ActorFilterGroup> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

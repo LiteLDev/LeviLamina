@@ -3,18 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class HashedString;
+class ItemInstance;
+namespace BlockEvents { class BlockPlaceEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,59 +27,72 @@ public:
     ConcretePowderBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
+
+    // vIndex: 152
+    virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 102
+    virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~ConcretePowderBlock() = default;
-
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 108
-    virtual bool shouldStopFalling(class Actor& entity) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const& block) const;
-
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const& block) const;
-
-    MCAPI ConcretePowderBlock(std::string const& nameId, int id);
-
+    virtual ~ConcretePowderBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    _tryTouchWater(class BlockSource& region, class BlockPos const& pos, std::optional<class HashedString> name) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI class mce::Color getDustColor$(class Block const& block) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI std::string getDustParticleName$(class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCAPI bool shouldStopFalling$(class Actor& entity) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
+    MCAPI bool $shouldStopFalling(::Actor& entity) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

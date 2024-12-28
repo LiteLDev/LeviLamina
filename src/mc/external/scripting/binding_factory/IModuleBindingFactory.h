@@ -21,40 +21,48 @@ public:
     IModuleBindingFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IModuleBindingFactory() = default;
+    virtual ~IModuleBindingFactory();
 
     // vIndex: 1
-    virtual std::string getName() const = 0;
+    virtual ::std::string getName() const = 0;
 
     // vIndex: 2
-    virtual struct Scripting::UUID getUUID() const = 0;
+    virtual ::Scripting::UUID getUUID() const = 0;
 
     // vIndex: 3
-    virtual bool hasAlias(std::string const& alias) const = 0;
+    virtual bool hasAlias(::std::string const&) const = 0;
 
     // vIndex: 4
-    virtual std::vector<struct Scripting::Version> getSupportedVersions() const = 0;
+    virtual ::std::vector<::Scripting::Version> getSupportedVersions() const = 0;
 
     // vIndex: 5
-    virtual std::vector<struct Scripting::ModuleDescriptor> getDependencies(struct Scripting::Version version
-    ) const = 0;
+    virtual ::std::vector<::Scripting::ModuleDescriptor> getDependencies(::Scripting::Version) const = 0;
 
     // vIndex: 6
-    virtual std::optional<struct Scripting::ModuleBinding> createModuleBinding(
-        struct Scripting::Version                             version,
-        std::optional<struct Scripting::ContextConfig> const& config
-    ) = 0;
+    virtual ::std::optional<::Scripting::ModuleBinding>
+    createModuleBinding(::Scripting::Version, ::std::optional<::Scripting::ContextConfig> const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 namespace RotationUtility {
+// functions
 // NOLINTBEGIN
-MCAPI void setRot(class Vec2 const& newRot, class Vec2& currentRot, class Vec2& previousRot);
+MCAPI void setRot(::Vec2 const& newRot, ::Vec2& currentRot, ::Vec2& previousRot);
 // NOLINTEND
 
-}; // namespace RotationUtility
+} // namespace RotationUtility

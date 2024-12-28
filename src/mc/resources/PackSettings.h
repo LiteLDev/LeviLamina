@@ -4,35 +4,32 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackSetting;
+struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
 class PackSettings {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                      mSettings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackSetting>> mPackSettings;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PackSettings& operator=(PackSettings const&);
     PackSettings(PackSettings const&);
+    PackSettings();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PackSettings();
+    MCAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
 
-    MCAPI class Json::Value const& getAllSettings() const;
+    MCAPI ::Json::Value const& getAllSettings() const;
 
-    MCAPI void loadPackSettings(struct PackIdVersion const& packId, class Json::Value const& packSettings);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initPackSetting(std::string const& name, class Json::Value const& value);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
     // NOLINTEND
 };

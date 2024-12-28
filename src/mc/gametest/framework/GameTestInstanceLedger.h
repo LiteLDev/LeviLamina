@@ -8,11 +8,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
+class LevelStorage;
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class IGameTestListener; }
 // clang-format on
 
 class GameTestInstanceLedger : public ::gametest::IGameTestListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke7bb35;
+    ::ll::UntypedStorage<8, 8>  mUnk275e5b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameTestInstanceLedger& operator=(GameTestInstanceLedger const&);
@@ -20,50 +28,50 @@ public:
     GameTestInstanceLedger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GameTestInstanceLedger() = default;
-
     // vIndex: 1
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance& testInstance);
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
-    // vIndex: 2
-    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
-
-    // vIndex: 3
-    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
-
-    // vIndex: 4
-    virtual void onTestStarted(class gametest::BaseGameTestInstance&);
-
-    // vIndex: 5
-    virtual void onTestRetryStarted(class gametest::BaseGameTestInstance&);
-
-    // vIndex: 6
-    virtual void onTestRetryFinished(class gametest::BaseGameTestInstance&);
-
-    MCAPI void clear(DimensionType dimension);
-
+    // vIndex: 0
+    virtual ~GameTestInstanceLedger() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit GameTestInstanceLedger(::LevelStorage& storage);
 
-    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+    MCAPI void clear(::DimensionType dimension);
+    // NOLINTEND
 
-    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& GAME_TEST_INSTANCE_PREFIX();
+    // NOLINTEND
 
-    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelStorage& storage);
+    // NOLINTEND
 
-    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+    // NOLINTEND
 
-    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance& testInstance);
-
-    MCAPI static std::string const& GAME_TEST_INSTANCE_PREFIX();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

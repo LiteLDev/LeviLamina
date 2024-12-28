@@ -3,35 +3,86 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
 #include "mc/entity/components/WitherBossPreAIStepResult.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Level;
+class MobEffectInstance;
+class Vec2;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct VariantParameterList;
 namespace mce { class UUID; }
 // clang-format on
 
 class WitherBoss : public ::Monster {
 public:
     // WitherBoss inner types define
-    enum class WitherAttackType {};
+    enum class WitherAttackType : int {
+        Charge        = 0,
+        HurtExplosion = 1,
+        Projectile    = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkfb1661;
+    ::ll::UntypedStorage<4, 4>  mUnk91e8c4;
+    ::ll::UntypedStorage<4, 24> mUnkf73b85;
+    ::ll::UntypedStorage<4, 24> mUnk42fb80;
+    ::ll::UntypedStorage<4, 12> mUnkafb5ce;
+    ::ll::UntypedStorage<4, 12> mUnkdbcf4c;
+    ::ll::UntypedStorage<4, 4>  mUnk10623a;
+    ::ll::UntypedStorage<4, 4>  mUnkb71073;
+    ::ll::UntypedStorage<4, 4>  mUnk802c66;
+    ::ll::UntypedStorage<1, 1>  mUnk409e03;
+    ::ll::UntypedStorage<1, 1>  mUnk50435a;
+    ::ll::UntypedStorage<4, 12> mUnkc20e00;
+    ::ll::UntypedStorage<4, 4>  mUnkf587d8;
+    ::ll::UntypedStorage<4, 4>  mUnk9b6d2a;
+    ::ll::UntypedStorage<4, 4>  mUnkb77d38;
+    ::ll::UntypedStorage<4, 4>  mUnk62a4f1;
+    ::ll::UntypedStorage<4, 4>  mUnkb46cbf;
+    ::ll::UntypedStorage<4, 4>  mUnkc1a831;
+    ::ll::UntypedStorage<4, 4>  mUnk8cedff;
+    ::ll::UntypedStorage<4, 4>  mUnkd4292b;
+    ::ll::UntypedStorage<4, 4>  mUnkfcfb2e;
+    ::ll::UntypedStorage<4, 4>  mUnkcb987d;
+    ::ll::UntypedStorage<4, 4>  mUnkc03dfe;
+    ::ll::UntypedStorage<1, 1>  mUnk5db70c;
+    ::ll::UntypedStorage<1, 1>  mUnkacf26a;
+    ::ll::UntypedStorage<4, 4>  mUnk8dfa8e;
+    ::ll::UntypedStorage<4, 4>  mUnkbcd1e5;
+    ::ll::UntypedStorage<4, 4>  mUnkf3ac9e;
+    ::ll::UntypedStorage<4, 4>  mUnke43f8c;
+    ::ll::UntypedStorage<4, 4>  mUnk95f423;
+    ::ll::UntypedStorage<4, 4>  mUnkca0cd1;
+    ::ll::UntypedStorage<4, 4>  mUnk56ff06;
+    ::ll::UntypedStorage<4, 4>  mUnkfac4e5;
+    ::ll::UntypedStorage<4, 4>  mUnk21dcc1;
+    ::ll::UntypedStorage<4, 4>  mUnk5bb727;
+    ::ll::UntypedStorage<1, 1>  mUnk33834c;
+    ::ll::UntypedStorage<4, 4>  mUnkfa9266;
+    ::ll::UntypedStorage<4, 4>  mUnk18c426;
+    ::ll::UntypedStorage<4, 4>  mUnke678ef;
+    ::ll::UntypedStorage<8, 8>  mUnk9c9e88;
+    ::ll::UntypedStorage<4, 4>  mUnk42962d;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -40,78 +91,97 @@ public:
     WitherBoss();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 10
-    virtual ~WitherBoss() = default;
+    // vIndex: 150
+    virtual void aiStep() /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 179
+    virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 14
-    virtual class Vec3 getFiringPos() const;
+    // vIndex: 87
+    virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 29
-    virtual bool startRiding(class Actor& vehicle);
+    // vIndex: 107
+    virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
+    // vIndex: 108
+    virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    // vIndex: 149
+    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 91
-    virtual bool canFreeze() const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 98
-    virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 111
-    virtual bool canBeAffected(uint effectId) const;
+    // vIndex: 94
+    virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
 
-    // vIndex: 112
-    virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
+    // vIndex: 160
+    virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const& source);
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 27
+    virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 157
-    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 158
-    virtual void aiStep();
+    // vIndex: 12
+    virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 168
-    virtual int getArmorValue() const;
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 187
-    virtual void newServerAiStep();
+    // vIndex: 8
+    virtual ~WitherBoss() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI WitherBoss(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+
+    MCAPI void _destroyBlocks(
+        ::Level&                       level,
+        ::AABB const&                  bb,
+        ::BlockSource&                 region,
+        int                            range,
+        ::WitherBoss::WitherAttackType attackType
+    );
+
+    MCAPI void _performRangedAttack(int headID, ::Actor& target);
+
+    MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
     MCAPI void awardSpawnWitherAchievement() const;
 
-    MCAPI class Vec3 getHeadPos(int headID) const;
+    MCAPI bool canShoot();
 
-    MCAPI class Vec2 getHeadRot(int headID) const;
+    MCAPI ::Vec3 getHeadPos(int headID) const;
+
+    MCAPI ::Vec2 getHeadRot(int headID) const;
 
     MCAPI int getInvulnerableTicks() const;
 
@@ -129,7 +199,7 @@ public:
 
     MCAPI void setAerialAttack(bool aerialAttack);
 
-    MCAPI void setAlternativeTarget(int headIndex, struct ActorUniqueID entityId);
+    MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
 
     MCAPI void setInvulnerableTicks(int invulnerableTicks);
 
@@ -140,81 +210,81 @@ public:
     MCAPI void setWantsToMove(bool shouldMove);
 
     MCAPI bool wantsToMove();
-
-    MCAPI static bool canDestroy(class Block const& block, ::WitherBoss::WitherAttackType attackType);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _destroyBlocks(
-        class Level&                   level,
-        class AABB const&              bb,
-        class BlockSource&             region,
-        int                            range,
-        ::WitherBoss::WitherAttackType attackType
-    );
-
-    MCAPI void _performRangedAttack(int headID, class Actor& target);
-
-    MCAPI void _performRangedAttack(int headID, class Vec3 const& targetPos, bool dangerous);
-
-    MCAPI bool canShoot();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool canDestroy(::Block const& block, ::WitherBoss::WitherAttackType attackType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& MAX_HEALTH_CAP_UUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void aiStep$();
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool canBeAffected$(uint effectId) const;
+    MCAPI void $aiStep();
 
-    MCAPI bool canBeAffectedByArrow$(class MobEffectInstance const& effect) const;
+    MCAPI void $newServerAiStep();
 
-    MCAPI bool canFreeze$() const;
+    MCAPI bool $canFreeze() const;
 
-    MCAPI float causeFallDamageToActor$(float, float, class ActorDamageSource);
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI void die$(class ActorDamageSource const& source);
+    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
-    MCAPI int getArmorValue$() const;
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI class Vec3 getFiringPos$() const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void hurtEffects$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI float $causeFallDamageToActor(float, float, ::ActorDamageSource);
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI int $getArmorValue() const;
 
-    MCAPI void newServerAiStep$();
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $remove();
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI void remove$();
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool startRiding$(class Actor& vehicle);
+    MCAPI ::Vec3 $getFiringPos() const;
 
-    MCAPI static class mce::UUID const& MAX_HEALTH_CAP_UUID();
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
 
-    MCAPI static int const& TIME_BEFORE_MOVING();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,24 +15,33 @@ public:
     IJsonSerializable();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IJsonSerializable();
 
     // vIndex: 1
-    virtual void serialize(class Json::Value& root) = 0;
+    virtual void serialize(::Json::Value&) = 0;
 
     // vIndex: 2
-    virtual void deserialize(class Json::Value& root) = 0;
+    virtual void deserialize(::Json::Value&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

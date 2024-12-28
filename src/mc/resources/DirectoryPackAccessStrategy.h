@@ -3,17 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
 // auto generated forward declare list
 // clang-format off
+class PackAssetSet;
+class ResourceLocation;
+namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
 // clang-format on
 
 class DirectoryPackAccessStrategy : public ::PackAccessStrategy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke82580;
+    ::ll::UntypedStorage<8, 56> mUnkd7f188;
+    ::ll::UntypedStorage<8, 32> mUnk33f5ed;
+    ::ll::UntypedStorage<1, 1>  mUnkeda44b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DirectoryPackAccessStrategy& operator=(DirectoryPackAccessStrategy const&);
@@ -21,121 +31,151 @@ public:
     DirectoryPackAccessStrategy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DirectoryPackAccessStrategy();
+    virtual ~DirectoryPackAccessStrategy() /*override*/;
 
     // vIndex: 1
-    virtual uint64 getPackSize() const;
+    virtual uint64 getPackSize() const /*override*/;
 
     // vIndex: 2
-    virtual class ResourceLocation const& getPackLocation() const;
+    virtual ::ResourceLocation const& getPackLocation() const /*override*/;
 
     // vIndex: 3
-    virtual std::string const& getPackName() const;
+    virtual ::std::string const& getPackName() const /*override*/;
 
     // vIndex: 4
-    virtual bool isWritable() const;
-
-    // vIndex: 5
-    virtual void setIsTrusted(bool);
+    virtual bool isWritable() const /*override*/;
 
     // vIndex: 6
-    virtual bool isTrusted() const;
+    virtual bool isTrusted() const /*override*/;
+
+    // vIndex: 5
+    virtual void setIsTrusted(bool) /*override*/;
 
     // vIndex: 7
-    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
     // vIndex: 8
-    virtual bool hasFolder(class Core::Path const& packRelativePath) const;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 9
-    virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
     // vIndex: 10
-    virtual bool deleteAsset(class Core::Path const& packRelativePath);
+    virtual bool deleteAsset(::Core::Path const& packRelativePath) /*override*/;
 
     // vIndex: 11
-    virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
+    virtual bool writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent) /*override*/;
 
     // vIndex: 12
     virtual void forEachIn(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback,
-        bool                                         recurseAnyways
-    ) const;
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const /*override*/;
 
     // vIndex: 13
-    virtual void forEachInAssetSet(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback
-    ) const;
+    virtual void
+    forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const
+        /*override*/;
 
     // vIndex: 14
-    virtual ::PackAccessStrategyType getStrategyType() const;
+    virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
-    // vIndex: 16
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const;
+    // vIndex: 17
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 18
-    virtual bool canRecurse() const;
+    // vIndex: 20
+    virtual bool canRecurse() const /*override*/;
 
-    // vIndex: 19
-    virtual void unload();
+    // vIndex: 21
+    virtual void unload() /*override*/;
 
-    MCAPI DirectoryPackAccessStrategy(class ResourceLocation const& packLocation, bool recurse);
-
+    // vIndex: 25
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const& packRelativePath
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DirectoryPackAccessStrategy(::ResourceLocation const& packLocation, bool recurse);
 
-    MCAPI void* ctor$(class ResourceLocation const& packLocation, bool recurse);
+    MCAPI DirectoryPackAccessStrategy(
+        ::std::unique_ptr<::PackAssetSet>&& assetSet,
+        ::ResourceLocation const&           packLocation,
+        bool                                recurse
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourceLocation const& packLocation, bool recurse);
 
-    MCAPI bool canRecurse$() const;
+    MCAPI void*
+    $ctor(::std::unique_ptr<::PackAssetSet>&& assetSet, ::ResourceLocation const& packLocation, bool recurse);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class PackAccessStrategy> createSubPack$(class Core::Path const& subPath) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool deleteAsset$(class Core::Path const& packRelativePath);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint64 $getPackSize() const;
 
-    MCAPI void forEachIn$(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback,
-        bool                                         recurseAnyways
+    MCAPI ::ResourceLocation const& $getPackLocation() const;
+
+    MCAPI ::std::string const& $getPackName() const;
+
+    MCAPI bool $isWritable() const;
+
+    MCAPI bool $isTrusted() const;
+
+    MCAPI void $setIsTrusted(bool);
+
+    MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+
+    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+
+    MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+
+    MCAPI bool $deleteAsset(::Core::Path const& packRelativePath);
+
+    MCAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
+
+    MCAPI void $forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
     ) const;
 
-    MCAPI void forEachInAssetSet$(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback
+    MCAPI void
+    $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
+
+    MCAPI ::PackAccessStrategyType $getStrategyType() const;
+
+    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+
+    MCAPI bool $canRecurse() const;
+
+    MCAPI void $unload();
+
+    MCAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath
     ) const;
+    // NOLINTEND
 
-    MCAPI bool getAsset$(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
-
-    MCAPI class ResourceLocation const& getPackLocation$() const;
-
-    MCAPI std::string const& getPackName$() const;
-
-    MCAPI uint64 getPackSize$() const;
-
-    MCAPI ::PackAccessStrategyType getStrategyType$() const;
-
-    MCAPI bool hasAsset$(class Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
-
-    MCAPI bool hasFolder$(class Core::Path const& packRelativePath) const;
-
-    MCAPI bool isTrusted$() const;
-
-    MCAPI bool isWritable$() const;
-
-    MCAPI void setIsTrusted$(bool);
-
-    MCAPI void unload$();
-
-    MCAPI bool writeAsset$(class Core::Path const& packRelativePath, std::string const& fileContent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,9 @@
 
 namespace PlayJumpSoundSystem {
 
-enum class SoundType {};
-
+enum class SoundType : int {
+    NormalJump = 0,
+    PowerJump  = 1,
 };
+
+}

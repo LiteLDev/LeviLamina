@@ -12,7 +12,14 @@ namespace persona {
 class ArmSize {
 public:
     // ArmSize inner types define
-    enum class Type {};
+    enum class Type : uint64 {
+        Slim    = 0,
+        Wide    = 0,
+        Count   = 0,
+        Unknown = 0,
+    };
+
+    using SizeInfoList = ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo>;
 
 public:
     // prevent constructor by default
@@ -21,27 +28,10 @@ public:
     ArmSize();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::string getStringFromType(::persona::ArmSize::Type armSizeType);
-
-    MCAPI static ::persona::ArmSize::Type getTypeFromString(std::string_view const& armSizeStr);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI static std::_List_const_iterator<
-        std::_List_val<std::_List_simple_types<std::pair<::persona::ArmSize::Type const, struct persona::SizeInfo>>>>
-    _getSizeInfoIteratorByType(::persona::ArmSize::Type armSizeType);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static std::unordered_map<::persona::ArmSize::Type, struct persona::SizeInfo> const& mInfoList();
-
+    MCAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 
-}; // namespace persona
+} // namespace persona

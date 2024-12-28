@@ -9,30 +9,42 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptTeleportOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnke27782;
+    ::ll::UntypedStorage<4, 12> mUnk3014e4;
+    ::ll::UntypedStorage<1, 2>  mUnk166a30;
+    ::ll::UntypedStorage<4, 16> mUnk7acad9;
+    ::ll::UntypedStorage<1, 2>  mUnkd39ed0;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptTeleportOptions(ScriptTeleportOptions const&);
     ScriptTeleportOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptTeleportOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptTeleportOptions&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTeleportOptions& operator=(::ScriptModuleMinecraft::ScriptTeleportOptions&&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptTeleportOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTeleportOptions&
+    operator=(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
 
     MCAPI ~ScriptTeleportOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptTeleportOptions> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptTeleportOptions> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

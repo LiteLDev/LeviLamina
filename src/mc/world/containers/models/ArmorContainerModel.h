@@ -1,0 +1,79 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/containers/models/ContainerModel.h"
+
+// auto generated forward declare list
+// clang-format off
+class Container;
+class ContainerWeakRef;
+class ItemStack;
+// clang-format on
+
+class ArmorContainerModel : public ::ContainerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkcc24e2;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ArmorContainerModel& operator=(ArmorContainerModel const&);
+    ArmorContainerModel(ArmorContainerModel const&);
+    ArmorContainerModel();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual ~ArmorContainerModel() /*override*/;
+
+    // vIndex: 2
+    virtual void postInit() /*override*/;
+
+    // vIndex: 3
+    virtual void releaseResources() /*override*/;
+
+    // vIndex: 0
+    virtual void containerContentChanged(int) /*override*/;
+
+    // vIndex: 14
+    virtual bool isValid() /*override*/;
+
+    // vIndex: 7
+    virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
+
+    // vIndex: 21
+    virtual ::Container* _getContainer() const /*override*/;
+
+    // vIndex: 24
+    virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $postInit();
+
+    MCAPI void $releaseResources();
+
+    MCAPI void $containerContentChanged(int);
+
+    MCAPI bool $isValid();
+
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+
+    MCAPI ::Container* $_getContainer() const;
+
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    // NOLINTEND
+};

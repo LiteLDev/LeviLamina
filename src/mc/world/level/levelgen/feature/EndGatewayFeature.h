@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class EndGatewayFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,23 +20,30 @@ public:
     EndGatewayFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const /*override*/;
+
     // vIndex: 0
-    virtual ~EndGatewayFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random&) const;
-
+    virtual ~EndGatewayFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const;
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,17 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class HitResult;
+class IConstBlockSource;
+class Random;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,132 +33,140 @@ public:
     ScaffoldingBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScaffoldingBlock() = default;
-
-    // vIndex: 4
-    virtual class HitResult
-    clip(class Block const&, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB getCollisionShape(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+    virtual ::AABB getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 4
+    virtual ::HitResult
+    clip(::Block const&, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 107
+    virtual bool canSlide(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
+
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 57
-    virtual bool canContainLiquid() const;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor&, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 152
+    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int itemValue) const;
-
-    // vIndex: 113
-    virtual bool canSlide(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const&) const;
-
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const&) const;
-
-    MCAPI ScaffoldingBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~ScaffoldingBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI int calculateStability(class BlockSource const& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _updateBlockStability(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScaffoldingBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI int calculateStability(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& MAX_STABILITY();
+    // NOLINTEND
 
-    MCAPI bool canSlide$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class HitResult
-    clip$(class Block const&, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI class AABB getCollisionShape$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI class mce::Color getDustColor$(class Block const&) const;
+    MCAPI ::HitResult
+    $clip(::Block const&, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
 
-    MCAPI std::string getDustParticleName$(class Block const&) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int itemValue) const;
+    MCAPI bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isWaterBlocking$() const;
+    MCAPI bool $isLavaBlocking() const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
+    MCAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI static int const& MAX_STABILITY();
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

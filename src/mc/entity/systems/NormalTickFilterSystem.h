@@ -7,9 +7,20 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class NormalTickFilterSystem {
+// auto generated forward declare list
+// clang-format off
+class DimensionStateComponent;
+class LoadingStateComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct LocalPlayerComponent;
+struct PlayerComponent;
+struct SkipNormalTickComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct NormalTickFilterSystem {
 public:
     // prevent constructor by default
     NormalTickFilterSystem& operator=(NormalTickFilterSystem const&);
@@ -17,30 +28,26 @@ public:
     NormalTickFilterSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createGenericSystem();
+    MCAPI static ::TickingSystemWithInfo createGenericSystem();
 
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerSystem();
+    MCAPI static ::TickingSystemWithInfo createLocalPlayerSystem();
 
     MCAPI static void tickGenericSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            class Optional<class DimensionStateComponent const>>         view,
-        class EntityModifier<class FlagComponent<struct SkipNormalTick>> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+            ::Optional<::DimensionStateComponent const>> view,
+        ::EntityModifier<::SkipNormalTickComponent>      mod
     );
 
     MCAPI static void tickLocalPlayerSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            class Optional<class LoadingStateComponent const>>           view,
-        class EntityModifier<class FlagComponent<struct SkipNormalTick>> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
+            ::Optional<::LoadingStateComponent const>> view,
+        ::EntityModifier<::SkipNormalTickComponent>    mod
     );
-
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class IPathBlockSource {
 public:
     // prevent constructor by default
@@ -10,9 +15,10 @@ public:
     IPathBlockSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPathBlockSource() = default;
+    virtual ~IPathBlockSource();
 
     // vIndex: 1
     virtual bool isInWater() const = 0;
@@ -21,20 +27,30 @@ public:
     virtual bool isInLava() const = 0;
 
     // vIndex: 3
-    virtual bool isWaterBlock(class BlockPos const& blockPos) const = 0;
+    virtual bool isWaterBlock(::BlockPos const&) const = 0;
 
     // vIndex: 4
-    virtual bool isLavaBlock(class BlockPos const& blockPos) const = 0;
+    virtual bool isLavaBlock(::BlockPos const&) const = 0;
 
     // vIndex: 5
-    virtual bool isSolidBlock(class BlockPos const& blockPos) const = 0;
+    virtual bool isSolidBlock(::BlockPos const&) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

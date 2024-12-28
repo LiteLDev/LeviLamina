@@ -10,12 +10,68 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-struct UnderWaterSensingSystem {
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct ActorHeadInWaterFlagComponent;
+struct ActorHeadWasInWaterFlagComponent;
+struct ActorRotationComponent;
+struct CamelFlagComponent;
+struct DimensionTypeComponent;
+struct GetAttachPositionViews;
+struct HorseFlagComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct MobBodyRotationComponent;
+struct MobFlagComponent;
+struct OffsetsComponent;
+struct ParrotFlagComponent;
+struct PassengerComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerComponent;
+struct RenderRotationComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct UpdateWaterStateRequestComponent;
+struct VanillaOffsetComponent;
+struct VehicleComponent;
+// clang-format on
+
+struct UnderWaterSensingSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                     ::Filter<
+                                         ::HorseFlagComponent,
+                                         ::MobFlagComponent,
+                                         ::ParrotFlagComponent,
+                                         ::VehicleComponent,
+                                         ::CamelFlagComponent,
+                                         ::PlayerComponent>,
+                                     ::Read<
+                                         ::DimensionTypeComponent,
+                                         ::StateVectorComponent,
+                                         ::UpdateWaterStateRequestComponent,
+                                         ::ActorRotationComponent,
+                                         ::MobBodyRotationComponent,
+                                         ::PassengerComponent,
+                                         ::RenderRotationComponent,
+                                         ::StandAnimationComponent,
+                                         ::ActorDataFlagComponent,
+                                         ::AABBShapeComponent,
+                                         ::OffsetsComponent,
+                                         ::VanillaOffsetComponent,
+                                         ::PassengerRenderingRidingOffsetComponent>,
+                                     ::Write<>,
+                                     ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+                                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                                     ::GlobalWrite<>,
+                                     ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     UnderWaterSensingSystem& operator=(UnderWaterSensingSystem const&);
@@ -23,176 +79,161 @@ public:
     UnderWaterSensingSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UnderWaterSensingSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct HorseFlag>,
-                          class FlagComponent<struct MobFlag>,
-                          class FlagComponent<struct ParrotFlag>,
-                          struct VehicleComponent,
-                          class FlagComponent<struct CamelFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>>,
-                      struct Read<
-                          struct DimensionTypeComponent,
-                          struct StateVectorComponent,
-                          struct UpdateWaterStateRequestComponent,
-                          struct ActorRotationComponent,
-                          struct MobBodyRotationComponent,
-                          struct PassengerComponent,
-                          struct RenderRotationComponent,
-                          struct StandAnimationComponent,
-                          struct ActorDataFlagComponent,
-                          struct AABBShapeComponent,
-                          struct OffsetsComponent,
-                          struct VanillaOffsetComponent,
-                          struct PassengerRenderingRidingOffsetComponent>,
-                      struct Write<>,
-                      struct AddRemove<
-                          class FlagComponent<struct ActorHeadInWaterFlag>,
-                          class FlagComponent<struct ActorHeadWasInWaterFlag>>,
-                      struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::StateVectorComponent,
+                          ::UpdateWaterStateRequestComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::PassengerComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::ActorDataFlagComponent,
+                          ::AABBShapeComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent>,
+                      ::Write<>,
+                      ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            struct Read<
-                struct DimensionTypeComponent,
-                struct StateVectorComponent,
-                struct UpdateWaterStateRequestComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct PassengerComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct ActorDataFlagComponent,
-                struct AABBShapeComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent>,
-            struct Write<>,
-            struct AddRemove<
-                class FlagComponent<struct ActorHeadInWaterFlag>,
-                class FlagComponent<struct ActorHeadWasInWaterFlag>>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    // vIndex: 0
+    virtual ~UnderWaterSensingSystem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void doUnderWaterSensing(
-        class StrictEntityContext const&                                       entity,
-        struct StateVectorComponent const&                                     stateVectorComponent,
-        struct UpdateWaterStateRequestComponent const&                         request,
-        class Optional<class FlagComponent<struct ActorHeadInWaterFlag> const> headInWater,
-        class EntityModifier<
-            class FlagComponent<struct ActorHeadInWaterFlag>,
-            class FlagComponent<struct ActorHeadWasInWaterFlag>> modifier,
-        struct GetAttachPositionViews const&                     views,
-        class IConstBlockSource const&                           region
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
-
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>>,
-            struct Read<
-                struct DimensionTypeComponent,
-                struct StateVectorComponent,
-                struct UpdateWaterStateRequestComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct PassengerComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct ActorDataFlagComponent,
-                struct AABBShapeComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent>,
-            struct Write<>,
-            struct AddRemove<
-                class FlagComponent<struct ActorHeadInWaterFlag>,
-                class FlagComponent<struct ActorHeadWasInWaterFlag>>,
-            struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entityContext
+    MCAPI static void doUnderWaterSensing(
+        ::StrictEntityContext const&                                                          entity,
+        ::StateVectorComponent const&                                                         stateVectorComponent,
+        ::UpdateWaterStateRequestComponent const&                                             request,
+        ::Optional<::ActorHeadInWaterFlagComponent const>                                     headInWater,
+        ::EntityModifier<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent> modifier,
+        ::GetAttachPositionViews const&                                                       views,
+        ::IConstBlockSource const&                                                            region
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct MobFlag>,
-                         class FlagComponent<struct ParrotFlag>,
-                         struct VehicleComponent,
-                         class FlagComponent<struct CamelFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>>,
-                     struct Read<
-                         struct DimensionTypeComponent,
-                         struct StateVectorComponent,
-                         struct UpdateWaterStateRequestComponent,
-                         struct ActorRotationComponent,
-                         struct MobBodyRotationComponent,
-                         struct PassengerComponent,
-                         struct RenderRotationComponent,
-                         struct StandAnimationComponent,
-                         struct ActorDataFlagComponent,
-                         struct AABBShapeComponent,
-                         struct OffsetsComponent,
-                         struct VanillaOffsetComponent,
-                         struct PassengerRenderingRidingOffsetComponent>,
-                     struct Write<>,
-                     struct AddRemove<
-                         class FlagComponent<struct ActorHeadInWaterFlag>,
-                         class FlagComponent<struct ActorHeadWasInWaterFlag>>,
-                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::HorseFlagComponent,
+                         ::MobFlagComponent,
+                         ::ParrotFlagComponent,
+                         ::VehicleComponent,
+                         ::CamelFlagComponent,
+                         ::PlayerComponent>,
+                     ::Read<
+                         ::DimensionTypeComponent,
+                         ::StateVectorComponent,
+                         ::UpdateWaterStateRequestComponent,
+                         ::ActorRotationComponent,
+                         ::MobBodyRotationComponent,
+                         ::PassengerComponent,
+                         ::RenderRotationComponent,
+                         ::StandAnimationComponent,
+                         ::ActorDataFlagComponent,
+                         ::AABBShapeComponent,
+                         ::OffsetsComponent,
+                         ::VanillaOffsetComponent,
+                         ::PassengerRenderingRidingOffsetComponent>,
+                     ::Write<>,
+                     ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::StateVectorComponent,
+                ::UpdateWaterStateRequestComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::ActorDataFlagComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::ActorHeadInWaterFlagComponent, ::ActorHeadWasInWaterFlagComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

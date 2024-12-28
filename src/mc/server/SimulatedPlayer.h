@@ -6,39 +6,58 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/sim/LookDuration.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
-#include "mc/world/actor/player/BedSleepingResult.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/GameType.h"
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockPos;
+class Certificate;
+class ChunkSource;
+class ChunkViewSource;
+class Dimension;
+class EntityContext;
+class ItemStack;
+class Level;
+class NavigationComponent;
+class NetworkIdentifier;
+class PacketSender;
+class PlayerSuspendLevelStorageSaveToken;
+class ServerNetworkHandler;
+class ServerNetworkSystem;
+class Vec3;
+struct PlayerMovementSettings;
+struct VariantParameterList;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
-namespace Editor { class IEditorPlayer; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace gametest { class BaseGameTestHelper; }
-namespace mce { class Color; }
 namespace mce { class UUID; }
+namespace sim { struct BuildIntent; }
+namespace sim { struct LookAtIntent; }
+namespace sim { struct MovementIntent; }
 // clang-format on
 
 class SimulatedPlayer : public ::ServerPlayer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::sim::MovementIntent>                                      mSimulatedMovement;
+    ::ll::TypedStorage<1, 2, ::sim::BuildIntent>                                          mBuildIntention;
+    ::ll::TypedStorage<8, 40, ::sim::LookAtIntent>                                        mLookAtIntent;
+    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>                                mDestroyingBlockPos;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mCooldownTick;
+    ::ll::TypedStorage<8, 72, ::PlayerMovementSettings>                                   mMovementSettings;
+    ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
+    ::ll::TypedStorage<8, 40, ::PlayerSuspendLevelStorageSaveToken const> mPlayerSuspendLevelStorageSaveToken;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimulatedPlayer& operator=(SimulatedPlayer const&);
@@ -46,72 +65,94 @@ public:
     SimulatedPlayer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
-    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
-
-    // vIndex: 10
-    virtual ~SimulatedPlayer() = default;
-
-    // vIndex: 23
+    // vIndex: 4
     virtual void
-    teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 158
-    virtual void aiStep();
+    // vIndex: 150
+    virtual void aiStep() /*override*/;
 
-    // vIndex: 245
-    virtual bool isSimulated() const;
+    // vIndex: 237
+    virtual bool isSimulated() const /*override*/;
 
-    // vIndex: 246
-    virtual std::string getXuid() const;
+    // vIndex: 238
+    virtual ::std::string getXuid() const /*override*/;
+
+    // vIndex: 239
+    virtual ::PlayerMovementSettings const& getMovementSettings() const /*override*/;
+
+    // vIndex: 21
+    virtual void teleportTo(
+        ::Vec3 const& pos,
+        bool          shouldStopRiding,
+        int           cause,
+        int           sourceEntityType,
+        bool          keepVelocity
+    ) /*override*/;
 
     // vIndex: 247
-    virtual struct PlayerMovementSettings const& getMovementSettings() const;
+    virtual int _getSpawnChunkLimit() const /*override*/;
 
-    // vIndex: 251
-    virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource& mainChunkSource);
+    // vIndex: 243
+    virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 255
-    virtual int _getSpawnChunkLimit() const;
+    // vIndex: 248
+    virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
 
-    // vIndex: 256
-    virtual void _updateChunkPublisherView(class Vec3 const&, float);
+    // vIndex: 0
+    virtual ~SimulatedPlayer() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SimulatedPlayer(
-        class Level&                                           level,
-        class PacketSender&                                    packetSender,
-        class ServerNetworkSystem&                             network,
-        class ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
-        ::GameType                                             playerGameType,
-        class NetworkIdentifier const&                         owner,
-        ::SubClientId                                          subid,
-        std::function<void(class ServerPlayer&)>               playerLoadedCallback,
-        class mce::UUID                                        uuid,
-        std::string const&                                     deviceId,
-        std::unique_ptr<class Certificate>                     certificate,
-        int                                                    maxChunkRadius,
-        bool                                                   enableItemStackNetManager,
-        class EntityContext&                                   entityContext
+        ::Level&                                           level,
+        ::PacketSender&                                    packetSender,
+        ::ServerNetworkSystem&                             network,
+        ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
+        ::GameType                                         playerGameType,
+        ::NetworkIdentifier const&                         owner,
+        ::SubClientId                                      subid,
+        ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
+        ::mce::UUID                                        uuid,
+        ::std::string const&                               deviceId,
+        ::std::unique_ptr<::Certificate>                   certificate,
+        int                                                maxChunkRadius,
+        bool                                               enableItemStackNetManager,
+        ::EntityContext&                                   entityContext
     );
 
-    MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
+    MCAPI void _addMoveComponent();
+
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult _createNavigationResult(::NavigationComponent* navigation
+    ) const;
+
+    MCAPI bool _trySwing();
+
+    MCAPI void _updateMovement();
+
+    MCAPI void _updateRidingComponents();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
 
     MCAPI void postAiStep();
 
     MCAPI void preAiStep();
 
-    MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> gameTestHelper);
+    MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
 
-    MCAPI void setXuid(std::string const& xuid);
+    MCAPI void setXuid(::std::string const& xuid);
 
     MCAPI bool simulateAttack();
 
-    MCAPI bool simulateAttack(class Actor* actor);
+    MCAPI bool simulateAttack(::Actor* actor);
 
-    MCAPI void simulateChat(std::string const& message);
+    MCAPI void simulateChat(::std::string const& message);
 
-    MCAPI bool simulateDestroyBlock(class BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
+    MCAPI bool simulateDestroyBlock(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
 
     MCAPI void simulateDisconnect();
 
@@ -119,38 +160,38 @@ public:
 
     MCAPI void simulateFly();
 
-    MCAPI bool simulateGiveItem(class ItemStack& item, bool selectSlot);
+    MCAPI bool simulateGiveItem(::ItemStack& item, bool selectSlot);
 
     MCAPI bool simulateInteract();
 
-    MCAPI bool simulateInteract(class Actor& actor);
+    MCAPI bool simulateInteract(::Actor& actor);
 
-    MCAPI bool simulateInteract(class BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
+    MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
 
     MCAPI bool simulateJump();
 
-    MCAPI void simulateLocalMove(class Vec3 const& localDirection, float);
+    MCAPI void simulateLocalMove(::Vec3 const& localDirection, float);
 
-    MCAPI void simulateLookAt(class Actor& actor, ::sim::LookDuration lookType);
+    MCAPI void simulateLookAt(::Actor& actor, ::sim::LookDuration lookType);
 
-    MCAPI void simulateLookAt(class BlockPos const& blockPos, ::sim::LookDuration lookType);
+    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
 
-    MCAPI void simulateLookAt(class Vec3 const& pos, ::sim::LookDuration lookType);
+    MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType);
 
-    MCAPI void simulateMoveToLocation(class Vec3 const& position, float speed, bool faceTarget);
+    MCAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
 
-    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(class Actor& actor, float speed);
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(::Actor& actor, float speed);
 
-    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult
-    simulateNavigateToLocation(class Vec3 const& position, float speed);
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
+    simulateNavigateToLocation(::Vec3 const& position, float speed);
 
-    MCAPI void simulateNavigateToLocations(std::vector<class Vec3>&& positions, float speed);
+    MCAPI void simulateNavigateToLocations(::std::vector<::Vec3>&& positions, float speed);
 
     MCAPI bool simulateRespawn();
 
     MCAPI void simulateSetBodyRotation(float degY);
 
-    MCAPI bool simulateSetItem(class ItemStack& item, bool selectSlot, int slot);
+    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
 
     MCAPI void simulateStartBuildInSlot(int slot);
 
@@ -166,91 +207,94 @@ public:
 
     MCAPI void simulateStopUsingItem();
 
-    MCAPI bool simulateUseItem(class ItemStack& item);
+    MCAPI bool simulateUseItem(::ItemStack& item);
 
     MCAPI bool simulateUseItemInSlot(int slot);
 
     MCAPI bool simulateUseItemInSlotOnBlock(
         int                                   slot,
-        class BlockPos const&                 pos,
+        ::BlockPos const&                     pos,
         ::ScriptModuleMinecraft::ScriptFacing face,
-        class Vec3 const&                     facePos
+        ::Vec3 const&                         facePos
     );
 
     MCAPI bool simulateUseItemOnBlock(
-        class ItemStack&                      item,
-        class BlockPos const&                 pos,
+        ::ItemStack&                          item,
+        ::BlockPos const&                     pos,
         ::ScriptModuleMinecraft::ScriptFacing face,
-        class Vec3 const&                     facePos
+        ::Vec3 const&                         facePos
     );
 
-    MCAPI void simulateWorldMove(class Vec3 const& worldDirection, float);
-
-    MCAPI static class SimulatedPlayer* create(
-        std::string const&                                      name,
-        class BlockPos const&                                   spawnPos,
-        DimensionType                                           dimensionId,
-        Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> serverNetworkHandler,
-        std::string const&                                      xuid
-    );
-
-    MCAPI static class SimulatedPlayer* tryGetFromEntity(class EntityContext& entity, bool includeRemoved);
-
+    MCAPI void simulateWorldMove(::Vec3 const& worldDirection, float);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addMoveComponent();
-
-    MCAPI struct ScriptModuleGameTest::ScriptNavigationResult
-    _createNavigationResult(class NavigationComponent* navigation) const;
-
-    MCAPI void _startCooldown();
-
-    MCAPI bool _trySwing();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Level&                                           level,
-        class PacketSender&                                    packetSender,
-        class ServerNetworkSystem&                             network,
-        class ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
-        ::GameType                                             playerGameType,
-        class NetworkIdentifier const&                         owner,
-        ::SubClientId                                          subid,
-        std::function<void(class ServerPlayer&)>               playerLoadedCallback,
-        class mce::UUID                                        uuid,
-        std::string const&                                     deviceId,
-        std::unique_ptr<class Certificate>                     certificate,
-        int                                                    maxChunkRadius,
-        bool                                                   enableItemStackNetManager,
-        class EntityContext&                                   entityContext
+    MCAPI static ::SimulatedPlayer* create(
+        ::std::string const&                                  name,
+        ::BlockPos const&                                     spawnPos,
+        ::DimensionType                                       dimensionId,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
+        ::std::string const&                                  xuid
     );
 
-    MCAPI std::shared_ptr<class ChunkViewSource> _createChunkSource$(class ChunkSource& mainChunkSource);
+    MCAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    // NOLINTEND
 
-    MCAPI int _getSpawnChunkLimit$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Level&                                           level,
+        ::PacketSender&                                    packetSender,
+        ::ServerNetworkSystem&                             network,
+        ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
+        ::GameType                                         playerGameType,
+        ::NetworkIdentifier const&                         owner,
+        ::SubClientId                                      subid,
+        ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
+        ::mce::UUID                                        uuid,
+        ::std::string const&                               deviceId,
+        ::std::unique_ptr<::Certificate>                   certificate,
+        int                                                maxChunkRadius,
+        bool                                               enableItemStackNetManager,
+        ::EntityContext&                                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI void _updateChunkPublisherView$(class Vec3 const&, float);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void aiStep$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI struct PlayerMovementSettings const& getMovementSettings$() const;
+    MCAPI void $aiStep();
 
-    MCAPI std::string getXuid$() const;
+    MCAPI bool $isSimulated() const;
 
-    MCAPI void initializeComponents$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI ::std::string $getXuid() const;
 
-    MCAPI bool isSimulated$() const;
+    MCAPI ::PlayerMovementSettings const& $getMovementSettings() const;
 
     MCAPI void
-    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
+    MCAPI int $_getSpawnChunkLimit() const;
+
+    MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
+
+    MCAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

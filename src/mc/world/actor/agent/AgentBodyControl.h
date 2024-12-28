@@ -5,32 +5,43 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/BodyControl.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class AgentBodyControl : public ::BodyControl {
 public:
     // prevent constructor by default
     AgentBodyControl& operator=(AgentBodyControl const&);
     AgentBodyControl(AgentBodyControl const&);
+    AgentBodyControl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AgentBodyControl() = default;
-
     // vIndex: 1
-    virtual void clientTick(class Mob& mob);
+    virtual void clientTick(::Mob& mob) /*override*/;
 
-    MCAPI AgentBodyControl();
-
+    // vIndex: 0
+    virtual ~AgentBodyControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $clientTick(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void clientTick$(class Mob& mob);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,7 +6,16 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct TickingSystemWithInfo;
+struct WitherBossFlagComponent;
+struct WitherBossPreAIStepResultComponent;
+// clang-format on
 
 class WitherBossPreAIStepSystem {
 public:
@@ -16,28 +25,22 @@ public:
     WitherBossPreAIStepSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doWitherBossPreAIStepSystem(
-        class StrictEntityContext&                                      context,
-        class ActorOwnerComponent&                                      actorOwnerComponent,
-        class EntityModifier<struct WitherBossPreAIStepResultComponent> mod
+        ::StrictEntityContext&                                 context,
+        ::ActorOwnerComponent&                                 actorOwnerComponent,
+        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
     MCAPI static void _tickWitherBossPreAIStepSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct WitherBossFlag>>,
-            class ActorOwnerComponent>                                  view,
-        class EntityModifier<struct WitherBossPreAIStepResultComponent> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::WitherBossFlagComponent>,
+            ::ActorOwnerComponent>                             view,
+        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

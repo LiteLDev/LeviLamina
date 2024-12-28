@@ -13,4 +13,4 @@ public:
     WorkingData();
 };
 
-}; // namespace OperationNodeDetails
+} // namespace OperationNodeDetails

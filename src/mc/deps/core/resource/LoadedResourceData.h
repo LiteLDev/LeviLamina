@@ -4,21 +4,28 @@
 
 class LoadedResourceData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk3cf435;
+    ::ll::UntypedStorage<8, 32> mUnk232c89;
+    ::ll::UntypedStorage<1, 1>  mUnkfc66b1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LoadedResourceData& operator=(LoadedResourceData const&);
     LoadedResourceData(LoadedResourceData const&);
     LoadedResourceData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~LoadedResourceData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

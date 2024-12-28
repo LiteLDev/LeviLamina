@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorInteraction;
+class ItemStack;
+class Player;
+// clang-format on
+
 class BalloonableComponent {
 public:
     // prevent constructor by default
@@ -10,14 +18,12 @@ public:
     BalloonableComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
+    MCAPI bool attach(::Actor& owner, ::Actor& attacher, ::ItemStack& item);
 
-    // NOLINTEND
+    MCAPI void detach(::Actor& owner, ::Actor& balloon);
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool attach(class Actor& owner, class Actor& attacher, class ItemStack& item);
-
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

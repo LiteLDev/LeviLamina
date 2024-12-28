@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
+
 class AnimationComponentID {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkdb1217;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AnimationComponentID& operator=(AnimationComponentID const&);
@@ -13,24 +24,23 @@ public:
     AnimationComponentID();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI AnimationComponentID(
-        struct ActorUniqueID const& actorUniqueId,
-        ushort                      attachableDepth,
-        ::AttachableSlotIndex       attachableIndex
+        ::ActorUniqueID const& actorUniqueId,
+        ushort                 attachableDepth,
+        ::AttachableSlotIndex  attachableIndex
     );
 
     MCAPI uint64 getHash() const;
 
-    MCAPI bool operator==(class AnimationComponentID const& rhs) const;
-
+    MCAPI bool operator==(::AnimationComponentID const& rhs) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    ctor$(struct ActorUniqueID const& actorUniqueId, ushort attachableDepth, ::AttachableSlotIndex attachableIndex);
-
+    $ctor(::ActorUniqueID const& actorUniqueId, ushort attachableDepth, ::AttachableSlotIndex attachableIndex);
     // NOLINTEND
 };

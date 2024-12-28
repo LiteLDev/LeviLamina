@@ -9,32 +9,39 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorHitAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkb17479;
+    ::ll::UntypedStorage<8, 40> mUnk63b410;
+    ::ll::UntypedStorage<8, 40> mUnkf4cca9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorHitAfterEvent& operator=(ScriptActorHitAfterEvent const&);
+    ScriptActorHitAfterEvent(ScriptActorHitAfterEvent const&);
     ScriptActorHitAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorHitAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
 
     MCAPI ~ScriptActorHitAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptActorHitAfterEvent>
-    bindV010();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHitAfterEvent> bindV010();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -4,20 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
+class AgeableComponent;
+class AgeableDefinition;
 class WeakEntityRef;
+struct ActorDefinitionFeedItem;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
-struct ActorDefinitionFeedItem;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptAgeableComponent {
+class ScriptAgeableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::AgeableComponent, ::AgeableDefinition> {
 public:
     // prevent constructor by default
     ScriptAgeableComponent& operator=(ScriptAgeableComponent const&);
@@ -25,47 +29,63 @@ public:
     ScriptAgeableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptAgeableComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptAgeableComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
-
-    MCAPI class Scripting::Result<float> getDuration() const;
-
-    MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem>> getFeedItems() const;
-
-    MCAPI class Scripting::Result<class ActorDefinitionTrigger> getGrowUp() const;
-
-    MCAPI class Scripting::Result<std::string> getTransformToItem() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAgeableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptAgeableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptAgeableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getDuration() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
+
+    MCAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptAgeableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

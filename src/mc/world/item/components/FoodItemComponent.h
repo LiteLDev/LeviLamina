@@ -5,85 +5,120 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/item/components/IFoodItemComponent.h"
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class HashedString;
+class Item;
+class ItemDescriptor;
+class ItemStack;
+class Level;
+class Player;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class FoodItemComponent {
+class FoodItemComponent : public ::NetworkedItemComponent<::FoodItemComponent>, public ::IFoodItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk66a403;
+    ::ll::UntypedStorage<4, 4>  mUnkb1ddb3;
+    ::ll::UntypedStorage<8, 16> mUnk2e30dd;
+    ::ll::UntypedStorage<1, 1>  mUnk1e72b9;
+    ::ll::UntypedStorage<8, 8>  mUnk9ca5c8;
+    ::ll::UntypedStorage<8, 16> mUnk28346c;
+    ::ll::UntypedStorage<8, 16> mUnka08e56;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FoodItemComponent& operator=(FoodItemComponent const&);
     FoodItemComponent(FoodItemComponent const&);
+    FoodItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void _initializeComponent();
+    // vIndex: 0
+    virtual ~FoodItemComponent() /*override*/;
 
-    MCVAPI bool canAlwaysEat() const;
+    // vIndex: 7
+    virtual void _initializeComponent() /*override*/;
 
-    MCVAPI class Item const* eatItem(class ItemStack& instance, class Actor& actor, class Level& level);
+    // vIndex: 1
+    virtual int getNutrition() const /*override*/;
 
-    MCVAPI int getNutrition() const;
+    // vIndex: 2
+    virtual float getSaturationModifier() const /*override*/;
 
-    MCVAPI float getSaturationModifier() const;
+    // vIndex: 3
+    virtual bool canAlwaysEat() const /*override*/;
 
-    MCVAPI bool use(class ItemStack& instance, class Player& player);
+    // vIndex: 4
+    virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    MCVAPI class Item const* useTimeDepleted(
-        ::ItemUseMethod&       itemUseMethod,
-        class ItemStack const& initialInstance,
-        class ItemStack&       instance,
-        class Player&          player,
-        class Level&           level
-    );
+    // vIndex: 5
+    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
-    MCAPI FoodItemComponent();
-
-    MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
-
-    MCAPI class Bedrock::PubSub::Connector<void(class ItemStack const&, class ItemStack&, class Actor&)>& onConsume();
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    // vIndex: 6
+    virtual ::Item const*
+    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForIFoodItemComponent();
+    MCAPI ::ItemDescriptor getUsingConvertsToItemDescriptor() const;
 
-    MCAPI static void** vftableForNetworkedItemComponent();
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
-    MCAPI void _initializeComponent$();
-
-    MCAPI bool canAlwaysEat$() const;
-
-    MCAPI class Item const* eatItem$(class ItemStack& instance, class Actor& actor, class Level& level);
-
-    MCAPI int getNutrition$() const;
-
-    MCAPI float getSaturationModifier$() const;
-
-    MCAPI bool use$(class ItemStack& instance, class Player& player);
-
-    MCAPI class Item const* useTimeDepleted$(
-        ::ItemUseMethod&       itemUseMethod,
-        class ItemStack const& initialInstance,
-        class ItemStack&       instance,
-        class Player&          player,
-        class Level&           level
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+
+    MCAPI int $getNutrition() const;
+
+    MCAPI float $getSaturationModifier() const;
+
+    MCAPI bool $canAlwaysEat() const;
+
+    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+
+    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+
+    MCAPI ::Item const* $useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForNetworkedItemComponent();
+
+    MCAPI static void** $vftableForIFoodItemComponent();
     // NOLINTEND
 };

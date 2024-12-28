@@ -20,28 +20,32 @@ public:
     ScriptUIManager(ScriptUIManager const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptUIManager();
 
-    MCAPI class Scripting::Result<void> closeAllForms(class ScriptModuleMinecraft::ScriptPlayer&);
-
-    MCAPI class ScriptModuleMinecraftServerUI::ScriptUIManager&
-    operator=(class ScriptModuleMinecraftServerUI::ScriptUIManager&&);
+    MCAPI ::Scripting::Result<void> closeAllForms(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
 
     MCAPI ~ScriptUIManager();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptUIManager> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftServerUI::ScriptUIManager> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftServerUI
+} // namespace ScriptModuleMinecraftServerUI

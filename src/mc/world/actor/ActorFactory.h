@@ -7,7 +7,42 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/actor/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorComponentFactory;
+class ActorDefinitionGroup;
+class ActorGoalFactory;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class DimensionHeightRange;
+class EntityContext;
+class Experiments;
+class IEntityInitializer;
+class Level;
+class LevelChunk;
+class Vec2;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct ActorFactoryData;
+struct VanillaActorData;
+// clang-format on
+
 class ActorFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Level>>                  mLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IEntityInitializer>>                 mEntityInitializer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ActorDefinitionGroup>>      mDefinitions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorFactoryData>> mFactoryFunctions;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                               mExperimentalEntities;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorComponentFactory>>               mComponentFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorGoalFactory>>                    mGoalFactory;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorFactory& operator=(ActorFactory const&);
@@ -15,139 +50,147 @@ public:
     ActorFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorFactory() = default;
-
-    MCAPI explicit ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level> level);
-
-    MCAPI void applyEntityInitializer(std::unique_ptr<class Actor> actor, class EntityContext& entity) const;
-
-    MCAPI std::vector<std::pair<std::string, struct ActorDefinitionIdentifier const*>>
-          buildSummonEntityTypeEnum(class Experiments const& experiments) const;
-
-    MCAPI void clearDefinitionGroup();
-
-    MCAPI class OwnerPtr<class EntityContext> clientCreateDisplayActor(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Actor*                            spawner,
-        class Vec3 const&                       position,
-        class Vec2 const&                       rotation
-    );
-
-    MCAPI class OwnerPtr<class EntityContext> createActor(
-        std::string const&                      method,
-        struct ActorDefinitionIdentifier const& identifier,
-        class Actor*                            spawner,
-        class Vec3 const&                       position,
-        class Vec2 const&                       rotation
-    );
-
-    MCAPI class OwnerPtr<class EntityContext>
-    createBornActor(struct ActorDefinitionIdentifier const& identifier, class Actor* parent);
-
-    MCAPI class OwnerPtr<class EntityContext>
-    createBornActor(struct ActorDefinitionIdentifier const& identifier, class BlockPos const& pos);
-
-    MCAPI class OwnerPtr<class EntityContext> createSpawnedActor(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Actor*                            spawner,
-        class Vec3 const&                       position,
-        class Vec2 const&                       rotation
-    );
-
-    MCAPI class OwnerPtr<class EntityContext> createSummonedActor(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Actor*                            spawner,
-        class Vec3 const&                       position
-    );
-
-    MCAPI class OwnerPtr<class EntityContext>
-    createTransformedActor(struct ActorDefinitionIdentifier const& identifier, class Actor* from);
-
-    MCAPI class ActorGoalFactory& getGoalFactory();
-
-    MCAPI void init(class Experiments const& experiments);
-
-    MCAPI class OwnerPtr<class EntityContext> loadActor(class CompoundTag* tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI class OwnerPtr<class EntityContext> loadActor(
-        class CompoundTag*                tag,
-        class DataLoadHelper&             dataLoadHelper,
-        class DimensionHeightRange const& heightRange
-    );
-
-    MCAPI class OwnerPtr<class EntityContext> loadActor(
-        class CompoundTag*                tag,
-        class DataLoadHelper&             dataLoadHelper,
-        class DimensionHeightRange const& heightRange,
-        class LevelChunk const*           levelChunk
-    );
-
-    MCAPI ::ActorType lookupEntityType(struct ActorDefinitionIdentifier const& identifier) const;
-
-    MCAPI void setDefinitionGroup(class ActorDefinitionGroup* group);
-
-    MCAPI void setEntityInitializer(std::shared_ptr<class IEntityInitializer> entityInitializer);
-
-    MCAPI static void clearEntityMappings();
-
-    MCAPI static void fillFactoryData(
-        struct ActorDefinitionIdentifier const&                         identifier,
-        struct ActorDefinitionIdentifier const&                         baseIdentifier,
-        std::unordered_map<std::string, struct ActorFactoryData> const& factoryFunctions,
-        struct ActorFactoryData&                                        data
-    );
-
-    MCAPI static class Actor* fixLegacyEntity(class BlockSource& region, class CompoundTag const* tag);
-
-    MCAPI static void registerEntityMapping(
-        ::ActorType const& actorType,
-        bool               allowSummon,
-        std::unique_ptr<
-            class
-            Actor> (*const&
-                        factory)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&),
-        std::optional<int> experimentIndex
-    );
-
+    virtual ~ActorFactory();
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+
     MCAPI void _buildSummonableActorList(
-        class Experiments const&                                                experiments,
-        std::function<void(std::string const&, struct ActorFactoryData const&)> callback
+        ::Experiments const&                                                   experiments,
+        ::std::function<void(::std::string const&, ::ActorFactoryData const&)> callback
     ) const;
 
-    MCAPI class OwnerPtr<class EntityContext> _constructActor(
-        struct ActorDefinitionIdentifier const& identifier,
-        class Vec3 const&                       position,
-        class Vec2 const&                       rotation,
-        std::vector<std::string> const*         previousDefinitions
+    MCAPI ::OwnerPtr<::EntityContext> _constructActor(
+        ::ActorDefinitionIdentifier const&  identifier,
+        ::Vec3 const&                       position,
+        ::Vec2 const&                       rotation,
+        ::std::vector<::std::string> const* previousDefinitions
     ) const;
 
-    MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup* group);
+    MCAPI void _loadDefinitionGroups(::ActorDefinitionGroup* group);
 
     MCAPI void _loadDefinitionsHelper();
 
     MCAPI bool _validateActorData(
-        class CompoundTag&                tag,
-        struct ActorDefinitionIdentifier& outDefinition,
-        class Vec3&                       outPosition,
-        class LevelChunk const*           levelChunk
+        ::CompoundTag&               tag,
+        ::ActorDefinitionIdentifier& outDefinition,
+        ::Vec3&                      outPosition,
+        ::LevelChunk const*          levelChunk
     ) const;
 
+    MCAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
+
+    MCAPI ::std::vector<::std::pair<::std::string, ::ActorDefinitionIdentifier const*>>
+    buildSummonEntityTypeEnum(::Experiments const& experiments) const;
+
+    MCAPI void clearDefinitionGroup();
+
+    MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
+        ::ActorDefinitionIdentifier const& identifier,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
+        ::Vec2 const&                      rotation
+    );
+
+    MCAPI ::OwnerPtr<::EntityContext> createActor(
+        ::std::string const&               method,
+        ::ActorDefinitionIdentifier const& identifier,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
+        ::Vec2 const&                      rotation
+    );
+
+    MCAPI ::OwnerPtr<::EntityContext> createBornActor(::ActorDefinitionIdentifier const& identifier, ::Actor* parent);
+
+    MCAPI ::OwnerPtr<::EntityContext>
+    createBornActor(::ActorDefinitionIdentifier const& identifier, ::BlockPos const& pos);
+
+    MCAPI ::OwnerPtr<::EntityContext> createSpawnedActor(
+        ::ActorDefinitionIdentifier const& identifier,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
+        ::Vec2 const&                      rotation
+    );
+
+    MCAPI ::OwnerPtr<::EntityContext>
+    createSummonedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* spawner, ::Vec3 const& position);
+
+    MCAPI ::OwnerPtr<::EntityContext>
+    createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
+
+    MCAPI ::ActorGoalFactory& getGoalFactory();
+
+    MCAPI void init(::Experiments const& experiments);
+
+    MCAPI ::OwnerPtr<::EntityContext> loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI ::OwnerPtr<::EntityContext>
+    loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper, ::DimensionHeightRange const& heightRange);
+
+    MCAPI ::OwnerPtr<::EntityContext> loadActor(
+        ::CompoundTag*                tag,
+        ::DataLoadHelper&             dataLoadHelper,
+        ::DimensionHeightRange const& heightRange,
+        ::LevelChunk const*           levelChunk
+    );
+
+    MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
+
+    MCAPI void setDefinitionGroup(::ActorDefinitionGroup* group);
+
+    MCAPI void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void clearEntityMappings();
 
-    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class Level> level);
+    MCAPI static void fillFactoryData(
+        ::ActorDefinitionIdentifier const&                             identifier,
+        ::ActorDefinitionIdentifier const&                             baseIdentifier,
+        ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
+        ::ActorFactoryData&                                            data
+    );
 
-    MCAPI static std::vector<struct VanillaActorData>& builtinEntityMappings();
+    MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
 
+    MCAPI static void registerEntityMapping(
+        ::ActorType const& actorType,
+        bool               allowSummon,
+        ::std::unique_ptr<
+            ::Actor> (*const& factory)(::ActorDefinitionGroup*, ::ActorDefinitionIdentifier const&, ::EntityContext&),
+        ::std::optional<int> experimentIndex
+    );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::VanillaActorData>& builtinEntityMappings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

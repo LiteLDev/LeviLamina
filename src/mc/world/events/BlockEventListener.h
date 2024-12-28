@@ -6,6 +6,19 @@
 #include "mc/world/events/EventResult.h"
 #include "mc/world/level/block/actor/PistonState.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class Dimension;
+class ItemStackBase;
+class Level;
+class Player;
+struct BlockNotificationEvent;
+struct NewBlockID;
+// clang-format on
+
 class BlockEventListener {
 public:
     // prevent constructor by default
@@ -14,97 +27,92 @@ public:
     BlockEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventListener() = default;
+    virtual ~BlockEventListener();
 
     // vIndex: 1
-    virtual ::EventResult onBlockPlacedByPlayer(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
-    );
+    virtual ::EventResult
+    onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     // vIndex: 2
     virtual ::EventResult
-    onBlockDestroyedByPlayer(class Player& player, class Block const& destroyedBlock, class BlockPos const& pos, class ItemStackBase const&, class ItemStackBase const&);
+    onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
 
     // vIndex: 3
-    virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player& player, class BlockPos const& pos);
+    virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 
     // vIndex: 4
     virtual ::EventResult
-    onBlockMovedByPiston(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
+    onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
 
     // vIndex: 5
-    virtual ::EventResult onBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
+    virtual ::EventResult onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
     // vIndex: 6
-    virtual ::EventResult onBlockDestructionStarted(class Player&, class BlockPos const&, class Block const&, uchar);
+    virtual ::EventResult onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const);
 
     // vIndex: 7
-    virtual ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
+    virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
     // vIndex: 8
-    virtual ::EventResult onBlockExploded(
-        class Dimension&      dimension,
-        class BlockPos const& blockPos,
-        class Block const&    destroyedBlock,
-        class Actor*          source
-    );
+    virtual ::EventResult
+    onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
 
     // vIndex: 9
-    virtual ::EventResult
-    onBlockModified(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+    virtual ::EventResult onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
 
     // vIndex: 10
-    virtual ::EventResult onUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
+    virtual ::EventResult onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
     // vIndex: 11
-    virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
-
+    virtual ::EventResult onEvent(::BlockNotificationEvent const& event);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     MCAPI ::EventResult
-    onBlockDestroyedByPlayer$(class Player& player, class Block const& destroyedBlock, class BlockPos const& pos, class ItemStackBase const&, class ItemStackBase const&);
+    $onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
 
-    MCAPI ::EventResult onBlockDestructionStarted$(class Player&, class BlockPos const&, class Block const&, uchar);
+    MCAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 
-    MCAPI ::EventResult onBlockDestructionStopped$(class Player& player, class BlockPos const& blockPos, int progress);
+    MCAPI ::EventResult
+    $onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
 
-    MCAPI ::EventResult onBlockExploded$(
-        class Dimension&      dimension,
-        class BlockPos const& blockPos,
-        class Block const&    destroyedBlock,
-        class Actor*          source
+    MCAPI ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
+
+    MCAPI ::EventResult $onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const);
+
+    MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
+
+    MCAPI ::EventResult $onBlockExploded(
+        ::Dimension&      dimension,
+        ::BlockPos const& blockPos,
+        ::Block const&    destroyedBlock,
+        ::Actor*          source
     );
 
-    MCAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer$(class Player& player, class BlockPos const& pos);
+    MCAPI ::EventResult $onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
 
-    MCAPI ::EventResult onBlockInteractedWith$(class Player& player, class BlockPos const& blockPos);
+    MCAPI ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
-    MCAPI ::EventResult
-    onBlockModified$(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
+    MCAPI ::EventResult $onEvent(::BlockNotificationEvent const& event);
+    // NOLINTEND
 
-    MCAPI ::EventResult
-    onBlockMovedByPiston$(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
-
-    MCAPI ::EventResult onBlockPlacedByPlayer$(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
-    );
-
-    MCAPI ::EventResult onEvent$(struct BlockNotificationEvent const&);
-
-    MCAPI ::EventResult onUnknownBlockReceived$(class Level& level, struct NewBlockID const& blockId, ushort data);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

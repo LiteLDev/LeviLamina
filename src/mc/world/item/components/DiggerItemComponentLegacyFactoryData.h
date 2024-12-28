@@ -3,45 +3,70 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct DiggerItemComponentLegacyFactoryData {
+struct DiggerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DiggerItemComponentLegacyFactoryData();
-
-    MCAPI DiggerItemComponentLegacyFactoryData();
-
-    MCAPI DiggerItemComponentLegacyFactoryData(struct DiggerItemComponentLegacyFactoryData const&);
-
-    MCAPI struct DiggerItemComponentLegacyFactoryData& operator=(struct DiggerItemComponentLegacyFactoryData&&);
-
-    MCAPI struct DiggerItemComponentLegacyFactoryData& operator=(struct DiggerItemComponentLegacyFactoryData const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
+    ::ll::UntypedStorage<1, 1>   mUnk3f3f82;
+    ::ll::UntypedStorage<8, 24>  mUnk94d125;
+    ::ll::UntypedStorage<8, 256> mUnk19543e;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    DiggerItemComponentLegacyFactoryData();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~DiggerItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct DiggerItemComponentLegacyFactoryData const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DiggerItemComponentLegacyFactoryData(::DiggerItemComponentLegacyFactoryData const&);
 
-    MCAPI void* ctor$();
+    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData const&);
 
-    MCAPI void dtor$();
+    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData&&);
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DiggerItemComponentLegacyFactoryData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

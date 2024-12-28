@@ -2,10 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockLootComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkb77f25;
+    // NOLINTEND
 
-struct BlockLootComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockLootComponent& operator=(BlockLootComponent const&);
@@ -13,18 +16,8 @@ public:
     BlockLootComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockLootComponent() = default;
-
-    MCAPI std::string const& getLootTable() const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI ::std::string const& getLootTable() const;
     // NOLINTEND
 };

@@ -8,11 +8,11 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace personaDefault::packId {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class mce::UUID const& PERSONA_BUILTIN_PACK();
+MCAPI ::mce::UUID const& PERSONA_BUILTIN_PACK();
 
-MCAPI class mce::UUID const& PERSONA_TESTING_PACK();
+MCAPI ::mce::UUID const& PERSONA_TESTING_PACK();
 // NOLINTEND
 
-}; // namespace personaDefault::packId
+} // namespace personaDefault::packId

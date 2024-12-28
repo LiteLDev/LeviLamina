@@ -3,22 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Material;
+class Random;
 // clang-format on
 
-class SculkCatalystBlock : public ::ActorBlock {
+class SculkCatalystBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     SculkCatalystBlock& operator=(SculkCatalystBlock const&);
@@ -26,33 +23,53 @@ public:
     SculkCatalystBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~SculkCatalystBlock() = default;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI SculkCatalystBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI static void
-    bloom(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Random&);
-
+    virtual ~SculkCatalystBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SculkCatalystBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const& block) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

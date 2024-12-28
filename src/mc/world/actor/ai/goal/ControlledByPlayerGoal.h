@@ -3,10 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class ControlledByPlayerGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk2faddd;
+    ::ll::UntypedStorage<4, 4> mUnk927c96;
+    ::ll::UntypedStorage<4, 4> mUnk29c794;
+    ::ll::UntypedStorage<4, 4> mUnka78353;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ControlledByPlayerGoal& operator=(ControlledByPlayerGoal const&);
@@ -14,51 +27,64 @@ public:
     ControlledByPlayerGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ControlledByPlayerGoal() = default;
-
-    // vIndex: 1
-    virtual bool canUse();
-
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
+
+    // vIndex: 1
+    virtual bool canUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit ControlledByPlayerGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~ControlledByPlayerGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canBeControlledByPassenger();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ControlledByPlayerGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI bool _canBeControlledByPassenger();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $stop();
 
-    MCAPI void tick$();
+    MCAPI bool $canUse();
 
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

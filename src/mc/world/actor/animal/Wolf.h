@@ -3,30 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Mob;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Wolf : public ::Animal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2a67c0;
+    ::ll::UntypedStorage<4, 4> mUnk7af3c9;
+    ::ll::UntypedStorage<4, 4> mUnk3b4e09;
+    ::ll::UntypedStorage<4, 4> mUnke5d0b7;
+    ::ll::UntypedStorage<1, 1> mUnkb0504e;
+    ::ll::UntypedStorage<1, 1> mUnk6c6cc2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Wolf& operator=(Wolf const&);
@@ -34,42 +39,51 @@ public:
     Wolf();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Wolf() = default;
+    // vIndex: 179
+    virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 60
-    virtual void setSitting(bool value);
+    // vIndex: 84
+    virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 68
-    virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
+    // vIndex: 173
+    virtual void onBorn(::Actor&, ::Actor& parentRight) /*override*/;
 
-    // vIndex: 74
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    // vIndex: 95
+    virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 88
-    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 57
+    virtual void setSitting(bool value) /*override*/;
 
-    // vIndex: 99
-    virtual void onSynchedDataUpdate(int dataId);
+    // vIndex: 71
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 158
+    virtual bool isAlliedTo(::Mob* other) /*override*/;
 
-    // vIndex: 166
-    virtual bool isAlliedTo(class Mob* other);
+    // vIndex: 65
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 181
-    virtual void onBorn(class Actor&, class Actor& parentRight);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 187
-    virtual void newServerAiStep();
+    // vIndex: 8
+    virtual ~Wolf() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Wolf(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+
+    MCAPI void _avoidSnowBury();
+
+    MCAPI void _updateTintColor();
 
     MCAPI float getHeadRollAngle(float a);
 
@@ -80,46 +94,56 @@ public:
     MCAPI bool isShaking() const;
 
     MCAPI void postNormalTick();
-
-    MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent>
-    getCustomHurtSound(class Mob& mob, ::ActorDamageCause cause);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _avoidSnowBury();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>
+    getCustomHurtSound(::Mob& mob, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent getAmbientSound$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $newServerAiStep();
 
-    MCAPI void handleEntityEvent$(::ActorEvent id, int data);
+    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool isAlliedTo$(class Mob* other);
+    MCAPI void $onBorn(::Actor&, ::Actor& parentRight);
 
-    MCAPI bool load$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void newServerAiStep$();
+    MCAPI void $setSitting(bool value);
 
-    MCAPI void onBorn$(class Actor&, class Actor& parentRight);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI void onSynchedDataUpdate$(int dataId);
+    MCAPI bool $isAlliedTo(::Mob* other);
 
-    MCAPI void setSitting$(bool value);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

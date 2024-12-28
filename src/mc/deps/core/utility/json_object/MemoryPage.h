@@ -2,14 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class Document; }
-// clang-format on
-
 namespace Bedrock::JSONObject {
 
 class MemoryPage {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf74249;
+    ::ll::UntypedStorage<8, 8> mUnkda6988;
+    ::ll::UntypedStorage<4, 4> mUnk5d624f;
+    ::ll::UntypedStorage<4, 4> mUnk165ea1;
+    ::ll::UntypedStorage<8, 8> mUnk221efb;
+    ::ll::UntypedStorage<8, 8> mUnkffec1b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MemoryPage& operator=(MemoryPage const&);
@@ -17,17 +23,7 @@ public:
     MemoryPage();
 
 public:
-    // NOLINTBEGIN
-    MCAPI
-    MemoryPage(gsl::not_null<class Bedrock::JSONObject::Document*>, class Bedrock::JSONObject::MemoryPage*, uint, uint);
-
-    MCAPI void* allocateBack(uint64 bytes, uint64 align);
-
-    MCAPI void* allocateFront(uint64 bytes, uint64 align);
-
-    // NOLINTEND
-
-    // private:
+    // member functions
     // NOLINTBEGIN
     MCAPI void* _allocate(
         uint64 (Bedrock::JSONObject::MemoryPage::*allocateFn)(uint64, uint64),
@@ -40,15 +36,10 @@ public:
 
     MCAPI uint64 _tryAllocateFront(uint64 bytes, uint64 align);
 
-    // NOLINTEND
+    MCAPI void* allocateBack(uint64 bytes, uint64 align);
 
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void*
-    ctor$(gsl::not_null<class Bedrock::JSONObject::Document*>, class Bedrock::JSONObject::MemoryPage*, uint, uint);
-
+    MCAPI void* allocateFront(uint64 bytes, uint64 align);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

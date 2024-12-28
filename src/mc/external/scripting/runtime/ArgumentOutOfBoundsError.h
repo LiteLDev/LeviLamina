@@ -2,9 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/runtime/Error.h"
+
 namespace Scripting {
 
-struct ArgumentOutOfBoundsError {
+struct ArgumentOutOfBoundsError : public ::Scripting::Error {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk740508;
+    ::ll::UntypedStorage<8, 8> mUnkafc9ac;
+    ::ll::UntypedStorage<8, 8> mUnke9fe98;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ArgumentOutOfBoundsError& operator=(ArgumentOutOfBoundsError const&);
@@ -12,25 +23,24 @@ public:
     ArgumentOutOfBoundsError();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ArgumentOutOfBoundsError(struct Scripting::ArgumentOutOfBoundsError&&);
-
-    MCAPI ArgumentOutOfBoundsError(std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
 
     MCAPI ~ArgumentOutOfBoundsError();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::ArgumentOutOfBoundsError&&);
+    MCAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& message_, double value_, double minValue_, double maxValue_);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

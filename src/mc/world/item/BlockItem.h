@@ -3,18 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class CompoundTag;
+class HashedString;
+class InteractionResult;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Vec3;
+struct Brightness;
+struct ResolvedItemIconInfo;
 // clang-format on
 
 class BlockItem : public ::Item {
@@ -25,76 +28,80 @@ public:
     BlockItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockItem();
-
-    // vIndex: 44
-    virtual bool isDestructive(int auxValue) const;
-
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
-
     // vIndex: 108
-    virtual struct Brightness getLightEmission(int data) const;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 109
-    virtual int getIconYOffset() const;
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 116
-    virtual bool
-    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 112
+    virtual ::Brightness getLightEmission(int data) const /*override*/;
+
+    // vIndex: 47
+    virtual bool isDestructive(int auxValue) const /*override*/;
+
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
-    MCAPI BlockItem(std::string const& name, int id, class HashedString const& blockName);
-
+    // vIndex: 0
+    virtual ~BlockItem() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _displayHeightLimitErrorMessages(class Actor& actor, int y, bool displayClientSideOnly) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BlockItem(::std::string const& name, int id, ::HashedString const& blockName);
 
-    MCAPI void* ctor$(std::string const& name, int id, class HashedString const& blockName);
+    MCAPI void _displayHeightLimitErrorMessages(::Actor& actor, int y, bool displayClientSideOnly) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& blockName);
+    // NOLINTEND
 
-    MCAPI bool
-    _calculatePlacePos$(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI int getIconYOffset$() const;
+    MCAPI ::Brightness $getLightEmission(int data) const;
 
-    MCAPI struct Brightness getLightEmission$(int data) const;
+    MCAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI bool isDestructive$(int auxValue) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool isValidAuxValue$(int auxValue) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

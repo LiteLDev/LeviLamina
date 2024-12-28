@@ -2,10 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct ActorUniqueID;
+// clang-format on
+
 class MingleComponent {
 public:
     // MingleComponent inner types define
-    enum class MingleState {};
+    enum class MingleState : int {
+        Unavailable      = 0,
+        Available        = 1,
+        PartneredActive  = 2,
+        PartneredPassive = 3,
+        Mingling         = 4,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk5ed224;
+    ::ll::UntypedStorage<8, 8> mUnkcbaa3e;
+    ::ll::UntypedStorage<8, 8> mUnk7deb29;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -13,25 +33,24 @@ public:
     MingleComponent(MingleComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI MingleComponent();
 
-    MCAPI class MingleComponent& clearPreviousPartnerId();
+    MCAPI ::MingleComponent& clearPreviousPartnerId();
 
-    MCAPI class Actor* fetchCurrentPartner(class Actor const& actorInLevel) const;
+    MCAPI ::Actor* fetchCurrentPartner(::Actor const& actorInLevel) const;
 
     MCAPI void resetState();
 
-    MCAPI class MingleComponent& setMingleState(::MingleComponent::MingleState val);
+    MCAPI ::MingleComponent& setMingleState(::MingleComponent::MingleState val);
 
-    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID val);
-
+    MCAPI ::MingleComponent& setPartnerId(::ActorUniqueID val);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

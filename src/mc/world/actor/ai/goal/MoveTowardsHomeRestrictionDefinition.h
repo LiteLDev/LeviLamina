@@ -18,27 +18,43 @@ public:
     MoveTowardsHomeRestrictionDefinition(MoveTowardsHomeRestrictionDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MoveTowardsHomeRestrictionDefinition() = default;
-
-    MCAPI MoveTowardsHomeRestrictionDefinition();
-
-    MCAPI static void buildSchema(
-        std::string const&                                name,
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::EmptyClass,
-            class MoveTowardsHomeRestrictionDefinition>>& root
-    );
-
+    virtual ~MoveTowardsHomeRestrictionDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MoveTowardsHomeRestrictionDefinition();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const& name,
+        ::std::shared_ptr<
+            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveTowardsHomeRestrictionDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

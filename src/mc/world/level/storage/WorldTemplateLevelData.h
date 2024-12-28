@@ -2,72 +2,90 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class CompoundTag;
+class ContentIdentity;
+struct PackIdVersion;
+// clang-format on
+
 class WorldTemplateLevelData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk9adb40;
+    ::ll::UntypedStorage<8, 136> mUnk15e625;
+    ::ll::UntypedStorage<8, 120> mUnka86a1c;
+    ::ll::UntypedStorage<8, 120> mUnk331089;
+    ::ll::UntypedStorage<1, 1>   mUnkb1a099;
+    ::ll::UntypedStorage<1, 1>   mUnk4582d1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WorldTemplateLevelData& operator=(WorldTemplateLevelData const&);
     WorldTemplateLevelData(WorldTemplateLevelData const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WorldTemplateLevelData();
 
     MCAPI WorldTemplateLevelData(
-        bool                         isFromWorldTemplate,
-        bool                         isWorldTemplateOptionLocked,
-        class BaseGameVersion const& baseGameVersion,
-        class BaseGameVersion const& maxBaseGameVersion
+        bool                     isFromWorldTemplate,
+        bool                     isWorldTemplateOptionLocked,
+        ::BaseGameVersion const& baseGameVersion,
+        ::BaseGameVersion const& maxBaseGameVersion
     );
 
-    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
+    MCAPI void _getTagData(::CompoundTag const& tag);
 
-    MCAPI class ContentIdentity const& getContentIdentity() const;
+    MCAPI void _setTagData(::CompoundTag& tag) const;
 
-    MCAPI void getTagData(class CompoundTag const& tag);
+    MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI struct PackIdVersion const& getWorldTemplateIdentity() const;
+    MCAPI ::ContentIdentity const& getContentIdentity() const;
+
+    MCAPI void getTagData(::CompoundTag const& tag);
+
+    MCAPI ::PackIdVersion const& getWorldTemplateIdentity() const;
 
     MCAPI bool isFromWorldTemplate() const;
 
     MCAPI bool isWorldTemplateOptionLocked() const;
 
-    MCAPI void setBaseGameVersion(class BaseGameVersion const& baseGameVersion);
+    MCAPI void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
-    MCAPI void setContentIdentity(class ContentIdentity const& contentIdentity);
+    MCAPI void setContentIdentity(::ContentIdentity const& contentIdentity);
 
     MCAPI void setIsWorldTemplateOptionLocked(bool isWorldTemplateOptionLocked);
 
-    MCAPI void setMaxBaseGameVersion(class BaseGameVersion const& maxBaseGameVersion);
+    MCAPI void setMaxBaseGameVersion(::BaseGameVersion const& maxBaseGameVersion);
 
-    MCAPI void setTagData(class CompoundTag& tag) const;
+    MCAPI void setTagData(::CompoundTag& tag) const;
 
-    MCAPI void setWorldTemplateIdentity(struct PackIdVersion const& identity);
+    MCAPI void setWorldTemplateIdentity(::PackIdVersion const& identity);
 
     MCAPI ~WorldTemplateLevelData();
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _getTagData(class CompoundTag const& tag);
-
-    MCAPI void _setTagData(class CompoundTag& tag) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        bool                         isFromWorldTemplate,
-        bool                         isWorldTemplateOptionLocked,
-        class BaseGameVersion const& baseGameVersion,
-        class BaseGameVersion const& maxBaseGameVersion
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        bool                     isFromWorldTemplate,
+        bool                     isWorldTemplateOptionLocked,
+        ::BaseGameVersion const& baseGameVersion,
+        ::BaseGameVersion const& maxBaseGameVersion
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -9,30 +9,34 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerDimensionChangeAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk2f3b64;
+    ::ll::UntypedStorage<8, 32> mUnk5326b7;
+    ::ll::UntypedStorage<4, 12> mUnk6edd65;
+    ::ll::UntypedStorage<8, 32> mUnk2f364e;
+    ::ll::UntypedStorage<4, 12> mUnke1ab96;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptPlayerDimensionChangeAfterEvent& operator=(ScriptPlayerDimensionChangeAfterEvent const&);
+    ScriptPlayerDimensionChangeAfterEvent(ScriptPlayerDimensionChangeAfterEvent const&);
     ScriptPlayerDimensionChangeAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptPlayerDimensionChangeAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>
+    bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -4,31 +4,34 @@
 
 class ActorAnimationControllerPtr {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk573969;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActorAnimationControllerPtr& operator=(ActorAnimationControllerPtr const&);
     ActorAnimationControllerPtr(ActorAnimationControllerPtr const&);
     ActorAnimationControllerPtr();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class HashedString const& getName() const;
-
     MCAPI bool isNull() const;
 
-    MCAPI class ActorAnimationController* operator->();
-
-    MCAPI class ActorAnimationController const* operator->() const;
-
     MCAPI ~ActorAnimationControllerPtr();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::ActorAnimationControllerPtr const& NONE();
+    // NOLINTEND
 
-    MCAPI static class ActorAnimationControllerPtr const& NONE();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

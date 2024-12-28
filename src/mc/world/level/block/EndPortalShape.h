@@ -2,7 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+// clang-format on
+
 class EndPortalShape {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnke4c8d8;
+    ::ll::UntypedStorage<4, 4>  mUnk975a30;
+    ::ll::UntypedStorage<4, 4>  mUnk4250e9;
+    ::ll::UntypedStorage<4, 4>  mUnkd6a933;
+    ::ll::UntypedStorage<4, 12> mUnk39cdb1;
+    ::ll::UntypedStorage<4, 12> mUnkada50f;
+    ::ll::UntypedStorage<4, 4>  mUnkbf3ee9;
+    ::ll::UntypedStorage<8, 24> mUnk7a0811;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EndPortalShape& operator=(EndPortalShape const&);
@@ -10,23 +29,24 @@ public:
     EndPortalShape();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI EndPortalShape(class BlockSource& region, class BlockPos pos);
+    MCAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
 
-    MCAPI class BlockPos getOrigin() const;
-
-    MCAPI bool isValid(class BlockSource& region);
+    MCAPI bool isValid(::BlockSource& region);
 
     MCAPI ~EndPortalShape();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockSource& region, class BlockPos pos);
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

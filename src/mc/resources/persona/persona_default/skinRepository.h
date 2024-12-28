@@ -8,13 +8,15 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace personaDefault::skinRepository {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class mce::UUID const& PERSONA_SKIN_PACK_UUID();
+MCAPI ::mce::UUID const& CUSTOM_SKIN_PACK_UUID();
+
+MCAPI ::mce::UUID const& PERSONA_SKIN_PACK_UUID();
 
 MCAPI uint64 const& PERSONA_SKIN_PACK_UUID_HASH();
 
-MCAPI class mce::UUID const& VANILLA_SKIN_PACK_UUID();
+MCAPI ::mce::UUID const& VANILLA_SKIN_PACK_UUID();
 // NOLINTEND
 
-}; // namespace personaDefault::skinRepository
+} // namespace personaDefault::skinRepository

@@ -2,62 +2,90 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+struct PlayerScoreboardId;
+struct ScoreboardId;
+// clang-format on
+
 class IdentityDefinition {
 public:
     // IdentityDefinition inner types define
-    enum class Type {};
+    enum class Type : uchar {
+        Invalid    = 0,
+        Player     = 1,
+        Entity     = 2,
+        FakePlayer = 3,
+    };
+
+    using PlayerNameResolver = ::std::function<::std::string const&(::ActorUniqueID)>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::ScoreboardId>            mScoreboardId;
+    ::ll::TypedStorage<1, 1, bool>                       mIsHiddenFakePlayer;
+    ::ll::TypedStorage<8, 8, ::PlayerScoreboardId>       mPlayerId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mEntityId;
+    ::ll::TypedStorage<8, 32, ::std::string>             mPlayerName;
+    ::ll::TypedStorage<1, 1, ::IdentityDefinition::Type> mIdentityType;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     IdentityDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI IdentityDefinition(class IdentityDefinition&& o);
+    MCAPI IdentityDefinition(::IdentityDefinition&& o);
 
-    MCAPI IdentityDefinition(class IdentityDefinition const& o);
+    MCAPI IdentityDefinition(::IdentityDefinition const& o);
 
-    MCAPI struct ActorUniqueID const& getEntityId() const;
+    MCAPI ::ActorUniqueID const& getEntityId() const;
 
-    MCAPI std::string const& getFakePlayerName() const;
+    MCAPI ::std::string const& getFakePlayerName() const;
 
     MCAPI ::IdentityDefinition::Type getIdentityType() const;
 
-    MCAPI std::string const& getName(std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver
+    MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
 
-    MCAPI struct PlayerScoreboardId const& getPlayerId() const;
+    MCAPI ::PlayerScoreboardId const& getPlayerId() const;
 
-    MCAPI struct ScoreboardId const& getScoreboardId() const;
+    MCAPI ::ScoreboardId const& getScoreboardId() const;
 
     MCAPI bool isEntityType() const;
-
-    MCAPI bool isFakeType() const;
-
-    MCAPI bool isHiddenFakePlayerType() const;
 
     MCAPI bool isPlayerType() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI class IdentityDefinition& operator=(class IdentityDefinition&& o);
+    MCAPI ::IdentityDefinition& operator=(::IdentityDefinition&& o);
 
-    MCAPI class IdentityDefinition& operator=(class IdentityDefinition const& o);
+    MCAPI ::IdentityDefinition& operator=(::IdentityDefinition const& o);
 
     MCAPI ~IdentityDefinition();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class IdentityDefinition const& o);
+    MCAPI static ::IdentityDefinition const& Invalid();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class IdentityDefinition&& o);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IdentityDefinition&& o);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::IdentityDefinition const& o);
+    // NOLINTEND
 
-    MCAPI static class IdentityDefinition const& Invalid();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

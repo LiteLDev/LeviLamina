@@ -5,18 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::PlatformUtils { struct PlatformData; }
-// clang-format on
-
 namespace Bedrock::PlatformUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class Core::PathBuffer<std::string> const& getExternalStoragePath();
+MCAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
-MCAPI std::string const& getPackageFamilyName();
+MCAPI ::std::string const& getPackageFamilyName();
 
 MCAPI bool isCentennial();
 // NOLINTEND
 
-}; // namespace Bedrock::PlatformUtils
+} // namespace Bedrock::PlatformUtils

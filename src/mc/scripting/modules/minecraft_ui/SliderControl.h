@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -12,12 +12,21 @@
 class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
-namespace ScriptModuleMinecraftServerUI { class IControl; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
 
 class SliderControl : public ::ScriptModuleMinecraftServerUI::IControl {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 216> mUnkd9ccf7;
+    ::ll::UntypedStorage<4, 4>   mUnkf5463a;
+    ::ll::UntypedStorage<4, 4>   mUnk5faac6;
+    ::ll::UntypedStorage<4, 4>   mUnk494292;
+    ::ll::UntypedStorage<4, 8>   mUnkc29b0a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SliderControl& operator=(SliderControl const&);
@@ -25,31 +34,58 @@ public:
     SliderControl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SliderControl() = default;
-
     // vIndex: 1
-    virtual class Scripting::Result<class Json::Value>
-    buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    virtual ::Scripting::Result_deprecated<::Json::Value>
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
-    MCAPI
-    SliderControl(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, float, float, float, std::optional<int>);
-
+    // vIndex: 0
+    virtual ~SliderControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SliderControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
+        float                                                                             minValue,
+        float                                                                             maxValue,
+        float                                                                             step,
+        ::std::optional<int>                                                              defaultValue
+    );
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, float, float, float, std::optional<int>);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
+        float                                                                             minValue,
+        float                                                                             maxValue,
+        float                                                                             step,
+        ::std::optional<int>                                                              defaultValue
+    );
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<class Json::Value>
-    buildJson$(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftServerUI
+} // namespace ScriptModuleMinecraftServerUI

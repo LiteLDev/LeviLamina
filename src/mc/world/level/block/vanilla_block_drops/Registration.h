@@ -13,53 +13,41 @@ struct ResourceDropsContext;
 // clang-format on
 
 namespace VanillaBlockDrops::Registration {
+// functions
 // NOLINTBEGIN
 MCAPI void
-add(class HashedString const& blockId,
-    std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-        dropStrategy);
+add(::HashedString const&                                                                         blockId,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy);
 
-MCAPI void dropExperience(class HashedString const& blockId);
+MCAPI void dropExperience(::HashedString const& blockId);
 
-MCAPI void dropNothing(class HashedString const& blockId);
+MCAPI void dropNothing(::HashedString const& blockId);
 
 MCAPI void dropOther(
-    class HashedString const&                                                                    blockId,
-    class HashedString const&                                                                    itemId,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
+    ::HashedString const&                                                             blockId,
+    ::HashedString const&                                                             itemId,
+    ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
 MCAPI void dropOtherNoExplosionDecay(
-    class HashedString const&                                                                    blockId,
-    class HashedString const&                                                                    itemId,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
+    ::HashedString const&                                                             blockId,
+    ::HashedString const&                                                             itemId,
+    ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropOtherWhenSilkTouch(class HashedString const& blockId, class HashedString const& itemId);
+MCAPI void dropOtherWhenSilkTouch(::HashedString const& blockId, ::HashedString const& itemId);
 
 MCAPI void dropSelf(
-    class HashedString const&                                                                    blockId,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
-);
-
-MCAPI void dropSelf(
-    class HashedString const&                                                                    blockId,
-    std::vector<class BlockState const*>                                                         statesToKeep,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
+    ::HashedString const&                                                             blockId,
+    ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
 MCAPI void dropSelfNoExplosionDecay(
-    class HashedString const&                                                                    blockId,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
+    ::HashedString const&                                                             blockId,
+    ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
 
-MCAPI void dropSelfNoExplosionDecay(
-    class HashedString const&                                                                    blockId,
-    std::vector<class BlockState const*>                                                         statesToKeep,
-    std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> countProvider
-);
-
-MCAPI void dropWhenSilkTouch(class HashedString const& blockId, std::vector<class BlockState const*> statesToKeep);
+MCAPI void dropWhenSilkTouch(::HashedString const& blockId, ::std::vector<::BlockState const*> statesToKeep);
 // NOLINTEND
 
-}; // namespace VanillaBlockDrops::Registration
+} // namespace VanillaBlockDrops::Registration

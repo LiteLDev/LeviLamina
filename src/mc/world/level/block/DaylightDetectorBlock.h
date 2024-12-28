@@ -3,22 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Player;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class DaylightDetectorBlock : public ::ActorBlock {
+class DaylightDetectorBlock : public ::ActorBlockBase<::BlockLegacy> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkbf044a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DaylightDetectorBlock& operator=(DaylightDetectorBlock const&);
@@ -26,75 +33,98 @@ public:
     DaylightDetectorBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DaylightDetectorBlock() = default;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 151
+    virtual void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
+
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 57
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 47
-    virtual bool isSignalSource() const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    // vIndex: 62
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const&) const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    // vIndex: 163
-    virtual void updateSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI DaylightDetectorBlock(std::string const& nameId, int id, bool isInverted);
-
+    // vIndex: 0
+    virtual ~DaylightDetectorBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DaylightDetectorBlock(::std::string const& nameId, int id, bool isInverted);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool isInverted);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool isInverted);
+    // NOLINTEND
 
-    MCAPI bool checkIsPathable$(class Actor&, class BlockPos const&, class BlockPos const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isSignalSource$() const;
+    MCAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    MCAPI bool $isSignalSource() const;
 
-    MCAPI void updateSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

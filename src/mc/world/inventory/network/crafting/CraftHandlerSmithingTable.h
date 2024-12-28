@@ -3,12 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStackRequestActionCraftBase;
+class Recipes;
+// clang-format on
+
 class CraftHandlerSmithingTable : public ::CraftHandlerBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5fa9a4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CraftHandlerSmithingTable& operator=(CraftHandlerSmithingTable const&);
@@ -16,26 +26,36 @@ public:
     CraftHandlerSmithingTable();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftHandlerSmithingTable() = default;
+    virtual ~CraftHandlerSmithingTable() /*override*/;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const& requestAction);
+    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction
+    ) /*override*/;
 
     // vIndex: 6
-    virtual class Recipes const* _getLevelRecipes() const;
-
+    virtual ::Recipes const* _getLevelRecipes() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Recipes const* _getLevelRecipes$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult _handleCraftAction$(class ItemStackRequestActionCraftBase const& requestAction);
+    MCAPI ::Recipes const* $_getLevelRecipes() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

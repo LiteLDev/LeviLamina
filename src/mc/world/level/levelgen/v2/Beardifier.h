@@ -13,35 +13,49 @@ namespace br::worldgen {
 
 class Beardifier {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk81b59c;
+    ::ll::UntypedStorage<8, 24> mUnke6bbab;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Beardifier& operator=(Beardifier const&);
     Beardifier(Beardifier const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Beardifier();
 
-    MCAPI double compute(class BlockPos pos) const;
+    MCAPI double compute(::BlockPos pos) const;
 
     MCAPI bool empty() const;
 
-    MCAPI class br::worldgen::Beardifier& operator=(class br::worldgen::Beardifier&&);
+    MCAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
 
     MCAPI ~Beardifier();
-
-    MCAPI static class br::worldgen::Beardifier
-    forStructuresInChunk(class br::worldgen::StructureCache const& structureCache, class ChunkPos pos);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::br::worldgen::Beardifier
+    forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

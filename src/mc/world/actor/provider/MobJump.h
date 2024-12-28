@@ -2,23 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 namespace MobJump {
+// functions
 // NOLINTBEGIN
-MCAPI int getNoJumpDelay(class EntityContext const& provider);
+MCAPI int getNoJumpDelay(::EntityContext const& provider);
 
-MCAPI void initializeMob(class EntityContext& provider);
+MCAPI void initializeMob(::EntityContext& provider);
 
-MCAPI bool isJumping(class EntityContext const& provider);
+MCAPI bool isJumping(::EntityContext const& provider);
 
-MCAPI void setJumpPendingScale(class EntityContext& provider, float jumpPendingScale);
+MCAPI void setJumpPendingScale(::EntityContext& provider, float jumpPendingScale);
 
-MCAPI void setJumpStartPosition(class EntityContext& provider, class Vec3 const& position);
+MCAPI void setJumpVelRedux(::EntityContext& provider, bool jumpStartVelRedux);
 
-MCAPI void setJumpVelRedux(class EntityContext& provider, bool jumpStartVelRedux);
+MCAPI void setJumping(::EntityContext& provider, bool jumping);
 
-MCAPI void setJumping(class EntityContext& provider, bool jumping);
-
-MCAPI void setNoJumpDelay(class EntityContext& provider, int noJumpDelay);
+MCAPI void setNoJumpDelay(::EntityContext& provider, int noJumpDelay);
 // NOLINTEND
 
-}; // namespace MobJump
+} // namespace MobJump

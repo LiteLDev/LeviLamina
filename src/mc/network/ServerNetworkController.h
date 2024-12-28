@@ -3,14 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/IServerNetworkController.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
+class ServerPlayer;
 namespace mce { class UUID; }
 // clang-format on
 
-class ServerNetworkController {
+struct ServerNetworkController : public ::IServerNetworkController {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk522e4e;
+    ::ll::UntypedStorage<8, 16> mUnk1ced00;
+    ::ll::UntypedStorage<8, 64> mUnk733c97;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ServerNetworkController& operator=(ServerNetworkController const&);
@@ -18,43 +28,60 @@ public:
     ServerNetworkController();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ServerNetworkController() = default;
-
     // vIndex: 1
-    virtual bool isDedicatedServer() const;
+    virtual bool isDedicatedServer() const /*override*/;
 
     // vIndex: 2
-    virtual bool isHost(class mce::UUID const& playerID) const;
+    virtual bool isHost(::mce::UUID const& playerID) const /*override*/;
 
     // vIndex: 3
-    virtual bool canChangePermission(class mce::UUID const& playerId, class ServerPlayer const& player) const;
+    virtual bool canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const /*override*/;
 
-    MCAPI ServerNetworkController(
-        bool                                                             isDedicatedServer,
-        class mce::UUID const&                                           hostID,
-        std::function<bool(class ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
-    );
-
+    // vIndex: 0
+    virtual ~ServerNetworkController() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        bool                                                             isDedicatedServer,
-        class mce::UUID const&                                           hostID,
-        std::function<bool(class ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
+    MCAPI ServerNetworkController(
+        bool                                                           isDedicatedServer,
+        ::mce::UUID const&                                             hostID,
+        ::std::function<bool(::ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
     );
+    // NOLINTEND
 
-    MCAPI bool canChangePermission$(class mce::UUID const& playerId, class ServerPlayer const& player) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        bool                                                           isDedicatedServer,
+        ::mce::UUID const&                                             hostID,
+        ::std::function<bool(::ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
+    );
+    // NOLINTEND
 
-    MCAPI bool isDedicatedServer$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isHost$(class mce::UUID const& playerID) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isDedicatedServer() const;
 
+    MCAPI bool $isHost(::mce::UUID const& playerID) const;
+
+    MCAPI bool $canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class Player;
+// clang-format on
+
 class CraftingContainer : public ::Container {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
+    ::ll::TypedStorage<4, 4, int>                         mWidth;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CraftingContainer& operator=(CraftingContainer const&);
@@ -13,72 +26,87 @@ public:
     CraftingContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingContainer();
+    virtual ~CraftingContainer() /*override*/;
+
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
+
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
+
+    // vIndex: 31
+    virtual void setContainerChanged(int slot) /*override*/;
+
+    // vIndex: 22
+    virtual void startOpen(::Player&) /*override*/;
+
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
-
-    // vIndex: 7
-    virtual class ItemStack const& getItem(int slot) const;
-
-    // vIndex: 12
-    virtual void setItem(int slot, class ItemStack const& item);
-
-    // vIndex: 20
-    virtual int getContainerSize() const;
-
-    // vIndex: 21
-    virtual int getMaxStackSize() const;
-
-    // vIndex: 22
-    virtual void startOpen(class Player&);
-
-    // vIndex: 23
-    virtual void stopOpen(class Player&);
-
-    // vIndex: 31
-    virtual void setContainerChanged(int slot);
-
-    MCAPI CraftingContainer(int w, int h);
-
-    MCAPI class ItemStack const& getItem(int x, int y) const;
-
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CraftingContainer(int w, int h);
 
-    MCAPI void* ctor$(int w, int h);
+    MCAPI ::ItemStack const& getItem(int x, int y) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int w, int h);
+    // NOLINTEND
 
-    MCAPI int getContainerSize$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI int $getContainerSize() const;
+
+    MCAPI int $getMaxStackSize() const;
+
+    MCAPI void $setContainerChanged(int slot);
+
+    MCAPI void $startOpen(::Player&);
+
+    MCAPI void $stopOpen(::Player& player);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+    // NOLINTEND
 
-    MCAPI void setContainerChanged$(int slot);
-
-    MCAPI void setItem$(int slot, class ItemStack const& item);
-
-    MCAPI void startOpen$(class Player&);
-
-    MCAPI void stopOpen$(class Player&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

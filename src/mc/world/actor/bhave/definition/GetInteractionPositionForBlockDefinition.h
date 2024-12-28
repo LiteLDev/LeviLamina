@@ -7,10 +7,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
 class GetInteractionPositionForBlockDefinition : public ::BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk350871;
+    ::ll::UntypedStorage<8, 32> mUnk2bb5a0;
+    ::ll::UntypedStorage<4, 12> mUnkcbce58;
+    ::ll::UntypedStorage<8, 32> mUnk594722;
+    ::ll::UntypedStorage<8, 32> mUnk6033a7;
+    ::ll::UntypedStorage<8, 32> mUnk1403b0;
+    ::ll::UntypedStorage<4, 4>  mUnk3feb65;
+    ::ll::UntypedStorage<8, 32> mUnkd757b3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GetInteractionPositionForBlockDefinition& operator=(GetInteractionPositionForBlockDefinition const&);
@@ -18,23 +32,30 @@ public:
     GetInteractionPositionForBlockDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GetInteractionPositionForBlockDefinition();
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~GetInteractionPositionForBlockDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

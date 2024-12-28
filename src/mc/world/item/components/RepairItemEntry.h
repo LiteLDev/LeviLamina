@@ -4,24 +4,29 @@
 
 struct RepairItemEntry {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk689ed9;
+    ::ll::UntypedStorage<8, 216> mUnk3d4a96;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    RepairItemEntry& operator=(RepairItemEntry const&);
     RepairItemEntry(RepairItemEntry const&);
     RepairItemEntry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&);
-
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&);
+    MCAPI bool operator==(::RepairItemEntry const& rhs) const;
 
     MCAPI ~RepairItemEntry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

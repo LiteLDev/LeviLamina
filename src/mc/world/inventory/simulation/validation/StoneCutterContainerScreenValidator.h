@@ -3,48 +3,76 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
+
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+class ContainerScreenValidation;
+class ItemStack;
+struct ContainerValidationCraftInputs;
+struct ContainerValidationCraftResult;
+struct RecipeNetIdTag;
+// clang-format on
 
 class StoneCutterContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
     // prevent constructor by default
     StoneCutterContainerScreenValidator& operator=(StoneCutterContainerScreenValidator const&);
     StoneCutterContainerScreenValidator(StoneCutterContainerScreenValidator const&);
+    StoneCutterContainerScreenValidator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StoneCutterContainerScreenValidator() = default;
-
     // vIndex: 2
-    virtual bool isCraftingImplemented();
+    virtual bool isCraftingImplemented() /*override*/;
 
     // vIndex: 3
-    virtual struct ContainerValidationCraftResult getCraftResult(
-        class ContainerScreenContext const&                    screenContext,
-        class ContainerScreenValidation&                       screenValidation,
-        std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
-    );
+    virtual ::ContainerValidationCraftResult getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    ) /*override*/;
 
-    MCAPI StoneCutterContainerScreenValidator();
-
+    // vIndex: 0
+    virtual ~StoneCutterContainerScreenValidator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool _recipeMatches(
+        ::ContainerScreenContext const& screenContext,
+        ::RecipeNetId const&            recipeNetId,
+        ::ItemStack const&              inputStack
+    ) const;
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct ContainerValidationCraftResult getCraftResult$(
-        class ContainerScreenContext const&                    screenContext,
-        class ContainerScreenValidation&                       screenValidation,
-        std::unique_ptr<struct ContainerValidationCraftInputs> craftInputs
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isCraftingImplemented();
+
+    MCAPI ::ContainerValidationCraftResult $getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
     );
+    // NOLINTEND
 
-    MCAPI bool isCraftingImplemented$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

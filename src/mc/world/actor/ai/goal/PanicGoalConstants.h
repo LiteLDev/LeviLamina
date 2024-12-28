@@ -6,13 +6,9 @@
 #include "mc/world/actor/ActorDamageCause.h"
 
 namespace PanicGoalConstants {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::vector<::ActorDamageCause>& POST_SUMMER_24_UPDATE_DEFAULT_NO_PANIC_DAMAGE_CAUSES();
-
-MCAPI std::vector<::ActorDamageCause>& POST_SUMMER_24_UPDATE_DEFAULT_PANIC_DAMAGE_CAUSES();
-
-MCAPI std::vector<::ActorDamageCause>& PRE_SUMMER_24_UPDATE_DEFAULT_PANIC_DAMAGE_CAUSES();
+MCAPI ::std::array<::ActorDamageCause, 18> const& POST_SUMMER_24_UPDATE_DEFAULT_PANIC_DAMAGE_CAUSES();
 // NOLINTEND
 
-}; // namespace PanicGoalConstants
+} // namespace PanicGoalConstants

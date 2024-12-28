@@ -3,9 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/typeid_t.h"
+#include "mc/config/TypedScreenCapabilities.h"
 
-struct EDUWorldsScreenCapabilities {
+struct EDUWorldsScreenCapabilities : public ::TypedScreenCapabilities<::EDUWorldsScreenCapabilities> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk61a6e6;
+    ::ll::UntypedStorage<1, 1> mUnk9d40e1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EDUWorldsScreenCapabilities& operator=(EDUWorldsScreenCapabilities const&);
@@ -13,21 +20,21 @@ public:
     EDUWorldsScreenCapabilities();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EDUWorldsScreenCapabilities() = default;
-
-    // vIndex: 1
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+    virtual ~EDUWorldsScreenCapabilities() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

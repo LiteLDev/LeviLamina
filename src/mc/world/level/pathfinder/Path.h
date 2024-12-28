@@ -6,6 +6,13 @@
 #include "mc/world/level/pathfinder/NodeType.h"
 #include "mc/world/level/pathfinder/PathCompletionType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class Vec3;
+// clang-format on
+
 class Path {
 public:
     // Path inner types declare
@@ -16,11 +23,28 @@ public:
     // Path inner types define
     class Node {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 12, ::BlockPos> pos;
+        ::ll::TypedStorage<4, 4, ::NodeType>  type;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Node& operator=(Node const&);
         Node(Node const&);
         Node();
     };
+
+    using NodeArray = ::std::vector<::Path::Node>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::Path::Node>> mNodes;
+    ::ll::TypedStorage<8, 8, uint64>                       mIndex;
+    ::ll::TypedStorage<1, 1, ::PathCompletionType>         mCompletionType;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -28,28 +52,31 @@ public:
     Path(Path const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Path();
 
-    MCAPI class BlockPos const& currentPos() const;
+    MCAPI void buildFromNodes(::std::vector<::Path::Node>&& nodeArray, ::PathCompletionType completionType);
 
-    MCAPI class Vec3 currentPos(class Actor const* actor) const;
+    MCAPI ::BlockPos const& currentPos() const;
 
-    MCAPI bool endsInXZ(class Vec3 const& pos);
+    MCAPI ::Vec3 currentPos(::Actor const* actor) const;
+
+    MCAPI bool endsInXZ(::Vec3 const& pos);
 
     MCAPI ::PathCompletionType getCompletionType() const;
 
-    MCAPI class Vec3 getEndPos() const;
+    MCAPI ::Vec3 getEndPos() const;
 
     MCAPI uint64 getIndex() const;
 
-    MCAPI class BlockPos const& getLastPos() const;
+    MCAPI ::BlockPos const& getLastPos() const;
 
-    MCAPI class BlockPos const& getNodePos(uint64 index) const;
+    MCAPI ::BlockPos const& getNodePos(uint64 index) const;
 
     MCAPI ::NodeType getNodeType(uint64 index) const;
 
-    MCAPI class Vec3 getPos(class Actor const* actor, uint64 index) const;
+    MCAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
     MCAPI uint64 getSize() const;
 
@@ -57,32 +84,28 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI std::unique_ptr<class Path> makeCopy() const;
+    MCAPI ::std::unique_ptr<::Path> makeCopy() const;
 
     MCAPI void next();
 
-    MCAPI bool sameAs(class Path* path) const;
+    MCAPI bool sameAs(::Path* path) const;
 
     MCAPI void setIndex(uint64 index);
 
     MCAPI void setSize(uint64 length);
 
     MCAPI ~Path();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void buildFromNodes(std::vector<class Path::Node>&& nodeArray, ::PathCompletionType completionType);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

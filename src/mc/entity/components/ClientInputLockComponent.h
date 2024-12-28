@@ -13,16 +13,25 @@ namespace Bedrock::PubSub { class Subscription; }
 
 struct ClientInputLockComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk6314bf;
+    ::ll::UntypedStorage<4, 4>   mUnkd0f48f;
+    ::ll::UntypedStorage<8, 128> mUnka6fa64;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ClientInputLockComponent& operator=(ClientInputLockComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ClientInputLockComponent();
 
-    MCAPI ClientInputLockComponent(struct ClientInputLockComponent&& rhs);
+    MCAPI ClientInputLockComponent(::ClientInputLockComponent const& rhs);
 
-    MCAPI ClientInputLockComponent(struct ClientInputLockComponent const& rhs);
+    MCAPI ClientInputLockComponent(::ClientInputLockComponent&& rhs);
 
     MCAPI bool hasAnyLock() const;
 
@@ -30,29 +39,31 @@ public:
 
     MCAPI bool hasLockType(::ClientInputLockType lock) const;
 
-    MCAPI struct ClientInputLockComponent& operator=(struct ClientInputLockComponent&& rhs);
+    MCAPI ::ClientInputLockComponent& operator=(::ClientInputLockComponent&& rhs);
 
-    MCAPI class Bedrock::PubSub::Subscription
-    registerLockCategoryChangeCallback(std::function<void(::ClientInputLockCategory, bool)> callback);
+    MCAPI ::Bedrock::PubSub::Subscription
+    registerLockCategoryChangeCallback(::std::function<void(::ClientInputLockCategory, bool)> callback);
 
     MCAPI uint serialize() const;
 
     MCAPI void setLockCategory(::ClientInputLockCategory category, bool state);
 
     MCAPI ~ClientInputLockComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ClientInputLockComponent&& rhs);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::ClientInputLockComponent const& rhs);
 
-    MCAPI void* ctor$(struct ClientInputLockComponent const& rhs);
+    MCAPI void* $ctor(::ClientInputLockComponent&& rhs);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

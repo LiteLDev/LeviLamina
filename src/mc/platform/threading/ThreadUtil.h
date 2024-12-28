@@ -17,17 +17,16 @@ public:
     ThreadUtil();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void setCoreAffinity(void* const& nativeHandle, int idealCore, uint64 desiredCoreMask);
 
     MCAPI static void setCurrentThreadCoreAffinity(int idealCore, uint64 desiredCoreMask);
 
-    MCAPI static void setCurrentThreadPriority(class Bedrock::Threading::OSThreadPriority const& pri);
+    MCAPI static void setCurrentThreadPriority(::Bedrock::Threading::OSThreadPriority const& pri);
 
-    MCAPI static void
-    setThreadPriority(void* const& nativeHandle, class Bedrock::Threading::OSThreadPriority const& pri);
-
+    MCAPI static void setThreadPriority(void* const& nativeHandle, ::Bedrock::Threading::OSThreadPriority const& pri);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

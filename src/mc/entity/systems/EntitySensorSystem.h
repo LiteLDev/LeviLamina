@@ -6,7 +6,16 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class EntitySensorComponent;
+class StrictEntityContext;
+struct ActorTickedComponent;
+struct CurrentTickComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class EntitySensorSystem {
 public:
@@ -16,28 +25,24 @@ public:
     EntitySensorSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tick(
-        class OptionalGlobal<struct CurrentTickComponent const> currentTickComponent,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorTickedFlag> const>,
-            class ActorOwnerComponent,
-            class EntitySensorComponent> view
+        ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorTickedComponent const>,
+            ::ActorOwnerComponent,
+            ::EntitySensorComponent> view
     );
 
     MCAPI static void _tickEntitySensorComponent(
-        class StrictEntityContext&,
-        class ActorOwnerComponent&         actorOwnerComponent,
-        class EntitySensorComponent&       entitySensorComponent,
-        struct CurrentTickComponent const& currentTickComponent
+        ::StrictEntityContext&,
+        ::ActorOwnerComponent&        actorOwnerComponent,
+        ::EntitySensorComponent&      entitySensorComponent,
+        ::CurrentTickComponent const& currentTickComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

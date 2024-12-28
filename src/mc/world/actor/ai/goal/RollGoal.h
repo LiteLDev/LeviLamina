@@ -3,10 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class Vec3;
+// clang-format on
+
 class RollGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb6af51;
+    ::ll::UntypedStorage<4, 4> mUnk314716;
+    ::ll::UntypedStorage<4, 4> mUnk626d49;
+    ::ll::UntypedStorage<4, 4> mUnkcc2be0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RollGoal& operator=(RollGoal const&);
@@ -14,61 +28,74 @@ public:
     RollGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RollGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 3
-    virtual bool canBeInterrupted();
+    virtual bool canBeInterrupted() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI RollGoal(class Mob& mob, float probability);
-
+    // vIndex: 0
+    virtual ~RollGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _handleRoll(int rollCounter, class Vec3& positionDelta, float& rollX, float& rollZ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RollGoal(::Mob& mob, float probability);
 
-    MCAPI void* ctor$(class Mob& mob, float probability);
+    MCAPI void _handleRoll(int rollCounter, ::Vec3& positionDelta, float& rollX, float& rollZ) const;
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float probability);
+    // NOLINTEND
 
-    MCAPI bool canBeInterrupted$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI bool $canBeInterrupted();
 
-    MCAPI void stop$();
+    MCAPI void $start();
 
-    MCAPI void tick$();
+    MCAPI void $stop();
 
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

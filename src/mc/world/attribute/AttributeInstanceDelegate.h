@@ -2,7 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AttributeBuff;
+class AttributeInstance;
+// clang-format on
+
 class AttributeInstanceDelegate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkcc716d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AttributeInstanceDelegate& operator=(AttributeInstanceDelegate const&);
@@ -10,9 +22,10 @@ public:
     AttributeInstanceDelegate();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AttributeInstanceDelegate() = default;
+    virtual ~AttributeInstanceDelegate();
 
     // vIndex: 1
     virtual void tick();
@@ -21,30 +34,46 @@ public:
     virtual void notify(int64);
 
     // vIndex: 3
-    virtual bool willChange(float, float, class AttributeBuff const&);
+    virtual bool willChange(float, float, ::AttributeBuff const&);
 
     // vIndex: 4
-    virtual float change(float, float newValue, class AttributeBuff const&);
+    virtual float change(float, float newValue, ::AttributeBuff const&);
 
     // vIndex: 5
-    virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;
-
+    virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::AttributeInstance const& _getInstance() const;
 
-    MCAPI float change$(float, float newValue, class AttributeBuff const&);
+    MCAPI ::AttributeInstance* _getMutableInstance() const;
+    // NOLINTEND
 
-    MCAPI float getBuffValueWithModifiers$(class AttributeBuff const& buff) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void notify$(int64);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $notify(int64);
 
-    MCAPI bool willChange$(float, float, class AttributeBuff const&);
+    MCAPI bool $willChange(float, float, ::AttributeBuff const&);
 
+    MCAPI float $change(float, float newValue, ::AttributeBuff const&);
+
+    MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

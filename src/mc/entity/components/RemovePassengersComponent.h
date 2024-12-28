@@ -4,23 +4,26 @@
 
 struct RemovePassengersComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk349689;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RemovePassengersComponent& operator=(RemovePassengersComponent const&);
     RemovePassengersComponent(RemovePassengersComponent const&);
     RemovePassengersComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct RemovePassengersComponent& operator=(struct RemovePassengersComponent&&);
-
     MCAPI ~RemovePassengersComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

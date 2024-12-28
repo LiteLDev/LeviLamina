@@ -8,15 +8,35 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class Item;
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class SetItemDataFunction : public ::LootItemFunction {
 public:
     // SetItemDataFunction inner types define
-    enum class ApplyForComplexAliasBlockResult {};
+    enum class ApplyForComplexAliasBlockResult : uchar {
+        NotComplexAliasBlock           = 0,
+        FailedToRemapComplexAliasBlock = 1,
+        Success                        = 2,
+    };
 
-    enum class ApplyForItemResult {};
+    enum class ApplyForItemResult : uchar {
+        AsNewItem   = 0,
+        SetAuxValue = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnk66cbff;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -25,50 +45,63 @@ public:
     SetItemDataFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetItemDataFunction() = default;
+    virtual ~SetItemDataFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    MCAPI static std::unique_ptr<class LootItemFunction>
-    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
-        class Item const*& inOutItemDef,
-        std::string const& originalItemName,
-        class Random&      random,
-        int&               outResultAux
+        ::Item const*&       inOutItemDef,
+        ::std::string const& originalItemName,
+        ::Random&            random,
+        int&                 outResultAux
     );
 
     MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
-        std::string const&         originalItemName,
-        std::string const&         itemRawNameId,
-        class Random&              random,
-        int&                       outAux,
-        class WeakPtr<class Item>& outItem
+        ::std::string const& originalItemName,
+        ::std::string const& itemRawNameId,
+        ::Random&            random,
+        int&                 outAux,
+        ::WeakPtr<::Item>&   outItem
     );
 
-    MCAPI void _applyImplForNormalBlock(class Block const*& inOutBlock, class Random& random);
-
+    MCAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

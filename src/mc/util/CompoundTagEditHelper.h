@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class Tag;
+// clang-format on
+
 class CompoundTagEditHelper {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk76e80d;
+    ::ll::UntypedStorage<8, 24> mUnkd306c3;
+    ::ll::UntypedStorage<8, 24> mUnk7225c7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CompoundTagEditHelper& operator=(CompoundTagEditHelper const&);
@@ -10,25 +24,18 @@ public:
     CompoundTagEditHelper();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class CompoundTag const* getParent() const;
+    MCAPI ::CompoundTag const* getParent() const;
 
-    MCAPI void replaceWith(std::string const& newTagName, std::unique_ptr<class Tag> newTag);
+    MCAPI void replaceWith(::std::string const& newTagName, ::std::unique_ptr<::Tag> newTag);
 
     MCAPI ~CompoundTagEditHelper();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void pushChild(std::string const& tagName);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

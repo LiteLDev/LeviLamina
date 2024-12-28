@@ -4,8 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ContainerScreenContext;
+class Player;
+// clang-format on
 
 class DispenserContainerManagerModel : public ::LevelContainerManagerModel {
 public:
@@ -15,26 +21,42 @@ public:
     DispenserContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DispenserContainerManagerModel() = default;
+    virtual ~DispenserContainerManagerModel() /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
-
-    MCAPI
-    DispenserContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
-
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DispenserContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

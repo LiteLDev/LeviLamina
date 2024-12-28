@@ -4,6 +4,9 @@
 
 namespace Core::Profile {
 
-enum class CounterFormat {};
-
+enum class CounterFormat : uint {
+    Default = 0,
+    Bytes   = 1,
 };
+
+}

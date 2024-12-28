@@ -3,21 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class CompoundTag;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Player;
+struct PageContent;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class WrittenBookItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk8e98b8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WrittenBookItem& operator=(WrittenBookItem const&);
@@ -25,65 +32,54 @@ public:
     WrittenBookItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WrittenBookItem() = default;
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 38
-    virtual bool isGlint(class ItemStackBase const& stack) const;
+    // vIndex: 50
+    virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 47
-    virtual bool requiresInteract() const;
+    // vIndex: 109
+    virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 87
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const
+        /*override*/;
+
+    // vIndex: 52
     virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
+    // vIndex: 92
+    virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const& item, class CompoundTag const* userData) const;
+    // vIndex: 39
+    virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 105
-    virtual std::string getInteractText(class Player const& player) const;
-
-    MCAPI static bool canBeCopied(class CompoundTag const* tag);
-
-    MCAPI static int getGeneration(class CompoundTag const* tag);
-
-    MCAPI static int getPageCount(class ItemStack const& book);
-
-    MCAPI static std::vector<struct PageContent> getPages(class ItemStack const& book);
-
+    // vIndex: 0
+    virtual ~WrittenBookItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool canBeCopied(::CompoundTag const* tag);
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+    MCAPI static int getGeneration(::CompoundTag const* tag);
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const& item, class CompoundTag const* userData) const;
+    MCAPI static int getPageCount(::ItemStack const& book);
 
-    MCAPI std::string getInteractText$(class Player const& player) const;
+    MCAPI static ::std::vector<::PageContent> getPages(::ItemStack const& book);
+    // NOLINTEND
 
-    MCAPI bool isGlint$(class ItemStackBase const& stack) const;
-
-    MCAPI bool requiresInteract$() const;
-
-    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_GENERATION();
 
     MCAPI static int const& MAX_PAGES();
@@ -92,23 +88,65 @@ public:
 
     MCAPI static int const& MAX_TITLE_LENGTH();
 
-    MCAPI static std::string_view const& TAG_AUTHOR();
+    MCAPI static ::std::string_view const& TAG_AUTHOR();
 
-    MCAPI static std::string_view const& TAG_GENERATION();
+    MCAPI static ::std::string_view const& TAG_FILTERED_AUTHOR();
 
-    MCAPI static std::string_view const& TAG_ID();
+    MCAPI static ::std::string_view const& TAG_FILTERED_TITLE();
 
-    MCAPI static std::string_view const& TAG_PAGES();
+    MCAPI static ::std::string_view const& TAG_GENERATION();
 
-    MCAPI static std::string_view const& TAG_PAGE_PHOTO_NAME();
+    MCAPI static ::std::string_view const& TAG_ID();
 
-    MCAPI static std::string_view const& TAG_PAGE_TEXT();
+    MCAPI static ::std::string_view const& TAG_PAGES();
 
-    MCAPI static std::string_view const& TAG_RESOLVED();
+    MCAPI static ::std::string_view const& TAG_PAGE_FILTERED_PHOTO_NAME();
 
-    MCAPI static std::string_view const& TAG_TITLE();
+    MCAPI static ::std::string_view const& TAG_PAGE_FILTERED_TEXT();
 
-    MCAPI static std::string_view const& TAG_XUID();
+    MCAPI static ::std::string_view const& TAG_PAGE_PHOTO_NAME();
 
+    MCAPI static ::std::string_view const& TAG_PAGE_TEXT();
+
+    MCAPI static ::std::string_view const& TAG_RESOLVED();
+
+    MCAPI static ::std::string_view const& TAG_TITLE();
+
+    MCAPI static ::std::string_view const& TAG_XUID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI bool $requiresInteract() const;
+
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+
+    MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
+
+    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

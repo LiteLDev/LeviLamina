@@ -4,33 +4,40 @@
 
 struct BlockStateDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk85fbc4;
+    ::ll::UntypedStorage<1, 1>  mUnk22ed63;
+    ::ll::UntypedStorage<8, 8>  mUnk5cc48c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BlockStateDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI BlockStateDefinition(struct BlockStateDefinition const& rhs);
+    MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
 
-    MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&& rhs);
+    MCAPI void _copy(::BlockStateDefinition const& rhs);
 
-    MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition const& rhs);
+    MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition&&);
+
+    MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition const& rhs);
 
     MCAPI ~BlockStateDefinition();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _copy(struct BlockStateDefinition const& rhs);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct BlockStateDefinition const& rhs);
+    MCAPI void* $ctor(::BlockStateDefinition const& rhs);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

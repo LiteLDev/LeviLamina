@@ -3,27 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/HangingActor.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class ActorInteraction;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class LeashFenceKnotActor : public ::HangingActor {
@@ -34,94 +28,116 @@ public:
     LeashFenceKnotActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
 
-    // vIndex: 10
-    virtual ~LeashFenceKnotActor() = default;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 143
+    virtual int getWidth() const /*override*/;
 
-    // vIndex: 23
-    virtual void
-    teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    // vIndex: 144
+    virtual int getHeight() const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 145
+    virtual void dropItem() /*override*/;
 
-    // vIndex: 124
-    virtual bool getInteraction(class Player&, class ActorInteraction& interaction, class Vec3 const&);
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual bool wouldSurvive(::BlockSource& region) /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 151
-    virtual int getWidth() const;
+    // vIndex: 120
+    virtual bool getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&) /*override*/;
 
-    // vIndex: 152
-    virtual int getHeight() const;
+    // vIndex: 21
+    virtual void teleportTo(
+        ::Vec3 const& pos,
+        bool          shouldStopRiding,
+        int           cause,
+        int           sourceEntityType,
+        bool          keepVelocity
+    ) /*override*/;
 
-    // vIndex: 153
-    virtual void dropItem();
+    // vIndex: 8
+    virtual ~LeashFenceKnotActor() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 155
-    virtual bool wouldSurvive(class BlockSource& region);
-
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI LeashFenceKnotActor(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI int numberofAnimalsAttached();
 
     MCAPI void removeAnimals();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dropItem$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI int getHeight$() const;
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod);
 
-    MCAPI bool getInteraction$(class Player&, class ActorInteraction& interaction, class Vec3 const&);
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI int $getWidth() const;
 
-    MCAPI int getWidth$() const;
+    MCAPI int $getHeight() const;
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void $dropItem();
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod, class VariantParameterList const&);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void remove$();
+    MCAPI bool $wouldSurvive(::BlockSource& region);
+
+    MCAPI void $remove();
+
+    MCAPI bool $getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&);
 
     MCAPI void
-    teleportTo$(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    // NOLINTEND
 
-    MCAPI bool wouldSurvive$(class BlockSource& region);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -16,10 +16,10 @@ public:
     ScriptSignTextSide();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::SignTextSide> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SignTextSide> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

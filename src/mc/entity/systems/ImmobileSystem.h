@@ -4,7 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct LocalMoveVelocityComponent;
+struct MobIsJumpingFlagComponent;
+struct MobRotationComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class ImmobileSystem {
 public:
@@ -14,20 +23,16 @@ public:
     ImmobileSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI static void doImmobileSystem(
-        class StrictEntityContext const&                                   context,
-        struct LocalMoveVelocityComponent&                                 localMoveVelocityComponent,
-        struct MobRotationComponent&                                       mobRotationComponent,
-        struct StateVectorComponent&                                       stateVectorComponent,
-        class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
+        ::StrictEntityContext const&                  context,
+        ::LocalMoveVelocityComponent&                 localMoveVelocityComponent,
+        ::MobRotationComponent&                       mobRotationComponent,
+        ::StateVectorComponent&                       stateVectorComponent,
+        ::EntityModifier<::MobIsJumpingFlagComponent> mod
     );
-
     // NOLINTEND
 };

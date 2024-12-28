@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackManifest;
 namespace Core { class Path; }
 // clang-format on
 
 class ScriptPluginPackSource : public ::IScriptPluginSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnka6c77a;
+    ::ll::UntypedStorage<8, 8>  mUnkec988c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPluginPackSource& operator=(ScriptPluginPackSource const&);
@@ -18,42 +26,51 @@ public:
     ScriptPluginPackSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptPluginPackSource() = default;
-
     // vIndex: 1
-    virtual class PackManifest const& getManifest();
+    virtual ::PackManifest const& getManifest() /*override*/;
 
     // vIndex: 2
-    virtual std::vector<std::string> enumerateScripts(std::string const& extension);
+    virtual ::std::vector<::std::string> enumerateScripts(::std::string const& extension) /*override*/;
 
     // vIndex: 3
-    virtual std::optional<std::string> loadScript(std::string const& path);
+    virtual ::std::optional<::std::string> loadScript(::std::string const& path) /*override*/;
 
     // vIndex: 4
-    virtual std::string removeRootFromPath(std::string const&);
+    virtual ::std::string removeRootFromPath(::std::string const& path) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScriptPluginPackSource() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Core::Path _removeRootFromPath(class Core::Path const& pathIn);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Core::Path _removeRootFromPath(::Core::Path const& pathIn);
+    // NOLINTEND
 
-    MCAPI std::vector<std::string> enumerateScripts$(std::string const& extension);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class PackManifest const& getManifest$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::PackManifest const& $getManifest();
 
-    MCAPI std::optional<std::string> loadScript$(std::string const& path);
+    MCAPI ::std::vector<::std::string> $enumerateScripts(::std::string const& extension);
 
-    MCAPI std::string removeRootFromPath$(std::string const&);
+    MCAPI ::std::optional<::std::string> $loadScript(::std::string const& path);
 
+    MCAPI ::std::string $removeRootFromPath(::std::string const& path);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

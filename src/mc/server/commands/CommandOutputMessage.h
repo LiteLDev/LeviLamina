@@ -7,39 +7,54 @@
 
 class CommandOutputMessage {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::CommandOutputMessageType>    mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                mMessageId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mParams;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CommandOutputMessage& operator=(CommandOutputMessage const&);
     CommandOutputMessage();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutputMessage(class CommandOutputMessage&& rhs);
+    MCAPI CommandOutputMessage(::CommandOutputMessage const& rhs);
 
-    MCAPI CommandOutputMessage(class CommandOutputMessage const& rhs);
+    MCAPI CommandOutputMessage(::CommandOutputMessage&& rhs);
 
-    MCAPI
-    CommandOutputMessage(::CommandOutputMessageType type, std::string const& msgId, std::vector<std::string>&& params);
+    MCAPI CommandOutputMessage(
+        ::CommandOutputMessageType     type,
+        ::std::string const&           msgId,
+        ::std::vector<::std::string>&& params
+    );
 
-    MCAPI std::string const& getMessageId() const;
+    MCAPI ::std::string const& getMessageId() const;
 
-    MCAPI std::vector<std::string> const& getParams() const;
+    MCAPI ::std::vector<::std::string> const& getParams() const;
 
     MCAPI ::CommandOutputMessageType getType() const;
 
     MCAPI ~CommandOutputMessage();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CommandOutputMessage const& rhs);
+    MCAPI void* $ctor(::CommandOutputMessage const& rhs);
 
-    MCAPI void* ctor$(class CommandOutputMessage&& rhs);
+    MCAPI void* $ctor(::CommandOutputMessage&& rhs);
 
-    MCAPI void* ctor$(::CommandOutputMessageType type, std::string const& msgId, std::vector<std::string>&& params);
+    MCAPI void*
+    $ctor(::CommandOutputMessageType type, ::std::string const& msgId, ::std::vector<::std::string>&& params);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

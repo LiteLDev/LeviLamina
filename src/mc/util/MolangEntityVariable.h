@@ -2,7 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangEntityVariable {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+#include "mc/util/MolangVariableIndex.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
+struct MolangEntityVariable : public ::MolangHashStringVariable<::MolangEntityVariable> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mMolangVariableIndex;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MolangEntityVariable& operator=(MolangEntityVariable const&);
@@ -10,19 +25,22 @@ public:
     MolangEntityVariable();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit MolangEntityVariable(class HashedString const& value);
+    MCAPI explicit MolangEntityVariable(::HashedString const& value);
 
     MCAPI ~MolangEntityVariable();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class HashedString const& value);
+    MCAPI void* $ctor(::HashedString const& value);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

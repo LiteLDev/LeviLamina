@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/platform/OperationMode.h"
 
+// auto generated forward declare list
+// clang-format off
+class PushNotificationMessage;
+// clang-format on
+
 class AppPlatformListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mListenerRegistered;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AppPlatformListener& operator=(AppPlatformListener const&);
@@ -13,6 +24,7 @@ public:
     AppPlatformListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~AppPlatformListener();
@@ -45,13 +57,13 @@ public:
     virtual void onAppTerminated();
 
     // vIndex: 10
-    virtual void onOperationModeChanged(::OperationMode operationMode);
+    virtual void onOperationModeChanged(::OperationMode const operationMode);
 
     // vIndex: 11
-    virtual void onPerformanceModeChanged(bool boost);
+    virtual void onPerformanceModeChanged(bool const boost);
 
     // vIndex: 12
-    virtual void onPushNotificationReceived(class PushNotificationMessage const& msg);
+    virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
 
     // vIndex: 13
     virtual void onResizeBegin();
@@ -69,65 +81,79 @@ public:
     virtual void onAppSurfaceDestroyed();
 
     // vIndex: 18
-    virtual void onClipboardCopy(std::string const&);
+    virtual void onClipboardCopy(::std::string const&);
 
     // vIndex: 19
-    virtual void onClipboardPaste(std::string const&);
+    virtual void onClipboardPaste(::std::string const&);
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit AppPlatformListener(bool doInit);
 
     MCAPI void initListener(float priority);
 
     MCAPI void terminate();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(bool doInit);
+    // NOLINTEND
 
-    MCAPI void* ctor$(bool doInit);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onLowMemory();
 
-    MCAPI void onAppFocusGained$();
+    MCAPI void $onAppPaused();
 
-    MCAPI void onAppFocusLost$();
+    MCAPI void $onAppUnpaused();
 
-    MCAPI void onAppPaused$();
+    MCAPI void $onAppPreSuspended();
 
-    MCAPI void onAppPreSuspended$();
+    MCAPI void $onAppSuspended();
 
-    MCAPI void onAppResumed$();
+    MCAPI void $onAppResumed();
 
-    MCAPI void onAppSurfaceCreated$();
+    MCAPI void $onAppFocusLost();
 
-    MCAPI void onAppSurfaceDestroyed$();
+    MCAPI void $onAppFocusGained();
 
-    MCAPI void onAppSuspended$();
+    MCAPI void $onAppTerminated();
 
-    MCAPI void onAppTerminated$();
+    MCAPI void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCAPI void onAppUnpaused$();
+    MCAPI void $onPerformanceModeChanged(bool const boost);
 
-    MCAPI void onClipboardCopy$(std::string const&);
+    MCAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI void onClipboardPaste$(std::string const&);
+    MCAPI void $onResizeBegin();
 
-    MCAPI void onDeviceLost$();
+    MCAPI void $onResizeEnd();
 
-    MCAPI void onLowMemory$();
+    MCAPI void $onDeviceLost();
 
-    MCAPI void onOperationModeChanged$(::OperationMode operationMode);
+    MCAPI void $onAppSurfaceCreated();
 
-    MCAPI void onPerformanceModeChanged$(bool boost);
+    MCAPI void $onAppSurfaceDestroyed();
 
-    MCAPI void onPushNotificationReceived$(class PushNotificationMessage const& msg);
+    MCAPI void $onClipboardCopy(::std::string const&);
 
-    MCAPI void onResizeBegin$();
+    MCAPI void $onClipboardPaste(::std::string const&);
+    // NOLINTEND
 
-    MCAPI void onResizeEnd$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

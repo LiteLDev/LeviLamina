@@ -5,37 +5,63 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleServerAdmin { class ScriptSecretString; }
+// clang-format on
+
 namespace ScriptModuleMinecraftNet {
 
 struct ScriptNetHeader {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc1dc94;
+    ::ll::UntypedStorage<8, 72> mUnk516770;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptNetHeader(ScriptNetHeader const&);
     ScriptNetHeader();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetHeader(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
+    MCAPI ScriptNetHeader(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
-    MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetHeader&&);
+    MCAPI ScriptNetHeader(
+        ::std::string const&                                                         key,
+        ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value
+    );
 
-    MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
+    MCAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader const&);
+
+    MCAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
     MCAPI ~ScriptNetHeader();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHeader> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptNetHeader> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
 
+    MCAPI void*
+    $ctor(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftNet
+} // namespace ScriptModuleMinecraftNet

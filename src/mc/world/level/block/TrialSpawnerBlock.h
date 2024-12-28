@@ -4,21 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+struct Brightness;
 // clang-format on
 
-class TrialSpawnerBlock : public ::ActorBlock {
+class TrialSpawnerBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     TrialSpawnerBlock& operator=(TrialSpawnerBlock const&);
@@ -26,40 +25,61 @@ public:
     TrialSpawnerBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
+
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
     // vIndex: 0
-    virtual ~TrialSpawnerBlock() = default;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    MCAPI TrialSpawnerBlock(std::string const& nameId, int id);
-
+    virtual ~TrialSpawnerBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TrialSpawnerBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI int $getVariant(::Block const& block) const;
 
+    MCAPI bool $isInteractiveBlock() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

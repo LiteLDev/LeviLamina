@@ -6,6 +6,14 @@
 #include "mc/world/level/levelgen/structure/StrongholdPiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+class StructurePiece;
+// clang-format on
+
 class SHPortalRoom : public ::StrongholdPiece {
 public:
     // prevent constructor by default
@@ -14,43 +22,62 @@ public:
     SHPortalRoom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SHPortalRoom() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
-
-    // vIndex: 3
-    virtual void
-    addChildren(class StructurePiece& startPiece, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&,
-        int footX,
-        int footY,
-        int footZ,
-        int direction,
-        int genDepth
-    );
+    // vIndex: 3
+    virtual void addChildren(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~SHPortalRoom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 genDepth
+    );
+    // NOLINTEND
 
-    MCAPI void
-    addChildren$(class StructurePiece& startPiece, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
+    MCAPI void $addChildren(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random
+    );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

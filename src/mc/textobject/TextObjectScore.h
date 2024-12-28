@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
 
 class TextObjectScore : public ::ITextObject {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk71dadc;
+    ::ll::UntypedStorage<8, 32> mUnk8e694b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TextObjectScore& operator=(TextObjectScore const&);
@@ -18,39 +26,52 @@ public:
     TextObjectScore();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TextObjectScore() = default;
-
     // vIndex: 1
-    virtual std::string asString() const;
+    virtual ::std::string asString() const /*override*/;
 
     // vIndex: 2
-    virtual class Json::Value asJsonValue() const;
+    virtual ::Json::Value asJsonValue() const /*override*/;
 
     // vIndex: 3
-    virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
+    // vIndex: 0
+    virtual ~TextObjectScore() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& RAW_TEXT_SCORE_KEY();
 
-    MCAPI class Json::Value asJsonValue$() const;
+    MCAPI static ::std::string const& RAW_TEXT_SCORE_NAME_KEY();
 
-    MCAPI std::string asString$() const;
+    MCAPI static ::std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
 
-    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+    MCAPI static ::std::string const& RAW_TEXT_SCORE_STAR();
+    // NOLINTEND
 
-    MCAPI static std::string const& RAW_TEXT_SCORE_KEY();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::string const& RAW_TEXT_SCORE_NAME_KEY();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $asString() const;
 
-    MCAPI static std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
+    MCAPI ::Json::Value $asJsonValue() const;
 
-    MCAPI static std::string const& RAW_TEXT_SCORE_STAR();
+    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

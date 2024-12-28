@@ -6,12 +6,11 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
@@ -21,57 +20,81 @@ namespace ScriptModuleMinecraft {
 
 class ScriptInventoryComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk97445f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptInventoryComponent& operator=(ScriptInventoryComponent const&);
+    ScriptInventoryComponent(ScriptInventoryComponent const&);
     ScriptInventoryComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptInventoryComponent() = default;
-
     // vIndex: 1
-    virtual bool _isValid() const;
+    virtual bool _isValid() const /*override*/;
 
-    MCAPI ScriptInventoryComponent(class ScriptModuleMinecraft::ScriptInventoryComponent const&);
-
-    MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
-
-    MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
-
-    MCAPI class Scripting::Result<std::string> getContainerType() const;
-
-    MCAPI class Scripting::Result<int> getInventorySize() const;
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>>
-    getOrCreateContainer();
-
-    MCAPI class Scripting::Result<
-        class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
-    getOrCreateContainerV010();
-
-    MCAPI class Scripting::Result<bool> getPrivate() const;
-
-    MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    // vIndex: 0
+    virtual ~ScriptInventoryComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
 
-    MCAPI bool _isValid$() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
 
-    MCAPI static char const* const& ComponentId();
+    MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>>
+    getOrCreateContainer();
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
+    getOrCreateContainerV010();
+
+    MCAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptInventoryComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

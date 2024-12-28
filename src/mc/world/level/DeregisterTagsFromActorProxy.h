@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/IDeregisterTagsFromActorProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class DeregisterTagsFromActorProxy : public ::IDeregisterTagsFromActorProxy {
 public:
     // prevent constructor by default
@@ -13,21 +18,30 @@ public:
     DeregisterTagsFromActorProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeregisterTagsFromActorProxy() = default;
+    virtual ~DeregisterTagsFromActorProxy() /*override*/;
 
     // vIndex: 1
-    virtual void deregisterTagsFromActor(class Actor& actor);
-
+    virtual void deregisterTagsFromActor(::Actor& actor) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void deregisterTagsFromActor$(class Actor& actor);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $deregisterTagsFromActor(::Actor& actor);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

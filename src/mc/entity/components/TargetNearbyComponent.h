@@ -2,28 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TargetNearbyComponent {
+struct TargetNearbyComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke73452;
+    ::ll::UntypedStorage<1, 1> mUnk519cda;
+    ::ll::UntypedStorage<1, 1> mUnkc7021d;
+    ::ll::UntypedStorage<4, 4> mUnk4cfa06;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TargetNearbyComponent& operator=(TargetNearbyComponent const&);
     TargetNearbyComponent(TargetNearbyComponent const&);
     TargetNearbyComponent();
-
-public:
-    // NOLINTBEGIN
-    MCAPI bool getWasInsideRange() const;
-
-    MCAPI bool getWasOutsideRange() const;
-
-    MCAPI bool getWasSeenLastTick() const;
-
-    MCAPI void setPreviousDistance(float distance);
-
-    MCAPI void setWasInsideRange(bool wasInside);
-
-    MCAPI void setWasOutsideRange(bool wasOutside);
-
-    MCAPI void setWasSeenLastTick(bool wasSeen);
-
-    // NOLINTEND
 };

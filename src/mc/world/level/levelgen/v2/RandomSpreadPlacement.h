@@ -11,10 +11,21 @@ namespace br::worldgen { struct StructurePlacement; }
 
 namespace br::worldgen {
 
-class RandomSpreadPlacement {
+struct RandomSpreadPlacement {
 public:
     // RandomSpreadPlacement inner types define
-    enum class Type {};
+    enum class Type : uchar {
+        Linear     = 0,
+        Triangular = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk5b60bc;
+    ::ll::UntypedStorage<4, 4> mUnk83d370;
+    ::ll::UntypedStorage<1, 1> mUnk5b1cdd;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -23,14 +34,16 @@ public:
     RandomSpreadPlacement();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class ChunkPos placementChunk(
-        struct br::worldgen::StructurePlacement const&           def,
-        struct br::worldgen::ChunkGeneratorStructureState const& state,
-        class ChunkPos                                           chunkPos
-    ) const;
+    MCAPI ::ChunkPos calcChunkOffset(::glm::ivec2 delta) const;
 
+    MCAPI ::ChunkPos placementChunk(
+        ::br::worldgen::StructurePlacement const&           def,
+        ::br::worldgen::ChunkGeneratorStructureState const& state,
+        ::ChunkPos                                          chunkPos
+    ) const;
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

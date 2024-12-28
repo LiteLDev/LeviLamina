@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/entity/definitions/NavigationDescription.h"
 
-class NavigationFlyDescription : public ::NavigationDescription {
+struct NavigationFlyDescription : public ::NavigationDescription {
 public:
     // prevent constructor by default
     NavigationFlyDescription& operator=(NavigationFlyDescription const&);
@@ -13,23 +13,30 @@ public:
     NavigationFlyDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 1
-    virtual ~NavigationFlyDescription();
-
+    virtual ~NavigationFlyDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

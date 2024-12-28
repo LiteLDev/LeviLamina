@@ -2,40 +2,62 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SpawnData {
+// auto generated inclusion list
+#include "mc/util/WeightedRandom.h"
+
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
+class SpawnData : public ::WeightedRandom::WeighedRandomItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkbe2905;
+    ::ll::UntypedStorage<1, 1>   mUnk4ccd3d;
+    ::ll::UntypedStorage<8, 64>  mUnkbee4d8;
+    ::ll::UntypedStorage<4, 8>   mUnka5cdc4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SpawnData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SpawnData() = default;
+    MCAPI SpawnData(::SpawnData&&);
 
-    MCAPI explicit SpawnData(class CompoundTag const& tag);
+    MCAPI SpawnData(::SpawnData const&);
 
-    MCAPI SpawnData(class SpawnData const& rhs);
+    MCAPI explicit SpawnData(::CompoundTag const& tag);
 
-    MCAPI SpawnData(int randomWeight, struct ActorDefinitionIdentifier actorId);
+    MCAPI SpawnData(int randomWeight, ::ActorDefinitionIdentifier actorId);
 
-    MCAPI class SpawnData& operator=(class SpawnData const& rhs);
+    MCAPI ::SpawnData& operator=(::SpawnData const&);
 
-    MCAPI bool operator==(class SpawnData const& rhs) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> save();
 
-    MCAPI std::unique_ptr<class CompoundTag> save();
-
+    MCAPI ~SpawnData();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::SpawnData&&);
 
-    MCAPI void* ctor$(class SpawnData const& rhs);
+    MCAPI void* $ctor(::SpawnData const&);
 
-    MCAPI void* ctor$(int randomWeight, struct ActorDefinitionIdentifier actorId);
+    MCAPI void* $ctor(::CompoundTag const& tag);
 
-    MCAPI void* ctor$(class CompoundTag const& tag);
+    MCAPI void* $ctor(int randomWeight, ::ActorDefinitionIdentifier actorId);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

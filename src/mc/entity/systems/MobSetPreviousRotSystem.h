@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorHeadRotationComponent;
+struct ActorRotationComponent;
+struct MobBodyRotationComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class MobSetPreviousRotSystem {
 public:
     // prevent constructor by default
@@ -10,19 +19,15 @@ public:
     MobSetPreviousRotSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _setPreviousRotation(
-        class StrictEntityContext&,
-        struct ActorHeadRotationComponent& actorHeadRotation,
-        struct ActorRotationComponent&     actorRotation,
-        struct MobBodyRotationComponent&   mobBodyRotation
+        ::StrictEntityContext&,
+        ::ActorHeadRotationComponent& actorHeadRotation,
+        ::ActorRotationComponent&     actorRotation,
+        ::MobBodyRotationComponent&   mobBodyRotation
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -10,19 +10,30 @@ public:
     IFileWriteAccess();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFileWriteAccess() = default;
+    virtual ~IFileWriteAccess();
 
     // vIndex: 1
-    virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) = 0;
+    virtual uint64 fwrite(void const*, uint64, uint64, void*) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

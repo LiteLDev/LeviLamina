@@ -3,15 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockLiquidContainerComponent.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -23,23 +15,29 @@ public:
     ScriptBlockLavaContainerComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBlockLavaContainerComponent() = default;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptBlockLavaContainerComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

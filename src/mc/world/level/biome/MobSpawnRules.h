@@ -5,129 +5,174 @@
 // auto generated inclusion list
 #include "mc/world/Difficulty.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+class BlockSource;
+class MobSpawnerData;
+class MobSpawnerPermutation;
+class Random;
+class SpawnConditions;
+struct ActorDefinitionIdentifier;
+struct MobSpawnHerdInfo;
+// clang-format on
+
 class MobSpawnRules {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk9c06bc;
+    ::ll::UntypedStorage<4, 4>  mUnkd8718f;
+    ::ll::UntypedStorage<4, 4>  mUnk10240b;
+    ::ll::UntypedStorage<4, 4>  mUnk8c1335;
+    ::ll::UntypedStorage<4, 4>  mUnk8e1387;
+    ::ll::UntypedStorage<1, 1>  mUnk6eb12e;
+    ::ll::UntypedStorage<4, 4>  mUnkf7398d;
+    ::ll::UntypedStorage<4, 4>  mUnk3309d0;
+    ::ll::UntypedStorage<4, 4>  mUnk1e8675;
+    ::ll::UntypedStorage<4, 4>  mUnk3ade4e;
+    ::ll::UntypedStorage<4, 4>  mUnk75c012;
+    ::ll::UntypedStorage<4, 4>  mUnk16bafa;
+    ::ll::UntypedStorage<4, 4>  mUnk5da43d;
+    ::ll::UntypedStorage<4, 4>  mUnk8fd342;
+    ::ll::UntypedStorage<4, 4>  mUnke5872a;
+    ::ll::UntypedStorage<4, 4>  mUnk6e66eb;
+    ::ll::UntypedStorage<1, 1>  mUnk2563fa;
+    ::ll::UntypedStorage<1, 1>  mUnk6bd693;
+    ::ll::UntypedStorage<1, 1>  mUnkef850c;
+    ::ll::UntypedStorage<1, 1>  mUnkab1106;
+    ::ll::UntypedStorage<1, 1>  mUnk7ef38d;
+    ::ll::UntypedStorage<4, 4>  mUnk72fc26;
+    ::ll::UntypedStorage<4, 4>  mUnk46f75e;
+    ::ll::UntypedStorage<1, 1>  mUnk18ecd0;
+    ::ll::UntypedStorage<8, 8>  mUnka90688;
+    ::ll::UntypedStorage<8, 8>  mUnke11f7c;
+    ::ll::UntypedStorage<4, 4>  mUnk7ca176;
+    ::ll::UntypedStorage<4, 4>  mUnk371bf6;
+    ::ll::UntypedStorage<8, 24> mUnk3c801b;
+    ::ll::UntypedStorage<8, 24> mUnkeb5390;
+    ::ll::UntypedStorage<8, 32> mUnk90cf78;
+    ::ll::UntypedStorage<8, 24> mUnk4d674b;
+    ::ll::UntypedStorage<8, 24> mUnk3ece83;
+    ::ll::UntypedStorage<8, 24> mUnk1d4d01;
+    ::ll::UntypedStorage<4, 4>  mUnk45133a;
+    ::ll::UntypedStorage<8, 24> mUnk87ca41;
+    ::ll::UntypedStorage<8, 32> mUnkf0a3ab;
+    ::ll::UntypedStorage<4, 4>  mUnkda3621;
+    ::ll::UntypedStorage<1, 1>  mUnkf5d9fe;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI MobSpawnRules();
 
-    MCAPI MobSpawnRules(class MobSpawnRules&&);
+    MCAPI MobSpawnRules(::MobSpawnRules&&);
 
-    MCAPI MobSpawnRules(class MobSpawnRules const&);
+    MCAPI MobSpawnRules(::MobSpawnRules const&);
 
-    MCAPI class MobSpawnRules& addHerd(int minCount, int maxCount, std::string const& herdEvent);
+    MCAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
 
-    MCAPI class MobSpawnRules&
-    addPermutation(int weight, int guaranteedCount, struct ActorDefinitionIdentifier const& id);
-
-    MCAPI bool canSpawnInConditions(class SpawnConditions const& conditions, class BlockSource& region) const;
+    MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
     MCAPI int getAboveBlockDistance() const;
 
-    MCAPI std::pair<int, int> const getDelayRange() const;
+    MCAPI ::std::pair<int, int> const getDelayRange() const;
 
     MCAPI int getDelaySpawnChance() const;
 
-    MCAPI std::vector<class MobSpawnerPermutation> const& getGuaranteedPermutations() const;
+    MCAPI ::std::vector<::MobSpawnerPermutation> const& getGuaranteedPermutations() const;
 
-    MCAPI std::vector<struct MobSpawnHerdInfo>& getHerdListMutable();
+    MCAPI ::std::vector<::MobSpawnHerdInfo>& getHerdListMutable();
 
-    MCAPI std::string const getMobToDelayId() const;
+    MCAPI ::std::string const getMobToDelayId() const;
 
-    MCAPI std::vector<class MobSpawnerPermutation> const& getPermutations() const;
+    MCAPI ::std::vector<::MobSpawnerPermutation> const& getPermutations() const;
 
     MCAPI bool getPersistence() const;
 
-    MCAPI int getPopulationCap(class SpawnConditions const& conditions) const;
+    MCAPI int getPopulationCap(::SpawnConditions const& conditions) const;
 
-    MCAPI std::vector<class BlockDescriptor> const& getSpawnAboveBlockList() const;
+    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnAboveBlockList() const;
 
-    MCAPI std::vector<class BlockDescriptor>& getSpawnAboveBlockListMutable();
+    MCAPI ::std::vector<::BlockDescriptor>& getSpawnAboveBlockListMutable();
 
     MCAPI int getSpawnCount(
-        class SpawnConditions const&   conditions,
-        class BlockSource&             region,
-        class Random&                  random,
-        struct MobSpawnHerdInfo const& herdInfo
+        ::SpawnConditions const&  conditions,
+        ::BlockSource&            region,
+        ::Random&                 random,
+        ::MobSpawnHerdInfo const& herdInfo
     ) const;
 
-    MCAPI std::vector<class BlockDescriptor> const& getSpawnOnBlockList() const;
+    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnOnBlockList() const;
 
-    MCAPI std::vector<class BlockDescriptor>& getSpawnOnBlockListMutable();
+    MCAPI ::std::vector<::BlockDescriptor>& getSpawnOnBlockListMutable();
 
-    MCAPI std::vector<class BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
+    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
 
-    MCAPI std::vector<class BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
+    MCAPI ::std::vector<::BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
 
     MCAPI bool isLavaSpawner() const;
 
     MCAPI bool isUnderwaterSpawner() const;
 
-    MCAPI class MobSpawnRules& operator=(class MobSpawnRules&&);
+    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
-    MCAPI class MobSpawnRules& operator=(class MobSpawnRules const&);
+    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
-    MCAPI struct MobSpawnHerdInfo const& selectRandomHerd(class Random& random) const;
+    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::Random& random) const;
 
-    MCAPI class MobSpawnRules& setAboveBlockDistance(int distance);
+    MCAPI ::MobSpawnRules& setAboveBlockDistance(int distance);
 
-    MCAPI class MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
+    MCAPI ::MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
 
-    MCAPI class MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
+    MCAPI ::MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
 
-    MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const& id);
+    MCAPI ::MobSpawnRules& setDelayRange(int min, int max, ::std::string const& id);
 
-    MCAPI class MobSpawnRules& setDelaySpawnChance(int chance);
+    MCAPI ::MobSpawnRules& setDelaySpawnChance(int chance);
 
-    MCAPI class MobSpawnRules& setDifficultyRange(::Difficulty minDifficulty, ::Difficulty maxDifficulty);
+    MCAPI ::MobSpawnRules& setDifficultyRange(::Difficulty minDifficulty, ::Difficulty maxDifficulty);
 
-    MCAPI class MobSpawnRules& setExperimentalGameplay();
+    MCAPI ::MobSpawnRules& setExperimentalGameplay();
 
-    MCAPI class MobSpawnRules&
-    setHardcodedSpawnRuleCallback(std::function<bool(class SpawnConditions const&, class BlockSource&)> callback);
+    MCAPI ::MobSpawnRules&
+    setHardcodedSpawnRuleCallback(::std::function<bool(::SpawnConditions const&, ::BlockSource&)> callback);
 
-    MCAPI class MobSpawnRules& setHeightRange(int minHeight, int maxHeight);
+    MCAPI ::MobSpawnRules& setHeightRange(int minHeight, int maxHeight);
 
-    MCAPI class MobSpawnRules& setLavaSpawner();
+    MCAPI ::MobSpawnRules& setLavaSpawner();
 
-    MCAPI class MobSpawnRules& setMobEventType(std::string const& eventName);
+    MCAPI ::MobSpawnRules& setMobEventType(::std::string const& eventName);
 
-    MCAPI class MobSpawnRules& setPersistence(bool persistence);
+    MCAPI ::MobSpawnRules& setPersistence(bool persistence);
 
-    MCAPI class MobSpawnRules& setPlayerInVillageBorderTolerance(uint tolerance);
+    MCAPI ::MobSpawnRules& setPlayerInVillageBorderTolerance(uint tolerance);
 
-    MCAPI class MobSpawnRules& setPlayerInVillageDistance(uint distance);
+    MCAPI ::MobSpawnRules& setPlayerInVillageDistance(uint distance);
 
-    MCAPI class MobSpawnRules& setPopulationCap(int surfaceCap, int undergroundCap);
+    MCAPI ::MobSpawnRules& setPopulationCap(int surfaceCap, int undergroundCap);
 
-    MCAPI class MobSpawnRules& setRarity(int rarity);
+    MCAPI ::MobSpawnRules& setRarity(int rarity);
 
-    MCAPI class MobSpawnRules& setSpawnDistanceCap(int max);
+    MCAPI ::MobSpawnRules& setSpawnDistanceCap(int max);
 
-    MCAPI class MobSpawnRules& setSpawnDistances(int min, int max);
+    MCAPI ::MobSpawnRules& setSpawnDistances(int min, int max);
 
-    MCAPI class MobSpawnRules& setSurfaceSpawner();
+    MCAPI ::MobSpawnRules& setSurfaceSpawner();
 
-    MCAPI class MobSpawnRules& setUndergroundSpawner();
+    MCAPI ::MobSpawnRules& setUndergroundSpawner();
 
-    MCAPI class MobSpawnRules& setUnderwaterSpawner();
+    MCAPI ::MobSpawnRules& setUnderwaterSpawner();
 
-    MCAPI class MobSpawnRules& setWorldAgeRange(uint64 min, uint64 max);
+    MCAPI ::MobSpawnRules& setWorldAgeRange(uint64 min, uint64 max);
 
     MCAPI ~MobSpawnRules();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class MobSpawnRules const&);
-
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(class MobSpawnRules&&);
-
-    MCAPI void dtor$();
-
     MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
 
     MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
@@ -135,6 +180,21 @@ public:
     MCAPI static uint64 const& MAX_WORLD_AGE();
 
     MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::MobSpawnRules&&);
+
+    MCAPI void* $ctor(::MobSpawnRules const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
+struct FilterContext;
+struct FilterInputs;
 namespace Json { class Value; }
 // clang-format on
 
 class ActorHasEquipmentTest : public ::FilterTest {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkc85f7c;
+    ::ll::UntypedStorage<4, 4>  mUnk32c4a4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorHasEquipmentTest& operator=(ActorHasEquipmentTest const&);
@@ -18,48 +28,55 @@ public:
     ActorHasEquipmentTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorHasEquipmentTest();
-
     // vIndex: 1
-    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const& context) const;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     // vIndex: 4
-    virtual std::string_view getName() const;
-
-    // vIndex: 5
-    virtual class Json::Value _serializeDomain() const;
+    virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 6
-    virtual class Json::Value _serializeValue() const;
+    virtual ::Json::Value _serializeValue() const /*override*/;
+
+    // vIndex: 5
+    virtual ::Json::Value _serializeDomain() const /*override*/;
 
     // vIndex: 7
-    virtual bool _isExpectedItem(std::vector<class ItemStack const*> const& itemList) const;
+    virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
 
+    // vIndex: 0
+    virtual ~ActorHasEquipmentTest() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI bool _isExpectedItem$(std::vector<class ItemStack const*> const& itemList) const;
+    MCAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI class Json::Value _serializeDomain$() const;
+    MCAPI ::std::string_view $getName() const;
 
-    MCAPI class Json::Value _serializeValue$() const;
+    MCAPI ::Json::Value $_serializeValue() const;
 
-    MCAPI bool evaluate$(struct FilterContext const& context) const;
+    MCAPI ::Json::Value $_serializeDomain() const;
 
-    MCAPI std::string_view getName$() const;
+    MCAPI bool $_isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
+    // NOLINTEND
 
-    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

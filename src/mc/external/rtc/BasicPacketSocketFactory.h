@@ -1,0 +1,97 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/external/rtc/PacketSocketFactory.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace rtc { class AsyncListenSocket; }
+namespace rtc { class AsyncPacketSocket; }
+namespace rtc { class Socket; }
+namespace rtc { class SocketAddress; }
+namespace rtc { class SocketFactory; }
+namespace rtc { struct PacketSocketTcpOptions; }
+namespace rtc { struct ProxyInfo; }
+namespace webrtc { class AsyncDnsResolverInterface; }
+// clang-format on
+
+namespace rtc {
+
+class BasicPacketSocketFactory : public ::rtc::PacketSocketFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb730be;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BasicPacketSocketFactory& operator=(BasicPacketSocketFactory const&);
+    BasicPacketSocketFactory(BasicPacketSocketFactory const&);
+    BasicPacketSocketFactory();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~BasicPacketSocketFactory() /*override*/;
+
+    // vIndex: 1
+    virtual ::rtc::AsyncPacketSocket* CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) /*override*/;
+
+    // vIndex: 2
+    virtual ::rtc::AsyncListenSocket*
+    CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) /*override*/;
+
+    // vIndex: 3
+    virtual ::rtc::AsyncPacketSocket*
+    CreateClientTcpSocket(::rtc::SocketAddress const&, ::rtc::SocketAddress const&, ::rtc::ProxyInfo const&, ::std::string const&, ::rtc::PacketSocketTcpOptions const&) /*override*/
+        ;
+
+    // vIndex: 4
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BasicPacketSocketFactory(::rtc::SocketFactory*);
+
+    MCAPI int BindSocket(::rtc::Socket*, ::rtc::SocketAddress const&, ushort, ushort);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::rtc::SocketFactory*);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::rtc::AsyncPacketSocket* $CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort);
+
+    MCAPI ::rtc::AsyncListenSocket* $CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int);
+
+    MCAPI ::rtc::AsyncPacketSocket*
+    $CreateClientTcpSocket(::rtc::SocketAddress const&, ::rtc::SocketAddress const&, ::rtc::ProxyInfo const&, ::std::string const&, ::rtc::PacketSocketTcpOptions const&);
+
+    MCAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace rtc

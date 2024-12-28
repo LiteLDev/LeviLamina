@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NullLogger {
+class NullLogger : public ::leveldb::Logger {
 public:
     // prevent constructor by default
     NullLogger& operator=(NullLogger const&);
@@ -10,23 +10,36 @@ public:
     NullLogger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NullLogger() = default;
-
     // vIndex: 1
-    virtual void Logv(char const*, char*);
+    virtual void Logv(char const* format, char* ap) /*override*/;
 
+    // vIndex: 0
+    virtual ~NullLogger() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::NullLogger& instance();
+    // NOLINTEND
 
-    MCAPI void Logv$(char const*, char*);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static class NullLogger& instance();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $Logv(char const* format, char* ap);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

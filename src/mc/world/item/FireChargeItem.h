@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class Container;
+class InteractionResult;
+class ItemStack;
+class ItemStackBase;
+class Vec3;
 // clang-format on
 
 class FireChargeItem : public ::Item {
@@ -25,61 +25,75 @@ public:
     FireChargeItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FireChargeItem() = default;
+    // vIndex: 77
+    virtual ::Actor*
+    createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const
+        /*override*/;
 
-    // vIndex: 44
-    virtual bool isDestructive(int) const;
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
-    // vIndex: 73
-    virtual class Actor* createProjectileActor(
-        class BlockSource& region,
-        class ItemStack const&,
-        class Vec3 const& pos,
-        class Vec3 const& direction
-    ) const;
+    // vIndex: 47
+    virtual bool isDestructive(int) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
-
-    // vIndex: 116
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& actor, uchar& face, class BlockPos& pos) const;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& actor, uchar& face, ::BlockPos& pos) const /*override*/;
 
-    MCAPI FireChargeItem(std::string const& name, int id);
-
+    // vIndex: 0
+    virtual ~FireChargeItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FireChargeItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
-
-    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& actor, uchar& face, class BlockPos& pos) const;
-
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
-
-    MCAPI class Actor* createProjectileActor$(
-        class BlockSource& region,
-        class ItemStack const&,
-        class Vec3 const& pos,
-        class Vec3 const& direction
-    ) const;
-
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
-
-    MCAPI bool isDestructive$(int) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& LEVEL_SOUND_EVENT_VOLUME();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Actor*
+    $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI bool $isDestructive(int) const;
+
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

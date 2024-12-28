@@ -4,40 +4,46 @@
 
 class BehaviorTreeDefinitionPtr {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk51d3a5;
+    ::ll::UntypedStorage<8, 8> mUnk7b4b36;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BehaviorTreeDefinitionPtr& operator=(BehaviorTreeDefinitionPtr const&);
+    BehaviorTreeDefinitionPtr(BehaviorTreeDefinitionPtr const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BehaviorTreeDefinitionPtr();
 
-    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&& moved);
+    MCAPI BehaviorTreeDefinitionPtr(::BehaviorTreeDefinitionPtr&& moved);
 
-    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const& rhs);
-
-    MCAPI BehaviorTreeDefinitionPtr(
-        class AutomationBehaviorTreeGroup& group,
-        class BehaviorTreeDefinition&      behaviorTreeDefinition
-    );
-
-    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr&& moved);
-
-    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr const& rhs);
+    MCAPI ::BehaviorTreeDefinitionPtr& operator=(::BehaviorTreeDefinitionPtr&& moved);
 
     MCAPI ~BehaviorTreeDefinitionPtr();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class AutomationBehaviorTreeGroup& group, class BehaviorTreeDefinition& behaviorTreeDefinition);
+    MCAPI static ::BehaviorTreeDefinitionPtr const& NONE();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BehaviorTreeDefinitionPtr&& moved);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class BehaviorTreeDefinitionPtr const& rhs);
+    MCAPI void* $ctor(::BehaviorTreeDefinitionPtr&& moved);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
-    MCAPI static class BehaviorTreeDefinitionPtr const& NONE();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

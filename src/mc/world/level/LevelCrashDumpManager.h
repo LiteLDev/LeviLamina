@@ -8,29 +8,43 @@
 
 class LevelCrashDumpManager : public ::ILevelCrashDumpManager {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd9b23f;
+    ::ll::UntypedStorage<1, 1> mUnkf2302b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LevelCrashDumpManager& operator=(LevelCrashDumpManager const&);
     LevelCrashDumpManager(LevelCrashDumpManager const&);
     LevelCrashDumpManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelCrashDumpManager();
+    virtual ~LevelCrashDumpManager() /*override*/;
 
     // vIndex: 1
-    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const;
-
+    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setCrashDumpLogStringID(::CrashDumpLogStringID) const;
+    // NOLINTEND
 
-    MCAPI void setCrashDumpLogStringID$(::CrashDumpLogStringID crashDumpLogStringID) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

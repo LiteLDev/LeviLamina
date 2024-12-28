@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -18,67 +19,66 @@ public:
     SoulSpeedEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SoulSpeedEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 14
-    virtual bool isTreasureOnly() const;
+    virtual bool isTreasureOnly() const /*override*/;
 
     // vIndex: 15
-    virtual bool isDiscoverable() const;
+    virtual bool isDiscoverable() const /*override*/;
 
-    MCAPI SoulSpeedEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
+    // vIndex: 0
+    virtual ~SoulSpeedEnchant() /*override*/;
+    // NOLINTEND
 
-    MCAPI static int getLevel(class Actor const& entity);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getLevel(::Actor const& entity);
 
     MCAPI static float getSpeedBoost(int level);
 
-    MCAPI static bool shouldSpawnParticles(class Actor const& entity);
-
+    MCAPI static bool shouldSpawnParticles(::Actor const& entity);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::mce::UUID const& SOUL_SPEED_BOOST_UUID();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getMaxCost$(int level) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI bool isDiscoverable$() const;
+    MCAPI bool $isTreasureOnly() const;
 
-    MCAPI bool isTreasureOnly$() const;
+    MCAPI bool $isDiscoverable() const;
+    // NOLINTEND
 
-    MCAPI static class mce::UUID const& SOUL_SPEED_BOOST_UUID();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

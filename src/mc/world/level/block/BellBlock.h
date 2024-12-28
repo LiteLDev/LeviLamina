@@ -3,22 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class Player;
+class Random;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class BellBlock : public ::ActorBlock {
+class BellBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     BellBlock& operator=(BellBlock const&);
@@ -26,128 +29,137 @@ public:
     BellBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BellBlock() = default;
-
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 17
-    virtual void
-    onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
-    // vIndex: 25
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    // vIndex: 69
-    virtual void movedByPiston(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
     // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 161
-    virtual void
-    _onHitByActivatingAttack(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
+    // vIndex: 64
+    virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 162
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& actor) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    MCAPI BellBlock(std::string const& nameId, int id);
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
-    MCAPI bool hasValidAttachment(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 17
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
+        /*override*/;
 
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 25
+    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 149
+    virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const
+        /*override*/;
+
+    // vIndex: 0
+    virtual ~BellBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Block const&
-    _determineAttachment(class Actor const& by, class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    MCAPI short _getItemId(class BlockSource const& region, std::string_view itemName) const;
-
-    MCAPI void _sendBellUsedEventToClient(class BlockSource const& region, class Actor const& sourceActor) const;
-
-    MCAPI void _tryAttachToNeighbors(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class BlockPos const& neighborPos,
-        int                   updateFlags
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BellBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI ::Block const&
+    _determineAttachment(::Actor const& by, ::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI void
-    _onHitByActivatingAttack$(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
+    MCAPI short _getItemId(::BlockSource const& region, ::std::string_view itemName) const;
 
-    MCAPI bool canConnect$(class Block const&, uchar, class Block const&) const;
-
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void entityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& actor) const;
-
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar face, class Vec3 const&, int) const;
-
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
-
-    MCAPI bool isInteractiveBlock$() const;
-
-    MCAPI void movedByPiston$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor) const;
 
     MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    _tryAttachToNeighbors(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos, int updateFlags)
+        const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
 
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+
+    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
+
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+    MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

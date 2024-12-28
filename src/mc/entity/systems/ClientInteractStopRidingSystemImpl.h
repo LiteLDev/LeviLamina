@@ -7,25 +7,34 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorRemovedFlagComponent;
+struct LocalPlayerComponent;
+struct PassengerComponent;
+struct RuntimeIDComponent;
+struct SendPacketsComponent;
+struct StateVectorComponent;
+struct StopRidingRequestComponent;
+struct SwitchingVehiclesFlagComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace ClientInteractStopRidingSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void tick(
-    entt::type_list<
-        struct Include<
-            class FlagComponent<struct LocalPlayerComponentFlag>,
-            class FlagComponent<struct StopRidingRequestFlag>>,
-        struct Exclude<
-            class FlagComponent<struct ActorRemovedFlag>,
-            class FlagComponent<struct SwitchingVehiclesFlag>>>,
-    class StrictEntityContext const&                  entity,
-    struct PassengerComponent const&                  passengerComponent,
-    struct StateVectorComponent const&                stateVectorComponent,
-    class EntityModifier<struct SendPacketsComponent> modifier,
-    class ViewT<class StrictEntityContext, struct Include<struct VehicleComponent>, struct RuntimeIDComponent const>
-        vehicleView
+    ::entt::type_list<
+        ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
+        ::Exclude<::ActorRemovedFlagComponent, ::SwitchingVehiclesFlagComponent>>,
+    ::StrictEntityContext const&                                                              entity,
+    ::PassengerComponent const&                                                               passengerComponent,
+    ::StateVectorComponent const&                                                             stateVectorComponent,
+    ::EntityModifier<::SendPacketsComponent>                                                  modifier,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RuntimeIDComponent const> vehicleView
 );
 // NOLINTEND
 
-}; // namespace ClientInteractStopRidingSystemImpl
+} // namespace ClientInteractStopRidingSystemImpl

@@ -25,57 +25,72 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockFiller {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnk76101e;
+    ::ll::UntypedStorage<8, 160> mUnk2149fb;
+    ::ll::UntypedStorage<8, 8>   mUnk495145;
+    ::ll::UntypedStorage<8, 16>  mUnkf05836;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockFiller& operator=(ScriptBlockFiller const&);
     ScriptBlockFiller(ScriptBlockFiller const&);
     ScriptBlockFiller();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockFiller(
-        struct ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        gsl::not_null<class Dimension*>                             dimension,
-        class Scripting::WeakLifetimeScope                          scope
+        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
+        ::gsl::not_null<::Dimension*>                          dimension,
+        ::Scripting::WeakLifetimeScope                         scope
     );
 
-    MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptListBlockVolume>,
-        struct ScriptModuleMinecraft::ScriptUnloadedChunksError,
-        struct Scripting::EngineError,
-        struct Scripting::Error>
+    MCAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
+        ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
+        ::Scripting::EngineError,
+        ::Scripting::Error>
     fillBlocks(
-        std::variant<
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockVolumeBase>,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const&
-            volume,
-        std::variant<
-            std::string,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>,
-            class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& volume,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     );
 
     MCAPI ~ScriptBlockFiller();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
-        gsl::not_null<class Dimension*>                             dimension,
-        class Scripting::WeakLifetimeScope                          scope
+    MCAPI static char const*& ERROR_MSG_FILL_BAD_HEIGHT();
+
+    MCAPI static char const*& ERROR_MSG_FILL_TOO_BIG();
+
+    MCAPI static char const*& ERROR_MSG_FILL_UNKNOWN_BLOCK();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
+        ::gsl::not_null<::Dimension*>                          dimension,
+        ::Scripting::WeakLifetimeScope                         scope
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI static char const* const& ERROR_MSG_FILL_BAD_HEIGHT();
-
-    MCAPI static char const* const& ERROR_MSG_FILL_TOO_BIG();
-
-    MCAPI static char const* const& ERROR_MSG_FILL_UNKNOWN_BLOCK();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

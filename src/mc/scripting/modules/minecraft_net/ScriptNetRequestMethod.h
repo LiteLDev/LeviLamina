@@ -7,12 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Method; }
+namespace Bedrock::Http { struct Method; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
 
-class ScriptNetRequestMethod {
+struct ScriptNetRequestMethod {
 public:
     // prevent constructor by default
     ScriptNetRequestMethod& operator=(ScriptNetRequestMethod const&);
@@ -20,10 +20,10 @@ public:
     ScriptNetRequestMethod();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, class Bedrock::Http::Method> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Bedrock::Http::Method> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftNet
+} // namespace ScriptModuleMinecraftNet

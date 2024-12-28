@@ -5,7 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct PassengerComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class PassengerFreezeMovementSystem {
 public:
@@ -15,17 +23,16 @@ public:
     PassengerFreezeMovementSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent& stateVector);
+    MCAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
 
-    MCAPI static void tickPassengerFreezeMovementSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct PassengerComponent, class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            struct StateVectorComponent> view
-    );
-
+    MCAPI static void
+    tickPassengerFreezeMovementSystem(::ViewT<
+                                      ::StrictEntityContext,
+                                      ::Include<::PassengerComponent, ::ActorMovementTickNeededComponent>,
+                                      ::StateVectorComponent> view);
     // NOLINTEND
 };

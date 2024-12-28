@@ -1,0 +1,61 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
+#include "mc/world/level/storage/AllExperiments.h"
+
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+struct ThrowableItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkaf42dc;
+    ::ll::UntypedStorage<4, 4> mUnkd1ee69;
+    ::ll::UntypedStorage<4, 4> mUnkca5ed4;
+    ::ll::UntypedStorage<4, 4> mUnk33ab61;
+    ::ll::UntypedStorage<4, 4> mUnkd654d1;
+    ::ll::UntypedStorage<1, 1> mUnk9d25cc;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ThrowableItemComponentLegacyFactoryData& operator=(ThrowableItemComponentLegacyFactoryData const&);
+    ThrowableItemComponentLegacyFactoryData(ThrowableItemComponentLegacyFactoryData const&);
+    ThrowableItemComponentLegacyFactoryData();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ThrowableItemComponentLegacyFactoryData() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+    // NOLINTEND
+};

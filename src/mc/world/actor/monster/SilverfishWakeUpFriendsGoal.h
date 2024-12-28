@@ -3,10 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Silverfish;
+// clang-format on
+
 class SilverfishWakeUpFriendsGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkd385e1;
+    ::ll::UntypedStorage<4, 4> mUnk576fd4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SilverfishWakeUpFriendsGoal& operator=(SilverfishWakeUpFriendsGoal const&);
@@ -14,35 +25,52 @@ public:
     SilverfishWakeUpFriendsGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SilverfishWakeUpFriendsGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit SilverfishWakeUpFriendsGoal(class Silverfish& silverfish);
-
+    // vIndex: 0
+    virtual ~SilverfishWakeUpFriendsGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SilverfishWakeUpFriendsGoal(::Silverfish& silverfish);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Silverfish& silverfish);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Silverfish& silverfish);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void tick$();
+    MCAPI void $tick();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+struct ActorDieEvent;
+// clang-format on
+
 class HoldBlockSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
@@ -13,42 +19,41 @@ public:
     HoldBlockSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HoldBlockSystem() = default;
+    // vIndex: 2
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& eventDispatcher);
+    virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
 
-    // vIndex: 2
-    virtual void tick(class EntityRegistry&);
-
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~HoldBlockSystem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent& dieEvent);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _holdBlockSystemOnActorDie(::ActorDieEvent& dieEvent);
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& eventDispatcher);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
+    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    // NOLINTEND
 
-    MCAPI void tick$(class EntityRegistry&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

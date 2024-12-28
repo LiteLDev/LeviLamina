@@ -3,19 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class IConstBlockSource;
+class Random;
+class Vec3;
 // clang-format on
 
 class MangrovePropaguleBlock : public ::BushBlock {
@@ -26,110 +27,98 @@ public:
     MangrovePropaguleBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MangrovePropaguleBlock() = default;
+    // vIndex: 125
+    virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const
+        /*override*/;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 16
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 15
+    virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 9
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
-    // vIndex: 80
-    virtual bool onFertilized(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Actor*          actor,
-        ::FertilizerType      fertilizerType
-    ) const;
-
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
-
-    // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 136
-    virtual class BlockLegacy& init();
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI MangrovePropaguleBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~MangrovePropaguleBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool _isFullyGrown(class Block const& block) const;
-
-    MCAPI bool _isHanging(class Block const& block) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MangrovePropaguleBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
+    MCAPI bool _isFullyGrown(::Block const& block) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB const& getOutline$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockLegacy& $init();
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI class BlockLegacy& init$();
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool onFertilized$(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Actor*          actor,
-        ::FertilizerType      fertilizerType
-    ) const;
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
 
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI class Vec3 randomlyModifyPosition$(class BlockPos const& pos) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
+    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

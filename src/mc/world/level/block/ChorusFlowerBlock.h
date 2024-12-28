@@ -3,19 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
 // clang-format on
 
 class ChorusFlowerBlock : public ::BlockLegacy {
@@ -26,105 +23,113 @@ public:
     ChorusFlowerBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChorusFlowerBlock() = default;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 17
-    virtual void onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 17
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    // vIndex: 55
-    virtual bool canBeDestroyedByWaterSpread() const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI ChorusFlowerBlock(std::string const& nameId, int id);
-
-    MCAPI static void generatePlant(
-        class BlockSource&    region,
-        class BlockPos const& target,
-        class Random&         random,
-        int                   maxHorizontalSpread
-    );
-
+    // vIndex: 0
+    virtual ~ChorusFlowerBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _placeDeadFlower(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void _placeGrownFlower(class BlockSource& region, class BlockPos const& pos, int newAge) const;
-
-    MCAPI static void _growTreeRecursive(
-        class BlockSource&    region,
-        class BlockPos const& current,
-        class BlockPos const& startPos,
-        class Random&         random,
-        int                   maxHorizontalSpread,
-        int                   depth
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChorusFlowerBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI void _placeDeadFlower(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool canBeDestroyedByWaterSpread$() const;
+    MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _growTreeRecursive(
+        ::BlockSource&    region,
+        ::BlockPos const& current,
+        ::BlockPos const& startPos,
+        ::Random&         random,
+        int               maxHorizontalSpread,
+        int               depth
+    );
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+    MCAPI static void
+    generatePlant(::BlockSource& region, ::BlockPos const& target, ::Random& random, int maxHorizontalSpread);
+    // NOLINTEND
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
-
-    MCAPI bool isWaterBlocking$() const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI void onProjectileHit$(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& BRANCH_DIRECTIONS();
 
     MCAPI static ushort const& DEAD_AGE();
 
     MCAPI static int const& GROW_RATE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
+
+    MCAPI bool $isLavaBlocking() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

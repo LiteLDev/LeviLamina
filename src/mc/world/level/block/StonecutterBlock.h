@@ -3,19 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockPos;
+class Player;
 // clang-format on
 
 class StonecutterBlock : public ::BlockLegacy {
@@ -26,50 +21,62 @@ public:
     StonecutterBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StonecutterBlock() = default;
+    // vIndex: 125
+    virtual ::BlockLegacy& init() /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
+
+    // vIndex: 30
+    virtual bool isCraftingBlock() const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 32
-    virtual bool isCraftingBlock() const;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    // vIndex: 136
-    virtual class BlockLegacy& init();
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
-
-    MCAPI StonecutterBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~StonecutterBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StonecutterBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockLegacy& $init();
 
-    MCAPI class BlockLegacy& init$();
+    MCAPI bool $use(::Player&, ::BlockPos const&, uchar) const;
 
-    MCAPI bool isCraftingBlock$() const;
+    MCAPI bool $isCraftingBlock() const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI bool use$(class Player&, class BlockPos const&, uchar) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

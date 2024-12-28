@@ -2,28 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FeatureTypeVersion {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/feature_loading/FeatureVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+// clang-format on
+
+class FeatureTypeVersion {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnk8bb473;
+    ::ll::UntypedStorage<1, 1>   mUnkbafaa0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    FeatureTypeVersion& operator=(FeatureTypeVersion const&);
     FeatureTypeVersion(FeatureTypeVersion const&);
     FeatureTypeVersion();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeVersion(class SemVersion, bool);
+    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
 
-    MCAPI void operator=(struct FeatureTypeVersion const&);
+    MCAPI ::SemVersion const& getFormatVersion() const;
 
     MCAPI ~FeatureTypeVersion();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class SemVersion, bool);
+    MCAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

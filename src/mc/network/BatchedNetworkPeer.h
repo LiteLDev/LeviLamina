@@ -3,8 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/SPSCQueue.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Scheduler;
+class TaskGroup;
+// clang-format on
 
 class BatchedNetworkPeer : public ::NetworkPeer {
 public:
@@ -16,30 +25,56 @@ public:
     // BatchedNetworkPeer inner types define
     struct DataCallback {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>           data;
+        ::ll::TypedStorage<4, 4, ::Compressibility>        compressible;
+        ::ll::TypedStorage<8, 64, ::std::function<void()>> callback;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         DataCallback& operator=(DataCallback const&);
         DataCallback(DataCallback const&);
         DataCallback();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI DataCallback(struct BatchedNetworkPeer::DataCallback&&);
+        MCAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
 
-        MCAPI struct BatchedNetworkPeer::DataCallback& operator=(struct BatchedNetworkPeer::DataCallback&&);
+        MCAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
 
         MCAPI ~DataCallback();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct BatchedNetworkPeer::DataCallback&&);
+        MCAPI void* $ctor(::BatchedNetworkPeer::DataCallback&&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 80, ::BinaryStream>                                       mOutgoingData;
+    ::ll::TypedStorage<8, 8, uint64>                                                mCompressibleBytes;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mIncomingDataBuffer;
+    ::ll::TypedStorage<8, 80, ::std::optional<::ReadOnlyBinaryStream>>              mIncomingData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                        mTaskGroup;
+    ::ll::TypedStorage<8, 80, ::SPSCQueue<::BatchedNetworkPeer::DataCallback, 512>> mSendQueue;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mTaskRunning;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                                 mQueuedPackets;
+    ::ll::TypedStorage<8, 8, uint64>                                                mSentPackets;
+    ::ll::TypedStorage<1, 1, bool>                                                  mAsyncEnabled;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -48,57 +83,77 @@ public:
     BatchedNetworkPeer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BatchedNetworkPeer() = default;
-
-    // vIndex: 1
-    virtual void
-    sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
-
-    // vIndex: 2
-    virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
-
-    // vIndex: 3
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-
-    // vIndex: 4
-    virtual void update();
+    virtual ~BatchedNetworkPeer() /*override*/;
 
     // vIndex: 5
-    virtual void flush(std::function<void()>&& callback);
+    virtual void flush(::std::function<void()>&& callback) /*override*/;
 
-    MCAPI BatchedNetworkPeer(std::shared_ptr<class NetworkPeer> peer, class Scheduler& scheduler);
+    // vIndex: 1
+    virtual void sendPacket(
+        ::std::string const&       data,
+        ::NetworkPeer::Reliability reliability,
+        ::Compressibility          compressible
+    ) /*override*/;
 
-    MCAPI void setAsyncEnabled(bool val);
+    // vIndex: 2
+    virtual ::NetworkPeer::DataStatus receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) /*override*/;
 
+    // vIndex: 3
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
+
+    // vIndex: 4
+    virtual void update() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+
     MCAPI void _startSendTask();
 
+    MCAPI void setAsyncEnabled(bool val);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::shared_ptr<class NetworkPeer> peer, class Scheduler& scheduler);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void flush$(std::function<void()>&& callback);
-
-    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
-
-    MCAPI ::NetworkPeer::DataStatus
-    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $flush(::std::function<void()>&& callback);
 
     MCAPI void
-    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCAPI void update$();
+    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
 
+    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+
+    MCAPI void $update();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

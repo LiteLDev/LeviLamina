@@ -3,20 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CopperBlock.h"
 #include "mc/world/level/block/CopperType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockPos;
+class HashedString;
+class IConstBlockSource;
+class Material;
 // clang-format on
 
 class CopperGrateBlock : public ::CopperBlock {
@@ -27,58 +24,84 @@ public:
     CopperGrateBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CopperGrateBlock() = default;
-
     // vIndex: 6
-    virtual bool
-    getCollisionShapeForCamera(class AABB& outAABB, class Block const&, class IConstBlockSource const&, class BlockPos const&)
-        const;
+    virtual bool getCollisionShapeForCamera(
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
-
-    MCAPI CopperGrateBlock(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant
-    );
-
-    MCAPI CopperGrateBlock(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant
-    );
-
+    // vIndex: 0
+    virtual ~CopperGrateBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        ::CopperType              copperType,
-        class HashedString const& previousVariant,
-        class HashedString const& nextAgeVariant,
-        class HashedString const& waxedVariant
+    MCAPI CopperGrateBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant
     );
 
-    MCAPI void*
-    ctor$(std::string const& nameId, int id, ::CopperType copperType, class HashedString const& previousVariant);
+    MCAPI CopperGrateBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant
+    );
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant
+    );
 
-    MCAPI bool
-    getCollisionShapeForCamera$(class AABB& outAABB, class Block const&, class IConstBlockSource const&, class BlockPos const&)
-        const;
+    MCAPI void* $ctor(
+        ::std::string const&  nameId,
+        int                   id,
+        ::Material const&     material,
+        ::CopperType          copperType,
+        ::HashedString const& previousVariant,
+        ::HashedString const& nextAgeVariant,
+        ::HashedString const& waxedVariant
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $getCollisionShapeForCamera(
+        ::AABB&                    outAABB,
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos
+    ) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

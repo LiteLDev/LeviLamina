@@ -7,21 +7,25 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/network/GamePublishSetting.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/util/Factory.h"
 #include "mc/util/IDType.h"
 #include "mc/util/OwnerPtrFactory.h"
 #include "mc/util/TagRegistry.h"
 #include "mc/world/Difficulty.h"
+#include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ParticleType.h"
+#include "mc/world/level/BlockSourceListener.h"
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/ILevel.h"
+#include "mc/world/level/IWorldRegistriesProvider.h"
 #include "mc/world/level/block/LevelEvent.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
 #include "mc/world/level/pathfinder/NodeType.h"
@@ -29,15 +33,356 @@
 
 // auto generated forward declare list
 // clang-format off
+class Abilities;
+class Actor;
+class ActorAnimationControllerGroup;
+class ActorAnimationGroup;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class ActorDimensionTransferManager;
+class ActorEventBroadcaster;
+class ActorEventCoordinator;
+class ActorFactory;
+class ActorFetcher;
+class ActorGarbageCollector;
+class ActorInfoRegistry;
+class ActorManager;
+class ActorRuntimeID;
+class ActorRuntimeIDManager;
+class ArmorTrimUnloader;
+class AutomationBehaviorTreeGroup;
+class AutonomousActorManager;
+class BaseLightTextureImageBuilder;
+class BehaviorFactory;
+class BiomeComponentFactory;
+class BiomeManager;
+class BiomeRegistry;
+class Block;
+class BlockActorLevelListener;
+class BlockDefinitionGroup;
+class BlockEventCoordinator;
+class BlockLegacy;
+class BlockPalette;
+class BlockPos;
+class BlockReducer;
+class BlockSource;
+class BlockSourceValidityManager;
+class BlockTypeRegistry;
+class BossEventSubscriptionManager;
+class CameraPresets;
+class CameraRegistry;
+class ChangeDimensionRequest;
+class ChunkGenerationManager;
+class ChunkPos;
+class ChunkSource;
+class ChunkTickOffsetManager;
+class ChunkTickRangeManager;
+class ChunkViewSource;
+class ChunkViewTrackerManager;
+class ClientPlayerEventCoordinator;
+class Command;
+class CommandOrigin;
+class CompoundTag;
+class ContainerRegistry;
+class Dimension;
+class DimensionConversionData;
+class DimensionDefinitionGroup;
+class DimensionFactory;
+class DimensionManager;
+class DisplayActorManager;
+class EducationSettingsManager;
+class EntityContext;
+class EntityRegistry;
+class EntitySystems;
+class EntitySystemsManager;
+class EventCoordinatorManager;
+class Experiments;
+class Explosion;
+class FeatureRegistry;
+class FeatureTypeFactory;
+class GameRules;
+class GameplayUserManager;
+class HashedString;
+class HitResult;
+class HitResultWrapper;
+class IConstBlockSource;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
+class IDynamicContainerSerialization;
+class IEntityRegistryOwner;
+class ILevelChunkEventManagerConnector;
+class ILevelRandom;
+class IMinecraftEventing;
+class IPlayerDimensionTransferConnector;
+class IRandom;
+class IUnknownBlockTypeRegistry;
+class InternalComponentRegistry;
+class ItemComponentPacket;
+class ItemEventCoordinator;
+class ItemRegistryRef;
+class JigsawStructureRegistry;
+class LayeredAbilities;
+class LevelBlockDestroyer;
+class LevelChunk;
+class LevelChunkEventManager;
+class LevelChunkMetaDataManager;
+class LevelChunkPerformanceTelemetry;
+class LevelChunkSaveManager;
+class LevelCrashDumpManager;
+class LevelData;
+class LevelEventCoordinator;
+class LevelEventManager;
+class LevelListener;
+class LevelSeed64;
+class LevelSettings;
+class LevelSoundManager;
+class LevelStorage;
+class LevelStorageManager;
+class LoadingScreenIdManager;
+class LootTables;
+class MapItemSavedData;
+class Mob;
+class MolangVariableMap;
+class NavigationComponent;
+class NetEventCallback;
+class NetworkIdentifier;
+class NpcDialogueStorage;
+class PacketSender;
+class Particle;
+class ParticleProvider;
+class Path;
+class PauseManager;
+class PermissionsHandler;
+class PhotoItemSavedDataCollection;
+class PhotoManager;
+class PhotoStorage;
+class Player;
+class PlayerAbilitiesManager;
+class PlayerDeathManager;
+class PlayerDimensionTransferManager;
+class PlayerEventCoordinator;
+class PlayerLimboActorManager;
+class PlayerListEntry;
+class PlayerListManager;
+class PlayerMovementSettingsManager;
+class PlayerSleepManager;
+class PlayerTickManager;
+class PortalForcer;
+class ProjectileFactory;
+class PropertyGroupManager;
+class Random;
+class Recipes;
+class ResourcePackManager;
+class SavedDataStorage;
+class Scheduler;
+class Scoreboard;
+class ScriptDeferredEventCoordinator;
+class ScriptingEventCoordinator;
+class SerializedSkin;
+class ServerLevelEventCoordinator;
+class ServerNetworkEventCoordinator;
+class ServerParticleManager;
+class ServerPlayerEventCoordinator;
+class ServerPlayerSleepManager;
+class SoundPlayerInterface;
+class Spawner;
+class StrictEntityContext;
+class StructureManager;
+class StructureSpawnRegistry;
+class SubChunkManager;
+class SubChunkPacket;
+class SubChunkRequestManager;
+class SurfaceBuilderRegistry;
+class TagCacheManager;
+class TaskGroup;
+class TempEPtrManager;
+class TickDeltaTimeManager;
+class TickTimeManager;
+class TickingAreaList;
+class TickingAreasManager;
+class TradeTables;
+class TrimMaterialRegistry;
+class TrimPatternRegistry;
+class TrustedSkinHelper;
+class UniqueIDManager;
+class UserEntityIdentifierComponent;
+class VanillaActorEventListenerManager;
+class Vec3;
+class WeakEntityRef;
+class WeatherManager;
+class _TickPtr;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct AdventureSettings;
+struct Bounds;
+struct BreakingItemParticleData;
+struct EducationLevelSettings;
+struct LevelTagIDType;
+struct LevelTagSetIDType;
+struct NetworkPermissions;
+struct PlayerMovementSettings;
+struct PlayerSleepStatus;
+struct ResolvedItemIconInfo;
+struct ScreenshotOptions;
+struct Tick;
+namespace Bedrock::PubSub { class Subscription; }
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
+namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
-class Level {
+class Level : public ::ILevel, public ::BlockSourceListener, public ::IWorldRegistriesProvider {
+public:
+    // Level inner types define
+    using RegionSet = ::std::unordered_set<::BlockSource*>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const>                       mPacketSender;
+    ::ll::TypedStorage<8, 128, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>> mTagRegistry;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::PauseManager>>                                                mPauseManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorInfoRegistry>>            mActorInfoRegistry;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LevelListener*>>                   mListeners;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageManager>>           mLevelStorageManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData> const>  mLevelData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockSource*>>              mRegions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDefinitionGroup>>          mEntityDefinitions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorAnimationGroup>>           mActorAnimationGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorAnimationControllerGroup>> mActorAnimationControllerGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockDefinitionGroup>>          mBlockDefinitions;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::TrimPatternRegistry>>          mTrimPatternRegistry;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::TrimMaterialRegistry>>         mTrimMaterialRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Spawner>>                       mMobSpawner;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProjectileFactory>>             mProjectileFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PropertyGroupManager>>          mActorPropertyGroups;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraPresets>>                 mCameraPresets;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorFactory>>               mBehaviorFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AutomationBehaviorTreeGroup>>   mAutomationBehaviorTreeDefinitions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockPalette>>                  mGlobalBlockPalette;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Recipes>>                       mRecipes;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockReducer>>                  mBlockReducer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NpcDialogueStorage>>            mNpcDialogueStorage;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InternalComponentRegistry>>     mInternalComponentRegistry;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PortalForcer>>> mPortalForcer;
+    ::ll::TypedStorage<8, 16, ::ItemRegistryRef const>                                        mItemRegistry;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BlockTypeRegistry>>                           mBlockRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IUnknownBlockTypeRegistry>>                  mUnknownBlockTypeRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BossEventSubscriptionManager>>       mBossEventSubscriptionManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::ContainerRegistry>> const> mContainerRegistry;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::HitResultWrapper>>> mHitResultWrapper;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mImmersiveReaderString;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::ILevelRandom>>>    mLevelRandom;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::NetEventCallback>> mNetEventCallback;
+    ::ll::TypedStorage<1, 1, bool const>                                      mIsClientSide;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                                   mSubClientId;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsExporting;
+    ::ll::TypedStorage<1, 1, bool>                                            mDisablePlayerInteractions;
+    ::ll::TypedStorage<1, 1, bool>                                            mSimPaused;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                  mMainThreadTaskGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                  mIOTaskGroup;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>                                    mScheduler;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mLevelId;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TickingAreasManager>>        mTickingAreasMgr;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TempEPtrManager>>> mTempEPtrManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PhotoItemSavedDataCollection>> mPhotoItemSavedDataCollection;
+    ::ll::TypedStorage<1, 1, bool>                                              mTearingDown;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                             mEventing;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::EventCoordinatorManager>>>
+                                                                                 mEventCoordinatorManager;
+    ::ll::TypedStorage<8, 728, ::LevelSoundManager>                              mLevelSoundManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelChunkPerformanceTelemetry>>>
+                                                   mLevelChunkPerformanceTelemetry;
+    ::ll::TypedStorage<8, 144, ::LootTables>       mLootTables;
+    ::ll::TypedStorage<8, 8, ::BlockLegacy const*> mRegisteredBorderBlock;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorFactory>>> mActorFactory;
+    ::ll::TypedStorage<8, 632, ::JigsawStructureRegistry>                                     mJigsawStructureRegistry;
+    ::ll::TypedStorage<8, 128, ::StructureSpawnRegistry>                                      mStructureSpawnRegistry;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionFactory>>> mDimensionFactory;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionManager>>> mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                                         mLevelEntity;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner>>              mEntityRegistryOwner;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::EntitySystemsManager>>>                mEntitySystemsManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureRegistry>>                                mFeatureRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureTypeFactory>>                             mFeatureTypeFactory;
+    ::ll::TypedStorage<8, 64, ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>>
+        mLightTextureImageBuilderFactory;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::EducationSettingsManager>>>
+                                                                                         mEducationSettingsManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerCapabilities::ISharedController>> mCapabilities;
+    ::ll::TypedStorage<1, 8, ::BlockActorLevelListener>                                  mBlockActorLevelListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VanillaActorEventListenerManager>> mVanillaActorEventListenerManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PositionTrackingDB::PositionTrackingDBClient>>
+                                                                mPositionTrackerDBClient;
+    ::ll::TypedStorage<1, 1, bool>                              mClientSideChunkGenEnabled;
+    ::ll::TypedStorage<1, 1, bool>                              mBlockNetworkIdsAreHashes;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeManager>> mBiomeManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorGarbageCollector>>>
+                                                                                              mActorGarbageCollector;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorManager>>> mActorManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemoveActorEntityReferences;
+    ::ll::TypedStorage<8, 168, ::AutonomousActorManager>       mAutonomousActorManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorFetcher>>> mActorFetcher;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::GameplayUserManager>>>
+                                                               mGameplayUserManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemovedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAnyGameplayUsersRemovedSubscription;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scoreboard>>  mScoreboard;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorRuntimeIDManager>>>
+        mActorRuntimeIDManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerListManager>>> mPlayerListManager;
+    ::ll::TypedStorage<8, 64, ::PlayerTickManager>                                                 mPlayerTickManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerParticleManager>>>
+                                                               mServerParticleManager;
+    ::ll::TypedStorage<8, 520, ::ParticleProvider>             mParticleProvider;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSendServerLegacyParticleSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAddTerrainParticleEffectSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAddTerrainSlideEffectSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAddBreakingItemParticleEffectSubscription;
+    ::ll::TypedStorage<8, 24, ::ChunkTickRangeManager>         mChunkTickRangeManager;
+    ::ll::TypedStorage<8, 72, ::ChunkViewTrackerManager>       mChunkViewTrackerManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ActorEventBroadcaster> const> mActorEventBroadcaster;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LoadingScreenIdManager>>      mLoadingScreenIdManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerDimensionTransferManager>>>
+                                                                              mPlayerDimensionTransferManager;
+    ::ll::TypedStorage<1, 16, ::LevelCrashDumpManager const>                  mLevelCrashDumpManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::UniqueIDManager>>> mUniqueIDManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mOnPictureTakenSubscription;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PhotoManager>>>      mPhotoManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelEventManager>>> mLevelEventManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLevelEventDataSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLevelEventCompoundTagSubscription;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ChunkTickOffsetManager>>>
+        mChunkTickOffsetManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerMovementSettingsManager>>>
+        mPlayerMovementSettingsManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerAbilitiesManager>>>
+        mPlayerAbilitiesManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelChunkEventManager>>>
+                                                               mLevelChunkEventManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkLoadedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkReloadedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkDiscardedSubscription;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorDimensionTransferManager>>>
+        mActorDimensionTransferManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelBlockDestroyer>>>
+        mLevelBlockDestroyer;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TickDeltaTimeManager>>>
+                                                                              mTickDeltaTimeManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManager>>> mTickTimeManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::BlockSourceValidityManager>>>
+                                                                                    mBlockSourceValidityManager;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::LevelChunkSaveManager>>                  mLevelChunkSaveManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::WeatherManager>>>        mWeatherManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::cereal::ReflectionCtx>>> mCerealContext;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Level& operator=(Level const&);
@@ -45,920 +390,1364 @@ public:
     Level();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void _destroyEffect(class BlockPos const& pos, class Block const& block, int intensityFactor);
+    // vIndex: 0
+    virtual ~Level() /*override*/;
 
-    MCVAPI class PlayerDeathManager* _getPlayerDeathManager();
+    // vIndex: 1
+    virtual bool initialize(
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId
+    ) /*override*/;
 
-    MCVAPI void _initializeMapDataManager();
-
-    MCVAPI void _subTick();
-
-    MCVAPI class Actor* addAutonomousEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
-
-    MCVAPI void addBlockSourceForValidityTracking(class BlockSource* region);
-
-    MCVAPI void addBreakingItemParticleEffect(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
-    );
-
-    MCVAPI void addChunkViewTracker(std::weak_ptr<class ChunkViewSource> chunkViewSource);
-
-    MCVAPI class Actor* addDisplayEntity(class BlockSource&, class OwnerPtr<class EntityContext>);
-
-    MCVAPI class Actor* addEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
-
-    MCVAPI class Actor* addGlobalEntity(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
-
-    MCVAPI void addListener(class LevelListener& listener);
-
-    MCVAPI class Particle* addParticle(
-        ::ParticleType           id,
-        class Vec3 const&        pos,
-        class Vec3 const&        dir,
-        int                      data,
-        class CompoundTag const* tag,
-        bool                     isGlobal
-    );
-
-    MCVAPI void addParticleEffect(
-        class HashedString const&      effect,
-        class Vec3 const&              emitterPosition,
-        class MolangVariableMap const& molangVariables
-    );
-
-    MCVAPI void addTerrainParticleEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
-
-    MCVAPI void addTerrainSlideEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
-
-    MCVAPI void
-    addTickingAreaList(DimensionType dimensionId, std::shared_ptr<class TickingAreaList> const& tickingAreas);
-
-    MCVAPI void addUser(class OwnerPtr<class EntityContext> userEntity);
-
-    MCVAPI class Level* asLevel();
-
-    MCVAPI bool blockNetworkIdsAreHashes();
-
-    MCVAPI void broadcastActorEvent(class Actor& actor, ::ActorEvent eventId, int data) const;
-
-    MCVAPI void broadcastLevelEvent(
-        ::LevelEvent                               type,
-        class CompoundTag const&                   tag,
-        class UserEntityIdentifierComponent const* userIdentifier
-    );
-
-    MCVAPI void broadcastLevelEvent(
-        ::LevelEvent                               type,
-        class Vec3 const&                          pos,
-        int                                        data,
-        class UserEntityIdentifierComponent const* userIdentifier
-    );
+    // vIndex: 2
+    virtual void startLeaveGame() /*override*/;
 
-    MCVAPI void broadcastLocalEvent(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, int data);
-
-    MCVAPI void
-    broadcastLocalEvent(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, class Block const& block);
+    // vIndex: 3
+    virtual bool isLeaveGameDone() /*override*/;
 
-    MCVAPI void broadcastSoundEvent(
-        class BlockSource&                      region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 4
+    virtual ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType) /*override*/;
 
-    MCVAPI void broadcastSoundEvent(
-        class Dimension&                        dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& identifier,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 5
+    virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const /*override*/;
 
-    MCVAPI void broadcastSoundEvent(
-        class BlockSource&                      region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        class Block const&                      block,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 6
+    virtual ::DimensionType getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const /*override*/;
 
-    MCVAPI bool canUseSkin(
-        class SerializedSkin const&    skin,
-        class NetworkIdentifier const& networkIdentifier,
-        class mce::UUID const&         clientId,
-        struct ActorUniqueID const&    playerId
-    ) const;
+    // vIndex: 8
+    virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) /*override*/;
 
-    MCVAPI bool copyAndLockMap(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
+    // vIndex: 7
+    virtual void forEachDimension(::std::function<bool(::Dimension const&)> callback) const /*override*/;
 
-    MCVAPI int countUsersWithMatchingNetworkId(class NetworkIdentifier const& networkId) const;
+    // vIndex: 11
+    virtual uint getChunkTickRange() const /*override*/;
 
-    MCVAPI class MapItemSavedData& createMapSavedData(
-        struct ActorUniqueID const& uuid,
-        class BlockPos const&       origin,
-        DimensionType               dimension,
-        int                         returnScaleLevel
-    );
+    // vIndex: 12
+    virtual ::ChunkTickRangeManager const& getChunkTickRangeManager() const /*override*/;
 
-    MCVAPI class MapItemSavedData& createMapSavedData(
-        std::vector<struct ActorUniqueID> const& mapIds,
-        class BlockPos const&                    origin,
-        DimensionType                            dimension,
-        int                                      returnScaleLevel
-    );
+    // vIndex: 13
+    virtual ::PortalForcer& getPortalForcer() /*override*/;
 
-    MCVAPI void createPhotoStorage();
+    // vIndex: 14
+    virtual void requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest) /*override*/;
 
-    MCVAPI void decrementTagCache(
-        std::string const&                                                                                tag,
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>& tagRegistry
-    );
+    // vIndex: 15
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager>
+    getPlayerDimensionTransferManager() /*override*/;
 
-    MCVAPI void denyEffect(class BlockSource& region, class Vec3 const& pos);
+    // vIndex: 16
+    virtual void
+    entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos) /*override*/;
 
-    MCVAPI bool destroyBlock(class BlockSource& region, class BlockPos const& pos, bool dropResources);
+    // vIndex: 17
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager>
+    getActorDimensionTransferManager() /*override*/;
 
-    MCVAPI void digestServerItemComponents(class ItemComponentPacket const& packet);
+    // vIndex: 18
+    virtual ::Spawner& getSpawner() const /*override*/;
 
-    MCVAPI void entityChangeDimension(class Actor& entity, DimensionType toId, std::optional<class Vec3> entityPos);
+    // vIndex: 19
+    virtual ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager>
+    getBossEventSubscriptionManager() /*override*/;
 
-    MCVAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID uuid, bool wasInit);
+    // vIndex: 20
+    virtual ::ProjectileFactory& getProjectileFactory() const /*override*/;
 
-    MCVAPI bool explode(class Explosion& explosion);
+    // vIndex: 21
+    virtual ::ActorDefinitionGroup* getEntityDefinitions() const /*override*/;
 
-    MCVAPI bool explode(
-        class BlockSource& region,
-        class Actor*       source,
-        class Vec3 const&  pos,
-        float              explosionRadius,
-        bool               fire,
-        bool               breaksBlocks,
-        float              maxResistance,
-        bool               allowUnderwater
-    );
+    // vIndex: 22
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> getActorAnimationGroup() const /*override*/;
 
-    MCVAPI bool extinguishFire(class BlockSource& region, class BlockPos const& pos, uchar face, class Actor* source);
+    // vIndex: 23
+    virtual ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> getActorAnimationControllerGroup() const
+        /*override*/;
 
-    MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorId, bool getRemoved) const;
+    // vIndex: 24
+    virtual ::BlockDefinitionGroup* getBlockDefinitions() const /*override*/;
 
-    MCVAPI class StrictEntityContext fetchStrictEntity(struct ActorUniqueID actorId, bool getRemoved) const;
+    // vIndex: 25
+    virtual ::PropertyGroupManager& getActorPropertyGroup() const /*override*/;
 
-    MCVAPI std::unique_ptr<class Path>
-           findPath(class Actor& from, class Actor& to, class NavigationComponent& navigation);
+    // vIndex: 27
+    virtual ::CameraPresets const& getCameraPresets() const /*override*/;
 
-    MCVAPI std::unique_ptr<class Path>
-           findPath(class Actor& from, int xBest, int yBest, int zBest, class NavigationComponent& navigation);
+    // vIndex: 26
+    virtual ::CameraPresets& getCameraPresets() /*override*/;
 
-    MCVAPI class Player* findPlayer(std::function<bool(class WeakEntityRef const&)> pred) const;
+    // vIndex: 28
+    virtual bool getDisablePlayerInteractions() const /*override*/;
 
-    MCVAPI class Player* findPlayer(std::function<bool(class Player const&)> pred) const;
+    // vIndex: 29
+    virtual void setDisablePlayerInteractions(bool const disable) /*override*/;
 
-    MCVAPI void flushRunTimeLighting();
+    // vIndex: 30
+    virtual ::AutomationBehaviorTreeGroup& getAutomationBehaviorTreeGroup() const /*override*/;
 
-    MCVAPI void forEachDimension(std::function<bool(class Dimension const&)> callback) const;
+    // vIndex: 31
+    virtual ::BehaviorFactory& getBehaviorFactory() const /*override*/;
 
-    MCVAPI void forEachDimension(std::function<bool(class Dimension&)> callback);
+    // vIndex: 32
+    virtual ::Difficulty getDifficulty() const /*override*/;
 
-    MCVAPI void forEachPlayer(std::function<bool(class Player const&)> callback) const;
+    // vIndex: 34
+    virtual ::DimensionConversionData getDimensionConversionData() const /*override*/;
 
-    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback);
+    // vIndex: 35
+    virtual float getSpecialMultiplier(::DimensionType dimensionType) const /*override*/;
 
-    MCVAPI void forEachUser(std::function<bool(class EntityContext const&)> callback) const;
+    // vIndex: 36
+    virtual bool hasCommandsEnabled() const /*override*/;
 
-    MCVAPI void forEachUser(std::function<bool(class EntityContext&)> callback);
+    // vIndex: 37
+    virtual bool useMsaGamertagsOnly() const /*override*/;
 
-    MCVAPI void forceFlushRemovedPlayers();
+    // vIndex: 38
+    virtual void setMsaGamertagsOnly(bool msaGamertagsOnly) /*override*/;
 
-    MCVAPI void forceRemoveEntity(class Actor& actor);
+    // vIndex: 39
+    virtual ::Actor* addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    MCVAPI void forceRemoveEntityfromWorld(class Actor& actor);
+    // vIndex: 40
+    virtual ::Actor* addGlobalEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    MCVAPI int getActivePlayerCount() const;
+    // vIndex: 41
+    virtual ::Actor* addAutonomousEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    MCVAPI std::vector<class WeakEntityRef> const& getActiveUsers() const;
+    // vIndex: 42
+    virtual void addUser(::OwnerPtr<::EntityContext> userEntity) /*override*/;
 
-    MCVAPI int getActiveUsersCount() const;
+    // vIndex: 43
+    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
 
-    MCVAPI class Bedrock::NonOwnerPointer<class ActorAnimationControllerGroup> getActorAnimationControllerGroup() const;
+    // vIndex: 44
+    virtual void removeDisplayEntity(::WeakEntityRef) /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> getActorAnimationGroup() const;
+    // vIndex: 45
+    virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
-    MCVAPI class ActorEventCoordinator& getActorEventCoordinator();
+    // vIndex: 46
+    virtual void suspendPlayer(::Player& player) /*override*/;
 
-    MCVAPI class ActorFactory& getActorFactory();
+    // vIndex: 47
+    virtual void resumePlayer(::Player& player) /*override*/;
 
-    MCVAPI class ActorFactory const& getActorFactory() const;
+    // vIndex: 48
+    virtual bool isPlayerSuspended(::Player& player) const /*override*/;
 
-    MCVAPI class ActorInfoRegistry* getActorInfoRegistry();
+    // vIndex: 50
+    virtual ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> getGameplayUserManager() /*override*/;
 
-    MCVAPI class PropertyGroupManager& getActorPropertyGroup() const;
+    // vIndex: 49
+    virtual ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager const> getGameplayUserManager() const /*override*/;
 
-    MCVAPI struct AdventureSettings& getAdventureSettings();
+    // vIndex: 51
+    virtual ::OwnerPtr<::EntityContext> removeActorAndTakeEntity(::WeakEntityRef entityRef) /*override*/;
 
-    MCVAPI struct AdventureSettings const& getAdventureSettings() const;
+    // vIndex: 52
+    virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef) /*override*/;
 
-    MCVAPI class ArmorTrimUnloader* getArmorTrimUnloader();
+    // vIndex: 53
+    virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc) /*override*/;
 
-    MCVAPI class AutomationBehaviorTreeGroup& getAutomationBehaviorTreeGroup() const;
+    // vIndex: 54
+    virtual ::StrictEntityContext fetchStrictEntity(::ActorUniqueID actorId, bool getRemoved) const /*override*/;
 
-    MCVAPI class BehaviorFactory& getBehaviorFactory() const;
+    // vIndex: 55
+    virtual ::Actor* fetchEntity(::ActorUniqueID actorId, bool getRemoved) const /*override*/;
 
-    MCVAPI class BiomeComponentFactory& getBiomeComponentFactory();
+    // vIndex: 56
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> getActorFetcher() const /*override*/;
 
-    MCVAPI class BiomeComponentFactory const& getBiomeComponentFactory() const;
+    // vIndex: 57
+    virtual ::Actor* getRuntimeEntity(::ActorRuntimeID actorId, bool getRemoved) const /*override*/;
 
-    MCVAPI class BiomeManager& getBiomeManager();
+    // vIndex: 59
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager> getActorRuntimeIDManager() /*override*/;
 
-    MCVAPI class BiomeManager const& getBiomeManager() const;
+    // vIndex: 58
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager const> getActorRuntimeIDManager() const /*override*/;
 
-    MCVAPI class BiomeRegistry& getBiomeRegistry();
+    // vIndex: 60
+    virtual ::Mob* getMob(::ActorUniqueID mobId) const /*override*/;
 
-    MCVAPI class BiomeRegistry const& getBiomeRegistry() const;
+    // vIndex: 63
+    virtual ::Player* getPlayer(::std::string const& name) const /*override*/;
 
-    MCVAPI class BlockComponentFactory const& getBlockComponentFactory() const;
+    // vIndex: 62
+    virtual ::Player* getPlayer(::mce::UUID const& uuid) const /*override*/;
 
-    MCVAPI class BlockComponentFactory& getBlockComponentFactory();
+    // vIndex: 61
+    virtual ::Player* getPlayer(::ActorUniqueID entityID) const /*override*/;
 
-    MCVAPI class BlockDefinitionGroup* getBlockDefinitions() const;
+    // vIndex: 64
+    virtual ::Player* getPlayerByXuid(::std::string const& xuid) const /*override*/;
 
-    MCVAPI class BlockEventCoordinator& getBlockEventCoordinator();
+    // vIndex: 65
+    virtual ::Player* getPlatformPlayer(::std::string const& platformOnlineId) const /*override*/;
 
-    MCVAPI class BlockPalette& getBlockPalette();
+    // vIndex: 66
+    virtual ::Player* getPlayerFromServerId(::std::string const& serverId) const /*override*/;
 
-    MCVAPI class BlockPalette const& getBlockPalette() const;
+    // vIndex: 67
+    virtual ::Player* getRuntimePlayer(::ActorRuntimeID runtimeId) const /*override*/;
 
-    MCVAPI class BlockReducer* getBlockReducer() const;
+    // vIndex: 68
+    virtual int getNumRemotePlayers() const /*override*/;
 
-    MCVAPI std::weak_ptr<class BlockTypeRegistry> getBlockRegistry() const;
+    // vIndex: 69
+    virtual ::Player* getPrimaryLocalPlayer() const /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class BossEventSubscriptionManager> getBossEventSubscriptionManager();
+    // vIndex: 70
+    virtual ::IMinecraftEventing& getEventing() /*override*/;
 
-    MCVAPI class CameraPresets& getCameraPresets();
+    // vIndex: 71
+    virtual ::mce::Color getPlayerColor(::Player const& player) const /*override*/;
 
-    MCVAPI class CameraPresets const& getCameraPresets() const;
+    // vIndex: 72
+    virtual ::Tick const& getCurrentTick() const /*override*/;
 
-    MCVAPI struct PlayerCapabilities::ISharedController const& getCapabilities() const;
+    // vIndex: 73
+    virtual ::Tick const getCurrentServerTick() const /*override*/;
 
-    MCVAPI uint getChunkTickRange() const;
+    // vIndex: 74
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TickDeltaTimeManager const> getTickDeltaTimeManager() const /*override*/;
 
-    MCVAPI class ChunkTickRangeManager const& getChunkTickRangeManager() const;
+    // vIndex: 378
+    virtual ::ArmorTrimUnloader* getArmorTrimUnloader();
 
-    MCVAPI class ClientPlayerEventCoordinator& getClientPlayerEventCoordinator();
+    // vIndex: 76
+    virtual ::BiomeRegistry const& getBiomeRegistry() const /*override*/;
 
-    MCVAPI class ResourcePackManager* getClientResourcePackManager() const;
+    // vIndex: 75
+    virtual ::BiomeRegistry& getBiomeRegistry() /*override*/;
 
-    MCVAPI std::vector<class ChunkPos> const& getClientTickingOffsets() const;
+    // vIndex: 78
+    virtual ::BlockPalette const& getBlockPalette() const /*override*/;
 
-    MCVAPI struct Tick const getCurrentServerTick() const;
+    // vIndex: 77
+    virtual ::BlockPalette& getBlockPalette() /*override*/;
 
-    MCVAPI struct Tick const& getCurrentTick() const;
+    // vIndex: 80
+    virtual ::FeatureRegistry const& getFeatureRegistry() const /*override*/;
 
-    MCVAPI class Abilities& getDefaultAbilities();
+    // vIndex: 79
+    virtual ::FeatureRegistry& getFeatureRegistry() /*override*/;
 
-    MCVAPI ::GameType getDefaultGameType() const;
+    // vIndex: 82
+    virtual ::FeatureTypeFactory const& getFeatureTypeFactory() const /*override*/;
 
-    MCVAPI class PermissionsHandler const& getDefaultPermissions() const;
+    // vIndex: 81
+    virtual ::FeatureTypeFactory& getFeatureTypeFactory() /*override*/;
 
-    MCVAPI class PermissionsHandler& getDefaultPermissions();
+    // vIndex: 84
+    virtual ::JigsawStructureRegistry const& getJigsawStructureRegistry() const /*override*/;
 
-    MCVAPI class BlockPos const& getDefaultSpawn() const;
+    // vIndex: 83
+    virtual ::JigsawStructureRegistry& getJigsawStructureRegistry() /*override*/;
 
-    MCVAPI ::Difficulty getDifficulty() const;
+    // vIndex: 86
+    virtual ::StructureSpawnRegistry const& getStructureSpawnRegistry() const /*override*/;
 
-    MCVAPI class WeakRef<class Dimension> getDimension(DimensionType id) const;
+    // vIndex: 85
+    virtual ::StructureSpawnRegistry& getStructureSpawnRegistry() /*override*/;
 
-    MCVAPI class DimensionConversionData getDimensionConversionData() const;
+    // vIndex: 88
+    virtual ::Bedrock::NotNullNonOwnerPtr<::StructureManager> const getStructureManager() const /*override*/;
 
-    MCVAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&> const& getDimensionFactory() const;
+    // vIndex: 87
+    virtual ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager() /*override*/;
 
-    MCVAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& getDimensionFactory();
+    // vIndex: 90
+    virtual ::BiomeComponentFactory const& getBiomeComponentFactory() const /*override*/;
 
-    MCVAPI class DimensionManager const& getDimensionManager() const;
+    // vIndex: 89
+    virtual ::BiomeComponentFactory& getBiomeComponentFactory() /*override*/;
 
-    MCVAPI class DimensionManager& getDimensionManager();
+    // vIndex: 92
+    virtual ::SurfaceBuilderRegistry const& getSurfaceBuilderRegistry() const /*override*/;
 
-    MCVAPI bool getDisablePlayerInteractions() const;
+    // vIndex: 91
+    virtual ::SurfaceBuilderRegistry& getSurfaceBuilderRegistry() /*override*/;
 
-    MCVAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
+    // vIndex: 94
+    virtual ::BiomeManager const& getBiomeManager() const /*override*/;
 
-    MCVAPI std::vector<class OwnerPtr<class EntityContext>> const& getEntities() const;
+    // vIndex: 93
+    virtual ::BiomeManager& getBiomeManager() /*override*/;
 
-    MCVAPI class ActorDefinitionGroup* getEntityDefinitions() const;
+    // vIndex: 96
+    virtual ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&> const& getDimensionFactory() const /*override*/;
 
-    MCVAPI class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
+    // vIndex: 95
+    virtual ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& getDimensionFactory() /*override*/;
 
-    MCVAPI class StackRefResult<class EntityRegistry> getEntityRegistry();
+    // vIndex: 98
+    virtual ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const&
+    getLightTextureImageBuilderFactory() const /*override*/;
 
-    MCVAPI class EntitySystems& getEntitySystems();
+    // vIndex: 97
+    virtual ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>&
+    getLightTextureImageBuilderFactory() /*override*/;
 
-    MCVAPI class IMinecraftEventing& getEventing();
+    // vIndex: 33
+    virtual ::InternalComponentRegistry& getInternalComponentRegistry() const /*override*/;
 
-    MCVAPI class FeatureRegistry const& getFeatureRegistry() const;
+    // vIndex: 100
+    virtual ::IWorldRegistriesProvider const& getWorldRegistriesProvider() const /*override*/;
 
-    MCVAPI class FeatureRegistry& getFeatureRegistry();
+    // vIndex: 99
+    virtual ::IWorldRegistriesProvider& getWorldRegistriesProvider() /*override*/;
 
-    MCVAPI class FeatureTypeFactory const& getFeatureTypeFactory() const;
+    // vIndex: 101
+    virtual void addListener(::LevelListener& listener) /*override*/;
 
-    MCVAPI class FeatureTypeFactory& getFeatureTypeFactory();
+    // vIndex: 102
+    virtual void removeListener(::LevelListener& listener) /*override*/;
 
-    MCVAPI class GameRules& getGameRules();
+    // vIndex: 103
+    virtual void tickEntities() /*override*/;
 
-    MCVAPI class GameRules const& getGameRules() const;
+    // vIndex: 104
+    virtual void tickEntitySystems() /*override*/;
 
-    MCVAPI class HitResult& getHitResult();
+    // vIndex: 107
+    virtual void onPlayerDeath(::Player& player, ::ActorDamageSource const& source) /*override*/;
 
-    MCVAPI class TaskGroup& getIOTasksGroup();
+    // vIndex: 108
+    virtual void tick() /*override*/;
 
-    MCVAPI class IRandom& getIRandom() const;
+    // vIndex: 110
+    virtual bool explode(
+        ::BlockSource& region,
+        ::Actor*       source,
+        ::Vec3 const&  pos,
+        float          explosionRadius,
+        bool           fire,
+        bool           breaksBlocks,
+        float          maxResistance,
+        bool           allowUnderwater
+    ) /*override*/;
 
-    MCVAPI std::string const& getImmersiveReaderString() const;
+    // vIndex: 109
+    virtual bool explode(::Explosion& explosion) /*override*/;
 
-    MCVAPI class InternalComponentRegistry& getInternalComponentRegistry() const;
+    // vIndex: 113
+    virtual void denyEffect(::BlockSource& region, ::Vec3 const& pos) /*override*/;
 
-    MCVAPI class ItemEventCoordinator& getItemEventCoordinator();
+    // vIndex: 114
+    virtual void potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect) /*override*/;
 
-    MCVAPI class ItemRegistryRef getItemRegistry() const;
+    // vIndex: 115
+    virtual bool extinguishFire(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source) /*override*/;
 
-    MCVAPI class JigsawStructureRegistry& getJigsawStructureRegistry();
+    // vIndex: 117
+    virtual ::std::unique_ptr<::Path>
+    findPath(::Actor& from, int xBest, int yBest, int zBest, ::NavigationComponent& navigation) /*override*/;
 
-    MCVAPI class JigsawStructureRegistry const& getJigsawStructureRegistry() const;
+    // vIndex: 116
+    virtual ::std::unique_ptr<::Path>
+    findPath(::Actor& from, ::Actor const& to, ::NavigationComponent& navigation) /*override*/;
 
-    MCVAPI bool getLANBroadcast() const;
+    // vIndex: 119
+    virtual void setSleepStatus(::PlayerSleepStatus const& status) /*override*/;
 
-    MCVAPI bool getLANBroadcastIntent() const;
+    // vIndex: 120
+    virtual ::PlayerSleepStatus getSleepStatus() const /*override*/;
 
-    MCVAPI DimensionType getLastOrDefaultSpawnDimensionId(DimensionType lastDimensionId) const;
+    // vIndex: 118
+    virtual void updateSleepingPlayerList() /*override*/;
 
-    MCVAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager();
+    // vIndex: 380
+    virtual ::PlayerSleepManager const& getPlayerSleepManager() const = 0;
 
-    MCVAPI class LevelData const& getLevelData() const;
+    // vIndex: 379
+    virtual ::PlayerSleepManager& getPlayerSleepManager() = 0;
 
-    MCVAPI class LevelData& getLevelData();
+    // vIndex: 153
+    virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> getServerPlayerSleepManager() /*override*/;
 
-    MCVAPI class WeakRef<class EntityContext> getLevelEntity();
+    // vIndex: 152
+    virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const
+        /*override*/;
 
-    MCVAPI class LevelEventCoordinator& getLevelEventCoordinator();
+    // vIndex: 121
+    virtual int getTime() const /*override*/;
 
-    MCVAPI std::string getLevelId() const;
+    // vIndex: 122
+    virtual void setTime(int time) /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class LevelSoundManager> getLevelSoundManager();
+    // vIndex: 123
+    virtual uint getSeed() /*override*/;
 
-    MCVAPI class LevelStorage const& getLevelStorage() const;
+    // vIndex: 124
+    virtual ::BlockPos const& getSharedSpawnPos() const /*override*/;
 
-    MCVAPI class LevelStorage& getLevelStorage();
+    // vIndex: 125
+    virtual void setDefaultSpawn(::BlockPos const& spawnPos) /*override*/;
 
-    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&> const&
-    getLightTextureImageBuilderFactory() const;
+    // vIndex: 126
+    virtual ::BlockPos const& getDefaultSpawn() const /*override*/;
 
-    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>&
-    getLightTextureImageBuilderFactory();
+    // vIndex: 127
+    virtual void setDefaultGameType(::GameType) /*override*/;
 
-    MCVAPI class HitResult& getLiquidHitResult();
+    // vIndex: 128
+    virtual ::GameType getDefaultGameType() const /*override*/;
 
-    MCVAPI class LootTables& getLootTables();
+    // vIndex: 129
+    virtual void setDifficulty(::Difficulty difficulty) /*override*/;
 
-    MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const& instance);
+    // vIndex: 130
+    virtual void setMultiplayerGameIntent(bool multiplayerGame) /*override*/;
 
-    MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const* instance);
+    // vIndex: 131
+    virtual bool getMultiplayerGameIntent() const /*override*/;
 
-    MCVAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID uuid);
+    // vIndex: 132
+    virtual void setMultiplayerGame(bool multiplayerGame) /*override*/;
 
-    MCVAPI class Mob* getMob(struct ActorUniqueID mobId) const;
+    // vIndex: 133
+    virtual bool isMultiplayerGame() const /*override*/;
 
-    MCVAPI bool getMultiplayerGameIntent() const;
+    // vIndex: 134
+    virtual void setLANBroadcastIntent(bool broadcast) /*override*/;
 
-    MCVAPI class Bedrock::NonOwnerPointer<class NetEventCallback> getNetEventCallback() const;
+    // vIndex: 135
+    virtual bool getLANBroadcastIntent() const /*override*/;
 
-    MCVAPI int getNetherScale() const;
+    // vIndex: 136
+    virtual void setLANBroadcast(bool broadcast) /*override*/;
 
-    MCVAPI struct ActorUniqueID getNewUniqueID();
+    // vIndex: 137
+    virtual bool getLANBroadcast() const /*override*/;
 
-    MCVAPI class ActorRuntimeID getNextRuntimeID();
+    // vIndex: 138
+    virtual void setXBLBroadcastIntent(::Social::GamePublishSetting) /*override*/;
 
-    MCVAPI int getNumRemotePlayers();
+    // vIndex: 139
+    virtual ::Social::GamePublishSetting getXBLBroadcastIntent() const /*override*/;
 
-    MCVAPI class WeakRef<class Dimension> getOrCreateDimension(DimensionType dimensionType);
+    // vIndex: 140
+    virtual bool hasXBLBroadcastIntent() const /*override*/;
 
-    MCVAPI class PacketSender* getPacketSender() const;
+    // vIndex: 141
+    virtual void setXBLBroadcastMode(::Social::GamePublishSetting) /*override*/;
 
-    MCVAPI class StackRefResult<class PauseManager> getPauseManager();
+    // vIndex: 142
+    virtual ::Social::GamePublishSetting getXBLBroadcastMode() const /*override*/;
 
-    MCVAPI class StackRefResult<class PauseManager const> getPauseManager() const;
+    // vIndex: 143
+    virtual bool hasXBLBroadcast() const /*override*/;
 
-    MCVAPI class PhotoStorage& getPhotoStorage();
+    // vIndex: 144
+    virtual void setPlatformBroadcastIntent(::Social::GamePublishSetting) /*override*/;
 
-    MCVAPI ::Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    // vIndex: 145
+    virtual ::Social::GamePublishSetting getPlatformBroadcastIntent() const /*override*/;
 
-    MCVAPI ::Social::GamePublishSetting getPlatformBroadcastMode() const;
+    // vIndex: 146
+    virtual bool hasPlatformBroadcastIntent() const /*override*/;
 
-    MCVAPI class Player* getPlatformPlayer(std::string const& platformOnlineId) const;
+    // vIndex: 147
+    virtual void setPlatformBroadcastMode(::Social::GamePublishSetting) /*override*/;
 
-    MCVAPI class Player* getPlayer(class mce::UUID const& uuid) const;
+    // vIndex: 148
+    virtual ::Social::GamePublishSetting getPlatformBroadcastMode() const /*override*/;
 
-    MCVAPI class Player* getPlayer(struct ActorUniqueID entityID) const;
+    // vIndex: 149
+    virtual bool hasPlatformBroadcast() const /*override*/;
 
-    MCVAPI class Player* getPlayer(std::string const& name) const;
+    // vIndex: 150
+    virtual void setHasLockedBehaviorPack(bool hasLocked) /*override*/;
 
-    MCVAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const& playerId);
+    // vIndex: 151
+    virtual void setHasLockedResourcePack(bool hasLocked) /*override*/;
 
-    MCVAPI class Player* getPlayerByXuid(std::string const& xuid) const;
+    // vIndex: 154
+    virtual void setCommandsEnabled(bool commandsEnabled) /*override*/;
 
-    MCVAPI class mce::Color getPlayerColor(class Player const& player) const;
+    // vIndex: 155
+    virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    MCVAPI class Player* getPlayerFromServerId(std::string const& serverId) const;
+    // vIndex: 156
+    virtual bool hasLevelStorage() const /*override*/;
 
-    MCVAPI std::unordered_map<class mce::UUID, class PlayerListEntry> const& getPlayerList() const;
+    // vIndex: 158
+    virtual ::LevelStorage& getLevelStorage() /*override*/;
 
-    MCVAPI std::unordered_map<class mce::UUID, class PlayerListEntry>& getPlayerList();
+    // vIndex: 157
+    virtual ::LevelStorage const& getLevelStorage() const /*override*/;
 
-    MCVAPI struct PlayerMovementSettings const& getPlayerMovementSettings() const;
+    // vIndex: 160
+    virtual ::LevelData& getLevelData() /*override*/;
 
-    MCVAPI std::string const& getPlayerPlatformOnlineId(class mce::UUID const& uuid) const;
+    // vIndex: 159
+    virtual ::LevelData const& getLevelData() const /*override*/;
 
-    MCVAPI std::string const& getPlayerXUID(class mce::UUID const& uuid) const;
+    // vIndex: 161
+    virtual ::PhotoStorage& getPhotoStorage() const /*override*/;
 
-    MCVAPI class PortalForcer& getPortalForcer();
+    // vIndex: 162
+    virtual void createPhotoStorage() /*override*/;
 
-    MCVAPI class PositionTrackingDB::PositionTrackingDBClient* getPositionTrackerDBClient() const;
+    // vIndex: 164
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PhotoManager> getPhotoManager() /*override*/;
 
-    MCVAPI class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const;
+    // vIndex: 163
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PhotoManager const> getPhotoManager() const /*override*/;
 
-    MCVAPI class Player* getPrimaryLocalPlayer() const;
+    // vIndex: 165
+    virtual void setEducationLevelSettings(::EducationLevelSettings settings) /*override*/;
 
-    MCVAPI class ProjectileFactory& getProjectileFactory() const;
+    // vIndex: 166
+    virtual ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const /*override*/;
 
-    MCVAPI class Random& getRandom() const;
+    // vIndex: 168
+    virtual ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager> getEducationSettingsManager() /*override*/;
 
-    MCVAPI class Recipes& getRecipes() const;
+    // vIndex: 167
+    virtual ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager const> getEducationSettingsManager() const
+        /*override*/;
 
-    MCVAPI class BlockLegacy const& getRegisteredBorderBlock() const;
+    // vIndex: 169
+    virtual void save() /*override*/;
 
-    MCVAPI class PlayerEventCoordinator& getRemotePlayerEventCoordinator();
+    // vIndex: 170
+    virtual void saveLevelData() /*override*/;
 
-    MCVAPI std::vector<class Actor*> getRuntimeActorList() const;
+    // vIndex: 171
+    virtual void saveGameData() /*override*/;
 
-    MCVAPI class Actor* getRuntimeEntity(class ActorRuntimeID actorId, bool getRemoved) const;
+    // vIndex: 172
+    virtual ::std::shared_ptr<void*> requestTimedStorageDeferment() /*override*/;
 
-    MCVAPI class Player* getRuntimePlayer(class ActorRuntimeID runtimeId) const;
+    // vIndex: 173
+    virtual ::TickingAreasManager& getTickingAreasMgr() /*override*/;
 
-    MCVAPI class SavedDataStorage& getSavedData();
+    // vIndex: 174
+    virtual void addTickingAreaList(
+        ::DimensionType                             dimensionId,
+        ::std::shared_ptr<::TickingAreaList> const& tickingAreas
+    ) /*override*/;
 
-    MCVAPI class Scoreboard const& getScoreboard() const;
+    // vIndex: 180
+    virtual void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI class Scoreboard& getScoreboard();
+    // vIndex: 179
+    virtual void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        float const                            volume,
+        float const                            pitch
+    ) /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> getScreenshotsFolder() const;
+    // vIndex: 178
+    virtual void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) /*override*/;
 
-    MCVAPI class ScriptDeferredEventCoordinator& getScriptDeferredEventCoordinator();
+    // vIndex: 177
+    virtual void playSound(
+        ::IConstBlockSource const&             region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI class ScriptingEventCoordinator& getScriptingEventCoordinator();
+    // vIndex: 176
+    virtual void playSound(
+        ::DimensionType                        dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI uint getSeed();
+    // vIndex: 181
+    virtual ::PlayerEventCoordinator& getRemotePlayerEventCoordinator() /*override*/;
 
-    MCVAPI class ServerNetworkEventCoordinator& getServerNetworkEventCoordinator();
+    // vIndex: 182
+    virtual ::ServerPlayerEventCoordinator& getServerPlayerEventCoordinator() /*override*/;
 
-    MCVAPI class ServerPlayerEventCoordinator& getServerPlayerEventCoordinator();
+    // vIndex: 183
+    virtual ::ClientPlayerEventCoordinator& getClientPlayerEventCoordinator() /*override*/;
 
-    MCVAPI class ResourcePackManager* getServerResourcePackManager() const;
+    // vIndex: 184
+    virtual ::ActorEventCoordinator& getActorEventCoordinator() /*override*/;
 
-    MCVAPI class BlockPos const& getSharedSpawnPos() const;
+    // vIndex: 185
+    virtual ::BlockEventCoordinator& getBlockEventCoordinator() /*override*/;
 
-    MCVAPI bool getSimPaused();
+    // vIndex: 186
+    virtual ::ItemEventCoordinator& getItemEventCoordinator() /*override*/;
 
-    MCVAPI struct PlayerSleepStatus getSleepStatus() const;
+    // vIndex: 187
+    virtual ::ServerNetworkEventCoordinator& getServerNetworkEventCoordinator() /*override*/;
 
-    MCVAPI std::vector<class ChunkPos> getSortedPositionsFromClientOffsets(std::vector<class ChunkPos> const&) const;
+    // vIndex: 188
+    virtual ::ScriptingEventCoordinator& getScriptingEventCoordinator() /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> getSoundPlayer() const;
+    // vIndex: 189
+    virtual ::ScriptDeferredEventCoordinator& getScriptDeferredEventCoordinator() /*override*/;
 
-    MCVAPI class Spawner& getSpawner() const;
+    // vIndex: 190
+    virtual ::LevelEventCoordinator& getLevelEventCoordinator() /*override*/;
 
-    MCVAPI float getSpecialMultiplier(DimensionType dimensionType) const;
+    // vIndex: 192
+    virtual void handleLevelEvent(::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> const getStructureManager() const;
+    // vIndex: 191
+    virtual void handleLevelEvent(::LevelEvent type, ::CompoundTag const& data) /*override*/;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
+    // vIndex: 193
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> getLevelEventManager() /*override*/;
 
-    MCVAPI class SubChunkRequestManager* getSubChunkRequestManager();
+    // vIndex: 194
+    virtual void handleStopSoundEvent(::std::string const& name) /*override*/;
 
-    MCVAPI class SurfaceBuilderRegistry const& getSurfaceBuilderRegistry() const;
+    // vIndex: 195
+    virtual void handleStopAllSounds() /*override*/;
 
-    MCVAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
+    // vIndex: 196
+    virtual void handleStopMusicEvent() /*override*/;
 
-    MCVAPI class TaskGroup& getSyncTasksGroup();
+    // vIndex: 198
+    virtual void broadcastLevelEvent(
+        ::LevelEvent                           type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    ) /*override*/;
 
-    MCVAPI class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&
-    getTagRegistry();
+    // vIndex: 197
+    virtual void broadcastLevelEvent(
+        ::LevelEvent                           type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    ) /*override*/;
 
-    MCVAPI bool getTearingDown() const;
+    // vIndex: 200
+    virtual void
+    broadcastLocalEvent(::BlockSource& region, ::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    MCVAPI class Random& getThreadRandom() const;
+    // vIndex: 199
+    virtual void
+    broadcastLocalEvent(::BlockSource& region, ::LevelEvent type, ::Vec3 const& pos, ::Block const& block) /*override*/;
 
-    MCVAPI class TickingAreasManager& getTickingAreasMgr();
+    // vIndex: 203
+    virtual void broadcastSoundEvent(
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Block const&                         block,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI std::vector<class ChunkPos> const& getTickingOffsets() const;
+    // vIndex: 202
+    virtual void broadcastSoundEvent(
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI int getTime() const;
+    // vIndex: 201
+    virtual void broadcastSoundEvent(
+        ::Dimension&                           dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     identifier,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    ) /*override*/;
 
-    MCVAPI class TradeTables* getTradeTables();
+    // vIndex: 204
+    virtual void broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const /*override*/;
 
-    MCVAPI std::weak_ptr<class TrimMaterialRegistry> getTrimMaterialRegistry();
+    // vIndex: 205
+    virtual ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> getActorEventBroadcaster() const /*override*/;
 
-    MCVAPI std::weak_ptr<class TrimMaterialRegistry const> getTrimMaterialRegistry() const;
+    // vIndex: 206
+    virtual void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource) /*override*/;
 
-    MCVAPI std::weak_ptr<class TrimPatternRegistry> getTrimPatternRegistry();
+    // vIndex: 207
+    virtual void onChunkReload(::Bounds const& bound) /*override*/;
 
-    MCVAPI std::weak_ptr<class TrimPatternRegistry const> getTrimPatternRegistry() const;
+    // vIndex: 209
+    virtual int getActivePlayerCount() const /*override*/;
 
-    MCVAPI class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> getUnknownBlockTypeRegistry();
+    // vIndex: 210
+    virtual int getActiveUsersCount() const /*override*/;
 
-    MCVAPI int getUserCount() const;
+    // vIndex: 212
+    virtual void forEachPlayer(::std::function<bool(::Player&)> callback) /*override*/;
 
-    MCVAPI std::vector<class OwnerPtr<class EntityContext>> const& getUsers() const;
+    // vIndex: 211
+    virtual void forEachPlayer(::std::function<bool(::Player const&)> callback) const /*override*/;
 
-    MCVAPI class IWorldRegistriesProvider& getWorldRegistriesProvider();
+    // vIndex: 214
+    virtual void forEachUser(::std::function<bool(::EntityContext&)> callback) /*override*/;
 
-    MCVAPI class IWorldRegistriesProvider const& getWorldRegistriesProvider() const;
+    // vIndex: 213
+    virtual void forEachUser(::std::function<bool(::EntityContext const&)> callback) const /*override*/;
 
-    MCVAPI ::Social::GamePublishSetting getXBLBroadcastIntent() const;
+    // vIndex: 216
+    virtual ::Player* findPlayer(::std::function<bool(::Player const&)> pred) const /*override*/;
 
-    MCVAPI ::Social::GamePublishSetting getXBLBroadcastMode() const;
+    // vIndex: 215
+    virtual ::Player* findPlayer(::std::function<bool(::WeakEntityRef const&)> pred) const /*override*/;
 
-    MCVAPI void handleLevelEvent(::LevelEvent type, class CompoundTag const& data);
+    // vIndex: 217
+    virtual int getUserCount() const /*override*/;
 
-    MCVAPI void handleLevelEvent(::LevelEvent type, class Vec3 const& pos, int data);
+    // vIndex: 218
+    virtual int countUsersWithMatchingNetworkId(::NetworkIdentifier const& networkId) const /*override*/;
 
-    MCVAPI void handleStopAllSounds();
+    // vIndex: 219
+    virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getUsers() const /*override*/;
 
-    MCVAPI void handleStopSoundEvent(std::string const& name);
+    // vIndex: 220
+    virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const /*override*/;
 
-    MCVAPI bool hasCommandsEnabled() const;
+    // vIndex: 1
+    virtual void onSourceCreated(::BlockSource& source) /*override*/;
 
-    MCVAPI bool hasLevelStorage() const;
+    // vIndex: 2
+    virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
 
-    MCVAPI bool hasPlatformBroadcast() const;
+    // vIndex: 221
+    virtual void onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    ) /*override*/;
 
-    MCVAPI bool hasPlatformBroadcastIntent() const;
+    // vIndex: 222
+    virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
-    MCVAPI bool hasStartWithMapEnabled() const;
+    // vIndex: 223
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    MCVAPI bool hasXBLBroadcast() const;
+    // vIndex: 208
+    virtual void onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk) /*override*/;
 
-    MCVAPI bool hasXBLBroadcastIntent() const;
+    // vIndex: 226
+    virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
-    MCVAPI void incrementTagCache(
-        std::string const&                                                                                tag,
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>& tagRegistry
-    );
+    // vIndex: 224
+    virtual void onChunkDiscarded(::LevelChunk& levelChunk) /*override*/;
 
-    MCVAPI bool initialize(
-        std::string const&         levelName,
-        class LevelSettings const& levelSettings,
-        class LevelData*           levelData,
-        class Experiments const&   experiments,
-        std::string const*         levelId
-    );
+    // vIndex: 225
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> getLevelChunkEventManager() /*override*/;
 
-    MCVAPI void initializeBlockDefinitionGroup();
+    // vIndex: 227
+    virtual void queueEntityDestruction(::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    MCVAPI bool isClientSide() const;
+    // vIndex: 229
+    virtual ::OwnerPtr<::EntityContext> removeEntity(::Actor& actor) /*override*/;
 
-    MCVAPI bool isClientSideGenerationEnabled();
+    // vIndex: 228
+    virtual ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef) /*override*/;
 
-    MCVAPI bool isEditorWorld() const;
+    // vIndex: 230
+    virtual void forceRemoveEntity(::Actor& actor) /*override*/;
 
-    MCVAPI bool isEdu() const;
+    // vIndex: 231
+    virtual void forceRemoveEntityfromWorld(::Actor& actor) /*override*/;
 
-    MCVAPI bool isExporting() const;
+    // vIndex: 232
+    virtual void forceFlushRemovedPlayers() /*override*/;
 
-    MCVAPI bool isLeaveGameDone();
+    // vIndex: 233
+    virtual void loadFunctionManager() /*override*/;
 
-    MCVAPI bool isMultiplayerGame() const;
+    // vIndex: 234
+    virtual void levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    MCVAPI bool isPlayerSuspended(class Player& player) const;
+    // vIndex: 235
+    virtual void registerTemporaryPointer(::_TickPtr& ptr) /*override*/;
 
-    MCVAPI void levelCleanupQueueEntityRemoval(class OwnerPtr<class EntityContext> entity);
+    // vIndex: 236
+    virtual void unregisterTemporaryPointer(::_TickPtr& ptr) /*override*/;
 
-    MCVAPI void loadBlockDefinitionGroup(class Experiments const& experiments);
+    // vIndex: 237
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> getTempEPtrManager() /*override*/;
 
-    MCVAPI void loadFunctionManager();
+    // vIndex: 238
+    virtual bool destroyBlock(::BlockSource& region, ::BlockPos const& pos, bool dropResources) /*override*/;
 
-    MCVAPI void notifySubChunkRequestManager(class SubChunkPacket const& packet);
+    // vIndex: 239
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> getLevelBlockDestroyer() /*override*/;
 
-    MCVAPI void onChunkDiscarded(class LevelChunk& lc);
+    // vIndex: 240
+    virtual void upgradeStorageVersion(::StorageVersion v) /*override*/;
 
-    MCVAPI void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
+    // vIndex: 241
+    virtual void suspendAndSave() /*override*/;
 
-    MCVAPI void onChunkReload(struct Bounds const& bound);
+    // vIndex: 175
+    virtual void
+    sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data) /*override*/;
 
-    MCVAPI void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
+    // vIndex: 242
+    virtual ::Particle* addParticle(
+        ::ParticleType       id,
+        ::Vec3 const&        pos,
+        ::Vec3 const&        dir,
+        int                  data,
+        ::CompoundTag const* tag,
+        bool                 isGlobal
+    ) /*override*/;
 
-    MCVAPI void onPlayerDeath(class Player& player, class ActorDamageSource const& source);
+    // vIndex: 111
+    virtual void spawnParticleEffect(
+        ::std::string const& effectName,
+        ::Vec3 const&        spawnLocation,
+        ::Dimension*         dimension
+    ) /*override*/;
 
-    MCVAPI void onSourceCreated(class BlockSource& source);
+    // vIndex: 112
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> getServerParticleManager() /*override*/;
 
-    MCVAPI void onSourceDestroyed(class BlockSource& source);
+    // vIndex: 243
+    virtual void addParticleEffect(
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
+    ) /*override*/;
 
-    MCVAPI void onSubChunkLoaded(
-        class ChunkSource& source,
-        class LevelChunk&  lc,
-        short              absoluteSubChunkIndex,
-        bool               subChunkVisibilityChanged
-    );
+    // vIndex: 244
+    virtual void addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
+    ) /*override*/;
 
-    MCVAPI void pauseAndFlushTaskGroups();
+    // vIndex: 245
+    virtual void addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
+    ) /*override*/;
 
-    MCVAPI void playSound(std::string const& name, class Vec3 const& pos, float volume, float pitch);
+    // vIndex: 246
+    virtual void addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    ) /*override*/;
 
-    MCVAPI void playSound(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, float volume, float pitch);
+    // vIndex: 247
+    virtual ::ActorUniqueID getNewUniqueID() /*override*/;
 
-    MCVAPI void playSound(
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 248
+    virtual ::ActorRuntimeID getNextRuntimeID() /*override*/;
 
-    MCVAPI void playSound(
-        DimensionType                           dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 249
+    virtual ::std::vector<::ChunkPos> const& getTickingOffsets() const /*override*/;
 
-    MCVAPI void playSound(
-        class IConstBlockSource const&          region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
+    // vIndex: 250
+    virtual ::std::vector<::ChunkPos> const& getClientTickingOffsets() const /*override*/;
 
-    MCVAPI void potionSplash(class Vec3 const& pos, class mce::Color const& color, bool instantaneousEffect);
+    // vIndex: 251
+    virtual ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers
+    ) const /*override*/;
 
-    MCVAPI void queueEntityDestruction(class OwnerPtr<class EntityContext> entity);
+    // vIndex: 252
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> getChunkTickOffsetManager() const
+        /*override*/;
 
-    MCVAPI void registerTemporaryPointer(class _TickPtr& ptr);
+    // vIndex: 253
+    virtual bool isExporting() const /*override*/;
 
-    MCVAPI class OwnerPtr<class EntityContext> removeActorAndTakeEntity(class WeakEntityRef entityRef);
+    // vIndex: 254
+    virtual void setIsExporting(bool IsExporting) /*override*/;
 
-    MCVAPI class OwnerPtr<class EntityContext> removeActorFromWorldAndTakeEntity(class WeakEntityRef entityRef);
+    // vIndex: 255
+    virtual ::SavedDataStorage& getSavedData() /*override*/;
 
-    MCVAPI void removeBlockSourceFromValidityTracking(class BlockSource* region);
+    // vIndex: 258
+    virtual ::MapItemSavedData* getMapSavedData(::ActorUniqueID const uuid) /*override*/;
 
-    MCVAPI void removeDisplayEntity(class WeakEntityRef);
+    // vIndex: 257
+    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const& instance) /*override*/;
 
-    MCVAPI class OwnerPtr<class EntityContext> removeEntity(class Actor& actor);
+    // vIndex: 256
+    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const* instance) /*override*/;
 
-    MCVAPI class OwnerPtr<class EntityContext> removeEntity(class WeakEntityRef entityRef);
+    // vIndex: 259
+    virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate) /*override*/;
 
-    MCVAPI void removeListener(class LevelListener& listener);
+    // vIndex: 260
+    virtual ::ActorUniqueID expandMapByID(::ActorUniqueID const uuid, bool wasInit) /*override*/;
 
-    MCVAPI void requestMapInfo(struct ActorUniqueID uuid, bool forceUpdate);
+    // vIndex: 261
+    virtual bool copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid) /*override*/;
 
-    MCVAPI void requestPlayerChangeDimension(class Player& player, class ChangeDimensionRequest&& changeRequest);
+    // vIndex: 263
+    virtual ::MapItemSavedData& createMapSavedData(
+        ::ActorUniqueID const& uuid,
+        ::BlockPos const&      origin,
+        ::DimensionType        dimension,
+        int                    returnScaleLevel
+    ) /*override*/;
 
-    MCVAPI std::shared_ptr<void*> requestTimedStorageDeferment();
+    // vIndex: 262
+    virtual ::MapItemSavedData& createMapSavedData(
+        ::std::vector<::ActorUniqueID> const& mapIds,
+        ::BlockPos const&                     origin,
+        ::DimensionType                       dimension,
+        int                                   returnScaleLevel
+    ) /*override*/;
 
-    MCVAPI void resumePlayer(class Player& player);
+    // vIndex: 264
+    virtual ::Core::PathBuffer<::std::string> getScreenshotsFolder() const /*override*/;
 
-    MCVAPI void runCommand(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    // vIndex: 265
+    virtual ::std::string getLevelId() const /*override*/;
 
-    MCVAPI void runCommand(
-        class HashedString const& commandStr,
-        class CommandOrigin&      origin,
+    // vIndex: 266
+    virtual void setLevelId(::std::string LevelId) /*override*/;
+
+    // vIndex: 267
+    virtual ::TaskGroup& getSyncTasksGroup() /*override*/;
+
+    // vIndex: 268
+    virtual ::TaskGroup& getIOTasksGroup() /*override*/;
+
+    // vIndex: 269
+    virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
+
+    // vIndex: 270
+    virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
+
+    // vIndex: 271
+    virtual ::TradeTables* getTradeTables() /*override*/;
+
+    // vIndex: 272
+    virtual void decrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    ) /*override*/;
+
+    // vIndex: 273
+    virtual void incrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+    ) /*override*/;
+
+    // vIndex: 274
+    virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
+
+    // vIndex: 275
+    virtual bool isEdu() const /*override*/;
+
+    // vIndex: 277
+    virtual ::ActorFactory& getActorFactory() /*override*/;
+
+    // vIndex: 276
+    virtual ::ActorFactory const& getActorFactory() const /*override*/;
+
+    // vIndex: 278
+    virtual ::ActorInfoRegistry* getActorInfoRegistry() /*override*/;
+
+    // vIndex: 280
+    virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() /*override*/;
+
+    // vIndex: 279
+    virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const /*override*/;
+
+    // vIndex: 281
+    virtual ::EntitySystems& getEntitySystems() /*override*/;
+
+    // vIndex: 282
+    virtual ::WeakRef<::EntityContext> getLevelEntity() /*override*/;
+
+    // vIndex: 284
+    virtual void runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
         ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion       commandVersion
-    );
+        ::CurrentCmdVersion const commandVersion
+    ) /*override*/;
 
-    MCVAPI void save();
+    // vIndex: 283
+    virtual void
+    runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) /*override*/;
 
-    MCVAPI void saveGameData();
+    // vIndex: 285
+    virtual ::PlayerCapabilities::ISharedController const& getCapabilities() const /*override*/;
 
-    MCVAPI void saveLevelData();
+    // vIndex: 286
+    virtual ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& getTagRegistry() /*override*/;
 
-    MCVAPI void sendAllPlayerAbilities(class Player const& playerReference);
+    // vIndex: 287
+    virtual ::PlayerMovementSettings const& getPlayerMovementSettings() const /*override*/;
 
-    MCVAPI void sendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
+    // vIndex: 288
+    virtual void setPlayerMovementSettings(::PlayerMovementSettings const& settings) /*override*/;
 
-    MCVAPI void setCommandsEnabled(bool commandsEnabled);
+    // vIndex: 290
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager>
+    getPlayerMovementSettingsManager() /*override*/;
 
-    MCVAPI void setDefaultGameType(::GameType gameType);
+    // vIndex: 289
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
+    getPlayerMovementSettingsManager() const /*override*/;
 
-    MCVAPI void setDefaultSpawn(class BlockPos const& spawnPos);
+    // vIndex: 291
+    virtual bool canUseSkin(
+        ::SerializedSkin const&    skin,
+        ::NetworkIdentifier const& networkIdentifier,
+        ::ActorUniqueID const&     playerId
+    ) const /*override*/;
 
-    MCVAPI void setDifficulty(::Difficulty difficulty);
+    // vIndex: 292
+    virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
 
-    MCVAPI void setDisablePlayerInteractions(bool disable);
+    // vIndex: 367
+    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const /*override*/;
 
-    MCVAPI void setEducationLevelSettings(struct EducationLevelSettings settings);
+    // vIndex: 366
+    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() /*override*/;
 
-    MCVAPI void setFinishedInitializing();
+    // vIndex: 368
+    virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() /*override*/;
 
-    MCVAPI void setHasLockedBehaviorPack(bool hasLocked);
+    // vIndex: 293
+    virtual ::PositionTrackingDB::PositionTrackingDBClient* getPositionTrackerDBClient() const /*override*/;
 
-    MCVAPI void setHasLockedResourcePack(bool hasLocked);
+    // vIndex: 294
+    virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    MCVAPI void setImmersiveReaderString(std::string newString);
+    // vIndex: 295
+    virtual void flushRunTimeLighting() /*override*/;
 
-    MCVAPI void setIsExporting(bool IsExporting);
+    // vIndex: 296
+    virtual void loadBlockDefinitionGroup(::Experiments const& experiments) /*override*/;
 
-    MCVAPI void setLANBroadcast(bool broadcast);
+    // vIndex: 297
+    virtual void initializeBlockDefinitionGroup() /*override*/;
 
-    MCVAPI void setLANBroadcastIntent(bool broadcast);
+    // vIndex: 298
+    virtual ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> getUnknownBlockTypeRegistry() /*override*/;
 
-    MCVAPI void setLevelId(std::string LevelId);
+    // vIndex: 369
+    virtual bool isClientSideGenerationEnabled() /*override*/;
 
-    MCVAPI void setMsaGamertagsOnly(bool msaGamertagsOnly);
+    // vIndex: 370
+    virtual bool blockNetworkIdsAreHashes() /*override*/;
 
-    MCVAPI void setMultiplayerGame(bool multiplayerGame);
+    // vIndex: 371
+    virtual ::ItemRegistryRef getItemRegistry() const /*override*/;
 
-    MCVAPI void setMultiplayerGameIntent(bool multiplayerGame);
+    // vIndex: 372
+    virtual ::std::weak_ptr<::BlockTypeRegistry> getBlockRegistry() const /*override*/;
 
-    MCVAPI void setNetEventCallback(class Bedrock::NonOwnerPointer<class NetEventCallback> val);
+    // vIndex: 364
+    virtual ::Level* asLevel() /*override*/;
 
-    MCVAPI void setPacketSender(class PacketSender* val);
+    // vIndex: 357
+    virtual bool use3DBiomeMaps() const /*override*/;
 
-    MCVAPI void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+    // vIndex: 358
+    virtual void addBlockSourceForValidityTracking(::BlockSource* region) /*override*/;
 
-    MCVAPI void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
+    // vIndex: 359
+    virtual void removeBlockSourceFromValidityTracking(::BlockSource* region) /*override*/;
 
-    MCVAPI void setPlayerAbilities(struct ActorUniqueID const& playerId, class LayeredAbilities const& abilities);
+    // vIndex: 360
+    virtual ::Bedrock::NotNullNonOwnerPtr<::BlockSourceValidityManager> getBlockSourceValidityManager() /*override*/;
 
-    MCVAPI void setPlayerMovementSettings(struct PlayerMovementSettings const& settings);
+    // vIndex: 373
+    virtual void pauseAndFlushTaskGroups() /*override*/;
 
-    MCVAPI void setSimPaused(bool value);
+    // vIndex: 10
+    virtual ::DimensionManager& getDimensionManager() /*override*/;
 
-    MCVAPI void setSleepStatus(struct PlayerSleepStatus const& status);
+    // vIndex: 9
+    virtual ::DimensionManager const& getDimensionManager() const /*override*/;
 
-    MCVAPI void setTime(int time);
+    // vIndex: 381
+    virtual void _subTick();
 
-    MCVAPI void setWorldTemplateOptionsUnlocked();
+    // vIndex: 106
+    virtual ::StackRefResult<::PauseManager> getPauseManager() /*override*/;
 
-    MCVAPI void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+    // vIndex: 105
+    virtual ::StackRefResult<::PauseManager const> getPauseManager() const /*override*/;
 
-    MCVAPI void setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
+    // vIndex: 299
+    virtual bool isClientSide() const /*override*/;
 
-    MCVAPI void
-    spawnParticleEffect(std::string const& effectName, class Vec3 const& spawnLocation, class Dimension* dimension);
+    // vIndex: 300
+    virtual ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const /*override*/;
 
-    MCVAPI void startLeaveGame();
+    // vIndex: 301
+    virtual ::std::string const& getPlayerXUID(::mce::UUID const& uuid) const /*override*/;
 
-    MCVAPI void suspendAndSave();
+    // vIndex: 302
+    virtual ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const& uuid) const /*override*/;
 
-    MCVAPI void suspendPlayer(class Player& player);
+    // vIndex: 304
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> getPlayerListManager() /*override*/;
 
-    MCVAPI class OwnerPtr<class EntityContext> takeEntity(class WeakEntityRef entityRef, class LevelChunk& lc);
+    // vIndex: 303
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager const> getPlayerListManager() const /*override*/;
 
-    MCVAPI void takePicture(
-        class cg::ImageBuffer&    outImage,
-        class Actor*              camera,
-        class Actor*              target,
-        struct ScreenshotOptions& screenshotOptions
-    );
+    // vIndex: 305
+    virtual ::std::vector<::WeakEntityRef> const& getActiveUsers() const /*override*/;
 
-    MCVAPI void tick();
+    // vIndex: 307
+    virtual void notifySubChunkRequestManager(::SubChunkPacket const& packet) /*override*/;
 
-    MCVAPI void tickEntities();
+    // vIndex: 308
+    virtual ::SubChunkRequestManager* getSubChunkRequestManager() /*override*/;
 
-    MCVAPI void tickEntitySystems();
+    // vIndex: 306
+    virtual ::std::vector<::Actor*> getRuntimeActorList() const /*override*/;
 
-    MCVAPI class Scoreboard* tryGetScoreboard();
+    // vIndex: 309
+    virtual ::PacketSender* getPacketSender() const /*override*/;
 
-    MCVAPI void unregisterTemporaryPointer(class _TickPtr& ptr);
+    // vIndex: 310
+    virtual ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback() const /*override*/;
 
-    MCVAPI void updateSleepingPlayerList();
+    // vIndex: 311
+    virtual void setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback> val) /*override*/;
 
-    MCVAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    // vIndex: 312
+    virtual ::gsl::not_null<::StackRefResult<::ILevelRandom>> getILevelRandom() /*override*/;
 
-    MCVAPI void upgradeStorageVersion(::StorageVersion v);
+    // vIndex: 313
+    virtual ::IRandom& getIRandom() const /*override*/;
 
-    MCVAPI bool use3DBiomeMaps() const;
+    // vIndex: 314
+    virtual ::Random& getRandom() const /*override*/;
 
-    MCVAPI bool useMsaGamertagsOnly() const;
+    // vIndex: 315
+    virtual ::Random& getThreadRandom() const /*override*/;
 
-    MCVAPI ~Level();
+    // vIndex: 316
+    virtual ::HitResult& getHitResult() /*override*/;
 
+    // vIndex: 317
+    virtual ::HitResult& getLiquidHitResult() /*override*/;
+
+    // vIndex: 318
+    virtual ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> getHitResultWrapper() /*override*/;
+
+    // vIndex: 319
+    virtual ::std::string const& getImmersiveReaderString() const /*override*/;
+
+    // vIndex: 320
+    virtual void setImmersiveReaderString(::std::string newString) /*override*/;
+
+    // vIndex: 322
+    virtual ::AdventureSettings& getAdventureSettings() /*override*/;
+
+    // vIndex: 321
+    virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
+
+    // vIndex: 324
+    virtual ::GameRules const& getGameRules() const /*override*/;
+
+    // vIndex: 323
+    virtual ::GameRules& getGameRules() /*override*/;
+
+    // vIndex: 325
+    virtual bool hasStartWithMapEnabled() const /*override*/;
+
+    // vIndex: 326
+    virtual bool isEditorWorld() const /*override*/;
+
+    // vIndex: 327
+    virtual bool isHardcore() const /*override*/;
+
+    // vIndex: 328
+    virtual ::Abilities& getDefaultAbilities() /*override*/;
+
+    // vIndex: 330
+    virtual ::PermissionsHandler& getDefaultPermissions() /*override*/;
+
+    // vIndex: 329
+    virtual ::PermissionsHandler const& getDefaultPermissions() const /*override*/;
+
+    // vIndex: 331
+    virtual bool getTearingDown() const /*override*/;
+
+    // vIndex: 332
+    virtual void takePicture(
+        ::cg::ImageBuffer&   outImage,
+        ::Actor*             camera,
+        ::Actor*             target,
+        ::ScreenshotOptions& screenshotOptions
+    ) /*override*/;
+
+    // vIndex: 333
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelSoundManager> getLevelSoundManager() /*override*/;
+
+    // vIndex: 334
+    virtual ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> getSoundPlayer() const /*override*/;
+
+    // vIndex: 335
+    virtual void setSimPaused(bool value) /*override*/;
+
+    // vIndex: 336
+    virtual bool getSimPaused() /*override*/;
+
+    // vIndex: 337
+    virtual void setFinishedInitializing() /*override*/;
+
+    // vIndex: 338
+    virtual ::LootTables& getLootTables() /*override*/;
+
+    // vIndex: 339
+    virtual void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime) /*override*/;
+
+    // vIndex: 340
+    virtual int getNetherScale() const /*override*/;
+
+    // vIndex: 342
+    virtual ::Scoreboard& getScoreboard() /*override*/;
+
+    // vIndex: 341
+    virtual ::Scoreboard const& getScoreboard() const /*override*/;
+
+    // vIndex: 343
+    virtual ::Scoreboard* tryGetScoreboard() /*override*/;
+
+    // vIndex: 344
+    virtual ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId) /*override*/;
+
+    // vIndex: 345
+    virtual void setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities) /*override*/;
+
+    // vIndex: 346
+    virtual void sendAllPlayerAbilities(::Player const& playerReference) /*override*/;
+
+    // vIndex: 347
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> getPlayerAbilitiesManager() /*override*/;
+
+    // vIndex: 348
+    virtual ::Recipes& getRecipes() const /*override*/;
+
+    // vIndex: 349
+    virtual ::BlockReducer* getBlockReducer() const /*override*/;
+
+    // vIndex: 351
+    virtual ::std::weak_ptr<::TrimPatternRegistry const> getTrimPatternRegistry() const /*override*/;
+
+    // vIndex: 350
+    virtual ::std::weak_ptr<::TrimPatternRegistry> getTrimPatternRegistry() /*override*/;
+
+    // vIndex: 353
+    virtual ::std::weak_ptr<::TrimMaterialRegistry const> getTrimMaterialRegistry() const /*override*/;
+
+    // vIndex: 352
+    virtual ::std::weak_ptr<::TrimMaterialRegistry> getTrimMaterialRegistry() /*override*/;
+
+    // vIndex: 354
+    virtual void digestServerItemComponents(::ItemComponentPacket const& packet) /*override*/;
+
+    // vIndex: 355
+    virtual ::BlockLegacy const& getRegisteredBorderBlock() const /*override*/;
+
+    // vIndex: 356
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkPerformanceTelemetry>
+    getLevelChunkPerformanceTelemetry() /*override*/;
+
+    // vIndex: 374
+    virtual ::cereal::ReflectionCtx const& cerealContext() const /*override*/;
+
+    // vIndex: 362
+    virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
+
+    // vIndex: 361
+    virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
+
+    // vIndex: 375
+    virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
+
+    // vIndex: 382
+    virtual void _initializeMapDataManager();
+
+    // vIndex: 377
+    virtual ::cereal::ReflectionCtx& _cerealContext() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Level(
-        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
-        class OwnerPtr<class LevelStorage>                             levelStorage,
-        class IMinecraftEventing&                                      eventing,
-        bool                                                           isClientSide,
-        ::SubClientId                                                  subClientId,
-        class Scheduler&                                               callbackContext,
-        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
-        class ResourcePackManager&                                     addOnResourcePackManager,
-        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
-        class WeakRef<class EntityContext>                             levelEntity,
-        std::unique_ptr<class BlockComponentFactory>                   blockComponentFactory,
-        std::unique_ptr<class BlockDefinitionGroup>                    blockDefinitionGroup,
-        class ItemRegistryRef                                          itemRegistry,
-        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry,
-        bool                                                           clientSideChunkGenerationEnabled,
-        bool                                                           blockNetworkIdsAreHashes,
-        struct NetworkPermissions const&                               networkPermissions,
-        std::optional<class DimensionDefinitionGroup>                  dimensionDefinitionGroup
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
+        ::IMinecraftEventing&                                        eventing,
+        bool                                                         isClientSide,
+        ::SubClientId                                                subClientId,
+        ::Scheduler&                                                 callbackContext,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
+        ::ResourcePackManager&                                       addOnResourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
+        ::WeakRef<::EntityContext>                                   levelEntity,
+        ::ItemRegistryRef                                            itemRegistry,
+        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry,
+        bool                                                         clientSideChunkGenerationEnabled,
+        bool                                                         blockNetworkIdsAreHashes,
+        ::NetworkPermissions const&                                  networkPermissions,
+        ::std::optional<::DimensionDefinitionGroup>                  dimensionDefinitionGroup
     );
 
-    MCAPI bool canChangeDimension(class Actor& actor, DimensionType toId);
+    MCAPI ::Bedrock::UniqueOwnerPointer<::PhotoManager> _createPhotoManager();
 
-    MCAPI void earlyShutdownMainthread();
+    MCAPI ::GameplayUserManager const& _getGameplayUserManager() const;
 
-    MCAPI gsl::not_null<class StackRefResult<class ActorManager>> getActorManager();
+    MCAPI ::GameplayUserManager& _getGameplayUserManager();
 
-    MCAPI class AutonomousActorManager const& getAutonomousActorManager() const;
+    MCAPI ::ILevelChunkEventManagerConnector& _getLevelChunkEventManagerConnector();
 
-    MCAPI gsl::not_null<class StackRefResult<class EventCoordinatorManager>> getEventCoordinatorManager();
+    MCAPI ::LevelStorageManager* _getLevelStorageManager();
 
-    MCAPI class LevelSeed64 getLevelSeed64() const;
+    MCAPI ::IPlayerDimensionTransferConnector& _getPlayerDimensionTransferConnector();
 
-    MCAPI class NpcDialogueStorage* getNpcDialogueStorage();
+    MCAPI ::PlayerListManager& _getPlayerListManager();
 
-    MCAPI class ServerLevelEventCoordinator& getServerLevelEventCoordinator();
-
-    MCAPI double getTickDeltaTime() const;
-
-    MCAPI ::NodeType isFree(
-        class NavigationComponent& navigation,
-        class Actor&               entity,
-        class BlockPos const&      lastPathPos,
-        class BlockPos const&      testPos,
-        class BlockPos const&      size,
-        ::CanJumpIntoNode          jumpIntoNode
-    );
-
-    MCAPI void setPerformanceTelemetryPeriodicCallback(std::function<void()> callback);
-
-    MCAPI void transferActorToOwnedEntityLimbo(class Player const& player, class Actor& actor);
-
-    MCAPI static uint createRandomSeed();
-
-    MCAPI static bool isUsableLevel(class ILevel const& level);
-
-    MCAPI static class LevelSeed64 parseLevelSeed64(std::string const& seedString);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class GameplayUserManager& _getGameplayUserManager();
-
-    MCAPI class GameplayUserManager const& _getGameplayUserManager() const;
-
-    MCAPI gsl::not_null<class StackRefResult<class GameplayUserManager>> _getGameplayUserManagerStackRef();
-
-    MCAPI class ILevelChunkEventManagerConnector& _getLevelChunkEventManagerConnector();
-
-    MCAPI class LevelStorageManager* _getLevelStorageManager();
-
-    MCAPI class IPlayerDimensionTransferConnector& _getPlayerDimensionTransferConnector();
-
-    MCAPI class PlayerListManager& _getPlayerListManager();
-
-    MCAPI class TickTimeManager& _getTickTimeManager();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI class OwnerPtr<class PhotoManager> _createPhotoManager();
+    MCAPI ::TickTimeManager& _getTickTimeManager();
 
     MCAPI void _initializeActorManager();
 
     MCAPI void _initializeBiomeManager();
-
-    MCAPI void _initializeBlockDestroyer();
 
     MCAPI void _initializeEventCoordinatorManager();
 
@@ -966,934 +1755,1056 @@ public:
 
     MCAPI void _initializeLevelChunkEventManager();
 
-    MCAPI void _initializeLevelChunkSaveManager();
-
     MCAPI void _initializeLevelEventManager();
-
-    MCAPI void _initializeLevelStorageManager();
 
     MCAPI void _initializeParticleProvider();
 
     MCAPI void _onAddBreakingItemParticleEffect(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
     );
 
     MCAPI void _onAddTerrainParticleEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
     MCAPI void _onAddTerrainSlideEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
     MCAPI void _onAnyGameplayUsersRemoved();
 
-    MCAPI void _onChunkDiscarded(class LevelChunk& levelChunk);
+    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCAPI void _onChunkLoaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk, int);
+    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int);
 
-    MCAPI void _onChunkReloaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
+    MCAPI void _onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
 
-    MCAPI void _onGameplayUserAdded(class EntityContext& entity);
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _onGameplayUserRemoved(class EntityContext& entity);
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI void _onLevelEventCompoundTag(::LevelEvent type, class CompoundTag const& data);
+    MCAPI void _onLevelEventCompoundTag(::LevelEvent type, ::CompoundTag const& data);
 
-    MCAPI void _onLevelEventData(::LevelEvent type, class Vec3 const& pos, int data);
+    MCAPI void _onLevelEventData(::LevelEvent type, ::Vec3 const& pos, int data);
 
     MCAPI void _onPictureTaken(
-        class cg::ImageBuffer&    outImage,
-        class Actor*              camera,
-        class Actor*              target,
-        struct ScreenshotOptions& screenshotOptions
+        ::cg::ImageBuffer&   outImage,
+        ::Actor*             camera,
+        ::Actor*             target,
+        ::ScreenshotOptions& screenshotOptions
     );
 
-    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
+    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _onSaveLevelData(class LevelStorage& levelStorage);
+    MCAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
-    MCAPI void _onSendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCAPI bool canChangeDimension(::Actor& actor, ::DimensionType toId);
 
-    MCAPI static std::unique_ptr<class LevelStorageManager> _createLevelStorageManager(
-        class OwnerPtr<class LevelStorage> levelStorage,
-        class Scheduler&                   scheduler,
-        class IMinecraftEventing&          eventing
+    MCAPI void earlyShutdownMainthread();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
+
+    MCAPI ::AutonomousActorManager const& getAutonomousActorManager() const;
+
+    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> getContainerRegistryAccess() const;
+
+    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> getContainerRegistryTracker() const;
+
+    MCAPI ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> getDynamicContainerSerialization() const;
+
+    MCAPI ::LevelSeed64 getLevelSeed64() const;
+
+    MCAPI ::NpcDialogueStorage* getNpcDialogueStorage();
+
+    MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
+
+    MCAPI double getTickDeltaTime() const;
+
+    MCAPI ::NodeType isFree(
+        ::NavigationComponent& navigation,
+        ::Actor&               entity,
+        ::BlockPos const&      lastPathPos,
+        ::BlockPos const&      testPos,
+        ::BlockPos const&      size,
+        ::CanJumpIntoNode      jumpIntoNode
     );
 
+    MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
+
+    MCAPI void transferActorToOwnedEntityLimbo(::Player const& player, ::Actor& actor);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBlockSourceListener();
-
-    MCAPI static void** vftableForILevel();
-
-    MCAPI static void** vftableForIWorldRegistriesProvider();
-
-    MCAPI void* ctor$(
-        Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const& soundPlayer,
-        class OwnerPtr<class LevelStorage>                             levelStorage,
-        class IMinecraftEventing&                                      eventing,
-        bool                                                           isClientSide,
-        ::SubClientId                                                  subClientId,
-        class Scheduler&                                               callbackContext,
-        Bedrock::NotNullNonOwnerPtr<class StructureManager>            structureManager,
-        class ResourcePackManager&                                     addOnResourcePackManager,
-        Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const& entityRegistryOwner,
-        class WeakRef<class EntityContext>                             levelEntity,
-        std::unique_ptr<class BlockComponentFactory>                   blockComponentFactory,
-        std::unique_ptr<class BlockDefinitionGroup>                    blockDefinitionGroup,
-        class ItemRegistryRef                                          itemRegistry,
-        std::weak_ptr<class BlockTypeRegistry>                         blockRegistry,
-        bool                                                           clientSideChunkGenerationEnabled,
-        bool                                                           blockNetworkIdsAreHashes,
-        struct NetworkPermissions const&                               networkPermissions,
-        std::optional<class DimensionDefinitionGroup>                  dimensionDefinitionGroup
+    MCAPI static ::std::unique_ptr<::LevelStorageManager> _createLevelStorageManager(
+        ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
+        ::Scheduler&                                  scheduler,
+        ::IMinecraftEventing&                         eventing
     );
 
-    MCAPI void dtor$();
-
-    MCAPI void _destroyEffect$(class BlockPos const& pos, class Block const& block, int intensityFactor);
-
-    MCAPI class PlayerDeathManager* _getPlayerDeathManager$();
-
-    MCAPI void _initializeMapDataManager$();
-
-    MCAPI void _subTick$();
-
-    MCAPI class Actor* addAutonomousEntity$(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
-
-    MCAPI void addBlockSourceForValidityTracking$(class BlockSource* region);
-
-    MCAPI void addBreakingItemParticleEffect$(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
+    MCAPI static ::std::unique_ptr<::PlayerLimboActorManager> _createPlayerLimboActorManager(
+        ::LevelStorageManager*                        levelStorageManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
     );
 
-    MCAPI void addChunkViewTracker$(std::weak_ptr<class ChunkViewSource> chunkViewSource);
+    MCAPI static uint createRandomSeed();
 
-    MCAPI class Actor* addDisplayEntity$(class BlockSource&, class OwnerPtr<class EntityContext>);
+    MCAPI static bool isUsableLevel(::ILevel const& level);
 
-    MCAPI class Actor* addEntity$(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
+    MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
+    // NOLINTEND
 
-    MCAPI class Actor* addGlobalEntity$(class BlockSource& region, class OwnerPtr<class EntityContext> entity);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
+        ::IMinecraftEventing&                                        eventing,
+        bool                                                         isClientSide,
+        ::SubClientId                                                subClientId,
+        ::Scheduler&                                                 callbackContext,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
+        ::ResourcePackManager&                                       addOnResourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
+        ::WeakRef<::EntityContext>                                   levelEntity,
+        ::ItemRegistryRef                                            itemRegistry,
+        ::std::weak_ptr<::BlockTypeRegistry>                         blockRegistry,
+        bool                                                         clientSideChunkGenerationEnabled,
+        bool                                                         blockNetworkIdsAreHashes,
+        ::NetworkPermissions const&                                  networkPermissions,
+        ::std::optional<::DimensionDefinitionGroup>                  dimensionDefinitionGroup
+    );
+    // NOLINTEND
 
-    MCAPI void addListener$(class LevelListener& listener);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Particle* addParticle$(
-        ::ParticleType           id,
-        class Vec3 const&        pos,
-        class Vec3 const&        dir,
-        int                      data,
-        class CompoundTag const* tag,
-        bool                     isGlobal
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $initialize(
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId
     );
 
-    MCAPI void addParticleEffect$(
-        class HashedString const&      effect,
-        class Vec3 const&              emitterPosition,
-        class MolangVariableMap const& molangVariables
+    MCAPI void $startLeaveGame();
+
+    MCAPI bool $isLeaveGameDone();
+
+    MCAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
+
+    MCAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
+
+    MCAPI ::DimensionType $getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const;
+
+    MCAPI void $forEachDimension(::std::function<bool(::Dimension&)> callback);
+
+    MCAPI void $forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
+
+    MCAPI uint $getChunkTickRange() const;
+
+    MCAPI ::ChunkTickRangeManager const& $getChunkTickRangeManager() const;
+
+    MCAPI ::PortalForcer& $getPortalForcer();
+
+    MCAPI void $requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
+
+    MCAPI void $entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
+
+    MCAPI ::Spawner& $getSpawner() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
+
+    MCAPI ::ProjectileFactory& $getProjectileFactory() const;
+
+    MCAPI ::ActorDefinitionGroup* $getEntityDefinitions() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> $getActorAnimationGroup() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
+
+    MCAPI ::BlockDefinitionGroup* $getBlockDefinitions() const;
+
+    MCAPI ::PropertyGroupManager& $getActorPropertyGroup() const;
+
+    MCAPI ::CameraPresets const& $getCameraPresets() const;
+
+    MCAPI ::CameraPresets& $getCameraPresets();
+
+    MCAPI bool $getDisablePlayerInteractions() const;
+
+    MCAPI void $setDisablePlayerInteractions(bool const disable);
+
+    MCAPI ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
+
+    MCAPI ::BehaviorFactory& $getBehaviorFactory() const;
+
+    MCAPI ::Difficulty $getDifficulty() const;
+
+    MCAPI ::DimensionConversionData $getDimensionConversionData() const;
+
+    MCAPI float $getSpecialMultiplier(::DimensionType dimensionType) const;
+
+    MCAPI bool $hasCommandsEnabled() const;
+
+    MCAPI bool $useMsaGamertagsOnly() const;
+
+    MCAPI void $setMsaGamertagsOnly(bool msaGamertagsOnly);
+
+    MCAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCAPI ::Actor* $addGlobalEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCAPI ::Actor* $addAutonomousEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
+
+    MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
+
+    MCAPI void $removeDisplayEntity(::WeakEntityRef);
+
+    MCAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
+
+    MCAPI void $suspendPlayer(::Player& player);
+
+    MCAPI void $resumePlayer(::Player& player);
+
+    MCAPI bool $isPlayerSuspended(::Player& player) const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> $getGameplayUserManager();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager const> $getGameplayUserManager() const;
+
+    MCAPI ::OwnerPtr<::EntityContext> $removeActorAndTakeEntity(::WeakEntityRef entityRef);
+
+    MCAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+
+    MCAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc);
+
+    MCAPI ::StrictEntityContext $fetchStrictEntity(::ActorUniqueID actorId, bool getRemoved) const;
+
+    MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorId, bool getRemoved) const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> $getActorFetcher() const;
+
+    MCAPI ::Actor* $getRuntimeEntity(::ActorRuntimeID actorId, bool getRemoved) const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager> $getActorRuntimeIDManager();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager const> $getActorRuntimeIDManager() const;
+
+    MCAPI ::Mob* $getMob(::ActorUniqueID mobId) const;
+
+    MCAPI ::Player* $getPlayer(::std::string const& name) const;
+
+    MCAPI ::Player* $getPlayer(::mce::UUID const& uuid) const;
+
+    MCAPI ::Player* $getPlayer(::ActorUniqueID entityID) const;
+
+    MCAPI ::Player* $getPlayerByXuid(::std::string const& xuid) const;
+
+    MCAPI ::Player* $getPlatformPlayer(::std::string const& platformOnlineId) const;
+
+    MCAPI ::Player* $getPlayerFromServerId(::std::string const& serverId) const;
+
+    MCAPI ::Player* $getRuntimePlayer(::ActorRuntimeID runtimeId) const;
+
+    MCAPI int $getNumRemotePlayers() const;
+
+    MCAPI ::Player* $getPrimaryLocalPlayer() const;
+
+    MCAPI ::IMinecraftEventing& $getEventing();
+
+    MCAPI ::mce::Color $getPlayerColor(::Player const& player) const;
+
+    MCAPI ::Tick const& $getCurrentTick() const;
+
+    MCAPI ::Tick const $getCurrentServerTick() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TickDeltaTimeManager const> $getTickDeltaTimeManager() const;
+
+    MCAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
+
+    MCAPI ::BiomeRegistry const& $getBiomeRegistry() const;
+
+    MCAPI ::BiomeRegistry& $getBiomeRegistry();
+
+    MCAPI ::BlockPalette const& $getBlockPalette() const;
+
+    MCAPI ::BlockPalette& $getBlockPalette();
+
+    MCAPI ::FeatureRegistry const& $getFeatureRegistry() const;
+
+    MCAPI ::FeatureRegistry& $getFeatureRegistry();
+
+    MCAPI ::FeatureTypeFactory const& $getFeatureTypeFactory() const;
+
+    MCAPI ::FeatureTypeFactory& $getFeatureTypeFactory();
+
+    MCAPI ::JigsawStructureRegistry const& $getJigsawStructureRegistry() const;
+
+    MCAPI ::JigsawStructureRegistry& $getJigsawStructureRegistry();
+
+    MCAPI ::StructureSpawnRegistry const& $getStructureSpawnRegistry() const;
+
+    MCAPI ::StructureSpawnRegistry& $getStructureSpawnRegistry();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> const $getStructureManager() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> $getStructureManager();
+
+    MCAPI ::BiomeComponentFactory const& $getBiomeComponentFactory() const;
+
+    MCAPI ::BiomeComponentFactory& $getBiomeComponentFactory();
+
+    MCAPI ::SurfaceBuilderRegistry const& $getSurfaceBuilderRegistry() const;
+
+    MCAPI ::SurfaceBuilderRegistry& $getSurfaceBuilderRegistry();
+
+    MCAPI ::BiomeManager const& $getBiomeManager() const;
+
+    MCAPI ::BiomeManager& $getBiomeManager();
+
+    MCAPI ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&> const& $getDimensionFactory() const;
+
+    MCAPI ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& $getDimensionFactory();
+
+    MCAPI ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const&
+    $getLightTextureImageBuilderFactory() const;
+
+    MCAPI ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& $getLightTextureImageBuilderFactory();
+
+    MCAPI ::InternalComponentRegistry& $getInternalComponentRegistry() const;
+
+    MCAPI ::IWorldRegistriesProvider const& $getWorldRegistriesProvider() const;
+
+    MCAPI ::IWorldRegistriesProvider& $getWorldRegistriesProvider();
+
+    MCAPI void $addListener(::LevelListener& listener);
+
+    MCAPI void $removeListener(::LevelListener& listener);
+
+    MCAPI void $tickEntities();
+
+    MCAPI void $tickEntitySystems();
+
+    MCAPI void $onPlayerDeath(::Player& player, ::ActorDamageSource const& source);
+
+    MCAPI void $tick();
+
+    MCAPI bool $explode(
+        ::BlockSource& region,
+        ::Actor*       source,
+        ::Vec3 const&  pos,
+        float          explosionRadius,
+        bool           fire,
+        bool           breaksBlocks,
+        float          maxResistance,
+        bool           allowUnderwater
     );
 
-    MCAPI void addTerrainParticleEffect$(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
+    MCAPI bool $explode(::Explosion& explosion);
 
-    MCAPI void addTerrainSlideEffect$(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
+    MCAPI void $denyEffect(::BlockSource& region, ::Vec3 const& pos);
+
+    MCAPI void $potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect);
+
+    MCAPI bool $extinguishFire(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source);
+
+    MCAPI ::std::unique_ptr<::Path>
+    $findPath(::Actor& from, int xBest, int yBest, int zBest, ::NavigationComponent& navigation);
+
+    MCAPI ::std::unique_ptr<::Path> $findPath(::Actor& from, ::Actor const& to, ::NavigationComponent& navigation);
+
+    MCAPI void $setSleepStatus(::PlayerSleepStatus const& status);
+
+    MCAPI ::PlayerSleepStatus $getSleepStatus() const;
+
+    MCAPI void $updateSleepingPlayerList();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+
+    MCAPI int $getTime() const;
+
+    MCAPI void $setTime(int time);
+
+    MCAPI uint $getSeed();
+
+    MCAPI ::BlockPos const& $getSharedSpawnPos() const;
+
+    MCAPI void $setDefaultSpawn(::BlockPos const& spawnPos);
+
+    MCAPI ::BlockPos const& $getDefaultSpawn() const;
+
+    MCAPI void $setDefaultGameType(::GameType);
+
+    MCAPI ::GameType $getDefaultGameType() const;
+
+    MCAPI void $setDifficulty(::Difficulty difficulty);
+
+    MCAPI void $setMultiplayerGameIntent(bool multiplayerGame);
+
+    MCAPI bool $getMultiplayerGameIntent() const;
+
+    MCAPI void $setMultiplayerGame(bool multiplayerGame);
+
+    MCAPI bool $isMultiplayerGame() const;
+
+    MCAPI void $setLANBroadcastIntent(bool broadcast);
+
+    MCAPI bool $getLANBroadcastIntent() const;
+
+    MCAPI void $setLANBroadcast(bool broadcast);
+
+    MCAPI bool $getLANBroadcast() const;
+
+    MCAPI void $setXBLBroadcastIntent(::Social::GamePublishSetting);
+
+    MCAPI ::Social::GamePublishSetting $getXBLBroadcastIntent() const;
+
+    MCAPI bool $hasXBLBroadcastIntent() const;
+
+    MCAPI void $setXBLBroadcastMode(::Social::GamePublishSetting);
+
+    MCAPI ::Social::GamePublishSetting $getXBLBroadcastMode() const;
+
+    MCAPI bool $hasXBLBroadcast() const;
+
+    MCAPI void $setPlatformBroadcastIntent(::Social::GamePublishSetting);
+
+    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastIntent() const;
+
+    MCAPI bool $hasPlatformBroadcastIntent() const;
+
+    MCAPI void $setPlatformBroadcastMode(::Social::GamePublishSetting);
+
+    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastMode() const;
+
+    MCAPI bool $hasPlatformBroadcast() const;
+
+    MCAPI void $setHasLockedBehaviorPack(bool hasLocked);
+
+    MCAPI void $setHasLockedResourcePack(bool hasLocked);
+
+    MCAPI void $setCommandsEnabled(bool commandsEnabled);
+
+    MCAPI void $setWorldTemplateOptionsUnlocked();
+
+    MCAPI bool $hasLevelStorage() const;
+
+    MCAPI ::LevelStorage& $getLevelStorage();
+
+    MCAPI ::LevelStorage const& $getLevelStorage() const;
+
+    MCAPI ::LevelData& $getLevelData();
+
+    MCAPI ::LevelData const& $getLevelData() const;
+
+    MCAPI ::PhotoStorage& $getPhotoStorage() const;
+
+    MCAPI void $createPhotoStorage();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PhotoManager> $getPhotoManager();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PhotoManager const> $getPhotoManager() const;
+
+    MCAPI void $setEducationLevelSettings(::EducationLevelSettings settings);
+
+    MCAPI ::std::optional<::EducationLevelSettings> const& $getEducationLevelSettings() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager> $getEducationSettingsManager();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager const> $getEducationSettingsManager() const;
+
+    MCAPI void $save();
+
+    MCAPI void $saveLevelData();
+
+    MCAPI void $saveGameData();
+
+    MCAPI ::std::shared_ptr<void*> $requestTimedStorageDeferment();
+
+    MCAPI ::TickingAreasManager& $getTickingAreasMgr();
+
+    MCAPI void
+    $addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas);
+
+    MCAPI void $playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
 
     MCAPI void
-    addTickingAreaList$(DimensionType dimensionId, std::shared_ptr<class TickingAreaList> const& tickingAreas);
+    $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
 
-    MCAPI void addUser$(class OwnerPtr<class EntityContext> userEntity);
+    MCAPI void $playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
-    MCAPI class Level* asLevel$();
-
-    MCAPI bool blockNetworkIdsAreHashes$();
-
-    MCAPI void broadcastActorEvent$(class Actor& actor, ::ActorEvent eventId, int data) const;
-
-    MCAPI void broadcastLevelEvent$(
-        ::LevelEvent                               type,
-        class CompoundTag const&                   tag,
-        class UserEntityIdentifierComponent const* userIdentifier
+    MCAPI void $playSound(
+        ::IConstBlockSource const&             region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
 
-    MCAPI void broadcastLevelEvent$(
-        ::LevelEvent                               type,
-        class Vec3 const&                          pos,
-        int                                        data,
-        class UserEntityIdentifierComponent const* userIdentifier
+    MCAPI void $playSound(
+        ::DimensionType                        dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
 
-    MCAPI void broadcastLocalEvent$(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, int data);
+    MCAPI ::PlayerEventCoordinator& $getRemotePlayerEventCoordinator();
+
+    MCAPI ::ServerPlayerEventCoordinator& $getServerPlayerEventCoordinator();
+
+    MCAPI ::ClientPlayerEventCoordinator& $getClientPlayerEventCoordinator();
+
+    MCAPI ::ActorEventCoordinator& $getActorEventCoordinator();
+
+    MCAPI ::BlockEventCoordinator& $getBlockEventCoordinator();
+
+    MCAPI ::ItemEventCoordinator& $getItemEventCoordinator();
+
+    MCAPI ::ServerNetworkEventCoordinator& $getServerNetworkEventCoordinator();
+
+    MCAPI ::ScriptingEventCoordinator& $getScriptingEventCoordinator();
+
+    MCAPI ::ScriptDeferredEventCoordinator& $getScriptDeferredEventCoordinator();
+
+    MCAPI ::LevelEventCoordinator& $getLevelEventCoordinator();
+
+    MCAPI void $handleLevelEvent(::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $handleLevelEvent(::LevelEvent type, ::CompoundTag const& data);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> $getLevelEventManager();
+
+    MCAPI void $handleStopSoundEvent(::std::string const& name);
+
+    MCAPI void $handleStopAllSounds();
+
+    MCAPI void $handleStopMusicEvent();
+
+    MCAPI void $broadcastLevelEvent(
+        ::LevelEvent                           type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    );
+
+    MCAPI void $broadcastLevelEvent(
+        ::LevelEvent                           type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    );
+
+    MCAPI void $broadcastLocalEvent(::BlockSource& region, ::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $broadcastLocalEvent(::BlockSource& region, ::LevelEvent type, ::Vec3 const& pos, ::Block const& block);
+
+    MCAPI void $broadcastSoundEvent(
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Block const&                         block,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    );
+
+    MCAPI void $broadcastSoundEvent(
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    );
+
+    MCAPI void $broadcastSoundEvent(
+        ::Dimension&                           dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     identifier,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
+    );
+
+    MCAPI void $broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> $getActorEventBroadcaster() const;
+
+    MCAPI void $addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
+
+    MCAPI void $onChunkReload(::Bounds const& bound);
+
+    MCAPI int $getActivePlayerCount() const;
+
+    MCAPI int $getActiveUsersCount() const;
+
+    MCAPI void $forEachPlayer(::std::function<bool(::Player&)> callback);
+
+    MCAPI void $forEachPlayer(::std::function<bool(::Player const&)> callback) const;
+
+    MCAPI void $forEachUser(::std::function<bool(::EntityContext&)> callback);
+
+    MCAPI void $forEachUser(::std::function<bool(::EntityContext const&)> callback) const;
+
+    MCAPI ::Player* $findPlayer(::std::function<bool(::Player const&)> pred) const;
+
+    MCAPI ::Player* $findPlayer(::std::function<bool(::WeakEntityRef const&)> pred) const;
+
+    MCAPI int $getUserCount() const;
+
+    MCAPI int $countUsersWithMatchingNetworkId(::NetworkIdentifier const& networkId) const;
+
+    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getUsers() const;
+
+    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getEntities() const;
+
+    MCAPI void $onSourceCreated(::BlockSource& source);
+
+    MCAPI void $onSourceDestroyed(::BlockSource& source);
+
+    MCAPI void $onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
+
+    MCAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
+
+    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+
+    MCAPI void $onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+
+    MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
+
+    MCAPI void $onChunkDiscarded(::LevelChunk& levelChunk);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> $getLevelChunkEventManager();
+
+    MCAPI void $queueEntityDestruction(::OwnerPtr<::EntityContext> entity);
+
+    MCAPI ::OwnerPtr<::EntityContext> $removeEntity(::Actor& actor);
+
+    MCAPI ::OwnerPtr<::EntityContext> $removeEntity(::WeakEntityRef entityRef);
+
+    MCAPI void $forceRemoveEntity(::Actor& actor);
+
+    MCAPI void $forceRemoveEntityfromWorld(::Actor& actor);
+
+    MCAPI void $forceFlushRemovedPlayers();
+
+    MCAPI void $loadFunctionManager();
+
+    MCAPI void $levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext> entity);
+
+    MCAPI void $registerTemporaryPointer(::_TickPtr& ptr);
+
+    MCAPI void $unregisterTemporaryPointer(::_TickPtr& ptr);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> $getTempEPtrManager();
+
+    MCAPI bool $destroyBlock(::BlockSource& region, ::BlockPos const& pos, bool dropResources);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
+
+    MCAPI void $upgradeStorageVersion(::StorageVersion v);
+
+    MCAPI void $suspendAndSave();
+
+    MCAPI void $sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
+
+    MCAPI ::Particle* $addParticle(
+        ::ParticleType       id,
+        ::Vec3 const&        pos,
+        ::Vec3 const&        dir,
+        int                  data,
+        ::CompoundTag const* tag,
+        bool                 isGlobal
+    );
 
     MCAPI void
-    broadcastLocalEvent$(class BlockSource& region, ::LevelEvent type, class Vec3 const& pos, class Block const& block);
+    $spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::Dimension* dimension);
 
-    MCAPI void broadcastSoundEvent$(
-        class BlockSource&                      region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> $getServerParticleManager();
+
+    MCAPI void $addParticleEffect(
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
     );
 
-    MCAPI void broadcastSoundEvent$(
-        class Dimension&                        dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& identifier,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+    MCAPI void $addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
-    MCAPI void broadcastSoundEvent$(
-        class BlockSource&                      region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        class Block const&                      block,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+    MCAPI void $addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
-    MCAPI bool canUseSkin$(
-        class SerializedSkin const&    skin,
-        class NetworkIdentifier const& networkIdentifier,
-        class mce::UUID const&         clientId,
-        struct ActorUniqueID const&    playerId
+    MCAPI void $addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
+
+    MCAPI ::ActorUniqueID $getNewUniqueID();
+
+    MCAPI ::ActorRuntimeID $getNextRuntimeID();
+
+    MCAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
+
+    MCAPI ::std::vector<::ChunkPos> const& $getClientTickingOffsets() const;
+
+    MCAPI ::std::vector<::ChunkPos> $getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers
     ) const;
 
-    MCAPI bool copyAndLockMap$(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> $getChunkTickOffsetManager() const;
 
-    MCAPI int countUsersWithMatchingNetworkId$(class NetworkIdentifier const& networkId) const;
+    MCAPI bool $isExporting() const;
 
-    MCAPI class MapItemSavedData& createMapSavedData$(
-        struct ActorUniqueID const& uuid,
-        class BlockPos const&       origin,
-        DimensionType               dimension,
-        int                         returnScaleLevel
+    MCAPI void $setIsExporting(bool IsExporting);
+
+    MCAPI ::SavedDataStorage& $getSavedData();
+
+    MCAPI ::MapItemSavedData* $getMapSavedData(::ActorUniqueID const uuid);
+
+    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const& instance);
+
+    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const* instance);
+
+    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+
+    MCAPI ::ActorUniqueID $expandMapByID(::ActorUniqueID const uuid, bool wasInit);
+
+    MCAPI bool $copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+
+    MCAPI ::MapItemSavedData& $createMapSavedData(
+        ::ActorUniqueID const& uuid,
+        ::BlockPos const&      origin,
+        ::DimensionType        dimension,
+        int                    returnScaleLevel
     );
 
-    MCAPI class MapItemSavedData& createMapSavedData$(
-        std::vector<struct ActorUniqueID> const& mapIds,
-        class BlockPos const&                    origin,
-        DimensionType                            dimension,
-        int                                      returnScaleLevel
+    MCAPI ::MapItemSavedData& $createMapSavedData(
+        ::std::vector<::ActorUniqueID> const& mapIds,
+        ::BlockPos const&                     origin,
+        ::DimensionType                       dimension,
+        int                                   returnScaleLevel
     );
 
-    MCAPI void createPhotoStorage$();
+    MCAPI ::Core::PathBuffer<::std::string> $getScreenshotsFolder() const;
 
-    MCAPI void decrementTagCache$(
-        std::string const&                                                                                tag,
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>& tagRegistry
+    MCAPI ::std::string $getLevelId() const;
+
+    MCAPI void $setLevelId(::std::string LevelId);
+
+    MCAPI ::TaskGroup& $getSyncTasksGroup();
+
+    MCAPI ::TaskGroup& $getIOTasksGroup();
+
+    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
+
+    MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
+
+    MCAPI ::TradeTables* $getTradeTables();
+
+    MCAPI void $decrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCAPI void denyEffect$(class BlockSource& region, class Vec3 const& pos);
-
-    MCAPI bool destroyBlock$(class BlockSource& region, class BlockPos const& pos, bool dropResources);
-
-    MCAPI void digestServerItemComponents$(class ItemComponentPacket const& packet);
-
-    MCAPI void entityChangeDimension$(class Actor& entity, DimensionType toId, std::optional<class Vec3> entityPos);
-
-    MCAPI struct ActorUniqueID expandMapByID$(struct ActorUniqueID uuid, bool wasInit);
-
-    MCAPI bool explode$(class Explosion& explosion);
-
-    MCAPI bool explode$(
-        class BlockSource& region,
-        class Actor*       source,
-        class Vec3 const&  pos,
-        float              explosionRadius,
-        bool               fire,
-        bool               breaksBlocks,
-        float              maxResistance,
-        bool               allowUnderwater
+    MCAPI void $incrementTagCache(
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCAPI bool extinguishFire$(class BlockSource& region, class BlockPos const& pos, uchar face, class Actor* source);
+    MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
-    MCAPI class Actor* fetchEntity$(struct ActorUniqueID actorId, bool getRemoved) const;
+    MCAPI bool $isEdu() const;
 
-    MCAPI class StrictEntityContext fetchStrictEntity$(struct ActorUniqueID actorId, bool getRemoved) const;
+    MCAPI ::ActorFactory& $getActorFactory();
 
-    MCAPI std::unique_ptr<class Path>
-          findPath$(class Actor& from, class Actor& to, class NavigationComponent& navigation);
+    MCAPI ::ActorFactory const& $getActorFactory() const;
 
-    MCAPI std::unique_ptr<class Path>
-          findPath$(class Actor& from, int xBest, int yBest, int zBest, class NavigationComponent& navigation);
+    MCAPI ::ActorInfoRegistry* $getActorInfoRegistry();
 
-    MCAPI class Player* findPlayer$(std::function<bool(class WeakEntityRef const&)> pred) const;
+    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCAPI class Player* findPlayer$(std::function<bool(class Player const&)> pred) const;
+    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
 
-    MCAPI void flushRunTimeLighting$();
+    MCAPI ::EntitySystems& $getEntitySystems();
 
-    MCAPI void forEachDimension$(std::function<bool(class Dimension const&)> callback) const;
+    MCAPI ::WeakRef<::EntityContext> $getLevelEntity();
 
-    MCAPI void forEachDimension$(std::function<bool(class Dimension&)> callback);
-
-    MCAPI void forEachPlayer$(std::function<bool(class Player const&)> callback) const;
-
-    MCAPI void forEachPlayer$(std::function<bool(class Player&)> callback);
-
-    MCAPI void forEachUser$(std::function<bool(class EntityContext const&)> callback) const;
-
-    MCAPI void forEachUser$(std::function<bool(class EntityContext&)> callback);
-
-    MCAPI void forceFlushRemovedPlayers$();
-
-    MCAPI void forceRemoveEntity$(class Actor& actor);
-
-    MCAPI void forceRemoveEntityfromWorld$(class Actor& actor);
-
-    MCAPI int getActivePlayerCount$() const;
-
-    MCAPI std::vector<class WeakEntityRef> const& getActiveUsers$() const;
-
-    MCAPI int getActiveUsersCount$() const;
-
-    MCAPI class Bedrock::NonOwnerPointer<class ActorAnimationControllerGroup> getActorAnimationControllerGroup$() const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class ActorAnimationGroup> getActorAnimationGroup$() const;
-
-    MCAPI class ActorEventCoordinator& getActorEventCoordinator$();
-
-    MCAPI class ActorFactory& getActorFactory$();
-
-    MCAPI class ActorFactory const& getActorFactory$() const;
-
-    MCAPI class ActorInfoRegistry* getActorInfoRegistry$();
-
-    MCAPI class PropertyGroupManager& getActorPropertyGroup$() const;
-
-    MCAPI struct AdventureSettings& getAdventureSettings$();
-
-    MCAPI struct AdventureSettings const& getAdventureSettings$() const;
-
-    MCAPI class ArmorTrimUnloader* getArmorTrimUnloader$();
-
-    MCAPI class AutomationBehaviorTreeGroup& getAutomationBehaviorTreeGroup$() const;
-
-    MCAPI class BehaviorFactory& getBehaviorFactory$() const;
-
-    MCAPI class BiomeComponentFactory& getBiomeComponentFactory$();
-
-    MCAPI class BiomeComponentFactory const& getBiomeComponentFactory$() const;
-
-    MCAPI class BiomeManager& getBiomeManager$();
-
-    MCAPI class BiomeManager const& getBiomeManager$() const;
-
-    MCAPI class BiomeRegistry& getBiomeRegistry$();
-
-    MCAPI class BiomeRegistry const& getBiomeRegistry$() const;
-
-    MCAPI class BlockComponentFactory const& getBlockComponentFactory$() const;
-
-    MCAPI class BlockComponentFactory& getBlockComponentFactory$();
-
-    MCAPI class BlockDefinitionGroup* getBlockDefinitions$() const;
-
-    MCAPI class BlockEventCoordinator& getBlockEventCoordinator$();
-
-    MCAPI class BlockPalette& getBlockPalette$();
-
-    MCAPI class BlockPalette const& getBlockPalette$() const;
-
-    MCAPI class BlockReducer* getBlockReducer$() const;
-
-    MCAPI std::weak_ptr<class BlockTypeRegistry> getBlockRegistry$() const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class BossEventSubscriptionManager> getBossEventSubscriptionManager$();
-
-    MCAPI class CameraPresets& getCameraPresets$();
-
-    MCAPI class CameraPresets const& getCameraPresets$() const;
-
-    MCAPI struct PlayerCapabilities::ISharedController const& getCapabilities$() const;
-
-    MCAPI uint getChunkTickRange$() const;
-
-    MCAPI class ChunkTickRangeManager const& getChunkTickRangeManager$() const;
-
-    MCAPI class ClientPlayerEventCoordinator& getClientPlayerEventCoordinator$();
-
-    MCAPI class ResourcePackManager* getClientResourcePackManager$() const;
-
-    MCAPI std::vector<class ChunkPos> const& getClientTickingOffsets$() const;
-
-    MCAPI struct Tick const getCurrentServerTick$() const;
-
-    MCAPI struct Tick const& getCurrentTick$() const;
-
-    MCAPI class Abilities& getDefaultAbilities$();
-
-    MCAPI ::GameType getDefaultGameType$() const;
-
-    MCAPI class PermissionsHandler const& getDefaultPermissions$() const;
-
-    MCAPI class PermissionsHandler& getDefaultPermissions$();
-
-    MCAPI class BlockPos const& getDefaultSpawn$() const;
-
-    MCAPI ::Difficulty getDifficulty$() const;
-
-    MCAPI class WeakRef<class Dimension> getDimension$(DimensionType id) const;
-
-    MCAPI class DimensionConversionData getDimensionConversionData$() const;
-
-    MCAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&> const& getDimensionFactory$() const;
-
-    MCAPI class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>& getDimensionFactory$();
-
-    MCAPI class DimensionManager const& getDimensionManager$() const;
-
-    MCAPI class DimensionManager& getDimensionManager$();
-
-    MCAPI bool getDisablePlayerInteractions$() const;
-
-    MCAPI std::optional<struct EducationLevelSettings> const& getEducationLevelSettings$() const;
-
-    MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getEntities$() const;
-
-    MCAPI class ActorDefinitionGroup* getEntityDefinitions$() const;
-
-    MCAPI class StackRefResult<class EntityRegistry const> getEntityRegistry$() const;
-
-    MCAPI class StackRefResult<class EntityRegistry> getEntityRegistry$();
-
-    MCAPI class EntitySystems& getEntitySystems$();
-
-    MCAPI class IMinecraftEventing& getEventing$();
-
-    MCAPI class FeatureRegistry const& getFeatureRegistry$() const;
-
-    MCAPI class FeatureRegistry& getFeatureRegistry$();
-
-    MCAPI class FeatureTypeFactory const& getFeatureTypeFactory$() const;
-
-    MCAPI class FeatureTypeFactory& getFeatureTypeFactory$();
-
-    MCAPI class GameRules& getGameRules$();
-
-    MCAPI class GameRules const& getGameRules$() const;
-
-    MCAPI class HitResult& getHitResult$();
-
-    MCAPI class TaskGroup& getIOTasksGroup$();
-
-    MCAPI class IRandom& getIRandom$() const;
-
-    MCAPI std::string const& getImmersiveReaderString$() const;
-
-    MCAPI class InternalComponentRegistry& getInternalComponentRegistry$() const;
-
-    MCAPI class ItemEventCoordinator& getItemEventCoordinator$();
-
-    MCAPI class ItemRegistryRef getItemRegistry$() const;
-
-    MCAPI class JigsawStructureRegistry& getJigsawStructureRegistry$();
-
-    MCAPI class JigsawStructureRegistry const& getJigsawStructureRegistry$() const;
-
-    MCAPI bool getLANBroadcast$() const;
-
-    MCAPI bool getLANBroadcastIntent$() const;
-
-    MCAPI DimensionType getLastOrDefaultSpawnDimensionId$(DimensionType lastDimensionId) const;
-
-    MCAPI class LevelChunkMetaDataManager* getLevelChunkMetaDataManager$();
-
-    MCAPI class LevelData const& getLevelData$() const;
-
-    MCAPI class LevelData& getLevelData$();
-
-    MCAPI class WeakRef<class EntityContext> getLevelEntity$();
-
-    MCAPI class LevelEventCoordinator& getLevelEventCoordinator$();
-
-    MCAPI std::string getLevelId$() const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class LevelSoundManager> getLevelSoundManager$();
-
-    MCAPI class LevelStorage const& getLevelStorage$() const;
-
-    MCAPI class LevelStorage& getLevelStorage$();
-
-    MCAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&> const&
-    getLightTextureImageBuilderFactory$() const;
-
-    MCAPI class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>&
-    getLightTextureImageBuilderFactory$();
-
-    MCAPI class HitResult& getLiquidHitResult$();
-
-    MCAPI class LootTables& getLootTables$();
-
-    MCAPI class MapItemSavedData* getMapSavedData$(class CompoundTag const& instance);
-
-    MCAPI class MapItemSavedData* getMapSavedData$(class CompoundTag const* instance);
-
-    MCAPI class MapItemSavedData* getMapSavedData$(struct ActorUniqueID uuid);
-
-    MCAPI class Mob* getMob$(struct ActorUniqueID mobId) const;
-
-    MCAPI bool getMultiplayerGameIntent$() const;
-
-    MCAPI class Bedrock::NonOwnerPointer<class NetEventCallback> getNetEventCallback$() const;
-
-    MCAPI int getNetherScale$() const;
-
-    MCAPI struct ActorUniqueID getNewUniqueID$();
-
-    MCAPI class ActorRuntimeID getNextRuntimeID$();
-
-    MCAPI int getNumRemotePlayers$();
-
-    MCAPI class WeakRef<class Dimension> getOrCreateDimension$(DimensionType dimensionType);
-
-    MCAPI class PacketSender* getPacketSender$() const;
-
-    MCAPI class StackRefResult<class PauseManager> getPauseManager$();
-
-    MCAPI class StackRefResult<class PauseManager const> getPauseManager$() const;
-
-    MCAPI class PhotoStorage& getPhotoStorage$();
-
-    MCAPI ::Social::GamePublishSetting getPlatformBroadcastIntent$() const;
-
-    MCAPI ::Social::GamePublishSetting getPlatformBroadcastMode$() const;
-
-    MCAPI class Player* getPlatformPlayer$(std::string const& platformOnlineId) const;
-
-    MCAPI class Player* getPlayer$(class mce::UUID const& uuid) const;
-
-    MCAPI class Player* getPlayer$(struct ActorUniqueID entityID) const;
-
-    MCAPI class Player* getPlayer$(std::string const& name) const;
-
-    MCAPI class LayeredAbilities* getPlayerAbilities$(struct ActorUniqueID const& playerId);
-
-    MCAPI class Player* getPlayerByXuid$(std::string const& xuid) const;
-
-    MCAPI class mce::Color getPlayerColor$(class Player const& player) const;
-
-    MCAPI class Player* getPlayerFromServerId$(std::string const& serverId) const;
-
-    MCAPI std::unordered_map<class mce::UUID, class PlayerListEntry> const& getPlayerList$() const;
-
-    MCAPI std::unordered_map<class mce::UUID, class PlayerListEntry>& getPlayerList$();
-
-    MCAPI struct PlayerMovementSettings const& getPlayerMovementSettings$() const;
-
-    MCAPI std::string const& getPlayerPlatformOnlineId$(class mce::UUID const& uuid) const;
-
-    MCAPI std::string const& getPlayerXUID$(class mce::UUID const& uuid) const;
-
-    MCAPI class PortalForcer& getPortalForcer$();
-
-    MCAPI class PositionTrackingDB::PositionTrackingDBClient* getPositionTrackerDBClient$() const;
-
-    MCAPI class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer$() const;
-
-    MCAPI class Player* getPrimaryLocalPlayer$() const;
-
-    MCAPI class ProjectileFactory& getProjectileFactory$() const;
-
-    MCAPI class Random& getRandom$() const;
-
-    MCAPI class Recipes& getRecipes$() const;
-
-    MCAPI class BlockLegacy const& getRegisteredBorderBlock$() const;
-
-    MCAPI class PlayerEventCoordinator& getRemotePlayerEventCoordinator$();
-
-    MCAPI std::vector<class Actor*> getRuntimeActorList$() const;
-
-    MCAPI class Actor* getRuntimeEntity$(class ActorRuntimeID actorId, bool getRemoved) const;
-
-    MCAPI class Player* getRuntimePlayer$(class ActorRuntimeID runtimeId) const;
-
-    MCAPI class SavedDataStorage& getSavedData$();
-
-    MCAPI class Scoreboard const& getScoreboard$() const;
-
-    MCAPI class Scoreboard& getScoreboard$();
-
-    MCAPI class Core::PathBuffer<std::string> getScreenshotsFolder$() const;
-
-    MCAPI class ScriptDeferredEventCoordinator& getScriptDeferredEventCoordinator$();
-
-    MCAPI class ScriptingEventCoordinator& getScriptingEventCoordinator$();
-
-    MCAPI uint getSeed$();
-
-    MCAPI class ServerNetworkEventCoordinator& getServerNetworkEventCoordinator$();
-
-    MCAPI class ServerPlayerEventCoordinator& getServerPlayerEventCoordinator$();
-
-    MCAPI class ResourcePackManager* getServerResourcePackManager$() const;
-
-    MCAPI class BlockPos const& getSharedSpawnPos$() const;
-
-    MCAPI bool getSimPaused$();
-
-    MCAPI struct PlayerSleepStatus getSleepStatus$() const;
-
-    MCAPI std::vector<class ChunkPos> getSortedPositionsFromClientOffsets$(std::vector<class ChunkPos> const&) const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> getSoundPlayer$() const;
-
-    MCAPI class Spawner& getSpawner$() const;
-
-    MCAPI float getSpecialMultiplier$(DimensionType dimensionType) const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> const getStructureManager$() const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager$();
-
-    MCAPI class SubChunkRequestManager* getSubChunkRequestManager$();
-
-    MCAPI class SurfaceBuilderRegistry const& getSurfaceBuilderRegistry$() const;
-
-    MCAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry$();
-
-    MCAPI class TaskGroup& getSyncTasksGroup$();
-
-    MCAPI class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>&
-    getTagRegistry$();
-
-    MCAPI bool getTearingDown$() const;
-
-    MCAPI class Random& getThreadRandom$() const;
-
-    MCAPI class TickingAreasManager& getTickingAreasMgr$();
-
-    MCAPI std::vector<class ChunkPos> const& getTickingOffsets$() const;
-
-    MCAPI int getTime$() const;
-
-    MCAPI class TradeTables* getTradeTables$();
-
-    MCAPI std::weak_ptr<class TrimMaterialRegistry> getTrimMaterialRegistry$();
-
-    MCAPI std::weak_ptr<class TrimMaterialRegistry const> getTrimMaterialRegistry$() const;
-
-    MCAPI std::weak_ptr<class TrimPatternRegistry> getTrimPatternRegistry$();
-
-    MCAPI std::weak_ptr<class TrimPatternRegistry const> getTrimPatternRegistry$() const;
-
-    MCAPI class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> getUnknownBlockTypeRegistry$();
-
-    MCAPI int getUserCount$() const;
-
-    MCAPI std::vector<class OwnerPtr<class EntityContext>> const& getUsers$() const;
-
-    MCAPI class IWorldRegistriesProvider& getWorldRegistriesProvider$();
-
-    MCAPI class IWorldRegistriesProvider const& getWorldRegistriesProvider$() const;
-
-    MCAPI ::Social::GamePublishSetting getXBLBroadcastIntent$() const;
-
-    MCAPI ::Social::GamePublishSetting getXBLBroadcastMode$() const;
-
-    MCAPI void handleLevelEvent$(::LevelEvent type, class CompoundTag const& data);
-
-    MCAPI void handleLevelEvent$(::LevelEvent type, class Vec3 const& pos, int data);
-
-    MCAPI void handleStopAllSounds$();
-
-    MCAPI void handleStopSoundEvent$(std::string const& name);
-
-    MCAPI bool hasCommandsEnabled$() const;
-
-    MCAPI bool hasLevelStorage$() const;
-
-    MCAPI bool hasPlatformBroadcast$() const;
-
-    MCAPI bool hasPlatformBroadcastIntent$() const;
-
-    MCAPI bool hasStartWithMapEnabled$() const;
-
-    MCAPI bool hasXBLBroadcast$() const;
-
-    MCAPI bool hasXBLBroadcastIntent$() const;
-
-    MCAPI void incrementTagCache$(
-        std::string const&                                                                                tag,
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>>& tagRegistry
-    );
-
-    MCAPI bool initialize$(
-        std::string const&         levelName,
-        class LevelSettings const& levelSettings,
-        class LevelData*           levelData,
-        class Experiments const&   experiments,
-        std::string const*         levelId
-    );
-
-    MCAPI void initializeBlockDefinitionGroup$();
-
-    MCAPI bool isClientSide$() const;
-
-    MCAPI bool isClientSideGenerationEnabled$();
-
-    MCAPI bool isEditorWorld$() const;
-
-    MCAPI bool isEdu$() const;
-
-    MCAPI bool isExporting$() const;
-
-    MCAPI bool isLeaveGameDone$();
-
-    MCAPI bool isMultiplayerGame$() const;
-
-    MCAPI bool isPlayerSuspended$(class Player& player) const;
-
-    MCAPI void levelCleanupQueueEntityRemoval$(class OwnerPtr<class EntityContext> entity);
-
-    MCAPI void loadBlockDefinitionGroup$(class Experiments const& experiments);
-
-    MCAPI void loadFunctionManager$();
-
-    MCAPI void notifySubChunkRequestManager$(class SubChunkPacket const& packet);
-
-    MCAPI void onChunkDiscarded$(class LevelChunk& lc);
-
-    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
-
-    MCAPI void onChunkReload$(struct Bounds const& bound);
-
-    MCAPI void onChunkReloaded$(class ChunkSource& source, class LevelChunk& lc);
-
-    MCAPI void onPlayerDeath$(class Player& player, class ActorDamageSource const& source);
-
-    MCAPI void onSourceCreated$(class BlockSource& source);
-
-    MCAPI void onSourceDestroyed$(class BlockSource& source);
-
-    MCAPI void onSubChunkLoaded$(
-        class ChunkSource& source,
-        class LevelChunk&  lc,
-        short              absoluteSubChunkIndex,
-        bool               subChunkVisibilityChanged
-    );
-
-    MCAPI void pauseAndFlushTaskGroups$();
-
-    MCAPI void playSound$(std::string const& name, class Vec3 const& pos, float volume, float pitch);
-
-    MCAPI void playSound$(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, float volume, float pitch);
-
-    MCAPI void playSound$(
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
-
-    MCAPI void playSound$(
-        DimensionType                           dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
-
-    MCAPI void playSound$(
-        class IConstBlockSource const&          region,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
-    );
-
-    MCAPI void potionSplash$(class Vec3 const& pos, class mce::Color const& color, bool instantaneousEffect);
-
-    MCAPI void queueEntityDestruction$(class OwnerPtr<class EntityContext> entity);
-
-    MCAPI void registerTemporaryPointer$(class _TickPtr& ptr);
-
-    MCAPI class OwnerPtr<class EntityContext> removeActorAndTakeEntity$(class WeakEntityRef entityRef);
-
-    MCAPI class OwnerPtr<class EntityContext> removeActorFromWorldAndTakeEntity$(class WeakEntityRef entityRef);
-
-    MCAPI void removeBlockSourceFromValidityTracking$(class BlockSource* region);
-
-    MCAPI void removeDisplayEntity$(class WeakEntityRef);
-
-    MCAPI class OwnerPtr<class EntityContext> removeEntity$(class Actor& actor);
-
-    MCAPI class OwnerPtr<class EntityContext> removeEntity$(class WeakEntityRef entityRef);
-
-    MCAPI void removeListener$(class LevelListener& listener);
-
-    MCAPI void requestMapInfo$(struct ActorUniqueID uuid, bool forceUpdate);
-
-    MCAPI void requestPlayerChangeDimension$(class Player& player, class ChangeDimensionRequest&& changeRequest);
-
-    MCAPI std::shared_ptr<void*> requestTimedStorageDeferment$();
-
-    MCAPI void resumePlayer$(class Player& player);
-
-    MCAPI void runCommand$(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
-
-    MCAPI void runCommand$(
-        class HashedString const& commandStr,
-        class CommandOrigin&      origin,
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
         ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion       commandVersion
+        ::CurrentCmdVersion const commandVersion
     );
 
-    MCAPI void save$();
+    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
-    MCAPI void saveGameData$();
+    MCAPI ::PlayerCapabilities::ISharedController const& $getCapabilities() const;
 
-    MCAPI void saveLevelData$();
+    MCAPI ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& $getTagRegistry();
 
-    MCAPI void sendAllPlayerAbilities$(class Player const& playerReference);
+    MCAPI ::PlayerMovementSettings const& $getPlayerMovementSettings() const;
 
-    MCAPI void sendServerLegacyParticle$(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCAPI void $setPlayerMovementSettings(::PlayerMovementSettings const& settings);
 
-    MCAPI void setCommandsEnabled$(bool commandsEnabled);
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> $getPlayerMovementSettingsManager();
 
-    MCAPI void setDefaultGameType$(::GameType gameType);
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
+    $getPlayerMovementSettingsManager() const;
 
-    MCAPI void setDefaultSpawn$(class BlockPos const& spawnPos);
+    MCAPI bool $canUseSkin(
+        ::SerializedSkin const&    skin,
+        ::NetworkIdentifier const& networkIdentifier,
+        ::ActorUniqueID const&     playerId
+    ) const;
 
-    MCAPI void setDifficulty$(::Difficulty difficulty);
+    MCAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
 
-    MCAPI void setDisablePlayerInteractions$(bool disable);
+    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
 
-    MCAPI void setEducationLevelSettings$(struct EducationLevelSettings settings);
+    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
 
-    MCAPI void setFinishedInitializing$();
+    MCAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
 
-    MCAPI void setHasLockedBehaviorPack$(bool hasLocked);
+    MCAPI ::PositionTrackingDB::PositionTrackingDBClient* $getPositionTrackerDBClient() const;
 
-    MCAPI void setHasLockedResourcePack$(bool hasLocked);
+    MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
 
-    MCAPI void setImmersiveReaderString$(std::string newString);
+    MCAPI void $flushRunTimeLighting();
 
-    MCAPI void setIsExporting$(bool IsExporting);
+    MCAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
 
-    MCAPI void setLANBroadcast$(bool broadcast);
+    MCAPI void $initializeBlockDefinitionGroup();
 
-    MCAPI void setLANBroadcastIntent$(bool broadcast);
+    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> $getUnknownBlockTypeRegistry();
 
-    MCAPI void setLevelId$(std::string LevelId);
+    MCAPI bool $isClientSideGenerationEnabled();
 
-    MCAPI void setMsaGamertagsOnly$(bool msaGamertagsOnly);
+    MCAPI bool $blockNetworkIdsAreHashes();
 
-    MCAPI void setMultiplayerGame$(bool multiplayerGame);
+    MCAPI ::ItemRegistryRef $getItemRegistry() const;
 
-    MCAPI void setMultiplayerGameIntent$(bool multiplayerGame);
+    MCAPI ::std::weak_ptr<::BlockTypeRegistry> $getBlockRegistry() const;
 
-    MCAPI void setNetEventCallback$(class Bedrock::NonOwnerPointer<class NetEventCallback> val);
+    MCAPI ::Level* $asLevel();
 
-    MCAPI void setPacketSender$(class PacketSender* val);
+    MCAPI bool $use3DBiomeMaps() const;
 
-    MCAPI void setPlatformBroadcastIntent$(::Social::GamePublishSetting broadcastMode);
+    MCAPI void $addBlockSourceForValidityTracking(::BlockSource* region);
 
-    MCAPI void setPlatformBroadcastMode$(::Social::GamePublishSetting broadcastMode);
+    MCAPI void $removeBlockSourceFromValidityTracking(::BlockSource* region);
 
-    MCAPI void setPlayerAbilities$(struct ActorUniqueID const& playerId, class LayeredAbilities const& abilities);
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockSourceValidityManager> $getBlockSourceValidityManager();
 
-    MCAPI void setPlayerMovementSettings$(struct PlayerMovementSettings const& settings);
+    MCAPI void $pauseAndFlushTaskGroups();
 
-    MCAPI void setSimPaused$(bool value);
+    MCAPI ::DimensionManager& $getDimensionManager();
 
-    MCAPI void setSleepStatus$(struct PlayerSleepStatus const& status);
+    MCAPI ::DimensionManager const& $getDimensionManager() const;
 
-    MCAPI void setTime$(int time);
+    MCAPI void $_subTick();
 
-    MCAPI void setWorldTemplateOptionsUnlocked$();
+    MCAPI ::StackRefResult<::PauseManager> $getPauseManager();
 
-    MCAPI void setXBLBroadcastIntent$(::Social::GamePublishSetting broadcastMode);
+    MCAPI ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
-    MCAPI void setXBLBroadcastMode$(::Social::GamePublishSetting broadcastMode);
+    MCAPI bool $isClientSide() const;
+
+    MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
+
+    MCAPI ::std::string const& $getPlayerXUID(::mce::UUID const& uuid) const;
+
+    MCAPI ::std::string const& $getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> $getPlayerListManager();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager const> $getPlayerListManager() const;
+
+    MCAPI ::std::vector<::WeakEntityRef> const& $getActiveUsers() const;
+
+    MCAPI void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
+
+    MCAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
+
+    MCAPI ::std::vector<::Actor*> $getRuntimeActorList() const;
+
+    MCAPI ::PacketSender* $getPacketSender() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> $getNetEventCallback() const;
+
+    MCAPI void $setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback> val);
+
+    MCAPI ::gsl::not_null<::StackRefResult<::ILevelRandom>> $getILevelRandom();
+
+    MCAPI ::IRandom& $getIRandom() const;
+
+    MCAPI ::Random& $getRandom() const;
+
+    MCAPI ::Random& $getThreadRandom() const;
+
+    MCAPI ::HitResult& $getHitResult();
+
+    MCAPI ::HitResult& $getLiquidHitResult();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> $getHitResultWrapper();
+
+    MCAPI ::std::string const& $getImmersiveReaderString() const;
+
+    MCAPI void $setImmersiveReaderString(::std::string newString);
+
+    MCAPI ::AdventureSettings& $getAdventureSettings();
+
+    MCAPI ::AdventureSettings const& $getAdventureSettings() const;
+
+    MCAPI ::GameRules const& $getGameRules() const;
+
+    MCAPI ::GameRules& $getGameRules();
+
+    MCAPI bool $hasStartWithMapEnabled() const;
+
+    MCAPI bool $isEditorWorld() const;
+
+    MCAPI bool $isHardcore() const;
+
+    MCAPI ::Abilities& $getDefaultAbilities();
+
+    MCAPI ::PermissionsHandler& $getDefaultPermissions();
+
+    MCAPI ::PermissionsHandler const& $getDefaultPermissions() const;
+
+    MCAPI bool $getTearingDown() const;
 
     MCAPI void
-    spawnParticleEffect$(std::string const& effectName, class Vec3 const& spawnLocation, class Dimension* dimension);
+    $takePicture(::cg::ImageBuffer& outImage, ::Actor* camera, ::Actor* target, ::ScreenshotOptions& screenshotOptions);
 
-    MCAPI void startLeaveGame$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelSoundManager> $getLevelSoundManager();
 
-    MCAPI void suspendAndSave$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> $getSoundPlayer() const;
 
-    MCAPI void suspendPlayer$(class Player& player);
+    MCAPI void $setSimPaused(bool value);
 
-    MCAPI class OwnerPtr<class EntityContext> takeEntity$(class WeakEntityRef entityRef, class LevelChunk& lc);
+    MCAPI bool $getSimPaused();
 
-    MCAPI void takePicture$(
-        class cg::ImageBuffer&    outImage,
-        class Actor*              camera,
-        class Actor*              target,
-        struct ScreenshotOptions& screenshotOptions
-    );
+    MCAPI void $setFinishedInitializing();
 
-    MCAPI void tick$();
+    MCAPI ::LootTables& $getLootTables();
 
-    MCAPI void tickEntities$();
+    MCAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
-    MCAPI void tickEntitySystems$();
+    MCAPI int $getNetherScale() const;
 
-    MCAPI class Scoreboard* tryGetScoreboard$();
+    MCAPI ::Scoreboard& $getScoreboard();
 
-    MCAPI void unregisterTemporaryPointer$(class _TickPtr& ptr);
+    MCAPI ::Scoreboard const& $getScoreboard() const;
 
-    MCAPI void updateSleepingPlayerList$();
+    MCAPI ::Scoreboard* $tryGetScoreboard();
 
-    MCAPI void updateWeather$(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCAPI ::LayeredAbilities* $getPlayerAbilities(::ActorUniqueID const& playerId);
 
-    MCAPI void upgradeStorageVersion$(::StorageVersion v);
+    MCAPI void $setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
 
-    MCAPI bool use3DBiomeMaps$() const;
+    MCAPI void $sendAllPlayerAbilities(::Player const& playerReference);
 
-    MCAPI bool useMsaGamertagsOnly$() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> $getPlayerAbilitiesManager();
 
-    MCAPI static auto IS_SLEEPING_POSSIBLE() -> char const (&)[];
+    MCAPI ::Recipes& $getRecipes() const;
 
-    MCAPI static auto OVERWORLD_PLAYER_COUNT_TAG() -> char const (&)[];
+    MCAPI ::BlockReducer* $getBlockReducer() const;
 
-    MCAPI static auto SLEEPING_PLAYER_COUNT_TAG() -> char const (&)[];
+    MCAPI ::std::weak_ptr<::TrimPatternRegistry const> $getTrimPatternRegistry() const;
 
+    MCAPI ::std::weak_ptr<::TrimPatternRegistry> $getTrimPatternRegistry();
+
+    MCAPI ::std::weak_ptr<::TrimMaterialRegistry const> $getTrimMaterialRegistry() const;
+
+    MCAPI ::std::weak_ptr<::TrimMaterialRegistry> $getTrimMaterialRegistry();
+
+    MCAPI void $digestServerItemComponents(::ItemComponentPacket const& packet);
+
+    MCAPI ::BlockLegacy const& $getRegisteredBorderBlock() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkPerformanceTelemetry> $getLevelChunkPerformanceTelemetry();
+
+    MCAPI ::cereal::ReflectionCtx const& $cerealContext() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+
+    MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
+
+    MCAPI void $_initializeMapDataManager();
+
+    MCAPI ::cereal::ReflectionCtx& $_cerealContext();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIWorldRegistriesProvider();
+
+    MCAPI static void** $vftableForBlockSourceListener();
+
+    MCAPI static void** $vftableForILevel();
     // NOLINTEND
 };

@@ -4,21 +4,27 @@
 
 struct ActorDefinitionTriggeredEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk782da6;
+    ::ll::UntypedStorage<8, 32> mUnkb32e03;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActorDefinitionTriggeredEvent& operator=(ActorDefinitionTriggeredEvent const&);
     ActorDefinitionTriggeredEvent(ActorDefinitionTriggeredEvent const&);
     ActorDefinitionTriggeredEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ActorDefinitionTriggeredEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

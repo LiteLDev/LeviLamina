@@ -3,19 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
-#include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
+#include "mc/world/level/levelgen/v2/StructureBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
-class PoolAliasBinding;
-namespace br::worldgen { class StructureHeightProvider; }
+class HashedString;
 namespace br::worldgen { struct JigsawStructure; }
 // clang-format on
 
 namespace br::worldgen {
 
-class JigsawStructureBuilder {
+class JigsawStructureBuilder : public ::br::worldgen::StructureBuilder<::br::worldgen::JigsawStructureBuilder> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkbb5d5d;
+    ::ll::UntypedStorage<4, 4>  mUnk506b8f;
+    ::ll::UntypedStorage<4, 8>  mUnkc17bb4;
+    ::ll::UntypedStorage<8, 32> mUnk9e3220;
+    ::ll::UntypedStorage<8, 32> mUnk63ea3e;
+    ::ll::UntypedStorage<8, 56> mUnk583b6e;
+    ::ll::UntypedStorage<1, 1>  mUnkcd9d57;
+    ::ll::UntypedStorage<8, 24> mUnk47f6a0;
+    ::ll::UntypedStorage<1, 1>  mUnk8fe22e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     JigsawStructureBuilder& operator=(JigsawStructureBuilder const&);
@@ -23,41 +35,39 @@ public:
     JigsawStructureBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~JigsawStructureBuilder();
-
-    MCAPI struct br::worldgen::JigsawStructure build();
-
-    MCAPI class br::worldgen::JigsawStructureBuilder& dimensionPadding(int amount);
-
-    MCAPI class br::worldgen::JigsawStructureBuilder& maxDepth(schar depth);
-
-    MCAPI class br::worldgen::JigsawStructureBuilder& maxDistanceFromCenter(int distance);
-
-    MCAPI class br::worldgen::JigsawStructureBuilder&
-    poolAliases(std::vector<std::shared_ptr<class PoolAliasBinding>>&& aliases);
-
-    MCAPI class br::worldgen::JigsawStructureBuilder&
-    projectStartToHeightmap(::br::worldgen::HeightmapProjection::Type projection);
-
-    MCAPI class br::worldgen::JigsawStructureBuilder& startHeight(class br::worldgen::StructureHeightProvider&& provider
-    );
-
-    MCAPI class br::worldgen::JigsawStructureBuilder& startPool(std::string_view key);
-
-    MCAPI static class br::worldgen::JigsawStructureBuilder create(std::string_view key, ::StructureFeatureType type);
-
+    virtual ~JigsawStructureBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
 
-    MCAPI void dtor$();
+    MCAPI ::br::worldgen::JigsawStructure build();
 
+    MCAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

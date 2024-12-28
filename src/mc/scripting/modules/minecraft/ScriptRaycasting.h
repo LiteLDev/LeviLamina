@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/common/facing/Name.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
@@ -17,22 +19,30 @@ namespace ScriptModuleMinecraft::ScriptRaycasting { struct EntityHitInfo; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::ScriptRaycasting {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<struct ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo> getBlockFromRay(
-    class BlockSource const&                                       region,
-    class Vec3 const&                                              pos,
-    class Vec3 const&                                              vector,
-    struct ScriptModuleMinecraft::ScriptBlockRaycastOptions const& blockOptions
+MCAPI ::std::optional<::BlockPos> getBlockFromAxisRay(
+    ::BlockSource const&                                      region,
+    ::BlockPos const&                                         pos,
+    ::Facing::Name                                            direction,
+    ::ScriptModuleMinecraft::ScriptBlockRaycastOptions const& blockOptions
 );
 
-MCAPI class Scripting::Result<std::vector<struct ScriptModuleMinecraft::ScriptRaycasting::EntityHitInfo>>
+MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo> getBlockFromRay(
+    ::BlockSource const&                                      region,
+    ::Vec3 const&                                             pos,
+    ::Vec3 const&                                             vector,
+    ::ScriptModuleMinecraft::ScriptBlockRaycastOptions const& blockOptions
+);
+
+MCAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptRaycasting::EntityHitInfo>>
 getEntitiesFromRay(
-    class BlockSource&                                              region,
-    class Vec3 const&                                               pos,
-    class Vec3 const&                                               direction,
-    struct ScriptModuleMinecraft::ScriptEntityRaycastOptions const& entityOptions,
-    std::optional<class Actor const*>                               except
+    ::BlockSource&                                             region,
+    ::Vec3 const&                                              pos,
+    ::Vec3 const&                                              direction,
+    ::ScriptModuleMinecraft::ScriptEntityRaycastOptions const& entityOptions,
+    ::std::optional<::Actor const*>                            except
 );
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraft::ScriptRaycasting
+} // namespace ScriptModuleMinecraft::ScriptRaycasting

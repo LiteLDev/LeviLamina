@@ -11,12 +11,11 @@ public:
     CRC32(CRC32 const&);
     CRC32();
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static auto table() -> uint const (&)[];
-
+    MCAPI static ::std::add_lvalue_reference_t<uint const[]> table();
     // NOLINTEND
 };
 
-}; // namespace SFAT
+} // namespace SFAT

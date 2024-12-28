@@ -4,9 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class LevelChunk;
+class Random;
+class RoomDefinition;
+// clang-format on
 
 class OceanMonumentPiece : public ::StructurePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk6bd372;
+    ::ll::UntypedStorage<8, 16> mUnkc62c22;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OceanMonumentPiece& operator=(OceanMonumentPiece const&);
@@ -14,77 +29,48 @@ public:
     OceanMonumentPiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OceanMonumentPiece();
+    // vIndex: 4
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
 
     // vIndex: 5
-    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    // vIndex: 7
-    virtual int getWorldX(int x, int z);
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 8
-    virtual int getWorldZ(int x, int z);
+    virtual int getWorldZ(int x, int z) /*override*/;
+
+    // vIndex: 7
+    virtual int getWorldX(int x, int z) /*override*/;
 
     // vIndex: 12
-    virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
+    virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
-    MCAPI OceanMonumentPiece(int& orientation, class BoundingBox& boundingBox);
-
+    // vIndex: 0
+    virtual ~OceanMonumentPiece() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI OceanMonumentPiece(
-        int                                   genDepth,
-        int&                                  orientation,
-        std::shared_ptr<class RoomDefinition> roomDefinition,
-        int                                   roomWidth,
-        int                                   roomHeight,
-        int                                   roomDepth
+        int                                 genDepth,
+        int&                                orientation,
+        ::std::shared_ptr<::RoomDefinition> roomDefinition,
+        int                                 roomWidth,
+        int                                 roomHeight,
+        int                                 roomDepth
     );
 
-    MCAPI bool chunkIntersects(class BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
+    MCAPI void
+    generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void generateDefaultFloor(
-        class BlockSource&       region,
-        class BoundingBox const& chunkBB,
-        int                      xOff,
-        int                      zOff,
-        bool                     downOpening
-    );
-
-    MCAPI void spawnElder(class BlockSource& region, class BoundingBox const& chunkBB, int x, int y, int z);
-
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(int& orientation, class BoundingBox& boundingBox);
-
-    MCAPI void* ctor$(
-        int                                   genDepth,
-        int&                                  orientation,
-        std::shared_ptr<class RoomDefinition> roomDefinition,
-        int                                   roomWidth,
-        int                                   roomHeight,
-        int                                   roomDepth
-    );
-
-    MCAPI void dtor$();
-
-    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
-
-    MCAPI int getWorldX$(int x, int z);
-
-    MCAPI int getWorldZ$(int x, int z);
-
-    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
     MCAPI static int& mGridroomLeftWingConnectIndex();
 
     MCAPI static int& mGridroomRightWingConnectIndex();
@@ -98,6 +84,42 @@ public:
     MCAPI static int const& mPenthouseIndex();
 
     MCAPI static int const& mRightWingIndex();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        int                                 genDepth,
+        int&                                orientation,
+        ::std::shared_ptr<::RoomDefinition> roomDefinition,
+        int                                 roomWidth,
+        int                                 roomHeight,
+        int                                 roomDepth
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI int $getWorldZ(int x, int z);
+
+    MCAPI int $getWorldX(int x, int z);
+
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

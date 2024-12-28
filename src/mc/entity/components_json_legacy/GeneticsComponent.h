@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+// clang-format on
+
 class GeneticsComponent {
 public:
     // GeneticsComponent inner types declare
@@ -12,6 +19,13 @@ public:
     // GeneticsComponent inner types define
     struct Gene {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk9879b9;
+        ::ll::UntypedStorage<4, 4> mUnk644375;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Gene& operator=(Gene const&);
         Gene(Gene const&);
@@ -19,53 +33,49 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk95498a;
+    ::ll::UntypedStorage<8, 8>  mUnk1ff6a2;
+    ::ll::UntypedStorage<8, 8>  mUnk855ac2;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     GeneticsComponent& operator=(GeneticsComponent const&);
     GeneticsComponent(GeneticsComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI GeneticsComponent();
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void buildDebugInfo(std::string& out) const;
+    MCAPI void buildDebugInfo(::std::string& out) const;
 
-    MCAPI struct GeneticsComponent::Gene* findGene(std::string const& geneName);
+    MCAPI void fireGeneEvents(::Actor& owner) const;
 
-    MCAPI void fireGeneEvents(class Actor& owner) const;
+    MCAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
 
-    MCAPI void initializeGenesFromParents(class Actor& owner, class Actor& parentalUnit1, class Actor& parentalUnit2);
-
-    MCAPI class GeneticsComponent& operator=(class GeneticsComponent&&);
-
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct GeneticsComponent::Gene _crossParentGenes(
-        struct GeneDefinition const&    definition,
-        struct GeneticsComponent::Gene& gene1,
-        struct GeneticsComponent::Gene& gene2
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& GENE_ARRAY();
 
-    MCAPI static std::string const& GENE_ARRAY();
-
-    MCAPI static std::string const& HIDDEN_ALLELE();
+    MCAPI static ::std::string const& HIDDEN_ALLELE();
 
     MCAPI static int const& INVALID_ALLELE_VALUE();
 
-    MCAPI static std::string const& MAIN_ALLELE();
+    MCAPI static ::std::string const& MAIN_ALLELE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

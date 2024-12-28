@@ -3,12 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
+class Experiments;
+class ReadOnlyBinaryStream;
+class ResourcePackManager;
+struct CameraPreset;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,91 +26,98 @@ public:
     // CameraPresets inner types define
     struct CameraList {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>       mName;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> mPresetIndices;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        CameraList& operator=(CameraList const&);
         CameraList(CameraList const&);
         CameraList();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI struct CameraPresets::CameraList& operator=(struct CameraPresets::CameraList const&);
-
         MCAPI ~CameraList();
-
-        MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
-    // prevent constructor by default
-    CameraPresets& operator=(CameraPresets const&);
-    CameraPresets(CameraPresets const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI CameraPresets();
-
-    MCAPI explicit CameraPresets(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI std::vector<std::string> buildCameraPresetList() const;
-
-    MCAPI std::optional<uint> getCameraPresetIndex(std::string const& presetName) const;
-
-    MCAPI std::vector<struct CameraPreset> const& getPresets() const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI void loadPresets(class ResourcePackManager& resourcePackManager);
-
-    MCAPI void write(class BinaryStream& stream) const;
-
-    MCAPI ~CameraPresets();
-
-    MCAPI static bool isAllowedEaseTarget(std::string const& easeTarget);
-
-    MCAPI static class Bedrock::Result<class CameraPresets> read(class ReadOnlyBinaryStream& stream);
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::CameraPreset>>              mPresets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>> mLists;
     // NOLINTEND
 
-    // private:
+public:
+    // prevent constructor by default
+    CameraPresets(CameraPresets const&);
+    CameraPresets();
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void _discardInvalidPresets();
 
     MCAPI void _parseAndLoadCameraList(
-        std::string const&      fileData,
-        class SemVersion const& engineVersion,
-        std::string const&      filename
+        ::std::string const&           fileData,
+        ::MolangVersion                molangVersion,
+        ::std::string_view             filename,
+        ::cereal::ReflectionCtx const& ctx
     );
 
     MCAPI void _parseAndLoadCameraPreset(
-        std::string const&      fileData,
-        class SemVersion const& engineVersion,
-        std::string const&      filename
+        ::std::string const&           fileData,
+        ::MolangVersion                molangVersion,
+        ::std::string_view             filename,
+        ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static void _loadJsonFiles(
-        class ResourcePackManager&                                                           resourcePackManager,
-        class Core::PathBuffer<class Core::StackString<char, 1024>> const&                   path,
-        std::function<void(std::string const&, class SemVersion const&, std::string const&)> callback
-    );
+    MCAPI void _storeCameraList(::CameraPresets::CameraList&& list);
 
+    MCAPI ::std::vector<::std::string> buildCameraPresetList() const;
+
+    MCAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
+
+    MCAPI ::std::vector<::CameraPreset> const& getPresets() const;
+
+    MCAPI bool isEmpty() const;
+
+    MCAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const&);
+
+    MCAPI ::CameraPresets& operator=(::CameraPresets const&);
+
+    MCAPI ::CameraPresets& operator=(::CameraPresets&&);
+
+    MCAPI void write(::BinaryStream& stream) const;
+
+    MCAPI ~CameraPresets();
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct cereal::ReflectionCtx& ctx);
+    MCAPI static void _setupBindings(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void* ctor$();
+    MCAPI static bool isAllowedEaseTarget(::std::string const& easeTarget);
 
-    MCAPI void dtor$();
+    MCAPI static bool isVanillaCamera(::std::string const& cameraName);
 
+    MCAPI static ::Bedrock::Result<::CameraPresets> read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,11 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ContainerScreenContext;
+class Player;
+struct ActorUniqueID;
+// clang-format on
+
 class ChestContainerManagerModel : public ::LevelContainerManagerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkb77461;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChestContainerManagerModel& operator=(ChestContainerManagerModel const&);
@@ -16,44 +29,57 @@ public:
     ChestContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ChestContainerManagerModel() = default;
+    virtual ~ChestContainerManagerModel() /*override*/;
 
-    // vIndex: 16
-    virtual bool isValid(float pickRange);
+    // vIndex: 19
+    virtual bool isValid(float pickRange) /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
-
-    MCAPI ChestContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
-
-    MCAPI ChestContainerManagerModel(
-        ::ContainerID         containerId,
-        class Player&         player,
-        class BlockPos const& blockPos,
-        ::BlockActorType      blockActorType
-    );
-
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
-
-    MCAPI void* ctor$(
-        ::ContainerID         containerId,
-        class Player&         player,
-        class BlockPos const& blockPos,
-        ::BlockActorType      blockActorType
+    MCAPI ChestContainerManagerModel(
+        ::ContainerID     containerId,
+        ::Player&         player,
+        ::BlockPos const& blockPos,
+        ::BlockActorType  blockActorType
     );
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI bool isValid$(float pickRange);
+    MCAPI void*
+    $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid(float pickRange);
+
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

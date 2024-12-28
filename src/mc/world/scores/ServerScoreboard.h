@@ -3,11 +3,66 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
 #include "mc/world/scores/Scoreboard.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BasicTimer;
+class CommandSoftEnumRegistry;
+class CompoundTag;
+class DisplayObjective;
+class EntityContext;
+class GameplayUserManager;
+class IActorManagerConnector;
+class ILevelStorageManagerConnector;
+class Level;
+class LevelStorage;
+class Objective;
+class PacketSender;
+class Player;
+class ScoreboardIdentityRef;
+struct ActorUniqueID;
+struct PlayerScoreboardId;
+struct ScorePacketInfo;
+struct ScoreboardId;
+namespace Bedrock::PubSub { class Subscription; }
+// clang-format on
+
 class ServerScoreboard : public ::Scoreboard {
+public:
+    // ServerScoreboard inner types declare
+    // clang-format off
+    struct unit_test_ctor_t;
+    // clang-format on
+
+    // ServerScoreboard inner types define
+    struct unit_test_ctor_t {
+    public:
+        // prevent constructor by default
+        unit_test_ctor_t& operator=(unit_test_ctor_t const&);
+        unit_test_ctor_t(unit_test_ctor_t const&);
+        unit_test_ctor_t();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BasicTimer>>                             mSaveTimer;
+    ::ll::TypedStorage<8, 8, ::LevelStorage*>                                             mLevelStorage;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Objective const*>>                          mTrackedObjectives;
+    ::ll::TypedStorage<8, 8, ::PacketSender*>                                             mPacketSender;
+    ::ll::TypedStorage<8, 16, ::ScoreboardId>                                             mLastUniqueSBID;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOnSaveSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemoveActorEntityReferencesSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemovedSubscription;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ServerScoreboard& operator=(ServerScoreboard const&);
@@ -15,153 +70,161 @@ public:
     ServerScoreboard();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerScoreboard();
-
-    // vIndex: 1
-    virtual class DisplayObjective const* setDisplayObjective(
-        std::string const&     displaySlotName,
-        class Objective const& objective,
-        ::ObjectiveSortOrder   order
-    );
-
-    // vIndex: 2
-    virtual class Objective* clearDisplayObjective(std::string const& displaySlotName);
-
-    // vIndex: 3
-    virtual struct ScoreboardId const& createScoreboardId(class Player const& player);
-
-    // vIndex: 4
-    virtual struct ScoreboardId const& createScoreboardId(class Actor const& entity);
-
-    // vIndex: 5
-    virtual struct ScoreboardId const& createScoreboardId(std::string const& name);
+    virtual ~ServerScoreboard() /*override*/;
 
     // vIndex: 6
-    virtual void onObjectiveAdded(class Objective const& objective);
+    virtual void onObjectiveAdded(::Objective const& objective) /*override*/;
 
     // vIndex: 7
-    virtual void onObjectiveRemoved(class Objective& objective);
+    virtual void onObjectiveRemoved(::Objective& objective) /*override*/;
 
     // vIndex: 8
-    virtual void onScoreChanged(struct ScoreboardId const& id, class Objective const& obj);
+    virtual void onScoreChanged(::ScoreboardId const& id, ::Objective const& obj) /*override*/;
 
     // vIndex: 9
-    virtual void onPlayerScoreRemoved(struct ScoreboardId const& id, class Objective const& objective);
-
-    // vIndex: 10
-    virtual void onPlayerJoined(class Player const& player);
-
-    // vIndex: 11
-    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const& playerId);
-
-    // vIndex: 12
-    virtual void tick();
+    virtual void onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective) /*override*/;
 
     // vIndex: 13
-    virtual void setPacketSender(class PacketSender* sender);
+    virtual void setPacketSender(::PacketSender* sender) /*override*/;
+
+    // vIndex: 1
+    virtual ::DisplayObjective const* setDisplayObjective(
+        ::std::string const&       displaySlotName,
+        ::Objective const&         objective,
+        ::ObjectiveSortOrder const order
+    ) /*override*/;
+
+    // vIndex: 2
+    virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName) /*override*/;
+
+    // vIndex: 10
+    virtual void onPlayerJoined(::Player const& player) /*override*/;
+
+    // vIndex: 11
+    virtual void onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId) /*override*/;
+
+    // vIndex: 12
+    virtual void tick() /*override*/;
+
+    // vIndex: 5
+    virtual ::ScoreboardId const& createScoreboardId(::Player const& player) /*override*/;
+
+    // vIndex: 4
+    virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity) /*override*/;
+
+    // vIndex: 3
+    virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer) /*override*/;
 
     // vIndex: 14
-    virtual void writeToLevelStorage();
+    virtual void writeToLevelStorage() /*override*/;
 
     // vIndex: 15
-    virtual bool isClientSide() const;
-
-    MCAPI ServerScoreboard(
-        class CommandSoftEnumRegistry                                         registry,
-        class LevelStorage*                                                   levelStorage,
-        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
-    );
-
-    MCAPI void deserialize(std::unique_ptr<class CompoundTag> root);
-
-    MCAPI void initializeImGui(class Level& level);
-
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager& levelStorageManager);
-
-    MCAPI void intializeWithActorManager(class ActorManager& actorManager);
-
-    MCAPI std::unique_ptr<class CompoundTag> serialize() const;
-
+    virtual bool isClientSide() const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void
-    _clearAllScoreTagsForObjective(std::string const& displaySlotName, class DisplayObjective const& displayObjective);
-
-    MCAPI class Player* _getPlayer(struct ActorUniqueID entityID) const;
-
-    MCAPI class StackRefResult<class GameplayUserManager> _getValidGameplayUserManager() const;
-
-    MCAPI void _onGameplayUserRemoved(class EntityContext& entity);
-
-    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
-
-    MCAPI void _onSaveEvent(class LevelStorage&);
-
-    MCAPI void _stopTrackingObjective(class Objective const& objective);
-
-    MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(
-        class ScoreboardIdentityRef const& identityDef,
-        std::string const&                 objName,
-        int                                score
-    );
-
-    MCAPI void
-    _updateAllScoreTagsForObjective(std::string const& displaySlotName, class DisplayObjective const& displayObjective);
-
-    MCAPI void _updateScoreTag(struct ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class CommandSoftEnumRegistry                                         registry,
-        class LevelStorage*                                                   levelStorage,
-        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
+    MCAPI ServerScoreboard(
+        ::CommandSoftEnumRegistry                            registry,
+        ::LevelStorage*                                      levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
 
-    MCAPI void dtor$();
+    MCAPI void
+    _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI class Objective* clearDisplayObjective$(std::string const& displaySlotName);
+    MCAPI ::Player* _getPlayer(::ActorUniqueID entityID) const;
 
-    MCAPI struct ScoreboardId const& createScoreboardId$(class Player const& player);
+    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI struct ScoreboardId const& createScoreboardId$(class Actor const& entity);
+    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI struct ScoreboardId const& createScoreboardId$(std::string const& name);
+    MCAPI void _onSaveEvent(::LevelStorage&);
 
-    MCAPI bool isClientSide$() const;
-
-    MCAPI void onObjectiveAdded$(class Objective const& objective);
-
-    MCAPI void onObjectiveRemoved$(class Objective& objective);
-
-    MCAPI void onPlayerIdentityUpdated$(struct PlayerScoreboardId const& playerId);
-
-    MCAPI void onPlayerJoined$(class Player const& player);
-
-    MCAPI void onPlayerScoreRemoved$(struct ScoreboardId const& id, class Objective const& objective);
-
-    MCAPI void onScoreChanged$(struct ScoreboardId const& id, class Objective const& obj);
-
-    MCAPI class DisplayObjective const* setDisplayObjective$(
-        std::string const&     displaySlotName,
-        class Objective const& objective,
-        ::ObjectiveSortOrder   order
+    MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(
+        ::ScoreboardIdentityRef const& identityDef,
+        ::std::string const&           objName,
+        int                            score
     );
 
-    MCAPI void setPacketSender$(class PacketSender* sender);
+    MCAPI void
+    _updateAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI void tick$();
+    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
 
-    MCAPI void writeToLevelStorage$();
+    MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
 
+    MCAPI void initializeImGui(::Level& level);
+
+    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
+    );
+
+    MCAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> serialize() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::CommandSoftEnumRegistry                            registry,
+        ::LevelStorage*                                      levelStorage,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onObjectiveAdded(::Objective const& objective);
+
+    MCAPI void $onObjectiveRemoved(::Objective& objective);
+
+    MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
+
+    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+
+    MCAPI void $setPacketSender(::PacketSender* sender);
+
+    MCAPI ::DisplayObjective const* $setDisplayObjective(
+        ::std::string const&       displaySlotName,
+        ::Objective const&         objective,
+        ::ObjectiveSortOrder const order
+    );
+
+    MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
+
+    MCAPI void $onPlayerJoined(::Player const& player);
+
+    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+
+    MCAPI void $tick();
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
+
+    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+
+    MCAPI void $writeToLevelStorage();
+
+    MCAPI bool $isClientSide() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

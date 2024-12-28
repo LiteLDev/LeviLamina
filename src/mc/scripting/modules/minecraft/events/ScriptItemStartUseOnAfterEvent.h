@@ -9,20 +9,32 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemStartUseOnAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk986ef2;
+    ::ll::UntypedStorage<8, 32> mUnkc32690;
+    ::ll::UntypedStorage<4, 4>  mUnk9b8a73;
+    ::ll::UntypedStorage<8, 32> mUnk15e7a5;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItemStartUseOnAfterEvent& operator=(ScriptItemStartUseOnAfterEvent const&);
     ScriptItemStartUseOnAfterEvent(ScriptItemStartUseOnAfterEvent const&);
     ScriptItemStartUseOnAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&&);
+    // NOLINTEND
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>
-    bind();
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

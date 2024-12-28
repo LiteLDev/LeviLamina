@@ -17,20 +17,27 @@ namespace PositionTrackingDB {
 
 class CacheManager {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk948f80;
+    ::ll::UntypedStorage<8, 16> mUnkaec1ce;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CacheManager& operator=(CacheManager const&);
     CacheManager(CacheManager const&);
     CacheManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI gsl::not_null<class PositionTrackingDB::TrackingRecord*> createTrackingRecordInLocalCache(
-        class PositionTrackingId const& id,
-        class BlockPos const&           pos,
-        DimensionType const&            dimension
+    MCAPI ::gsl::not_null<::PositionTrackingDB::TrackingRecord*> createTrackingRecordInLocalCache(
+        ::PositionTrackingId const& id,
+        ::BlockPos const&           pos,
+        ::DimensionType const&      dimension
     );
-
     // NOLINTEND
 };
 
-}; // namespace PositionTrackingDB
+} // namespace PositionTrackingDB

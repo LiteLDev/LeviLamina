@@ -9,29 +9,38 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorRemoveAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkec1221;
+    ::ll::UntypedStorage<8, 32> mUnkb5b28c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorRemoveAfterEvent& operator=(ScriptActorRemoveAfterEvent const&);
     ScriptActorRemoveAfterEvent(ScriptActorRemoveAfterEvent const&);
     ScriptActorRemoveAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
 
     MCAPI ~ScriptActorRemoveAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

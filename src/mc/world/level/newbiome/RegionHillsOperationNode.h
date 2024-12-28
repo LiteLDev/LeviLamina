@@ -3,11 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/newbiome/MixerOperationNode.h"
 #include "mc/world/level/newbiome/OperationNode.h"
-#include "mc/world/level/newbiome/operation_node_details/TransferData.h"
 #include "mc/world/level/newbiome/operation_node_details/WorkingData.h"
 
-class RegionHillsOperationNode {
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeRegistry;
+class Pos2d;
+// clang-format on
+
+class RegionHillsOperationNode : public ::MixerOperationNode<::Biome const*, ::Pos2d, ::Biome const*> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkc01c9b;
+    ::ll::UntypedStorage<8, 8>  mUnk860d5e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RegionHillsOperationNode& operator=(RegionHillsOperationNode const&);
@@ -15,62 +29,67 @@ public:
     RegionHillsOperationNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RegionHillsOperationNode() = default;
-
-    // vIndex: 1
-    virtual void init(int64 seed);
-
-    // vIndex: 2
-    virtual class OperationNodeDetails::TransferData<class Biome const*>
-    _allocateAndFill(uint64 requiredBytes, class Pos2d const& origin, class Pos2d const& size) const;
-
     // vIndex: 3
     virtual void _fillArea(
-        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
-        class Pos2d const&                                                               origin,
-        class Pos2d const&                                                               size,
-        int                                                                              pw
-    ) const;
+        ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
+        ::Pos2d const&                                                       origin,
+        ::Pos2d const&                                                       size,
+        int                                                                  pw
+    ) const /*override*/;
 
     // vIndex: 4
-    virtual std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& origin, class Pos2d const& size) const;
+    virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
 
-    MCAPI RegionHillsOperationNode(
-        uint                                                                   seedMixup,
-        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>& parent,
-        std::shared_ptr<class OperationNode<int, class Pos2d>>&                riverOperationNode,
-        class BiomeRegistry const&                                             biomeRegistry
-    );
-
+    // vIndex: 0
+    virtual ~RegionHillsOperationNode() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        uint                                                                   seedMixup,
-        std::shared_ptr<class OperationNode<class Biome const*, class Pos2d>>& parent,
-        std::shared_ptr<class OperationNode<int, class Pos2d>>&                riverOperationNode,
-        class BiomeRegistry const&                                             biomeRegistry
+    MCAPI RegionHillsOperationNode(
+        uint                                                         seedMixup,
+        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
+        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
+        ::BiomeRegistry const&                                       biomeRegistry
     );
+    // NOLINTEND
 
-    MCAPI class OperationNodeDetails::TransferData<class Biome const*>
-    _allocateAndFill$(uint64 requiredBytes, class Pos2d const& origin, class Pos2d const& size) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        uint                                                         seedMixup,
+        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
+        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
+        ::BiomeRegistry const&                                       biomeRegistry
+    );
+    // NOLINTEND
 
-    MCAPI void _fillArea$(
-        class OperationNodeDetails::WorkingData<class Biome const*, class Biome const*>& operationNodeData,
-        class Pos2d const&                                                               origin,
-        class Pos2d const&                                                               size,
-        int                                                                              pw
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_fillArea(
+        ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
+        ::Pos2d const&                                                       origin,
+        ::Pos2d const&                                                       size,
+        int                                                                  pw
     ) const;
 
-    MCAPI std::tuple<class Pos2d, class Pos2d> _getAreaRead$(class Pos2d const& origin, class Pos2d const& size) const;
+    MCAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+    // NOLINTEND
 
-    MCAPI void init$(int64 seed);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

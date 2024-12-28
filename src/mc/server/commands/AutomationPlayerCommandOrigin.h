@@ -3,18 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/CommandOriginType.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerCommandOrigin.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class CommandOrigin;
+class CompoundTag;
+class Level;
+class NetworkIdentifier;
+class Player;
+struct ActorUniqueID;
+struct CommandOriginData;
 // clang-format on
 
 class AutomationPlayerCommandOrigin : public ::PlayerCommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnke41da0;
+    ::ll::UntypedStorage<8, 160> mUnk8ae9e9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AutomationPlayerCommandOrigin& operator=(AutomationPlayerCommandOrigin const&);
@@ -22,74 +32,91 @@ public:
     AutomationPlayerCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AutomationPlayerCommandOrigin() = default;
-
-    // vIndex: 1
-    virtual std::string const& getRequestId() const;
+    virtual ~AutomationPlayerCommandOrigin() /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
+
+    // vIndex: 1
+    virtual ::std::string const& getRequestId() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-
-    // vIndex: 19
-    virtual class NetworkIdentifier const& getSourceId() const;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
 
     // vIndex: 24
-    virtual struct CommandOriginData toCommandOriginData() const;
+    virtual ::CommandOriginData toCommandOriginData() const /*override*/;
+
+    // vIndex: 19
+    virtual ::NetworkIdentifier const& getSourceId() const /*override*/;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CompoundTag serialize() const /*override*/;
 
     // vIndex: 30
-    virtual bool isValid() const;
-
-    MCAPI AutomationPlayerCommandOrigin(std::string const& requestId, class Player& origin);
-
-    MCAPI AutomationPlayerCommandOrigin(
-        struct ActorUniqueID           playerId,
-        class Level&                   level,
-        std::string const&             requestId,
-        class NetworkIdentifier const& sourceId
-    );
-
+    virtual bool isValid() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AutomationPlayerCommandOrigin(::std::string const& requestId, ::Player& origin);
 
-    MCAPI void* ctor$(
-        struct ActorUniqueID           playerId,
-        class Level&                   level,
-        std::string const&             requestId,
-        class NetworkIdentifier const& sourceId
+    MCAPI AutomationPlayerCommandOrigin(
+        ::ActorUniqueID            playerId,
+        ::Level&                   level,
+        ::std::string const&       requestId,
+        ::NetworkIdentifier const& sourceId
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& requestId, class Player& origin);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& requestId, ::Player& origin);
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+    MCAPI void* $ctor(
+        ::ActorUniqueID            playerId,
+        ::Level&                   level,
+        ::std::string const&       requestId,
+        ::NetworkIdentifier const& sourceId
+    );
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string const& getRequestId$() const;
+    MCAPI ::std::string const& $getRequestId() const;
 
-    MCAPI class NetworkIdentifier const& getSourceId$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI bool isValid$() const;
+    MCAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCAPI struct CommandOriginData toCommandOriginData$() const;
+    MCAPI ::NetworkIdentifier const& $getSourceId() const;
 
+    MCAPI ::CompoundTag $serialize() const;
+
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

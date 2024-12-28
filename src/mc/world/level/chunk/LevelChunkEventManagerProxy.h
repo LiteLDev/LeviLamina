@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/chunk/ILevelChunkEventManagerProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkSource;
+class LevelChunk;
+// clang-format on
+
 class LevelChunkEventManagerProxy : public ::ILevelChunkEventManagerProxy {
 public:
     // prevent constructor by default
@@ -13,51 +19,60 @@ public:
     LevelChunkEventManagerProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LevelChunkEventManagerProxy() = default;
-
     // vIndex: 1
-    virtual bool isReadOnly(class LevelChunk const& levelChunk) const;
+    virtual bool isReadOnly(::LevelChunk const& levelChunk) const /*override*/;
 
     // vIndex: 2
-    virtual bool setOnChunkLoadedCalled(class LevelChunk& levelChunk);
+    virtual bool setOnChunkLoadedCalled(::LevelChunk& levelChunk) /*override*/;
 
     // vIndex: 3
-    virtual void onTickingStarted(class LevelChunk& levelChunk);
+    virtual void onTickingStarted(::LevelChunk& levelChunk) /*override*/;
 
     // vIndex: 4
-    virtual void setupRedstoneCircuit(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
+    virtual void setupRedstoneCircuit(::ChunkSource& chunkSource, ::LevelChunk& levelChunk) /*override*/;
 
     // vIndex: 5
-    virtual int getClosestPlayerDistanceSquared(class LevelChunk const& levelChunk) const;
+    virtual int getClosestPlayerDistanceSquared(::LevelChunk const& levelChunk) const /*override*/;
 
     // vIndex: 6
-    virtual bool isOwnedByTickingThread(class LevelChunk const& levelChunk) const;
+    virtual bool isOwnedByTickingThread(::LevelChunk const& levelChunk) const /*override*/;
 
     // vIndex: 7
-    virtual void onTickingStopped(class LevelChunk& levelChunk);
+    virtual void onTickingStopped(::LevelChunk& levelChunk) /*override*/;
 
+    // vIndex: 0
+    virtual ~LevelChunkEventManagerProxy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getClosestPlayerDistanceSquared$(class LevelChunk const& levelChunk) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isReadOnly(::LevelChunk const& levelChunk) const;
 
-    MCAPI bool isOwnedByTickingThread$(class LevelChunk const& levelChunk) const;
+    MCAPI bool $setOnChunkLoadedCalled(::LevelChunk& levelChunk);
 
-    MCAPI bool isReadOnly$(class LevelChunk const& levelChunk) const;
+    MCAPI void $onTickingStarted(::LevelChunk& levelChunk);
 
-    MCAPI void onTickingStarted$(class LevelChunk& levelChunk);
+    MCAPI void $setupRedstoneCircuit(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
 
-    MCAPI void onTickingStopped$(class LevelChunk& levelChunk);
+    MCAPI int $getClosestPlayerDistanceSquared(::LevelChunk const& levelChunk) const;
 
-    MCAPI bool setOnChunkLoadedCalled$(class LevelChunk& levelChunk);
+    MCAPI bool $isOwnedByTickingThread(::LevelChunk const& levelChunk) const;
 
-    MCAPI void setupRedstoneCircuit$(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
+    MCAPI void $onTickingStopped(::LevelChunk& levelChunk);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

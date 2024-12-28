@@ -3,18 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class ServerNetworkEventListener;
 struct ChatEvent;
 struct MessageEvent;
-struct ServerNetworkGameplayNotificationEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptServerNetworkEventListener {
+class ScriptServerNetworkEventListener : public ::EventListenerDispatcher<::ServerNetworkEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkab21db;
+    ::ll::UntypedStorage<8, 16> mUnk45e805;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptServerNetworkEventListener& operator=(ScriptServerNetworkEventListener const&);
@@ -22,33 +30,37 @@ public:
     ScriptServerNetworkEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptServerNetworkEventListener() = default;
-
-    // vIndex: 1
-    virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const& event);
+    // vIndex: 6
+    virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
     // vIndex: 2
-    virtual ::EventResult onMessage(struct MessageEvent const& messageEvent);
+    virtual ::EventResult onMessage(::MessageEvent const& messageEvent) /*override*/;
 
-    // vIndex: 3
-    virtual ::EventResult onEvent(struct ChatEvent const& chatEvent);
-
+    // vIndex: 0
+    virtual ~ScriptServerNetworkEventListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ServerNetworkGameplayNotificationEvent const& event);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ChatEvent const& chatEvent);
 
-    MCAPI ::EventResult onEvent$(struct ChatEvent const& chatEvent);
+    MCAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
+    // NOLINTEND
 
-    MCAPI ::EventResult onMessage$(struct MessageEvent const& messageEvent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft
