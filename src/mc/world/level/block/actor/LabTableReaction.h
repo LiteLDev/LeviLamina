@@ -5,7 +5,29 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/LabTableReactionType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class ItemStack;
+class LabTableReactionComponent;
+// clang-format on
+
 class LabTableReaction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnka2bdfc;
+    ::ll::UntypedStorage<4, 4>  mUnk9ed7f8;
+    ::ll::UntypedStorage<4, 4>  mUnkaee8c3;
+    ::ll::UntypedStorage<8, 8>  mUnkb0119a;
+    ::ll::UntypedStorage<8, 8>  mUnk47415d;
+    ::ll::UntypedStorage<8, 8>  mUnk12f9d6;
+    ::ll::UntypedStorage<8, 24> mUnk352f3a;
+    ::ll::UntypedStorage<1, 1>  mUnk25cd57;
+    ::ll::UntypedStorage<1, 1>  mUnk85c0f5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LabTableReaction& operator=(LabTableReaction const&);
@@ -13,29 +35,42 @@ public:
     LabTableReaction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LabTableReaction() = default;
+    virtual ~LabTableReaction();
+    // NOLINTEND
 
-    MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent> comp);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 
-    MCAPI void addResultItem(class ItemStack const& resultItem);
+    MCAPI void addResultItem(::ItemStack const& resultItem);
 
     MCAPI int getReactionId();
 
     MCAPI ::LabTableReactionType getType();
 
-    MCAPI bool tick(class BlockSource& region);
-
-    MCAPI static std::unique_ptr<class LabTableReaction>
-    createReaction(::LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
-
+    MCAPI bool tick(::BlockSource& region);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LabTableReaction>
+    createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

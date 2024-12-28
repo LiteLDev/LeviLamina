@@ -1,9 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/ChunkPos.h"
 
 struct ActorChunkTransferEntry {
-    ChunkPos mOldChunkPos;
-    ChunkPos mNewChunkPos;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk3a409d;
+    ::ll::UntypedStorage<8, 8> mUnk45f558;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorChunkTransferEntry& operator=(ActorChunkTransferEntry const&);
+    ActorChunkTransferEntry(ActorChunkTransferEntry const&);
+    ActorChunkTransferEntry();
 };

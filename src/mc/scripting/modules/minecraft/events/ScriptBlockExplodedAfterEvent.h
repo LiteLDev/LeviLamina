@@ -4,33 +4,36 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockExplodedAfterEvent {
+struct ScriptBlockExplodedAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk4162a1;
+    ::ll::UntypedStorage<8, 32> mUnk7283f9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptBlockExplodedAfterEvent& operator=(ScriptBlockExplodedAfterEvent const&);
+    ScriptBlockExplodedAfterEvent(ScriptBlockExplodedAfterEvent const&);
     ScriptBlockExplodedAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -8,8 +8,9 @@ namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
 namespace FlatteningUtils::DeadCoralFan {
+// functions
 // NOLINTBEGIN
-MCAPI struct FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}; // namespace FlatteningUtils::DeadCoralFan
+} // namespace FlatteningUtils::DeadCoralFan

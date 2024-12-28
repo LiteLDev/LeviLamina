@@ -4,18 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CropBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockPos;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
 // clang-format on
 
 class BeetrootBlock : public ::CropBlock {
@@ -26,54 +24,64 @@ public:
     BeetrootBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BeetrootBlock() = default;
+    // vIndex: 153
+    virtual ::ItemInstance const getBaseSeed() const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 165
-    virtual class ItemInstance const getBaseSeed() const;
-
-    MCAPI BeetrootBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~BeetrootBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BeetrootBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class ItemInstance const getBaseSeed$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemInstance const $getBaseSeed() const;
+
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI class AABB const& getOutline$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const& pos,
-        class AABB&           bufferValue
-    ) const;
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const& block) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

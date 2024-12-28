@@ -9,23 +9,24 @@ namespace Util::Url { struct ComponentsView; }
 // clang-format on
 
 namespace Util::Url {
+// functions
 // NOLINTBEGIN
-MCAPI std::string addUrlSchemeIfNotPresent(std::string const& url, std::string const& scheme);
+MCAPI ::std::string addUrlSchemeIfNotPresent(::std::string const& url, ::std::string const& scheme);
 
-MCAPI std::string anonymizeIPAddress(std::string const&);
+MCAPI ::std::string anonymizeIPAddress(::std::string const& ipAddress);
 
-MCAPI std::string anonymizeIPv6Address(std::string const&);
+MCAPI ::std::string anonymizeIPv6Address(::std::string const& ipAddress);
 
-MCAPI bool isValidIP(std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
+MCAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 
-MCAPI struct Util::Url::ComponentsView parseUrl(std::string_view url);
+MCAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::vector<std::pair<std::string, std::string>> const& EMPTY_QUERY_PARAMETERS();
+MCAPI ::std::vector<::std::pair<::std::string, ::std::string>> const& EMPTY_QUERY_PARAMETERS();
 
-MCAPI struct Util::Url::Components const& EMPTY_URL();
+MCAPI ::Util::Url::Components const& EMPTY_URL();
 // NOLINTEND
 
-}; // namespace Util::Url
+} // namespace Util::Url

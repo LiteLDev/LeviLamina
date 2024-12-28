@@ -4,21 +4,26 @@
 
 struct PlayerDisconnectEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk51e674;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerDisconnectEvent& operator=(PlayerDisconnectEvent const&);
     PlayerDisconnectEvent(PlayerDisconnectEvent const&);
     PlayerDisconnectEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~PlayerDisconnectEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

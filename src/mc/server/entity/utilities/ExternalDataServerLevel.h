@@ -9,7 +9,20 @@
 #include "mc/input/ClientPlayMode.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ILevel;
+class Vec3;
+struct AdventureSettings;
+// clang-format on
+
 struct ExternalDataServerLevel : public ::ExternalDataInterface {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke4525e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExternalDataServerLevel& operator=(ExternalDataServerLevel const&);
@@ -17,50 +30,72 @@ public:
     ExternalDataServerLevel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExternalDataServerLevel() = default;
+    virtual ~ExternalDataServerLevel() /*override*/;
 
     // vIndex: 1
-    virtual bool isInWorldAndNotShowingAnyMenuScreens() const;
+    virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
     // vIndex: 2
-    virtual struct AdventureSettings const& getAdventureSettings() const;
+    virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
 
     // vIndex: 3
-    virtual ::ClientPlayMode getPlayMode() const;
-
-    // vIndex: 4
-    virtual ::InputMode getInputMode() const;
-
-    // vIndex: 5
-    virtual ::GameType getDefaultGameType() const;
+    virtual ::ClientPlayMode getPlayMode() const /*override*/;
 
     // vIndex: 6
-    virtual float getSmoothRotationSpeed() const;
+    virtual float getSmoothRotationSpeed() const /*override*/;
 
-    MCAPI explicit ExternalDataServerLevel(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
+    // vIndex: 4
+    virtual ::InputMode getInputMode() const /*override*/;
 
+    // vIndex: 5
+    virtual ::GameType getDefaultGameType() const /*override*/;
+
+    // vIndex: 7
+    virtual ::Vec3 getWorldSpaceVRRealityGazeDir() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ExternalDataServerLevel(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
+    // NOLINTEND
 
-    MCAPI struct AdventureSettings const& getAdventureSettings$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::GameType getDefaultGameType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
-    MCAPI ::InputMode getInputMode$() const;
+    MCAPI ::AdventureSettings const& $getAdventureSettings() const;
 
-    MCAPI ::ClientPlayMode getPlayMode$() const;
+    MCAPI ::ClientPlayMode $getPlayMode() const;
 
-    MCAPI float getSmoothRotationSpeed$() const;
+    MCAPI float $getSmoothRotationSpeed() const;
 
-    MCAPI bool isInWorldAndNotShowingAnyMenuScreens$() const;
+    MCAPI ::InputMode $getInputMode() const;
 
+    MCAPI ::GameType $getDefaultGameType() const;
+
+    MCAPI ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

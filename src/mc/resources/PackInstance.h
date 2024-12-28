@@ -1,80 +1,100 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/resources/PackReport.h"
-#include "mc/resources/PackStats.h"
-#include "mc/resources/ResourcePack.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContentTierInfo;
+class PackManifest;
+class PackReport;
+class PackSettings;
+class PackStats;
+class ResourceLocation;
+class ResourcePack;
+class SemVersion;
 namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
 class PackInstance {
 public:
-    PackReport                                      mPackReport;   // this+0x0
-    class PackSettings*                             mPackSettings; // this+0x1B0
-    Bedrock::NotNullNonOwnerPtr<class ResourcePack> mPack;         // this+0x1B8
-    PackStats                                       mStats;        // this+0x1C8
-    int                                             mSubpackIndex; // this+0x1D8
+    // PackInstance inner types define
+    using Callback = ::std::function<void(::Core::Path const&)>;
 
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI PackInstance(class PackInstance const&);
+    ::ll::TypedStorage<8, 432, ::PackReport>                              mPackReport;
+    ::ll::TypedStorage<8, 8, ::PackSettings*>                             mPackSettings;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePack>> mPack;
+    ::ll::TypedStorage<4, 16, ::PackStats>                                mStats;
+    ::ll::TypedStorage<4, 4, int>                                         mSubpackIndex;
+    // NOLINTEND
 
+public:
+    // prevent constructor by default
+    PackInstance(PackInstance const&);
+    PackInstance();
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI PackInstance(
-        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
-        std::string const&                              subpackName,
-        bool                                            isDependent,
-        class PackSettings*                             packSettings
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
+        int                                           subpackIndex,
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
 
     MCAPI PackInstance(
-        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
-        int                                             subpackIndex,
-        bool                                            isDependent,
-        class PackSettings*                             packSettings
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
+        ::std::string const&                          subpackName,
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
 
     MCAPI void
-    forEachIn(class Core::Path const& path, std::function<void(class Core::Path const&)> callback, bool recurseAnyways)
-        const;
+    forEachIn(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
+
+    MCAPI void forEachInAssetSet(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback) const;
+
+    MCAPI ::std::string const& getFolderName() const;
 
     MCAPI double getLoadTime() const;
 
-    MCAPI class PackManifest& getManifest();
+    MCAPI ::PackManifest const& getManifest() const;
 
-    MCAPI class PackManifest const& getManifest() const;
+    MCAPI ::PackManifest& getManifest();
 
     MCAPI ::PackCategory getPackCategory() const;
 
-    MCAPI class mce::UUID const getPackId() const;
+    MCAPI ::mce::UUID const getPackId() const;
 
     MCAPI ::PackOrigin getPackOrigin() const;
 
-    MCAPI class PackStats& getPackStats();
+    MCAPI ::PackStats const& getPackStats() const;
 
-    MCAPI class PackStats const& getPackStats() const;
+    MCAPI ::PackStats& getPackStats();
 
-    MCAPI bool getResource(class Core::Path const& resourceName, std::string& resourceStream) const;
+    MCAPI ::Core::PathBuffer<::std::string> const& getRelativePathWithinZip() const;
 
-    MCAPI class ResourceLocation const& getResourceLocation() const;
+    MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
 
-    MCAPI std::string const& getSubpackFolderName() const;
+    MCAPI ::ResourceLocation const& getResourceLocation() const;
 
-    MCAPI int getSubpackIndex() const;
+    MCAPI ::std::string const& getSubpackFolderName() const;
 
-    MCAPI class ContentTierInfo getTierInfo() const;
+    MCAPI ::ContentTierInfo getTierInfo() const;
 
-    MCAPI class SemVersion const& getVersion() const;
+    MCAPI ::SemVersion const& getVersion() const;
 
-    MCAPI bool hasResource(class Core::Path const& resourceName) const;
+    MCAPI bool hasResource(::Core::Path const& resourceName) const;
 
     MCAPI bool isBaseGamePack() const;
 
@@ -82,42 +102,32 @@ public:
 
     MCAPI bool isZipped() const;
 
-    MCAPI class PackInstance& operator=(class PackInstance const&);
-
-    MCAPI bool operator==(class PackInstance const& rhs) const;
-
-    MCAPI void setLocale(std::string const& locale);
+    MCAPI ::PackInstance& operator=(::PackInstance const&);
 
     MCAPI ~PackInstance();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isPackPointerValid() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
-        std::string const&                              subpackName,
-        bool                                            isDependent,
-        class PackSettings*                             packSettings
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
+        int                                           subpackIndex,
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
 
-    MCAPI void* ctor$(class PackInstance const&);
-
-    MCAPI void* ctor$(
-        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
-        int                                             subpackIndex,
-        bool                                            isDependent,
-        class PackSettings*                             packSettings
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePack> pack,
+        ::std::string const&                          subpackName,
+        bool                                          isDependent,
+        ::PackSettings*                               packSettings
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

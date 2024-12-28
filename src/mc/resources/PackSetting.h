@@ -1,32 +1,36 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/resources/PackSettingObserver.h"
 
 // auto generated forward declare list
 // clang-format off
+class PackSettingObserver;
 namespace Json { class Value; }
 // clang-format on
 
 class PackSetting {
 public:
-    PackSetting() = delete;
-
-    Json::Value*                     mValue;     // this+0x0
-    std::vector<PackSettingObserver> mObservers; // this+0x8
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI void set(class Json::Value const& value);
-
-    MCAPI ~PackSetting();
-
+    ::ll::TypedStorage<8, 8, ::Json::Value*>                        mValue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackSettingObserver>> mObservers;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
+    // prevent constructor by default
+    PackSetting& operator=(PackSetting const&);
+    PackSetting(PackSetting const&);
+    PackSetting();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~PackSetting();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

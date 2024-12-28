@@ -4,27 +4,34 @@
 
 class CommandIntegerRange {
 public:
-    int  mMinValue{}; // this+0x0
-    int  mMaxValue{}; // this+0x4
-    bool mInvert{};   // this+0x8
-
-    CommandIntegerRange() = default;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI
-    CommandIntegerRange(int minVal, int maxVal, bool invert, bool inclusive);
-
-    MCAPI bool isWithinRange(int value) const;
-
+    ::ll::TypedStorage<4, 4, int>  mMinValue;
+    ::ll::TypedStorage<4, 4, int>  mMaxValue;
+    ::ll::TypedStorage<1, 1, bool> mInvert;
+    ::ll::TypedStorage<1, 1, bool> mInclusive;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandIntegerRange& operator=(CommandIntegerRange const&);
+    CommandIntegerRange(CommandIntegerRange const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI CommandIntegerRange();
 
-    MCAPI void* ctor$(int minVal, int maxVal, bool invert, bool inclusive);
+    MCAPI CommandIntegerRange(int minVal, int maxVal, bool invert, bool inclusive);
 
+    MCAPI bool isWithinRange(int value) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(int minVal, int maxVal, bool invert, bool inclusive);
     // NOLINTEND
 };

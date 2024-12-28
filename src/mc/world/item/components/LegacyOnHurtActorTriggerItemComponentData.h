@@ -4,21 +4,26 @@
 
 struct LegacyOnHurtActorTriggerItemComponentData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 264> mUnk6b6e05;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LegacyOnHurtActorTriggerItemComponentData& operator=(LegacyOnHurtActorTriggerItemComponentData const&);
     LegacyOnHurtActorTriggerItemComponentData(LegacyOnHurtActorTriggerItemComponentData const&);
     LegacyOnHurtActorTriggerItemComponentData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~LegacyOnHurtActorTriggerItemComponentData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

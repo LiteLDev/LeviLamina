@@ -2,16 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-
 class ActorGarbageCollector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd9edef;
+    ::ll::UntypedStorage<8, 24> mUnkba024f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorGarbageCollector& operator=(ActorGarbageCollector const&);
     ActorGarbageCollector(ActorGarbageCollector const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ActorGarbageCollector();
 
@@ -19,16 +24,12 @@ public:
 
     MCAPI void clearPendingEntities();
 
-    MCAPI void garbageCollectEntity(class OwnerPtr<class EntityContext> entity);
-
     MCAPI void update();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

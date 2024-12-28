@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class OnFireSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
@@ -13,20 +18,27 @@ public:
     OnFireSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void extinguishFire(class Actor& actor);
-
-    MCAPI static void setOnFire(class Actor& actor, int seconds);
-
-    MCAPI static void setOnFireNoEffects(class Actor& actor, int seconds);
-
-    MCAPI static void stopFire(class Actor& actor);
-
+    // vIndex: 0
+    virtual ~OnFireSystem() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool _extinguishFireIfInWater(class Actor& actor);
+    MCAPI static void extinguishFire(::Actor& actor);
 
+    MCAPI static void setOnFire(::Actor& actor, int seconds);
+
+    MCAPI static void setOnFireNoEffects(::Actor& actor, int seconds);
+
+    MCAPI static void stopFire(::Actor& actor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

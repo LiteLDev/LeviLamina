@@ -3,25 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class CompoundTag;
+class Item;
+class ItemDescriptor;
+class ItemStackBase;
+struct ResolvedItemIconInfo;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class CoalItem : public ::ComponentItem {
 public:
     // CoalItem inner types define
-    enum class Type {};
+    enum class Type : int {
+        StoneCoal = 0,
+        CharCoal  = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk3c371b;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -30,44 +36,61 @@ public:
     CoalItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 115
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const /*override*/;
+
     // vIndex: 0
-    virtual ~CoalItem() = default;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    // vIndex: 112
-    virtual float getFurnaceXPmultiplier(class ItemStackBase const& instance) const;
-
-    MCAPI CoalItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
-
+    virtual ~CoalItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CoalItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::CoalItem::Type type);
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getFurnaceXPmultiplier$(class ItemStackBase const& instance) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
+    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

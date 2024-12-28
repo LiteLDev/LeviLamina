@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct DashComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DashDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk239876;
+    ::ll::UntypedStorage<4, 4> mUnk1340a1;
+    ::ll::UntypedStorage<4, 4> mUnk6e36af;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DashDefinition& operator=(DashDefinition const&);
@@ -18,14 +28,17 @@ public:
     DashDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, class DashComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::DashComponent& component) const;
 
-    MCAPI void uninitialize(class EntityContext& entity, class DashComponent& component) const;
+    MCAPI void uninitialize(::EntityContext& entity, ::DashComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>>& root
-    );
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DashDefinition>>& root);
     // NOLINTEND
 };

@@ -4,6 +4,9 @@
 
 namespace Core {
 
-enum class TransactionFlags {};
-
+enum class TransactionFlags : int {
+    None             = 0,
+    OptimizationOnly = 1,
 };
+
+}

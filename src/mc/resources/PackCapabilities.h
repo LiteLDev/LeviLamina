@@ -5,12 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class IAdvancedGraphicsOptions;
+class PackCapabilityRegistry;
+// clang-format on
+
 namespace PackCapabilities {
+// functions
 // NOLINTBEGIN
-MCAPI class PackCapabilityRegistry createRegistry(
-    class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions> advancedGraphicsOptions,
-    class PackCapabilityRegistry                                   additionalCapabilities
+MCAPI ::PackCapabilityRegistry createRegistry(
+    ::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+    ::PackCapabilityRegistry                               additionalCapabilities
 );
 // NOLINTEND
 
-}; // namespace PackCapabilities
+} // namespace PackCapabilities

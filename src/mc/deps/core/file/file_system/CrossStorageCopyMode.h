@@ -4,6 +4,9 @@
 
 namespace Core {
 
-enum class CrossStorageCopyMode {};
-
+enum class CrossStorageCopyMode : int {
+    Buffered = 0,
+    FullCopy = 1,
 };
+
+}

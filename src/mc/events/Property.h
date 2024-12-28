@@ -6,23 +6,30 @@ namespace Social::Events {
 
 class Property {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkac73a7;
+    ::ll::UntypedStorage<8, 16> mUnka5b622;
+    ::ll::UntypedStorage<1, 1>  mUnk99a354;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Property& operator=(Property const&);
     Property(Property const&);
     Property();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~Property();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Social::Events
+} // namespace Social::Events

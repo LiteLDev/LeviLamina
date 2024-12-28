@@ -1,93 +1,123 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockSource;
+struct ActorUniqueID;
+// clang-format on
+
 class ActorDamageByActorSource : public ::ActorDamageSource {
 public:
-    class BlockSource const* mRegion;           // this+0x10
-    bool                     mIsWorldBuilder;   // this+0x18
-    bool                     mIsCreative;       // this+0x19
-    ActorUniqueID            mEntityID;         // this+0x20
-    ::ActorType              mEntityType;       // this+0x28
-    ::ActorCategory          mEntityCategories; // this+0x2C
-    std::string              mEntityNameTag;    // this+0x30
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorDamageByActorSource();
-
-    // vIndex: 1
-    virtual bool isEntitySource() const;
-
-    // vIndex: 10
-    virtual std::pair<std::string, std::vector<std::string>>
-    getDeathMessage(std::string deadName, class Actor* dead) const;
-
-    // vIndex: 11
-    virtual bool getIsCreative() const;
-
-    // vIndex: 12
-    virtual bool getIsWorldBuilder() const;
-
-    // vIndex: 13
-    virtual struct ActorUniqueID getEntityUniqueID() const;
-
-    // vIndex: 14
-    virtual ::ActorType getEntityType() const;
-
-    // vIndex: 15
-    virtual ::ActorCategory getEntityCategories() const;
-
-    // vIndex: 18
-    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-
-    // vIndex: 19
-    virtual ::ActorType getDamagingEntityType() const;
-
-    // vIndex: 21
-    virtual std::unique_ptr<class ActorDamageSource> clone() const;
-
-    MCAPI ActorDamageByActorSource(class Actor const& actor, ::ActorDamageCause cause);
-
+    ::ll::TypedStorage<8, 8, ::BlockSource const&> mRegion;
+    ::ll::TypedStorage<1, 1, bool>                 mIsWorldBuilder;
+    ::ll::TypedStorage<1, 1, bool>                 mIsCreative;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>      mEntityID;
+    ::ll::TypedStorage<4, 4, ::ActorType>          mEntityType;
+    ::ll::TypedStorage<4, 4, ::ActorCategory>      mEntityCategories;
+    ::ll::TypedStorage<8, 32, ::std::string>       mEntityNameTag;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ActorDamageByActorSource& operator=(ActorDamageByActorSource const&);
+    ActorDamageByActorSource(ActorDamageByActorSource const&);
+    ActorDamageByActorSource();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual bool isEntitySource() const /*override*/;
 
-    MCAPI void* ctor$(class Actor const& actor, ::ActorDamageCause cause);
+    // vIndex: 10
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 11
+    virtual bool getIsCreative() const /*override*/;
 
-    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+    // vIndex: 12
+    virtual bool getIsWorldBuilder() const /*override*/;
 
-    MCAPI ::ActorType getDamagingEntityType$() const;
+    // vIndex: 13
+    virtual ::ActorUniqueID getEntityUniqueID() const /*override*/;
 
-    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+    // vIndex: 14
+    virtual ::ActorType getEntityType() const /*override*/;
 
-    MCAPI std::pair<std::string, std::vector<std::string>>
-          getDeathMessage$(std::string deadName, class Actor* dead) const;
+    // vIndex: 15
+    virtual ::ActorCategory getEntityCategories() const /*override*/;
 
-    MCAPI ::ActorCategory getEntityCategories$() const;
+    // vIndex: 18
+    virtual ::ActorUniqueID getDamagingEntityUniqueID() const /*override*/;
 
-    MCAPI ::ActorType getEntityType$() const;
+    // vIndex: 19
+    virtual ::ActorType getDamagingEntityType() const /*override*/;
 
-    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+    // vIndex: 21
+    virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
-    MCAPI bool getIsCreative$() const;
+    // vIndex: 0
+    virtual ~ActorDamageByActorSource() /*override*/;
+    // NOLINTEND
 
-    MCAPI bool getIsWorldBuilder$() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorDamageByActorSource(::Actor const& actor, ::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI bool isEntitySource$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor const& actor, ::ActorDamageCause cause);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isEntitySource() const;
+
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+
+    MCAPI bool $getIsCreative() const;
+
+    MCAPI bool $getIsWorldBuilder() const;
+
+    MCAPI ::ActorUniqueID $getEntityUniqueID() const;
+
+    MCAPI ::ActorType $getEntityType() const;
+
+    MCAPI ::ActorCategory $getEntityCategories() const;
+
+    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
+
+    MCAPI ::ActorType $getDamagingEntityType() const;
+
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

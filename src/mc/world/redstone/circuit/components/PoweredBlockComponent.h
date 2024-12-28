@@ -6,74 +6,103 @@
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CircuitSceneGraph;
+class CircuitSystem;
+class CircuitTrackingInfo;
+// clang-format on
+
 class PoweredBlockComponent : public ::BaseCircuitComponent {
 public:
-    bool                       mPromotedToProducer;
-    bool                       mAllowAsPowerSource;
-    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PoweredBlockComponent;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                         mPromotedToProducer;
+    ::ll::TypedStorage<1, 1, bool>                         mAllowAsPowerSource;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PoweredBlockComponent& operator=(PoweredBlockComponent const&);
+    PoweredBlockComponent(PoweredBlockComponent const&);
+    PoweredBlockComponent();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PoweredBlockComponent() = default;
-
-    // vIndex: 1
-    virtual int getStrength() const;
-
-    // vIndex: 7
-    virtual bool canConsumerPower() const;
+    // vIndex: 12
+    virtual bool
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 11
     virtual bool addSource(
-        class CircuitSceneGraph&         graph,
-        class CircuitTrackingInfo const& info,
-        int&                             dampening,
-        bool&                            bDirectlyPowered
-    );
-
-    // vIndex: 12
-    virtual bool
-    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
+    ) /*override*/;
 
     // vIndex: 14
-    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
+    virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 20
-    virtual bool hasChildrenSource() const;
+    // vIndex: 7
+    virtual bool canConsumerPower() const /*override*/;
 
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
+    // vIndex: 21
+    virtual bool hasChildrenSource() const /*override*/;
 
-    MCAPI explicit PoweredBlockComponent(uchar connections);
+    // vIndex: 1
+    virtual int getStrength() const /*override*/;
 
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+
+    // vIndex: 0
+    virtual ~PoweredBlockComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PoweredBlockComponent(uchar connections);
+    // NOLINTEND
 
-    MCAPI void* ctor$(uchar connections);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uchar connections);
+    // NOLINTEND
 
-    MCAPI bool addSource$(
-        class CircuitSceneGraph&         graph,
-        class CircuitTrackingInfo const& info,
-        int&                             dampening,
-        bool&                            bDirectlyPowered
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool canConsumerPower$() const;
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+    MCAPI bool $canConsumerPower() const;
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+    MCAPI bool $hasChildrenSource() const;
 
-    MCAPI int getStrength$() const;
+    MCAPI int $getStrength() const;
 
-    MCAPI bool hasChildrenSource$() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

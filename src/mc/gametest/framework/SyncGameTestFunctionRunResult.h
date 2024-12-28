@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace gametest { class IGameTestFunctionRunResult; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
@@ -15,34 +14,49 @@ namespace gametest {
 
 class SyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctionRunResult {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnkc3d536;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SyncGameTestFunctionRunResult& operator=(SyncGameTestFunctionRunResult const&);
     SyncGameTestFunctionRunResult(SyncGameTestFunctionRunResult const&);
     SyncGameTestFunctionRunResult();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SyncGameTestFunctionRunResult() = default;
-
     // vIndex: 1
-    virtual bool isComplete() const;
+    virtual bool isComplete() const /*override*/;
 
     // vIndex: 2
-    virtual std::optional<struct gametest::GameTestError> getError();
+    virtual ::std::optional<::gametest::GameTestError> getError() /*override*/;
 
+    // vIndex: 0
+    virtual ~SyncGameTestFunctionRunResult() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<struct gametest::GameTestError> getError$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isComplete() const;
 
-    MCAPI bool isComplete$() const;
+    MCAPI ::std::optional<::gametest::GameTestError> $getError();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

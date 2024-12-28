@@ -2,182 +2,187 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
 class HashedString;
+// clang-format on
 
 namespace VanillaBiomeNames {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& BambooJungle();
+MCAPI ::HashedString const& BambooJungle();
 
-MCAPI class HashedString const& BambooJungleHills();
+MCAPI ::HashedString const& BambooJungleHills();
 
-MCAPI class HashedString const& BasaltDeltas();
+MCAPI ::HashedString const& BasaltDeltas();
 
-MCAPI class HashedString const& Beach();
+MCAPI ::HashedString const& Beach();
 
-MCAPI class HashedString const& BirchForest();
+MCAPI ::HashedString const& BirchForest();
 
-MCAPI class HashedString const& BirchForestHills();
+MCAPI ::HashedString const& BirchForestHills();
 
-MCAPI class HashedString const& BirchForestHillsMutated();
+MCAPI ::HashedString const& BirchForestHillsMutated();
 
-MCAPI class HashedString const& BirchForestMutated();
+MCAPI ::HashedString const& BirchForestMutated();
 
-MCAPI class HashedString const& CherryGrove();
+MCAPI ::HashedString const& CherryGrove();
 
-MCAPI class HashedString const& ColdBeach();
+MCAPI ::HashedString const& ColdBeach();
 
-MCAPI class HashedString const& ColdOcean();
+MCAPI ::HashedString const& ColdOcean();
 
-MCAPI class HashedString const& ColdTaiga();
+MCAPI ::HashedString const& ColdTaiga();
 
-MCAPI class HashedString const& ColdTaigaHills();
+MCAPI ::HashedString const& ColdTaigaHills();
 
-MCAPI class HashedString const& ColdTaigaMutated();
+MCAPI ::HashedString const& ColdTaigaMutated();
 
-MCAPI class HashedString const& CrimsonForest();
+MCAPI ::HashedString const& CrimsonForest();
 
-MCAPI class HashedString const& DeepColdOcean();
+MCAPI ::HashedString const& DeepColdOcean();
 
-MCAPI class HashedString const& DeepDark();
+MCAPI ::HashedString const& DeepDark();
 
-MCAPI class HashedString const& DeepFrozenOcean();
+MCAPI ::HashedString const& DeepFrozenOcean();
 
-MCAPI class HashedString const& DeepLukewarmOcean();
+MCAPI ::HashedString const& DeepLukewarmOcean();
 
-MCAPI class HashedString const& DeepOcean();
+MCAPI ::HashedString const& DeepOcean();
 
-MCAPI class HashedString const& DeepWarmOcean();
+MCAPI ::HashedString const& DeepWarmOcean();
 
-MCAPI class HashedString const& Desert();
+MCAPI ::HashedString const& Desert();
 
-MCAPI class HashedString const& DesertHills();
+MCAPI ::HashedString const& DesertHills();
 
-MCAPI class HashedString const& DesertMutated();
+MCAPI ::HashedString const& DesertMutated();
 
-MCAPI class HashedString const& DripstoneCaves();
+MCAPI ::HashedString const& DripstoneCaves();
 
-MCAPI class HashedString const& ExtremeHills();
+MCAPI ::HashedString const& ExtremeHills();
 
-MCAPI class HashedString const& ExtremeHillsEdge();
+MCAPI ::HashedString const& ExtremeHillsEdge();
 
-MCAPI class HashedString const& ExtremeHillsMutated();
+MCAPI ::HashedString const& ExtremeHillsMutated();
 
-MCAPI class HashedString const& ExtremeHillsPlusTrees();
+MCAPI ::HashedString const& ExtremeHillsPlusTrees();
 
-MCAPI class HashedString const& ExtremeHillsPlusTreesMutated();
+MCAPI ::HashedString const& ExtremeHillsPlusTreesMutated();
 
-MCAPI class HashedString const& FlowerForest();
+MCAPI ::HashedString const& FlowerForest();
 
-MCAPI class HashedString const& Forest();
+MCAPI ::HashedString const& Forest();
 
-MCAPI class HashedString const& ForestHills();
+MCAPI ::HashedString const& ForestHills();
 
-MCAPI class HashedString const& FrozenOcean();
+MCAPI ::HashedString const& FrozenOcean();
 
-MCAPI class HashedString const& FrozenPeaks();
+MCAPI ::HashedString const& FrozenPeaks();
 
-MCAPI class HashedString const& FrozenRiver();
+MCAPI ::HashedString const& FrozenRiver();
 
-MCAPI class HashedString const& Grove();
+MCAPI ::HashedString const& Grove();
 
-MCAPI class HashedString const& Hell();
+MCAPI ::HashedString const& Hell();
 
-MCAPI class HashedString const& IceMountains();
+MCAPI ::HashedString const& IceMountains();
 
-MCAPI class HashedString const& IcePlains();
+MCAPI ::HashedString const& IcePlains();
 
-MCAPI class HashedString const& IcePlainsSpikes();
+MCAPI ::HashedString const& IcePlainsSpikes();
 
-MCAPI class HashedString const& JaggedPeaks();
+MCAPI ::HashedString const& JaggedPeaks();
 
-MCAPI class HashedString const& Jungle();
+MCAPI ::HashedString const& Jungle();
 
-MCAPI class HashedString const& JungleEdge();
+MCAPI ::HashedString const& JungleEdge();
 
-MCAPI class HashedString const& JungleEdgeMutated();
+MCAPI ::HashedString const& JungleEdgeMutated();
 
-MCAPI class HashedString const& JungleHills();
+MCAPI ::HashedString const& JungleHills();
 
-MCAPI class HashedString const& JungleMutated();
+MCAPI ::HashedString const& JungleMutated();
 
-MCAPI class HashedString const& LegacyFrozenOcean();
+MCAPI ::HashedString const& LegacyFrozenOcean();
 
-MCAPI class HashedString const& LukewarmOcean();
+MCAPI ::HashedString const& LukewarmOcean();
 
-MCAPI class HashedString const& LushCaves();
+MCAPI ::HashedString const& LushCaves();
 
-MCAPI class HashedString const& MangroveSwamp();
+MCAPI ::HashedString const& MangroveSwamp();
 
-MCAPI class HashedString const& Meadow();
+MCAPI ::HashedString const& Meadow();
 
-MCAPI class HashedString const& MegaTaiga();
+MCAPI ::HashedString const& MegaTaiga();
 
-MCAPI class HashedString const& MegaTaigaHills();
+MCAPI ::HashedString const& MegaTaigaHills();
 
-MCAPI class HashedString const& Mesa();
+MCAPI ::HashedString const& Mesa();
 
-MCAPI class HashedString const& MesaBryce();
+MCAPI ::HashedString const& MesaBryce();
 
-MCAPI class HashedString const& MesaPlateau();
+MCAPI ::HashedString const& MesaPlateau();
 
-MCAPI class HashedString const& MesaPlateauMutated();
+MCAPI ::HashedString const& MesaPlateauMutated();
 
-MCAPI class HashedString const& MesaPlateauStone();
+MCAPI ::HashedString const& MesaPlateauStone();
 
-MCAPI class HashedString const& MesaPlateauStoneMutated();
+MCAPI ::HashedString const& MesaPlateauStoneMutated();
 
-MCAPI class HashedString const& MushroomIsland();
+MCAPI ::HashedString const& MushroomIsland();
 
-MCAPI class HashedString const& MushroomIslandShore();
+MCAPI ::HashedString const& MushroomIslandShore();
 
-MCAPI class HashedString const& Ocean();
+MCAPI ::HashedString const& Ocean();
 
-MCAPI class HashedString const& Plains();
+MCAPI ::HashedString const& PaleGarden();
 
-MCAPI class HashedString const& RedwoodTaigaHillsMutated();
+MCAPI ::HashedString const& Plains();
 
-MCAPI class HashedString const& RedwoodTaigaMutated();
+MCAPI ::HashedString const& RedwoodTaigaHillsMutated();
 
-MCAPI class HashedString const& River();
+MCAPI ::HashedString const& RedwoodTaigaMutated();
 
-MCAPI class HashedString const& RoofedForest();
+MCAPI ::HashedString const& River();
 
-MCAPI class HashedString const& RoofedForestMutated();
+MCAPI ::HashedString const& RoofedForest();
 
-MCAPI class HashedString const& Savanna();
+MCAPI ::HashedString const& RoofedForestMutated();
 
-MCAPI class HashedString const& SavannaMutated();
+MCAPI ::HashedString const& Savanna();
 
-MCAPI class HashedString const& SavannaPlateau();
+MCAPI ::HashedString const& SavannaMutated();
 
-MCAPI class HashedString const& SavannaPlateauMutated();
+MCAPI ::HashedString const& SavannaPlateau();
 
-MCAPI class HashedString const& SnowySlopes();
+MCAPI ::HashedString const& SavannaPlateauMutated();
 
-MCAPI class HashedString const& SoulsandValley();
+MCAPI ::HashedString const& SnowySlopes();
 
-MCAPI class HashedString const& StoneBeach();
+MCAPI ::HashedString const& SoulsandValley();
 
-MCAPI class HashedString const& StonyPeaks();
+MCAPI ::HashedString const& StoneBeach();
 
-MCAPI class HashedString const& SunflowerPlains();
+MCAPI ::HashedString const& StonyPeaks();
 
-MCAPI class HashedString const& Swampland();
+MCAPI ::HashedString const& SunflowerPlains();
 
-MCAPI class HashedString const& SwamplandMutated();
+MCAPI ::HashedString const& Swampland();
 
-MCAPI class HashedString const& Taiga();
+MCAPI ::HashedString const& SwamplandMutated();
 
-MCAPI class HashedString const& TaigaHills();
+MCAPI ::HashedString const& Taiga();
 
-MCAPI class HashedString const& TaigaMutated();
+MCAPI ::HashedString const& TaigaHills();
 
-MCAPI class HashedString const& TheEnd();
+MCAPI ::HashedString const& TaigaMutated();
 
-MCAPI class HashedString const& WarmOcean();
+MCAPI ::HashedString const& TheEnd();
 
-MCAPI class HashedString const& WarpedForest();
+MCAPI ::HashedString const& WarmOcean();
+
+MCAPI ::HashedString const& WarpedForest();
 // NOLINTEND
 
-}; // namespace VanillaBiomeNames
+} // namespace VanillaBiomeNames

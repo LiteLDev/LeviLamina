@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/newbiome/operation_node_filters/FilterBase.h"
+
 // auto generated forward declare list
 // clang-format off
 class Biome;
@@ -9,7 +12,15 @@ class Biome;
 
 namespace OperationNodeFilters {
 
-class RareBiomeSpot {
+class RareBiomeSpot : public ::OperationNodeFilters::FilterBase<1, 1, ::Biome const*, ::Biome const*> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk4aed31;
+    ::ll::UntypedStorage<8, 8> mUnkaf403b;
+    ::ll::UntypedStorage<8, 8> mUnkd0a5b6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RareBiomeSpot& operator=(RareBiomeSpot const&);
@@ -17,17 +28,16 @@ public:
     RareBiomeSpot();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI RareBiomeSpot(uint oneInXChance, class Biome const& fromBiome, class Biome const& toBiome);
-
+    MCAPI RareBiomeSpot(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(uint oneInXChance, class Biome const& fromBiome, class Biome const& toBiome);
-
+    MCAPI void* $ctor(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
     // NOLINTEND
 };
 
-}; // namespace OperationNodeFilters
+} // namespace OperationNodeFilters

@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace UpdateMovingFlagSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}; // namespace UpdateMovingFlagSystem
+} // namespace UpdateMovingFlagSystem

@@ -6,7 +6,19 @@
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ItemStackRequestActionCreate : public ::ItemStackRequestAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk9c8a7c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionCreate& operator=(ItemStackRequestActionCreate const&);
@@ -14,28 +26,41 @@ public:
     ItemStackRequestActionCreate();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionCreate() = default;
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI uchar getResultsIndex() const;
-
+    // vIndex: 0
+    virtual ~ItemStackRequestActionCreate() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI uchar getResultsIndex() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

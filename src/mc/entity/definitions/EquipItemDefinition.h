@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EquipItemDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8178ec;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EquipItemDefinition& operator=(EquipItemDefinition const&);
@@ -18,13 +25,16 @@ public:
     EquipItemDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addExcludeItemByName(class ItemDescriptor const& itemDescriptor);
+    MCAPI void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquipItemDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EquipItemDefinition>>& root
     );
-
     // NOLINTEND
 };

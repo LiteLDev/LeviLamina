@@ -2,14 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ChunkPos;
+class Pos;
+class Random;
+struct Bounds;
+// clang-format on
+
 namespace TickUtil {
+// functions
 // NOLINTBEGIN
-MCAPI std::pair<class BlockPos, class BlockPos>
-      chunkBoundsToGridBounds(class Pos const& chunkMin, class Pos const& chunkMax);
+MCAPI ::std::pair<::BlockPos, ::BlockPos> chunkBoundsToGridBounds(::Pos const& chunkMin, ::Pos const& chunkMax);
 
-MCAPI struct Bounds getDeterministicBounds(struct Bounds const& bounds);
+MCAPI ::Bounds getDeterministicBounds(::Bounds const& bounds);
 
-MCAPI class ChunkPos getRandomInBounds(struct Bounds const& bounds, class Random& random);
+MCAPI ::ChunkPos getRandomInBounds(::Bounds const& bounds, ::Random& random);
 // NOLINTEND
 
-}; // namespace TickUtil
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::string const& TICKING_AREAS_PREFIX();
+// NOLINTEND
+
+} // namespace TickUtil

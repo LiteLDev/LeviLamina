@@ -4,7 +4,7 @@
 
 namespace xbox::httpclient {
 
-class http_memory {
+struct http_memory {
 public:
     // prevent constructor by default
     http_memory& operator=(http_memory const&);
@@ -12,12 +12,12 @@ public:
     http_memory();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void* mem_alloc(uint64);
 
     MCAPI static void mem_free(void*);
-
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

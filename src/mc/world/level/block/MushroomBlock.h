@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
 // clang-format on
 
 class MushroomBlock : public ::BushBlock {
@@ -26,73 +24,82 @@ public:
     MushroomBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MushroomBlock() = default;
-
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 74
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+    // vIndex: 144
+    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
 
-    // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 143
+    virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const
+        /*override*/;
 
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 155
-    virtual ::BlockRenderLayer getRenderLayer() const;
-
-    // vIndex: 156
-    virtual ::BlockRenderLayer
-    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    MCAPI MushroomBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~MushroomBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MushroomBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool
-    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer() const;
 
-    MCAPI ::BlockRenderLayer getRenderLayer$() const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI ::BlockRenderLayer
-    getRenderLayer$(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar face) const;
-
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

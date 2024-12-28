@@ -5,18 +5,23 @@
 // auto generated inclusion list
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
 #include "mc/gameplayhandlers/HandlerResult.h"
+#include "mc/scripting/event_handlers/ScriptEventHandler.h"
 #include "mc/world/events/MutablePlayerGameplayEvent.h"
 #include "mc/world/events/PlayerGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+class PlayerGameplayHandler;
+struct PlayerDisconnectEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptPlayerGameplayHandler {
+class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGameplayHandler>,
+                                    public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // prevent constructor by default
     ScriptPlayerGameplayHandler& operator=(ScriptPlayerGameplayHandler const&);
@@ -24,125 +29,66 @@ public:
     ScriptPlayerGameplayHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptPlayerGameplayHandler() = default;
+    // vIndex: 27
+    virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
 
     // vIndex: 1
-    virtual ::HandlerResult handleEvent(struct PlayerGameplayEvent<void> const& event);
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) /*override*/;
 
     // vIndex: 2
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct PlayerGameplayEvent<::CoordinatorResult> const& event);
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
 
-    // vIndex: 3
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutablePlayerGameplayEvent<::CoordinatorResult>& event);
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5
-    virtual void __unk_vfn_5();
-
-    // vIndex: 6
-    virtual void __unk_vfn_6();
-
-    // vIndex: 7
-    virtual void __unk_vfn_7();
-
-    // vIndex: 8
-    virtual void __unk_vfn_8();
-
-    // vIndex: 9
-    virtual void __unk_vfn_9();
-
-    // vIndex: 10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11
-    virtual void __unk_vfn_11();
-
-    // vIndex: 12
-    virtual void __unk_vfn_12();
-
-    // vIndex: 13
-    virtual void __unk_vfn_13();
-
-    // vIndex: 14
-    virtual void __unk_vfn_14();
-
-    // vIndex: 15
-    virtual void __unk_vfn_15();
-
-    // vIndex: 16
-    virtual void __unk_vfn_16();
-
-    // vIndex: 17
-    virtual void __unk_vfn_17();
-
-    // vIndex: 18
-    virtual void __unk_vfn_18();
-
-    // vIndex: 19
-    virtual void __unk_vfn_19();
-
-    // vIndex: 20
-    virtual void __unk_vfn_20();
-
-    // vIndex: 21
-    virtual void __unk_vfn_21();
-
-    // vIndex: 22
-    virtual void __unk_vfn_22();
-
-    // vIndex: 23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 24
-    virtual ::HandlerResult handleEvent(struct PlayerDisconnectEvent const& playerDisconnectEvent);
-
+    // vIndex: 0
+    virtual ~ScriptPlayerGameplayHandler() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _handleCoordinatorPlayerGameplayEvent(
-        struct PlayerGameplayEvent<::CoordinatorResult> const& event,
-        class Scripting::WeakLifetimeScope const&              scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
 
     MCAPI bool _handleMutablePlayerGameplayEvent(
-        struct MutablePlayerGameplayEvent<::CoordinatorResult>& event,
-        class Scripting::WeakLifetimeScope const&               scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::MutablePlayerGameplayEvent<::CoordinatorResult>&                                event,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
     MCAPI bool _handlePlayerDisconnectEvent(
-        struct PlayerDisconnectEvent const&       playerDisconnectEvent,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::PlayerDisconnectEvent const&                                                    playerDisconnectEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::HandlerResult handleEvent$(struct PlayerGameplayEvent<void> const& event);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct PlayerGameplayEvent<::CoordinatorResult> const& event);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct MutablePlayerGameplayEvent<::CoordinatorResult>& event);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
+    // NOLINTEND
 
-    MCAPI ::HandlerResult handleEvent$(struct PlayerDisconnectEvent const& playerDisconnectEvent);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

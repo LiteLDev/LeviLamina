@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
 class BreakBlockDefinition : public ::BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk23a542;
+    ::ll::UntypedStorage<8, 32> mUnk120a08;
+    ::ll::UntypedStorage<4, 4>  mUnk15c1e8;
+    ::ll::UntypedStorage<8, 32> mUnk7832bb;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BreakBlockDefinition& operator=(BreakBlockDefinition const&);
@@ -18,21 +28,30 @@ public:
     BreakBlockDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BreakBlockDefinition() = default;
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~BreakBlockDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

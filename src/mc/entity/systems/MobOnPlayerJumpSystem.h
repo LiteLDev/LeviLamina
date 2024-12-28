@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MobOnPlayerJumpSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct MobOnPlayerJumpSystem {
 public:
     // prevent constructor by default
     MobOnPlayerJumpSystem& operator=(MobOnPlayerJumpSystem const&);
@@ -10,10 +15,10 @@ public:
     MobOnPlayerJumpSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCAPI static float getPlayerJumpPendingScale(int jumpAmount);
-
     // NOLINTEND
 };

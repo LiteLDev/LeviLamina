@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class TextPacketType : uchar {
-    Raw                    = 0x0,
-    Chat                   = 0x1,
-    Translate              = 0x2,
-    Popup                  = 0x3,
-    JukeboxPopup           = 0x4,
-    Tip                    = 0x5,
-    SystemMessage          = 0x6,
-    Whisper                = 0x7,
-    Announcement           = 0x8,
-    TextObjectWhisper      = 0x9,
-    TextObject             = 0xA,
-    TextObjectAnnouncement = 0xB,
+    Raw                    = 0,
+    Chat                   = 1,
+    Translate              = 2,
+    Popup                  = 3,
+    JukeboxPopup           = 4,
+    Tip                    = 5,
+    SystemMessage          = 6,
+    Whisper                = 7,
+    Announcement           = 8,
+    TextObjectWhisper      = 9,
+    TextObject             = 10,
+    TextObjectAnnouncement = 11,
 };

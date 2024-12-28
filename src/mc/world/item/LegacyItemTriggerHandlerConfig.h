@@ -4,27 +4,40 @@
 
 struct LegacyItemTriggerHandlerConfig {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk9a893d;
+    ::ll::UntypedStorage<8, 64> mUnkca2470;
+    ::ll::UntypedStorage<8, 64> mUnkf7120b;
+    ::ll::UntypedStorage<8, 64> mUnk2a8de2;
+    ::ll::UntypedStorage<8, 64> mUnk7036ec;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LegacyItemTriggerHandlerConfig& operator=(LegacyItemTriggerHandlerConfig const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LegacyItemTriggerHandlerConfig();
 
-    MCAPI LegacyItemTriggerHandlerConfig(struct LegacyItemTriggerHandlerConfig const&);
+    MCAPI LegacyItemTriggerHandlerConfig(::LegacyItemTriggerHandlerConfig const&);
 
     MCAPI ~LegacyItemTriggerHandlerConfig();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct LegacyItemTriggerHandlerConfig const&);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

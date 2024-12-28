@@ -9,10 +9,9 @@ public:
     EasingInverse(EasingInverse const&);
     EasingInverse();
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::vector<std::function<float(float, float, float)>>& mEasingFuncs();
-
+    MCAPI static ::std::vector<::std::function<float(float, float, float)>>& mEasingFuncs();
     // NOLINTEND
 };

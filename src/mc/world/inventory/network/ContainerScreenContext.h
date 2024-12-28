@@ -3,47 +3,62 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/world/ContainerType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockActor;
+class BlockPos;
+class IContainerRegistryAccess;
+class Player;
+struct ActorUniqueID;
+// clang-format on
+
 class ContainerScreenContext {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk2d14c0;
+    ::ll::UntypedStorage<1, 1>  mUnkfc88ee;
+    ::ll::UntypedStorage<8, 24> mUnk4c6b57;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ContainerScreenContext& operator=(ContainerScreenContext const&);
     ContainerScreenContext(ContainerScreenContext const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ContainerScreenContext();
 
-    MCAPI
-    ContainerScreenContext(class Player& player, ::ContainerType screenContainerType, class BlockPos const& blockPos);
+    MCAPI ContainerScreenContext(::Player& player, ::ContainerType screenContainerType, ::ActorUniqueID const& actorId);
 
-    MCAPI ContainerScreenContext(
-        class Player&               player,
-        ::ContainerType             screenContainerType,
-        struct ActorUniqueID const& actorId
-    );
+    MCAPI ContainerScreenContext(::Player& player, ::ContainerType screenContainerType, ::BlockPos const& blockPos);
 
-    MCAPI class Player& getPlayer() const;
+    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> getContainerRegistryAccess() const;
+
+    MCAPI ::Player& getPlayer() const;
 
     MCAPI ::ContainerType getScreenContainerType() const;
 
-    MCAPI class Actor* tryGetActor() const;
+    MCAPI ::Actor* tryGetActor() const;
 
-    MCAPI class BlockActor* tryGetBlockActor() const;
+    MCAPI ::BlockActor* tryGetBlockActor() const;
 
-    MCAPI class BlockPos const* tryGetBlockActorPos() const;
-
+    MCAPI ::BlockPos const* tryGetBlockActorPos() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Player& player, ::ContainerType screenContainerType, struct ActorUniqueID const& actorId);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Player& player, ::ContainerType screenContainerType, class BlockPos const& blockPos);
+    MCAPI void* $ctor(::Player& player, ::ContainerType screenContainerType, ::ActorUniqueID const& actorId);
 
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor(::Player& player, ::ContainerType screenContainerType, ::BlockPos const& blockPos);
     // NOLINTEND
 };

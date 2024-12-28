@@ -2,69 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDefinitionDiffList;
+class HashedString;
+class PropertyComponent;
+class PropertyGroup;
+struct MolangScriptArg;
+// clang-format on
+
 namespace ActorPropertyUtils {
+// functions
 // NOLINTBEGIN
-MCAPI bool _checkAndQueueBoolValue(
-    class PropertyGroup const&,
-    uint64                         overallIndex,
-    class ActorDefinitionDiffList* actorDiffList,
-    bool                           value
-);
-
 MCAPI bool _checkAndQueueEnumIndexValueByHash(
-    class PropertyGroup const&     propertyGroup,
-    uint64                         enumIndexArrayIndex,
-    uint64                         overallIndex,
-    class ActorDefinitionDiffList* actorDiffList,
-    uint64                         value
-);
-
-MCAPI bool _checkAndQueueFloatValue(
-    class PropertyGroup const&,
-    uint64,
-    uint64                         overallIndex,
-    class ActorDefinitionDiffList* actorDiffList,
-    float                          value
-);
-
-MCAPI bool _checkAndQueueIntValue(
-    class PropertyGroup const&,
-    uint64,
-    uint64                         overallIndex,
-    class ActorDefinitionDiffList* actorDiffList,
-    int                            value
+    ::PropertyGroup const&     propertyGroup,
+    uint64                     enumIndexArrayIndex,
+    uint64                     overallIndex,
+    ::ActorDefinitionDiffList* actorDiffList,
+    uint64                     value
 );
 
 MCAPI void addPendingEventResponseChange(
-    class PropertyComponent const& props,
-    class Actor&                   actor,
-    class HashedString const&      propertyName,
-    struct MolangScriptArg const&  molangResult,
-    std::string const&             displayName
+    ::PropertyComponent const& props,
+    ::Actor&                   actor,
+    ::HashedString const&      propertyName,
+    ::MolangScriptArg const&   molangResult,
+    ::std::string const&       displayName
 );
+
+MCAPI bool tryQueueBoolValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, bool value);
 
 MCAPI bool
-tryQueueBoolValue(class PropertyComponent const& props, class Actor& actor, uint64 propertyNameHash, bool value);
-
-MCAPI bool tryQueueEnumIndexValueByIndex(
-    class PropertyComponent const& props,
-    class Actor&                   actor,
-    uint64                         propertyNameHash,
-    uint64                         value
-);
+tryQueueEnumIndexValueByIndex(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, uint64 value);
 
 MCAPI bool tryQueueEnumIndexValueByString(
-    class PropertyComponent const& props,
-    class Actor&                   actor,
-    uint64                         propertyNameHash,
-    std::string const&             value
+    ::PropertyComponent const& props,
+    ::Actor&                   actor,
+    uint64                     propertyNameHash,
+    ::std::string const&       value
 );
 
-MCAPI bool
-tryQueueFloatValue(class PropertyComponent const& props, class Actor& actor, uint64 propertyNameHash, float value);
+MCAPI bool tryQueueFloatValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, float value);
 
-MCAPI bool
-tryQueueIntValue(class PropertyComponent const& props, class Actor& actor, uint64 propertyNameHash, int value);
+MCAPI bool tryQueueIntValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, int value);
 // NOLINTEND
 
-}; // namespace ActorPropertyUtils
+} // namespace ActorPropertyUtils

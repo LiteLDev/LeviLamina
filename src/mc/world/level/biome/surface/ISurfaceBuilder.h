@@ -1,12 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/Random.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/biome/Biome.h"
-#include "mc/world/level/block/BlockVolume.h"
-#include "mc/world/level/chunk/HeightmapWrapper.h"
-#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
+
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BlockPos;
+class BlockVolume;
+class HeightmapWrapper;
+class PerlinSimplexNoise;
+class Random;
+// clang-format on
 
 class ISurfaceBuilder {
 public:
@@ -17,23 +21,26 @@ public:
 
     // ISurfaceBuilder inner types define
     enum class WaterLevelStrategy : int {
-        LOCAL  = 0,
-        GLOBAL = 1,
+        Local  = 0,
+        Global = 1,
     };
 
     struct BuildParameters {
     public:
-        Biome const&                              mBiome;
-        Random&                                   mRandom;
-        BlockVolume&                              mBlocks;
-        BlockPos const&                           mPos;
-        float                                     mDepthValue;
-        short                                     mSeaLevel;
-        std::unique_ptr<PerlinSimplexNoise>       mMaterialAdjNoise;
-        ISurfaceBuilder::WaterLevelStrategy const mWaterLevelStrategy;
-        int const                                 mLowerLimit;
-        HeightmapWrapper const&                   mPreWorldGenHeightmap;
-        bool const                                mUseCCOrLater;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Biome const&>                                 mBiome;
+        ::ll::TypedStorage<8, 8, ::Random&>                                      mRandom;
+        ::ll::TypedStorage<8, 8, ::BlockVolume&>                                 mBlocks;
+        ::ll::TypedStorage<8, 8, ::BlockPos const&>                              mPos;
+        ::ll::TypedStorage<4, 4, float>                                          mDepthValue;
+        ::ll::TypedStorage<2, 2, short>                                          mSeaLevel;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise> const&> mMaterialAdjNoise;
+        ::ll::TypedStorage<4, 4, ::ISurfaceBuilder::WaterLevelStrategy const>    mWaterLevelStrategy;
+        ::ll::TypedStorage<4, 4, int const>                                      mLowerLimit;
+        ::ll::TypedStorage<8, 8, ::HeightmapWrapper const&>                      mPreWorldGenHeightmap;
+        ::ll::TypedStorage<1, 1, bool const>                                     mUseCCOrLater;
+        // NOLINTEND
 
     public:
         // prevent constructor by default
@@ -42,40 +49,39 @@ public:
         BuildParameters();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI BuildParameters(
-            class Biome const&                               biome,
-            class Random&                                    random,
-            class BlockVolume&                               blocks,
-            class BlockPos const&                            pos,
-            float                                            depthValue,
-            short                                            seaLevel,
-            std::unique_ptr<class PerlinSimplexNoise> const& materialAdjNoise,
-            ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
-            int                                              lowerLimit,
-            class HeightmapWrapper const&                    preWorldGenHeightmap,
-            bool                                             useCCOrLater
+            ::Biome const&                                 biome,
+            ::Random&                                      random,
+            ::BlockVolume&                                 blocks,
+            ::BlockPos const&                              pos,
+            float                                          depthValue,
+            short                                          seaLevel,
+            ::std::unique_ptr<::PerlinSimplexNoise> const& materialAdjNoise,
+            ::ISurfaceBuilder::WaterLevelStrategy          waterLevelStrategy,
+            int                                            lowerLimit,
+            ::HeightmapWrapper const&                      preWorldGenHeightmap,
+            bool                                           useCCOrLater
         );
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(
-            class Biome const&                               biome,
-            class Random&                                    random,
-            class BlockVolume&                               blocks,
-            class BlockPos const&                            pos,
-            float                                            depthValue,
-            short                                            seaLevel,
-            std::unique_ptr<class PerlinSimplexNoise> const& materialAdjNoise,
-            ::ISurfaceBuilder::WaterLevelStrategy            waterLevelStrategy,
-            int                                              lowerLimit,
-            class HeightmapWrapper const&                    preWorldGenHeightmap,
-            bool                                             useCCOrLater
+        MCAPI void* $ctor(
+            ::Biome const&                                 biome,
+            ::Random&                                      random,
+            ::BlockVolume&                                 blocks,
+            ::BlockPos const&                              pos,
+            float                                          depthValue,
+            short                                          seaLevel,
+            ::std::unique_ptr<::PerlinSimplexNoise> const& materialAdjNoise,
+            ::ISurfaceBuilder::WaterLevelStrategy          waterLevelStrategy,
+            int                                            lowerLimit,
+            ::HeightmapWrapper const&                      preWorldGenHeightmap,
+            bool                                           useCCOrLater
         );
-
         // NOLINTEND
     };
 
@@ -86,5 +92,27 @@ public:
     ISurfaceBuilder();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
     virtual ~ISurfaceBuilder();
+
+    // vIndex: 1
+    virtual void init(::Biome&, uint) = 0;
+
+    // vIndex: 2
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const&) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

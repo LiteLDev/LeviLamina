@@ -7,11 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_80 { struct CustomComponentsItemComponent; }
-namespace cereal { struct ReflectionCtx; }
+class HashedString;
+namespace SharedTypes::v1_20_80 { struct CustomComponentsItemComponent; }
 // clang-format on
 
 class CustomComponentsItemComponent : public ::ItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk7cb388;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CustomComponentsItemComponent& operator=(CustomComponentsItemComponent const&);
@@ -19,24 +25,41 @@ public:
     CustomComponentsItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CustomComponentsItemComponent() = default;
-
-    MCAPI explicit CustomComponentsItemComponent(struct Puv::v1_20_80::CustomComponentsItemComponent component);
-
-    MCAPI std::vector<std::string> const& getComponentNames() const;
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~CustomComponentsItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_20_80::CustomComponentsItemComponent component);
 
-    MCAPI void* ctor$(struct Puv::v1_20_80::CustomComponentsItemComponent component);
+    MCAPI ::std::vector<::std::string> const& getComponentNames() const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::CustomComponentsItemComponent component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

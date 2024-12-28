@@ -5,36 +5,65 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/LookControl.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class AgentLookControl : public ::LookControl {
 public:
     // prevent constructor by default
     AgentLookControl& operator=(AgentLookControl const&);
     AgentLookControl(AgentLookControl const&);
-    AgentLookControl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AgentLookControl() = default;
-
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob);
+    virtual void initializeInternal(::Mob& mob) /*override*/;
 
     // vIndex: 2
-    virtual void tick(class Mob& mob);
+    virtual void tick(::Mob& mob) /*override*/;
 
+    // vIndex: 0
+    virtual ~AgentLookControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AgentLookControl();
+    // NOLINTEND
 
-    MCAPI void initializeInternal$(class Mob& mob);
-
-    MCAPI void tick$(class Mob& mob);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static float& sBaseYMax();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob);
+
+    MCAPI void $tick(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

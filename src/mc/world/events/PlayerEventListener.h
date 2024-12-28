@@ -8,6 +8,24 @@
 #include "mc/network/packet/PlayerActionType.h"
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class Dimension;
+class EntityContext;
+class IClientInstance;
+class ItemDescriptor;
+class ItemEnchants;
+class ItemInstance;
+class ItemStack;
+class LocalPlayer;
+class Player;
+class Vec2;
+struct PlayerNotificationEvent;
+// clang-format on
+
 class PlayerEventListener {
 public:
     // prevent constructor by default
@@ -16,224 +34,259 @@ public:
     PlayerEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerEventListener() = default;
+    virtual ~PlayerEventListener();
 
-    MCVAPI ::EventResult onCameraSetPlayerRot(class Player&, class Vec2 const&);
+    // vIndex: 1
+    virtual ::EventResult onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
 
-    MCVAPI ::EventResult onEvent(struct PlayerNotificationEvent const& event);
+    // vIndex: 2
+    virtual ::EventResult onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
-    MCVAPI ::EventResult onLocalPlayerDeath(class IClientInstance& client, class LocalPlayer& player);
+    // vIndex: 3
+    virtual ::EventResult
+    onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCVAPI ::EventResult onLocalPlayerRespawn(class IClientInstance& client, class LocalPlayer& player);
+    // vIndex: 4
+    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int const level);
 
-    MCVAPI ::EventResult
-    onPlayerAction(class Player& player, ::PlayerActionType type, class BlockPos const& pos, int data);
+    // vIndex: 5
+    virtual ::EventResult onPlayerCaravanChanged(::Actor const& mob, int caravanCount);
 
-    MCVAPI ::EventResult onPlayerAttackedActor(class Player& player, class Actor& target);
+    // vIndex: 6
+    virtual ::EventResult onPlayerSaved(::Player& player);
 
-    MCVAPI ::EventResult onPlayerAuthInputApplied(class Player&);
+    // vIndex: 7
+    virtual ::EventResult onPlayerInput(::EntityContext&);
 
-    MCVAPI ::EventResult onPlayerAuthInputReceived(class Player&);
+    // vIndex: 8
+    virtual ::EventResult onPlayerAuthInputReceived(::Player&);
 
-    MCVAPI ::EventResult
-    onPlayerAwardAchievement(class Player& player, ::MinecraftEventing::AchievementIds achievement);
+    // vIndex: 9
+    virtual ::EventResult onPlayerAuthInputApplied(::Player&);
 
-    MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const& mob, int caravanCount);
+    // vIndex: 10
+    virtual ::EventResult onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
-    MCVAPI ::EventResult onPlayerCraftedItem(
-        class Player&             player,
-        class ItemInstance const& craftedItem,
-        bool                      recipeBook,
-        bool                      hadSearchString,
-        bool                      craftedAutomatically,
-        int                       startingTabId,
-        int                       endingTabId,
-        int                       numTabsChanged,
-        bool                      filterOn,
-        bool                      recipeBookShown,
-        std::vector<short> const& ingredientItemIDs
+    // vIndex: 11
+    virtual ::EventResult onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+
+    // vIndex: 12
+    virtual ::EventResult onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
+
+    // vIndex: 13
+    virtual ::EventResult onPlayerAction(::Player& player, ::PlayerActionType type, ::BlockPos const& pos, int data);
+
+    // vIndex: 14
+    virtual ::EventResult onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
+
+    // vIndex: 15
+    virtual ::EventResult onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
+
+    // vIndex: 16
+    virtual ::EventResult onPlayerMove(::Player& player);
+
+    // vIndex: 17
+    virtual ::EventResult onPlayerSlide(::Player& player);
+
+    // vIndex: 18
+    virtual ::EventResult onPlayerTargetBlockHit(::Player& player, int const signalStrength);
+
+    // vIndex: 19
+    virtual ::EventResult onPlayerTick(::Player& player);
+
+    // vIndex: 20
+    virtual ::EventResult onPlayerStartRiding(::Player& player, ::Actor& vehicle);
+
+    // vIndex: 21
+    virtual ::EventResult
+    onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
+
+    // vIndex: 22
+    virtual ::EventResult onPlayerCreated(
+        ::LocalPlayer&       player,
+        ::std::string const& personaSlot,
+        ::std::string const& classicSkinId,
+        bool                 usingClassicSkin
     );
 
-    MCVAPI ::EventResult onPlayerCreated(
-        class LocalPlayer& player,
-        std::string const& personaSlot,
-        std::string const& classicSkinId,
-        bool               usingClassicSkin
+    // vIndex: 24
+    virtual ::EventResult onPlayerTeleported(::Player& player);
+
+    // vIndex: 23
+    virtual ::EventResult onPlayerTeleported(::Player&, float);
+
+    // vIndex: 25
+    virtual ::EventResult onPlayerAttackedActor(::Player& player, ::Actor& target);
+
+    // vIndex: 27
+    virtual ::EventResult onPlayerDestroyedBlock(::Player& player, int x, int y, int z);
+
+    // vIndex: 26
+    virtual ::EventResult onPlayerDestroyedBlock(::Player& player, ::Block const& block);
+
+    // vIndex: 28
+    virtual ::EventResult onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
+
+    // vIndex: 29
+    virtual ::EventResult
+    onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
+    // vIndex: 30
+    virtual ::EventResult onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
+
+    // vIndex: 31
+    virtual ::EventResult onPlayerItemUseInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+
+    // vIndex: 32
+    virtual ::EventResult onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+
+    // vIndex: 33
+    virtual ::EventResult onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
     );
 
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, class Block const& block);
+    // vIndex: 34
+    virtual ::EventResult onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
 
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, int x, int y, int z);
+    // vIndex: 35
+    virtual ::EventResult
+    onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
 
-    MCVAPI ::EventResult
-    onPlayerEnchantedItem(class Player& player, class ItemStack const& item, class ItemEnchants const& enchants);
+    // vIndex: 36
+    virtual ::EventResult
+    onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
 
-    MCVAPI ::EventResult onPlayerEquippedArmor(class Player& player, class ItemDescriptor const& item);
+    // vIndex: 37
+    virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    MCVAPI ::EventResult onPlayerInput(class EntityContext&);
-
-    MCVAPI ::EventResult
-    onPlayerItemEquipped(class Player& player, class ItemInstance const& equippedItem, int equipmentSlotId);
-
-    MCVAPI ::EventResult onPlayerItemPlaceInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
-
-    MCVAPI ::EventResult onPlayerItemUseInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
-
-    MCVAPI ::EventResult onPlayerMove(class Player& player);
-
-    MCVAPI ::EventResult onPlayerNamedItem(class Player& player, class ItemDescriptor const& item);
-
-    MCVAPI ::EventResult
-    onPlayerPiglinBarter(class Player& player, std::string const& item, bool wasTargetingBarteringPlayer);
-
-    MCVAPI ::EventResult onPlayerPortalBuilt(class Player& player, DimensionType dimensionBuiltIn);
-
-    MCVAPI ::EventResult
-    onPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
-
-    MCVAPI ::EventResult onPlayerPoweredBeacon(class Player const& player, int level);
-
-    MCVAPI ::EventResult onPlayerSaved(class Player& player);
-
-    MCVAPI ::EventResult onPlayerSlide(class Player& player);
-
-    MCVAPI ::EventResult onPlayerSmithiedItem(class Player&, class ItemDescriptor const&);
-
-    MCVAPI ::EventResult onPlayerStartRiding(class Player& player, class Actor& vehicle);
-
-    MCVAPI ::EventResult onPlayerStopRiding(
-        class Player& player,
-        bool          exitFromPassenger,
-        bool          entityIsBeingDestroyed,
-        bool          switchingVehicles
-    );
-
-    MCVAPI ::EventResult onPlayerTargetBlockHit(class Player& player, int signalStrength);
-
-    MCVAPI ::EventResult onPlayerTeleported(class Player& player);
-
-    MCVAPI ::EventResult onPlayerTeleported(class Player&, float);
-
-    MCVAPI ::EventResult onPlayerTick(class Player& player);
-
-    MCVAPI ::EventResult onPlayerTurn(class Player& player, class Vec2& turnDelta);
-
-    MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player& player, int blockID);
-
-    MCVAPI ::EventResult onStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);
-
+    // vIndex: 38
+    virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onCameraSetPlayerRot$(class Player&, class Vec2 const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
 
-    MCAPI ::EventResult onEvent$(struct PlayerNotificationEvent const& event);
-
-    MCAPI ::EventResult onLocalPlayerDeath$(class IClientInstance& client, class LocalPlayer& player);
-
-    MCAPI ::EventResult onLocalPlayerRespawn$(class IClientInstance& client, class LocalPlayer& player);
-
-    MCAPI ::EventResult
-    onPlayerAction$(class Player& player, ::PlayerActionType type, class BlockPos const& pos, int data);
-
-    MCAPI ::EventResult onPlayerAttackedActor$(class Player& player, class Actor& target);
-
-    MCAPI ::EventResult onPlayerAuthInputApplied$(class Player&);
-
-    MCAPI ::EventResult onPlayerAuthInputReceived$(class Player&);
+    MCAPI ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
     MCAPI ::EventResult
-    onPlayerAwardAchievement$(class Player& player, ::MinecraftEventing::AchievementIds achievement);
+    $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCAPI ::EventResult onPlayerCaravanChanged$(class Actor const& mob, int caravanCount);
+    MCAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int const level);
 
-    MCAPI ::EventResult onPlayerCraftedItem$(
-        class Player&             player,
-        class ItemInstance const& craftedItem,
-        bool                      recipeBook,
-        bool                      hadSearchString,
-        bool                      craftedAutomatically,
-        int                       startingTabId,
-        int                       endingTabId,
-        int                       numTabsChanged,
-        bool                      filterOn,
-        bool                      recipeBookShown,
-        std::vector<short> const& ingredientItemIDs
+    MCAPI ::EventResult $onPlayerCaravanChanged(::Actor const& mob, int caravanCount);
+
+    MCAPI ::EventResult $onPlayerSaved(::Player& player);
+
+    MCAPI ::EventResult $onPlayerInput(::EntityContext&);
+
+    MCAPI ::EventResult $onPlayerAuthInputReceived(::Player&);
+
+    MCAPI ::EventResult $onPlayerAuthInputApplied(::Player&);
+
+    MCAPI ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
+
+    MCAPI ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+
+    MCAPI ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
+
+    MCAPI ::EventResult $onPlayerAction(::Player& player, ::PlayerActionType type, ::BlockPos const& pos, int data);
+
+    MCAPI ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
+
+    MCAPI ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
+
+    MCAPI ::EventResult $onPlayerMove(::Player& player);
+
+    MCAPI ::EventResult $onPlayerSlide(::Player& player);
+
+    MCAPI ::EventResult $onPlayerTargetBlockHit(::Player& player, int const signalStrength);
+
+    MCAPI ::EventResult $onPlayerTick(::Player& player);
+
+    MCAPI ::EventResult $onPlayerStartRiding(::Player& player, ::Actor& vehicle);
+
+    MCAPI ::EventResult
+    $onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
+
+    MCAPI ::EventResult $onPlayerCreated(
+        ::LocalPlayer&       player,
+        ::std::string const& personaSlot,
+        ::std::string const& classicSkinId,
+        bool                 usingClassicSkin
     );
 
-    MCAPI ::EventResult onPlayerCreated$(
-        class LocalPlayer& player,
-        std::string const& personaSlot,
-        std::string const& classicSkinId,
-        bool               usingClassicSkin
+    MCAPI ::EventResult $onPlayerTeleported(::Player& player);
+
+    MCAPI ::EventResult $onPlayerTeleported(::Player&, float);
+
+    MCAPI ::EventResult $onPlayerAttackedActor(::Player& player, ::Actor& target);
+
+    MCAPI ::EventResult $onPlayerDestroyedBlock(::Player& player, int x, int y, int z);
+
+    MCAPI ::EventResult $onPlayerDestroyedBlock(::Player& player, ::Block const& block);
+
+    MCAPI ::EventResult $onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
+
+    MCAPI ::EventResult
+    $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
+    MCAPI ::EventResult $onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);
+
+    MCAPI ::EventResult $onPlayerItemUseInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+
+    MCAPI ::EventResult $onPlayerItemPlaceInteraction(::Player& player, ::ItemInstance const& itemBeforeUse);
+
+    MCAPI ::EventResult $onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
     );
 
-    MCAPI ::EventResult onPlayerDestroyedBlock$(class Player& player, class Block const& block);
-
-    MCAPI ::EventResult onPlayerDestroyedBlock$(class Player& player, int x, int y, int z);
+    MCAPI ::EventResult $onPlayerSmithiedItem(::Player&, ::ItemDescriptor const&);
 
     MCAPI ::EventResult
-    onPlayerEnchantedItem$(class Player& player, class ItemStack const& item, class ItemEnchants const& enchants);
-
-    MCAPI ::EventResult onPlayerEquippedArmor$(class Player& player, class ItemDescriptor const& item);
-
-    MCAPI ::EventResult onPlayerInput$(class EntityContext&);
+    $onPlayerItemEquipped(::Player& player, ::ItemInstance const& equippedItem, int equipmentSlotId);
 
     MCAPI ::EventResult
-    onPlayerItemEquipped$(class Player& player, class ItemInstance const& equippedItem, int equipmentSlotId);
+    $onPlayerPiglinBarter(::Player& player, ::std::string const& item, bool wasTargetingBarteringPlayer);
 
-    MCAPI ::EventResult onPlayerItemPlaceInteraction$(class Player& player, class ItemInstance const& itemBeforeUse);
+    MCAPI ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    MCAPI ::EventResult onPlayerItemUseInteraction$(class Player& player, class ItemInstance const& itemBeforeUse);
+    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+    // NOLINTEND
 
-    MCAPI ::EventResult onPlayerMove$(class Player& player);
-
-    MCAPI ::EventResult onPlayerNamedItem$(class Player& player, class ItemDescriptor const& item);
-
-    MCAPI ::EventResult
-    onPlayerPiglinBarter$(class Player& player, std::string const& item, bool wasTargetingBarteringPlayer);
-
-    MCAPI ::EventResult onPlayerPortalBuilt$(class Player& player, DimensionType dimensionBuiltIn);
-
-    MCAPI ::EventResult
-    onPlayerPortalUsed$(class Player& player, DimensionType fromDimension, DimensionType toDimension);
-
-    MCAPI ::EventResult onPlayerPoweredBeacon$(class Player const& player, int level);
-
-    MCAPI ::EventResult onPlayerSaved$(class Player& player);
-
-    MCAPI ::EventResult onPlayerSlide$(class Player& player);
-
-    MCAPI ::EventResult onPlayerSmithiedItem$(class Player&, class ItemDescriptor const&);
-
-    MCAPI ::EventResult onPlayerStartRiding$(class Player& player, class Actor& vehicle);
-
-    MCAPI ::EventResult onPlayerStopRiding$(
-        class Player& player,
-        bool          exitFromPassenger,
-        bool          entityIsBeingDestroyed,
-        bool          switchingVehicles
-    );
-
-    MCAPI ::EventResult onPlayerTargetBlockHit$(class Player& player, int signalStrength);
-
-    MCAPI ::EventResult onPlayerTeleported$(class Player& player);
-
-    MCAPI ::EventResult onPlayerTeleported$(class Player&, float);
-
-    MCAPI ::EventResult onPlayerTick$(class Player& player);
-
-    MCAPI ::EventResult onPlayerTurn$(class Player& player, class Vec2& turnDelta);
-
-    MCAPI ::EventResult onPlayerWaxOnWaxOff$(class Player& player, int blockID);
-
-    MCAPI ::EventResult onStartDestroyBlock$(class Player& player, class BlockPos const& pos, uchar& face);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

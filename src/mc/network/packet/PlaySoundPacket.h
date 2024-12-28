@@ -1,65 +1,91 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class NetworkBlockPosition;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class PlaySoundPacket : public ::Packet {
 public:
-    std::string          mName;   // this+0x30
-    NetworkBlockPosition mPos;    // this+0x50
-    float                mVolume; // this+0x5C
-    float                mPitch;  // this+0x60
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>          mName;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 4, float>                   mVolume;
+    ::ll::TypedStorage<4, 4, float>                   mPitch;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PlaySoundPacket& operator=(PlaySoundPacket const&);
     PlaySoundPacket(PlaySoundPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlaySoundPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI PlaySoundPacket();
-
-    MCAPI PlaySoundPacket(std::string name, class Vec3 const& pos, float volume, float pitch);
-
+    // vIndex: 0
+    virtual ~PlaySoundPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PlaySoundPacket();
 
-    MCAPI void* ctor$(std::string name, class Vec3 const& pos, float volume, float pitch);
+    MCAPI PlaySoundPacket(::std::string name, ::Vec3 const& pos, float volume, float pitch);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::string name, ::Vec3 const& pos, float volume, float pitch);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

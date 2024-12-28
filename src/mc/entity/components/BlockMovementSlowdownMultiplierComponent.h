@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockMovementSlowdownMultiplierComponent {
+// auto generated inclusion list
+#include "mc/entity/components/Vec3Component.h"
+
+struct BlockMovementSlowdownMultiplierComponent : public ::Vec3Component {
 public:
     // prevent constructor by default
     BlockMovementSlowdownMultiplierComponent& operator=(BlockMovementSlowdownMultiplierComponent const&);

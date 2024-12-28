@@ -3,31 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/HumanoidMonster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class EntityContext;
+class WitherBoss;
+struct ActorDefinitionIdentifier;
 namespace mce { class UUID; }
 // clang-format on
 
 class Skeleton : public ::HumanoidMonster {
+public:
+    // Skeleton inner types define
+    enum class SkeletonType : int {
+        Default = 0,
+        Wither  = 1,
+        Stray   = 2,
+        Bogged  = 3,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8992a7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Skeleton& operator=(Skeleton const&);
@@ -35,67 +40,88 @@ public:
     Skeleton();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~Skeleton() = default;
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 159
+    virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause) /*override*/;
 
-    // vIndex: 55
-    virtual void setTarget(class Actor* target);
+    // vIndex: 107
+    virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 91
-    virtual bool canFreeze() const;
+    // vIndex: 52
+    virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 111
-    virtual bool canBeAffected(uint effectId) const;
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 119
-    virtual void getDebugText(std::vector<std::string>& outputInfo);
+    // vIndex: 87
+    virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const& source);
+    // vIndex: 115
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
-    // vIndex: 167
-    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
-
-    MCAPI Skeleton(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI void setWitherParent(class WitherBoss* wither);
-
+    // vIndex: 8
+    virtual ~Skeleton() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI Skeleton(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI bool canBeAffected$(uint effectId) const;
+    MCAPI void setWitherParent(::WitherBoss* wither);
+    // NOLINTEND
 
-    MCAPI bool canFreeze$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
+    // NOLINTEND
 
-    MCAPI void die$(class ActorDamageSource const& source);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI bool doHurtTarget$(class Actor* target, ::ActorDamageCause const& cause);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void getDebugText$(std::vector<std::string>& outputInfo);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void normalTick$();
+    MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
 
-    MCAPI void setTarget$(class Actor* target);
+    MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI static class mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
+    MCAPI void $setTarget(::Actor* entity);
 
+    MCAPI void $normalTick();
+
+    MCAPI bool $canFreeze() const;
+
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

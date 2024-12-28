@@ -7,18 +7,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class Experiments;
+class ItemRegistryRef;
+class Level;
+class ServerScriptManager;
 namespace VanillaWorldSystems { class Impl; }
 // clang-format on
 
 namespace VanillaWorldSystems {
+// functions
 // NOLINTBEGIN
-MCAPI std::shared_ptr<class VanillaWorldSystems::Impl> init(
-    class Bedrock::NonOwnerPointer<class Level> const&             level,
-    class Experiments const&                                       experiments,
-    class BaseGameVersion const&                                   baseGameVersion,
-    class ItemRegistryRef                                          itemRegistry,
-    std::optional<gsl::not_null<class ServerScriptManager const*>> scriptManager
+MCAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(
+    ::Bedrock::NonOwnerPointer<::Level> const&                     level,
+    ::Experiments const&                                           experiments,
+    ::BaseGameVersion const&                                       baseGameVersion,
+    ::ItemRegistryRef                                              itemRegistry,
+    ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
 );
 // NOLINTEND
 
-}; // namespace VanillaWorldSystems
+} // namespace VanillaWorldSystems

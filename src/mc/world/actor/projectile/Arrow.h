@@ -3,30 +3,42 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/projectile/AbstractArrow.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class ItemStack;
+class MobEffectInstance;
+class Particle;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
 
 class Arrow : public ::AbstractArrow {
+public:
+    // Arrow inner types define
+    enum class Data : int {
+        IsCritical     = 16,
+        TippedAuxValue = 18,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk3d577d;
+    ::ll::UntypedStorage<4, 4>  mUnk5b628b;
+    ::ll::UntypedStorage<4, 4>  mUnkbc8193;
+    ::ll::UntypedStorage<8, 24> mUnk5ddff5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Arrow& operator=(Arrow const&);
@@ -34,47 +46,52 @@ public:
     Arrow();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~Arrow() = default;
+    // vIndex: 143
+    virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 42
-    virtual void playerTouch(class Player& player);
+    // vIndex: 40
+    virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 126
-    virtual void setAuxValue(int aux);
+    // vIndex: 122
+    virtual void setAuxValue(int aux) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 144
+    virtual ::ItemStack _getPickupItem() const /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 151
-    virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 152
-    virtual class ItemStack _getPickupItem() const;
+    // vIndex: 145
+    virtual void applyParticleColor(::Particle* p);
 
-    // vIndex: 153
-    virtual void applyParticleColor(class Particle* p);
+    // vIndex: 146
+    virtual ::mce::Color getEffectColor();
 
-    // vIndex: 154
-    virtual class mce::Color getEffectColor();
+    // vIndex: 8
+    virtual ~Arrow() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Arrow(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
-    MCAPI void addMobEffect(class MobEffectInstance effect);
+    MCAPI void addMobEffect(::MobEffectInstance effect);
 
     MCAPI int getAuxValue() const;
 
@@ -87,39 +104,51 @@ public:
     MCAPI void setEnchantPower(int level);
 
     MCAPI void setEnchantPunch(int level);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI class ItemStack _getPickupItem$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void applyParticleColor$(class Particle* p);
+    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCAPI class mce::Color getEffectColor$();
+    MCAPI void $normalTick();
 
-    MCAPI void normalTick$();
+    MCAPI void $playerTouch(::Player& player);
 
-    MCAPI void playerTouch$(class Player& player);
+    MCAPI void $setAuxValue(int aux);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::ItemStack $_getPickupItem() const;
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void setAuxValue$(int aux);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void shoot$(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+    MCAPI void $applyParticleColor(::Particle* p);
 
+    MCAPI ::mce::Color $getEffectColor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

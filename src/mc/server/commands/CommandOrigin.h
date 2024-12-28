@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -12,53 +11,75 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockPos;
+class CommandArea;
+class CommandPositionFloat;
+class CompoundTag;
+class Dimension;
+class ILevel;
+class Level;
+class NetworkIdentifier;
+class Vec2;
+class Vec3;
+struct CommandOriginData;
+struct CommandOriginIdentity;
 namespace mce { class UUID; }
 // clang-format on
 
 class CommandOrigin {
 public:
-    mce::UUID mUuid; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandOrigin& operator=(CommandOrigin const&);
+    CommandOrigin(CommandOrigin const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandOrigin() = default;
+    virtual ~CommandOrigin();
 
     // vIndex: 1
-    virtual std::string const& getRequestId() const = 0;
+    virtual ::std::string const& getRequestId() const = 0;
 
     // vIndex: 2
-    virtual std::string getName() const = 0;
+    virtual ::std::string getName() const = 0;
 
     // vIndex: 3
-    virtual class BlockPos getBlockPosition() const = 0;
+    virtual ::BlockPos getBlockPosition() const = 0;
 
     // vIndex: 4
-    virtual class Vec3 getWorldPosition() const = 0;
+    virtual ::Vec3 getWorldPosition() const = 0;
 
     // vIndex: 5
-    virtual std::optional<class Vec2> getRotation() const = 0;
+    virtual ::std::optional<::Vec2> getRotation() const = 0;
 
     // vIndex: 6
-    virtual class Level* getLevel() const = 0;
+    virtual ::Level* getLevel() const = 0;
 
     // vIndex: 7
-    virtual class Dimension* getDimension() const = 0;
+    virtual ::Dimension* getDimension() const = 0;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const = 0;
+    virtual ::Actor* getEntity() const = 0;
 
     // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const = 0;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const = 0;
 
     // vIndex: 11
-    virtual std::optional<class BlockPos> getCursorHitBlockPos() const;
+    virtual ::std::optional<::BlockPos> getCursorHitBlockPos() const;
 
     // vIndex: 12
-    virtual std::optional<class Vec3> getCursorHitPos() const;
+    virtual ::std::optional<::Vec3> getCursorHitPos() const;
 
     // vIndex: 13
     virtual bool hasChatPerms() const;
@@ -79,115 +100,141 @@ public:
     virtual bool isSelectorExpansionAllowed() const;
 
     // vIndex: 19
-    virtual class NetworkIdentifier const& getSourceId() const;
+    virtual ::NetworkIdentifier const& getSourceId() const;
 
     // vIndex: 20
     virtual ::SubClientId getSourceSubId() const;
 
     // vIndex: 21
-    virtual class CommandOrigin const& getOutputReceiver() const;
+    virtual ::CommandOrigin const& getOutputReceiver() const;
 
     // vIndex: 22
-    virtual struct CommandOriginIdentity getIdentity() const;
+    virtual ::CommandOriginIdentity getIdentity() const;
 
     // vIndex: 23
     virtual ::CommandOriginType getOriginType() const = 0;
 
     // vIndex: 24
-    virtual struct CommandOriginData toCommandOriginData() const;
+    virtual ::CommandOriginData toCommandOriginData() const;
 
     // vIndex: 25
-    virtual class mce::UUID const& getUUID() const;
+    virtual ::mce::UUID const& getUUID() const;
 
     // vIndex: 26
-    virtual void handleCommandOutputCallback(int, std::string&&) const;
+    virtual void handleCommandOutputCallback(int, ::std::string&&) const;
 
     // vIndex: 27
     virtual void updateValues();
 
     // vIndex: 28
-    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const& commandPosition) const;
+    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CompoundTag serialize() const;
 
     // vIndex: 30
     virtual bool isValid() const = 0;
 
     // vIndex: 31
-    virtual void _setUUID(class mce::UUID const& uuid);
+    virtual bool requiresValidLevel() const;
 
-    MCAPI CommandOrigin();
-
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const& pos, int commandVersion) const;
-
-    MCAPI std::unique_ptr<class CommandArea>
-    getAreaAt(class BlockPos const& min, class BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
-
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const& pos, int commandVersion) const;
-
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(
-        class BlockPos const& min,
-        class BlockPos const& max,
-        int                   commandVersion,
-        bool                  allowUnloadedChunks
-    ) const;
-
-    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(
-        struct CommandOriginData const&                     data,
-        class Bedrock::NonOwnerPointer<class ILevel> const& level,
-        class NetworkIdentifier const&                      sourceId,
-        ::SubClientId                                       sourceSubId
-    );
-
+    // vIndex: 32
+    virtual void _setUUID(::mce::UUID const& uuid);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CommandOrigin();
 
-    MCAPI void* ctor$();
+    MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
 
-    MCAPI void _setUUID$(class mce::UUID const& uuid);
+    MCAPI ::std::unique_ptr<::CommandArea>
+    getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
 
-    MCAPI bool canUseAbility$(::AbilitiesIndex ability) const;
+    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& pos, int commandVersion) const;
 
-    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+    MCAPI ::std::unique_ptr<::CommandArea>
+    getAreaAtWithBuffer(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks)
+        const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> getCursorHitBlockPos$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::CommandOrigin> fromCommandOriginData(
+        ::CommandOriginData const&                  data,
+        ::Bedrock::NonOwnerPointer<::ILevel> const& level,
+        ::NetworkIdentifier const&                  sourceId,
+        ::SubClientId                               sourceSubId
+    );
+    // NOLINTEND
 
-    MCAPI std::optional<class Vec3> getCursorHitPos$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::NetworkIdentifier& sUnknownSource();
+    // NOLINTEND
 
-    MCAPI class Vec3 const getExecutePosition$(int version, class CommandPositionFloat const& commandPosition) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI struct CommandOriginIdentity getIdentity$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class CommandOrigin const& getOutputReceiver$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
 
-    MCAPI class NetworkIdentifier const& getSourceId$() const;
+    MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
-    MCAPI ::SubClientId getSourceSubId$() const;
+    MCAPI bool $hasChatPerms() const;
 
-    MCAPI class mce::UUID const& getUUID$() const;
+    MCAPI bool $hasTellPerms() const;
 
-    MCAPI void handleCommandOutputCallback$(int, std::string&&) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
-    MCAPI bool hasChatPerms$() const;
+    MCAPI bool $isWorldBuilder() const;
 
-    MCAPI bool hasTellPerms$() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI bool isSelectorExpansionAllowed$() const;
+    MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCAPI bool isWorldBuilder$() const;
+    MCAPI ::NetworkIdentifier const& $getSourceId() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI ::SubClientId $getSourceSubId() const;
 
-    MCAPI struct CommandOriginData toCommandOriginData$() const;
+    MCAPI ::CommandOrigin const& $getOutputReceiver() const;
 
-    MCAPI void updateValues$();
+    MCAPI ::CommandOriginIdentity $getIdentity() const;
 
-    MCAPI static class NetworkIdentifier& sUnknownSource();
+    MCAPI ::CommandOriginData $toCommandOriginData() const;
 
+    MCAPI ::mce::UUID const& $getUUID() const;
+
+    MCAPI void $handleCommandOutputCallback(int, ::std::string&&) const;
+
+    MCAPI void $updateValues();
+
+    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+
+    MCAPI ::CompoundTag $serialize() const;
+
+    MCAPI bool $requiresValidLevel() const;
+
+    MCAPI void $_setUUID(::mce::UUID const& uuid);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

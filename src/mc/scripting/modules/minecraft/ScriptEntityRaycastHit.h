@@ -4,16 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptEntityRaycastHit {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk8112da;
+    ::ll::UntypedStorage<4, 4>  mUnk44f2d4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptEntityRaycastHit& operator=(ScriptEntityRaycastHit const&);
@@ -21,29 +22,22 @@ public:
     ScriptEntityRaycastHit();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEntityRaycastHit(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const& actor,
-        float                                                                                     distance
-    );
-
     MCAPI ~ScriptEntityRaycastHit();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const& actor,
-        float                                                                                     distance
-    );
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

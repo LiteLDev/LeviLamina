@@ -3,30 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/projectile/AbstractArrow.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class ItemStack;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class ThrownTrident : public ::AbstractArrow {
+public:
+    // ThrownTrident inner types define
+    enum class Data : int {
+        OwnerID = 17,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnk5a0d0e;
+    ::ll::UntypedStorage<4, 4>   mUnk1626c9;
+    ::ll::UntypedStorage<8, 152> mUnkfcbd41;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ThrownTrident& operator=(ThrownTrident const&);
@@ -34,86 +42,103 @@ public:
     ThrownTrident();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
-    virtual void outOfWorld();
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 143
+    virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
-    // vIndex: 10
-    virtual ~ThrownTrident() = default;
+    // vIndex: 40
+    virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 42
-    virtual void playerTouch(class Player& player);
+    // vIndex: 73
+    virtual void despawn() /*override*/;
 
-    // vIndex: 65
-    virtual bool isEnchanted() const;
+    // vIndex: 1
+    virtual void outOfWorld() /*override*/;
 
-    // vIndex: 76
-    virtual void despawn();
+    // vIndex: 62
+    virtual bool isEnchanted() const /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 151
-    virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+    // vIndex: 144
+    virtual ::ItemStack _getPickupItem() const /*override*/;
 
-    // vIndex: 152
-    virtual class ItemStack _getPickupItem() const;
+    // vIndex: 8
+    virtual ~ThrownTrident() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ThrownTrident(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI void doNormalTick();
 
-    MCAPI class ItemStack getPickupItem() const;
+    MCAPI ::ItemStack getPickupItem() const;
 
     MCAPI void returnWithLoyalty(int enchantLevel);
 
-    MCAPI void setTridentItem(class ItemStack const& item);
-
+    MCAPI void setTridentItem(::ItemStack const& item);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI class ItemStack _getPickupItem$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCAPI void despawn$();
+    MCAPI void $playerTouch(::Player& player);
 
-    MCAPI bool isEnchanted$() const;
+    MCAPI void $despawn();
 
-    MCAPI void outOfWorld$();
+    MCAPI void $outOfWorld();
 
-    MCAPI void playerTouch$(class Player& player);
+    MCAPI bool $isEnchanted() const;
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void shoot$(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI ::ItemStack $_getPickupItem() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

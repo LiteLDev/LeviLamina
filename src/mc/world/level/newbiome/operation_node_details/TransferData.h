@@ -13,4 +13,4 @@ public:
     TransferData();
 };
 
-}; // namespace OperationNodeDetails
+} // namespace OperationNodeDetails

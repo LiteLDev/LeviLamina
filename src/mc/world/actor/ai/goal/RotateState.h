@@ -7,37 +7,43 @@
 
 class RotateState : public ::PetSleepWithOwnerState {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk344b15;
+    ::ll::UntypedStorage<4, 4> mUnk6f6bea;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RotateState& operator=(RotateState const&);
     RotateState(RotateState const&);
     RotateState();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RotateState() = default;
-
     // vIndex: 1
-    virtual void tick();
+    virtual void tick() /*override*/;
 
-    // vIndex: 2
-    virtual void start();
-
-    // vIndex: 3
-    virtual void stop();
-
+    // vIndex: 0
+    virtual ~RotateState() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
+    // NOLINTEND
 
-    MCAPI void stop$();
-
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

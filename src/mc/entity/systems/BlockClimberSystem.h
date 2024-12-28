@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockLegacy;
+class BlockPos;
+class IConstBlockSource;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class BlockClimberSystem {
 public:
     // prevent constructor by default
@@ -10,17 +18,17 @@ public:
     BlockClimberSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool canBlockBeAscendedByJumping(
-        class BlockLegacy const&       block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          blockPos,
-        bool                           canStandOnSnow,
-        bool                           hasLightweightFamily,
-        bool                           isPlayer
+        ::BlockLegacy const&       block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          blockPos,
+        bool                       canStandOnSnow,
+        bool                       hasLightweightFamily,
+        bool                       isPlayer
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

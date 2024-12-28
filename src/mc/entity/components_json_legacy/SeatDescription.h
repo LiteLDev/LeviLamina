@@ -2,35 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExpressionNode;
+// clang-format on
+
 struct SeatDescription {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12>  mUnkffe8e6;
+    ::ll::UntypedStorage<4, 4>   mUnk53a4e8;
+    ::ll::UntypedStorage<4, 4>   mUnka2353f;
+    ::ll::UntypedStorage<1, 1>   mUnke1cd25;
+    ::ll::UntypedStorage<8, 216> mUnk42e630;
+    ::ll::UntypedStorage<1, 1>   mUnkd0eb9e;
+    ::ll::UntypedStorage<4, 4>   mUnk5c0f68;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    SeatDescription& operator=(SeatDescription const&);
+    SeatDescription(SeatDescription const&);
     SeatDescription();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI SeatDescription(struct SeatDescription const&);
+    MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
 
-    MCAPI void addRotationExpressionNode(class ExpressionNode const& node);
-
-    MCAPI struct SeatDescription& operator=(struct SeatDescription&&);
-
-    MCAPI struct SeatDescription& operator=(struct SeatDescription const&);
-
-    MCAPI bool operator==(struct SeatDescription const& seat) const;
+    MCAPI bool operator==(::SeatDescription const& seat) const;
 
     MCAPI ~SeatDescription();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct SeatDescription const&);
+    MCAPI static ::SeatDescription const& EMPTY();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI static struct SeatDescription const& EMPTY();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WaterWalkSpeedEnchantComponent {
+// auto generated inclusion list
+#include "mc/entity/components/IntComponent.h"
+
+struct WaterWalkSpeedEnchantComponent : public ::IntComponent {
 public:
     // prevent constructor by default
     WaterWalkSpeedEnchantComponent& operator=(WaterWalkSpeedEnchantComponent const&);

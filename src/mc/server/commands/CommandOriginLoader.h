@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/server/commands/ICommandOriginLoader.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CompoundTag;
+class ServerLevel;
+// clang-format on
+
 class CommandOriginLoader : public ::ICommandOriginLoader {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnke6b10a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandOriginLoader& operator=(CommandOriginLoader const&);
@@ -13,29 +26,48 @@ public:
     CommandOriginLoader();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandOriginLoader();
+    virtual ~CommandOriginLoader() /*override*/;
 
     // vIndex: 1
-    virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const& tag);
-
-    MCAPI explicit CommandOriginLoader(class ServerLevel& level);
-
-    MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const& tag, class ServerLevel& level);
-
+    virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit CommandOriginLoader(::ServerLevel& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ServerLevel& level);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerLevel& level);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CommandOrigin> load$(class CompoundTag const& tag);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::CommandOrigin> $load(::CompoundTag const& tag);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

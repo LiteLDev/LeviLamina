@@ -7,6 +7,14 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class IContentKeyProvider;
+class IPackManifestFactory;
+class Pack;
+class PackSourceReport;
+// clang-format on
+
 class PackSource {
 public:
     // prevent constructor by default
@@ -15,15 +23,16 @@ public:
     PackSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PackSource();
+    virtual ~PackSource() = 0;
 
     // vIndex: 1
-    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const = 0;
+    virtual void forEachPackConst(::std::function<void(::Pack const&)>) const = 0;
 
     // vIndex: 2
-    virtual void forEachPack(std::function<void(class Pack&)> callback) = 0;
+    virtual void forEachPack(::std::function<void(::Pack&)>) = 0;
 
     // vIndex: 3
     virtual ::PackOrigin getPackOrigin() const;
@@ -32,30 +41,36 @@ public:
     virtual ::PackType getPackType() const;
 
     // vIndex: 5
-    virtual class PackSourceReport load(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    ) = 0;
-
-    MCAPI class Pack* fetchPack(struct PackIdVersion const& packId);
-
-    MCAPI void resolveUpgradeDependencies(
-        class Pack&                                                         pack,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
-
+    virtual ::PackSourceReport
+    load(::IPackManifestFactory&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&) = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void resolveUpgradeDependencies(
+        ::Pack&                                                           pack,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::PackOrigin getPackOrigin$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackType getPackType$() const;
+    MCAPI ::PackType $getPackType() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

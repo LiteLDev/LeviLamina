@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+struct FilterInputs;
 namespace Json { class Value; }
 // clang-format on
 
 class SimpleBoolFilterTest : public ::FilterTest {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnka7c087;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimpleBoolFilterTest& operator=(SimpleBoolFilterTest const&);
@@ -18,9 +25,29 @@ public:
     SimpleBoolFilterTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SimpleBoolFilterTest() = default;
+    // vIndex: 1
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
+    // vIndex: 6
+    virtual ::Json::Value _serializeValue() const /*override*/;
+
+    // vIndex: 0
+    virtual ~SimpleBoolFilterTest() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+
+    MCAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
 };

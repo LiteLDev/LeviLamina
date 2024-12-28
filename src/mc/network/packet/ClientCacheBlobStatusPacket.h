@@ -7,47 +7,66 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ClientCacheBlobStatusPacket : public ::Packet {
 public:
-    std::vector<uint64> mMissingIds; // this+0x30
-    std::vector<uint64> mFoundIds;   // this+0x48
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mMissingIds;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mFoundIds;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&);
     ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&);
     ClientCacheBlobStatusPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClientCacheBlobStatusPacket() = default;
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ClientCacheBlobStatusPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

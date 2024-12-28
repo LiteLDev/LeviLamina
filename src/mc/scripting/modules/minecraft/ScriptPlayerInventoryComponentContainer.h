@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptInventoryComponentContainer.h"
 
 // auto generated forward declare list
@@ -13,11 +11,6 @@
 class Container;
 class ItemContext;
 class WeakEntityRef;
-namespace ScriptModuleMinecraft { class ScriptContainer; }
-namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
-namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
-namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -31,41 +24,59 @@ public:
     ScriptPlayerInventoryComponentContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPlayerInventoryComponentContainer();
+    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/;
 
     // vIndex: 13
-    virtual class Container* _tryGetContainer() const;
+    virtual ::Container* _tryGetContainer() const /*override*/;
 
     // vIndex: 14
-    virtual class ItemContext _getItemContext(int slot) const;
-
-    MCAPI ScriptPlayerInventoryComponentContainer(
-        class WeakEntityRef const&                entityRef,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        class ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer>
-    bindV010();
-
+    virtual ::ItemContext _getItemContext(int slot) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptPlayerInventoryComponentContainer(
+        ::WeakEntityRef const&                entityRef,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(class WeakEntityRef const& entityRef, class Scripting::WeakLifetimeScope const& scope);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer>
+    bindV010();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
 
-    MCAPI class ItemContext _getItemContext$(int slot) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Container* _tryGetContainer$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Container* $_tryGetContainer() const;
 
+    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

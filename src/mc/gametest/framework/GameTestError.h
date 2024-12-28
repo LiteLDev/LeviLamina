@@ -4,44 +4,50 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
-#include "mc/gametest/framework/GameTestErrorType.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 namespace gametest {
 
-struct GameTestError {
+struct GameTestError : public ::Scripting::Error {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk7154fb;
+    ::ll::UntypedStorage<8, 24> mUnka9c735;
+    ::ll::UntypedStorage<4, 32> mUnk5e1f8c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameTestError& operator=(GameTestError const&);
+    GameTestError(GameTestError const&);
     GameTestError();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI GameTestError(struct gametest::GameTestError&&);
-
-    MCAPI GameTestError(struct gametest::GameTestError const&);
-
-    MCAPI GameTestError(::gametest::GameTestErrorType, std::string const&, std::vector<std::string>);
-
-    MCAPI struct gametest::GameTestError& operator=(struct gametest::GameTestError&&);
+    MCAPI GameTestError(::gametest::GameTestError&&);
 
     MCAPI ~GameTestError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct gametest::GameTestError> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(::gametest::GameTestErrorType, std::string const&, std::vector<std::string>);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::gametest::GameTestError> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct gametest::GameTestError&&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gametest::GameTestError&&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct gametest::GameTestError const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

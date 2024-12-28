@@ -3,10 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class FindMountGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk2740b2;
+    ::ll::UntypedStorage<4, 4>  mUnkd9553d;
+    ::ll::UntypedStorage<4, 4>  mUnk7b23f4;
+    ::ll::UntypedStorage<4, 4>  mUnkfc44f4;
+    ::ll::UntypedStorage<4, 4>  mUnk9cfa6b;
+    ::ll::UntypedStorage<1, 1>  mUnke99754;
+    ::ll::UntypedStorage<1, 1>  mUnkee769b;
+    ::ll::UntypedStorage<4, 4>  mUnka22d13;
+    ::ll::UntypedStorage<4, 4>  mUnk555735;
+    ::ll::UntypedStorage<4, 4>  mUnk5b1b97;
+    ::ll::UntypedStorage<8, 8>  mUnk88b6e6;
+    ::ll::UntypedStorage<8, 8>  mUnk1d312a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FindMountGoal& operator=(FindMountGoal const&);
@@ -14,68 +30,61 @@ public:
     FindMountGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FindMountGoal() = default;
+    virtual ~FindMountGoal() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI FindMountGoal(
-        class Mob& mob,
-        float      dist,
-        int        startDelay,
-        bool       avoidWater,
-        bool       targetNeeded,
-        float      mountDistance,
-        int        maxFailedAttempts
-    );
-
-    MCAPI bool isInMountRange();
-
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool isInMountRange();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class Mob& mob,
-        float      dist,
-        int        startDelay,
-        bool       avoidWater,
-        bool       targetNeeded,
-        float      mountDistance,
-        int        maxFailedAttempts
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

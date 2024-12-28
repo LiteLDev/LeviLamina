@@ -5,10 +5,39 @@
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class BlockVolume;
+class BoundingBox;
+class ChunkPos;
+class Dimension;
+class Random;
+class StructurePoolElement;
+struct JigsawJunction;
+// clang-format on
+
 class PoolElementStructurePiece : public ::StructurePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 24> mUnkae4efc;
+    ::ll::UntypedStorage<4, 4>  mUnk98ec3b;
+    ::ll::UntypedStorage<4, 4>  mUnkdb7900;
+    ::ll::UntypedStorage<4, 4>  mUnkbce672;
+    ::ll::UntypedStorage<4, 4>  mUnk7c68cb;
+    ::ll::UntypedStorage<8, 8>  mUnkc93c20;
+    ::ll::UntypedStorage<4, 12> mUnkea11e1;
+    ::ll::UntypedStorage<1, 1>  mUnk8a1f71;
+    ::ll::UntypedStorage<4, 24> mUnkd032f6;
+    ::ll::UntypedStorage<8, 64> mUnkdb9bdf;
+    ::ll::UntypedStorage<4, 12> mUnkcaf6a7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PoolElementStructurePiece& operator=(PoolElementStructurePiece const&);
@@ -16,73 +45,87 @@ public:
     PoolElementStructurePiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PoolElementStructurePiece();
-
-    // vIndex: 1
-    virtual void moveBoundingBox(int dx, int dy, int dz);
-
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 5
-    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+
+    // vIndex: 1
+    virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 13
     virtual int
-    generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>&)
+    generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&)
         const = 0;
 
     // vIndex: 14
-    virtual class Block const*
-    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const = 0;
+    virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const = 0;
 
     // vIndex: 15
-    virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const&) const = 0;
 
     // vIndex: 16
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 
     // vIndex: 17
-    virtual bool _needsPostProcessing(class BlockSource& region);
+    virtual bool _needsPostProcessing(::BlockSource& region);
 
-    MCAPI PoolElementStructurePiece(
-        class StructurePoolElement const& element,
-        class BlockPos                    position,
-        ::Rotation                        rotation,
-        int                               genDepth,
-        struct JigsawJunction&            junction,
-        class BoundingBox const&          box,
-        class BlockPos                    refPos
-    );
-
+    // vIndex: 0
+    virtual ~PoolElementStructurePiece() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class StructurePoolElement const& element,
-        class BlockPos                    position,
-        ::Rotation                        rotation,
-        int                               genDepth,
-        struct JigsawJunction&            junction,
-        class BoundingBox const&          box,
-        class BlockPos                    refPos
+    MCAPI PoolElementStructurePiece(
+        ::StructurePoolElement const& element,
+        ::BlockPos                    position,
+        ::Rotation                    rotation,
+        int                           genDepth,
+        ::JigsawJunction&             junction,
+        ::BoundingBox const&          box,
+        ::BlockPos                    refPos
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::StructurePoolElement const& element,
+        ::BlockPos                    position,
+        ::Rotation                    rotation,
+        int                           genDepth,
+        ::JigsawJunction&             junction,
+        ::BoundingBox const&          box,
+        ::BlockPos                    refPos
+    );
+    // NOLINTEND
 
-    MCAPI bool _needsPostProcessing$(class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void moveBoundingBox$(int dx, int dy, int dz);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
 
+    MCAPI bool $_needsPostProcessing(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

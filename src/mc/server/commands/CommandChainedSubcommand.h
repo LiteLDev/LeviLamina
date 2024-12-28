@@ -1,21 +1,52 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/Command.h"
+
+// auto generated forward declare list
+// clang-format off
+class Command;
+// clang-format on
 
 class CommandChainedSubcommand {
 public:
-    std::unique_ptr<Command> mCommand; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>> mCommand;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandChainedSubcommand& operator=(CommandChainedSubcommand const&);
+    CommandChainedSubcommand(CommandChainedSubcommand const&);
+    CommandChainedSubcommand();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandChainedSubcommand() = default;
+    virtual ~CommandChainedSubcommand();
 
     // vIndex: 1
-    virtual std::string getCommandName() const = 0;
+    virtual ::std::string getCommandName() const = 0;
+    // NOLINTEND
 
-    MCAPI class Command const* getCommand() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Command const* getCommand() const;
+
+    MCAPI void setCommand(::std::unique_ptr<::Command> command);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

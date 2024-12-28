@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ApiDiag {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::atomic<uint>& g_globalApiRefs();
+MCAPI ::std::atomic<uint>& g_globalApiRefs();
 // NOLINTEND
 
-}; // namespace ApiDiag
+} // namespace ApiDiag

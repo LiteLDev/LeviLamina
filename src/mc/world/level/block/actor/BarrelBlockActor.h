@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Player;
+// clang-format on
+
 class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // prevent constructor by default
@@ -13,39 +20,69 @@ public:
     BarrelBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::string getName() const;
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI void onPlace(class BlockSource& region);
+    // vIndex: 11
+    virtual void onPlace(::BlockSource& region) /*override*/;
 
-    MCVAPI void playCloseSound(class BlockSource& region);
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI void playOpenSound(class BlockSource& region);
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 49
+    virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    MCVAPI void stopOpen(class Player& player);
+    // vIndex: 50
+    virtual void playCloseSound(::BlockSource& region) /*override*/;
 
+    // vIndex: 0
+    virtual ~BarrelBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForFillingContainer();
+    MCAPI explicit BarrelBlockActor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onPlace$(class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void playCloseSound$(class BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void playOpenSound$(class BlockSource& region);
+    MCAPI void $startOpen(::Player& player);
 
-    MCAPI void startOpen$(class Player& player);
+    MCAPI void $stopOpen(::Player& player);
 
-    MCAPI void stopOpen$(class Player& player);
+    MCAPI void $playOpenSound(::BlockSource& region);
 
+    MCAPI void $playCloseSound(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI static void** $vftableForFillingContainer();
     // NOLINTEND
 };

@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
 struct MoveControlDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk945d5e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MoveControlDescription& operator=(MoveControlDescription const&);
@@ -13,19 +24,24 @@ public:
     MoveControlDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ~MoveControlDescription() = default;
-
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
+    // vIndex: 1
+    virtual ~MoveControlDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 };

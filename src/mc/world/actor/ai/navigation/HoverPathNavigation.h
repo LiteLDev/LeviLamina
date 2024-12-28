@@ -5,7 +5,23 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/navigation/PathNavigation.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+class NavigationComponent;
+class Path;
+class Vec3;
+struct NavigationDescription;
+// clang-format on
+
 class HoverPathNavigation : public ::PathNavigation {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkbb21d2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HoverPathNavigation& operator=(HoverPathNavigation const&);
@@ -13,60 +29,67 @@ public:
     HoverPathNavigation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HoverPathNavigation() = default;
-
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob, struct NavigationDescription* description);
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
 
     // vIndex: 2
-    virtual void tick(class NavigationComponent& parent, class Mob& mob);
+    virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 3
-    virtual class Vec3 getTempMobPos(class Mob const& mob) const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+    virtual ::Vec3 getTempMobPos(::Mob const& mob) const /*override*/;
 
     // vIndex: 5
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+    virtual ::std::unique_ptr<::Path>
+    createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
+
+    // vIndex: 4
+    virtual ::std::unique_ptr<::Path>
+    createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
     // vIndex: 9
-    virtual void stop(class NavigationComponent& parent, class Mob& mob);
+    virtual void stop(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 11
-    virtual bool canUpdatePath(class Mob const& mob) const;
+    virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
     // vIndex: 12
-    virtual void updatePath(class NavigationComponent& parent, class Mob& mob);
+    virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
+    // vIndex: 0
+    virtual ~HoverPathNavigation() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUpdatePath$(class Mob const& mob) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
 
-    MCAPI std::unique_ptr<class Path>
-          createPath$(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI std::unique_ptr<class Path>
-          createPath$(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI class Vec3 getTempMobPos$(class Mob const& mob) const;
+    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCAPI void initializeInternal$(class Mob& mob, struct NavigationDescription* description);
+    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI void stop$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCAPI void updatePath$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

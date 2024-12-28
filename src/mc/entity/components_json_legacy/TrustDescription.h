@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
-class TrustDescription : public ::ActorComponentDescription {
+struct TrustDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
     TrustDescription& operator=(TrustDescription const&);
@@ -13,23 +13,30 @@ public:
     TrustDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 1
-    virtual ~TrustDescription();
-
+    virtual ~TrustDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

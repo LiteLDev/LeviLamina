@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
 class FlyDefinition : public ::BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk3d66b9;
+    ::ll::UntypedStorage<8, 32> mUnkabca45;
+    ::ll::UntypedStorage<1, 1>  mUnk83f7e7;
+    ::ll::UntypedStorage<8, 32> mUnkfe353c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FlyDefinition& operator=(FlyDefinition const&);
@@ -18,21 +28,30 @@ public:
     FlyDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FlyDefinition() = default;
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~FlyDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

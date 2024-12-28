@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace gametest { class BaseGameTestBatchRunner; }
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestTicker; }
@@ -15,36 +14,51 @@ namespace gametest { class GameTestTicker; }
 
 class MinecraftGameTestBatchRunner : public ::gametest::BaseGameTestBatchRunner {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk3b72dd;
+    ::ll::UntypedStorage<8, 8> mUnk637ef7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MinecraftGameTestBatchRunner& operator=(MinecraftGameTestBatchRunner const&);
     MinecraftGameTestBatchRunner(MinecraftGameTestBatchRunner const&);
     MinecraftGameTestBatchRunner();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestBatchRunner() = default;
+    virtual ~MinecraftGameTestBatchRunner() /*override*/;
 
     // vIndex: 1
-    virtual std::shared_ptr<class gametest::BaseGameTestInstance>
-    _createGameTestInstance(class gametest::BaseGameTestFunction& function);
+    virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
+    _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
 
     // vIndex: 2
     virtual void
-    _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
-
+    _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::shared_ptr<class gametest::BaseGameTestInstance>
-          _createGameTestInstance$(class gametest::BaseGameTestFunction& function);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::gametest::BaseGameTestInstance>
+    $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
 
-    MCAPI void
-    _runTest$(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker& ticker);
+    MCAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

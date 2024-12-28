@@ -1,12 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+class FeatureRegistry;
+// clang-format on
 
 class OwnerStorageFeature {
 public:
-    std::optional<std::reference_wrapper<FeatureRegistry>> mRegistry; // this+0x0
-    uint64                                                 mIndex;    // this+0x10
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::reference_wrapper<::FeatureRegistry>>> mRegistry;
+    ::ll::TypedStorage<8, 8, uint64>                                                        mIndex;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -14,16 +21,15 @@ public:
     OwnerStorageFeature(OwnerStorageFeature const&);
     OwnerStorageFeature();
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~OwnerStorageFeature();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

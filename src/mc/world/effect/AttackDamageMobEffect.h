@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class AttributeModifier;
+// clang-format on
+
 class AttackDamageMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,37 +18,38 @@ public:
     AttackDamageMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AttackDamageMobEffect() = default;
-
     // vIndex: 8
-    virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
+    virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const /*override*/;
 
-    MCAPI AttackDamageMobEffect(
-        int                id,
-        std::string const& resourceName,
-        std::string const& locName,
-        bool               isHarmful,
-        int                color,
-        int                icon
-    );
+    // vIndex: 0
+    virtual ~AttackDamageMobEffect() /*override*/;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static float getDamageAfterDamageBoost(float initialDamage, int count);
 
     MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(int id, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    // NOLINTEND
 
-    MCAPI float getAttributeModifierValue$(int amplifier, class AttributeModifier const& modifier) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

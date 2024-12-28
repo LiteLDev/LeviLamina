@@ -4,18 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
 // clang-format on
 
 class AzaleaBlock : public ::BushBlock {
@@ -26,70 +27,83 @@ public:
     AzaleaBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AzaleaBlock() = default;
-
     // vIndex: 5
-    virtual class AABB getCollisionShape(
-        class Block const&                                         block,
-        class IConstBlockSource const&                             region,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+    virtual ::AABB getCollisionShape(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
+
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     // vIndex: 24
-    virtual bool canProvideMultifaceSupport(class Block const&, uchar face) const;
+    virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
+    // vIndex: 81
+    virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
-
-    // vIndex: 87
-    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI AzaleaBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~AzaleaBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AzaleaBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool canProvideMultifaceSupport$(class Block const&, uchar face) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class AABB getCollisionShape$(
-        class Block const&                                         block,
-        class IConstBlockSource const&                             region,
-        class BlockPos const&                                      pos,
-        class optional_ref<class GetCollisionShapeInterface const> entity
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool isWaterBlocking$() const;
-
-    MCAPI bool mayPlaceOn$(class BlockSource& region, class BlockPos const& pos) const;
-
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
-        const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+
+    MCAPI bool $isLavaBlocking() const;
+
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

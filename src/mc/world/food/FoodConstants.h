@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace FoodConstants {
-// thunks
+// static variables
 // NOLINTBEGIN
 MCAPI float const& FOOD_SATURATION_GOOD();
 
@@ -34,4 +34,4 @@ MCAPI float const& START_SATURATION();
 MCAPI int const& STARVE_LEVEL();
 // NOLINTEND
 
-}; // namespace FoodConstants
+} // namespace FoodConstants

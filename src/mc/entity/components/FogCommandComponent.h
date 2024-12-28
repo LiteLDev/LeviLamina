@@ -2,7 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+// clang-format on
+
 class FogCommandComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkdf5f86;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FogCommandComponent& operator=(FogCommandComponent const&);
@@ -10,21 +23,24 @@ public:
     FogCommandComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI std::vector<std::string> getFogSettingsStack() const;
+    MCAPI ::std::vector<::std::string> getFogSettingsStack() const;
 
-    MCAPI class FogCommandComponent& operator=(class FogCommandComponent&&);
+    MCAPI bool popFogSetting(::std::string const& userProvidedId);
 
-    MCAPI bool popFogSetting(std::string const& userProvidedId);
+    MCAPI bool pushFogSetting(::std::string const& fogId, ::std::string const& userProvidedId);
 
-    MCAPI bool pushFogSetting(std::string const& fogId, std::string const& userProvidedId);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI bool removeFogSettings(::std::string const& userProvidedId);
+    // NOLINTEND
 
-    MCAPI bool removeFogSettings(std::string const& userProvidedId);
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isValidIdentifier(::std::string const& format);
     // NOLINTEND
 };

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/ApiId.h"
 #include "mc/deps/core/threading/LocklessQueue.h"
 #include "mc/deps/core/threading/XTaskQueueDispatchMode.h"
 
 // auto generated forward declare list
 // clang-format off
+struct ITaskQueuePortContext;
 namespace OS { struct ThreadPoolActionStatus; }
 // clang-format on
 
@@ -52,147 +52,50 @@ public:
     TaskQueuePortImpl(TaskQueuePortImpl const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual void __unk_vfn_0();
+    MCAPI bool AppendEntry(::TaskQueuePortImpl::QueueEntry const&, uint64);
 
-    // vIndex: 1
-    virtual uint Release();
+    MCAPI bool AppendWaitRegistrationEntry(::TaskQueuePortImpl::WaitRegistration*);
 
-    // vIndex: 2
-    virtual long QueryApi(::ApiId, void**);
+    MCAPI void CancelPendingEntries(::ITaskQueuePortContext*, bool);
 
-    // vIndex: 3
-    virtual struct XTaskQueuePortObject* GetHandle();
-
-    // vIndex: 4
-    virtual long QueueItem(struct ITaskQueuePortContext*, uint, void*, void (*)(void*, bool));
-
-    // vIndex: 5
-    virtual long
-    RegisterWaitHandle(struct ITaskQueuePortContext*, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
-
-    // vIndex: 6
-    virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
-
-    // vIndex: 7
-    virtual long PrepareTerminate(struct ITaskQueuePortContext*, void*, void (*)(void*), void**);
-
-    // vIndex: 8
-    virtual void CancelTermination(void*);
-
-    // vIndex: 9
-    virtual void Terminate(void*);
-
-    // vIndex: 10
-    virtual long Attach(struct ITaskQueuePortContext*);
-
-    // vIndex: 11
-    virtual void Detach(struct ITaskQueuePortContext*);
-
-    // vIndex: 12
-    virtual bool Dispatch(struct ITaskQueuePortContext*, uint);
-
-    // vIndex: 13
-    virtual bool IsEmpty();
-
-    // vIndex: 14
-    virtual long SuspendTermination(struct ITaskQueuePortContext*);
-
-    // vIndex: 15
-    virtual void ResumeTermination(struct ITaskQueuePortContext*);
-
-    // vIndex: 16
-    virtual void SuspendPort();
-
-    // vIndex: 17
-    virtual void ResumePort();
-
-    // vIndex: 18
-    virtual ~TaskQueuePortImpl();
-
-    // vIndex: 19
-    virtual void* QueryApiImpl(::ApiId);
+    MCAPI bool DrainOneItem(::OS::ThreadPoolActionStatus&);
 
     MCAPI long Initialize(::XTaskQueueDispatchMode);
 
-    MCAPI TaskQueuePortImpl();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const&, uint64);
-
-    MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration*);
-
-    MCAPI void CancelPendingEntries(struct ITaskQueuePortContext*, bool);
-
-    MCAPI bool DrainOneItem(struct OS::ThreadPoolActionStatus&);
-
-    MCAPI long InitializeWaitRegistration(struct TaskQueuePortImpl::WaitRegistration*);
+    MCAPI long InitializeWaitRegistration(::TaskQueuePortImpl::WaitRegistration*);
 
     MCAPI void NotifyItemQueued();
 
-    MCAPI void ProcessThreadPoolCallback(struct OS::ThreadPoolActionStatus&);
+    MCAPI void ProcessThreadPoolCallback(::OS::ThreadPoolActionStatus&);
 
-    MCAPI void ScheduleTermination(struct TaskQueuePortImpl::TerminationEntry*);
+    MCAPI void ScheduleTermination(::TaskQueuePortImpl::TerminationEntry*);
 
     MCAPI void SubmitPendingCallback();
 
-    MCAPI bool Wait(struct ITaskQueuePortContext*, uint);
+    MCAPI TaskQueuePortImpl();
 
-    MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry>*);
-
-    MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WAIT*, ulong);
-
+    MCAPI bool Wait(::ITaskQueuePortContext*, uint);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void EraseQueue(::LocklessQueue<::TaskQueuePortImpl::QueueEntry>*);
 
-    MCAPI void* ctor$();
+    MCAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_WAIT*, ulong);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI long Attach$(struct ITaskQueuePortContext*);
-
-    MCAPI void CancelTermination$(void*);
-
-    MCAPI void Detach$(struct ITaskQueuePortContext*);
-
-    MCAPI bool Dispatch$(struct ITaskQueuePortContext*, uint);
-
-    MCAPI struct XTaskQueuePortObject* GetHandle$();
-
-    MCAPI bool IsEmpty$();
-
-    MCAPI long PrepareTerminate$(struct ITaskQueuePortContext*, void*, void (*)(void*), void**);
-
-    MCAPI long QueryApi$(::ApiId, void**);
-
-    MCAPI void* QueryApiImpl$(::ApiId);
-
-    MCAPI long QueueItem$(struct ITaskQueuePortContext*, uint, void*, void (*)(void*, bool));
-
-    MCAPI long
-    RegisterWaitHandle$(struct ITaskQueuePortContext*, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
-
-    MCAPI uint Release$();
-
-    MCAPI void ResumePort$();
-
-    MCAPI void ResumeTermination$(struct ITaskQueuePortContext*);
-
-    MCAPI void SuspendPort$();
-
-    MCAPI long SuspendTermination$(struct ITaskQueuePortContext*);
-
-    MCAPI void Terminate$(void*);
-
-    MCAPI void UnregisterWaitHandle$(struct XTaskQueueRegistrationToken);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

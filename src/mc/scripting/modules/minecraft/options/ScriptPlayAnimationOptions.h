@@ -9,35 +9,49 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayAnimationOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk661f75;
+    ::ll::UntypedStorage<8, 40> mUnk7de0bf;
+    ::ll::UntypedStorage<4, 8>  mUnkb5e4ac;
+    ::ll::UntypedStorage<8, 40> mUnk3a0d0d;
+    ::ll::UntypedStorage<8, 40> mUnkb81727;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptPlayAnimationOptions& operator=(ScriptPlayAnimationOptions const&);
+    ScriptPlayAnimationOptions(ScriptPlayAnimationOptions const&);
     ScriptPlayAnimationOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayAnimationOptions(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCAPI ScriptPlayAnimationOptions(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
+    operator=(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
     MCAPI ~ScriptPlayAnimationOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptPlayAnimationOptions> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

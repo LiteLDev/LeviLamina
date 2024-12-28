@@ -8,47 +8,74 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class ActorAnimationInfo;
+class ActorSkeletalAnimationPtr;
+class HashedString;
+class MinEngineVersion;
+class PackStats;
+class ResourcePackManager;
 namespace Core { class Path; }
 // clang-format on
 
 class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkcc69e4;
+    ::ll::UntypedStorage<8, 64> mUnk6df89c;
+    ::ll::UntypedStorage<8, 80> mUnkc78eae;
+    ::ll::UntypedStorage<8, 24> mUnk6b4a97;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorAnimationGroup& operator=(ActorAnimationGroup const&);
     ActorAnimationGroup(ActorAnimationGroup const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorAnimationGroup() = default;
-
-    MCAPI ActorAnimationGroup();
-
-    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const& name);
-
-    MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const& name);
-
-    MCAPI void loadActorAnimation(
-        std::string const&      fileData,
-        class Core::Path const& filenameWithExtension,
-        class PackStats&        stats,
-        class SemVersion const& engineVersion,
-        ::CurrentCmdVersion     packCommandVersion,
-        bool                    isPersonaPack,
-        std::string const&      personaPieceId
-    );
-
-    MCAPI void loadActorAnimationsSync(class ResourcePackManager& resourcePackManager);
-
+    virtual ~ActorAnimationGroup() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorAnimationGroup();
 
-    MCAPI void* ctor$();
+    MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
+    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
+
+    MCAPI void loadActorAnimation(
+        ::std::string const&      fileData,
+        ::Core::Path const&       filenameWithExtension,
+        ::PackStats&              stats,
+        ::MinEngineVersion const& minEngineVersion,
+        ::CurrentCmdVersion       packCommandVersion,
+        bool                      isPersonaPack,
+        ::std::string const&      personaPieceId
+    );
+
+    MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

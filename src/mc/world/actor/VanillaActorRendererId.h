@@ -2,34 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace VanillaActorRendererId {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& _map();
+MCAPI ::HashedString const& _map();
 
-MCAPI class HashedString const& _photo();
+MCAPI ::HashedString const& _photo();
 
-MCAPI class HashedString const& _query();
+MCAPI ::HashedString const& _query();
 
-MCAPI class HashedString const& elderGuardian();
+MCAPI ::HashedString const& elderGuardian();
 
-MCAPI class HashedString const& elderGuardianGhost();
+MCAPI ::HashedString const& elderGuardianGhost();
 
-MCAPI class HashedString const& guardian();
+MCAPI ::HashedString const& guardian();
 
-MCAPI class HashedString const& itemEntity();
+MCAPI ::HashedString const& itemEntity();
 
-MCAPI class HashedString const& lingeringPotion();
+MCAPI ::HashedString const& lingeringPotion();
 
-MCAPI class HashedString const& npc();
+MCAPI ::HashedString const& npc();
 
-MCAPI class HashedString const& player();
+MCAPI ::HashedString const& player();
 
-MCAPI class HashedString const& shield();
+MCAPI ::HashedString const& shield();
 
-MCAPI class HashedString const& thrownPotion();
+MCAPI ::HashedString const& thrownPotion();
 
-MCAPI class HashedString const& trident();
+MCAPI ::HashedString const& trident();
 // NOLINTEND
 
-}; // namespace VanillaActorRendererId
+} // namespace VanillaActorRendererId

@@ -8,13 +8,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
 namespace Bedrock { class DataStore; }
-namespace Bedrock { class IApplicationDataStores; }
 // clang-format on
 
 namespace Bedrock {
 
 class ApplicationDataStores : public ::Bedrock::IApplicationDataStores {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk25abfe;
+    ::ll::UntypedStorage<8, 96> mUnkddf272;
+    ::ll::UntypedStorage<8, 32> mUnk9c8278;
+    ::ll::UntypedStorage<1, 1>  mUnke3598c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ApplicationDataStores& operator=(ApplicationDataStores const&);
@@ -22,43 +31,60 @@ public:
     ApplicationDataStores();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ApplicationDataStores() = default;
+    virtual ~ApplicationDataStores() /*override*/;
 
     // vIndex: 1
-    virtual void init();
-
-    // vIndex: 2
-    virtual class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+    virtual void init() /*override*/;
 
     // vIndex: 3
-    virtual class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) /*override*/;
 
+    // vIndex: 2
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ApplicationDataStores(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
 
-    MCAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-    getDataStore$(::Bedrock::IApplicationDataStores::DataStores which);
+    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+    // NOLINTEND
 
-    MCAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-    getDataStore$(::Bedrock::IApplicationDataStores::DataStores which) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::AppPlatform> platform, ::std::string_view tag);
+    // NOLINTEND
 
-    MCAPI void init$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+
+    MCAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

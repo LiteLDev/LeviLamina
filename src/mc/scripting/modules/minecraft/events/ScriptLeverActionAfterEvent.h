@@ -4,10 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptLeverActionAfterEvent {
+struct ScriptLeverActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk4a17dd;
+    ::ll::UntypedStorage<8, 32> mUnk259794;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptLeverActionAfterEvent& operator=(ScriptLeverActionAfterEvent const&);
@@ -15,13 +23,10 @@ public:
     ScriptLeverActionAfterEvent();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

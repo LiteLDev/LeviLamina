@@ -2,25 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class RandomValueBounds {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk98064d;
+    ::ll::UntypedStorage<4, 4> mUnk79891e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomValueBounds& operator=(RandomValueBounds const&);
     RandomValueBounds(RandomValueBounds const&);
     RandomValueBounds();
-
-public:
-    // NOLINTBEGIN
-    MCAPI void deserialize(class Json::Value const& object);
-
-    MCAPI float getFloat(class Random& random) const;
-
-    MCAPI int getInt(class Random& random) const;
-
-    // NOLINTEND
 };

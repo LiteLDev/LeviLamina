@@ -6,10 +6,19 @@
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/network/SparseContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+// clang-format on
+
 class SparseContainerClient : public ::SparseContainer {
 public:
     // SparseContainerClient inner types define
-    enum class PushSlotPredictionResult {};
+    enum class PushSlotPredictionResult : int {
+        Succeeded                  = 0,
+        FailedWithFuturePrediction = 1,
+        FailedWithError            = 2,
+    };
 
 public:
     // prevent constructor by default
@@ -18,16 +27,28 @@ public:
     SparseContainerClient();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI void _networkUpdateItem(int slot, class ItemStack const& newItem);
-
+    // vIndex: 0
+    virtual ~SparseContainerClient() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, std::string> const&
-    pushSlotPredictionResultMap();
+    MCAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
+    pushSlotPredictionResultMap();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

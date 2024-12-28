@@ -7,6 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemInstance;
+class ItemStack;
+class ItemStackBase;
+class LootTableContext;
+class Random;
 namespace mce { class Color; }
 // clang-format on
 
@@ -18,36 +23,43 @@ public:
     RandomDyeFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomDyeFunction() = default;
+    virtual ~RandomDyeFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext&);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _applyBase(class ItemStackBase& item, class Random& random) const;
-
-    MCAPI class mce::Color _getRandomArmorColor(class Random& random) const;
-
-    MCAPI class mce::Color _getRandomDyeColor(class Random& random) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+    MCAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

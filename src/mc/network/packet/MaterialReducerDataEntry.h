@@ -1,29 +1,35 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/MaterialReducerEntryOutput.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MaterialReducerEntryOutput;
+// clang-format on
 
 struct MaterialReducerDataEntry {
 public:
-    int                                     mFromItemKey;        // this+0x0
-    std::vector<MaterialReducerEntryOutput> mToItemIdsAndCounts; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                          fromItemKey;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialReducerEntryOutput>> toItemIdsAndCounts;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);
     MaterialReducerDataEntry(MaterialReducerDataEntry const&);
     MaterialReducerDataEntry();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MaterialReducerDataEntry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,20 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/gametest/framework/BaseGameTestFunction.h"
+#include "mc/gametest/BaseGameTestFunction.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class WeakLifetimeScope; }
-namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
-namespace gametest { class IGameTestFunctionRunResult; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
 
 class BaseScriptGameTestFunction : public ::gametest::BaseGameTestFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnke32198;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BaseScriptGameTestFunction& operator=(BaseScriptGameTestFunction const&);
@@ -24,29 +28,46 @@ public:
     BaseScriptGameTestFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseScriptGameTestFunction() = default;
+    virtual ~BaseScriptGameTestFunction() /*override*/;
 
     // vIndex: 1
-    virtual std::unique_ptr<class gametest::IGameTestFunctionContext>
-    createContext(class gametest::BaseGameTestHelper& helper) const;
-
-    MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope scope, std::string const& testName);
-
+    virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext> createContext(::gametest::BaseGameTestHelper& helper
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope scope, std::string const& testName);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class gametest::IGameTestFunctionContext>
-          createContext$(class gametest::BaseGameTestHelper& helper) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext> $createContext(::gametest::BaseGameTestHelper& helper
+    ) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

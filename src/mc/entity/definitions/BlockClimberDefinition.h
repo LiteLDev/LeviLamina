@@ -18,11 +18,10 @@ public:
     BlockClimberDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockClimberDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockClimberDefinition>>& root
     );
-
     // NOLINTEND
 };

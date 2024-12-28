@@ -3,10 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemDescriptor;
+class Mob;
+class Player;
+// clang-format on
+
 class BegGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk55ef32;
+    ::ll::UntypedStorage<4, 4>  mUnkcbd50d;
+    ::ll::UntypedStorage<4, 4>  mUnkf62eda;
+    ::ll::UntypedStorage<4, 4>  mUnk2158a8;
+    ::ll::UntypedStorage<4, 4>  mUnka69381;
+    ::ll::UntypedStorage<8, 40> mUnk6ccd4e;
+    ::ll::UntypedStorage<8, 24> mUnk5fe9e3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BegGoal& operator=(BegGoal const&);
@@ -14,68 +32,81 @@ public:
     BegGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BegGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI BegGoal(
-        class Mob&                               tamableAnimal,
-        std::vector<class ItemDescriptor> const& itemList,
-        float                                    lookDistance,
-        int                                      minLookTime,
-        int                                      maxLookTime
-    );
-
+    // vIndex: 0
+    virtual ~BegGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _playerHoldingInteresting(class Player* player);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob&                               tamableAnimal,
-        std::vector<class ItemDescriptor> const& itemList,
-        float                                    lookDistance,
-        int                                      minLookTime,
-        int                                      maxLookTime
+    MCAPI BegGoal(
+        ::Mob&                                 tamableAnimal,
+        ::std::vector<::ItemDescriptor> const& itemList,
+        float                                  lookDistance,
+        int                                    minLookTime,
+        int                                    maxLookTime
     );
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI bool _playerHoldingInteresting(::Player* player);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                 tamableAnimal,
+        ::std::vector<::ItemDescriptor> const& itemList,
+        float                                  lookDistance,
+        int                                    minLookTime,
+        int                                    maxLookTime
+    );
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void stop$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void tick$();
+    MCAPI void $start();
 
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

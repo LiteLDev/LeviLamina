@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct OutOfControlComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -18,15 +20,18 @@ public:
     OutOfControlDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, struct OutOfControlComponent&) const;
+    MCAPI void initialize(::EntityContext& entity, ::OutOfControlComponent&) const;
 
-    MCAPI void uninitialize(class EntityContext& entity, struct OutOfControlComponent&) const;
+    MCAPI void uninitialize(::EntityContext& entity, ::OutOfControlComponent&) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OutOfControlDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OutOfControlDefinition>>& root
     );
-
     // NOLINTEND
 };

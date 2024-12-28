@@ -1,24 +1,31 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/v2/ChunkGeneratorStructureState.h"
-#include "mc/world/level/levelgen/v2/StructureCache.h"
-
-// auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace br::worldgen { class StructureCache; }
-// clang-format on
-
+class BiomeSource;
+class BlockPos;
+class Dimension;
+class HashedString;
+class IPreliminarySurfaceProvider;
 class StructureFeature;
+namespace br::worldgen { class StructureCache; }
+namespace br::worldgen { struct ChunkGeneratorStructureState; }
+// clang-format on
 
 class StructureFeatureRegistry {
 public:
-    br::worldgen::ChunkGeneratorStructureState     mChunkGeneratorStructureState; // this+0x0
-    std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;            // this+0x30
-    br::worldgen::StructureCache                   mStructureCache;               // this+0x48
+    // StructureFeatureRegistry inner types define
+    using StructureFeatureContainer = ::std::vector<::std::unique_ptr<::StructureFeature>>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::br::worldgen::ChunkGeneratorStructureState>         mGeneratorState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructureFeature>>> mStructureFeatures;
+    ::ll::TypedStorage<8, 136, ::br::worldgen::StructureCache>                      mStructureCache;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -26,49 +33,45 @@ public:
     StructureFeatureRegistry(StructureFeatureRegistry const&);
 
 public:
-    template <std::derived_from<StructureFeature> T, class... Args>
-    T& registerFeature(Args&&... args) {
-        auto  ptr = std::make_unique<T>(std::forward<Args>(args)...);
-        auto& ref = *ptr;
-        mStructureFeatures.push_back(std::move(ptr));
-        return ref;
-    }
-
-public:
+    // member functions
     // NOLINTBEGIN
     MCAPI StructureFeatureRegistry();
 
     MCAPI bool findNearestStructureFeature(
-        class Dimension&                   dimension,
-        class IPreliminarySurfaceProvider& surfaceProvider,
-        ::StructureFeatureType             feature,
-        class BlockPos const&              origin,
-        class BlockPos&                    pos,
-        class BiomeSource const&           biomeSource,
-        bool                               mustBeInNewChunks,
-        std::optional<class HashedString>  biomeTag
+        ::Dimension&                    dimension,
+        ::IPreliminarySurfaceProvider&  surfaceProvider,
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        ::BiomeSource const&            biomeSource,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
+    MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    MCAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
+    MCAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
-    MCAPI class br::worldgen::StructureCache& structureCache();
+    MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+
+    MCAPI ::br::worldgen::StructureCache& structureCache();
 
     MCAPI void tick();
 
     MCAPI void waitForBlueprints() const;
 
     MCAPI ~StructureFeatureRegistry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

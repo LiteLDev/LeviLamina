@@ -7,10 +7,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class LootItem : public ::LootPoolEntry {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk2dc136;
+    ::ll::UntypedStorage<4, 4>  mUnkd57594;
+    ::ll::UntypedStorage<8, 24> mUnkdeb840;
+    ::ll::UntypedStorage<8, 32> mUnkf149d1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LootItem& operator=(LootItem const&);
@@ -18,30 +31,42 @@ public:
     LootItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool
-    _createItem(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
+        /*override*/;
 
     // vIndex: 1
-    virtual ~LootItem() = default;
-
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(
-        class Json::Value const&                               entry,
-        int                                                    weight,
-        int                                                    quality,
-        std::vector<std::unique_ptr<class LootItemCondition>>& conditions
-    );
-
+    virtual ~LootItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+        ::Json::Value const&                                   entry,
+        int                                                    weight,
+        int                                                    quality,
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions
+    );
+    // NOLINTEND
 
-    MCAPI bool
-    _createItem$(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

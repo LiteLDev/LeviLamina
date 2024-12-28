@@ -7,31 +7,43 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorIsBeingDestroyedFlagComponent;
+struct ExitFromPassengerFlagComponent;
+struct LocalPlayerComponent;
+struct PassengerComponent;
+struct StopRidingRequestComponent;
+struct SwitchingVehiclesFlagComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace ActorStopRidingEventSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void tickHandlerEvent(
-    entt::type_list<struct Include<class FlagComponent<struct StopRidingRequestFlag>>>,
-    class StrictEntityContext const&                                            entity,
-    class ActorOwnerComponent const&                                            actorOwnerComponent,
-    struct PassengerComponent const&                                            passengerComponent,
-    class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const> actorIsBeingDestroyedFlagComponent,
-    class Optional<class FlagComponent<struct ExitFromPassengerFlag> const>     exitFromPassengerFlagComponent,
-    class Optional<class FlagComponent<struct SwitchingVehiclesFlag> const>     switchingVehiclesFlagComponent,
-    class ViewT<class StrictEntityContext, struct Include<struct VehicleComponent>, class ActorOwnerComponent const>
-                                                                            vehicles,
-    class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>> modifier
+    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
+    ::StrictEntityContext const&                           entity,
+    ::ActorOwnerComponent const&                           actorOwnerComponent,
+    ::PassengerComponent const&                            passengerComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlagComponent,
+    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlagComponent,
+    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlagComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorOwnerComponent const> vehicles,
+    ::EntityModifier<::StopRidingRequestComponent>                                             modifier
 );
 
 MCAPI void tickListenerEvent(
-    entt::type_list<struct Include<class FlagComponent<struct StopRidingRequestFlag>>>,
-    class ActorOwnerComponent const&                                            actorOwnerComponent,
-    class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const>  localPlayerFlag,
-    class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const> actorIsBeingDestroyedFlag,
-    class Optional<class FlagComponent<struct ExitFromPassengerFlag> const>     exitFromPassengerFlag,
-    class Optional<class FlagComponent<struct SwitchingVehiclesFlag> const>     switchingVehiclesFlag
+    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
+    ::ActorOwnerComponent const&                           actorOwnerComponent,
+    ::Optional<::LocalPlayerComponent const>               localPlayerFlag,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlag,
+    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlag,
+    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlag
 );
 // NOLINTEND
 
-}; // namespace ActorStopRidingEventSystemImpl
+} // namespace ActorStopRidingEventSystemImpl

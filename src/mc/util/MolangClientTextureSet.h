@@ -1,8 +1,17 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
 
 struct MolangClientTextureSet {
-    HashedString mData;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk44f08b;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MolangClientTextureSet& operator=(MolangClientTextureSet const&);
+    MolangClientTextureSet(MolangClientTextureSet const&);
+    MolangClientTextureSet();
 };

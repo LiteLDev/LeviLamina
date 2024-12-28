@@ -5,22 +5,45 @@
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+namespace Json { class Value; }
+// clang-format on
+
 class BaseGameVersion {
 public:
-    class SemVersion mSemVersion;
-    bool             mNeverCompatible;
+    // BaseGameVersion inner types declare
+    // clang-format off
+    struct any_version_constructor;
+    // clang-format on
+
+    // BaseGameVersion inner types define
+    struct any_version_constructor {
+    public:
+        // prevent constructor by default
+        any_version_constructor& operator=(any_version_constructor const&);
+        any_version_constructor(any_version_constructor const&);
+        any_version_constructor();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 112, ::SemVersion> mSemVersion;
+    ::ll::TypedStorage<1, 1, bool>           mNeverCompatible;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BaseGameVersion();
 
-    MCAPI BaseGameVersion(class BaseGameVersion const& rhs);
-
-    MCAPI explicit BaseGameVersion(class SemVersion const& semVersion);
+    MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
     MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
 
-    MCAPI class SemVersion const& asSemVersion() const;
-
-    MCAPI std::string const& asString() const;
+    MCAPI ::std::string const& asString() const;
 
     MCAPI ushort getMajor() const;
 
@@ -30,50 +53,60 @@ public:
 
     MCAPI bool isAnyVersion() const;
 
-    MCAPI bool isCompatibleWith(class BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI bool isNeverCompatible() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI bool operator!=(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator!=(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator<(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator<(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator<=(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator<=(::BaseGameVersion const& rhs) const;
 
-    MCAPI class BaseGameVersion& operator=(class BaseGameVersion const&);
+    MCAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 
-    MCAPI bool operator==(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator==(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator>(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator>(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator>=(class BaseGameVersion const& rhs) const;
+    MCAPI bool operator>=(::BaseGameVersion const& rhs) const;
 
     MCAPI ~BaseGameVersion();
-
-    MCAPI static ::SemVersion::MatchType fromString(std::string const& source, class BaseGameVersion& output);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BaseGameVersion const& rhs);
+    MCAPI static ::SemVersion::MatchType fromJsonArray(::Json::Value const& jsonArray, ::BaseGameVersion& output);
 
-    MCAPI void* ctor$();
+    MCAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
+    // NOLINTEND
 
-    MCAPI void* ctor$(ushort major, uint minor, uint patch);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& ANY();
 
-    MCAPI void* ctor$(class SemVersion const& semVersion);
+    MCAPI static ::BaseGameVersion const& EMPTY();
 
-    MCAPI void dtor$();
+    MCAPI static ::BaseGameVersion const& INCOMPATIBLE();
+    // NOLINTEND
 
-    MCAPI static class BaseGameVersion const& ANY();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static class BaseGameVersion const& EMPTY();
+    MCAPI void* $ctor(::BaseGameVersion const& rhs);
 
-    MCAPI static class BaseGameVersion const& INCOMPATIBLE();
+    MCAPI void* $ctor(ushort major, uint minor, uint patch);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

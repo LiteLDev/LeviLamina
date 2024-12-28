@@ -1,77 +1,100 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
-#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class InteractPacket : public ::Packet {
 public:
     // InteractPacket inner types define
     enum class Action : uchar {
-        Invalid        = 0x0,
-        RightClick     = 0x1,
-        LeftClick      = 0x2,
-        StopRiding     = 0x3,
-        InteractUpdate = 0x4, // MouseOver
-        NpcOpen        = 0x5,
-        OpenInventory  = 0x6,
+        Invalid        = 0,
+        StopRiding     = 3,
+        InteractUpdate = 4,
+        NpcOpen        = 5,
+        OpenInventory  = 6,
     };
 
 public:
-    InteractPacket::Action mAction;   // this+0x30
-    ActorRuntimeID         mTargetId; // this+0x38
-    Vec3                   mPos;      // this+0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::InteractPacket::Action> mAction;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>         mTargetId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mPos;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     InteractPacket& operator=(InteractPacket const&);
     InteractPacket(InteractPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InteractPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI InteractPacket();
-
-    MCAPI InteractPacket(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
-
+    // vIndex: 0
+    virtual ~InteractPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI InteractPacket();
 
-    MCAPI void* ctor$(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
+    MCAPI InteractPacket(::InteractPacket::Action action, ::ActorRuntimeID targetId, ::Vec3 const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::InteractPacket::Action action, ::ActorRuntimeID targetId, ::Vec3 const& pos);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

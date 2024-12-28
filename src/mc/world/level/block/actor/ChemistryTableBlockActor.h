@@ -3,9 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/ChemistryTableType.h"
+#include "mc/world/Container.h"
+#include "mc/world/level/block/actor/BlockActor.h"
 
-class ChemistryTableBlockActor {
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+class ItemStack;
+class LabTablePacket;
+class LabTableReaction;
+class Level;
+class Player;
+class Random;
+class SaveContext;
+// clang-format on
+
+class ChemistryTableBlockActor : public ::BlockActor, public ::Container {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>    mUnk2e18b8;
+    ::ll::UntypedStorage<8, 8>    mUnkf3e8c0;
+    ::ll::UntypedStorage<8, 8>    mUnkc2f502;
+    ::ll::UntypedStorage<8, 1368> mUnk132ced;
+    ::ll::UntypedStorage<8, 152>  mUnke8961b;
+    ::ll::UntypedStorage<1, 1>    mUnk4c0c1d;
+    ::ll::UntypedStorage<8, 48>   mUnk1d03e1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChemistryTableBlockActor& operator=(ChemistryTableBlockActor const&);
@@ -13,96 +42,129 @@ public:
     ChemistryTableBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI class Container* getContainer();
+    // vIndex: 0
+    virtual ~ChemistryTableBlockActor() /*override*/;
 
-    MCVAPI class Container const* getContainer() const;
+    // vIndex: 33
+    virtual ::Container* getContainer() /*override*/;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 32
+    virtual ::Container const* getContainer() const /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI void onRemoved(class BlockSource& region);
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 22
+    virtual void startOpen(::Player& p) /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 23
+    virtual void stopOpen(::Player& p) /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCVAPI void startOpen(class Player& p);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI void stopOpen(class Player& p);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI void tick(class BlockSource& region);
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    MCAPI bool isSameType(::ChemistryTableType type) const;
-
-    MCAPI void playerOpenLabTable(class Player& player);
-
-    MCAPI void reset(class BlockSource& region);
-
-    MCAPI void serverCombine(class BlockSource& region, std::vector<class ItemStack> const& consumedInput);
-
-    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const& packet, class BlockSource& region);
-
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::unique_ptr<class LabTableReaction>
-          _createReaction(class Random& random, std::vector<class ItemStack> const& consumedInput);
-
-    MCAPI void _popPendingReactionOutput(class BlockSource& region);
-
-    MCAPI ::ChemistryTableType _updateType(class BlockSource& region);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBlockActor();
+    MCAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
 
-    MCAPI static void** vftableForContainer();
+    MCAPI ::std::unique_ptr<::LabTableReaction>
+    _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
 
-    MCAPI class Container* getContainer$();
+    MCAPI void _popPendingReactionOutput(::BlockSource& region);
 
-    MCAPI class Container const* getContainer$() const;
+    MCAPI ::HashedString const& _updateType(::BlockSource& region);
 
-    MCAPI int getContainerSize$() const;
+    MCAPI bool isSameType(::HashedString const& type) const;
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI void playerOpenLabTable(::Player& player);
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI void reset(::BlockSource& region);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void serverCombine(::BlockSource& region, ::std::vector<::ItemStack> const& consumedInput);
 
-    MCAPI void onRemoved$(class BlockSource& region);
+    MCAPI void serverLabTablePacket_DEPRECATED(::LabTablePacket const& packet, ::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Container* $getContainer();
+
+    MCAPI ::Container const* $getContainer() const;
+
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCAPI int $getMaxStackSize() const;
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI void $startOpen(::Player& p);
+
+    MCAPI void $stopOpen(::Player& p);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+    // NOLINTEND
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
 
-    MCAPI void startOpen$(class Player& p);
-
-    MCAPI void stopOpen$(class Player& p);
-
-    MCAPI void tick$(class BlockSource& region);
-
+    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

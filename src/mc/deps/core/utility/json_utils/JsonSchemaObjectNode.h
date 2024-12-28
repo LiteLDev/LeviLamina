@@ -13,4 +13,4 @@ public:
     JsonSchemaObjectNode();
 };
 
-}; // namespace JsonUtil
+} // namespace JsonUtil

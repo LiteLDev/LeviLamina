@@ -4,38 +4,30 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/AsyncErrc.h"
-#include "mc/deps/core/threading/AsyncStatus.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
-#include "mc/deps/core/threading/WorkerTaskStats.h"
 
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
 class WorkerPool;
 namespace Bedrock::Threading { class AssignedThread; }
-namespace Bedrock::Threading { class EnableQueueForThread; }
-namespace Bedrock::Threading { class OSThreadPriority; }
-namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
-namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
-struct XAsyncBlock;
-struct XTaskQueueObject;
 // clang-format on
 
 namespace Bedrock::Threading {
+// functions
 // NOLINTBEGIN
 MCAPI bool IS_RUNNING_STATICS();
 
-MCAPI std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc id);
+MCAPI ::std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc id);
 
-MCAPI gsl::not_null<class WorkerPool*> getDefaultWorkerPool();
+MCAPI ::gsl::not_null<::WorkerPool*> getDefaultWorkerPool();
 
-MCAPI class Bedrock::Threading::AssignedThread& getMainThread();
+MCAPI ::Bedrock::Threading::AssignedThread& getMainThread();
 
-MCAPI gsl::not_null<class Scheduler*> getMainThreadScheduler();
+MCAPI ::gsl::not_null<::Scheduler*> getMainThreadScheduler();
 
-MCAPI gsl::not_null<class WorkerPool*> getNetworkWorkerPool();
+MCAPI ::gsl::not_null<::WorkerPool*> getNetworkWorkerPool();
 
-MCAPI class Bedrock::Threading::AssignedThread& getServerThread();
+MCAPI ::Bedrock::Threading::AssignedThread& getServerThread();
 // NOLINTEND
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

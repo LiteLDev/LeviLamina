@@ -1,12 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/BlockDescriptor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
 
 struct ReplaceRule {
 public:
-    BlockDescriptor              mBlock;
-    std::vector<BlockDescriptor> mMayReplace;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -15,19 +22,22 @@ public:
     ReplaceRule();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ReplaceRule(class BlockDescriptor, std::vector<class BlockDescriptor>);
+    MCAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
 
     MCAPI ~ReplaceRule();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockDescriptor, std::vector<class BlockDescriptor>);
+    MCAPI void* $ctor(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

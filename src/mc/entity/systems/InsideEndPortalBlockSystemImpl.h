@@ -5,12 +5,19 @@
 // auto generated inclusion list
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+struct EndPortalBlockFlag;
+// clang-format on
+
 namespace InsideEndPortalBlockSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void tickInsideEndPortalBlock(
-    struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const& endPortalInsideComponent,
-    class ActorOwnerComponent&                                                   actorOwnerComponent
+    ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const& endPortalInsideComponent,
+    ::ActorOwnerComponent&                                             actorOwnerComponent
 );
 // NOLINTEND
 
-}; // namespace InsideEndPortalBlockSystemImpl
+} // namespace InsideEndPortalBlockSystemImpl

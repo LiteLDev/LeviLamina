@@ -6,51 +6,77 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct AttributeRequestComponent;
+struct CanVehicleSprintFlagComponent;
+struct ItemUseSlowdownModifierComponent;
+struct MobEffectsComponent;
+struct MoveInputComponent;
+struct MovementAbilitiesComponent;
+struct MovementAttributesComponent;
+struct OnGroundFlagComponent;
+struct PassengerComponent;
+struct PlayerActionComponent;
+struct PlayerInputModeComponent;
+struct PlayerInputRequestComponent;
+struct PlayerLastPosComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct VanillaClientGameplayComponent;
+struct VehicleComponent;
+struct WasInWaterFlagComponent;
+// clang-format on
 
 namespace SprintTriggerSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createActionSystem();
+MCAPI ::TickingSystemWithInfo createActionSystem();
 
-MCAPI struct TickingSystemWithInfo createIntentSystem();
+MCAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCAPI struct TickingSystemWithInfo createSetRequestSystem();
+MCAPI ::TickingSystemWithInfo createSetRequestSystem();
 
 MCAPI void doIntentTick(
-    class Optional<struct ItemUseSlowdownModifierComponent const>        itemInUse,
-    class Optional<struct OnGroundFlagComponent const> const&            onGround,
-    class Optional<class FlagComponent<struct InWaterFlag> const> const& wasInWater,
-    struct MovementAbilitiesComponent const&                             abilities,
-    struct MobEffectsComponent const&                                    mobEffects,
-    struct MoveInputComponent const&                                     moveInput,
-    struct PlayerInputModeComponent const&                               playerInputMode,
-    struct StateVectorComponent const&                                   stateVector,
-    struct PlayerLastPosComponent const&                                 playerLastPos,
-    struct ActorDataFlagComponent const&                                 synchedActorData,
-    struct PlayerInputRequestComponent&                                  playerInputRequest,
-    struct VanillaClientGameplayComponent&                               vanillaClientGameplay,
-    struct PlayerActionComponent&                                        playerAction
+    ::Optional<::ItemUseSlowdownModifierComponent const> itemInUse,
+    ::Optional<::OnGroundFlagComponent const> const&     onGround,
+    ::Optional<::WasInWaterFlagComponent const> const&   wasInWater,
+    ::MovementAbilitiesComponent const&                  abilities,
+    ::MobEffectsComponent const&                         mobEffects,
+    ::MoveInputComponent const&                          moveInput,
+    ::PlayerInputModeComponent const&                    playerInputMode,
+    ::StateVectorComponent const&                        stateVector,
+    ::PlayerLastPosComponent const&                      playerLastPos,
+    ::ActorDataFlagComponent const&                      synchedActorData,
+    ::PlayerInputRequestComponent&                       playerInputRequest,
+    ::VanillaClientGameplayComponent&                    vanillaClientGameplay,
+    ::PlayerActionComponent&                             playerAction
 );
 
 MCAPI void doSetRequestTick(
-    class StrictEntityContext const&                       entity,
-    class Optional<struct PassengerComponent const> const& passenger,
-    struct MovementAttributesComponent const&              attributes,
-    struct PlayerInputRequestComponent&                    playerInputRequest,
-    class ViewT<
-        class StrictEntityContext,
-        struct VehicleComponent,
-        struct ActorDataControllingSeatIndexComponent const,
-        class Optional<class FlagComponent<struct CanVehicleSprintFlag>>> const& vehicleView
+    ::StrictEntityContext const&                  entity,
+    ::Optional<::PassengerComponent const> const& passenger,
+    ::MovementAttributesComponent const&          attributes,
+    ::PlayerInputRequestComponent&                playerInputRequest,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::VehicleComponent,
+        ::ActorDataControllingSeatIndexComponent const,
+        ::Optional<::CanVehicleSprintFlagComponent>> const& vehicleView
 );
 
 MCAPI void setSprinting(
-    class StrictEntityContext const&                        e,
-    class EntityModifier<struct AttributeRequestComponent>& modifier,
-    struct ActorDataFlagComponent&                          actorData,
-    struct ActorDataDirtyFlagsComponent&                    dirtyFlags,
-    bool                                                    shouldSprint
+    ::StrictEntityContext const&                   e,
+    ::EntityModifier<::AttributeRequestComponent>& modifier,
+    ::ActorDataFlagComponent&                      actorData,
+    ::ActorDataDirtyFlagsComponent&                dirtyFlags,
+    bool                                           shouldSprint
 );
 // NOLINTEND
 
-}; // namespace SprintTriggerSystem
+} // namespace SprintTriggerSystem

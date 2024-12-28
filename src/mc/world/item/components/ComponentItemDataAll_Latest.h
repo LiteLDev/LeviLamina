@@ -4,28 +4,38 @@
 
 struct ComponentItemDataAll_Latest {
 public:
-    // prevent constructor by default
-    ComponentItemDataAll_Latest& operator=(ComponentItemDataAll_Latest const&);
-    ComponentItemDataAll_Latest(ComponentItemDataAll_Latest const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ComponentItemDataAll_Latest();
-
-    MCAPI ComponentItemDataAll_Latest(struct ComponentItemDataAll_Latest&&);
-
-    MCAPI ~ComponentItemDataAll_Latest();
-
+    ::ll::UntypedStorage<8, 3816> mUnkdab0d7;
+    ::ll::UntypedStorage<1, 2>    mUnk508f97;
+    ::ll::UntypedStorage<8, 192>  mUnk213e50;
+    ::ll::UntypedStorage<8, 32>   mUnk55128e;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ComponentItemDataAll_Latest(ComponentItemDataAll_Latest const&);
+    ComponentItemDataAll_Latest();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest&&);
 
-    MCAPI void* ctor$(struct ComponentItemDataAll_Latest&&);
+    MCAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest const&);
 
-    MCAPI void dtor$();
+    MCAPI ~ComponentItemDataAll_Latest();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ComponentItemDataAll_Latest&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

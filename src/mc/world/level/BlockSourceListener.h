@@ -5,10 +5,15 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockChangedEventTarget.h"
 
-class BlockSource;
-class BlockPos;
+// auto generated forward declare list
+// clang-format off
 class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
 struct ActorBlockSyncMessage;
+// clang-format on
 
 class BlockSourceListener {
 public:
@@ -18,78 +23,67 @@ public:
     BlockSourceListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockSourceListener();
 
     // vIndex: 1
-    virtual void onSourceCreated(class BlockSource& source);
+    virtual void onSourceCreated(::BlockSource& source);
 
     // vIndex: 2
-    virtual void onSourceDestroyed(class BlockSource& source);
+    virtual void onSourceDestroyed(::BlockSource& source);
 
     // vIndex: 3
-    virtual void onAreaChanged(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+    virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     // vIndex: 4
-    virtual void onBlockChanged(
-        class BlockSource&                  source,
-        class BlockPos const&               pos,
-        uint                                layer,
-        class Block const&                  block,
-        class Block const&                  oldBlock,
-        int                                 updateFlags,
-        struct ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget           eventTarget,
-        class Actor*                        blockChangeSource
-    );
+    virtual void
+    onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*);
 
     // vIndex: 5
-    virtual void onBrightnessChanged(class BlockSource& source, class BlockPos const& pos);
+    virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
     // vIndex: 6
-    virtual void onBlockEntityChanged(class BlockSource& source, class BlockActor& te);
+    virtual void onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);
 
     // vIndex: 7
-    virtual void onEntityChanged(class BlockSource& source, class Actor& entity);
+    virtual void onEntityChanged(::BlockSource& source, ::Actor& entity);
 
     // vIndex: 8
-    virtual void onBlockEvent(class BlockSource& source, int x, int y, int z, int b0, int b1);
-
+    virtual void onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onSourceCreated(::BlockSource& source);
 
-    MCAPI void onAreaChanged$(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+    MCAPI void $onSourceDestroyed(::BlockSource& source);
 
-    MCAPI void onBlockChanged$(
-        class BlockSource&                  source,
-        class BlockPos const&               pos,
-        uint                                layer,
-        class Block const&                  block,
-        class Block const&                  oldBlock,
-        int                                 updateFlags,
-        struct ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget           eventTarget,
-        class Actor*                        blockChangeSource
-    );
+    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCAPI void onBlockEntityChanged$(class BlockSource& source, class BlockActor& te);
+    MCAPI void
+    $onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*);
 
-    MCAPI void onBlockEvent$(class BlockSource& source, int x, int y, int z, int b0, int b1);
+    MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
-    MCAPI void onBrightnessChanged$(class BlockSource& source, class BlockPos const& pos);
+    MCAPI void $onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);
 
-    MCAPI void onEntityChanged$(class BlockSource& source, class Actor& entity);
+    MCAPI void $onEntityChanged(::BlockSource& source, ::Actor& entity);
 
-    MCAPI void onSourceCreated$(class BlockSource& source);
+    MCAPI void $onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
+    // NOLINTEND
 
-    MCAPI void onSourceDestroyed$(class BlockSource& source);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

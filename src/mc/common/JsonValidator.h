@@ -20,47 +20,63 @@ public:
     // JsonValidator inner types define
     class Property {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk120916;
+        ::ll::UntypedStorage<1, 1>  mUnk7ec7d1;
+        ::ll::UntypedStorage<1, 1>  mUnk88cb04;
+        ::ll::UntypedStorage<8, 32> mUnkbf71d5;
+        ::ll::UntypedStorage<8, 16> mUnk255cfa;
+        ::ll::UntypedStorage<8, 24> mUnkf4a8ae;
+        ::ll::UntypedStorage<8, 24> mUnk5bd6f2;
+        ::ll::UntypedStorage<8, 64> mUnk5364ba;
+        // NOLINTEND
+
+    public:
+        // member functions
         // NOLINTBEGIN
         MCAPI Property();
 
-        MCAPI Property(class JsonValidator::Property&&);
+        MCAPI Property(::JsonValidator::Property const&);
 
-        MCAPI Property(class JsonValidator::Property const&);
+        MCAPI Property(::JsonValidator::Property&&);
 
-        MCAPI class JsonValidator::Property& addChildProperty(class JsonValidator::Property const& prop);
+        MCAPI ::JsonValidator::Property& addChildProperty(::JsonValidator::Property const& prop);
 
-        MCAPI class JsonValidator::Property&
-        addConditionalProperty(class Json::Value const& value, class JsonValidator::Property const& prop);
+        MCAPI ::JsonValidator::Property&
+        addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCAPI class JsonValidator::Property& addType(::Json::ValueType type);
+        MCAPI ::JsonValidator::Property& addType(::Json::ValueType type);
 
-        MCAPI class JsonValidator::Property& description(std::string const& description);
+        MCAPI ::JsonValidator::Property& description(::std::string const& description);
 
-        MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property&&);
+        MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
 
-        MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property const&);
+        MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 
-        MCAPI class JsonValidator::Property& operator[](std::string const& propName);
+        MCAPI ::JsonValidator::Property& operator[](::std::string const& propName);
 
-        MCAPI class JsonValidator::Property& requireConditionalProperty();
+        MCAPI ::JsonValidator::Property& requireConditionalProperty();
 
-        MCAPI class JsonValidator::Property& required();
+        MCAPI ::JsonValidator::Property& required();
 
         MCAPI ~Property();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
 
-        MCAPI void* ctor$(class JsonValidator::Property const&);
+        MCAPI void* $ctor(::JsonValidator::Property const&);
 
-        MCAPI void* ctor$(class JsonValidator::Property&&);
+        MCAPI void* $ctor(::JsonValidator::Property&&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -71,12 +87,12 @@ public:
     JsonValidator();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool validate(
-        class JsonValidator::Property const& rootProp,
-        class Json::Value const&             rootData,
-        std::vector<std::string>*            errors
+        ::JsonValidator::Property const& rootProp,
+        ::Json::Value const&             rootData,
+        ::std::vector<::std::string>*    errors
     );
-
     // NOLINTEND
 };

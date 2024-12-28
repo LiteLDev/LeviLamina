@@ -4,6 +4,10 @@
 
 namespace Core {
 
-enum class FileType {};
-
+enum class FileType : int {
+    File      = 0,
+    Directory = 1,
+    None      = 2,
 };
+
+}

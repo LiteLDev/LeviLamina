@@ -4,8 +4,17 @@
 
 struct YBlendingBugSettings {
 public:
-    bool  emulateBug;                   // this+0x0
-    bool  extraBlendAtOldWorldgenStart; // this+0x1
-    float oldWorldgenStartYInputPos;    // this+0x4
-    bool  alwaysUseYZeroFor2DBlending;  // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>  emulateBug;
+    ::ll::TypedStorage<1, 1, bool>  extraBlendAtOldWorldgenStart;
+    ::ll::TypedStorage<4, 4, float> oldWorldgenStartYInputPos;
+    ::ll::TypedStorage<1, 1, bool>  alwaysUseYZeroFor2DBlending;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    YBlendingBugSettings& operator=(YBlendingBugSettings const&);
+    YBlendingBugSettings(YBlendingBugSettings const&);
+    YBlendingBugSettings();
 };

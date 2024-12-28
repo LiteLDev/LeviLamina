@@ -1,13 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandFlag.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 class AvailableCommandsPacket : public ::Packet {
 public:
@@ -23,152 +28,211 @@ public:
     // clang-format on
 
     // AvailableCommandsPacket inner types define
+    struct EnumData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>       name;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> values;
+        // NOLINTEND
 
-    struct ChainedSubcommandDataValue {
-        uint index;
-        uint value;
+    public:
+        // prevent constructor by default
+        EnumData& operator=(EnumData const&);
+        EnumData(EnumData const&);
+        EnumData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~EnumData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     struct ChainedSubcommandData {
     public:
-        std::string                             name;
-        std::vector<ChainedSubcommandDataValue> valueIndices;
-    };
-
-    struct CommandData {
-    public:
-        std::string               name;           // 0
-        std::string               description;    // 32
-        struct CommandFlag        flag;           // 64
-        ::CommandPermissionLevel  perm;           // 66
-        std::vector<OverloadData> overloads;      // 72
-        std::vector<int>          chainedOffsets; // 96
-        int                       aliasEnumIndex; // 120
-
-    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI CommandData(struct AvailableCommandsPacket::CommandData&&);
-
-        MCAPI ~CommandData();
-
+        ::ll::TypedStorage<8, 32, ::std::string>                          name;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, uint>>> values;
         // NOLINTEND
 
-        // thunks
     public:
+        // prevent constructor by default
+        ChainedSubcommandData& operator=(ChainedSubcommandData const&);
+        ChainedSubcommandData(ChainedSubcommandData const&);
+        ChainedSubcommandData();
+    };
+
+    struct SoftEnumData {
+    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct AvailableCommandsPacket::CommandData&&);
+        ::ll::TypedStorage<8, 32, ::std::string>                name;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> values;
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // prevent constructor by default
+        SoftEnumData& operator=(SoftEnumData const&);
+        SoftEnumData(SoftEnumData const&);
+        SoftEnumData();
 
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~SoftEnumData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
     struct ConstrainedValueData {
     public:
-        int                enumValueIndex;
-        int                enumNameIndex;
-        std::vector<uchar> indices;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>                  enumValueSymbol;
+        ::ll::TypedStorage<4, 4, uint>                  enumSymbol;
+        ::ll::TypedStorage<8, 24, ::std::vector<uchar>> constraints;
+        // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ConstrainedValueData& operator=(ConstrainedValueData const&);
+        ConstrainedValueData(ConstrainedValueData const&);
+        ConstrainedValueData();
+
+    public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ConstrainedValueData();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct EnumData {
-    public:
-        std::string       name;
-        std::vector<uint> valueIndices;
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~EnumData();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct OverloadData {
-    public:
-        std::vector<ParamData> datas;
-        bool                   chained;
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~OverloadData();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
     struct ParamData {
     public:
-        std::string desc;
-        uint        sym;
-        bool        optional;
-        uchar       paramOptions;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> name;
+        ::ll::TypedStorage<4, 4, uint>           parseSymbol;
+        ::ll::TypedStorage<1, 1, bool>           optional;
+        ::ll::TypedStorage<1, 1, uchar>          paramOptions;
+        // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ParamData& operator=(ParamData const&);
+        ParamData(ParamData const&);
+        ParamData();
+
+    public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~ParamData();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    struct SoftEnumData {
+    struct OverloadData {
     public:
-        std::string              name;
-        std::vector<std::string> values;
-
-    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI ~SoftEnumData();
-
+        ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ParamData>> params;
+        ::ll::TypedStorage<1, 1, bool>                                                 isChaining;
         // NOLINTEND
 
-        // thunks
     public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
+        // prevent constructor by default
+        OverloadData& operator=(OverloadData const&);
+        OverloadData(OverloadData const&);
+        OverloadData();
 
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~OverloadData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    std::vector<std::string>           mEnumValues;       // 48
-    std::vector<std::string>           mPostfixes;        // 48+24=72
-    std::vector<EnumData>              mEnums;            // 48+24*2=96
-    std::vector<std::string>           mSubcommandValues; // 48+24*3=120
-    std::vector<ChainedSubcommandData> mSubcommands;      // 48+24*4=144
-    std::vector<CommandData>           mCommands;         // 48+24*5=168
-    std::vector<SoftEnumData>          mSoftEnums;        // 48+24*6=192
-    std::vector<ConstrainedValueData>  mConstraints;      // 48+24*7=216
+    struct CommandData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                                          name;
+        ::ll::TypedStorage<8, 32, ::std::string>                                          description;
+        ::ll::TypedStorage<2, 2, ushort>                                                  flags;
+        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                                permission;
+        ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::OverloadData>> overloads;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                                    chainedSubcommandIndexes;
+        ::ll::TypedStorage<4, 4, int>                                                     aliasEnum;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CommandData& operator=(CommandData const&);
+        CommandData(CommandData const&);
+        CommandData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CommandData(::AvailableCommandsPacket::CommandData&&);
+
+        MCAPI ~CommandData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::AvailableCommandsPacket::CommandData&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mEnumValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mPostfixes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::EnumData>>              mEnums;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                    mChainedSubcommandValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>> mChainedSubcommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::CommandData>>           mCommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::SoftEnumData>>          mSoftEnums;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>>  mConstraints;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -176,64 +240,79 @@ public:
     AvailableCommandsPacket(AvailableCommandsPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AvailableCommandsPacket();
+    virtual ~AvailableCommandsPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI AvailableCommandsPacket();
 
     MCAPI AvailableCommandsPacket(
-        std::vector<std::string> const&                                      enumValues,
-        std::vector<std::string> const&                                      chainedSubcommandValues,
-        std::vector<std::string> const&                                      postfixes,
-        std::vector<struct AvailableCommandsPacket::EnumData>&&              enumData,
-        std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
-        std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
-        std::vector<struct AvailableCommandsPacket::CommandData>&&           commandData,
-        std::vector<struct AvailableCommandsPacket::SoftEnumData>&&          softEnumData
+        ::std::vector<::std::string> const&                               enumValues,
+        ::std::vector<::std::string> const&                               chainedSubcommandValues,
+        ::std::vector<::std::string> const&                               postfixes,
+        ::std::vector<::AvailableCommandsPacket::EnumData>&&              enumData,
+        ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
+        ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
+        ::std::vector<::AvailableCommandsPacket::CommandData>&&           commandData,
+        ::std::vector<::AvailableCommandsPacket::SoftEnumData>&&          softEnumData
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        std::vector<std::string> const&                                      enumValues,
-        std::vector<std::string> const&                                      chainedSubcommandValues,
-        std::vector<std::string> const&                                      postfixes,
-        std::vector<struct AvailableCommandsPacket::EnumData>&&              enumData,
-        std::vector<struct AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
-        std::vector<struct AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
-        std::vector<struct AvailableCommandsPacket::CommandData>&&           commandData,
-        std::vector<struct AvailableCommandsPacket::SoftEnumData>&&          softEnumData
+    MCAPI void* $ctor(
+        ::std::vector<::std::string> const&                               enumValues,
+        ::std::vector<::std::string> const&                               chainedSubcommandValues,
+        ::std::vector<::std::string> const&                               postfixes,
+        ::std::vector<::AvailableCommandsPacket::EnumData>&&              enumData,
+        ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
+        ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
+        ::std::vector<::AvailableCommandsPacket::CommandData>&&           commandData,
+        ::std::vector<::AvailableCommandsPacket::SoftEnumData>&&          softEnumData
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

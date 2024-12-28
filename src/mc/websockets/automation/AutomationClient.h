@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/codebuilder/IClient.h"
+#include "mc/platform/UriListener.h"
+#include "mc/world/level/LevelListener.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
@@ -19,7 +24,24 @@ namespace CodeBuilder { struct EventMessage; }
 
 namespace Automation {
 
-class AutomationClient {
+class AutomationClient : public ::CodeBuilder::IClient, public ::UriListener, public ::LevelListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkd8f49d;
+    ::ll::UntypedStorage<8, 8>  mUnk133ab6;
+    ::ll::UntypedStorage<8, 8>  mUnk9e65e2;
+    ::ll::UntypedStorage<4, 4>  mUnkde21bd;
+    ::ll::UntypedStorage<1, 1>  mUnkda283b;
+    ::ll::UntypedStorage<4, 4>  mUnk94c7c4;
+    ::ll::UntypedStorage<1, 1>  mUnk60f2b9;
+    ::ll::UntypedStorage<8, 24> mUnkcee0c9;
+    ::ll::UntypedStorage<8, 16> mUnk731e86;
+    ::ll::UntypedStorage<8, 64> mUnk66f7fc;
+    ::ll::UntypedStorage<8, 80> mUnk53c64c;
+    ::ll::UntypedStorage<8, 16> mUnk3a88e5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AutomationClient& operator=(AutomationClient const&);
@@ -27,81 +49,106 @@ public:
     AutomationClient();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void onLevelDestruction(std::string const&);
+    // vIndex: 0
+    virtual ~AutomationClient() /*override*/;
 
-    MCVAPI void onUri(class ActivationUri const& uri);
+    // vIndex: 1
+    virtual void onUri(::ActivationUri const& uri) /*override*/;
 
-    MCVAPI void playerListChanged();
+    // vIndex: 5
+    virtual void send(::CodeBuilder::AgentMessage const& message) /*override*/;
 
-    MCVAPI void send(struct CodeBuilder::CommandMessage const& message);
+    // vIndex: 4
+    virtual void send(::CodeBuilder::CommandMessage const& message) /*override*/;
 
-    MCVAPI void send(struct CodeBuilder::ErrorMessage const& message);
+    // vIndex: 3
+    virtual void send(::CodeBuilder::ErrorMessage const& message) /*override*/;
 
-    MCVAPI void send(struct CodeBuilder::ChatMessage const& message);
+    // vIndex: 2
+    virtual void send(::CodeBuilder::EventMessage const& message) /*override*/;
 
-    MCVAPI void send(struct CodeBuilder::AgentMessage const& message);
+    // vIndex: 1
+    virtual void send(::CodeBuilder::ChatMessage const& message) /*override*/;
 
-    MCVAPI void send(struct CodeBuilder::EventMessage const& message);
+    // vIndex: 2
+    virtual void tick() /*override*/;
 
-    MCVAPI void tick();
+    // vIndex: 23
+    virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    MCAPI explicit AutomationClient(class IMinecraftApp& minecraft);
+    // vIndex: 27
+    virtual void playerListChanged() /*override*/;
+    // NOLINTEND
 
-    MCAPI std::shared_ptr<class Automation::AutomationSession> getDefaultSession();
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit AutomationClient(::IMinecraftApp& minecraft);
 
-    MCAPI std::shared_ptr<class CodeBuilder::GameContext> getGameContext() const;
+    MCAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
-    MCAPI std::shared_ptr<class Automation::AutomationSession> getSessionForCommand(class CommandOrigin const& origin);
+    MCAPI void _removeSession(::Automation::AutomationSession const& session);
+
+    MCAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
+
+    MCAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
+
+    MCAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
+
+    MCAPI ::std::shared_ptr<::Automation::AutomationSession> getSessionForCommand(::CommandOrigin const& origin);
 
     MCAPI bool isReadyForInGameCommands();
 
     MCAPI void setRequireEncryption(bool isEncryptionRequired);
 
     MCAPI void setServerRetryTime(float retryTime);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _forEachSession(std::function<bool(class Automation::AutomationSession&)> const& callback);
-
-    MCAPI void _removeSession(class Automation::AutomationSession const& session);
-
-    MCAPI bool _tryAddCommand(struct CodeBuilder::CommandRequest&& commandRequest);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftableForCodeBuilderIClient();
+    MCAPI void* $ctor(::IMinecraftApp& minecraft);
+    // NOLINTEND
 
-    MCAPI static void** vftableForLevelListener();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForUriListener();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onUri(::ActivationUri const& uri);
 
-    MCAPI void* ctor$(class IMinecraftApp& minecraft);
+    MCAPI void $send(::CodeBuilder::AgentMessage const& message);
 
-    MCAPI void onLevelDestruction$(std::string const&);
+    MCAPI void $send(::CodeBuilder::CommandMessage const& message);
 
-    MCAPI void onUri$(class ActivationUri const& uri);
+    MCAPI void $send(::CodeBuilder::ErrorMessage const& message);
 
-    MCAPI void playerListChanged$();
+    MCAPI void $send(::CodeBuilder::EventMessage const& message);
 
-    MCAPI void send$(struct CodeBuilder::CommandMessage const& message);
+    MCAPI void $send(::CodeBuilder::ChatMessage const& message);
 
-    MCAPI void send$(struct CodeBuilder::ErrorMessage const& message);
+    MCAPI void $tick();
 
-    MCAPI void send$(struct CodeBuilder::ChatMessage const& message);
+    MCAPI void $onLevelDestruction(::std::string const&);
 
-    MCAPI void send$(struct CodeBuilder::AgentMessage const& message);
+    MCAPI void $playerListChanged();
+    // NOLINTEND
 
-    MCAPI void send$(struct CodeBuilder::EventMessage const& message);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForUriListener();
 
-    MCAPI void tick$();
+    MCAPI static void** $vftableForIClient();
 
+    MCAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };
 
-}; // namespace Automation
+} // namespace Automation

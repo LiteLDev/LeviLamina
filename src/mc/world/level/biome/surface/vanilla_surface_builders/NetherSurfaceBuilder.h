@@ -8,44 +8,92 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
 
 class NetherSurfaceBuilder : public ::ISurfaceBuilder {
 public:
+    // NetherSurfaceBuilder inner types declare
+    // clang-format off
+    struct LocalRegistry;
+    // clang-format on
+
+    // NetherSurfaceBuilder inner types define
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkd93d92;
+        ::ll::UntypedStorage<8, 8> mUnk5568d2;
+        ::ll::UntypedStorage<8, 8> mUnk66c612;
+        ::ll::UntypedStorage<8, 8> mUnk7ce050;
+        ::ll::UntypedStorage<8, 8> mUnkc3cf77;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalRegistry& operator=(LocalRegistry const&);
+        LocalRegistry(LocalRegistry const&);
+        LocalRegistry();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk9a2cfd;
+    ::ll::UntypedStorage<8, 40> mUnk124b4b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     NetherSurfaceBuilder& operator=(NetherSurfaceBuilder const&);
     NetherSurfaceBuilder(NetherSurfaceBuilder const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NetherSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome&, uint levelSeed);
+    virtual void init(::Biome&, uint levelSeed) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
-    MCAPI NetherSurfaceBuilder();
-
+    // vIndex: 0
+    virtual ~NetherSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NetherSurfaceBuilder();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void init$(class Biome&, uint levelSeed);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome&, uint levelSeed);
 
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

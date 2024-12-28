@@ -8,29 +8,42 @@
 
 struct BlockMaterialInstance {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk4d33c2;
+    ::ll::UntypedStorage<4, 4>  mUnk22148c;
+    ::ll::UntypedStorage<1, 1>  mUnkdce191;
+    ::ll::UntypedStorage<1, 1>  mUnk50874f;
+    ::ll::UntypedStorage<8, 16> mUnk6e50da;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BlockMaterialInstance(BlockMaterialInstance const&);
     BlockMaterialInstance();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance&&);
+    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
 
-    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance const&);
+    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
 
     MCAPI ~BlockMaterialInstance();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
-    MCAPI static std::initializer_list<std::pair<std::string const, ::BlockRenderLayer>> const&
+    MCAPI static ::std::initializer_list<::std::pair<::std::string const, ::BlockRenderLayer>> const&
     blockRenderLayerEnumValues();
 
-    MCAPI static class BidirectionalUnorderedMap<std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

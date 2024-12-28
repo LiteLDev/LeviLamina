@@ -2,24 +2,41 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 struct MolangActorArrayPtr {
 public:
-    std::vector<class Actor*> mActors;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit MolangActorArrayPtr(std::vector<class Actor*>);
-
-    MCAPI ~MolangActorArrayPtr();
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>> mActors;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    MolangActorArrayPtr& operator=(MolangActorArrayPtr const&);
+    MolangActorArrayPtr(MolangActorArrayPtr const&);
+    MolangActorArrayPtr();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::vector<class Actor*>);
+    MCAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);
 
-    MCAPI void dtor$();
+    MCAPI ~MolangActorArrayPtr();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::Actor*> actors);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

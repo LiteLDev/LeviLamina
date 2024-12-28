@@ -10,6 +10,8 @@
 class EntityContext;
 namespace AgentComponents::Actions { struct Attack; }
 namespace AgentComponents::Actions { struct Collect; }
+namespace AgentComponents::Actions { struct DetectObstacle; }
+namespace AgentComponents::Actions { struct DetectRedstone; }
 namespace AgentComponents::Actions { struct Drop; }
 namespace AgentComponents::Actions { struct DropAll; }
 namespace AgentComponents::Actions { struct InspectData; }
@@ -24,60 +26,47 @@ namespace AgentComponents::Actions { struct Turn; }
 // clang-format on
 
 namespace AgentComponents::Actions {
+// functions
 // NOLINTBEGIN
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Attack const& action);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemSpace const& action);
 
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Collect const& action);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DropAll const& action);
 
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Drop const& action);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DetectObstacle const& action);
 
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::DropAll const& action);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemDetail const& action);
 
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::InspectData const& action
-);
-
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::InspectItemCount const& action
-);
-
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::InspectItemDetail const& action
-);
-
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::InspectItemSpace const& action
-);
-
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::PlaceBlock const& action
-);
+MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Turn const& action);
 
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Till const& action);
-
-MCAPI void _startAction(
-    class EntityContext& entity,
-    ::CurrentCmdVersion,
-    struct AgentComponents::Actions::TransferItemTo const& action
-);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemCount const& action);
 
 MCAPI void
-_startAction(class EntityContext& entity, ::CurrentCmdVersion, struct AgentComponents::Actions::Turn const& action);
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::PlaceBlock const& action);
+
+MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Till const& action);
+
+MCAPI void
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectData const& action);
+
+MCAPI void
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::TransferItemTo const& action);
+
+MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Attack const& action);
+
+MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Drop const& action);
+
+MCAPI void
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DetectRedstone const& action);
+
+MCAPI void
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Collect const& action);
+
+MCAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
 // NOLINTEND
 
-}; // namespace AgentComponents::Actions
+} // namespace AgentComponents::Actions

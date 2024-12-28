@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/IAddActorEntityProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Dimension;
+// clang-format on
+
 class AddActorEntityProxy : public ::IAddActorEntityProxy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk16011c;
+    ::ll::UntypedStorage<8, 8> mUnkb68e29;
+    ::ll::UntypedStorage<8, 8> mUnk6e1b78;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AddActorEntityProxy& operator=(AddActorEntityProxy const&);
@@ -13,30 +27,47 @@ public:
     AddActorEntityProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AddActorEntityProxy() = default;
-
     // vIndex: 1
-    virtual void initializeActor(class Actor& actor);
+    virtual void initializeActor(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual void reloadActor(class Actor& actor);
+    virtual void reloadActor(::Actor& actor) /*override*/;
 
-    MCAPI explicit AddActorEntityProxy(class Dimension& dimension);
-
+    // vIndex: 0
+    virtual ~AddActorEntityProxy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit AddActorEntityProxy(::Dimension& dimension);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension& dimension);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
 
-    MCAPI void initializeActor$(class Actor& actor);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void reloadActor$(class Actor& actor);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeActor(::Actor& actor);
 
+    MCAPI void $reloadActor(::Actor& actor);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

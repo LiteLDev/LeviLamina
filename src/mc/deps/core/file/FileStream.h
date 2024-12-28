@@ -9,37 +9,55 @@ namespace Core { class Path; }
 
 namespace Core {
 
-class FileStream {
+class FileStream : public ::std::iostream, public virtual ::std::ios {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 160> mUnk7e5019;
+    ::ll::UntypedStorage<1, 1>   mUnkfd47eb;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FileStream& operator=(FileStream const&);
     FileStream(FileStream const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileStream() = default;
-
-    MCAPI FileStream();
-
-    MCAPI FileStream(class Core::Path const& filename, int openMode);
-
-    MCAPI void close();
-
-    MCAPI void open(class Core::Path const& filename, int om);
-
+    virtual ~FileStream() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FileStream();
 
-    MCAPI void* ctor$();
+    MCAPI FileStream(::Core::Path const& filename, int openMode);
 
-    MCAPI void* ctor$(class Core::Path const& filename, int openMode);
+    MCAPI void open(::Core::Path const& filename, int om);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Core::Path const& filename, int openMode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

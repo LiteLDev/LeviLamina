@@ -4,8 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { struct SupportedScriptComponentFactoriesEntry; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -19,17 +21,22 @@ public:
     ScriptItemComponents();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(
-        class Scripting::ModuleBindingBuilder&                       moduleBuilder,
-        class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+    MCAPI static ::std::shared_ptr<
+        ::std::unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>>>
+    _getSupportedItemComponents(
+        ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const&
+                                 supportedComponentTypeNames,
+        ::BaseGameVersion const& version,
+        ::std::string const&     prerelease
     );
 
-    MCAPI static std::
-        unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
-        getSupportedItemComponents();
-
+    MCAPI static void bind(
+        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
+        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+    );
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

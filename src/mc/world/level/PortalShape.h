@@ -3,10 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Facing.h"
+#include "mc/common/facing/Name.h"
 #include "mc/world/level/block/PortalAxis.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class PortalRecord;
+class Vec3;
+class WorldChangeTransaction;
+// clang-format on
+
 class PortalShape {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkb18294;
+    ::ll::UntypedStorage<1, 1>  mUnk680fc5;
+    ::ll::UntypedStorage<1, 1>  mUnk2ad9bc;
+    ::ll::UntypedStorage<4, 4>  mUnkfc9d90;
+    ::ll::UntypedStorage<4, 12> mUnk50130b;
+    ::ll::UntypedStorage<1, 1>  mUnkf825cc;
+    ::ll::UntypedStorage<4, 4>  mUnk5d3d26;
+    ::ll::UntypedStorage<4, 4>  mUnk8bb68c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PortalShape& operator=(PortalShape const&);
@@ -14,14 +36,19 @@ public:
     PortalShape();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PortalShape(class BlockSource const& source, class BlockPos const& pos, ::PortalAxis axis);
+    MCAPI PortalShape(::BlockSource const& source, ::BlockPos const& pos, ::PortalAxis axis);
 
-    MCAPI void createPortalBlocks(class WorldChangeTransaction& transaction) const;
+    MCAPI int _calculatePortalHeight(::BlockSource const& source);
 
-    MCAPI class PortalRecord createRecord() const;
+    MCAPI int _getDistanceUntilEdge(::BlockPos const& pos, ::Facing::Name direction, ::BlockSource const& source) const;
 
-    MCAPI void evaluate(class BlockPos const& originalPosition, class BlockSource const& source);
+    MCAPI void createPortalBlocks(::WorldChangeTransaction& transaction) const;
+
+    MCAPI ::PortalRecord createRecord() const;
+
+    MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
 
     MCAPI int getNumberOfPortalBlocks() const;
 
@@ -29,28 +56,16 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI void
-    removePortalBlocks(class WorldChangeTransaction& transaction, class BlockPos const& firstPortalPosition) const;
+    MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
     MCAPI void setAxis(::PortalAxis axis);
 
-    MCAPI void updateNeighboringBlocks(class BlockSource& source, class Vec3 const& perpendicularAxis) const;
-
+    MCAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI int _calculatePortalHeight(class BlockSource const& source);
-
-    MCAPI int
-    _getDistanceUntilEdge(class BlockPos const& pos, ::Facing::Name direction, class BlockSource const& source) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockSource const& source, class BlockPos const& pos, ::PortalAxis axis);
-
+    MCAPI void* $ctor(::BlockSource const& source, ::BlockPos const& pos, ::PortalAxis axis);
     // NOLINTEND
 };

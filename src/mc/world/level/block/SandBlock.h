@@ -3,18 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FallingBlock.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,77 +25,76 @@ public:
     SandBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SandBlock() = default;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 48
-    virtual bool canBeOriginalSurface() const;
+    // vIndex: 151
+    virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 152
+    virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
+
+    // vIndex: 74
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
-    // vIndex: 81
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
+    // vIndex: 75
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 82
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
+    // vIndex: 46
+    virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 160
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
-
-    // vIndex: 163
-    virtual class mce::Color getDustColor(class Block const& block) const;
-
-    // vIndex: 164
-    virtual std::string getDustParticleName(class Block const& block) const;
-
-    MCAPI SandBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~SandBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SandBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCAPI bool canBeFertilized$(class BlockSource&, class BlockPos const&, class Block const& aboveBlock) const;
+    MCAPI ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI bool canBeOriginalSurface$() const;
-
-    MCAPI class mce::Color getDustColor$(class Block const& block) const;
-
-    MCAPI std::string getDustParticleName$(class Block const& block) const;
-
-    MCAPI class mce::Color getMapColor$(class BlockSource&, class BlockPos const&, class Block const& block) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
-
-    MCAPI bool isAuxValueRelevantForPicking$() const;
-
-    MCAPI bool mayConsumeFertilizer$(class BlockSource&) const;
+    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
     MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
+    MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
+
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI bool $canBeOriginalSurface() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,12 +8,13 @@ namespace mce { class Blob; }
 // clang-format on
 
 namespace mce::BlobHelper {
+// functions
 // NOLINTBEGIN
-MCAPI class mce::Blob clone(class mce::Blob const& blob);
+MCAPI ::mce::Blob clone(::mce::Blob const& blob);
 
-MCAPI void copySpanIntoBlob(class mce::Blob&, gsl::span<uchar const>);
+MCAPI void copySpanIntoBlob(::mce::Blob& blob, ::gsl::span<uchar const> span);
 
-MCAPI void copyStringIntoBlob(class mce::Blob& blob, std::string const& source);
+MCAPI void copyStringIntoBlob(::mce::Blob& blob, ::std::string const& source);
 // NOLINTEND
 
-}; // namespace mce::BlobHelper
+} // namespace mce::BlobHelper

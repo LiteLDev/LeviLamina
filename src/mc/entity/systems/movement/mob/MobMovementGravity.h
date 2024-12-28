@@ -5,51 +5,67 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class NavigationComponent;
+class StrictEntityContext;
+class Vec2;
+class Vec3;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct FallDistanceComponent;
+struct MobEffectsComponent;
+struct PhysicsComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace MobMovementGravity {
+// functions
 // NOLINTBEGIN
-MCAPI void forLiquidGravitySystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forLiquidGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forNormalGravitySystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forNormalGravitySystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI bool
-isCenterTopAndBottomNotInAir(class Vec3 const& pos, class IConstBlockSource const& region, class Vec2 const& aabbDim);
+MCAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
 
 MCAPI bool shouldApplyLiquidGravity(
-    class NavigationComponent const*     navigationComponent,
-    class PhysicsComponent const*        physicsComponent,
-    struct ActorDataFlagComponent const& actorData,
-    class Vec3 const&                    pos,
-    class IConstBlockSource const&       region,
-    class Vec2 const&                    aabbDim
+    ::NavigationComponent const*    navigationComponent,
+    ::PhysicsComponent const*       physicsComponent,
+    ::ActorDataFlagComponent const& actorData,
+    ::Vec3 const&                   pos,
+    ::IConstBlockSource const&      region,
+    ::Vec2 const&                   aabbDim
 );
 
 MCAPI void tickAirGravity(
-    class StrictEntityContext const&,
-    struct ActorDataFlagComponent const& synchedActorData,
-    struct MobEffectsComponent const&    mobEffects,
-    struct StateVectorComponent&         stateVector,
-    struct FallDistanceComponent&        fallDistance
+    ::StrictEntityContext const&,
+    ::ActorDataFlagComponent const& synchedActorData,
+    ::MobEffectsComponent const&    mobEffects,
+    ::StateVectorComponent&         stateVector,
+    ::FallDistanceComponent&        fallDistance
 );
 
 MCAPI void tickLavaGravity(
-    class StrictEntityContext const&,
-    class Optional<class NavigationComponent const> navigation,
-    class Optional<class PhysicsComponent const>    physics,
-    struct AABBShapeComponent const&                aabbShape,
-    struct ActorDataFlagComponent const&            synchedActorData,
-    struct StateVectorComponent&                    stateVector,
-    class IConstBlockSource const&                  region
+    ::StrictEntityContext const&,
+    ::Optional<::NavigationComponent const> navigation,
+    ::Optional<::PhysicsComponent const>    physics,
+    ::AABBShapeComponent const&             aabbShape,
+    ::ActorDataFlagComponent const&         synchedActorData,
+    ::StateVectorComponent&                 stateVector,
+    ::IConstBlockSource const&              region
 );
 
 MCAPI void tickMobWaterGravity(
-    class StrictEntityContext const&,
-    class Optional<class NavigationComponent const> navigation,
-    class Optional<class PhysicsComponent const>    physics,
-    struct AABBShapeComponent const&                aabbShape,
-    struct ActorDataFlagComponent const&            synchedActorData,
-    struct StateVectorComponent&                    stateVector,
-    class IConstBlockSource const&                  region
+    ::StrictEntityContext const&,
+    ::Optional<::NavigationComponent const> navigation,
+    ::Optional<::PhysicsComponent const>    physics,
+    ::AABBShapeComponent const&             aabbShape,
+    ::ActorDataFlagComponent const&         synchedActorData,
+    ::StateVectorComponent&                 stateVector,
+    ::IConstBlockSource const&              region
 );
 // NOLINTEND
 
-}; // namespace MobMovementGravity
+} // namespace MobMovementGravity

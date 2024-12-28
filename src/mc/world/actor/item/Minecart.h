@@ -3,31 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/item/MinecartType.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+struct AABBShapeComponent;
+struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct VariantParameterList;
 // clang-format on
 
 class Minecart : public ::Actor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk3355bb;
+    ::ll::UntypedStorage<1, 1> mUnk74c1d6;
+    ::ll::UntypedStorage<4, 4> mUnkd59223;
+    ::ll::UntypedStorage<8, 8> mUnk80b5a7;
+    ::ll::UntypedStorage<8, 8> mUnk8f8e51;
+    ::ll::UntypedStorage<4, 4> mUnk34dff3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Minecart& operator=(Minecart const&);
@@ -35,126 +42,139 @@ public:
     Minecart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 8
+    virtual ~Minecart() /*override*/;
 
-    // vIndex: 5
-    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~Minecart();
+    // vIndex: 3
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 17
-    virtual float getInterpolatedBodyYaw(float) const;
+    // vIndex: 143
+    virtual void destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
-
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
-
-    // vIndex: 97
-    virtual struct ActorUniqueID getControllingPlayer() const;
-
-    // vIndex: 130
-    virtual void kill();
-
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool, bool);
-
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper&);
-
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    // vIndex: 151
-    virtual void destroy(class ActorDamageSource const&, bool dropMinecartComponents);
-
-    // vIndex: 152
+    // vIndex: 144
     virtual ::MinecartType getType() = 0;
 
-    // vIndex: 153
-    virtual class Block const* getDefaultDisplayBlock() const;
+    // vIndex: 145
+    virtual ::Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 154
+    // vIndex: 146
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 155
-    virtual void applyNaturalSlowdown(class BlockSource&);
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 156
+    // vIndex: 93
+    virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
+
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
+
+    // vIndex: 15
+    virtual float getInterpolatedBodyYaw(float) const /*override*/;
+
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+
+    // vIndex: 124
+    virtual void kill() /*override*/;
+
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+
+    // vIndex: 147
+    virtual void applyNaturalSlowdown(::BlockSource&);
+
+    // vIndex: 148
     virtual void _lazyInitDisplayBlock();
-
-    MCAPI Minecart(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI void dropMinecartWithContentsAndRemove(std::string_view vanillaMinecartName, bool dropMinecartComponents);
-
-    MCAPI void postNormalTick(class BlockPos const& preNormalTickBlockPos);
-
-    MCAPI class BlockPos preNormalTick();
-
-    MCAPI void setCustomDisplay(bool displayValue);
-
-    MCAPI void setDisplayBlock(class Block const& block);
-
-    MCAPI static float getHeightOffset(struct AABBShapeComponent const& aabb);
-
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI Minecart(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void _registerLoopingSounds();
 
+    MCAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
+
+    MCAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
+
+    MCAPI ::BlockPos preNormalTick();
+
+    MCAPI void setDisplayBlock(::Block const& block);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static float getHeightOffset(::AABBShapeComponent const& aabb);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float damage, bool, bool);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void _lazyInitDisplayBlock$();
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI void $destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    MCAPI void applyNaturalSlowdown$(class BlockSource&);
+    MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI void destroy$(class ActorDamageSource const&, bool dropMinecartComponents);
+    MCAPI int $getDefaultDisplayOffset() const;
 
-    MCAPI struct ActorUniqueID getControllingPlayer$() const;
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI class Block const* getDefaultDisplayBlock$() const;
+    MCAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCAPI int getDefaultDisplayOffset$() const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI float getInterpolatedBodyYaw$(float) const;
+    MCAPI float $getInterpolatedBodyYaw(float) const;
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void kill$();
+    MCAPI void $kill();
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $applyNaturalSlowdown(::BlockSource&);
 
-    MCAPI void reloadHardcodedClient$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $_lazyInitDisplayBlock();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

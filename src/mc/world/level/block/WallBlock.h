@@ -4,19 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/WallConnectionType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class HitResult;
+class IConstBlockSource;
+class Material;
+class Random;
+class Vec3;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class WallBlock : public ::BlockLegacy {
@@ -27,202 +35,167 @@ public:
     WallBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WallBlock();
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
-    // vIndex: 4
-    virtual class HitResult
-    clip(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 65
+    virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 66
+    virtual void onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 9
-    virtual class AABB const& getOutline(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 10
-    virtual class AABB const& getVisualShapeInWorld(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&,
-        class AABB& bufferAABB
-    ) const;
+    virtual ::AABB const&
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+        /*override*/;
 
-    // vIndex: 13
-    virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
+    // vIndex: 5
+    virtual ::AABB
+    getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
+
+    // vIndex: 9
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 25
-    virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
+    virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
-    // vIndex: 37
-    virtual bool isWallBlock() const;
+    // vIndex: 13
+    virtual bool
+    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
+        /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 35
+    virtual bool isWallBlock() const /*override*/;
 
-    // vIndex: 70
-    virtual void onStructureBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 71
-    virtual void onStructureNeighborBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 4
+    virtual ::HitResult
+    clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 93
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 160
-    virtual class mce::Color
-    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI WallBlock(std::string const& nameId, int id, class BlockLegacy const& baseBlock);
-
-    MCAPI WallBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI void tryFixWallStates(class BlockSource& region, class BlockPos const& pos, int updateFlags) const;
-
+    // vIndex: 0
+    virtual ~WallBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ::WallConnectionType
-    _desiredConnectionState(class BlockSource& region, class BlockPos const& pos, uchar neighbor) const;
-
-    MCAPI bool _isCovered(class BlockSource& region, class BlockPos const& pos, class AABB const& testAABB) const;
-
-    MCAPI bool _shouldBePost(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI bool _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WallBlock(::std::string const& nameId, int id, ::BlockLegacy const& baseBlock);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+    MCAPI WallBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class BlockLegacy const& baseBlock);
+    MCAPI ::WallConnectionType
+    _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
 
-    MCAPI void dtor$();
+    MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+    MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+    MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI bool canConnect$(class Block const& otherBlock, uchar, class Block const&) const;
+    MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI class HitResult
-    clip$(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& origin, class Vec3 const& end, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI bool getLiquidClipVolume$(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
-
-    MCAPI class mce::Color
-    getMapColor$(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    MCAPI class AABB const& getOutline$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    bufferValue
-    ) const;
-
-    MCAPI class Block const& getPlacementBlock$(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
-
-    MCAPI int getVariant$(class Block const& block) const;
-
-    MCAPI class AABB const& getVisualShapeInWorld$(
-        class Block const& block,
-        class IConstBlockSource const&,
-        class BlockPos const&,
-        class AABB& bufferAABB
-    ) const;
-
-    MCAPI bool isAuxValueRelevantForPicking$() const;
-
-    MCAPI bool isWallBlock$() const;
-
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onStructureBlockPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onStructureNeighborBlockPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static float const& POST_HEIGHT();
 
     MCAPI static float const& POST_WIDTH();
 
-    MCAPI static class BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     MCAPI static float const& WALL_HEIGHT();
 
-    MCAPI static std::array<std::string, 14> const& WALL_NAMES();
-
     MCAPI static float const& WALL_WIDTH();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& baseBlock);
+
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
+
+    MCAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI ::AABB const&
+    $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
+        const;
+
+    MCAPI ::AABB
+    $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
+        const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+
+    MCAPI bool
+    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+
+    MCAPI bool $isWallBlock() const;
+
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI ::HitResult
+    $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

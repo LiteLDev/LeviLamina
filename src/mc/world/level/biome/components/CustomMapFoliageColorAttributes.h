@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CustomMapFoliageColorAttributes {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct CustomMapFoliageColorAttributes : public ::BiomeComponentBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd1743e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CustomMapFoliageColorAttributes& operator=(CustomMapFoliageColorAttributes const&);
@@ -10,16 +19,21 @@ public:
     CustomMapFoliageColorAttributes();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CustomMapFoliageColorAttributes() = default;
-
+    virtual ~CustomMapFoliageColorAttributes() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,26 +6,28 @@ namespace TickMobEffectsSystem {
 
 struct RemoveMobEffectsRequestComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8b658f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RemoveMobEffectsRequestComponent& operator=(RemoveMobEffectsRequestComponent const&);
     RemoveMobEffectsRequestComponent(RemoveMobEffectsRequestComponent const&);
     RemoveMobEffectsRequestComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent&
-    operator=(struct TickMobEffectsSystem::RemoveMobEffectsRequestComponent&&);
-
     MCAPI ~RemoveMobEffectsRequestComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace TickMobEffectsSystem
+} // namespace TickMobEffectsSystem

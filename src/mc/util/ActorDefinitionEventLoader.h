@@ -2,8 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/JsonBetaState.h"
+
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionEvent;
+class ActorEventResponseFactory;
+class MinEngineVersion;
+class SemVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -15,30 +22,29 @@ public:
     ActorDefinitionEventLoader();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static class ActorDefinitionEvent loadEvent(
-        class Json::Value                      root,
-        class SemVersion const&                engineVersion,
-        class SemVersion const&                formatVersion,
-        class ActorEventResponseFactory const* responseFactory
-    );
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _loadCollection(
-        class ActorDefinitionEvent&            defEvent,
-        class Json::Value const&               collection,
-        class SemVersion const&                engineVersion,
-        class ActorEventResponseFactory const* responseFactory
+        ::ActorDefinitionEvent&            defEvent,
+        ::Json::Value const&               collection,
+        ::MinEngineVersion const&          minEngineVersion,
+        ::ActorEventResponseFactory const* responseFactory,
+        ::JsonBetaState                    useBetaFeatures
     );
 
-    MCAPI static class ActorDefinitionEvent _loadEvent(
-        class Json::Value&                     root,
-        class SemVersion const&                engineVersion,
-        class ActorEventResponseFactory const* responseFactory
+    MCAPI static ::ActorDefinitionEvent _loadEvent(
+        ::Json::Value&                     root,
+        ::MinEngineVersion const&          minEngineVersion,
+        ::ActorEventResponseFactory const* responseFactory,
+        ::JsonBetaState                    useBetaFeatures
     );
 
+    MCAPI static ::ActorDefinitionEvent loadEvent(
+        ::Json::Value                      root,
+        ::MinEngineVersion const&          minEngineVersion,
+        ::SemVersion const&                formatVersion,
+        ::ActorEventResponseFactory const* responseFactory,
+        ::JsonBetaState                    useBetaFeatures
+    );
     // NOLINTEND
 };

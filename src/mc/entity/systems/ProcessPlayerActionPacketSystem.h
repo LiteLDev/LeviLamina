@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InventoryTransactionPacket;
+struct PlayerActionComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class ProcessPlayerActionPacketSystem {
 public:
     // prevent constructor by default
@@ -10,14 +17,14 @@ public:
     ProcessPlayerActionPacketSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _foreachTransactionPacket(
-        struct PlayerActionComponent const&                           actions,
-        bool                                                          isClientSide,
-        std::function<void(class InventoryTransactionPacket&)> const& callback
+        ::PlayerActionComponent const&                              actions,
+        bool                                                        isClientSide,
+        ::std::function<void(::InventoryTransactionPacket&)> const& callback
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

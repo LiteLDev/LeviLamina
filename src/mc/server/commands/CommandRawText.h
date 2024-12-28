@@ -4,12 +4,20 @@
 
 class CommandRawText {
 public:
-    std::string                      text;
-    [[nodiscard]] constexpr explicit operator std::string() const { return text; }
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
+    // NOLINTEND
 
 public:
-    // NOLINTBEGIN
-    MCAPI std::string const& getText() const;
+    // prevent constructor by default
+    CommandRawText& operator=(CommandRawText const&);
+    CommandRawText(CommandRawText const&);
+    CommandRawText();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::string const& getText() const;
     // NOLINTEND
 };

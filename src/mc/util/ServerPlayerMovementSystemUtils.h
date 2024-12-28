@@ -7,29 +7,42 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class PlayerMovementSettingsComponent;
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct FallDistanceComponent;
+struct PassengerComponent;
+struct PlayerIsSleepingFlagComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StateVectorComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
 
 namespace ServerPlayerMovementSystemUtils {
+// functions
 // NOLINTBEGIN
 MCAPI void _tickResetFallDistanceSystem(
-    entt::type_list<struct Include<
-        class FlagComponent<struct ActorMovementTickNeededFlag>,
-        struct ServerPlayerCurrentMovementComponent>>,
-    class ActorOwnerComponent const&   actorOwnerComponent,
-    struct StateVectorComponent const& stateVectorComponent,
-    struct FallDistanceComponent&      fallDistanceComponent
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ServerPlayerCurrentMovementComponent>>,
+    ::ActorOwnerComponent const&  actorOwnerComponent,
+    ::StateVectorComponent const& stateVectorComponent,
+    ::FallDistanceComponent&      fallDistanceComponent
 );
 
 MCAPI void checkCheatingIfSupported(
-    class ActorOwnerComponent&                               actorOwnerComponent,
-    struct ServerPlayerCurrentMovementComponent const&       serverPlayerCurrentMovement,
-    struct ActorDataFlagComponent const&                     synchedActorData,
-    class Optional<struct PassengerComponent const> const&   passengerComponent,
-    class Optional<struct StateVectorComponent const> const& stateVectorComponent,
-    class ViewT<class StrictEntityContext, struct VehicleInputIntentComponent, class ActorOwnerComponent> const&
-                                                                      vehicleView,
-    class OptionalGlobal<class PlayerMovementSettingsComponent const> playerMovementSettings
+    ::ActorOwnerComponent&                                   actorOwnerComponent,
+    ::ServerPlayerCurrentMovementComponent const&            serverPlayerCurrentMovement,
+    ::ActorDataFlagComponent const&                          synchedActorData,
+    ::Optional<::PassengerComponent const> const&            passengerComponent,
+    ::Optional<::StateVectorComponent const> const&          stateVectorComponent,
+    ::Optional<::PlayerIsSleepingFlagComponent const> const& playerIsSleeping,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent, ::ActorOwnerComponent> const& vehicleView,
+    ::OptionalGlobal<::PlayerMovementSettingsComponent const>                                   playerMovementSettings
 );
 // NOLINTEND
 
-}; // namespace ServerPlayerMovementSystemUtils
+} // namespace ServerPlayerMovementSystemUtils

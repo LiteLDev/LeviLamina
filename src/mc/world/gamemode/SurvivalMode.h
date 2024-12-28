@@ -3,10 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/input/InputMode.h"
 #include "mc/world/gamemode/GameMode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class InteractionResult;
+class ItemStack;
+class Player;
+class Vec3;
+// clang-format on
+
 class SurvivalMode : public ::GameMode {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnke69c28;
+    ::ll::UntypedStorage<1, 1>  mUnk3d88ec;
+    ::ll::UntypedStorage<4, 4>  mUnk812b7b;
+    ::ll::UntypedStorage<8, 64> mUnk7f623c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SurvivalMode& operator=(SurvivalMode const&);
@@ -14,102 +33,121 @@ public:
     SurvivalMode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SurvivalMode() = default;
-
-    // vIndex: 1
-    virtual bool startDestroyBlock(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
-
-    // vIndex: 2
-    virtual bool destroyBlock(class BlockPos const& pos, uchar face);
-
-    // vIndex: 5
-    virtual void startBuildBlock(class BlockPos const& pos, uchar face);
-
-    // vIndex: 6
-    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool isSimTick);
-
-    // vIndex: 9
-    virtual void tick();
-
-    // vIndex: 11
-    virtual bool useItem(class ItemStack& item);
-
-    // vIndex: 12
-    virtual class InteractionResult useItemOn(
-        class ItemStack&      item,
-        class BlockPos const& at,
-        uchar                 face,
-        class Vec3 const&     hit,
-        class Block const*    targetBlock
-    );
+    // vIndex: 14
+    virtual bool attack(::Actor& entity) /*override*/;
 
     // vIndex: 13
-    virtual bool interact(class Actor& entity, class Vec3 const& location);
+    virtual bool interact(::Actor& entity, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 14
-    virtual bool attack(class Actor& entity);
+    // vIndex: 2
+    virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
+
+    // vIndex: 1
+    virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock) /*override*/;
+
+    // vIndex: 5
+    virtual void startBuildBlock(::BlockPos const& pos, uchar face) /*override*/;
+
+    // vIndex: 6
+    virtual bool buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick) /*override*/;
+
+    // vIndex: 11
+    virtual bool useItem(::ItemStack& item) /*override*/;
+
+    // vIndex: 12
+    virtual ::InteractionResult useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    ) /*override*/;
+
+    // vIndex: 9
+    virtual void tick() /*override*/;
 
     // vIndex: 16
-    virtual void setTrialMode(bool isEnabled);
+    virtual void setTrialMode(bool isEnabled) /*override*/;
 
     // vIndex: 17
-    virtual bool isInTrialMode();
+    virtual bool isInTrialMode() /*override*/;
 
     // vIndex: 18
-    virtual void registerUpsellScreenCallback(std::function<void(bool)> callback);
+    virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback) /*override*/;
 
-    MCAPI explicit SurvivalMode(class Player& player);
-
+    // vIndex: 0
+    virtual ~SurvivalMode() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _messagePlayers(std::string message);
+    MCAPI explicit SurvivalMode(::Player& player);
+
+    MCAPI void _messagePlayers(::std::string message);
 
     MCAPI void _showTrialReminder(bool force);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool& mTrialHasEnded();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player& player);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player);
+    // NOLINTEND
 
-    MCAPI bool attack$(class Actor& entity);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool buildBlock$(class BlockPos const& pos, uchar face, bool isSimTick);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $attack(::Actor& entity);
 
-    MCAPI bool destroyBlock$(class BlockPos const& pos, uchar face);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
-    MCAPI bool interact$(class Actor& entity, class Vec3 const& location);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool isInTrialMode$();
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCAPI void registerUpsellScreenCallback$(std::function<void(bool)> callback);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI void setTrialMode$(bool isEnabled);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
 
-    MCAPI void startBuildBlock$(class BlockPos const& pos, uchar face);
+    MCAPI bool $useItem(::ItemStack& item);
 
-    MCAPI bool startDestroyBlock$(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
-
-    MCAPI void tick$();
-
-    MCAPI bool useItem$(class ItemStack& item);
-
-    MCAPI class InteractionResult useItemOn$(
-        class ItemStack&      item,
-        class BlockPos const& at,
-        uchar                 face,
-        class Vec3 const&     hit,
-        class Block const*    targetBlock
+    MCAPI ::InteractionResult $useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
     );
 
-    MCAPI static bool& mTrialHasEnded();
+    MCAPI void $tick();
 
+    MCAPI void $setTrialMode(bool isEnabled);
+
+    MCAPI bool $isInTrialMode();
+
+    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

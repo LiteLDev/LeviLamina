@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class DensityEnchant : public ::Enchant {
 public:
     // prevent constructor by default
@@ -13,36 +18,45 @@ public:
     DensityEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DensityEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 8
-    virtual float getDamageBonus(int level, class Actor const&, class Actor const& attacker) const;
+    virtual float getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const /*override*/;
 
+    // vIndex: 0
+    virtual ~DensityEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getDamageBonus$(int level, class Actor const&, class Actor const& attacker) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxCost$(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI float $getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

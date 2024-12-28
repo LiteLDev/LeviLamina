@@ -13,52 +13,52 @@ public:
     Uri& operator=(Uri const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI http_string const& FullPath() const;
+    MCAPI ::http_string const& FullPath() const;
 
-    MCAPI http_string const& Host() const;
+    MCAPI ::http_string const& Host() const;
 
     MCAPI bool IsSecure() const;
 
+    MCAPI bool
+    ParseAuthority(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);
+
+    MCAPI bool
+    ParseHost(::http_string const&, ::std::_String_const_iterator<::std::_String_val<::std::_Simple_types<char>>>&);
+
     MCAPI ushort Port() const;
 
-    MCAPI http_string Resource() const;
+    MCAPI ::http_string Resource() const;
 
-    MCAPI http_string const& Scheme() const;
+    MCAPI ::http_string const& Scheme() const;
 
     MCAPI Uri();
 
-    MCAPI explicit Uri(http_string const&);
+    MCAPI Uri(::xbox::httpclient::Uri const&);
 
-    MCAPI Uri(class xbox::httpclient::Uri const&);
+    MCAPI explicit Uri(::http_string const&);
 
-    MCAPI class xbox::httpclient::Uri& operator=(class xbox::httpclient::Uri&&);
+    MCAPI ::xbox::httpclient::Uri& operator=(::xbox::httpclient::Uri&&);
 
     MCAPI ~Uri();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    ParseAuthority(http_string const&, std::_String_const_iterator<std::_String_val<std::_Simple_types<char>>>&);
-
-    MCAPI bool ParseHost(http_string const&, std::_String_const_iterator<std::_String_val<std::_Simple_types<char>>>&);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class xbox::httpclient::Uri const&);
+    MCAPI void* $ctor(::xbox::httpclient::Uri const&);
 
-    MCAPI void* ctor$(http_string const&);
+    MCAPI void* $ctor(::http_string const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

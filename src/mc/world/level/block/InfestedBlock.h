@@ -3,22 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockPos;
+class BlockSource;
+class HashedString;
+struct ResourceDropsContext;
 // clang-format on
 
 class InfestedBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk9ee2c8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InfestedBlock& operator=(InfestedBlock const&);
@@ -26,62 +28,63 @@ public:
     InfestedBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InfestedBlock() = default;
+    // vIndex: 130
+    virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 97
+    // vIndex: 91
     virtual void spawnAfterBreak(
-        class BlockSource& region,
-        class Block const&,
-        class BlockPos const&              pos,
-        struct ResourceDropsContext const& resourceDropsContext
-    ) const;
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
+    ) const /*override*/;
 
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const& block) const;
-
-    // vIndex: 120
-    virtual bool isAuxValueRelevantForPicking() const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 141
-    virtual class Block const* tryGetUninfested(class Block const& block) const;
-
-    MCAPI InfestedBlock(std::string const& nameId, int id);
-
-    MCAPI static void spawnSilverfish(class BlockSource& region, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~InfestedBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI InfestedBlock(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const* $tryGetUninfested(::Block const& block) const;
 
-    MCAPI bool isAuxValueRelevantForPicking$() const;
-
-    MCAPI void spawnAfterBreak$(
-        class BlockSource& region,
-        class Block const&,
-        class BlockPos const&              pos,
-        struct ResourceDropsContext const& resourceDropsContext
+    MCAPI void $spawnAfterBreak(
+        ::BlockSource& region,
+        ::Block const&,
+        ::BlockPos const&             pos,
+        ::ResourceDropsContext const& resourceDropsContext
     ) const;
+    // NOLINTEND
 
-    MCAPI class Block const* tryGetUninfested$(class Block const& block) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorInfoRegistry;
+class BaseGameVersion;
+class BlockDefinitionGroup;
+class CreativeItemRegistry;
+class Experiments;
+class HardcodedCreativeItemsHelper;
+class ItemRegistryRef;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -15,48 +22,40 @@ public:
     VanillaItems();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void registerHardCodedItemTags(class ItemRegistryRef itemRegistry);
+    MCAPI static void
+    _addCommandOnlyCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
+
+    MCAPI static void
+    _addConstructionCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
+
+    MCAPI static void
+    _addEquipmentCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
+
+    MCAPI static void
+    _addItemsCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const& worldVersion, ::Experiments const&);
+
+    MCAPI static void
+    _addNatureCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const& worldVersion, ::Experiments const&);
+
+    MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
     MCAPI static void registerItems(
-        struct cereal::ReflectionCtx& ctx,
-        class ItemRegistryRef         itemRegistry,
-        class BaseGameVersion const&  baseGameVersion,
-        class Experiments const&      experiments
+        ::cereal::ReflectionCtx& ctx,
+        ::ItemRegistryRef        itemRegistry,
+        ::BaseGameVersion const& baseGameVersion,
+        ::Experiments const&     experiments
     );
 
     MCAPI static void serverInitCreativeItemsCallback(
-        class ItemRegistryRef itemRegistry,
-        class ActorInfoRegistry*,
-        class BlockDefinitionGroup*  blockDefinitionGroup,
-        class CreativeItemRegistry*  creativeItemRegistry,
-        bool                         isClient,
-        class BaseGameVersion const& worldVersion,
-        class Experiments const&     experiments
+        ::ItemRegistryRef itemRegistry,
+        ::ActorInfoRegistry*,
+        ::BlockDefinitionGroup*  blockDefinitionGroup,
+        ::CreativeItemRegistry*  creativeItemRegistry,
+        bool                     isClient,
+        ::BaseGameVersion const& worldVersion,
+        ::Experiments const&     experiments
     );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void
-    _addCommandOnlyCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const&, class Experiments const&);
-
-    MCAPI static void
-    _addConstructionCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const&, class Experiments const&);
-
-    MCAPI static void _addEquipmentCategory(
-        class CreativeItemRegistry*  creativeItemRegistry,
-        class ItemRegistryRef        itemRegistry,
-        class BaseGameVersion const& worldVersion,
-        class Experiments const&     experiments
-    );
-
-    MCAPI static void
-    _addItemsCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const& worldVersion, class Experiments const&);
-
-    MCAPI static void
-    _addNatureCategory(class CreativeItemRegistry* creativeItemRegistry, class ItemRegistryRef itemRegistry, class BaseGameVersion const& worldVersion, class Experiments const&);
-
     // NOLINTEND
 };

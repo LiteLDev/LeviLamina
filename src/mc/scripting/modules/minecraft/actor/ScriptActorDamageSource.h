@@ -9,33 +9,36 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorDamageSource {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkfa31ca;
+    ::ll::UntypedStorage<8, 40> mUnk9a9c16;
+    ::ll::UntypedStorage<8, 40> mUnkafa60d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptActorDamageSource& operator=(ScriptActorDamageSource const&);
+    ScriptActorDamageSource(ScriptActorDamageSource const&);
     ScriptActorDamageSource();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource const&);
-
     MCAPI ~ScriptActorDamageSource();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDamageSource> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptActorDamageSource> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

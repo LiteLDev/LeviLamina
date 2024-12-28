@@ -7,10 +7,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class ExplorationMapFunction : public ::LootItemFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk300c0a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExplorationMapFunction& operator=(ExplorationMapFunction const&);
@@ -18,29 +29,42 @@ public:
     ExplorationMapFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExplorationMapFunction() = default;
+    virtual ~ExplorationMapFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random&, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random&, class LootTableContext& context);
-
-    MCAPI static std::unique_ptr<class LootItemFunction>
-    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random&, class LootTableContext& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemInstance& item, class Random&, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
+    MCAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

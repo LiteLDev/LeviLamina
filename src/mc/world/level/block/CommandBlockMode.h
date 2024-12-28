@@ -2,7 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandBlockMode : short {
-    Repeating = 0x1,
-    Chain     = 0x2,
+enum class CommandBlockMode : ushort {
+    Normal    = 0,
+    Repeating = 1,
+    Chain     = 2,
 };

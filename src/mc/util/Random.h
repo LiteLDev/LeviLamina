@@ -1,93 +1,135 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/application/common/utility/ThreadOwner.h"
-#include "mc/deps/core/math/Random.h"
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/IRandom.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/threading/ThreadLocalObject.h"
+#include "mc/util/ThreadOwner.h"
 
-class Random : public IRandom, public Bedrock::EnableNonOwnerReferences {
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Random; }
+// clang-format on
+
+class Random : public ::IRandom, public ::Bedrock::EnableNonOwnerReferences {
 public:
-    Bedrock::Application::ThreadOwner<Core::Random> mRandom; // this+0x20
+    // Random inner types define
+    using result_type = uint;
 
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 2536, ::Bedrock::Application::ThreadOwner<::Core::Random>> mRandom;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Random& operator=(Random const&);
     Random(Random const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void consumeCount(uint count);
+    // vIndex: 0
+    virtual ~Random() /*override*/;
 
-    MCVAPI std::unique_ptr<class IRandom> fork();
+    // vIndex: 4
+    virtual bool nextBoolean() /*override*/;
 
-    MCVAPI bool nextBoolean();
+    // vIndex: 5
+    virtual float nextFloat() /*override*/;
 
-    MCVAPI double nextDouble();
+    // vIndex: 6
+    virtual double nextDouble() /*override*/;
 
-    MCVAPI float nextFloat();
+    // vIndex: 2
+    virtual int nextInt() /*override*/;
 
-    MCVAPI double nextGaussianDouble();
+    // vIndex: 1
+    virtual int nextInt(int n) /*override*/;
 
-    MCVAPI int nextInt();
+    // vIndex: 3
+    virtual int64 nextLong() /*override*/;
 
-    MCVAPI int nextInt(int n);
+    // vIndex: 7
+    virtual double nextGaussianDouble() /*override*/;
 
-    MCVAPI int64 nextLong();
+    // vIndex: 8
+    virtual void consumeCount(uint count) /*override*/;
 
-    MCVAPI ~Random();
+    // vIndex: 9
+    virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Random();
 
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI float nextFloat(float, float);
-
-    MCAPI float nextGaussianFloat();
-
-    MCAPI int nextGaussianInt(int);
-
-    MCAPI int nextInt(int min, int max);
+    MCAPI float nextFloat(float min, float max);
 
     MCAPI int nextIntInclusive(int min, int max);
 
-    MCAPI static class Random& getThreadLocal();
-
+    MCAPI void setSeed(uint seed);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI static ::Random& getThreadLocal();
+    // NOLINTEND
 
-    MCAPI static void** vftableForIRandom();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::Random>& mThreadLocalRandom();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(uint seed, bool onlyUsedDeterministically);
+    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void consumeCount$(uint count);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $nextBoolean();
 
-    MCAPI std::unique_ptr<class IRandom> fork$();
+    MCAPI float $nextFloat();
 
-    MCAPI bool nextBoolean$();
+    MCAPI double $nextDouble();
 
-    MCAPI double nextDouble$();
+    MCAPI int $nextInt();
 
-    MCAPI float nextFloat$();
+    MCAPI int $nextInt(int n);
 
-    MCAPI double nextGaussianDouble$();
+    MCAPI int64 $nextLong();
 
-    MCAPI int nextInt$();
+    MCAPI double $nextGaussianDouble();
 
-    MCAPI int nextInt$(int n);
+    MCAPI void $consumeCount(uint count);
 
-    MCAPI int64 nextLong$();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random>& mThreadLocalRandom();
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
 
+    MCAPI static void** $vftableForIRandom();
     // NOLINTEND
 };

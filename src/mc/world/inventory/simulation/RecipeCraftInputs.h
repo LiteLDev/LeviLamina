@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RecipeCraftInputs {
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerValidationCraftInputs.h"
+
+struct RecipeCraftInputs : public ::ContainerValidationCraftInputs {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk8dfabf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RecipeCraftInputs& operator=(RecipeCraftInputs const&);
@@ -10,15 +19,14 @@ public:
     RecipeCraftInputs();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~RecipeCraftInputs();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

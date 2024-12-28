@@ -7,56 +7,81 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PlayerStartItemCooldownPacket : public ::Packet {
 public:
-    std::string mItemCategory;  // this+0x30
-    int         mDurationTicks; // this+0x50
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mItemCategory;
+    ::ll::TypedStorage<4, 4, int>            mDurationTicks;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PlayerStartItemCooldownPacket& operator=(PlayerStartItemCooldownPacket const&);
     PlayerStartItemCooldownPacket(PlayerStartItemCooldownPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerStartItemCooldownPacket();
+    virtual ~PlayerStartItemCooldownPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI PlayerStartItemCooldownPacket();
-
-    MCAPI PlayerStartItemCooldownPacket(std::string const& itemCategory, int durationTicks);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PlayerStartItemCooldownPacket();
 
-    MCAPI void* ctor$();
+    MCAPI PlayerStartItemCooldownPacket(::std::string const& itemCategory, int durationTicks);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& itemCategory, int durationTicks);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::string const& itemCategory, int durationTicks);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

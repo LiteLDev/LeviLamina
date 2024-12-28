@@ -6,11 +6,6 @@
 #include "mc/deps/core/threading/EnableQueueForThread.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading { class EnableQueueForThread; }
-// clang-format on
-
 namespace Bedrock::Threading {
 
 class EnableQueueForMainThread : public ::Bedrock::Threading::EnableQueueForThread {
@@ -21,33 +16,40 @@ public:
     EnableQueueForMainThread();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EnableQueueForMainThread();
-
-    MCAPI explicit EnableQueueForMainThread(std::string name);
-
+    virtual ~EnableQueueForMainThread() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit EnableQueueForMainThread(::std::string name);
+
     MCAPI void flushMainThreadTasks();
 
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-          queueForMainThread(std::function<void()>&& callback);
-
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    queueForMainThread(::std::function<void()>&& callback);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string name);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string name);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/SculkSensorVibrationConfig.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class CalibratedSculkSensorVibrationConfig : public ::SculkSensorVibrationConfig {
 public:
     // prevent constructor by default
@@ -13,29 +20,35 @@ public:
     CalibratedSculkSensorVibrationConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CalibratedSculkSensorVibrationConfig() = default;
-
     // vIndex: 3
     virtual bool shouldListen(
-        class BlockSource&             region,
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext
-    );
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~CalibratedSculkSensorVibrationConfig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool shouldListen$(
-        class BlockSource&             region,
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool
+    $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

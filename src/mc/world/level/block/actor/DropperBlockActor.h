@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/DispenserBlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockSource;
+class CompoundTag;
+class Container;
+class ItemStack;
+class Vec3;
+// clang-format on
+
 class DropperBlockActor : public ::DispenserBlockActor {
 public:
     // prevent constructor by default
@@ -13,38 +23,57 @@ public:
     DropperBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI explicit DropperBlockActor(class BlockPos pos);
-
-    MCAPI bool pushOutItems(class BlockSource& region);
-
-    MCAPI static bool
-    addItemsToContainerAndDepleteStack(class Container& container, class ItemStack& item, int stackSizeLimit, int face);
-
-    MCAPI static class Container* getContainerAt(class BlockSource& region, class Vec3 const& pos);
-
+    // vIndex: 0
+    virtual ~DropperBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForContainer();
+    MCAPI bool pushOutItems(::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    addItemsToContainerAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int face);
 
-    MCAPI void* ctor$(class BlockPos pos);
+    MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

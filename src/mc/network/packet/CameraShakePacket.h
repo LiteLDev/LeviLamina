@@ -9,62 +9,87 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class CameraShakePacket : public ::Packet {
 public:
-    float             mIntensity;   // this+0x30
-    float             mSeconds;     // this+0x34
-    CameraShakeType   mShakeType;   // this+0x38
-    CameraShakeAction mShakeAction; // this+0x39
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>               mIntensity;
+    ::ll::TypedStorage<4, 4, float>               mSeconds;
+    ::ll::TypedStorage<1, 1, ::CameraShakeType>   mShakeType;
+    ::ll::TypedStorage<1, 1, ::CameraShakeAction> mShakeAction;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     CameraShakePacket& operator=(CameraShakePacket const&);
     CameraShakePacket(CameraShakePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CameraShakePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~CameraShakePacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI CameraShakePacket();
 
     MCAPI explicit CameraShakePacket(::CameraShakeAction shakeAction);
 
     MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType shakeType);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(float intensity, float seconds, ::CameraShakeType shakeType);
+    MCAPI void* $ctor(::CameraShakeAction shakeAction);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(float intensity, float seconds, ::CameraShakeType shakeType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::CameraShakeAction shakeAction);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

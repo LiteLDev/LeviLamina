@@ -12,4 +12,4 @@ public:
     FutureType();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

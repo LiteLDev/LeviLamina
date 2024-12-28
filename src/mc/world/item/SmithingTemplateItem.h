@@ -3,24 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class ItemStackBase;
+class Level;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class SmithingTemplateItem : public ::Item {
 public:
     // SmithingTemplateItem inner types define
-    enum class UpgradeType {};
+    enum class UpgradeType : int {
+        NetheriteUpgrade = 0,
+        ArmorTrim        = 1,
+        Count            = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkbef1ed;
+    ::ll::UntypedStorage<8, 32> mUnkcdef5a;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -29,50 +35,52 @@ public:
     SmithingTemplateItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SmithingTemplateItem() = default;
-
-    // vIndex: 48
+    // vIndex: 52
     virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
-
-    MCAPI SmithingTemplateItem(
-        std::string const&                  name,
-        int                                 id,
-        ::SmithingTemplateItem::UpgradeType upgradeType,
-        std::string const&                  upgradeName
-    );
-
+    // vIndex: 0
+    virtual ~SmithingTemplateItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SmithingTemplateItem(::std::string const& name, int id, ::SmithingTemplateItem::UpgradeType upgradeType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        std::string const&                  name,
-        int                                 id,
-        ::SmithingTemplateItem::UpgradeType upgradeType,
-        std::string const&                  upgradeName
-    );
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::SmithingTemplateItem::UpgradeType upgradeType);
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

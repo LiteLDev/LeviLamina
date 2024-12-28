@@ -6,7 +6,23 @@
 #include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+// clang-format on
+
 class Igloo : public ::ScatteredFeaturePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 192> mUnk4fd173;
+    ::ll::UntypedStorage<4, 12>  mUnkc11f95;
+    ::ll::UntypedStorage<4, 12>  mUnkb18b49;
+    ::ll::UntypedStorage<4, 12>  mUnkf41f63;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Igloo& operator=(Igloo const&);
@@ -14,39 +30,64 @@ public:
     Igloo();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~Igloo() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 5
-    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 0
+    virtual ~Igloo() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI Igloo(short seaLevel, int west, int north);
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
 
-    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
 
-    MCAPI static std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
+    // NOLINTEND
 
-    MCAPI static std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(short seaLevel, int west, int north);
+    // NOLINTEND
 
-    MCAPI static std::string const& STRUCTURE_LOCATION_LABORATORY();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::string const& STRUCTURE_LOCATION_LADDER();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

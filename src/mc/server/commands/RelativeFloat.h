@@ -4,28 +4,34 @@
 
 class RelativeFloat {
 public:
-    float mOffset{};
-    bool  mRelative{};
-
-    RelativeFloat() = default;
-
-    RelativeFloat(float value, bool relative = true) : mOffset(value), mRelative(relative) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-
-    MCAPI float getValue(float center = 0) const;
-
-    MCAPI bool isRelative() const;
-
+    ::ll::TypedStorage<4, 4, float> mOffset;
+    ::ll::TypedStorage<1, 1, bool>  mRelative;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    RelativeFloat& operator=(RelativeFloat const&);
+    RelativeFloat(RelativeFloat const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(float offset, bool relative);
+    MCAPI RelativeFloat();
 
-    MCAPI void* ctor$();
+    MCAPI RelativeFloat(float offset, bool relative);
 
+    MCAPI float getValue(float base) const;
+
+    MCAPI bool isRelative() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(float offset, bool relative);
     // NOLINTEND
 };

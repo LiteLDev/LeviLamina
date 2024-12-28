@@ -2,6 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MolangVariableIndex : uint16 {
-    Unknown = 0xffff,
+enum class MolangVariableIndex : ushort {
+    Unknown = 65535,
 };

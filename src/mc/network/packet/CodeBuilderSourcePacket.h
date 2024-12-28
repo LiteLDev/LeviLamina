@@ -1,61 +1,87 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/options/code_builder_storage_query_options/Category.h"
-#include "mc/options/code_builder_storage_query_options/Operation.h"
-#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
-
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/options/code_builder_storage_query_options/Category.h"
+#include "mc/options/code_builder_storage_query_options/Operation.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 class CodeBuilderSourcePacket : public ::Packet {
 public:
-    CodeBuilderStorageQueryOptions::Operation mOperation;  // this+0x30
-    CodeBuilderStorageQueryOptions::Category  mCategory;   // this+0x31
-    CodeBuilderExecutionState::CodeStatus     mCodeStatus; // this+0x32
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Operation> mOperation;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Category>  mCategory;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus>     mCodeStatus;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&);
     CodeBuilderSourcePacket(CodeBuilderSourcePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CodeBuilderSourcePacket() = default;
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI CodeBuilderSourcePacket();
-
+    // vIndex: 0
+    virtual ~CodeBuilderSourcePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CodeBuilderSourcePacket();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -8,62 +8,84 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace Json { class Writer; }
 // clang-format on
 
 namespace Json {
 
 class StyledWriter : public ::Json::Writer {
 public:
-    using ChildValues = std::vector<std::string>;
-
-    ChildValues childValues_;
-    std::string document_;
-    std::string indentString_;
-    uint        rightMargin_;
-    uint        indentSize_;
-    bool        addChildValues_;
+    // StyledWriter inner types define
+    using ChildValues = ::std::vector<::std::string>;
 
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StyledWriter();
-
-    // vIndex: 1
-    virtual std::string write(class Json::Value const& root);
-
-    MCAPI StyledWriter();
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> childValues_;
+    ::ll::TypedStorage<8, 32, ::std::string>                document_;
+    ::ll::TypedStorage<8, 32, ::std::string>                indentString_;
+    ::ll::TypedStorage<4, 4, int>                           rightMargin_;
+    ::ll::TypedStorage<4, 4, int>                           indentSize_;
+    ::ll::TypedStorage<1, 1, bool>                          addChildValues_;
     // NOLINTEND
 
-    // private:
+public:
+    // prevent constructor by default
+    StyledWriter& operator=(StyledWriter const&);
+    StyledWriter(StyledWriter const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~StyledWriter() /*override*/;
+
+    // vIndex: 1
+    virtual ::std::string write(::Json::Value const& root) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StyledWriter();
+
     MCAPI void indent();
 
-    MCAPI void pushValue(std::string const& value);
+    MCAPI bool isMultineArray(::Json::Value const& value);
+
+    MCAPI void pushValue(::std::string const& value);
 
     MCAPI void unindent();
 
-    MCAPI void writeArrayValue(class Json::Value const& value);
+    MCAPI void writeArrayValue(::Json::Value const& value);
 
-    MCAPI void writeValue(class Json::Value const& value);
+    MCAPI void writeIndent();
 
-    MCAPI void writeWithIndent(std::string const& value);
-
+    MCAPI void writeValue(::Json::Value const& value);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $write(::Json::Value const& root);
+    // NOLINTEND
 
-    MCAPI std::string write$(class Json::Value const& root);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

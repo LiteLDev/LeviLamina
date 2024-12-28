@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class I18nObserver {
+// auto generated inclusion list
+#include "mc/deps/core/utility/Observer.h"
+
+// auto generated forward declare list
+// clang-format off
+class PackManifest;
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
+class I18nObserver : public ::Core::Observer<::I18nObserver, ::Bedrock::Threading::Mutex> {
 public:
     // prevent constructor by default
     I18nObserver& operator=(I18nObserver const&);
@@ -10,27 +19,30 @@ public:
     I18nObserver();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~I18nObserver() = default;
-
-    // vIndex: 1
-    virtual void onLanguageChanged(std::string const& code, bool languageSystemInitializing);
+    virtual ~I18nObserver() /*override*/;
 
     // vIndex: 2
-    virtual void __unk_vfn_2() = 0;
+    virtual void onLanguageChanged(::std::string const&, bool) = 0;
 
     // vIndex: 3
-    virtual void onLanguagesLoaded() = 0;
+    virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) = 0;
 
+    // vIndex: 4
+    virtual void onLanguagesLoaded() = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onLanguageChanged$(std::string const& code, bool languageSystemInitializing);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

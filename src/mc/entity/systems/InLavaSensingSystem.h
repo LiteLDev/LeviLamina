@@ -5,9 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class InLavaSensingSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct TickingSystemWithInfo;
+struct UpdateWaterStateRequestComponent;
+struct WasInLavaFlagComponent;
+// clang-format on
+
+struct InLavaSensingSystem {
 public:
     // prevent constructor by default
     InLavaSensingSystem& operator=(InLavaSensingSystem const&);
@@ -15,25 +22,20 @@ public:
     InLavaSensingSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void doInLavaSensing(
-        class StrictEntityContext const&                             entity,
-        struct UpdateWaterStateRequestComponent const&               updateWaterStateRequestComponent,
-        class EntityModifier<class FlagComponent<struct InLavaFlag>> mod
+        ::StrictEntityContext const&               entity,
+        ::UpdateWaterStateRequestComponent const&  updateWaterStateRequestComponent,
+        ::EntityModifier<::WasInLavaFlagComponent> mod
     );
 
     MCAPI static void singleTickSystem(
-        class StrictEntityContext&                                                            entity,
-        class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const> view,
-        class EntityModifier<class FlagComponent<struct InLavaFlag>>                          mod
+        ::StrictEntityContext&                                                   entity,
+        ::ViewT<::StrictEntityContext, ::UpdateWaterStateRequestComponent const> view,
+        ::EntityModifier<::WasInLavaFlagComponent>                               mod
     );
-
-    MCAPI static void tickSystem(
-        class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const> view,
-        class EntityModifier<class FlagComponent<struct InLavaFlag>>                          mod
-    );
-
     // NOLINTEND
 };

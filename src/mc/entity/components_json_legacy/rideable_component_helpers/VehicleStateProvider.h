@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components_json_legacy/rideable_component_helpers/IVehicleStateProvider.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace RideableComponentHelpers { class IRideableActor; }
 struct ActorUniqueID;
 struct RideableComponentData;
 struct StrictActorIDEntityContextPair;
+namespace RideableComponentHelpers { class IRideableActor; }
 // clang-format on
 
 namespace RideableComponentHelpers {
 
-class VehicleStateProvider {
+class VehicleStateProvider : public ::RideableComponentHelpers::IVehicleStateProvider {
 public:
     // prevent constructor by default
     VehicleStateProvider& operator=(VehicleStateProvider const&);
@@ -20,38 +23,51 @@ public:
     VehicleStateProvider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VehicleStateProvider() = default;
-
     // vIndex: 1
     virtual bool canAddPassenger(
-        std::vector<struct StrictActorIDEntityContextPair> const& vehiclePassengers,
-        struct RideableComponentData const&                       vehicleData,
-        class RideableComponentHelpers::IRideableActor const&     vehicleActor,
-        class RideableComponentHelpers::IRideableActor const&     passengerActor
-    ) const;
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::RideableComponentData const&                         vehicleData,
+        ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
+        ::RideableComponentHelpers::IRideableActor const&      passengerActor
+    ) const /*override*/;
 
-    MCAPI static bool isPassenger(
-        std::vector<struct StrictActorIDEntityContextPair> const& vehiclePassengers,
-        struct ActorUniqueID const&                               passengerID
-    );
-
+    // vIndex: 0
+    virtual ~VehicleStateProvider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool isPassenger(
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::ActorUniqueID const&                                 passengerID
+    );
+    // NOLINTEND
 
-    MCAPI bool canAddPassenger$(
-        std::vector<struct StrictActorIDEntityContextPair> const& vehiclePassengers,
-        struct RideableComponentData const&                       vehicleData,
-        class RideableComponentHelpers::IRideableActor const&     vehicleActor,
-        class RideableComponentHelpers::IRideableActor const&     passengerActor
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canAddPassenger(
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::RideableComponentData const&                         vehicleData,
+        ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
+        ::RideableComponentHelpers::IRideableActor const&      passengerActor
     ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace RideableComponentHelpers
+} // namespace RideableComponentHelpers

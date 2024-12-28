@@ -7,6 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class EnchantmentInstance;
+class ItemInstance;
+class ItemStack;
+class LootItemCondition;
+class LootTableContext;
+class Random;
+struct Trade;
 namespace Json { class Value; }
 // clang-format on
 
@@ -20,24 +27,41 @@ public:
     // EnchantBookForTradingFunction inner types define
     struct EnchantmentOption {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk85cc40;
+        ::ll::UntypedStorage<4, 4>  mUnk738917;
+        ::ll::UntypedStorage<4, 4>  mUnk59d95d;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         EnchantmentOption& operator=(EnchantmentOption const&);
         EnchantmentOption(EnchantmentOption const&);
         EnchantmentOption();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~EnchantmentOption();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk1be4fe;
+    ::ll::UntypedStorage<4, 4>  mUnk751251;
+    ::ll::UntypedStorage<4, 4>  mUnk18274c;
+    ::ll::UntypedStorage<4, 4>  mUnk677e06;
+    ::ll::UntypedStorage<8, 24> mUnk4675c9;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -46,50 +70,63 @@ public:
     EnchantBookForTradingFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EnchantBookForTradingFunction() = default;
-
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext&);
-
-    // vIndex: 2
-    virtual int apply(class ItemStack& item, class Random& random, struct Trade const&, class LootTableContext&);
-
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext&);
+    virtual ~EnchantBookForTradingFunction() /*override*/;
 
     // vIndex: 4
-    virtual int apply(class ItemInstance& item, class Random& random, struct Trade const&, class LootTableContext&);
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    MCAPI static std::unique_ptr<class EnchantBookForTradingFunction>
-    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
+    // vIndex: 3
+    virtual int
+    apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
+
+    // vIndex: 1
+    virtual int
+    apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class EnchantmentInstance _getRandomEnchantInstance(class Random& random) const;
-
-    MCAPI std::optional<class EnchantmentInstance> _trySelectEnchantmentFromOptions(class Random& random) const;
-
-    MCAPI static std::optional<struct EnchantBookForTradingFunction::EnchantmentOption>
-    _parseEnchantmentOption(class Json::Value const& enchantOptionData);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
+    _parseEnchantmentOption(::Json::Value const& enchantOptionData);
 
-    MCAPI int apply$(class ItemStack& item, class Random& random, struct Trade const&, class LootTableContext&);
+    MCAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int apply$(class ItemInstance& item, class Random& random, struct Trade const&, class LootTableContext&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
+    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+
+    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,8 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/ItemFrameBlockActor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
 
 class GlowItemFrameBlockActor : public ::ItemFrameBlockActor {
 public:
@@ -14,20 +18,33 @@ public:
     GlowItemFrameBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GlowItemFrameBlockActor() = default;
-
-    MCAPI explicit GlowItemFrameBlockActor(class BlockPos pos);
-
+    virtual ~GlowItemFrameBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit GlowItemFrameBlockActor(::BlockPos pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

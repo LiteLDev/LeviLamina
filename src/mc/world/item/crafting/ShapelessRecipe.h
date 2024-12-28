@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class CraftingContainer;
+class CraftingContext;
+class ItemInstance;
+class RecipeIngredient;
 // clang-format on
 
 class ShapelessRecipe : public ::Recipe {
@@ -18,52 +21,67 @@ public:
     ShapelessRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ShapelessRecipe();
-
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
 
     // vIndex: 2
-    virtual int getCraftingSize() const;
+    virtual int getCraftingSize() const /*override*/;
 
     // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     // vIndex: 4
-    virtual bool isShapeless() const;
+    virtual bool isShapeless() const /*override*/;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
     // vIndex: 6
-    virtual int size() const;
+    virtual int size() const /*override*/;
 
-    MCAPI explicit ShapelessRecipe(struct Recipe::ConstructionContext&& context);
-
+    // vIndex: 0
+    virtual ~ShapelessRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ShapelessRecipe(::Recipe::ConstructionContext&& context);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct Recipe::ConstructionContext&& context);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::vector<class ItemInstance> const& assemble$(class CraftingContainer&, class CraftingContext&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
 
-    MCAPI int getCraftingSize$() const;
+    MCAPI int $getCraftingSize() const;
 
-    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCAPI bool isShapeless$() const;
+    MCAPI bool $isShapeless() const;
 
-    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCAPI int size$() const;
+    MCAPI int $size() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

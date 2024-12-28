@@ -1,10 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Features.h"
-
-// auto generated inclusion list
-#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,132 +18,157 @@ public:
     class Token;
     // clang-format on
 
+    // Reader inner types define
+    using Char = char;
+
     using Location = char const*;
 
-    // Reader inner types define
     enum class TokenType : int {
-        EndOfStream     = 0x0,
-        ObjectBegin     = 0x1,
-        ObjectEnd       = 0x2,
-        ArrayBegin      = 0x3,
-        ArrayEnd        = 0x4,
-        String          = 0x5,
-        Number          = 0x6,
-        True            = 0x7,
-        False           = 0x8,
-        Null            = 0x9,
-        ArraySeparator  = 0xA,
-        MemberSeparator = 0xB,
-        Comment         = 0xC,
-        Error           = 0xD,
+        TokenEndOfStream     = 0,
+        TokenObjectBegin     = 1,
+        TokenObjectEnd       = 2,
+        TokenArrayBegin      = 3,
+        TokenArrayEnd        = 4,
+        TokenString          = 5,
+        TokenNumber          = 6,
+        TokenTrue            = 7,
+        TokenFalse           = 8,
+        TokenNull            = 9,
+        TokenArraySeparator  = 10,
+        TokenMemberSeparator = 11,
+        TokenComment         = 12,
+        TokenError           = 13,
     };
 
     class Token {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::Json::Reader::TokenType> type_;
+        ::ll::TypedStorage<8, 8, char const*>               start_;
+        ::ll::TypedStorage<8, 8, char const*>               end_;
+        ::ll::TypedStorage<1, 1, bool>                      stringHasEscape_;
+        // NOLINTEND
 
     public:
-        TokenType type_;
-        Location  start_;
-        Location  end_;
+        // prevent constructor by default
+        Token& operator=(Token const&);
+        Token(Token const&);
+        Token();
     };
 
     class ErrorInfo {
     public:
-        Token       token_;
-        std::string message_;
-        Location    extra_;
-
-    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI ~ErrorInfo();
-
+        ::ll::TypedStorage<8, 32, ::Json::Reader::Token> token_;
+        ::ll::TypedStorage<8, 32, ::std::string>         message_;
+        ::ll::TypedStorage<8, 8, char const*>            extra_;
         // NOLINTEND
 
-        // thunks
     public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
+        // prevent constructor by default
+        ErrorInfo& operator=(ErrorInfo const&);
+        ErrorInfo(ErrorInfo const&);
+        ErrorInfo();
 
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ErrorInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    using Nodes  = std::stack<Value*>;
-    using Errors = std::deque<ErrorInfo>;
+    using Errors = ::std::deque<::Json::Reader::ErrorInfo>;
+
+    using Nodes = ::std::stack<::Json::Value*, ::std::deque<::Json::Value*>>;
 
 public:
-    Nodes          nodes_;
-    Errors         errors_;
-    std::string    document_;
-    Location       begin_;
-    Location       end_;
-    Location       current_;
-    Location       lastValueEnd_;
-    Json::Value*   lastValue_;
-    std::string    commentsBefore_;
-    Json::Features features_;
-    bool           collectComments_;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 40, ::std::stack<::Json::Value*, ::std::deque<::Json::Value*>>> nodes_;
+    ::ll::TypedStorage<8, 40, ::std::deque<::Json::Reader::ErrorInfo>>                    errors_;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              document_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 begin_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 end_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 current_;
+    ::ll::TypedStorage<8, 8, char const*>                                                 lastValueEnd_;
+    ::ll::TypedStorage<8, 8, ::Json::Value*>                                              lastValue_;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              commentsBefore_;
+    ::ll::TypedStorage<1, 2, ::Json::Features>                                            features_;
+    ::ll::TypedStorage<1, 1, bool>                                                        collectComments_;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Reader& operator=(Reader const&);
+    Reader(Reader const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Reader();
 
-    MCAPI explicit Reader(class Json::Features const& features);
+    MCAPI explicit Reader(::Json::Features const& features);
 
-    MCAPI std::string getFormattedErrorMessages() const;
+    MCAPI bool addError(::std::string const& message, ::Json::Reader::Token& token, char const* extra);
 
-    MCAPI bool parse(std::istream& sin, class Json::Value& root, bool collectComments);
+    MCAPI ::Json::Value decodeDouble(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool parse(std::string const& document, class Json::Value& root, bool collectComments);
+    MCAPI ::Json::Value decodeNumber(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool parse(char const* originalBegin, uint64 length, class Json::Value& root, bool collectComments);
-
-    MCAPI ~Reader();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool addError(std::string const& message, class Json::Reader::Token& token, char const* extra);
-
-    MCAPI class Json::Value decodeDouble(class Json::Reader::Token& token, bool& successful);
-
-    MCAPI class Json::Value decodeNumber(class Json::Reader::Token& token, bool& successful);
-
-    MCAPI bool decodeString(class Json::Reader::Token& token, char* decoded);
-
-    MCAPI class Json::Value::CZString decodeString(class Json::Reader::Token& token, bool& successful);
+    MCAPI bool decodeString(::Json::Reader::Token& token, char* decoded);
 
     MCAPI bool
-    decodeUnicodeCodePoint(class Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
+    decodeUnicodeCodePoint(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
     MCAPI bool
-    decodeUnicodeEscapeSequence(class Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
+    decodeUnicodeEscapeSequence(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
-    MCAPI std::string getLocationLineAndColumn(char const* location) const;
+    MCAPI ::std::string getFormattedErrorMessages() const;
 
-    MCAPI bool parse(char const* beginDoc, char const* endDoc, class Json::Value& root, bool);
+    MCAPI ::std::string getLocationLineAndColumn(char const* location) const;
 
-    MCAPI class Json::Value readArray(class Json::Reader::Token&, bool& ok);
+    MCAPI bool parse(::std::string const& document, ::Json::Value& root, bool collectComments);
 
-    MCAPI class Json::Value readObject(class Json::Reader::Token&, bool& successful);
+    MCAPI bool parse(::std::istream& sin, ::Json::Value& root, bool collectComments);
 
-    MCAPI bool readToken(class Json::Reader::Token& token);
+    MCAPI bool parse(char const* beginDoc, char const* endDoc, ::Json::Value& root, bool);
 
-    MCAPI class Json::Value readValue(bool& successful);
+    MCAPI bool parse(char const* originalBegin, uint64 length, ::Json::Value& root, bool collectComments);
+
+    MCAPI ::Json::Value readArray(::Json::Reader::Token&, bool& ok);
+
+    MCAPI ::Json::Value readObject(::Json::Reader::Token&, bool& successful);
+
+    MCAPI bool readToken(::Json::Reader::Token& token);
+
+    MCAPI ::Json::Value readValue(bool& successful);
 
     MCAPI bool recoverFromError(::Json::Reader::TokenType skipUntilToken);
 
+    MCAPI ~Reader();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Json::Features const& features);
+    MCAPI void* $ctor(::Json::Features const& features);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

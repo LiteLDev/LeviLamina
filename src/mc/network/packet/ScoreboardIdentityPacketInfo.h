@@ -1,10 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/scores/PlayerScoreboardId.h"
-#include "mc/world/scores/ScoreboardId.h"
 
 struct ScoreboardIdentityPacketInfo {
-    ScoreboardId       mScoreboardId; // this+0x0
-    PlayerScoreboardId mPlayerId;     // this+0x10
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnka1a5a8;
+    ::ll::UntypedStorage<8, 8>  mUnked4ff0;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScoreboardIdentityPacketInfo& operator=(ScoreboardIdentityPacketInfo const&);
+    ScoreboardIdentityPacketInfo(ScoreboardIdentityPacketInfo const&);
+    ScoreboardIdentityPacketInfo();
 };

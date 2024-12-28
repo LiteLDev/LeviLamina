@@ -4,21 +4,26 @@
 
 class ITreeCanopyWrapper {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb352c6;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ITreeCanopyWrapper& operator=(ITreeCanopyWrapper const&);
     ITreeCanopyWrapper(ITreeCanopyWrapper const&);
     ITreeCanopyWrapper();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ITreeCanopyWrapper();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

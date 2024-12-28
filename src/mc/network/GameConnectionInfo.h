@@ -17,51 +17,68 @@ namespace Social {
 
 class GameConnectionInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2>   mUnk206dd6;
+    ::ll::UntypedStorage<8, 32>  mUnkc765ce;
+    ::ll::UntypedStorage<8, 32>  mUnk26dcb3;
+    ::ll::UntypedStorage<4, 4>   mUnk2115f0;
+    ::ll::UntypedStorage<8, 16>  mUnk76ec07;
+    ::ll::UntypedStorage<8, 8>   mUnkb3e742;
+    ::ll::UntypedStorage<8, 168> mUnk508ac9;
+    ::ll::UntypedStorage<8, 136> mUnkd989b0;
+    ::ll::UntypedStorage<1, 1>   mUnk28f2a6;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI GameConnectionInfo();
 
-    MCAPI GameConnectionInfo(class Social::GameConnectionInfo const&);
+    MCAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
 
     MCAPI GameConnectionInfo(
-        struct RakNet::SystemAddress     connection,
-        struct RakNet::RakNetGUID const& rakGuid,
-        class ThirdPartyInfo const&      serverInfo,
-        class GatheringServerInfo const& gatheringServerInfo
+        ::RakNet::SystemAddress      connection,
+        ::RakNet::RakNetGUID const&  rakGuid,
+        ::ThirdPartyInfo const&      serverInfo,
+        ::GatheringServerInfo const& gatheringServerInfo
     );
 
-    MCAPI std::string const& getHostIpAddress() const;
+    MCAPI ::std::string const& getHostIpAddress() const;
 
     MCAPI int getPort() const;
 
-    MCAPI class ThirdPartyInfo const& getThirdPartyServerInfo() const;
+    MCAPI ::ThirdPartyInfo const& getThirdPartyServerInfo() const;
 
     MCAPI ::Social::ConnectionType getType() const;
 
-    MCAPI class Social::GameConnectionInfo& operator=(class Social::GameConnectionInfo const&);
+    MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
 
-    MCAPI void setUnresolvedUrl(std::string const& url);
+    MCAPI void setUnresolvedUrl(::std::string const& url);
 
     MCAPI ~GameConnectionInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Social::GameConnectionInfo const&);
+    MCAPI void* $ctor(::Social::GameConnectionInfo const&);
 
-    MCAPI void* ctor$(
-        struct RakNet::SystemAddress     connection,
-        struct RakNet::RakNetGUID const& rakGuid,
-        class ThirdPartyInfo const&      serverInfo,
-        class GatheringServerInfo const& gatheringServerInfo
+    MCAPI void* $ctor(
+        ::RakNet::SystemAddress      connection,
+        ::RakNet::RakNetGUID const&  rakGuid,
+        ::ThirdPartyInfo const&      serverInfo,
+        ::GatheringServerInfo const& gatheringServerInfo
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Social
+} // namespace Social

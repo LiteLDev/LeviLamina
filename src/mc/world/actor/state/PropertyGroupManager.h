@@ -2,35 +2,52 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class HashedString;
+class PropertyGroup;
+// clang-format on
+
 class PropertyGroupManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk64dcbf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PropertyGroupManager& operator=(PropertyGroupManager const&);
     PropertyGroupManager(PropertyGroupManager const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PropertyGroupManager();
 
-    MCAPI class CompoundTag getActorPropertyDataTag(class HashedString const& actorCanonicalName) const;
+    MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
-    MCAPI std::unordered_map<class HashedString, std::shared_ptr<class PropertyGroup const>> const&
-          getAllPropertyGroups() const;
+    MCAPI ::std::unordered_map<::HashedString, ::std::shared_ptr<::PropertyGroup const>> const&
+    getAllPropertyGroups() const;
 
-    MCAPI void registerGroup(class HashedString const& id, std::shared_ptr<class PropertyGroup const> group);
+    MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
 
-    MCAPI void tryInitPropertiesOnActor(class Actor& actor) const;
+    MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
 
     MCAPI ~PropertyGroupManager();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

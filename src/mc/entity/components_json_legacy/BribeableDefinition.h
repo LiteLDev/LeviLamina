@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class BribeableComponent;
+class EntityContext;
+class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class BribeableDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk9dc398;
+    ::ll::UntypedStorage<8, 24> mUnk1fe0be;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BribeableDefinition& operator=(BribeableDefinition const&);
@@ -18,15 +28,18 @@ public:
     BribeableDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addBribeItem(class ItemDescriptor const& itemDescriptor);
+    MCAPI void addBribeItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void initialize(class EntityContext&, class BribeableComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::BribeableComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BribeableDefinition>>& root
     );
-
     // NOLINTEND
 };

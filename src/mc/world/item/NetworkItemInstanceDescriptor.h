@@ -8,10 +8,21 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class BlockPalette;
+class ItemInstance;
+class ItemStackDescriptor;
+class ReadOnlyBinaryStream;
 // clang-format on
 
 class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkcdd6df;
+    ::ll::UntypedStorage<8, 32> mUnka0ca51;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
@@ -19,36 +30,43 @@ public:
     NetworkItemInstanceDescriptor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkItemInstanceDescriptor();
-
-    MCAPI explicit NetworkItemInstanceDescriptor(class ItemInstance const& item);
-
-    MCAPI explicit NetworkItemInstanceDescriptor(class ItemStackDescriptor const& descriptor);
-
-    MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor&&);
-
-    MCAPI class ItemInstance getItemInstance(class BlockPalette const& blockPalette) const;
-
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI void write(class BinaryStream& stream) const;
-
+    virtual ~NetworkItemInstanceDescriptor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
 
-    MCAPI void* ctor$(class ItemStackDescriptor const& descriptor);
+    MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
-    MCAPI void* ctor$(class ItemInstance const& item);
+    MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
 
-    MCAPI void* ctor$(class NetworkItemInstanceDescriptor&&);
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void dtor$();
+    MCAPI void write(::BinaryStream& stream) const;
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
+
+    MCAPI void* $ctor(::ItemInstance const& item);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

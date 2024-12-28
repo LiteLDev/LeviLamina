@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
 class EnchantingContainerScreenValidator : public ::ContainerScreenValidatorBase {
@@ -11,22 +10,24 @@ public:
     // prevent constructor by default
     EnchantingContainerScreenValidator& operator=(EnchantingContainerScreenValidator const&);
     EnchantingContainerScreenValidator(EnchantingContainerScreenValidator const&);
+    EnchantingContainerScreenValidator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EnchantingContainerScreenValidator() = default;
-
-    MCAPI EnchantingContainerScreenValidator();
-
+    virtual ~EnchantingContainerScreenValidator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

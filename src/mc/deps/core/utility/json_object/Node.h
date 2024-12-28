@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_object/JSONType.h"
+#include "mc/deps/core/utility/json_object/NodeBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace Bedrock::JSONObject { class ValueWrapper; }
 
 namespace Bedrock::JSONObject {
 
-class Node {
+class Node : public ::Bedrock::JSONObject::NodeBase {
 public:
     // prevent constructor by default
     Node& operator=(Node const&);
@@ -21,29 +21,12 @@ public:
     Node();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
+    MCAPI ::Bedrock::JSONObject::ObjectNode* asObject();
 
-    MCAPI ::Bedrock::JSONObject::JSONType getType() const;
-
-    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const& rhs);
-
-    MCAPI std::string toJSONString() const;
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI ~Node();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI ::Bedrock::JSONObject::Node* operator=(::Bedrock::JSONObject::ValueWrapper const& rhs);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

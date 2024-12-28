@@ -4,11 +4,13 @@
 
 namespace mce {
 
-enum class ImageFormat : int {
-    Unknown    = 0x0,
-    R8Unorm    = 0x1,
-    RGB8Unorm  = 0x2,
-    RGBA8Unorm = 0x3,
+enum class ImageFormat : uint {
+    Unknown     = 0,
+    R8Unorm     = 1,
+    RG8Unorm    = 2,
+    RGB8Unorm   = 3,
+    RGBA8Unorm  = 4,
+    RGBA16Float = 5,
 };
 
-};
+}

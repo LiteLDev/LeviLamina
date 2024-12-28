@@ -2,13 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-class EnderManPreAIStepSystem {
+struct EnderManPreAIStepSystem {
 public:
     // prevent constructor by default
     EnderManPreAIStepSystem& operator=(EnderManPreAIStepSystem const&);
@@ -16,18 +15,8 @@ public:
     EnderManPreAIStepSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    MCAPI static void tick(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct EnderManFlag>,
-                class FlagComponent<struct MobIsJumpingFlag>>>             view,
-        class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
-    );
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

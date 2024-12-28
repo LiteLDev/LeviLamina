@@ -3,22 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class Player;
+class Vec3;
+struct Brightness;
 // clang-format on
 
-class VaultBlock : public ::ActorBlock {
+class VaultBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     VaultBlock& operator=(VaultBlock const&);
@@ -26,62 +25,81 @@ public:
     VaultBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
+
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 120
+    virtual ::Block const& getRenderBlock() const /*override*/;
+
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
+
+    // vIndex: 122
+    virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
+
     // vIndex: 0
-    virtual ~VaultBlock() = default;
-
-    // vIndex: 98
-    virtual class Block const&
-    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 131
-    virtual class Block const& getRenderBlock() const;
-
-    // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
-
-    // vIndex: 133
-    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
-
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    MCAPI VaultBlock(std::string const& nameId, int id);
-
+    virtual ~VaultBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI VaultBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI ::Flip getFaceFlip$(uchar face, class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI class Block const&
-    getPlacementBlock$(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI class Block const& getRenderBlock$() const;
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
+        const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

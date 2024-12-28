@@ -1,30 +1,51 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
 
-struct SynchedActorDataComponent;
-struct ActorDataFlagComponent;
-struct ActorDataDirtyFlagsComponent;
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CompoundTag;
+class DataItem;
 class EntityContext;
+class SynchedActorData;
+class SynchedActorDataReader;
+class SynchedActorDataWriter;
+class Vec3;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct SynchedActorDataComponent;
+// clang-format on
 
 class SynchedActorDataEntityWrapper {
 public:
-    gsl::not_null<SynchedActorDataComponent*>    mSynchedActorData;
-    gsl::not_null<ActorDataFlagComponent*>       mActorDataFlag;
-    gsl::not_null<ActorDataDirtyFlagsComponent*> mActorDataDirtyFlag;
-    WeakRef<EntityContext>                       mWeakEntity;
-
-    template <typename T>
-    MCAPI void define(ushort, T const&);
-    template <typename T>
-    MCAPI void set(ushort, T const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::SynchedActorDataComponent*>>    mData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataFlagComponent*>>       mFlagData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorDataDirtyFlagsComponent*>> mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                      mEntityContext;
+    // NOLINTEND
 
 public:
-    // NOLINTBEGIN
-    MCAPI explicit SynchedActorDataEntityWrapper(class EntityContext& entity);
+    // prevent constructor by default
+    SynchedActorDataEntityWrapper& operator=(SynchedActorDataEntityWrapper const&);
+    SynchedActorDataEntityWrapper(SynchedActorDataEntityWrapper const&);
+    SynchedActorDataEntityWrapper();
 
-    MCAPI class CompoundTag const& getCompoundTag(ushort id) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);
+
+    MCAPI ::gsl::not_null<::SynchedActorData const*> _get() const;
+
+    MCAPI ::gsl::not_null<::SynchedActorData*> _get();
+
+    MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
     MCAPI float getFloat(ushort id) const;
 
@@ -34,13 +55,13 @@ public:
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCAPI class BlockPos getPosition(ushort id) const;
+    MCAPI ::BlockPos getPosition(ushort id) const;
 
     MCAPI short getShort(ushort id) const;
 
-    MCAPI std::string const& getString(ushort id) const;
+    MCAPI ::std::string const& getString(ushort id) const;
 
-    MCAPI class Vec3 getVec3(ushort id) const;
+    MCAPI ::Vec3 getVec3(ushort id) const;
 
     MCAPI bool hasData(ushort id) const;
 
@@ -48,32 +69,26 @@ public:
 
     MCAPI void markDirty(ushort id);
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
+    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll() const;
 
-    MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
+    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty();
 
-    MCAPI class SynchedActorDataReader reader() const;
+    MCAPI ::SynchedActorDataReader reader() const;
 
-    MCAPI class SynchedActorDataWriter writer();
+    MCAPI ::SynchedActorDataWriter writer();
 
     MCAPI ~SynchedActorDataEntityWrapper();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI gsl::not_null<class SynchedActorData*> _get();
-
-    MCAPI gsl::not_null<class SynchedActorData const*> _get() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class EntityContext& entity);
+    MCAPI void* $ctor(::EntityContext& entity);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

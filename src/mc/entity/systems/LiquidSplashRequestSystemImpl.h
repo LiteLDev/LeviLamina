@@ -5,22 +5,33 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorGameTypeComponent;
+struct ActorHeadInWaterFlagComponent;
+struct ActorHeadWasInWaterFlagComponent;
+struct ExternalDataInterface;
+struct PostSplashGameEventRequestComponent;
+struct UpdateWaterStateRequestComponent;
+struct WasInLavaFlagComponent;
+struct WaterSplashEffectRequestComponent;
+// clang-format on
 
 namespace LiquidSplashRequestSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doTick(
-    class StrictEntityContext const&                                                 entity,
-    struct UpdateWaterStateRequestComponent const&                                   waterState,
-    class Optional<struct ActorGameTypeComponent const> const&                       playerGameType,
-    class Optional<class FlagComponent<struct InLavaFlag> const> const&              wasInLava,
-    class Optional<class FlagComponent<struct ActorHeadInWaterFlag> const> const&    headInWater,
-    class Optional<class FlagComponent<struct ActorHeadWasInWaterFlag> const> const& headWasInWater,
-    class EntityModifier<
-        class FlagComponent<struct PostSplashGameEventRequestFlag>,
-        struct WaterSplashEffectRequestComponent> modifier,
-    struct ExternalDataInterface const&           externalData
+    ::StrictEntityContext const&                                                                 entity,
+    ::UpdateWaterStateRequestComponent const&                                                    waterState,
+    ::Optional<::ActorGameTypeComponent const> const&                                            playerGameType,
+    ::Optional<::WasInLavaFlagComponent const> const&                                            wasInLava,
+    ::Optional<::ActorHeadInWaterFlagComponent const> const&                                     headInWater,
+    ::Optional<::ActorHeadWasInWaterFlagComponent const> const&                                  headWasInWater,
+    ::EntityModifier<::PostSplashGameEventRequestComponent, ::WaterSplashEffectRequestComponent> modifier,
+    ::ExternalDataInterface const&                                                               externalData
 );
 // NOLINTEND
 
-}; // namespace LiquidSplashRequestSystemImpl
+} // namespace LiquidSplashRequestSystemImpl

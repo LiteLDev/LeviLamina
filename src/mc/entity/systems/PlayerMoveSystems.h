@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerMoveSystems {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct PlayerMoveSystems {
 public:
     // prevent constructor by default
     PlayerMoveSystems& operator=(PlayerMoveSystems const&);
@@ -10,12 +15,12 @@ public:
     PlayerMoveSystems();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
+    MCAPI static ::TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
 
-    MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();
+    MCAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
 
-    MCAPI static struct TickingSystemWithInfo createPlayerPreMoveSystem();
-
+    MCAPI static ::TickingSystemWithInfo createPlayerPreMoveSystem();
     // NOLINTEND
 };

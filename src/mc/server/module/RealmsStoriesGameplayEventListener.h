@@ -4,10 +4,38 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/level/storage/RealmEventId.h"
 
-class RealmsStoriesGameplayEventListener {
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorEventListener;
+class Dimension;
+class IRealmEventLogger;
+class ItemEnchants;
+class ItemInstance;
+class ItemStack;
+class LevelStorage;
+class Player;
+class PlayerEventListener;
+struct ActorAcquiredItemEvent;
+struct ActorKilledEvent;
+struct PlayerUseNameTagEvent;
+namespace Json { class Value; }
+// clang-format on
+
+class RealmsStoriesGameplayEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
+                                           public ::EventListenerDispatcher<::PlayerEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk8ca991;
+    ::ll::UntypedStorage<8, 8>  mUnkc3ec80;
+    ::ll::UntypedStorage<8, 8>  mUnk5b2408;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RealmsStoriesGameplayEventListener& operator=(RealmsStoriesGameplayEventListener const&);
@@ -15,63 +43,134 @@ public:
     RealmsStoriesGameplayEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onEvent(struct ActorKilledEvent const& actorKilledEvent);
+    // vIndex: 41
+    virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent) /*override*/;
 
-    MCVAPI ::EventResult onEvent(struct ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+    // vIndex: 30
+    virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
-    MCVAPI ::EventResult onPlayerMove(class Player& player);
+    // vIndex: 66
+    virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
-    MCVAPI ::EventResult onPlayerPortalBuilt(class Player& player, DimensionType);
+    // vIndex: 16
+    virtual ::EventResult onPlayerMove(::Player& player) /*override*/;
 
-    MCVAPI ::EventResult
-    onPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
+    // vIndex: 2
+    virtual ::EventResult onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn) /*override*/;
 
-    MCVAPI ::EventResult onPlayerPoweredBeacon(class Player const& player, int);
+    // vIndex: 3
+    virtual ::EventResult
+    onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
-    MCAPI explicit RealmsStoriesGameplayEventListener(class LevelStorage& levelStorage);
+    // vIndex: 4
+    virtual ::EventResult onPlayerPoweredBeacon(::Player const& player, int level) /*override*/;
 
+    // vIndex: 33
+    virtual ::EventResult onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    ) /*override*/;
+
+    // vIndex: 29
+    virtual ::EventResult
+    onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants) /*override*/;
+
+    // vIndex: 0
+    virtual ~RealmsStoriesGameplayEventListener() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void
-    _handlePillagerKilledEvent(class Actor const& killedActor, struct ActorKilledEvent const& actorKilledEvent);
-
-    MCAPI void _publishEventForRealmsService(::RealmEventId id, std::string const& xuid);
-
-    MCAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, class Player const& player);
-
-    MCAPI void
-    _publishWorldEventFirstOrOtherTime(::RealmEventId firstTimeId, ::RealmEventId otherTimeId, std::string const& xuid);
-
-    MCAPI static std::set<std::string> _getXuidsInKillProximity(class Actor const& killedActor, float xz, float y);
-
-    MCAPI static std::string _playerXuidsToString(std::set<std::string> const& xuids);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForEventListenerDispatcherActorEventListener();
+    MCAPI RealmsStoriesGameplayEventListener(
+        ::LevelStorage&                        levelStorage,
+        ::std::unique_ptr<::IRealmEventLogger> realmEventLogger
+    );
 
-    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
+    MCAPI void _handleDragonKilledEvent(::Actor const& killedActor);
 
-    MCAPI void* ctor$(class LevelStorage& levelStorage);
+    MCAPI void _handlePillagerKilledEvent(::Actor const& killedActor, ::ActorKilledEvent const& actorKilledEvent);
 
-    MCAPI ::EventResult onEvent$(struct ActorKilledEvent const& actorKilledEvent);
+    MCAPI void _handleWitherKilledEvent(::Actor const& killedActor);
 
-    MCAPI ::EventResult onEvent$(struct ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+    MCAPI void
+    _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
 
-    MCAPI ::EventResult onPlayerMove$(class Player& player);
+    MCAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, ::Player const& player);
+    // NOLINTEND
 
-    MCAPI ::EventResult onPlayerPortalBuilt$(class Player& player, DimensionType);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
+
+    MCAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelStorage& levelStorage, ::std::unique_ptr<::IRealmEventLogger> realmEventLogger);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& actorAcquiredItemEvent);
+
+    MCAPI ::EventResult $onEvent(::ActorKilledEvent const& actorKilledEvent);
+
+    MCAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent);
+
+    MCAPI ::EventResult $onPlayerMove(::Player& player);
+
+    MCAPI ::EventResult $onPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
 
     MCAPI ::EventResult
-    onPlayerPortalUsed$(class Player& player, DimensionType fromDimension, DimensionType toDimension);
+    $onPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCAPI ::EventResult onPlayerPoweredBeacon$(class Player const& player, int);
+    MCAPI ::EventResult $onPlayerPoweredBeacon(::Player const& player, int level);
 
+    MCAPI ::EventResult $onPlayerCraftedItem(
+        ::Player&                   player,
+        ::ItemInstance const&       craftedItem,
+        bool                        recipeBook,
+        bool                        hadSearchString,
+        bool                        craftedAutomatically,
+        int                         startingTabId,
+        int                         endingTabId,
+        int                         numTabsChanged,
+        bool                        filterOn,
+        bool                        recipeBookShown,
+        ::std::vector<short> const& ingredientItemIDs
+    );
+
+    MCAPI ::EventResult
+    $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEventListenerDispatcherActorEventListener();
+
+    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

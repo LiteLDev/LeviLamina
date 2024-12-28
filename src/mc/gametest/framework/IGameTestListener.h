@@ -17,37 +17,51 @@ public:
     IGameTestListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void onTestFailed(class gametest::BaseGameTestInstance&);
+    // vIndex: 0
+    virtual ~IGameTestListener();
 
-    MCVAPI void onTestPassed(class gametest::BaseGameTestInstance&);
+    // vIndex: 1
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
-    MCVAPI void onTestRetryFinished(class gametest::BaseGameTestInstance&);
+    // vIndex: 2
+    virtual void onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCVAPI void onTestRetryStarted(class gametest::BaseGameTestInstance&);
+    // vIndex: 3
+    virtual void onTestFailed(::gametest::BaseGameTestInstance&);
 
-    MCVAPI void onTestStarted(class gametest::BaseGameTestInstance&);
+    // vIndex: 4
+    virtual void onTestStarted(::gametest::BaseGameTestInstance&);
 
-    MCVAPI void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    // vIndex: 5
+    virtual void onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
+    // vIndex: 6
+    virtual void onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void onTestFailed$(class gametest::BaseGameTestInstance&);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onTestPassed$(class gametest::BaseGameTestInstance&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
-    MCAPI void onTestRetryFinished$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void onTestRetryStarted$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void onTestStarted$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
 
-    MCAPI void onTestStructureLoaded$(class gametest::BaseGameTestInstance&);
+    MCAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
+    MCAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

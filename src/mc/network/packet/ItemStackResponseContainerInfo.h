@@ -1,36 +1,48 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/ItemStackResponseSlotInfo.h"
-#include "mc/world/containers/ContainerEnumName.h"
 
-// auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
+// auto generated forward declare list
+// clang-format off
+struct FullContainerName;
+struct ItemStackResponseSlotInfo;
+// clang-format on
 
 struct ItemStackResponseContainerInfo {
 public:
-    ContainerEnumName                      mOpenContainerNetId; // this+0x0
-    std::vector<ItemStackResponseSlotInfo> mSlots;              // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::FullContainerName>                        mFullContainerName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseSlotInfo>> mSlots;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&);
     ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&);
     ItemStackResponseContainerInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemStackResponseContainerInfo(::ContainerEnumName openContainerNetId);
+    MCAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);
+
+    MCAPI explicit ItemStackResponseContainerInfo(::FullContainerName const& openContainerNetId);
 
     MCAPI ~ItemStackResponseContainerInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(::ContainerEnumName openContainerNetId);
+    MCAPI void* $ctor(::ItemStackResponseContainerInfo&&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::FullContainerName const& openContainerNetId);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

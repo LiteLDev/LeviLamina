@@ -1,15 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/typeid_t.h"
 
-enum class CommandCompareOperator : char {
-    Invalid           = 0x0,
-    Equals            = 0x1,
-    LessThan          = 0x2,
-    GreaterThan       = 0x3,
-    LessThanEquals    = 0x4,
-    GreaterThanEquals = 0x5,
+enum class CommandCompareOperator : uchar {
+    Invalid           = 0,
+    Equals            = 1,
+    LessThan          = 2,
+    GreaterThan       = 3,
+    LessThanEquals    = 4,
+    GreaterThanEquals = 5,
 };
-
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandCompareOperator>();

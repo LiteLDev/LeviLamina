@@ -6,16 +6,21 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
-namespace VillageManagerComponentUtils {
-// NOLINTBEGIN
-MCAPI void addVillageManager(
-    struct VillageManagerComponent& villageManagerComponent,
-    DimensionType                   type,
-    class IVillageManager*          manager
-);
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class IVillageManager;
+struct VillageManagerComponent;
+// clang-format on
 
-MCAPI class Bedrock::NonOwnerPointer<class IVillageManager>
-getVillageManager(struct VillageManagerComponent const& villageManagerComponent, DimensionType type);
+namespace VillageManagerComponentUtils {
+// functions
+// NOLINTBEGIN
+MCAPI void
+addVillageManager(::VillageManagerComponent& villageManagerComponent, ::DimensionType type, ::IVillageManager* manager);
+
+MCAPI ::Bedrock::NonOwnerPointer<::IVillageManager>
+getVillageManager(::VillageManagerComponent const& villageManagerComponent, ::DimensionType type);
 // NOLINTEND
 
-}; // namespace VillageManagerComponentUtils
+} // namespace VillageManagerComponentUtils

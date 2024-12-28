@@ -1,58 +1,49 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/transaction/InventorySource.h"
-#include "mc/world/item/ItemStack.h"
-#include "mc/world/item/NetworkItemStackDescriptor.h"
+
+// auto generated forward declare list
+// clang-format off
+class InventorySource;
+class ItemStack;
+class NetworkItemStackDescriptor;
+// clang-format on
 
 class InventoryAction {
 public:
-    InventorySource            mSource;             // this+0x0
-    uint                       mSlot;               // this+0xC
-    NetworkItemStackDescriptor mFromItemDescriptor; // this+0x10
-    NetworkItemStackDescriptor mToItemDescriptor;   // this+0x70
-    ItemStack                  mFromItem;           // this+0xD0
-    ItemStack                  mToItem;             // this+0x170
-
-public:
-    InventoryAction(InventorySource source, uint slot, ItemStack const& fromItem, ItemStack const& toItem)
-    : mSource(source),
-      mSlot(slot),
-      mFromItemDescriptor(fromItem),
-      mToItemDescriptor(toItem) {
-        mFromItem = fromItem;
-        mToItem   = toItem;
-    }
-
-    InventoryAction(
-        InventorySource                   source,
-        uint                              slot,
-        NetworkItemStackDescriptor const& fromItemDescriptor,
-        NetworkItemStackDescriptor const& toItemDescriptor
-    )
-    : mSource(source),
-      mSlot(slot),
-      mFromItemDescriptor(fromItemDescriptor),
-      mToItemDescriptor(toItemDescriptor),
-      mFromItem(),
-      mToItem() {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI InventoryAction(class InventoryAction const&);
-
-    MCAPI class InventoryAction& operator=(class InventoryAction const&);
-
-    MCAPI ~InventoryAction();
-
+    ::ll::TypedStorage<4, 12, ::InventorySource>            mSource;
+    ::ll::TypedStorage<4, 4, uint>                          mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFromItemDescriptor;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mToItemDescriptor;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mFromItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                 mToItem;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    InventoryAction();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class InventoryAction const&);
+    MCAPI InventoryAction(::InventoryAction const&);
 
-    MCAPI void dtor$();
+    MCAPI ::InventoryAction& operator=(::InventoryAction const&);
 
+    MCAPI ~InventoryAction();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::InventoryAction const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

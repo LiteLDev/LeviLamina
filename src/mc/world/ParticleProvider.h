@@ -6,103 +6,106 @@
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/world/actor/ParticleType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class CompoundTag;
+class HashedString;
+class MolangVariableMap;
+class Particle;
+class Vec3;
+struct BreakingItemParticleData;
+struct ResolvedItemIconInfo;
+// clang-format on
+
 class ParticleProvider {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnk35e01e;
+    ::ll::UntypedStorage<8, 128> mUnk9deb54;
+    ::ll::UntypedStorage<8, 128> mUnk876d92;
+    ::ll::UntypedStorage<8, 128> mUnk499051;
+    ::ll::UntypedStorage<8, 128> mUnka1cafa;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ParticleProvider& operator=(ParticleProvider const&);
     ParticleProvider(ParticleProvider const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ParticleProvider();
-
-    // vIndex: 1
-    virtual class Bedrock::PubSub::Connector<void(::ParticleType, class Vec3 const&, class Vec3 const&, int)>&
-    getSendServerLegacyParticleConnector();
-
-    // vIndex: 2
-    virtual class Bedrock::PubSub::Connector<
-        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
-    getAddTerrainParticleEffectConnector();
-
-    // vIndex: 3
-    virtual class Bedrock::PubSub::Connector<
-        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
-    getAddTerrainSlideEffectConnector();
-
-    // vIndex: 4
-    virtual class Bedrock::PubSub::Connector<
-        void(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&)>&
-    getAddBreakingItemParticleEffectConnector();
-
     MCAPI ParticleProvider();
 
     MCAPI void addBreakingItemParticleEffect(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
     );
 
-    MCAPI class Particle* addParticle(
-        ::ParticleType           type,
-        class Vec3 const&        pos,
-        class Vec3 const&        dir,
-        int                      data,
-        class CompoundTag const* tag,
-        bool                     isGlobal
+    MCAPI ::Particle* addParticle(
+        ::ParticleType       type,
+        ::Vec3 const&        pos,
+        ::Vec3 const&        dir,
+        int                  data,
+        ::CompoundTag const* tag,
+        bool                 isGlobal
     );
 
     MCAPI void addParticleEffect(
-        class HashedString const&      effect,
-        class Vec3 const&              emitterPosition,
-        class MolangVariableMap const& molangVariables
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
     );
 
     MCAPI void addTerrainParticleEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
     MCAPI void addTerrainSlideEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
     );
 
-    MCAPI void sendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&)>&
+    getAddBreakingItemParticleEffectConnector();
 
+    MCAPI ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
+    getAddTerrainParticleEffectConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
+    getAddTerrainSlideEffectConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ParticleType, ::Vec3 const&, ::Vec3 const&, int)>&
+    getSendServerLegacyParticleConnector();
+
+    MCAPI void sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
+
+    MCAPI ~ParticleProvider();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
-    MCAPI class Bedrock::PubSub::Connector<void(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&)>&
-    getAddBreakingItemParticleEffectConnector$();
-
-    MCAPI class Bedrock::PubSub::Connector<
-        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
-    getAddTerrainParticleEffectConnector$();
-
-    MCAPI class Bedrock::PubSub::Connector<
-        void(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float)>&
-    getAddTerrainSlideEffectConnector$();
-
-    MCAPI class Bedrock::PubSub::Connector<void(::ParticleType, class Vec3 const&, class Vec3 const&, int)>&
-    getSendServerLegacyParticleConnector$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

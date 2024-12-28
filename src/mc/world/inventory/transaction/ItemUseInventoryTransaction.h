@@ -8,83 +8,143 @@
 #include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class Block;
+class BlockPalette;
+class BlockPos;
+class IItemUseTransactionSubject;
+class ILegacyItemUseTransactionSubject;
+class ItemStack;
+class NetworkBlockPosition;
+class NetworkItemStackDescriptor;
+class Player;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseInventoryTransaction inner types define
     enum class ActionType : int {
-        Clear   = 0x0,
-        UriOnly = 0x1,
-        Named   = 0x2,
+        Place   = 0,
+        Use     = 1,
+        Destroy = 2,
     };
 
-    ActionType                 mActionType{};           // this+0x0
-    BlockPos                   mBlockPos{};             // this+0x4
-    uint32_t                   mTargetBlockRuntimeId{}; // this+0x10
-    uint8_t                    mFace{};                 // this+0x14
-    int32_t                    mSlot{};                 // this+0x18
-    NetworkItemStackDescriptor mItemInHand{};           // this+0x20
-    Vec3                       mPlayerPos{};            // this+0x30
-    Vec3                       mClickPos{};             // this+0x3C
+    enum class TriggerType : uchar {
+        Unknown        = 0,
+        PlayerInput    = 1,
+        SimulationTick = 2,
+    };
+
+    enum class PredictedResult : uchar {
+        Failure = 0,
+        Success = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ItemUseInventoryTransaction::ActionType>      mActionType;
+    ::ll::TypedStorage<1, 1, ::ItemUseInventoryTransaction::TriggerType>     mTriggerType;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>                        mPos;
+    ::ll::TypedStorage<4, 4, uint>                                           mTargetBlockId;
+    ::ll::TypedStorage<1, 1, uchar>                                          mFace;
+    ::ll::TypedStorage<4, 4, int>                                            mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                  mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mFromPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mClickPos;
+    ::ll::TypedStorage<1, 1, ::ItemUseInventoryTransaction::PredictedResult> mClientPredictedResult;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     ItemUseInventoryTransaction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemUseInventoryTransaction();
+    virtual ~ItemUseInventoryTransaction() /*override*/;
 
     // vIndex: 1
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 2
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 3
-    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
-
-    // vIndex: 4
-    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
+    virtual void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
 
     // vIndex: 5
-    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
+    virtual void onTransactionError(::Player& player, ::InventoryTransactionError error) const /*override*/;
 
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const& transaction);
-
-    MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
-
-    MCAPI void resendBlocksAroundArea(class Player& player, class BlockPos const& pos, uchar facing) const;
-
-    MCAPI void resendPlayerState(class Player& player) const;
-
-    MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const& item);
-
-    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const& targetBlock);
-
+    // vIndex: 4
+    virtual ::InventoryTransactionError handle(::Player& player, bool isSenderAuthority) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
 
-    MCAPI void* ctor$(class ItemUseInventoryTransaction const& transaction);
+    MCAPI ::InventoryTransactionError
+    handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority)
+        const;
 
-    MCAPI void dtor$();
+    MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
-    MCAPI ::InventoryTransactionError handle$(class Player& player, bool isSenderAuthority) const;
+    MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
 
-    MCAPI void onTransactionError$(class Player& player, ::InventoryTransactionError error) const;
+    MCAPI ::ItemUseInventoryTransaction& setTargetBlock(::Block const& targetBlock);
+    // NOLINTEND
 
-    MCAPI void postLoadItems$(class BlockPalette& blockPalette, bool isClientSide);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void resendBlocksAroundArea(::Player& player, ::BlockPos const& pos, uchar facing);
 
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+    MCAPI static void resendPlayerState(::Player& player);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
-    MCAPI static class BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, std::string> const&
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
     actionTypeMap();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemUseInventoryTransaction const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+
+    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

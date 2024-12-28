@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace DesiredMoveDirectionSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createPassengerSystem();
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createVehicleSystem();
+namespace DesiredMoveDirectionSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createPassengerSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleSystem();
 // NOLINTEND
 
-}; // namespace DesiredMoveDirectionSystem
+} // namespace DesiredMoveDirectionSystem

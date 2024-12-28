@@ -3,22 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/alchemy/Potion.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class CompoundTag;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Player;
+struct ResolvedItemIconInfo;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class OminousBottleItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64>  mUnk309557;
+    ::ll::UntypedStorage<8, 136> mUnkdd77bf;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OminousBottleItem& operator=(OminousBottleItem const&);
@@ -26,84 +34,103 @@ public:
     OminousBottleItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OminousBottleItem() = default;
-
-    // vIndex: 44
-    virtual bool isDestructive(int) const;
-
-    // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& item,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
-
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
-
-    // vIndex: 59
-    virtual bool uniqueAuxValues() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
-
-    // vIndex: 75
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack& item, class Level* level, class Player* player) const;
-
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
-
-    // vIndex: 84
-    virtual std::string buildEffectDescriptionName(class ItemStackBase const& item) const;
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
-
-    // vIndex: 119
+    // vIndex: 121
     virtual ::Potion::PotionType getPotionType() const;
 
-    MCAPI OminousBottleItem(std::string const& name, int id);
+    // vIndex: 87
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    MCAPI static class MobEffectInstance getAppliedMobEffect(int auxValue);
+    // vIndex: 52
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
+    // vIndex: 88
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
+
+    // vIndex: 63
+    virtual bool uniqueAuxValues() const /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
+
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+
+    // vIndex: 79
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
+
+    // vIndex: 60
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+
+    // vIndex: 47
+    virtual bool isDestructive(int) const /*override*/;
+
+    // vIndex: 0
+    virtual ~OminousBottleItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OminousBottleItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& MAX_AMPLIFIER();
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& item,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Potion::PotionType $getPotionType() const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI std::string buildEffectDescriptionName$(class ItemStackBase const& item) const;
+    MCAPI bool $uniqueAuxValues() const;
 
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const&, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::Potion::PotionType getPotionType$() const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool isDestructive$(int) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
 
-    MCAPI bool isValidAuxValue$(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI bool uniqueAuxValues$() const;
+    MCAPI bool $isDestructive(int) const;
+    // NOLINTEND
 
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player& player) const;
-
-    MCAPI ::ItemUseMethod useTimeDepleted$(class ItemStack& item, class Level* level, class Player* player) const;
-
-    MCAPI static int const& MAX_AMPLIFIER();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

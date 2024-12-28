@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BiomeDimensionAttributes {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct BiomeDimensionAttributes : public ::BiomeComponentBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkef4255;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BiomeDimensionAttributes& operator=(BiomeDimensionAttributes const&);
@@ -10,16 +19,21 @@ public:
     BiomeDimensionAttributes();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BiomeDimensionAttributes() = default;
-
+    virtual ~BiomeDimensionAttributes() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

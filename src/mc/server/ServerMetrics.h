@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ServerInstance;
+// clang-format on
+
 class ServerMetrics {
 public:
     // prevent constructor by default
@@ -10,27 +15,36 @@ public:
     ServerMetrics();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ServerMetrics();
 
     // vIndex: 1
-    virtual void sendPeriodicMetrics(class ServerInstance& serverInstance) = 0;
+    virtual void sendPeriodicMetrics(::ServerInstance&) = 0;
 
     // vIndex: 2
-    virtual void sendServerTickTime(std::chrono::nanoseconds const& timepoint) = 0;
+    virtual void sendServerTickTime(::std::chrono::nanoseconds const&) = 0;
 
     // vIndex: 3
     virtual void sendChunkLoadTelemetryData() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

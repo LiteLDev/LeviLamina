@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class WeepingVinesClusterFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,31 +20,38 @@ public:
     WeepingVinesClusterFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~WeepingVinesClusterFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+    virtual ~WeepingVinesClusterFeature() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isInvalidPlacementLocation(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void _placeRoofNetherWart(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI void _placeRoofWeepingVines(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _placeRoofNetherWart(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void _placeRoofWeepingVines(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

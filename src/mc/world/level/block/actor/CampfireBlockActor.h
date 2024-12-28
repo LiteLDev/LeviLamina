@@ -3,10 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+class ItemInstance;
+class Level;
+class SaveContext;
+// clang-format on
+
 class CampfireBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 512> mUnk949ab4;
+    ::ll::UntypedStorage<4, 16>  mUnk82ac43;
+    ::ll::UntypedStorage<1, 1>   mUnkf5d0aa;
+    ::ll::UntypedStorage<4, 4>   mUnk85654f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CampfireBlockActor& operator=(CampfireBlockActor const&);
@@ -14,69 +35,90 @@ public:
     CampfireBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CampfireBlockActor() = default;
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
-
-    // vIndex: 7
-    virtual void tick(class BlockSource& region);
-
-    // vIndex: 8
-    virtual void onChanged(class BlockSource& region);
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 19
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI void dropAllItems(class BlockSource& region);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI class HashedString const& getCampfireTag(class BlockSource const& region) const;
-
-    MCAPI class ItemInstance const& getCookingItem(int slot);
-
-    MCAPI bool setItem(class BlockSource&, class ItemInstance const& item);
-
+    // vIndex: 0
+    virtual ~CampfireBlockActor() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _finishCooking(class BlockSource& region, int slot);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit CampfireBlockActor(::BlockPos const& pos);
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+    MCAPI void _finishCooking(::BlockSource& region, int slot);
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void dropAllItems(::BlockSource& region);
 
-    MCAPI float getShadowRadius$(class BlockSource&) const;
+    MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::ItemInstance const& getCookingItem(int slot);
 
-    MCAPI void onChanged$(class BlockSource& region);
+    MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void tick$(class BlockSource& region);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_SMOKE_THRESHOLD_COUNTER();
 
     MCAPI static int const& MIN_SMOKE_THRESHOLD_COUNTER();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI float $getShadowRadius(::BlockSource&) const;
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,45 +5,77 @@
 // auto generated inclusion list
 #include "mc/server/commands/CommandPermissionLevel.h"
 
+// auto generated forward declare list
+// clang-format off
+class AutomationCmdOutput;
+class CommandOrigin;
+class CommandOutput;
+// clang-format on
+
 class CommandOutputSender {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk9d00b4;
+    ::ll::UntypedStorage<8, 8>  mUnkf1fd72;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&);
     CommandOutputSender(CommandOutputSender const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandOutputSender() = default;
+    virtual ~CommandOutputSender();
 
     // vIndex: 1
-    virtual void send(class CommandOrigin const& origin, class CommandOutput const& output);
+    virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
     // vIndex: 2
-    virtual void registerOutputCallback(std::function<void(class AutomationCmdOutput&)> const& callback);
-
-    MCAPI CommandOutputSender();
-
-    MCAPI void sendToAdmins(
-        class CommandOrigin const& origin,
-        class CommandOutput const& output,
-        ::CommandPermissionLevel   opPermLevel
-    );
-
-    MCAPI static std::vector<std::string> translate(std::vector<std::string> const&);
-
+    virtual void registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CommandOutputSender();
 
-    MCAPI void* ctor$();
+    MCAPI void
+    sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
+    // NOLINTEND
 
-    MCAPI void registerOutputCallback$(std::function<void(class AutomationCmdOutput&)> const& callback);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
+    // NOLINTEND
 
-    MCAPI void send$(class CommandOrigin const& origin, class CommandOutput const& output);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
+
+    MCAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

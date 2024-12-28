@@ -4,37 +4,52 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft::Releases { struct VersionRelease; }
 namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::Releases {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& V010();
+MCAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_V1_RELEASES();
 
-MCAPI struct Scripting::Version const& V100();
+MCAPI ::Scripting::Version const& V010();
 
-MCAPI struct Scripting::Version const& V110();
+MCAPI ::Scripting::Version const& V1_0_0();
 
-MCAPI struct Scripting::Version const& V1100();
+MCAPI ::Scripting::Version const& V1_10_0();
 
-MCAPI struct Scripting::Version const& V1110();
+MCAPI ::Scripting::Version const& V1_11_0();
 
-MCAPI struct Scripting::Version const& V120();
+MCAPI ::Scripting::Version const& V1_12_0();
 
-MCAPI struct Scripting::Version const& V130();
+MCAPI ::Scripting::Version const& V1_13_0();
 
-MCAPI struct Scripting::Version const& V140();
+MCAPI ::Scripting::Version const& V1_14_0();
 
-MCAPI struct Scripting::Version const& V150();
+MCAPI ::Scripting::Version const& V1_15_0();
 
-MCAPI struct Scripting::Version const& V160();
+MCAPI ::Scripting::Version const& V1_16_0();
 
-MCAPI struct Scripting::Version const& V170();
+MCAPI ::Scripting::Version const& V1_1_0();
 
-MCAPI struct Scripting::Version const& V180();
+MCAPI ::Scripting::Version const& V1_2_0();
 
-MCAPI struct Scripting::Version const& V190();
+MCAPI ::Scripting::Version const& V1_3_0();
+
+MCAPI ::Scripting::Version const& V1_4_0();
+
+MCAPI ::Scripting::Version const& V1_5_0();
+
+MCAPI ::Scripting::Version const& V1_6_0();
+
+MCAPI ::Scripting::Version const& V1_7_0();
+
+MCAPI ::Scripting::Version const& V1_8_0();
+
+MCAPI ::Scripting::Version const& V1_9_0();
+
+MCAPI ::Scripting::Version const& V2_0_0();
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraft::Releases
+} // namespace ScriptModuleMinecraft::Releases

@@ -12,33 +12,45 @@ namespace AgentComponents {
 
 class ActionQueue {
 public:
+    // ActionQueue inner types declare
+    // clang-format off
+    class Definition;
+    // clang-format on
+
+    // ActionQueue inner types define
+    class Definition {
+    public:
+        // prevent constructor by default
+        Definition& operator=(Definition const&);
+        Definition(Definition const&);
+        Definition();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnke8cbf2;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActionQueue& operator=(ActionQueue const&);
     ActionQueue(ActionQueue const&);
     ActionQueue();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActionQueue(class AgentComponents::ActionQueue&&);
-
-    MCAPI static void schedule(class EntityContext& entity, struct AgentComponents::Actions::QueueItem item);
-
-    MCAPI static void tryStartNext(class EntityContext& entity);
-
+    MCAPI ::AgentComponents::Actions::QueueItem pop();
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct AgentComponents::Actions::QueueItem pop();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class AgentComponents::ActionQueue&&);
+    MCAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);
 
+    MCAPI static void tryStartNext(::EntityContext& entity);
     // NOLINTEND
 };
 
-}; // namespace AgentComponents
+} // namespace AgentComponents

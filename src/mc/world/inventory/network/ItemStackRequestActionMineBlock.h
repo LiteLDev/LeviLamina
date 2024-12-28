@@ -6,10 +6,29 @@
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ItemStackRequestSlotInfo;
+// clang-format on
+
 class ItemStackRequestActionMineBlock : public ::ItemStackRequestAction {
 public:
     // ItemStackRequestActionMineBlock inner types define
-    enum class PreValidationStatus {};
+    enum class PreValidationStatus : uchar {
+        Valid   = 0,
+        Invalid = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkf1714f;
+    ::ll::UntypedStorage<4, 4>  mUnk7fc14d;
+    ::ll::UntypedStorage<4, 24> mUnk5ee6ac;
+    ::ll::UntypedStorage<1, 1>  mUnk9bbb5c;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -18,34 +37,47 @@ public:
     ItemStackRequestActionMineBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionMineBlock() = default;
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ItemStackRequestActionMineBlock() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ::ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
 
     MCAPI int getPredictedDurability() const;
 
-    MCAPI struct ItemStackRequestSlotInfo getSrc() const;
+    MCAPI ::ItemStackRequestSlotInfo getSrc() const;
 
     MCAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

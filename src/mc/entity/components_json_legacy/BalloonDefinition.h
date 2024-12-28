@@ -12,16 +12,21 @@ namespace JsonUtil { class EmptyClass; }
 
 class BalloonDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkf4bb3e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BalloonDefinition& operator=(BalloonDefinition const&);
     BalloonDefinition(BalloonDefinition const&);
     BalloonDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonDefinition>>& root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BalloonDefinition>>& root);
     // NOLINTEND
 };

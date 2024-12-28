@@ -14,33 +14,64 @@ namespace ScriptModuleMinecraft {
 
 class ScriptRGB {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk60d0e7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptRGB& operator=(ScriptRGB const&);
     ScriptRGB(ScriptRGB const&);
     ScriptRGB();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptRGB() = default;
+    virtual ~ScriptRGB();
 
     // vIndex: 1
     virtual bool isValid() const;
-
-    MCAPI class mce::Color const& getColor() const;
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptRGB> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ScriptRGB(::mce::Color const& color);
 
-    MCAPI bool isValid$() const;
+    MCAPI ::mce::Color const& getColor() const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRGB> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::mce::Color const& color);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

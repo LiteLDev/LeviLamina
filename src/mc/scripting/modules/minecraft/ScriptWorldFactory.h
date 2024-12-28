@@ -9,6 +9,7 @@
 // clang-format off
 class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptWorld; }
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -22,11 +23,11 @@ public:
     ScriptWorldFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptWorld>
-    getHandle(class Scripting::WeakLifetimeScope& scope, class ServerLevel& level);
-
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>
+    getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level, ::Scripting::DependencyLocator& locator);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

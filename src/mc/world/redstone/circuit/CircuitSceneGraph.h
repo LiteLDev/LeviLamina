@@ -1,11 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseCircuitComponent;
+class BlockPos;
+class BlockSource;
+class ChunkPos;
+class CircuitComponentList;
+struct ChunkCircuitComponentList;
+// clang-format on
 
 class CircuitSceneGraph {
 public:
@@ -15,90 +23,97 @@ public:
     // clang-format on
 
     // CircuitSceneGraph inner types define
+    using ComponentMap = ::std::unordered_map<::BlockPos, ::std::unique_ptr<::BaseCircuitComponent>>;
+
+    using ComponentsPerPosMap = ::std::unordered_map<::BlockPos, ::CircuitComponentList>;
+
+    using ComponentsPerChunkMap = ::std::unordered_map<::BlockPos, ::ChunkCircuitComponentList>;
+
     class PendingEntry {
     public:
-        class BaseCircuitComponent*                 mRawComponentPtr;
-        std::unique_ptr<class BaseCircuitComponent> mComponent;
-        class BlockPos                              mPos;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*>                   mRawComponentPtr;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseCircuitComponent>> mComponent;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                               mPos;
+        // NOLINTEND
 
+    public:
         // prevent constructor by default
         PendingEntry& operator=(PendingEntry const&);
         PendingEntry(PendingEntry const&);
         PendingEntry();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI PendingEntry(class CircuitSceneGraph::PendingEntry&& entry);
-
-        MCAPI class CircuitSceneGraph::PendingEntry& operator=(class CircuitSceneGraph::PendingEntry&& rhs);
-
         MCAPI ~PendingEntry();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void* ctor$(class CircuitSceneGraph::PendingEntry&& entry);
-
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
-    std::unordered_map<BlockPos, std::unique_ptr<BaseCircuitComponent>> mAllComponents;
-    CircuitComponentList                                                mActiveComponents;
-    std::unordered_map<BlockPos, CircuitComponentList>                  mActiveComponentsPerChunk;
-    std::unordered_map<BlockPos, CircuitComponentList>                  mPowerAssociationMap;
-    std::unordered_map<BlockPos, PendingEntry>                          mPendingAdds;
-    std::unordered_map<BlockPos, PendingEntry>                          mPendingUpdates;
-    std::unordered_map<BlockPos, std::vector<BlockPos>>                 mComponentsToReEvaluate;
-    std::vector<PendingEntry>                                           mPendingRemoves;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::unique_ptr<::BaseCircuitComponent>>>
+                                                                                             mAllComponents;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::ChunkCircuitComponentList>> mActiveComponentsPerChunk;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitComponentList>>      mPowerAssociationMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry>> mPendingAdds;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry>> mPendingUpdates;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>> mComponentsToReEvaluate;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CircuitSceneGraph::PendingEntry>>            mPendingRemoves;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CircuitSceneGraph& operator=(CircuitSceneGraph const&);
+    CircuitSceneGraph(CircuitSceneGraph const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CircuitSceneGraph();
 
-    MCAPI void add(class BlockPos const& pos, std::unique_ptr<class BaseCircuitComponent> component);
+    MCAPI void add(::BlockPos const& pos, ::std::unique_ptr<::BaseCircuitComponent> component);
 
-    MCAPI class BaseCircuitComponent* getBaseComponent(class BlockPos const& pos);
+    MCAPI void findRelationships(::BlockPos const& pos, ::BaseCircuitComponent* producerTarget, ::BlockSource* region);
 
-    MCAPI class BaseCircuitComponent* getComponent(class BlockPos const& pos, ::CircuitComponentType typeID);
+    MCAPI ::BaseCircuitComponent* getComponent(::BlockPos const& pos, ::CircuitComponentType typeID);
 
-    MCAPI class BaseCircuitComponent* getFromPendingAdd(class BlockPos const& pos, ::CircuitComponentType typeID);
+    MCAPI ::BaseCircuitComponent* getFromPendingAdd(::BlockPos const& pos, ::CircuitComponentType typeID);
 
-    MCAPI void invalidatePos(class BlockPos const& pos);
+    MCAPI void invalidatePos(::BlockPos const& pos);
 
-    MCAPI void preSetupPoweredBlocks(class ChunkPos const& chunkPos);
-
-    MCAPI ~CircuitSceneGraph();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void
-    findRelationships(class BlockPos const& pos, class BaseCircuitComponent* producerTarget, class BlockSource* region);
+    MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
 
     MCAPI void processPendingAdds();
 
-    MCAPI void processPendingUpdates(class BlockSource* region);
-
-    MCAPI void removeComponent(class BlockPos const& pos);
+    MCAPI void removeComponent(::BlockPos const& pos);
 
     MCAPI void removeStaleRelationships();
 
-    MCAPI void scheduleRelationshipUpdate(class BlockPos const& pos, class BaseCircuitComponent* component);
+    MCAPI void scheduleRelationshipUpdate(::BlockPos const& pos, ::BaseCircuitComponent* component);
 
+    MCAPI void update(::BlockSource* region);
+
+    MCAPI ~CircuitSceneGraph();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

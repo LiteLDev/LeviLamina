@@ -9,10 +9,11 @@ namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
 namespace FlatteningUtils::Log2 {
+// functions
 // NOLINTBEGIN
-MCAPI struct FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCAPI std::function<class Block const*(int)> getBlockComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 // NOLINTEND
 
-}; // namespace FlatteningUtils::Log2
+} // namespace FlatteningUtils::Log2

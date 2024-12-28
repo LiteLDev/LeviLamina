@@ -12,17 +12,39 @@ namespace JsonUtil { class EmptyClass; }
 
 class TargetNearbyDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnkc50ab8;
+    ::ll::UntypedStorage<4, 4>   mUnkf55c7e;
+    ::ll::UntypedStorage<1, 1>   mUnk1f1461;
+    ::ll::UntypedStorage<8, 104> mUnk809433;
+    ::ll::UntypedStorage<8, 104> mUnk59ffaa;
+    ::ll::UntypedStorage<8, 104> mUnk56719e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     TargetNearbyDefinition& operator=(TargetNearbyDefinition const&);
     TargetNearbyDefinition(TargetNearbyDefinition const&);
     TargetNearbyDefinition();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~TargetNearbyDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TargetNearbyDefinition>>& root
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,31 +4,53 @@
 
 class DimensionBrightnessRamp {
 public:
-    float mBrightnessRamp[16] = {0};
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 64, float[16]> mBrightnessRamp;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&);
+    DimensionBrightnessRamp(DimensionBrightnessRamp const&);
+    DimensionBrightnessRamp();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DimensionBrightnessRamp() = default;
+    virtual ~DimensionBrightnessRamp();
 
     // vIndex: 1
     virtual void buildBrightnessRamp();
 
     // vIndex: 2
     virtual float getBaseAmbientValue() const;
-
-    MCAPI float getBrightnessRampValue(int index) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI float getBrightnessRampValue(int index) const;
+    // NOLINTEND
 
-    MCAPI void buildBrightnessRamp$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getBaseAmbientValue$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $buildBrightnessRamp();
 
+    MCAPI float $getBaseAmbientValue() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

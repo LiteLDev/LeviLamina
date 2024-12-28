@@ -6,6 +6,14 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class Level;
+class Minecraft;
+class ServerInstance;
+struct ServerInstanceNotificationEvent;
+// clang-format on
+
 class ServerInstanceEventListener {
 public:
     // prevent constructor by default
@@ -14,45 +22,85 @@ public:
     ServerInstanceEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onServerInitializeEnd(class ServerInstance& instance);
+    // vIndex: 0
+    virtual ~ServerInstanceEventListener();
 
-    MCVAPI ::EventResult onServerInitializeStart(class ServerInstance& instance);
+    // vIndex: 1
+    virtual ::EventResult onServerInitializeStart(::ServerInstance& instance);
 
-    MCVAPI ::EventResult onServerMinecraftInitialized(
-        class ServerInstance&                               instance,
-        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    // vIndex: 2
+    virtual ::EventResult onServerInitializeEnd(::ServerInstance& instance);
+
+    // vIndex: 3
+    virtual ::EventResult onServerMinecraftInitialized(
+        ::ServerInstance&                                 instance,
+        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
     );
 
-    MCVAPI ::EventResult onServerResume(class ServerInstance& instance);
+    // vIndex: 4
+    virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
-    MCVAPI ::EventResult onServerSuspend(class ServerInstance& instance);
+    // vIndex: 5
+    virtual ::EventResult onServerUpdateStart(::ServerInstance& instance);
 
-    MCVAPI ::EventResult onServerUpdateEnd(class ServerInstance& instance);
+    // vIndex: 6
+    virtual ::EventResult onServerUpdateEnd(::ServerInstance& instance);
 
-    MCVAPI ::EventResult onStartLeaveGame(class ServerInstance& instance);
+    // vIndex: 7
+    virtual ::EventResult onServerSuspend(::ServerInstance& instance);
 
+    // vIndex: 8
+    virtual ::EventResult onServerResume(::ServerInstance& instance);
+
+    // vIndex: 9
+    virtual ::EventResult onServerThreadStarted(::ServerInstance& instance);
+
+    // vIndex: 10
+    virtual ::EventResult onServerThreadStopped(::ServerInstance& instance);
+
+    // vIndex: 11
+    virtual ::EventResult onStartLeaveGame(::ServerInstance& instance);
+
+    // vIndex: 12
+    virtual ::EventResult onEvent(::ServerInstanceNotificationEvent const& event);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::EventResult onServerInitializeEnd$(class ServerInstance& instance);
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onServerInitializeStart$(class ServerInstance& instance);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onServerInitializeStart(::ServerInstance& instance);
 
-    MCAPI ::EventResult onServerMinecraftInitialized$(
-        class ServerInstance&                               instance,
-        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    MCAPI ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onServerMinecraftInitialized(
+        ::ServerInstance&                                 instance,
+        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
     );
 
-    MCAPI ::EventResult onServerResume$(class ServerInstance& instance);
+    MCAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
-    MCAPI ::EventResult onServerSuspend$(class ServerInstance& instance);
+    MCAPI ::EventResult $onServerUpdateStart(::ServerInstance& instance);
 
-    MCAPI ::EventResult onServerUpdateEnd$(class ServerInstance& instance);
+    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCAPI ::EventResult onStartLeaveGame$(class ServerInstance& instance);
+    MCAPI ::EventResult $onServerSuspend(::ServerInstance& instance);
 
+    MCAPI ::EventResult $onServerResume(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onServerThreadStopped(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+
+    MCAPI ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
     // NOLINTEND
 };

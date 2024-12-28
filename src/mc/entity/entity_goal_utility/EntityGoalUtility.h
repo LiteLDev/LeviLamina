@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace EntityGoalUtility {
+// functions
 // NOLINTBEGIN
-MCAPI std::string getNumericNodeSpecifier(ushort id);
+MCAPI ::std::string getNumericNodeSpecifier(ushort id);
 // NOLINTEND
 
-}; // namespace EntityGoalUtility
+} // namespace EntityGoalUtility

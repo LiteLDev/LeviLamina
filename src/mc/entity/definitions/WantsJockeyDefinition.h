@@ -18,11 +18,10 @@ public:
     WantsJockeyDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WantsJockeyDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::WantsJockeyDefinition>>& root
     );
-
     // NOLINTEND
 };

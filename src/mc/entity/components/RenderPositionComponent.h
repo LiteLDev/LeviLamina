@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RenderPositionComponent {
+// auto generated inclusion list
+#include "mc/entity/components/Vec3Component.h"
+
+struct RenderPositionComponent : public ::Vec3Component {
 public:
     // prevent constructor by default
     RenderPositionComponent& operator=(RenderPositionComponent const&);

@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+class Vec3;
+struct ActorDataFlagComponent;
+struct ActorDataSeatOffsetComponent;
+struct ActorRotationComponent;
+struct HorseFlagComponent;
+struct RenderRotationComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+// clang-format on
 
 struct InterpolatedRidingPositionCalculationHelper {
 public:
@@ -15,24 +27,21 @@ public:
     InterpolatedRidingPositionCalculationHelper();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Vec3 getCamelInterpolatedRidingOffset(bool isSitting);
+    MCAPI static ::Vec3 getCamelInterpolatedRidingOffset(bool isSitting);
 
-    MCAPI static class Vec3 getHorseInterpolatedRidingOffset(
-        class StrictEntityContext const& entity,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct HorseFlag>>,
-            struct StandAnimationComponent const> const& horses,
-        class ViewT<
-            class StrictEntityContext,
-            struct ActorRotationComponent const,
-            struct RenderRotationComponent const,
-            struct StateVectorComponent const,
-            struct ActorDataFlagComponent const,
-            struct ActorDataSeatOffsetComponent const> const& commonData,
-        float                                                 alpha
+    MCAPI static ::Vec3 getHorseInterpolatedRidingOffset(
+        ::StrictEntityContext const&                                                                            entity,
+        ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>, ::StandAnimationComponent const> const& horses,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorRotationComponent const,
+            ::RenderRotationComponent const,
+            ::StateVectorComponent const,
+            ::ActorDataFlagComponent const,
+            ::ActorDataSeatOffsetComponent const> const& commonData,
+        float                                            alpha
     );
-
     // NOLINTEND
 };

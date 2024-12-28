@@ -3,9 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/actor/BlockActorRendererId.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class ItemStack;
+class Player;
+// clang-format on
 
 class EnderChestBlockActor : public ::ChestBlockActor {
 public:
@@ -15,51 +20,63 @@ public:
     EnderChestBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    // vIndex: 0
+    virtual ~EnderChestBlockActor() /*override*/;
 
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    // vIndex: 48
+    virtual void openBy(::Player& p) /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI void openBy(class Player& p);
+    // vIndex: 29
+    virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
 
-    MCVAPI void playCloseSound(class BlockSource& region);
+    // vIndex: 30
+    virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    MCVAPI void playOpenSound(class BlockSource& region);
+    // vIndex: 49
+    virtual void playOpenSound(::BlockSource& region) /*override*/;
 
-    MCAPI EnderChestBlockActor(
-        ::BlockActorType       type,
-        std::string const&     id,
-        ::BlockActorRendererId renderId,
-        class BlockPos const&  pos
-    );
-
+    // vIndex: 50
+    virtual void playCloseSound(::BlockSource& region) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForFillingContainer();
-
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
-
-    MCAPI void*
-    ctor$(::BlockActorType type, std::string const& id, ::BlockActorRendererId renderId, class BlockPos const& pos);
-
-    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
-
-    MCAPI bool canPushInItem$(int, int, class ItemStack const&) const;
-
-    MCAPI std::string getName$() const;
-
-    MCAPI void openBy$(class Player& p);
-
-    MCAPI void playCloseSound$(class BlockSource& region);
-
-    MCAPI void playOpenSound$(class BlockSource& region);
-
     MCAPI static int const& ITEMS_SIZE();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $openBy(::Player& p);
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+
+    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+
+    MCAPI void $playOpenSound(::BlockSource& region);
+
+    MCAPI void $playCloseSound(::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForFillingContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

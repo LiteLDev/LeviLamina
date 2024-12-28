@@ -1,69 +1,94 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/PositionTrackingId.h"
-
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class PositionTrackingId;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PositionTrackingDBServerBroadcastPacket : public ::Packet {
 public:
-    enum Action : uchar {
-        Update   = 0x0,
-        Destroy  = 0x1,
-        NotFound = 0x2,
+    // PositionTrackingDBServerBroadcastPacket inner types define
+    enum class Action : uchar {
+        Update   = 0,
+        Destroy  = 1,
+        NotFound = 2,
     };
 
 public:
-    Action             mAction; // this+0x30
-    PositionTrackingId mId;     // this+0x34
-    CompoundTag        mData;   // this+0x38
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::PositionTrackingDBServerBroadcastPacket::Action> mAction;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                              mId;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                                    mData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&);
     PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PositionTrackingDBServerBroadcastPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI PositionTrackingDBServerBroadcastPacket();
-
+    // vIndex: 0
+    virtual ~PositionTrackingDBServerBroadcastPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PositionTrackingDBServerBroadcastPacket();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

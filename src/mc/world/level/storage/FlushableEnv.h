@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FlushableEnv {
+class FlushableEnv : public ::leveldb::EnvWrapper {
 public:
     // prevent constructor by default
     FlushableEnv& operator=(FlushableEnv const&);
@@ -10,25 +10,42 @@ public:
     FlushableEnv();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlushableEnv();
+    virtual ~FlushableEnv() /*override*/;
 
     // vIndex: 20
     virtual void flushToPermanentStorage() = 0;
+    // NOLINTEND
 
-    MCAPI explicit FlushableEnv(leveldb::Env* env);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FlushableEnv(::leveldb::Env* env);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::leveldb::Env* env);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(leveldb::Env* env);
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

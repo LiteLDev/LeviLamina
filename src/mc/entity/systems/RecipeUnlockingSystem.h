@@ -5,8 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class Level;
+class Recipes;
+class ServerPlayer;
+class StrictEntityContext;
+class UnlockedRecipesServerComponent;
+struct ServerPlayerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class RecipeUnlockingSystem {
 public:
@@ -17,6 +28,13 @@ public:
 
     // RecipeUnlockingSystem inner types define
     struct InventoryChangedData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk54225a;
+        ::ll::UntypedStorage<8, 8>  mUnk864952;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         InventoryChangedData& operator=(InventoryChangedData const&);
@@ -31,47 +49,39 @@ public:
     RecipeUnlockingSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static void
+    _handleCriterionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCAPI static bool isEnabled(class Level const& level);
+    MCAPI static void
+    _handleInitialUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    // NOLINTEND
+    MCAPI static void
+    _handleInstructionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI static std::vector<std::string> _unlockRecipes(
-        class UnlockedRecipesServerComponent&                                    unlockedComp,
-        class Recipes const&                                                     recipes,
-        bool                                                                     playerIsInWater,
-        std::optional<struct RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
+    MCAPI static void _tick(::ViewT<
+                            ::StrictEntityContext,
+                            ::Include<::ServerPlayerComponent>,
+                            ::UnlockedRecipesServerComponent,
+                            ::ActorOwnerComponent> view);
+
+    MCAPI static ::std::vector<::std::string> _unlockRecipes(
+        ::UnlockedRecipesServerComponent&                                     unlockedComp,
+        ::Recipes const&                                                      recipes,
+        bool                                                                  playerIsInWater,
+        ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
     );
 
     MCAPI static void _useContext(
-        class UnlockedRecipesServerComponent&          unlockedComp,
-        class Recipes const&                           recipes,
+        ::UnlockedRecipesServerComponent&              unlockedComp,
+        ::Recipes const&                               recipes,
         ::RecipeUnlockingRequirement::UnlockingContext context,
-        std::vector<std::string>&                      unlockedRecipeIds
+        ::std::vector<::std::string>&                  unlockedRecipeIds
     );
 
-    // NOLINTEND
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void
-    _handleCriterionUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void
-    _handleInitialUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void
-    _handleInstructionUnlocks(class ServerPlayer* serverPlayer, class UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void _tick(class ViewT<
-                            class StrictEntityContext,
-                            struct Include<class FlagComponent<struct ServerPlayerComponentFlag>>,
-                            class UnlockedRecipesServerComponent,
-                            class ActorOwnerComponent> view);
-
+    MCAPI static bool isEnabled(::Level const& level);
     // NOLINTEND
 };

@@ -3,10 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct ActorUniqueID;
+struct MobDescriptor;
+// clang-format on
+
 class NearestAttackableTargetGoal : public ::TargetGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk5c5325;
+    ::ll::UntypedStorage<8, 8>  mUnkca975d;
+    ::ll::UntypedStorage<1, 1>  mUnkeaf412;
+    ::ll::UntypedStorage<8, 64> mUnk19ab4e;
+    ::ll::UntypedStorage<4, 4>  mUnkf98960;
+    ::ll::UntypedStorage<4, 4>  mUnk54025b;
+    ::ll::UntypedStorage<1, 1>  mUnk5e8198;
+    ::ll::UntypedStorage<4, 4>  mUnk5db5ca;
+    ::ll::UntypedStorage<4, 4>  mUnkf72696;
+    ::ll::UntypedStorage<4, 4>  mUnkb153ae;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NearestAttackableTargetGoal& operator=(NearestAttackableTargetGoal const&);
@@ -14,63 +35,68 @@ public:
     NearestAttackableTargetGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NearestAttackableTargetGoal();
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 11
-    virtual struct ActorUniqueID _findTarget(struct MobDescriptor const** outMobDescriptor);
+    virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor);
 
-    MCAPI explicit NearestAttackableTargetGoal(class Mob& mob);
-
-    MCAPI bool isTargetVisible(class Mob const& mob, float maxDistance, float maxHeight) const;
-
+    // vIndex: 0
+    virtual ~NearestAttackableTargetGoal() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _canStartSearching();
+    MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
 
-    MCAPI bool _isTargetInCooldown(struct MobDescriptor const& descriptor) const;
+    MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI bool _selectTarget();
 
+    MCAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI struct ActorUniqueID _findTarget$(struct MobDescriptor const** outMobDescriptor);
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void $start();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool canUse$();
+    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    // NOLINTEND
 
-    MCAPI void start$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

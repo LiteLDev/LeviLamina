@@ -9,10 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
-namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -20,57 +18,70 @@ namespace ScriptModuleMinecraft {
 
 class ScriptListBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptListBlockVolume() = default;
-
     // vIndex: 1
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator(class Scripting::WeakLifetimeScope scope);
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
-    MCAPI ScriptListBlockVolume();
-
-    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
-
-    MCAPI ScriptListBlockVolume(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
-
-    MCAPI explicit ScriptListBlockVolume(std::vector<class BlockPos> const& locations);
-
-    MCAPI explicit ScriptListBlockVolume(std::vector<class Vec3> const& locations);
-
-    MCAPI void add(std::vector<class Vec3> const& locations);
-
-    MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
-
-    MCAPI class ScriptModuleMinecraft::ScriptListBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
-
-    MCAPI void remove(std::vector<class Vec3> const& locations);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptListBlockVolume> bind();
-
+    // vIndex: 0
+    virtual ~ScriptListBlockVolume() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptListBlockVolume();
 
-    MCAPI void* ctor$(std::vector<class Vec3> const& locations);
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI void* ctor$();
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
 
-    MCAPI void* ctor$(std::vector<class BlockPos> const& locations);
+    MCAPI void add(::std::vector<::Vec3> const& locations);
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume&
+    operator=(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
+    MCAPI ::ScriptModuleMinecraft::ScriptListBlockVolume& operator=(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs
+    );
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator$(class Scripting::WeakLifetimeScope scope);
+    MCAPI void remove(::std::vector<::Vec3> const& locations);
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptListBlockVolume> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

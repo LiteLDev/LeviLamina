@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -11,71 +9,98 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/ContainerType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class UpdateEquipPacket : public ::Packet {
 public:
-    ContainerID   mContainerId;    // this+0x30
-    ContainerType mType;           // this+0x31
-    int           mSize;           // this+0x34
-    ActorUniqueID mEntityUniqueID; // this+0x38
-    CompoundTag   mData;           // this+0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::ContainerID>   mContainerId;
+    ::ll::TypedStorage<1, 1, ::ContainerType> mType;
+    ::ll::TypedStorage<4, 4, int>             mSize;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>  mData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     UpdateEquipPacket& operator=(UpdateEquipPacket const&);
     UpdateEquipPacket(UpdateEquipPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UpdateEquipPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& bitStream) const;
+    virtual void write(::BinaryStream& bitStream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~UpdateEquipPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI UpdateEquipPacket();
 
     MCAPI UpdateEquipPacket(
-        ::ContainerID               containerID,
-        ::ContainerType             type,
-        int                         size,
-        class CompoundTag&&         tag,
-        struct ActorUniqueID const& entityID
+        ::ContainerID          containerID,
+        ::ContainerType        type,
+        int                    size,
+        ::CompoundTag&&        tag,
+        ::ActorUniqueID const& entityID
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        ::ContainerID               containerID,
-        ::ContainerType             type,
-        int                         size,
-        class CompoundTag&&         tag,
-        struct ActorUniqueID const& entityID
+    MCAPI void* $ctor(
+        ::ContainerID          containerID,
+        ::ContainerType        type,
+        int                    size,
+        ::CompoundTag&&        tag,
+        ::ActorUniqueID const& entityID
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& bitStream) const;
 
-    MCAPI void write$(class BinaryStream& bitStream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

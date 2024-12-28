@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ScoreboardId;
+// clang-format on
+
 class ScoreboardEventListener {
 public:
     // prevent constructor by default
@@ -13,38 +18,45 @@ public:
     ScoreboardEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ScoreboardEventListener();
 
     // vIndex: 1
-    virtual ::EventResult onObjectiveAdded(std::string const&);
+    virtual ::EventResult onObjectiveAdded(::std::string const&);
 
     // vIndex: 2
-    virtual ::EventResult onObjectiveRemoved(std::string const&);
+    virtual ::EventResult onObjectiveRemoved(::std::string const&);
 
     // vIndex: 3
-    virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const&);
 
     // vIndex: 4
-    virtual ::EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
-
+    virtual ::EventResult onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCAPI ::EventResult onObjectiveAdded$(std::string const&);
+    MCAPI ::EventResult $onObjectiveRemoved(::std::string const&);
 
-    MCAPI ::EventResult onObjectiveRemoved$(std::string const&);
+    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
 
-    MCAPI ::EventResult onScoreChanged$(struct ScoreboardId const&, std::string const&, int);
+    MCAPI ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
+    // NOLINTEND
 
-    MCAPI ::EventResult onScoreboardIdentityRemoved$(struct ScoreboardId const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

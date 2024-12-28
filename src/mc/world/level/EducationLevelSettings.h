@@ -1,47 +1,68 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/AgentCapabilities.h"
-#include "mc/world/level/EducationLocalLevelSettings.h"
-#include "mc/world/level/ExternalLinkSettings.h"
+
+// auto generated forward declare list
+// clang-format off
+struct AgentCapabilities;
+struct CommandFlag;
+struct EducationLocalLevelSettings;
+struct ExternalLinkSettings;
+// clang-format on
 
 struct EducationLevelSettings {
 public:
-    std::string                           mCodeBuilderDefaultUri;
-    std::string                           mCodeBuilderTitle;
-    bool                                  mCanResizeCodeBuilder;
-    bool                                  mDisableLegacyTitleBar;
-    std::string                           mPostProcessFilter;
-    std::string                           mScreenshotBorderResourcePath;
-    std::unordered_map<std::string, uint> mHiddenCommands;
-    EducationLocalLevelSettings           mLocalSettings;
-    std::optional<AgentCapabilities>      mAgentCapabilities;
-    std::optional<ExternalLinkSettings>   mExternalLinkSettings;
+    // EducationLevelSettings inner types define
+    using HiddenCommands = ::std::string;
 
+    using CommandOverrideFunctor = ::std::function<void(::CommandFlag&, ::std::string const&)>;
 
+public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI EducationLevelSettings();
-
-    MCAPI EducationLevelSettings(struct EducationLevelSettings const&);
-
-    MCAPI std::function<void(struct CommandFlag&, std::string const&)> getCommandOverrideFunctor() const;
-
-    MCAPI struct EducationLevelSettings& operator=(struct EducationLevelSettings const&);
-
-    MCAPI ~EducationLevelSettings();
-
+    ::ll::TypedStorage<8, 32, ::std::string>                             codeBuilderDefaultUri;
+    ::ll::TypedStorage<8, 32, ::std::string>                             codeBuilderTitle;
+    ::ll::TypedStorage<1, 1, bool>                                       canResizeCodeBuilder;
+    ::ll::TypedStorage<1, 1, bool>                                       disableLegacyTitleBar;
+    ::ll::TypedStorage<8, 32, ::std::string>                             postProcessFilter;
+    ::ll::TypedStorage<8, 32, ::std::string>                             screenshotBorderResourcePath;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, uint>> hiddenCommands;
+    ::ll::TypedStorage<8, 40, ::EducationLocalLevelSettings>             localSettings;
+    ::ll::TypedStorage<1, 3, ::std::optional<::AgentCapabilities>>       agentCapabilities;
+    ::ll::TypedStorage<8, 72, ::std::optional<::ExternalLinkSettings>>   externalLinkSettings;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    EducationLevelSettings();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI EducationLevelSettings(::EducationLevelSettings const&);
 
-    MCAPI void* ctor$(struct EducationLevelSettings const&);
+    MCAPI ::std::function<void(::CommandFlag&, ::std::string const&)> getCommandOverrideFunctor() const;
 
-    MCAPI void dtor$();
+    MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
-    MCAPI static std::string const& DEFAULT_BORDER_PATH();
+    MCAPI ~EducationLevelSettings();
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& DEFAULT_BORDER_PATH();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EducationLevelSettings const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

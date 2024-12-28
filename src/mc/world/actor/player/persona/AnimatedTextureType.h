@@ -4,11 +4,11 @@
 
 namespace persona {
 
-enum class AnimatedTextureType : int {
-    None        = 0x0,
-    Face        = 0x1,
-    Body32x32   = 0x2,
-    Body128x128 = 0x3,
+enum class AnimatedTextureType : uint {
+    None        = 0,
+    Face        = 1,
+    Body32x32   = 2,
+    Body128x128 = 3,
 };
 
-};
+}

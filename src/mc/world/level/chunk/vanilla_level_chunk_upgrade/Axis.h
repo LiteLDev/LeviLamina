@@ -4,6 +4,9 @@
 
 namespace VanillaLevelChunkUpgrade {
 
-enum class Axis {};
-
+enum class Axis : int {
+    X = 0,
+    Z = 1,
 };
+
+}

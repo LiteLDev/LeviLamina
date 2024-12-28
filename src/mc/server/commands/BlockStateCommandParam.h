@@ -1,54 +1,67 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/Block.h"
 
-#include "ll/api/Expected.h"
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockState;
+class CommandOutput;
+class CompoundTag;
+class HashedString;
+// clang-format on
 
 class BlockStateCommandParam {
 public:
     // BlockStateCommandParam inner types define
     enum class Type : int {
-        Integer = 0x0,
-        Float   = 0x1,
-        Bool    = 0x2,
-        String  = 0x3,
-        Invalid = 0x4,
+        Integer = 0,
+        Float   = 1,
+        Bool    = 2,
+        String  = 3,
+        Invalid = 4,
     };
 
-    std::string mBlockState; // this+0x0
-    std::string mValue;      // this+0x20
-    Type        mType;       // this+0x40
-
-    LLNDAPI ll::Expected<Block::BlockStateValueType> toStateValue() const;
-
-    LLNDAPI static ll::Expected<Block::BlockStatesType> toStateMap(std::vector<BlockStateCommandParam> const&);
-
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI BlockStateCommandParam(std::string state, std::string value, ::BlockStateCommandParam::Type type);
-
-    MCAPI std::optional<std::pair<class HashedString, int>>
-          getNameAndValue(class CommandOutput& output, class Block const& defaultNewBlock) const;
-
-    MCAPI bool setBlockState(class Block const** inputBlock, class CommandOutput& output) const;
-
+    ::ll::TypedStorage<8, 32, ::std::string>                 mBlockState;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mValue;
+    ::ll::TypedStorage<4, 4, ::BlockStateCommandParam::Type> mType;
     // NOLINTEND
 
-    // private:
+public:
+    // prevent constructor by default
+    BlockStateCommandParam& operator=(BlockStateCommandParam const&);
+    BlockStateCommandParam(BlockStateCommandParam const&);
+    BlockStateCommandParam();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _createCompoundTag(class CompoundTag& tag, class CommandOutput& output) const;
+    MCAPI BlockStateCommandParam(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
 
-    MCAPI class BlockState const* _getBlockState(class Block const& block) const;
+    MCAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
 
+    MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
+
+    MCAPI ::std::optional<::std::pair<::HashedString, int>>
+    getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
+
+    MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
+
+    MCAPI ~BlockStateCommandParam();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string state, std::string value, ::BlockStateCommandParam::Type type);
+    MCAPI void* $ctor(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockSource;
+class BoundingBox;
+class Random;
+class StructurePiece;
+// clang-format on
+
 class StructureHelpers {
 public:
     // prevent constructor by default
@@ -10,54 +19,54 @@ public:
     StructureHelpers();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool createChest(
-        class StructurePiece&    piece,
-        class BlockSource&       region,
-        class BoundingBox const& chunkBB,
-        class Random&            random,
-        int                      x,
-        int                      y,
-        int                      z,
-        uchar                    direction,
-        std::string const&       lootTable
+        ::StructurePiece&    piece,
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        int                  x,
+        int                  y,
+        int                  z,
+        uchar                direction,
+        ::std::string const& lootTable
     );
 
     MCAPI static bool createDispenser(
-        class StructurePiece&    piece,
-        class BlockSource&       region,
-        class BoundingBox const& chunkBB,
-        class Random&            random,
-        int                      x,
-        int                      y,
-        int                      z,
-        int                      facing,
-        std::string const&       lootTable
+        ::StructurePiece&    piece,
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        int                  x,
+        int                  y,
+        int                  z,
+        int                  facing,
+        ::std::string const& lootTable
     );
 
     MCAPI static bool createMinecartChest(
-        class StructurePiece&    piece,
-        class BlockSource&       region,
-        class BoundingBox const& chunkBB,
-        class Random&            random,
-        int                      x,
-        int                      y,
-        int                      z,
-        int                      direction,
-        std::string const&       lootTable
+        ::StructurePiece&    piece,
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        int                  x,
+        int                  y,
+        int                  z,
+        int                  direction,
+        ::std::string const& lootTable
     );
 
     MCAPI static void fillColumnDown(
-        class StructurePiece&    piece,
-        class BlockSource&       region,
-        class Block const&       block,
-        int                      x,
-        int                      startY,
-        int                      z,
-        class BoundingBox const& chunkBB
+        ::StructurePiece&    piece,
+        ::BlockSource&       region,
+        ::Block const&       block,
+        int                  x,
+        int                  startY,
+        int                  z,
+        ::BoundingBox const& chunkBB
     );
 
     MCAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
-
     // NOLINTEND
 };

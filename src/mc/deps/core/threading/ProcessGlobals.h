@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace ProcessGlobals {
-// thunks
-// NOLINTBEGIN
-MCAPI std::atomic<struct XTaskQueueObject*>& g_defaultProcessQueue();
+// auto generated forward declare list
+// clang-format off
+struct XTaskQueueObject;
+// clang-format on
 
-MCAPI std::atomic<struct XTaskQueueObject*>& g_processQueue();
+namespace ProcessGlobals {
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::atomic<::XTaskQueueObject*>& g_defaultProcessQueue();
+
+MCAPI ::std::atomic<::XTaskQueueObject*>& g_processQueue();
 // NOLINTEND
 
-}; // namespace ProcessGlobals
+} // namespace ProcessGlobals

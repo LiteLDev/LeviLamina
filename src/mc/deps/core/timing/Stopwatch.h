@@ -4,11 +4,22 @@
 
 class Stopwatch {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnka98630;
+    ::ll::UntypedStorage<8, 8>  mUnk81e7ba;
+    ::ll::UntypedStorage<8, 8>  mUnkacd501;
+    ::ll::UntypedStorage<8, 8>  mUnkec6ec1;
+    ::ll::UntypedStorage<4, 4>  mUnkc4d592;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~Stopwatch();
@@ -20,30 +31,44 @@ public:
     virtual double stopContinue();
 
     // vIndex: 3
-    virtual void print(std::string const& prepend);
+    virtual void print(::std::string const& prepend);
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Stopwatch();
 
     MCAPI void reset();
 
     MCAPI void start();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI double $stop();
 
-    MCAPI void print$(std::string const& prepend);
+    MCAPI double $stopContinue();
 
-    MCAPI double stop$();
+    MCAPI void $print(::std::string const& prepend);
+    // NOLINTEND
 
-    MCAPI double stopContinue$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

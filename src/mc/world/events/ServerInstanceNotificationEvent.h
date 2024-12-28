@@ -2,7 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ServerInstanceNotificationEvent {
+// auto generated inclusion list
+#include "mc/world/events/EventVariantImpl.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ServerInstanceLeaveGameDoneEvent;
+struct ServerInstanceRequestResourceReload;
+// clang-format on
+
+struct ServerInstanceNotificationEvent
+: public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {
 public:
     // prevent constructor by default
     ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&);
@@ -10,15 +20,14 @@ public:
     ServerInstanceNotificationEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ServerInstanceNotificationEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

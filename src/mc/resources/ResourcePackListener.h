@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ResourcePackManager;
+// clang-format on
+
 class ResourcePackListener {
 public:
     // prevent constructor by default
@@ -10,15 +15,16 @@ public:
     ResourcePackListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ResourcePackListener();
 
     // vIndex: 1
-    virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr) = 0;
+    virtual void onActiveResourcePacksChanged(::ResourcePackManager&) = 0;
 
     // vIndex: 2
-    virtual void onFullPackStackInvalid();
+    virtual bool onFullPackStackInvalid();
 
     // vIndex: 3
     virtual void onBaseGamePackDownloadComplete();
@@ -27,24 +33,30 @@ public:
     virtual void onLanguageSubpacksChanged();
 
     // vIndex: 5
-    virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
-
+    virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $onFullPackStackInvalid();
 
-    MCAPI void onBaseGamePackDownloadComplete$();
+    MCAPI void $onBaseGamePackDownloadComplete();
 
-    MCAPI void onFullPackStackInvalid$();
+    MCAPI void $onLanguageSubpacksChanged();
 
-    MCAPI void onLanguageSubpacksChanged$();
+    MCAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+    // NOLINTEND
 
-    MCAPI void onResourceManagerDestroyed$(class ResourcePackManager& mgr);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

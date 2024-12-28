@@ -4,6 +4,10 @@
 
 namespace Scripting {
 
-enum class Privilege {};
-
+enum class Privilege : uint {
+    None           = 0,
+    ReadOnly       = 1,
+    EarlyExecution = 2,
 };
+
+}

@@ -2,20 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace VanillaBlockGeometryIds {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& Beacon();
+MCAPI ::HashedString const& Beacon();
 
-MCAPI class HashedString const& BigDripleaf();
+MCAPI ::HashedString const& BigDripleaf();
 
-MCAPI class HashedString const& EnchantingTable();
+MCAPI ::HashedString const& EnchantingTable();
 
-MCAPI class HashedString const& Hopper();
+MCAPI ::HashedString const& Hopper();
 
-MCAPI class HashedString const& HopperSide();
+MCAPI ::HashedString const& HopperSide();
 
-MCAPI class HashedString const& Lectern();
+MCAPI ::HashedString const& Lectern();
 // NOLINTEND
 
-}; // namespace VanillaBlockGeometryIds
+} // namespace VanillaBlockGeometryIds

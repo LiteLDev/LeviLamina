@@ -1,18 +1,31 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
 
 class DimensionConversionData {
 public:
-    Vec3 mOverworldSpawnPoint;
-    int  mNetherScale;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::Vec3> mOverworldSpawnPoint;
+    ::ll::TypedStorage<4, 4, int>     mNetherScale;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DimensionConversionData& operator=(DimensionConversionData const&);
+    DimensionConversionData(DimensionConversionData const&);
+    DimensionConversionData();
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI int getNetherScale() const;
 
-    MCAPI class Vec3 const& getOverworldSpawnPoint() const;
-
+    MCAPI ::Vec3 const& getOverworldSpawnPoint() const;
     // NOLINTEND
 };

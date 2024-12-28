@@ -11,21 +11,24 @@ public:
     MainProcScope(MainProcScope const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI MainProcScope();
 
     MCAPI ~MainProcScope();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

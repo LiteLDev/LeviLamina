@@ -7,6 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
 namespace DripstoneUtils { class WindOffsetter; }
 // clang-format on
 
@@ -20,24 +24,31 @@ public:
     // LargeDripstoneFeature inner types define
     class LargeDripstone {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk1918c4;
+        ::ll::UntypedStorage<1, 1>  mUnk398797;
+        ::ll::UntypedStorage<4, 4>  mUnkb24ebd;
+        ::ll::UntypedStorage<4, 4>  mUnka18da9;
+        ::ll::UntypedStorage<4, 4>  mUnk22ed9f;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         LargeDripstone& operator=(LargeDripstone const&);
         LargeDripstone(LargeDripstone const&);
         LargeDripstone();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
-            class IBlockWorldGenAPI&                   target,
-            class DripstoneUtils::WindOffsetter const& wind
+            ::IBlockWorldGenAPI&                   target,
+            ::DripstoneUtils::WindOffsetter const& wind
         );
 
-        MCAPI void placeBlocks(
-            class IBlockWorldGenAPI&                   target,
-            class Random&                              random,
-            class DripstoneUtils::WindOffsetter const& wind
-        ) const;
-
+        MCAPI void
+        placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
         // NOLINTEND
     };
 
@@ -48,28 +59,32 @@ public:
     LargeDripstoneFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LargeDripstoneFeature() = default;
-
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    // vIndex: 0
+    virtual ~LargeDripstoneFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos>
-    place$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

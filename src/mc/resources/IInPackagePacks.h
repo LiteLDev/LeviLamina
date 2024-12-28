@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackCategory.h"
+#include "mc/deps/core/resource/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,22 +21,29 @@ public:
     // IInPackagePacks inner types define
     struct MetaData {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk43d8b5;
+        ::ll::UntypedStorage<1, 1>  mUnk70b4f6;
+        ::ll::UntypedStorage<4, 4>  mUnke50a5c;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         MetaData& operator=(MetaData const&);
         MetaData(MetaData const&);
         MetaData();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI MetaData(class Core::Path const& path, bool isHidden, ::PackCategory packCategory);
-
+        MCAPI MetaData(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class Core::Path const& path, bool isHidden, ::PackCategory packCategory);
-
+        MCAPI void* $ctor(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
         // NOLINTEND
     };
 
@@ -44,4 +52,26 @@ public:
     IInPackagePacks& operator=(IInPackagePacks const&);
     IInPackagePacks(IInPackagePacks const&);
     IInPackagePacks();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~IInPackagePacks();
+
+    // vIndex: 1
+    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

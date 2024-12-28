@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class VibrationListenerConfig {
 public:
     // prevent constructor by default
@@ -10,23 +19,41 @@ public:
     VibrationListenerConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    // vIndex: 0
+    virtual ~VibrationListenerConfig();
 
-    MCVAPI bool isValidVibration(class GameEvent const& gameEvent);
+    // vIndex: 1
+    virtual void
+    onSignalReceive(::BlockSource&, ::BlockPos const&, ::GameEvent const&, ::Actor*, float, uint, ::Actor*) = 0;
 
-    MCVAPI void onSerializableDataChanged(class BlockSource&);
+    // vIndex: 2
+    virtual bool isValidVibration(::GameEvent const& gameEvent);
 
+    // vIndex: 3
+    virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) = 0;
+
+    // vIndex: 4
+    virtual void onSerializableDataChanged(::BlockSource&);
+
+    // vIndex: 5
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCAPI void onSerializableDataChanged$(class BlockSource&);
+    MCAPI void $onSerializableDataChanged(::BlockSource&);
 
+    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 };

@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class CompoundTag;
+class Item;
 // clang-format on
 
 class ItemStackDescriptor : public ::ItemDescriptorCount {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mUserData;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackDescriptor& operator=(ItemStackDescriptor const&);
@@ -18,29 +25,39 @@ public:
 
     std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackDescriptor();
-
-    MCAPI ItemStackDescriptor();
-
-    MCAPI
-    ItemStackDescriptor(class Item const& item, int auxValue, ushort stackSize, class CompoundTag const* userData);
-
-    MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&& other);
-
+    virtual ~ItemStackDescriptor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemStackDescriptor();
 
-    MCAPI void* ctor$();
+    MCAPI ItemStackDescriptor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
 
-    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize, class CompoundTag const* userData);
+    MCAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

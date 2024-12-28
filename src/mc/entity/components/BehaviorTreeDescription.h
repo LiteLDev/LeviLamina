@@ -5,7 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
-class BehaviorTreeDescription : public ::ActorComponentDescription {
+struct BehaviorTreeDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk9017ba;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BehaviorTreeDescription& operator=(BehaviorTreeDescription const&);
@@ -13,23 +19,30 @@ public:
     BehaviorTreeDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 1
-    virtual ~BehaviorTreeDescription();
-
+    virtual ~BehaviorTreeDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

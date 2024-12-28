@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
@@ -13,6 +12,19 @@
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/ItemUseMethod.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BinaryStream;
+class Dimension;
+class ItemStackBase;
+class Mob;
+class Player;
+class Raid;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class LegacyTelemetryEventPacket : public ::Packet {
 public:
     // LegacyTelemetryEventPacket inner types declare
@@ -22,180 +34,186 @@ public:
 
     // LegacyTelemetryEventPacket inner types define
     enum class Type : int {
-        Achievement                      = 0x0,
-        Interaction                      = 0x1,
-        PortalCreated                    = 0x2,
-        PortalUsed                       = 0x3,
-        MobKilled                        = 0x4,
-        CauldronUsed                     = 0x5,
-        PlayerDied                       = 0x6,
-        BossKilled                       = 0x7,
-        AgentCommand_Obsolete            = 0x8,
-        AgentCreated                     = 0x9,
-        PatternRemoved_Obsolete          = 0xA,
-        SlashCommand                     = 0xB,
-        Deprecated_FishBucketed          = 0xC,
-        MobBorn                          = 0xD,
-        PetDied_Obsolete                 = 0xE,
-        POICauldronUsed                  = 0xF,
-        ComposterUsed                    = 0x10,
-        BellUsed                         = 0x11,
-        ActorDefinition                  = 0x12,
-        RaidUpdate                       = 0x13,
-        PlayerMovementAnomaly_Obsolete   = 0x14,
-        PlayerMovementCorrected_Obsolete = 0x15,
-        HoneyHarvested                   = 0x16,
-        TargetBlockHit                   = 0x17,
-        PiglinBarter                     = 0x18,
-        PlayerWaxedOrUnwaxedCopper       = 0x19,
-        CodeBuilderRuntimeAction         = 0x1A,
-        CodeBuilderScoreboard            = 0x1B,
-        StriderRiddenInLavaInOverworld   = 0x1C,
-        SneakCloseToSculkSensor          = 0x1D,
-        CarefulRestoration               = 0x1E,
-        ItemUsedEvent                    = 0x1F
+        Achievement                     = 0,
+        Interaction                     = 1,
+        PortalCreated                   = 2,
+        PortalUsed                      = 3,
+        MobKilled                       = 4,
+        CauldronUsed                    = 5,
+        PlayerDied                      = 6,
+        BossKilled                      = 7,
+        AgentCommandObsolete            = 8,
+        AgentCreated                    = 9,
+        PatternRemovedObsolete          = 10,
+        SlashCommand                    = 11,
+        DeprecatedFishBucketed          = 12,
+        MobBorn                         = 13,
+        PetDiedObsolete                 = 14,
+        POICauldronUsed                 = 15,
+        ComposterUsed                   = 16,
+        BellUsed                        = 17,
+        ActorDefinition                 = 18,
+        RaidUpdate                      = 19,
+        PlayerMovementAnomalyObsolete   = 20,
+        PlayerMovementCorrectedObsolete = 21,
+        HoneyHarvested                  = 22,
+        TargetBlockHit                  = 23,
+        PiglinBarter                    = 24,
+        PlayerWaxedOrUnwaxedCopper      = 25,
+        CodeBuilderRuntimeAction        = 26,
+        CodeBuilderScoreboard           = 27,
+        StriderRiddenInLavaInOverworld  = 28,
+        SneakCloseToSculkSensor         = 29,
+        CarefulRestoration              = 30,
+        ItemUsedEvent                   = 31,
+    };
+
+    enum class AgentResult : int {
+        ActionFail       = 0,
+        ActionSuccess    = 1,
+        QueryResultFalse = 2,
+        QueryResultTrue  = 3,
     };
 
     struct Data {
     public:
-        Type      mType;        // this+0x0
-        std::byte mUsePlayerID; // this+0x4
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::LegacyTelemetryEventPacket::Type> mType;
+        ::ll::TypedStorage<1, 1, uchar>                              mUsePlayerID;
         union {
             struct {
-                MinecraftEventing::AchievementIds mAchievementId;
+                ::ll::UntypedStorage<4, 4> mUnkdb4be3;
             } Achievement;
-
             struct {
-                int                                mInteractedEntityType;
-                MinecraftEventing::InteractionType mInteractionType;
-                int                                mInteractedEntityVariant;
-                uchar                              mInteractedEntityColor;
+                ::ll::UntypedStorage<8, 8> mUnkb274d3;
+                ::ll::UntypedStorage<4, 4> mUnkbb6585;
+                ::ll::UntypedStorage<4, 4> mUnk55e0e4;
+                ::ll::UntypedStorage<4, 4> mUnk99deb4;
+                ::ll::UntypedStorage<1, 1> mUnk1f638a;
             } Interaction;
-
             struct {
-                int mBuiltInDimension;
+                ::ll::UntypedStorage<4, 4> mUnk5b8083;
             } PortalCreated;
-
             struct {
-                int mFromDimension;
-                int mToDimension;
+                ::ll::UntypedStorage<4, 4> mUnkb9fbc9;
+                ::ll::UntypedStorage<4, 4> mUnk43c3ff;
             } PortalUsed;
-
             struct {
-                int64     mKillerEntityId;
-                int64     mKilledMobId;
-                ActorType mDamageChildType;
-                int       mDamageSource;
-                int       mTraderTier;
+                ::ll::UntypedStorage<8, 8> mUnk9a2c1e;
+                ::ll::UntypedStorage<8, 8> mUnk3e0977;
+                ::ll::UntypedStorage<4, 4> mUnk8eff09;
+                ::ll::UntypedStorage<4, 4> mUnk680d77;
+                ::ll::UntypedStorage<4, 4> mUnkfbdd6e;
             } MobKilled;
-
             struct {
-                short mContentsType;
-                uint  mContentsColor;
-                short mFillLevel;
+                ::ll::UntypedStorage<2, 2> mUnkbcdce3;
+                ::ll::UntypedStorage<4, 4> mUnk3a1996;
+                ::ll::UntypedStorage<2, 2> mUnkc523de;
             } CauldronUsed;
-
             struct {
-                int  mKillerId;
-                int  mKillerVariant;
-                int  mDamageSource;
-                bool mInRaid;
+                ::ll::UntypedStorage<4, 4> mUnk874988;
+                ::ll::UntypedStorage<4, 4> mUnk8f020b;
+                ::ll::UntypedStorage<4, 4> mUnkea1370;
+                ::ll::UntypedStorage<1, 1> mUnk7082cc;
             } PlayerDied;
-
             struct {
-                int   mPartySize;
-                int64 mBossUniqueId;
-                int   mBossType;
+                ::ll::UntypedStorage<4, 4> mUnk5caf87;
+                ::ll::UntypedStorage<8, 8> mUnk10731e;
+                ::ll::UntypedStorage<4, 4> mUnkd9ef6c;
             } BossKilled;
-
             struct {
-                int mResult;
-                int mResultNumber;
+                ::ll::UntypedStorage<4, 4> mUnkc66542;
+                ::ll::UntypedStorage<4, 4> mUnk13a5ca;
             } AgentCommand;
-
             struct {
-                int mSuccessCount;
-                int mErrorCount;
+                ::ll::UntypedStorage<4, 4> mUnk49f527;
+                ::ll::UntypedStorage<4, 4> mUnkc99546;
             } SlashCommand;
-
             struct {
-                int   mBabyType;
-                int   mBabyVariant;
-                uchar mBabyColor;
+                ::ll::UntypedStorage<4, 4> mUnk4f57ec;
+                ::ll::UntypedStorage<4, 4> mUnkbbbeb6;
+                ::ll::UntypedStorage<1, 1> mUnk3bb98f;
             } MobBorn;
-
             struct {
-                short                                      mItemId;
-                MinecraftEventing::POIBlockInteractionType mInteractionType;
+                ::ll::UntypedStorage<2, 2> mUnk24c1fa;
+                ::ll::UntypedStorage<4, 4> mUnk4aef55;
             } POICauldronUsed;
-
             struct {
-                short mItemId;
+                ::ll::UntypedStorage<2, 2> mUnk7119ba;
+                ::ll::UntypedStorage<4, 4> mUnk762659;
             } ComposterUsed;
-
             struct {
-                int  mCurrentWave;
-                int  mTotalWaves;
-                bool mSuccess;
+                ::ll::UntypedStorage<2, 2> mUnk20ab2e;
             } BellUsed;
-
             struct {
-                float mPositionDelta;
-                float mObservedScore;
-                float mThresholdDistance;
-                float mThresholdScore;
-                int   mThresholdDuration_ms;
+                ::ll::UntypedStorage<4, 4> mUnk2d4fb9;
+                ::ll::UntypedStorage<4, 4> mUnk13af5c;
+                ::ll::UntypedStorage<1, 1> mUnk2fa508;
             } RaidUpdate;
-
             struct {
-                int mRedstoneLevel;
+                ::ll::UntypedStorage<4, 4> mUnk7e052c;
             } TargetBlockHit;
-
             struct {
-                int  mItemId;
-                bool mWasTargetingBarteringPlayer;
+                ::ll::UntypedStorage<4, 4> mUnkd2152b;
+                ::ll::UntypedStorage<1, 1> mUnkd18694;
             } PiglinBarter;
-
             struct {
-                int mBlockID;
+                ::ll::UntypedStorage<4, 4> mUnkee799b;
             } PlayerWaxedOrUnwaxedCopper;
-
             struct {
-                int score;
+                ::ll::UntypedStorage<4, 4> mUnke2ed2e;
             } CodeBuilderScoreboard;
-        }; // this+0x8
-        std::string mEntityName;               // this+0x28
-        std::string mCommandName;              // this+0x48
-        std::string mResultKey;                // this+0x68
-        std::string mResultString;             // this+0x88
-        std::string mErrorList;                // this+0xA8
-        std::string mObjectiveName;            // this+0xC8
-        std::string mCodeBuilderRuntimeAction; // this+0xE8
+            struct {
+                ::ll::UntypedStorage<2, 2> mUnk5e4d71;
+                ::ll::UntypedStorage<4, 4> mUnkc09cc4;
+                ::ll::UntypedStorage<4, 4> mUnk5c7bb4;
+                ::ll::UntypedStorage<4, 4> mUnk7bb7ce;
+            } ItemUsedEvent;
+        };
+        ::ll::TypedStorage<8, 32, ::std::string> mEntityName;
+        ::ll::TypedStorage<8, 32, ::std::string> mCommandName;
+        ::ll::TypedStorage<8, 32, ::std::string> mResultKey;
+        ::ll::TypedStorage<8, 32, ::std::string> mResultString;
+        ::ll::TypedStorage<8, 32, ::std::string> mErrorList;
+        ::ll::TypedStorage<8, 32, ::std::string> mObjectiveName;
+        ::ll::TypedStorage<8, 32, ::std::string> mCodeBuilderRuntimeAction;
+        // NOLINTEND
 
+    public:
         // prevent constructor by default
         Data& operator=(Data const&);
         Data(Data const&);
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI Data();
 
-        MCAPI ~Data();
+        MCAPI ::LegacyTelemetryEventPacket::Data& operator=(::LegacyTelemetryEventPacket::Data&&);
 
+        MCAPI ~Data();
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$();
+        MCAPI void* $ctor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
-    ActorUniqueID mPlayerId;
-    Data          mEventData;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mPlayerId;
+    ::ll::TypedStorage<8, 264, ::LegacyTelemetryEventPacket::Data> mEventData;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -203,175 +221,187 @@ public:
     LegacyTelemetryEventPacket(LegacyTelemetryEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyTelemetryEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~LegacyTelemetryEventPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI LegacyTelemetryEventPacket();
 
-    MCAPI LegacyTelemetryEventPacket(class Player const& player, std::string const& codebuilderRuntimeAction);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::gsl::not_null<::Mob const*> baby);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const* player, DimensionType portalBuiltInDimension);
+    MCAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& codebuilderRuntimeAction);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const* player, gsl::not_null<class Mob const*> baby);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
 
-    MCAPI LegacyTelemetryEventPacket(class Player const* player, struct LegacyTelemetryEventPacket::Data const& data);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const& player, std::string const& objective, int score);
-
-    MCAPI
-    LegacyTelemetryEventPacket(class Player const* player, DimensionType fromDimension, DimensionType toDimension);
-
-    MCAPI LegacyTelemetryEventPacket(class Player const* player, class Raid const& raid, bool success);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::DimensionType portalBuiltInDimension);
 
     MCAPI LegacyTelemetryEventPacket(
-        class Player const*                  player,
-        gsl::not_null<class Actor const*>    interactedEntity,
-        ::MinecraftEventing::InteractionType interactionType
-    );
-
-    MCAPI LegacyTelemetryEventPacket(
-        class Player const*                 player,
+        ::Player const*                     player,
         ::MinecraftEventing::AchievementIds achievementId,
         bool                                usePlayerID
     );
 
-    MCAPI LegacyTelemetryEventPacket(class Player const* player, int partySize, gsl::not_null<class Actor const*> e);
-
-    MCAPI LegacyTelemetryEventPacket(
-        class Player const&        player,
-        class ItemStackBase const& item,
-        ::ItemUseMethod            useMethod,
-        int                        useCount
-    );
-
     MCAPI
-    LegacyTelemetryEventPacket(class Player const* player, short contentsType, uint contentsColor, short fillLevel);
+    LegacyTelemetryEventPacket(::Player const* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
     MCAPI LegacyTelemetryEventPacket(
-        class Player const*             player,
-        class Actor const*              killerEntity,
-        gsl::not_null<class Mob const*> killedMob,
-        ::ActorDamageCause              cause,
-        ::ActorType                     damageChildType
-    );
-
-    MCAPI LegacyTelemetryEventPacket(
-        class Player const* player,
-        std::string const&  commandName,
-        int                 successCount,
-        int                 errorCount,
-        std::string const&  errorList
-    );
-
-    MCAPI LegacyTelemetryEventPacket(
-        class Player const* player,
-        int                 killerId,
-        int                 killerVariant,
-        ::ActorDamageCause  cause,
-        bool                inRaid
-    );
-
-    MCAPI LegacyTelemetryEventPacket(
-        class Player const*             player,
-        class Actor const*              killerEntity,
-        gsl::not_null<class Mob const*> killedMob,
-        ::ActorDamageCause              cause,
-        std::string                     traderName,
-        int                             traderTier,
-        ::ActorType                     damageChildType
-    );
-
-    MCAPI class LegacyTelemetryEventPacket& operator=(class LegacyTelemetryEventPacket&&);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(class Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
-
-    MCAPI void* ctor$(class Player const* player, int partySize, gsl::not_null<class Actor const*> e);
-
-    MCAPI void*
-    ctor$(class Player const& player, class ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
-
-    MCAPI void* ctor$(class Player const& player, std::string const& objective, int score);
-
-    MCAPI void* ctor$(class Player const* player, short contentsType, uint contentsColor, short fillLevel);
-
-    MCAPI void* ctor$(
-        class Player const* player,
-        std::string const&  commandName,
-        int                 successCount,
-        int                 errorCount,
-        std::string const&  errorList
-    );
-
-    MCAPI void* ctor$(class Player const* player, struct LegacyTelemetryEventPacket::Data const& data);
-
-    MCAPI void* ctor$(class Player const* player, gsl::not_null<class Mob const*> baby);
-
-    MCAPI void* ctor$(class Player const* player, class Raid const& raid, bool success);
-
-    MCAPI void* ctor$(
-        class Player const*             player,
-        class Actor const*              killerEntity,
-        gsl::not_null<class Mob const*> killedMob,
-        ::ActorDamageCause              cause,
-        std::string                     traderName,
-        int                             traderTier,
-        ::ActorType                     damageChildType
-    );
-
-    MCAPI void* ctor$(
-        class Player const*                  player,
-        gsl::not_null<class Actor const*>    interactedEntity,
+        ::Player const*                      player,
+        ::gsl::not_null<::Actor const*>      interactedEntity,
         ::MinecraftEventing::InteractionType interactionType
     );
 
-    MCAPI void* ctor$();
+    MCAPI LegacyTelemetryEventPacket(::Player const& player, ::std::string const& objective, int score);
 
-    MCAPI void* ctor$(class Player const* player, DimensionType portalBuiltInDimension);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
 
-    MCAPI void* ctor$(class Player const& player, std::string const& codebuilderRuntimeAction);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, ::Raid const& raid, bool success);
 
-    MCAPI void* ctor$(class Player const* player, DimensionType fromDimension, DimensionType toDimension);
+    MCAPI LegacyTelemetryEventPacket(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCAPI void* ctor$(
-        class Player const*             player,
-        class Actor const*              killerEntity,
-        gsl::not_null<class Mob const*> killedMob,
-        ::ActorDamageCause              cause,
-        ::ActorType                     damageChildType
+    MCAPI LegacyTelemetryEventPacket(
+        ::Player const&        player,
+        ::ItemStackBase const& item,
+        ::ItemUseMethod        useMethod,
+        int                    useCount
     );
 
-    MCAPI void*
-    ctor$(class Player const* player, int killerId, int killerVariant, ::ActorDamageCause cause, bool inRaid);
+    MCAPI LegacyTelemetryEventPacket(
+        ::Player const*      player,
+        ::std::string const& commandName,
+        int                  successCount,
+        int                  errorCount,
+        ::std::string const& errorList
+    );
 
-    MCAPI void dtor$();
+    MCAPI LegacyTelemetryEventPacket(
+        ::Player const*               player,
+        ::Actor const*                killerEntity,
+        ::gsl::not_null<::Mob const*> killedMob,
+        ::ActorDamageCause            cause,
+        ::ActorType                   damageChildType
+    );
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI LegacyTelemetryEventPacket(
+        ::Player const*    player,
+        int                killerId,
+        int                killerVariant,
+        ::ActorDamageCause cause,
+        bool               inRaid
+    );
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI LegacyTelemetryEventPacket(
+        ::Player const*               player,
+        ::Actor const*                killerEntity,
+        ::gsl::not_null<::Mob const*> killedMob,
+        ::ActorDamageCause            cause,
+        ::std::string                 traderName,
+        int                           traderTier,
+        ::ActorType                   damageChildType
+    );
 
-    MCAPI std::string getName$() const;
+    MCAPI ::LegacyTelemetryEventPacket& operator=(::LegacyTelemetryEventPacket&&);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::Player const* player, ::gsl::not_null<::Mob const*> baby);
+
+    MCAPI void* $ctor(::Player const& player, ::std::string const& codebuilderRuntimeAction);
+
+    MCAPI void* $ctor(::Player const* player, ::LegacyTelemetryEventPacket::Data const& data);
+
+    MCAPI void* $ctor(::Player const* player, ::DimensionType portalBuiltInDimension);
+
+    MCAPI void* $ctor(::Player const* player, ::MinecraftEventing::AchievementIds achievementId, bool usePlayerID);
+
+    MCAPI void* $ctor(::Player const* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+
+    MCAPI void* $ctor(
+        ::Player const*                      player,
+        ::gsl::not_null<::Actor const*>      interactedEntity,
+        ::MinecraftEventing::InteractionType interactionType
+    );
+
+    MCAPI void* $ctor(::Player const& player, ::std::string const& objective, int score);
+
+    MCAPI void* $ctor(::Player const* player, int partySize, ::gsl::not_null<::Actor const*> e);
+
+    MCAPI void* $ctor(::Player const* player, ::Raid const& raid, bool success);
+
+    MCAPI void* $ctor(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
+
+    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
+
+    MCAPI void* $ctor(
+        ::Player const*      player,
+        ::std::string const& commandName,
+        int                  successCount,
+        int                  errorCount,
+        ::std::string const& errorList
+    );
+
+    MCAPI void* $ctor(
+        ::Player const*               player,
+        ::Actor const*                killerEntity,
+        ::gsl::not_null<::Mob const*> killedMob,
+        ::ActorDamageCause            cause,
+        ::ActorType                   damageChildType
+    );
+
+    MCAPI void* $ctor(::Player const* player, int killerId, int killerVariant, ::ActorDamageCause cause, bool inRaid);
+
+    MCAPI void* $ctor(
+        ::Player const*               player,
+        ::Actor const*                killerEntity,
+        ::gsl::not_null<::Mob const*> killedMob,
+        ::ActorDamageCause            cause,
+        ::std::string                 traderName,
+        int                           traderTier,
+        ::ActorType                   damageChildType
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

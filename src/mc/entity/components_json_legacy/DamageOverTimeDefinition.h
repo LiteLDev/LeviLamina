@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class DamageOverTimeComponent;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class DamageOverTimeDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk6894f9;
+    ::ll::UntypedStorage<4, 4> mUnk82b498;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&);
@@ -18,13 +27,16 @@ public:
     DamageOverTimeDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::DamageOverTimeComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>>& root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DamageOverTimeDefinition>>& root
     );
-
     // NOLINTEND
 };

@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
-class NoClipOrNoBlockMoveFilterSystem {
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct MoveRequestComponent;
+struct OffsetsComponent;
+struct StateVectorComponent;
+struct SubBBsComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct NoClipOrNoBlockMoveFilterSystem {
 public:
     // prevent constructor by default
     NoClipOrNoBlockMoveFilterSystem& operator=(NoClipOrNoBlockMoveFilterSystem const&);
@@ -13,20 +26,20 @@ public:
     NoClipOrNoBlockMoveFilterSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
     MCAPI static void tick(
-        class StrictEntityContext const&                  context,
-        struct MoveRequestComponent const&                moveRequest,
-        struct OffsetsComponent const&                    offsets,
-        struct ActorDataFlagComponent const&              actorData,
-        struct AABBShapeComponent&                        aabb,
-        struct StateVectorComponent&                      state,
-        struct SubBBsComponent&                           subBBs,
-        class EntityModifier<struct MoveRequestComponent> mod,
-        class IConstBlockSource const&                    region
+        ::StrictEntityContext const&             context,
+        ::MoveRequestComponent const&            moveRequest,
+        ::OffsetsComponent const&                offsets,
+        ::ActorDataFlagComponent const&          actorData,
+        ::AABBShapeComponent&                    aabb,
+        ::StateVectorComponent&                  state,
+        ::SubBBsComponent&                       subBBs,
+        ::EntityModifier<::MoveRequestComponent> mod,
+        ::IConstBlockSource const&               region
     );
-
     // NOLINTEND
 };

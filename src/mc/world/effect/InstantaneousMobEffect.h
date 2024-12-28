@@ -13,30 +13,35 @@ public:
     InstantaneousMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InstantaneousMobEffect() = default;
+    virtual ~InstantaneousMobEffect() /*override*/;
 
     // vIndex: 7
-    virtual bool isInstantaneous() const;
+    virtual bool isInstantaneous() const /*override*/;
 
     // vIndex: 9
     virtual bool isDurationEffectTick(int remainingDuration, int) const;
-
-    MCAPI InstantaneousMobEffect(uint, std::string const&, std::string const&, bool, int, int);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint, std::string const&, std::string const&, bool, int, int);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInstantaneous() const;
 
-    MCAPI bool isDurationEffectTick$(int remainingDuration, int) const;
+    MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
+    // NOLINTEND
 
-    MCAPI bool isInstantaneous$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

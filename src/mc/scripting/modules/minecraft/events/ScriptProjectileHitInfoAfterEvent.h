@@ -4,51 +4,52 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class WeakLifetimeScope; }
 struct ProjectileHitEvent;
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptProjectileHitInfoAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk203a55;
+    ::ll::UntypedStorage<4, 12> mUnk7c1bb1;
+    ::ll::UntypedStorage<4, 12> mUnk84f4c0;
+    ::ll::UntypedStorage<4, 12> mUnka7e81d;
+    ::ll::UntypedStorage<8, 40> mUnkefdbc2;
+    ::ll::UntypedStorage<8, 32> mUnkb991b3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptProjectileHitInfoAfterEvent& operator=(ScriptProjectileHitInfoAfterEvent const&);
+    ScriptProjectileHitInfoAfterEvent(ScriptProjectileHitInfoAfterEvent const&);
     ScriptProjectileHitInfoAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
-
-    MCAPI ScriptProjectileHitInfoAfterEvent(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
-
     MCAPI ScriptProjectileHitInfoAfterEvent(
-        struct ProjectileHitEvent const&          projectileHitEvent,
-        class Scripting::WeakLifetimeScope const& scope
+        ::ProjectileHitEvent const&           projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
-
     MCAPI ~ScriptProjectileHitInfoAfterEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
+    MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
-
-    MCAPI void*
-    ctor$(struct ProjectileHitEvent const& projectileHitEvent, class Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -3,19 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class WarpedFungusOnAStickItem : public ::ComponentItem {
@@ -26,40 +18,57 @@ public:
     WarpedFungusOnAStickItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WarpedFungusOnAStickItem() = default;
-
-    // vIndex: 37
-    virtual bool isHandEquipped() const;
-
-    // vIndex: 47
-    virtual bool requiresInteract() const;
+    // vIndex: 38
+    virtual bool isHandEquipped() const /*override*/;
 
     // vIndex: 50
-    virtual int getEnchantSlot() const;
+    virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 51
-    virtual int getEnchantValue() const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
-    MCAPI WarpedFungusOnAStickItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
 
+    // vIndex: 0
+    virtual ~WarpedFungusOnAStickItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WarpedFungusOnAStickItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI int getEnchantSlot$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getEnchantValue$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isHandEquipped() const;
 
-    MCAPI bool isHandEquipped$() const;
+    MCAPI bool $requiresInteract() const;
 
-    MCAPI bool requiresInteract$() const;
+    MCAPI int $getEnchantSlot() const;
 
+    MCAPI int $getEnchantValue() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

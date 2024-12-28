@@ -6,69 +6,101 @@
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CircuitSceneGraph;
+class CircuitSystem;
+class CircuitTrackingInfo;
+// clang-format on
+
 class PulseCapacitor : public ::CapacitorComponent {
 public:
-    bool                         mPowered;
-    bool                         mNewPowered;
-    ::CircuitComponentType const mCircuitComponentType = CircuitComponentType::PulseCapacitor;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                         mPowered;
+    ::ll::TypedStorage<1, 1, bool>                         mNewPowered;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PulseCapacitor& operator=(PulseCapacitor const&);
+    PulseCapacitor(PulseCapacitor const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PulseCapacitor() = default;
-
-    // vIndex: 1
-    virtual int getStrength() const;
-
-    // vIndex: 3
-    virtual void setStrength(int strength);
-
     // vIndex: 6
-    virtual bool canConsumePowerAnyDirection() const;
+    virtual bool canConsumePowerAnyDirection() const /*override*/;
 
     // vIndex: 7
-    virtual bool canConsumerPower() const;
+    virtual bool canConsumerPower() const /*override*/;
 
     // vIndex: 12
     virtual bool
-    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+
+    // vIndex: 26
+    virtual uchar getPoweroutDirection() const /*override*/;
 
     // vIndex: 14
-    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
+    virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
+    // vIndex: 3
+    virtual void setStrength(int strength) /*override*/;
 
-    // vIndex: 25
-    virtual uchar getPoweroutDirection() const;
+    // vIndex: 1
+    virtual int getStrength() const /*override*/;
 
-    MCAPI PulseCapacitor();
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
+    // vIndex: 0
+    virtual ~PulseCapacitor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PulseCapacitor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI bool
-    allowConnection$(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canConsumePowerAnyDirection$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canConsumePowerAnyDirection() const;
 
-    MCAPI bool canConsumerPower$() const;
+    MCAPI bool $canConsumerPower() const;
 
-    MCAPI bool evaluate$(class CircuitSystem& system, class BlockPos const& pos);
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+    MCAPI uchar $getPoweroutDirection() const;
 
-    MCAPI uchar getPoweroutDirection$() const;
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI int getStrength$() const;
+    MCAPI void $setStrength(int strength);
 
-    MCAPI void setStrength$(int strength);
+    MCAPI int $getStrength() const;
 
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

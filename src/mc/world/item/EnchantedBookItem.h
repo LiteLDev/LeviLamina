@@ -3,21 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class ItemStackBase;
 // clang-format on
 
 class EnchantedBookItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd7bd5c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EnchantedBookItem& operator=(EnchantedBookItem const&);
@@ -25,35 +24,52 @@ public:
     EnchantedBookItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
+
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
+
+    // vIndex: 39
+    virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
+
     // vIndex: 0
-    virtual ~EnchantedBookItem() = default;
-
-    // vIndex: 38
-    virtual bool isGlint(class ItemStackBase const& stack) const;
-
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
-
-    // vIndex: 51
-    virtual int getEnchantValue() const;
-
-    MCAPI EnchantedBookItem(std::string const& name, int id, bool isGlint);
-
+    virtual ~EnchantedBookItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EnchantedBookItem(::std::string const& name, int id, bool isGlint);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, bool isGlint);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, bool isGlint);
+    // NOLINTEND
 
-    MCAPI int getEnchantSlot$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getEnchantValue$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool isGlint$(class ItemStackBase const& stack) const;
+    MCAPI int $getEnchantValue() const;
 
+    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

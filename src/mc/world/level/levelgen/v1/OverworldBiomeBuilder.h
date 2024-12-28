@@ -4,10 +4,36 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class Biome;
+class BiomeRegistry;
+class Experiments;
+struct BiomeNoiseTarget;
 namespace ClimateUtils { struct Parameter; }
 // clang-format on
 
 class OverworldBiomeBuilder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16>   mUnkff988f;
+    ::ll::UntypedStorage<8, 16>   mUnk5965fc;
+    ::ll::UntypedStorage<8, 480>  mUnk2ccf85;
+    ::ll::UntypedStorage<8, 1200> mUnk2df82e;
+    ::ll::UntypedStorage<8, 1200> mUnk6a5bb6;
+    ::ll::UntypedStorage<8, 1200> mUnk1d88fa;
+    ::ll::UntypedStorage<8, 1200> mUnk492617;
+    ::ll::UntypedStorage<8, 1200> mUnk968c77;
+    ::ll::UntypedStorage<8, 8>    mUnk4829fa;
+    ::ll::UntypedStorage<8, 8>    mUnkf351ee;
+    ::ll::UntypedStorage<8, 80>   mUnkc78866;
+    ::ll::UntypedStorage<8, 200>  mUnk8822e5;
+    ::ll::UntypedStorage<8, 200>  mUnkbdff81;
+    ::ll::UntypedStorage<8, 200>  mUnka6b64d;
+    ::ll::UntypedStorage<8, 200>  mUnkdb8923;
+    ::ll::UntypedStorage<8, 200>  mUnk408818;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OverworldBiomeBuilder& operator=(OverworldBiomeBuilder const&);
@@ -15,123 +41,125 @@ public:
     OverworldBiomeBuilder();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit OverworldBiomeBuilder(class BaseGameVersion const& baseGameVersion);
+    MCAPI OverworldBiomeBuilder(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
-    MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>& biomes, class BiomeRegistry const& biomeRegistry) const;
-
-    MCAPI ~OverworldBiomeBuilder();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _addHighSlice(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void
-    _addInlandBiomes(std::vector<struct BiomeNoiseTarget>& biomes, class BiomeRegistry const& biomeRegistry) const;
+    MCAPI void _addInlandBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
 
     MCAPI void _addLowSlice(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
     ) const;
 
     MCAPI void _addMidSlice(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
     ) const;
 
     MCAPI void _addPeaks(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
     ) const;
 
     MCAPI void _addSurfaceBiome(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& temperature,
-        struct ClimateUtils::Parameter const& humidity,
-        struct ClimateUtils::Parameter const& continentalness,
-        struct ClimateUtils::Parameter const& erosion,
-        struct ClimateUtils::Parameter const& weirdness,
-        float                                 offset,
-        class Biome*                          second
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   temperature,
+        ::ClimateUtils::Parameter const&   humidity,
+        ::ClimateUtils::Parameter const&   continentalness,
+        ::ClimateUtils::Parameter const&   erosion,
+        ::ClimateUtils::Parameter const&   weirdness,
+        float                              offset,
+        ::Biome*                           second
     ) const;
 
     MCAPI void _addUndergroundBiome(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& temperature,
-        struct ClimateUtils::Parameter const& humidity,
-        struct ClimateUtils::Parameter const& continentalness,
-        struct ClimateUtils::Parameter const& erosion,
-        struct ClimateUtils::Parameter const& weirdness,
-        float                                 offset,
-        class Biome*                          second
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   temperature,
+        ::ClimateUtils::Parameter const&   humidity,
+        ::ClimateUtils::Parameter const&   continentalness,
+        ::ClimateUtils::Parameter const&   erosion,
+        ::ClimateUtils::Parameter const&   weirdness,
+        float                              offset,
+        ::Biome*                           second
     ) const;
 
     MCAPI void _addValleys(
-        std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+        ::std::vector<::BiomeNoiseTarget>& biomes,
+        ::ClimateUtils::Parameter const&   weirdness,
+        ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI class Biome* _pickBadlandsBiome(
-        int                                   humidityIndex,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+    MCAPI ::Biome* _pickBadlandsBiome(
+        int                              humidityIndex,
+        ::ClimateUtils::Parameter const& weirdness,
+        ::BiomeRegistry const&           biomeRegistry
     ) const;
 
-    MCAPI class Biome* _pickShatteredCoastBiome(
-        int                                   temperatureIndex,
-        int                                   humidityIndex,
-        struct ClimateUtils::Parameter const& weirdness,
-        class BiomeRegistry const&            biomeRegistry
+    MCAPI ::Biome* _pickMiddleBiomeOrBadlandsIfHot(
+        int                              temperatureIndex,
+        int                              humidityIndex,
+        ::ClimateUtils::Parameter const& weirdness,
+        ::BiomeRegistry const&           biomeRegistry
     ) const;
 
-    MCAPI void _populateBiomeArrays(class BiomeRegistry const& biomeRegistry) const;
+    MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
 
+    MCAPI void addBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
+
+    MCAPI ~OverworldBiomeBuilder();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BaseGameVersion const& baseGameVersion);
+    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> EROSIONS();
 
-    MCAPI void dtor$();
+    MCAPI static ::ClimateUtils::Parameter const& FULL_RANGE();
 
-    MCAPI static auto EROSIONS() -> struct ClimateUtils::Parameter const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> HUMIDITIES();
 
-    MCAPI static struct ClimateUtils::Parameter const& FULL_RANGE();
+    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> TEMPERATURES();
 
-    MCAPI static auto HUMIDITIES() -> struct ClimateUtils::Parameter const (&)[];
+    MCAPI static ::ClimateUtils::Parameter const& coastContinentalness();
 
-    MCAPI static auto TEMPERATURES() -> struct ClimateUtils::Parameter const (&)[];
+    MCAPI static ::ClimateUtils::Parameter const& deepOceanContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& coastContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& dripstoneCavesContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& deepOceanContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& farInlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& dripstoneCavesContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& inlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& farInlandContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& lushCavesHumidity();
 
-    MCAPI static struct ClimateUtils::Parameter const& inlandContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& midInlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& lushCavesHumidity();
+    MCAPI static ::ClimateUtils::Parameter const& mushroomFieldsContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& midInlandContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& nearInlandContinentalness();
 
-    MCAPI static struct ClimateUtils::Parameter const& mushroomFieldsContinentalness();
+    MCAPI static ::ClimateUtils::Parameter const& oceanContinentalness();
+    // NOLINTEND
 
-    MCAPI static struct ClimateUtils::Parameter const& nearInlandContinentalness();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    // NOLINTEND
 
-    MCAPI static struct ClimateUtils::Parameter const& oceanContinentalness();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

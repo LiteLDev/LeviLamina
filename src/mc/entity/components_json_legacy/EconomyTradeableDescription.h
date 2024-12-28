@@ -5,7 +5,29 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
-class EconomyTradeableDescription : public ::ActorComponentDescription {
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
+struct EconomyTradeableDescription : public ::ActorComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd5ad06;
+    ::ll::UntypedStorage<8, 32> mUnk393108;
+    ::ll::UntypedStorage<1, 1>  mUnk10e7b1;
+    ::ll::UntypedStorage<4, 4>  mUnk9f4fee;
+    ::ll::UntypedStorage<4, 8>  mUnkd5fb30;
+    ::ll::UntypedStorage<4, 8>  mUnk206819;
+    ::ll::UntypedStorage<4, 4>  mUnk5376cd;
+    ::ll::UntypedStorage<4, 4>  mUnka899a4;
+    ::ll::UntypedStorage<1, 1>  mUnka7d6f1;
+    ::ll::UntypedStorage<1, 1>  mUnk7d2059;
+    ::ll::UntypedStorage<1, 1>  mUnk6b9b92;
+    ::ll::UntypedStorage<1, 1>  mUnkae8426;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EconomyTradeableDescription& operator=(EconomyTradeableDescription const&);
@@ -13,28 +35,35 @@ public:
     EconomyTradeableDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
-
-    // vIndex: 1
-    virtual ~EconomyTradeableDescription();
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams deserializeDataParams);
+    virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
+    // vIndex: 1
+    virtual ~EconomyTradeableDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
 
-    MCAPI void deserializeData$(struct DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

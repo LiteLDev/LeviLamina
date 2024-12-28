@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cereal/Constraint.h"
+#include "mc/deps/cereal/Constraint.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class Constraint; }
+namespace BlockGeometrySerializer { struct Proxy; }
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace BlockGeometrySerializer {
 
-class Constraint : public ::cereal::Constraint {
+struct Constraint : public ::cereal::Constraint {
 public:
     // prevent constructor by default
     Constraint& operator=(Constraint const&);
@@ -22,30 +22,37 @@ public:
     Constraint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
-
-    // vIndex: 1
-    virtual ~Constraint() = default;
+    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
 
     // vIndex: 2
-    virtual struct cereal::internal::ConstraintDescription description() const;
+    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    MCAPI static bool checkValidVanillaName(std::string const& geoName);
-
+    // vIndex: 1
+    virtual ~Constraint() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace BlockGeometrySerializer
+} // namespace BlockGeometrySerializer

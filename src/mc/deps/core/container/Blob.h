@@ -6,88 +6,101 @@ namespace mce {
 
 class Blob {
 public:
-    using value_type     = uchar;
-    using size_type      = size_t;
-    using pointer        = value_type*;
-    using iterator       = value_type*;
-    using const_pointer  = value_type const*;
-    using const_iterator = value_type const*;
+    // Blob inner types declare
+    // clang-format off
+    struct Deleter;
+    // clang-format on
 
-    using delete_function = void (*)(pointer);
+    // Blob inner types define
+    using value_type = uchar;
+
+    using delete_function = void (*)(uchar*);
 
     struct Deleter {
     public:
-        delete_function mFn;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk90cf01;
+        // NOLINTEND
 
-        [[nodiscard]] LL_CONSTEXPR23 Deleter() : mFn(Blob::defaultDeleter) {}
-
-        [[nodiscard]] LL_CONSTEXPR23 Deleter(delete_function fn) : mFn(fn) {}
-
-        void operator()(pointer x) const { mFn(x); }
+    public:
+        // prevent constructor by default
+        Deleter& operator=(Deleter const&);
+        Deleter(Deleter const&);
+        Deleter();
     };
 
-    using pointer_type = std::unique_ptr<value_type[], Deleter>;
+    using pointer_type = ::std::unique_ptr<uchar[0], ::mce::Blob::Deleter>;
 
-    pointer_type mBlob{}; // this+0x0
-    size_type    mSize{}; // this+0x10
+    using reference = uchar&;
 
-    [[nodiscard]] LL_CONSTEXPR23 Blob() = default;
+    using const_reference = uchar const&;
 
-    [[nodiscard]] LL_CONSTEXPR23 Blob(std::span<value_type> s, Deleter deleter = {}) : mSize(s.size()) {
-        mBlob = pointer_type(new value_type[mSize], deleter);
-        std::copy(s.begin(), s.end(), mBlob.get());
-    }
+    using pointer = uchar*;
 
-    [[nodiscard]] LL_CONSTEXPR23 pointer data() const { return mBlob.get(); }
+    using const_pointer = uchar const*;
 
-    [[nodiscard]] LL_CONSTEXPR23 size_type size() const { return mSize; }
+    using iterator = uchar*;
 
-    [[nodiscard]] LL_CONSTEXPR23 std::span<value_type> view() const { return {data(), size()}; }
+    using const_iterator = uchar const*;
 
-    LL_MAY_CONSTEXPR Blob&       operator=(Blob&&) noexcept = default;
-    [[nodiscard]] LL_CONSTEXPR23 Blob(Blob&&) noexcept      = default;
+    using difference_type = int64;
 
-    [[nodiscard]] LL_CONSTEXPR23 Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
-
-    LL_CONSTEXPR23 Blob& operator=(Blob const& other) {
-        if (this != &other) {
-            *this = Blob{other};
-        }
-        return *this;
-    }
+    using size_type = uint64;
 
 public:
+    // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::unique_ptr<uchar[0], ::mce::Blob::Deleter>> mBlob;
+    ::ll::TypedStorage<8, 8, uint64>                                             mSize;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Blob& operator=(Blob const&);
+    Blob(Blob const&);
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Blob();
+
+    MCAPI Blob(::mce::Blob&& rhs);
+
     MCAPI explicit Blob(uint64 size);
 
-    MCAPI const_iterator cbegin() const;
+    MCAPI uchar const* cbegin() const;
 
-    MCAPI const_iterator cend() const;
+    MCAPI uchar const* cend() const;
 
     MCAPI bool empty() const;
 
+    MCAPI ::mce::Blob& operator=(::mce::Blob&& rhs);
+
     MCAPI ~Blob();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void defaultDeleter(pointer ptr);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void defaultDeleter(uchar* ptr);
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint64 size);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class mce::Blob&& rhs);
+    MCAPI void* $ctor(::mce::Blob&& rhs);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(uint64 size);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace mce
+} // namespace mce

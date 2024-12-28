@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class DaylightCycle : schar {
-    Normal    = 0x0,
-    AlwaysDay = 0x1,
-    LockTime  = 0x2,
+enum class DaylightCycle : uchar {
+    Normal    = 0,
+    AlwaysDay = 1,
+    LockTime  = 2,
 };

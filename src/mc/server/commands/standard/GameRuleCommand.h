@@ -7,6 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class GameRule;
+class Level;
 namespace Json { class Value; }
 // clang-format on
 
@@ -20,24 +25,41 @@ public:
     // GameRuleCommand inner types define
     struct InitProxy {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk895cad;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI explicit InitProxy(class Level& level);
-
+        MCAPI explicit InitProxy(::Level& level);
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class Level& level);
-
+        MCAPI void* $ctor(::Level& level);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk8beb94;
+    ::ll::UntypedStorage<4, 4>  mUnk429d60;
+    ::ll::UntypedStorage<4, 4>  mUnk4140a0;
+    ::ll::UntypedStorage<1, 1>  mUnk7e7790;
+    ::ll::UntypedStorage<1, 1>  mUnk4dbe3f;
+    ::ll::UntypedStorage<1, 1>  mUnkf282fd;
+    ::ll::UntypedStorage<1, 1>  mUnke07538;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -46,38 +68,47 @@ public:
     GameRuleCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GameRuleCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, struct GameRuleCommand::InitProxy&& dependencies);
-
+    // vIndex: 0
+    virtual ~GameRuleCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void getGameRule(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI void setGameRule(class CommandOrigin const& origin, class CommandOutput& output) const;
-
-    MCAPI static void createJsonIndex(
-        std::string const&    ruleName,
-        class GameRule const& rule,
-        class Json::Value&    json,
-        std::string*          value
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void getGameRule(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI void setGameRule(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    createJsonIndex(::std::string const& ruleName, ::GameRule const& rule, ::Json::Value& json, ::std::string* value);
+
+    MCAPI static void setup(::CommandRegistry& registry, ::GameRuleCommand::InitProxy&& dependencies);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

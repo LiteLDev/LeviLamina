@@ -12,37 +12,45 @@ namespace npc {
 
 struct ActionContainer {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnke14f11;
+    ::ll::UntypedStorage<8, 24> mUnk8bc2fe;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActionContainer& operator=(ActionContainer const&);
     ActionContainer(ActionContainer const&);
     ActionContainer();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(uint64 i);
+    MCAPI ::std::variant<::npc::CommandAction, ::npc::UrlAction> const* at(uint64) const;
 
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(uint64 i) const;
+    MCAPI ::std::variant<::npc::CommandAction, ::npc::UrlAction>* at(uint64 i);
 
     MCAPI uint64 countUrl() const;
 
-    MCAPI std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>> const& data() const;
+    MCAPI ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>> const& data() const;
 
-    MCAPI void push(std::variant<struct npc::CommandAction, struct npc::UrlAction>&& action);
+    MCAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
 
-    MCAPI void reset(std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&& data);
+    MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
+
+    MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
 
     MCAPI uint64 size() const;
 
     MCAPI ~ActionContainer();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace npc
+} // namespace npc

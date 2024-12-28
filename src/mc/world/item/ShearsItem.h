@@ -3,18 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Container;
+class InteractionResult;
+class ItemStack;
+class ItemStackBase;
+class Mob;
+class Vec3;
 // clang-format on
 
 class ShearsItem : public ::Item {
@@ -25,61 +27,77 @@ public:
     ShearsItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ShearsItem() = default;
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 31
-    virtual bool canDestroySpecial(class Block const& block) const;
-
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
-
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
-
-    // vIndex: 77
-    virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
-
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    // vIndex: 32
+    virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
     // vIndex: 81
-    virtual bool mineBlock(class ItemStack& item, class Block const& block, int, int, int, class Actor* owner) const;
+    virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+        /*override*/;
+
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
+
+    // vIndex: 0
+    virtual ~ShearsItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool _tryShearActor(class BlockSource& region, class Actor& mob);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ShearsItem(::std::string const& name, int itemId);
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _tryShearActor(::BlockSource& region, ::Actor& mob);
+    // NOLINTEND
 
-    MCAPI bool canDestroySpecial$(class Block const& block) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int itemId);
+    // NOLINTEND
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI int getEnchantSlot$() const;
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI bool mineBlock$(class ItemStack& item, class Block const& block, int, int, int, class Actor* owner) const;
+    MCAPI int $getEnchantSlot() const;
 
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

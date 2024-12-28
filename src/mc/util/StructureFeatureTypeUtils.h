@@ -2,12 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+// auto generated forward declare list
+// clang-format off
+class Experiments;
+class HashedString;
+// clang-format on
 
 namespace StructureFeatureTypeUtils {
+// functions
 // NOLINTBEGIN
-MCAPI bool isFeatureTypeAllowedForExperiments(::StructureFeatureType, class Experiments const&);
+MCAPI int getVanillaFeatureTypeIndex_DEPRECATED(::HashedString const& type);
+
+MCAPI bool isFeatureTypeAllowedForExperiments(::HashedString, ::Experiments const&);
 // NOLINTEND
 
-}; // namespace StructureFeatureTypeUtils
+} // namespace StructureFeatureTypeUtils

@@ -7,67 +7,85 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
+class IContentKeyProvider;
+class LevelData;
+class PackAccessStrategy;
+class TaskGroup;
+struct LevelSummary;
 namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on
 
 namespace ExternalFileLevelStorage {
+// functions
 // NOLINTBEGIN
-MCAPI class Core::Result
-_readLevelDataFromFile(class Core::Path const& datFilename, std::string const& worldID, class LevelData& levelData);
+MCAPI ::Core::Result
+_readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
 
-MCAPI bool _writeLevelDat(class Core::Path const& datFilename, class LevelData const& levelData);
+MCAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
 
-MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy(
-    class Core::Path const&                                             levelDirectory,
-    class ContentIdentity const&                                        contentIdentity,
-    Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+MCAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
+
+MCAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
+    ::Core::Path const&                                               levelDirectory,
+    ::ContentIdentity const&                                          contentIdentity,
+    ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
 );
 
-MCAPI std::vector<std::string> const getImportantFiles();
+MCAPI ::std::vector<::std::string> const getImportantFiles();
 
-MCAPI std::string getLevelIDFromPath(class Core::Path const& levelRootPath, class Core::Path const& worldsPath);
+MCAPI bool isLevelMarkedForSync(::Core::Path const& directory);
 
-MCAPI bool isLevelMarkedForSync(class Core::Path const& directory);
+MCAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
-MCAPI void makeReadableLevelnameFile(class Core::Path const& fullPath, std::string const& name);
+MCAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-MCAPI class Core::Result readLevelDataFromData(std::string const& dataStr, class LevelData& levelData);
-
-MCAPI class Core::Result
-readLevelDataFromFile(class Core::Path const& directory, std::string const& levelId, class LevelData& levelData);
+MCAPI ::Core::Result
+readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
 
 MCAPI bool readShallowLevelSummaryFromSyncFile(
-    class Core::Path const& directory,
-    std::string const&      levelId,
-    struct LevelSummary&    summary
+    ::Core::Path const&  directory,
+    ::std::string const& levelId,
+    ::LevelSummary&      summary
 );
 
 MCAPI bool readSyncFileData(
-    class Core::Path const& directory,
-    std::string&            levelName,
-    int64&                  levelSize,
-    int64&                  remoteTimestamp,
-    bool&                   isSyncUsable
+    ::Core::Path const& directory,
+    ::std::string&      levelName,
+    int64&              levelSize,
+    int64&              remoteTimestamp,
+    bool&               isSyncUsable
 );
 
 MCAPI void saveLevelData(
-    class Core::Path const& levelPath,
-    std::string const&      levelId,
-    class LevelData const&  levelData,
-    bool                    ignoreCache
+    ::Core::Path const&  levelPath,
+    ::std::string const& levelId,
+    ::LevelData const&   levelData,
+    bool                 ignoreCache
 );
 
 MCAPI void
-saveLevelDataToPath(class Core::Path const& fullPath, std::string const& levelId, class LevelData const& levelData);
+saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
 
 MCAPI void saveLevelDisplayDataToCache(
-    std::string const&              levelId,
-    class LevelData const&          levelData,
-    gsl::not_null<class TaskGroup*> taskGroup
+    ::std::string const&          levelId,
+    ::LevelData const&            levelData,
+    ::gsl::not_null<::TaskGroup*> taskGroup
 );
 
-MCAPI class Core::Result validateLevelDat(class Core::Path filePath);
+MCAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND
 
-}; // namespace ExternalFileLevelStorage
+// static variables
+// NOLINTBEGIN
+MCAPI char const* const& CLOUD_SYNC_LOCK();
+
+MCAPI char const* const& FN_CORRUPTED_WORLD_MARKER();
+
+MCAPI char const* const& FN_LEVEL_DAT();
+
+MCAPI ::std::atomic<bool>& writingToCache();
+// NOLINTEND
+
+} // namespace ExternalFileLevelStorage

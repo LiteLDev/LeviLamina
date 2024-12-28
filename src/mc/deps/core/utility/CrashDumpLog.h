@@ -4,6 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+struct CrashDumpEventData;
+struct CrashDumpFrameData;
+struct CrashDumpKeyValueData;
+struct CrashDump_AllData;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
@@ -15,65 +19,60 @@ public:
     CrashDumpLog();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void logEvent(struct CrashDumpEventData const&);
+    MCAPI static void crashDumpLogThreadRoutine();
 
-    MCAPI static void logFrame(struct CrashDumpFrameData const&);
+    MCAPI static void logEvent(::CrashDumpEventData const& eventData);
 
-    MCAPI static void logKeyValue(struct CrashDumpKeyValueData const&);
+    MCAPI static void logFrame(::CrashDumpFrameData const& frameData);
 
-    MCAPI static void setAssertMessage(char const*, int, char const*, char const*);
+    MCAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
 
-    MCAPI static void setBehaviorPackIds(std::vector<std::string> const&);
+    MCAPI static void setAssertMessage(char const* desc, int line, char const* file, char const* function);
 
-    MCAPI static bool setDeviceSessionID(std::string const&);
+    MCAPI static void setBehaviorPackIds(::std::vector<::std::string> const& packIds);
 
-    MCAPI static void setGameVersion(char const*);
+    MCAPI static bool setDeviceSessionID(::std::string const& str);
 
-    MCAPI static void setPlatform(char const*);
+    MCAPI static void setGameVersion(char const* gameVersion);
 
-    MCAPI static void setTotalMemory(uint64);
+    MCAPI static void setPlatform(char const* platformString);
+
+    MCAPI static void setTotalMemory(uint64 memory);
 
     MCAPI static bool startCrashDumpLogThread();
 
     MCAPI static void stopCrashDumpLogThread();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void crashDumpLogThreadRoutine();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static struct CrashDump_AllData*& mAllData();
+    MCAPI static ::CrashDump_AllData*& mAllData();
 
-    MCAPI static class Bedrock::Threading::Mutex& mAssertDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mAssertDataMutex();
 
-    MCAPI static std::unique_ptr<std::thread>& mCrashDumpLog_logThread();
+    MCAPI static ::std::unique_ptr<::std::thread>& mCrashDumpLog_logThread();
 
-    MCAPI static class Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mCrashDumpThreadMutex();
 
-    MCAPI static std::condition_variable& mCrashDumpThreadMutexCV();
+    MCAPI static ::std::condition_variable& mCrashDumpThreadMutexCV();
 
-    MCAPI static class Bedrock::Threading::Mutex& mEventDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mEventDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex& mFrameDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mFrameDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex& mGameplayDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mGameplayDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex& mGlobalDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mGlobalDataMutex();
 
     MCAPI static bool& mIsThreadRunning();
 
-    MCAPI static class Bedrock::Threading::Mutex& mKeyValueDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mKeyValueDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex& mPlayerDataMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mPlayerDataMutex();
 
-    MCAPI static class Bedrock::Threading::Mutex& mRenderDataMutex();
-
+    MCAPI static ::Bedrock::Threading::Mutex& mRenderDataMutex();
     // NOLINTEND
 };

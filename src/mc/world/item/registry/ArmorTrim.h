@@ -2,7 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class HashedString;
+class ItemStackBase;
+class Level;
+namespace Bedrock::Safety { class RedactableString; }
+// clang-format on
+
 class ArmorTrim {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk9bfa43;
+    ::ll::UntypedStorage<8, 48> mUnkb7fbf8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ArmorTrim& operator=(ArmorTrim const&);
@@ -10,46 +26,60 @@ public:
     ArmorTrim();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ArmorTrim(class CompoundTag const& tag);
+    MCAPI explicit ArmorTrim(::CompoundTag const& tag);
 
-    MCAPI ArmorTrim(class HashedString patternId, class HashedString materialId);
+    MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCAPI class HashedString const& getMaterialId() const;
+    MCAPI ::HashedString const& getMaterialId() const;
 
-    MCAPI class HashedString const& getPatternId() const;
+    MCAPI ::HashedString const& getPatternId() const;
 
     MCAPI ~ArmorTrim();
-
-    MCAPI static void
-    appendUpgradeHoverText(class ItemStackBase const& stack, class Level& level, std::string& hovertext);
-
-    MCAPI static std::optional<class ArmorTrim> getTrim(class ItemStackBase const& instance);
-
-    MCAPI static void setTrim(class ItemStackBase& instance, class ArmorTrim trim);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class HashedString patternId, class HashedString materialId);
+    MCAPI static void appendUpgradeHoverText(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext
+    );
 
-    MCAPI void* ctor$(class CompoundTag const& tag);
+    MCAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
 
-    MCAPI void dtor$();
+    MCAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
+    // NOLINTEND
 
-    MCAPI static std::string const& TAG_TRIM();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& TAG_TRIM();
 
-    MCAPI static std::string const& TAG_TRIM_MATERIAL();
+    MCAPI static ::std::string const& TAG_TRIM_MATERIAL();
 
-    MCAPI static std::string const& TAG_TRIM_PATTERN();
+    MCAPI static ::std::string const& TAG_TRIM_PATTERN();
 
-    MCAPI static std::string const& UPGRADE_DESCRIPTION();
+    MCAPI static ::std::string const& UPGRADE_DESCRIPTION();
 
-    MCAPI static std::string const& UPGRADE_DESCRIPTION_FORMAT();
+    MCAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
 
-    MCAPI static std::string const& WRONG_VERSION_OR_ITEM_ERROR();
+    MCAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CompoundTag const& tag);
+
+    MCAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

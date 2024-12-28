@@ -2,17 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class SimplePositionalRandomFactory;
+class Vec3;
+// clang-format on
+
 namespace VoronoiZoomMultiNoise {
+// functions
 // NOLINTBEGIN
-MCAPI class Vec3 getGridOffset(class SimplePositionalRandomFactory const& positionalRandom, class BlockPos pos);
+MCAPI ::Vec3 getGridOffset(::SimplePositionalRandomFactory const& positionalRandom, ::BlockPos worldPos);
 
 MCAPI uint getZoomedVoronoiCellIndex(
-    class BlockPos                 inPos,
-    std::vector<class Vec3> const& voronoiCellOffsets,
-    uint                           minCellIndex,
-    uint                           bufferXZSize,
-    uint                           bufferYSize
+    ::BlockPos                   inPos,
+    ::std::vector<::Vec3> const& voronoiCellOffsets,
+    uint                         minCellIndex,
+    uint                         bufferXZSize,
+    uint                         bufferYSize
 );
 // NOLINTEND
 
-}; // namespace VoronoiZoomMultiNoise
+} // namespace VoronoiZoomMultiNoise

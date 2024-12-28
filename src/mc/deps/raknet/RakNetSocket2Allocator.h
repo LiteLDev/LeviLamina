@@ -17,16 +17,12 @@ public:
     RakNetSocket2Allocator();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<class RakNet::RakNetSocket2> CreateSharedRNS2();
+    MCAPI static ::std::shared_ptr<::RakNet::RakNetSocket2> CreateSharedRNS2();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void DeallocRNS2(class RakNet::RakNetSocket2* s);
-
+    MCAPI static void DeallocRNS2(::RakNet::RakNetSocket2* s);
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

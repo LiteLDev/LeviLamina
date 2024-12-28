@@ -4,12 +4,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 namespace NpcComponents { struct LeaveMenuCountdown; }
 // clang-format on
 
 namespace NpcSystemHelper {
+// functions
 // NOLINTBEGIN
-MCAPI void sendClosePacket(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown const& countDown);
+MCAPI void sendClosePacket(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown const& countDown);
 // NOLINTEND
 
-}; // namespace NpcSystemHelper
+} // namespace NpcSystemHelper

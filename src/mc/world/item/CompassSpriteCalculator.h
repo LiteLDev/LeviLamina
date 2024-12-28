@@ -2,7 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+// clang-format on
+
 class CompassSpriteCalculator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka643b6;
+    ::ll::UntypedStorage<8, 8> mUnk46d9d2;
+    ::ll::UntypedStorage<4, 4> mUnk16b4e4;
+    ::ll::UntypedStorage<4, 4> mUnkc84c5a;
+    ::ll::UntypedStorage<4, 4> mUnkdb8cd3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CompassSpriteCalculator& operator=(CompassSpriteCalculator const&);
@@ -10,51 +27,61 @@ public:
     CompassSpriteCalculator();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CompassSpriteCalculator(
-        std::function<class BlockPos(class BlockSource const*, class Actor*)> targetToPointTo,
-        std::function<bool(class BlockSource const*, class Actor*)>           isPointingAtTarget,
-        float                                                                 rot,
-        float                                                                 rotA
+        ::BlockPos (*targetToPointTo)(::BlockSource const*, ::Actor*),
+        bool (*isPointingAtTarget)(::BlockSource const*, ::Actor*),
+        float rot,
+        float rotA
     );
 
     MCAPI int getFrame() const;
 
-    MCAPI int update(class Actor& actor, bool instant);
+    MCAPI int update(::Actor& actor, bool instant);
 
     MCAPI int updateFromPosition(
-        class BlockSource const* region,
-        class Actor*             actor,
-        float                    x,
-        float                    z,
-        float                    yRot,
-        bool                     isZFlipped,
-        bool                     instant
+        ::BlockSource const* region,
+        ::Actor*             actor,
+        float                x,
+        float                z,
+        float                yRot,
+        bool                 isZFlipped,
+        bool                 instant
     );
 
-    MCAPI ~CompassSpriteCalculator();
-
-    MCAPI static std::function<bool(class BlockSource const*, class Actor*)> isInLastDeathDimension();
-
-    MCAPI static std::function<bool(class BlockSource const*, class Actor*)> isInOverworldDimension();
-
-    MCAPI static std::function<class BlockPos(class BlockSource const*, class Actor*)> pointTowardsLastDeathLocation();
-
-    MCAPI static std::function<class BlockPos(class BlockSource const*, class Actor*)> pointTowardsSpawnPoint();
-
+    MCAPI int updateFromPosition(
+        ::BlockSource const*,
+        ::BlockPos const& lookTowards,
+        float             x,
+        float             z,
+        float             yRot,
+        bool              isZFlipped,
+        bool              instant,
+        bool              spin
+    );
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::function<class BlockPos(class BlockSource const*, class Actor*)> targetToPointTo,
-        std::function<bool(class BlockSource const*, class Actor*)>           isPointingAtTarget,
-        float                                                                 rot,
-        float                                                                 rotA
+    MCAPI static bool isInLastDeathDimension(::BlockSource const* region, ::Actor* actor);
+
+    MCAPI static bool isInOverworldDimension(::BlockSource const* region, ::Actor*);
+
+    MCAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
+
+    MCAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockPos (*targetToPointTo)(::BlockSource const*, ::Actor*),
+        bool (*isPointingAtTarget)(::BlockSource const*, ::Actor*),
+        float rot,
+        float rotA
     );
-
-    MCAPI void dtor$();
-
     // NOLINTEND
 };

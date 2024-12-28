@@ -12,31 +12,54 @@ namespace Core { class FileStorageArea; }
 
 class FlushableStorageAreaEnv : public ::FlushableEnv {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk35823d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FlushableStorageAreaEnv& operator=(FlushableStorageAreaEnv const&);
     FlushableStorageAreaEnv(FlushableStorageAreaEnv const&);
     FlushableStorageAreaEnv();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlushableStorageAreaEnv() = default;
+    virtual ~FlushableStorageAreaEnv() /*override*/;
 
     // vIndex: 20
-    virtual void flushToPermanentStorage();
-
-    MCAPI FlushableStorageAreaEnv(leveldb::Env* env, std::shared_ptr<class Core::FileStorageArea> storageArea);
-
+    virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FlushableStorageAreaEnv(::leveldb::Env* env, ::std::shared_ptr<::Core::FileStorageArea> storageArea);
+    // NOLINTEND
 
-    MCAPI void* ctor$(leveldb::Env* env, std::shared_ptr<class Core::FileStorageArea> storageArea);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::leveldb::Env* env, ::std::shared_ptr<::Core::FileStorageArea> storageArea);
+    // NOLINTEND
 
-    MCAPI void flushToPermanentStorage$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $flushToPermanentStorage();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,25 +3,59 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/script_engine/Closure.h"
-#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentConnectors.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCompleteUseEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
 #include "mc/world/item/ItemUseMethod.h"
 
 // auto generated forward declare list
 // clang-format off
-class ComponentItem;
 class ItemStack;
 class Level;
 class Player;
-namespace ScriptModuleMinecraft { struct IScriptItemCustomComponentClosures; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentCompleteUseEvent {
+struct ScriptItemCustomComponentCompleteUseEvent : public ::ScriptModuleMinecraft::ScriptItemCompleteUseEvent,
+                                                   public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent {
+public:
+    // ScriptItemCustomComponentCompleteUseEvent inner types declare
+    // clang-format off
+    struct IntermediateStorage;
+    // clang-format on
+
+    // ScriptItemCustomComponentCompleteUseEvent inner types define
+    struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 152> mUnkab316f;
+        ::ll::UntypedStorage<8, 24>  mUnk6d644f;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        IntermediateStorage& operator=(IntermediateStorage const&);
+        IntermediateStorage(IntermediateStorage const&);
+        IntermediateStorage();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~IntermediateStorage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
 public:
     // prevent constructor by default
     ScriptItemCustomComponentCompleteUseEvent& operator=(ScriptItemCustomComponentCompleteUseEvent const&);
@@ -29,45 +63,47 @@ public:
     ScriptItemCustomComponentCompleteUseEvent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentCompleteUseEvent(
-        ::ItemUseMethod&,
-        class ItemStack const& initialItemStack,
-        class ItemStack&,
-        class Player& player,
-        class Level&,
-        class Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent&&);
-
-    MCAPI static struct Scripting::ClassBinding bind();
-
-    MCAPI static std::optional<
-        class Scripting::Closure<void(class Scripting::StrongTypedObjectHandle<
-                                      struct ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent>)>>
-    getClosure(struct ScriptModuleMinecraft::IScriptItemCustomComponentClosures const& closures);
-
-    MCAPI static struct ScriptItemCustomComponentConnectors<
-        void(::ItemUseMethod&, class ItemStack const&, class ItemStack&, class Player&, class Level&)>
-    getConnectors(class ComponentItem& item);
-
+    // vIndex: 0
+    virtual ~ScriptItemCustomComponentCompleteUseEvent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        ::ItemUseMethod&,
-        class ItemStack const& initialItemStack,
-        class ItemStack&,
-        class Player& player,
-        class Level&,
-        class Scripting::WeakLifetimeScope const& scope
+    MCAPI ScriptItemCustomComponentCompleteUseEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
     );
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

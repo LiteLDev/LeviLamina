@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootTableContext;
+class Random;
+struct IntRange;
 namespace Json { class Value; }
 // clang-format on
 
@@ -20,11 +23,27 @@ public:
     // LootItemMatchToolCondition inner types define
     struct EnchantInfo {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk5d9cea;
+        ::ll::UntypedStorage<4, 8>  mUnkeb6509;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         EnchantInfo& operator=(EnchantInfo const&);
         EnchantInfo(EnchantInfo const&);
         EnchantInfo();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>  mUnkeb8bef;
+    ::ll::UntypedStorage<4, 8>  mUnkf68036;
+    ::ll::UntypedStorage<8, 32> mUnk8cc4d1;
+    ::ll::UntypedStorage<8, 24> mUnk3540d9;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -33,37 +52,58 @@ public:
     LootItemMatchToolCondition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LootItemMatchToolCondition() = default;
+    virtual ~LootItemMatchToolCondition() /*override*/;
 
     // vIndex: 1
-    virtual bool applies(class Random& random, class LootTableContext& context);
-
-    MCAPI LootItemMatchToolCondition(
-        struct IntRange                                                    count,
-        struct IntRange                                                    durability,
-        std::string                                                        itemName,
-        std::vector<struct LootItemMatchToolCondition::EnchantInfo> const& enchantments
-    );
-
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
-
+    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        struct IntRange                                                    count,
-        struct IntRange                                                    durability,
-        std::string                                                        itemName,
-        std::vector<struct LootItemMatchToolCondition::EnchantInfo> const& enchantments
+    MCAPI LootItemMatchToolCondition(
+        ::IntRange                                                      count,
+        ::IntRange                                                      durability,
+        ::std::string                                                   itemName,
+        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments
     );
+    // NOLINTEND
 
-    MCAPI bool applies$(class Random& random, class LootTableContext& context);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IntRange                                                      count,
+        ::IntRange                                                      durability,
+        ::std::string                                                   itemName,
+        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $applies(::Random& random, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

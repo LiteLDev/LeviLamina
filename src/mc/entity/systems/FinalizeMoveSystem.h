@@ -6,9 +6,24 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class FinalizeMoveSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct CollidableMobNearFlagComponent;
+struct CollisionFlagComponent;
+struct HorizontalCollisionFlagComponent;
+struct MoveRequestComponent;
+struct MovementAbilitiesComponent;
+struct OffsetsComponent;
+struct OnGroundFlagComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct VerticalCollisionFlagComponent;
+// clang-format on
+
+struct FinalizeMoveSystem {
 public:
     // prevent constructor by default
     FinalizeMoveSystem& operator=(FinalizeMoveSystem const&);
@@ -16,25 +31,25 @@ public:
     FinalizeMoveSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
     MCAPI static void tick(
-        class ViewT<
-            class StrictEntityContext,
-            struct AABBShapeComponent const,
-            struct MoveRequestComponent const,
-            struct OffsetsComponent const,
-            struct StateVectorComponent,
-            class Optional<struct OnGroundFlagComponent const>,
-            class Optional<struct MovementAbilitiesComponent const>> view,
-        class EntityModifier<
-            struct OnGroundFlagComponent,
-            class FlagComponent<struct CollisionFlag>,
-            class FlagComponent<struct HorizontalCollisionFlag>,
-            class FlagComponent<struct VerticalCollisionFlag>,
-            class FlagComponent<struct CollidableMobNearFlag>> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::AABBShapeComponent const,
+            ::MoveRequestComponent const,
+            ::OffsetsComponent const,
+            ::StateVectorComponent,
+            ::Optional<::OnGroundFlagComponent const>,
+            ::Optional<::MovementAbilitiesComponent const>> view,
+        ::EntityModifier<
+            ::OnGroundFlagComponent,
+            ::CollisionFlagComponent,
+            ::HorizontalCollisionFlagComponent,
+            ::VerticalCollisionFlagComponent,
+            ::CollidableMobNearFlagComponent> mod
     );
-
     // NOLINTEND
 };

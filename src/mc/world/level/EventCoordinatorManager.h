@@ -3,72 +3,118 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorEventCoordinator;
+class BlockEventCoordinator;
+class ClientPlayerEventCoordinator;
+class ItemEventCoordinator;
+class LevelEventCoordinator;
+class PlayerEventCoordinator;
+class ScriptDeferredEventCoordinator;
+class ScriptingEventCoordinator;
+class ServerLevelEventCoordinator;
+class ServerNetworkEventCoordinator;
+class ServerPlayerEventCoordinator;
+// clang-format on
 
 class EventCoordinatorManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkf9e1db;
+    ::ll::UntypedStorage<8, 16> mUnk425f9d;
+    ::ll::UntypedStorage<8, 16> mUnka34e42;
+    ::ll::UntypedStorage<8, 16> mUnk284a74;
+    ::ll::UntypedStorage<8, 16> mUnkb27f6d;
+    ::ll::UntypedStorage<8, 16> mUnkab1af4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EventCoordinatorManager& operator=(EventCoordinatorManager const&);
     EventCoordinatorManager(EventCoordinatorManager const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~EventCoordinatorManager();
 
     // vIndex: 1
-    virtual class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> getRemotePlayerEventCoordinator();
 
     // vIndex: 2
-    virtual class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> getClientPlayerEventCoordinator();
 
     // vIndex: 3
-    virtual class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::ServerPlayerEventCoordinator> getServerPlayerEventCoordinator();
 
     // vIndex: 4
-    virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> getLevelEventCoordinator() = 0;
 
     // vIndex: 5
-    virtual class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::ServerLevelEventCoordinator> getServerLevelEventCoordinator();
 
     // vIndex: 6
-    virtual class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator();
-
-    MCAPI EventCoordinatorManager();
-
-    MCAPI gsl::not_null<class StackRefResult<class ActorEventCoordinator>> getActorEventCoordinator();
-
-    MCAPI gsl::not_null<class StackRefResult<class BlockEventCoordinator>> getBlockEventCoordinator();
-
-    MCAPI gsl::not_null<class StackRefResult<class ItemEventCoordinator>> getItemEventCoordinator();
-
-    MCAPI gsl::not_null<class StackRefResult<class ScriptDeferredEventCoordinator>> getScriptDeferredEventCoordinator();
-
-    MCAPI gsl::not_null<class StackRefResult<class ScriptingEventCoordinator>> getScriptingEventCoordinator();
-
-    MCAPI static class OwnerPtr<class EventCoordinatorManager> createEventCoordinatorManager(bool isClientSide);
-
+    virtual ::Bedrock::NonOwnerPointer<::ServerNetworkEventCoordinator> getServerNetworkEventCoordinator();
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EventCoordinatorManager();
 
-    MCAPI void* ctor$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorEventCoordinator> getActorEventCoordinator();
 
-    MCAPI void dtor$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockEventCoordinator> getBlockEventCoordinator();
 
-    MCAPI class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ItemEventCoordinator> getItemEventCoordinator();
 
-    MCAPI class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScriptDeferredEventCoordinator> getScriptDeferredEventCoordinator();
 
-    MCAPI class StackRefResult<class ServerLevelEventCoordinator> getServerLevelEventCoordinator$();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScriptingEventCoordinator> getScriptingEventCoordinator();
+    // NOLINTEND
 
-    MCAPI class StackRefResult<class ServerNetworkEventCoordinator> getServerNetworkEventCoordinator$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::UniqueOwnerPointer<::EventCoordinatorManager>
+    createEventCoordinatorManager(bool isClientSide);
+    // NOLINTEND
 
-    MCAPI class StackRefResult<class ServerPlayerEventCoordinator> getServerPlayerEventCoordinator$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> $getRemotePlayerEventCoordinator();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> $getClientPlayerEventCoordinator();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerEventCoordinator> $getServerPlayerEventCoordinator();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerLevelEventCoordinator> $getServerLevelEventCoordinator();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkEventCoordinator> $getServerNetworkEventCoordinator();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

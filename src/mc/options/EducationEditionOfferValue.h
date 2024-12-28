@@ -7,16 +7,20 @@
 
 class EducationEditionOfferValue {
 public:
-    EducationEditionOffer mValue;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::EducationEditionOffer> mValue;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     EducationEditionOfferValue& operator=(EducationEditionOfferValue const&);
     EducationEditionOfferValue(EducationEditionOfferValue const&);
     EducationEditionOfferValue();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class EducationEditionOfferValue& operator=(::EducationEditionOffer);
-
+    MCAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);
     // NOLINTEND
 };

@@ -2,12 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+struct InsideGenericBlockComponent;
+// clang-format on
+
 namespace InsideGenericBlockSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void tickInsideGenericBlock(
-    struct InsideGenericBlockComponent& insideGenericBlockComponent,
-    class ActorOwnerComponent&          actorOwnerComponent
+    ::InsideGenericBlockComponent& insideGenericBlockComponent,
+    ::ActorOwnerComponent&         actorOwnerComponent
 );
 // NOLINTEND
 
-}; // namespace InsideGenericBlockSystemImpl
+} // namespace InsideGenericBlockSystemImpl

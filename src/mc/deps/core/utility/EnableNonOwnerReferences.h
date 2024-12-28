@@ -6,36 +6,67 @@ namespace Bedrock {
 
 class EnableNonOwnerReferences {
 public:
+    // EnableNonOwnerReferences inner types declare
+    // clang-format off
+    struct ControlBlock;
+    // clang-format on
+
+    // EnableNonOwnerReferences inner types define
     struct ControlBlock {
-        EnableNonOwnerReferences* mPtr;
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnkeefdff;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ControlBlock& operator=(ControlBlock const&);
+        ControlBlock(ControlBlock const&);
+        ControlBlock();
     };
 
-    std::shared_ptr<ControlBlock> mControlBlock; // this+0x8
-
-    template <std::derived_from<EnableNonOwnerReferences> Self>
-    [[nodiscard]] inline NotNullNonOwnerPtr<Self> getNonOwnerRef();
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::EnableNonOwnerReferences::ControlBlock>> mControlBlock;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
+    EnableNonOwnerReferences(EnableNonOwnerReferences const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~EnableNonOwnerReferences();
-
-    MCAPI EnableNonOwnerReferences();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EnableNonOwnerReferences();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Bedrock::EnableNonOwnerReferences const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

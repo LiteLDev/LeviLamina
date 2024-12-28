@@ -2,12 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace SculkSensorConversionUtils {
-// thunks
-// NOLINTBEGIN
-MCAPI std::function<std::optional<int>(class BlockLegacy const&, int)>& SculkSensorPhaseStateGetter();
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+// clang-format on
 
-MCAPI std::function<class Block const*(class BlockLegacy const&, int, int)>& SculkSensorPhaseStateSetter();
+namespace SculkSensorConversionUtils {
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::function<::std::optional<int>(::BlockLegacy const&, int)>& SculkSensorPhaseStateGetter();
+
+MCAPI ::std::function<::Block const*(::BlockLegacy const&, int, int)>& SculkSensorPhaseStateSetter();
 // NOLINTEND
 
-}; // namespace SculkSensorConversionUtils
+} // namespace SculkSensorConversionUtils

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class TridentImpalerEnchant : public ::Enchant {
 public:
     // prevent constructor by default
@@ -13,56 +18,45 @@ public:
     TridentImpalerEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TridentImpalerEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 8
-    virtual float getDamageBonus(int level, class Actor const& target, class Actor const&) const;
+    virtual float getDamageBonus(int level, ::Actor const& target, ::Actor const&) const /*override*/;
 
-    MCAPI TridentImpalerEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        bool                 isLootable,
-        int                  secondarySlots
-    );
-
+    // vIndex: 0
+    virtual ~TridentImpalerEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        bool                 isLootable,
-        int                  secondarySlots
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI float getDamageBonus$(int level, class Actor const& target, class Actor const&) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMaxCost$(int level) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI float $getDamageBonus(int level, ::Actor const& target, ::Actor const&) const;
+    // NOLINTEND
 
-    MCAPI int getMinCost$(int level) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

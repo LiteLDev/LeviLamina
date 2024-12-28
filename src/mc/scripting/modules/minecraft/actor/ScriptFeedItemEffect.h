@@ -16,10 +16,10 @@ public:
     ScriptFeedItemEffect();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::FeedItem::Effect> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

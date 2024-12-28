@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class BlockPos;
+class BlockSource;
+class FeatureRegistry;
+class Random;
+// clang-format on
+
 class LegacySpringsFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk1b6150;
+    ::ll::UntypedStorage<8, 24> mUnkf240b4;
+    ::ll::UntypedStorage<1, 1>  mUnk1220d0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacySpringsFeature& operator=(LegacySpringsFeature const&);
@@ -13,25 +30,42 @@ public:
     LegacySpringsFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacySpringsFeature() = default;
+    virtual ~LegacySpringsFeature() /*override*/;
 
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
-    MCAPI LegacySpringsFeature(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
-
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

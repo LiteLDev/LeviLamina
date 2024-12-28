@@ -5,7 +5,27 @@
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+// clang-format on
+
 class ReloadCommand : public ::ServerCommand {
+public:
+    // ReloadCommand inner types define
+    enum class ReloadAction : int {
+        ScriptsAndFunctions = 0,
+        Everything          = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd0d8f6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ReloadCommand& operator=(ReloadCommand const&);
@@ -13,23 +33,36 @@ public:
     ReloadCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ReloadCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, bool isEditorWorld, bool isDedicatedServer);
-
+    // vIndex: 0
+    virtual ~ReloadCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry, bool isDedicatedServer);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

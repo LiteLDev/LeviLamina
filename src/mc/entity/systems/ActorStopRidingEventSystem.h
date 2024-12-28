@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorStopRidingEventSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ActorStopRidingEventSystem {
 public:
     // prevent constructor by default
     ActorStopRidingEventSystem& operator=(ActorStopRidingEventSystem const&);
@@ -10,10 +15,10 @@ public:
     ActorStopRidingEventSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createCancelableEventSystem();
+    MCAPI static ::TickingSystemWithInfo createCancelableEventSystem();
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

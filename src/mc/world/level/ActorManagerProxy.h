@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/IActorManagerProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class ActorManagerProxy : public ::IActorManagerProxy {
 public:
     // prevent constructor by default
@@ -13,15 +18,24 @@ public:
     ActorManagerProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void removeActor(class Actor& actor);
+    // vIndex: 4
+    virtual void removeActor(::Actor& actor) /*override*/;
 
+    // vIndex: 0
+    virtual ~ActorManagerProxy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void removeActor$(class Actor& actor);
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $removeActor(::Actor& actor);
     // NOLINTEND
 };

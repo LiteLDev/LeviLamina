@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorUpdateRidingIDSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ActorUpdateRidingIDSystem {
 public:
     // prevent constructor by default
     ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&);
@@ -10,12 +15,12 @@ public:
     ActorUpdateRidingIDSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
+    MCAPI static ::TickingSystemWithInfo createClearPrevRidingIDSystem();
 
-    MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
+    MCAPI static ::TickingSystemWithInfo createClearRidingIDSystem();
 
-    MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
-
+    MCAPI static ::TickingSystemWithInfo createUpdatePrevRidingIDSystem();
     // NOLINTEND
 };

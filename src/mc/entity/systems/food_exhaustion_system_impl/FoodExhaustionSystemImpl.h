@@ -4,34 +4,41 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorGameTypeComponent;
+struct AttributeRequestComponent;
+struct ExhaustionComponent;
+struct GetAttachPositionViews;
+struct OnGroundFlagComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StateVectorComponent;
+struct WasInWaterFlagComponent;
+// clang-format on
+
 namespace FoodExhaustionSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doFoodExhaustion(
-    class StrictEntityContext const&                              entity,
-    class Optional<struct OnGroundFlagComponent const>            onGround,
-    class Optional<class FlagComponent<struct InWaterFlag> const> wasInWater,
-    class ExhaustionComponent const&                              exhaustion,
-    struct ActorGameTypeComponent const&                          playerGameType,
-    struct ServerPlayerCurrentMovementComponent const&            serverPlayerCurrentMovementComponent,
-    struct StateVectorComponent const&                            stateVectorComponent,
-    struct ActorDataFlagComponent const&                          actorData,
-    struct GetAttachPositionViews const&                          views,
-    class EntityModifier<struct AttributeRequestComponent>        modifier,
-    ::GameType                                                    defaultGameType,
-    class IConstBlockSource const&                                region
+    ::StrictEntityContext const&                  entity,
+    ::Optional<::OnGroundFlagComponent const>     onGround,
+    ::Optional<::WasInWaterFlagComponent const>   wasInWater,
+    ::ExhaustionComponent const&                  exhaustion,
+    ::ActorGameTypeComponent const&               playerGameType,
+    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
+    ::StateVectorComponent const&                 stateVectorComponent,
+    ::ActorDataFlagComponent const&               actorData,
+    ::GetAttachPositionViews const&               views,
+    ::EntityModifier<::AttributeRequestComponent> modifier,
+    ::GameType                                    defaultGameType,
+    ::IConstBlockSource const&                    region
 );
 // NOLINTEND
 
-}; // namespace FoodExhaustionSystemImpl
+} // namespace FoodExhaustionSystemImpl

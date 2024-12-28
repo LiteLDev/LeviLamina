@@ -4,7 +4,15 @@
 
 namespace Bedrock::DataStoreDetail {
 
-class DataStoreInfo {
+struct DataStoreInfo {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnk622ba4;
+    ::ll::UntypedStorage<8, 64>  mUnkc8f768;
+    ::ll::UntypedStorage<8, 192> mUnk4413f7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DataStoreInfo& operator=(DataStoreInfo const&);
@@ -12,17 +20,16 @@ public:
     DataStoreInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~DataStoreInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::DataStoreDetail
+} // namespace Bedrock::DataStoreDetail

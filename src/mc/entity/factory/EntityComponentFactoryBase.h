@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class DefinitionInstanceGroup;
+class EntityContext;
+class EntityRegistry;
 // clang-format on
 
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,28 +20,29 @@ public:
     EntityComponentFactoryBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EntityComponentFactoryBase();
-
-    MCAPI void addComponents(
-        class EntityRegistry&                registry,
-        class EntityContext&                 entity,
-        class DefinitionInstanceGroup const& definitionGroup
-    ) const;
-
-    MCAPI void removeComponents(
-        class EntityRegistry&                registry,
-        class EntityContext&                 entity,
-        class DefinitionInstanceGroup const& definitionGroup
-    ) const;
-
+    virtual ~EntityComponentFactoryBase() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void
+    addComponents(::EntityRegistry& registry, ::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup)
+        const;
 
+    MCAPI void removeComponents(
+        ::EntityRegistry&                registry,
+        ::EntityContext&                 entity,
+        ::DefinitionInstanceGroup const& definitionGroup
+    ) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

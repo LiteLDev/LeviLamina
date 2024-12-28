@@ -7,10 +7,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
+class CraftingContext;
+class ItemInstance;
+class RecipeIngredient;
 namespace mce { class UUID; }
 // clang-format on
 
 class MapLockingRecipe : public ::MultiRecipe {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk56c855;
+    ::ll::UntypedStorage<8, 8>  mUnkcdc078;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MapLockingRecipe& operator=(MapLockingRecipe const&);
@@ -18,54 +29,76 @@ public:
     MapLockingRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MapLockingRecipe() = default;
+    // vIndex: 5
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const&
-    assemble(class CraftingContainer& craftSlots, class CraftingContext& craftingContext) const;
-
-    // vIndex: 2
-    virtual int getCraftingSize() const;
-
-    // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
-
-    // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
-
-    // vIndex: 6
-    virtual int size() const;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const /*override*/;
 
     // vIndex: 8
-    virtual std::vector<class ItemInstance> const& getResultItems() const;
+    virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
-    MCAPI MapLockingRecipe(std::string const& recipeId, class mce::UUID const& id);
+    // vIndex: 2
+    virtual int getCraftingSize() const /*override*/;
 
+    // vIndex: 3
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
+
+    // vIndex: 6
+    virtual int size() const /*override*/;
+
+    // vIndex: 0
+    virtual ~MapLockingRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MapLockingRecipe(::std::string const& recipeId, ::mce::UUID const& id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& recipeId, class mce::UUID const& id);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& CartographyTableID();
+    // NOLINTEND
 
-    MCAPI std::vector<class ItemInstance> const&
-          assemble$(class CraftingContainer& craftSlots, class CraftingContext& craftingContext) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& id);
+    // NOLINTEND
 
-    MCAPI int getCraftingSize$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
 
-    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+    MCAPI ::std::vector<::ItemInstance> const&
+    $assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const;
 
-    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
+    MCAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI int size$() const;
+    MCAPI int $getCraftingSize() const;
 
-    MCAPI static class mce::UUID const& CartographyTableID();
+    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
+    MCAPI int $size() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

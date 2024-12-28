@@ -12,7 +12,11 @@ public:
         OnlyHeadRot = 3,
     };
 
-    PositionMode mPositionMode; // this+0x0
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::PlayerPositionModeComponent::PositionMode> mPositionMode;
+    // NOLINTEND
 
 public:
     // prevent constructor by default

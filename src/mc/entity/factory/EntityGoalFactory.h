@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DefinitionInstanceGroup;
+class EntityContext;
+class EntityRegistry;
+class IJsonDefinitionSerializer;
+// clang-format on
+
 class EntityGoalFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk8112d0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntityGoalFactory& operator=(EntityGoalFactory const&);
@@ -10,23 +24,26 @@ public:
     EntityGoalFactory();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name);
+    MCAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
 
     MCAPI ~EntityGoalFactory();
-
-    MCAPI static void addGoals(
-        class EntityRegistry&                entityRegistry,
-        class EntityContext&                 entity,
-        class DefinitionInstanceGroup const& definitionGroup
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static void addGoals(
+        ::EntityRegistry&                entityRegistry,
+        ::EntityContext&                 entity,
+        ::DefinitionInstanceGroup const& definitionGroup
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

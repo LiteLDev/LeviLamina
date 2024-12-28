@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/entity/factory/EntityComponentFactoryBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class EntityComponentFactoryCerealBase : public ::EntityComponentFactoryBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk4f5b25;
+    ::ll::UntypedStorage<8, 24> mUnkd08b5d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntityComponentFactoryCerealBase& operator=(EntityComponentFactoryCerealBase const&);
@@ -18,35 +20,15 @@ public:
     EntityComponentFactoryCerealBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EntityComponentFactoryCerealBase();
-
-    MCAPI explicit EntityComponentFactoryCerealBase(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI struct cereal::ReflectionCtx& cerealContext();
-
-    MCAPI struct cereal::ReflectionCtx const& cerealContext() const;
-
-    MCAPI void serializeComponentDefinitions(
-        class DefinitionInstanceGroup& outputDefinitions,
-        rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&
-                                input,
-        class SemVersion const& engineVersion
-    ) const;
-
-    MCAPI class ICerealDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name) const;
-
+    virtual ~EntityComponentFactoryCerealBase() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

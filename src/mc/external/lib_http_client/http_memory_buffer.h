@@ -4,7 +4,7 @@
 
 namespace xbox::httpclient {
 
-class http_memory_buffer {
+struct http_memory_buffer {
 public:
     // prevent constructor by default
     http_memory_buffer& operator=(http_memory_buffer const&);
@@ -12,17 +12,16 @@ public:
     http_memory_buffer();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~http_memory_buffer();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

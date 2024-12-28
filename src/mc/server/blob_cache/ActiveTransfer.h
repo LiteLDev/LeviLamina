@@ -2,44 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class NetworkIdentifier;
-namespace ClientBlobCache::Server { class ActiveTransfersManager; }
-// clang-format on
-
 namespace ClientBlobCache::Server {
 
 class ActiveTransfer {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnka898bd;
+    ::ll::UntypedStorage<8, 160> mUnk320474;
+    ::ll::UntypedStorage<8, 64>  mUnk4bec70;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActiveTransfer& operator=(ActiveTransfer const&);
     ActiveTransfer(ActiveTransfer const&);
+    ActiveTransfer();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActiveTransfer();
-
-    MCAPI
-    ActiveTransfer(class ClientBlobCache::Server::ActiveTransfersManager& cache, class NetworkIdentifier const& client);
-
     MCAPI bool isDone() const;
 
     MCAPI void onAckReceived(uint64 acked);
-
-    MCAPI bool shouldBeSent() const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void*
-    ctor$(class ClientBlobCache::Server::ActiveTransfersManager& cache, class NetworkIdentifier const& client);
-
     // NOLINTEND
 };
 
-}; // namespace ClientBlobCache::Server
+} // namespace ClientBlobCache::Server

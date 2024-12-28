@@ -3,15 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct UseModifiersItemComponent; }
+class HashedString;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class UseModifiersItemComponent {
+class UseModifiersItemComponent : public ::NetworkedItemComponent<::UseModifiersItemComponent> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk4d8034;
+    ::ll::UntypedStorage<4, 8>  mUnk84bfad;
+    ::ll::UntypedStorage<8, 16> mUnkaac728;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UseModifiersItemComponent& operator=(UseModifiersItemComponent const&);
@@ -19,77 +29,42 @@ public:
     UseModifiersItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UseModifiersItemComponent() = default;
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
     // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    virtual void _initializeComponent() /*override*/;
 
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI explicit UseModifiersItemComponent(struct Puv::v1_20_50::UseModifiersItemComponent component);
-
-    MCAPI float getMovementModifier() const;
-
-    MCAPI bool use(class ItemStack& instance, class Player& player) const;
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    // vIndex: 0
+    virtual ~UseModifiersItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void* ctor$(struct Puv::v1_20_50::UseModifiersItemComponent component);
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
-
-    MCAPI bool checkComponentDataForContentErrors$() const;
-
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
-
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

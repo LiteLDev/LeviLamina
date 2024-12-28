@@ -1,65 +1,87 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/ActorEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 class ActorEventPacket : public ::Packet {
 public:
-    ActorRuntimeID mRuntimeId; // this+0x30
-    ActorEvent     mEventId;   // this+0x38
-    int            mData;      // this+0x3c
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<1, 1, ::ActorEvent>     mEventId;
+    ::ll::TypedStorage<4, 4, int>              mData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ActorEventPacket& operator=(ActorEventPacket const&);
     ActorEventPacket(ActorEventPacket const&);
+    ActorEventPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI ActorEventPacket();
-
-    MCAPI ActorEventPacket(class ActorRuntimeID runtimeId, ::ActorEvent eventId, int data);
-
+    // vIndex: 0
+    virtual ~ActorEventPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ActorEventPacket(::ActorRuntimeID runtimeId, ::ActorEvent eventId, int data);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ActorRuntimeID runtimeId, ::ActorEvent eventId, int data);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorRuntimeID runtimeId, ::ActorEvent eventId, int data);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

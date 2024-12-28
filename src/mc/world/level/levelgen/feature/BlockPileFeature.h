@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class BlockPileFeature : public ::Feature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkec55b4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockPileFeature& operator=(BlockPileFeature const&);
@@ -13,30 +27,47 @@ public:
     BlockPileFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockPileFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
     // vIndex: 4
-    virtual class Block const& getBlockToPlace(class Random& random) const;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    MCAPI explicit BlockPileFeature(class Block const& block);
+    // vIndex: 5
+    virtual ::Block const& getBlockToPlace(::Random& random) const;
 
+    // vIndex: 0
+    virtual ~BlockPileFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BlockPileFeature(::Block const& block);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block);
+    // NOLINTEND
 
-    MCAPI class Block const& getBlockToPlace$(class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
+    MCAPI ::Block const& $getBlockToPlace(::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

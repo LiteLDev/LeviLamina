@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorDamageSource;
+// clang-format on
+
 class InfestedMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,23 +19,31 @@ public:
     InfestedMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InfestedMobEffect() = default;
-
     // vIndex: 5
-    virtual void
-    onActorHurt(class Actor& target, int amplifier, class ActorDamageSource const& source, float damage) const;
+    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const
+        /*override*/;
 
+    // vIndex: 0
+    virtual ~InfestedMobEffect() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void
-    onActorHurt$(class Actor& target, int amplifier, class ActorDamageSource const& source, float damage) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

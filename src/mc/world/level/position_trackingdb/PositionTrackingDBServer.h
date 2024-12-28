@@ -19,7 +19,18 @@ namespace PositionTrackingDB { class TrackingRecord; }
 
 namespace PositionTrackingDB {
 
-class PositionTrackingDBServer {
+class PositionTrackingDBServer : public ::std::enable_shared_from_this<::PositionTrackingDB::PositionTrackingDBServer> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkb10319;
+    ::ll::UntypedStorage<8, 8>  mUnka9fff9;
+    ::ll::UntypedStorage<8, 8>  mUnk6c1d34;
+    ::ll::UntypedStorage<8, 8>  mUnk9cff21;
+    ::ll::UntypedStorage<8, 8>  mUnk5448f9;
+    ::ll::UntypedStorage<8, 24> mUnk791b46;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PositionTrackingDBServer& operator=(PositionTrackingDBServer const&);
@@ -27,45 +38,43 @@ public:
     PositionTrackingDBServer();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PositionTrackingDBServer(class Level& level, class Scheduler& callbackContext);
+    MCAPI PositionTrackingDBServer(::Level& level, ::Scheduler& callbackContext);
 
-    MCAPI class PositionTrackingId createTracker(class BlockPos const& positionToTrack, DimensionType const& dimension);
+    MCAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
+
+    MCAPI void _broadcastUpdateToClients(::PositionTrackingDB::TrackingRecord const* record);
+
+    MCAPI void _initializeNewPositionTrackerId(::PositionTrackingId& inOut, bool writeToPersistent);
+
+    MCAPI void _updateRecordDirtyStatus(::PositionTrackingDB::TrackingRecord* record);
+
+    MCAPI ::PositionTrackingId createTracker(::BlockPos const& positionToTrack, ::DimensionType const& dimension);
+
+    MCAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
 
     MCAPI ::PositionTrackingDB::ResultCode
-    destroyTracker(class PositionTrackingId const& id, bool forceLocalCacheEntry);
+    findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
-    MCAPI ::PositionTrackingDB::ResultCode
-    findTracker(class PositionTrackingId const& id, class PositionTrackingDB::TrackingRecord** outRecord);
-
-    MCAPI void onReceivePacket(class PositionTrackingDBClientRequestPacket const& packet);
+    MCAPI void onReceivePacket(::PositionTrackingDBClientRequestPacket const& packet);
 
     MCAPI bool tick();
 
     MCAPI ~PositionTrackingDBServer();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addRecordToPendingUpdateQueue(class PositionTrackingDB::TrackingRecord* record);
-
-    MCAPI void _broadcastUpdateToClients(class PositionTrackingDB::TrackingRecord const* record);
-
-    MCAPI void _initializeNewPositionTrackerId(class PositionTrackingId& inOut, bool writeToPersistent);
-
-    MCAPI void _updateRecordDirtyStatus(class PositionTrackingDB::TrackingRecord* record);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Level& level, class Scheduler& callbackContext);
+    MCAPI void* $ctor(::Level& level, ::Scheduler& callbackContext);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace PositionTrackingDB
+} // namespace PositionTrackingDB

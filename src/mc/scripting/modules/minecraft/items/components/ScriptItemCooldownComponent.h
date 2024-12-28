@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 // clang-format on
 
@@ -20,39 +20,49 @@ class ScriptItemCooldownComponent : public ::ScriptModuleMinecraft::ScriptItemCo
 public:
     // prevent constructor by default
     ScriptItemCooldownComponent& operator=(ScriptItemCooldownComponent const&);
+    ScriptItemCooldownComponent(ScriptItemCooldownComponent const&);
     ScriptItemCooldownComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemCooldownComponent() = default;
-
-    MCAPI ScriptItemCooldownComponent(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);
-
-    MCAPI class Scripting::Result<std::string> getCooldownCategory();
-
-    MCAPI class Scripting::Result<int> getCooldownTicks();
-
-    MCAPI class Scripting::Result<int> getCooldownTicksRemaining(class ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
-    );
-
-    MCAPI class Scripting::Result<bool> isCooldownCategory(std::string const& category);
-
-    MCAPI class Scripting::Result<void> startCooldown(class ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemCooldownComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptItemCooldownComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<::std::string> getCooldownCategory();
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);
+    MCAPI ::Scripting::Result_deprecated<int> getCooldownTicks();
 
+    MCAPI ::Scripting::Result_deprecated<int>
+    getCooldownTicksRemaining(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+
+    MCAPI ::Scripting::Result_deprecated<bool> isCooldownCategory(::std::string const& category);
+
+    MCAPI ::Scripting::Result<void> startCooldown(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemCooldownComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

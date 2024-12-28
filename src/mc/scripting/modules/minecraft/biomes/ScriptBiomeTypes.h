@@ -18,26 +18,54 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBiomeTypes {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk6289c3;
+    ::ll::UntypedStorage<8, 24> mUnka904b7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBiomeTypes& operator=(ScriptBiomeTypes const&);
     ScriptBiomeTypes(ScriptBiomeTypes const&);
     ScriptBiomeTypes();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBiomeType>>
-          get(std::string const& biomeName, class Scripting::WeakLifetimeScope& scope);
+    MCAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
 
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBiomeTypes>
-    bind(class Bedrock::NonOwnerPointer<class BiomeRegistry> biomeRegistry);
+    MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
+
+    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _generateAllBiomeTypeHandles(class Scripting::WeakLifetimeScope& scope);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBiomeTypes>
+    bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

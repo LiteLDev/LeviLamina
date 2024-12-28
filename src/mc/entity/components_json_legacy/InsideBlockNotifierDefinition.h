@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class InsideBlockNotifierComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class InsideBlockNotifierDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd94296;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&);
@@ -18,13 +26,17 @@ public:
     InsideBlockNotifierDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, class InsideBlockNotifierComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::InsideBlockNotifierComponent& component) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsideBlockNotifierDefinition>>& root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::InsideBlockNotifierDefinition>>&
+            root
     );
-
     // NOLINTEND
 };

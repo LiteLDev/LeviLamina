@@ -12,12 +12,13 @@ class PackCapabilityRegistry;
 // clang-format on
 
 namespace PackCapabilities::Detail {
+// functions
 // NOLINTBEGIN
-MCAPI class PackCapabilityRegistry createRegistry(
-    class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions> advancedGraphicsOptions,
-    std::optional<bool>                                            creator_editor,
-    class PackCapabilityRegistry                                   additionalCapabilities
+MCAPI ::PackCapabilityRegistry createRegistry(
+    ::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+    ::std::optional<bool>                                  creator_editor,
+    ::PackCapabilityRegistry                               additionalCapabilities
 );
 // NOLINTEND
 
-}; // namespace PackCapabilities::Detail
+} // namespace PackCapabilities::Detail

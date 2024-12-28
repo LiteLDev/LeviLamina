@@ -5,14 +5,12 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockVolumeBase;
 class BoundingBox;
-class ChunkPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -22,52 +20,63 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockVolumeBase {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb35746;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockVolumeBase& operator=(ScriptBlockVolumeBase const&);
     ScriptBlockVolumeBase(ScriptBlockVolumeBase const&);
     ScriptBlockVolumeBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ScriptBlockVolumeBase();
 
     // vIndex: 1
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator(class Scripting::WeakLifetimeScope scope) = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+        getBlockLocationIterator(::Scripting::WeakLifetimeScope) = 0;
+    // NOLINTEND
 
-    MCAPI explicit ScriptBlockVolumeBase(std::unique_ptr<class BlockVolumeBase> blockVolumeBase);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCAPI void forEach(std::function<bool(class BlockPos const&)> callback) const;
+    MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
 
-    MCAPI class Scripting::Result<class BoundingBox> getBoundingBox() const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
-    MCAPI std::set<class ChunkPos> getChunks() const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<class Vec3> getMax() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockVolumeBase> bind();
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<class Vec3> getMin() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Vec3 getSpan() const;
-
-    MCAPI bool isInside(class Vec3 const& location) const;
-
-    MCAPI void translate(class Vec3 const& delta);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockVolumeBase> bind();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(std::unique_ptr<class BlockVolumeBase> blockVolumeBase);
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

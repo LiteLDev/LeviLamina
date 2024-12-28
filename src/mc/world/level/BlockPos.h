@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/util/Mirror.h"
@@ -9,73 +8,91 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChunkBlockPos;
+class ChunkPos;
+class SubChunkPos;
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class AABB;
-class BoundingBox;
-class Vec3;
-
-class BlockPos : public ll::math::intN3<BlockPos> {
+class BlockPos {
 public:
-    using intN3::intN3;
-
-    LLNDAPI operator AABB() const;
-    LLNDAPI operator BoundingBox() const;
-
-    LLNDAPI Vec3 bottomCenter() const;
-    LLNDAPI Vec3 center() const;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit BlockPos(class SubChunkPos const& subChunkPos);
+    ::ll::TypedStorage<4, 4, int> x;
+    ::ll::TypedStorage<4, 4, int> y;
+    ::ll::TypedStorage<4, 4, int> z;
+    // NOLINTEND
 
-    MCAPI BlockPos(class ChunkPos const& cp, int y);
+public:
+    // prevent constructor by default
+    BlockPos& operator=(BlockPos const&);
+    BlockPos(BlockPos const&);
+    BlockPos();
 
-    MCAPI BlockPos(class ChunkPos const& cp, class ChunkBlockPos const& offset, short minDimensionHeight);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockPos(::SubChunkPos const& subChunkPos);
+
+    MCAPI explicit BlockPos(::Vec3 const& v);
+
+    MCAPI BlockPos(::ChunkPos const& cp, int y);
+
+    MCAPI BlockPos(::ChunkPos const& cp, ::ChunkBlockPos const& offset, short minDimensionHeight);
 
     MCAPI BlockPos(float x, float y, float z);
 
-    MCAPI class BlockPos above() const;
+    MCAPI ::BlockPos above() const;
 
-    MCAPI class BlockPos neighbor(uchar direction) const;
+    MCAPI ::Vec3 bottomCenter() const;
 
-    MCAPI explicit operator class Vec3() const;
+    MCAPI ::BlockPos neighbor(uchar direction) const;
+
+    MCAPI bool operator!=(::BlockPos const& rhs) const;
 
     MCAPI int randomSeed() const;
 
-    MCAPI class BlockPos relative(uchar facing, int steps) const;
+    MCAPI int64 randomSeed64() const;
 
-    MCAPI std::string toCommandString() const;
+    MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
-    MCAPI std::string toString() const;
+    MCAPI ::std::string toCommandString() const;
 
-    MCAPI class BlockPos transform(::Rotation rotation, ::Mirror mirror, class Vec3 const& pivot) const;
+    MCAPI ::std::string toString() const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(float x, float y, float z);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ChunkPos const& cp, int y);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BlockPos const& MAX();
 
-    MCAPI void* ctor$(class Vec3 const& v);
+    MCAPI static ::BlockPos const& MIN();
 
-    MCAPI void* ctor$(class SubChunkPos const& subChunkPos);
+    MCAPI static ::BlockPos const& ONE();
 
-    MCAPI void* ctor$(class ChunkPos const& cp, class ChunkBlockPos const& offset, short minDimensionHeight);
+    MCAPI static ::BlockPos const& ZERO();
+    // NOLINTEND
 
-    MCAPI static class BlockPos const& MAX();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SubChunkPos const& subChunkPos);
 
-    MCAPI static class BlockPos const& MIN();
+    MCAPI void* $ctor(::Vec3 const& v);
 
-    MCAPI static class BlockPos const& ONE();
+    MCAPI void* $ctor(::ChunkPos const& cp, int y);
 
-    MCAPI static class BlockPos const& ZERO();
+    MCAPI void* $ctor(::ChunkPos const& cp, ::ChunkBlockPos const& offset, short minDimensionHeight);
 
+    MCAPI void* $ctor(float x, float y, float z);
     // NOLINTEND
 };

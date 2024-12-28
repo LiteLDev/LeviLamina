@@ -5,38 +5,57 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-// clang-format on
-
 namespace Core {
 
 class LoadTimeProfiler : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnkeffd94;
+    ::ll::UntypedStorage<4, 4>   mUnkec42a1;
+    ::ll::UntypedStorage<8, 24>  mUnkd556d0;
+    ::ll::UntypedStorage<8, 296> mUnk58830a;
+    ::ll::UntypedStorage<1, 1>   mUnka79572;
+    ::ll::UntypedStorage<1, 1>   mUnkfa6b3f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LoadTimeProfiler& operator=(LoadTimeProfiler const&);
     LoadTimeProfiler(LoadTimeProfiler const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoadTimeProfiler() = default;
+    virtual ~LoadTimeProfiler() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI LoadTimeProfiler();
 
     MCAPI void setEnabled(bool enabled);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

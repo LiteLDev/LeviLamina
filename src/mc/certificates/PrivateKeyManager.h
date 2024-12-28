@@ -8,35 +8,56 @@
 
 class PrivateKeyManager : public ::KeyManager {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd0fc2c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PrivateKeyManager& operator=(PrivateKeyManager const&);
     PrivateKeyManager(PrivateKeyManager const&);
     PrivateKeyManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PrivateKeyManager();
-
     // vIndex: 1
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
-
-    MCAPI std::string computeSecret(class KeyManager const& peer) const;
-
+    // vIndex: 0
+    virtual ~PrivateKeyManager() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
 
-    MCAPI void* ctor$(::Crypto::Asymmetric::System system);
+    MCAPI ::std::string computeSecret(::KeyManager const& peer) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Crypto::Asymmetric::System system);
+    // NOLINTEND
 
-    MCAPI bool isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

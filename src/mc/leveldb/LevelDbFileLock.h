@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LevelDbFileLock {
+class LevelDbFileLock : public ::leveldb::FileLock {
 public:
     // prevent constructor by default
     LevelDbFileLock& operator=(LevelDbFileLock const&);
@@ -10,16 +10,21 @@ public:
     LevelDbFileLock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelDbFileLock() = default;
-
+    virtual ~LevelDbFileLock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -1,131 +1,163 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/synth/PerlinNoise.h"
-#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
-#include "mc/world/level/levelgen/v1/BeardKernel.h"
 
 // auto generated inclusion list
 #include "mc/util/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
+// auto generated forward declare list
+// clang-format off
+class Aquifer;
 class Biome;
+class BiomeSource;
+class Block;
+class BlockPos;
+class BlockSource;
+class BlockVolume;
+class ChunkPos;
+class Dimension;
+class LevelChunk;
+class PerlinNoise;
+class PerlinSimplexNoise;
+class Random;
+class WorldGenCache;
+class XoroshiroPositionalRandomFactory;
+struct BeardKernel;
+// clang-format on
 
 class OverworldGenerator2d : public ::OverworldGenerator {
 public:
-    std::unique_ptr<PerlinNoise>        mMinLimitPerlinNoise; // this+0x170
-    std::unique_ptr<PerlinNoise>        mMaxLimitPerlinNoise; // this+0x178
-    std::unique_ptr<PerlinNoise>        mMainPerlinNoise;     // this+0x180
-    std::unique_ptr<PerlinSimplexNoise> mSurfaceNoise;        // this+0x188
-    std::unique_ptr<PerlinNoise>        mScaleNoise;          // this+0x190
-    std::unique_ptr<PerlinNoise>        mDepthNoise;          // this+0x198
-    std::unique_ptr<PerlinNoise>        mForestNoise;         // this+0x1A0
-    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise;    // this+0x1A8
-    BeardKernel*                        mBeardKernel;         // this+0x1B0
-    std::unique_ptr<BiomeSource>        mBiomeSource;         // this+0xD9B0
+    // OverworldGenerator2d inner types define
+    using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 41>;
 
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        minLimitPerlinNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        maxLimitPerlinNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        mainPerlinNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> surfaceNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        scaleNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        depthNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        forestNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mMaterialAdjNoise;
+    ::ll::TypedStorage<1, 1, ::BeardKernel>                           mBeardKernel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>>        mBiomeSource;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     OverworldGenerator2d& operator=(OverworldGenerator2d const&);
     OverworldGenerator2d(OverworldGenerator2d const&);
     OverworldGenerator2d();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
-    virtual void _prepareHeights(
-        class BlockVolume&                                                    box,
-        class ChunkPos const&                                                 chunkPos,
-        class WorldGenCache const&                                            worldGenCache,
-        class Aquifer*                                                        aquiferPtr,
-        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
-        bool                                                                  factorInBeardsAndShavers,
-        std::vector<short>*                                                   ZXheights,
-        int                                                                   skipTopN
-    );
+    // vIndex: 41
+    virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
-    // vIndex: 46
-    virtual void decorateWorldGenPostProcess(
-        class Biome const& biome,
-        class LevelChunk&  lc,
-        class BlockSource& source,
-        class Random&      random
-    ) const;
-
-    // vIndex: 42
-    virtual class BlockPos findSpawnPosition() const;
-
-    // vIndex: 47
-    virtual class Util::MultidimensionalArray<float, 5, 5, 41>
-    generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
-
-    // vIndex: 40
-    virtual class BiomeSource const& getBiomeSource() const;
-
-    // vIndex: 48
-    virtual int getLevelGenHeight() const;
-
-    // vIndex: 54
-    virtual std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise() const;
-
-    // vIndex: 53
-    virtual class PerlinSimplexNoise const& getSurfaceNoise();
+    // vIndex: 43
+    virtual ::BlockPos findSpawnPosition() const /*override*/;
 
     // vIndex: 49
-    virtual std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
+    virtual int getLevelGenHeight() const /*override*/;
 
-    MCAPI
-    OverworldGenerator2d(class Dimension& dimension, uint seed, bool isLegacyWorld, class Biome const* biomeOverride);
+    // vIndex: 48
+    virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
+    ) const /*override*/;
 
+    // vIndex: 54
+    virtual ::PerlinSimplexNoise const& getSurfaceNoise() /*override*/;
+
+    // vIndex: 55
+    virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
+
+    // vIndex: 47
+    virtual void
+    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 56
+    virtual void _prepareHeights(
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::WorldGenCache const&                                          worldGenCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights,
+        int                                                             skipTopN
+    ) /*override*/;
+
+    // vIndex: 50
+    virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
+        /*override*/;
+
+    // vIndex: 0
+    virtual ~OverworldGenerator2d() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
-    _generateDensityCellsForChunk(class ChunkPos const& chunkPos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForChunkSource();
+    MCAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
 
-    MCAPI static void** vftableForIPreliminarySurfaceProvider();
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(::ChunkPos const& chunkPos
+    ) const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension& dimension, uint seed, bool isLegacyWorld, class Biome const* biomeOverride);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    // NOLINTEND
 
-    MCAPI void _prepareHeights$(
-        class BlockVolume&                                                    box,
-        class ChunkPos const&                                                 chunkPos,
-        class WorldGenCache const&                                            worldGenCache,
-        class Aquifer*                                                        aquiferPtr,
-        std::function<void(class BlockPos const&, class Block const&, int)>&& tickUpdateFn,
-        bool                                                                  factorInBeardsAndShavers,
-        std::vector<short>*                                                   ZXheights,
-        int                                                                   skipTopN
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void decorateWorldGenPostProcess$(
-        class Biome const& biome,
-        class LevelChunk&  lc,
-        class BlockSource& source,
-        class Random&      random
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
+
+    MCAPI ::BlockPos $findSpawnPosition() const;
+
+    MCAPI int $getLevelGenHeight() const;
+
+    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
     ) const;
 
-    MCAPI class BlockPos findSpawnPosition$() const;
+    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCAPI class Util::MultidimensionalArray<float, 5, 5, 41>
-    generateDensityCellsForChunk$(class ChunkPos const& chunkPos) const;
+    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCAPI class BiomeSource const& getBiomeSource$() const;
+    MCAPI void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCAPI int getLevelGenHeight$() const;
+    MCAPI void $_prepareHeights(
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::WorldGenCache const&                                          worldGenCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights,
+        int                                                             skipTopN
+    );
 
-    MCAPI std::unique_ptr<class PerlinSimplexNoise> const& getMaterialAdjNoise$() const;
+    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+    // NOLINTEND
 
-    MCAPI class PerlinSimplexNoise const& getSurfaceNoise$();
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
 
-    MCAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory$() const;
-
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

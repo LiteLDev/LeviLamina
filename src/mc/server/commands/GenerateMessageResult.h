@@ -1,28 +1,30 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandSelector.h"
 
 struct GenerateMessageResult {
 public:
-    std::string mString; // this+0x0
-    bool        mUnknow; // this+0x20
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
+    ::ll::TypedStorage<1, 1, bool>           mIsValid;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     GenerateMessageResult& operator=(GenerateMessageResult const&);
     GenerateMessageResult(GenerateMessageResult const&);
     GenerateMessageResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~GenerateMessageResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -1,77 +1,99 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/PacksInfoData.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct PackIdVersion;
+struct PackInfoData;
+struct PacksInfoData;
+// clang-format on
+
 class ResourcePacksInfoPacket : public ::Packet {
 public:
-    PacksInfoData                                    mData;
-    std::vector<std::pair<std::string, std::string>> mCDNUrls;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 168, ::PacksInfoData> mData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&);
     ResourcePacksInfoPacket(ResourcePacksInfoPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ResourcePacksInfoPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ResourcePacksInfoPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ResourcePacksInfoPacket();
 
     MCAPI ResourcePacksInfoPacket(
-        bool                                               resourcePackRequired,
-        std::vector<struct PackInfoData>&                  behaviorPacks,
-        std::vector<struct PackInfoData>&                  resourcePacks,
-        bool                                               forceServerPacksEnabled,
-        std::vector<std::pair<std::string, std::string>>&& cdnUrls,
-        bool                                               hasAddonPacks
+        bool                           resourcePackRequired,
+        ::std::vector<::PackInfoData>& resourcePacks,
+        bool                           hasAddonPacks,
+        ::PackIdVersion const&         worldTemplateIdVersion
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        bool                                               resourcePackRequired,
-        std::vector<struct PackInfoData>&                  behaviorPacks,
-        std::vector<struct PackInfoData>&                  resourcePacks,
-        bool                                               forceServerPacksEnabled,
-        std::vector<std::pair<std::string, std::string>>&& cdnUrls,
-        bool                                               hasAddonPacks
+    MCAPI void* $ctor(
+        bool                           resourcePackRequired,
+        ::std::vector<::PackInfoData>& resourcePacks,
+        bool                           hasAddonPacks,
+        ::PackIdVersion const&         worldTemplateIdVersion
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

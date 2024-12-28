@@ -13,4 +13,4 @@ public:
     ClassBindingBuilder();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -2,12 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class WardenSpawnTrackerComponent;
+// clang-format on
+
 namespace WardenSpawnTrackerSystemInternal {
+// functions
 // NOLINTBEGIN
 MCAPI void tickWardenSpawnTrackerComponent(
-    class ActorOwnerComponent&         actorOwnerComponent,
-    class WardenSpawnTrackerComponent& wardenSpawnTrackerComponent
+    ::ActorOwnerComponent&         actorOwnerComponent,
+    ::WardenSpawnTrackerComponent& wardenSpawnTrackerComponent
 );
 // NOLINTEND
 
-}; // namespace WardenSpawnTrackerSystemInternal
+} // namespace WardenSpawnTrackerSystemInternal

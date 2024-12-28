@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/config/player_capabilities/IPlayerData.h"
-#include "mc/config/player_capabilities/ISharedController.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -10,148 +8,177 @@
 #include "mc/network/packet/TextPacketType.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class ResolvedTextObject;
+namespace PlayerCapabilities { struct IPlayerData; }
+namespace PlayerCapabilities { struct ISharedController; }
+// clang-format on
+
 class TextPacket : public ::Packet {
 public:
-    TextPacketType             mType;            // this+0x30
-    std::string                mAuthor;          // this+0x38
-    std::string                mMessage;         // this+0x58
-    std::optional<std::string> mFilteredMessage; // this+0x78
-    std::vector<std::string>   mParams;          // this+0xA0
-    bool                       mLocalize;        // this+0x88
-    std::string                mXuid;            // this+0xC0
-    std::string                mPlatformId;      // this+0xE0
-
-    [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
-        auto res  = TextPacket{};
-        res.mType = TextPacketType::Raw;
-        res.mMessage.assign(msg);
-        return res;
-    }
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::TextPacketType>                mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mAuthor;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   params;
+    ::ll::TypedStorage<1, 1, bool>                            mLocalize;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mPlatformId;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TextPacket(TextPacket const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TextPacket();
+    virtual ~TextPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI TextPacket();
 
-    MCAPI class TextPacket& operator=(class TextPacket const&);
-
-    MCAPI static bool const _shouldHandleTextPacketForPlayer(
-
-        struct PlayerCapabilities::IPlayerData&             playerData,
-        struct PlayerCapabilities::ISharedController const& sharedController
-    );
-
-    MCAPI static class TextPacket createAnnouncement(
-        std::string const& author,
-        std::string const& message,
-        std::string const& xuid,
-        std::string const& platformId
-    );
-
-    MCAPI static class TextPacket createChat(
-        std::string const&         author,
-        std::string const&         message,
-        std::optional<std::string> filteredMessage,
-        std::string const&         xuid,
-        std::string const&         platformId
-    );
-
-    MCAPI static class TextPacket
-    createJukeboxPopup(std::string const& message, std::vector<std::string> const& params);
-
-    MCAPI static class TextPacket createRawJsonObjectMessage(std::string const& rawJson);
-
-    MCAPI static class TextPacket createSystemMessage(std::string const& message);
-
-    MCAPI static class TextPacket createTextObjectMessage(
-        class ResolvedTextObject const& resolvedTextObject,
-        std::string                     fromXuid,
-        std::string                     fromPlatformId
-    );
-
-    MCAPI static class TextPacket createTextObjectWhisperMessage(
-        class ResolvedTextObject const& resolvedTextObject,
-        std::string const&              xuid,
-        std::string const&              platformId
-    );
-
-    MCAPI static class TextPacket
-    createTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
-
-    MCAPI static class TextPacket createTranslated(std::string const& message, std::vector<std::string> const& params);
-
-    MCAPI static class TextPacket createTranslatedAnnouncement(
-        std::string const& author,
-        std::string const& message,
-        std::string const& xuid,
-        std::string const& platformId
-    );
-
-    MCAPI static class TextPacket createWhisper(
-        std::string const& author,
-        std::string const& message,
-        std::string const& xuid,
-        std::string const& platformId
-    );
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI TextPacket(
-        ::TextPacketType                type,
-        std::string const&              author,
-        std::string const&              message,
-        std::optional<std::string>      filteredMessage,
-        std::vector<std::string> const& params,
-        bool                            localize_,
-        std::string const&              xuid,
-        std::string const&              platformId
+        ::TextPacketType                    type,
+        ::std::string const&                author,
+        ::std::string const&                message,
+        ::std::optional<::std::string>      filteredMessage,
+        ::std::vector<::std::string> const& params,
+        bool                                localize_,
+        ::std::string const&                xuid,
+        ::std::string const&                platformId
     );
 
+    MCAPI ::TextPacket& operator=(::TextPacket const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        ::TextPacketType                type,
-        std::string const&              author,
-        std::string const&              message,
-        std::optional<std::string>      filteredMessage,
-        std::vector<std::string> const& params,
-        bool                            localize_,
-        std::string const&              xuid,
-        std::string const&              platformId
+    MCAPI static bool const _shouldHandleTextPacketForPlayer(
+        ::PlayerCapabilities::IPlayerData&             playerData,
+        ::PlayerCapabilities::ISharedController const& sharedController
     );
 
-    MCAPI void dtor$();
+    MCAPI static ::TextPacket createAnnouncement(
+        ::std::string const&           author,
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage,
+        ::std::string const&           xuid,
+        ::std::string const&           platformId
+    );
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI static ::TextPacket createChat(
+        ::std::string const&           author,
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage,
+        ::std::string const&           xuid,
+        ::std::string const&           platformId
+    );
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI static ::TextPacket
+    createJukeboxPopup(::std::string const& message, ::std::vector<::std::string> const& params);
 
-    MCAPI std::string getName$() const;
+    MCAPI static ::TextPacket createRawJsonObjectMessage(::std::string const& rawJson);
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI static ::TextPacket createSystemMessage(::std::string const& message);
 
+    MCAPI static ::TextPacket createTextObjectMessage(
+        ::ResolvedTextObject const& resolvedTextObject,
+        ::std::string               fromXuid,
+        ::std::string               fromPlatformId
+    );
+
+    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+        ::ResolvedTextObject const& resolvedTextObject,
+        ::std::string const&        xuid,
+        ::std::string const&        platformId
+    );
+
+    MCAPI static ::TextPacket
+    createTranslated(::std::string const& message, ::std::vector<::std::string> const& params);
+
+    MCAPI static ::TextPacket createTranslatedAnnouncement(
+        ::std::string const& author,
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCAPI static ::TextPacket createWhisper(
+        ::std::string const&           author,
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage,
+        ::std::string const&           xuid,
+        ::std::string const&           platformId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        ::TextPacketType                    type,
+        ::std::string const&                author,
+        ::std::string const&                message,
+        ::std::optional<::std::string>      filteredMessage,
+        ::std::vector<::std::string> const& params,
+        bool                                localize_,
+        ::std::string const&                xuid,
+        ::std::string const&                platformId
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

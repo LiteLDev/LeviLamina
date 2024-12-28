@@ -12,15 +12,10 @@ public:
     HEAD();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static std::string const& name();
-
+    MCAPI static ::std::string const& name();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http::MethodType
+} // namespace Bedrock::Http::MethodType

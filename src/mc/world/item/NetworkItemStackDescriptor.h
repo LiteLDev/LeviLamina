@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
@@ -10,57 +9,82 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class BlockPalette;
+class ItemStack;
+class ItemStackDescriptor;
+class ReadOnlyBinaryStream;
+struct ItemStackNetIdTag;
+struct ItemStackNetIdVariant;
 // clang-format on
 
 class NetworkItemStackDescriptor : public ::ItemDescriptorCount {
 public:
-    bool                  mIncludeNetIds{};  // this+0x18
-    ItemStackNetIdVariant mNetIdVariant{};   // this+0x20
-    uint                  mBlockRuntimeId{}; // this+0x38
-    std::string           mUserDataBuffer{}; // this+0x40
-
-    // prevent constructor by default
-    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
-    NetworkItemStackDescriptor();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                     mIncludeNetIds;
+    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    ::ll::TypedStorage<4, 4, uint>                     mBlockRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>           mUserDataBuffer;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
+    NetworkItemStackDescriptor(NetworkItemStackDescriptor const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkItemStackDescriptor();
+    virtual ~NetworkItemStackDescriptor() /*override*/;
+    // NOLINTEND
 
-    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const& item);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI NetworkItemStackDescriptor();
 
-    MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const& descriptor);
+    MCAPI NetworkItemStackDescriptor(::NetworkItemStackDescriptor&&);
 
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
+    MCAPI explicit NetworkItemStackDescriptor(::ItemStackDescriptor const& descriptor);
 
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
+    MCAPI explicit NetworkItemStackDescriptor(::ItemStack const& item);
 
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
+    MCAPI ::ItemStack getItemStack(::BlockPalette const& blockPalette) const;
+
+    MCAPI ::NetworkItemStackDescriptor& operator=(::NetworkItemStackDescriptor&&);
+
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI void setIncludeNetIds(bool includeNetIds) const;
 
-    MCAPI ItemStackNetId const* tryGetServerNetId() const;
+    MCAPI ::ItemStackNetId const* tryGetServerNetId() const;
 
-    MCAPI void write(class BinaryStream& stream) const;
-
+    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class ItemStack const& item);
+    MCAPI void* $ctor(::NetworkItemStackDescriptor&&);
 
-    MCAPI void* ctor$(class NetworkItemStackDescriptor const&);
+    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
 
-    MCAPI void* ctor$(class NetworkItemStackDescriptor&&);
+    MCAPI void* $ctor(::ItemStack const& item);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ItemStackDescriptor const& descriptor);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

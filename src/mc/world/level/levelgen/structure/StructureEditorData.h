@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated inclusion list
 #include "mc/util/AnimationMode.h"
@@ -10,27 +9,37 @@
 #include "mc/world/level/block/StructureBlockType.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CompoundTag;
+class DataLoadHelper;
+class StructureSettings;
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
+
 class StructureEditorData {
 public:
-    std::string               mStructureName;
-    std::string               mDataField;
-    bool                      mIncludePlayers;
-    bool                      mShowBoundingBox;
-    StructureRedstoneSaveMode mRedstoneSaveMode;
-    StructureBlockType        mType;
-    StructureSettings         mSettings;
-
-
-    // prevent constructor by default
-    StructureEditorData& operator=(StructureEditorData const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>              mStructureName;
+    ::ll::TypedStorage<8, 32, ::std::string>              mDataField;
+    ::ll::TypedStorage<1, 1, bool>                        mIncludePlayers;
+    ::ll::TypedStorage<1, 1, bool>                        mShowBoundingBox;
+    ::ll::TypedStorage<1, 1, ::StructureRedstoneSaveMode> mRedstoneSaveMode;
+    ::ll::TypedStorage<4, 4, ::StructureBlockType>        mType;
+    ::ll::TypedStorage<8, 104, ::StructureSettings>       mSettings;
+    // NOLINTEND
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI StructureEditorData();
 
-    MCAPI StructureEditorData(class StructureEditorData const&);
+    MCAPI StructureEditorData(::StructureEditorData const&);
 
-    MCAPI std::string getAnimationModeAsString() const;
+    MCAPI ::std::string getAnimationModeAsString() const;
 
     MCAPI float getAnimationSeconds() const;
 
@@ -48,7 +57,7 @@ public:
 
     MCAPI ::Mirror getMirror() const;
 
-    MCAPI class Vec3 const& getPivot() const;
+    MCAPI ::Vec3 const& getPivot() const;
 
     MCAPI ::StructureRedstoneSaveMode getRedstoneSaveMode() const;
 
@@ -58,17 +67,19 @@ public:
 
     MCAPI ::StructureBlockType getStructureBlockType() const;
 
-    MCAPI std::string const& getStructureName() const;
+    MCAPI ::std::string const& getStructureName() const;
 
-    MCAPI class BlockPos const& getStructureOffset() const;
+    MCAPI ::BlockPos const& getStructureOffset() const;
 
-    MCAPI class StructureSettings const& getStructureSettings() const;
+    MCAPI ::StructureSettings const& getStructureSettings() const;
 
-    MCAPI class BlockPos const& getStructureSize() const;
+    MCAPI ::BlockPos const& getStructureSize() const;
 
-    MCAPI void load(class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void save(class CompoundTag& tag) const;
+    MCAPI ::StructureEditorData& operator=(::StructureEditorData const&);
+
+    MCAPI void save(::CompoundTag& tag) const;
 
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
 
@@ -88,7 +99,7 @@ public:
 
     MCAPI void setIsWaterLogged(bool waterLogged);
 
-    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
+    MCAPI void setLastTouchedByPlayerID(::ActorUniqueID lastTouchedByPlayerID);
 
     MCAPI void setMirror(::Mirror mirror);
 
@@ -98,40 +109,50 @@ public:
 
     MCAPI void setStructureBlockType(::StructureBlockType structureBlockType);
 
-    MCAPI void setStructureName(std::string_view name);
+    MCAPI void setStructureName(::std::string_view name);
 
-    MCAPI void setStructureOffset(class BlockPos const& offset);
+    MCAPI void setStructureOffset(::BlockPos const& offset);
 
-    MCAPI void setStructureSize(class BlockPos const& size);
+    MCAPI void setStructureSize(::BlockPos const& size);
 
     MCAPI ~StructureEditorData();
-
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const& size, ::Rotation rotation);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class StructureEditorData const&);
+    MCAPI static ::BlockPos getOrientedBounds(::BlockPos const& size, ::Rotation rotation);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 
-    MCAPI void dtor$();
-
-    MCAPI static std::string const& DEFAULT_EXPORT_NAME();
-
-    MCAPI static std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+    MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 
     MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
 
-    MCAPI static class BlockPos const& MAX_STRUCTURE_OFFSET();
+    MCAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
 
-    MCAPI static class BlockPos const& MIN_STRUCTURE_OFFSET();
+    MCAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
 
-    MCAPI static class BlockPos const& MIN_STRUCTURE_SIZE();
+    MCAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
 
     MCAPI static char const& NAMESPACE_DELIMITER();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::StructureEditorData const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

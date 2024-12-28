@@ -13,64 +13,74 @@ namespace Scripting {
 
 class StrongObjectHandle {
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle&& rhs);
+    ::ll::UntypedStorage<8, 16> mUnk312e65;
+    ::ll::UntypedStorage<8, 16> mUnkd70ff5;
+    // NOLINTEND
 
-    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle const& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StrongObjectHandle();
 
-    MCAPI StrongObjectHandle(
-        class Scripting::WeakLifetimeScope scope,
-        struct Scripting::ObjectHandle     objHandle,
-        bool                               addReference
-    );
+    MCAPI StrongObjectHandle(::Scripting::StrongObjectHandle const& rhs);
 
-    MCAPI entt::meta_any asAny();
+    MCAPI StrongObjectHandle(::Scripting::StrongObjectHandle&& rhs);
 
-    MCAPI struct Scripting::ObjectHandle getHandle() const;
+    MCAPI
+    StrongObjectHandle(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle, bool addReference);
 
-    MCAPI class Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCAPI void _addReference();
 
-    MCAPI class Scripting::WeakLifetimeScope getScope() const;
+    MCAPI ::entt::meta_any asAny();
 
-    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle&& rhs);
+    MCAPI ::Scripting::ObjectHandle getHandle() const;
 
-    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle const& rhs);
+    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI bool operator==(class Scripting::StrongObjectHandle const& rhs) const;
+    MCAPI ::Scripting::WeakLifetimeScope getScope() const;
+
+    MCAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
+
+    MCAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
+
+    MCAPI bool operator==(::Scripting::StrongObjectHandle const& rhs) const;
 
     MCAPI bool valid() const;
 
     MCAPI ~StrongObjectHandle();
-
-    MCAPI static struct Scripting::ObjectHandle release(class Scripting::StrongObjectHandle&& handleRef);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI StrongObjectHandle();
-
-    MCAPI void _addReference();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Scripting::StrongObjectHandle&& rhs);
+    MCAPI static ::Scripting::ObjectHandle release(::Scripting::StrongObjectHandle&& handleRef);
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(class Scripting::WeakLifetimeScope scope, struct Scripting::ObjectHandle objHandle, bool addReference);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::StrongObjectHandle const& InvalidHandle();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Scripting::StrongObjectHandle const& rhs);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Scripting::StrongObjectHandle const& rhs);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Scripting::StrongObjectHandle&& rhs);
 
-    MCAPI static class Scripting::StrongObjectHandle const& InvalidHandle();
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle, bool addReference);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

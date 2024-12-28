@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class PackManifest;
+class PackReport;
+// clang-format on
+
 class IPackTelemetry {
 public:
     // prevent constructor by default
@@ -10,18 +16,30 @@ public:
     IPackTelemetry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IPackTelemetry();
 
+    // vIndex: 1
+    virtual void fireEventPackUpgradeAttempt(::PackManifest const&, ::PackReport const&) = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

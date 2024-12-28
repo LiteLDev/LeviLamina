@@ -5,71 +5,102 @@
 // auto generated inclusion list
 #include "mc/world/item/ItemStackBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+class CompoundTag;
+class Item;
+// clang-format on
+
 class ItemInstance : public ::ItemStackBase {
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemInstance();
-
-    // vIndex: 1
-    virtual void reinit(class Item const& item, int count, int auxValue);
-
     // vIndex: 2
-    virtual void reinit(class BlockLegacy const& block, int count);
+    virtual void reinit(::BlockLegacy const& block, int count) /*override*/;
 
     // vIndex: 3
-    virtual void reinit(std::string_view name, int count, int auxValue);
+    virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
 
-    MCAPI ItemInstance();
+    // vIndex: 1
+    virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
 
-    MCAPI ItemInstance(class ItemInstance const& rhs);
-
-    MCAPI explicit ItemInstance(class ItemStackBase const& rhs);
-
-    MCAPI ItemInstance(class BlockLegacy const& block, int count);
-
-    MCAPI ItemInstance(class Block const& block, int count, class CompoundTag const* _userData);
-
-    MCAPI ItemInstance(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
-
-    MCAPI ItemInstance(std::string_view name, int count, int auxValue, class CompoundTag const* _userData);
-
-    MCAPI class ItemInstance clone() const;
-
-    MCAPI class ItemInstance& operator=(class ItemInstance const& rhs);
-
-    MCAPI static class ItemInstance fromTag(class CompoundTag const& tag);
-
+    // vIndex: 0
+    virtual ~ItemInstance() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemInstance();
 
-    MCAPI void* ctor$();
+    MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
 
-    MCAPI void* ctor$(std::string_view name, int count, int auxValue, class CompoundTag const* _userData);
+    MCAPI ItemInstance(::ItemInstance const& rhs);
 
-    MCAPI void* ctor$(class ItemInstance const& rhs);
+    MCAPI ItemInstance(::BlockLegacy const& block, int count);
 
-    MCAPI void* ctor$(class ItemStackBase const& rhs);
+    MCAPI ItemInstance(::Block const& block, int count, ::CompoundTag const* _userData);
 
-    MCAPI void* ctor$(class Block const& block, int count, class CompoundTag const* _userData);
+    MCAPI ItemInstance(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCAPI void* ctor$(class BlockLegacy const& block, int count);
+    MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCAPI void* ctor$(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
+    MCAPI ::ItemInstance clone() const;
 
-    MCAPI void dtor$();
+    MCAPI ::ItemInstance& operator=(::ItemInstance const& rhs);
+    // NOLINTEND
 
-    MCAPI void reinit$(class Item const& item, int count, int auxValue);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::ItemInstance fromTag(::CompoundTag const& tag);
+    // NOLINTEND
 
-    MCAPI void reinit$(class BlockLegacy const& block, int count);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ItemInstance const& EMPTY_ITEM();
+    // NOLINTEND
 
-    MCAPI void reinit$(std::string_view name, int count, int auxValue);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static class ItemInstance const& EMPTY_ITEM();
+    MCAPI void* $ctor(::ItemStackBase const& rhs);
 
+    MCAPI void* $ctor(::ItemInstance const& rhs);
+
+    MCAPI void* $ctor(::BlockLegacy const& block, int count);
+
+    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
+
+    MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+
+    MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reinit(::BlockLegacy const& block, int count);
+
+    MCAPI void $reinit(::Item const& item, int count, int auxValue);
+
+    MCAPI void $reinit(::std::string_view const name, int count, int auxValue);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

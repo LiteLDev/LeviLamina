@@ -4,26 +4,20 @@
 
 struct Tick {
 public:
-    using Type = uint64;
-
-    Type t;
-
-    [[nodiscard]] constexpr operator Type() const noexcept { return t; }
-
-    [[nodiscard]] constexpr Tick(Type v) noexcept : t(v) {}
-
-    [[nodiscard]] constexpr Tick(Tick const& v) = default;
-
-    [[nodiscard]] constexpr Tick() noexcept : t(0) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64> tickID;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI static struct Tick const& MAX();
+    // prevent constructor by default
+    Tick& operator=(Tick const&);
+    Tick(Tick const&);
+    Tick();
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Tick const& MAX();
     // NOLINTEND
 };

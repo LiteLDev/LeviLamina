@@ -3,10 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/facing/Name.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
-#include "mc/world/Facing.h"
 #include "mc/world/level/block/states/CommonDirection.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
 
 class VanillaBlockStateTransformUtils {
 public:
@@ -16,16 +21,7 @@ public:
     VanillaBlockStateTransformUtils();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static class Block const* transformBlock(class Block const& block, ::CommonDirection targetDirection);
-
-    MCAPI static class Block const* transformBlock(class Block const& block, ::Facing::Name targetDirection);
-
-    MCAPI static class Block const* transformBlock(class Block const& block, ::Rotation rotation, ::Mirror mirror);
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static ::CommonDirection _mirror(::CommonDirection direction, ::Mirror mirror);
 
@@ -35,5 +31,24 @@ public:
 
     MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
+    MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
+
+    MCAPI static ::Block const* transformBlock(::Block const& block, ::Facing::Name targetDirection);
+
+    MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+
+    MCAPI static ::Block const*
+    transformMultiFaceDirectionBits(::Block const& block, ::CommonDirection targetDirection);
+
+    MCAPI static ::Block const*
+    transformMultiFaceDirectionBits(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+
+    MCAPI static ::Block const* transformStandingRotation(::Block const& block, ::CommonDirection targetDirection);
+
+    MCAPI static ::Block const* transformStandingRotation(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+
+    MCAPI static ::Block const* transformVineDirectionBits(::Block const& block, ::CommonDirection targetDirection);
+
+    MCAPI static ::Block const* transformVineDirectionBits(::Block const& block, ::Rotation rotation, ::Mirror mirror);
     // NOLINTEND
 };

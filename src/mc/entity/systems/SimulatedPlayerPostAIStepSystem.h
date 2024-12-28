@@ -2,6 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/Include.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct SimulatedPlayerFlagComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class SimulatedPlayerPostAIStepSystem {
 public:
     // prevent constructor by default
@@ -10,17 +23,11 @@ public:
     SimulatedPlayerPostAIStepSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static void
+    _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _doSimulatedPlayerPostAIStepSystem(
-        class StrictEntityContext const&,
-        class ActorOwnerComponent& actorOwnerComponent
-    );
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

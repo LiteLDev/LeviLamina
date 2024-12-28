@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
 
 class TextObjectLocalizedText : public ::ITextObject {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkbecb4b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TextObjectLocalizedText& operator=(TextObjectLocalizedText const&);
@@ -18,35 +25,52 @@ public:
     TextObjectLocalizedText();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TextObjectLocalizedText() = default;
-
     // vIndex: 1
-    virtual std::string asString() const;
+    virtual ::std::string asString() const /*override*/;
 
     // vIndex: 2
-    virtual class Json::Value asJsonValue() const;
+    virtual ::Json::Value asJsonValue() const /*override*/;
 
     // vIndex: 3
-    virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
-    MCAPI explicit TextObjectLocalizedText(std::string text);
-
+    // vIndex: 0
+    virtual ~TextObjectLocalizedText() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit TextObjectLocalizedText(::std::string text);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string text);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string text);
+    // NOLINTEND
 
-    MCAPI class Json::Value asJsonValue$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string asString$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $asString() const;
 
-    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+    MCAPI ::Json::Value $asJsonValue() const;
 
+    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

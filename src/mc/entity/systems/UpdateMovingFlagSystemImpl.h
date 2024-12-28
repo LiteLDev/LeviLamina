@@ -7,19 +7,28 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct ControlledByLocalInstanceComponent;
+struct PassengerComponent;
+struct SetMovingFlagRequestComponent;
+struct StateVectorComponent;
+// clang-format on
 
 namespace UpdateMovingFlagSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doTickMovingFlagSystem(
-    entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>>,
-    class StrictEntityContext const&                context,
-    struct StateVectorComponent const&              stateVectorComponent,
-    class Optional<struct PassengerComponent const> passengerComponent,
-    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ControlledByLocalInstanceFlag>>>
-                                                                 vehicleView,
-    class EntityModifier<class FlagComponent<struct MovingFlag>> modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::StrictEntityContext const&                                                    context,
+    ::StateVectorComponent const&                                                   stateVectorComponent,
+    ::Optional<::PassengerComponent const>                                          passengerComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> vehicleView,
+    ::EntityModifier<::SetMovingFlagRequestComponent>                               modifier
 );
 // NOLINTEND
 
-}; // namespace UpdateMovingFlagSystemImpl
+} // namespace UpdateMovingFlagSystemImpl

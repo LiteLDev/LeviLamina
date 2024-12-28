@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/Factory.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace BlockTrait { class ITrait; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class BlockTraitFactory {
+class BlockTraitFactory : public ::Factory<::BlockTrait::ITrait> {
 public:
     // BlockTraitFactory inner types declare
     // clang-format off
@@ -17,30 +21,46 @@ public:
     // BlockTraitFactory inner types define
     struct TraitMetadata {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnkb113c1;
+        ::ll::UntypedStorage<8, 24>  mUnkeca172;
+        ::ll::UntypedStorage<8, 120> mUnkbe701a;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        TraitMetadata& operator=(TraitMetadata const&);
         TraitMetadata();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI TraitMetadata(struct BlockTraitFactory::TraitMetadata const&);
+        MCAPI TraitMetadata(::BlockTraitFactory::TraitMetadata const&);
 
-        MCAPI struct BlockTraitFactory::TraitMetadata& operator=(struct BlockTraitFactory::TraitMetadata&&);
-
-        MCAPI struct BlockTraitFactory::TraitMetadata& operator=(struct BlockTraitFactory::TraitMetadata const&);
+        MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
 
         MCAPI ~TraitMetadata();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct BlockTraitFactory::TraitMetadata const&);
+        MCAPI void* $ctor(::BlockTraitFactory::TraitMetadata const&);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk6fcb72;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -48,30 +68,35 @@ public:
     BlockTraitFactory(BlockTraitFactory const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockTraitFactory();
 
     MCAPI ~BlockTraitFactory();
-
-    MCAPI static std::unordered_map<std::string, struct BlockTraitFactory::TraitMetadata>&
-    getPropRegisteredTraits(struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI static void registerAllTraits(struct cereal::ReflectionCtx& ctx);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static entt::meta_type initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void dtor$();
+    MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
 
+    MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
+    registeredTraits(::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

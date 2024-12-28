@@ -11,16 +11,24 @@ namespace BlockTransformationSerializer {
 
 struct RotationBindingType {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkf82fdf;
+    ::ll::UntypedStorage<4, 4> mUnk74a881;
+    ::ll::UntypedStorage<4, 4> mUnk6f4c42;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RotationBindingType& operator=(RotationBindingType const&);
     RotationBindingType(RotationBindingType const&);
     RotationBindingType();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void rotationTypeFromVec3(class Vec3 const& arr);
-
+    MCAPI void rotationTypeFromVec3(::Vec3 const& arr);
     // NOLINTEND
 };
 
-}; // namespace BlockTransformationSerializer
+} // namespace BlockTransformationSerializer

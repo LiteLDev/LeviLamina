@@ -5,7 +5,84 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockDescriptor;
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class SingleBlockFeature : public ::IFeature {
+public:
+    // SingleBlockFeature inner types declare
+    // clang-format off
+    struct WeightedBlockDescriptor;
+    // clang-format on
+
+    // SingleBlockFeature inner types define
+    enum class CheckDirection : uchar {
+        Top      = 0,
+        Bottom   = 1,
+        North    = 2,
+        East     = 3,
+        South    = 4,
+        West     = 5,
+        All      = 6,
+        Sides    = 7,
+        Diagonal = 8,
+        Count    = 9,
+    };
+
+    enum class AttachCondition : uchar {
+        MayAttachTo    = 0,
+        MayNotAttachTo = 1,
+    };
+
+    struct WeightedBlockDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 184> mUnk32ff74;
+        ::ll::UntypedStorage<4, 4>   mUnkb978f3;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WeightedBlockDescriptor& operator=(WeightedBlockDescriptor const&);
+        WeightedBlockDescriptor(WeightedBlockDescriptor const&);
+        WeightedBlockDescriptor();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~WeightedBlockDescriptor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk555a95;
+    ::ll::UntypedStorage<1, 1>   mUnk3fe127;
+    ::ll::UntypedStorage<1, 1>   mUnkcbde6a;
+    ::ll::UntypedStorage<1, 1>   mUnk59b549;
+    ::ll::UntypedStorage<1, 1>   mUnke1aa00;
+    ::ll::UntypedStorage<1, 1>   mUnk770dd3;
+    ::ll::UntypedStorage<4, 4>   mUnk947893;
+    ::ll::UntypedStorage<8, 216> mUnk1d8d80;
+    ::ll::UntypedStorage<8, 216> mUnk7888e6;
+    ::ll::UntypedStorage<8, 24>  mUnke73e15;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SingleBlockFeature& operator=(SingleBlockFeature const&);
@@ -13,34 +90,41 @@ public:
     SingleBlockFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SingleBlockFeature() = default;
+    virtual ~SingleBlockFeature() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class RenderParams&) const;
-
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Block const*
+    _mayAttach(::BlockDescriptor const& blockDescriptor, ::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCAPI bool isValidPlacement$(std::string const&);
+    MCAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos>
-          place$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class RenderParams&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

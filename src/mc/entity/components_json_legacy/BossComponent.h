@@ -1,43 +1,56 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossBarOverlay.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
+#include "mc/world/actor/ai/util/BossBarOverlay.h"
+#include "mc/world/actor/ai/util/BossEventUpdateType.h"
 
 // auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+class Player;
+namespace mce { class UUID; }
+// clang-format on
 
 class BossComponent {
 public:
-    std::string                           mName;              // this+0x0
-    bool                                  mHealthBarVisible;  // this+0x20
-    float                                 mHealthPercent;     // this+0x24
-    bool                                  mShouldDarkenSky;   // this+0x28
-    bool                                  mCreateWorldFog;    // this+0x29
-    BossBarColor                          mColor;             // this+0x2c
-    BossBarOverlay                        mOverlay;           // this+0x30
-    int                                   mPlayersRegistered; // this+0x34
-    int                                   mLastHealth;        // this+0x38
-    int                                   mHudRangeSquared;   // this+0x3c
-    std::chrono::steady_clock::time_point mLastPlayerUpdate;  // this+0x40
-    std::unordered_map<mce::UUID, int>    mPlayerParty;       // this+0x48
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                          mName;
+    ::ll::TypedStorage<1, 1, bool>                                    mHealthBarVisible;
+    ::ll::TypedStorage<4, 4, float>                                   mHealthPercent;
+    ::ll::TypedStorage<1, 1, bool>                                    mShouldDarkenSky;
+    ::ll::TypedStorage<1, 1, bool>                                    mCreateWorldFog;
+    ::ll::TypedStorage<4, 4, ::BossBarColor>                          mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay>                        mOverlay;
+    ::ll::TypedStorage<4, 4, int>                                     mPlayersRegistered;
+    ::ll::TypedStorage<4, 4, int>                                     mLastHealth;
+    ::ll::TypedStorage<4, 4, int>                                     mHudRangeSquared;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPlayerUpdate;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, int>> mPlayerParty;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     BossComponent& operator=(BossComponent const&);
     BossComponent(BossComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BossComponent();
 
-    MCAPI BossComponent(class BossComponent&&);
+    MCAPI BossComponent(::BossComponent&&);
 
-    MCAPI void addPlayerToParty(class mce::UUID id, int damage);
+    MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
 
-    MCAPI void broadcastBossEvent(class Actor& owner, ::BossEventUpdateType type);
+    MCAPI void addPlayerToParty(::mce::UUID id, int damage);
+
+    MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
     MCAPI ::BossBarColor getColor() const;
 
@@ -47,63 +60,58 @@ public:
 
     MCAPI int getLastHealth() const;
 
-    MCAPI std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
+    MCAPI ::std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
 
-    MCAPI std::string getName() const;
+    MCAPI ::std::string getName() const;
 
     MCAPI ::BossBarOverlay getOverlay() const;
 
-    MCAPI std::unordered_map<class mce::UUID, int> const& getPlayerParty() const;
+    MCAPI ::std::unordered_map<::mce::UUID, int> const& getPlayerParty() const;
 
     MCAPI bool getShouldDarkenSky() const;
 
-    MCAPI void handleRegisterPlayers(class Actor& owner);
+    MCAPI void handleRegisterPlayers(::Actor& owner);
 
-    MCAPI class BossComponent& operator=(class BossComponent&&);
+    MCAPI ::BossComponent& operator=(::BossComponent&&);
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void registerPlayer(class Actor& owner, class Player* player);
+    MCAPI void registerPlayer(::Actor& owner, ::Player* player);
 
-    MCAPI void resendBossEventData(class Actor& owner, class Player* player);
+    MCAPI void resendBossEventData(::Actor& owner, ::Player* player);
 
-    MCAPI void sendDeathTelemetry(class Actor& owner);
+    MCAPI void sendDeathTelemetry(::Actor& owner);
 
-    MCAPI void setColor(class Actor& owner, ::BossBarColor color);
+    MCAPI void setColor(::Actor& owner, ::BossBarColor color);
 
-    MCAPI void setHealthBarVisible(class Actor& owner, bool visible);
+    MCAPI void setHealthBarVisible(::Actor& owner, bool visible);
 
-    MCAPI void setHealthPercent(class Actor& owner, float percent);
+    MCAPI void setHealthPercent(::Actor& owner, float percent);
 
     MCAPI void setLastHealth(int lastHealth);
 
-    MCAPI void setLastPlayerUpdate(std::chrono::steady_clock::time_point lastUpdate);
+    MCAPI void setLastPlayerUpdate(::std::chrono::steady_clock::time_point lastUpdate);
 
-    MCAPI void setName(class Actor& owner, std::string const& name);
+    MCAPI void setName(::Actor& owner, ::std::string const& name);
 
-    MCAPI bool tryRemoveBoss(class Actor& owner, class Player& player);
+    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCAPI void unRegisterPlayer(class Actor& owner, class Player* player);
+    MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
 
     MCAPI ~BossComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _sendBossEvent(class Actor& owner, ::BossEventUpdateType type, class Player* player);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class BossComponent&&);
+    MCAPI void* $ctor(::BossComponent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

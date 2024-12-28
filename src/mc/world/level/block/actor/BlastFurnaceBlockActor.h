@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/FurnaceBlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 public:
     // prevent constructor by default
@@ -13,19 +18,44 @@ public:
     BlastFurnaceBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::string getName() const;
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~BlastFurnaceBlockActor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBlockActor();
+    MCAPI explicit BlastFurnaceBlockActor(::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI static void** vftableForContainer();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

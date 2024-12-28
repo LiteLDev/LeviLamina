@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class IcebergFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,71 +21,74 @@ public:
     IcebergFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~IcebergFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+    virtual ~IcebergFeature() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _isIcebergBlock(class Block const& block) const;
-
     MCAPI void carve(
-        int                   radius,
-        int                   yOff,
-        class BlockPos const& globalOrigin,
-        class BlockSource&    region,
-        bool                  underWater,
-        float                 angle,
-        class BlockPos const& localOrigin,
-        int                   ellipseA,
-        int                   ellipseC
+        int               radius,
+        int               yOff,
+        ::BlockPos const& globalOrigin,
+        ::BlockSource&    region,
+        bool              underWater,
+        float             angle,
+        ::BlockPos const& localOrigin,
+        int               ellipseA,
+        int               ellipseC
     ) const;
 
     MCAPI void generateIcebergBlock(
-        class BlockSource&    region,
-        class Random&         random,
-        class BlockPos const& origin,
-        int                   height,
-        int                   xo,
-        int                   yOff,
-        int                   zo,
-        int                   radius,
-        int                   a,
-        bool                  snowOnTop,
-        bool                  isEllipse,
-        float                 shapeAngle,
-        int                   elllipseC,
-        class Block const&    blockToPlace
+        ::BlockSource&    region,
+        ::Random&         random,
+        ::BlockPos const& origin,
+        int               height,
+        int               xo,
+        int               yOff,
+        int               zo,
+        int               radius,
+        int               a,
+        bool              snowOnTop,
+        bool              isEllipse,
+        float             shapeAngle,
+        int               elllipseC,
+        ::Block const&    blockToPlace
     ) const;
-
-    MCAPI int heightDependentRadiusRound(class Random& random, int yOff, int height, int width) const;
 
     MCAPI void setIcebergBlock(
-        class BlockPos const& pos,
-        class BlockSource&    region,
-        class Random&         random,
-        int                   hDiff,
-        int                   height,
-        bool                  snowOnTop,
-        bool                  isEllipse,
-        class Block const&    blockToPlace
+        ::BlockPos const& pos,
+        ::BlockSource&    region,
+        ::Random&         random,
+        int               hDiff,
+        int               height,
+        bool              snowOnTop,
+        bool              isEllipse,
+        ::Block const&    blockToPlace
     ) const;
-
-    MCAPI float signedDistanceEllipse(int xo, int zo, class BlockPos const& origin, int a, int c, float angle) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

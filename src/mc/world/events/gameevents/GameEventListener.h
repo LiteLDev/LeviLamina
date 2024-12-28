@@ -2,10 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+namespace GameEvents { class PositionSource; }
+// clang-format on
+
 class GameEventListener {
 public:
     // GameEventListener inner types define
-    enum class DeliveryMode {};
+    enum class DeliveryMode : int {
+        Unspecified = 0,
+        ByDistance  = 1,
+    };
 
 public:
     // prevent constructor by default
@@ -14,15 +25,33 @@ public:
     GameEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::GameEventListener::DeliveryMode getDeliveryMode() const;
+    // vIndex: 0
+    virtual ~GameEventListener();
 
+    // vIndex: 1
+    virtual void handleGameEvent(::GameEvent const&, ::GameEventContext const&, ::BlockSource&) = 0;
+
+    // vIndex: 2
+    virtual ::GameEvents::PositionSource const& getPositionSource() const = 0;
+
+    // vIndex: 3
+    virtual uint getRange() const = 0;
+
+    // vIndex: 4
+    virtual ::GameEventListener::DeliveryMode getDeliveryMode() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 };

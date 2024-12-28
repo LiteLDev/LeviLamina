@@ -7,7 +7,50 @@
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorFillingContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BlockActor;
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Container;
+class ContainerContentChangeListener;
+class DataLoadHelper;
+class ItemStack;
+class Level;
+class Player;
+class SaveContext;
+// clang-format on
+
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkdb9f02;
+    ::ll::UntypedStorage<1, 1>  mUnkc8bf6d;
+    ::ll::UntypedStorage<1, 1>  mUnkfda882;
+    ::ll::UntypedStorage<4, 4>  mUnk693265;
+    bool                        mUnk5a304c : 1;
+    ::ll::UntypedStorage<4, 4>  mUnka71691;
+    ::ll::UntypedStorage<4, 4>  mUnk602e56;
+    ::ll::UntypedStorage<1, 1>  mUnk216a5b;
+    ::ll::UntypedStorage<4, 4>  mUnkc7d985;
+    bool                        mUnkad13d7 : 1;
+    bool                        mUnk1b7d3b : 1;
+    bool                        mUnk5a1323 : 1;
+    bool                        mUnk2e85c7 : 1;
+    ::ll::UntypedStorage<4, 4>  mUnkf38351;
+    ::ll::UntypedStorage<4, 4>  mUnk693a89;
+    ::ll::UntypedStorage<8, 8>  mUnk479781;
+    ::ll::UntypedStorage<4, 12> mUnkb0bf94;
+    ::ll::UntypedStorage<1, 1>  mUnk2a1fb3;
+    ::ll::UntypedStorage<1, 1>  mUnk972134;
+    ::ll::UntypedStorage<8, 64> mUnk866a1d;
+    ::ll::UntypedStorage<4, 4>  mUnk808996;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChestBlockActor& operator=(ChestBlockActor const&);
@@ -15,249 +58,298 @@ public:
     ChestBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool _canOpenThis(class BlockSource& region) const;
+    // vIndex: 0
+    virtual ~ChestBlockActor() /*override*/;
 
-    MCVAPI bool _detectEntityObstruction(class BlockSource& region) const;
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI void addContentChangeListener(class ContainerContentChangeListener* listener);
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    // vIndex: 13
+    virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    MCVAPI void clearCache();
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
-    MCVAPI int clearInventory(int resizeTo);
+    // vIndex: 46
+    virtual void loadItems(::CompoundTag const& base, ::Level& level);
 
-    MCVAPI class Container* getContainer();
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI class Container const* getContainer() const;
+    // vIndex: 47
+    virtual bool saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI class BlockActor* getCrackEntity(class BlockSource& region, class BlockPos const& pos);
+    // vIndex: 3
+    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI void getDebugText(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
+    // vIndex: 17
+    virtual void clearCache() /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 16
+    virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI class AABB getObstructionAABB() const;
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCVAPI void initializeContainerContents(class BlockSource& region);
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    MCVAPI void loadItems(class CompoundTag const& base, class Level& level);
+    // vIndex: 18
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
-    MCVAPI void onChanged(class BlockSource& region);
+    // vIndex: 21
+    virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
-    MCVAPI void onMove();
+    // vIndex: 46
+    virtual int clearInventory(int resizeTo) /*override*/;
 
-    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
+    // vIndex: 33
+    virtual ::Container* getContainer() /*override*/;
 
-    MCVAPI void onPlace(class BlockSource& region);
+    // vIndex: 32
+    virtual ::Container const* getContainer() const /*override*/;
 
-    MCVAPI void onRemoved(class BlockSource& region);
+    // vIndex: 12
+    virtual void onMove() /*override*/;
 
-    MCVAPI void openBy(class Player& p);
+    // vIndex: 11
+    virtual void onPlace(::BlockSource& region) /*override*/;
 
-    MCVAPI void playCloseSound(class BlockSource& region);
+    // vIndex: 48
+    virtual void openBy(::Player& p);
 
-    MCVAPI void playOpenSound(class BlockSource& region);
+    // vIndex: 31
+    virtual void setContainerChanged(int slot) /*override*/;
 
-    MCVAPI void removeContentChangeListener(class ContainerContentChangeListener* listener);
+    // vIndex: 29
+    virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 30
+    virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    MCVAPI bool saveItemInstanceData(class CompoundTag& base) const;
+    // vIndex: 23
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) /*override*/;
 
-    MCVAPI bool saveItems(class CompoundTag& base) const;
+    // vIndex: 3
+    virtual void addContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 4
+    virtual void removeContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
 
-    MCVAPI void setContainerChanged(int slot);
+    // vIndex: 38
+    virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    MCVAPI void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 49
+    virtual void playOpenSound(::BlockSource& region);
 
-    MCVAPI void stopOpen(class Player& player);
+    // vIndex: 50
+    virtual void playCloseSound(::BlockSource& region);
 
-    MCVAPI void tick(class BlockSource& region);
+    // vIndex: 51
+    virtual bool _canOpenThis(::BlockSource& region) const;
 
-    MCVAPI void triggerEvent(int b0, int b1);
+    // vIndex: 52
+    virtual ::AABB getObstructionAABB() const;
 
-    MCVAPI ~ChestBlockActor();
+    // vIndex: 53
+    virtual bool _detectEntityObstruction(::BlockSource& region) const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ChestBlockActor(
         ::BlockActorType       type,
-        std::string const&     id,
+        ::std::string const&   id,
         ::BlockActorRendererId renderId,
-        class BlockPos const&  pos,
+        ::BlockPos const&      pos,
         bool                   isTrapped
     );
 
-    MCAPI bool canOpen(class BlockSource& region) const;
+    MCAPI void _closeChest(::BlockSource& region, ::Player* player);
 
-    MCAPI bool canPairWith(class BlockActor* entity, class BlockSource& region);
+    MCAPI void _getCenter(float& outx, float& outy, float& outz);
 
-    MCAPI void forceCloseChest(class BlockSource& region);
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
+
+    MCAPI void _unpair();
+
+    MCAPI bool canOpen(::BlockSource& region) const;
+
+    MCAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
+
+    MCAPI void forceCloseChest(::BlockSource& region);
 
     MCAPI int getOpenCount() const;
 
     MCAPI float getOpenness() const;
 
-    MCAPI class BlockPos const& getPairedChestPosition();
+    MCAPI ::BlockPos const& getPairedChestPosition();
 
     MCAPI bool isFindable() const;
 
     MCAPI bool isLargeChest() const;
 
-    MCAPI void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to);
+    MCAPI void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
 
-    MCAPI void pairWith(class ChestBlockActor* chest, bool lead);
+    MCAPI void pairWith(::ChestBlockActor* chest, bool lead);
 
     MCAPI void setFindable(bool isFindable);
 
-    MCAPI void unpair(class BlockSource& region);
-
+    MCAPI void unpair(::BlockSource& region);
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _getCenter(float& outx, float& outy, float& outz);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _closeChest(class BlockSource& region, class Player* player);
-
-    MCAPI bool _saveClientSideState(class CompoundTag& tag) const;
-
-    MCAPI void _tryToPairWith(class BlockSource& region, class BlockPos const& position);
-
-    MCAPI void _unpair();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftableForFillingContainer();
-
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
-
-    MCAPI void* ctor$(
+    MCAPI void* $ctor(
         ::BlockActorType       type,
-        std::string const&     id,
+        ::std::string const&   id,
         ::BlockActorRendererId renderId,
-        class BlockPos const&  pos,
+        ::BlockPos const&      pos,
         bool                   isTrapped
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _canOpenThis$(class BlockSource& region) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getContainerSize() const;
 
-    MCAPI bool _detectEntityObstruction$(class BlockSource& region) const;
+    MCAPI int $getMaxStackSize() const;
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void addContentChangeListener$(class ContainerContentChangeListener* listener);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI bool canPullOutItem$(int, int, class ItemStack const&) const;
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCAPI bool canPushInItem$(int, int, class ItemStack const&) const;
-
-    MCAPI void clearCache$();
-
-    MCAPI int clearInventory$(int resizeTo);
-
-    MCAPI class Container* getContainer$();
-
-    MCAPI class Container const* getContainer$() const;
-
-    MCAPI int getContainerSize$() const;
-
-    MCAPI class BlockActor* getCrackEntity$(class BlockSource& region, class BlockPos const& pos);
-
-    MCAPI void getDebugText$(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
-
-    MCAPI class ItemStack const& getItem$(int slot) const;
-
-    MCAPI int getMaxStackSize$() const;
-
-    MCAPI std::string getName$() const;
-
-    MCAPI class AABB getObstructionAABB$() const;
-
-    MCAPI void initializeContainerContents$(class BlockSource& region);
-
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void loadItems$(class CompoundTag const& base, class Level& level);
-
-    MCAPI void onChanged$(class BlockSource& region);
-
-    MCAPI void onMove$();
-
-    MCAPI void onNeighborChanged$(class BlockSource& region, class BlockPos const& position);
-
-    MCAPI void onPlace$(class BlockSource& region);
-
-    MCAPI void onRemoved$(class BlockSource& region);
-
-    MCAPI void openBy$(class Player& p);
-
-    MCAPI void playCloseSound$(class BlockSource& region);
-
-    MCAPI void playOpenSound$(class BlockSource& region);
-
-    MCAPI void removeContentChangeListener$(class ContainerContentChangeListener* listener);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI bool saveItemInstanceData$(class CompoundTag& base) const;
-
-    MCAPI bool saveItems$(class CompoundTag& base) const;
-
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void setContainerChanged$(int slot);
+    MCAPI void $loadItems(::CompoundTag const& base, ::Level& level);
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+    MCAPI bool $saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    MCAPI void startOpen$(class Player& player);
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void stopOpen$(class Player& player);
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
-    MCAPI void tick$(class BlockSource& region);
+    MCAPI void $clearCache();
 
-    MCAPI void triggerEvent$(int b0, int b1);
+    MCAPI void $tick(::BlockSource& region);
 
+    MCAPI void $triggerEvent(int b0, int b1);
+
+    MCAPI void $startOpen(::Player& player);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void $stopOpen(::Player& player);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+
+    MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI int $clearInventory(int resizeTo);
+
+    MCAPI ::Container* $getContainer();
+
+    MCAPI ::Container const* $getContainer() const;
+
+    MCAPI void $onMove();
+
+    MCAPI void $onPlace(::BlockSource& region);
+
+    MCAPI void $openBy(::Player& p);
+
+    MCAPI void $setContainerChanged(int slot);
+
+    MCAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+
+    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
+
+    MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
+
+    MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
+
+    MCAPI void $initializeContainerContents(::BlockSource& region);
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+
+    MCAPI void $playOpenSound(::BlockSource& region);
+
+    MCAPI void $playCloseSound(::BlockSource& region);
+
+    MCAPI bool $_canOpenThis(::BlockSource& region) const;
+
+    MCAPI ::AABB $getObstructionAABB() const;
+
+    MCAPI bool $_detectEntityObstruction(::BlockSource& region) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForFillingContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

@@ -7,7 +7,36 @@
 #include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeSource;
+class Block;
+class BlockPos;
+class BlockVolume;
+class BoundingBox;
+class Dimension;
+class Feature;
+class Level;
+class LevelData;
+class Pos;
+class Random;
+class StructureSettings;
+class StructureTemplate;
+struct WorldGenContext;
+// clang-format on
+
 class BlockVolumeTarget : public ::IBlockWorldGenAPI {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkfdc169;
+    ::ll::UntypedStorage<8, 8>  mUnk7f7cce;
+    ::ll::UntypedStorage<8, 8>  mUnk9ec553;
+    ::ll::UntypedStorage<4, 4>  mUnk719c7d;
+    ::ll::UntypedStorage<8, 80> mUnk48ff4c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockVolumeTarget& operator=(BlockVolumeTarget const&);
@@ -15,166 +44,171 @@ public:
     BlockVolumeTarget();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockVolumeTarget();
-
-    // vIndex: 1
-    virtual bool canGetChunk() const;
-
-    // vIndex: 2
-    virtual class LevelChunk* getChunk(class ChunkPos const& pos);
-
-    // vIndex: 3
-    virtual class Block const* tryGetLiquidBlock(class BlockPos const& pos) const;
+    virtual ~BlockVolumeTarget() /*override*/;
 
     // vIndex: 4
-    virtual class Block const& getBlock(class BlockPos const& pos) const;
+    virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 5
-    virtual class Block const& getBlockNoBoundsCheck(class BlockPos const& pos) const;
+    virtual ::Block const& getBlockNoBoundsCheck(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 6
-    virtual class Block const& getExtraBlock(class BlockPos const&) const;
+    virtual ::Block const& getExtraBlock(::BlockPos const&) const /*override*/;
+
+    // vIndex: 3
+    virtual ::Block const* tryGetLiquidBlock(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 7
-    virtual gsl::span<class BlockDataFetchResult<class Block> const>
-    fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
+    virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
+    fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) /*override*/;
 
     // vIndex: 8
-    virtual bool hasBiomeTag(uint64 tagNameHash, class BlockPos const& pos) const;
+    virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 9
-    virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int);
+    virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int) /*override*/;
 
     // vIndex: 10
-    virtual bool setBlockSimple(class BlockPos const& pos, class Block const& block);
+    virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) /*override*/;
 
     // vIndex: 11
-    virtual bool apply() const;
+    virtual bool apply() const /*override*/;
 
     // vIndex: 12
-    virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
+    virtual bool placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&) /*override*/;
 
     // vIndex: 13
-    virtual bool mayPlace(class BlockPos const&, class Block const&) const;
+    virtual bool mayPlace(::BlockPos const&, ::Block const&) const /*override*/;
 
     // vIndex: 14
-    virtual bool canSurvive(class BlockPos const&, class Block const&) const;
+    virtual bool canSurvive(::BlockPos const&, ::Block const&) const /*override*/;
 
     // vIndex: 15
-    virtual bool canBeBuiltOver(class BlockPos const&, class Block const&) const;
+    virtual bool canBeBuiltOver(::BlockPos const&, ::Block const&) const /*override*/;
 
     // vIndex: 16
-    virtual short getMaxHeight() const;
+    virtual short getMaxHeight() const /*override*/;
 
     // vIndex: 17
-    virtual short getMinHeight() const;
+    virtual short getMinHeight() const /*override*/;
 
     // vIndex: 18
-    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
+    virtual bool shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const /*override*/;
 
     // vIndex: 19
-    virtual short getHeightmap(int x, int z);
+    virtual short getHeightmap(int x, int z) /*override*/;
 
     // vIndex: 20
-    virtual bool isLegacyLevel();
+    virtual bool isLegacyLevel() /*override*/;
 
     // vIndex: 21
-    virtual class Biome const* getBiome(class BlockPos const& pos) const;
+    virtual ::Biome const* getBiome(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
-    virtual bool isInBounds(class Pos const& pos) const;
+    virtual bool isInBounds(::Pos const& pos) const /*override*/;
 
     // vIndex: 23
-    virtual short getLocalWaterLevel(class BlockPos const&) const;
+    virtual short getLocalWaterLevel(::BlockPos const&) const /*override*/;
 
     // vIndex: 24
-    virtual class LevelData const& getLevelData() const;
+    virtual ::LevelData const& getLevelData() const /*override*/;
 
     // vIndex: 25
-    virtual struct WorldGenContext const& getContext();
+    virtual ::WorldGenContext const& getContext() /*override*/;
 
     // vIndex: 26
-    virtual void disableBlockSimple();
-
-    MCAPI BlockVolumeTarget(
-        class BlockVolume&            blockVolume,
-        class Level&                  level,
-        class BiomeSource const&      biomeSource,
-        DimensionType                 dimensionType,
-        struct WorldGenContext const& context
-    );
-
+    virtual void disableBlockSimple() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class BlockVolume&            blockVolume,
-        class Level&                  level,
-        class BiomeSource const&      biomeSource,
-        DimensionType                 dimensionType,
-        struct WorldGenContext const& context
+    MCAPI BlockVolumeTarget(
+        ::BlockVolume&           blockVolume,
+        ::Level&                 level,
+        ::BiomeSource const&     biomeSource,
+        ::DimensionType          dimensionType,
+        ::WorldGenContext const& context
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockVolume&           blockVolume,
+        ::Level&                 level,
+        ::BiomeSource const&     biomeSource,
+        ::DimensionType          dimensionType,
+        ::WorldGenContext const& context
+    );
+    // NOLINTEND
 
-    MCAPI bool apply$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canBeBuiltOver$(class BlockPos const&, class Block const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI bool canGetChunk$() const;
+    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCAPI bool canSurvive$(class BlockPos const&, class Block const&) const;
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const&) const;
 
-    MCAPI void disableBlockSimple$();
+    MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
-    MCAPI gsl::span<class BlockDataFetchResult<class Block> const>
-          fetchBlocksInBox$(class BoundingBox const&, std::function<bool(class Block const&)>);
+    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    $fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>);
 
-    MCAPI class Biome const* getBiome$(class BlockPos const& pos) const;
+    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
-    MCAPI class Block const& getBlock$(class BlockPos const& pos) const;
+    MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int);
 
-    MCAPI class Block const& getBlockNoBoundsCheck$(class BlockPos const& pos) const;
+    MCAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI class LevelChunk* getChunk$(class ChunkPos const& pos);
+    MCAPI bool $apply() const;
 
-    MCAPI struct WorldGenContext const& getContext$();
+    MCAPI bool $placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&);
 
-    MCAPI class Block const& getExtraBlock$(class BlockPos const&) const;
+    MCAPI bool $mayPlace(::BlockPos const&, ::Block const&) const;
 
-    MCAPI short getHeightmap$(int x, int z);
+    MCAPI bool $canSurvive(::BlockPos const&, ::Block const&) const;
 
-    MCAPI class LevelData const& getLevelData$() const;
+    MCAPI bool $canBeBuiltOver(::BlockPos const&, ::Block const&) const;
 
-    MCAPI short getLocalWaterLevel$(class BlockPos const&) const;
+    MCAPI short $getMaxHeight() const;
 
-    MCAPI short getMaxHeight$() const;
+    MCAPI short $getMinHeight() const;
 
-    MCAPI short getMinHeight$() const;
+    MCAPI bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
-    MCAPI bool hasBiomeTag$(uint64 tagNameHash, class BlockPos const& pos) const;
+    MCAPI short $getHeightmap(int x, int z);
 
-    MCAPI bool isInBounds$(class Pos const& pos) const;
+    MCAPI bool $isLegacyLevel();
 
-    MCAPI bool isLegacyLevel$();
+    MCAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
 
-    MCAPI bool mayPlace$(class BlockPos const&, class Block const&) const;
+    MCAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCAPI bool placeStructure$(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
+    MCAPI short $getLocalWaterLevel(::BlockPos const&) const;
 
-    MCAPI bool setBlock$(class BlockPos const& pos, class Block const& newBlock, int);
+    MCAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI bool setBlockSimple$(class BlockPos const& pos, class Block const& block);
+    MCAPI ::WorldGenContext const& $getContext();
 
-    MCAPI bool shimPlaceForOldFeatures$(class Feature const&, class BlockPos const&, class Random&) const;
+    MCAPI void $disableBlockSimple();
+    // NOLINTEND
 
-    MCAPI class Block const* tryGetLiquidBlock$(class BlockPos const& pos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

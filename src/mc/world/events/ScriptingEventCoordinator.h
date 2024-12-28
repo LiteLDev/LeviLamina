@@ -4,11 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/world/events/EventCoordinator.h"
 #include "mc/world/events/EventRef.h"
 #include "mc/world/events/MutableScriptingGameplayEvent.h"
 #include "mc/world/events/ScriptingGameplayEvent.h"
 
-class ScriptingEventCoordinator {
+// auto generated forward declare list
+// clang-format off
+class ScriptingEventHandler;
+class ScriptingEventListener;
+// clang-format on
+
+class ScriptingEventCoordinator : public ::EventCoordinator<::ScriptingEventListener> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk92354c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptingEventCoordinator& operator=(ScriptingEventCoordinator const&);
@@ -16,25 +29,33 @@ public:
     ScriptingEventCoordinator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptingEventCoordinator() = default;
-
-    MCAPI class ScriptingEventHandler& getScriptingEventHandler();
-
-    MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler>&& handler);
-
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<::CoordinatorResult>> event
-    );
-
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<::CoordinatorResult>> event);
-
+    virtual ~ScriptingEventCoordinator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ScriptingEventHandler& getScriptingEventHandler();
 
+    MCAPI void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
+
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableScriptingGameplayEvent<::CoordinatorResult>> event);
+
+    MCAPI ::CoordinatorResult sendEvent(::EventRef<::ScriptingGameplayEvent<::CoordinatorResult>> event);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

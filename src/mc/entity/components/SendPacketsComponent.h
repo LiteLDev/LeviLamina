@@ -4,14 +4,20 @@
 
 struct SendPacketsComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3d19ac;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SendPacketsComponent& operator=(SendPacketsComponent const&);
     SendPacketsComponent(SendPacketsComponent const&);
     SendPacketsComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct SendPacketsComponent& operator=(struct SendPacketsComponent&&);
-
+    MCAPI ::SendPacketsComponent& operator=(::SendPacketsComponent&&);
     // NOLINTEND
 };

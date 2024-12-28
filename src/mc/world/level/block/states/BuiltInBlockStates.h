@@ -8,15 +8,15 @@
 #include "mc/world/level/block/states/BuiltInBlockStateVariant.h"
 
 namespace BuiltInBlockStates {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class BuiltInBlockStateVariant<uchar> const& BlockFace();
+MCAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
-MCAPI class BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
+MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
-MCAPI class BuiltInBlockStateVariant<uchar> const& FacingDirection();
+MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 
-MCAPI class BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
+MCAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
 // NOLINTEND
 
-}; // namespace BuiltInBlockStates
+} // namespace BuiltInBlockStates

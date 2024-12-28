@@ -2,35 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/entity/components/SoundEventRequest.h"
+// auto generated forward declare list
+// clang-format off
+class LevelComponent;
+class StrictEntityContext;
+struct GetAttachPositionViews;
+struct SoundEventRequestQueueComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
-class SoundEventSystem {
-public:
-    // prevent constructor by default
-    SoundEventSystem& operator=(SoundEventSystem const&);
-    SoundEventSystem(SoundEventSystem const&);
-    SoundEventSystem();
+namespace SoundEventSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo create();
 
-public:
-    // NOLINTBEGIN
-    MCAPI static void _playSound(
-        class ILevel&                                          level,
-        struct SoundEventRequest const&                        request,
-        struct SoundEventRequest::SynchronizedPlainData const& data
-    );
+MCAPI void doSoundEventSystem(
+    ::StrictEntityContext const&,
+    ::LevelComponent&                  level,
+    ::SoundEventRequestQueueComponent& requests,
+    ::GetAttachPositionViews const&    getAttachPosViews
+);
+// NOLINTEND
 
-    MCAPI static void _tick(
-        class StrictEntityContext const&,
-        class LevelComponent&                   level,
-        struct SoundEventRequestQueueComponent& requests
-    );
-
-    MCAPI static void
-        _view(class ViewT<class StrictEntityContext, class LevelComponent, struct SoundEventRequestQueueComponent>);
-
-    MCAPI static struct TickingSystemWithInfo create();
-
-    // NOLINTEND
-};
+} // namespace SoundEventSystem

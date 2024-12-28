@@ -13,14 +13,15 @@ namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
 namespace FlatteningUtils::CoralBlock {
+// functions
 // NOLINTBEGIN
-MCAPI struct FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCAPI std::function<class Block const*(int)> getBlockComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 
-MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
+MCAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
 
-MCAPI std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
+MCAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
 // NOLINTEND
 
-}; // namespace FlatteningUtils::CoralBlock
+} // namespace FlatteningUtils::CoralBlock

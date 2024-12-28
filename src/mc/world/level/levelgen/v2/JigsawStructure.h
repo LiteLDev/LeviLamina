@@ -9,40 +9,74 @@
 // clang-format off
 namespace br::worldgen { class GenerationStub; }
 namespace br::worldgen { struct GenerationContext; }
-namespace br::worldgen { struct Structure; }
 // clang-format on
 
 namespace br::worldgen {
 
 struct JigsawStructure : public ::br::worldgen::Structure {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk42e662;
+    ::ll::UntypedStorage<8, 32> mUnkfee9be;
+    ::ll::UntypedStorage<1, 1>  mUnkcef2bc;
+    ::ll::UntypedStorage<8, 56> mUnkd84b51;
+    ::ll::UntypedStorage<4, 4>  mUnk449e9c;
+    ::ll::UntypedStorage<4, 8>  mUnk5771aa;
+    ::ll::UntypedStorage<1, 1>  mUnk750b60;
+    ::ll::UntypedStorage<1, 1>  mUnk8c5cbf;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     JigsawStructure& operator=(JigsawStructure const&);
     JigsawStructure(JigsawStructure const&);
-    JigsawStructure();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~JigsawStructure();
-
     // vIndex: 1
-    virtual std::optional<class br::worldgen::GenerationStub>
-    findValidGenerationPoint(struct br::worldgen::GenerationContext& context) const;
+    virtual ::std::optional<::br::worldgen::GenerationStub>
+    findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
 
+    // vIndex: 0
+    virtual ~JigsawStructure() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI JigsawStructure();
 
-    MCAPI void dtor$();
+    MCAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
+    // NOLINTEND
 
-    MCAPI std::optional<class br::worldgen::GenerationStub>
-          findValidGenerationPoint$(struct br::worldgen::GenerationContext& context) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::br::worldgen::JigsawStructure&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::br::worldgen::GenerationStub>
+    $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

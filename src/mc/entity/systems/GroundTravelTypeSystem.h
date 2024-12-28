@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GroundTravelTypeSystem {
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BaseGameVersion;
+class IConstBlockSource;
+class Vec3;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct GroundTravelTypeSystem {
 public:
     // prevent constructor by default
     GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&);
@@ -10,24 +19,23 @@ public:
     GroundTravelTypeSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static float calcMoveRelativeSpeed(
-        class IConstBlockSource const& region,
-        class Vec3 const&              pos,
-        class AABB const&              aabb,
-        float                          speed,
-        bool                           hasSoulSpeedEnchant,
-        class BaseGameVersion const&   version
+        ::IConstBlockSource const& region,
+        ::Vec3 const&              pos,
+        ::AABB const&              aabb,
+        float                      speed,
+        bool                       hasSoulSpeedEnchant,
+        ::BaseGameVersion const&   version
     );
 
-    MCAPI static struct TickingSystemWithInfo create(class BaseGameVersion const& version);
-
+    MCAPI static ::TickingSystemWithInfo create(::BaseGameVersion const& version);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class BaseGameVersion const& FRICTION_FIX_VERSION();
-
+    MCAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
     // NOLINTEND
 };

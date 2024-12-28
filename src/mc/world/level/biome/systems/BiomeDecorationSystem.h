@@ -5,47 +5,58 @@
 // auto generated inclusion list
 #include "mc/world/level/GeneratorType.h"
 
-namespace BiomeDecorationSystem {
-// NOLINTBEGIN
-MCAPI void consolidateDecorationFeatures(class BiomeRegistry& registry);
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BlockSource;
+class BlockVolumeTarget;
+class ChunkPos;
+class IPreliminarySurfaceProvider;
+class LevelChunk;
+class Random;
+struct BiomeDecorationFeature;
+// clang-format on
 
+namespace BiomeDecorationSystem {
+// functions
+// NOLINTBEGIN
 MCAPI void decorate(
-    class LevelChunk&                        lc,
-    class BlockSource&                       source,
-    class Random&                            random,
-    std::vector<class Biome const*>&         uniqueBiomes,
-    std::string const&                       pass,
-    class IPreliminarySurfaceProvider const& preliminarySurfaceProvider
+    ::LevelChunk&                        lc,
+    ::BlockSource&                       source,
+    ::Random&                            random,
+    ::std::vector<::Biome const*>&       uniqueBiomes,
+    ::std::string const&                 pass,
+    ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
 );
 
 MCAPI bool decorateBiome(
-    class LevelChunk&                              lc,
-    class BlockSource&                             source,
-    class Random&                                  random,
-    gsl::span<struct BiomeDecorationFeature const> featureList,
-    std::string const&                             pass,
-    class Biome const*                             biome,
-    class IPreliminarySurfaceProvider const&       preliminarySurfaceProvider
+    ::LevelChunk&                               lc,
+    ::BlockSource&                              source,
+    ::Random&                                   random,
+    ::gsl::span<::BiomeDecorationFeature const> featureList,
+    ::std::string const&                        pass,
+    ::Biome const*                              biome,
+    ::IPreliminarySurfaceProvider const&        preliminarySurfaceProvider
 );
 
 MCAPI bool decorateLargeFeature(
-    ::GeneratorType                                generatorType,
-    uint const&                                    seed,
-    class BlockVolumeTarget&                       target,
-    class Random&                                  random,
-    gsl::span<struct BiomeDecorationFeature const> featureList,
-    class ChunkPos const&                          pos,
-    std::string const&                             pass
+    ::GeneratorType                             generatorType,
+    uint const&                                 seed,
+    ::BlockVolumeTarget&                        target,
+    ::Random&                                   random,
+    ::gsl::span<::BiomeDecorationFeature const> featureList,
+    ::ChunkPos const&                           pos,
+    ::std::string const&                        pass
 );
 
 MCAPI void decorateLargeFeature(
-    class Biome const&       biome,
-    class LevelChunk&        lc,
-    class BlockVolumeTarget& target,
-    class Random&            random,
-    class ChunkPos const&    pos,
-    std::string const&       pass
+    ::Biome const&       biome,
+    ::LevelChunk&        lc,
+    ::BlockVolumeTarget& target,
+    ::Random&            random,
+    ::ChunkPos const&    pos,
+    ::std::string const& pass
 );
 // NOLINTEND
 
-}; // namespace BiomeDecorationSystem
+} // namespace BiomeDecorationSystem

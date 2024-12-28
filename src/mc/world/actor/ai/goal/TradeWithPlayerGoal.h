@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 class TradeWithPlayerGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk469576;
+    ::ll::UntypedStorage<4, 4>  mUnkf9afc3;
+    ::ll::UntypedStorage<8, 8>  mUnk39c790;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&);
@@ -14,36 +21,45 @@ public:
     TradeWithPlayerGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TradeWithPlayerGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
+    virtual ~TradeWithPlayerGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

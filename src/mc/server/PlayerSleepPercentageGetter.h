@@ -7,27 +7,42 @@
 
 class PlayerSleepPercentageGetter : public ::IPlayerSleepPercentageGetter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk49c20a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerSleepPercentageGetter& operator=(PlayerSleepPercentageGetter const&);
     PlayerSleepPercentageGetter(PlayerSleepPercentageGetter const&);
     PlayerSleepPercentageGetter();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerSleepPercentageGetter() = default;
+    virtual ~PlayerSleepPercentageGetter() /*override*/;
 
     // vIndex: 1
-    virtual float getPlayerSleepPercentageGoal() const;
-
+    virtual float getPlayerSleepPercentageGoal() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getPlayerSleepPercentageGoal$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getPlayerSleepPercentageGoal() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

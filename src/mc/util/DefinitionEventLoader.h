@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionEvent;
+class EventResponseFactory;
+class MinEngineVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,25 +21,21 @@ public:
     DefinitionEventLoader();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static class DefinitionEvent loadEvent(
-        class Json::Value                 root,
-        class SemVersion const&           engineVersion,
-        ::TypeExecutingEvent              eventCaller,
-        class EventResponseFactory const* responseFactory
-    );
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _loadCollection(
-        class DefinitionEvent&            defEvent,
-        class Json::Value const&          collection,
-        class SemVersion const&           engineVersion,
-        ::TypeExecutingEvent              eventCaller,
-        class EventResponseFactory const* responseFactory
+        ::DefinitionEvent&            defEvent,
+        ::Json::Value const&          collection,
+        ::MinEngineVersion const&     minEngineVersion,
+        ::TypeExecutingEvent          eventCaller,
+        ::EventResponseFactory const* responseFactory
     );
 
+    MCAPI static ::DefinitionEvent loadEvent(
+        ::Json::Value                 root,
+        ::MinEngineVersion const&     minEngineVersion,
+        ::TypeExecutingEvent          eventCaller,
+        ::EventResponseFactory const* responseFactory
+    );
     // NOLINTEND
 };

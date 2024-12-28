@@ -2,33 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/TaskOptions.h"
+
 struct TaskStartInfoBase {
 public:
-    enum class TaskOptions : int {
-        Default         = 0x0,
-        TaskProfiled    = 0x1,
-        LinkPredecessor = 0x2,
-    };
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::string_view>                     name;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                       affinity;
+    ::ll::TypedStorage<4, 4, uint>                                    priority;
+    ::ll::TypedStorage<4, 4, int>                                     priorityBackDown;
+    ::ll::TypedStorage<4, 4, ::TaskOptions>                           options;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> startAtTime;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     TaskStartInfoBase& operator=(TaskStartInfoBase const&);
     TaskStartInfoBase(TaskStartInfoBase const&);
     TaskStartInfoBase();
 
-    std::string_view                      name;             // this+0x0
-    std::thread::id                       affinity;         // this+0x10
-    uint                                  priority;         // this+0x14
-    int                                   priorityBackDown; // this+0x18
-    TaskOptions                           options;          // this+0x1C
-    std::chrono::steady_clock::time_point startAtTime;      // this+0x20
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static std::thread::id const& NoAffinity();
-
+    MCAPI static ::std::thread::id const& NoAffinity();
     // NOLINTEND
 };

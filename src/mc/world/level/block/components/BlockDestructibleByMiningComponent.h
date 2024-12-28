@@ -2,10 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+// auto generated forward declare list
+// clang-format off
+class ItemStackBase;
+// clang-format on
 
-struct BlockDestructibleByMiningComponent : public ::BlockComponentBase {
+struct BlockDestructibleByMiningComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk560512;
+    ::ll::UntypedStorage<8, 24> mUnk3dbb3e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&);
@@ -13,16 +22,8 @@ public:
     BlockDestructibleByMiningComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockDestructibleByMiningComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI float getDestroySpeed(::ItemStackBase const& item) const;
     // NOLINTEND
 };

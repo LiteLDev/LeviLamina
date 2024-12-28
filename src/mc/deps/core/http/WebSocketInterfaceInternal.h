@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class WebSocketInterface; }
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
@@ -24,44 +23,57 @@ public:
     WebSocketInterfaceInternal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebSocketInterfaceInternal() = default;
+    virtual ~WebSocketInterfaceInternal() /*override*/;
 
     // vIndex: 1
-    virtual long
-    connect(char const*, char const*, gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
+    virtual HRESULT
+    connect(char const*, char const*, ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*) /*override*/
+        ;
 
     // vIndex: 2
-    virtual long
-        sendMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, std::string_view, gsl::not_null<struct XAsyncBlock*>);
+    virtual HRESULT
+        sendMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::std::string_view, ::gsl::not_null<::XAsyncBlock*>) /*override*/
+        ;
 
     // vIndex: 3
-    virtual long
-        sendBinaryMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::span<uchar const>, gsl::not_null<struct XAsyncBlock*>);
+    virtual HRESULT
+        sendBinaryMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::span<uchar const>, ::gsl::not_null<::XAsyncBlock*>) /*override*/
+        ;
 
     // vIndex: 4
-    virtual long disconnect(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
-
+    virtual HRESULT
+    disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI long
-    connect$(char const*, char const*, gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI HRESULT
+    $connect(char const*, char const*, ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*);
 
-    MCAPI long disconnect$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+    MCAPI HRESULT
+        $sendMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::std::string_view, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCAPI long
-        sendBinaryMessage$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::span<uchar const>, gsl::not_null<struct XAsyncBlock*>);
+    MCAPI HRESULT
+        $sendBinaryMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::span<uchar const>, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCAPI long
-        sendMessage$(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, std::string_view, gsl::not_null<struct XAsyncBlock*>);
+    MCAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

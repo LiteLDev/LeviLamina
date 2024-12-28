@@ -16,30 +16,40 @@ namespace PositionTrackingDB {
 
 class PositionTrackingDBClient {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk3a4557;
+    ::ll::UntypedStorage<8, 8> mUnk3023ee;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PositionTrackingDBClient& operator=(PositionTrackingDBClient const&);
     PositionTrackingDBClient(PositionTrackingDBClient const&);
     PositionTrackingDBClient();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit PositionTrackingDBClient(class Level& level);
+    MCAPI explicit PositionTrackingDBClient(::Level& level);
 
     MCAPI ::PositionTrackingDB::ResultCode
-    findTracker(class PositionTrackingId const& id, class PositionTrackingDB::TrackingRecord** outRecord);
+    findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
     MCAPI ~PositionTrackingDBClient();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Level& level);
+    MCAPI void* $ctor(::Level& level);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace PositionTrackingDB
+} // namespace PositionTrackingDB

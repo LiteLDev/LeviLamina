@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EducationEditionOffer : int {
-    None        = 0x0,
-    RestOfWorld = 0x1,
-    China       = 0x2,
+enum class EducationEditionOffer : uint {
+    None            = 0,
+    RestOfWorld     = 1,
+    ChinaDeprecated = 2,
 };

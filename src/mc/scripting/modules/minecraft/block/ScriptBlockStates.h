@@ -22,18 +22,16 @@ public:
     ScriptBlockStates();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockStates> bind();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockStates> bind();
 
-    MCAPI static std::optional<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>>
-    get(class Scripting::WeakLifetimeScope const& scope, std::string const& name);
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>>
+    get(::Scripting::WeakLifetimeScope const& scope, ::std::string const& name);
 
-    MCAPI static std::vector<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>>
-    getAll(class Scripting::WeakLifetimeScope const& scope);
-
+    MCAPI static ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>>
+    getAll(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

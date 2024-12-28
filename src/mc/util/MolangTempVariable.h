@@ -1,26 +1,46 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
+
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
 #include "mc/util/MolangVariableIndex.h"
 
-struct MolangTempVariable : HashedString {
-    MolangVariableIndex mMolangVariableIndex;
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
 
+struct MolangTempVariable : public ::MolangHashStringVariable<::MolangTempVariable> {
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit MolangTempVariable(class HashedString const& value);
-
-    MCAPI ~MolangTempVariable();
-
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mMolangVariableIndex;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    MolangTempVariable& operator=(MolangTempVariable const&);
+    MolangTempVariable(MolangTempVariable const&);
+    MolangTempVariable();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class HashedString const& value);
+    MCAPI explicit MolangTempVariable(::HashedString const& value);
 
-    MCAPI void dtor$();
+    MCAPI ~MolangTempVariable();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

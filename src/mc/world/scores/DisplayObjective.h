@@ -6,7 +6,22 @@
 // auto generated inclusion list
 #include "mc/world/scores/ObjectiveSortOrder.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class Objective;
+class Scoreboard;
+struct ScoreboardId;
+// clang-format on
+
 class DisplayObjective {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Objective const*>   mObjective;
+    ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder> mSortOrder;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Objective const*   mObjective; // this+0x0
@@ -16,29 +31,24 @@ public:
     DisplayObjective() = delete;
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DisplayObjective(class Objective const& obj, ::ObjectiveSortOrder order);
+    MCAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
 
-    MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const& scoreboardId) const;
-
-    MCAPI class Objective const& getObjective() const;
+    MCAPI ::Objective const& getObjective() const;
 
     MCAPI ::ObjectiveSortOrder getSortOrder() const;
 
-    MCAPI bool isDisplaying(class Objective const& targetObjective) const;
+    MCAPI bool isDisplaying(::Objective const& targetObjective) const;
 
     MCAPI bool isValid() const;
-
-    MCAPI static class DisplayObjective deserialize(class CompoundTag const& dataTag, class Scoreboard const& owner);
-
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const& toSave);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Objective const& obj, ::ObjectiveSortOrder order);
+    MCAPI static ::DisplayObjective deserialize(::CompoundTag const& dataTag, ::Scoreboard const& owner);
 
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::DisplayObjective const& toSave);
     // NOLINTEND
 };

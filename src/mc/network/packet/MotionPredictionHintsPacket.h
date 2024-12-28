@@ -1,65 +1,91 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
-#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class MotionPredictionHintsPacket : public ::Packet {
 public:
-    ActorRuntimeID mRuntimeId; // this+0x30
-    Vec3           mMotion;    // this+0x38
-    bool           mOnGround;  // this+0x44
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<4, 12, ::Vec3>          mMotion;
+    ::ll::TypedStorage<1, 1, bool>             mOnGround;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     MotionPredictionHintsPacket& operator=(MotionPredictionHintsPacket const&);
     MotionPredictionHintsPacket(MotionPredictionHintsPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MotionPredictionHintsPacket();
+    virtual ~MotionPredictionHintsPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI MotionPredictionHintsPacket();
-
-    MCAPI explicit MotionPredictionHintsPacket(class Actor const& entity);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MotionPredictionHintsPacket();
 
-    MCAPI void* ctor$();
+    MCAPI explicit MotionPredictionHintsPacket(::Actor const& entity);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Actor const& entity);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Actor const& entity);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

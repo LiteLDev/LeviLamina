@@ -7,10 +7,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
+class CraftingContext;
+class HashedString;
+class ItemInstance;
+class RecipeIngredient;
 namespace mce { class UUID; }
 // clang-format on
 
 class SmithingTrimRecipe : public ::ShapelessRecipe {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkda36da;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SmithingTrimRecipe& operator=(SmithingTrimRecipe const&);
@@ -18,59 +29,79 @@ public:
     SmithingTrimRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SmithingTrimRecipe() = default;
+    // vIndex: 5
+    virtual bool matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const&
-    assemble(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;
-
-    // vIndex: 5
-    virtual bool
-    matches(class CraftingContainer const& craftingContainer, class CraftingContext const& craftingContext) const;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const /*override*/;
 
     // vIndex: 10
-    virtual bool hasDataDrivenResult() const;
+    virtual bool hasDataDrivenResult() const /*override*/;
 
-    MCAPI SmithingTrimRecipe(
-        std::string const&            recipeId,
-        class RecipeIngredient const& templateIngredient,
-        class RecipeIngredient const& baseIngredient,
-        class RecipeIngredient const& additionIngredient,
-        class HashedString const&     tag
-    );
-
-    MCAPI class RecipeIngredient const& getAdditionIngredient() const;
-
-    MCAPI class RecipeIngredient const& getBaseIngredient() const;
-
-    MCAPI class RecipeIngredient const& getTemplateIngredient() const;
-
+    // vIndex: 0
+    virtual ~SmithingTrimRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&            recipeId,
-        class RecipeIngredient const& templateIngredient,
-        class RecipeIngredient const& baseIngredient,
-        class RecipeIngredient const& additionIngredient,
-        class HashedString const&     tag
+    MCAPI SmithingTrimRecipe(
+        ::std::string const&      recipeId,
+        ::RecipeIngredient const& templateIngredient,
+        ::RecipeIngredient const& baseIngredient,
+        ::RecipeIngredient const& additionIngredient,
+        ::HashedString const&     tag
     );
 
-    MCAPI std::vector<class ItemInstance> const&
-          assemble$(class CraftingContainer& craftingContainer, class CraftingContext& craftingContext) const;
+    MCAPI ::RecipeIngredient const& getAdditionIngredient() const;
 
-    MCAPI bool hasDataDrivenResult$() const;
+    MCAPI ::RecipeIngredient const& getBaseIngredient() const;
 
-    MCAPI bool
-    matches$(class CraftingContainer const& craftingContainer, class CraftingContext const& craftingContext) const;
+    MCAPI ::RecipeIngredient const& getTemplateIngredient() const;
+    // NOLINTEND
 
-    MCAPI static class mce::UUID const& ID();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID const& ID();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&      recipeId,
+        ::RecipeIngredient const& templateIngredient,
+        ::RecipeIngredient const& baseIngredient,
+        ::RecipeIngredient const& additionIngredient,
+        ::HashedString const&     tag
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const;
+
+    MCAPI ::std::vector<::ItemInstance> const&
+    $assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const;
+
+    MCAPI bool $hasDataDrivenResult() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

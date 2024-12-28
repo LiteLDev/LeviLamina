@@ -3,9 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/resources/IPackLoadScoped.h"
 #include "mc/util/EventResponseFactory.h"
 
-class BlockEventResponseFactory : public ::EventResponseFactory {
+// auto generated forward declare list
+// clang-format off
+class IPackLoadContext;
+// clang-format on
+
+class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
     // prevent constructor by default
     BlockEventResponseFactory& operator=(BlockEventResponseFactory const&);
@@ -13,28 +19,37 @@ public:
     BlockEventResponseFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventResponseFactory();
+    virtual ~BlockEventResponseFactory() /*override*/;
 
     // vIndex: 1
-    virtual void initializeFactory(class Experiments const& experiments);
+    virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
 
     // vIndex: 2
-    virtual void initSchema();
-
+    virtual void initSchema() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
 
-    MCAPI void initSchema$();
+    MCAPI void $initSchema();
+    // NOLINTEND
 
-    MCAPI void initializeFactory$(class Experiments const& experiments);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIPackLoadScoped();
 
+    MCAPI static void** $vftableForEventResponseFactory();
     // NOLINTEND
 };

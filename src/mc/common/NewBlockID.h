@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NewBlockID {
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
+struct NewBlockID : public ::NewType<ushort> {
 public:
     // prevent constructor by default
     NewBlockID& operator=(NewBlockID const&);

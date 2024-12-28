@@ -2,10 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorSpawnRuleBase.h"
+// auto generated forward declare list
+// clang-format off
+class BiomeFilterGroup;
+class MobSpawnRules;
+class ResourcePackManager;
+class SemVersion;
+class SpawnGroupData;
+struct ActorSpawnRuleData;
+// clang-format on
 
-class SpawnGroupRegistry : public ::ActorSpawnRuleBase {
+class SpawnGroupRegistry {
+public:
+    // SpawnGroupRegistry inner types define
+    using SpawnGroupRegistryMap = ::std::vector<::std::unique_ptr<::SpawnGroupData>>;
+
+    using SpawnGroupLookupMap = ::std::unordered_map<::std::string, ::SpawnGroupData*>;
+
+    using SpawnRulesHandler =
+        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::SpawnGroupData>>>     mSpawnGroupRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SpawnGroupData*>> mSpawnGroupLookupMap;
+    // NOLINTEND
+
 public:
     std::vector<std::unique_ptr<class SpawnGroupData>>     mSpawnGroupRegistry;  // this+0x48
     std::unordered_map<std::string, class SpawnGroupData*> mSpawnGroupLookupMap; // this+0x60
@@ -16,50 +39,50 @@ public:
     SpawnGroupRegistry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SpawnGroupRegistry() = default;
-
-    // vIndex: 1
-    virtual std::string const& getRootKey();
-
-    // vIndex: 2
-    virtual std::string const& getFileType();
-
-    // vIndex: 3
-    virtual bool processPopulationControl(std::string const&, std::string const&);
-
-    // vIndex: 4
-    virtual void readResourceFiles(
-        class ResourcePackManager&                                  resourcePackManager,
-        class MobSpawnRules const&                                  baseSpawnRules,
-        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
-    );
-
-    MCAPI explicit SpawnGroupRegistry(class ResourcePackManager& resourcePackManager);
-
-    MCAPI class SpawnGroupData const* getSpawnGroup(std::string const& identifier) const;
-
+    virtual ~SpawnGroupRegistry();
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SpawnGroupRegistry(::ResourcePackManager& resourcePackManager);
 
-    MCAPI void* ctor$(class ResourcePackManager& resourcePackManager);
+    MCAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
-    MCAPI std::string const& getFileType$();
-
-    MCAPI std::string const& getRootKey$();
-
-    MCAPI bool processPopulationControl$(std::string const&, std::string const&);
-
-    MCAPI void readResourceFiles$(
-        class ResourcePackManager&                                  resourcePackManager,
-        class MobSpawnRules const&                                  baseSpawnRules,
-        std::unordered_map<std::string, struct ActorSpawnRuleData>& dataMap
+    MCAPI void _getResources(
+        ::ResourcePackManager& resourcePackManager,
+        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
+            callback
     );
 
+    MCAPI bool _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
+
+    MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
+
+    MCAPI void readResourceFiles(
+        ::ResourcePackManager&                                     resourcePackManager,
+        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,29 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionTrigger;
+class Block;
+// clang-format on
+
 class InsideBlockEventMap {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 104> mUnkbf08b6;
+    ::ll::UntypedStorage<8, 104> mUnke62994;
+    ::ll::UntypedStorage<8, 8>   mUnk394bad;
+    ::ll::UntypedStorage<1, 1>   mUnk994dee;
+    ::ll::UntypedStorage<1, 1>   mUnk3a3526;
+    ::ll::UntypedStorage<1, 1>   mUnk3e56c6;
+    ::ll::UntypedStorage<1, 1>   mUnk527ce9;
+    ::ll::UntypedStorage<1, 1>   mUnkaeffb6;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    InsideBlockEventMap& operator=(InsideBlockEventMap const&);
     InsideBlockEventMap();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI InsideBlockEventMap(class InsideBlockEventMap const&);
+    MCAPI InsideBlockEventMap(::InsideBlockEventMap const&);
 
     MCAPI InsideBlockEventMap(
-        class Block const&                  block,
-        bool                                watchEnter,
-        bool                                watchExit,
-        bool                                ignoreStates,
-        class ActorDefinitionTrigger const& enteredEvent,
-        class ActorDefinitionTrigger const& exitedEvent
+        ::Block const&                  block,
+        bool                            watchEnter,
+        bool                            watchExit,
+        bool                            ignoreStates,
+        ::ActorDefinitionTrigger const& enteredEvent,
+        ::ActorDefinitionTrigger const& exitedEvent
     );
 
-    MCAPI gsl::not_null<class Block const*> getBlock() const;
+    MCAPI ::gsl::not_null<::Block const*> getBlock() const;
 
-    MCAPI class ActorDefinitionTrigger const& getEnteredEvent() const;
+    MCAPI ::ActorDefinitionTrigger const& getEnteredEvent() const;
 
-    MCAPI class ActorDefinitionTrigger const& getExitedEvent() const;
+    MCAPI ::ActorDefinitionTrigger const& getExitedEvent() const;
 
     MCAPI bool isActorCurrentlyInside() const;
 
@@ -34,8 +55,6 @@ public:
 
     MCAPI bool isWatchingIfActorExits() const;
 
-    MCAPI class InsideBlockEventMap& operator=(class InsideBlockEventMap const&);
-
     MCAPI void setCurrentlyInside(bool isInside);
 
     MCAPI void setWasInside(bool wasInside);
@@ -43,24 +62,26 @@ public:
     MCAPI bool wasActorInsideLastTick() const;
 
     MCAPI ~InsideBlockEventMap();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Block const&                  block,
-        bool                                watchEnter,
-        bool                                watchExit,
-        bool                                ignoreStates,
-        class ActorDefinitionTrigger const& enteredEvent,
-        class ActorDefinitionTrigger const& exitedEvent
+    MCAPI void* $ctor(::InsideBlockEventMap const&);
+
+    MCAPI void* $ctor(
+        ::Block const&                  block,
+        bool                            watchEnter,
+        bool                            watchExit,
+        bool                            ignoreStates,
+        ::ActorDefinitionTrigger const& enteredEvent,
+        ::ActorDefinitionTrigger const& exitedEvent
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(class InsideBlockEventMap const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

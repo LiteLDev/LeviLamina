@@ -13,4 +13,4 @@ public:
     StrongTypedObjectHandle();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

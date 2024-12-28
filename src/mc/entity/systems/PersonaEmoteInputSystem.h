@@ -7,6 +7,16 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct EmotePlayedTelemetryDataComponent;
+struct EventingDispatcherComponent;
+struct EventingRequestQueueComponent;
+struct ShouldStopEmotingRequestComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class PersonaEmoteInputSystem {
 public:
     // prevent constructor by default
@@ -15,32 +25,26 @@ public:
     PersonaEmoteInputSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _personaEmoteInputSystem(
-        class StrictEntityContext const&                                             entity,
-        struct EventingDispatcherComponent const&                                    eventingDispatcherComponent,
-        struct EmotePlayedTelemetryDataComponent const&                              emotePlayedTelemetryDataComponent,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
-        class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
-            modifier
+        ::StrictEntityContext const&                                    entity,
+        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+        ::EmotePlayedTelemetryDataComponent const&                      emotePlayedTelemetryDataComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView,
+        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
     MCAPI static void _tickPersonaEmoteInputSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct ShouldStopEmotingRequestComponent>,
-            struct EventingDispatcherComponent const,
-            struct EmotePlayedTelemetryDataComponent const>                          view,
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
-        class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
-            modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ShouldStopEmotingRequestComponent>,
+            ::EventingDispatcherComponent const,
+            ::EmotePlayedTelemetryDataComponent const>                                             view,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>                            requestQueueView,
+        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

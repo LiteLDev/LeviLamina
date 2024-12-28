@@ -4,9 +4,64 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+// clang-format on
 
 class ScatteredFeaturePiece : public ::StructurePiece {
+public:
+    // ScatteredFeaturePiece inner types declare
+    // clang-format off
+    struct LocalRegistry;
+    // clang-format on
+
+    // ScatteredFeaturePiece inner types define
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnka0d4c3;
+        ::ll::UntypedStorage<8, 8> mUnke2e410;
+        ::ll::UntypedStorage<8, 8> mUnk471d7e;
+        ::ll::UntypedStorage<8, 8> mUnk5c5ca2;
+        ::ll::UntypedStorage<8, 8> mUnk23b104;
+        ::ll::UntypedStorage<8, 8> mUnkfcca70;
+        ::ll::UntypedStorage<8, 8> mUnk80537b;
+        ::ll::UntypedStorage<8, 8> mUnkef7b9d;
+        ::ll::UntypedStorage<8, 8> mUnk39562f;
+        ::ll::UntypedStorage<8, 8> mUnk106f39;
+        ::ll::UntypedStorage<8, 8> mUnk7eed11;
+        ::ll::UntypedStorage<8, 8> mUnkc68161;
+        ::ll::UntypedStorage<8, 8> mUnk10e49e;
+        ::ll::UntypedStorage<8, 8> mUnkfc6d83;
+        ::ll::UntypedStorage<8, 8> mUnk558cc0;
+        ::ll::UntypedStorage<8, 8> mUnk4be404;
+        ::ll::UntypedStorage<8, 8> mUnka710eb;
+        ::ll::UntypedStorage<8, 8> mUnkd95807;
+        ::ll::UntypedStorage<8, 8> mUnk67dea5;
+        ::ll::UntypedStorage<8, 8> mUnk42a369;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalRegistry& operator=(LocalRegistry const&);
+        LocalRegistry(LocalRegistry const&);
+        LocalRegistry();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk18d9e0;
+    ::ll::UntypedStorage<4, 4>   mUnk7de789;
+    ::ll::UntypedStorage<4, 4>   mUnkda278f;
+    ::ll::UntypedStorage<4, 4>   mUnk113833;
+    ::ll::UntypedStorage<8, 160> mUnk2a0bdd;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScatteredFeaturePiece& operator=(ScatteredFeaturePiece const&);
@@ -14,28 +69,38 @@ public:
     ScatteredFeaturePiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScatteredFeaturePiece();
-
+    virtual ~ScatteredFeaturePiece() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
 
-    MCAPI bool updateAverageGroundHeight(class BlockSource& region, class BoundingBox const& chunkBB, int offset);
+    MCAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
 
+    MCAPI bool
+    updateHeightPositionToLowestGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(int west, int floor, int north, int width, int height, int depth);
+    // NOLINTEND
 
-    MCAPI void* ctor$(int west, int floor, int north, int width, int height, int depth);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

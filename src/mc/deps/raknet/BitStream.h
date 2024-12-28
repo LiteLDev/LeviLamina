@@ -6,11 +6,23 @@ namespace RakNet {
 
 class BitStream {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk2f223f;
+    ::ll::UntypedStorage<4, 4>   mUnk9ced5a;
+    ::ll::UntypedStorage<4, 4>   mUnkb3cc97;
+    ::ll::UntypedStorage<8, 8>   mUnk87a405;
+    ::ll::UntypedStorage<1, 1>   mUnkb9b8cd;
+    ::ll::UntypedStorage<1, 256> mUnkb60a72;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BitStream& operator=(BitStream const&);
     BitStream(BitStream const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void AddBitsAndReallocate(uint numberOfBitsToWrite);
 
@@ -46,11 +58,11 @@ public:
 
     MCAPI void SetWriteOffset(uint offset);
 
+    MCAPI void Write(::RakNet::BitStream* bitStream, uint numberOfBits);
+
+    MCAPI void Write(::RakNet::BitStream& bitStream, uint numberOfBits);
+
     MCAPI void Write(char const* inputByteArray, uint numberOfBytes);
-
-    MCAPI void Write(class RakNet::BitStream& bitStream, uint numberOfBits);
-
-    MCAPI void Write(class RakNet::BitStream* bitStream, uint numberOfBits);
 
     MCAPI void Write0();
 
@@ -67,27 +79,31 @@ public:
     MCAPI void WriteBits(uchar const* inByteArray, uint numberOfBitsToWrite, bool rightAlignedBits);
 
     MCAPI ~BitStream();
+    // NOLINTEND
 
-    MCAPI static bool IsNetworkOrder();
-
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static bool IsNetworkOrderInternal();
 
     MCAPI static void ReverseBytes(uchar* inByteArray, uchar* inOutByteArray, uint length);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(uint initialBytesToAllocate);
+    MCAPI void* $ctor(uint initialBytesToAllocate);
 
-    MCAPI void* ctor$(uchar* _data, uint lengthInBytes, bool _copyData);
+    MCAPI void* $ctor(uchar* _data, uint lengthInBytes, bool _copyData);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

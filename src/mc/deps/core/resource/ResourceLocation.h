@@ -14,49 +14,58 @@ namespace Json { class Value; }
 
 class ResourceLocation {
 public:
-    ResourceFileSystem            mFileSystem; // this+0x0
-    Core::PathBuffer<std::string> mPath;       // this+0x8
-    uint64                        mPathHash;   // this+0x28
-    uint64                        mFullHash;   // this+0x30
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ResourceFileSystem>               mFileSystem;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
+    ::ll::TypedStorage<8, 8, uint64>                             mPathHash;
+    ::ll::TypedStorage<8, 8, uint64>                             mFullHash;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourceLocation& operator=(ResourceLocation const&);
+    ResourceLocation(ResourceLocation const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ResourceLocation();
 
-    MCAPI explicit ResourceLocation(class Core::Path const& path);
+    MCAPI explicit ResourceLocation(::Core::Path const& path);
 
-    MCAPI ResourceLocation(class Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
 
-    MCAPI class Core::PathBuffer<std::string> getFullPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const& getRelativePath() const;
 
-    MCAPI void serialize(class Json::Value& out) const;
+    MCAPI void serialize(::Json::Value& out) const;
 
-    MCAPI void setRelativePath(class Core::PathBuffer<std::string> const& path);
+    MCAPI void setRelativePath(::Core::PathBuffer<::std::string> const& path);
 
     MCAPI ~ResourceLocation();
-
-    MCAPI static class ResourceLocation const& getEmptyLocation();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _computeHashes();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCAPI static ::ResourceLocation const& getEmptyLocation();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Core::Path const& path);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Core::Path const& path);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Core::Path const& path, ::ResourceFileSystem fileSystem);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

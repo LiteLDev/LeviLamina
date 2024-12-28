@@ -3,17 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/resources/PackAccessAssetGenerationResult.h"
-#include "mc/resources/PackAccessStrategyType.h"
 #include "mc/resources/ZipPackAccessStrategy.h"
 
 // auto generated forward declare list
 // clang-format off
+class IFileAccess;
+class PackAccessStrategy;
+class ResourceLocation;
 namespace Core { class Path; }
 // clang-format on
 
 class ZipPackAccessStrategyOwningFileAccess : public ::ZipPackAccessStrategy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkd6ea6d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ZipPackAccessStrategyOwningFileAccess& operator=(ZipPackAccessStrategyOwningFileAccess const&);
@@ -21,28 +27,47 @@ public:
     ZipPackAccessStrategyOwningFileAccess();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ZipPackAccessStrategyOwningFileAccess() = default;
+    virtual ~ZipPackAccessStrategyOwningFileAccess() /*override*/;
 
-    MCAPI ZipPackAccessStrategyOwningFileAccess(
-        std::shared_ptr<class IFileAccess> fileAccess,
-        class ResourceLocation const&      path,
-        class Core::Path const&            subPath
-    );
-
+    // vIndex: 17
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::shared_ptr<class IFileAccess> fileAccess,
-        class ResourceLocation const&      path,
-        class Core::Path const&            subPath
+    MCAPI ZipPackAccessStrategyOwningFileAccess(
+        ::std::shared_ptr<::IFileAccess> fileAccess,
+        ::ResourceLocation const&        path,
+        ::Core::Path const&              subPath
     );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::shared_ptr<::IFileAccess> fileAccess, ::ResourceLocation const& path, ::Core::Path const& subPath);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

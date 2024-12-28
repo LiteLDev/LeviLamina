@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/player/persona/PieceType.h"
@@ -13,38 +12,43 @@ namespace mce { class UUID; }
 
 class SerializedPersonaPieceHandle {
 public:
-    std::string        mPieceId;
-    persona::PieceType mPieceType;
-    mce::UUID          mPackId;
-    bool               mIsDefaultPiece;
-    std::string        mProductId;
-
-    SerializedPersonaPieceHandle() = delete;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI SerializedPersonaPieceHandle(
-        std::string const&   pieceId,
-        ::persona::PieceType pieceType,
-        class mce::UUID      packId,
-        bool                 isDefaultPiece,
-        std::string const&   productId
-    );
-
-    MCAPI class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const&);
-
+    ::ll::TypedStorage<8, 32, ::std::string>       mPieceId;
+    ::ll::TypedStorage<4, 4, ::persona::PieceType> mPieceType;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>         mPackId;
+    ::ll::TypedStorage<1, 1, bool>                 mIsDefaultPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>       mProductId;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+    SerializedPersonaPieceHandle();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::string const&   pieceId,
+    MCAPI SerializedPersonaPieceHandle(
+        ::std::string const& pieceId,
         ::persona::PieceType pieceType,
-        class mce::UUID      packId,
+        ::mce::UUID          packId,
         bool                 isDefaultPiece,
-        std::string const&   productId
+        ::std::string const& productId
     );
 
+    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const& pieceId,
+        ::persona::PieceType pieceType,
+        ::mce::UUID          packId,
+        bool                 isDefaultPiece,
+        ::std::string const& productId
+    );
     // NOLINTEND
 };

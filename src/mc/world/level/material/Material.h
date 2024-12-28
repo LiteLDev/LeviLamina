@@ -7,20 +7,37 @@
 
 class Material {
 public:
+    // Material inner types define
+    enum class Settings : int {
+        Solid    = 0,
+        Liquid   = 1,
+        NonSolid = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2f9c1b;
+    ::ll::UntypedStorage<1, 1> mUnka992cc;
+    ::ll::UntypedStorage<1, 1> mUnk5efe4c;
+    ::ll::UntypedStorage<1, 1> mUnk2aafbc;
+    ::ll::UntypedStorage<1, 1> mUnk4e9dbe;
+    ::ll::UntypedStorage<1, 1> mUnk8febda;
+    ::ll::UntypedStorage<1, 1> mUnkea2e8c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Material& operator=(Material const&);
     Material(Material const&);
     Material();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool getBlocksMotion() const;
 
     MCAPI bool getBlocksPrecipitation() const;
-
-    MCAPI float getTranslucency() const;
-
-    MCAPI bool isAlwaysDestroyable() const;
 
     MCAPI bool isLiquid() const;
 
@@ -32,34 +49,30 @@ public:
 
     MCAPI bool isTopSolid(bool includeWater, bool includeLeaves) const;
 
-    MCAPI bool isType(::MaterialType surface) const;
+    MCAPI bool isType(::MaterialType type) const;
 
-    MCAPI bool operator!=(class Material const& rhs) const;
+    MCAPI bool operator!=(::Material const& rhs) const;
 
-    MCAPI bool operator==(class Material const& rhs) const;
+    MCAPI bool operator==(::Material const& rhs) const;
+    // NOLINTEND
 
-    MCAPI static void addMaterial(std::unique_ptr<class Material> mat);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _setupMaterials();
 
-    MCAPI static class Material const& getMaterial(::MaterialType surface);
+    MCAPI static ::Material const& getMaterial(::MaterialType type);
 
     MCAPI static void initMaterials();
 
     MCAPI static void teardownMaterials();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _setupSurfaceMaterials();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
     MCAPI static bool& mInitialized();
 
-    MCAPI static std::vector<std::unique_ptr<class Material>>& mMaterials();
-
+    MCAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
     // NOLINTEND
 };

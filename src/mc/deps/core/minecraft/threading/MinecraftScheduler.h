@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+// clang-format on
+
 class MinecraftScheduler {
 public:
     // prevent constructor by default
@@ -10,17 +15,16 @@ public:
     MinecraftScheduler();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scheduler& client();
+    MCAPI static ::Scheduler& client();
 
     MCAPI static void destroyClientSingleton();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class Scheduler>& mInstance();
-
+    MCAPI static ::std::unique_ptr<::Scheduler>& mInstance();
     // NOLINTEND
 };

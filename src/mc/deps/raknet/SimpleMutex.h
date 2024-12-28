@@ -6,11 +6,18 @@ namespace RakNet {
 
 class SimpleMutex {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkfaa54f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SimpleMutex& operator=(SimpleMutex const&);
     SimpleMutex(SimpleMutex const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void Lock();
 
@@ -19,17 +26,19 @@ public:
     MCAPI void Unlock();
 
     MCAPI ~SimpleMutex();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

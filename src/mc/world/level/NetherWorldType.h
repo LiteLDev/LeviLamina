@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class NetherWorldType : schar {
-    Normal = 0x0,
-    Flat   = 0x1,
+enum class NetherWorldType : uchar {
+    Normal = 0,
+    Flat   = 1,
 };

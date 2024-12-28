@@ -10,31 +10,28 @@ namespace br::worldgen { struct StructureSet; }
 namespace br::worldgen {
 
 class StructureSetRegistry {
-    using StructureSetMap = entt::dense_map<std::string, std::shared_ptr<br::worldgen::StructureSet>>;
+public:
+    // StructureSetRegistry inner types define
+    using Map = ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>>;
 
 public:
-    StructureSetMap mStructureSetMap;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>>>
+        mStructureSets;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     StructureSetRegistry& operator=(StructureSetRegistry const&);
     StructureSetRegistry(StructureSetRegistry const&);
     StructureSetRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
-        entt::internal::dense_map_node<std::string, std::shared_ptr<struct br::worldgen::StructureSet>>>>>>
-          begin() const;
-
-    MCAPI entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
-        entt::internal::dense_map_node<std::string, std::shared_ptr<struct br::worldgen::StructureSet>>>>>>
-          end() const;
-
-    MCAPI void record(std::string_view key, std::shared_ptr<struct br::worldgen::StructureSet>&& set);
-
-    MCAPI uint64 size() const;
-
+    MCAPI void record(::std::string_view key, ::std::shared_ptr<::br::worldgen::StructureSet>&& set);
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

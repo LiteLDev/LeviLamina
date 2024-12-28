@@ -18,70 +18,57 @@ public:
     ILifetimeScopeListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ILifetimeScopeListener();
 
     // vIndex: 1
-    virtual void onMakeObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    ) = 0;
+    virtual void
+    onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
     // vIndex: 2
-    virtual void onDestroyObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    ) = 0;
+    virtual void
+    onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
     // vIndex: 3
-    virtual void onTrackObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    ) = 0;
+    virtual void
+    onTrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
     // vIndex: 4
-    virtual void onUntrackObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    ) = 0;
+    virtual void
+    onUntrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
     // vIndex: 5
-    virtual void onObjectReducedToSingleOwner(
-        class Scripting::LifetimeRegistry& registry,
-        struct Scripting::ObjectHandle     handle
-    ) = 0;
+    virtual void onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) = 0;
 
     // vIndex: 6
-    virtual void onObjectPromotedToMultipleOwners(
-        class Scripting::LifetimeRegistry& registry,
-        struct Scripting::ObjectHandle     handle
-    ) = 0;
+    virtual void onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) = 0;
 
     // vIndex: 7
-    virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry& registry) = 0;
+    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) = 0;
 
     // vIndex: 8
-    virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&) = 0;
+    virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -2,27 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
+struct BlockBakedMaterialDataComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke05803;
+    ::ll::UntypedStorage<1, 1>  mUnkf24d4c;
+    // NOLINTEND
 
-struct BlockBakedMaterialDataComponent : public ::BlockComponentBase {
 public:
     // prevent constructor by default
     BlockBakedMaterialDataComponent& operator=(BlockBakedMaterialDataComponent const&);
     BlockBakedMaterialDataComponent(BlockBakedMaterialDataComponent const&);
     BlockBakedMaterialDataComponent();
-
-public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockBakedMaterialDataComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    // NOLINTEND
 };

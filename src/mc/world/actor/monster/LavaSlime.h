@@ -3,28 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Slime.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class EntityContext;
+class IConstBlockSource;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class LavaSlime : public ::Slime {
@@ -35,73 +24,90 @@ public:
     LavaSlime();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~LavaSlime() = default;
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 41
-    virtual float getBrightness(float, class IConstBlockSource const&) const;
-
-    // vIndex: 51
-    virtual bool isOnFire() const;
+    // vIndex: 182
+    virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 160
-    virtual bool checkSpawnRules(bool fromSpawner);
+    virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 168
-    virtual int getArmorValue() const;
+    // vIndex: 39
+    virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 190
-    virtual bool isDarkEnoughToSpawn() const;
+    // vIndex: 186
+    virtual ::OwnerPtr<::EntityContext> createChild(int i) /*override*/;
 
-    // vIndex: 191
-    virtual bool doPlayLandSound();
+    // vIndex: 49
+    virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 193
-    virtual void decreaseSquish();
+    // vIndex: 185
+    virtual void decreaseSquish() /*override*/;
 
-    // vIndex: 194
-    virtual class OwnerPtr<class EntityContext> createChild(int i);
+    // vIndex: 183
+    virtual bool doPlayLandSound() /*override*/;
 
-    MCAPI LavaSlime(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
+    // vIndex: 8
+    virtual ~LavaSlime() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI LavaSlime(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool checkSpawnRules$(bool fromSpawner);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
 
-    MCAPI class OwnerPtr<class EntityContext> createChild$(int i);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void decreaseSquish$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool doPlayLandSound$();
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI int getArmorValue$() const;
+    MCAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI float getBrightness$(float, class IConstBlockSource const&) const;
+    MCAPI int $getArmorValue() const;
 
-    MCAPI bool isDarkEnoughToSpawn$() const;
+    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI bool isOnFire$() const;
+    MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI bool $isOnFire() const;
 
+    MCAPI void $decreaseSquish();
+
+    MCAPI bool $doPlayLandSound();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

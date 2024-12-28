@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class Random;
+// clang-format on
+
 class BuriedTreasurePiece : public ::StructurePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk34a6c1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BuriedTreasurePiece& operator=(BuriedTreasurePiece const&);
@@ -14,32 +28,41 @@ public:
     BuriedTreasurePiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BuriedTreasurePiece() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 0
+    virtual ~BuriedTreasurePiece() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isCovered(class BlockSource const& region, class BlockPos const& blockPos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

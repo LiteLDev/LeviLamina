@@ -3,15 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50 { struct ShooterItemComponent; }
+class HashedString;
+class ItemStack;
+class Player;
+class SemVersion;
+namespace SharedTypes::v1_20_50 { struct ShooterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ShooterItemComponent {
+class ShooterItemComponent : public ::NetworkedItemComponent<::ShooterItemComponent> {
 public:
     // ShooterItemComponent inner types declare
     // clang-format off
@@ -20,7 +25,42 @@ public:
     // clang-format on
 
     // ShooterItemComponent inner types define
+    struct ShooterAmmunitionEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk247bf5;
+        ::ll::UntypedStorage<1, 1>  mUnk4a1ba9;
+        ::ll::UntypedStorage<1, 1>  mUnk3c5257;
+        ::ll::UntypedStorage<1, 1>  mUnk851fe8;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ShooterAmmunitionEntry& operator=(ShooterAmmunitionEntry const&);
+        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
+        ShooterAmmunitionEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ShooterAmmunitionEntry();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
     class DrawDuration {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkab3a3e;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         DrawDuration& operator=(DrawDuration const&);
@@ -28,39 +68,22 @@ public:
         DrawDuration();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI void setValue(float duration);
-
         // NOLINTEND
     };
 
-    struct ShooterAmmunitionEntry {
-    public:
-        // prevent constructor by default
-        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
-        ShooterAmmunitionEntry();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry&
-        operator=(struct ShooterItemComponent::ShooterAmmunitionEntry&&);
-
-        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry&
-        operator=(struct ShooterItemComponent::ShooterAmmunitionEntry const&);
-
-        MCAPI bool operator==(struct ShooterItemComponent::ShooterAmmunitionEntry const&) const;
-
-        MCAPI ~ShooterAmmunitionEntry();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk4af28f;
+    ::ll::UntypedStorage<4, 4>  mUnk897ef8;
+    ::ll::UntypedStorage<1, 1>  mUnkc35ddc;
+    ::ll::UntypedStorage<1, 1>  mUnk6a0e62;
+    ::ll::UntypedStorage<8, 16> mUnk56d780;
+    ::ll::UntypedStorage<8, 16> mUnk7edfbd;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -69,93 +92,75 @@ public:
     ShooterItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShooterItemComponent() = default;
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
+    virtual ~ShooterItemComponent() /*override*/;
 
     // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    virtual void _initializeComponent() /*override*/;
 
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI explicit ShooterItemComponent(struct Puv::v1_20_50::ShooterItemComponent const& component);
-
-    MCAPI bool releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    // vIndex: 1
+    virtual bool checkComponentDataForContentErrors() const /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+
     MCAPI void _consumeAmmunition(
-        class Player*          player,
-        class ItemStack const& ammunition,
-        int                    slotIndex,
-        bool                   infiniteAmmo,
-        bool                   fromOffhand
+        ::Player*          player,
+        ::ItemStack const& ammunition,
+        int                slotIndex,
+        bool               infiniteAmmo,
+        bool               fromOffhand
     ) const;
 
-    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack& ammo, bool& fromOffhand) const;
+    MCAPI int _getAmmunition(::Player const* player, bool, ::ItemStack& ammo, bool& fromOffhand) const;
 
-    MCAPI int _getMaxUseDuration(class ItemStack const& item) const;
+    MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
-    MCAPI void _shootProjectiles(class ItemStack& shooterStack, class Player* player, int durationLeft) const;
+    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
+    MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void* ctor$(struct Puv::v1_20_50::ShooterItemComponent const& component);
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+    MCAPI bool $checkComponentDataForContentErrors() const;
+    // NOLINTEND
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
-
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
-
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

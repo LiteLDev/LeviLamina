@@ -2,14 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Vec3;
+// clang-format on
+
 namespace FlockingUtility {
+// functions
 // NOLINTBEGIN
-MCAPI bool
-checkForSteeringCollision(class Actor& owner, class Vec3 const& direction, float distance, class Vec3& vecOut);
+MCAPI bool checkForSteeringCollision(::Actor& owner, ::Vec3 const& direction, float distance, ::Vec3& vecOut);
 
-MCAPI void chooseRandomDirection(class Actor& owner, class Vec3& vecOut);
+MCAPI void chooseRandomDirection(::Actor& owner, ::Vec3& vecOut);
 
-MCAPI void getWaterHeights(class Actor const& owner, float& minHeightOut, float& maxHeightOut);
+MCAPI void getWaterHeights(::Actor const& owner, float& minHeightOut, float& maxHeightOut);
 // NOLINTEND
 
-}; // namespace FlockingUtility
+} // namespace FlockingUtility

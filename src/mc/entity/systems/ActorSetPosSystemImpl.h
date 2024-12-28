@@ -5,53 +5,73 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class HitboxComponent;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorChunkMoveFlagComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorLocalPlayerEntityMovedFlagComponent;
+struct ActorSetPositionRequestComponent;
+struct ChunkPositionComponent;
+struct OffsetsComponent;
+struct PaintingFlagComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+// clang-format on
 
 namespace ActorSetPosSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void _tickActorUpdatePositionAndAABBSystem2(
-    struct ActorSetPositionRequestComponent const&           positionUpdateRequest,
-    struct OffsetsComponent const&                           heightOffsetComponent,
-    struct AABBShapeComponent&                               aabbShapeComponent,
-    struct StateVectorComponent&                             stateVectorComponent,
-    class Optional<class FlagComponent<struct PaintingFlag>> isPainting
+    ::ActorSetPositionRequestComponent const& positionUpdateRequest,
+    ::OffsetsComponent const&                 heightOffsetComponent,
+    ::AABBShapeComponent&                     aabbShapeComponent,
+    ::StateVectorComponent&                   stateVectorComponent,
+    ::Optional<::PaintingFlagComponent>       isPainting
 );
 
 MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
-    class StrictEntityContext& context,
-    class EntityModifier<
-        class FlagComponent<struct ActorChunkMoveFlag>,
-        class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-        struct ActorSetPositionRequestComponent> modifier
+    ::StrictEntityContext& context,
+    ::EntityModifier<
+        ::ActorChunkMoveFlagComponent,
+        ::ActorLocalPlayerEntityMovedFlagComponent,
+        ::ActorSetPositionRequestComponent> modifier
 );
 
+MCAPI void _tickAddLocalPlayerEntityMovedSystemSynchronous1(::ActorOwnerComponent const& actorOwnerComponent);
+
 MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
-    class StrictEntityContext&           context,
-    struct ChunkPositionComponent const& chunkPositionComponent,
-    struct StateVectorComponent const&   stateVectorComponent,
-    class EntityModifier<
-        class FlagComponent<struct ActorChunkMoveFlag>,
-        class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-        struct ActorSetPositionRequestComponent> modifier
+    ::StrictEntityContext&          context,
+    ::ChunkPositionComponent const& chunkPositionComponent,
+    ::StateVectorComponent const&   stateVectorComponent,
+    ::EntityModifier<
+        ::ActorChunkMoveFlagComponent,
+        ::ActorLocalPlayerEntityMovedFlagComponent,
+        ::ActorSetPositionRequestComponent> modifier
 );
 
 MCAPI void _tickChunkMoveNeededSystemSynchronous4(
-    class ActorOwnerComponent const&     actorOwnerComponent,
-    struct ChunkPositionComponent const& chunkPositionComponent,
-    struct StateVectorComponent const&   stateVectorComponent
+    ::ActorOwnerComponent const&    actorOwnerComponent,
+    ::ChunkPositionComponent const& chunkPositionComponent,
+    ::StateVectorComponent const&   stateVectorComponent
 );
 
 MCAPI void _tickMoveHitboxSystem3(
-    struct ActorSetPositionRequestComponent const& positionUpdateComponent,
-    class HitboxComponent&                         hitboxComponent
+    ::ActorSetPositionRequestComponent const& positionUpdateComponent,
+    ::HitboxComponent&                        hitboxComponent
 );
 
 MCAPI void _tickShulkerUpdatePositionSystem5(
-    struct StateVectorComponent const&   stateVectorComponent,
-    struct SynchedActorDataComponent&    synchedActorDataComponent,
-    struct ActorDataFlagComponent&       actorDataFlagComponent,
-    struct ActorDataDirtyFlagsComponent& dirtyFlagsComponent
+    ::StateVectorComponent const&   stateVectorComponent,
+    ::SynchedActorDataComponent&    synchedActorDataComponent,
+    ::ActorDataFlagComponent&       actorDataFlagComponent,
+    ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent
 );
 // NOLINTEND
 
-}; // namespace ActorSetPosSystemImpl
+} // namespace ActorSetPosSystemImpl

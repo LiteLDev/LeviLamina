@@ -12,4 +12,4 @@ public:
     VoidMoveIntent();
 };
 
-}; // namespace sim
+} // namespace sim

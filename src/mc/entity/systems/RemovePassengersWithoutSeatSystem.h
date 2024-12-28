@@ -6,7 +6,16 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class RideableComponent;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
 
 class RemovePassengersWithoutSeatSystem {
 public:
@@ -16,28 +25,24 @@ public:
     RemovePassengersWithoutSeatSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    MCAPI static void removePassengersWithoutSeat(
-        class StrictEntityContext&,
-        class RideableComponent const&                                           rideableComponent,
-        struct VehicleComponent&                                                 vehicleComponent,
-        class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>>& modifier
-    );
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickRemovePassengersWithoutSeat(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            class RideableComponent const,
-            struct VehicleComponent>                                            view,
-        class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>> modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::RideableComponent const,
+            ::VehicleComponent>                        view,
+        ::EntityModifier<::StopRidingRequestComponent> modifier
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
+
+    MCAPI static void removePassengersWithoutSeat(
+        ::StrictEntityContext&,
+        ::RideableComponent const&                      rideableComponent,
+        ::VehicleComponent&                             vehicleComponent,
+        ::EntityModifier<::StopRidingRequestComponent>& modifier
+    );
     // NOLINTEND
 };

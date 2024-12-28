@@ -5,28 +5,48 @@
 // auto generated inclusion list
 #include "mc/server/commands/CurrentCmdVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+// clang-format on
+
 class CommandVersion {
 public:
-    int mFrom = 0, mTo = 0x7FFFFFFF;
-
-    CommandVersion() = default;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI CommandVersion(int from, int to);
-
-    MCAPI static class SemVersion getLatestCompatibleSemVersion(int version);
-
-    MCAPI static ::CurrentCmdVersion const getVersionMapping(class SemVersion const& engineVersion);
-
+    ::ll::TypedStorage<4, 4, int> mFrom;
+    ::ll::TypedStorage<4, 4, int> mTo;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandVersion& operator=(CommandVersion const&);
+    CommandVersion(CommandVersion const&);
+    CommandVersion();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(int from, int to);
+    MCAPI CommandVersion(int from, int to);
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::SemVersion getLatestCompatibleSemVersion(int version);
+
+    MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& CurrentVersion();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int from, int to);
     // NOLINTEND
 };

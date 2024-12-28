@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorRefreshComponentsSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ActorRefreshComponentsSystem {
 public:
     // prevent constructor by default
     ActorRefreshComponentsSystem& operator=(ActorRefreshComponentsSystem const&);
@@ -10,8 +15,8 @@ public:
     ActorRefreshComponentsSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -10,7 +10,6 @@
 // clang-format off
 namespace Scripting { class IRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class ScriptValue; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct GeneratorType; }
@@ -20,56 +19,71 @@ namespace Scripting {
 
 class GeneratorAny : public ::Scripting::ScriptValue {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk3dab5e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     GeneratorAny();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GeneratorAny() = default;
+    virtual ~GeneratorAny() /*override*/;
+    // NOLINTEND
 
-    MCAPI GeneratorAny(class Scripting::GeneratorAny&& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GeneratorAny(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI GeneratorAny(class Scripting::GeneratorAny const& rhs);
+    MCAPI GeneratorAny(::Scripting::GeneratorAny&& rhs);
 
     MCAPI GeneratorAny(
-        class Scripting::IRuntime*                                                       runtime,
-        struct Scripting::ContextId                                                      contextId,
-        class Scripting::WeakLifetimeScope                                               scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorType> const& generatorHandle
+        ::Scripting::IRuntime*                                                  runtime,
+        ::Scripting::ContextId                                                  contextId,
+        ::Scripting::WeakLifetimeScope                                          scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle
     );
 
-    MCAPI class Scripting::GeneratorAny& operator=(class Scripting::GeneratorAny&& rhs);
+    MCAPI ::Scripting::ResultAny nextGeneric(::entt::meta_any& argAny, ::entt::meta_type expectedReturnType) const;
 
-    MCAPI class Scripting::GeneratorAny& operator=(class Scripting::GeneratorAny const& rhs);
+    MCAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny const& rhs);
+
+    MCAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
 
     MCAPI bool valid() const;
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Scripting::ResultAny nextGeneric(entt::meta_any& argAny, entt::meta_type expectedReturnType) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI void* ctor$(class Scripting::GeneratorAny const& rhs);
+    MCAPI void* $ctor(::Scripting::GeneratorAny&& rhs);
 
-    MCAPI void* ctor$(class Scripting::GeneratorAny&& rhs);
-
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*                                                       runtime,
-        struct Scripting::ContextId                                                      contextId,
-        class Scripting::WeakLifetimeScope                                               scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::GeneratorType> const& generatorHandle
+    MCAPI void* $ctor(
+        ::Scripting::IRuntime*                                                  runtime,
+        ::Scripting::ContextId                                                  contextId,
+        ::Scripting::WeakLifetimeScope                                          scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

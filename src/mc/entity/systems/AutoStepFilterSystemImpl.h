@@ -5,18 +5,28 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct AutoStepRequestFlagComponent;
+struct MaxAutoStepComponent;
+struct MoveRequestComponent;
+struct MovementAbilitiesComponent;
+struct OnGroundFlagComponent;
+// clang-format on
 
 namespace AutoStepFilterSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doAutoStepFilterSystem(
-    class StrictEntityContext const&                                      context,
-    struct MoveRequestComponent const&                                    moveRequestComponent,
-    struct MaxAutoStepComponent const&                                    maxAutoStepComponent,
-    class Optional<struct OnGroundFlagComponent const>                    onGroundFlagComponent,
-    class Optional<struct MovementAbilitiesComponent const>               abilitiesComponent,
-    class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>> mod
+    ::StrictEntityContext const&                     context,
+    ::MoveRequestComponent const&                    moveRequestComponent,
+    ::MaxAutoStepComponent const&                    maxAutoStepComponent,
+    ::Optional<::OnGroundFlagComponent const>        onGroundFlagComponent,
+    ::Optional<::MovementAbilitiesComponent const>   abilitiesComponent,
+    ::EntityModifier<::AutoStepRequestFlagComponent> mod
 );
 // NOLINTEND
 
-}; // namespace AutoStepFilterSystemImpl
+} // namespace AutoStepFilterSystemImpl

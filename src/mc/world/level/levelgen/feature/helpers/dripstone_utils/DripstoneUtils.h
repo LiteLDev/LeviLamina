@@ -7,44 +7,49 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class BlockLegacy;
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
 namespace DripstoneUtils { struct PointedDripstoneBasePos; }
-namespace ValueProviders { struct UniformFloat; }
 // clang-format on
 
 namespace DripstoneUtils {
+// functions
 // NOLINTBEGIN
 MCAPI void buildBaseToTipColumn(
-    class IBlockWorldGenAPI& target,
-    class BlockPos const&    basePos,
-    uchar                    direction,
-    int                      length,
-    bool                     mergeTips
+    ::IBlockWorldGenAPI& target,
+    ::BlockPos const&    basePos,
+    uchar                direction,
+    int                  length,
+    bool                 mergeTips
 );
 
-MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI& target, class BlockPos const& pos);
+MCAPI bool canBeAdjacentToWater(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
 
-MCAPI bool canPlacePool(class IBlockWorldGenAPI& target, class BlockPos const& pos);
+MCAPI bool canPlacePool(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
 
 MCAPI float getDripstoneHeight(float xzDistanceFromCenter, float dripstoneRadius, float scale, float bluntness);
 
-MCAPI class Block const& getPlacementBlock(uchar direction, ::DripstoneThickness const& thickness);
+MCAPI ::Block const& getPlacementBlock(uchar direction, ::DripstoneThickness const& thickness);
 
-MCAPI std::optional<struct DripstoneUtils::PointedDripstoneBasePos>
-      getPointedDripstoneBasePos(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random);
+MCAPI ::std::optional<::DripstoneUtils::PointedDripstoneBasePos>
+getPointedDripstoneBasePos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random);
 
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI& target, class BlockPos const& center, int xzRadius);
+MCAPI bool isCircleMostlyEmbeddedInStone(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
 
-MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isDripstoneBaseOrLava(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isEmptyOrWater(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI bool isEmptyOrWaterOrLava(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isEmptyOrWaterOrLava(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI bool isLava(class IBlockWorldGenAPI const& target, class BlockPos const& pos);
+MCAPI bool isLava(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
-MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI& target, class BlockPos const& pos);
+MCAPI bool placeDripstoneBlockIfPossible(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
 
-MCAPI bool replaceableByDripstone(class BlockLegacy const& block);
+MCAPI bool replaceableByDripstone(::BlockLegacy const& block);
 // NOLINTEND
 
-}; // namespace DripstoneUtils
+} // namespace DripstoneUtils

@@ -2,46 +2,42 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class ModuleBindingBuilder; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentScriptInterface.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentInterface {
+class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<9> {
 public:
     // prevent constructor by default
+    ScriptBlockCustomComponentInterface& operator=(ScriptBlockCustomComponentInterface const&);
+    ScriptBlockCustomComponentInterface(ScriptBlockCustomComponentInterface const&);
     ScriptBlockCustomComponentInterface();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentInterface(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
+    MCAPI ScriptBlockCustomComponentInterface(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
 
-    MCAPI ScriptBlockCustomComponentInterface(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&);
+    MCAPI bool isEmpty() const;
 
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&
+    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
 
     MCAPI ~ScriptBlockCustomComponentInterface();
-
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder& builder);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

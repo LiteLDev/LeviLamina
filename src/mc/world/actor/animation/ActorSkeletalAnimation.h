@@ -2,12 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
-#include "mc/server/commands/CurrentCmdVersion.h"
-#include "mc/world/actor/animation/AnimationLoopMode.h"
+// auto generated forward declare list
+// clang-format off
+class BoneAnimation;
+// clang-format on
 
 class ActorSkeletalAnimation {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48>  mUnkb8cb8b;
+    ::ll::UntypedStorage<4, 4>   mUnk195089;
+    ::ll::UntypedStorage<4, 4>   mUnk9e60dd;
+    ::ll::UntypedStorage<1, 1>   mUnk1a1b73;
+    ::ll::UntypedStorage<8, 216> mUnk5f9b7c;
+    ::ll::UntypedStorage<8, 216> mUnkeb2e2d;
+    ::ll::UntypedStorage<8, 216> mUnk3fe41b;
+    ::ll::UntypedStorage<8, 216> mUnk4b5cf3;
+    ::ll::UntypedStorage<8, 24>  mUnk6d4bd9;
+    ::ll::UntypedStorage<8, 24>  mUnk74b140;
+    ::ll::UntypedStorage<8, 24>  mUnkb6f3e2;
+    ::ll::UntypedStorage<8, 24>  mUnk534aee;
+    ::ll::UntypedStorage<8, 32>  mUnkba353d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorSkeletalAnimation& operator=(ActorSkeletalAnimation const&);
@@ -15,60 +33,26 @@ public:
     ActorSkeletalAnimation();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorSkeletalAnimation(std::string const& name, std::string const& sourceFilePathWithExtension);
+    MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
 
-    MCAPI class ActorAnimationEvent& addActorEvent(
-        float               time,
-        std::string const&  event,
-        ::CurrentCmdVersion commandVersion,
-        ::MolangVersion     molangVersion
-    );
-
-    MCAPI class BoneAnimation& addBoneAnimation(std::string const& name);
-
-    MCAPI class ActorParticleEffectEvent& addParticleEffectEvent(float time);
-
-    MCAPI class ActorSoundEffectEvent& addSoundEffectEvent(float time);
-
-    MCAPI void calculateAnimationLength();
-
-    MCAPI std::vector<class BoneAnimation>& getBoneAnimations();
-
-    MCAPI void initPrecomputedInterpolation();
+    MCAPI ::BoneAnimation& addBoneAnimation(::std::string const& name);
 
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 
-    MCAPI void setAnimTimeUpdate(class ExpressionNode const& expression);
-
-    MCAPI void setAnimationLength(float animationLength);
-
-    MCAPI void setBlendWeight(class ExpressionNode const& expression);
-
-    MCAPI void setLoopDelay(class ExpressionNode const& expression);
-
-    MCAPI void setLoopMode(::AnimationLoopMode loopMode);
-
-    MCAPI void setShouldOverridePreviousAnimation(bool overridePreviousAnimation);
-
-    MCAPI void setStartDelay(class ExpressionNode const& expression);
-
-    MCAPI void sortEvents();
-
-    MCAPI void sortParticleEffectEvents();
-
-    MCAPI void sortSoundEffectEvents();
-
     MCAPI ~ActorSkeletalAnimation();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& name, std::string const& sourceFilePathWithExtension);
+    MCAPI void* $ctor(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -11,12 +11,31 @@
 class AppPlatform;
 namespace Core { class Path; }
 namespace Social::Events { class Event; }
-namespace Social::Events { class IEventListener; }
 // clang-format on
 
 namespace Social::Events {
 
 class AggregationEventListener : public ::Social::Events::IEventListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk5906f0;
+    ::ll::UntypedStorage<8, 8>   mUnk6d36a6;
+    ::ll::UntypedStorage<1, 1>   mUnka30829;
+    ::ll::UntypedStorage<8, 32>  mUnk3b4146;
+    ::ll::UntypedStorage<8, 80>  mUnk9aa06e;
+    ::ll::UntypedStorage<8, 296> mUnk7e3094;
+    ::ll::UntypedStorage<8, 80>  mUnk63885d;
+    ::ll::UntypedStorage<8, 64>  mUnk2b7477;
+    ::ll::UntypedStorage<8, 64>  mUnk6c4f66;
+    ::ll::UntypedStorage<8, 64>  mUnkc7e0b3;
+    ::ll::UntypedStorage<1, 1>   mUnk76b524;
+    ::ll::UntypedStorage<4, 4>   mUnkd93415;
+    ::ll::UntypedStorage<4, 4>   mUnk2079a4;
+    ::ll::UntypedStorage<4, 4>   mUnk5e5b2e;
+    ::ll::UntypedStorage<4, 4>   mUnkdb1c91;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AggregationEventListener& operator=(AggregationEventListener const&);
@@ -24,84 +43,94 @@ public:
     AggregationEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AggregationEventListener();
+    virtual ~AggregationEventListener() /*override*/;
 
     // vIndex: 1
     virtual void recordEvent(
-        class Social::Events::Event const&                       event,
-        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform
-    );
+        ::Social::Events::Event const&                   event,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void sendEvents(bool forceSend);
-
-    // vIndex: 4
-    virtual void stopDebugEventLogging();
+    virtual void sendEvents(bool forceSend) /*override*/;
 
     // vIndex: 5
-    virtual void sendEvent(class Social::Events::Event const& event) = 0;
+    virtual void sendEvent(::Social::Events::Event const&) = 0;
+
+    // vIndex: 4
+    virtual void stopDebugEventLogging() /*override*/;
 
     // vIndex: 6
     virtual void _flushEventQueue();
 
     // vIndex: 7
-    virtual bool _checkAgainstEventAllowlist(class Social::Events::Event const& event) const;
+    virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
     // vIndex: 8
     virtual bool _isListenerReadyForEvents() const;
-
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit AggregationEventListener(class Core::Path const& logFileName);
+    MCAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 
-    // NOLINTEND
+    MCAPI void _handleAggregation(
+        ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
+        ::Social::Events::Event const&         event
+    );
 
-    // private:
-    // NOLINTBEGIN
     MCAPI bool _needToSendAggregatedEvents() const;
 
     MCAPI void _recordAggregatedEvent(
-        class Social::Events::Event const&                                        event,
-        std::unordered_map<std::string, std::deque<class Social::Events::Event>>& eventQueue
+        ::Social::Events::Event const&                                              event,
+        ::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& eventQueue
     );
 
     MCAPI void _sendCustomAggregatedEvents(bool forceSend);
 
-    MCAPI void _sendEvents(std::unordered_map<std::string, std::deque<class Social::Events::Event>>& queueToSend);
+    MCAPI void _sendEvents(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
 
-    MCAPI void _sendNextEvent(std::unordered_map<std::string, std::deque<class Social::Events::Event>>& queueToSend);
-
+    MCAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Core::Path const& logFileName);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Core::Path const& logFileName);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
-    MCAPI bool _checkAgainstEventAllowlist$(class Social::Events::Event const& event) const;
+    MCAPI void $sendEvents(bool forceSend);
 
-    MCAPI void _flushEventQueue$();
+    MCAPI void $stopDebugEventLogging();
 
-    MCAPI bool _isListenerReadyForEvents$() const;
+    MCAPI void $_flushEventQueue();
 
-    MCAPI void recordEvent$(
-        class Social::Events::Event const&                       event,
-        class Bedrock::NonOwnerPointer<class AppPlatform> const& appPlatform
-    );
+    MCAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
-    MCAPI void sendEvents$(bool forceSend);
+    MCAPI bool $_isListenerReadyForEvents() const;
+    // NOLINTEND
 
-    MCAPI void stopDebugEventLogging$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Social::Events
+} // namespace Social::Events

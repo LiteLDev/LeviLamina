@@ -1,40 +1,40 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/feature/gamerefs_feature/StackResultStorageFeature.h"
-#include "mc/world/level/levelgen/feature/registry/FeatureRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+class FeatureRegistry;
+// clang-format on
 
 class WeakStorageFeature {
 public:
-    std::optional<std::reference_wrapper<FeatureRegistry>> mRegistry; // this+0x0
-    uint64                                                 mIndex;    // this+0x10
-
-    template <class T = IFeature>
-    [[nodiscard]] optional_ref<T> tryUnwrap() const {
-        return StackResultStorageFeature{*this}.tryUnwrap<T>();
-    }
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::reference_wrapper<::FeatureRegistry>>> mRegistry;
+    ::ll::TypedStorage<8, 8, uint64>                                                        mIndex;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     WeakStorageFeature& operator=(WeakStorageFeature const&);
     WeakStorageFeature(WeakStorageFeature const&);
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WeakStorageFeature();
 
-    MCAPI WeakStorageFeature(class WeakStorageFeature&& other);
+    MCAPI WeakStorageFeature(::WeakStorageFeature&& other);
 
-    MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&& other);
-
+    MCAPI ::WeakStorageFeature& operator=(::WeakStorageFeature&& other);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakStorageFeature&& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor(::WeakStorageFeature&& other);
     // NOLINTEND
 };

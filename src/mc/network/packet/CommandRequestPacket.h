@@ -1,64 +1,100 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandOriginData.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CommandContext;
+class ILevel;
+class NetworkIdentifier;
+class ReadOnlyBinaryStream;
+struct CommandOriginData;
+// clang-format on
 
 class CommandRequestPacket : public ::Packet {
 public:
-    std::string       mCommand;        // this+0x30
-    CommandOriginData mOrigin;         // this+0x50
-    bool              mInternalSource; // this+0x90
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>       mCommand;
+    ::ll::TypedStorage<8, 64, ::CommandOriginData> mOrigin;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>  mVersion;
+    ::ll::TypedStorage<1, 1, bool>                 mInternalSource;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     CommandRequestPacket& operator=(CommandRequestPacket const&);
     CommandRequestPacket(CommandRequestPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandRequestPacket();
+    virtual ~CommandRequestPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI CommandRequestPacket();
-
-    MCAPI CommandRequestPacket(class CommandContext& context, bool internalSource);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CommandRequestPacket();
 
-    MCAPI void* ctor$(class CommandContext& context, bool internalSource);
+    MCAPI CommandRequestPacket(::CommandContext& context, bool internalSource);
 
-    MCAPI void* ctor$();
+    MCAPI ::std::unique_ptr<::CommandContext>
+    createCommandContext(::NetworkIdentifier const& source, ::Bedrock::NonOwnerPointer<::ILevel> const& level) const;
 
-    MCAPI void dtor$();
+    MCAPI bool getInternalSource() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void* $ctor(::CommandContext& context, bool internalSource);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

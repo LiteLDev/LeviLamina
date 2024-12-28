@@ -4,15 +4,15 @@
 
 namespace Json {
 
-enum class ValueType : int {
-    Null    = 0x0,
-    Int     = 0x1,
-    Uint    = 0x2,
-    Real    = 0x3,
-    String  = 0x4,
-    Boolean = 0x5,
-    Array   = 0x6,
-    Object  = 0x7,
+enum class ValueType : schar {
+    NullValue    = 0,
+    IntValue     = 1,
+    UintValue    = 2,
+    RealValue    = 3,
+    StringValue  = 4,
+    BooleanValue = 5,
+    ArrayValue   = 6,
+    ObjectValue  = 7,
 };
 
-};
+}

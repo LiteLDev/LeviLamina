@@ -12,16 +12,21 @@ namespace JsonUtil { class EmptyClass; }
 
 struct SkinIDDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk567d00;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SkinIDDefinition& operator=(SkinIDDefinition const&);
     SkinIDDefinition(SkinIDDefinition const&);
     SkinIDDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>>& root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SkinIDDefinition>>& root);
     // NOLINTEND
 };

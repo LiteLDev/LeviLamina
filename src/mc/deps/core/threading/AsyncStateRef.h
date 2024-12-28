@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AsyncStateRef {
+struct AsyncStateRef {
 public:
     // prevent constructor by default
     AsyncStateRef& operator=(AsyncStateRef const&);
@@ -10,15 +10,14 @@ public:
     AsyncStateRef();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~AsyncStateRef();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

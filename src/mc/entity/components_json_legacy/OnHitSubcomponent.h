@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
 
@@ -14,42 +16,53 @@ public:
     OnHitSubcomponent(OnHitSubcomponent const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~OnHitSubcomponent();
 
     // vIndex: 1
-    virtual void readfromJSON(class Json::Value& component, class SemVersion const&) = 0;
+    virtual void readfromJSON(::Json::Value&) = 0;
 
     // vIndex: 2
-    virtual void writetoJSON(class Json::Value& component) const = 0;
+    virtual void writetoJSON(::Json::Value&) const = 0;
 
     // vIndex: 3
-    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent&) = 0;
+    virtual void doOnHitEffect(::Actor&, ::ProjectileComponent&) = 0;
 
     // vIndex: 4
     virtual char const* getName();
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI OnHitSubcomponent();
 
+    MCAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _canAttack(class Actor* projectileOwnerActor, class Actor* hitActor) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getName();
+    // NOLINTEND
 
-    MCAPI char const* getName$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

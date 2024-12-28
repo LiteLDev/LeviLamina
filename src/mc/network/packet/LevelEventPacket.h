@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -9,61 +8,87 @@
 #include "mc/platform/Result.h"
 #include "mc/world/level/block/LevelEvent.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class LevelEventPacket : public ::Packet {
 public:
-    int  mEventId; // this+0x30
-    Vec3 mPos;     // this+0x34
-    int  mData;    // this+0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>     mEventId;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 4, int>     mData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     LevelEventPacket& operator=(LevelEventPacket const&);
     LevelEventPacket(LevelEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LevelEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI LevelEventPacket();
-
-    MCAPI LevelEventPacket(::LevelEvent eventId, class Vec3 const& pos, int data);
-
-    MCAPI LevelEventPacket(::LevelEvent eventId, float x, float y, float z, int data);
-
+    // vIndex: 0
+    virtual ~LevelEventPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LevelEventPacket();
 
-    MCAPI void* ctor$(::LevelEvent eventId, float x, float y, float z, int data);
+    MCAPI LevelEventPacket(::LevelEvent eventId, ::Vec3 const& pos, int data);
 
-    MCAPI void* ctor$();
+    MCAPI LevelEventPacket(::LevelEvent eventId, float x, float y, float z, int data);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::LevelEvent eventId, class Vec3 const& pos, int data);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::LevelEvent eventId, ::Vec3 const& pos, int data);
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::LevelEvent eventId, float x, float y, float z, int data);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,12 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BlockPos;
+class IConstBlockSource;
+struct JumpPreventionResult;
+// clang-format on
+
 namespace JumpPreventionUtility {
+// functions
 // NOLINTBEGIN
 MCAPI float getJumpMultiplier(bool jumpIsPrevented);
 
-MCAPI struct JumpPreventionResult
-getJumpPrevention(bool isOnGround, class AABB const& aabb, class BlockPos pos, class IConstBlockSource const& region);
+MCAPI ::JumpPreventionResult
+getJumpPrevention(bool isOnGround, ::AABB const& aabb, ::BlockPos pos, ::IConstBlockSource const& region);
 // NOLINTEND
 
-}; // namespace JumpPreventionUtility
+} // namespace JumpPreventionUtility

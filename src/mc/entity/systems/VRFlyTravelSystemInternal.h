@@ -5,15 +5,25 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct LocalPlayerPrePlayerTravelComponent;
+struct MobTravelComponent;
+struct MovementAbilitiesComponent;
+struct PlayerInputModeComponent;
+// clang-format on
+
 namespace VRFlyTravelSystemInternal {
+// functions
 // NOLINTBEGIN
 MCAPI void _prePlayerTravelSystem(
-    class StrictEntityContext const&                                 context,
-    struct PlayerInputModeComponent const&                           inputMode,
-    struct MobTravelComponent&                                       mobTravel,
-    struct MovementAbilitiesComponent&                               abilitiesComponent,
-    class EntityModifier<struct LocalPlayerPrePlayerTravelComponent> mod
+    ::StrictEntityContext const&                            context,
+    ::PlayerInputModeComponent const&                       inputMode,
+    ::MobTravelComponent&                                   mobTravel,
+    ::MovementAbilitiesComponent&                           abilitiesComponent,
+    ::EntityModifier<::LocalPlayerPrePlayerTravelComponent> mod
 );
 // NOLINTEND
 
-}; // namespace VRFlyTravelSystemInternal
+} // namespace VRFlyTravelSystemInternal

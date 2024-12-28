@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PostTickPositionDeltaComponent {
+// auto generated inclusion list
+#include "mc/entity/components/Vec3Component.h"
+
+struct PostTickPositionDeltaComponent : public ::Vec3Component {
 public:
     // prevent constructor by default
     PostTickPositionDeltaComponent& operator=(PostTickPositionDeltaComponent const&);

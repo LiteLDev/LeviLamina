@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class LifetimeRegistryReference; }
-namespace Scripting { struct ContextId; }
 namespace Scripting { struct ObjectHandle; }
 namespace Scripting::internal { struct FetchAsAnyComponent; }
 // clang-format on
@@ -14,56 +12,57 @@ namespace Scripting {
 
 class LifetimeRegistry {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnkcb6979;
+    ::ll::UntypedStorage<8, 8>   mUnk217a0b;
+    ::ll::UntypedStorage<8, 304> mUnkdff59e;
+    ::ll::UntypedStorage<8, 16>  mUnk8cf060;
+    ::ll::UntypedStorage<8, 24>  mUnk88d612;
+    ::ll::UntypedStorage<8, 128> mUnk60fe14;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LifetimeRegistry& operator=(LifetimeRegistry const&);
     LifetimeRegistry(LifetimeRegistry const&);
     LifetimeRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI
-    LifetimeRegistry(struct Scripting::ContextId contextId, class Scripting::LifetimeRegistryReference& registryRef);
+    MCAPI ::Scripting::ObjectHandle _createBaseObject(::Scripting::internal::FetchAsAnyComponent&& fetchAny);
 
-    MCAPI void addReference(struct Scripting::ObjectHandle handle);
+    MCAPI void _destroyObject(::Scripting::ObjectHandle handle, ::entt::meta_type type, uint size, bool tracked);
+
+    MCAPI bool _doTypesMatch(::Scripting::ObjectHandle handle, ::entt::meta_type expectedType);
+
+    MCAPI void addReference(::Scripting::ObjectHandle handle);
 
     MCAPI void destroyLifetimeScope(bool expectAllDead);
 
-    MCAPI bool removeReference(struct Scripting::ObjectHandle handle);
+    MCAPI bool removeReference(::Scripting::ObjectHandle handle);
 
-    MCAPI entt::meta_any resolveAsAny(struct Scripting::ObjectHandle handle);
+    MCAPI ::entt::meta_any resolveAsAny(::Scripting::ObjectHandle handle);
 
-    MCAPI entt::meta_any resolveAsStrongTypedObjectHandle(struct Scripting::ObjectHandle handle);
+    MCAPI ::entt::meta_any resolveAsStrongTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI entt::meta_any resolveAsTypedObjectHandle(struct Scripting::ObjectHandle handle);
+    MCAPI ::entt::meta_any resolveAsTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI entt::meta_any resolveAsWeakTypedObjectHandle(struct Scripting::ObjectHandle handle);
+    MCAPI ::entt::meta_any resolveAsWeakTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI entt::meta_type resolvedType(struct Scripting::ObjectHandle handle);
+    MCAPI ::entt::meta_type resolvedType(::Scripting::ObjectHandle handle);
 
-    MCAPI bool valid(struct Scripting::ObjectHandle const& handle);
+    MCAPI bool valid(::Scripting::ObjectHandle const& handle);
 
     MCAPI ~LifetimeRegistry();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct Scripting::ObjectHandle _createBaseObject(struct Scripting::internal::FetchAsAnyComponent&& fetchAny);
-
-    MCAPI void _destroyObject(struct Scripting::ObjectHandle handle, entt::meta_type type, uint size, bool tracked);
-
-    MCAPI bool _doTypesMatch(struct Scripting::ObjectHandle handle, entt::meta_type expectedType);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::ContextId contextId, class Scripting::LifetimeRegistryReference& registryRef);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

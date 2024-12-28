@@ -1,31 +1,43 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class ItemRegistryRef;
+// clang-format on
 
 struct ItemData {
 public:
-    HashedString mName;             // this+0x0
-    short        mId;               // this+0x30
-    bool         mIsComponentBased; // this+0x32
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<2, 2, short>           mId;
+    ::ll::TypedStorage<1, 1, bool>            mIsComponentBased;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ItemData& operator=(ItemData const&);
     ItemData(ItemData const&);
     ItemData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ItemData();
-
-    MCAPI static std::vector<struct ItemData> fromItemRegistry(class ItemRegistryRef itemRegistry);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

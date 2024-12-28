@@ -4,21 +4,28 @@
 
 struct SubpackInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk2e7e5d;
+    ::ll::UntypedStorage<8, 32> mUnk98bbf2;
+    ::ll::UntypedStorage<4, 4>  mUnk18ecfb;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SubpackInfo& operator=(SubpackInfo const&);
     SubpackInfo(SubpackInfo const&);
     SubpackInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~SubpackInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

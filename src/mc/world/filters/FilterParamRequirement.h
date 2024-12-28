@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class FilterParamRequirement {};
+enum class FilterParamRequirement : int {
+    Required = 0,
+    Optional = 1,
+};

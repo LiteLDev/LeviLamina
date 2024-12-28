@@ -6,10 +6,31 @@ namespace Common {
 
 struct BuildInfo {
 public:
-    std::string mBuildId;  // this+0x0
-    std::string mCommitId; // this+0x20
-    std::string mBranchId; // this+0x40
-    std::string mFlavor;   // this+0x60
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> mBuildId;
+    ::ll::TypedStorage<8, 32, ::std::string> mCommitId;
+    ::ll::TypedStorage<8, 32, ::std::string> mBranchId;
+    ::ll::TypedStorage<8, 32, ::std::string> mFlavor;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BuildInfo& operator=(BuildInfo const&);
+    BuildInfo(BuildInfo const&);
+    BuildInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~BuildInfo();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };
 
-}; // namespace Common
+} // namespace Common

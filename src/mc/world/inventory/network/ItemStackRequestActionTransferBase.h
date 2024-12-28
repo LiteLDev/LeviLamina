@@ -1,19 +1,28 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/network/ItemStackRequestSlotInfo.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestAction.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ItemStackRequestSlotInfo;
+// clang-format on
+
 class ItemStackRequestActionTransferBase : public ::ItemStackRequestAction {
 public:
-    bool                     mIsDstSerialized;
-    bool                     mIsAmountSerialized;
-    uchar                    mAmount;
-    ItemStackRequestSlotInfo mSrc;
-    ItemStackRequestSlotInfo mDst;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                        mIsDstSerialized;
+    ::ll::TypedStorage<1, 1, bool>                        mIsAmountSerialized;
+    ::ll::TypedStorage<1, 1, uchar>                       mAmount;
+    ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mSrc;
+    ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mDst;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -22,18 +31,35 @@ public:
     ItemStackRequestActionTransferBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual void _write(::BinaryStream& stream) const /*override*/;
+
+    // vIndex: 5
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
     // vIndex: 0
-    virtual ~ItemStackRequestActionTransferBase();
-
-    MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
-
+    virtual ~ItemStackRequestActionTransferBase() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI ::ItemStackRequestSlotInfo const& getSrc() const;
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

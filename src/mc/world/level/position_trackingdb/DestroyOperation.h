@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace PositionTrackingDB { class AsyncOperationBase; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
@@ -16,75 +15,63 @@ namespace PositionTrackingDB {
 
 class DestroyOperation : public ::PositionTrackingDB::AsyncOperationBase {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnka1cd0f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DestroyOperation& operator=(DestroyOperation const&);
     DestroyOperation(DestroyOperation const&);
     DestroyOperation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DestroyOperation() = default;
-
-    // vIndex: 1
-    virtual bool tick(
-        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        class PositionTrackingDB::TrackingRecord&                         record
-    );
+    virtual ~DestroyOperation() /*override*/;
 
     // vIndex: 2
-    virtual char const* getDescription() const;
-
-    // vIndex: 3
-    virtual bool isAsync() const;
-
-    // vIndex: 4
-    virtual bool isComplete() const;
+    virtual char const* getDescription() const /*override*/;
 
     // vIndex: 5
     virtual bool _init(
-        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        class PositionTrackingDB::TrackingRecord&                         record
-    );
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    ) /*override*/;
 
     // vIndex: 6
     virtual bool
-    _tick(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr, class PositionTrackingDB::TrackingRecord&);
-
-    // vIndex: 7
-    virtual bool
-    _quit(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr, class PositionTrackingDB::TrackingRecord&);
-
+    _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&) /*override*/
+        ;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _init$(
-        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        class PositionTrackingDB::TrackingRecord&                         record
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getDescription() const;
+
+    MCAPI bool $_init(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
     );
 
     MCAPI bool
-    _quit$(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr, class PositionTrackingDB::TrackingRecord&);
+    $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    // NOLINTEND
 
-    MCAPI bool
-    _tick$(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr, class PositionTrackingDB::TrackingRecord&);
-
-    MCAPI char const* getDescription$() const;
-
-    MCAPI bool isAsync$() const;
-
-    MCAPI bool isComplete$() const;
-
-    MCAPI bool tick$(
-        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        class PositionTrackingDB::TrackingRecord&                         record
-    );
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PositionTrackingDB
+} // namespace PositionTrackingDB

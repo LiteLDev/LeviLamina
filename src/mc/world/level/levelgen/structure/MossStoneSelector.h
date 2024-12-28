@@ -5,7 +5,41 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/BlockSelector.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class Random;
+// clang-format on
+
 class MossStoneSelector : public ::BlockSelector {
+public:
+    // MossStoneSelector inner types declare
+    // clang-format off
+    struct LocalRegistry;
+    // clang-format on
+
+    // MossStoneSelector inner types define
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk927816;
+        ::ll::UntypedStorage<8, 8> mUnk5492bf;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalRegistry& operator=(LocalRegistry const&);
+        LocalRegistry(LocalRegistry const&);
+        LocalRegistry();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkd83ee1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MossStoneSelector& operator=(MossStoneSelector const&);
@@ -13,27 +47,42 @@ public:
     MossStoneSelector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MossStoneSelector();
-
     // vIndex: 1
-    virtual class Block const& next(class Random& random, int, int, int, bool) const;
+    virtual ::Block const& next(::Random& random, int, int, int, bool) const /*override*/;
 
-    MCAPI MossStoneSelector(class Block const* cobblestone, class Block const* mossyCobblestone);
-
+    // vIndex: 0
+    virtual ~MossStoneSelector() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MossStoneSelector(::Block const* cobblestone, ::Block const* mossyCobblestone);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const* cobblestone, class Block const* mossyCobblestone);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const* cobblestone, ::Block const* mossyCobblestone);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Block const& next$(class Random& random, int, int, int, bool) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const& $next(::Random& random, int, int, int, bool) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

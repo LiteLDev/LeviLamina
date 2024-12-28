@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VehicleClientPositionPassengerSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct VehicleClientPositionPassengerSystem {
 public:
     // prevent constructor by default
     VehicleClientPositionPassengerSystem& operator=(VehicleClientPositionPassengerSystem const&);
@@ -10,12 +15,12 @@ public:
     VehicleClientPositionPassengerSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
+    MCAPI static ::TickingSystemWithInfo createSetPositionRequestSystem();
 
-    MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
+    MCAPI static ::TickingSystemWithInfo createSetPreviousPosRotSystem();
 
-    MCAPI static struct TickingSystemWithInfo createSetRotationLock();
-
+    MCAPI static ::TickingSystemWithInfo createSetRotationLock();
     // NOLINTEND
 };

@@ -4,86 +4,124 @@
 
 // auto generated forward declare list
 // clang-format off
+class Attribute;
+class AttributeBuff;
+class AttributeInstanceDelegate;
+class AttributeInstanceHandle;
+class AttributeModifier;
+class BaseAttributeMap;
 namespace mce { class UUID; }
 // clang-format on
 
 class AttributeInstance {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk183bf8;
+    ::ll::UntypedStorage<8, 8>  mUnk1ca1d4;
+    ::ll::UntypedStorage<8, 24> mUnk7319d3;
+    ::ll::UntypedStorage<8, 24> mUnkbf5019;
+    ::ll::UntypedStorage<8, 24> mUnk56d777;
+    ::ll::UntypedStorage<8, 16> mUnk82a33a;
+    union {
+        ::ll::UntypedStorage<4, 12> mUnka87383;
+        struct {
+            ::ll::UntypedStorage<4, 4> mUnkd9d901;
+            ::ll::UntypedStorage<4, 4> mUnk48fff1;
+            ::ll::UntypedStorage<4, 4> mUnk1ff616;
+        };
+    };
+    union {
+        ::ll::UntypedStorage<4, 12> mUnka0d1e6;
+        struct {
+            ::ll::UntypedStorage<4, 4> mUnk72add9;
+            ::ll::UntypedStorage<4, 4> mUnk88baeb;
+            ::ll::UntypedStorage<4, 4> mUnk525b7f;
+        };
+    };
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AttributeInstance& operator=(AttributeInstance const&);
     AttributeInstance();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~AttributeInstance();
 
     // vIndex: 1
     virtual void tick();
+    // NOLINTEND
 
-    MCAPI AttributeInstance(class AttributeInstance const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AttributeInstance(::AttributeInstance const&);
 
-    MCAPI void addBuff(class AttributeBuff const& buff);
+    MCAPI float _calculateValue();
 
-    MCAPI void addModifier(class AttributeModifier const& modifier);
+    MCAPI float _sanitizeValue(float value);
 
-    MCAPI void addModifier(std::shared_ptr<class AttributeModifier> modifier);
+    MCAPI void addBuff(::AttributeBuff const& buff);
 
-    MCAPI class Attribute const* getAttribute() const;
+    MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
+
+    MCAPI void addModifier(::AttributeModifier const& modifier);
+
+    MCAPI ::Attribute const* getAttribute() const;
 
     MCAPI float getCurrentValue() const;
 
     MCAPI float getDefaultValue(int operand) const;
 
-    MCAPI class AttributeInstanceHandle getHandle() const;
+    MCAPI ::AttributeInstanceHandle getHandle() const;
 
     MCAPI float getMaxValue() const;
 
     MCAPI float getMinValue() const;
 
-    MCAPI class AttributeModifier getModifier(class mce::UUID const& id) const;
+    MCAPI ::AttributeModifier getModifier(::mce::UUID const& id) const;
 
-    MCAPI std::vector<class AttributeModifier> getModifiers() const;
+    MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCAPI std::vector<class AttributeModifier> getModifiers(int operation) const;
+    MCAPI bool hasModifier(::mce::UUID const& id) const;
 
-    MCAPI bool hasModifier(class AttributeModifier const& modifier) const;
+    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
-    MCAPI bool hasModifier(class mce::UUID const& id) const;
-
-    MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier> modifier) const;
+    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
     MCAPI bool hasModifiers() const;
 
     MCAPI bool hasTemporalBuffs() const;
 
-    MCAPI void inheritFrom(class AttributeInstance const& other, class BaseAttributeMap* attributeMap);
+    MCAPI void inheritFrom(::AttributeInstance const& other, ::BaseAttributeMap* attributeMap);
 
     MCAPI bool isValid() const;
 
     MCAPI void recalculateModifiers();
 
-    MCAPI void registerListener(class AttributeInstance const& listener);
+    MCAPI void registerListener(::AttributeInstance const& listener);
 
-    MCAPI void removeBuff(class AttributeBuff const& buff);
+    MCAPI void removeBuff(::std::shared_ptr<::AttributeBuff> buff);
 
-    MCAPI void removeBuff(std::shared_ptr<class AttributeBuff> buff);
+    MCAPI void removeBuff(::AttributeBuff const& buff);
 
     MCAPI void removeBuffs();
 
-    MCAPI bool removeModifier(class mce::UUID const& id);
+    MCAPI bool removeModifier(::mce::UUID const& id);
 
-    MCAPI void removeModifier(class AttributeModifier const& modifier);
+    MCAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier> modifier);
+    MCAPI void removeModifier(::AttributeModifier const& modifier);
 
     MCAPI void resetToDefaultValue();
 
     MCAPI void resetToMaxValue();
 
     MCAPI void resetToMinValue();
-
-    MCAPI void serializationSetRange(float min, float base, float max);
 
     MCAPI void serializationSetValue(float currentValue, int operand, float maxValue);
 
@@ -93,38 +131,36 @@ public:
 
     MCAPI void setDefaultValueOnly(float newDefaultValue);
 
-    MCAPI void setDelegate(std::shared_ptr<class AttributeInstanceDelegate> delegate);
+    MCAPI void setDelegate(::std::shared_ptr<::AttributeInstanceDelegate> delegate);
 
     MCAPI void setMaxValue(float max);
 
     MCAPI void setRange(float min, float defaultValue, float max);
 
-    MCAPI void updateModifier(class AttributeModifier const& takeOver);
-
+    MCAPI void updateModifier(::AttributeModifier const& takeOver);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI float _calculateValue();
-
-    MCAPI float _calculateValue(class AttributeBuff const& buff);
-
-    MCAPI float _sanitizeValue(float value);
-
-    MCAPI void _setDirty();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::AttributeInstance const&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class AttributeInstance const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
+    // NOLINTEND
 
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

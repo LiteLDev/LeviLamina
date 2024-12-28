@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,8 +9,11 @@ namespace Json { class Value; }
 
 class PropertyBag {
 public:
-    Json::Value mJsonValue;     // this+0x0
-    int         mChangeVersion; // this+0x10
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::Json::Value> mJsonValue;
+    ::ll::TypedStorage<4, 4, int>            mChangeVersion;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -19,25 +21,28 @@ public:
     PropertyBag(PropertyBag const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PropertyBag();
 
-    MCAPI explicit PropertyBag(class Json::Value const& jsonValue);
+    MCAPI explicit PropertyBag(::Json::Value const& jsonValue);
 
-    MCAPI class Json::Value const& toJsonValue() const;
+    MCAPI ::Json::Value const& toJsonValue() const;
 
-    MCAPI std::string toString() const;
-
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Json::Value const& jsonValue);
+    MCAPI static ::PropertyBag& EMPTY();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI static class PropertyBag& EMPTY();
-
+    MCAPI void* $ctor(::Json::Value const& jsonValue);
     // NOLINTEND
 };

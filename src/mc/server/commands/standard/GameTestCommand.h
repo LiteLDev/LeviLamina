@@ -8,10 +8,44 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace gametest { struct TestParameters; }
+class BlockPos;
+class BlockSource;
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class MinecraftGameTest;
 // clang-format on
 
 class GameTestCommand : public ::ServerCommand {
+public:
+    // GameTestCommand inner types define
+    enum class Mode : int {
+        Unknown         = 0,
+        ClearAll        = 1,
+        Create          = 2,
+        Run             = 3,
+        RunThis         = 4,
+        RunSet          = 5,
+        RunSetUntilFail = 6,
+        RunNearbyTests  = 7,
+        ShowPosition    = 8,
+        Stop            = 9,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk65b672;
+    ::ll::UntypedStorage<8, 32> mUnk26090e;
+    ::ll::UntypedStorage<4, 4>  mUnk81cc73;
+    ::ll::UntypedStorage<4, 4>  mUnke78c51;
+    ::ll::UntypedStorage<1, 1>  mUnkb367b2;
+    ::ll::UntypedStorage<4, 4>  mUnkdd95a0;
+    ::ll::UntypedStorage<4, 4>  mUnkef546d;
+    ::ll::UntypedStorage<4, 4>  mUnkcac895;
+    ::ll::UntypedStorage<4, 4>  mUnk6e4539;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameTestCommand& operator=(GameTestCommand const&);
@@ -19,76 +53,83 @@ public:
     GameTestCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GameTestCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void addGameTestNameEnums(class MinecraftGameTest& gameTest, class CommandRegistry& commandRegistry);
-
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~GameTestCommand() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct gametest::TestParameters
-    _createTestParameters(class BlockSource& region, class CommandOrigin const& origin) const;
-
-    MCAPI void
-    _handleCreateTest(class BlockSource& region, class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI void _handleCreateTest(::BlockSource& region, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void _handleRun(
-        class MinecraftGameTest&   gameTest,
-        class BlockSource&         region,
-        class CommandOrigin const& origin,
-        class CommandOutput&       output
+        ::MinecraftGameTest&   gameTest,
+        ::BlockSource&         region,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output
     ) const;
 
     MCAPI void _handleRunNearbyTests(
-        class MinecraftGameTest&   gameTest,
-        class BlockSource&         region,
-        class CommandOrigin const& origin,
-        class CommandOutput&       output
+        ::MinecraftGameTest&   gameTest,
+        ::BlockSource&         region,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output
     ) const;
 
     MCAPI void _handleRunSet(
-        class MinecraftGameTest&   gameTest,
-        class BlockSource&         region,
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        bool                       stopOtherTestsOnFailure
+        ::MinecraftGameTest&   gameTest,
+        ::BlockSource&         region,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        bool                   stopOtherTestsOnFailure
     ) const;
 
     MCAPI void _handleRunThis(
-        class MinecraftGameTest&   gameTest,
-        class BlockSource&         region,
-        class CommandOrigin const& origin,
-        class CommandOutput&       output
+        ::MinecraftGameTest&   gameTest,
+        ::BlockSource&         region,
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output
     ) const;
 
-    MCAPI void
-    _handleShowPosition(class BlockSource& region, class CommandOrigin const& origin, class CommandOutput& output)
-        const;
+    MCAPI void _handleShowPosition(::BlockSource& region, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void _runTestAt(
-        class MinecraftGameTest&  gameTest,
-        class BlockSource&        region,
-        class CommandOutput*      output,
-        class BlockPos const&     structureBlockPos,
-        std::optional<::Rotation> rotation
+        ::MinecraftGameTest&        gameTest,
+        ::BlockSource&              region,
+        ::CommandOutput*            output,
+        ::BlockPos const&           structureBlockPos,
+        ::std::optional<::Rotation> rotation
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void addGameTestNameEnums(::MinecraftGameTest& gameTest, ::CommandRegistry& commandRegistry);
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

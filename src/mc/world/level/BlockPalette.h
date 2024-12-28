@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/deps/core/utility/buffer_span_mut.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+class IUnknownBlockTypeRegistry;
+class Level;
+struct BlockID;
+struct NewBlockID;
+struct NibblePair;
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
 
 class BlockPalette {
 public:
@@ -15,11 +26,6 @@ public:
     // clang-format on
 
     // BlockPalette inner types define
-    enum class PaletteType : int {
-        Sequential = 0x0,
-        Hashed     = 0x1,
-    };
-
     struct ConstructorToken {
     public:
         // prevent constructor by default
@@ -28,11 +34,19 @@ public:
         ConstructorToken();
     };
 
-    std::mutex                                      mLegacyBlockStatesConversionWarningMutex;
-    std::set<std::pair<int, int>>                   mLegacyBlockStatesConversionWarningSet;
-    std::map<std::string, class BlockLegacy const*> mNameLookup;
-    std::vector<class Block const*>                 mBlockFromNetworkId;
-    class Level*                                    mLevel;
+    enum class PaletteType : int {
+        Sequential = 0,
+        Hashed     = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>       mLegacyBlockStatesConversionWarningMutex;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mLegacyBlockStatesConversionWarningSet;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
+    ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -41,6 +55,7 @@ public:
     BlockPalette();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockPalette();
@@ -49,63 +64,77 @@ public:
     virtual ::BlockPalette::PaletteType getPaletteType();
 
     // vIndex: 2
-    virtual void appendBlock(class Block const& blockState);
+    virtual void appendBlock(::Block const& blockState);
 
     // vIndex: 3
-    virtual class Block const& getBlock(uint const& networkId) const;
+    virtual ::Block const& getBlock(uint const& networkId) const;
 
     // vIndex: 4
-    virtual void assignBlockNetworkId(class Block const& block, uint64 networkId) const;
+    virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    // NOLINTEND
 
-    MCAPI explicit BlockPalette(class Level& level);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockPalette(::BlockPalette::ConstructorToken);
 
-    MCAPI explicit BlockPalette(struct BlockPalette::ConstructorToken);
+    MCAPI explicit BlockPalette(::Level& level);
 
     MCAPI void cacheBlockComponentData();
 
-    MCAPI class Block const& getBlockFromLegacyData(struct NewBlockID id, uint data) const;
+    MCAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
 
-    MCAPI class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
 
     MCAPI void initFromBlockDefinitions();
 
-    MCAPI class Block const& switchBlock(class Block const& oldBlock, class BlockLegacy const& newBlockType) const;
+    MCAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
-    MCAPI static class Block const& convertLegacyBlock(struct BlockID id, ushort data);
+    MCAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockLegacy const& newBlockType) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
 
     MCAPI static bool convertLegacyBlocks(
-        class buffer_span_mut<class Block const*> dst,
-        class buffer_span<struct BlockID>         blockIDs,
-        class buffer_span<struct NibblePair>      data,
-        uint64                                    volume
+        ::buffer_span_mut<::Block const*> dst,
+        ::buffer_span<::BlockID>          blockIDs,
+        ::buffer_span<::NibblePair>       data,
+        uint64                            volume
     );
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool shouldWarnFor(struct NewBlockID id, ushort data) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::BlockPalette::ConstructorToken);
 
-    MCAPI void* ctor$(struct BlockPalette::ConstructorToken);
+    MCAPI void* $ctor(::Level& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Level& level);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI void appendBlock$(class Block const& blockState);
+    MCAPI void $appendBlock(::Block const& blockState);
 
-    MCAPI void assignBlockNetworkId$(class Block const& block, uint64 networkId) const;
+    MCAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCAPI class Block const& getBlock$(uint const& networkId) const;
+    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    // NOLINTEND
 
-    MCAPI ::BlockPalette::PaletteType getPaletteType$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

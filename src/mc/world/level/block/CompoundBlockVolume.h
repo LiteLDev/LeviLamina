@@ -8,77 +8,116 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class BlockPos;
+class BoundingBox;
+class CompoundBlockVolumeItem;
+class CompoundBlockVolumeIterator;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    CompoundBlockVolume(CompoundBlockVolume const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka82ec2;
+    ::ll::UntypedStorage<4, 12> mUnkecccd4;
+    ::ll::UntypedStorage<4, 24> mUnk35e969;
+    // NOLINTEND
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompoundBlockVolume() = default;
+    virtual ~CompoundBlockVolume() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI CompoundBlockVolume();
+
+    MCAPI CompoundBlockVolume(::CompoundBlockVolume&& other);
+
+    MCAPI CompoundBlockVolume(::CompoundBlockVolume const& other);
+
+    MCAPI void _recalculateBounds();
+
+    MCAPI ::CompoundBlockVolumeIterator begin() const;
+
+    MCAPI ::BoundingBox calculateBoundsWithItem(::CompoundBlockVolumeItem const& item);
 
     MCAPI uint64 capacity() const;
 
     MCAPI void clear(bool resetOrigin);
 
-    MCAPI void forEachPosition(std::function<bool(class BlockPos const&)> const& callback) const;
+    MCAPI ::CompoundBlockVolumeIterator end() const;
 
-    MCAPI std::vector<class CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
+    MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
-    MCAPI class BoundingBox getBoundingBox() const;
+    MCAPI void
+    forEachVolumeItem(::std::function<bool(::CompoundBlockVolumeItem const&, ::CompoundBlockVolume const&)> func) const;
 
-    MCAPI class BlockPos getMax() const;
+    MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
 
-    MCAPI class BlockPos getMin() const;
+    MCAPI ::BoundingBox getBoundingBox() const;
 
-    MCAPI class BlockPos const& getOrigin() const;
+    MCAPI ::BlockPos getMax() const;
 
-    MCAPI std::vector<class CompoundBlockVolumeItem> getVolumeList() const;
+    MCAPI ::BlockPos getMin() const;
+
+    MCAPI ::BlockPos const& getOrigin() const;
+
+    MCAPI ::std::vector<::CompoundBlockVolumeItem> getVolumeList() const;
 
     MCAPI bool isEmpty() const;
 
-    MCAPI bool isInside(class BlockPos const& pos) const;
+    MCAPI bool isInside(::BlockPos const& pos) const;
 
-    MCAPI class CompoundBlockVolume& operator=(class CompoundBlockVolume const& other);
+    MCAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
 
-    MCAPI bool operator==(class CompoundBlockVolume const& other) const;
+    MCAPI bool operator==(::CompoundBlockVolume const& other) const;
 
-    MCAPI std::optional<class CompoundBlockVolumeItem>
-          peekLastVolume(std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
+    MCAPI ::std::optional<::CompoundBlockVolumeItem>
+    peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
 
     MCAPI bool popVolume();
 
-    MCAPI void pushVolume(class CompoundBlockVolumeItem&& item);
+    MCAPI void pushVolume(::CompoundBlockVolumeItem&& item);
 
-    MCAPI void setOrigin(class BlockPos const& newPos, bool preserveExistingVolumes);
+    MCAPI void pushVolume(::CompoundBlockVolumeItem const& item);
 
-    MCAPI void translateOrigin(class BlockPos const& deltaPos, bool preserveExistingVolumes);
+    MCAPI void setOrigin(::BlockPos const& newPos, bool preserveExistingVolumes);
+
+    MCAPI void translateOrigin(::BlockPos const& deltaPos, bool preserveExistingVolumes);
 
     MCAPI uint64 volumeCount() const;
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _recalculateBounds();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::CompoundBlockVolume&& other);
+
+    MCAPI void* $ctor(::CompoundBlockVolume const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

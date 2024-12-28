@@ -4,37 +4,38 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptPlayerBreakBlockAfterEvent {
+struct ScriptPlayerBreakBlockAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnka28136;
+    ::ll::UntypedStorage<8, 32> mUnk4947a8;
+    ::ll::UntypedStorage<8, 40> mUnka29e34;
+    ::ll::UntypedStorage<8, 40> mUnk4f7293;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPlayerBreakBlockAfterEvent& operator=(ScriptPlayerBreakBlockAfterEvent const&);
+    ScriptPlayerBreakBlockAfterEvent(ScriptPlayerBreakBlockAfterEvent const&);
     ScriptPlayerBreakBlockAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerBreakBlockAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
-
-    MCAPI ScriptPlayerBreakBlockAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
-
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

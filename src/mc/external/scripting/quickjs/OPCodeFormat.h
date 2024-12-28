@@ -1,0 +1,35 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+enum class OPCodeFormat : int {
+    None         = 0,
+    NoneInt      = 1,
+    NoneLoc      = 2,
+    NoneArg      = 3,
+    NoneVarRef   = 4,
+    U8           = 5,
+    I8           = 6,
+    Loc8         = 7,
+    Const8       = 8,
+    Label8       = 9,
+    U16          = 10,
+    I16          = 11,
+    Label16      = 12,
+    Npop         = 13,
+    Npopx        = 14,
+    NpopU16      = 15,
+    Loc          = 16,
+    Arg          = 17,
+    VarRef       = 18,
+    U32          = 19,
+    I32          = 20,
+    Const        = 21,
+    Label        = 22,
+    Atom         = 23,
+    AtomU8       = 24,
+    AtomU16      = 25,
+    AtomLabelU8  = 26,
+    AtomLabelU16 = 27,
+    LabelU16     = 28,
+};

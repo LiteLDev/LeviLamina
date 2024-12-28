@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class DataLoadHelperType : int {
-    Default      = 0x0,
-    Structure    = 0x1,
-    NewUniqueIds = 0x2,
+    Default      = 0,
+    Structure    = 1,
+    NewUniqueIds = 2,
 };

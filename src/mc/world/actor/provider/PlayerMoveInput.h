@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace PlayerMoveInput {
-// NOLINTBEGIN
-MCAPI void initializePlayer(class EntityContext& entity);
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
 
-MCAPI bool isSneakDown(class EntityContext const& entity);
+namespace PlayerMoveInput {
+// functions
+// NOLINTBEGIN
+MCAPI void initializePlayer(::EntityContext& entity);
+
+MCAPI bool isSneakDown(::EntityContext const& entity);
 // NOLINTEND
 
-}; // namespace PlayerMoveInput
+} // namespace PlayerMoveInput

@@ -5,6 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorOwnerComponent;
+class BlockSource;
+class EntityRegistry;
+class LevelChunk;
+class LoadedChunksComponent;
+struct Tick;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class LevelChunkTickingSystem : public ::ITickingSystem {
 public:
     // prevent constructor by default
@@ -13,60 +25,53 @@ public:
     LevelChunkTickingSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LevelChunkTickingSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~LevelChunkTickingSystem() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _determineLevelChunksToTick(
-        class Actor const&                              actor,
-        class BlockSource&                              region,
-        class LoadedChunksComponent&                    loadedChunksComponent,
-        std::vector<std::shared_ptr<class LevelChunk>>& levelChunksToTick,
-        std::vector<std::shared_ptr<class LevelChunk>>& levelChunksBlockEntitiesToTick,
-        struct Tick const&                              currentTick
+        ::Actor const&                                  actor,
+        ::BlockSource&                                  region,
+        ::LoadedChunksComponent&                        loadedChunksComponent,
+        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick,
+        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick,
+        ::Tick const&                                   currentTick
     );
 
-    MCAPI static void _tickLevelChunksAroundActor(
-        class Actor&                 actor,
-        class BlockSource&           region,
-        class LoadedChunksComponent& loadedChunksComponent
-    );
+    MCAPI static void
+    _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
 
     MCAPI static void _tickLevelChunksAroundActorView(
-        class ActorOwnerComponent&   actorOwnerComponent,
-        class LoadedChunksComponent& loadedChunksComponent
+        ::ActorOwnerComponent&   actorOwnerComponent,
+        ::LoadedChunksComponent& loadedChunksComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createPlayerPassengerSystem();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

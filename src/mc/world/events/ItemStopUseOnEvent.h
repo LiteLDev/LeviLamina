@@ -4,24 +4,28 @@
 
 struct ItemStopUseOnEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnkbd3e11;
+    ::ll::UntypedStorage<8, 24>  mUnk9bcf7e;
+    ::ll::UntypedStorage<4, 12>  mUnk7fe223;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ItemStopUseOnEvent& operator=(ItemStopUseOnEvent const&);
+    ItemStopUseOnEvent(ItemStopUseOnEvent const&);
     ItemStopUseOnEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const&);
-
     MCAPI ~ItemStopUseOnEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ItemStopUseOnEvent const&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

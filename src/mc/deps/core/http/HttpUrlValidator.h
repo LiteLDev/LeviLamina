@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 // clang-format on
@@ -23,25 +22,34 @@ public:
     HttpUrlValidator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HttpUrlValidator() = default;
-
     // vIndex: 1
-    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&& request);
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    send(::Bedrock::Http::Request&& request) /*override*/;
 
+    // vIndex: 0
+    virtual ~HttpUrlValidator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-          send$(class Bedrock::Http::Request&& request);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    $send(::Bedrock::Http::Request&& request);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

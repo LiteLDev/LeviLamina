@@ -15,39 +15,35 @@ namespace Util::Agent { struct SimulatedMoveResult; }
 // clang-format on
 
 namespace Util::Agent {
+// functions
 // NOLINTBEGIN
-MCAPI struct AgentComponents::BlockQueryResult
-getNextBlock(class BlockSource& source, class Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
+MCAPI ::AgentComponents::BlockQueryResult
+getNextBlock(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
-MCAPI struct AgentComponents::BlockQueryResult
-getNextBlockSweep(class BlockSource& source, class Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
+MCAPI ::AgentComponents::BlockQueryResult
+getNextBlockSweep(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
 
-MCAPI struct AgentComponents::BlockQueryResult getNextBlockUnfiltered(
-    class BlockSource&           source,
-    class Vec3                   curPos,
+MCAPI ::AgentComponents::BlockQueryResult
+getNextBlockUnfiltered(::BlockSource& source, ::Vec3 curPos, float bodyRot, ::AgentComponents::Direction direction);
+
+MCAPI ::AgentComponents::BlockQueryResult getNextBlockUnfilteredSweep(
+    ::BlockSource&               source,
+    ::Vec3                       curPos,
     float                        bodyRot,
     ::AgentComponents::Direction direction
 );
 
-MCAPI struct AgentComponents::BlockQueryResult getNextBlockUnfilteredSweep(
-    class BlockSource&           source,
-    class Vec3                   curPos,
-    float                        bodyRot,
-    ::AgentComponents::Direction direction
-);
+MCAPI ::Vec3 getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
 
-MCAPI class Vec3
-getNextPosFromDirection(class Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
-
-MCAPI struct Util::Agent::SimulatedMoveResult
-simulateMove(class EntityContext& entity, ::AgentComponents::Direction dir, class Vec3 destination);
+MCAPI ::Util::Agent::SimulatedMoveResult
+simulateMove(::EntityContext& entity, ::AgentComponents::Direction dir, ::Vec3 destination);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
 MCAPI float const& COMMAND_INTERVAL();
 
 MCAPI float const& MOVE_EPSILON();
 // NOLINTEND
 
-}; // namespace Util::Agent
+} // namespace Util::Agent

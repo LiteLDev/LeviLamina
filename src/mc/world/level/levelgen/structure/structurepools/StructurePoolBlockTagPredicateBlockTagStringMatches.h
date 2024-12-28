@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockTagPredicate.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class CompoundTag;
+namespace Util { class XXHash; }
+// clang-format on
+
 class StructurePoolBlockTagPredicateBlockTagStringMatches : public ::IStructurePoolBlockTagPredicate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk7e5364;
+    ::ll::UntypedStorage<8, 32> mUnkdb079c;
+    ::ll::UntypedStorage<8, 32> mUnk838f56;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructurePoolBlockTagPredicateBlockTagStringMatches&
@@ -14,26 +29,48 @@ public:
     StructurePoolBlockTagPredicateBlockTagStringMatches();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches() = default;
-
     // vIndex: 1
-    virtual bool test(class Block const& block, class CompoundTag const& tag) const;
+    virtual bool test(::Block const& block, ::CompoundTag const& tag) const /*override*/;
 
-    MCAPI
-    StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const& block, std::string tag, std::string value);
+    // vIndex: 2
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
+    // vIndex: 0
+    virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    StructurePoolBlockTagPredicateBlockTagStringMatches(::Block const& block, ::std::string tag, ::std::string value);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block, std::string tag, std::string value);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, ::std::string tag, ::std::string value);
+    // NOLINTEND
 
-    MCAPI bool test$(class Block const& block, class CompoundTag const& tag) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $test(::Block const& block, ::CompoundTag const& tag) const;
+
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

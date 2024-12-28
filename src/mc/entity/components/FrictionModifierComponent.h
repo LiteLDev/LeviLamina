@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FrictionModifierComponent {
+// auto generated inclusion list
+#include "mc/entity/components/FloatComponent.h"
+
+struct FrictionModifierComponent : public ::FloatComponent {
 public:
     // prevent constructor by default
     FrictionModifierComponent& operator=(FrictionModifierComponent const&);

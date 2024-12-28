@@ -2,11 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace WitherBossSpawnUtilities {
-// NOLINTBEGIN
-MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilder(class BlockSource& region);
+// auto generated forward declare list
+// clang-format off
+class BlockPatternBuilder;
+class BlockSource;
+// clang-format on
 
-MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilderForTShape(class BlockSource& region);
+namespace WitherBossSpawnUtilities {
+// functions
+// NOLINTBEGIN
+MCAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilder(::BlockSource& region);
+
+MCAPI ::std::unique_ptr<::BlockPatternBuilder> createWitherBuilderForTShape(::BlockSource& region);
 // NOLINTEND
 
-}; // namespace WitherBossSpawnUtilities
+} // namespace WitherBossSpawnUtilities

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/TypedClientNetId.h"
@@ -9,141 +8,192 @@
 #include "mc/world/item/ItemStackBase.h"
 #include "mc/world/item/ItemUseMethod.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPalette;
+class CompoundTag;
+class InteractionResult;
+class Item;
+class ItemInstance;
+class Level;
+class Mob;
+class NetworkItemStackDescriptor;
+class Player;
+class RecipeIngredient;
+class Vec3;
+struct ItemStackLegacyRequestIdTag;
+struct ItemStackNetIdTag;
+struct ItemStackNetIdVariant;
+struct ItemUsedOnEventContext;
+// clang-format on
+
 class ItemStack : public ::ItemStackBase {
 public:
-    ItemStackNetIdVariant mNetIdVariant;
-
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStack();
+    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    // NOLINTEND
 
-    // vIndex: 1
-    virtual void reinit(class Item const& item, int count = 1, int auxValue = 0);
-
+public:
+    // virtual functions
+    // NOLINTBEGIN
     // vIndex: 2
-    virtual void reinit(class BlockLegacy const& blockLegacy, int count = 1);
+    virtual void reinit(::BlockLegacy const& block, int count) /*override*/;
 
     // vIndex: 3
-    virtual void reinit(std::string_view name, int count = 1, int auxValue = 0);
+    virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
+
+    // vIndex: 1
+    virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
 
     // vIndex: 4
-    virtual void setNull(std::optional<std::string> reason);
+    virtual void setNull(::std::optional<::std::string> reason) /*override*/;
 
     // vIndex: 5
-    virtual std::string toString() const;
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 6
-    virtual std::string toDebugString() const;
+    virtual ::std::string toDebugString() const /*override*/;
 
+    // vIndex: 0
+    virtual ~ItemStack() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ItemStack();
 
-    MCAPI explicit ItemStack(class ItemInstance const& rhs);
+    MCAPI explicit ItemStack(::RecipeIngredient const& ingredient);
 
-    MCAPI ItemStack(class ItemStack const& rhs);
+    MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCAPI explicit ItemStack(class RecipeIngredient const& ingredient);
+    MCAPI explicit ItemStack(::ItemInstance const& rhs);
 
-    MCAPI ItemStack(class BlockLegacy const& blockLegacy, int count = 1);
+    MCAPI ItemStack(::BlockLegacy const& block, int count);
 
-    MCAPI ItemStack(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
-    MCAPI
-    ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCAPI
-    ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI ItemStack(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCAPI void _assignNetIdVariant(class ItemStack const& fromItem) const;
+    MCAPI void _assignNetIdVariant(::ItemStack const& fromItem) const;
 
-    MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const& legacyClientRequestId);
+    MCAPI void clientInitLegacyRequestId(::ItemStackLegacyRequestId const& legacyClientRequestId);
 
-    MCAPI class ItemStack clone() const;
+    MCAPI ::ItemStack clone() const;
 
-    MCAPI float getDestroySpeed(class Block const& block) const;
+    MCAPI float getDestroySpeed(::Block const& block) const;
 
-    MCAPI struct ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
+    MCAPI ::ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
 
     MCAPI int getMaxUseDuration() const;
 
-    MCAPI class ItemStack getStrippedNetworkItem() const;
+    MCAPI ::ItemStack getStrippedNetworkItem() const;
 
     MCAPI bool hasItemStackNetId() const;
 
-    MCAPI bool inventoryTick(class Level& level, class Actor& owner, int slot, bool selected);
+    MCAPI bool inventoryTick(::Level& level, ::Actor& owner, int slot, bool selected);
 
-    MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const& other) const;
+    MCAPI bool matchesAndNetIdVariantMatches(::ItemStack const& other) const;
 
-    MCAPI bool matchesNetIdVariant(class ItemStack const& other) const;
+    MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
-    MCAPI class ItemStack& operator=(class ItemStack const& rhs);
+    MCAPI ::ItemStack& operator=(::ItemStack const& rhs);
 
-    MCAPI void playSoundIncrementally(class Mob& mob) const;
+    MCAPI void playSoundIncrementally(::Mob& mob) const;
 
-    MCAPI void releaseUsing(class Player* player, int durationLeft);
+    MCAPI void releaseUsing(::Player* player, int durationLeft);
 
-    MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const& otherItemStack) const;
+    MCAPI bool sameItemAndAuxAndBlockData(::ItemStack const& otherItemStack) const;
 
     MCAPI void serverInitNetId();
 
-    MCAPI ItemStackNetId const* tryGetItemStackNetId() const;
+    MCAPI ::ItemStackNetId const* tryGetItemStackNetId() const;
 
-    MCAPI class ItemStack& use(class Player& player);
+    MCAPI ::ItemStack& use(::Player& player);
 
     MCAPI void useAsFuel();
 
-    MCAPI class InteractionResult
-    useOn(class Actor& entity, int x, int y, int z, uchar face, class Vec3 const& clickPos);
-
-    MCAPI ::ItemUseMethod useTimeDepleted(class Level* level, class Player* player);
-
-    MCAPI static class ItemStack fromDescriptor(
-        class NetworkItemStackDescriptor const& descriptor,
-        class BlockPalette&                     blockPalette,
-        bool                                    isClientSide
+    MCAPI ::InteractionResult useOn(
+        ::Actor&                 entity,
+        int                      x,
+        int                      y,
+        int                      z,
+        uchar                    face,
+        ::Vec3 const&            clickPos,
+        ::ItemUsedOnEventContext itemUsedOnEventContext
     );
 
-    MCAPI static class ItemStack fromTag(class CompoundTag const& tag);
-
-    MCAPI static class ItemStack fromTag(class CompoundTag const& tag, class Level& level);
-
+    MCAPI ::ItemUseMethod useTimeDepleted(::Level* level, ::Player* player);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::ItemStack
+    fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void* ctor$(class RecipeIngredient const& ingredient);
+    MCAPI static ::ItemStack fromTag(::CompoundTag const& tag);
 
-    MCAPI void* ctor$(class ItemInstance const& rhs);
+    MCAPI static ::ItemStack fromTag(::CompoundTag const& tag, ::Level& level);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ItemStack const& EMPTY_ITEM();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string_view name, int count, int auxValue, class CompoundTag const* _userData);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class ItemStack const& rhs);
+    MCAPI void* $ctor(::RecipeIngredient const& ingredient);
 
-    MCAPI void* ctor$(class BlockLegacy const& block, int count);
+    MCAPI void* $ctor(::ItemStack const& rhs);
 
-    MCAPI void* ctor$(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
+    MCAPI void* $ctor(::ItemInstance const& rhs);
 
-    MCAPI void* ctor$(class Block const& block, int count, class CompoundTag const* _userData);
+    MCAPI void* $ctor(::BlockLegacy const& block, int count);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
-    MCAPI void reinit$(class Item const& item, int count, int auxValue);
+    MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCAPI void reinit$(class BlockLegacy const& block, int count);
+    MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    // NOLINTEND
 
-    MCAPI void reinit$(std::string_view name, int count, int auxValue);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void setNull$(std::optional<std::string> reason);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reinit(::BlockLegacy const& block, int count);
 
-    MCAPI std::string toDebugString$() const;
+    MCAPI void $reinit(::Item const& item, int count, int auxValue);
 
-    MCAPI std::string toString$() const;
+    MCAPI void $reinit(::std::string_view const name, int count, int auxValue);
 
-    MCAPI static class ItemStack const& EMPTY_ITEM();
+    MCAPI void $setNull(::std::optional<::std::string> reason);
 
+    MCAPI ::std::string $toString() const;
+
+    MCAPI ::std::string $toDebugString() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

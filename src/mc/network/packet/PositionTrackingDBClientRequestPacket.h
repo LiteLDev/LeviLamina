@@ -1,64 +1,90 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/PositionTrackingId.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class PositionTrackingId;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class PositionTrackingDBClientRequestPacket : public ::Packet {
 public:
+    // PositionTrackingDBClientRequestPacket inner types define
     enum class Action : uchar {
-        Query = 0x0,
+        Query = 0,
     };
 
 public:
-    Action             mAction; // this+0x30
-    PositionTrackingId mId;     // this+0x34
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::PositionTrackingDBClientRequestPacket::Action> mAction;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                            mId;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PositionTrackingDBClientRequestPacket& operator=(PositionTrackingDBClientRequestPacket const&);
     PositionTrackingDBClientRequestPacket(PositionTrackingDBClientRequestPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PositionTrackingDBClientRequestPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI PositionTrackingDBClientRequestPacket();
-
+    // vIndex: 0
+    virtual ~PositionTrackingDBClientRequestPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PositionTrackingDBClientRequestPacket();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

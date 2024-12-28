@@ -14,51 +14,59 @@ namespace Scripting {
 
 class WeakLifetimeScope {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkc28ee3;
+    ::ll::UntypedStorage<4, 4> mUnk42d11b;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WeakLifetimeScope();
 
-    MCAPI explicit WeakLifetimeScope(class Scripting::LifetimeRegistryReference* registryRef);
+    MCAPI explicit WeakLifetimeScope(::Scripting::LifetimeRegistryReference* registryRef);
 
-    MCAPI WeakLifetimeScope(class Scripting::WeakLifetimeScope&& rhs);
+    MCAPI WeakLifetimeScope(::Scripting::WeakLifetimeScope&& rhs);
 
-    MCAPI WeakLifetimeScope(class Scripting::WeakLifetimeScope const& rhs);
+    MCAPI WeakLifetimeScope(::Scripting::WeakLifetimeScope const& rhs);
 
-    MCAPI void addListener(std::weak_ptr<class Scripting::ILifetimeScopeListener> listener) const;
+    MCAPI void addListener(::std::weak_ptr<::Scripting::ILifetimeScopeListener> listener) const;
 
-    MCAPI struct Scripting::ContextId getContextId() const;
+    MCAPI ::Scripting::ContextId getContextId() const;
 
-    MCAPI class Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI class Scripting::WeakLifetimeScope& operator=(class Scripting::WeakLifetimeScope&& rhs);
+    MCAPI ::Scripting::WeakLifetimeScope& operator=(::Scripting::WeakLifetimeScope const& rhs);
 
-    MCAPI class Scripting::WeakLifetimeScope& operator=(class Scripting::WeakLifetimeScope const& rhs);
+    MCAPI ::Scripting::WeakLifetimeScope& operator=(::Scripting::WeakLifetimeScope&& rhs);
 
-    MCAPI bool operator==(class Scripting::WeakLifetimeScope const& rhs) const;
+    MCAPI bool operator==(::Scripting::WeakLifetimeScope const& rhs) const;
 
-    MCAPI void removeListener(std::shared_ptr<class Scripting::ILifetimeScopeListener> listener) const;
-
-    MCAPI void reset();
+    MCAPI void removeListener(::std::shared_ptr<::Scripting::ILifetimeScopeListener> listener) const;
 
     MCAPI bool valid() const;
 
     MCAPI ~WeakLifetimeScope();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope const& rhs);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Scripting::LifetimeRegistryReference* registryRef);
 
-    MCAPI void* ctor$(class Scripting::LifetimeRegistryReference* registryRef);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope&& rhs);
 
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope&& rhs);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& rhs);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -5,7 +5,45 @@
 // auto generated inclusion list
 #include "mc/server/ServerMetrics.h"
 
+// auto generated forward declare list
+// clang-format off
+class ServerCommunicationInterface;
+class ServerInstance;
+// clang-format on
+
 class ServerMetricsImpl : public ::ServerMetrics {
+public:
+    // ServerMetricsImpl inner types declare
+    // clang-format off
+    struct DataTransferred;
+    // clang-format on
+
+    // ServerMetricsImpl inner types define
+    struct DataTransferred {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk6f732d;
+        ::ll::UntypedStorage<8, 8> mUnk7d4a71;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DataTransferred& operator=(DataTransferred const&);
+        DataTransferred(DataTransferred const&);
+        DataTransferred();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnke1d394;
+    ::ll::UntypedStorage<8, 64>  mUnka9d3a6;
+    ::ll::UntypedStorage<8, 8>   mUnk6262f1;
+    ::ll::UntypedStorage<1, 1>   mUnk2cff8a;
+    ::ll::UntypedStorage<8, 616> mUnkd52975;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ServerMetricsImpl& operator=(ServerMetricsImpl const&);
@@ -13,41 +51,54 @@ public:
     ServerMetricsImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerMetricsImpl() = default;
+    virtual ~ServerMetricsImpl() /*override*/;
 
     // vIndex: 1
-    virtual void sendPeriodicMetrics(class ServerInstance& serverInstance);
+    virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) /*override*/;
 
     // vIndex: 2
-    virtual void sendServerTickTime(std::chrono::nanoseconds const& timepoint);
+    virtual void sendServerTickTime(::std::chrono::nanoseconds const& timepoint) /*override*/;
 
     // vIndex: 3
-    virtual void sendChunkLoadTelemetryData();
-
-    MCAPI explicit ServerMetricsImpl(class ServerCommunicationInterface* serverCommunicationInterface);
-
+    virtual void sendChunkLoadTelemetryData() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void sendPeriodicMetricsInternal(class ServerInstance& serverInstance);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ServerMetricsImpl(::ServerCommunicationInterface* serverCommunicationInterface);
 
-    MCAPI void* ctor$(class ServerCommunicationInterface* serverCommunicationInterface);
+    MCAPI void sendPeriodicMetricsInternal(::ServerInstance& serverInstance);
+    // NOLINTEND
 
-    MCAPI void sendChunkLoadTelemetryData$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerCommunicationInterface* serverCommunicationInterface);
+    // NOLINTEND
 
-    MCAPI void sendPeriodicMetrics$(class ServerInstance& serverInstance);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void sendServerTickTime$(std::chrono::nanoseconds const& timepoint);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $sendPeriodicMetrics(::ServerInstance& serverInstance);
 
+    MCAPI void $sendServerTickTime(::std::chrono::nanoseconds const& timepoint);
+
+    MCAPI void $sendChunkLoadTelemetryData();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

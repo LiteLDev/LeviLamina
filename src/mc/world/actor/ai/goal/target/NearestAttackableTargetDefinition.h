@@ -8,10 +8,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class Mob;
+class NearestAttackableTargetGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class NearestAttackableTargetDefinition : public ::TargetGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk67abec;
+    ::ll::UntypedStorage<4, 4> mUnk5c17f0;
+    ::ll::UntypedStorage<4, 4> mUnk50ac30;
+    ::ll::UntypedStorage<4, 4> mUnk513186;
+    ::ll::UntypedStorage<4, 4> mUnk9805ea;
+    ::ll::UntypedStorage<4, 4> mUnk3439b5;
+    ::ll::UntypedStorage<1, 1> mUnk919701;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NearestAttackableTargetDefinition& operator=(NearestAttackableTargetDefinition const&);
@@ -19,30 +34,46 @@ public:
     NearestAttackableTargetDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NearestAttackableTargetDefinition() = default;
-
     // vIndex: 2
-    virtual bool validate(class Mob& mob) const;
+    virtual bool validate(::Mob& mob) const /*override*/;
 
-    MCAPI void initialize(class EntityContext& entity, class NearestAttackableTargetGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>>&
-            root
-    );
-
+    // vIndex: 0
+    virtual ~NearestAttackableTargetDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void initialize(::EntityContext& entity, ::NearestAttackableTargetGoal& goal) const;
+    // NOLINTEND
 
-    MCAPI bool validate$(class Mob& mob) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const& name,
+        ::std::shared_ptr<
+            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NearestAttackableTargetDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $validate(::Mob& mob) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

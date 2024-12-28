@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IObjectInspector; }
 namespace Scripting { class ResultAny; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
@@ -16,43 +15,80 @@ namespace Scripting::QuickJS {
 
 class ObjectInspector : public ::Scripting::IObjectInspector {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkfcc24f;
+    ::ll::UntypedStorage<8, 8>  mUnk78ab83;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ObjectInspector& operator=(ObjectInspector const&);
     ObjectInspector(ObjectInspector const&);
     ObjectInspector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ObjectInspector() = default;
+    virtual ~ObjectInspector() /*override*/;
 
     // vIndex: 1
-    virtual bool isSameObject(struct Scripting::ObjectHandle handleA, struct Scripting::ObjectHandle handleB) const;
+    virtual bool isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const /*override*/;
 
     // vIndex: 2
-    virtual bool
-    hasBooleanPropertyValue(struct Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
+    virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const
+        /*override*/;
 
     // vIndex: 3
-    virtual std::optional<class Scripting::ResultAny>
-    getPropertyValue(struct Scripting::ObjectHandle handle, char const* name, entt::meta_type expectedType) const;
+    virtual ::std::optional<::Scripting::ResultAny>
+    getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type expectedType) const
+        /*override*/;
 
+    // vIndex: 4
+    virtual uint getDataBufferLength(::Scripting::ObjectHandle handle) const /*override*/;
+
+    // vIndex: 5
+    virtual uint getDataBufferByteLength(::Scripting::ObjectHandle handle) const /*override*/;
+
+    // vIndex: 6
+    virtual uchar* getDataBufferBytes(::Scripting::ObjectHandle handle) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI uint _getPropertyAsSize(::Scripting::ObjectHandle handle, char const* propertyName) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class Scripting::ResultAny>
-    getPropertyValue$(struct Scripting::ObjectHandle handle, char const* name, entt::meta_type expectedType) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool
-    hasBooleanPropertyValue$(struct Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const;
 
-    MCAPI bool isSameObject$(struct Scripting::ObjectHandle handleA, struct Scripting::ObjectHandle handleB) const;
+    MCAPI bool $hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
 
+    MCAPI ::std::optional<::Scripting::ResultAny>
+    $getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type expectedType) const;
+
+    MCAPI uint $getDataBufferLength(::Scripting::ObjectHandle handle) const;
+
+    MCAPI uint $getDataBufferByteLength(::Scripting::ObjectHandle handle) const;
+
+    MCAPI uchar* $getDataBufferBytes(::Scripting::ObjectHandle handle) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting::QuickJS
+} // namespace Scripting::QuickJS

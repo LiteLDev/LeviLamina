@@ -7,13 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class WeakLifetimeScope; }
 struct BeforeWatchdogTerminateEvent;
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptWatchdogTerminateBeforeEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk77ec13;
+    ::ll::UntypedStorage<1, 1> mUnkdff9e1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptWatchdogTerminateBeforeEvent& operator=(ScriptWatchdogTerminateBeforeEvent const&);
@@ -21,22 +28,24 @@ public:
     ScriptWatchdogTerminateBeforeEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI
-    ScriptWatchdogTerminateBeforeEvent(struct BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, class Scripting::WeakLifetimeScope const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
-    bind();
-
+    ScriptWatchdogTerminateBeforeEvent(::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, ::Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    ctor$(struct BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, class Scripting::WeakLifetimeScope const&);
-
+    $ctor(::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, ::Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

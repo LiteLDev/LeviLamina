@@ -3,9 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/IMapDataManagerOptions.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class LevelData;
+// clang-format on
+
 class MapDataManagerOptions : public ::IMapDataManagerOptions {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka0070d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MapDataManagerOptions& operator=(MapDataManagerOptions const&);
@@ -13,40 +26,57 @@ public:
     MapDataManagerOptions();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MapDataManagerOptions() = default;
-
     // vIndex: 1
-    virtual bool isPremiumWorldTemplate() const;
+    virtual bool isPremiumWorldTemplate() const /*override*/;
 
     // vIndex: 2
-    virtual bool isLegacyLevel() const;
+    virtual bool isLegacyLevel() const /*override*/;
 
     // vIndex: 3
-    virtual bool hasMapsCenteredToOrigin() const;
+    virtual bool hasMapsCenteredToOrigin() const /*override*/;
 
     // vIndex: 4
-    virtual class BlockPos const& getWorldCenter() const;
+    virtual ::BlockPos const& getWorldCenter() const /*override*/;
 
-    MCAPI explicit MapDataManagerOptions(class LevelData& levelData);
-
+    // vIndex: 0
+    virtual ~MapDataManagerOptions() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit MapDataManagerOptions(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class LevelData& levelData);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
+    // NOLINTEND
 
-    MCAPI class BlockPos const& getWorldCenter$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool hasMapsCenteredToOrigin$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isPremiumWorldTemplate() const;
 
-    MCAPI bool isLegacyLevel$() const;
+    MCAPI bool $isLegacyLevel() const;
 
-    MCAPI bool isPremiumWorldTemplate$() const;
+    MCAPI bool $hasMapsCenteredToOrigin() const;
 
+    MCAPI ::BlockPos const& $getWorldCenter() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

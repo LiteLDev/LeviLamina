@@ -4,13 +4,27 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealSchemaUpgrade;
+class SemVersion;
 namespace Core { class Path; }
+namespace cereal { struct Schema; }
 // clang-format on
 
 class CerealDocumentUpgrader {
 public:
     // CerealDocumentUpgrader inner types define
-    enum class ParseAndUpgradeResult {};
+    enum class ParseAndUpgradeResult : int {
+        Failure               = 0,
+        SuccessWithChanges    = 1,
+        SuccessWithoutChanges = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk34f8f2;
+    ::ll::UntypedStorage<8, 112> mUnkd5595a;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -19,53 +33,52 @@ public:
     CerealDocumentUpgrader();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit CerealDocumentUpgrader(class SemVersion terminus);
+    MCAPI explicit CerealDocumentUpgrader(::SemVersion terminus);
 
     MCAPI void clear();
 
     MCAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
-        std::string const& json,
-        class SemVersion&  outDocumentVersion,
-        rapidjson::GenericDocument<
-            rapidjson::UTF8<char>,
-            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-            rapidjson::CrtAllocator>&                       document,
-        class Core::Path const&                             resourceName,
-        bool                                                allowMissingVersionAsZero,
-        std::optional<class SemVersion> const&              minVersion,
-        std::function<bool(class SemVersion const&)> const& shouldUpgrade
+        ::std::string const& json,
+        ::SemVersion&        outDocumentVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&                   document,
+        ::Core::Path const&                               resourceName,
+        bool                                              allowMissingVersionAsZero,
+        ::std::optional<::SemVersion> const&              minVersion,
+        ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
 
-    MCAPI void registerUpgrade(std::shared_ptr<class CerealSchemaUpgrade> upgrade);
+    MCAPI void registerUpgrade(::std::shared_ptr<::CerealSchemaUpgrade> upgrade);
 
     MCAPI bool upgradeJson(
-        std::string&      json,
-        class SemVersion& outDocumentVersion,
-        rapidjson::GenericDocument<
-            rapidjson::UTF8<char>,
-            rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-            rapidjson::CrtAllocator>&                       document,
-        class Core::Path const&                             resourceName,
-        std::optional<class SemVersion> const&              minVersion,
-        std::function<bool(class SemVersion const&)> const& shouldUpgrade
+        ::std::string& json,
+        ::SemVersion&  outDocumentVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&                   document,
+        ::Core::Path const&                               resourceName,
+        ::std::optional<::SemVersion> const&              minVersion,
+        ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
-
-    MCAPI ~CerealDocumentUpgrader();
-
-    MCAPI static std::string getVersion(rapidjson::GenericDocument<
-                                        rapidjson::UTF8<char>,
-                                        rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                                        rapidjson::CrtAllocator> const& document);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class SemVersion terminus);
+    MCAPI static ::std::string getVersion(::rapidjson::GenericDocument<
+                                          ::rapidjson::UTF8<char>,
+                                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+                                          ::rapidjson::CrtAllocator> const& document);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SemVersion terminus);
     // NOLINTEND
 };

@@ -6,14 +6,21 @@ namespace Bedrock::Threading {
 
 class PrioritizeSharedOwnership {
 public:
-    static const uint64_t mWaitForZeroBit = 0x8000000000000000; // constant
-
-    std::shared_mutex           mMutex;              // this+0x0
-    std::condition_variable_any mZeroReaders;        // this+0x8
-    std::atomic_uint64_t        mReaderCount;        // this+0x60
-    uint64_t                    mWaitingWriterCount; // this+0x68
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>            mMutex;
+    ::ll::TypedStorage<8, 88, ::std::condition_variable_any> mZeroReaders;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>          mReaderCount;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PrioritizeSharedOwnership& operator=(PrioritizeSharedOwnership const&);
+    PrioritizeSharedOwnership(PrioritizeSharedOwnership const&);
+    PrioritizeSharedOwnership();
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void lock();
 
@@ -24,8 +31,7 @@ public:
     MCAPI void unlock();
 
     MCAPI void unlock_shared();
-
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

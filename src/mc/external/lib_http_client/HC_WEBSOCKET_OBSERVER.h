@@ -19,30 +19,22 @@ public:
     HC_WEBSOCKET_OBSERVER();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HC_WEBSOCKET_OBSERVER() = default;
+    MCAPI static void BinaryMessageFragmentFunc(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*);
 
-    MCAPI static std::unique_ptr<struct HC_WEBSOCKET_OBSERVER, struct http_alloc_deleter<struct HC_WEBSOCKET_OBSERVER>> Initialize(std::shared_ptr<class xbox::httpclient::WebSocket>, void (*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*), void*);
+    MCAPI static void BinaryMessageFunc(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*);
 
+    MCAPI static void CloseFunc(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
+
+    MCAPI static ::std::unique_ptr<::HC_WEBSOCKET_OBSERVER, ::http_alloc_deleter<::HC_WEBSOCKET_OBSERVER>> Initialize(::std::shared_ptr<::xbox::httpclient::WebSocket>, void (*)(::HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*), void*);
+
+    MCAPI static void MessageFunc(::HC_WEBSOCKET_OBSERVER*, char const*, void*);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*);
-
-    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*);
-
-    MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
-
-    MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

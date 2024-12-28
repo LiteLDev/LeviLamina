@@ -8,10 +8,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace gametest { class BaseGameTestInstance; }
+class AABB;
+class BlockSource;
+class BoundingBox;
+class Dimension;
+class Vec3;
 // clang-format on
 
 class MinecraftGameTestInstance : public ::gametest::BaseGameTestInstance {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkc127d6;
+    ::ll::UntypedStorage<1, 1> mUnk4f4f29;
+    ::ll::UntypedStorage<8, 8> mUnk5f587b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MinecraftGameTestInstance& operator=(MinecraftGameTestInstance const&);
@@ -19,76 +31,85 @@ public:
     MinecraftGameTestInstance();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestInstance() = default;
-
-    // vIndex: 1
-    virtual void initialize();
-
-    // vIndex: 2
-    virtual bool hasStructureBlock() const;
-
-    // vIndex: 3
-    virtual void clearStructure();
-
-    // vIndex: 4
-    virtual void spawnStructure();
-
-    // vIndex: 5
-    virtual std::optional<class AABB> getStructureBounds() const;
-
-    // vIndex: 6
-    virtual std::optional<class Vec3> getStructureBlockPivot() const;
-
-    // vIndex: 7
-    virtual std::optional<class Vec3> getStructureBlockPosPivot() const;
-
-    // vIndex: 8
-    virtual class BoundingBox getStructureBoundingBox() const;
-
-    // vIndex: 9
-    virtual DimensionType getStructureDimension() const;
-
-    // vIndex: 10
-    virtual int _getLevelTick() const;
-
-    // vIndex: 11
-    virtual bool _isTestReady();
+    virtual ~MinecraftGameTestInstance() /*override*/;
 
     // vIndex: 14
-    virtual class BlockSource& getBlockSource() const;
+    virtual ::BlockSource& getBlockSource() const;
 
+    // vIndex: 1
+    virtual void initialize() /*override*/;
+
+    // vIndex: 2
+    virtual bool hasStructureBlock() const /*override*/;
+
+    // vIndex: 3
+    virtual void clearStructure() /*override*/;
+
+    // vIndex: 4
+    virtual void spawnStructure() /*override*/;
+
+    // vIndex: 5
+    virtual ::std::optional<::AABB> getStructureBounds() const /*override*/;
+
+    // vIndex: 6
+    virtual ::std::optional<::Vec3> getStructureBlockPivot() const /*override*/;
+
+    // vIndex: 7
+    virtual ::std::optional<::Vec3> getStructureBlockPosPivot() const /*override*/;
+
+    // vIndex: 8
+    virtual ::BoundingBox getStructureBoundingBox() const /*override*/;
+
+    // vIndex: 9
+    virtual ::DimensionType getStructureDimension() const /*override*/;
+
+    // vIndex: 10
+    virtual int _getLevelTick() const /*override*/;
+
+    // vIndex: 11
+    virtual bool _isTestReady() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int _getLevelTick$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockSource& $getBlockSource() const;
 
-    MCAPI bool _isTestReady$();
+    MCAPI void $initialize();
 
-    MCAPI void clearStructure$();
+    MCAPI bool $hasStructureBlock() const;
 
-    MCAPI class BlockSource& getBlockSource$() const;
+    MCAPI void $clearStructure();
 
-    MCAPI std::optional<class Vec3> getStructureBlockPivot$() const;
+    MCAPI void $spawnStructure();
 
-    MCAPI std::optional<class Vec3> getStructureBlockPosPivot$() const;
+    MCAPI ::std::optional<::AABB> $getStructureBounds() const;
 
-    MCAPI class BoundingBox getStructureBoundingBox$() const;
+    MCAPI ::std::optional<::Vec3> $getStructureBlockPivot() const;
 
-    MCAPI std::optional<class AABB> getStructureBounds$() const;
+    MCAPI ::std::optional<::Vec3> $getStructureBlockPosPivot() const;
 
-    MCAPI DimensionType getStructureDimension$() const;
+    MCAPI ::BoundingBox $getStructureBoundingBox() const;
 
-    MCAPI bool hasStructureBlock$() const;
+    MCAPI ::DimensionType $getStructureDimension() const;
 
-    MCAPI void initialize$();
+    MCAPI int $_getLevelTick() const;
 
-    MCAPI void spawnStructure$();
+    MCAPI bool $_isTestReady();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

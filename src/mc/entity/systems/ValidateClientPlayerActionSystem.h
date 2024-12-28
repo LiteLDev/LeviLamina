@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ValidateClientPlayerActionSystem {
+// auto generated forward declare list
+// clang-format off
+class EntitySystems;
+// clang-format on
+
+struct ValidateClientPlayerActionSystem {
 public:
     // prevent constructor by default
     ValidateClientPlayerActionSystem& operator=(ValidateClientPlayerActionSystem const&);
@@ -10,8 +15,10 @@ public:
     ValidateClientPlayerActionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void registerSystems(class EntitySystems& systemRegistry, bool reportTelemetry);
+    MCAPI static void registerServerAntiCheatSystems(::EntitySystems& systemRegistry);
 
+    MCAPI static void registerSystems(::EntitySystems& systemRegistry, bool reportTelemetry);
     // NOLINTEND
 };

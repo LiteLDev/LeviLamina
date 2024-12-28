@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct WorldTemplateManagerProxyCallbacks;
+// clang-format on
+
 class WorldTemplateManagerProxy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 192> mUnk812f17;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WorldTemplateManagerProxy& operator=(WorldTemplateManagerProxy const&);
@@ -10,19 +21,22 @@ public:
     WorldTemplateManagerProxy();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const& callbacks);
+    MCAPI explicit WorldTemplateManagerProxy(::WorldTemplateManagerProxyCallbacks const& callbacks);
 
     MCAPI ~WorldTemplateManagerProxy();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct WorldTemplateManagerProxyCallbacks const& callbacks);
+    MCAPI void* $ctor(::WorldTemplateManagerProxyCallbacks const& callbacks);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -1,26 +1,42 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
 
 struct MolangActorIdArrayPtr {
 public:
-    std::vector<ActorUniqueID> mActorIds;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit MolangActorIdArrayPtr(std::vector<struct ActorUniqueID> actorIds);
-
-    MCAPI ~MolangActorIdArrayPtr();
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mActorIds;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    MolangActorIdArrayPtr& operator=(MolangActorIdArrayPtr const&);
+    MolangActorIdArrayPtr(MolangActorIdArrayPtr const&);
+    MolangActorIdArrayPtr();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::vector<struct ActorUniqueID> actorIds);
+    MCAPI explicit MolangActorIdArrayPtr(::std::vector<::ActorUniqueID> actorIds);
 
-    MCAPI void dtor$();
+    MCAPI ~MolangActorIdArrayPtr();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::ActorUniqueID> actorIds);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

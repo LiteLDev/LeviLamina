@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 class MoveTowardsRestrictionGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk9c918c;
+    ::ll::UntypedStorage<4, 4>  mUnk4a0d42;
+    ::ll::UntypedStorage<4, 12> mUnkde2dba;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MoveTowardsRestrictionGoal& operator=(MoveTowardsRestrictionGoal const&);
@@ -14,32 +26,41 @@ public:
     MoveTowardsRestrictionGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MoveTowardsRestrictionGoal() = default;
+    virtual ~MoveTowardsRestrictionGoal() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
-
+    virtual void start() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const& restrictionCenter);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canContinueToUse();
 
+    MCAPI void $start();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

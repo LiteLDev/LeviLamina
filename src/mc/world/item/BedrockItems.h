@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 
+// auto generated forward declare list
+// clang-format off
+class Item;
+class ItemRegistryRef;
+// clang-format on
+
 class BedrockItems {
 public:
     // prevent constructor by default
@@ -13,17 +19,16 @@ public:
     BedrockItems();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void registerItems(class ItemRegistryRef itemRegistry);
+    MCAPI static void registerItems(::ItemRegistryRef itemRegistry);
 
-    MCAPI static void unregisterItems(class ItemRegistryRef itemRegistry);
-
+    MCAPI static void unregisterItems(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class WeakPtr<class Item>& mAir();
-
+    MCAPI static ::WeakPtr<::Item>& mAir();
     // NOLINTEND
 };

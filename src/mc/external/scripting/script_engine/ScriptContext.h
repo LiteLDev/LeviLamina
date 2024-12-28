@@ -19,59 +19,65 @@ namespace Scripting {
 
 class ScriptContext {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk673a09;
+    ::ll::UntypedStorage<1, 1>  mUnkac9107;
+    ::ll::UntypedStorage<8, 8>  mUnk374a26;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptContext& operator=(ScriptContext const&);
     ScriptContext(ScriptContext const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptContext();
 
-    MCAPI ScriptContext(class Scripting::ScriptContext&& rhs);
+    MCAPI ScriptContext(::Scripting::ScriptContext&& rhs);
 
     MCAPI ScriptContext(
-        class Scripting::IRuntime*                         runtime,
-        struct Scripting::ContextId                        contextId,
-        std::unique_ptr<class Scripting::LifetimeRegistry> registry
+        ::std::shared_ptr<::Scripting::IRuntime>         runtime,
+        ::Scripting::ContextId                           contextId,
+        ::std::unique_ptr<::Scripting::LifetimeRegistry> registry
     );
 
-    MCAPI struct Scripting::ContextId getContextId() const;
-
-    MCAPI class Scripting::IRuntime* getRuntime();
-
-    MCAPI class Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
-
-    MCAPI class Scripting::ScriptContext& operator=(class Scripting::ScriptContext&& rhs);
-
-    MCAPI class Scripting::ResultAny
-    run(class Scripting::IPayload& payload, std::optional<::Scripting::Privilege> privilege);
-
-    MCAPI ~ScriptContext();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _destroy();
 
+    MCAPI ::Scripting::ContextId getContextId() const;
+
+    MCAPI ::Scripting::IRuntime* getRuntime();
+
+    MCAPI ::Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
+
+    MCAPI ::Scripting::ScriptContext& operator=(::Scripting::ScriptContext&& rhs);
+
+    MCAPI ::Scripting::ResultAny run(::Scripting::IPayload& payload, ::std::optional<::Scripting::Privilege> privilege);
+
+    MCAPI ~ScriptContext();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Scripting::ScriptContext&& rhs);
+    MCAPI void* $ctor(::Scripting::ScriptContext&& rhs);
 
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*                         runtime,
-        struct Scripting::ContextId                        contextId,
-        std::unique_ptr<class Scripting::LifetimeRegistry> registry
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::Scripting::IRuntime>         runtime,
+        ::Scripting::ContextId                           contextId,
+        ::std::unique_ptr<::Scripting::LifetimeRegistry> registry
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -1,39 +1,59 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/raknet/BitStream.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/util/BytesDataInput.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class BitStream; }
+// clang-format on
+
 class RakDataInput : public ::BytesDataInput {
 public:
-    RakNet::BitStream* mBitStream;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RakDataInput();
-
-    // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
-
-    // vIndex: 10
-    virtual uint64 numBytesLeft() const;
-
+    ::ll::TypedStorage<8, 8, ::RakNet::BitStream&> mBitStream;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    RakDataInput& operator=(RakDataInput const&);
+    RakDataInput(RakDataInput const&);
+    RakDataInput();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 9
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 10
+    virtual uint64 numBytesLeft() const /*override*/;
 
-    MCAPI uint64 numBytesLeft$() const;
+    // vIndex: 0
+    virtual ~RakDataInput() /*override*/;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+
+    MCAPI uint64 $numBytesLeft() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

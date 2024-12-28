@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-namespace ScriptModuleMinecraft { class ScriptItemComponent; }
-namespace Scripting { struct NumberRange; }
 struct FloatRange;
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace Scripting { struct NumberRange; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -21,40 +21,50 @@ class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItem
 public:
     // prevent constructor by default
     ScriptItemDurabilityComponent& operator=(ScriptItemDurabilityComponent const&);
+    ScriptItemDurabilityComponent(ScriptItemDurabilityComponent const&);
     ScriptItemDurabilityComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemDurabilityComponent() = default;
-
-    MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
-
-    MCAPI class Scripting::Result<int> getCurrentDamage();
-
-    MCAPI class Scripting::Result<int> getDamageChance(int unbreaking);
-
-    MCAPI class Scripting::Result<struct Scripting::NumberRange> getDamageChanceRange();
-
-    MCAPI class Scripting::Result<struct FloatRange> getDamageRange_V010();
-
-    MCAPI class Scripting::Result<int> getMaxDurability();
-
-    MCAPI class Scripting::Result<void> setCurrentDamage(int damage);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemDurabilityComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptItemDurabilityComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
+    MCAPI ::Scripting::Result_deprecated<int> getDamageChance(int unbreaking);
 
+    MCAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getDamageChanceRange();
+
+    MCAPI ::Scripting::Result_deprecated<::FloatRange> getDamageRange_V010();
+
+    MCAPI ::Scripting::Result_deprecated<int> getMaxDurability();
+
+    MCAPI ::Scripting::Result<void> setCurrentDamage(int damage);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemDurabilityComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -5,18 +5,22 @@
 // auto generated inclusion list
 #include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
+#include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
-#include "mc/gameplayhandlers/HandlerResult.h"
-#include "mc/world/events/BlockGameplayEvent.h"
-#include "mc/world/events/MutableBlockGameplayEvent.h"
+#include "mc/scripting/event_handlers/ScriptEventHandler.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockGameplayHandler;
+struct BlockTryDestroyByPlayerEvent;
+struct BlockTryPlaceByPlayerEvent;
+struct ExplosionStartedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptBlockGameplayHandler {
+class ScriptBlockGameplayHandler : public ::EventHandlerDispatcher<::BlockGameplayHandler>,
+                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // prevent constructor by default
     ScriptBlockGameplayHandler& operator=(ScriptBlockGameplayHandler const&);
@@ -24,95 +28,65 @@ public:
     ScriptBlockGameplayHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptBlockGameplayHandler() = default;
-
-    // vIndex: 1
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct BlockTryPlaceByPlayerEvent const& eventData);
-
-    // vIndex: 2
-    virtual struct GameplayHandlerResult<std::optional<std::string>>
-    handleEvent(struct CraftUISetResultNameEvent const&);
-
-    // vIndex: 3
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct ExplosionStartedEvent& explosionStartedEvent);
-
-    // vIndex: 4
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct BlockTryDestroyByPlayerEvent& eventData
-    );
+    // vIndex: 6
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ExplosionStartedEvent& explosionStartedEvent
+    ) /*override*/;
 
     // vIndex: 5
-    virtual ::HandlerResult handleEvent(struct BlockGameplayEvent<void> const&);
-
-    // vIndex: 6
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct BlockGameplayEvent<::CoordinatorResult> const&);
-
-    // vIndex: 7
-    virtual struct GameplayHandlerResult<std::optional<std::string>>
-    handleEvent(struct BlockGameplayEvent<std::optional<std::string>> const&);
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryDestroyByPlayerEvent& eventData
+    ) /*override*/;
 
     // vIndex: 8
-    virtual struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(struct MutableBlockGameplayEvent<::CoordinatorResult>& event);
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryPlaceByPlayerEvent const& eventData
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScriptBlockGameplayHandler() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _handleBlockTryDestroyByPlayerEvent(
-        struct BlockTryDestroyByPlayerEvent&      eventData,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::BlockTryDestroyByPlayerEvent&                                                   eventData,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
     MCAPI bool _handleBlockTryPlaceByPlayerEvent(
-        struct BlockTryPlaceByPlayerEvent const&  eventData,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::BlockTryPlaceByPlayerEvent const&                                               eventData,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
     MCAPI bool _handleExplosionStartedEvent(
-        struct ExplosionStartedEvent&             explosionStartedEvent,
-        class Scripting::WeakLifetimeScope const& scope,
-        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>
-            scriptLevelEventsHandle
+        ::ExplosionStartedEvent&                                                          explosionStartedEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct BlockTryPlaceByPlayerEvent const& eventData);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ExplosionStartedEvent& explosionStartedEvent);
 
-    MCAPI struct GameplayHandlerResult<std::optional<std::string>>
-    handleEvent$(struct CraftUISetResultNameEvent const&);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryDestroyByPlayerEvent& eventData);
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct ExplosionStartedEvent& explosionStartedEvent);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BlockTryPlaceByPlayerEvent const& eventData);
+    // NOLINTEND
 
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult> handleEvent$(struct BlockTryDestroyByPlayerEvent& eventData
-    );
-
-    MCAPI ::HandlerResult handleEvent$(struct BlockGameplayEvent<void> const&);
-
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct BlockGameplayEvent<::CoordinatorResult> const&);
-
-    MCAPI struct GameplayHandlerResult<std::optional<std::string>>
-    handleEvent$(struct BlockGameplayEvent<std::optional<std::string>> const&);
-
-    MCAPI struct GameplayHandlerResult<::CoordinatorResult>
-    handleEvent$(struct MutableBlockGameplayEvent<::CoordinatorResult>& event);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

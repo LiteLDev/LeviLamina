@@ -2,7 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+
 class BedrockLoadContext {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2> mUnk7888ec;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BedrockLoadContext& operator=(BedrockLoadContext const&);
@@ -10,19 +19,16 @@ public:
     BedrockLoadContext();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedrockLoadContext(class SemVersion const& engineVersion);
+    MCAPI explicit BedrockLoadContext(::MolangVersion molangVersion);
 
-    MCAPI ~BedrockLoadContext();
-
+    MCAPI ::MolangVersion getMolangVersion() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class SemVersion const& engineVersion);
-
-    MCAPI void dtor$();
-
+    MCAPI void* $ctor(::MolangVersion molangVersion);
     // NOLINTEND
 };

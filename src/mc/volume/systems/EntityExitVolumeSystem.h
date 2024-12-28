@@ -3,10 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+// clang-format on
+
 class EntityExitVolumeSystem : public ::ITickingSystem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf578f9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntityExitVolumeSystem& operator=(EntityExitVolumeSystem const&);
@@ -14,50 +24,24 @@ public:
     EntityExitVolumeSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EntityExitVolumeSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI explicit EntityExitVolumeSystem(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
-
+    // vIndex: 0
+    virtual ~EntityExitVolumeSystem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _tick(
-        class EntityContext&                 entity,
-        class VolumeBoundsComponent&         bounds,
-        class EntitiesInsideVolumeComponent& entitiesInsideVolume
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
-
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
     // NOLINTEND
 };

@@ -1,29 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/util/MolangLoopBreak.h"
-#include "mc/util/MolangLoopContinue.h"
-#include "mc/world/actor/Actor.h"
-#include "mc/world/item/ItemStackBase.h"
 
 union MolangScriptArgPOD {
-    float              mFloat;
-    uint64             mHashType64;
-    MolangLoopBreak    mLoopBreak;
-    MolangLoopContinue mLoopContinue;
-    Actor*             mActorPtr;
-    ActorUniqueID      mActorId;
-    ItemStackBase*     mItemStackBasePtr;
-    uint64             _mData;
-    constexpr MolangScriptArgPOD() : _mData(0) {}
-    constexpr MolangScriptArgPOD(float val) : mFloat(val) {}
-    constexpr MolangScriptArgPOD(uint64 val) : mHashType64(val) {}
-    constexpr MolangScriptArgPOD(MolangLoopBreak val) : mLoopBreak(val) {}
-    constexpr MolangScriptArgPOD(MolangLoopContinue val) : mLoopContinue(val) {}
-    constexpr MolangScriptArgPOD(Actor const* val) : mActorPtr(const_cast<Actor*>(val)) {}
-    constexpr MolangScriptArgPOD(ActorUniqueID val) : mActorId(val) {}
-    constexpr MolangScriptArgPOD(ItemStackBase const* val) : mItemStackBasePtr(const_cast<ItemStackBase*>(val)) {}
-    constexpr bool operator==(MolangScriptArgPOD const& rhs) const { return _mData == rhs._mData; }
-    void           clear() { _mData = 0; }
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnk1771a1;
+    ::ll::UntypedStorage<8, 8> mUnk31676d;
+    ::ll::UntypedStorage<1, 8> mUnk7ad0fd;
+    ::ll::UntypedStorage<1, 8> mUnk17236c;
+    ::ll::UntypedStorage<8, 8> mUnkc5af4a;
+    ::ll::UntypedStorage<8, 8> mUnk4ac7a7;
+    ::ll::UntypedStorage<8, 8> mUnkbcccbb;
+    ::ll::UntypedStorage<8, 8> mUnkc528c5;
+    // NOLINTEND
 };

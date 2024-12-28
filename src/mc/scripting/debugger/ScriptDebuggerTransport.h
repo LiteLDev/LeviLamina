@@ -5,12 +5,17 @@
 // auto generated inclusion list
 #include "mc/external/scripting/runtime/IDebuggerTransport.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class IDebuggerTransport; }
-// clang-format on
-
 class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkeffb26;
+    ::ll::UntypedStorage<8, 8>   mUnk47b104;
+    ::ll::UntypedStorage<8, 136> mUnkf9bbd8;
+    ::ll::UntypedStorage<8, 8>   mUnk34b362;
+    ::ll::UntypedStorage<8, 8>   mUnk23a39e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptDebuggerTransport& operator=(ScriptDebuggerTransport const&);
@@ -18,66 +23,80 @@ public:
     ScriptDebuggerTransport();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDebuggerTransport() = default;
+    virtual ~ScriptDebuggerTransport() /*override*/;
 
     // vIndex: 1
-    virtual bool listen(ushort port);
+    virtual bool listen(ushort port) /*override*/;
 
     // vIndex: 2
-    virtual bool connect(std::string const& host, ushort port);
+    virtual bool connect(::std::string const& host, ushort port) /*override*/;
 
     // vIndex: 3
-    virtual bool selectClient();
+    virtual bool selectClient(::std::string& outClient) /*override*/;
 
     // vIndex: 4
-    virtual bool connected() const;
+    virtual bool started() const /*override*/;
 
     // vIndex: 5
-    virtual bool lostConnection() const;
+    virtual bool connected() const /*override*/;
 
     // vIndex: 6
-    virtual bool readyClose() const;
+    virtual bool lostConnection() const /*override*/;
 
     // vIndex: 7
-    virtual void close();
+    virtual bool readyClose() const /*override*/;
 
     // vIndex: 8
-    virtual bool peek() const;
+    virtual void close() /*override*/;
 
     // vIndex: 9
-    virtual bool receive(char* buffer, uint64 length);
+    virtual bool peek() const /*override*/;
 
     // vIndex: 10
-    virtual void send(char const* buffer, uint64 length);
+    virtual bool receive(char* buffer, uint64 length) /*override*/;
 
+    // vIndex: 11
+    virtual void send(char const* buffer, uint64 length) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void close$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $listen(ushort port);
 
-    MCAPI bool connect$(std::string const& host, ushort port);
+    MCAPI bool $connect(::std::string const& host, ushort port);
 
-    MCAPI bool connected$() const;
+    MCAPI bool $selectClient(::std::string& outClient);
 
-    MCAPI bool listen$(ushort port);
+    MCAPI bool $started() const;
 
-    MCAPI bool lostConnection$() const;
+    MCAPI bool $connected() const;
 
-    MCAPI bool peek$() const;
+    MCAPI bool $lostConnection() const;
 
-    MCAPI bool readyClose$() const;
+    MCAPI bool $readyClose() const;
 
-    MCAPI bool receive$(char* buffer, uint64 length);
+    MCAPI void $close();
 
-    MCAPI bool selectClient$();
+    MCAPI bool $peek() const;
 
-    MCAPI void send$(char const* buffer, uint64 length);
+    MCAPI bool $receive(char* buffer, uint64 length);
 
+    MCAPI void $send(char const* buffer, uint64 length);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

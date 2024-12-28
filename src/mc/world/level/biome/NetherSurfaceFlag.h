@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NetherSurfaceFlag {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct NetherSurfaceFlag : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     NetherSurfaceFlag& operator=(NetherSurfaceFlag const&);
@@ -10,16 +13,21 @@ public:
     NetherSurfaceFlag();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetherSurfaceFlag() = default;
-
+    virtual ~NetherSurfaceFlag() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

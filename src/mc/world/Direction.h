@@ -9,7 +9,13 @@
 class Direction {
 public:
     // Direction inner types define
-    enum class Type {};
+    enum class Type : uchar {
+        South     = 0,
+        West      = 1,
+        North     = 2,
+        East      = 3,
+        Undefined = 255,
+    };
 
 public:
     // prevent constructor by default
@@ -18,6 +24,7 @@ public:
     Direction();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar facingDirection);
 
@@ -26,31 +33,29 @@ public:
     MCAPI static ::Direction::Type mirrorDirection(::Mirror mirror, ::Direction::Type direction);
 
     MCAPI static ::Direction::Type rotateDirection(::Direction::Type direction, ::Rotation rotation);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static auto DIRECTION_CLOCKWISE() -> ::Direction::Type const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_CLOCKWISE();
 
-    MCAPI static auto DIRECTION_COUNTER_CLOCKWISE() -> ::Direction::Type const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_COUNTER_CLOCKWISE();
 
-    MCAPI static std::array<uchar, 4> const& DIRECTION_FACING();
+    MCAPI static ::std::array<uchar, 4> const& DIRECTION_FACING();
 
-    MCAPI static auto DIRECTION_OPPOSITE() -> ::Direction::Type const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_OPPOSITE();
 
-    MCAPI static auto FACING_DIRECTION() -> ::Direction::Type const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> FACING_DIRECTION();
 
-    MCAPI static std::unordered_map<std::string, ::Direction::Type> const& FROM_STRING_MAP();
+    MCAPI static ::std::unordered_map<::std::string, ::Direction::Type> const& FROM_STRING_MAP();
 
-    MCAPI static auto STEP_X() -> int const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<uchar[][6]> RELATIVE_DIRECTION_FACING();
 
-    MCAPI static auto STEP_Z() -> int const (&)[];
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_X();
 
-    MCAPI static std::array<std::string, 4> const& TO_STRING_ARRAY();
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_Z();
 
-    MCAPI static std::unordered_map<uint, std::string> const& TO_STRING_MAP();
-
+    MCAPI static ::std::unordered_map<uint, ::std::string> const& TO_STRING_MAP();
     // NOLINTEND
 };

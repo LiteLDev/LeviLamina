@@ -4,6 +4,10 @@
 
 namespace Core::Profile {
 
-enum class CounterFlags {};
-
+enum class CounterFlags : uint {
+    None          = 0,
+    Detailed      = 1,
+    DetailedGraph = 2,
 };
+
+}

@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class GameEvent;
+// clang-format on
+
 namespace VibrationListenerUtils {
+// functions
 // NOLINTBEGIN
-MCAPI int getGameEventFrequency(class GameEvent const& gameEvent);
+MCAPI int getGameEventFrequency(::GameEvent const& gameEvent);
 
-MCAPI class GameEvent const& getResonateEventByFrequency(int frequency);
-
-MCAPI bool ignoreVibrationIfSneaking(
-    class BlockSource&,
-    class GameEvent const&         gameEvent,
-    struct GameEventContext const& gameEventContext
-);
+MCAPI ::GameEvent const& getResonateEventByFrequency(int frequency);
 // NOLINTEND
 
-}; // namespace VibrationListenerUtils
+} // namespace VibrationListenerUtils

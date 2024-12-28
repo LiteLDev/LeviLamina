@@ -2,7 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LevelDbRandomAccessFile {
+class LevelDbRandomAccessFile : public ::leveldb::RandomAccessFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk52ec66;
+    ::ll::UntypedStorage<8, 80> mUnk2ca349;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelDbRandomAccessFile& operator=(LevelDbRandomAccessFile const&);
@@ -10,21 +17,30 @@ public:
     LevelDbRandomAccessFile();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LevelDbRandomAccessFile() = default;
-
     // vIndex: 1
-    virtual leveldb::Status Read(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
+    virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
 
+    // vIndex: 0
+    virtual ~LevelDbRandomAccessFile() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI leveldb::Status Read$(uint64 offset, uint64 n, leveldb::Slice* result, char* scratch) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::leveldb::Status $Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

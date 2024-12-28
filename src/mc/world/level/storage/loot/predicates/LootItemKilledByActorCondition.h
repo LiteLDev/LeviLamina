@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class LootItemKilledByActorCondition : public ::LootItemCondition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 176> mUnk16f3ab;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LootItemKilledByActorCondition& operator=(LootItemKilledByActorCondition const&);
@@ -18,23 +26,36 @@ public:
     LootItemKilledByActorCondition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LootItemKilledByActorCondition() = default;
+    virtual ~LootItemKilledByActorCondition() /*override*/;
 
     // vIndex: 1
-    virtual bool applies(class Random& random, class LootTableContext& context);
-
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
-
+    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
+    // NOLINTEND
 
-    MCAPI bool applies$(class Random& random, class LootTableContext& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $applies(::Random& random, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

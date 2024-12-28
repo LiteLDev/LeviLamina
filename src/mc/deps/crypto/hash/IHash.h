@@ -6,9 +6,16 @@ namespace Crypto::Hash {
 
 class IHash {
 public:
+    // prevent constructor by default
+    IHash& operator=(IHash const&);
+    IHash(IHash const&);
+    IHash();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IHash() = default;
+    virtual ~IHash();
 
     // vIndex: 1
     virtual void reset() = 0;
@@ -21,8 +28,19 @@ public:
 
     // vIndex: 4
     virtual uint64 resultSize() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };
 
-}; // namespace Crypto::Hash
+} // namespace Crypto::Hash

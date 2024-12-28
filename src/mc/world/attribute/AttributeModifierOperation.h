@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class AttributeModifierOperation : int {
-    addition      = 0x0,
-    MultiplyBase  = 0x1,
-    MultiplyTotal = 0x2,
-    Cap           = 0x3,
-    Invalid       = 0x4,
-    Count         = Invalid,
+    OperationAddition      = 0,
+    OperationMultiplyBase  = 1,
+    OperationMultiplyTotal = 2,
+    OperationCap           = 3,
+    TotalOperations        = 4,
+    OperationInvalid       = 4,
 };

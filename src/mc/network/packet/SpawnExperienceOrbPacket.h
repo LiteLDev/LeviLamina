@@ -1,63 +1,88 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Vec3;
+// clang-format on
+
 class SpawnExperienceOrbPacket : public ::Packet {
 public:
-    Vec3 mPos;   // this+0x30
-    int  mCount; // this+0x3C
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 4, int>     mXPValue;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&);
     SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SpawnExperienceOrbPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI SpawnExperienceOrbPacket();
-
-    MCAPI SpawnExperienceOrbPacket(class Vec3 const& pos, int xpValue);
-
+    // vIndex: 0
+    virtual ~SpawnExperienceOrbPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SpawnExperienceOrbPacket();
 
-    MCAPI void* ctor$(class Vec3 const& pos, int xpValue);
+    MCAPI SpawnExperienceOrbPacket(::Vec3 const& pos, int xpValue);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Vec3 const& pos, int xpValue);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,72 +13,87 @@ namespace RakNet { struct SystemAddress; }
 
 class RakTcpProxy : public ::TcpProxy {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkbdae36;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RakTcpProxy& operator=(RakTcpProxy const&);
     RakTcpProxy(RakTcpProxy const&);
     RakTcpProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RakTcpProxy() = default;
+    virtual ~RakTcpProxy() /*override*/;
 
     // vIndex: 1
-    virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing);
+    virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) /*override*/;
 
     // vIndex: 2
-    virtual struct RakNet::SystemAddress connect(std::string const& host, ushort port);
+    virtual ::RakNet::SystemAddress connect(::std::string const& host, ushort port) /*override*/;
 
     // vIndex: 3
-    virtual void send(char const* data, uint length, struct RakNet::SystemAddress address);
+    virtual void send(char const* data, uint length, ::RakNet::SystemAddress address) /*override*/;
 
     // vIndex: 4
-    virtual void close(struct RakNet::SystemAddress address);
+    virtual void close(::RakNet::SystemAddress address) /*override*/;
 
     // vIndex: 5
-    virtual bool packetsAvailable();
+    virtual bool packetsAvailable() /*override*/;
 
     // vIndex: 6
-    virtual struct RakNet::Packet* nextPacket();
+    virtual ::RakNet::Packet* nextPacket() /*override*/;
 
     // vIndex: 7
-    virtual void deallocatePacket(struct RakNet::Packet* packet);
+    virtual void deallocatePacket(::RakNet::Packet* packet) /*override*/;
 
     // vIndex: 8
-    virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
+    virtual ::RakNet::SystemAddress nextCompletedConnectionAttempt() /*override*/;
 
     // vIndex: 9
-    virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
+    virtual ::RakNet::SystemAddress nextFailedConnectionAttempt() /*override*/;
 
     // vIndex: 10
-    virtual struct RakNet::SystemAddress nextLostConnection();
-
+    virtual ::RakNet::SystemAddress nextLostConnection() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void close$(struct RakNet::SystemAddress address);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $start(ushort port, ushort maxIncomming, ushort maxOutgoing);
 
-    MCAPI struct RakNet::SystemAddress connect$(std::string const& host, ushort port);
+    MCAPI ::RakNet::SystemAddress $connect(::std::string const& host, ushort port);
 
-    MCAPI void deallocatePacket$(struct RakNet::Packet* packet);
+    MCAPI void $send(char const* data, uint length, ::RakNet::SystemAddress address);
 
-    MCAPI struct RakNet::SystemAddress nextCompletedConnectionAttempt$();
+    MCAPI void $close(::RakNet::SystemAddress address);
 
-    MCAPI struct RakNet::SystemAddress nextFailedConnectionAttempt$();
+    MCAPI bool $packetsAvailable();
 
-    MCAPI struct RakNet::SystemAddress nextLostConnection$();
+    MCAPI ::RakNet::Packet* $nextPacket();
 
-    MCAPI struct RakNet::Packet* nextPacket$();
+    MCAPI void $deallocatePacket(::RakNet::Packet* packet);
 
-    MCAPI bool packetsAvailable$();
+    MCAPI ::RakNet::SystemAddress $nextCompletedConnectionAttempt();
 
-    MCAPI void send$(char const* data, uint length, struct RakNet::SystemAddress address);
+    MCAPI ::RakNet::SystemAddress $nextFailedConnectionAttempt();
 
-    MCAPI bool start$(ushort port, ushort maxIncomming, ushort maxOutgoing);
+    MCAPI ::RakNet::SystemAddress $nextLostConnection();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

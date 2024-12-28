@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VolumeComponentFactory {
+// auto generated inclusion list
+#include "mc/entity/factory/EntityComponentFactoryCereal.h"
+
+class VolumeComponentFactory : public ::EntityComponentFactoryCereal<::VolumeComponentFactory> {
 public:
     // prevent constructor by default
     VolumeComponentFactory& operator=(VolumeComponentFactory const&);
@@ -10,18 +13,15 @@ public:
     VolumeComponentFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VolumeComponentFactory() = default;
-
-    MCAPI void registerVolumeComponentDefinitions(bool registerServerDefinitions);
-
+    virtual ~VolumeComponentFactory() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

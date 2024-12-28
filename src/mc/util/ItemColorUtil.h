@@ -12,20 +12,21 @@ namespace mce { class Color; }
 // clang-format on
 
 namespace ItemColorUtil {
+// functions
 // NOLINTBEGIN
 MCAPI ::ItemColor fromBlockColor(::BlockColor color);
 
-MCAPI ::ItemColor fromColor(class mce::Color const& color);
+MCAPI ::ItemColor fromColor(::mce::Color const& color);
 
 MCAPI ::ItemColor fromInt(int auxValue);
 
-MCAPI class mce::Color getColor(::ItemColor color);
+MCAPI ::mce::Color getColor(::ItemColor color);
 
-MCAPI std::string const& getName(::ItemColor color);
+MCAPI ::std::string const& getName(::ItemColor color);
 
-MCAPI std::string const& getNameMixedCase(::ItemColor color);
+MCAPI ::std::string const& getNameMixedCase(::ItemColor color);
 
 MCAPI int getRGBColor(::ItemColor color);
 // NOLINTEND
 
-}; // namespace ItemColorUtil
+} // namespace ItemColorUtil

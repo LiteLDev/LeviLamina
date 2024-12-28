@@ -9,10 +9,11 @@ namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
 namespace FlatteningUtils::WoodenSlab {
+// functions
 // NOLINTBEGIN
-MCAPI struct FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
-}; // namespace FlatteningUtils::WoodenSlab
+} // namespace FlatteningUtils::WoodenSlab

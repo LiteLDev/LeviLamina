@@ -2,14 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class GameTestClearTask;
-// clang-format on
-
 namespace gametest {
 
 class GameTestTicker {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk584414;
+    ::ll::UntypedStorage<8, 24> mUnkf3f9fa;
+    ::ll::UntypedStorage<8, 24> mUnk2cc6b4;
+    ::ll::UntypedStorage<8, 24> mUnkadb620;
+    ::ll::UntypedStorage<8, 8>  mUnke09f0e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameTestTicker& operator=(GameTestTicker const&);
@@ -17,18 +22,14 @@ public:
     GameTestTicker();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void add(std::unique_ptr<class GameTestClearTask> clearTask);
-
     MCAPI void clear();
 
     MCAPI bool empty() const;
 
-    MCAPI void forceStop();
-
     MCAPI void tick();
-
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

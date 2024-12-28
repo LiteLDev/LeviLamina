@@ -10,7 +10,6 @@
 // clang-format off
 class IMinecraftApp;
 namespace Automation { class AutomationClient; }
-namespace CodeBuilder { class IManager; }
 namespace CodeBuilder { class IMessenger; }
 // clang-format on
 
@@ -18,38 +17,62 @@ namespace CodeBuilder {
 
 class Manager : public ::CodeBuilder::IManager {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk60b204;
+    ::ll::UntypedStorage<8, 8> mUnk89b328;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Manager& operator=(Manager const&);
     Manager(Manager const&);
     Manager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Manager() = default;
+    virtual ~Manager() /*override*/;
 
     // vIndex: 1
-    virtual Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const /*override*/;
 
     // vIndex: 2
-    virtual Bedrock::NotNullNonOwnerPtr<class CodeBuilder::IMessenger> getEventing() const;
-
-    MCAPI explicit Manager(class IMinecraftApp& minecraftApp);
-
+    virtual ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> getEventing() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit Manager(::IMinecraftApp& minecraftApp);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class IMinecraftApp& minecraftApp);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftApp& minecraftApp);
+    // NOLINTEND
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class CodeBuilder::IMessenger> getEventing$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> $getEventing() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace CodeBuilder
+} // namespace CodeBuilder

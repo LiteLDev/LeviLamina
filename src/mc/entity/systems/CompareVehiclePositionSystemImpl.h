@@ -6,27 +6,40 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ComparisonEventingCapComponent;
+struct EventingDispatcherComponent;
+struct EventingRequestQueueComponent;
+struct PassengerComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StateVectorComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
+
 namespace CompareVehiclePositionSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doCompareVehiclePosition(
-    struct PassengerComponent const&                   passengerComponent,
-    struct EventingDispatcherComponent const&          eventingDispatcherComponent,
-    struct ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovement,
-    class ViewT<class StrictEntityContext, struct VehicleInputIntentComponent, struct StateVectorComponent> vehicleView,
-    class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
-    class OptionalGlobal<struct ComparisonEventingCapComponent>                  eventingCapComponent
+    ::PassengerComponent const&                                                           passengerComponent,
+    ::EventingDispatcherComponent const&                                                  eventingDispatcherComponent,
+    ::ServerPlayerCurrentMovementComponent const&                                         serverPlayerCurrentMovement,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent, ::StateVectorComponent> vehicleView,
+    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>                       requestQueueView,
+    ::OptionalGlobal<::ComparisonEventingCapComponent>                                    eventingCapComponent
 );
 
 MCAPI void tick(
-    class ViewT<
-        class StrictEntityContext,
-        struct PassengerComponent const,
-        struct EventingDispatcherComponent const,
-        struct ServerPlayerCurrentMovementComponent const>                                                  view,
-    class ViewT<class StrictEntityContext, struct VehicleInputIntentComponent, struct StateVectorComponent> vehicleView,
-    class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView,
-    class OptionalGlobal<struct ComparisonEventingCapComponent>                  eventingCapComponent
+    ::ViewT<
+        ::StrictEntityContext,
+        ::PassengerComponent const,
+        ::EventingDispatcherComponent const,
+        ::ServerPlayerCurrentMovementComponent const>                                     view,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent, ::StateVectorComponent> vehicleView,
+    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>                       requestQueueView,
+    ::OptionalGlobal<::ComparisonEventingCapComponent>                                    eventingCapComponent
 );
 // NOLINTEND
 
-}; // namespace CompareVehiclePositionSystemImpl
+} // namespace CompareVehiclePositionSystemImpl

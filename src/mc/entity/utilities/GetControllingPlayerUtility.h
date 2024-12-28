@@ -2,20 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataControllingSeatIndexComponent;
+struct ActorDataFlagComponent;
+struct VehicleComponent;
+// clang-format on
+
 namespace GetControllingPlayerUtility {
+// functions
 // NOLINTBEGIN
 MCAPI bool hasControllingPassenger(
-    struct ActorDataControllingSeatIndexComponent const& controllingSeatIndex,
-    struct VehicleComponent const&                       vehicleComponent
+    ::ActorDataControllingSeatIndexComponent const& controllingSeatIndex,
+    ::VehicleComponent const&                       vehicleComponent
 );
 
 MCAPI bool isPassengerControllingVehicle(
-    class StrictEntityContext const&                     passenger,
-    struct VehicleComponent const&                       vehicleComponent,
-    struct ActorDataControllingSeatIndexComponent const& controllingSeatIndex
+    ::StrictEntityContext const&                    passenger,
+    ::VehicleComponent const&                       vehicleComponent,
+    ::ActorDataControllingSeatIndexComponent const& controllingSeatIndex
 );
 
-MCAPI bool isWASDControlled(struct ActorDataFlagComponent const& actorDataFlagComponent);
+MCAPI bool isWASDControlled(::ActorDataFlagComponent const& actorDataFlagComponent);
 // NOLINTEND
 
-}; // namespace GetControllingPlayerUtility
+} // namespace GetControllingPlayerUtility

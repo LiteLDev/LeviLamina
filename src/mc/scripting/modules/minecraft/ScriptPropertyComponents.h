@@ -11,18 +11,19 @@ namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::ScriptPropertyComponents {
+// functions
 // NOLINTBEGIN
-MCAPI std::vector<struct ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration>
-      GetComponentRegistration();
+MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration>
+GetComponentRegistration();
 
 MCAPI void bind(
-    class Scripting::ModuleBindingBuilder&                       moduleBuilder,
-    class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
+    ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
+    ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
 );
 
 MCAPI void registerScriptPropertyComponentFactories(
-    std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>& factory
+    ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>& factory
 );
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraft::ScriptPropertyComponents
+} // namespace ScriptModuleMinecraft::ScriptPropertyComponents

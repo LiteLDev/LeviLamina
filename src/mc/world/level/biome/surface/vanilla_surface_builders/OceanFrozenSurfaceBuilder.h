@@ -8,12 +8,18 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
 
 class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk160b83;
+    ::ll::UntypedStorage<8, 8> mUnk89e0d4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
@@ -21,28 +27,37 @@ public:
     OceanFrozenSurfaceBuilder();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OceanFrozenSurfaceBuilder() = default;
-
     // vIndex: 1
-    virtual void init(class Biome& biome, uint levelSeed);
+    virtual void init(::Biome& biome, uint levelSeed) /*override*/;
 
     // vIndex: 2
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
+    // vIndex: 0
+    virtual ~OceanFrozenSurfaceBuilder() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void buildSurfaceAt$(struct ISurfaceBuilder::BuildParameters const& parameters) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init(::Biome& biome, uint levelSeed);
 
-    MCAPI void init$(class Biome& biome, uint levelSeed);
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace VanillaSurfaceBuilders
+} // namespace VanillaSurfaceBuilders

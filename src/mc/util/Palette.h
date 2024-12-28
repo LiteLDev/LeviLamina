@@ -18,47 +18,46 @@ public:
     Palette();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static ::PaletteColor fromByte(uchar id);
 
-    MCAPI static class mce::Color const& getColor(::PaletteColor id);
-
+    MCAPI static ::mce::Color const& getColor(::PaletteColor id);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class mce::Color const& BLACK();
+    MCAPI static ::mce::Color const& BLACK();
 
-    MCAPI static class mce::Color const& BLUE();
+    MCAPI static ::mce::Color const& BLUE();
 
-    MCAPI static class mce::Color const& BROWN();
+    MCAPI static ::mce::Color const& BROWN();
 
-    MCAPI static class mce::Color const& CYAN();
+    MCAPI static ::mce::Color const& CYAN();
 
-    MCAPI static class mce::Color const& GRAY();
+    MCAPI static ::mce::Color const& GRAY();
 
-    MCAPI static class mce::Color const& GREEN();
+    MCAPI static ::mce::Color const& GREEN();
 
-    MCAPI static class mce::Color const& LIGHT_BLUE();
+    MCAPI static ::mce::Color const& LIGHT_BLUE();
 
-    MCAPI static class mce::Color const& LIGHT_GREEN();
+    MCAPI static ::mce::Color const& LIGHT_GREEN();
 
-    MCAPI static class mce::Color const& MAGENTA();
+    MCAPI static ::mce::Color const& MAGENTA();
 
-    MCAPI static class mce::Color const& ORANGE();
+    MCAPI static ::mce::Color const& ORANGE();
 
-    MCAPI static class mce::Color const& PINK();
+    MCAPI static ::mce::Color const& PINK();
 
-    MCAPI static class mce::Color const& PURPLE();
+    MCAPI static ::mce::Color const& PURPLE();
 
-    MCAPI static class mce::Color const& RED();
+    MCAPI static ::mce::Color const& RED();
 
-    MCAPI static class mce::Color const& SILVER();
+    MCAPI static ::mce::Color const& SILVER();
 
-    MCAPI static class mce::Color const& WHITE();
+    MCAPI static ::mce::Color const& WHITE();
 
-    MCAPI static class mce::Color const& YELLOW();
-
+    MCAPI static ::mce::Color const& YELLOW();
     // NOLINTEND
 };

@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class PlayerSuspendLevelStorageSaveToken;
+// clang-format on
+
 class PlayerDimensionTransferSaveSuspensionComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk38f85b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerDimensionTransferSaveSuspensionComponent& operator=(PlayerDimensionTransferSaveSuspensionComponent const&);
@@ -10,21 +21,24 @@ public:
     PlayerDimensionTransferSaveSuspensionComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerDimensionTransferSaveSuspensionComponent(
-        class PlayerSuspendLevelStorageSaveToken playerSuspendLevelStorageSaveToken
+        ::PlayerSuspendLevelStorageSaveToken playerSuspendLevelStorageSaveToken
     );
 
     MCAPI ~PlayerDimensionTransferSaveSuspensionComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class PlayerSuspendLevelStorageSaveToken playerSuspendLevelStorageSaveToken);
+    MCAPI void* $ctor(::PlayerSuspendLevelStorageSaveToken playerSuspendLevelStorageSaveToken);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

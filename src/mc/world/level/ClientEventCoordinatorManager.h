@@ -3,42 +3,77 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/EventCoordinatorManager.h"
 
+// auto generated forward declare list
+// clang-format off
+class ClientPlayerEventCoordinator;
+class LevelEventCoordinator;
+class PlayerEventCoordinator;
+// clang-format on
+
 class ClientEventCoordinatorManager : public ::EventCoordinatorManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkdbb610;
+    ::ll::UntypedStorage<8, 16> mUnk7a962b;
+    ::ll::UntypedStorage<8, 16> mUnkdeb488;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ClientEventCoordinatorManager& operator=(ClientEventCoordinatorManager const&);
     ClientEventCoordinatorManager(ClientEventCoordinatorManager const&);
-    ClientEventCoordinatorManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientEventCoordinatorManager() = default;
+    virtual ~ClientEventCoordinatorManager() /*override*/;
 
     // vIndex: 1
-    virtual class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> getRemotePlayerEventCoordinator() /*override*/;
 
     // vIndex: 2
-    virtual class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator();
+    virtual ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> getClientPlayerEventCoordinator() /*override*/;
 
     // vIndex: 4
-    virtual gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator();
-
+    virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> getLevelEventCoordinator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ClientEventCoordinatorManager();
+    // NOLINTEND
 
-    MCAPI class StackRefResult<class ClientPlayerEventCoordinator> getClientPlayerEventCoordinator$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI gsl::not_null<class StackRefResult<class LevelEventCoordinator>> getLevelEventCoordinator$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class StackRefResult<class PlayerEventCoordinator> getRemotePlayerEventCoordinator$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> $getRemotePlayerEventCoordinator();
 
+    MCAPI ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> $getClientPlayerEventCoordinator();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> $getLevelEventCoordinator();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,11 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Level;
+class SaveContext;
+class SculkSensorVibrationConfig;
+// clang-format on
+
 class SculkSensorBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 200> mUnke4e960;
+    ::ll::UntypedStorage<8, 80>  mUnk9420c4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkSensorBlockActor& operator=(SculkSensorBlockActor const&);
@@ -15,60 +32,75 @@ public:
     SculkSensorBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkSensorBlockActor();
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 13
-    virtual void onRemoved(class BlockSource& region);
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCAPI explicit SculkSensorBlockActor(class BlockPos const& pos);
+    // vIndex: 0
+    virtual ~SculkSensorBlockActor() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
 
     MCAPI SculkSensorBlockActor(
-        ::BlockActorType                                    type,
-        class BlockPos const&                               pos,
-        std::string const&                                  id,
-        uint                                                listenerRange,
-        std::unique_ptr<class SculkSensorVibrationConfig>&& vibrationConfig
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        ::std::string const&                              id,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
     );
 
     MCAPI int getLatestReceivedVibrationFrequency() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::BlockPos const& pos);
 
-    MCAPI void* ctor$(
-        ::BlockActorType                                    type,
-        class BlockPos const&                               pos,
-        std::string const&                                  id,
-        uint                                                listenerRange,
-        std::unique_ptr<class SculkSensorVibrationConfig>&& vibrationConfig
+    MCAPI void* $ctor(
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        ::std::string const&                              id,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void onRemoved$(class BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI void $onRemoved(::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI void tick$(class BlockSource& region);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

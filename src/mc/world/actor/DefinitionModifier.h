@@ -4,24 +4,27 @@
 
 struct DefinitionModifier {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkc07185;
+    ::ll::UntypedStorage<8, 24> mUnk87a0c8;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DefinitionModifier& operator=(DefinitionModifier const&);
+    DefinitionModifier(DefinitionModifier const&);
     DefinitionModifier();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DefinitionModifier(struct DefinitionModifier const&);
-
     MCAPI ~DefinitionModifier();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct DefinitionModifier const&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

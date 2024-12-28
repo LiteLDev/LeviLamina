@@ -7,7 +7,13 @@
 
 namespace UpdateBoundingBox {
 
-class SizeSetVisitor {
+struct SizeSetVisitor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk8a678a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SizeSetVisitor& operator=(SizeSetVisitor const&);
@@ -15,10 +21,10 @@ public:
     SizeSetVisitor();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void operator()(struct ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue const&);
-
+    MCAPI void operator()(::ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue const& data);
     // NOLINTEND
 };
 
-}; // namespace UpdateBoundingBox
+} // namespace UpdateBoundingBox

@@ -3,11 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/BannerBlockType.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class SaveContext;
+// clang-format on
+
 class BannerBlockActor : public ::BlockActor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk525ff6;
+    ::ll::UntypedStorage<1, 1>  mUnk54a8b2;
+    ::ll::UntypedStorage<8, 24> mUnkdaebcc;
+    ::ll::UntypedStorage<8, 24> mUnke50015;
+    ::ll::UntypedStorage<4, 4>  mUnk832478;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BannerBlockActor& operator=(BannerBlockActor const&);
@@ -15,72 +37,101 @@ public:
     BannerBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BannerBlockActor() = default;
-
-    // vIndex: 1
-    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 2
-    virtual bool save(class CompoundTag& tag) const;
+    // vIndex: 11
+    virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 7
-    virtual void tick(class BlockSource& region);
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 11
-    virtual void onPlace(class BlockSource& region);
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 40
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 41
-    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    // vIndex: 0
+    virtual ~BannerBlockActor() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BannerBlockActor(::BlockPos const& pos);
 
     MCAPI uchar getBaseColorInt() const;
 
-    MCAPI void setItemValues(class ItemStackBase const& instance);
-
-    MCAPI static ::BannerBlockType getBannerType(class CompoundTag const* tag);
-
-    MCAPI static int getBaseColor(class ItemStack const& item);
-
-    MCAPI static int getPatternCount(class CompoundTag const* tagElement);
-
-    MCAPI static bool isDefaultBanner(class ItemStackBase const& instance);
-
-    MCAPI static bool removeLastPattern(class ItemStack& instance, class Player&);
-
+    MCAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+    MCAPI static int getBaseColor(::ItemStack const& item);
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI static int getPatternCount(::CompoundTag const* tagElement);
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI static bool isDefaultBanner(::ItemStackBase const& instance);
 
-    MCAPI void onPlace$(class BlockSource& region);
+    MCAPI static void removeLastPattern(::ItemStack& instance);
+    // NOLINTEND
 
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void tick$(class BlockSource& region);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_PATTERNS();
 
-    MCAPI static std::string const& TAG_BASE_COLOR();
+    MCAPI static ::std::string const& TAG_BASE_COLOR();
 
-    MCAPI static std::string const& TAG_COLOR();
+    MCAPI static ::std::string const& TAG_COLOR();
 
-    MCAPI static std::string const& TAG_PATTERN();
+    MCAPI static ::std::string const& TAG_PATTERN();
 
-    MCAPI static std::string const& TAG_PATTERNS();
+    MCAPI static ::std::string const& TAG_PATTERNS();
 
-    MCAPI static std::string const& TAG_TYPE();
+    MCAPI static ::std::string const& TAG_TYPE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onPlace(::BlockSource& region);
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

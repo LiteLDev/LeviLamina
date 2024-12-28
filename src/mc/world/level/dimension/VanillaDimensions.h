@@ -7,6 +7,12 @@
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class DimensionConversionData;
+class Vec3;
+// clang-format on
 
 class VanillaDimensions {
 public:
@@ -16,41 +22,40 @@ public:
     VanillaDimensions();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool convertPointBetweenDimensions(
-        class Vec3 const&                    startingPosition,
-        class Vec3&                          outputPosition,
-        DimensionType                        fromID,
-        DimensionType                        toID,
-        class DimensionConversionData const& data
+        ::Vec3 const&                    startingPosition,
+        ::Vec3&                          outputPosition,
+        ::DimensionType                  fromID,
+        ::DimensionType                  toID,
+        ::DimensionConversionData const& data
     );
 
-    MCAPI static DimensionType fromSerializedInt(int i);
+    MCAPI static ::DimensionType fromSerializedInt(int i);
 
-    MCAPI static class Bedrock::Result<DimensionType> fromSerializedInt(class Bedrock::Result<int>&& i);
+    MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
-    MCAPI static DimensionType fromString(std::string const& name);
+    MCAPI static ::DimensionType fromString(::std::string const& name);
 
-    MCAPI static int toSerializedInt(DimensionType const& type);
+    MCAPI static int toSerializedInt(::DimensionType const& type);
 
-    MCAPI static std::string const toString(DimensionType const& type);
-
+    MCAPI static ::std::string const toString(::DimensionType const& type);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<std::string, DimensionType> const& DimensionMap();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::DimensionType> const& DimensionMap();
 
-    MCAPI static DimensionType const& Nether();
+    MCAPI static ::DimensionType const& Nether();
 
-    MCAPI static DimensionType const& Overworld();
+    MCAPI static ::DimensionType const& Overworld();
 
-    MCAPI static DimensionType const& TheEnd();
+    MCAPI static ::DimensionType const& TheEnd();
 
-    MCAPI static class Vec3 const& TheEndSpawnPoint();
+    MCAPI static ::Vec3 const& TheEndSpawnPoint();
 
-    MCAPI static DimensionType const& Undefined();
-
+    MCAPI static ::DimensionType const& Undefined();
     // NOLINTEND
 };

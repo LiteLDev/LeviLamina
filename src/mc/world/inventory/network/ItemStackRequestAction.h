@@ -7,7 +7,21 @@
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPalette;
+class ItemStackRequestActionCraftBase;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class ItemStackRequestAction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionType> mActionType;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestAction() = delete;
@@ -16,54 +30,72 @@ public:
 
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ItemStackRequestAction();
 
     // vIndex: 1
-    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+    virtual ::ItemStackRequestActionCraftBase const* getCraftAction() const;
 
     // vIndex: 2
     virtual int getFilteredStringIndex() const;
 
     // vIndex: 3
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const = 0;
+    virtual void _write(::BinaryStream&) const = 0;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType actionType);
 
     MCAPI ::ItemStackRequestActionType getActionType() const;
-
-    MCAPI void write(class BinaryStream& stream) const;
-
-    MCAPI static std::string const getActionTypeName(::ItemStackRequestActionType type);
-
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>>
-    read(class ReadOnlyBinaryStream& stream);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestAction>> read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ItemStackRequestActionType actionType);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::ItemStackRequestActionType, ::std::string> const& actionTypeMap();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackRequestActionType actionType);
+    // NOLINTEND
 
-    MCAPI class ItemStackRequestActionCraftBase const* getCraftAction$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getFilteredStringIndex$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
 
-    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
+    MCAPI int $getFilteredStringIndex() const;
 
-    MCAPI static class BidirectionalUnorderedMap<::ItemStackRequestActionType, std::string> const& actionTypeMap();
+    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

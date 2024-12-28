@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -17,48 +16,78 @@ namespace Core {
 
 class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk4812b0;
+    ::ll::UntypedStorage<8, 32> mUnk572541;
+    ::ll::UntypedStorage<8, 32> mUnk9af116;
+    ::ll::UntypedStorage<8, 32> mUnkc1dc72;
+    ::ll::UntypedStorage<8, 32> mUnkbde984;
+    ::ll::UntypedStorage<8, 32> mUnkcf4814;
+    ::ll::UntypedStorage<8, 32> mUnk72fd26;
+    ::ll::UntypedStorage<8, 32> mUnke53a36;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FilePathManager& operator=(FilePathManager const&);
     FilePathManager(FilePathManager const&);
     FilePathManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FilePathManager();
-
-    MCAPI FilePathManager(class Core::Path const& root, bool isDedicatedServer);
-
-    MCAPI class Core::PathBuffer<std::string> getResourcePacksPath() const;
-
-    MCAPI class Core::PathBuffer<std::string> getUserDataPath() const;
-
-    MCAPI class Core::PathBuffer<std::string> getWorldsPath() const;
-
+    virtual ~FilePathManager() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FilePathManager(::Core::Path const& root, bool isDedicatedServer);
 
-    MCAPI void* ctor$(class Core::Path const& root, bool isDedicatedServer);
+    MCAPI ::Core::PathBuffer<::std::string> getLevelArchivePath() const;
 
-    MCAPI void dtor$();
+    MCAPI ::Core::PathBuffer<::std::string> getResourcePacksPath() const;
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& ARCHIVE_DIR();
+    MCAPI ::Core::PathBuffer<::std::string> getUserDataPath() const;
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& HOME_DIR();
+    MCAPI ::Core::PathBuffer<::std::string> getWorldsPath() const;
+    // NOLINTEND
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& PERSONA_TEST_DIR();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_DIR();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& REALM_WORLDS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_DIR();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& RESOURCE_PACKS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& PERSONA_TEST_DIR();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& WORLDS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& REALM_WORLDS_DIR();
 
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Path const& root, bool isDedicatedServer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

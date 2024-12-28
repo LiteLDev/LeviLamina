@@ -7,31 +7,44 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class EntitySensorComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct EntitySensorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk57b5ee;
+    ::ll::UntypedStorage<8, 64> mUnk55c54d;
+    ::ll::UntypedStorage<8, 24> mUnkd3a7f9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntitySensorDefinition& operator=(EntitySensorDefinition const&);
     EntitySensorDefinition(EntitySensorDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI EntitySensorDefinition();
 
-    MCAPI void initialize(class EntityContext& entity, class EntitySensorComponent& component) const;
-
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EntitySensorDefinition>>& root);
-
+    MCAPI void initialize(::EntityContext& entity, ::EntitySensorComponent& component) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EntitySensorDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

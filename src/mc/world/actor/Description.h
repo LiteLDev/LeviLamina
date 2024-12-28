@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DeserializeDataParams;
+// clang-format on
+
 struct Description {
 public:
     // prevent constructor by default
@@ -10,26 +15,39 @@ public:
     Description();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual char const* getJsonName() const = 0;
 
     // vIndex: 1
-    virtual ~Description() = default;
+    virtual ~Description();
 
     // vIndex: 2
-    virtual void deserializeData(struct DeserializeDataParams);
-
-    MCAPI struct Description* parseDescription(struct DeserializeDataParams deserializeDataParams);
-
+    virtual void deserializeData(::DeserializeDataParams);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
+    // NOLINTEND
 
-    MCAPI void deserializeData$(struct DeserializeDataParams);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $deserializeData(::DeserializeDataParams);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

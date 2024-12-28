@@ -13,4 +13,4 @@ public:
     Generator();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

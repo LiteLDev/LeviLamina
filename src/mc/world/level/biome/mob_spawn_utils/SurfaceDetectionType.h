@@ -4,6 +4,9 @@
 
 namespace MobSpawnUtils {
 
-enum class SurfaceDetectionType {};
-
+enum class SurfaceDetectionType : int {
+    AirOrLiquidToSolidBlocking = 0,
+    NoCollisionToFullUpSupport = 1,
 };
+
+}

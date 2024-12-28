@@ -5,7 +5,31 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class BiomeSource;
+class BlockPos;
+class ChunkPos;
+class Dimension;
+class HashedString;
+class IPreliminarySurfaceProvider;
+class OceanMonumentFeature;
+class Random;
+class StructureStart;
+// clang-format on
+
 class OceanRuinFeature : public ::StructureFeature {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk6293aa;
+    ::ll::UntypedStorage<4, 4>  mUnk41ecdf;
+    ::ll::UntypedStorage<4, 4>  mUnk3ed8b4;
+    ::ll::UntypedStorage<8, 24> mUnkcd5ab4;
+    ::ll::UntypedStorage<8, 8>  mUnk539693;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OceanRuinFeature& operator=(OceanRuinFeature const&);
@@ -13,78 +37,94 @@ public:
     OceanRuinFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OceanRuinFeature() = default;
-
     // vIndex: 3
     virtual bool getNearestGeneratedFeature(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
-    );
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
+    ) /*override*/;
+
+    // vIndex: 4
+    virtual bool isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
+    ) /*override*/;
 
     // vIndex: 5
-    virtual bool isFeatureChunk(
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
-    );
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    ) /*override*/;
 
-    // vIndex: 6
-    virtual std::unique_ptr<class StructureStart> createStructureStart(
-        class Dimension&                         generator,
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
-    MCAPI
-    OceanRuinFeature(class OceanMonumentFeature& monument, uint seed, class BaseGameVersion const& baseGameVersion);
-
+    // vIndex: 0
+    virtual ~OceanRuinFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OceanRuinFeature(::OceanMonumentFeature& monument, uint seed, ::BaseGameVersion const& baseGameVersion);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class OceanMonumentFeature& monument, uint seed, class BaseGameVersion const& baseGameVersion);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OceanMonumentFeature& monument, uint seed, ::BaseGameVersion const& baseGameVersion);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class StructureStart> createStructureStart$(
-        class Dimension&                         generator,
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $getNearestGeneratedFeature(
+        ::Dimension&                           dimension,
+        ::BiomeSource const&                   biomeSource,
+        ::BlockPos const&                      origin,
+        ::BlockPos&                            pos,
+        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
+        bool                                   mustBeInNewChunks,
+        ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool getNearestGeneratedFeature$(
-        class Dimension&                         dimension,
-        class BiomeSource const&                 biomeSource,
-        class BlockPos const&                    origin,
-        class BlockPos&                          pos,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        bool                                     mustBeInNewChunks,
-        std::optional<class HashedString> const& biomeTag
+    MCAPI bool $isFeatureChunk(
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     );
 
-    MCAPI bool isFeatureChunk$(
-        class BiomeSource const&                 biomeSource,
-        class Random&                            random,
-        class ChunkPos const&                    lc,
-        uint                                     levelSeed,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        class Dimension const&                   dimension
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,4 +18,4 @@ public:
     std::vector<ErrorInfo> mStackErrors;
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

@@ -2,32 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class MemoryPage; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/utility/json_object/Node.h"
 
 namespace Bedrock::JSONObject {
 
-class NullNode {
+class NullNode : public ::Bedrock::JSONObject::Node {
 public:
     // prevent constructor by default
     NullNode& operator=(NullNode const&);
     NullNode(NullNode const&);
     NullNode();
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI explicit NullNode(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

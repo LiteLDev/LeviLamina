@@ -3,18 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/ActorCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class CommandOrigin;
+class CompoundTag;
+struct ActorUniqueID;
 // clang-format on
 
 class ActorServerCommandOrigin : public ::ActorCommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk295400;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorServerCommandOrigin& operator=(ActorServerCommandOrigin const&);
@@ -22,45 +28,58 @@ public:
     ActorServerCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorServerCommandOrigin() = default;
-
-    // vIndex: 9
-    virtual ::CommandPermissionLevel getPermissionsLevel() const;
-
-    // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
+    virtual ~ActorServerCommandOrigin() /*override*/;
 
     // vIndex: 18
-    virtual bool isSelectorExpansionAllowed() const;
+    virtual bool isSelectorExpansionAllowed() const /*override*/;
+
+    // vIndex: 9
+    virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
+
+    // vIndex: 10
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
-
-    MCAPI struct ActorUniqueID getTargetOther() const;
-
-    MCAPI void setTargetOther(struct ActorUniqueID targetOther);
-
+    virtual ::CompoundTag serialize() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ActorUniqueID getTargetOther() const;
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+    MCAPI void setTargetOther(::ActorUniqueID targetOther);
+    // NOLINTEND
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCAPI bool isSelectorExpansionAllowed$() const;
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
+    MCAPI ::CommandOriginType $getOriginType() const;
+
+    MCAPI ::CompoundTag $serialize() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

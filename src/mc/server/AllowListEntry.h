@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/server/IJsonSerializable.h"
@@ -9,48 +8,67 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace mce { class UUID; }
 // clang-format on
 
 class AllowListEntry : public ::IJsonSerializable {
 public:
-    std::string mName;               // 8
-    mce::UUID   mUuid;               // 40
-    std::string mXuid;               // 56
-    bool        mIgnoresPlayerLimit; // 88
-
-    AllowListEntry(std::string name, std::string xuid, mce::UUID uuid = {}, bool ignoresPlayerLimit = false)
-    : mName(std::move(name)),
-      mUuid(uuid),
-      mXuid(std::move(xuid)),
-      mIgnoresPlayerLimit(ignoresPlayerLimit) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AllowListEntry();
-
-    // vIndex: 1
-    virtual void serialize(class Json::Value& root);
-
-    // vIndex: 2
-    virtual void deserialize(class Json::Value& root);
-
-    MCAPI explicit AllowListEntry(std::string name);
-
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>   mUuid;
+    ::ll::TypedStorage<8, 32, ::std::string> mXuid;
+    ::ll::TypedStorage<1, 1, bool>           mIgnoresPlayerLimit;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    AllowListEntry& operator=(AllowListEntry const&);
+    AllowListEntry(AllowListEntry const&);
+    AllowListEntry();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual void serialize(::Json::Value& root) /*override*/;
 
-    MCAPI void* ctor$(std::string name);
+    // vIndex: 2
+    virtual void deserialize(::Json::Value& root) /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 0
+    virtual ~AllowListEntry() /*override*/;
+    // NOLINTEND
 
-    MCAPI void deserialize$(class Json::Value& root);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit AllowListEntry(::std::string name);
+    // NOLINTEND
 
-    MCAPI void serialize$(class Json::Value& root);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string name);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serialize(::Json::Value& root);
+
+    MCAPI void $deserialize(::Json::Value& root);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

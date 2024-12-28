@@ -1,0 +1,71 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/http/IResponseBody.h"
+#include "mc/deps/core/http/ResponseBodyType.h"
+
+namespace Bedrock::Http {
+
+class IgnoredResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
+public:
+    // prevent constructor by default
+    IgnoredResponseBody& operator=(IgnoredResponseBody const&);
+    IgnoredResponseBody(IgnoredResponseBody const&);
+    IgnoredResponseBody();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::std::error_code start(::std::optional<uint64>) /*override*/;
+
+    // vIndex: 2
+    virtual ::std::error_code write(::gsl::span<uchar const>) /*override*/;
+
+    // vIndex: 3
+    virtual void complete() /*override*/;
+
+    // vIndex: 4
+    virtual void cancel() /*override*/;
+
+    // vIndex: 5
+    virtual ::std::string const& getLoggableDestination() const /*override*/;
+
+    // vIndex: 6
+    virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
+
+    // vIndex: 7
+    virtual ::Bedrock::Http::ResponseBodyType getType() const /*override*/;
+
+    // vIndex: 0
+    virtual ~IgnoredResponseBody() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::error_code $start(::std::optional<uint64>);
+
+    MCAPI ::std::error_code $write(::gsl::span<uchar const>);
+
+    MCAPI void $complete();
+
+    MCAPI void $cancel();
+
+    MCAPI ::std::string const& $getLoggableDestination() const;
+
+    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
+
+    MCAPI ::Bedrock::Http::ResponseBodyType $getType() const;
+    // NOLINTEND
+};
+
+} // namespace Bedrock::Http

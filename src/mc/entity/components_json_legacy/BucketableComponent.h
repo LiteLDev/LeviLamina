@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorInteraction;
+class BaseGameVersion;
+class Player;
+// clang-format on
+
 class BucketableComponent {
 public:
     // prevent constructor by default
@@ -9,23 +17,28 @@ public:
     BucketableComponent(BucketableComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BucketableComponent();
 
-    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
-
-    MCAPI void initFromDefinition(class Actor&);
-
-    MCAPI static void implInteraction(class Actor& owner, class Player& player);
-
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void implInteraction(::Actor& owner, ::Player& player);
+    // NOLINTEND
 
-    MCAPI static class BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

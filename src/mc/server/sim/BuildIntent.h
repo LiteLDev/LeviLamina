@@ -15,28 +15,33 @@ namespace sim {
 
 struct BuildIntent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 2> mUnk702cc9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BuildIntent& operator=(BuildIntent const&);
     BuildIntent(BuildIntent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BuildIntent();
 
-    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer& player, class BlockSource& region);
+    MCAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player, ::BlockSource& region);
 
-    MCAPI void finalize(class SimulatedPlayer& player);
+    MCAPI void finalize(::SimulatedPlayer& player);
 
     MCAPI void reset();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace sim
+} // namespace sim

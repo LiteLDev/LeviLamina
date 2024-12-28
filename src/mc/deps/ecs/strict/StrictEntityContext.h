@@ -1,7 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class EntityId;
+class EntityRegistry;
+// clang-format on
 
 class StrictEntityContext {
 public:
@@ -19,58 +25,57 @@ public:
         Hash();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI uint64 operator()(class StrictEntityContext const& entity) const;
-
+        MCAPI uint64 operator()(::StrictEntityContext const& entity) const;
         // NOLINTEND
     };
 
 public:
-    EntityId mEntity;     // this+0x0
-    uint     mRegistryId; // this+0x4
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::EntityId> mEntity;
+    ::ll::TypedStorage<4, 4, uint>       mRegistryId;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     StrictEntityContext& operator=(StrictEntityContext const&);
     StrictEntityContext(StrictEntityContext const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI StrictEntityContext();
 
-    MCAPI explicit StrictEntityContext(class EntityContext const& entity);
+    MCAPI explicit StrictEntityContext(::EntityContext const& entity);
 
-    MCAPI StrictEntityContext(class StrictEntityContext&& other);
+    MCAPI StrictEntityContext(::StrictEntityContext&& other);
 
-    MCAPI StrictEntityContext(class EntityRegistry& registry, class EntityId entity);
+    MCAPI StrictEntityContext(::EntityRegistry& registry, ::EntityId entity);
 
-    MCAPI bool isNull() const;
-
-    MCAPI bool operator!=(class StrictEntityContext const& other) const;
-
-    MCAPI class StrictEntityContext& operator=(class StrictEntityContext&& other);
-
-    MCAPI bool operator==(class StrictEntityContext const& other) const;
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class EntityId _getEntityId() const;
+    MCAPI ::EntityId _getEntityId() const;
 
     MCAPI uint _getRegistryId() const;
 
+    MCAPI bool isNull() const;
+
+    MCAPI bool operator!=(::StrictEntityContext const& other) const;
+
+    MCAPI ::StrictEntityContext& operator=(::StrictEntityContext&& other);
+
+    MCAPI bool operator==(::StrictEntityContext const& other) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class EntityContext const& entity);
+    MCAPI void* $ctor(::EntityContext const& entity);
 
-    MCAPI void* ctor$(class StrictEntityContext&& other);
+    MCAPI void* $ctor(::StrictEntityContext&& other);
 
-    MCAPI void* ctor$(class EntityRegistry& registry, class EntityId entity);
-
+    MCAPI void* $ctor(::EntityRegistry& registry, ::EntityId entity);
     // NOLINTEND
 };

@@ -4,41 +4,33 @@
 
 class ScopedGameTestTickingArea {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk327de1;
+    ::ll::UntypedStorage<8, 8>  mUnk5eb88c;
+    ::ll::UntypedStorage<4, 24> mUnkc921a0;
+    ::ll::UntypedStorage<8, 32> mUnkc0ba01;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScopedGameTestTickingArea& operator=(ScopedGameTestTickingArea const&);
     ScopedGameTestTickingArea(ScopedGameTestTickingArea const&);
     ScopedGameTestTickingArea();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScopedGameTestTickingArea(
-        class Dimension&         dimension,
-        class BoundingBox const& bounds,
-        std::string const&       structureName
-    );
+    MCAPI void _createTickingArea();
 
-    MCAPI bool areChunksLoaded();
-
-    MCAPI std::shared_ptr<class ITickingArea> getTickingArea() const;
-
-    MCAPI ~ScopedGameTestTickingArea();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _removeTickingArea();
 
+    MCAPI bool areChunksLoaded();
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Dimension& dimension, class BoundingBox const& bounds, std::string const& structureName);
-
-    MCAPI void dtor$();
-
-    MCAPI static std::string const& TICKING_AREA_PREFIX();
-
+    MCAPI static ::std::string const& TICKING_AREA_PREFIX();
     // NOLINTEND
 };

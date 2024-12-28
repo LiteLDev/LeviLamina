@@ -2,33 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPos;
-class Block;
+// auto generated forward declare list
+// clang-format off
 class Aquifer;
+class Block;
+class BlockPos;
 class IPreliminarySurfaceProvider;
+// clang-format on
 
 struct WorldGenContext {
 public:
-    std::function<void(const BlockPos&, const Block&, int)> mTickUpdateFn;               // this+0x0
-    Aquifer*                                                mAquifer;                    // this+0x40
-    IPreliminarySurfaceProvider const*                      mPreliminarySurfaceProvider; // this+0x48
-
-    WorldGenContext() = default;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Aquifer*>                                                     mAquifer;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::BlockPos const&, ::Block const&, int)>> mTickUpdateFn;
+    ::ll::TypedStorage<8, 8, ::IPreliminarySurfaceProvider const*> mPreliminarySurfaceProvider;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     WorldGenContext& operator=(WorldGenContext const&);
+    WorldGenContext(WorldGenContext const&);
+    WorldGenContext();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~WorldGenContext();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

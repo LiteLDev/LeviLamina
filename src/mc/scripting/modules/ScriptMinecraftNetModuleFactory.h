@@ -8,17 +8,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class GenericModuleBindingFactory; }
+class Scheduler;
+class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
-namespace Scripting { struct UUID; }
-namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
 class ScriptMinecraftNetModuleFactory : public ::Scripting::GenericModuleBindingFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk7f2275;
+    ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptMinecraftNetModuleFactory& operator=(ScriptMinecraftNetModuleFactory const&);
@@ -26,39 +31,55 @@ public:
     ScriptMinecraftNetModuleFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptMinecraftNetModuleFactory() = default;
-
-    MCAPI explicit ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
-
-    MCAPI static std::string getModuleUUIDAsString();
-
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addVersions();
-
-    MCAPI struct Scripting::ModuleBinding _generateBindings(
-        class Scripting::ModuleBindingBuilder&         moduleBuilder,
-        std::optional<struct Scripting::ContextConfig> contextConfig,
-        bool                                           allowUntagged,
-        std::vector<std::string> const&                allowedTags
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    ScriptMinecraftNetModuleFactory(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
 
-    MCAPI void* ctor$(class Bedrock::NonOwnerPointer<class Scheduler> serverScheduler);
+    MCAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> contextConfig,
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags
+    );
+    // NOLINTEND
 
-    MCAPI static char const* const& ModuleName();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string getModuleUUIDAsString();
+    // NOLINTEND
 
-    MCAPI static class mce::UUID const& ModuleUUID();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ModuleName();
 
+    MCAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

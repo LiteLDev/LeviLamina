@@ -4,21 +4,27 @@
 
 struct ActorDroppedItemEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk5f347a;
+    ::ll::UntypedStorage<8, 128> mUnkd476ff;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActorDroppedItemEvent& operator=(ActorDroppedItemEvent const&);
     ActorDroppedItemEvent(ActorDroppedItemEvent const&);
     ActorDroppedItemEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ActorDroppedItemEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

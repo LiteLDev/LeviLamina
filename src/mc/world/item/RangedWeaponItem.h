@@ -3,18 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class ItemStack;
+class Mob;
+class Player;
 // clang-format on
 
 class RangedWeaponItem : public ::Item {
@@ -25,51 +21,67 @@ public:
     RangedWeaponItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RangedWeaponItem();
-
-    // vIndex: 51
-    virtual int getEnchantValue() const;
-
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
+    // vIndex: 80
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 76
-    virtual void releaseUsing(class ItemStack& item, class Player* player, int durationLeft) const;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
-
-    // vIndex: 106
+    // vIndex: 110
     virtual int
-    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+    getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
+        /*override*/;
 
-    MCAPI RangedWeaponItem(std::string const& name, short id);
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
 
-    MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
+    // vIndex: 0
+    virtual ~RangedWeaponItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RangedWeaponItem(::std::string const& name, short id);
 
-    MCAPI void* ctor$(std::string const& name, short id);
+    MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI int
-    getAnimationFrameFor$(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
+    $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI int getEnchantValue$() const;
+    MCAPI int $getEnchantValue() const;
 
-    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    // NOLINTEND
 
-    MCAPI void releaseUsing$(class ItemStack& item, class Player* player, int durationLeft) const;
-
-    MCAPI class ItemStack& use$(class ItemStack& instance, class Player& player) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

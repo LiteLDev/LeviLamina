@@ -4,12 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ParticleType.h"
-#include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockSourceListener.h"
 #include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class ChunkSource;
+class CompoundTag;
+class HashedString;
+class LevelChunk;
+class MolangVariableMap;
+class Vec3;
+struct BreakingItemParticleData;
+struct ResolvedItemIconInfo;
+struct ScreenshotOptions;
 namespace cg { class ImageBuffer; }
 // clang-format on
 
@@ -21,181 +32,124 @@ public:
     LevelListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelListener();
+    virtual ~LevelListener() /*override*/;
 
     // vIndex: 9
     virtual void allChanged();
 
     // vIndex: 10
-    virtual void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+    virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
     // vIndex: 11
-    virtual void addParticleEffect(
-        class HashedString const&      effect,
-        class Actor const&             actor,
-        class HashedString const&      locator,
-        class Vec3 const&              emitterOffset,
-        class MolangVariableMap const& molangVariables
-    );
+    virtual void
+    addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
 
     // vIndex: 12
-    virtual void addTerrainParticleEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
+    virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
     // vIndex: 13
-    virtual void addTerrainSlideEffect(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
+    virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
     // vIndex: 14
-    virtual void addBreakingItemParticleEffect(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
-    );
+    virtual void
+    addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
     // vIndex: 15
-    virtual void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
+    virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
 
     // vIndex: 16
-    virtual void playStreamingMusic(std::string const& name, int x, int y, int z);
+    virtual void playStreamingMusic(::std::string const&, int, int, int);
 
     // vIndex: 17
-    virtual void onEntityAdded(class Actor& entity);
+    virtual void onEntityAdded(::Actor&);
 
     // vIndex: 18
-    virtual void onEntityRemoved(class Actor& entity);
+    virtual void onEntityRemoved(::Actor&);
 
     // vIndex: 19
-    virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
     // vIndex: 20
-    virtual void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
+    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
     // vIndex: 21
-    virtual void onSubChunkLoaded(
-        class ChunkSource& source,
-        class LevelChunk&  lc,
-        short              absoluteSubChunkIndex,
-        bool               subChunkVisibilityChanged
-    );
+    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
 
     // vIndex: 22
-    virtual void onChunkUnloaded(class LevelChunk& lc);
+    virtual void onChunkUnloaded(::LevelChunk&);
 
     // vIndex: 23
-    virtual void onLevelDestruction(std::string const& levelId);
-
-    // vIndex: 24
-    virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
+    virtual void onLevelDestruction(::std::string const&);
 
     // vIndex: 25
-    virtual void levelEvent(::LevelEvent type, class CompoundTag const& data);
+    virtual void levelEvent(::LevelEvent, ::Vec3 const&, int);
+
+    // vIndex: 24
+    virtual void levelEvent(::LevelEvent, ::CompoundTag const&);
 
     // vIndex: 26
-    virtual void takePicture(
-        class cg::ImageBuffer&    outImage,
-        class Actor*              camera,
-        class Actor*              target,
-        struct ScreenshotOptions& screenshotOptions
-    );
+    virtual void takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
 
     // vIndex: 27
     virtual void playerListChanged();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $allChanged();
 
-    MCAPI void addBreakingItemParticleEffect$(
-        class Vec3 const&                  pos,
-        ::ParticleType                     type,
-        struct ResolvedItemIconInfo const& textureInfo
-    );
+    MCAPI void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
-    MCAPI void addParticleEffect$(
-        class HashedString const&      effect,
-        class Actor const&             actor,
-        class HashedString const&      locator,
-        class Vec3 const&              emitterOffset,
-        class MolangVariableMap const& molangVariables
-    );
+    MCAPI void
+    $addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
 
-    MCAPI void addTerrainParticleEffect$(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
+    MCAPI void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    MCAPI void addTerrainSlideEffect$(
-        class BlockPos const& pos,
-        class Block const&    block,
-        class Vec3 const&     emitterPosition,
-        float                 intensity,
-        float                 velocityScalar,
-        float                 emitterRadius
-    );
+    MCAPI void $addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    MCAPI void allChanged$();
+    MCAPI void
+    $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
-    MCAPI void levelEvent$(::LevelEvent type, class Vec3 const& pos, int data);
+    MCAPI void $playMusic(::std::string const&, ::Vec3 const&, float, float);
 
-    MCAPI void levelEvent$(::LevelEvent type, class CompoundTag const& data);
+    MCAPI void $playStreamingMusic(::std::string const&, int, int, int);
 
-    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+    MCAPI void $onEntityAdded(::Actor&);
 
-    MCAPI void onChunkReloaded$(class ChunkSource& source, class LevelChunk& lc);
+    MCAPI void $onEntityRemoved(::Actor&);
 
-    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
+    MCAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI void onEntityAdded$(class Actor& entity);
+    MCAPI void $onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI void onEntityRemoved$(class Actor& entity);
+    MCAPI void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
 
-    MCAPI void onLevelDestruction$(std::string const& levelId);
+    MCAPI void $onChunkUnloaded(::LevelChunk&);
 
-    MCAPI void onSubChunkLoaded$(
-        class ChunkSource& source,
-        class LevelChunk&  lc,
-        short              absoluteSubChunkIndex,
-        bool               subChunkVisibilityChanged
-    );
+    MCAPI void $onLevelDestruction(::std::string const&);
 
-    MCAPI void playMusic$(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
+    MCAPI void $levelEvent(::LevelEvent, ::Vec3 const&, int);
 
-    MCAPI void playStreamingMusic$(std::string const& name, int x, int y, int z);
+    MCAPI void $levelEvent(::LevelEvent, ::CompoundTag const&);
 
-    MCAPI void playerListChanged$();
+    MCAPI void $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
 
-    MCAPI void sendServerLegacyParticle$(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCAPI void $playerListChanged();
+    // NOLINTEND
 
-    MCAPI void takePicture$(
-        class cg::ImageBuffer&    outImage,
-        class Actor*              camera,
-        class Actor*              target,
-        struct ScreenshotOptions& screenshotOptions
-    );
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

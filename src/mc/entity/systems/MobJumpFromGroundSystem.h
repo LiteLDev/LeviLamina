@@ -2,15 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace MobJumpFromGroundSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
+MCAPI ::TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
 
-MCAPI struct TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
+MCAPI ::TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
 
-MCAPI struct TickingSystemWithInfo createFilterSystem();
+MCAPI ::TickingSystemWithInfo createFilterSystem();
 
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}; // namespace MobJumpFromGroundSystem
+} // namespace MobJumpFromGroundSystem

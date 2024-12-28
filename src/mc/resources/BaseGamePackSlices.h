@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class IResourcePackRepository;
+class ResourcePackStack;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -20,24 +23,36 @@ public:
     // BaseGamePackSlices inner types define
     struct BaseGameVersionPack {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 120> mUnk745cd0;
+        ::ll::UntypedStorage<8, 8>   mUnk5b766c;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         BaseGameVersionPack& operator=(BaseGameVersionPack const&);
         BaseGameVersionPack(BaseGameVersionPack const&);
         BaseGameVersionPack();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~BaseGameVersionPack();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3fcc2d;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -45,31 +60,34 @@ public:
     BaseGamePackSlices(BaseGamePackSlices const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BaseGamePackSlices();
 
     MCAPI void addFromVersions(
-        std::vector<class BaseGameVersion> const&                               baseGameVersions,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& resourcePackRepository,
-        class mce::UUID const&                                                  packId
+        ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
+        ::mce::UUID const&                                                    packId
     );
 
     MCAPI void applyPackSlices(
-        class BaseGameVersion const&                                            baseGameVersion,
-        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository const> const& resourcePackRepository,
-        class ResourcePackStack&                                                packStack
+        ::BaseGameVersion const&                                              baseGameVersion,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
+        ::ResourcePackStack&                                                  packStack
     ) const;
 
     MCAPI ~BaseGamePackSlices();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

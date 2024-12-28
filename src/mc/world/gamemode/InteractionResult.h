@@ -4,11 +4,21 @@
 
 class InteractionResult {
 public:
+    // InteractionResult inner types define
     enum class Result : int {
-        Fail    = 0x0,
-        Success = 0x1,
-        Swing   = 0x2,
+        Success = 1,
+        Swing   = 2,
     };
 
-    Result mResult;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> mResult;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    InteractionResult& operator=(InteractionResult const&);
+    InteractionResult(InteractionResult const&);
+    InteractionResult();
 };

@@ -2,19 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class BaseBlockLocationIterator {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk5888e9;
+    ::ll::UntypedStorage<4, 12> mUnkab4ac1;
+    ::ll::UntypedStorage<4, 12> mUnk1e2df8;
+    ::ll::UntypedStorage<1, 1>  mUnkbed67c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    BaseBlockLocationIterator& operator=(BaseBlockLocationIterator const&);
     BaseBlockLocationIterator(BaseBlockLocationIterator const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseBlockLocationIterator() = default;
+    virtual ~BaseBlockLocationIterator();
 
     // vIndex: 1
-    virtual class BaseBlockLocationIterator& operator++();
+    virtual ::BaseBlockLocationIterator& operator++();
 
     // vIndex: 2
     virtual bool isValid() const = 0;
@@ -24,37 +38,51 @@ public:
 
     // vIndex: 4
     virtual void _end();
-
-    MCAPI bool done() const;
-
-    MCAPI bool operator!=(class BaseBlockLocationIterator const& rhs);
-
-    MCAPI class BlockPos operator*() const;
-
-    MCAPI void reset();
-
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BaseBlockLocationIterator();
 
-    MCAPI BaseBlockLocationIterator(class BlockPos const& min, class BlockPos const& max, bool begin);
+    MCAPI BaseBlockLocationIterator(::BlockPos const& min, ::BlockPos const& max, bool begin);
 
+    MCAPI bool done() const;
+
+    MCAPI bool operator!=(::BaseBlockLocationIterator const& rhs);
+
+    MCAPI ::BlockPos operator*() const;
+
+    MCAPI ::BaseBlockLocationIterator& operator=(::BaseBlockLocationIterator const& other);
+
+    MCAPI void reset();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class BlockPos const& min, class BlockPos const& max, bool begin);
+    MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& max, bool begin);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _begin$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_begin();
 
-    MCAPI void _end$();
+    MCAPI void $_end();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

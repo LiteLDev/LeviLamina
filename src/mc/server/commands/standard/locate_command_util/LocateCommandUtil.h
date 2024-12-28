@@ -5,10 +5,17 @@
 // auto generated inclusion list
 #include "mc/server/commands/standard/locate_command_util/Biomes.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Dimension;
+// clang-format on
+
 namespace LocateCommandUtil {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<class BlockPos>
-      locateNearbyBiome(class BlockPos position, class Dimension* dimension, ::LocateCommandUtil::Biomes biome);
+MCAPI ::std::optional<::BlockPos>
+locateNearbyBiome(::BlockPos position, ::Dimension* dimension, ::LocateCommandUtil::Biomes biome);
 // NOLINTEND
 
-}; // namespace LocateCommandUtil
+} // namespace LocateCommandUtil

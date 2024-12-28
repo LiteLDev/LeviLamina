@@ -3,20 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { struct BlockFallOnEvent; }
-namespace mce { class Color; }
+class BlockPos;
+class EntityContext;
+class Experiments;
+class Material;
+struct UpdateEntityAfterFallOnInterface;
+namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class SlimeBlock : public ::BlockLegacy {
@@ -27,49 +23,65 @@ public:
     SlimeBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SlimeBlock() = default;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 74
-    virtual void
-    updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
+    // vIndex: 134
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 75
-    virtual bool isBounceBlock() const;
+    // vIndex: 68
+    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
+        /*override*/;
 
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const&);
+    // vIndex: 69
+    virtual bool isBounceBlock() const /*override*/;
 
     // vIndex: 145
-    virtual void onStandOn(class EntityContext& entity, class BlockPos const&) const;
+    virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 157
-    virtual int getExtraRenderLayers() const;
-
-    MCAPI SlimeBlock(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI void onFallOn(struct BlockEvents::BlockFallOnEvent& eventData) const;
-
+    // vIndex: 0
+    virtual ~SlimeBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SlimeBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
 
-    MCAPI int getExtraRenderLayers$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isBounceBlock$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const&) const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI void
-    updateEntityAfterFallOn$(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
+    MCAPI bool $isBounceBlock() const;
+
+    MCAPI int $getExtraRenderLayers() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

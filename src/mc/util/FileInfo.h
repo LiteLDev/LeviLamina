@@ -9,25 +9,36 @@ namespace Core { class Path; }
 
 struct FileInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk919717;
+    ::ll::UntypedStorage<8, 8>  mUnk73a9a3;
+    ::ll::UntypedStorage<8, 32> mUnkd6cb9a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FileInfo& operator=(FileInfo const&);
     FileInfo(FileInfo const&);
     FileInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI FileInfo(class Core::Path _filePath, int _fileSize, std::string _fileHash);
+    MCAPI FileInfo(::Core::Path _filePath, int _fileSize, ::std::string _fileHash);
 
     MCAPI ~FileInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Core::Path _filePath, int _fileSize, std::string _fileHash);
+    MCAPI void* $ctor(::Core::Path _filePath, int _fileSize, ::std::string _fileHash);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

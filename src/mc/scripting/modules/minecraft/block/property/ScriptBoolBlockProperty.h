@@ -6,12 +6,12 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/property/IScriptBlockProperty.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockState;
-namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 // clang-format on
 
@@ -19,53 +19,70 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBoolBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProperty {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkbc7a0c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBoolBlockProperty& operator=(ScriptBoolBlockProperty const&);
     ScriptBoolBlockProperty(ScriptBoolBlockProperty const&);
     ScriptBoolBlockProperty();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBoolBlockProperty();
-
-    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
-
-    MCAPI ScriptBoolBlockProperty(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        std::vector<bool>                                                                             validValues,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
-
-    MCAPI class Scripting::Result<bool> getState() const;
-
-    MCAPI class ScriptModuleMinecraft::ScriptBoolBlockProperty&
-    operator=(class ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
-
-    MCAPI class Scripting::Result<void> setState(bool state);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
-
+    virtual ~ScriptBoolBlockProperty() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string                                                                                   name,
-        class BlockState const&                                                                       blockState,
-        std::vector<bool>                                                                             validValues,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    MCAPI ScriptBoolBlockProperty(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::std::vector<bool>                                                                   validValues,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
+    MCAPI ::Scripting::Result_deprecated<bool> getState() const;
 
-    MCAPI void dtor$();
+    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
 
+    MCAPI ::Scripting::Result<void> setState(bool state);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string                                                                         name,
+        ::BlockState const&                                                                   blockState,
+        ::std::vector<bool>                                                                   validValues,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

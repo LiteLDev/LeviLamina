@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/raknet/RakNetGUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,80 +11,86 @@ class NetworkIdentifier {
 public:
     // NetworkIdentifier inner types define
     enum class Type : int {
-        RakNet    = 0x0,
-        Address   = 0x1,
-        Address6  = 0x2,
-        NetherNet = 0x3,
-        Generic   = 0x4,
+        RakNet    = 0,
+        Address   = 1,
+        Address6  = 2,
+        NetherNet = 3,
+        Invalid   = 4,
     };
 
-    uint64             mNetherNetIdValue; // this+0x0
-    RakNet::RakNetGUID mGuid;             // this+0x8
-    char               mSock[0x80];       // this+0x18
-    Type               mType;             // this+0x98
-
-    LLNDAPI std::string getIPAndPort() const;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64>                    mNetherNetIdValue;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     mGuid;
+    ::ll::TypedStorage<8, 128, ::sockaddr_storage>      mSock;
+    ::ll::TypedStorage<4, 4, ::NetworkIdentifier::Type> mType;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkIdentifier& operator=(NetworkIdentifier const&);
+    NetworkIdentifier(NetworkIdentifier const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI NetworkIdentifier();
 
-    MCAPI explicit NetworkIdentifier(struct RakNet::RakNetGUID const& guid);
+    MCAPI explicit NetworkIdentifier(::sockaddr_in const& address);
 
-    MCAPI explicit NetworkIdentifier(struct sockaddr_in const& address);
+    MCAPI explicit NetworkIdentifier(::sockaddr_in6 const& address);
 
-    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const& address);
+    MCAPI explicit NetworkIdentifier(::RakNet::RakNetGUID const& guid);
 
     MCAPI explicit NetworkIdentifier(uint64 nethernetId);
 
-    MCAPI std::string getAddress() const;
+    MCAPI ::std::string getAddress() const;
 
-    MCAPI std::string getCorrelationId() const;
+    MCAPI ::std::string getCorrelationId() const;
 
     MCAPI uint64 getHash() const;
 
-    MCAPI struct RakNet::RakNetGUID const& getRakNetGUID() const;
+    MCAPI ::RakNet::RakNetGUID const& getRakNetGUID() const;
 
-    MCAPI struct sockaddr_in const& getSocketAddress() const;
+    MCAPI ::sockaddr_in const& getSocketAddress() const;
 
-    MCAPI struct sockaddr_in6 const& getSocketAddress6() const;
+    MCAPI ::sockaddr_in6 const& getSocketAddress6() const;
 
     MCAPI ::NetworkIdentifier::Type getType() const;
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI bool operator==(class NetworkIdentifier const& other) const;
+    MCAPI bool operator==(::NetworkIdentifier const& other) const;
 
-    MCAPI std::string toString() const;
-
-    MCAPI static std::string calculateCorrelationId(struct RakNet::RakNetGUID const& rakId);
-
-    MCAPI static std::string calculateCorrelationId(uint64 netherNetId);
-
-    MCAPI static std::string hyphenateId(uint64 id);
-
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool equalsTypeData(class NetworkIdentifier const& other) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct RakNet::RakNetGUID const& guid);
+    MCAPI static ::std::string calculateCorrelationId(uint64 netherNetId);
 
-    MCAPI void* ctor$(struct sockaddr_in6 const& address);
+    MCAPI static ::std::string calculateCorrelationId(::RakNet::RakNetGUID const& rakId);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct sockaddr_in const& address);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::NetworkIdentifier& INVALID_ID();
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint64 nethernetId);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::sockaddr_in const& address);
 
-    MCAPI static class NetworkIdentifier& INVALID_ID();
+    MCAPI void* $ctor(::sockaddr_in6 const& address);
 
+    MCAPI void* $ctor(::RakNet::RakNetGUID const& guid);
+
+    MCAPI void* $ctor(uint64 nethernetId);
     // NOLINTEND
 };

@@ -3,23 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class EntityContext;
+class Experiments;
+class Random;
+struct Brightness;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class SculkSensorBlock : public ::ActorBlock {
+class SculkSensorBlock : public ::ActorBlockBase<::BlockLegacy> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2a6123;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkSensorBlock& operator=(SculkSensorBlock const&);
@@ -27,109 +36,145 @@ public:
     SculkSensorBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkSensorBlock() = default;
-
-    // vIndex: 19
-    virtual bool
-    liquidCanFlowIntoFromDirection(uchar flowIntoFacing, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
-        const;
-
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
-
-    // vIndex: 47
-    virtual bool isSignalSource() const;
-
-    // vIndex: 59
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
-
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
-
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 145
-    virtual void onStandOn(class EntityContext& entityContext, class BlockPos const& pos) const;
+    // vIndex: 44
+    virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 54
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 159
-    virtual struct Brightness getEmissiveBrightness(class Block const& block) const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    MCAPI SculkSensorBlock(std::string const& nameId, int id);
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    MCAPI SculkSensorBlock(std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
+    // vIndex: 147
+    virtual ::Brightness getEmissiveBrightness(::Block const& block) const /*override*/;
 
-    MCAPI static bool isActive(class BlockSource& region, class BlockPos const& pos);
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    MCAPI static bool isOnCooldown(class BlockSource& region, class BlockPos const& pos);
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    MCAPI static void setActivePhase(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Actor*          source,
-        int                   redstoneStrength,
-        int                   vibrationFrequency
-    );
+    // vIndex: 19
+    virtual bool liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 0
+    virtual ~SculkSensorBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SculkSensorBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI SculkSensorBlock(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _setCooldownPhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType) const;
+    MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar) const;
+    MCAPI static bool isActive(::Block const& block);
 
-    MCAPI struct Brightness getEmissiveBrightness$(class Block const& block) const;
+    MCAPI static bool isActive(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+    MCAPI static bool isOnCooldown(::Block const& block);
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI static bool isOnCooldown(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool isSignalSource$() const;
+    MCAPI static void setActivePhase(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor*          source,
+        int               redstoneStrength,
+        int               vibrationFrequency
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool $isSignalSource() const;
 
     MCAPI bool
-    liquidCanFlowIntoFromDirection$(uchar flowIntoFacing, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
-        const;
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void onStandOn$(class EntityContext& entityContext, class BlockPos const& pos) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool shouldConnectToRedstone$(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
+    MCAPI ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI bool $hasComparatorSignal() const;
 
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCAPI bool $liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

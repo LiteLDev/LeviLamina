@@ -3,27 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class ActorDamageSource;
+class ActorDefinitionGroup;
+class ActorInteraction;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class ItemStack;
+class Player;
+class Vec3;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class ArmorStand : public ::Mob {
@@ -36,11 +31,30 @@ public:
     // ArmorStand inner types define
     struct Pose {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk3cebd2;
+        ::ll::UntypedStorage<4, 12> mUnkfb376b;
+        ::ll::UntypedStorage<4, 12> mUnk61848b;
+        ::ll::UntypedStorage<4, 12> mUnk1d0f70;
+        ::ll::UntypedStorage<4, 12> mUnk27eaa2;
+        ::ll::UntypedStorage<4, 12> mUnk2f3907;
+        ::ll::UntypedStorage<4, 12> mUnke58d73;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Pose& operator=(Pose const&);
         Pose(Pose const&);
         Pose();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf8a971;
+    ::ll::UntypedStorage<4, 4> mUnk4f8dc7;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -49,129 +63,145 @@ public:
     ArmorStand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 10
-    virtual ~ArmorStand() = default;
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 26
-    virtual void normalTick();
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 69
-    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
+    // vIndex: 120
+    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     // vIndex: 124
-    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+    virtual void kill() /*override*/;
 
-    // vIndex: 130
-    virtual void kill();
+    // vIndex: 125
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 131
-    virtual void die(class ActorDamageSource const& source);
+    // vIndex: 139
+    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
-    // vIndex: 144
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    // vIndex: 24
+    virtual void normalTick() /*override*/;
 
-    // vIndex: 146
-    virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
+    // vIndex: 151
+    virtual void pushActors() /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 66
+    virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    // vIndex: 159
-    virtual void pushActors();
-
-    MCAPI ArmorStand(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
-    );
-
-    MCAPI void setPoseIndex(int poseIndex);
-
+    // vIndex: 8
+    virtual ~ArmorStand() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI ArmorStand(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void _causeDamage(float dmg);
 
-    MCAPI void _destroyWithEffects(class Actor* sourceActor);
+    MCAPI void _destroyWithEffects(::Actor* sourceActor);
 
     MCAPI void _dropHeldItems();
 
     MCAPI void _dropHeldItemsAndResource();
 
-    MCAPI void _dropItem(class ItemStack const& item);
+    MCAPI void _dropItem(::ItemStack const& item);
 
-    MCAPI bool _trySwapItem(class Player& player, ::Puv::Legacy::EquipmentSlot slot);
+    MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
 
+    MCAPI void _updatePoseFromSynchedData();
+
+    MCAPI ::std::unique_ptr<::CompoundTag> _writePose() const;
+
+    MCAPI void setPoseIndex(int poseIndex);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::ArmorStand::Pose const& POSE_ATHENA();
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+    MCAPI static ::ArmorStand::Pose const& POSE_BRANDISH();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_A();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_B();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_DEFAULT();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ENTERTAIN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HERO();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HONOR();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_RIPOSTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SALUTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SOLEMN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
+
+    MCAPI static ::std::add_lvalue_reference_t<::ArmorStand::Pose const*[]> STAND_POSES();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI bool _hurt$(class ActorDamageSource const& source, float, bool, bool);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void die$(class ActorDamageSource const& source);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool getInteraction$(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI bool isInvulnerableTo$(class ActorDamageSource const& source) const;
+    MCAPI void $kill();
 
-    MCAPI void kill$();
+    MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI void normalTick$();
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
-    MCAPI void pushActors$();
+    MCAPI void $normalTick();
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $pushActors();
 
-    MCAPI void updateEntitySpecificMolangVariables$(class RenderParams&);
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    // NOLINTEND
 
-    MCAPI static struct ArmorStand::Pose const& POSE_ATHENA();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_BRANDISH();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_CANCAN_A();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_CANCAN_B();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_DEFAULT();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_ENTERTAIN();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_HERO();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_HONOR();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_RIPOSTE();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_SALUTE();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_SOLEMN();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_ZERO_ROTATION();
-
-    MCAPI static struct ArmorStand::Pose const& POSE_ZOMBIE();
-
-    MCAPI static auto STAND_POSES() -> struct ArmorStand::Pose const* (&)[];
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

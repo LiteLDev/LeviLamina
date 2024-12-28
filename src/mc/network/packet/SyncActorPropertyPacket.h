@@ -1,66 +1,92 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class HashedString;
+class PropertyGroupManager;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class SyncActorPropertyPacket : public ::Packet {
 public:
-    CompoundTag mPropertyData; // this+0x30
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mPropertyData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&);
     SyncActorPropertyPacket(SyncActorPropertyPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SyncActorPropertyPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~SyncActorPropertyPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SyncActorPropertyPacket();
 
     MCAPI SyncActorPropertyPacket(
-        class HashedString const&         actorCanonicalName,
-        class PropertyGroupManager const& propertyGroupManager
+        ::HashedString const&         actorCanonicalName,
+        ::PropertyGroupManager const& propertyGroupManager
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void*
-    ctor$(class HashedString const& actorCanonicalName, class PropertyGroupManager const& propertyGroupManager);
+    MCAPI void* $ctor(::HashedString const& actorCanonicalName, ::PropertyGroupManager const& propertyGroupManager);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

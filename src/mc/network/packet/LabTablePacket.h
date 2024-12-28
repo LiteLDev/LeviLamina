@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -9,69 +8,95 @@
 #include "mc/platform/Result.h"
 #include "mc/world/level/block/actor/LabTableReactionType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPos;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class LabTablePacket : public ::Packet {
 public:
     // LabTablePacket inner types define
     enum class Type : uchar {
-        StartCombine  = 0x0,
-        StartReaction = 0x1,
-        Reset         = 0x2,
+        StartCombine  = 0,
+        StartReaction = 1,
+        Reset         = 2,
     };
 
 public:
-    Type                 mType;     // this+0x30
-    BlockPos             mPos;      // this+0x34
-    LabTableReactionType mReaction; // this+0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::LabTablePacket::Type> mType;
+    ::ll::TypedStorage<4, 12, ::BlockPos>            mPos;
+    ::ll::TypedStorage<1, 1, ::LabTableReactionType> mReaction;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     LabTablePacket& operator=(LabTablePacket const&);
     LabTablePacket(LabTablePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LabTablePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI LabTablePacket();
-
-    MCAPI LabTablePacket(class BlockPos const& pos, ::LabTableReactionType reaction);
-
-    MCAPI LabTablePacket(::LabTablePacket::Type type, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~LabTablePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LabTablePacket();
 
-    MCAPI void* ctor$();
+    MCAPI LabTablePacket(::BlockPos const& pos, ::LabTableReactionType reaction);
 
-    MCAPI void* ctor$(class BlockPos const& pos, ::LabTableReactionType reaction);
+    MCAPI LabTablePacket(::LabTablePacket::Type type, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::LabTablePacket::Type type, class BlockPos const& pos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BlockPos const& pos, ::LabTableReactionType reaction);
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::LabTablePacket::Type type, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

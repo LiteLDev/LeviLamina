@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorMovementTickFilterSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ActorMovementTickFilterSystem {
 public:
     // prevent constructor by default
     ActorMovementTickFilterSystem& operator=(ActorMovementTickFilterSystem const&);
@@ -10,8 +15,8 @@ public:
     ActorMovementTickFilterSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createBase();
-
+    MCAPI static ::TickingSystemWithInfo createBase();
     // NOLINTEND
 };

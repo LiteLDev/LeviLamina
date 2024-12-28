@@ -4,6 +4,6 @@
 
 namespace LocateCommandUtil {
 
-enum class Biomes {};
+enum class Biomes : int {};
 
-};
+}

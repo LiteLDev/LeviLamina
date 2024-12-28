@@ -4,10 +4,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class Random;
+class Randomize;
 namespace Json { class Value; }
 // clang-format on
 
 struct IntRange {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk8edd10;
+    ::ll::UntypedStorage<4, 4> mUnkac0553;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IntRange& operator=(IntRange const&);
@@ -15,31 +24,34 @@ public:
     IntRange();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit IntRange(int value);
 
     MCAPI IntRange(int min, int max);
 
-    MCAPI int getValue(class Random& random) const;
+    MCAPI int getValue(::Random& random) const;
 
-    MCAPI int getValueInclusive(class Random& random) const;
+    MCAPI int getValueInclusive(::Random& random) const;
 
-    MCAPI int getValueInclusive(class Randomize& randomize) const;
+    MCAPI int getValueInclusive(::Randomize& randomize) const;
 
     MCAPI bool isInRangeInclusive(int value) const;
 
-    MCAPI bool parseJson(class Json::Value node, int minDefault, int maxDefault);
-
+    MCAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(int min, int max);
+    MCAPI static ::IntRange const& ZERO();
+    // NOLINTEND
 
-    MCAPI void* ctor$(int value);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int value);
 
-    MCAPI static struct IntRange const& ZERO();
-
+    MCAPI void* $ctor(int min, int max);
     // NOLINTEND
 };

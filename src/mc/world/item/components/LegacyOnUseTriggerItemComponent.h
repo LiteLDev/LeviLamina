@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class LegacyOnUseTriggerItemComponent : public ::LegacyTriggerItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16>  mUnke3ca41;
+    ::ll::UntypedStorage<8, 264> mUnk5dba27;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyOnUseTriggerItemComponent& operator=(LegacyOnUseTriggerItemComponent const&);
@@ -18,29 +20,30 @@ public:
     LegacyOnUseTriggerItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
+    virtual void _initializeComponent() /*override*/;
+
     // vIndex: 0
-    virtual ~LegacyOnUseTriggerItemComponent() = default;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~LegacyOnUseTriggerItemComponent() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _use(bool& result, class ItemStack& item, class Player& player);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

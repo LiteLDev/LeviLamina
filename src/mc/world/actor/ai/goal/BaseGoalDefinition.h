@@ -2,7 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class Goal;
+class Mob;
+// clang-format on
+
 class BaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk8d09b6;
+    ::ll::UntypedStorage<4, 4>  mUnk28fb77;
+    ::ll::UntypedStorage<8, 32> mUnk9beb99;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BaseGoalDefinition& operator=(BaseGoalDefinition const&);
@@ -10,32 +25,47 @@ public:
     BaseGoalDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BaseGoalDefinition();
 
     // vIndex: 1
-    virtual bool validateMobType(class Mob&) const;
+    virtual bool validateMobType(::Mob&) const;
 
     // vIndex: 2
-    virtual bool validate(class Mob&) const;
-
-    MCAPI void initialize(class EntityContext&, class Goal& goal) const;
-
+    virtual bool validate(::Mob&) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void initialize(::EntityContext&, ::Goal& goal) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::std::string, int>& mControlFlagMap();
+    // NOLINTEND
 
-    MCAPI bool validate$(class Mob&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool validateMobType$(class Mob&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $validateMobType(::Mob&) const;
 
-    MCAPI static std::unordered_map<std::string, int>& mControlFlagMap();
+    MCAPI bool $validate(::Mob&) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

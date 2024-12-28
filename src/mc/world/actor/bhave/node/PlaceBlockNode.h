@@ -6,32 +6,50 @@
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class PlaceBlockNode : public ::BehaviorNode {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk13f3e6;
+    ::ll::UntypedStorage<1, 1> mUnk3fd05f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlaceBlockNode& operator=(PlaceBlockNode const&);
     PlaceBlockNode(PlaceBlockNode const&);
+    PlaceBlockNode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlaceBlockNode() = default;
-
     // vIndex: 1
-    virtual ::BehaviorStatus tick(class Actor& owner);
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
-    MCAPI PlaceBlockNode();
-
+    // vIndex: 0
+    virtual ~PlaceBlockNode() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
+    // NOLINTEND
 
-    MCAPI ::BehaviorStatus tick$(class Actor& owner);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,32 +4,15 @@
 
 class LevelDataWrapper {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>    mUnkc5446e;
+    ::ll::UntypedStorage<8, 1808> mUnkab2ff4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LevelDataWrapper& operator=(LevelDataWrapper const&);
     LevelDataWrapper(LevelDataWrapper const&);
-
-public:
-    // NOLINTBEGIN
-    MCAPI LevelDataWrapper();
-
-    MCAPI class LevelData& operator*();
-
-    MCAPI class LevelData const& operator*() const;
-
-    MCAPI class LevelData const* operator->() const;
-
-    MCAPI void setLevelData(class LevelData& levelData);
-
-    MCAPI ~LevelDataWrapper();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
-    // NOLINTEND
+    LevelDataWrapper();
 };

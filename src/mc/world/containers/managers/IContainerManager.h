@@ -6,6 +6,13 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/ContainerType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+struct FullContainerName;
+namespace Bedrock::PubSub { class Subscription; }
+// clang-format on
+
 class IContainerManager {
 public:
     // prevent constructor by default
@@ -14,6 +21,7 @@ public:
     IContainerManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IContainerManager();
@@ -22,40 +30,58 @@ public:
     virtual ::ContainerID getContainerId() const = 0;
 
     // vIndex: 2
-    virtual void setContainerId(::ContainerID id) = 0;
+    virtual void setContainerId(::ContainerID) = 0;
 
     // vIndex: 3
     virtual ::ContainerType getContainerType() const = 0;
 
     // vIndex: 4
-    virtual void setContainerType(::ContainerType type) = 0;
+    virtual void setContainerType(::ContainerType) = 0;
 
     // vIndex: 5
-    virtual void serverInitItemStackIds() = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        registerContainerTypeListener(::std::function<void(::ContainerType)>) const = 0;
 
     // vIndex: 6
-    virtual std::vector<class ItemStack> getItemCopies() const = 0;
+    virtual void serverInitItemStackIds() = 0;
 
     // vIndex: 7
-    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork) = 0;
+    virtual ::std::vector<::ItemStack> getItemCopies() const = 0;
 
     // vIndex: 8
-    virtual class ItemStack const& getSlot(int slot) const = 0;
+    virtual void setSlot(int, ::ItemStack const&, bool) = 0;
 
     // vIndex: 9
-    virtual void setData(int id, int value) = 0;
+    virtual ::ItemStack const& getSlot(int) const = 0;
 
     // vIndex: 10
+    virtual void setData(int, int) = 0;
+
+    // vIndex: 11
+    virtual void setFullContainerSlot(int, ::FullContainerName const&, ::ItemStack const&, bool) = 0;
+
+    // vIndex: 12
+    virtual ::ItemStack const& getFullContainerSlot(int, ::FullContainerName const&) const = 0;
+
+    // vIndex: 13
     virtual void broadcastChanges() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

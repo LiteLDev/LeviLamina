@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
+class Scoreboard;
+class TextObjectRoot;
 namespace Json { class Value; }
 // clang-format on
 
@@ -19,28 +22,15 @@ public:
     // clang-format on
 
     // TextObjectParser inner types define
-    struct ErrorLocalization {
-    public:
-        // prevent constructor by default
-        ErrorLocalization& operator=(ErrorLocalization const&);
-        ErrorLocalization(ErrorLocalization const&);
-        ErrorLocalization();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~ErrorLocalization();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
     struct ServerData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk65f186;
+        ::ll::UntypedStorage<8, 8> mUnk50aa87;
+        ::ll::UntypedStorage<8, 8> mUnk9a53de;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ServerData& operator=(ServerData const&);
@@ -48,24 +38,47 @@ public:
         ServerData();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ServerData(
-            class CommandRegistry::Parser& parser,
-            class CommandOrigin const&     commandOrigin,
-            class Scoreboard const&        scoreboard
+            ::CommandRegistry::Parser& parser,
+            ::CommandOrigin const&     commandOrigin,
+            ::Scoreboard const&        scoreboard
         );
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(
-            class CommandRegistry::Parser& parser,
-            class CommandOrigin const&     commandOrigin,
-            class Scoreboard const&        scoreboard
-        );
+        MCAPI void*
+        $ctor(::CommandRegistry::Parser& parser, ::CommandOrigin const& commandOrigin, ::Scoreboard const& scoreboard);
+        // NOLINTEND
+    };
 
+    struct ErrorLocalization {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk890d87;
+        ::ll::UntypedStorage<8, 24> mUnk3f4353;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ErrorLocalization& operator=(ErrorLocalization const&);
+        ErrorLocalization(ErrorLocalization const&);
+        ErrorLocalization();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ErrorLocalization();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -76,88 +89,83 @@ public:
     TextObjectParser();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static bool
-    textObjectFromJson(class Json::Value const& root, class TextObjectRoot& parsedObject, std::string& errorMsg);
-
-    MCAPI static bool textObjectFromJsonServer(
-        class Json::Value const&                    root,
-        class TextObjectRoot&                       parsedObject,
-        struct TextObjectParser::ServerData         serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
-    MCAPI static bool textObjectFromJsonString(
-        std::string const&    jsonAsString,
-        class TextObjectRoot& parsedObject,
-        std::string&          errorMsg
-    );
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool _getObjectsFromTextObject(
-        class Json::Value const&                    root,
-        class TextObjectRoot&                       parsedObject,
-        struct TextObjectParser::ServerData*        serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
+        ::Json::Value const&                   root,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
     MCAPI static bool _parseScoreTextObject(
-        class TextObjectRoot&                       parentTextObject,
-        class Json::Value const&                    scoreObject,
-        struct TextObjectParser::ServerData*        serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
+        ::TextObjectRoot&                      parentTextObject,
+        ::Json::Value const&                   scoreObject,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
     MCAPI static bool _parseSelectorTextObject(
-        class TextObjectRoot&                       parentTextObject,
-        std::string                                 selectorString,
-        struct TextObjectParser::ServerData*        serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
+        ::TextObjectRoot&                      parentTextObject,
+        ::std::string                          selectorString,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
     MCAPI static bool _textObjectFromJson(
-        class Json::Value const&                    root,
-        class TextObjectRoot&                       parsedObject,
-        struct TextObjectParser::ServerData*        serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
+        ::Json::Value const&                   root,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
     MCAPI static bool _textObjectFromString(
-        std::string const&                          jsonAsString,
-        class TextObjectRoot&                       parsedObject,
-        struct TextObjectParser::ServerData*        serverData,
-        struct TextObjectParser::ErrorLocalization& errorLocalization
+        ::std::string const&                   jsonAsString,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData*        serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
+    MCAPI static bool
+    textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
+
+    MCAPI static bool textObjectFromJsonServer(
+        ::Json::Value const&                   root,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData         serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
+    );
+
+    MCAPI static bool textObjectFromJsonString(
+        ::std::string const& jsonAsString,
+        ::TextObjectRoot&    parsedObject,
+        ::std::string&       errorMsg
+    );
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_NOT_ARRAY();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_NOT_OBJECT();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_NO_DATA();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_NO_DATA();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_PARSE_FAILED();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_NOT_OBJECT();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_SELECTOR_NOT_STRING();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_TEXT_NOT_STRING();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_TRANSLATE_NOT_STRING();
 
-    MCAPI static std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
-
+    MCAPI static ::std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
     // NOLINTEND
 };

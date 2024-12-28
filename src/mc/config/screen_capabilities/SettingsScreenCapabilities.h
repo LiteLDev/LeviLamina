@@ -3,9 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/typeid_t.h"
+#include "mc/config/TypedScreenCapabilities.h"
 
-struct SettingsScreenCapabilities {
+struct SettingsScreenCapabilities : public ::TypedScreenCapabilities<::SettingsScreenCapabilities> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkb1617a;
+    ::ll::UntypedStorage<1, 1>  mUnkc8b176;
+    ::ll::UntypedStorage<1, 1>  mUnk16a365;
+    ::ll::UntypedStorage<1, 1>  mUnk3208be;
+    ::ll::UntypedStorage<1, 1>  mUnk836179;
+    ::ll::UntypedStorage<1, 1>  mUnka2b9ce;
+    ::ll::UntypedStorage<1, 1>  mUnk97de66;
+    ::ll::UntypedStorage<1, 1>  mUnka9eab7;
+    ::ll::UntypedStorage<1, 1>  mUnkabbfbd;
+    ::ll::UntypedStorage<1, 1>  mUnk2c7724;
+    ::ll::UntypedStorage<1, 1>  mUnk1ac17b;
+    ::ll::UntypedStorage<8, 24> mUnk53949e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SettingsScreenCapabilities& operator=(SettingsScreenCapabilities const&);
@@ -13,23 +30,21 @@ public:
     SettingsScreenCapabilities();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SettingsScreenCapabilities();
-
-    // vIndex: 1
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+    virtual ~SettingsScreenCapabilities() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

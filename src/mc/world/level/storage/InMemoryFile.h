@@ -2,15 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class InMemoryFile {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnk7ae000;
+    ::ll::UntypedStorage<8, 24> mUnk41540f;
+    ::ll::UntypedStorage<8, 32> mUnk93c79a;
+    ::ll::UntypedStorage<1, 1>  mUnk2c24f7;
+    ::ll::UntypedStorage<4, 4>  mUnk722073;
+    ::ll::UntypedStorage<1, 1>  mUnk5894c2;
+    ::ll::UntypedStorage<1, 1>  mUnkaa2208;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InMemoryFile& operator=(InMemoryFile const&);
@@ -18,31 +22,8 @@ public:
     InMemoryFile();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit InMemoryFile(class Core::Path const& fileName);
-
-    MCAPI leveldb::Status flushToDisk(leveldb::Env* env);
-
-    MCAPI class Core::PathBuffer<std::string> getFilename() const;
-
-    MCAPI uint64 getFlushSize() const;
-
-    MCAPI bool isReadyForFlush() const;
-
-    MCAPI bool isSafeToDelete(std::string& outReasonString) const;
-
-    MCAPI void markForDelete();
-
-    MCAPI ~InMemoryFile();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Core::Path const& fileName);
-
-    MCAPI void dtor$();
-
+    MCAPI ::leveldb::Status flushToDisk(::leveldb::Env* env);
     // NOLINTEND
 };

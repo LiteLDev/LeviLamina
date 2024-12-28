@@ -5,13 +5,14 @@
 namespace Social {
 
 enum class ConnectionType : short {
-    Undefined                 = -1,
-    Local                     = 0x0,
-    IPv4                      = 0x1,
-    IPv6                      = 0x2,
-    WebSocketsWebRTCSignaling = 0x3,
-    NAT                       = 0x5,
-    UPNP                      = 0x6,
-    UnknownIP                 = 0x7,
+    Undefined                 = 65535,
+    Local                     = 0,
+    IPv4                      = 1,
+    IPv6                      = 2,
+    WebSocketsWebRTCSignaling = 3,
+    Nat                       = 5,
+    Upnp                      = 6,
+    UnknownIP                 = 7,
 };
-};
+
+}

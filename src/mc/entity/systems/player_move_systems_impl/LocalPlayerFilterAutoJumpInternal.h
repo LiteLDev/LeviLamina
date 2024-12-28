@@ -9,10 +9,11 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,29 +22,29 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
-struct ActorMovementTickNeededFlag;
+struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct ActorTypeComponent;
-struct CamelFlag;
-struct CanStandOnSnowFlag;
+struct CamelFlagComponent;
+struct CanStandOnSnowFlagComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct HasLightweightFamilyFlag;
-struct HorseFlag;
+struct HasLightweightFamilyFlagComponent;
+struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
-struct LocalPlayerComponentFlag;
+struct LocalPlayerComponent;
 struct MobBodyRotationComponent;
-struct MobFlag;
+struct MobFlagComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct MovementAttributesComponent;
 struct OffsetsComponent;
 struct OnGroundFlagComponent;
-struct ParrotFlag;
+struct ParrotFlagComponent;
 struct PassengerComponent;
 struct PassengerRenderingRidingOffsetComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
 struct StateVectorComponent;
@@ -53,7 +54,44 @@ struct VehicleComponent;
 
 namespace PlayerMoveSystemsImpl {
 
-struct LocalPlayerFilterAutoJumpInternal {
+struct LocalPlayerFilterAutoJumpInternal
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<
+          ::CanStandOnSnowFlagComponent,
+          ::HasLightweightFamilyFlagComponent,
+          ::HorseFlagComponent,
+          ::MobFlagComponent,
+          ::ParrotFlagComponent,
+          ::VehicleComponent,
+          ::CamelFlagComponent,
+          ::PlayerComponent,
+          ::ActorMovementTickNeededComponent,
+          ::LocalPlayerComponent>,
+      ::Read<
+          ::AABBShapeComponent,
+          ::MovementAbilitiesComponent,
+          ::ActorTypeComponent,
+          ::FallDistanceComponent,
+          ::PassengerComponent,
+          ::ActorGameTypeComponent,
+          ::ActorDataFlagComponent,
+          ::VehicleComponent,
+          ::ActorRotationComponent,
+          ::MobBodyRotationComponent,
+          ::RenderRotationComponent,
+          ::StandAnimationComponent,
+          ::OffsetsComponent,
+          ::VanillaOffsetComponent,
+          ::PassengerRenderingRidingOffsetComponent,
+          ::MovementAttributesComponent,
+          ::DimensionTypeComponent,
+          ::OnGroundFlagComponent,
+          ::StateVectorComponent>,
+      ::Write<::MoveInputComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     LocalPlayerFilterAutoJumpInternal& operator=(LocalPlayerFilterAutoJumpInternal const&);
@@ -61,283 +99,288 @@ public:
     LocalPlayerFilterAutoJumpInternal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LocalPlayerFilterAutoJumpInternal() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct CanStandOnSnowFlag>,
-                          class FlagComponent<struct HasLightweightFamilyFlag>,
-                          class FlagComponent<struct HorseFlag>,
-                          class FlagComponent<struct MobFlag>,
-                          class FlagComponent<struct ParrotFlag>,
-                          struct VehicleComponent,
-                          class FlagComponent<struct CamelFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct ActorMovementTickNeededFlag>,
-                          class FlagComponent<struct LocalPlayerComponentFlag>>,
-                      struct Read<
-                          struct AABBShapeComponent,
-                          struct MovementAbilitiesComponent,
-                          struct ActorTypeComponent,
-                          struct FallDistanceComponent,
-                          struct PassengerComponent,
-                          struct ActorGameTypeComponent,
-                          struct ActorDataFlagComponent,
-                          struct VehicleComponent,
-                          struct ActorRotationComponent,
-                          struct MobBodyRotationComponent,
-                          struct RenderRotationComponent,
-                          struct StandAnimationComponent,
-                          struct OffsetsComponent,
-                          struct VanillaOffsetComponent,
-                          struct PassengerRenderingRidingOffsetComponent,
-                          struct MovementAttributesComponent,
-                          struct DimensionTypeComponent,
-                          struct OnGroundFlagComponent,
-                          struct StateVectorComponent>,
-                      struct Write<struct MoveInputComponent>,
-                      struct AddRemove<>,
-                      struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent,
+                          ::ActorMovementTickNeededComponent,
+                          ::LocalPlayerComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::MovementAttributesComponent,
+                          ::DimensionTypeComponent,
+                          ::OnGroundFlagComponent,
+                          ::StateVectorComponent>,
+                      ::Write<::MoveInputComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct MovementAttributesComponent,
-                struct DimensionTypeComponent,
-                struct OnGroundFlagComponent,
-                struct StateVectorComponent>,
-            struct Write<struct MoveInputComponent>,
-            struct AddRemove<>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entity
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entity
+    ) /*override*/;
 
-    MCAPI void commonTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct MovementAttributesComponent,
-                struct DimensionTypeComponent,
-                struct OnGroundFlagComponent,
-                struct StateVectorComponent>,
-            struct Write<struct MoveInputComponent>,
-            struct AddRemove<>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext*    entity
-    );
-
-    MCAPI static void _setJumpingIfPlayerCanAutoJump(
-        class StrictEntityContext const&                   entity,
-        struct AABBShapeComponent const&                   aabbShape,
-        struct ActorRotationComponent const&               actorRotation,
-        struct MovementAttributesComponent const&          attributes,
-        struct StateVectorComponent const&                 stateVector,
-        struct ActorDataFlagComponent const&               synchedActorData,
-        struct MoveInputComponent&                         moveInput,
-        class Optional<struct OnGroundFlagComponent const> isOnGround,
-        class Optional<struct PassengerComponent const>    isRiding,
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct MovementAttributesComponent,
-                struct DimensionTypeComponent,
-                struct OnGroundFlagComponent,
-                struct StateVectorComponent>,
-            struct Write<struct MoveInputComponent>,
-            struct AddRemove<>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>&  executionContext,
-        class IConstBlockSource const& region
-    );
-
+    // vIndex: 0
+    virtual ~LocalPlayerFilterAutoJumpInternal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
-
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct MovementAttributesComponent,
-                struct DimensionTypeComponent,
-                struct OnGroundFlagComponent,
-                struct StateVectorComponent>,
-            struct Write<struct MoveInputComponent>,
-            struct AddRemove<>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& context,
-        class StrictEntityContext&    entity
+    MCAPI void commonTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext*   entity
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct CanStandOnSnowFlag>,
-                         class FlagComponent<struct HasLightweightFamilyFlag>,
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct MobFlag>,
-                         class FlagComponent<struct ParrotFlag>,
-                         struct VehicleComponent,
-                         class FlagComponent<struct CamelFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct ActorMovementTickNeededFlag>,
-                         class FlagComponent<struct LocalPlayerComponentFlag>>,
-                     struct Read<
-                         struct AABBShapeComponent,
-                         struct MovementAbilitiesComponent,
-                         struct ActorTypeComponent,
-                         struct FallDistanceComponent,
-                         struct PassengerComponent,
-                         struct ActorGameTypeComponent,
-                         struct ActorDataFlagComponent,
-                         struct VehicleComponent,
-                         struct ActorRotationComponent,
-                         struct MobBodyRotationComponent,
-                         struct RenderRotationComponent,
-                         struct StandAnimationComponent,
-                         struct OffsetsComponent,
-                         struct VanillaOffsetComponent,
-                         struct PassengerRenderingRidingOffsetComponent,
-                         struct MovementAttributesComponent,
-                         struct DimensionTypeComponent,
-                         struct OnGroundFlagComponent,
-                         struct StateVectorComponent>,
-                     struct Write<struct MoveInputComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> data);
 
+    MCAPI static void _setJumpingIfPlayerCanAutoJump(
+        ::StrictEntityContext const&              entity,
+        ::AABBShapeComponent const&               aabbShape,
+        ::ActorRotationComponent const&           actorRotation,
+        ::MovementAttributesComponent const&      attributes,
+        ::StateVectorComponent const&             stateVector,
+        ::ActorDataFlagComponent const&           synchedActorData,
+        ::MoveInputComponent&                     moveInput,
+        ::Optional<::OnGroundFlagComponent const> isOnGround,
+        ::Optional<::PassengerComponent const>    isRiding,
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&   executionContext,
+        ::IConstBlockSource const& region
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::CanStandOnSnowFlagComponent,
+                         ::HasLightweightFamilyFlagComponent,
+                         ::HorseFlagComponent,
+                         ::MobFlagComponent,
+                         ::ParrotFlagComponent,
+                         ::VehicleComponent,
+                         ::CamelFlagComponent,
+                         ::PlayerComponent,
+                         ::ActorMovementTickNeededComponent,
+                         ::LocalPlayerComponent>,
+                     ::Read<
+                         ::AABBShapeComponent,
+                         ::MovementAbilitiesComponent,
+                         ::ActorTypeComponent,
+                         ::FallDistanceComponent,
+                         ::PassengerComponent,
+                         ::ActorGameTypeComponent,
+                         ::ActorDataFlagComponent,
+                         ::VehicleComponent,
+                         ::ActorRotationComponent,
+                         ::MobBodyRotationComponent,
+                         ::RenderRotationComponent,
+                         ::StandAnimationComponent,
+                         ::OffsetsComponent,
+                         ::VanillaOffsetComponent,
+                         ::PassengerRenderingRidingOffsetComponent,
+                         ::MovementAttributesComponent,
+                         ::DimensionTypeComponent,
+                         ::OnGroundFlagComponent,
+                         ::StateVectorComponent>,
+                     ::Write<::MoveInputComponent>,
+                     ::AddRemove<>,
+                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::ActorMovementTickNeededComponent,
+                ::LocalPlayerComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::MovementAttributesComponent,
+                ::DimensionTypeComponent,
+                ::OnGroundFlagComponent,
+                ::StateVectorComponent>,
+            ::Write<::MoveInputComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context,
+        ::StrictEntityContext&   entity
+    );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PlayerMoveSystemsImpl
+} // namespace PlayerMoveSystemsImpl

@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RunAroundLikeCrazyGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk328185;
+    ::ll::UntypedStorage<4, 4>  mUnk6e6c9b;
+    ::ll::UntypedStorage<4, 12> mUnk9ab483;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RunAroundLikeCrazyGoal& operator=(RunAroundLikeCrazyGoal const&);
@@ -14,40 +26,57 @@ public:
     RunAroundLikeCrazyGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RunAroundLikeCrazyGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
+
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& debugInfo) const;
+    virtual void appendDebugInfo(::std::string& debugInfo) const /*override*/;
 
-    MCAPI RunAroundLikeCrazyGoal(class Mob& mob, float speedModifier);
-
+    // vIndex: 0
+    virtual ~RunAroundLikeCrazyGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RunAroundLikeCrazyGoal(::Mob& mob, float speedModifier);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speedModifier);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speedModifier);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& debugInfo) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI bool $canContinueToUse();
 
+    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

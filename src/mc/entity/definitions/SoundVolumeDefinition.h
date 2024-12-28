@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct SoundVolumeDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk5ece06;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SoundVolumeDefinition& operator=(SoundVolumeDefinition const&);
@@ -18,13 +25,16 @@ public:
     SoundVolumeDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity) const;
+    MCAPI void initialize(::EntityContext& entity) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SoundVolumeDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SoundVolumeDefinition>>& root
     );
-
     // NOLINTEND
 };

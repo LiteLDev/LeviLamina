@@ -7,9 +7,26 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class JumpEndSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataJumpDurationComponent;
+struct ActorMovementTickNeededComponent;
+struct ExitFromPassengerFlagComponent;
+struct JumpTicksComponent;
+struct MobIsJumpingFlagComponent;
+struct MobJumpComponent;
+struct ParrotFlagComponent;
+struct PassengerComponent;
+struct StateVectorComponent;
+struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
+
+struct JumpEndSystem {
 public:
     // prevent constructor by default
     JumpEndSystem& operator=(JumpEndSystem const&);
@@ -17,28 +34,24 @@ public:
     JumpEndSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
     MCAPI static void tick(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            class Optional<struct VehicleComponent const>,
-            struct StateVectorComponent const,
-            struct ActorDataDirtyFlagsComponent,
-            struct ActorDataJumpDurationComponent,
-            struct JumpTicksComponent,
-            struct MobJumpComponent> view,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ParrotFlag>>,
-            struct PassengerComponent const> parrotPassengersView,
-        class EntityModifier<
-            class FlagComponent<struct ExitFromPassengerFlag>,
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct MobIsJumpingFlag>> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent>,
+            ::Optional<::VehicleComponent const>,
+            ::StateVectorComponent const,
+            ::ActorDataDirtyFlagsComponent,
+            ::ActorDataJumpDurationComponent,
+            ::JumpTicksComponent,
+            ::MobJumpComponent> view,
+        ::ViewT<::StrictEntityContext, ::Include<::ParrotFlagComponent>, ::PassengerComponent const>
+            parrotPassengersView,
+        ::EntityModifier<::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent, ::MobIsJumpingFlagComponent>
+            mod
     );
-
     // NOLINTEND
 };

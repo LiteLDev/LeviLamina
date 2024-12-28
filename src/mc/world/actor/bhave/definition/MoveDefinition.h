@@ -7,10 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
 namespace Json { class Value; }
 // clang-format on
 
 class MoveDefinition : public ::BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc89ac6;
+    ::ll::UntypedStorage<8, 32> mUnk5907c5;
+    ::ll::UntypedStorage<8, 32> mUnk7672fc;
+    ::ll::UntypedStorage<8, 32> mUnk2a3353;
+    ::ll::UntypedStorage<4, 4>  mUnk18fcf2;
+    ::ll::UntypedStorage<8, 32> mUnk12f277;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MoveDefinition& operator=(MoveDefinition const&);
@@ -18,23 +30,30 @@ public:
     MoveDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MoveDefinition();
-
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
+    // vIndex: 0
+    virtual ~MoveDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

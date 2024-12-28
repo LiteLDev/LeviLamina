@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Vec3;
+// clang-format on
+
 namespace BehaviorNodeUtils {
+// functions
 // NOLINTBEGIN
-MCAPI void lookAt(class Actor& actorLooking, class Vec3 const& lookAtPos, float yMax, float xMax);
+MCAPI void lookAt(::Actor& actorLooking, ::Vec3 const& lookAtPos, float yMax, float xMax);
 // NOLINTEND
 
-}; // namespace BehaviorNodeUtils
+} // namespace BehaviorNodeUtils

@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/navigation/PathNavigation.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class BlockSource;
+class Mob;
+class NavigationComponent;
+class Path;
+class Vec3;
+// clang-format on
+
 class WallClimberPathNavigation : public ::PathNavigation {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkc0c821;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WallClimberPathNavigation& operator=(WallClimberPathNavigation const&);
@@ -13,51 +30,58 @@ public:
     WallClimberPathNavigation();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WallClimberPathNavigation() = default;
-
     // vIndex: 2
-    virtual void tick(class NavigationComponent& parent, class Mob& mob);
-
-    // vIndex: 4
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+    virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 5
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+    virtual ::std::unique_ptr<::Path>
+    createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
+
+    // vIndex: 4
+    virtual ::std::unique_ptr<::Path>
+    createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
     // vIndex: 7
-    virtual bool moveTo(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);
+    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed) /*override*/;
 
     // vIndex: 11
-    virtual bool canUpdatePath(class Mob const& mob) const;
+    virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
+    // vIndex: 0
+    virtual ~WallClimberPathNavigation() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _isInsideBorderBlock(class AABB const& aabb, class BlockSource const& region, float grow) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool _isInsideBorderBlock(::AABB const& aabb, ::BlockSource const& region, float grow) const;
+    // NOLINTEND
 
-    MCAPI bool canUpdatePath$(class Mob const& mob) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class Path>
-          createPath$(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI std::unique_ptr<class Path>
-          createPath$(class NavigationComponent& parent, class Mob& mob, class Actor& target);
+    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCAPI bool moveTo$(class NavigationComponent& parent, class Mob& mob, class Actor& target, float speed);
+    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI void tick$(class NavigationComponent& parent, class Mob& mob);
+    MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed);
 
+    MCAPI bool $canUpdatePath(::Mob const& mob) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

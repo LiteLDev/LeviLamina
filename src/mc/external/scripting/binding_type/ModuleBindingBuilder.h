@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class Release; }
+namespace Scripting { class RuntimeConditions; }
+namespace Scripting { class TypeMapBuilder; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ConstantFactory; }
 namespace Scripting { struct EnumBinding; }
@@ -18,6 +20,7 @@ namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
+namespace Scripting { struct TypeMapData; }
 namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -26,121 +29,140 @@ namespace Scripting {
 
 class ModuleBindingBuilder {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 352> mUnk19651f;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ModuleBindingBuilder& operator=(ModuleBindingBuilder const&);
     ModuleBindingBuilder(ModuleBindingBuilder const&);
     ModuleBindingBuilder();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ModuleBindingBuilder(
-        struct Scripting::UUID const&    id,
-        std::string const&               name,
-        struct Scripting::Version const& version
-    );
+    MCAPI
+    ModuleBindingBuilder(::Scripting::UUID const& id, ::std::string const& name, ::Scripting::Version const& version);
 
-    MCAPI struct Scripting::ModuleBinding build(bool allowUntagged, std::vector<std::string> const& additionalTags);
-
-    MCAPI class Scripting::ModuleBindingBuilder& classBinding(struct Scripting::ClassBinding&& classBinding);
-
-    MCAPI class Scripting::ModuleBindingBuilder&
-    dependency(std::vector<struct Scripting::ModuleDescriptor> const& modules);
-
-    MCAPI class Scripting::ModuleBindingBuilder& enumBinding(struct Scripting::EnumBinding&& enumBinding);
-
-    MCAPI class Scripting::ModuleBindingBuilder& errorBinding(struct Scripting::ErrorBinding&& errorBinding);
-
-    MCAPI struct Scripting::ModuleDescriptor getModuleDescriptor() const;
-
-    MCAPI class Scripting::ModuleBindingBuilder& interfaceBinding(struct Scripting::InterfaceBinding&& interfaceBinding
-    );
-
-    MCAPI ~ModuleBindingBuilder();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI bool _allowed(
-        std::vector<class Scripting::Release> const& releases,
-        bool                                         allowUntagged,
-        std::vector<std::string> const&              additionalTags
+        ::std::vector<::Scripting::Release> const& releases,
+        bool                                       allowUntagged,
+        ::std::vector<::std::string> const&        additionalTags
     ) const;
 
-    MCAPI std::vector<struct Scripting::ClassBinding> _filterClassBindings(
-        std::vector<struct Scripting::ClassBinding> const& classBindings,
-        bool                                               allowUntagged,
-        std::vector<std::string> const&                    additionalTags
+    MCAPI ::std::vector<::Scripting::ClassBinding> _filterClassBindings(
+        ::std::vector<::Scripting::ClassBinding> const& classBindings,
+        bool                                            allowUntagged,
+        ::std::vector<::std::string> const&             additionalTags
     ) const;
 
-    MCAPI std::vector<struct Scripting::EnumBinding> _filterEnumBindings(
-        std::vector<struct Scripting::EnumBinding> const& enumBindings,
-        bool                                              allowUntagged,
-        std::vector<std::string> const&                   additionalTags
+    MCAPI ::std::vector<::Scripting::EnumBinding> _filterEnumBindings(
+        ::std::vector<::Scripting::EnumBinding> const& enumBindings,
+        bool                                           allowUntagged,
+        ::std::vector<::std::string> const&            additionalTags
     ) const;
 
-    MCAPI std::vector<struct Scripting::EnumBinding::EnumValue> _filterEnumValueMap(
-        std::vector<struct Scripting::ConstantFactory> const&        filteredConstants,
-        std::vector<struct Scripting::EnumBinding::EnumValue> const& valueMap
+    MCAPI ::std::vector<::Scripting::EnumBinding::EnumValue> _filterEnumValueMap(
+        ::std::vector<::Scripting::ConstantFactory> const&        filteredConstants,
+        ::std::vector<::Scripting::EnumBinding::EnumValue> const& valueMap
     ) const;
 
-    MCAPI std::vector<struct Scripting::ErrorBinding> _filterErrorBindings(
-        std::vector<struct Scripting::ErrorBinding> const& errorBindings,
-        bool                                               allowUnreleased,
-        std::vector<std::string> const&                    allowedTags
+    MCAPI ::std::vector<::Scripting::ErrorBinding> _filterErrorBindings(
+        ::std::vector<::Scripting::ErrorBinding> const& errorBindings,
+        bool                                            allowUnreleased,
+        ::std::vector<::std::string> const&             allowedTags
     ) const;
 
-    MCAPI std::vector<struct Scripting::InterfaceBinding> _filterInterfaceBindings(
-        std::vector<struct Scripting::InterfaceBinding> const& interfaceBindings,
-        bool                                                   allowUntagged,
-        std::vector<std::string> const&                        additionalTags
+    MCAPI ::std::vector<::Scripting::InterfaceBinding> _filterInterfaceBindings(
+        ::std::vector<::Scripting::InterfaceBinding> const& interfaceBindings,
+        bool                                                allowUntagged,
+        ::std::vector<::std::string> const&                 additionalTags
+    ) const;
+
+    MCAPI ::std::vector<::Scripting::TypeMapData> _filterTypeMaps(
+        ::std::vector<::Scripting::TypeMapData> const& typeMaps,
+        bool                                           allowUntagged,
+        ::std::vector<::std::string> const&            additionalTags
     ) const;
 
     MCAPI bool
-    _isClassTypeInList(entt::meta_type type, std::vector<struct Scripting::ClassBinding> const& classBindings) const;
+    _isClassTypeInList(::entt::meta_type type, ::std::vector<::Scripting::ClassBinding> const& classBindings) const;
 
-    MCAPI std::vector<struct Scripting::ClassBinding>
-          _orderClassBindingsByDependency(std::vector<struct Scripting::ClassBinding>& unorderedBindings) const;
+    MCAPI ::std::vector<::Scripting::ClassBinding>
+    _orderClassBindingsByDependency(::std::vector<::Scripting::ClassBinding>& unorderedBindings) const;
 
+    MCAPI ::Scripting::ModuleBinding build(
+        bool                                  allowUntagged,
+        ::std::vector<::std::string> const&   additionalTags,
+        ::Scripting::RuntimeConditions const& currentRuntimeConditions
+    );
+
+    MCAPI ::Scripting::ModuleBindingBuilder& classBinding(::Scripting::ClassBinding&& classBinding);
+
+    MCAPI ::Scripting::ModuleBindingBuilder& createTypeMap(::Scripting::TypeMapBuilder& typeMapBuilder);
+
+    MCAPI ::Scripting::ModuleBindingBuilder& enumBinding(::Scripting::EnumBinding&& enumBinding);
+
+    MCAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
+
+    MCAPI ::Scripting::ModuleDescriptor getModuleDescriptor() const;
+
+    MCAPI ::Scripting::ModuleBindingBuilder& interfaceBinding(::Scripting::InterfaceBinding&& interfaceBinding);
+
+    MCAPI ::Scripting::ModuleBindingBuilder& scriptModuleCode(::std::string&& scriptModuleCode);
+
+    MCAPI ~ModuleBindingBuilder();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static bool _assertClassMemberSymbolDoesntExist(
-        struct Scripting::ClassBinding const&  classBinding,
-        std::string const&                     name,
-        struct Scripting::TaggedBinding const& binding
+        ::Scripting::ClassBinding const&  classBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
     );
 
     MCAPI static bool _assertEnumMemberSymbolDoesntExist(
-        struct Scripting::EnumBinding const&   enumBinding,
-        std::string const&                     name,
-        struct Scripting::TaggedBinding const& binding
+        ::Scripting::EnumBinding const&   enumBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
     );
 
     MCAPI static bool _assertModuleMemberSymbolDoesntExist(
-        struct Scripting::ModuleBinding const& moduleBinding,
-        std::string const&                     name,
-        struct Scripting::TaggedBinding const& binding
+        ::Scripting::ModuleBinding const& moduleBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
     );
 
-    MCAPI static void _validateClassConstructors(struct Scripting::ModuleBinding const& moduleBinding);
+    MCAPI static void _validateClassConstructors(::Scripting::ModuleBinding const& moduleBinding);
 
-    MCAPI static void _validateModuleNames(struct Scripting::ModuleBinding const& moduleBinding);
-
+    MCAPI static void _validateModuleNames(::Scripting::ModuleBinding const& moduleBinding);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void*
-    ctor$(struct Scripting::UUID const& id, std::string const& name, struct Scripting::Version const& version);
+    MCAPI static ::Scripting::ConstantFactory& mEmptyConstantFactory();
 
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::FunctionBinding& mEmptyFunctionBinding();
 
-    MCAPI static struct Scripting::ConstantFactory& mEmptyConstantFactory();
+    MCAPI static ::Scripting::ObjectFactory& mEmptyObjectFactory();
+    // NOLINTEND
 
-    MCAPI static struct Scripting::FunctionBinding& mEmptyFunctionBinding();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::UUID const& id, ::std::string const& name, ::Scripting::Version const& version);
+    // NOLINTEND
 
-    MCAPI static struct Scripting::ObjectFactory& mEmptyObjectFactory();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

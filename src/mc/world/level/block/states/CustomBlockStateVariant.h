@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/level/block/states/BlockState.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 class CustomBlockStateVariant : public ::BlockState {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnk4702d3;
+    ::ll::UntypedStorage<8, 128> mUnk84844b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CustomBlockStateVariant& operator=(CustomBlockStateVariant const&);
@@ -13,26 +25,35 @@ public:
     CustomBlockStateVariant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CustomBlockStateVariant() = default;
-
     // vIndex: 1
-    virtual void toNBT(class CompoundTag& tag, int val) const;
+    virtual void toNBT(::CompoundTag& tag, int val) const /*override*/;
 
     // vIndex: 2
-    virtual bool fromNBT(class CompoundTag const& tag, int& outValue) const;
+    virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const /*override*/;
 
+    // vIndex: 0
+    virtual ~CustomBlockStateVariant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool fromNBT$(class CompoundTag const& tag, int& outValue) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $toNBT(::CompoundTag& tag, int val) const;
 
-    MCAPI void toNBT$(class CompoundTag& tag, int val) const;
+    MCAPI bool $fromNBT(::CompoundTag const& tag, int& outValue) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

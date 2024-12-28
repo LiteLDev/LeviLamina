@@ -11,30 +11,30 @@ namespace CameraPresetsInternals {
 
 struct VerboseCameraList {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc6a2a8;
+    ::ll::UntypedStorage<8, 24> mUnk5e4a2d;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VerboseCameraList(VerboseCameraList const&);
     VerboseCameraList();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct CameraPresetsInternals::VerboseCameraList&
-    operator=(struct CameraPresetsInternals::VerboseCameraList&&);
+    MCAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList&&);
 
-    MCAPI struct CameraPresetsInternals::VerboseCameraList&
-    operator=(struct CameraPresetsInternals::VerboseCameraList const&);
-
-    MCAPI ~VerboseCameraList();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 
-}; // namespace CameraPresetsInternals
+} // namespace CameraPresetsInternals

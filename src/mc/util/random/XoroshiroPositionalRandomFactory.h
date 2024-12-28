@@ -8,44 +8,68 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class IRandom;
+class XoroshiroRandom;
 namespace Crypto::Hash { class md5; }
 // clang-format on
 
 class XoroshiroPositionalRandomFactory : public ::IPositionalRandomFactory {
 public:
-    uint64 mSeedLo; // this+0x8
-    uint64 mSeedHi; // this+0x10
-
-public:
-    XoroshiroPositionalRandomFactory(uint64 seedLo, uint64 seedHi) : mSeedLo(seedLo), mSeedHi(seedHi) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~XoroshiroPositionalRandomFactory();
-
-    // vIndex: 1
-    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& blockPos) const;
-
-    // vIndex: 2
-    virtual std::unique_ptr<class IRandom> forString(std::string const& s) const;
-
-    MCAPI class XoroshiroRandom forStringImpl(std::string const& s) const;
-
+    ::ll::TypedStorage<8, 8, uint64> mSeedLo;
+    ::ll::TypedStorage<8, 8, uint64> mSeedHi;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    XoroshiroPositionalRandomFactory& operator=(XoroshiroPositionalRandomFactory const&);
+    XoroshiroPositionalRandomFactory(XoroshiroPositionalRandomFactory const&);
+    XoroshiroPositionalRandomFactory();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 2
+    virtual ::std::unique_ptr<::IRandom> forString(::std::string const& s) const /*override*/;
 
-    MCAPI std::unique_ptr<class IRandom> forBlockPos$(class BlockPos const& blockPos) const;
+    // vIndex: 0
+    virtual ~XoroshiroPositionalRandomFactory() /*override*/;
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class IRandom> forString$(std::string const& s) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::XoroshiroRandom forStringImpl(::std::string const& s) const;
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5>& mThreadLocalDigest();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::Crypto::Hash::md5>& mThreadLocalDigest();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::IRandom> $forBlockPos(::BlockPos const& blockPos) const;
+
+    MCAPI ::std::unique_ptr<::IRandom> $forString(::std::string const& s) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,14 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/http/IRequestBody.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http::Internal { class IRequestBody; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class BinaryRequestBody : public ::Bedrock::Http::Internal::IRequestBody {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkafd1fc;
+    ::ll::UntypedStorage<8, 8>  mUnk8f0a1f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BinaryRequestBody& operator=(BinaryRequestBody const&);
@@ -20,47 +22,58 @@ public:
     BinaryRequestBody();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BinaryRequestBody();
+    virtual ~BinaryRequestBody() /*override*/;
 
     // vIndex: 1
-    virtual struct Bedrock::Http::Internal::IRequestBody::ReadResult read(gsl::span<uchar>);
+    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
 
     // vIndex: 2
-    virtual uint64 getSize();
+    virtual uint64 getSize() /*override*/;
 
     // vIndex: 3
-    virtual void cancel();
+    virtual void cancel() /*override*/;
 
     // vIndex: 4
-    virtual std::string const& getLoggableSource() const;
+    virtual ::std::string const& getLoggableSource() const /*override*/;
 
     // vIndex: 5
-    virtual gsl::span<uchar const> getLoggableData() const;
-
-    MCAPI void setData(gsl::span<uchar const>);
-
+    virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void setData(::gsl::span<uchar const> data);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void cancel$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar> destination);
 
-    MCAPI gsl::span<uchar const> getLoggableData$() const;
+    MCAPI uint64 $getSize();
 
-    MCAPI std::string const& getLoggableSource$() const;
+    MCAPI void $cancel();
 
-    MCAPI uint64 getSize$();
+    MCAPI ::std::string const& $getLoggableSource() const;
 
-    MCAPI struct Bedrock::Http::Internal::IRequestBody::ReadResult read$(gsl::span<uchar>);
+    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

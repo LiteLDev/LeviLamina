@@ -2,26 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace VolumeInstanceData { struct VolumeStorageDefinition; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace VolumeInstanceData {
+// static variables
 // NOLINTBEGIN
-MCAPI void bindVolumeStorageType(struct cereal::ReflectionCtx& ctx);
-
-MCAPI void deserialize(
-    std::string const&                  key,
-    class CompoundTag const&            tag,
-    class EntityContext&                volume,
-    struct cereal::ReflectionCtx const& ctx
-);
-
-MCAPI std::string const& getIdentifier(class CompoundTag const& tag);
-
-MCAPI class CompoundTag serialize(class EntityContext const& volume, struct cereal::ReflectionCtx const& ctx);
+MCAPI ::std::string const& VOLUME_INSTANCE_DATA_PREFIX();
 // NOLINTEND
 
-}; // namespace VolumeInstanceData
+} // namespace VolumeInstanceData

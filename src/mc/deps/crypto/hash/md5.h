@@ -5,62 +5,83 @@
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/IHash.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Crypto::Hash { class IHash; }
-// clang-format on
-
 namespace Crypto::Hash {
 
 class md5 : public ::Crypto::Hash::IHash {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkc62ebb;
+    ::ll::UntypedStorage<4, 4>  mUnk114d4c;
+    ::ll::UntypedStorage<4, 4>  mUnk9cb5c7;
+    ::ll::UntypedStorage<4, 4>  mUnkeed0ca;
+    ::ll::UntypedStorage<4, 4>  mUnk26ccef;
+    ::ll::UntypedStorage<4, 4>  mUnkdd0605;
+    ::ll::UntypedStorage<1, 64> mUnk899a7b;
+    ::ll::UntypedStorage<4, 64> mUnkc290fc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     md5& operator=(md5 const&);
     md5(md5 const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~md5() = default;
+    virtual ~md5() /*override*/;
 
     // vIndex: 1
-    virtual void reset();
+    virtual void reset() /*override*/;
 
     // vIndex: 2
-    virtual void update(void const* data, uint size);
+    virtual void update(void const* data, uint size) /*override*/;
 
     // vIndex: 3
-    virtual void final(uchar* result);
+    virtual void final(uchar* result) /*override*/;
 
     // vIndex: 4
-    virtual uint64 resultSize() const;
-
-    MCAPI md5();
-
+    virtual uint64 resultSize() const /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void const* _body(void const* data, uint size);
 
+    MCAPI md5();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void final$(uchar* result);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reset();
 
-    MCAPI void reset$();
+    MCAPI void $update(void const* data, uint size);
 
-    MCAPI uint64 resultSize$() const;
+    MCAPI void $final(uchar* result);
 
-    MCAPI void update$(void const* data, uint size);
+    MCAPI uint64 $resultSize() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Hash
+} // namespace Crypto::Hash

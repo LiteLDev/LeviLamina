@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace Puv { class Input; }
+namespace Puv { class LoadResultAny; }
 namespace Puv { class VersionRange; }
 // clang-format on
 
@@ -12,34 +14,61 @@ namespace Puv {
 
 class ParserBase {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnkdde19d;
+    ::ll::UntypedStorage<8, 232> mUnk480fe1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ParserBase& operator=(ParserBase const&);
     ParserBase(ParserBase const&);
     ParserBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ParserBase();
 
-    MCAPI ParserBase(class SemVersion parserVersion, class Puv::VersionRange supportedVersions);
+    // vIndex: 1
+    virtual ::Puv::LoadResultAny parse(::Puv::Input const&) const = 0;
+    // NOLINTEND
 
-    MCAPI class SemVersion const& parserVersion() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
 
-    MCAPI class Puv::VersionRange const& supportedVersions() const;
+    MCAPI ::SemVersion const& parserVersion() const;
+
+    MCAPI ::Puv::VersionRange const& supportedVersions() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(class SemVersion parserVersion, class Puv::VersionRange supportedVersions);
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Puv
+} // namespace Puv

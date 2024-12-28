@@ -8,10 +8,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemInstance;
+class ItemStack;
+class ItemStackBase;
+class LootItemCondition;
+class LootTableContext;
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 class SetBannerDetailsFunction : public ::LootItemFunction {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnke809d9;
+    ::ll::UntypedStorage<1, 1>  mUnkd8feda;
+    ::ll::UntypedStorage<8, 24> mUnkc9e1fc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SetBannerDetailsFunction& operator=(SetBannerDetailsFunction const&);
@@ -19,38 +33,51 @@ public:
     SetBannerDetailsFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetBannerDetailsFunction() = default;
+    virtual ~SetBannerDetailsFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    MCAPI static std::unique_ptr<class LootItemFunction>
-    deserialize(class Json::Value object, std::vector<std::unique_ptr<class LootItemCondition>>& predicates);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _apply(class ItemStackBase& item, class Random& random, class LootTableContext& context) const;
-
-    MCAPI static void
-    _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>>& patternVec, class Json::Value const& object);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _apply(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) const;
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

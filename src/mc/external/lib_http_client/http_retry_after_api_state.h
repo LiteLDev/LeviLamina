@@ -12,4 +12,4 @@ public:
     http_retry_after_api_state();
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

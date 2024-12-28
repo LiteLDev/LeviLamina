@@ -1,90 +1,105 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/util/Bounds.h"
-#include "mc/world/level/chunk/IRequestAction.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/AreaType.h"
 #include "mc/world/level/chunk/ChunkRequestListType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class Dimension;
+class ICommandOriginLoader;
+class IRequestAction;
+class ITickingAreaView;
+class LevelChunk;
+struct Bounds;
+struct DeserializedChunkLoadedRequest;
+struct Tick;
+// clang-format on
+
 class ChunkLoadedRequest {
 public:
-    ChunkLoadedRequest() = delete;
-
-    enum class AreaType : schar {
-        Bounds      = 0x0,
-        Circle      = 0x1,
-        TickingArea = 0x2,
-    };
-
-    bool                                  mAllowNonTickingPlayerAndTickingAreaChunks; // this+0x0
-    enum class AreaType                   mAreaType;                                  // this+0x1
-    struct Bounds                         mBounds;                                    // this+0x4
-    std::string                           mTickingAreaName;                           // this+0x38
-    std::string                           mSerializationId;                           // this+0x58
-    std::unique_ptr<class IRequestAction> mRequestAction;                             // this+0x78
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ChunkLoadedRequest(class ChunkLoadedRequest&&);
+    ::ll::TypedStorage<1, 1, bool>                                mAllowNonTickingPlayerAndTickingAreaChunks;
+    ::ll::TypedStorage<1, 1, ::AreaType>                          mAreaType;
+    ::ll::TypedStorage<4, 48, ::Bounds>                           mBounds;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mTickingAreaName;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mSerializationId;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRequestAction>> mRequestAction;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&);
+    ChunkLoadedRequest(ChunkLoadedRequest const&);
+    ChunkLoadedRequest();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
 
     MCAPI ChunkLoadedRequest(
-        std::string const&                    tickingAreaName,
-        std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+        ::std::string const&                tickingAreaName,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
     MCAPI ChunkLoadedRequest(
-        struct Bounds const&                  bounds,
-        std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  isCircleArea,
-        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+        ::Bounds const&                     bounds,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                isCircleArea,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(class Dimension& dimension, struct Tick currentLevelTick) const;
+    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
-    MCAPI bool areaContainsChunk(class LevelChunk const& chunk) const;
+    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
 
-    MCAPI class CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
+    MCAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
+
+    MCAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
 
     MCAPI ~ChunkLoadedRequest();
-
-    MCAPI static bool isValidTag(class CompoundTag const& tag);
-
-    MCAPI static struct DeserializedChunkLoadedRequest load(
-        std::string const&          key,
-        class CompoundTag const&    tag,
-        class ICommandOriginLoader& loader,
-        std::string const&          dimensionPrefix
-    );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class ITickingAreaView const* _getTickingArea(class Dimension const& dimension) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct Bounds const&                  bounds,
-        std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  isCircleArea,
-        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+    MCAPI static ::DeserializedChunkLoadedRequest load(
+        ::std::string const&    key,
+        ::CompoundTag const&    tag,
+        ::ICommandOriginLoader& loader,
+        ::std::string const&    dimensionPrefix
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkLoadedRequest&&);
+
+    MCAPI void* $ctor(
+        ::std::string const&                tickingAreaName,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI void* ctor$(class ChunkLoadedRequest&&);
-
-    MCAPI void* ctor$(
-        std::string const&                    tickingAreaName,
-        std::unique_ptr<class IRequestAction> requestAction,
-        bool                                  allowNonTickingPlayerAndTickingAreaChunks
+    MCAPI void* $ctor(
+        ::Bounds const&                     bounds,
+        ::std::unique_ptr<::IRequestAction> requestAction,
+        bool                                isCircleArea,
+        bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

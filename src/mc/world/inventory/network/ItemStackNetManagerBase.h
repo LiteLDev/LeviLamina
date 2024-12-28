@@ -4,10 +4,36 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerType.h"
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class ContainerScreenContext;
+class ContainerWeakRef;
+class ItemStack;
+class ItemStackNetManagerScreen;
+class ItemStackRequestAction;
+class Player;
+class SparseContainer;
+struct FullContainerName;
+struct ItemStackRequestIdTag;
+// clang-format on
+
 class ItemStackNetManagerBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk1a7334;
+    ::ll::UntypedStorage<1, 1>  mUnk784de5;
+    ::ll::UntypedStorage<8, 8>  mUnkecd0f2;
+    ::ll::UntypedStorage<8, 16> mUnk6169ac;
+    ::ll::UntypedStorage<8, 16> mUnk29720d;
+    ::ll::UntypedStorage<8, 8>  mUnkc005c3;
+    ::ll::UntypedStorage<1, 1>  mUnk568e3c;
+    ::ll::UntypedStorage<4, 16> mUnka42c09;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackNetManagerBase& operator=(ItemStackNetManagerBase const&);
@@ -15,6 +41,7 @@ public:
     ItemStackNetManagerBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ItemStackNetManagerBase();
@@ -23,7 +50,7 @@ public:
     virtual bool isEnabled() const;
 
     // vIndex: 2
-    virtual ItemStackRequestId getRequestId() const = 0;
+    virtual ::ItemStackRequestId getRequestId() const = 0;
 
     // vIndex: 3
     virtual bool retainSetItemStackNetIdVariant() const;
@@ -32,84 +59,92 @@ public:
     virtual bool allowInventoryTransactionManager() const = 0;
 
     // vIndex: 5
-    virtual gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest();
+    virtual ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest();
 
     // vIndex: 6
-    virtual void onContainerScreenOpen(class ContainerScreenContext const& screenContext);
+    virtual void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     // vIndex: 7
     virtual void onContainerScreenClose();
 
     // vIndex: 8
-    virtual class SparseContainer*
-    initOpenContainer(class BlockSource&, ::ContainerEnumName, class ContainerWeakRef const&);
+    virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
     // vIndex: 9
     virtual void
-    _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+    _addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
 
     // vIndex: 10
-    virtual void _initScreen(class ItemStackNetManagerScreen&);
+    virtual void _initScreen(::ItemStackNetManagerScreen&);
+    // NOLINTEND
 
-    MCAPI ItemStackNetManagerBase(class Player& player, bool isClientSide, bool isEnabled);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ItemStackNetManagerBase(::Player& player, bool isClientSide, bool isEnabled);
 
-    MCAPI class ContainerScreenContext const& getScreenContext() const;
+    MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
+
+    MCAPI void _pushScreen(::ContainerScreenContext screenContext);
+
+    MCAPI ::ContainerScreenContext const& getScreenContext() const;
 
     MCAPI bool isClientSide() const;
 
     MCAPI bool isScreenOpen() const;
+    // NOLINTEND
 
-    MCAPI static gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest(class Player* player);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest(::Player* player);
 
     MCAPI static bool setPlayerContainer(
-        class Player&                                      player,
-        ::ContainerType                                    containerType,
-        int                                                slot,
-        class ItemStack const&                             item,
-        class ItemStack&                                   slotItem,
-        std::function<void(class ItemStack const&)> const& callback
+        ::Player&                                        player,
+        ::ContainerType                                  containerType,
+        int                                              slot,
+        ::ItemStack const&                               item,
+        ::ItemStack&                                     slotItem,
+        ::std::function<void(::ItemStack const&)> const& callback
     );
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const& requestAction);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _pushScreen(class ContainerScreenContext screenContext);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Player& player, bool isClientSide, bool isEnabled);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player& player, bool isClientSide, bool isEnabled);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isEnabled() const;
+
+    MCAPI bool $retainSetItemStackNetIdVariant() const;
+
+    MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
+
+    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+
+    MCAPI void $onContainerScreenClose();
+
+    MCAPI ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
     MCAPI void
-    _addLegacyTransactionRequestSetItemSlot$(class ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+    $_addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
 
-    MCAPI void _initScreen$(class ItemStackNetManagerScreen&);
+    MCAPI void $_initScreen(::ItemStackNetManagerScreen&);
+    // NOLINTEND
 
-    MCAPI gsl::final_action<std::function<void()>> _tryBeginClientLegacyTransactionRequest$();
-
-    MCAPI class SparseContainer*
-    initOpenContainer$(class BlockSource&, ::ContainerEnumName, class ContainerWeakRef const&);
-
-    MCAPI bool isEnabled$() const;
-
-    MCAPI void onContainerScreenClose$();
-
-    MCAPI void onContainerScreenOpen$(class ContainerScreenContext const& screenContext);
-
-    MCAPI bool retainSetItemStackNetIdVariant$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

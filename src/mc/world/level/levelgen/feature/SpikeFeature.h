@@ -1,10 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
+
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
 
 class SpikeFeature : public ::Feature {
 public:
@@ -16,12 +24,15 @@ public:
     // SpikeFeature inner types define
     class EndSpike {
     public:
-        int const  mCenterX;
-        int const  mCenterZ;
-        int const  mRadius;
-        int const  mHeight;
-        bool const mGuarded;
-        AABB const mTopBoundingBox;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int const>     mCenterX;
+        ::ll::TypedStorage<4, 4, int const>     mCenterZ;
+        ::ll::TypedStorage<4, 4, int const>     mRadius;
+        ::ll::TypedStorage<4, 4, int const>     mHeight;
+        ::ll::TypedStorage<1, 1, bool const>    mGuarded;
+        ::ll::TypedStorage<4, 24, ::AABB const> mTopBoundingBox;
+        // NOLINTEND
 
     public:
         // prevent constructor by default
@@ -30,6 +41,7 @@ public:
         EndSpike();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI EndSpike(int centerX, int centerZ, int radius, int height, bool guarded);
 
@@ -39,24 +51,25 @@ public:
 
         MCAPI int getHeight() const;
 
-        MCAPI class AABB getTopBoundingBox() const;
+        MCAPI ::AABB getTopBoundingBox() const;
 
-        MCAPI bool startsInChunk(class BlockPos const& chunkOrigin) const;
-
+        MCAPI bool startsInChunk(::BlockPos const& chunkOrigin) const;
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(int centerX, int centerZ, int radius, int height, bool guarded);
-
+        MCAPI void* $ctor(int centerX, int centerZ, int radius, int height, bool guarded);
         // NOLINTEND
     };
 
 public:
-    EndSpike const& mSpike;
-    BlockPos        mCrystalBeamTarget;
-    bool            mCrystalInvulnerable;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::SpikeFeature::EndSpike const&> mSpike;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mCrystalBeamTarget;
+    ::ll::TypedStorage<1, 1, bool>                            mCrystalInvulnerable;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -65,36 +78,50 @@ public:
     SpikeFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~SpikeFeature();
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI explicit SpikeFeature(class SpikeFeature::EndSpike const& spike);
-
-    MCAPI bool
-    placeManually(class BlockSource& region, class BlockPos const& pos, class Random& random, class Actor* placer);
-
-    MCAPI void postProcessMobsAt(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI void setCrystalBeamTarget(class BlockPos const& target);
-
-    MCAPI void setCrystalInvulnerable(bool invulnerable);
-
+    virtual ~SpikeFeature() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SpikeFeature(::SpikeFeature::EndSpike const& spike);
 
-    MCAPI void* ctor$(class SpikeFeature::EndSpike const& spike);
+    MCAPI bool placeManually(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Actor* placer);
 
-    MCAPI void dtor$();
+    MCAPI void postProcessMobsAt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void setCrystalBeamTarget(::BlockPos const& target);
 
+    MCAPI void setCrystalInvulnerable(bool invulnerable);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SpikeFeature::EndSpike const& spike);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

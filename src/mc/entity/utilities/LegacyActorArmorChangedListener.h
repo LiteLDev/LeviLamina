@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/ContainerContentChangeListener.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class EntityContext;
+// clang-format on
+
 class LegacyActorArmorChangedListener : public ::ContainerContentChangeListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka51d7e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyActorArmorChangedListener& operator=(LegacyActorArmorChangedListener const&);
@@ -13,25 +25,42 @@ public:
     LegacyActorArmorChangedListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int) /*override*/;
 
     // vIndex: 1
-    virtual ~LegacyActorArmorChangedListener() = default;
-
-    MCAPI void containerContentChanged(class Actor& actor);
-
-    MCAPI static void initializeEntity(class EntityContext& entity);
-
+    virtual ~LegacyActorArmorChangedListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void containerContentChanged(::Actor& actor);
+    // NOLINTEND
 
-    MCAPI void containerContentChanged$(int);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void initializeEntity(::EntityContext& entity);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $containerContentChanged(int);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

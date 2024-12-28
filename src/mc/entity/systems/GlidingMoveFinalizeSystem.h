@@ -2,47 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-class GlidingMoveFinalizeSystem {
-public:
-    // prevent constructor by default
-    GlidingMoveFinalizeSystem& operator=(GlidingMoveFinalizeSystem const&);
-    GlidingMoveFinalizeSystem(GlidingMoveFinalizeSystem const&);
-    GlidingMoveFinalizeSystem();
+namespace GlidingMoveFinalizeSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createCollisionDamageCalculateSystem();
 
-public:
-    // NOLINTBEGIN
-    MCAPI static void _tickCollisionDamageCalculate(
-        class StrictEntityContext const&                              entity,
-        struct MobTravelComponent const&                              mobTravelComponent,
-        struct StateVectorComponent const&                            stateVectorComponent,
-        class EntityModifier<struct GlidingCollisionDamageComponent>& modifier,
-        class IConstBlockSource const&                                region
-    );
+MCAPI ::TickingSystemWithInfo createCollisionDamageHurtSystem();
+// NOLINTEND
 
-    MCAPI static void _tickCollisionDamageHurt(
-        class StrictEntityContext&,
-        class ActorOwnerComponent&                    actorOwnerComponent,
-        struct GlidingCollisionDamageComponent const& glidingCollisionDamageComponent
-    );
-
-    MCAPI static struct TickingSystemWithInfo createCollisionDamageCalculateSystem();
-
-    MCAPI static struct TickingSystemWithInfo createCollisionDamageHurtSystem();
-
-    MCAPI static void tickCollisionDamageHurt(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct MobFlag>>,
-            class ActorOwnerComponent,
-            struct GlidingCollisionDamageComponent const>            view,
-        class EntityModifier<struct GlidingCollisionDamageComponent> modifier
-    );
-
-    // NOLINTEND
-};
+} // namespace GlidingMoveFinalizeSystem

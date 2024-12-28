@@ -5,7 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerValidationCommitObject.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+// clang-format on
+
 class ExperienceCostCommitObject : public ::ContainerValidationCommitObject {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk21fe08;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExperienceCostCommitObject& operator=(ExperienceCostCommitObject const&);
@@ -13,31 +24,40 @@ public:
     ExperienceCostCommitObject();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExperienceCostCommitObject() = default;
+    virtual ~ExperienceCostCommitObject() /*override*/;
 
     // vIndex: 1
-    virtual bool append(class ContainerValidationCommitObject* other);
+    virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
 
     // vIndex: 2
-    virtual bool canCommit(class ContainerScreenContext const& screenContext) const;
+    virtual bool canCommit(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 3
-    virtual void commit(class ContainerScreenContext const& screenContext);
-
+    virtual void commit(::ContainerScreenContext const& screenContext) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool append$(class ContainerValidationCommitObject* other);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $append(::ContainerValidationCommitObject* other);
 
-    MCAPI bool canCommit$(class ContainerScreenContext const& screenContext) const;
+    MCAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI void commit$(class ContainerScreenContext const& screenContext);
+    MCAPI void $commit(::ContainerScreenContext const& screenContext);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

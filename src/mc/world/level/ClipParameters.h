@@ -2,50 +2,68 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ShapeType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockSource;
+class Vec3;
+// clang-format on
+
 struct ClipParameters {
 public:
-    class Vec3 const* mA;                  // this+0x0
-    class Vec3 const* mB;                  // this+0x8
-    class Player*     mPlayer;             // this+0x10
-    bool              mLiquid;             // this+0x18
-    bool              mFullOnly;           // this+0x19
-    bool              mSolidOnly;          // this+0x1A
-    bool              mIgnoreBorderBlocks; // this+0x1B
-    int               mMaxDistance;        // this+0x1C
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Vec3 const&> mA;
+    ::ll::TypedStorage<8, 8, ::Vec3 const&> mB;
+    ::ll::TypedStorage<8, 8, ::Actor*>      mActor;
+    ::ll::TypedStorage<1, 1, bool>          mLiquid;
+    ::ll::TypedStorage<1, 1, bool>          mFullOnly;
+    ::ll::TypedStorage<1, 1, bool>          mIgnoreBorderBlocks;
+    ::ll::TypedStorage<1, 1, ::ShapeType>   mShapeType;
+    ::ll::TypedStorage<4, 4, int>           mMaxDistance;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const>
+        mShouldCheckBlock;
+    // NOLINTEND
 
-    std::function<bool(class BlockSource const&, class Block const&, bool)> mShouldCheckBlock; // this+0x20
-
+public:
     // prevent constructor by default
     ClipParameters& operator=(ClipParameters const&);
     ClipParameters(ClipParameters const&);
     ClipParameters();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ClipParameters(class Vec3 const& a, class Vec3 const& b);
+    MCAPI ClipParameters(::Vec3 const& a, ::Vec3 const& b);
 
     MCAPI ClipParameters(
-        class Vec3 const&                                                              a,
-        class Vec3 const&                                                              b,
-        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
+        ::Vec3 const&                                                            a,
+        ::Vec3 const&                                                            b,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
     );
 
     MCAPI ~ClipParameters();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Vec3 const&                                                              a,
-        class Vec3 const&                                                              b,
-        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
+    MCAPI void* $ctor(::Vec3 const& a, ::Vec3 const& b);
+
+    MCAPI void* $ctor(
+        ::Vec3 const&                                                            a,
+        ::Vec3 const&                                                            b,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Vec3 const& a, class Vec3 const& b);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

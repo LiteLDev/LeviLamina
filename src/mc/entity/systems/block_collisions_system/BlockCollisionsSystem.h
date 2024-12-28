@@ -7,28 +7,36 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class EntitySystems;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct BlockCollisionEvaluationQueueComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct LocalSpatialEntityFetcherFactoryComponent;
+struct PlayerComponent;
 namespace BlockCollisionsSystem { struct BlockCollisionResolutionVectorComponent; }
 // clang-format on
 
 namespace BlockCollisionsSystem {
+// functions
 // NOLINTBEGIN
 MCAPI void _processBlockCollisionMoveRequestsSystem(
-    class OptionalGlobal<struct BlockCollisionEvaluationQueueComponent>    queue,
-    class OptionalGlobal<struct LocalSpatialEntityFetcherFactoryComponent> fetcherFactoryComponent,
-    class OptionalGlobal<struct LocalConstBlockSourceFactoryComponent>     blockSourceFactoryComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct PlayerComponentFlag>>,
-        struct AABBShapeComponent const,
-        class ActorOwnerComponent const>                                                        toCheck,
-    class EntityModifier<struct BlockCollisionsSystem::BlockCollisionResolutionVectorComponent> modifier
+    ::OptionalGlobal<::BlockCollisionEvaluationQueueComponent>    queue,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> fetcherFactoryComponent,
+    ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent>     blockSourceFactoryComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PlayerComponent>,
+        ::AABBShapeComponent const,
+        ::ActorOwnerComponent const>                                                   toCheck,
+    ::EntityModifier<::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent> modifier
 );
 
-MCAPI void registerSystems(class EntitySystems& systemRegistry, bool isUsingClientRewind);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}; // namespace BlockCollisionsSystem
+} // namespace BlockCollisionsSystem

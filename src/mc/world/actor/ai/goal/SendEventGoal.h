@@ -3,10 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct SendEventData;
+// clang-format on
+
 class SendEventGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk2d6c75;
+    ::ll::UntypedStorage<8, 40> mUnk61ca85;
+    ::ll::UntypedStorage<8, 24> mUnk1f9da1;
+    ::ll::UntypedStorage<4, 4>  mUnkd1efb7;
+    ::ll::UntypedStorage<4, 4>  mUnkdf07dc;
+    ::ll::UntypedStorage<4, 4>  mUnke7a4b6;
+    ::ll::UntypedStorage<4, 4>  mUnk39fc55;
+    ::ll::UntypedStorage<8, 8>  mUnk84812a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SendEventGoal& operator=(SendEventGoal const&);
@@ -14,56 +32,69 @@ public:
     SendEventGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SendEventGoal() = default;
+    // vIndex: 7
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
-    // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    MCAPI SendEventGoal(class Mob& caster, std::vector<struct SendEventData> const& spellTypes);
-
+    // vIndex: 0
+    virtual ~SendEventGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI int _selectBestSpell();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SendEventGoal(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
 
-    MCAPI void* ctor$(class Mob& caster, std::vector<struct SendEventData> const& spellTypes);
+    MCAPI int _selectBestSpell();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void start$();
+    MCAPI bool $canUse();
 
-    MCAPI void stop$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void tick$();
+    MCAPI void $start();
 
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

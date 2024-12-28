@@ -4,17 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+struct ActorTickedComponent;
+struct MoveRequestComponent;
+struct OnGroundFlagComponent;
+// clang-format on
 
 namespace CheckFallDamageSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void checkFallDamage(
-    class ActorOwnerComponent&                                        actorComponent,
-    struct MoveRequestComponent const&                                request,
-    class Optional<struct OnGroundFlagComponent const>                onGround,
-    class Optional<class FlagComponent<struct ActorTickedFlag> const> actorTickedComponent,
-    bool                                                              forceRecheckLiquid
+    ::ActorOwnerComponent&                    actorComponent,
+    ::MoveRequestComponent const&             request,
+    ::Optional<::OnGroundFlagComponent const> onGround,
+    ::Optional<::ActorTickedComponent const>  actorTickedComponent,
+    bool                                      forceRecheckLiquid
 );
 // NOLINTEND
 
-}; // namespace CheckFallDamageSystemImpl
+} // namespace CheckFallDamageSystemImpl

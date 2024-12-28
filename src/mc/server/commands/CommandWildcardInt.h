@@ -4,6 +4,30 @@
 
 class CommandWildcardInt {
 public:
-    bool mIsWildcard; // this+0x0
-    int  mValue;      // this+0x4
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mIsWildcard;
+    ::ll::TypedStorage<4, 4, int>  mValue;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CommandWildcardInt& operator=(CommandWildcardInt const&);
+    CommandWildcardInt(CommandWildcardInt const&);
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CommandWildcardInt();
+
+    MCAPI int getValue() const;
+
+    MCAPI bool isWildcard() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 };

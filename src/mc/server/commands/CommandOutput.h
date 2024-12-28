@@ -1,79 +1,61 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandOutputMessage.h"
-#include "mc/server/commands/CommandOutputParameter.h"
-#include "mc/server/commands/CommandPropertyBag.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandOutputMessageType.h"
 #include "mc/server/commands/CommandOutputType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CommandOutputMessage;
+class CommandOutputParameter;
+class CommandPropertyBag;
+// clang-format on
+
 class CommandOutput {
 public:
-    CommandOutputType                   mType;
-    std::unique_ptr<CommandPropertyBag> mBag;
-    std::vector<CommandOutputMessage>   mMessages;
-    int                                 mSuccessCount;
-    bool                                mHasPlayerText;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::CommandOutputType>                     mType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandPropertyBag>> mBag;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>>  mMessages;
+    ::ll::TypedStorage<4, 4, int>                                     mSuccessCount;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasPlayerText;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
-    template <class First, class... Args>
-        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    void success(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
-        success(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
-    }
-
-    template <class First, class... Args>
-        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    void error(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
-        error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
-    }
-
-    void error(std::string_view str) { mMessages.emplace_back(CommandOutputMessageType::Error, std::string{str}); }
-    void success(std::string_view str) {
-        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{str});
-        mSuccessCount++;
-    }
-
-    void error(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
-        std::vector<std::string> args;
-        args.reserve(params.size());
-        for (auto& param : params) {
-            args.emplace_back(param);
-        }
-        mMessages.emplace_back(CommandOutputMessageType::Error, std::string{msgId}, std::move(args));
-    }
-    void success(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
-        std::vector<std::string> args;
-        args.reserve(params.size());
-        for (auto& param : params) {
-            args.emplace_back(param);
-        }
-        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{msgId}, std::move(args));
-        mSuccessCount++;
-    }
-
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutput(class CommandOutput const& rhs);
+    MCAPI CommandOutput(::CommandOutput const& rhs);
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addToResultList(std::string const& key, class Actor const& element);
+    MCAPI void addMessage(
+        ::std::string const&                           msgId,
+        ::std::vector<::CommandOutputParameter> const& params,
+        ::CommandOutputMessageType                     type
+    );
 
-    MCAPI void addToResultList(std::string const& key, std::string const& element);
+    MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
+
+    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
 
     MCAPI bool empty() const;
 
-    MCAPI void forceOutput(std::string const& msgId, std::vector<class CommandOutputParameter> const& params);
+    MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI class CommandPropertyBag const& getData() const;
+    MCAPI void forceOutput(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI std::vector<class CommandOutputMessage> const& getMessages() const;
+    MCAPI ::CommandPropertyBag const& getData() const;
+
+    MCAPI ::std::vector<::CommandOutputMessage> const& getMessages() const;
 
     MCAPI int getSuccessCount() const;
 
@@ -82,40 +64,34 @@ public:
     MCAPI bool hasErrorMessage() const;
 
     MCAPI void load(
-        ::CommandOutputType                         type,
-        int                                         successCount,
-        std::vector<class CommandOutputMessage>&&   messages,
-        std::unique_ptr<class CommandPropertyBag>&& data
+        ::CommandOutputType                       type,
+        int                                       successCount,
+        ::std::vector<::CommandOutputMessage>&&   messages,
+        ::std::unique_ptr<::CommandPropertyBag>&& data
     );
 
     MCAPI void setHasPlayerText();
 
     MCAPI void success();
 
+    MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
+
     MCAPI bool wantsData() const;
 
     MCAPI ~CommandOutput();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void addMessage(
-        std::string const&                               msgId,
-        std::vector<class CommandOutputParameter> const& params,
-        ::CommandOutputMessageType                       type
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CommandOutput const& rhs);
+    MCAPI void* $ctor(::CommandOutput const& rhs);
 
-    MCAPI void* ctor$(::CommandOutputType type);
+    MCAPI void* $ctor(::CommandOutputType type);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

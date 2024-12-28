@@ -8,13 +8,14 @@
 #include "mc/diagnostics/bedrock_log/LogRule.h"
 
 namespace Bedrock::Diagnostics::Interface {
+// functions
 // NOLINTBEGIN
 MCAPI bool
 handleAssert(char const* msgFormat, char const* arg, int line, char const* file, char const* function, char* args);
 
 MCAPI void
 log(::BedrockLog::LogCategory category,
-    std::bitset<3>            channelMask,
+    ::std::bitset<3>          channelMask,
     ::BedrockLog::LogRule     rule,
     ::LogAreaID               area,
     uint                      priority,
@@ -26,4 +27,4 @@ log(::BedrockLog::LogCategory category,
 MCAPI bool shouldDebugBreak();
 // NOLINTEND
 
-}; // namespace Bedrock::Diagnostics::Interface
+} // namespace Bedrock::Diagnostics::Interface

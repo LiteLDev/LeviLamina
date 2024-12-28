@@ -3,7 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/events/BlockEventDispatcher.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockEventDispatcher;
+// clang-format on
+
 class BlockEventDispatcherToken {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                                 mHandle;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::BlockEventDispatcher>> mDispatcher;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
@@ -12,33 +27,36 @@ public:
     int                         mHandle;     // this+0x0
     class BlockEventDispatcher* mDispatcher; // this+0x8
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockEventDispatcherToken();
 
-    MCAPI BlockEventDispatcherToken(class BlockEventDispatcherToken&& rhs);
+    MCAPI BlockEventDispatcherToken(::BlockEventDispatcherToken&& rhs);
 
-    MCAPI class BlockEventDispatcher* getDispatcher() const;
+    MCAPI ::BlockEventDispatcher* getDispatcher() const;
 
     MCAPI int getHandle() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&& rhs);
+    MCAPI ::BlockEventDispatcherToken& operator=(::BlockEventDispatcherToken&& rhs);
 
     MCAPI void unregister();
 
     MCAPI ~BlockEventDispatcherToken();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class BlockEventDispatcherToken&& rhs);
+    MCAPI void* $ctor(::BlockEventDispatcherToken&& rhs);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

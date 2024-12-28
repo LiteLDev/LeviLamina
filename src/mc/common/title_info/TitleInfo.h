@@ -6,13 +6,13 @@
 #include "mc/common/title_info/TitleId.h"
 
 namespace TitleInfo {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::string const& BedrockVanillaTag();
+MCAPI ::std::string const& BedrockVanillaTag();
 
 MCAPI ::TitleInfo::TitleId const& CurrentTitleId();
 
-MCAPI std::string const& EarthTag();
+MCAPI ::std::string const& EarthTag();
 // NOLINTEND
 
-}; // namespace TitleInfo
+} // namespace TitleInfo

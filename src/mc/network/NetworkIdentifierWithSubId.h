@@ -1,11 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/common/SubClientId.h"
-#include "mc/network/NetworkIdentifier.h"
+
+// auto generated forward declare list
+// clang-format off
+class NetworkIdentifier;
+// clang-format on
 
 struct NetworkIdentifierWithSubId {
 public:
-    NetworkIdentifier mIdentifier{};  // this+0x0
-    SubClientId       mSubClientId{}; // this+0xA0
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 160, ::NetworkIdentifier> id;
+    ::ll::TypedStorage<1, 1, ::SubClientId>         subClientId;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetworkIdentifierWithSubId& operator=(NetworkIdentifierWithSubId const&);
+    NetworkIdentifierWithSubId(NetworkIdentifierWithSubId const&);
+    NetworkIdentifierWithSubId();
 };

@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class DripstoneClusterFeature : public ::IFeature {
 public:
     // prevent constructor by default
@@ -13,53 +21,57 @@ public:
     DripstoneClusterFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DripstoneClusterFeature() = default;
-
     // vIndex: 1
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    // vIndex: 0
+    virtual ~DripstoneClusterFeature() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static int _getDripstoneHeight(class Random& random, int dx, int dz, float density, int maxHeight);
+    MCAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
 
     MCAPI static bool _placeColumn(
-        class IBlockWorldGenAPI& target,
-        class Random&            random,
-        class BlockPos const&    pos,
-        int                      dx,
-        int                      dz,
-        float                    chanceOfWater,
-        double                   chanceOfStalagmiteOrStalactite,
-        int                      clusterHeight,
-        float                    density
+        ::IBlockWorldGenAPI& target,
+        ::Random&            random,
+        ::BlockPos const&    pos,
+        int                  dx,
+        int                  dz,
+        float                chanceOfWater,
+        double               chanceOfStalagmiteOrStalactite,
+        int                  clusterHeight,
+        float                density
     );
 
     MCAPI static void _replaceBlocksWithDripstoneBlocks(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    firstPos,
-        int                      maxCount,
-        uchar                    direction
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    firstPos,
+        int                  maxCount,
+        uchar                direction
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos>
-    place$(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, class RenderParams&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,18 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class ItemStack;
+class Mob;
 // clang-format on
 
 class CarrotOnAStickItem : public ::Item {
@@ -25,45 +20,62 @@ public:
     CarrotOnAStickItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CarrotOnAStickItem() = default;
-
-    // vIndex: 37
-    virtual bool isHandEquipped() const;
-
-    // vIndex: 47
-    virtual bool requiresInteract() const;
+    // vIndex: 38
+    virtual bool isHandEquipped() const /*override*/;
 
     // vIndex: 50
-    virtual int getEnchantSlot() const;
+    virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 51
-    virtual int getEnchantValue() const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    // vIndex: 55
+    virtual int getEnchantValue() const /*override*/;
 
-    MCAPI CarrotOnAStickItem(std::string const& name, short id);
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
+    // vIndex: 0
+    virtual ~CarrotOnAStickItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CarrotOnAStickItem(::std::string const& name, short id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, short id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
+    // NOLINTEND
 
-    MCAPI int getEnchantSlot$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getEnchantValue$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isHandEquipped() const;
 
-    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
+    MCAPI bool $requiresInteract() const;
 
-    MCAPI bool isHandEquipped$() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool requiresInteract$() const;
+    MCAPI int $getEnchantValue() const;
 
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

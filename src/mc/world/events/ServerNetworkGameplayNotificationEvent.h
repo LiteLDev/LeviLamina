@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ServerNetworkGameplayNotificationEvent {
+// auto generated inclusion list
+#include "mc/world/events/EventVariantImpl.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ChatEvent;
+struct IncomingPacketEvent;
+struct OutgoingPacketEvent;
+// clang-format on
+
+struct ServerNetworkGameplayNotificationEvent
+: public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {
 public:
     // prevent constructor by default
     ServerNetworkGameplayNotificationEvent& operator=(ServerNetworkGameplayNotificationEvent const&);
@@ -10,15 +21,14 @@ public:
     ServerNetworkGameplayNotificationEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ServerNetworkGameplayNotificationEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -1,46 +1,65 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/FacingID.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
-#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseCircuitComponent;
+class BlockPos;
+// clang-format on
 
 class CircuitTrackingInfo {
 public:
+    // CircuitTrackingInfo inner types declare
+    // clang-format off
+    class Entry;
+    // clang-format on
+
+    // CircuitTrackingInfo inner types define
     class Entry {
     public:
-        class BaseCircuitComponent* mComponent;
-        class BlockPos              mPos;
-        ::FacingID                  mDirection;
-        ::CircuitComponentType      mTypeID;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk106ebf;
+        ::ll::UntypedStorage<4, 12> mUnk79e265;
+        ::ll::UntypedStorage<1, 1>  mUnkd64ed2;
+        ::ll::UntypedStorage<8, 8>  mUnk8146c8;
+        // NOLINTEND
 
-        [[nodiscard]] constexpr Entry(class BaseCircuitComponent* component, BlockPos const& pos) {
-            mComponent = component;
-            mDirection = (FacingID)component->getDirection();
-            mPos       = pos;
-            mTypeID    = component->getCircuitComponentGroupType();
-        }
+    public:
+        // prevent constructor by default
+        Entry& operator=(Entry const&);
+        Entry(Entry const&);
+        Entry();
     };
 
-    Entry mCurrent;
-    Entry mPower;
-    Entry mNearest;
-    Entry m2ndNearest;
-    int   mDampening;
-    bool  mDirectlyPowered;
-    int   mData;
-
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
-
+    ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> mCurrent;
+    ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> mPower;
+    ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> mNearest;
+    ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> m2ndNearest;
+    ::ll::TypedStorage<4, 4, int>                           mDampening;
+    ::ll::TypedStorage<1, 1, bool>                          mDirectlyPowered;
+    ::ll::TypedStorage<4, 4, int>                           mData;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
+    // prevent constructor by default
+    CircuitTrackingInfo& operator=(CircuitTrackingInfo const&);
+    CircuitTrackingInfo(CircuitTrackingInfo const&);
+    CircuitTrackingInfo();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
 };

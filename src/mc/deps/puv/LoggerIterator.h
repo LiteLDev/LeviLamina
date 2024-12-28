@@ -13,4 +13,4 @@ public:
     LoggerIterator();
 };
 
-}; // namespace Puv
+} // namespace Puv

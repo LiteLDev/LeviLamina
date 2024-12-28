@@ -4,54 +4,73 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealDocumentUpgrader;
+class SemVersion;
 namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 112> mUnk98f75b;
+    ::ll::UntypedStorage<8, 120> mUnk89992b;
+    ::ll::UntypedStorage<8, 112> mUnk253327;
+    ::ll::UntypedStorage<8, 176> mUnkf9a327;
+    ::ll::UntypedStorage<8, 112> mUnk3d2b20;
+    ::ll::UntypedStorage<8, 24>  mUnk70d426;
+    ::ll::UntypedStorage<8, 64>  mUnk5ef251;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BlockDefinition& operator=(BlockDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockDefinition();
 
-    MCAPI BlockDefinition(struct BlockDefinition&&);
+    MCAPI BlockDefinition(::BlockDefinition const&);
 
-    MCAPI BlockDefinition(struct BlockDefinition const&);
+    MCAPI BlockDefinition(::BlockDefinition&&);
 
-    MCAPI struct BlockDefinition& operator=(struct BlockDefinition&&);
+    MCAPI ::BlockDefinition& operator=(::BlockDefinition&&);
 
     MCAPI ~BlockDefinition();
-
-    MCAPI static void registerBlockDefinitionTypes(struct cereal::ReflectionCtx& ctx);
-
-    MCAPI static std::pair<bool, class SemVersion> upgradeJson(
-        struct cereal::ReflectionCtx const& ctx,
-        std::string&                        json,
-        class Core::Path const&             resourceName,
-        std::optional<class SemVersion>     minVersion
-    );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static class CerealDocumentUpgrader* getCerealDocumentUpgrader(struct cereal::ReflectionCtx const& ctx);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct BlockDefinition&&);
+    MCAPI static ::CerealDocumentUpgrader* getCerealDocumentUpgrader(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void* ctor$();
+    MCAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void* ctor$(struct BlockDefinition const&);
+    MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void dtor$();
+    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+        ::cereal::ReflectionCtx const& ctx,
+        ::std::string&                 json,
+        ::Core::Path const&            resourceName,
+        ::std::optional<::SemVersion>  minVersion
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BlockDefinition const&);
+
+    MCAPI void* $ctor(::BlockDefinition&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

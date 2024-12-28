@@ -14,21 +14,30 @@ public:
     VanillaInPackagePacks();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VanillaInPackagePacks() = default;
-
     // vIndex: 1
-    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(::PackType packType) const;
+    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const /*override*/;
 
+    // vIndex: 0
+    virtual ~VanillaInPackagePacks() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::vector<struct IInPackagePacks::MetaData> getPacks$(::PackType packType) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

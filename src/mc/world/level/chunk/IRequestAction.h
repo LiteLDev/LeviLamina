@@ -2,16 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class Dimension;
+class ServerLevel;
+// clang-format on
+
 class IRequestAction {
 public:
     // IRequestAction inner types define
-    enum class RequestActionType : schar {
-        FunctionAction           = 0x0,
-        TestAction               = 0x1,
-        StructureAnimationAction = 0x2,
+    enum class RequestActionType : uchar {
+        FunctionAction           = 0,
+        TestAction               = 1,
+        StructureAnimationAction = 2,
     };
 
-    RequestActionType mActionType;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::IRequestAction::RequestActionType> mActionType;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -20,35 +31,54 @@ public:
     IRequestAction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IRequestAction();
 
     // vIndex: 1
-    virtual void execute(class ServerLevel& level, class Dimension& dimension) = 0;
+    virtual void execute(::ServerLevel&, ::Dimension&) = 0;
 
     // vIndex: 2
-    virtual void serialize(class CompoundTag& tag);
+    virtual void serialize(::CompoundTag& tag);
 
     // vIndex: 3
-    virtual bool operator==(class IRequestAction const& action) const;
-
-    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
-
-    MCAPI static bool isValidTag(class CompoundTag const& tag);
-
+    virtual bool operator==(::IRequestAction const& action) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::IRequestAction::RequestActionType const& actionType);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isValidTag(::CompoundTag const& tag);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IRequestAction::RequestActionType const& actionType);
+    // NOLINTEND
 
-    MCAPI void serialize$(class CompoundTag& tag);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serialize(::CompoundTag& tag);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class IMinecraftApp;
+// clang-format on
+
 class CloseWebSocketCommand : public ::Command {
 public:
     // prevent constructor by default
@@ -13,25 +21,42 @@ public:
     CloseWebSocketCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CloseWebSocketCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput&) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput&) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, class IMinecraftApp& app);
-
+    // vIndex: 0
+    virtual ~CloseWebSocketCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput&) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::IMinecraftApp*& mApp();
+    // NOLINTEND
 
-    MCAPI static class IMinecraftApp*& mApp();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

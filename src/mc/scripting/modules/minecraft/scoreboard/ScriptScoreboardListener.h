@@ -3,14 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScoreboardEventListener;
-namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 struct ScoreboardId;
 // clang-format on
 
@@ -18,41 +15,49 @@ namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardListener : public ::ScoreboardEventListener {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk79dfd3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptScoreboardListener& operator=(ScriptScoreboardListener const&);
     ScriptScoreboardListener(ScriptScoreboardListener const&);
     ScriptScoreboardListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptScoreboardListener() = default;
-
     // vIndex: 2
-    virtual ::EventResult onObjectiveRemoved(std::string const& objective);
+    virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
 
     // vIndex: 3
-    virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const& id);
+    virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
 
-    MCAPI explicit ScriptScoreboardListener(
-        class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard> scoreboardHandle
-    );
-
+    // vIndex: 0
+    virtual ~ScriptScoreboardListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard> scoreboardHandle);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
-    MCAPI ::EventResult onObjectiveRemoved$(std::string const& objective);
+    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    // NOLINTEND
 
-    MCAPI ::EventResult onScoreboardIdentityRemoved$(struct ScoreboardId const& id);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

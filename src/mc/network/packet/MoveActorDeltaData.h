@@ -2,31 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class MoveActorAbsoluteData;
+// clang-format on
+
 class MoveActorDeltaData {
 public:
+    // MoveActorDeltaData inner types define
     union Header {
-        ushort mRaw;                   // this+0x0
-        bool   mContainsPositionX;     // this(bf)+0x0:0x0 len(0x1)
-        bool   mContainsPositionY;     // this(bf)+0x0:0x1 len(0x1)
-        bool   mContainsPositionZ;     // this(bf)+0x0:0x2 len(0x1)
-        bool   mContainsRotationX;     // this(bf)+0x0:0x3 len(0x1)
-        bool   mContainsRotationY;     // this(bf)+0x0:0x4 len(0x1)
-        bool   mContainsRotationYHead; // this(bf)+0x0:0x5 len(0x1)
-        bool   mIsOnGround;            // this(bf)+0x0:0x6 len(0x1)
-        bool   mTeleported;            // this(bf)+0x0:0x7 len(0x1)
-        bool   mForceMoveLocalEntity;  // this(bf)+0x1:0x0 len(0x1)
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<2, 2> mUnkf843cc;
+        ::ll::UntypedStorage<1, 2> mUnk9db329;
+        ::ll::UntypedStorage<1, 2> mUnk5bbecc;
+        ::ll::UntypedStorage<1, 2> mUnk9923a7;
+        ::ll::UntypedStorage<1, 2> mUnke31c0b;
+        ::ll::UntypedStorage<1, 2> mUnk9f4a86;
+        ::ll::UntypedStorage<1, 2> mUnk996760;
+        ::ll::UntypedStorage<1, 2> mUnk96fd33;
+        ::ll::UntypedStorage<1, 2> mUnk99f021;
+        ::ll::UntypedStorage<1, 2> mUnk10b4d4;
+        // NOLINTEND
     };
 
-    ActorRuntimeID             mRuntimeId;
-    MoveActorDeltaData::Header mHeader;
-    float                      mNewPositionX;
-    float                      mNewPositionY;
-    float                      mNewPositionZ;
-    schar                      mRotX;
-    schar                      mRotY;
-    schar                      mRotYHead;
-    MoveActorAbsoluteData      mPreviousData;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>             mRuntimeId;
+    ::ll::TypedStorage<2, 2, ::MoveActorDeltaData::Header> mHeader;
+    ::ll::TypedStorage<4, 4, float>                        mNewPositionX;
+    ::ll::TypedStorage<4, 4, float>                        mNewPositionY;
+    ::ll::TypedStorage<4, 4, float>                        mNewPositionZ;
+    ::ll::TypedStorage<1, 1, char>                         mRotX;
+    ::ll::TypedStorage<1, 1, char>                         mRotY;
+    ::ll::TypedStorage<1, 1, char>                         mRotYHead;
+    ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     MoveActorDeltaData& operator=(MoveActorDeltaData const&);
     MoveActorDeltaData(MoveActorDeltaData const&);

@@ -2,21 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AdultRidingHeightOffsetComponent {
+// auto generated inclusion list
+#include "mc/entity/components/FloatComponent.h"
+
+struct AdultRidingHeightOffsetComponent : public ::FloatComponent {
 public:
     // prevent constructor by default
     AdultRidingHeightOffsetComponent& operator=(AdultRidingHeightOffsetComponent const&);
     AdultRidingHeightOffsetComponent(AdultRidingHeightOffsetComponent const&);
     AdultRidingHeightOffsetComponent();
-
-public:
-    // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static float const& SITTING_ANIMATION_OFFSET();
-
-    // NOLINTEND
 };

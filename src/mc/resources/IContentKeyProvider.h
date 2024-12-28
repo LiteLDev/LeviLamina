@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class ContentIdentity;
 // clang-format on
 
 class IContentKeyProvider : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,22 +18,38 @@ public:
     IContentKeyProvider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IContentKeyProvider() = default;
+    virtual ~IContentKeyProvider() /*override*/;
 
-    MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const;
+    // vIndex: 1
+    virtual ::std::string getContentKey(::ContentIdentity const&) const = 0;
 
-    MCVAPI bool requireEncryptedReads() const;
+    // vIndex: 2
+    virtual ::std::string getAlternateContentKey(::ContentIdentity const&) const;
 
+    // vIndex: 3
+    virtual bool requireEncryptedReads() const;
+
+    // vIndex: 4
+    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) = 0;
+
+    // vIndex: 5
+    virtual void clearTempContentKeys() = 0;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool requireEncryptedReads$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
 
+    MCAPI bool $requireEncryptedReads() const;
     // NOLINTEND
 };

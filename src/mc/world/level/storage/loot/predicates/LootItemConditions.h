@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItemCondition;
 namespace Json { class Value; }
 // clang-format on
 
@@ -15,14 +16,8 @@ public:
     LootItemConditions();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool allApply(
-        std::vector<std::unique_ptr<class LootItemCondition>> const& predicates,
-        class Random&                                                random,
-        class LootTableContext&                                      context
-    );
-
-    MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value object);
-
+    MCAPI static ::std::vector<::std::unique_ptr<::LootItemCondition>> deserialize(::Json::Value object);
     // NOLINTEND
 };

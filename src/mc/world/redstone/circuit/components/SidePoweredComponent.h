@@ -4,55 +4,80 @@
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
-#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseCircuitComponent;
+class BlockPos;
+class CircuitComponentList;
+class CircuitSceneGraph;
+class CircuitTrackingInfo;
+// clang-format on
 
 class SidePoweredComponent : public ::CapacitorComponent {
 public:
-    CircuitComponentList mSideComponents;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SidePoweredComponent();
-
-    // vIndex: 6
-    virtual bool canConsumePowerAnyDirection() const;
-
-    // vIndex: 7
-    virtual bool canConsumerPower() const;
-
-    // vIndex: 10
-    virtual void removeSource(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
-
-    // vIndex: 12
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
-
-    // vIndex: 22
-    virtual void removeFromAnySourceList(class BaseCircuitComponent const* component);
-
-    // vIndex: 25
-    virtual uchar getPoweroutDirection() const;
-
+    ::ll::TypedStorage<8, 24, ::CircuitComponentList> mSideComponents;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    SidePoweredComponent& operator=(SidePoweredComponent const&);
+    SidePoweredComponent(SidePoweredComponent const&);
+    SidePoweredComponent();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~SidePoweredComponent() /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 26
+    virtual uchar getPoweroutDirection() const /*override*/;
 
-    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+    // vIndex: 12
+    virtual bool
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    MCAPI bool canConsumePowerAnyDirection$() const;
+    // vIndex: 6
+    virtual bool canConsumePowerAnyDirection() const /*override*/;
 
-    MCAPI bool canConsumerPower$() const;
+    // vIndex: 7
+    virtual bool canConsumerPower() const /*override*/;
 
-    MCAPI uchar getPoweroutDirection$() const;
+    // vIndex: 10
+    virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
 
-    MCAPI void removeFromAnySourceList$(class BaseCircuitComponent const* component);
+    // vIndex: 23
+    virtual void removeFromAnySourceList(::BaseCircuitComponent const* component) /*override*/;
+    // NOLINTEND
 
-    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uchar $getPoweroutDirection() const;
+
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+
+    MCAPI bool $canConsumePowerAnyDirection() const;
+
+    MCAPI bool $canConsumerPower() const;
+
+    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+
+    MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

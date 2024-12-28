@@ -8,34 +8,56 @@
 
 class WorldTemplatePackManifest : public ::PackManifest {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkaf55f4;
+    ::ll::UntypedStorage<1, 1> mUnk9c0858;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     WorldTemplatePackManifest& operator=(WorldTemplatePackManifest const&);
     WorldTemplatePackManifest(WorldTemplatePackManifest const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldTemplatePackManifest();
+    virtual ~WorldTemplatePackManifest() /*override*/;
 
     // vIndex: 1
-    virtual std::unique_ptr<class PackManifest> clone() const;
+    virtual ::std::unique_ptr<::PackManifest> clone() const /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI WorldTemplatePackManifest();
 
     MCAPI ::GameType getGameType() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::PackManifest> $clone() const;
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class PackManifest> clone$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InsideHoneyBlockSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct InsideHoneyBlockSystem {
 public:
     // prevent constructor by default
     InsideHoneyBlockSystem& operator=(InsideHoneyBlockSystem const&);
@@ -10,8 +15,8 @@ public:
     InsideHoneyBlockSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createEventsSystem();
-
+    MCAPI static ::TickingSystemWithInfo createEventsSystem();
     // NOLINTEND
 };

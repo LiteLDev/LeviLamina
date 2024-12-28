@@ -13,51 +13,40 @@ public:
     TridentLoyaltyEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TridentLoyaltyEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
-    MCAPI TridentLoyaltyEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        bool                 isLootable,
-        int                  secondarySlots
-    );
-
+    // vIndex: 0
+    virtual ~TridentLoyaltyEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        bool                 isLootable,
-        int                  secondarySlots
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxCost$(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxLevel() const;
+    // NOLINTEND
 
-    MCAPI int getMinCost$(int level) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

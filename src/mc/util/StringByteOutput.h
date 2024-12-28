@@ -7,28 +7,42 @@
 
 class StringByteOutput : public ::BytesDataOutput {
 public:
-    std::string* mBuffer;
-
-    [[nodiscard]] constexpr explicit StringByteOutput(std::string& str) noexcept : mBuffer(std::addressof(str)) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StringByteOutput() = default;
-
-    // vIndex: 9
-    virtual void writeBytes(void const* data, uint64 bytes);
-
+    ::ll::TypedStorage<8, 8, ::std::string&> mBuffer;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    StringByteOutput& operator=(StringByteOutput const&);
+    StringByteOutput(StringByteOutput const&);
+    StringByteOutput();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 9
+    virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 0
+    virtual ~StringByteOutput() /*override*/;
+    // NOLINTEND
 
-    MCAPI void writeBytes$(void const* data, uint64 bytes);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $writeBytes(void const* data, uint64 bytes);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

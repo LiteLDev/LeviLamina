@@ -2,7 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ChatRestrictionLevel : schar {
-    Dropped  = 0x1,
-    Disabled = 0x2,
+enum class ChatRestrictionLevel : uchar {
+    None     = 0,
+    Dropped  = 1,
+    Disabled = 2,
 };

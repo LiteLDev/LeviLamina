@@ -1,22 +1,33 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Color.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
 
 class TintMapColor {
 public:
-    std::array<mce::Color, 4> colors;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI TintMapColor();
-
+    ::ll::TypedStorage<4, 64, ::std::array<::mce::Color, 4>> colors;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
+    // prevent constructor by default
+    TintMapColor& operator=(TintMapColor const&);
+    TintMapColor(TintMapColor const&);
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TintMapColor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

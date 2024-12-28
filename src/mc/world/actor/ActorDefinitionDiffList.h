@@ -2,7 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionDescriptor;
+class ActorDefinitionGroup;
+class DefinitionInstanceGroup;
+struct DiffListPair;
+// clang-format on
+
 class ActorDefinitionDiffList {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkbfd811;
+    ::ll::UntypedStorage<8, 24> mUnk85875f;
+    ::ll::UntypedStorage<8, 8>  mUnk22bcd4;
+    ::ll::UntypedStorage<1, 1>  mUnkcfe8c6;
+    ::ll::UntypedStorage<8, 72> mUnk3506a3;
+    ::ll::UntypedStorage<8, 72> mUnk35e483;
+    ::ll::UntypedStorage<8, 64> mUnka83a5c;
+    ::ll::UntypedStorage<1, 1>  mUnk34ae2b;
+    ::ll::UntypedStorage<8, 24> mUnk4874d3;
+    ::ll::UntypedStorage<8, 64> mUnkb8f849;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorDefinitionDiffList& operator=(ActorDefinitionDiffList const&);
@@ -10,65 +33,56 @@ public:
     ActorDefinitionDiffList();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinitionDiffList(class ActorDefinitionGroup& definitions);
+    MCAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
 
-    MCAPI void addDefinition(std::string const& def);
+    MCAPI void _updateStack();
 
-    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, std::variant<int, float, bool, uint64> value);
+    MCAPI void addDefinition(::std::string const& def);
 
-    MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(uint64 start, uint64 end) const;
+    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);
 
     MCAPI void clearChangedDescription();
 
     MCAPI void clearDefinitions();
 
-    MCAPI std::string definitionListToString(std::string const&) const;
+    MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCAPI class DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
+    MCAPI ::DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
 
-    MCAPI class DefinitionInstanceGroup& getAddedDefinitionGroupMutable();
+    MCAPI ::ActorDefinitionDescriptor& getChangedDescription();
 
-    MCAPI class ActorDefinitionDescriptor& getChangedDescription();
+    MCAPI ::std::vector<::DiffListPair> const& getDefinitionStack() const;
 
-    MCAPI std::vector<struct DiffListPair> const& getDefinitionStack() const;
+    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
 
-    MCAPI std::unique_ptr<class ActorDefinitionDescriptor> getDescription(bool needsUpdate);
-
-    MCAPI class DefinitionInstanceGroup const& getRemovedDefinitionGroup() const;
-
-    MCAPI class DefinitionInstanceGroup& getRemovedDefinitionGroupMutable();
+    MCAPI ::DefinitionInstanceGroup const& getRemovedDefinitionGroup() const;
 
     MCAPI bool hasChanged() const;
 
-    MCAPI bool hasDefinition(std::string const& def) const;
+    MCAPI bool hasDefinition(::std::string const& def) const;
 
     MCAPI void lockChanges();
 
-    MCAPI void removeDefinition(std::string const& def);
+    MCAPI void removeDefinition(::std::string const& def);
 
-    MCAPI void setDefinitionStack(std::vector<struct DiffListPair>& stack);
-
-    MCAPI uint64 size() const;
+    MCAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
 
     MCAPI void unlockChanges();
 
     MCAPI ~ActorDefinitionDiffList();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _updateStack();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ActorDefinitionGroup& definitions);
+    MCAPI void* $ctor(::ActorDefinitionGroup& definitions);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

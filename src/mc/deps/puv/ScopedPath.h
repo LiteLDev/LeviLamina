@@ -4,7 +4,13 @@
 
 namespace Puv::internal {
 
-class ScopedPath {
+struct ScopedPath {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkf9ce6e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScopedPath& operator=(ScopedPath const&);
@@ -12,17 +18,16 @@ public:
     ScopedPath();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ScopedPath();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Puv::internal
+} // namespace Puv::internal

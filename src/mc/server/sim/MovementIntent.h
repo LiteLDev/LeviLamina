@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SimulatedPlayer;
 namespace sim { struct MoveInDirectionIntent; }
 namespace sim { struct MoveToPositionIntent; }
 namespace sim { struct NavigateToEntityIntent; }
@@ -14,7 +13,13 @@ namespace sim { struct VoidMoveIntent; }
 
 namespace sim {
 
-class MovementIntent {
+struct MovementIntent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnkd2e2e6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MovementIntent& operator=(MovementIntent const&);
@@ -22,33 +27,34 @@ public:
     MovementIntent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit MovementIntent(std::variant<
-                                  struct sim::VoidMoveIntent,
-                                  struct sim::MoveInDirectionIntent,
-                                  struct sim::MoveToPositionIntent,
-                                  struct sim::NavigateToPositionsIntent,
-                                  struct sim::NavigateToEntityIntent> type);
-
-    MCAPI void finalize(class SimulatedPlayer& player);
+    MCAPI explicit MovementIntent(::std::variant<
+                                  ::sim::VoidMoveIntent,
+                                  ::sim::MoveInDirectionIntent,
+                                  ::sim::MoveToPositionIntent,
+                                  ::sim::NavigateToPositionsIntent,
+                                  ::sim::NavigateToEntityIntent> type);
 
     MCAPI ~MovementIntent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::variant<
-                      struct sim::VoidMoveIntent,
-                      struct sim::MoveInDirectionIntent,
-                      struct sim::MoveToPositionIntent,
-                      struct sim::NavigateToPositionsIntent,
-                      struct sim::NavigateToEntityIntent> type);
+    MCAPI void* $ctor(::std::variant<
+                      ::sim::VoidMoveIntent,
+                      ::sim::MoveInDirectionIntent,
+                      ::sim::MoveToPositionIntent,
+                      ::sim::NavigateToPositionsIntent,
+                      ::sim::NavigateToEntityIntent> type);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace sim
+} // namespace sim

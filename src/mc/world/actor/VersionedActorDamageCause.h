@@ -12,43 +12,37 @@ namespace Scripting { struct Version; }
 
 class VersionedActorDamageCause {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnka039ce;
+    ::ll::UntypedStorage<4, 4>  mUnkac8430;
+    ::ll::UntypedStorage<8, 40> mUnkd1aeb7;
+    ::ll::UntypedStorage<1, 2>  mUnk1d165a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VersionedActorDamageCause& operator=(VersionedActorDamageCause const&);
     VersionedActorDamageCause(VersionedActorDamageCause const&);
     VersionedActorDamageCause();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI VersionedActorDamageCause(
-        std::string               name,
-        ::ActorDamageCause        cause,
-        struct Scripting::Version version,
-        std::optional<uchar>      deprecatedMajorVersion
-    );
-
     MCAPI ::ActorDamageCause getCause() const;
 
-    MCAPI std::optional<uchar> getDeprecatedMajorVersion() const;
+    MCAPI ::std::optional<uchar> getDeprecatedMajorVersion() const;
 
-    MCAPI std::string const& getName() const;
+    MCAPI ::std::string const& getName() const;
 
-    MCAPI struct Scripting::Version getVersion() const;
+    MCAPI ::Scripting::Version getVersion() const;
 
     MCAPI ~VersionedActorDamageCause();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        std::string               name,
-        ::ActorDamageCause        cause,
-        struct Scripting::Version version,
-        std::optional<uchar>      deprecatedMajorVersion
-    );
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -13,4 +13,4 @@ public:
     explicit operator T0 const&() const noexcept { return value; }
 };
 
-}; // namespace Core
+} // namespace Core

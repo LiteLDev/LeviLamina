@@ -3,19 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/BoatItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class CompoundTag;
+class ItemDescriptor;
 // clang-format on
 
 class ChestBoatItem : public ::BoatItem {
@@ -26,32 +20,49 @@ public:
     ChestBoatItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 121
+    virtual ::ActorType _getActorType() const /*override*/;
+
     // vIndex: 0
-    virtual ~ChestBoatItem() = default;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 119
-    virtual ::ActorType _getActorType() const;
-
-    MCAPI ChestBoatItem(std::string const& name, int id, int woodType);
-
+    virtual ~ChestBoatItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ChestBoatItem(::std::string const& name, int id, int woodType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, int woodType);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, int woodType);
+    // NOLINTEND
 
-    MCAPI ::ActorType _getActorType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
+    MCAPI ::ActorType $_getActorType() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

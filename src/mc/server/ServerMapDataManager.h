@@ -3,14 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/server/IServerMapDataManagerConnector.h"
 #include "mc/world/level/MapDataManager.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
+class EntityContext;
+class IGameplayUserManagerConnector;
+class MapItemSavedData;
+struct ActorUniqueID;
 // clang-format on
 
-class ServerMapDataManager : public ::MapDataManager {
+class ServerMapDataManager : public ::MapDataManager, public ::IServerMapDataManagerConnector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnkd83502;
+    ::ll::UntypedStorage<8, 16>  mUnk3a525e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ServerMapDataManager& operator=(ServerMapDataManager const&);
@@ -18,49 +30,59 @@ public:
     ServerMapDataManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerMapDataManager() = default;
+    virtual ~ServerMapDataManager() /*override*/;
 
     // vIndex: 1
-    virtual class Bedrock::PubSub::Subscription
-    registerOnCreateMapSavedDataCallback(std::function<void(class MapItemSavedData&)> callback);
+    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector
+    ) /*override*/;
+
+    // vIndex: 0
+    virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;
 
     // vIndex: 2
-    virtual void registerOnGameplayUserAddedSubscription(class GameplayUserManager& gameplayUserManager);
+    virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid) /*override*/;
 
     // vIndex: 3
-    virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const& uuid);
+    virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate) /*override*/;
 
     // vIndex: 4
-    virtual void requestMapInfo(struct ActorUniqueID, bool);
-
-    // vIndex: 5
-    virtual void _copyAndLockMap(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
-
+    virtual void _copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _onGameplayUserAdded(class EntityContext& entity);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    // NOLINTEND
 
-    MCAPI void _copyAndLockMap$(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class MapItemSavedData& createMapSavedData$(struct ActorUniqueID const& uuid);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI class Bedrock::PubSub::Subscription
-    registerOnCreateMapSavedDataCallback$(std::function<void(class MapItemSavedData&)> callback);
+    MCAPI ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
 
-    MCAPI void registerOnGameplayUserAddedSubscription$(class GameplayUserManager& gameplayUserManager);
+    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCAPI void requestMapInfo$(struct ActorUniqueID, bool);
+    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
+    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIServerMapDataManagerConnector();
+
+    MCAPI static void** $vftableForMapDataManager();
     // NOLINTEND
 };

@@ -4,14 +4,33 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
+#include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class GameEvent;
+class Level;
+class SaveContext;
+class SculkSpreader;
+struct GameEventContext;
 namespace GameEvents { class PositionSource; }
 // clang-format on
 
-class SculkCatalystBlockActor {
+class SculkCatalystBlockActor : public ::BlockActor, public ::GameEventListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnkb043fc;
+    ::ll::UntypedStorage<8, 24> mUnk9fc922;
+    ::ll::UntypedStorage<8, 64> mUnkd95293;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkCatalystBlockActor& operator=(SculkCatalystBlockActor const&);
@@ -19,71 +38,96 @@ public:
     SculkCatalystBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::GameEventListener::DeliveryMode getDeliveryMode() const;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI class GameEvents::PositionSource const& getPositionSource() const;
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI uint getRange() const;
+    // vIndex: 7
+    virtual void tick(::BlockSource& region) /*override*/;
 
-    MCVAPI void handleGameEvent(
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext,
-        class BlockSource&             region
-    );
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 1
+    virtual void handleGameEvent(
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::BlockSource&            region
+    ) /*override*/;
 
-    MCVAPI void onRemoved(class BlockSource& region);
+    // vIndex: 2
+    virtual ::GameEvents::PositionSource const& getPositionSource() const /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 3
+    virtual uint getRange() const /*override*/;
 
-    MCVAPI void tick(class BlockSource& region);
+    // vIndex: 4
+    virtual ::GameEventListener::DeliveryMode getDeliveryMode() const /*override*/;
 
-    MCAPI explicit SculkCatalystBlockActor(class BlockPos const& pos);
-
-    MCAPI class SculkSpreader& getSculkSpreader();
-
+    // vIndex: 0
+    virtual ~SculkCatalystBlockActor() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _tryConsumeOnDeathExperience(class Level& level, class Actor& actor);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBlockActor();
+    MCAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
 
-    MCAPI static void** vftableForGameEventListener();
+    MCAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
 
-    MCAPI void* ctor$(class BlockPos const& pos);
+    MCAPI ::SculkSpreader& getSculkSpreader();
+    // NOLINTEND
 
-    MCAPI ::GameEventListener::DeliveryMode getDeliveryMode$() const;
-
-    MCAPI class GameEvents::PositionSource const& getPositionSource$() const;
-
-    MCAPI uint getRange$() const;
-
-    MCAPI void handleGameEvent$(
-        class GameEvent const&         gameEvent,
-        struct GameEventContext const& gameEventContext,
-        class BlockSource&             region
-    );
-
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    MCAPI void onRemoved$(class BlockSource& region);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void tick$(class BlockSource& region);
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static ::BlockActorType const& TypeId();
 
-    MCAPI static std::string const& TypeString();
+    MCAPI static ::std::string const& TypeString();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void $tick(::BlockSource& region);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void
+    $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
+
+    MCAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+
+    MCAPI uint $getRange() const;
+
+    MCAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForBlockActor();
+
+    MCAPI static void** $vftableForGameEventListener();
     // NOLINTEND
 };

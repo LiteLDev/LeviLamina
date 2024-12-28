@@ -13,30 +13,47 @@ public:
     FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FakeBatteryMonitorInterface() = default;
+    virtual ~FakeBatteryMonitorInterface() /*override*/;
 
     // vIndex: 1
-    virtual ::BatteryStatus getBatteryStatus() const;
+    virtual ::BatteryStatus getBatteryStatus() const /*override*/;
 
     // vIndex: 2
-    virtual float getBatteryLevel() const;
-
-    MCAPI FakeBatteryMonitorInterface();
-
+    virtual float getBatteryLevel() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FakeBatteryMonitorInterface();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI float getBatteryLevel$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::BatteryStatus getBatteryStatus$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BatteryStatus $getBatteryStatus() const;
 
+    MCAPI float $getBatteryLevel() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

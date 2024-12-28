@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/application/AppPlatform.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 
@@ -11,106 +12,167 @@
 namespace Core { class Path; }
 // clang-format on
 
-class AppPlatformWindows {
+class AppPlatformWindows : public ::AppPlatform {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnk387a7f;
+    ::ll::UntypedStorage<8, 32>  mUnk93a477;
+    ::ll::UntypedStorage<8, 32>  mUnk136df8;
+    ::ll::UntypedStorage<8, 32>  mUnk4a65eb;
+    ::ll::UntypedStorage<8, 32>  mUnkb28730;
+    ::ll::UntypedStorage<8, 616> mUnkfe07cc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI class Core::PathBuffer<std::string> _getCurrentStoragePath() const;
+    // vIndex: 25
+    virtual uint64 getTotalHardwareThreadsCount() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> _getExternalStoragePath() const;
+    // vIndex: 24
+    virtual uint64 getHighPerformanceThreadsCount() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> _getInternalStoragePath() const;
+    // vIndex: 247
+    virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> _getUserdataPath() const;
+    // vIndex: 65
+    virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    MCVAPI bool allowContentLogWriteToDisk();
+    // vIndex: 174
+    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
-    MCVAPI uint64 calculateAvailableDiskFreeSpace(class Core::Path const&);
+    // vIndex: 76
+    virtual bool allowContentLogWriteToDisk() /*override*/;
 
-    MCVAPI bool canAppSelfTerminate() const;
+    // vIndex: 177
+    virtual bool devHotReloadRenderResources() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const&);
+    // vIndex: 78
+    virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
 
-    MCVAPI uint64 getHighPerformanceThreadsCount() const;
+    // vIndex: 79
+    virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-    MCVAPI class MPMCQueue<std::function<void()>>& getMainThreadQueue();
+    // vIndex: 210
+    virtual bool canAppSelfTerminate() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
+    // vIndex: 211
+    virtual bool getPlatformTTSExists() const /*override*/;
 
-    MCVAPI bool getPlatformTTSEnabled() const;
+    // vIndex: 212
+    virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    MCVAPI bool getPlatformTTSExists() const;
+    // vIndex: 67
+    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
+        /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> getPlatformTempPath() const;
+    // vIndex: 236
+    virtual bool allowsExternalCommandExecution() const /*override*/;
 
-    MCVAPI uint64 getTotalHardwareThreadsCount() const;
+    // vIndex: 237
+    virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
-    MCVAPI void queueForMainThread_DEPRECATED(std::function<void()>);
+    // vIndex: 238
+    virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
-    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const&) const;
+    // vIndex: 239
+    virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
-    MCVAPI ~AppPlatformWindows();
+    // vIndex: 240
+    virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
+    // vIndex: 45
+    virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
+
+    // vIndex: 0
+    virtual ~AppPlatformWindows() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI AppPlatformWindows();
 
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForIAppPlatform();
+    MCAPI static long callWerRegisterCustomMetadata(::std::string const& key, ::std::string const& data);
+    // NOLINTEND
 
-    MCAPI static void** vftableForISecureStorageKeySystem();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Core::PathBuffer<std::string> _getCurrentStoragePath$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint64 $getTotalHardwareThreadsCount() const;
 
-    MCAPI class Core::PathBuffer<std::string> _getExternalStoragePath$() const;
+    MCAPI uint64 $getHighPerformanceThreadsCount() const;
 
-    MCAPI class Core::PathBuffer<std::string> _getInternalStoragePath$() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 
-    MCAPI class Core::PathBuffer<std::string> _getUserdataPath$() const;
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCAPI bool allowContentLogWriteToDisk$();
+    MCAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
 
-    MCAPI uint64 calculateAvailableDiskFreeSpace$(class Core::Path const&);
+    MCAPI bool $allowContentLogWriteToDisk();
 
-    MCAPI bool canAppSelfTerminate$() const;
+    MCAPI bool $devHotReloadRenderResources() const;
 
-    MCAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder$(class Core::Path const&);
+    MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
-    MCAPI uint64 getHighPerformanceThreadsCount$() const;
+    MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
-    MCAPI class MPMCQueue<std::function<void()>>& getMainThreadQueue$();
+    MCAPI bool $canAppSelfTerminate() const;
 
-    MCAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath$();
+    MCAPI bool $getPlatformTTSExists() const;
 
-    MCAPI bool getPlatformTTSEnabled$() const;
+    MCAPI bool $getPlatformTTSEnabled() const;
 
-    MCAPI bool getPlatformTTSExists$() const;
+    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCAPI class Core::PathBuffer<std::string> getPlatformTempPath$() const;
+    MCAPI bool $allowsExternalCommandExecution() const;
 
-    MCAPI uint64 getTotalHardwareThreadsCount$() const;
+    MCAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
 
-    MCAPI void queueForMainThread_DEPRECATED$(std::function<void()>);
+    MCAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
-    MCAPI void registerExperimentsActiveCrashDump$(std::vector<std::string> const&) const;
+    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
-    MCAPI static std::string const& EXPERIMENTS_ACTIVE_KEY();
+    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIAppPlatform();
+
+    MCAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

@@ -6,7 +6,28 @@
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Container;
+class DataLoadHelper;
+class ItemStack;
+class Level;
+class Player;
+class Random;
+class SaveContext;
+// clang-format on
+
 class DispenserBlockActor : public ::RandomizableBlockActorContainer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 1368> mUnk4402cc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DispenserBlockActor& operator=(DispenserBlockActor const&);
@@ -14,99 +35,128 @@ public:
     DispenserBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 33
+    virtual ::Container* getContainer() /*override*/;
 
-    MCVAPI class Container* getContainer();
+    // vIndex: 32
+    virtual ::Container const* getContainer() const /*override*/;
 
-    MCVAPI class Container const* getContainer() const;
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 26
+    virtual ::std::string getName() const /*override*/;
 
-    MCVAPI std::string getName() const;
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void onMove();
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 12
+    virtual void onMove() /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    MCVAPI void stopOpen(class Player&);
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    MCAPI explicit DispenserBlockActor(class BlockPos pos);
-
-    MCAPI DispenserBlockActor(class BlockPos pos, ::BlockActorType type);
-
-    MCAPI int getRandomSlot(class Random& random);
-
+    // vIndex: 0
+    virtual ~DispenserBlockActor() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void initItems();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForContainer();
+    MCAPI explicit DispenserBlockActor(::BlockPos pos);
 
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+    MCAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
 
-    MCAPI void* ctor$(class BlockPos pos);
+    MCAPI int getRandomSlot(::Random& random);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockPos pos, ::BlockActorType type);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource& region);
+    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
+    // NOLINTEND
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Container* getContainer$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getContainerSize() const;
 
-    MCAPI class Container const* getContainer$() const;
+    MCAPI ::Container* $getContainer();
 
-    MCAPI int getContainerSize$() const;
+    MCAPI ::Container const* $getContainer() const;
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI std::string getName$() const;
+    MCAPI int $getMaxStackSize() const;
 
-    MCAPI void load$(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void onMove$();
+    MCAPI void $startOpen(::Player& player);
 
-    MCAPI bool save$(class CompoundTag& tag) const;
+    MCAPI void $stopOpen(::Player& player);
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI void $onMove();
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void startOpen$(class Player& player);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
 
-    MCAPI void stopOpen$(class Player&);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
 
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

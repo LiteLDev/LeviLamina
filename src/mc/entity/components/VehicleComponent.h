@@ -4,26 +4,33 @@
 
 struct VehicleComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk5fcf58;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VehicleComponent& operator=(VehicleComponent const&);
     VehicleComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI VehicleComponent(struct VehicleComponent const&);
-
-    MCAPI struct VehicleComponent& operator=(struct VehicleComponent&&);
+    MCAPI VehicleComponent(::VehicleComponent const&);
 
     MCAPI ~VehicleComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct VehicleComponent const&);
+    MCAPI void* $ctor(::VehicleComponent const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

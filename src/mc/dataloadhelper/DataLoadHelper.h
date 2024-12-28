@@ -1,75 +1,97 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
+
+// auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelperType.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
-#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class HashedString;
+class Vec3;
+struct ActorUniqueID;
+// clang-format on
 
 class DataLoadHelper {
 public:
+    // prevent constructor by default
+    DataLoadHelper& operator=(DataLoadHelper const&);
+    DataLoadHelper(DataLoadHelper const&);
+    DataLoadHelper();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataLoadHelper() = default;
+    virtual ~DataLoadHelper();
 
     // vIndex: 1
-    virtual class Vec3 loadPosition(class Vec3 const& position) = 0;
+    virtual ::Vec3 loadPosition(::Vec3 const&) = 0;
 
     // vIndex: 2
-    virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos) = 0;
+    virtual ::BlockPos loadBlockPosition(::BlockPos const&) = 0;
 
     // vIndex: 3
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset) = 0;
+    virtual ::BlockPos loadBlockPositionOffset(::BlockPos const&) = 0;
 
     // vIndex: 4
-    virtual float loadRotationDegreesX(float x) = 0;
+    virtual float loadRotationDegreesX(float) = 0;
 
     // vIndex: 5
-    virtual float loadRotationDegreesY(float y) = 0;
+    virtual float loadRotationDegreesY(float) = 0;
 
     // vIndex: 6
-    virtual float loadRotationRadiansX(float x) = 0;
+    virtual float loadRotationRadiansX(float) = 0;
 
     // vIndex: 7
-    virtual float loadRotationRadiansY(float y) = 0;
+    virtual float loadRotationRadiansY(float) = 0;
 
     // vIndex: 8
-    virtual uchar loadFacingID(uchar facing) = 0;
-
-    // vIndex: 9
-    virtual class Vec3 loadDirection(class Vec3 const& direction) = 0;
+    virtual uchar loadFacingID(uchar) = 0;
 
     // vIndex: 10
-    virtual ::Direction::Type loadDirection(::Direction::Type direction) = 0;
+    virtual ::Vec3 loadDirection(::Vec3 const&) = 0;
+
+    // vIndex: 9
+    virtual ::Direction::Type loadDirection(::Direction::Type) = 0;
 
     // vIndex: 11
-    virtual ::Rotation loadRotation(::Rotation rotation) = 0;
+    virtual ::Rotation loadRotation(::Rotation) = 0;
 
     // vIndex: 12
-    virtual ::Mirror loadMirror(::Mirror mirror) = 0;
+    virtual ::Mirror loadMirror(::Mirror) = 0;
 
     // vIndex: 13
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id) = 0;
+    virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID) = 0;
 
     // vIndex: 14
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID id) = 0;
+    virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID) = 0;
 
     // vIndex: 15
-    virtual struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
-        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
-        std::string const&                                                                             componentName
-    ) = 0;
+    virtual ::InternalComponentRegistry::ComponentInfo const*
+    loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&, ::std::string const&) = 0;
 
     // vIndex: 16
     virtual ::DataLoadHelperType getType() const = 0;
 
     // vIndex: 17
     virtual bool shouldResetTime() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

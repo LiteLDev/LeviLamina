@@ -1,11 +1,25 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/chunk/ChunkKey.h"
+
+// auto generated forward declare list
+// clang-format off
+class ChunkKey;
+class CompoundTag;
+// clang-format on
 
 struct ActorUnloadedChunkTransferEntry {
-    ChunkKey                     mFromChunkKey;    // this+0x0
-    std::string                  mActorStorageKey; // this+0x10
-    std::unique_ptr<CompoundTag> mActorTag;        // this+0x30
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 12, ::ChunkKey>                      mFromChunkKey;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mActorStorageKey;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mActorTag;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorUnloadedChunkTransferEntry& operator=(ActorUnloadedChunkTransferEntry const&);
+    ActorUnloadedChunkTransferEntry(ActorUnloadedChunkTransferEntry const&);
+    ActorUnloadedChunkTransferEntry();
 };

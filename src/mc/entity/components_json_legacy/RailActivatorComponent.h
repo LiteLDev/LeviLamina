@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class RailActivatorComponent {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     RailActivatorComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void ejectAllPassengers(class Actor& owner);
-
+    MCAPI void ejectAllPassengers(::Actor& owner);
     // NOLINTEND
 };

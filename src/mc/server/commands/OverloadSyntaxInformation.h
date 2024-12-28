@@ -4,21 +4,30 @@
 
 struct OverloadSyntaxInformation {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk328dfd;
+    ::ll::UntypedStorage<4, 4>  mUnk8b9765;
+    ::ll::UntypedStorage<4, 4>  mUnk137e0e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     OverloadSyntaxInformation& operator=(OverloadSyntaxInformation const&);
     OverloadSyntaxInformation(OverloadSyntaxInformation const&);
     OverloadSyntaxInformation();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI OverloadSyntaxInformation(std::string const& _text, uint _start, uint _end);
+    MCAPI OverloadSyntaxInformation(::std::string const& _text, uint _start, uint _end);
 
+    MCAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& _text, uint _start, uint _end);
-
+    MCAPI void* $ctor(::std::string const& _text, uint _start, uint _end);
     // NOLINTEND
 };

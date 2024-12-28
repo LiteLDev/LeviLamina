@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
@@ -23,32 +22,60 @@ public:
     // VillagerCelebrationGoal inner types define
     class VillagerCelebrationDefinition : public ::BaseGoalDefinition {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>   mUnk7ad600;
+        ::ll::UntypedStorage<4, 8>   mUnke82e38;
+        ::ll::UntypedStorage<8, 104> mUnk4d0de4;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&);
         VillagerCelebrationDefinition(VillagerCelebrationDefinition const&);
         VillagerCelebrationDefinition();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~VillagerCelebrationDefinition() = default;
-
-        MCAPI static void buildSchema(
-            std::string const&                                                  name,
-            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                class JsonUtil::EmptyClass,
-                class VillagerCelebrationGoal::VillagerCelebrationDefinition>>& root
-        );
-
+        virtual ~VillagerCelebrationDefinition() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // static functions
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI static void buildSchema(
+            ::std::string const&                                            name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+                ::JsonUtil::EmptyClass,
+                ::VillagerCelebrationGoal::VillagerCelebrationDefinition>>& root
+        );
+        // NOLINTEND
 
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkfd5a01;
+    ::ll::UntypedStorage<8, 8>   mUnk6ea749;
+    ::ll::UntypedStorage<8, 8>   mUnkf44a31;
+    ::ll::UntypedStorage<4, 4>   mUnk7fb0bf;
+    ::ll::UntypedStorage<4, 8>   mUnk292343;
+    ::ll::UntypedStorage<8, 104> mUnk6d7cd6;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -57,54 +84,61 @@ public:
     VillagerCelebrationGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VillagerCelebrationGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 0
+    virtual ~VillagerCelebrationGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void _launchFirework();
-
-    MCAPI void _setNextFireworkTick();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

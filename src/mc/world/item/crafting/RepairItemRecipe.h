@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
+class CraftingContext;
+class ItemInstance;
+class RecipeIngredient;
 namespace mce { class UUID; }
 // clang-format on
 
 class RepairItemRecipe : public ::MultiRecipe {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk5dae9c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RepairItemRecipe& operator=(RepairItemRecipe const&);
@@ -18,54 +28,74 @@ public:
     RepairItemRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RepairItemRecipe() = default;
-
     // vIndex: 1
-    virtual std::vector<class ItemInstance> const&
-    assemble(class CraftingContainer& craftSlots, class CraftingContext&) const;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
+        /*override*/;
 
     // vIndex: 2
-    virtual int getCraftingSize() const;
+    virtual int getCraftingSize() const /*override*/;
 
     // vIndex: 3
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
-
-    // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
-
-    // vIndex: 6
-    virtual int size() const;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     // vIndex: 8
-    virtual std::vector<class ItemInstance> const& getResultItems() const;
+    virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
-    MCAPI RepairItemRecipe(std::string const& recipeId, class mce::UUID const* uuid);
+    // vIndex: 5
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
+    // vIndex: 6
+    virtual int size() const /*override*/;
+
+    // vIndex: 0
+    virtual ~RepairItemRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RepairItemRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& recipeId, class mce::UUID const* uuid);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID& ID();
+    // NOLINTEND
 
-    MCAPI std::vector<class ItemInstance> const&
-          assemble$(class CraftingContainer& craftSlots, class CraftingContext&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
+    // NOLINTEND
 
-    MCAPI int getCraftingSize$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class RecipeIngredient const& getIngredient$(int x, int y) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCAPI std::vector<class ItemInstance> const& getResultItems$() const;
+    MCAPI int $getCraftingSize() const;
 
-    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
+    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCAPI int size$() const;
+    MCAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI static class mce::UUID& ID();
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
+    MCAPI int $size() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

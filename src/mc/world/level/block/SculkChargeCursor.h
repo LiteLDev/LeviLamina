@@ -2,7 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DefaultSculkBehavior;
+class IBlockWorldGenAPI;
+class Random;
+class SculkBehavior;
+class SculkBlockBehavior;
+class SculkSpreader;
+class SculkVeinBlockBehavior;
+// clang-format on
+
 class SculkChargeCursor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnkd12853;
+    ::ll::UntypedStorage<4, 4>  mUnkbd7b4e;
+    ::ll::UntypedStorage<4, 4>  mUnkad8615;
+    ::ll::UntypedStorage<4, 4>  mUnke19e1f;
+    ::ll::UntypedStorage<4, 4>  mUnke09bb7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkChargeCursor& operator=(SculkChargeCursor const&);
@@ -10,51 +35,51 @@ public:
     SculkChargeCursor();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkChargeCursor(class CompoundTag const& tag);
+    MCAPI explicit SculkChargeCursor(::CompoundTag const& tag);
 
     MCAPI void update(
-        class IBlockWorldGenAPI& target,
-        class BlockSource*       region,
-        class BlockPos const&    origin,
-        class Random&            random,
-        class SculkSpreader&     spreader,
-        bool                     spreadVeins
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::Random&            random,
+        ::SculkSpreader&     spreader,
+        bool                 spreadVeins
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::array<class BlockPos, 18> _getNonCornerNeighborsOffsets(class Random& random);
-
-    MCAPI static class SculkBehavior const& _getSculkBehavior(class Block const& block);
-
-    MCAPI static std::optional<class BlockPos> _getValidMovementPos(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class SculkSpreader&     spreader,
-        class Random&            random
-    );
-
-    MCAPI static bool _isMovementUnobstructed(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    fromPos,
-        class BlockPos const&    toPos
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CompoundTag const& tag);
+    MCAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
 
-    MCAPI static class DefaultSculkBehavior const& sDefaultSculkBehavior();
+    MCAPI static ::SculkBehavior const& _getSculkBehavior(::Block const& block);
 
-    MCAPI static class SculkBlockBehavior const& sSculkBlockBehavior();
+    MCAPI static ::std::optional<::BlockPos> _getValidMovementPos(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::SculkSpreader&     spreader,
+        ::Random&            random
+    );
 
-    MCAPI static class SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
+    MCAPI static bool
+    _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
+
+    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
+
+    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 };

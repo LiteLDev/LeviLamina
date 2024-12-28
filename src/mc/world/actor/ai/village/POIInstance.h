@@ -5,7 +5,35 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/village/POIType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class HashedString;
+class Random;
+// clang-format on
+
 class POIInstance {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnk82eab5;
+    ::ll::UntypedStorage<8, 48> mUnk6130ba;
+    ::ll::UntypedStorage<8, 48> mUnkf46f85;
+    ::ll::UntypedStorage<8, 8>  mUnk3a5ecf;
+    ::ll::UntypedStorage<4, 12> mUnked9252;
+    ::ll::UntypedStorage<8, 8>  mUnk8753c7;
+    ::ll::UntypedStorage<8, 8>  mUnke8a65c;
+    ::ll::UntypedStorage<8, 8>  mUnke1c3c1;
+    ::ll::UntypedStorage<4, 4>  mUnk6bac51;
+    ::ll::UntypedStorage<4, 4>  mUnk5d6ad8;
+    ::ll::UntypedStorage<8, 48> mUnkb52c59;
+    ::ll::UntypedStorage<2, 2>  mUnk51db84;
+    ::ll::UntypedStorage<1, 1>  mUnk16dd7d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     POIInstance& operator=(POIInstance const&);
@@ -13,81 +41,64 @@ public:
     POIInstance();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI POIInstance(
-        class BlockPos const& pos,
-        bool                  useBoundingBox,
-        std::string           name,
-        ::POIType             type,
-        float                 radius,
-        uint64                maxCapacity,
-        uint64                weight,
-        std::string           soundEvent,
-        std::string           initEvent,
-        std::string           endEvent
+        ::BlockPos const& pos,
+        bool              useBoundingBox,
+        ::std::string     name,
+        ::POIType         type,
+        float             radius,
+        uint64            maxCapacity,
+        uint64            weight,
+        ::std::string     soundEvent,
+        ::std::string     initEvent,
+        ::std::string     endEvent
     );
 
-    MCAPI void decreaseOwnerCount(uint64 amount);
+    MCAPI ::HashedString const& getName() const;
 
-    MCAPI class HashedString const& getEndEvent() const;
-
-    MCAPI class HashedString const& getInitEvent() const;
-
-    MCAPI class HashedString const& getName() const;
-
-    MCAPI uint64 getOwnerCapacity() const;
-
-    MCAPI uint64 getOwnerCount() const;
-
-    MCAPI class BlockPos const& getPosition() const;
+    MCAPI ::BlockPos const& getPosition() const;
 
     MCAPI float getRadius() const;
 
-    MCAPI class AABB getSecondBlockFullAABB(class BlockSource& region);
+    MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCAPI class HashedString const& getSoundEvent() const;
-
-    MCAPI ::POIType getType() const;
-
-    MCAPI std::string getTypeName() const;
-
-    MCAPI uint64 getWeight() const;
-
-    MCAPI void increaseOwnerCount(uint64 amount);
+    MCAPI ::HashedString const& getSoundEvent() const;
 
     MCAPI void incrementArrivalFailureCount();
 
-    MCAPI bool isFull() const;
-
-    MCAPI bool isPathable() const;
-
     MCAPI void resetArrivalFailureCount();
 
-    MCAPI void save(class CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void setVillage(class Village* value);
-
-    MCAPI void trySpawnParticles(class BlockSource& region, class Random& random, int particleType) const;
+    MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
 
     MCAPI bool useBoundingBox() const;
 
+    MCAPI ~POIInstance();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class BlockPos const& pos,
-        bool                  useBoundingBox,
-        std::string           name,
-        ::POIType             type,
-        float                 radius,
-        uint64                maxCapacity,
-        uint64                weight,
-        std::string           soundEvent,
-        std::string           initEvent,
-        std::string           endEvent
+    MCAPI void* $ctor(
+        ::BlockPos const& pos,
+        bool              useBoundingBox,
+        ::std::string     name,
+        ::POIType         type,
+        float             radius,
+        uint64            maxCapacity,
+        uint64            weight,
+        ::std::string     soundEvent,
+        ::std::string     initEvent,
+        ::std::string     endEvent
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

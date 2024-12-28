@@ -4,10 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+class ItemStack;
+class Player;
+struct ActorUniqueID;
+// clang-format on
+
 class HorseContainerManagerModel : public ::LevelContainerManagerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkd3fa92;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HorseContainerManagerModel& operator=(HorseContainerManagerModel const&);
@@ -15,43 +28,57 @@ public:
     HorseContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HorseContainerManagerModel() = default;
-
-    // vIndex: 6
-    virtual std::vector<class ItemStack> getItemCopies() const;
-
-    // vIndex: 7
-    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
+    virtual ~HorseContainerManagerModel() /*override*/;
 
     // vIndex: 8
-    virtual class ItemStack const& getSlot(int slot) const;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
+    // vIndex: 9
+    virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    MCAPI
-    HorseContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
+    // vIndex: 7
+    virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    MCAPI class Actor* getEntity() const;
-
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HorseContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::vector<class ItemStack> getItemCopies$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI class ItemStack const& getSlot$(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void setSlot$(int slot, class ItemStack const& item, bool fromNetwork);
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

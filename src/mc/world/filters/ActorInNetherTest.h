@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/filters/FilterTest.h"
 #include "mc/world/filters/SimpleBoolFilterTest.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+struct FilterContext;
 // clang-format on
 
 class ActorInNetherTest : public ::SimpleBoolFilterTest {
@@ -19,28 +18,35 @@ public:
     ActorInNetherTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorInNetherTest();
-
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const& context) const;
+    virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     // vIndex: 4
-    virtual std::string_view getName() const;
+    virtual ::std::string_view getName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~ActorInNetherTest() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $evaluate(::FilterContext const& context) const;
 
-    MCAPI bool evaluate$(struct FilterContext const& context) const;
+    MCAPI ::std::string_view $getName() const;
+    // NOLINTEND
 
-    MCAPI std::string_view getName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

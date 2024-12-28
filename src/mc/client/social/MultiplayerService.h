@@ -12,4 +12,4 @@ public:
     MultiplayerService();
 };
 
-}; // namespace Social
+} // namespace Social

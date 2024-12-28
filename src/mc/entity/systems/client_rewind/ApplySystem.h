@@ -10,27 +10,40 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
-struct ActorMovementTickNeededFlag;
+struct ActorMovementTickNeededComponent;
+namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
 // clang-format on
 
 namespace ClientRewind {
 
-class ApplySystem {
+struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                         ::Filter<::ActorMovementTickNeededComponent>,
+                         ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+                         ::Write<
+                             ::ActorDataFlagComponent,
+                             ::ActorDataHorseFlagComponent,
+                             ::ActorDataJumpDurationComponent,
+                             ::ActorDataBoundingBoxComponent,
+                             ::ActorDataSeatOffsetComponent,
+                             ::ActorDataDirtyFlagsComponent>,
+                         ::AddRemove<>,
+                         ::GlobalRead<>,
+                         ::GlobalWrite<>,
+                         ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     ApplySystem& operator=(ApplySystem const&);
@@ -38,81 +51,112 @@ public:
     ApplySystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ApplySystem() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                      struct Read<struct ClientRewind::ApplyReplayStateTrackerRequestComponent>,
-                      struct Write<
-                          struct ActorDataFlagComponent,
-                          struct ActorDataHorseFlagComponent,
-                          struct ActorDataJumpDurationComponent,
-                          struct ActorDataBoundingBoxComponent,
-                          struct ActorDataSeatOffsetComponent,
-                          struct ActorDataDirtyFlagsComponent>,
-                      struct AddRemove<>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::ActorMovementTickNeededComponent>,
+                      ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+                      ::Write<
+                          ::ActorDataFlagComponent,
+                          ::ActorDataHorseFlagComponent,
+                          ::ActorDataJumpDurationComponent,
+                          ::ActorDataBoundingBoxComponent,
+                          ::ActorDataSeatOffsetComponent,
+                          ::ActorDataDirtyFlagsComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 6
-    virtual void
-    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct Read<struct ClientRewind::ApplyReplayStateTrackerRequestComponent>, struct Write<struct ActorDataFlagComponent, struct ActorDataHorseFlagComponent, struct ActorDataJumpDurationComponent, struct ActorDataBoundingBoxComponent, struct ActorDataSeatOffsetComponent, struct ActorDataDirtyFlagsComponent>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+            ::Write<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
-    MCAPI static void tickEntity(
-        class StrictEntityContext const&                              entity,
-        struct ClientRewind::ApplyReplayStateTrackerRequestComponent& request,
-        struct ActorDataDirtyFlagsComponent&                          dirtyFlags,
-        class ViewT<
-            class StrictEntityContext,
-            struct ActorDataFlagComponent,
-            class Optional<struct ActorDataHorseFlagComponent>,
-            class Optional<struct ActorDataJumpDurationComponent>,
-            class Optional<struct ActorDataBoundingBoxComponent>,
-            class Optional<struct ActorDataSeatOffsetComponent>> const& tracked
-    );
-
+    // vIndex: 0
+    virtual ~ApplySystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void tickEntity(
+        ::StrictEntityContext const&                             entity,
+        ::ClientRewind::ApplyReplayStateTrackerRequestComponent& request,
+        ::ActorDataDirtyFlagsComponent&                          dirtyFlags,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorDataFlagComponent,
+            ::Optional<::ActorDataHorseFlagComponent>,
+            ::Optional<::ActorDataJumpDurationComponent>,
+            ::Optional<::ActorDataBoundingBoxComponent>,
+            ::Optional<::ActorDataSeatOffsetComponent>> const& tracked
+    );
+    // NOLINTEND
 
-    MCAPI void
-    singleTick$(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct Read<struct ClientRewind::ApplyReplayStateTrackerRequestComponent>, struct Write<struct ActorDataFlagComponent, struct ActorDataHorseFlagComponent, struct ActorDataJumpDurationComponent, struct ActorDataBoundingBoxComponent, struct ActorDataSeatOffsetComponent, struct ActorDataDirtyFlagsComponent>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                     struct Read<struct ClientRewind::ApplyReplayStateTrackerRequestComponent>,
-                     struct Write<
-                         struct ActorDataFlagComponent,
-                         struct ActorDataHorseFlagComponent,
-                         struct ActorDataJumpDurationComponent,
-                         struct ActorDataBoundingBoxComponent,
-                         struct ActorDataSeatOffsetComponent,
-                         struct ActorDataDirtyFlagsComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::ActorMovementTickNeededComponent>,
+                     ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+                     ::Write<
+                         ::ActorDataFlagComponent,
+                         ::ActorDataHorseFlagComponent,
+                         ::ActorDataJumpDurationComponent,
+                         ::ActorDataBoundingBoxComponent,
+                         ::ActorDataSeatOffsetComponent,
+                         ::ActorDataDirtyFlagsComponent>,
+                     ::AddRemove<>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& executionContext);
 
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+            ::Write<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ClientRewind
+} // namespace ClientRewind

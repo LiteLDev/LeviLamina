@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
@@ -12,12 +12,19 @@
 class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
-namespace ScriptModuleMinecraftServerUI { class IControl; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
 
 class TextInputControl : public ::ScriptModuleMinecraftServerUI::IControl {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 216> mUnk3be11b;
+    ::ll::UntypedStorage<8, 216> mUnk2c44a9;
+    ::ll::UntypedStorage<8, 224> mUnk422f53;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TextInputControl& operator=(TextInputControl const&);
@@ -25,37 +32,54 @@ public:
     TextInputControl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TextInputControl() = default;
-
     // vIndex: 1
-    virtual class Scripting::Result<class Json::Value>
-    buildJson(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    virtual ::Scripting::Result_deprecated<::Json::Value>
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
-    MCAPI TextInputControl(
-        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
-        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
-        std::optional<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
-    );
-
+    // vIndex: 0
+    virtual ~TextInputControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> label,
-        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
-        std::optional<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
+    MCAPI TextInputControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
     );
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<class Json::Value>
-    buildJson$(class Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> label,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> placeholderText,
+        ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> defaultValue
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraftServerUI
+} // namespace ScriptModuleMinecraftServerUI

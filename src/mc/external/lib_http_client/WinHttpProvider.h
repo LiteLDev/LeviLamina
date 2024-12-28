@@ -10,12 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace xbox::httpclient { class Uri; }
-namespace xbox::httpclient { struct WinHttpWebSocketExports; }
 struct HC_CALL;
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
+namespace xbox::httpclient { class Uri; }
+namespace xbox::httpclient { struct WinHttpWebSocketExports; }
 // clang-format on
 
 namespace xbox::httpclient {
@@ -28,52 +28,46 @@ public:
     WinHttpProvider();
 
 public:
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WinHttpProvider();
-
-    MCAPI static struct xbox::httpclient::WinHttpWebSocketExports GetWinHttpWebSocketExports();
-
-    MCAPI static void HttpCallPerformAsyncHandler(struct HC_CALL*, struct XAsyncBlock*, void*, struct HC_PERFORM_ENV*);
-
-    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpProvider>> Initialize();
-
-    MCAPI static long
-    WebSocketConnectAsyncHandler(char const*, char const*, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*, void*, struct HC_PERFORM_ENV*);
-
-    MCAPI static long WebSocketDisconnectHandler(struct HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
-
-    MCAPI static long WebSocketSendAsyncHandler(struct HC_WEBSOCKET_OBSERVER*, char const*, struct XAsyncBlock*, void*);
-
-    MCAPI static long
-    WebSocketSendBinaryAsyncHandler(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, struct XAsyncBlock*, void*);
-
-    // NOLINTEND
-
-    // private:
+    // member functions
     // NOLINTBEGIN
     MCAPI long CloseAllConnections();
 
-    MCAPI class Result<void*> GetHSession(uint);
+    MCAPI ::Result<void*> GetHSession(uint);
 
-    MCAPI long HttpCallPerformAsync(struct HC_CALL*, struct XAsyncBlock*);
+    MCAPI long HttpCallPerformAsync(::HC_CALL*, ::XAsyncBlock*);
 
-    MCAPI long WebSocketConnectAsync(char const*, char const*, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*);
+    MCAPI long WebSocketConnectAsync(char const*, char const*, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*);
+    // NOLINTEND
 
-    MCAPI static long GetProxyName(::xbox::httpclient::proxy_type, class xbox::httpclient::Uri, ulong&, http_wstring&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static long GetProxyName(::xbox::httpclient::proxy_type, ::xbox::httpclient::Uri, ulong&, ::http_wstring&);
+
+    MCAPI static ::xbox::httpclient::WinHttpWebSocketExports GetWinHttpWebSocketExports();
+
+    MCAPI static void HttpCallPerformAsyncHandler(::HC_CALL*, ::XAsyncBlock*, void*, ::HC_PERFORM_ENV*);
+
+    MCAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WinHttpProvider>> Initialize();
 
     MCAPI static long SetGlobalProxyForHSession(void*, char const*);
 
+    MCAPI static long
+    WebSocketConnectAsyncHandler(char const*, char const*, ::HC_WEBSOCKET_OBSERVER*, ::XAsyncBlock*, void*, ::HC_PERFORM_ENV*);
+
+    MCAPI static long WebSocketDisconnectHandler(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
+
+    MCAPI static long WebSocketSendAsyncHandler(::HC_WEBSOCKET_OBSERVER*, char const*, ::XAsyncBlock*, void*);
+
+    MCAPI static long
+    WebSocketSendBinaryAsyncHandler(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, ::XAsyncBlock*, void*);
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void dtor$();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

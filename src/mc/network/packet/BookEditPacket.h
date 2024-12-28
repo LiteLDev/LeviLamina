@@ -1,77 +1,96 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/BookEditAction.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/packet/BookEditAction.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct PageContent;
+// clang-format on
+
 class BookEditPacket : public ::Packet {
 public:
-    BookEditAction mAction;     // this+0x30
-    int            mBookSlot;   // this+0x34
-    int            mPageIndex1; // this+0x38
-    int            mPageIndex2; // this+0x3C
-    std::string    mText1;      // this+0x40
-    std::string    mText2;      // this+0x60
-    std::string    mXuid;       // this+0x80
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::BookEditAction> mAction;
+    ::ll::TypedStorage<4, 4, int>              mBookSlot;
+    ::ll::TypedStorage<4, 4, int>              mPageIndex1;
+    ::ll::TypedStorage<4, 4, int>              mPageIndex2;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText1;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText2;
+    ::ll::TypedStorage<8, 32, ::std::string>   mText3;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     BookEditPacket& operator=(BookEditPacket const&);
+    BookEditPacket(BookEditPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BookEditPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~BookEditPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI BookEditPacket();
 
-    MCAPI BookEditPacket(class BookEditPacket const&);
+    MCAPI ::Bedrock::Result<void> _readPage(::ReadOnlyBinaryStream& stream);
 
-    MCAPI struct PageContent getPage() const;
+    MCAPI void _writePage(::BinaryStream& stream) const;
 
+    MCAPI ::PageContent getPage() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream& stream);
-
-    MCAPI void _writePage(class BinaryStream& stream) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BookEditPacket const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void dtor$();
+    MCAPI ::std::string $getName() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
-
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

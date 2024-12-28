@@ -6,8 +6,11 @@
 #include "mc/server/commands/CommandPermissionLevel.h"
 
 namespace CommandPermissionLevelConversion {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<::CommandPermissionLevel> fromString(std::string const& commandPermLevel);
+MCAPI ::std::optional<::CommandPermissionLevel> fromString(::std::string const& commandPermLevel);
+
+MCAPI ::std::string toString(::CommandPermissionLevel commandPermLevel);
 // NOLINTEND
 
-}; // namespace CommandPermissionLevelConversion
+} // namespace CommandPermissionLevelConversion

@@ -3,21 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/item/BlockItem.h"
+#include "mc/world/item/Rarity.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class Container;
+class HashedString;
+class InteractionResult;
+class ItemStack;
+class ItemStackBase;
+class Vec3;
+struct ResolvedItemIconInfo;
 // clang-format on
 
-class SkullItem : public ::Item {
+class SkullItem : public ::BlockItem {
 public:
     // prevent constructor by default
     SkullItem& operator=(SkullItem const&);
@@ -25,84 +31,91 @@ public:
     SkullItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SkullItem() = default;
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 29
-    virtual ::BlockShape getBlockShape() const;
+    // vIndex: 43
+    virtual ::Rarity getRarity(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 32
-    virtual int getLevelDataForAuxValue(int auxValue) const;
+    // vIndex: 33
+    virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
-    // vIndex: 56
-    virtual bool isValidAuxValue(int auxValue) const;
+    // vIndex: 30
+    virtual ::BlockShape getBlockShape() const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    // vIndex: 101
+    virtual ::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 97
-    virtual ::ActorLocation getEquipLocation() const;
+    // vIndex: 102
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 98
-    virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
-
-    // vIndex: 113
-    virtual std::string getAuxValuesDescription() const;
-
-    // vIndex: 116
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
+    // vIndex: 0
+    virtual ~SkullItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SkullItem(::std::string const& name, int id, ::HashedString const& blockName);
+    // NOLINTEND
 
-    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& blockName);
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
-    MCAPI std::string getAuxValuesDescription$() const;
+    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::BlockShape getBlockShape$() const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI int getEnchantSlot$() const;
+    MCAPI ::BlockShape $getBlockShape() const;
 
-    MCAPI ::ActorLocation getEquipLocation$() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+    MCAPI ::ActorLocation $getEquipLocation() const;
 
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI int getLevelDataForAuxValue$(int auxValue) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool isValidAuxValue$(int auxValue) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

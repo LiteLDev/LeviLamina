@@ -1,61 +1,60 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/climate_utils/Parameter.h"
 
 // auto generated forward declare list
 // clang-format off
+struct TargetPoint;
 namespace ClimateUtils { struct Parameter; }
 // clang-format on
 
 struct ClimateParameters {
 public:
-    ClimateUtils::Parameter mTemperature;
-    ClimateUtils::Parameter mHumidity;
-    ClimateUtils::Parameter mContinentalness;
-    ClimateUtils::Parameter mErosion;
-    ClimateUtils::Parameter mDepth;
-    ClimateUtils::Parameter mWeirdness;
-    float                   mOffset;
-    ClimateUtils::Parameter mTemperature2;
-    ClimateUtils::Parameter mHumidity2;
-    ClimateUtils::Parameter mContinentalness2;
-    ClimateUtils::Parameter mErosion2;
-    ClimateUtils::Parameter mDepth2;
-    ClimateUtils::Parameter mWeirdness2;
-    ClimateUtils::Parameter mOffset2;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mTemperature;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mHumidity;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mContinentalness;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mErosion;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mDepth;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter>                   mWeirdness;
+    ::ll::TypedStorage<8, 8, int64>                                        mOffset;
+    ::ll::TypedStorage<8, 112, ::std::array<::ClimateUtils::Parameter, 7>> mParameterSpace;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ClimateParameters& operator=(ClimateParameters const&);
     ClimateParameters(ClimateParameters const&);
     ClimateParameters();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ClimateParameters(
-        struct ClimateUtils::Parameter temperature,
-        struct ClimateUtils::Parameter humidity,
-        struct ClimateUtils::Parameter continentalness,
-        struct ClimateUtils::Parameter erosion,
-        struct ClimateUtils::Parameter depth,
-        struct ClimateUtils::Parameter weirdness,
-        float                          offset
+        ::ClimateUtils::Parameter temperature,
+        ::ClimateUtils::Parameter humidity,
+        ::ClimateUtils::Parameter continentalness,
+        ::ClimateUtils::Parameter erosion,
+        ::ClimateUtils::Parameter depth,
+        ::ClimateUtils::Parameter weirdness,
+        float                     offset
     );
 
+    MCAPI int64 fitness(::TargetPoint const& other) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct ClimateUtils::Parameter temperature,
-        struct ClimateUtils::Parameter humidity,
-        struct ClimateUtils::Parameter continentalness,
-        struct ClimateUtils::Parameter erosion,
-        struct ClimateUtils::Parameter depth,
-        struct ClimateUtils::Parameter weirdness,
-        float                          offset
+    MCAPI void* $ctor(
+        ::ClimateUtils::Parameter temperature,
+        ::ClimateUtils::Parameter humidity,
+        ::ClimateUtils::Parameter continentalness,
+        ::ClimateUtils::Parameter erosion,
+        ::ClimateUtils::Parameter depth,
+        ::ClimateUtils::Parameter weirdness,
+        float                     offset
     );
-
     // NOLINTEND
 };

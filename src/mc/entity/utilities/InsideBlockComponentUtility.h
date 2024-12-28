@@ -5,24 +5,26 @@
 // auto generated inclusion list
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+struct EndPortalBlockFlag;
+struct InsideGenericBlockComponent;
+struct SweetBerryBushBlockFlag;
+// clang-format on
+
 namespace InsideBlockComponentUtility {
+// functions
 // NOLINTBEGIN
-MCAPI void entityInside(std::vector<struct InsideBlockData> const& insideBlockDataVector, class Actor& actor);
-
 MCAPI void entityInsideLegacyRedirect(
-    struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const& insideBlockComponent,
-    class ActorOwnerComponent&                                                   actorOwnerComponent
+    ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag> const& insideBlockComponent,
+    ::ActorOwnerComponent&                                                  actorOwnerComponent
 );
 
-MCAPI void entityInsideLegacyRedirect(
-    struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const& insideBlockComponent,
-    class ActorOwnerComponent&                                                        actorOwnerComponent
-);
+MCAPI void entityInsideLegacyRedirect(::InsideGenericBlockComponent const&, ::ActorOwnerComponent&);
 
-MCAPI void entityInsideLegacyRedirect(
-    struct InsideGenericBlockComponent const& insideBlockComponent,
-    class ActorOwnerComponent&                actorOwnerComponent
-);
+MCAPI void
+entityInsideLegacyRedirect(::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag> const&, ::ActorOwnerComponent&);
 // NOLINTEND
 
-}; // namespace InsideBlockComponentUtility
+} // namespace InsideBlockComponentUtility

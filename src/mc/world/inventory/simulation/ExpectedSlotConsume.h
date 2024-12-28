@@ -2,10 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+struct FullContainerName;
+// clang-format on
 
 struct ExpectedSlotConsume {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12>  mUnkcc258d;
+    ::ll::UntypedStorage<1, 1>   mUnkfcd450;
+    ::ll::UntypedStorage<8, 152> mUnk846e89;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExpectedSlotConsume& operator=(ExpectedSlotConsume const&);
@@ -13,21 +24,20 @@ public:
     ExpectedSlotConsume();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ExpectedSlotConsume(
-        ::ContainerEnumName    openContainerNetId,
-        uchar                  slot,
-        class ItemStack const& item,
-        uchar                  amountOverride
+        ::FullContainerName const& openContainerNetId,
+        uchar                      slot,
+        ::ItemStack const&         item,
+        uchar                      amountOverride
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    ctor$(::ContainerEnumName openContainerNetId, uchar slot, class ItemStack const& item, uchar amountOverride);
-
+    $ctor(::FullContainerName const& openContainerNetId, uchar slot, ::ItemStack const& item, uchar amountOverride);
     // NOLINTEND
 };

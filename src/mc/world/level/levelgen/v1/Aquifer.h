@@ -1,43 +1,85 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/Block.h"
-#include "mc/world/level/levelgen/synth/AquiferNoises.h"
-#include "mc/world/level/levelgen/synth/OverworldNoises3d.h"
-#include "mc/world/level/levelgen/v1/SurfaceLevelCache.h"
+
+// auto generated forward declare list
+// clang-format off
+class AquiferNoises;
+class Block;
+class BlockPos;
+class ChunkPos;
+class SurfaceLevelCache;
+struct OverworldNoises3d;
+// clang-format on
 
 class Aquifer {
 public:
     // Aquifer inner types declare
     // clang-format off
     struct FluidSample;
+    struct LocalRegistry;
     // clang-format on
 
     // Aquifer inner types define
-    struct FluidSample {
-        enum FluidType : schar {};
+    using AquifierGridPos = ::BlockPos;
 
-        BlockPos  pos;   // this+0x0
-        int       level; // this+0xC
-        FluidType type;  // this+0x10
+    struct FluidSample {
+    public:
+        // FluidSample inner types define
+        enum class FluidType : schar {
+            Water = 0,
+            Lava  = 1,
+            None  = 2,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 12, ::BlockPos>                       pos;
+        ::ll::TypedStorage<4, 4, int>                               blockLevel;
+        ::ll::TypedStorage<1, 1, ::Aquifer::FluidSample::FluidType> fluidType;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FluidSample& operator=(FluidSample const&);
+        FluidSample(FluidSample const&);
+        FluidSample();
     };
 
-    AquiferNoises const&     mAquiferNoises;             // this+0x0
-    OverworldNoises3d const& mOverworldNoises3d;         // this+0x8
-    SurfaceLevelCache const& mSurfaceLevelCache;         // this+0x10
-    int                      mSeaLevel;                  // this+0x18
-    int                      mLastFluidLevel;            // this+0x1C
-    float                    mLastBarrier;               // this+0x20
-    FluidSample::FluidType   mFluidType;                 // this+0x24
-    bool                     mShouldScheduleFluidUpdate; // this+0x25
-    BlockPos                 mMinGrid;                   // this+0x28
-    BlockPos                 mGridSize;                  // this+0x34
-    std::vector<FluidSample> mFluidLevelCache;           // this+0x40
-    Block const&             mWaterBlock;                // this+0x58 Aquifer::getLastFluidBlockType
-    Block const&             mLavaBlock;                 // this+0x60
-    Block const&             mFlowingWaterBlock;         // this+0x68
-    Block const&             mFlowingLavaBlock;          // this+0x70
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk33b760;
+        ::ll::UntypedStorage<8, 8> mUnkeef3f1;
+        ::ll::UntypedStorage<8, 8> mUnkf5b904;
+        ::ll::UntypedStorage<8, 8> mUnkd60ac1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalRegistry& operator=(LocalRegistry const&);
+        LocalRegistry(LocalRegistry const&);
+        LocalRegistry();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::AquiferNoises const&>                 mAquiferNoises;
+    ::ll::TypedStorage<8, 8, ::OverworldNoises3d const&>             mTerrainNoises;
+    ::ll::TypedStorage<8, 8, ::SurfaceLevelCache const&>             mSurfaceLevelCache;
+    ::ll::TypedStorage<4, 4, int>                                    mSeaLevel;
+    ::ll::TypedStorage<4, 4, int>                                    mLastFluidLevel;
+    ::ll::TypedStorage<4, 4, float>                                  mLastBarrierDensity;
+    ::ll::TypedStorage<1, 1, ::Aquifer::FluidSample::FluidType>      mLastFluidType;
+    ::ll::TypedStorage<1, 1, bool>                                   mShouldScheduleFluidUpdate;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mMinGrid;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mGridSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Aquifer::FluidSample>> mFluidLevelCache;
+    ::ll::TypedStorage<8, 32, ::Aquifer::LocalRegistry>              mLocalRegistry;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -46,49 +88,50 @@ public:
     Aquifer();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Aquifer(
-        class ChunkPos const&           chunkPos,
-        class AquiferNoises const&      aquiferNoises,
-        struct OverworldNoises3d const& terrainNoises,
-        class SurfaceLevelCache const&  surfaceLevelCache,
-        int                             dimensionMinHeight,
-        int                             levelGenHeight,
-        int                             seaLevel
+        ::ChunkPos const&          chunkPos,
+        ::AquiferNoises const&     aquiferNoises,
+        ::OverworldNoises3d const& terrainNoises,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        int                        dimensionMinHeight,
+        int                        levelGenHeight,
+        int                        seaLevel
     );
 
-    MCAPI void computeAt(class BlockPos const& pos);
+    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+
+    MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
+
+    MCAPI void computeAt(::BlockPos const& worldPos);
 
     MCAPI float getLastBarrier() const;
 
-    MCAPI class Block const* getLastFluidBlockType(bool canTickUpdate) const;
+    MCAPI ::Block const* getLastFluidBlockType(bool canTickUpdate) const;
 
     MCAPI int getLastFluidLevel() const;
 
     MCAPI bool shouldScheduleFluidUpdate() const;
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const& cellCenter) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class ChunkPos const&           chunkPos,
-        class AquiferNoises const&      aquiferNoises,
-        struct OverworldNoises3d const& terrainNoises,
-        class SurfaceLevelCache const&  surfaceLevelCache,
-        int                             dimensionMinHeight,
-        int                             levelGenHeight,
-        int                             seaLevel
+    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ChunkPos const&          chunkPos,
+        ::AquiferNoises const&     aquiferNoises,
+        ::OverworldNoises3d const& terrainNoises,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        int                        dimensionMinHeight,
+        int                        levelGenHeight,
+        int                        seaLevel
     );
-
-    MCAPI static std::array<std::pair<int, int>, 13> const& chunkOffset();
-
     // NOLINTEND
 };

@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class DedicatedServer;
+// clang-format on
+
 class StopCommand : public ::Command {
 public:
     // prevent constructor by default
@@ -13,25 +21,42 @@ public:
     StopCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StopCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, class DedicatedServer& server);
-
+    // vIndex: 0
+    virtual ~StopCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry, ::DedicatedServer& server);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const&, class CommandOutput&) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::DedicatedServer*& mServer();
+    // NOLINTEND
 
-    MCAPI static class DedicatedServer*& mServer();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput&) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

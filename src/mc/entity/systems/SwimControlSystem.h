@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SwimControlSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct SwimControlSystem {
 public:
     // prevent constructor by default
     SwimControlSystem& operator=(SwimControlSystem const&);
@@ -10,8 +15,8 @@ public:
     SwimControlSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo create();
-
+    MCAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

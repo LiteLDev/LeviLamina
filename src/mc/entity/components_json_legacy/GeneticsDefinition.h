@@ -7,36 +7,52 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GeneticsComponent;
+struct GeneDefinition;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GeneticsDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk6a83da;
+    ::ll::UntypedStorage<8, 24> mUnk5906e9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GeneticsDefinition& operator=(GeneticsDefinition const&);
     GeneticsDefinition(GeneticsDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI GeneticsDefinition();
 
-    MCAPI void addGeneDefinition(struct GeneDefinition const& geneDefinition);
+    MCAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
 
-    MCAPI void initialize(class EntityContext& entity, class GeneticsComponent& component) const;
-
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>>&
-            root
-    );
-
+    MCAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static float const& DEFAULT_MUTATION_RATE();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

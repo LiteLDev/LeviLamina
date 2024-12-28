@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UpdateServerPlayerInputSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct UpdateServerPlayerInputSystem {
 public:
     // prevent constructor by default
     UpdateServerPlayerInputSystem& operator=(UpdateServerPlayerInputSystem const&);
@@ -10,8 +15,8 @@ public:
     UpdateServerPlayerInputSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

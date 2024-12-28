@@ -3,31 +3,41 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deps/puv/EquipmentSlot.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/network/packet/types/world/actor/ActorEvent.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/monster/Monster.h"
-#include "mc/world/item/ArmorSlot.h"
-#include "mc/world/item/HandSlot.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class ActorDefinitionGroup;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
+class SpawnConditions;
+struct ActorDefinitionIdentifier;
+struct VariantParameterList;
 // clang-format on
 
 class Slime : public ::Monster {
+public:
+    // Slime inner types define
+    enum class ClientEvent : schar {
+        None       = 0,
+        JustLanded = 1,
+        JustJumped = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk874ac2;
+    ::ll::UntypedStorage<4, 4> mUnkc3abae;
+    ::ll::UntypedStorage<4, 4> mUnkba9a10;
+    ::ll::UntypedStorage<4, 4> mUnk90285c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Slime& operator=(Slime const&);
@@ -35,115 +45,125 @@ public:
     Slime();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
-    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
+    // vIndex: 2
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 10
-    virtual ~Slime();
+    // vIndex: 36
+    virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 13
-    virtual void remove();
+    // vIndex: 95
+    virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 38
-    virtual float getShadowRadius() const;
+    // vIndex: 11
+    virtual void remove() /*override*/;
 
-    // vIndex: 99
-    virtual void onSynchedDataUpdate(int dataId);
+    // vIndex: 152
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 147
-    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
-
-    // vIndex: 148
-    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    // vIndex: 158
-    virtual void aiStep();
-
-    // vIndex: 160
-    virtual bool checkSpawnRules(bool fromSpawner);
-
-    // vIndex: 184
-    virtual float _getWalkTargetValue(class BlockPos const& pos);
-
-    // vIndex: 191
+    // vIndex: 183
     virtual bool doPlayLandSound();
 
-    // vIndex: 192
+    // vIndex: 184
     virtual void playJumpSound();
 
-    // vIndex: 193
+    // vIndex: 176
+    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
+
+    // vIndex: 185
     virtual void decreaseSquish();
 
-    // vIndex: 194
-    virtual class OwnerPtr<class EntityContext> createChild(int i);
+    // vIndex: 186
+    virtual ::OwnerPtr<::EntityContext> createChild(int i);
 
+    // vIndex: 141
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+
+    // vIndex: 140
+    virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+
+    // vIndex: 8
+    virtual ~Slime() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Slime(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
 
     MCAPI float getOldSquishValue() const;
 
     MCAPI float getSquishValue() const;
 
-    MCAPI void postNormalTick(bool wasOnGround);
-
-    MCAPI void preNormalTick();
-
-    MCAPI static std::function<bool(class SpawnConditions const&, class BlockSource&)> getSpawnRulesCallback();
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
     MCAPI void justJumped();
 
     MCAPI void justLanded();
 
-    MCAPI void setSlimeSize(int size);
+    MCAPI void postNormalTick(bool wasOnGround);
 
+    MCAPI void preNormalTick();
+
+    MCAPI void setSlimeSize(int size);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::function<bool(::SpawnConditions const&, ::BlockSource&)> getSpawnRulesCallback();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class ActorDefinitionGroup*             definitions,
-        struct ActorDefinitionIdentifier const& definitionName,
-        class EntityContext&                    entityContext
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float _getWalkTargetValue$(class BlockPos const& pos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void addAdditionalSaveData$(class CompoundTag& tag) const;
+    MCAPI float $getShadowRadius() const;
 
-    MCAPI void aiStep$();
+    MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI bool checkSpawnRules$(bool fromSpawner);
+    MCAPI void $remove();
 
-    MCAPI class OwnerPtr<class EntityContext> createChild$(int i);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI void decreaseSquish$();
+    MCAPI bool $doPlayLandSound();
 
-    MCAPI bool doPlayLandSound$();
+    MCAPI void $playJumpSound();
 
-    MCAPI float getShadowRadius$() const;
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void onSynchedDataUpdate$(int dataId);
+    MCAPI void $decreaseSquish();
 
-    MCAPI void playJumpSound$();
+    MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
-    MCAPI void readAdditionalSaveData$(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void reloadHardcoded$(::ActorInitializationMethod method, class VariantParameterList const& params);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    // NOLINTEND
 
-    MCAPI void remove$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

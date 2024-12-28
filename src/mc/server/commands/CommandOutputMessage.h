@@ -7,7 +7,54 @@
 
 class CommandOutputMessage {
 public:
-    CommandOutputMessageType mType;
-    std::string              mMessageId;
-    std::vector<std::string> mParams;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::CommandOutputMessageType>    mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                mMessageId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mParams;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CommandOutputMessage& operator=(CommandOutputMessage const&);
+    CommandOutputMessage();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CommandOutputMessage(::CommandOutputMessage const& rhs);
+
+    MCAPI CommandOutputMessage(::CommandOutputMessage&& rhs);
+
+    MCAPI CommandOutputMessage(
+        ::CommandOutputMessageType     type,
+        ::std::string const&           msgId,
+        ::std::vector<::std::string>&& params
+    );
+
+    MCAPI ::std::string const& getMessageId() const;
+
+    MCAPI ::std::vector<::std::string> const& getParams() const;
+
+    MCAPI ::CommandOutputMessageType getType() const;
+
+    MCAPI ~CommandOutputMessage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CommandOutputMessage const& rhs);
+
+    MCAPI void* $ctor(::CommandOutputMessage&& rhs);
+
+    MCAPI void*
+    $ctor(::CommandOutputMessageType type, ::std::string const& msgId, ::std::vector<::std::string>&& params);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

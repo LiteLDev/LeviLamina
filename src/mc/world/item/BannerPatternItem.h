@@ -3,24 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
-// clang-format on
 
 class BannerPatternItem : public ::Item {
 public:
     // BannerPatternItem inner types define
-    enum class Type {};
+    enum class Type : int {
+        CreeperCharge   = 0,
+        SkullCharge     = 1,
+        FlowerCharge    = 2,
+        Thing           = 3,
+        FieldMasoned    = 4,
+        BordureIndented = 5,
+        Snout           = 6,
+        Globe           = 7,
+        Flow            = 8,
+        Guster          = 9,
+        Count           = 10,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk1c4268;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -29,50 +35,47 @@ public:
     BannerPatternItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BannerPatternItem() = default;
-
-    // vIndex: 39
-    virtual bool isPattern() const;
-
     // vIndex: 40
-    virtual int getPatternIndex() const;
+    virtual bool isPattern() const /*override*/;
 
-    // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+    // vIndex: 41
+    virtual int getPatternIndex() const /*override*/;
 
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
-
-    MCAPI BannerPatternItem(std::string const& name, int id, ::BannerPatternItem::Type type);
-
+    // vIndex: 0
+    virtual ~BannerPatternItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BannerPatternItem(::std::string const& name, int id, ::BannerPatternItem::Type type);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, ::BannerPatternItem::Type type);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::BannerPatternItem::Type type);
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const*) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isPattern() const;
 
-    MCAPI int getPatternIndex$() const;
+    MCAPI int $getPatternIndex() const;
+    // NOLINTEND
 
-    MCAPI bool isPattern$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,10 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/DragonBaseGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+// clang-format on
+
 class DragonStrafePlayerGoal : public ::DragonBaseGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkd50c8e;
+    ::ll::UntypedStorage<8, 8>  mUnkc70361;
+    ::ll::UntypedStorage<1, 1>  mUnkb07a61;
+    ::ll::UntypedStorage<1, 1>  mUnk52836d;
+    ::ll::UntypedStorage<4, 4>  mUnk119092;
+    ::ll::UntypedStorage<4, 4>  mUnk4fc9e2;
+    ::ll::UntypedStorage<4, 4>  mUnka7714b;
+    ::ll::UntypedStorage<4, 4>  mUnk926532;
+    ::ll::UntypedStorage<4, 4>  mUnk139a05;
+    ::ll::UntypedStorage<4, 4>  mUnk7910ab;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DragonStrafePlayerGoal& operator=(DragonStrafePlayerGoal const&);
@@ -14,60 +34,73 @@ public:
     DragonStrafePlayerGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DragonStrafePlayerGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit DragonStrafePlayerGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~DragonStrafePlayerGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit DragonStrafePlayerGoal(::Mob& mob);
+
     MCAPI void findNewTarget();
 
     MCAPI void navigateToNextPathNode();
 
-    MCAPI void setTarget(class Actor* target);
-
+    MCAPI void setTarget(::Actor* target);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,15 +9,16 @@ namespace OS { struct ThreadPoolActionStatus; }
 
 namespace OS {
 
-class ThreadPool {
+struct ThreadPool {
 public:
     // prevent constructor by default
     ThreadPool& operator=(ThreadPool const&);
     ThreadPool(ThreadPool const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&));
+    MCAPI long Initialize(void*, void (*)(void*, ::OS::ThreadPoolActionStatus&));
 
     MCAPI void Submit();
 
@@ -26,17 +27,19 @@ public:
     MCAPI ThreadPool();
 
     MCAPI ~ThreadPool();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace OS
+} // namespace OS

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CommandOutputType : int {
-    None       = 0x0,
-    LastOutput = 0x1,
-    Silent     = 0x2,
-    AllOutput  = 0x3,
-    DataSet    = 0x4,
+    None       = 0,
+    LastOutput = 1,
+    Silent     = 2,
+    AllOutput  = 3,
+    DataSet    = 4,
 };

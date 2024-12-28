@@ -4,25 +4,34 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Vec3;
+struct AABBShapeComponent;
+struct AutoStepRequestFlagComponent;
+struct MaxAutoStepComponent;
+struct MoveRequestComponent;
+struct SubBBsComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 namespace AutoStepSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doAutoStepSystemImpl(
-    entt::type_list<struct Include<class FlagComponent<struct AutoStepRequestFlag>>>,
-    struct MaxAutoStepComponent const& maxAutoStepComponent,
-    struct MoveRequestComponent&       moveRequestComponent,
-    struct AABBShapeComponent&         aabbShapeComponent,
-    struct SubBBsComponent&            subBBsComponent
+    ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
+    ::MaxAutoStepComponent const& maxAutoStepComponent,
+    ::MoveRequestComponent&       moveRequestComponent,
+    ::AABBShapeComponent&         aabbShapeComponent,
+    ::SubBBsComponent&            subBBsComponent
 );
 
-MCAPI class AABB getMaxCollisionVolume(
-    class Vec3 const&                  preMoveSpeed,
-    struct MaxAutoStepComponent const& step,
-    class AABB const&                  preMoveShape
-);
+MCAPI ::AABB
+getMaxCollisionVolume(::Vec3 const& preMoveSpeed, ::MaxAutoStepComponent const& step, ::AABB const& preMoveShape);
 // NOLINTEND
 
-}; // namespace AutoStepSystem
+} // namespace AutoStepSystem

@@ -3,9 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/ITickTimeManagerProxy.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+struct Tick;
+// clang-format on
+
 class TickTimeManagerProxy : public ::ITickTimeManagerProxy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkbaef15;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TickTimeManagerProxy& operator=(TickTimeManagerProxy const&);
@@ -13,45 +26,62 @@ public:
     TickTimeManagerProxy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TickTimeManagerProxy() = default;
+    virtual ~TickTimeManagerProxy() /*override*/;
 
     // vIndex: 1
-    virtual bool shouldUpdateWorldTime() const;
+    virtual bool shouldUpdateWorldTime() const /*override*/;
 
     // vIndex: 2
-    virtual void setWorldTickTime(int time);
+    virtual void setWorldTickTime(int time) /*override*/;
 
     // vIndex: 3
-    virtual int getWorldTickTime() const;
+    virtual int getWorldTickTime() const /*override*/;
 
     // vIndex: 4
-    virtual void incrementCurrentTick();
+    virtual void incrementCurrentTick() /*override*/;
 
     // vIndex: 5
-    virtual struct Tick getCurrentTick() const;
-
-    MCAPI explicit TickTimeManagerProxy(class LevelData& levelData);
-
+    virtual ::Tick getCurrentTick() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit TickTimeManagerProxy(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class LevelData& levelData);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
+    // NOLINTEND
 
-    MCAPI struct Tick getCurrentTick$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getWorldTickTime$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $shouldUpdateWorldTime() const;
 
-    MCAPI void incrementCurrentTick$();
+    MCAPI void $setWorldTickTime(int time);
 
-    MCAPI void setWorldTickTime$(int time);
+    MCAPI int $getWorldTickTime() const;
 
-    MCAPI bool shouldUpdateWorldTime$() const;
+    MCAPI void $incrementCurrentTick();
 
+    MCAPI ::Tick $getCurrentTick() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

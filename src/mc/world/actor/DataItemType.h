@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class DataItemType : uchar {
-    Byte        = 0x0,
-    Short       = 0x1,
-    Int         = 0x2,
-    Float       = 0x3,
-    String      = 0x4,
-    CompoundTag = 0x5,
-    BlockPos    = 0x6,
-    Int64       = 0x7,
-    Vec3        = 0x8,
-    Unknown     = 0x9,
+    Byte        = 0,
+    Short       = 1,
+    Int         = 2,
+    Float       = 3,
+    String      = 4,
+    CompoundTag = 5,
+    Pos         = 6,
+    Int64       = 7,
+    Vec3        = 8,
+    Unknown     = 9,
 };

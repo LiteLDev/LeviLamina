@@ -18,18 +18,50 @@ namespace Core {
 
 class FileImpl {
 public:
+    // FileImpl inner types declare
+    // clang-format off
+    struct WriteBufferInfo;
+    // clang-format on
+
+    // FileImpl inner types define
+    struct WriteBufferInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkec2ac3;
+        ::ll::UntypedStorage<8, 80> mUnk52e0bb;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WriteBufferInfo& operator=(WriteBufferInfo const&);
+        WriteBufferInfo(WriteBufferInfo const&);
+        WriteBufferInfo();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk77bcd9;
+    ::ll::UntypedStorage<8, 8> mUnkb78983;
+    ::ll::UntypedStorage<8, 8> mUnk95d296;
+    ::ll::UntypedStorage<1, 1> mUnk1f6afd;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FileImpl& operator=(FileImpl const&);
     FileImpl(FileImpl const&);
     FileImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~FileImpl();
 
     // vIndex: 1
-    virtual class Core::PathBuffer<std::string> _getPath() const = 0;
+    virtual ::Core::PathBuffer<::std::string> _getPath() const = 0;
 
     // vIndex: 2
     virtual uint64 _getBlockSize() const = 0;
@@ -38,98 +70,114 @@ public:
     virtual bool _isOpen() = 0;
 
     // vIndex: 4
-    virtual class Core::Result _close() = 0;
+    virtual ::Core::Result _close() = 0;
 
     // vIndex: 5
-    virtual class Core::Result _read(void* pBuffer, uint64 numBytes, uint64* pNumBytesRead) = 0;
+    virtual ::Core::Result _read(void*, uint64, uint64*) = 0;
 
     // vIndex: 6
-    virtual class Core::Result _readExactly(void* buf, uint64 numBytes) = 0;
+    virtual ::Core::Result _readExactly(void*, uint64) = 0;
 
     // vIndex: 7
-    virtual class Core::Result _skip(uint64 numBytes) = 0;
+    virtual ::Core::Result _skip(uint64) = 0;
 
     // vIndex: 8
-    virtual class Core::Result _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead) = 0;
+    virtual ::Core::Result _readAtPosition(uint64, void*, uint64, uint64*) = 0;
 
     // vIndex: 9
-    virtual class Core::Result _getPosition(uint64* pPosition) = 0;
+    virtual ::Core::Result _getPosition(uint64*) = 0;
 
     // vIndex: 10
-    virtual class Core::Result _setPosition(uint64 position) = 0;
+    virtual ::Core::Result _setPosition(uint64) = 0;
 
     // vIndex: 11
-    virtual class Core::Result _write(void const*, uint64) = 0;
+    virtual ::Core::Result _write(void const*, uint64) = 0;
 
     // vIndex: 12
-    virtual class Core::Result _flush() = 0;
+    virtual ::Core::Result _flush() = 0;
 
     // vIndex: 13
-    virtual class Core::Result _getSize(uint64* pSize) = 0;
+    virtual ::Core::Result _getSize(uint64*) = 0;
 
     // vIndex: 14
-    virtual class Core::Result _getRemainingSize(uint64* pFileSize) = 0;
+    virtual ::Core::Result _getRemainingSize(uint64*) = 0;
+    // NOLINTEND
 
-    MCAPI FileImpl(class Core::FileSystemImpl* pTransaction, class Core::FileOpenMode openMode);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FileImpl(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
 
-    MCAPI class Core::Result close();
+    MCAPI ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> _lockIfWriteBuffered(bool flushBuffer);
 
-    MCAPI class Core::Result flush();
+    MCAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
+
+    MCAPI ::Core::Result close();
+
+    MCAPI ::Core::Result flush();
 
     MCAPI uint64 getBlockSize() const;
 
-    MCAPI class Core::FileOpenMode const& getOpenMode() const;
+    MCAPI ::Core::FileOpenMode const& getOpenMode() const;
 
-    MCAPI class Core::PathBuffer<std::string> getPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getPath() const;
 
-    MCAPI class Core::Result getPosition(uint64* pPosition);
+    MCAPI ::Core::Result getPosition(uint64* pPosition);
 
-    MCAPI class Core::Result getRemainingSize(uint64* pSize);
+    MCAPI ::Core::Result getRemainingSize(uint64* pSize);
 
-    MCAPI class Core::Result getSize(uint64* pSize);
+    MCAPI ::Core::Result getSize(uint64* pSize);
 
-    MCAPI class Core::FileSystemImpl* getTransaction();
+    MCAPI ::Core::FileSystemImpl* getTransaction();
 
     MCAPI bool isOpen();
 
-    MCAPI class Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+    MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI class Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
+    MCAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
-    MCAPI class Core::Result readExactly(void* buf, uint64 numBytes);
+    MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
     MCAPI void setLoggingEnabled(bool loggingEnabled);
 
-    MCAPI class Core::Result setPosition(uint64 position);
+    MCAPI ::Core::Result setPosition(uint64 position);
 
-    MCAPI class Core::Result skip(uint64 numBytes);
+    MCAPI ::Core::Result skip(uint64 numBytes);
 
-    MCAPI class Core::Result write(void const* pBuf, uint64 numBytes);
-
+    MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Bedrock::Threading::UniqueLock<std::recursive_mutex> _lockIfWriteBuffered(bool flushBuffer);
-
-    MCAPI class Core::Result _writeOperation(class Core::Result&& result, uint64 numBytesWritten);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::vector<::Core::FileImpl*>& sAllFiles();
 
-    MCAPI void* ctor$(class Core::FileSystemImpl* pTransaction, class Core::FileOpenMode openMode);
+    MCAPI static ::Bedrock::Threading::Mutex& sAllFilesLock();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::FileSystemImpl* pTransaction, ::Core::FileOpenMode openMode);
+    // NOLINTEND
 
-    MCAPI static std::vector<class Core::FileImpl*>& sAllFiles();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Threading::Mutex& sAllFilesLock();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

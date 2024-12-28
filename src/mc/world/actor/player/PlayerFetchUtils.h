@@ -4,37 +4,37 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GameplayUserManager;
+class Player;
+struct ActorUniqueID;
 namespace mce { class UUID; }
 // clang-format on
 
 namespace PlayerFetchUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class Player* findActivePlayerByActorUniqueID(
-    class GameplayUserManager const& gameplayUserManager,
-    struct ActorUniqueID             actorUniqueID
-);
+MCAPI ::Player*
+findActivePlayerByActorUniqueID(::GameplayUserManager const& gameplayUserManager, ::ActorUniqueID actorUniqueID);
 
-MCAPI class Player* findPlayer(
-    class GameplayUserManager const&                gameplayUserManager,
-    std::function<bool(class EntityContext const&)> callback
-);
+MCAPI ::Player*
+findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::Player const&)> callback);
 
-MCAPI class Player*
-findPlayer(class GameplayUserManager const& gameplayUserManager, std::function<bool(class Player const&)> callback);
+MCAPI ::Player*
+findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::EntityContext const&)> callback);
 
-MCAPI class Player* findPlayerByName(class GameplayUserManager const& gameplayUserManager, std::string const& name);
+MCAPI ::Player* findPlayerByName(::GameplayUserManager const& gameplayUserManager, ::std::string const& name);
 
-MCAPI class Player*
-findPlayerByPlatformId(class GameplayUserManager const& gameplayUserManager, std::string const& platformOnlineId);
+MCAPI ::Player*
+findPlayerByPlatformId(::GameplayUserManager const& gameplayUserManager, ::std::string const& platformOnlineId);
 
-MCAPI class Player*
-findPlayerByServerId(class GameplayUserManager const& gameplayUserManager, std::string const& serverId);
+MCAPI ::Player* findPlayerByServerId(::GameplayUserManager const& gameplayUserManager, ::std::string const& serverId);
 
-MCAPI class Player* findPlayerByUUID(class GameplayUserManager const& gameplayUserManager, class mce::UUID const& uuid);
+MCAPI ::Player* findPlayerByUUID(::GameplayUserManager const& gameplayUserManager, ::mce::UUID const& uuid);
 
-MCAPI class Player* findPlayerByXuid(class GameplayUserManager const& gameplayUserManager, std::string const& xuid);
+MCAPI ::Player* findPlayerByXuid(::GameplayUserManager const& gameplayUserManager, ::std::string const& xuid);
 
-MCAPI class Player* findPrimaryLocalPlayer(class GameplayUserManager const& gameplayUserManager);
+MCAPI ::Player* findPrimaryLocalPlayer(::GameplayUserManager const& gameplayUserManager);
 // NOLINTEND
 
-}; // namespace PlayerFetchUtils
+} // namespace PlayerFetchUtils

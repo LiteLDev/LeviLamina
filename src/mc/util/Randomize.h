@@ -1,21 +1,32 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/util/Random.h"
+
+// auto generated forward declare list
+// clang-format off
+class Random;
+// clang-format on
 
 class Randomize {
 public:
-    Bedrock::NonOwnerPointer<Random> mRandom; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Random>> mRandom;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     Randomize& operator=(Randomize const&);
     Randomize(Randomize const&);
     Randomize();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit Randomize(class Random& random);
+    MCAPI explicit Randomize(::Random& random);
 
     MCAPI bool chance(int likeliness, int possibilities) const;
 
@@ -34,17 +45,23 @@ public:
     MCAPI int nextIntInclusive(int min, int max) const;
 
     MCAPI ~Randomize();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Random& random);
-
-    MCAPI void dtor$();
-
     MCAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Random& random);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

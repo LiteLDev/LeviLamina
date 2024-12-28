@@ -19,29 +19,36 @@ public:
     FullCopyFileOperations();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Core::Result copyDirectory(
-        class Core::FileSystemImpl* pSourceTransaction,
-        class Core::Path const&     sourceDirectoryPath,
-        class Core::FileSystemImpl* pTargetTransaction,
-        class Core::Path const&     targetDirectoryPath
+    MCAPI static ::Core::Result copyDirectory(
+        ::Core::FileSystemImpl* pSourceTransaction,
+        ::Core::Path const&     sourceDirectoryPath,
+        ::Core::FileSystemImpl* pTargetTransaction,
+        ::Core::Path const&     targetDirectoryPath
     );
 
-    MCAPI static class Core::Result copyFile(
-        class Core::FileSystemImpl* pSourceTransaction,
-        class Core::Path const&     sourceFilePath,
-        class Core::FileSystemImpl* pTargetTransaction,
-        class Core::Path const&     targetFilePath
+    MCAPI static ::Core::Result copyFile(
+        ::Core::FileSystemImpl* pSourceTransaction,
+        ::Core::Path const&     sourceFilePath,
+        ::Core::FileSystemImpl* pTargetTransaction,
+        ::Core::Path const&     targetFilePath
     );
 
-    MCAPI static class Core::Result moveFile(
-        class Core::FileSystemImpl* pSourceTransaction,
-        class Core::Path const&     sourceFilePath,
-        class Core::FileSystemImpl* pTargetTransaction,
-        class Core::Path const&     targetFilePath
+    MCAPI static ::Core::Result moveDirectory(
+        ::Core::FileSystemImpl* pSourceTransaction,
+        ::Core::Path const&     sourceDirectoryPath,
+        ::Core::FileSystemImpl* pTargetTransaction,
+        ::Core::Path const&     targetDirectoryPath
     );
 
+    MCAPI static ::Core::Result moveFile(
+        ::Core::FileSystemImpl* pSourceTransaction,
+        ::Core::Path const&     sourceFilePath,
+        ::Core::FileSystemImpl* pTargetTransaction,
+        ::Core::Path const&     targetFilePath
+    );
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

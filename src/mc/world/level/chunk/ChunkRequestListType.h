@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ChunkRequestListType {};
+enum class ChunkRequestListType : uchar {
+    Async   = 0,
+    Ticking = 1,
+};

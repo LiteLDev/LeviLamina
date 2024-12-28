@@ -4,23 +4,29 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class CommandOrigin;
+class CommandPositionFloat;
+class Vec2;
+class Vec3;
 namespace RotationCommandUtils { class RotationData; }
 // clang-format on
 
 namespace RotationCommandUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class Vec2 ComputeFacingRotation(class Vec3 destination, class Vec3 const& facePosition, int commandVersion);
+MCAPI ::Vec2 ComputeFacingRotation(::Vec3 destination, ::Vec3 const& facePosition, int commandVersion);
 
-MCAPI class Vec2 ComputeRotation(
-    class Actor const&                                             victim,
-    std::optional<class RotationCommandUtils::RotationData> const& rotationData,
-    int                                                            commandVersion
+MCAPI ::Vec2 ComputeRotation(
+    ::Actor const&                                               victim,
+    ::std::optional<::RotationCommandUtils::RotationData> const& rotationData,
+    int                                                          commandVersion
 );
 
-MCAPI class Vec3 getFacingDirectionFacingEntity(class Actor const& faceEntity);
+MCAPI ::Vec3 getFacingDirectionFacingEntity(::Actor const& faceEntity);
 
-MCAPI class Vec3
-getFacingDirectionFacingPosition(int version, class CommandOrigin const& origin, class CommandPositionFloat facingPos);
+MCAPI ::Vec3
+getFacingDirectionFacingPosition(int version, ::CommandOrigin const& origin, ::CommandPositionFloat facingPos);
 // NOLINTEND
 
-}; // namespace RotationCommandUtils
+} // namespace RotationCommandUtils

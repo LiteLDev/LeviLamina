@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
+struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -19,35 +21,44 @@ public:
     EventResponse();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~EventResponse();
 
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const;
 
     // vIndex: 2
-    virtual void executeAction(class RenderParams& params) const = 0;
+    virtual void executeAction(::RenderParams&) const = 0;
 
     // vIndex: 3
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
-        const;
-
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI void
-    buildSchema$(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
-        const;
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

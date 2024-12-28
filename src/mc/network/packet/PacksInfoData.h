@@ -1,27 +1,43 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/PackInfoData.h"
+
+// auto generated forward declare list
+// clang-format off
+struct PackIdVersion;
+struct PackInfoData;
+// clang-format on
 
 struct PacksInfoData {
 public:
-    bool                      mResourcePackRequired;    // this+0x0
-    bool                      mHasScripts;              // this+0x1
-    bool                      mHasExceptions;           // this+0x2
-    bool                      mForceServerPacksEnabled; // this+0x3
-    std::vector<PackInfoData> mBehaviorPacks;           // this+0x8
-    std::vector<PackInfoData> mResourcePacks;           // this+0x20
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                           mResourcePackRequired;
+    ::ll::TypedStorage<1, 1, bool>                           mHasAddonPacks;
+    ::ll::TypedStorage<1, 1, bool>                           mHasScripts;
+    ::ll::TypedStorage<8, 136, ::PackIdVersion>              mWorldTemplateIdAndVersion;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInfoData>> mResourcePacks;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PacksInfoData& operator=(PacksInfoData const&);
     PacksInfoData(PacksInfoData const&);
     PacksInfoData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI uint64 getBehaviorPackSize() const;
+    MCAPI uint64 getRequiredResourcePackSize() const;
 
     MCAPI uint64 getResourcePackSize() const;
 
+    MCAPI ~PacksInfoData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

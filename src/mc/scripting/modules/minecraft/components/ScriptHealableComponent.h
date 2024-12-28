@@ -4,20 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
+class HealableComponent;
+class HealableDefinition;
 class WeakEntityRef;
+struct FeedItem;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
-struct FeedItem;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptHealableComponent {
+class ScriptHealableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::HealableComponent, ::HealableDefinition> {
 public:
     // prevent constructor by default
     ScriptHealableComponent& operator=(ScriptHealableComponent const&);
@@ -25,43 +29,59 @@ public:
     ScriptHealableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptHealableComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptHealableComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
-
-    MCAPI class Scripting::Result<bool> getForceUse() const;
-
-    MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptHealableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptHealableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<::ActorFilterGroup> getFilters() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getForceUse() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::FeedItem>> getItems() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptHealableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

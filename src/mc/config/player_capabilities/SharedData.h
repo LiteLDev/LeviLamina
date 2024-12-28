@@ -4,49 +4,61 @@
 
 // auto generated inclusion list
 #include "mc/config/ChatRestrictionLevel.h"
+#include "mc/config/player_capabilities/ISharedData.h"
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 struct GameRuleId;
 // clang-format on
-class Level;
 
 namespace PlayerCapabilities {
 
-struct ISharedData {};
-
-struct SharedData : public ISharedData {
+struct SharedData : public ::PlayerCapabilities::ISharedData {
 public:
-    Level const* mLevel;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Level const&> mLevel;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     SharedData& operator=(SharedData const&);
     SharedData(SharedData const&);
     SharedData();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SharedData() = default;
-
     // vIndex: 1
-    virtual std::optional<bool> isGameRuleEnabled(struct GameRuleId rule) const;
+    virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId const rule) const /*override*/;
 
     // vIndex: 2
-    virtual ::ChatRestrictionLevel getChatRestrictionLevel() const;
+    virtual ::ChatRestrictionLevel getChatRestrictionLevel() const /*override*/;
 
+    // vIndex: 0
+    virtual ~SharedData() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::ChatRestrictionLevel getChatRestrictionLevel$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<bool> $isGameRuleEnabled(::GameRuleId const rule) const;
 
-    MCAPI std::optional<bool> isGameRuleEnabled$(struct GameRuleId rule) const;
+    MCAPI ::ChatRestrictionLevel $getChatRestrictionLevel() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PlayerCapabilities
+} // namespace PlayerCapabilities

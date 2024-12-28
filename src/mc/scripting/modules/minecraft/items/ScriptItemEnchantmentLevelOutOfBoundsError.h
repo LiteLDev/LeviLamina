@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemEnchantmentLevelOutOfBoundsError {
+struct ScriptItemEnchantmentLevelOutOfBoundsError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptItemEnchantmentLevelOutOfBoundsError& operator=(ScriptItemEnchantmentLevelOutOfBoundsError const&);
@@ -15,26 +16,28 @@ public:
     ScriptItemEnchantmentLevelOutOfBoundsError();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemEnchantmentLevelOutOfBoundsError(
-        std::string const& details,
-        std::string const& typeName,
-        int                level,
-        int                maxLevel
+        ::std::string const& details,
+        ::std::string const& typeName,
+        int                  level,
+        int                  maxLevel
     );
-
-    MCAPI static class Scripting::ErrorBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& details, std::string const& typeName, int level, int maxLevel);
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
+    bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

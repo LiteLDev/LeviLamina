@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -11,6 +14,32 @@ namespace Json { class Value; }
 namespace Json {
 
 class ValueIteratorBase {
+public:
+    // ValueIteratorBase inner types define
+    using size_t = uint;
+
+    using difference_type = int;
+
+    using SelfType = ::Json::ValueIteratorBase;
+
+    using iterator_category = ::std::bidirectional_iterator_tag;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    union {
+        ::ll::TypedStorage<8, 8, ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::Json::Value*>>>>
+            array_;
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::std::_Tree_iterator<
+                ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::Json::Value::CZString const, ::Json::Value>>>>>
+            map_;
+    };
+    ::ll::TypedStorage<1, 1, bool> isArray_;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ValueIteratorBase& operator=(ValueIteratorBase const&);
@@ -33,33 +62,34 @@ public:
     Json::Value& operator*() const { return deref(); }
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const& other);
+    MCAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);
 
-    MCAPI char const* memberName() const;
-
-    MCAPI ~ValueIteratorBase();
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Json::Value& deref() const;
+    MCAPI ::Json::Value& deref() const;
 
     MCAPI void increment();
 
-    MCAPI bool isEqual(class Json::ValueIteratorBase const& other) const;
+    MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
 
+    MCAPI char const* memberName() const;
+
+    MCAPI bool operator!=(::Json::ValueIteratorBase const& other) const;
+
+    MCAPI ~ValueIteratorBase();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Json::ValueIteratorBase const& other);
+    MCAPI void* $ctor(::Json::ValueIteratorBase const& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Json
+} // namespace Json

@@ -13,4 +13,4 @@ public:
     InterfaceBindingBuilder();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

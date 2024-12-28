@@ -2,16 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockQueuedTickEventComponent; }
-namespace BlockEvents { struct BlockQueuedTickEvent; }
+class Random;
+namespace BlockEvents { class BlockEventManager; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-struct BlockQueuedTickingComponent : public ::BlockComponentBase {
+struct BlockQueuedTickingComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnkfd4e77;
+    ::ll::UntypedStorage<4, 4>   mUnk9c9597;
+    ::ll::UntypedStorage<4, 4>   mUnk6987ce;
+    ::ll::UntypedStorage<8, 256> mUnk26c6d0;
+    ::ll::UntypedStorage<8, 16>  mUnk51ad9f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockQueuedTickingComponent& operator=(BlockQueuedTickingComponent const&);
@@ -19,22 +27,31 @@ public:
     BlockQueuedTickingComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockQueuedTickingComponent() = default;
-
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockQueuedTickEventComponent*> comp);
-
-    MCAPI int getRandomTickDelay(class Random& random) const;
-
-    MCAPI void onTick(struct BlockEvents::BlockQueuedTickEvent const& eventData) const;
-
+    virtual ~BlockQueuedTickingComponent();
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
+    MCAPI int getRandomTickDelay(::Random& random) const;
+
+    MCAPI void onTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

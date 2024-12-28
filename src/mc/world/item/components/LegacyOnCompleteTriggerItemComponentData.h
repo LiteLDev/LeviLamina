@@ -4,21 +4,26 @@
 
 struct LegacyOnCompleteTriggerItemComponentData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 264> mUnkc1becb;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LegacyOnCompleteTriggerItemComponentData& operator=(LegacyOnCompleteTriggerItemComponentData const&);
     LegacyOnCompleteTriggerItemComponentData(LegacyOnCompleteTriggerItemComponentData const&);
     LegacyOnCompleteTriggerItemComponentData();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~LegacyOnCompleteTriggerItemComponentData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

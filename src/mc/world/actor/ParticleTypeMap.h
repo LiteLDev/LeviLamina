@@ -6,6 +6,11 @@
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/actor/ParticleType.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 class ParticleTypeMap {
 public:
     // prevent constructor by default
@@ -14,17 +19,16 @@ public:
     ParticleTypeMap();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class HashedString const& getParticleName(::ParticleType type);
+    MCAPI static ::HashedString const& getParticleName(::ParticleType type);
 
-    MCAPI static ::ParticleType getParticleTypeId(std::string const& str);
-
+    MCAPI static ::ParticleType getParticleTypeId(::std::string const& str);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ParticleType, class HashedString> const& map();
-
+    MCAPI static ::BidirectionalUnorderedMap<::ParticleType, ::HashedString> const& map();
     // NOLINTEND
 };

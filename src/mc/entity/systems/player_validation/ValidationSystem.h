@@ -8,22 +8,35 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
 namespace PlayerValidation {
 
-struct ValidationSystem {
+struct ValidationSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                              ::Filter<::PlayerComponent>,
+                              ::Read<::StateVectorComponent>,
+                              ::Write<::ActorOwnerComponent>,
+                              ::AddRemove<>,
+                              ::GlobalRead<>,
+                              ::GlobalWrite<>,
+                              ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk98615a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ValidationSystem& operator=(ValidationSystem const&);
@@ -31,51 +44,52 @@ public:
     ValidationSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ValidationSystem() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<class FlagComponent<struct PlayerComponentFlag>>,
-                      struct Read<struct StateVectorComponent>,
-                      struct Write<class ActorOwnerComponent>,
-                      struct AddRemove<>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::PlayerComponent>,
+                      ::Read<::StateVectorComponent>,
+                      ::Write<::ActorOwnerComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
-    MCAPI static struct TickingSystemWithInfo createSystem(std::string&& message);
-
+    // vIndex: 0
+    virtual ~ValidationSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<class FlagComponent<struct PlayerComponentFlag>>,
-                     struct Read<struct StateVectorComponent>,
-                     struct Write<class ActorOwnerComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::PlayerComponent>,
+                     ::Read<::StateVectorComponent>,
+                     ::Write<::ActorOwnerComponent>,
+                     ::AddRemove<>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PlayerValidation
+} // namespace PlayerValidation

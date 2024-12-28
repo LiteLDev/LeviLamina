@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CommandSelectionType : int {
-    Self           = 0x0,
-    Entities       = 0x1,
-    Players        = 0x2,
-    DefaultPlayers = 0x3,
-    OwnedAgent     = 0x4,
-    Agents         = 0x5,
-    Initiator      = 0x6,
+    Self           = 0,
+    Entities       = 1,
+    Players        = 2,
+    DefaultPlayers = 3,
+    OwnedAgent     = 4,
+    Agents         = 5,
+    Initiator      = 6,
 };

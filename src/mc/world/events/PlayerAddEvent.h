@@ -4,21 +4,26 @@
 
 struct PlayerAddEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk96b214;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerAddEvent& operator=(PlayerAddEvent const&);
     PlayerAddEvent(PlayerAddEvent const&);
     PlayerAddEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~PlayerAddEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

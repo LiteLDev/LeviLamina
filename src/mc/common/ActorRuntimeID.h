@@ -4,18 +4,14 @@
 
 class ActorRuntimeID {
 public:
-    uint64 id;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, uint64> rawID;
+    // NOLINTEND
 
-    [[nodiscard]] constexpr ActorRuntimeID() : id(0) {}
-    [[nodiscard]] constexpr ActorRuntimeID(uint64 x) : id(x) {}
-
-    [[nodiscard]] constexpr operator uint64() const { return id; }
-};
-
-namespace std {
-template <>
-class hash<ActorRuntimeID> {
 public:
-    size_t operator()(ActorRuntimeID const& id) const { return std::hash<int64>()(id.id); }
+    // prevent constructor by default
+    ActorRuntimeID& operator=(ActorRuntimeID const&);
+    ActorRuntimeID(ActorRuntimeID const&);
+    ActorRuntimeID();
 };
-} // namespace std

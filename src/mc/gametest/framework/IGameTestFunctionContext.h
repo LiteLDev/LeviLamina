@@ -10,6 +10,19 @@ public:
     IGameTestFunctionContext& operator=(IGameTestFunctionContext const&);
     IGameTestFunctionContext(IGameTestFunctionContext const&);
     IGameTestFunctionContext();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~IGameTestFunctionContext();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

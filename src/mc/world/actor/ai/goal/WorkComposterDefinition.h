@@ -13,31 +13,48 @@ namespace JsonUtil { class EmptyClass; }
 
 class WorkComposterDefinition : public ::WorkDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk42e0e7;
+    ::ll::UntypedStorage<4, 4> mUnke06973;
+    ::ll::UntypedStorage<4, 4> mUnk5ff2d6;
+    ::ll::UntypedStorage<4, 4> mUnka5527d;
+    ::ll::UntypedStorage<1, 1> mUnk25298b;
+    ::ll::UntypedStorage<1, 1> mUnk15a8f0;
+    ::ll::UntypedStorage<4, 4> mUnk263aed;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     WorkComposterDefinition& operator=(WorkComposterDefinition const&);
     WorkComposterDefinition(WorkComposterDefinition const&);
+    WorkComposterDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorkComposterDefinition() = default;
-
-    MCAPI WorkComposterDefinition();
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkComposterDefinition>>& root
-    );
-
+    virtual ~WorkComposterDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                    name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::WorkComposterDefinition>>& root
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

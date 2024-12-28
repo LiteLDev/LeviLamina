@@ -7,28 +7,45 @@
 
 class WorkDefinition : public ::BaseGoalDefinition {
 public:
-    // prevent constructor by default
-    WorkDefinition(WorkDefinition const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WorkDefinition();
-
-    MCAPI WorkDefinition();
-
-    MCAPI class WorkDefinition& operator=(class WorkDefinition const&);
-
+    ::ll::UntypedStorage<4, 4>   mUnk13a35d;
+    ::ll::UntypedStorage<4, 4>   mUnk28c474;
+    ::ll::UntypedStorage<4, 4>   mUnk9b0c55;
+    ::ll::UntypedStorage<4, 4>   mUnkc31a68;
+    ::ll::UntypedStorage<1, 1>   mUnkb37ac0;
+    ::ll::UntypedStorage<4, 4>   mUnkf59a3c;
+    ::ll::UntypedStorage<8, 104> mUnk1d88d5;
+    ::ll::UntypedStorage<4, 4>   mUnkc9d234;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    WorkDefinition(WorkDefinition const&);
+    WorkDefinition();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~WorkDefinition() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::WorkDefinition& operator=(::WorkDefinition const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

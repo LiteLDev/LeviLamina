@@ -3,33 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/server/sim/ExecutionResult.h"
 #include "mc/server/sim/LookDuration.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
+class EntityContext;
+class SimulatedPlayer;
 namespace sim { struct BuildIntent; }
-namespace sim { struct ContinuousLookAtEntityIntent; }
-namespace sim { struct ContinuousLookAtPositionIntent; }
-namespace sim { struct LookAtEntityIntent; }
 namespace sim { struct LookAtIntent; }
-namespace sim { struct LookAtPositionIntent; }
-namespace sim { struct MoveInDirectionIntent; }
-namespace sim { struct MoveToPositionIntent; }
-namespace sim { struct NavigateToEntityIntent; }
-namespace sim { struct NavigateToPositionsIntent; }
-namespace sim { struct VoidLookAtIntent; }
-namespace sim { struct VoidMoveIntent; }
 // clang-format on
 
 namespace sim {
+// functions
 // NOLINTBEGIN
-MCAPI struct sim::LookAtIntent
-lookAt(class SimulatedPlayer& player, class EntityContext& entity, ::sim::LookDuration duration);
+MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::EntityContext& entity, ::sim::LookDuration duration);
 
-MCAPI struct sim::LookAtIntent lookAt(class SimulatedPlayer& player, glm::vec3 position, ::sim::LookDuration duration);
+MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::glm::vec3 position, ::sim::LookDuration duration);
 
-MCAPI struct sim::BuildIntent startBuild(class SimulatedPlayer& player, class BlockSource& region, int slot);
+MCAPI ::sim::BuildIntent startBuild(::SimulatedPlayer& player, ::BlockSource& region, int slot);
 // NOLINTEND
 
-}; // namespace sim
+} // namespace sim

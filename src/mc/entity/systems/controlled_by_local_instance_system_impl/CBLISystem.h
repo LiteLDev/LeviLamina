@@ -3,33 +3,58 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededFlag;
-struct BoatFlag;
-struct ControlledByLocalInstanceFlag;
-struct HorseFlag;
-struct LocalPlayerComponentFlag;
-struct PlayerComponentFlag;
-struct RecalculateControlledByLocalInstanceRequestFlag;
+struct ActorMovementTickNeededComponent;
+struct BoatFlagComponent;
+struct ControlledByLocalInstanceComponent;
+struct HorseFlagComponent;
+struct LocalPlayerComponent;
+struct PlayerComponent;
+struct RecalculateControlledByLocalInstanceRequestComponent;
 struct VehicleComponent;
 // clang-format on
 
 namespace ControlledByLocalInstanceSystemImpl {
 
-struct CBLISystem {
+struct CBLISystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                        ::Filter<
+                            ::ActorMovementTickNeededComponent,
+                            ::BoatFlagComponent,
+                            ::HorseFlagComponent,
+                            ::PlayerComponent,
+                            ::RecalculateControlledByLocalInstanceRequestComponent>,
+                        ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                        ::Write<>,
+                        ::AddRemove<::ControlledByLocalInstanceComponent>,
+                        ::GlobalRead<>,
+                        ::GlobalWrite<>,
+                        ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk34b53b;
+    ::ll::UntypedStorage<8, 8> mUnkabd3ce;
+    ::ll::UntypedStorage<8, 8> mUnk2692f8;
+    ::ll::UntypedStorage<8, 8> mUnk7ebf3b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CBLISystem& operator=(CBLISystem const&);
@@ -37,108 +62,91 @@ public:
     CBLISystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CBLISystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct ActorMovementTickNeededFlag>,
-                          class FlagComponent<struct BoatFlag>,
-                          class FlagComponent<struct HorseFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
-                      struct Read<
-                          struct VehicleComponent,
-                          struct ActorDataFlagComponent,
-                          class FlagComponent<struct LocalPlayerComponentFlag>>,
-                      struct Write<>,
-                      struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& strictContext);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorMovementTickNeededComponent,
+                          ::BoatFlagComponent,
+                          ::HorseFlagComponent,
+                          ::PlayerComponent,
+                          ::RecalculateControlledByLocalInstanceRequestComponent>,
+                      ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                      ::Write<>,
+                      ::AddRemove<::ControlledByLocalInstanceComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& strictContext) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct BoatFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
-            struct Read<
-                struct VehicleComponent,
-                struct ActorDataFlagComponent,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Write<>,
-            struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& strictContext,
-        class StrictEntityContext&    entity
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~CBLISystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::ActorMovementTickNeededComponent,
+                         ::BoatFlagComponent,
+                         ::HorseFlagComponent,
+                         ::PlayerComponent,
+                         ::RecalculateControlledByLocalInstanceRequestComponent>,
+                     ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                     ::Write<>,
+                     ::AddRemove<::ControlledByLocalInstanceComponent>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& strictContext);
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct BoatFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
-            struct Read<
-                struct VehicleComponent,
-                struct ActorDataFlagComponent,
-                class FlagComponent<struct LocalPlayerComponentFlag>>,
-            struct Write<>,
-            struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& strictContext,
-        class StrictEntityContext&    entity
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct ActorMovementTickNeededFlag>,
-                         class FlagComponent<struct BoatFlag>,
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>,
-                     struct Read<
-                         struct VehicleComponent,
-                         struct ActorDataFlagComponent,
-                         class FlagComponent<struct LocalPlayerComponentFlag>>,
-                     struct Write<>,
-                     struct AddRemove<class FlagComponent<struct ControlledByLocalInstanceFlag>>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& strictContext);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ControlledByLocalInstanceSystemImpl
+} // namespace ControlledByLocalInstanceSystemImpl

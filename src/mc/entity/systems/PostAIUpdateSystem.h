@@ -4,8 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct IsDeadFlagComponent;
+struct MobFlagComponent;
+struct MobIsImmobileFlagComponent;
+struct NoActionTimeComponent;
+struct OnGroundFlagComponent;
+struct TickingSystemWithInfo;
+struct WasOnGroundFlagComponent;
+// clang-format on
 
 class PostAIUpdateSystem {
 public:
@@ -15,19 +30,25 @@ public:
     PostAIUpdateSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI static void doPostAiUpdate(
-        class StrictEntityContext&                                        entity,
-        class Optional<struct OnGroundFlagComponent const>                onGround,
-        struct NoActionTimeComponent&                                     noActionTime,
-        class EntityModifier<class FlagComponent<struct WasOnGroundFlag>> mod
+        ::StrictEntityContext&                       entity,
+        ::Optional<::OnGroundFlagComponent const>    onGround,
+        ::NoActionTimeComponent&                     noActionTime,
+        ::EntityModifier<::WasOnGroundFlagComponent> mod
     );
 
+    MCAPI static void tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+            ::Exclude<::MobIsImmobileFlagComponent, ::IsDeadFlagComponent>,
+            ::Optional<::OnGroundFlagComponent const>,
+            ::NoActionTimeComponent>                 view,
+        ::EntityModifier<::WasOnGroundFlagComponent> mod
+    );
     // NOLINTEND
 };

@@ -6,7 +6,23 @@
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/world/level/chunk/ILevelChunkEventManagerConnector.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkSource;
+class ILevelChunkEventManagerProxy;
+class LevelChunk;
+// clang-format on
+
 class LevelChunkEventManager : public ::ILevelChunkEventManagerConnector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnk5fa7b8;
+    ::ll::UntypedStorage<8, 128> mUnkb42b90;
+    ::ll::UntypedStorage<8, 128> mUnk7144be;
+    ::ll::UntypedStorage<8, 8>   mUnka9f96b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelChunkEventManager& operator=(LevelChunkEventManager const&);
@@ -14,46 +30,61 @@ public:
     LevelChunkEventManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelChunkEventManager() = default;
+    virtual ~LevelChunkEventManager() /*override*/;
 
     // vIndex: 1
-    virtual class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&, int)>&
-    getOnChunkLoadedConnector();
+    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>&
+    getOnChunkLoadedConnector() /*override*/;
 
     // vIndex: 2
-    virtual class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&)>&
-    getOnChunkReloadedConnector();
+    virtual ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>&
+    getOnChunkReloadedConnector() /*override*/;
 
     // vIndex: 3
-    virtual class Bedrock::PubSub::Connector<void(class LevelChunk&)>& getOnChunkDiscardedConnector();
-
-    MCAPI explicit LevelChunkEventManager(
-        std::unique_ptr<class ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
-    );
-
-    MCAPI void onChunkDiscarded(class LevelChunk& levelChunk);
-
-    MCAPI void onChunkLoaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
-
-    MCAPI void onChunkReloaded(class ChunkSource& chunkSource, class LevelChunk& levelChunk);
-
+    virtual ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& getOnChunkDiscardedConnector() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit LevelChunkEventManager(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
+    );
 
-    MCAPI void* ctor$(std::unique_ptr<class ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
+    MCAPI void onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCAPI class Bedrock::PubSub::Connector<void(class LevelChunk&)>& getOnChunkDiscardedConnector$();
+    MCAPI void onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
 
-    MCAPI class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&, int)>&
-    getOnChunkLoadedConnector$();
+    MCAPI void onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+    // NOLINTEND
 
-    MCAPI class Bedrock::PubSub::Connector<void(class ChunkSource&, class LevelChunk&)>& getOnChunkReloadedConnector$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& $getOnChunkLoadedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

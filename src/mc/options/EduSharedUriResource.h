@@ -2,41 +2,57 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 struct EduSharedUriResource {
 public:
-    std::string mLinkUri;
-    std::string mButtonName;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string> linkUri;
+    ::ll::TypedStorage<8, 32, ::std::string> buttonName;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     EduSharedUriResource& operator=(EduSharedUriResource const&);
     EduSharedUriResource(EduSharedUriResource const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI EduSharedUriResource();
 
-    MCAPI explicit EduSharedUriResource(class CompoundTag const& tag);
+    MCAPI EduSharedUriResource(::EduSharedUriResource&&);
 
-    MCAPI EduSharedUriResource(struct EduSharedUriResource&&);
+    MCAPI explicit EduSharedUriResource(::CompoundTag const& tag);
 
     MCAPI ~EduSharedUriResource();
-
-    MCAPI static struct EduSharedUriResource fromTag(class CompoundTag const& tag);
-
-    MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const& resource);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct EduSharedUriResource&&);
+    MCAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
 
-    MCAPI void* ctor$(class CompoundTag const& tag);
+    MCAPI static ::std::unique_ptr<::CompoundTag> toTag(::EduSharedUriResource const& resource);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::EduSharedUriResource&&);
 
+    MCAPI void* $ctor(::CompoundTag const& tag);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

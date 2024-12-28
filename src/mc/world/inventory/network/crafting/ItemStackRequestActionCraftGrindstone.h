@@ -4,58 +4,76 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraft.h"
 
-class ItemStackRequestActionCraftGrindstone {
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ItemStackNetIdVariant;
+// clang-format on
+
+class ItemStackRequestActionCraftGrindstone : public ::ItemStackRequestActionCraft<::ItemStackNetIdVariant, 16> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk52d9fe;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
     ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ItemStackRequestActionCraftGrindstone() = default;
-
-    // vIndex: 1
-    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-
-    // vIndex: 2
-    virtual int getFilteredStringIndex() const;
-
-    // vIndex: 3
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
-
     // vIndex: 4
-    virtual void _write(class BinaryStream& stream) const;
+    virtual void _write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 6
-    virtual struct ItemStackNetIdVariant const& getRecipeNetId() const;
+    virtual ::ItemStackNetIdVariant const& getRecipeNetId() const /*override*/;
 
-    MCAPI ItemStackRequestActionCraftGrindstone();
-
+    // vIndex: 0
+    virtual ~ItemStackRequestActionCraftGrindstone() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ItemStackRequestActionCraftGrindstone();
 
-    MCAPI void* ctor$();
+    MCAPI int getRepairCost() const;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void _write$(class BinaryStream& stream) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemStackRequestActionCraftBase const* getCraftAction$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI int getFilteredStringIndex$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI struct ItemStackNetIdVariant const& getRecipeNetId$() const;
+    MCAPI ::ItemStackNetIdVariant const& $getRecipeNetId() const;
+    // NOLINTEND
 
-    MCAPI void postLoadItems_DEPRECATEDASKTYLAING$(class BlockPalette& blockPalette, bool isClientSide);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

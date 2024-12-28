@@ -3,19 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/DiggerItem.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class ItemStackBase;
+class RenderParams;
 // clang-format on
 
 class PickaxeItem : public ::DiggerItem {
@@ -26,41 +20,47 @@ public:
     PickaxeItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
+
+    // vIndex: 8
+    virtual void executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const /*override*/;
+
     // vIndex: 0
-    virtual ~PickaxeItem() = default;
-
-    // vIndex: 31
-    virtual bool canDestroySpecial(class Block const& block) const;
-
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
-
-    // vIndex: 77
-    virtual float getDestroySpeed(class ItemStackBase const& item, class Block const& block) const;
-
-    MCAPI PickaxeItem(std::string const& name, int id, class Item::Tier const& tier);
-
+    virtual ~PickaxeItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool const _isTierOneBlock(class BlockLegacy const& block) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PickaxeItem(::std::string const& name, int id, ::Item::Tier const& tier);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, class Item::Tier const& tier);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::Item::Tier const& tier);
+    // NOLINTEND
 
-    MCAPI bool canDestroySpecial$(class Block const& block) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getDestroySpeed$(class ItemStackBase const& item, class Block const& block) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI int getEnchantSlot$() const;
+    MCAPI void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,12 @@
 
 namespace Core::ZipUtils {
 
-enum class ZipResult {};
-
+enum class ZipResult : int {
+    Ok            = 0,
+    ZipError      = 1,
+    ParamError    = 2,
+    BadZipFile    = 3,
+    InternalError = 4,
 };
+
+}

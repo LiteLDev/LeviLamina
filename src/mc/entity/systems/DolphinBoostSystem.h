@@ -5,9 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class DolphinBoostSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct IsNearDolphinsFlagComponent;
+struct ScanForDolphinFlagComponent;
+struct ScanForDolphinTimerComponent;
+struct SwimSpeedMultiplierComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct DolphinBoostSystem {
 public:
     // prevent constructor by default
     DolphinBoostSystem& operator=(DolphinBoostSystem const&);
@@ -15,27 +25,27 @@ public:
     DolphinBoostSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickScan(
-        class StrictEntityContext const&                                 context,
-        struct ActorDataFlagComponent const&                             synchedActorDataComponent,
-        struct ScanForDolphinTimerComponent&                             scanForDolphinTimerComponent,
-        class EntityModifier<class FlagComponent<struct ScanForDolphin>> modifier
+        ::StrictEntityContext const&                    context,
+        ::ActorDataFlagComponent const&                 synchedActorDataComponent,
+        ::ScanForDolphinTimerComponent&                 scanForDolphinTimerComponent,
+        ::EntityModifier<::ScanForDolphinFlagComponent> modifier
     );
 
     MCAPI static void _tickSwimSpeedModifier(
-        class StrictEntityContext const&,
-        struct ActorDataFlagComponent const&                           synchedActorDataComponent,
-        struct SwimSpeedMultiplierComponent&                           swimSpeedMultiplierComponent,
-        class Optional<class FlagComponent<struct ScanForDolphin>>     scanForDolphinFlagComponent,
-        class Optional<class FlagComponent<struct IsNearDolphinsFlag>> isNearDolphinComponent
+        ::StrictEntityContext const&,
+        ::ActorDataFlagComponent const&           synchedActorDataComponent,
+        ::SwimSpeedMultiplierComponent&           swimSpeedMultiplierComponent,
+        ::Optional<::ScanForDolphinFlagComponent> scanForDolphinFlagComponent,
+        ::Optional<::IsNearDolphinsFlagComponent> isNearDolphinComponent
     );
 
-    MCAPI static struct TickingSystemWithInfo createFindDolphinsSystem();
+    MCAPI static ::TickingSystemWithInfo createFindDolphinsSystem();
 
-    MCAPI static struct TickingSystemWithInfo createScanSystem();
+    MCAPI static ::TickingSystemWithInfo createScanSystem();
 
-    MCAPI static struct TickingSystemWithInfo createSwimSpeedModifierSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSwimSpeedModifierSystem();
     // NOLINTEND
 };

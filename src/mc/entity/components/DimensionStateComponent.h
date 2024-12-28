@@ -5,7 +5,19 @@
 class DimensionStateComponent {
 public:
     // DimensionStateComponent inner types define
-    enum class DimensionState {};
+    enum class DimensionState : int {
+        Ready                 = 0,
+        Pending               = 1,
+        WaitingServerResponse = 2,
+        WaitingArea           = 3,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkc474f6;
+    ::ll::UntypedStorage<8, 8> mUnk6df981;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -14,15 +26,14 @@ public:
     DimensionStateComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit DimensionStateComponent(std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
-
+    MCAPI explicit DimensionStateComponent(::std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
-
+    MCAPI void* $ctor(::std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
     // NOLINTEND
 };

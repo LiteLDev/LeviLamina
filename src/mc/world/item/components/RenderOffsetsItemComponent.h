@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class RenderOffsetsItemComponent {
+class RenderOffsetsItemComponent : public ::NetworkedItemComponent<::RenderOffsetsItemComponent> {
 public:
     // RenderOffsetsItemComponent inner types declare
     // clang-format off
@@ -19,21 +22,15 @@ public:
     // clang-format on
 
     // RenderOffsetsItemComponent inner types define
-    struct ItemTransforms {
-    public:
-        // prevent constructor by default
-        ItemTransforms& operator=(ItemTransforms const&);
-        ItemTransforms(ItemTransforms const&);
-        ItemTransforms();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI bool operator==(struct RenderOffsetsItemComponent::ItemTransforms const&) const;
-
-        // NOLINTEND
-    };
-
     struct TRS {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk51bcea;
+        ::ll::UntypedStorage<4, 12> mUnk899447;
+        ::ll::UntypedStorage<4, 12> mUnk7e2076;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         TRS& operator=(TRS const&);
@@ -41,86 +38,103 @@ public:
         TRS();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(struct RenderOffsetsItemComponent::TRS const&) const;
-
+        MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
         // NOLINTEND
     };
+
+    struct ItemTransforms {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 36> mUnka00cee;
+        ::ll::UntypedStorage<4, 36> mUnk5e1775;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemTransforms& operator=(ItemTransforms const&);
+        ItemTransforms(ItemTransforms const&);
+        ItemTransforms();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
+        // NOLINTEND
+    };
+
+    enum class Hand : int {
+        MainHand = 0,
+        OffHand  = 1,
+    };
+
+    enum class Perspective : int {
+        FirstPerson = 0,
+        ThirdPerson = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 72> mUnk982987;
+    ::ll::UntypedStorage<4, 72> mUnk20441b;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&);
     RenderOffsetsItemComponent(RenderOffsetsItemComponent const&);
-    RenderOffsetsItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RenderOffsetsItemComponent() = default;
-
-    // vIndex: 1
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2
-    virtual void writeSettings();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
-    // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
-
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~RenderOffsetsItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RenderOffsetsItemComponent();
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
-    MCAPI void _initializeComponent$();
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
+    // NOLINTEND
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
-
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

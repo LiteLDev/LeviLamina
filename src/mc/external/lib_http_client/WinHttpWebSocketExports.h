@@ -12,4 +12,4 @@ public:
     WinHttpWebSocketExports();
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

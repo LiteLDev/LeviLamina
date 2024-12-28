@@ -12,24 +12,29 @@ namespace JsonUtil { class EmptyClass; }
 
 struct EquipmentTableDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 56> mUnkfce7f6;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     EquipmentTableDefinition& operator=(EquipmentTableDefinition const&);
     EquipmentTableDefinition(EquipmentTableDefinition const&);
     EquipmentTableDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EquipmentTableDefinition>> const&
-            root
-    );
-
+    MCAPI void _setLootTable(::std::string const& lootTable);
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void _setLootTable(std::string const& lootTable);
-
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EquipmentTableDefinition>> const&
+            root
+    );
     // NOLINTEND
 };

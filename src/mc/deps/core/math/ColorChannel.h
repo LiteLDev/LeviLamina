@@ -4,19 +4,20 @@
 
 class ColorChannel {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkc791a4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ColorChannel& operator=(ColorChannel const&);
     ColorChannel(ColorChannel const&);
     ColorChannel();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static class ColorChannel const& INVALID();
-
+    MCAPI static ::ColorChannel const& INVALID();
     // NOLINTEND
 };

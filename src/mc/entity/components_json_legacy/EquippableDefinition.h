@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class EquippableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EquippableDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk2e94dc;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EquippableDefinition& operator=(EquippableDefinition const&);
@@ -18,13 +26,16 @@ public:
     EquippableDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, class EquippableComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::EquippableComponent& component) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
     MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>>&
-            root
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EquippableDefinition>>& root
     );
-
     // NOLINTEND
 };

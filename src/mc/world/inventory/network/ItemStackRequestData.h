@@ -3,12 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
-#include "mc/world/inventory/network/TypedClientNetId.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ItemStackRequestAction;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 class ItemStackRequestData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 16> mUnk7b7070;
+    ::ll::UntypedStorage<8, 24> mUnk55835a;
+    ::ll::UntypedStorage<4, 4>  mUnkac5613;
+    ::ll::UntypedStorage<8, 24> mUnk586044;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemStackRequestData& operator=(ItemStackRequestData const&);
@@ -16,32 +30,24 @@ public:
     ItemStackRequestData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const& getActions() const;
+    MCAPI ::ItemStackRequestAction const* tryFindAction(::ItemStackRequestActionType type) const;
 
-    MCAPI ItemStackRequestId const& getRequestId() const;
-
-    MCAPI std::vector<std::string> const& getStringsToFilter() const;
-
-    MCAPI ::TextProcessingEventOrigin const& getStringsToFilterOrigin() const;
-
-    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
-
-    MCAPI class ItemStackRequestAction const* tryFindAction(::ItemStackRequestActionType type) const;
-
-    MCAPI void write(class BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~ItemStackRequestData();
-
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>>
-    read(class ReadOnlyBinaryStream& stream);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

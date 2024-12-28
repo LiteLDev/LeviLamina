@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,31 +20,40 @@ public:
     ThrownPotionEffectSubcomponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ThrownPotionEffectSubcomponent() = default;
-
     // vIndex: 2
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(::Json::Value&) const /*override*/;
 
     // vIndex: 3
-    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
+    virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName();
+    virtual char const* getName() /*override*/;
 
+    // vIndex: 0
+    virtual ~ThrownPotionEffectSubcomponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void doOnHitEffect$(class Actor& owner, class ProjectileComponent& component);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $writetoJSON(::Json::Value&) const;
 
-    MCAPI char const* getName$();
+    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI void writetoJSON$(class Json::Value&) const;
+    MCAPI char const* $getName();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

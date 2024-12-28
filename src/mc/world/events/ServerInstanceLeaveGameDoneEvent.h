@@ -4,21 +4,26 @@
 
 struct ServerInstanceLeaveGameDoneEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk328481;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ServerInstanceLeaveGameDoneEvent& operator=(ServerInstanceLeaveGameDoneEvent const&);
     ServerInstanceLeaveGameDoneEvent(ServerInstanceLeaveGameDoneEvent const&);
     ServerInstanceLeaveGameDoneEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

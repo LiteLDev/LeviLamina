@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class HashedString;
 // clang-format on
 
 class MultiRecipe : public ::Recipe {
@@ -18,35 +18,52 @@ public:
     MultiRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MultiRecipe() = default;
+    // vIndex: 9
+    virtual bool isMultiRecipe() const /*override*/;
 
     // vIndex: 4
-    virtual bool isShapeless() const;
-
-    // vIndex: 9
-    virtual bool isMultiRecipe() const;
+    virtual bool isShapeless() const /*override*/;
 
     // vIndex: 10
-    virtual bool hasDataDrivenResult() const;
+    virtual bool hasDataDrivenResult() const /*override*/;
 
-    MCAPI MultiRecipe(std::string const& recipeId, class HashedString tag);
-
+    // vIndex: 0
+    virtual ~MultiRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MultiRecipe(::std::string const& recipeId, ::HashedString tag);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& recipeId, class HashedString tag);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& recipeId, ::HashedString tag);
+    // NOLINTEND
 
-    MCAPI bool hasDataDrivenResult$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isMultiRecipe$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isMultiRecipe() const;
 
-    MCAPI bool isShapeless$() const;
+    MCAPI bool $isShapeless() const;
 
+    MCAPI bool $hasDataDrivenResult() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

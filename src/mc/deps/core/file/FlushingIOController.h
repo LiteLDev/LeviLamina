@@ -11,16 +11,62 @@ namespace Bedrock {
 
 class FlushingIOController {
 public:
+    // FlushingIOController inner types declare
+    // clang-format off
+    class Flusher;
+    // clang-format on
+
+    // FlushingIOController inner types define
+    class Flusher {
+    public:
+        // prevent constructor by default
+        Flusher& operator=(Flusher const&);
+        Flusher(Flusher const&);
+        Flusher();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        // vIndex: 0
+        virtual ~Flusher();
+
+        // vIndex: 1
+        virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka30178;
+    ::ll::UntypedStorage<8, 8> mUnkc26063;
+    ::ll::UntypedStorage<8, 8> mUnk5f53e1;
+    ::ll::UntypedStorage<8, 8> mUnk77d4a1;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FlushingIOController& operator=(FlushingIOController const&);
     FlushingIOController(FlushingIOController const&);
     FlushingIOController();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Core::Result flush();
-
+    MCAPI ::Core::Result flush();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

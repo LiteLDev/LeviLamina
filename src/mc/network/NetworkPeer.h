@@ -13,43 +13,59 @@ public:
     // clang-format on
 
     // NetworkPeer inner types define
-    enum class DataStatus : int {
-        HasData        = 0x0,
-        NoData         = 0x1,
-        BrokenData     = 0x2,
-        ConnectionLost = 0x3,
-    };
+    using PacketRecvTimepoint = ::std::chrono::steady_clock::time_point;
+
+    using PacketRecvTimepointPtr = ::std::shared_ptr<::std::chrono::steady_clock::time_point>;
 
     enum class Reliability : int {
-        Reliable            = 0x0,
-        ReliableOrdered     = 0x1,
-        Unreliable          = 0x2,
-        UnreliableSequenced = 0x3,
+        Reliable            = 0,
+        ReliableOrdered     = 1,
+        Unreliable          = 2,
+        UnreliableSequenced = 3,
+    };
+
+    enum class DataStatus : int {
+        HasData    = 0,
+        NoData     = 1,
+        BrokenData = 2,
     };
 
     enum class NetworkLoad : int {
-        Unrestricted = 0x0,
-        Low          = 0x1,
-        Medium       = 0x2,
-        High         = 0x3,
+        Unrestricted = 0,
+        Low          = 1,
+        Medium       = 2,
+        High         = 3,
     };
-
-    using PacketRecvTimepoint = std::chrono::steady_clock::time_point;
 
     struct NetworkStatus {
     public:
-        NetworkLoad mLoad;                   // this+0x0
-        int         mCurrentPing;            // this+0x4
-        int         mAveragePing;            // this+0x8
-        int         mApproximateMaxBps;      // this+0xC
-        float       mCurrentPacketLoss;      // this+0x10
-        float       mAveragePacketLoss;      // this+0x14
-        uint64      mTotalBytesReceived;     // this+0x18
-        uint64      mTotalBytesSent;         // this+0x20
-        uint64      mCurrentBytesSendBuffer; // this+0x28
-        int         mICEState;               // this+0x30
-        bool        mUsingRelays;            // this+0x34
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::NetworkPeer::NetworkLoad> mLoad;
+        ::ll::TypedStorage<4, 4, int>                        mCurrentPing;
+        ::ll::TypedStorage<4, 4, int>                        mAveragePing;
+        ::ll::TypedStorage<4, 4, int>                        mApproximateMaxBps;
+        ::ll::TypedStorage<4, 4, float>                      mCurrentPacketLoss;
+        ::ll::TypedStorage<4, 4, float>                      mAveragePacketLoss;
+        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesReceived;
+        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesSent;
+        ::ll::TypedStorage<8, 8, uint64>                     mCurrentBytesSendBuffer;
+        ::ll::TypedStorage<4, 4, int>                        mICEState;
+        ::ll::TypedStorage<1, 1, bool>                       mUsingRelays;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NetworkStatus& operator=(NetworkStatus const&);
+        NetworkStatus(NetworkStatus const&);
+        NetworkStatus();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::NetworkPeer>> mPeer;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -57,52 +73,56 @@ public:
     NetworkPeer(NetworkPeer const&);
     NetworkPeer();
 
-    std::shared_ptr<NetworkPeer> mPeer; // this+0x8
-
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~NetworkPeer();
 
     // vIndex: 1
-    virtual void
-    sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible) = 0;
+    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
 
     // vIndex: 2
     virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<PacketRecvTimepoint> const& timepointPtr) = 0;
+    receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
 
     // vIndex: 3
-    virtual struct NetworkStatus getNetworkStatus() const = 0;
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
     // vIndex: 4
     virtual void update();
 
     // vIndex: 5
-    virtual void flush(std::function<void()>&& callback);
+    virtual void flush(::std::function<void()>&& callback);
 
     // vIndex: 6
     virtual bool isLocal() const;
 
     // vIndex: 7
     virtual bool isEncrypted() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $update();
 
-    MCAPI void flush$(std::function<void()>&& callback);
+    MCAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI bool isEncrypted$() const;
+    MCAPI bool $isLocal() const;
 
-    MCAPI bool isLocal$() const;
+    MCAPI bool $isEncrypted() const;
+    // NOLINTEND
 
-    MCAPI void update$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

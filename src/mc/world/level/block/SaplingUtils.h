@@ -2,11 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace SaplingUtils {
-// NOLINTBEGIN
-MCAPI bool isNearFlowerBlock(class BlockSource& region, class BlockPos const& pos);
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
 
-MCAPI bool shouldTreeContainBeehive(class BlockSource& region, class BlockPos const& pos, class Random& random);
+namespace SaplingUtils {
+// functions
+// NOLINTBEGIN
+MCAPI bool isNearFlowerBlock(::BlockSource& region, ::BlockPos const& pos);
+
+MCAPI bool shouldTreeContainBeehive(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 // NOLINTEND
 
-}; // namespace SaplingUtils
+} // namespace SaplingUtils

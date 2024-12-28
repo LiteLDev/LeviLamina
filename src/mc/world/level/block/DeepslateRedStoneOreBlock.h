@@ -3,19 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/RedStoneOreBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Random;
 // clang-format on
 
 class DeepslateRedStoneOreBlock : public ::RedStoneOreBlock {
@@ -26,35 +23,52 @@ public:
     DeepslateRedStoneOreBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 151
+    virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
     // vIndex: 0
-    virtual ~DeepslateRedStoneOreBlock() = default;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 163
-    virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI DeepslateRedStoneOreBlock(std::string const& nameId, int id, bool lit);
-
+    virtual ~DeepslateRedStoneOreBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DeepslateRedStoneOreBlock(::std::string const& nameId, int id, bool lit);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool lit);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
+    // NOLINTEND
 
-    MCAPI void _lightUpBlock$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
+    MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

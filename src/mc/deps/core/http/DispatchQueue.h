@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
-#include "mc/deps/core/threading/AsyncStatus.h"
+#include "mc/deps/core/threading/AsyncResultBase.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 // clang-format on
@@ -21,64 +20,81 @@ public:
     // DispatchQueue inner types declare
     // clang-format off
     class AsyncQueueResult;
+    struct Compare;
     // clang-format on
 
     // DispatchQueue inner types define
-    class AsyncQueueResult {
+    class AsyncQueueResult : public ::Bedrock::Threading::AsyncResultBase<::Bedrock::Http::Response> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkc7d5ff;
+        ::ll::UntypedStorage<8, 16> mUnk16d853;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         AsyncQueueResult& operator=(AsyncQueueResult const&);
         AsyncQueueResult(AsyncQueueResult const&);
-        AsyncQueueResult();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~AsyncQueueResult() = default;
-
-        // vIndex: 1
-        virtual ::Bedrock::Threading::AsyncStatus getStatus() const;
-
-        // vIndex: 2
-        virtual std::error_code getError() const;
-
-        // vIndex: 3
-        virtual void cancel();
-
-        // vIndex: 4
-        virtual class Bedrock::Http::Response getResult() const;
-
-        // vIndex: 5
-        virtual void addOnComplete(
-            std::function<void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)> callback
-        );
-
         // vIndex: 6
-        virtual void _cancel();
+        virtual void _cancel() /*override*/;
 
+        // vIndex: 0
+        virtual ~AsyncQueueResult() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI AsyncQueueResult();
+        // NOLINTEND
 
-        MCAPI void _cancel$();
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+        // NOLINTEND
 
-        MCAPI void addOnComplete$(
-            std::function<void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)> callback
-        );
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void cancel$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI void $_cancel();
+        // NOLINTEND
 
-        MCAPI std::error_code getError$() const;
-
-        MCAPI class Bedrock::Http::Response getResult$() const;
-
-        MCAPI ::Bedrock::Threading::AsyncStatus getStatus$() const;
-
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+    struct Compare {
+    public:
+        // prevent constructor by default
+        Compare& operator=(Compare const&);
+        Compare(Compare const&);
+        Compare();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnked6186;
+    ::ll::UntypedStorage<4, 4>   mUnkd0e8a3;
+    ::ll::UntypedStorage<8, 336> mUnk88bbd3;
+    ::ll::UntypedStorage<8, 24>  mUnk2d9653;
+    ::ll::UntypedStorage<8, 32>  mUnkb12c33;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -87,44 +103,55 @@ public:
     DispatchQueue();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DispatchQueue();
+    virtual ~DispatchQueue() /*override*/;
 
     // vIndex: 1
-    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&& request);
-
-    MCAPI explicit DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess> childProcess);
-
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    send(::Bedrock::Http::Request&& request) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-          _addNewRequest(class Bedrock::Http::Request&& request);
+    MCAPI explicit DispatchQueue(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    _addNewRequest(::Bedrock::Http::Request&& request);
 
     MCAPI void _cleanUpCompletedRequests();
 
     MCAPI void _handlePendingRequest();
 
     MCAPI void _onCompletion();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::shared_ptr<class Bedrock::Http::DispatcherProcess> childProcess);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    $send(::Bedrock::Http::Request&& request);
+    // NOLINTEND
 
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-          send$(class Bedrock::Http::Request&& request);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

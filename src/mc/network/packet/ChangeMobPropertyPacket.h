@@ -1,57 +1,88 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
+
 class ChangeMobPropertyPacket : public ::Packet {
 public:
-    std::string   mPropName;           // this+0x30
-    bool          mBoolComponentVal;   // this+0x50
-    float         mFloatComponentVal;  // this+0x54
-    int           mIntComponentVal;    // this+0x58
-    std::string   mStringComponentVal; // this+0x60
-    ActorUniqueID mActorId;            // this+0x80
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChangeMobPropertyPacket() = default;
-
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
-
-    // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
-
-    // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI ChangeMobPropertyPacket();
-
+    ::ll::TypedStorage<8, 32, ::std::string>  mPropName;
+    ::ll::TypedStorage<1, 1, bool>            mBoolComponentVal;
+    ::ll::TypedStorage<4, 4, float>           mFloatComponentVal;
+    ::ll::TypedStorage<4, 4, int>             mIntComponentVal;
+    ::ll::TypedStorage<8, 32, ::std::string>  mStringComponentVal;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ChangeMobPropertyPacket& operator=(ChangeMobPropertyPacket const&);
+    ChangeMobPropertyPacket(ChangeMobPropertyPacket const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    // vIndex: 4
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    // vIndex: 8
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI std::string getName$() const;
+    // vIndex: 0
+    virtual ~ChangeMobPropertyPacket() /*override*/;
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChangeMobPropertyPacket();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

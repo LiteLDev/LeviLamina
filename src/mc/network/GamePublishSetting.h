@@ -5,11 +5,11 @@
 namespace Social {
 
 enum class GamePublishSetting : int {
-    NoMultiPlay      = 0x0,
-    InviteOnly       = 0x1,
-    FriendsOnly      = 0x2,
-    FriendsOfFriends = 0x3,
-    Public           = 0x4,
+    NoMultiPlay      = 0,
+    InviteOnly       = 1,
+    FriendsOnly      = 2,
+    FriendsOfFriends = 3,
+    Public           = 4,
 };
 
-};
+}

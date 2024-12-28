@@ -6,9 +6,18 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class VillagerV2PreTravelSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct SkipMobTravelComponent;
+struct TickingSystemWithInfo;
+struct VillagerV2FlagComponent;
+// clang-format on
+
+struct VillagerV2PreTravelSystem {
 public:
     // prevent constructor by default
     VillagerV2PreTravelSystem& operator=(VillagerV2PreTravelSystem const&);
@@ -16,28 +25,22 @@ public:
     VillagerV2PreTravelSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doVillagerV2PreTravel(
-        class StrictEntityContext const&                                    entity,
-        struct ActorDataFlagComponent const&                                synchedActorDataComponent,
-        class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>> modifier
+        ::StrictEntityContext const&               entity,
+        ::ActorDataFlagComponent const&            synchedActorDataComponent,
+        ::EntityModifier<::SkipMobTravelComponent> modifier
     );
 
     MCAPI static void _tick(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct VillagerV2Flag>>,
-            struct ActorDataFlagComponent const>                            view,
-        class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>> modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::VillagerV2FlagComponent>,
+            ::ActorDataFlagComponent const>        view,
+        ::EntityModifier<::SkipMobTravelComponent> modifier
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

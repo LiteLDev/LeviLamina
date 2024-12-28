@@ -3,17 +3,37 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/world/level/ILevelSoundManagerConnector.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-namespace Bedrock::PubSub { class Subscription; }
+class IDimension;
+class LevelEventCoordinator;
+class Player;
+class SoundPlayerInterface;
+class Vec3;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
-class LevelSoundManager : public ::Bedrock::EnableNonOwnerReferences {
+class LevelSoundManager : public ::ILevelSoundManagerConnector {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk406f62;
+    ::ll::UntypedStorage<8, 8>   mUnk7e7c75;
+    ::ll::UntypedStorage<1, 1>   mUnk9b5acc;
+    ::ll::UntypedStorage<1, 1>   mUnkc1d14b;
+    ::ll::UntypedStorage<8, 24>  mUnk56a928;
+    ::ll::UntypedStorage<8, 128> mUnka99fae;
+    ::ll::UntypedStorage<8, 128> mUnk334827;
+    ::ll::UntypedStorage<8, 128> mUnkf749fa;
+    ::ll::UntypedStorage<8, 128> mUnkc1d9ac;
+    ::ll::UntypedStorage<8, 128> mUnk19d345;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LevelSoundManager& operator=(LevelSoundManager const&);
@@ -21,76 +41,132 @@ public:
     LevelSoundManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::Bedrock::PubSub::Connector<void(
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorDefinitionIdentifier const&,
+        bool,
+        bool
+    )>&
+    getOnLevelSoundEventConnector() /*override*/;
+
+    // vIndex: 2
+    virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    getOnLevelSoundEventWithVolumeAndPitchConnector() /*override*/;
+
+    // vIndex: 3
+    virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() /*override*/;
+
+    // vIndex: 4
+    virtual ::Bedrock::PubSub::Connector<void()>& getOnStopAllLevelSoundsEventConnector() /*override*/;
+
+    // vIndex: 5
+    virtual ::Bedrock::PubSub::Connector<void()>& getOnStopMusicEventConnector() /*override*/;
+
     // vIndex: 0
-    virtual ~LevelSoundManager();
+    virtual ~LevelSoundManager() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LevelSoundManager(
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        bool                                                         isClientSide,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator>       levelEventCoordinator,
+        bool                                                         isServerAuthSoundEnabled
+    );
 
     MCAPI void broadcastSoundEvent(
-        class IDimension&                       dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& identifier,
-        bool                                    isBabyMob,
-        bool                                    isGlobal,
-        class Player*                           primaryLocalPlayer
+        ::IDimension&                          dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     identifier,
+        bool                                   isBabyMob,
+        bool                                   isGlobal,
+        ::Player*                              primaryLocalPlayer
     );
 
     MCAPI void playPredictiveSynchronizedSound(
-        class IDimension&                       dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        class Player*                           targetPlayer,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+        ::IDimension&                          dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Player*                              targetPlayer,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
 
-    MCAPI void playSound(std::string const& name, class Vec3 const& pos, float volume, float pitch);
-
     MCAPI void playSound(
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
 
     MCAPI void playSynchronizedSound_DEPRECATED(
-        class IDimension&                       dimension,
-        ::Puv::Legacy::LevelSoundEvent          type,
-        class Vec3 const&                       pos,
-        class Player*                           primaryLocalPlayer,
-        int                                     data,
-        struct ActorDefinitionIdentifier const& entityType,
-        bool                                    isBabyMob,
-        bool                                    isGlobal
+        ::IDimension&                          dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Player*                              primaryLocalPlayer,
+        int                                    data,
+        ::ActorDefinitionIdentifier const&     entityType,
+        bool                                   isBabyMob,
+        bool                                   isGlobal
     );
-
-    MCAPI class Bedrock::PubSub::Subscription
-    registerOnLevelSoundEventCallback(std::function<void(
-                                          ::Puv::Legacy::LevelSoundEvent,
-                                          class Vec3 const&,
-                                          int,
-                                          struct ActorDefinitionIdentifier const&,
-                                          bool,
-                                          bool
-                                      )> callback);
-
-    MCAPI void setLevelEventCoordinator(
-        gsl::not_null<class StackRefResult<class LevelEventCoordinator>> const& levelEventCoordinator
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
+        bool                                                         isClientSide,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator>       levelEventCoordinator,
+        bool                                                         isServerAuthSoundEnabled
+    );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Connector<void(
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorDefinitionIdentifier const&,
+        bool,
+        bool
+    )>&
+    $getOnLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    $getOnLevelSoundEventWithVolumeAndPitchConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

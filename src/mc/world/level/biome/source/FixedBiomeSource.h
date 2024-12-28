@@ -1,84 +1,114 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/Biome.h"
 
 // auto generated inclusion list
 #include "mc/world/level/biome/source/BiomeSource.h"
 
+// auto generated forward declare list
+// clang-format off
 class Biome;
+class BiomeArea;
+class BlockPos;
+class BoundingBox;
+class ChunkLocalNoiseCache;
+class LevelChunk;
+struct GetBiomeOptions;
+// clang-format on
 
 class FixedBiomeSource : public ::BiomeSource {
 public:
-    const Biome* mFixedBiome;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Biome const&> mFixedBiome;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     FixedBiomeSource& operator=(FixedBiomeSource const&);
     FixedBiomeSource(FixedBiomeSource const&);
     FixedBiomeSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FixedBiomeSource() = default;
-
     // vIndex: 1
-    virtual void fillBiomes(class LevelChunk& levelChunk, class ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
-
-    // vIndex: 2
-    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
-
-    // vIndex: 3
-    virtual class BiomeArea
-    getBiomeArea(class BoundingBox const& area, uint scale, struct GetBiomeOptions const& getBiomeOptions) const;
+    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const
+        /*override*/;
 
     // vIndex: 4
-    virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const>) const;
-
-    // vIndex: 5
-    virtual class Biome const* getBiome(struct GetBiomeOptions const& getBiomeOptions) const;
-
-    // vIndex: 6
-    virtual class Biome const* getBiome(int blockX, int blockY, int blockZ) const;
+    virtual bool containsOnly(int, int, int, int, ::gsl::span<uint64 const> allowed) const /*override*/;
 
     // vIndex: 7
-    virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
+    virtual ::Biome const* getBiome(::BlockPos const& blockPos) const /*override*/;
+
+    // vIndex: 6
+    virtual ::Biome const* getBiome(::GetBiomeOptions const& getBiomeOptions) const /*override*/;
+
+    // vIndex: 5
+    virtual ::Biome const* getBiome(int blockX, int blockY, int blockZ) const /*override*/;
+
+    // vIndex: 3
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
+
+    // vIndex: 2
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const /*override*/;
 
     // vIndex: 8
-    virtual bool has(uint64 id) const;
+    virtual bool has(uint64 id) const /*override*/;
 
     // vIndex: 9
-    virtual bool hasByHashId(uint64 id) const;
+    virtual bool hasByHashId(uint64 id) const /*override*/;
 
-    MCAPI explicit FixedBiomeSource(class Biome const& fixedBiome);
-
+    // vIndex: 0
+    virtual ~FixedBiomeSource() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit FixedBiomeSource(::Biome const& fixedBiome);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Biome const& fixedBiome);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Biome const& fixedBiome);
+    // NOLINTEND
 
-    MCAPI bool containsOnly$(int, int, int, int, gsl::span<uint64 const>) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void fillBiomes$(class LevelChunk& levelChunk, class ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
 
-    MCAPI class Biome const* getBiome$(struct GetBiomeOptions const& getBiomeOptions) const;
+    MCAPI bool $containsOnly(int, int, int, int, ::gsl::span<uint64 const> allowed) const;
 
-    MCAPI class Biome const* getBiome$(int blockX, int blockY, int blockZ) const;
+    MCAPI ::Biome const* $getBiome(::BlockPos const& blockPos) const;
 
-    MCAPI class Biome const* getBiome$(class BlockPos const& blockPos) const;
+    MCAPI ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
+    MCAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
-    MCAPI class BiomeArea
-    getBiomeArea$(class BoundingBox const& area, uint scale, struct GetBiomeOptions const& getBiomeOptions) const;
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI bool has$(uint64 id) const;
+    MCAPI ::BiomeArea
+    $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI bool hasByHashId$(uint64 id) const;
+    MCAPI bool $has(uint64 id) const;
 
+    MCAPI bool $hasByHashId(uint64 id) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

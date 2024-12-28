@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CompareVehiclePositionSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct CompareVehiclePositionSystem {
 public:
     // prevent constructor by default
     CompareVehiclePositionSystem& operator=(CompareVehiclePositionSystem const&);
@@ -10,8 +15,8 @@ public:
     CompareVehiclePositionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

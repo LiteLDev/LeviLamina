@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/structure/NBBridgeCrossing.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Random;
+// clang-format on
+
 class NBStartPiece : public ::NBBridgeCrossing {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkf837b7;
+    ::ll::UntypedStorage<8, 24> mUnk50f3f8;
+    ::ll::UntypedStorage<8, 24> mUnk323fd5;
+    ::ll::UntypedStorage<8, 24> mUnka13de3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NBStartPiece& operator=(NBStartPiece const&);
@@ -14,25 +28,42 @@ public:
     NBStartPiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NBStartPiece() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
-    MCAPI NBStartPiece(class Random& random, int west, int north);
-
+    // vIndex: 0
+    virtual ~NBStartPiece() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NBStartPiece(::Random& random, int west, int north);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Random& random, int west, int north);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Random& random, int west, int north);
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

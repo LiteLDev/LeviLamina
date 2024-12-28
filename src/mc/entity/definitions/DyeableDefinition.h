@@ -12,17 +12,21 @@ namespace JsonUtil { class EmptyClass; }
 
 struct DyeableDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk72e6d8;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DyeableDefinition& operator=(DyeableDefinition const&);
     DyeableDefinition(DyeableDefinition const&);
     DyeableDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&
-            root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DyeableDefinition>>& root);
     // NOLINTEND
 };

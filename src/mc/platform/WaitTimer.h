@@ -4,13 +4,14 @@
 
 namespace OS {
 
-class WaitTimer {
+struct WaitTimer {
 public:
     // prevent constructor by default
     WaitTimer& operator=(WaitTimer const&);
     WaitTimer(WaitTimer const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void Cancel();
 
@@ -25,17 +26,19 @@ public:
     MCAPI WaitTimer();
 
     MCAPI ~WaitTimer();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace OS
+} // namespace OS

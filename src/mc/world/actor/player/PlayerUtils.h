@@ -4,16 +4,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
+class Player;
 namespace mce { class Color; }
 // clang-format on
 
 namespace PlayerUtils {
+// functions
 // NOLINTBEGIN
-MCAPI void addItem(class Player& player, class ItemStack& itemToAdd);
+MCAPI void addItem(::Player& player, ::ItemStack& itemToAdd);
 
-MCAPI class mce::Color getPlayerColor(class Player const& player);
+MCAPI ::mce::Color getPlayerColor(::Player const& player);
 
-MCAPI void replaceCurrentItem(class Player& player, class ItemStack& newItem);
+MCAPI void replaceCurrentItem(::Player& player, ::ItemStack& newItem);
+
+MCAPI bool willPlayerPushLoadingScreenForDimensionTransfer(::Player const& player);
 // NOLINTEND
 
-}; // namespace PlayerUtils
+} // namespace PlayerUtils

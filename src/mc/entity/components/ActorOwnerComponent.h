@@ -2,7 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class ActorOwnerComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk2bb37a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorOwnerComponent& operator=(ActorOwnerComponent const&);
@@ -10,29 +21,32 @@ public:
     ActorOwnerComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorOwnerComponent(class ActorOwnerComponent&& other);
+    MCAPI ActorOwnerComponent(::ActorOwnerComponent&& other);
 
-    MCAPI explicit ActorOwnerComponent(std::unique_ptr<class Actor> uniqueActor);
+    MCAPI explicit ActorOwnerComponent(::std::unique_ptr<::Actor> uniqueActor);
 
-    MCAPI class Actor& getActor() const;
+    MCAPI ::Actor& getActor() const;
 
-    MCAPI class Actor& getActor();
+    MCAPI ::Actor& getActor();
 
-    MCAPI class ActorOwnerComponent& operator=(class ActorOwnerComponent&& other);
+    MCAPI ::ActorOwnerComponent& operator=(::ActorOwnerComponent&& other);
 
     MCAPI ~ActorOwnerComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::unique_ptr<class Actor> uniqueActor);
+    MCAPI void* $ctor(::ActorOwnerComponent&& other);
 
-    MCAPI void* ctor$(class ActorOwnerComponent&& other);
+    MCAPI void* $ctor(::std::unique_ptr<::Actor> uniqueActor);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

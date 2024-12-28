@@ -4,6 +4,6 @@
 
 namespace xbox::httpclient {
 
-enum class proxy_type {};
+enum class proxy_type : uint {};
 
-};
+}

@@ -1,12 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/AvailableCommandsPacket.h"
-#include "mc/server/commands/CommandCompareOperator.h"
-#include "mc/server/commands/CommandFlag.h"
-#include "mc/server/commands/CommandOperator.h"
-#include "mc/server/commands/CommandVersion.h"
-#include "mc/server/commands/WildcardCommandSelector.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
@@ -20,1014 +14,1152 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class AvailableCommandsPacket;
+class Command;
+class CommandOrigin;
+class CommandParameterData;
+class CommandRunStats;
+class CommandSelectorBase;
+class CommandVersion;
+class IMinecraftEventing;
+class Packet;
+struct ActorSelectorArgs;
+struct CommandFlag;
+struct CommandSyntaxInformation;
 namespace Json { class Value; }
 // clang-format on
-
-class Command;
-class CommandParameterData;
-class CommandFilePath;
-class CommandIntegerRange;
-class CommandMessage;
-class CommandPositionFloat;
-class CommandRawText;
-class CommandWildcardInt;
-class BlockStateCommandParam;
-class CommandChainedSubcommand;
-class Packet;
-class RelativeFloat;
 
 class CommandRegistry {
 public:
     // CommandRegistry inner types declare
     // clang-format off
     struct ChainedSubcommand;
+    struct ConstrainedValue;
     struct Enum;
+    struct Factorization;
     struct LexicalToken;
+    struct OptionalParameterChain;
     struct Overload;
-    class ParamSymbols;
+    struct ParamSymbols;
     struct ParseRule;
     struct ParseTable;
     struct ParseToken;
-    struct Signature;
-    class Symbol;
     class Parser;
     struct RegistryState;
+    struct SemanticInfo;
+    struct Signature;
     struct SoftEnum;
+    class Symbol;
     struct SymbolHasher;
+    struct SymbolPairHasher;
     // clang-format on
 
     // CommandRegistry inner types define
+    class Parser {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::CommandRegistry const&>             mRegistry;
+        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseTable const*> mParseTable;
+        ::ll::TypedStorage<8, 40, ::std::deque<::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::ParseToken*>>>
+                                                                                   mStack;
+        ::ll::TypedStorage<8, 32, ::CommandRegistry::LexicalToken>                 mNext;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   mInput;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> mRoot;
+        ::ll::TypedStorage<8, 32, ::std::string>                                   mError;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                    mErrorParams;
+        ::ll::TypedStorage<4, 4, int>                                              mVersion;
+        ::ll::TypedStorage<1, 1, bool>                                             mGenerateParams;
+        ::ll::TypedStorage<1, 1, bool>                                             mBreakAtEnd;
+        // NOLINTEND
 
-    using ParseFn =
-        bool (CommandRegistry::*)(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const;
-    using FactoryFn       = std::unique_ptr<class Command>();
-    using ProcessFunction = std::function<ParseToken*(ParseToken&, Symbol)>;
+    public:
+        // prevent constructor by default
+        Parser& operator=(Parser const&);
+        Parser(Parser const&);
+        Parser();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Parser(::CommandRegistry const& registry, int version);
+
+        MCAPI bool _parse(::std::string const& in);
+
+        MCAPI ::std::unique_ptr<::Command> createCommand(::CommandOrigin const& origin);
+
+        MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
+        createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
+
+        MCAPI ::std::string const& getErrorMessage() const;
+
+        MCAPI ::std::vector<::std::string> getErrorParams() const;
+
+        MCAPI bool parseCommand(::std::string const& in);
+
+        MCAPI bool parseSelector(::std::string const& in);
+
+        MCAPI ~Parser();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::CommandRegistry const& registry, int version);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    using ValueTypeID = uint64;
+
+    using EnumValueID = uint64;
+
+    using EnumID = uint;
+
+    using SoftEnumID = uint;
+
+    using ChainedSubcommandValueID = uint64;
+
+    using ChainedSubcommandID = uint;
+
+    using SemanticConstraintID = uchar;
+
+    using ConstrainedValueID = uint;
+
+    using ConstrainedValueLookupKey = ::std::pair<uint64, uint>;
+
+    using CommandOverrideFunctor = ::std::function<void(::CommandFlag&, ::std::string const&)>;
+
+    using ScoreboardScoreAccessor = ::std::function<int(bool&, ::std::string const&, ::Actor const&)>;
+
+    using HardTerminal = ::CommandLexer::TokenType;
 
     enum class HardNonTerminal : int {
-        Epsilon                   = 0x100000,
-        Int                       = 0x100001,
-        Float                     = 0x100002,
-        Val                       = 0x100003,
-        RVal                      = 0x100004,
-        WildcardInt               = 0x100005,
-        Operator                  = 0x100006,
-        CompareOperator           = 0x100007,
-        Selection                 = 0x100008,
-        StandaloneSelection       = 0x100009,
-        WildcardSelection         = 0x10000a,
-        NonIdSelector             = 0x10000b,
-        ScoresArg                 = 0x10000c,
-        ScoresArgs                = 0x10000d,
-        ScoreSelectParam          = 0x10000e,
-        ScoreSelector             = 0x10000f,
-        TagSelector               = 0x100010,
-        FilePath                  = 0x100011,
-        FilePathVal               = 0x100012,
-        FilePathCont              = 0x100013,
-        IntegerRangeVal           = 0x100014,
-        IntegerRangePostVal       = 0x100015,
-        IntegerRange              = 0x100016,
-        FullIntegerRange          = 0x100017,
-        RationalRangeVal          = 0x100018,
-        RationalRangePostVal      = 0x100019,
-        RationalRange             = 0x10001a,
-        FullRationalRange         = 0x10001b,
-        SelArgs                   = 0x10001c,
-        Args                      = 0x10001d,
-        Arg                       = 0x10001e,
-        MArg                      = 0x10001f,
-        MValue                    = 0x100020,
-        NameArg                   = 0x100021,
-        TypeArg                   = 0x100022,
-        FamilyArg                 = 0x100023,
-        HasPermissionArg          = 0x100024,
-        HasPermissionArgs         = 0x100025,
-        HasPermissionSelector     = 0x100026,
-        HasPermissionElement      = 0x100027,
-        HasPermissionElements     = 0x100028,
-        TagArg                    = 0x100029,
-        HasItemElement            = 0x10002a,
-        HasItemElements           = 0x10002b,
-        HasItemArg                = 0x10002c,
-        HasItemArgs               = 0x10002d,
-        HasItemSelector           = 0x10002e,
-        EquipmentSlotEnum         = 0x10002f,
-        PropertyValue             = 0x100030,
-        HasPropertyParamValue     = 0x100031,
-        HasPropertyParamEnumValue = 0x100032,
-        HasPropertyArg            = 0x100033,
-        HasPropertyArgs           = 0x100034,
-        HasPropertyElement        = 0x100035,
-        HasPropertyElements       = 0x100036,
-        HasPropertySelector       = 0x100037,
-        Id                        = 0x100038,
-        IdCont                    = 0x100039,
-        CoordXInt                 = 0x10003a,
-        CoordYInt                 = 0x10003b,
-        CoordZInt                 = 0x10003c,
-        CoordXFloat               = 0x10003d,
-        CoordYFloat               = 0x10003e,
-        CoordZFloat               = 0x10003f,
-        Position                  = 0x100040,
-        PositionFloat             = 0x100041,
-        MessageExp                = 0x100042,
-        Message                   = 0x100043,
-        MessageRoot               = 0x100044,
-        PostSelector              = 0x100045,
-        RawText                   = 0x100046,
-        RawTextCont               = 0x100047,
-        JsonValue                 = 0x100048,
-        JsonField                 = 0x100049,
-        JsonObject                = 0x10004a,
-        JsonObjectFields          = 0x10004b,
-        JsonObjectCont            = 0x10004c,
-        JsonArray                 = 0x10004d,
-        JsonArrayValues           = 0x10004e,
-        JsonArrayCont             = 0x10004f,
-        BlockState                = 0x100050,
-        BlockStateKey             = 0x100051,
-        BlockStateValue           = 0x100052,
-        BlockStateValues          = 0x100053,
-        BlockStateArray           = 0x100054,
-        BlockStateArrayCont       = 0x100055,
-        Command                   = 0x100056,
-        SlashCommand              = 0x100057,
-        CodeBuilderArg            = 0x100058,
-        CodeBuilderArgs           = 0x100059,
-        CodeBuilderSelectParam    = 0x10005a,
-        CodeBuilderSelector       = 0x10005b,
-        Count,
-    };
-
-    struct ChainedSubcommand {
-    public:
-        std::string                          name;   // this+0x0
-        Bedrock::typeid_t<CommandRegistry>   type;   // this+0x18
-        ParseFn                              parse;  // this+0x20
-        std::vector<std::pair<uint64, uint>> values; // this+0x30
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~ChainedSubcommand();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct Enum {
-
-        std::string                            name;   // this+0x0
-        Bedrock::typeid_t<CommandRegistry>     type;   // this+0x20
-        ParseFn                                parse;  // this+0x28
-        std::vector<std::pair<uint64, uint64>> values; // this+0x30
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~Enum();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct Overload {
-        CommandVersion                    version;       // this+0x0
-        FactoryFn*                        alloc;         // this+0x8
-        std::vector<CommandParameterData> params;        // this+0x10
-        int                               versionOffset; // this+0x28
-        bool                              chaining;      // this+0x2C
-        std::vector<Symbol>               paramsSymbol;  // this+0x30
-
-        Overload(CommandVersion, std::unique_ptr<class Command> (*)(void));
+        Epsilon                   = 1048576,
+        Int                       = 1048577,
+        Float                     = 1048578,
+        Val                       = 1048579,
+        RVal                      = 1048580,
+        WildcardInt               = 1048581,
+        Operator                  = 1048582,
+        CompareOperator           = 1048583,
+        Selection                 = 1048584,
+        StandaloneSelection       = 1048585,
+        WildcardSelection         = 1048586,
+        NonIdSelector             = 1048587,
+        ScoresArg                 = 1048588,
+        ScoresArgs                = 1048589,
+        ScoreSelectParam          = 1048590,
+        ScoreSelector             = 1048591,
+        TagSelector               = 1048592,
+        FilePath                  = 1048593,
+        FilePathVal               = 1048594,
+        FilePathCont              = 1048595,
+        IntegerRangeVal           = 1048596,
+        IntegerRangePostVal       = 1048597,
+        IntegerRange              = 1048598,
+        FullIntegerRange          = 1048599,
+        RationalRangeVal          = 1048600,
+        RationalRangePostVal      = 1048601,
+        RationalRange             = 1048602,
+        FullRationalRange         = 1048603,
+        SelArgs                   = 1048604,
+        Args                      = 1048605,
+        Arg                       = 1048606,
+        MArg                      = 1048607,
+        MValue                    = 1048608,
+        NameArg                   = 1048609,
+        TypeArg                   = 1048610,
+        FamilyArg                 = 1048611,
+        HasPermissionArg          = 1048612,
+        HasPermissionArgs         = 1048613,
+        HasPermissionSelector     = 1048614,
+        HasPermissionElement      = 1048615,
+        HasPermissionElements     = 1048616,
+        TagArg                    = 1048617,
+        HasItemElement            = 1048618,
+        HasItemElements           = 1048619,
+        HasItemArg                = 1048620,
+        HasItemArgs               = 1048621,
+        HasItemSelector           = 1048622,
+        EquipmentSlotEnum         = 1048623,
+        PropertyValue             = 1048624,
+        HasPropertyParamValue     = 1048625,
+        HasPropertyParamEnumValue = 1048626,
+        HasPropertyArg            = 1048627,
+        HasPropertyArgs           = 1048628,
+        HasPropertyElement        = 1048629,
+        HasPropertyElements       = 1048630,
+        HasPropertySelector       = 1048631,
+        Id                        = 1048632,
+        IdCont                    = 1048633,
+        CoordXInt                 = 1048634,
+        CoordYInt                 = 1048635,
+        CoordZInt                 = 1048636,
+        CoordXFloat               = 1048637,
+        CoordYFloat               = 1048638,
+        CoordZFloat               = 1048639,
+        Position                  = 1048640,
+        PositionFloat             = 1048641,
+        MessageExp                = 1048642,
+        Message                   = 1048643,
+        MessageRoot               = 1048644,
+        PostSelector              = 1048645,
+        RawText                   = 1048646,
+        RawTextCont               = 1048647,
+        JsonValue                 = 1048648,
+        JsonField                 = 1048649,
+        JsonObject                = 1048650,
+        JsonObjectFields          = 1048651,
+        JsonObjectCont            = 1048652,
+        JsonArray                 = 1048653,
+        JsonArrayValues           = 1048654,
+        JsonArrayCont             = 1048655,
+        BlockState                = 1048656,
+        BlockStateKey             = 1048657,
+        BlockStateValue           = 1048658,
+        BlockStateValues          = 1048659,
+        BlockStateArray           = 1048660,
+        BlockStateArrayCont       = 1048661,
+        Command                   = 1048662,
+        SlashCommand              = 1048663,
+        CodeBuilderArg            = 1048664,
+        CodeBuilderArgs           = 1048665,
+        CodeBuilderSelectParam    = 1048666,
+        CodeBuilderSelector       = 1048667,
     };
 
     class Symbol {
     public:
-        int mValue{-1}; // this+0x0
-
-        static int const NonTerminalBit   = 0x100000;
-        static int const EnumBit          = 0x200000;
-        static int const OptionalBit      = 0x400000;
-        static int const FactorizationBit = 0x800000;
-        static int const PostfixBit       = 0x1000000;
-        static int const EnumValueBit     = 0x2000000;
-        static int const SoftEnumBit      = 0x4000000;
-
-        Symbol() = default;
-
-        Symbol(uint64 idx) : mValue((int)idx) {}
-
-        Symbol(Symbol const& other) : mValue(other.mValue) {}
-
-        Symbol(HardNonTerminal data) : mValue(static_cast<int>(data)) {}
-
-        Symbol(CommandLexer::TokenType data) : mValue(static_cast<int>(data)) {}
-
-        Symbol& operator=(Symbol const& other) {
-            mValue = other.mValue;
-            return *this;
-        }
-
-        [[nodiscard]] inline bool operator==(Symbol const& other) const { return mValue == other.mValue; }
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int> mValue;
+        // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Symbol& operator=(Symbol const&);
+        Symbol(Symbol const&);
+        Symbol();
+
+    public:
+        // member functions
         // NOLINTBEGIN
+        MCAPI explicit Symbol(uint64 value);
+
         MCAPI uint64 toIndex() const;
 
         MCAPI int value() const;
-
-        // NOLINTEND
-    };
-
-    struct LexicalToken {
-        char const*            mText;           // this+0x0
-        uint                   mLength;         // this+0x8
-        Symbol                 mType;           // this+0xC
-        Symbol                 mIdentifierInfo; // this+0x10
-        CommandRegistry const& mRegistry;       // this+0x18
-
-        LexicalToken(CommandRegistry& registry) : mRegistry(registry) {}
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct CommandRegistry::LexicalToken& operator=(struct CommandLexer::Token const&);
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct CommandRegistry::Overload&&);
-
-        MCAPI void* ctor$(class CommandVersion, std::unique_ptr<class Command> (*)());
-
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    class ParamSymbols {
-    public:
-        Symbol x;             // this+0x0
-        Symbol y;             // this+0x4
-        Symbol z;             // this+0x8
-        Symbol dx;            // this+0xC
-        Symbol dy;            // this+0x10
-        Symbol dz;            // this+0x14
-        Symbol r;             // this+0x18
-        Symbol rm;            // this+0x1C
-        Symbol rx;            // this+0x20
-        Symbol rxm;           // this+0x24
-        Symbol ry;            // this+0x28
-        Symbol rym;           // this+0x2C
-        Symbol l;             // this+0x30
-        Symbol lm;            // this+0x34
-        Symbol c;             // this+0x38
-        Symbol m;             // this+0x3C
-        Symbol name;          // this+0x40
-        Symbol type;          // this+0x44
-        Symbol family;        // this+0x48
-        Symbol score;         // this+0x4C
-        Symbol tag;           // this+0x50
-        Symbol hasitem;       // this+0x54
-        Symbol haspermission; // this+0x58
-        Symbol hasproperty;   // this+0x5C
-        Symbol codebuilder;   // this+0x60
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ParamSymbols();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$();
-
-        // NOLINTEND
-    };
-
-    struct ParseRule {
-        Symbol              sym;     // this+0x0
-        ProcessFunction     func;    // this+0x8
-        std::vector<Symbol> syms;    // this+0x48
-        CommandVersion      version; // this+0x60
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct CommandRegistry::ParseRule& operator=(struct CommandRegistry::ParseRule&& rhs);
-
-        // NOLINTEND
-    };
-
-    struct ParseTable {
-        std::map<Symbol, std::vector<Symbol>>           first;   // this+0x0
-        std::map<Symbol, std::vector<Symbol>>           follow;  // this+0x10
-        entt::dense_map<std::pair<Symbol, Symbol>, int> predict; // this+0x20
-        std::chrono::system_clock::duration             buildDuration;
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ParseTable();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$();
-
-        // NOLINTEND
-    };
-
-    struct ParseToken {
-        std::unique_ptr<ParseToken> child;  // this+0x0
-        std::unique_ptr<ParseToken> next;   // this+0x8
-        ParseToken*                 parent; // this+0x10
-        char const*                 text;   // this+0x18
-        uint                        length; // this+0x20
-        Symbol                      type;   // this+0x24
-
-
-    public:
-        // NOLINTBEGIN
-        MCAPI std::string toString() const;
-
-        // NOLINTEND
-    };
-
-    struct Signature {
-        // size 160
-        std::string            name;                          // this+0x0
-        std::string            desc;                          // this+0x20
-        std::vector<Overload>  overloads;                     // this+0x40
-        std::vector<uint>      chainedSubcommandIndexes;      // this+0x58
-        CommandPermissionLevel perm;                          // this+0x70
-        Symbol                 mainSymbol;                    // this+0x74
-        Symbol                 altSymbol;                     // this+0x78
-        CommandFlag            flag;                          // this+0x7C
-        int                    firstRule{};                   // this+0x80
-        int                    firstFactorization{};          // this+0x84
-        int                    firstOptional{};               // this+0x88
-        bool                   runnable{};                    // this+0x8C
-        bool                   hasChainedSubcommands{};       // this+0x8D
-        bool                   finalizedChainedSubcommands{}; // this+0x8E
-        size_t                 ruleCounter{};                 // this+0x90
-
-    public:
-        // NOLINTBEGIN
-        MCAPI Signature(struct CommandRegistry::Signature&&);
-
-        MCAPI ~Signature();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$(struct CommandRegistry::Signature&&);
-
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    class Parser {
-    public:
-        CommandRegistry const&                     mRegistry;                 // this+0x0
-        ParseTable const*                          mParseTable;               // this+0x8
-        std::deque<std::pair<Symbol, ParseToken*>> mStack;                    // this+0x10
-        LexicalToken                               mNext;                     // this+0x38
-        std::string                                mInput;                    // this+0x58
-        std::unique_ptr<ParseToken>                mRoot;                     // this+0x78
-        std::string                                mError;                    // this+0x80
-        std::vector<std::string>                   mErrorParams;              // this+0xA0
-        int                                        mVersion;                  // this+0xB8
-        bool                                       mGenerateParams;           // this+0xBC
-        bool                                       mBreakAtEnd;               // this+0xBD
-        std::unique_ptr<std::vector<std::string>>  mParseStepRecordingBuffer; // this+0xC0
-
-
-    public:
-        // NOLINTBEGIN
-        MCAPI Parser(class CommandRegistry const& registry, int version);
-
-        MCAPI std::unique_ptr<class Command> createCommand(class CommandOrigin const& origin);
-
-        MCAPI std::unique_ptr<class CommandSelector<class Actor>>
-              createSelector(std::string const& selectorString, class CommandOrigin const& origin);
-
-        MCAPI std::string const& getErrorMessage() const;
-
-        MCAPI std::vector<std::string> getErrorParams() const;
-
-        MCAPI bool parseCommand(std::string const& in);
-
-        MCAPI bool parseSelector(std::string const& in);
-
-        MCAPI ~Parser();
-
-        // NOLINTEND
-
-        // private:
-        // NOLINTBEGIN
-        MCAPI entt::dense_map<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int>::
-            const_iterator
-            _findParsePrediction(
-                struct CommandRegistry::LexicalToken const& lexToken,
-                class CommandRegistry::Symbol const&        stackSymbol
-            ) const;
-
-        MCAPI bool _parse(std::string const& in);
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$(class CommandRegistry const& registry, int version);
-
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct RegistryState {
-    public:
-        uint              signatureCount;              // this+0x0
-        uint              enumValueCount;              // this+0x4
-        uint              postfixCount;                // this+0x8
-        uint              enumCount;                   // this+0xc
-        uint              enumLookupCount;             // this+0x10
-        uint              typeLookupCount;             // this+0x14
-        uint              factorizationCount;          // this+0x18
-        uint              optionalCount;               // this+0x1c
-        uint              ruleCount;                   // this+0x20
-        uint              softEnumCount;               // this+0x24
-        uint              constraintCount;             // this+0x28
-        uint              chainedSubcommandCount;      // this+0x2c
-        uint              chainedSubcommandValueCount; // this+0x30
-        std::vector<uint> enumValuesCount;             // this+0x38
-        std::vector<uint> constrainedValueCount;       // this+0x50
-        std::vector<uint> softEnumValuesCount;         // this+0x68
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~RegistryState();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct SoftEnum {
-    public:
-        std::string              mName;   // this+0x0
-        std::vector<std::string> mValues; // this+0x20
-
-    public:
-        // NOLINTBEGIN
-        MCAPI SoftEnum(std::string const&, std::vector<std::string>);
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void* ctor$(std::string const& name, std::vector<std::string> values);
-
+        MCAPI void* $ctor(uint64 value);
         // NOLINTEND
     };
 
     struct SymbolHasher {
     public:
         // prevent constructor by default
-        SymbolHasher& operator=(SymbolHasher const&) = delete;
-        SymbolHasher(SymbolHasher const&)            = delete;
-        SymbolHasher()                               = delete;
+        SymbolHasher& operator=(SymbolHasher const&);
+        SymbolHasher(SymbolHasher const&);
+        SymbolHasher();
     };
 
+    struct SymbolPairHasher {
+    public:
+        // prevent constructor by default
+        SymbolPairHasher& operator=(SymbolPairHasher const&);
+        SymbolPairHasher(SymbolPairHasher const&);
+        SymbolPairHasher();
+    };
+
+    using NonTerminal = ::CommandRegistry::Symbol;
+
+    using Terminal = ::CommandRegistry::Symbol;
+
+    using SymbolVector = ::std::vector<::CommandRegistry::Symbol>;
+
+    using SymbolSet =
+        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>;
+
+    using ParseMap = ::std::map<
+        ::CommandRegistry::Symbol,
+        ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>;
+
+    struct Overload {
+    public:
+        // Overload inner types define
+        using AllocFunction = ::std::unique_ptr<::Command> (*)();
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 8, ::CommandVersion>                          version;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command> (*)()>        alloc;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandParameterData>>    params;
+        ::ll::TypedStorage<4, 4, int>                                       versionOffset;
+        ::ll::TypedStorage<1, 1, bool>                                      isChaining;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> paramsSymbol;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Overload& operator=(Overload const&);
+        Overload(Overload const&);
+        Overload();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Overload(::CommandRegistry::Overload&&);
+
+        MCAPI Overload(::CommandVersion version_, ::std::unique_ptr<::Command> (*alloc_)());
+
+        MCAPI ~Overload();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::CommandRegistry::Overload&&);
+
+        MCAPI void* $ctor(::CommandVersion version_, ::std::unique_ptr<::Command> (*alloc_)());
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct Signature {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                              name;
+        ::ll::TypedStorage<8, 32, ::std::string>                              description;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Overload>> overloads;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        chainedSubcommandIndexes;
+        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                    permissionLevel;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandSymbol;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandAliasEnum;
+        ::ll::TypedStorage<2, 2, ::CommandFlag>                               flags;
+        ::ll::TypedStorage<4, 4, int>                                         firstRule;
+        ::ll::TypedStorage<4, 4, int>                                         firstFactorization;
+        ::ll::TypedStorage<4, 4, int>                                         firstOptional;
+        ::ll::TypedStorage<1, 1, bool>                                        runnable;
+        ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Signature& operator=(Signature const&);
+        Signature(Signature const&);
+        Signature();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Signature(::CommandRegistry::Signature&&);
+
+        MCAPI ~Signature();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::CommandRegistry::Signature&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct LexicalToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, char const*>               mText;
+        ::ll::TypedStorage<4, 4, uint>                      mLength;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mType;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> mIdentifierInfo;
+        ::ll::TypedStorage<8, 8, ::CommandRegistry const&>  mRegistry;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LexicalToken& operator=(LexicalToken const&);
+        LexicalToken(LexicalToken const&);
+        LexicalToken();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
+        // NOLINTEND
+    };
+
+    struct ParseToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> child;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry::ParseToken>> next;
+        ::ll::TypedStorage<8, 8, ::CommandRegistry::ParseToken*>                   parent;
+        ::ll::TypedStorage<8, 8, char const*>                                      text;
+        ::ll::TypedStorage<4, 4, uint>                                             length;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                        type;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseToken& operator=(ParseToken const&);
+        ParseToken(ParseToken const&);
+        ParseToken();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::std::string toString() const;
+        // NOLINTEND
+    };
+
+    using ProcessFunction =
+        ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>;
+
+    struct ParseRule {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> nonTerminal;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>>
+                                                                            process;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> derivation;
+        ::ll::TypedStorage<4, 8, ::CommandVersion>                          versions;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseRule& operator=(ParseRule const&);
+        ParseRule(ParseRule const&);
+        ParseRule();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
+        // NOLINTEND
+    };
+
+    using RuleIndex = int;
+
     struct OptionalParameterChain {
-        int    parameterCount;     // this+0x0
-        int    followingRuleIndex; // this+0x4
-        Symbol paramSymbol;        // this+0x8
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkdcc5ea;
+        ::ll::UntypedStorage<4, 4> mUnk61affa;
+        ::ll::UntypedStorage<4, 4> mUnka4c53c;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        OptionalParameterChain& operator=(OptionalParameterChain const&);
+        OptionalParameterChain(OptionalParameterChain const&);
+        OptionalParameterChain();
     };
 
     struct Factorization {
-        Symbol commandSymbol; // this+0x0
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk6c8d20;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Factorization& operator=(Factorization const&);
+        Factorization(Factorization const&);
+        Factorization();
     };
+
+    using ParseFunction =
+        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const;
+
+    using EnumConversionFunction = ::std::function<void(void*, uint64)>;
+
+    struct Enum {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                         name;
+        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
+        ::ll::TypedStorage<
+            8,
+            8,
+            bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+                const>
+                                                                              parse;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint64>>> values;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Enum& operator=(Enum const&);
+        Enum(Enum const&);
+        Enum();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Enum();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    using ChainedSubcommandConversionFunction = ::std::function<void(void*, uint64)>;
+
+    struct ChainedSubcommand {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                         name;
+        ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> type;
+        ::ll::TypedStorage<
+            8,
+            8,
+            bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+                const>
+                                                                            parse;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint64, uint>>> values;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ChainedSubcommand& operator=(ChainedSubcommand const&);
+        ChainedSubcommand(ChainedSubcommand const&);
+        ChainedSubcommand();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ChainedSubcommand();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct SoftEnum {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                mName;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValues;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SoftEnum& operator=(SoftEnum const&);
+        SoftEnum(SoftEnum const&);
+        SoftEnum();
+    };
+
     struct ConstrainedValue {
-        Symbol             mValue;
-        Symbol             mEnum;
-        std::vector<uchar> mConstraints;
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnk1f98ad;
+        ::ll::UntypedStorage<4, 4>  mUnk426cb0;
+        ::ll::UntypedStorage<8, 24> mUnkc30381;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConstrainedValue& operator=(ConstrainedValue const&);
+        ConstrainedValue(ConstrainedValue const&);
+        ConstrainedValue();
     };
 
-    std::function<void(Packet const&)>                          mNetworkUpdateCallback;        // this+0x0
-    std::function<int(bool&, std::string const&, Actor const&)> mGetScoreForObjective;         // this+0x40
-    bool                                                        mEduMode;                      // this+0x80
-    std::vector<ParseRule>                                      mRules;                        // this+0x88
-    std::map<uint, ParseTable>                                  mParseTables;                  // this+0xA0
-    std::vector<OptionalParameterChain>                         mOptionals;                    // this+0xB0
-    std::vector<std::string>                                    mEnumValues;                   // this+0xC8
-    std::vector<Enum>                                           mEnums;                        // this+0xE0
-    std::vector<std::string>                                    mChainedSubcommandValues;      // this+0xF8
-    std::vector<ChainedSubcommand>                              mChainedSubcommands;           // this+0x110
-    std::vector<Factorization>                                  mFactorizations;               // this+0x128
-    std::vector<std::string>                                    mPostfixes;                    // this+0x140
-    std::map<std::string, uint>                                 mEnumLookup;                   // this+0x158
-    std::map<std::string, uint64>                               mEnumValueLookup;              // this+0x168
-    std::map<std::string, uint>                                 mChainedSubcommandLookUp;      // this+0x178
-    std::map<std::string, uint64>                               mChainedSubcommandValueLookup; // this+0x188
-    std::vector<Symbol>                                         mCommandSymbols;               // this+0x198
-    std::map<std::string, Signature>                            mSignatures;                   // this+0x1B0
-    std::map<Bedrock::typeid_t<CommandRegistry>, int>           mTypeLookup;                   // this+0x1C0
-    std::map<std::string, std::string>                          mAliases;                      // this+0x1D0
-    std::vector<SemanticConstraint>                             mSemanticConstraints;          // this+0x1E0
-    std::map<SemanticConstraint, uchar>                         mSemanticConstraintLookup;     // this+0x1F8
-    std::vector<ConstrainedValue>                               mConstrainedValues;            // this+0x208
-    std::map<std::pair<uint64, uint>, uint>                     mConstrainedValueLookup;       // this+0x220
-    std::vector<SoftEnum>                                       mSoftEnums;                    // this+0x230
-    std::map<std::string, uint>                                 mSoftEnumLookup;               // this+0x248
-    std::vector<RegistryState>                                  mStateStack;                   // this+0x258
-    ParamSymbols                                                mArgs;                         // this+0x270
-    std::unordered_map<uchar, uchar>                            mSkipOnEpsAutocompleteSymbols; // this+0x2D0
-    std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x310
-    std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x350
+    struct ParamSymbols {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> x;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> y;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> z;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> dx;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> dy;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> dz;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> r;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> rm;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> rx;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> rxm;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> ry;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> rym;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> l;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> lm;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> c;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> m;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> name;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> type;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> family;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> score;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> tag;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> hasitem;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> haspermission;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> hasproperty;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> codebuilder;
+        // NOLINTEND
 
-    template <class T>
-    bool parse(
-        void*                              storage,
-        CommandRegistry::ParseToken const& token,
-        CommandOrigin const&               origin,
-        int                                version,
-        std::string&                       error,
-        std::vector<std::string>&          errorParams
-    ) const;
+    public:
+        // prevent constructor by default
+        ParamSymbols& operator=(ParamSymbols const&);
+        ParamSymbols(ParamSymbols const&);
 
-    template <class E, class C>
-    bool parseEnum(
-        void*                              storage,
-        CommandRegistry::ParseToken const& token,
-        CommandOrigin const&               origin,
-        int                                version,
-        std::string&                       error,
-        std::vector<std::string>&          errorParams
-    ) const;
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ParamSymbols();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+        // NOLINTEND
+    };
+
+    struct RegistryState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>                 signatureCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumValueCount;
+        ::ll::TypedStorage<4, 4, uint>                 postfixCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumCount;
+        ::ll::TypedStorage<4, 4, uint>                 enumLookupCount;
+        ::ll::TypedStorage<4, 4, uint>                 typeLookupCount;
+        ::ll::TypedStorage<4, 4, uint>                 factorizationCount;
+        ::ll::TypedStorage<4, 4, uint>                 optionalCount;
+        ::ll::TypedStorage<4, 4, uint>                 ruleCount;
+        ::ll::TypedStorage<4, 4, uint>                 softEnumCount;
+        ::ll::TypedStorage<4, 4, uint>                 constraintCount;
+        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandCount;
+        ::ll::TypedStorage<4, 4, uint>                 chainedSubcommandValueCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> enumValuesCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> constrainedValueCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RegistryState& operator=(RegistryState const&);
+        RegistryState(RegistryState const&);
+        RegistryState();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~RegistryState();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    using PredictTable = ::entt::dense_map<
+        ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+        int,
+        ::CommandRegistry::SymbolPairHasher,
+        ::std::equal_to<void>>;
+
+    struct ParseTable {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::std::map<
+                ::CommandRegistry::Symbol,
+                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
+            first;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::std::map<
+                ::CommandRegistry::Symbol,
+                ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>>>
+            follow;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::entt::dense_map<
+                ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+                int,
+                ::CommandRegistry::SymbolPairHasher,
+                ::std::equal_to<void>>>
+                                                             predict;
+        ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseTable& operator=(ParseTable const&);
+        ParseTable(ParseTable const&);
+        ParseTable();
+    };
+
+    struct SemanticInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnka0701b;
+        ::ll::UntypedStorage<8, 24> mUnke3831e;
+        ::ll::UntypedStorage<8, 32> mUnk220a81;
+        ::ll::UntypedStorage<8, 32> mUnkb80526;
+        ::ll::UntypedStorage<8, 16> mUnk88e4b6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SemanticInfo& operator=(SemanticInfo const&);
+        SemanticInfo(SemanticInfo const&);
+        SemanticInfo();
+    };
+
+    using ParamVisitCallback = ::std::function<
+        bool(::CommandParameterData const&, ::CommandOrigin const&, ::CommandRegistry::ParseToken const*)>;
+
+    using CommandVisitCallback = ::std::function<bool(::CommandRegistry::ParseToken const*, ::CommandOrigin const&)>;
+
+    using ParseTableMap = ::std::map<uint, ::CommandRegistry::ParseTable>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::function<void(::Packet const&)>>                            mNetworkUpdateCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<int(bool&, ::std::string const&, ::Actor const&)>> mGetScoreForObjective;
+    ::ll::TypedStorage<1, 1, bool>                                                               mIsEduMode;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ParseRule>>                       mRules;
+    ::ll::TypedStorage<8, 16, ::std::map<uint, ::CommandRegistry::ParseTable>>                   mParseTables;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::OptionalParameterChain>>          mOptionals;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                      mEnumValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Enum>>                            mEnums;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                            mChainedSubcommandValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ChainedSubcommand>>     mChainedSubcommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Factorization>>         mFactorizations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                            mPostfixes;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mEnumLookup;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint64>>                       mEnumValueLookup;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mChainedSubcommandLookup;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint64>>                       mChainedSubcommandValueLookup;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                mCommandSymbols;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::CommandRegistry::Signature>> mSignatures;
+    ::ll::TypedStorage<8, 16, ::std::map<::Bedrock::typeid_t<::CommandRegistry>, int>> mTypeLookup;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>>                mAliases;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SemanticConstraint>>                     mSemanticConstraints;
+    ::ll::TypedStorage<8, 16, ::std::map<::SemanticConstraint, uchar>>                 mSemanticConstraintLookup;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ConstrainedValue>>      mConstrainedValues;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::pair<uint64, uint>, uint>>             mConstrainedValueLookup;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::SoftEnum>>              mSoftEnums;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mSoftEnumLookup;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::RegistryState>>         mStateStack;
+    ::ll::TypedStorage<4, 100, ::CommandRegistry::ParamSymbols>                        mArgs;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mSkipOnEpsAutocompleteSymbols;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mAllowEmptySymbols;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::CommandFlag&, ::std::string const&)>> mCommandOverrideFunctor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRunStats>>                         mCommandRunStats;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
-    CommandRegistry& operator=(CommandRegistry const&) = delete;
-    CommandRegistry(CommandRegistry const&)            = delete;
+    CommandRegistry& operator=(CommandRegistry const&);
+    CommandRegistry(CommandRegistry const&);
     CommandRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit CommandRegistry(bool isEduMode);
 
-    MCAPI void addEnumValueConstraints(
-        std::string const&              enumName,
-        std::vector<std::string> const& values,
-        ::SemanticConstraint            constraints
+    MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        ::std::string const&                                   name,
+        ::std::vector<::std::pair<::std::string, uint>> const& strings,
+        ::Bedrock::typeid_t<::CommandRegistry>                 type,
+        bool (CommandRegistry::*
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const,
+        ::CommandRegistry::Signature* signature
     );
 
-    MCAPI int addEnumValues(std::string const& name, std::vector<std::string> const& values);
-
-    MCAPI int addSoftEnum(std::string const& name, std::vector<std::string> values);
-
-    MCAPI void addSoftEnumValues(std::string const& enumName, std::vector<std::string> values);
-
-    MCAPI bool
-    buildSelector(struct ActorSelectorArgs const& args, class CommandSelectorBase* output, std::string& error) const;
-
-    MCAPI bool enabledInEditor(std::string const& nameIn) const;
-
-    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
-
-    MCAPI void fireCommandParseTableTelemetry(class IMinecraftEventing const& eventing, bool isServer) const;
-
-    MCAPI class Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
-
-    MCAPI std::vector<std::string> getAliases(std::string const& command) const;
-
-    MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const& origin) const;
-
-    MCAPI std::string getCommandName(std::string const&) const;
-
-    MCAPI struct CommandSyntaxInformation
-    getCommandOverloadSyntaxInformation(class CommandOrigin const& origin, std::string const& commandName) const;
-
-    MCAPI ::CommandStatus getCommandStatus(std::string const& nameIn) const;
-
-    MCAPI bool isCommandOfType(std::string const& nameIn, ::CommandTypeFlag commandType) const;
-
-    MCAPI bool isValidCommand(std::string const& commandName) const;
-
-    MCAPI void registerAlias(std::string name, std::string alias);
-
-    MCAPI void registerCommand(
-        std::string const&       name,
-        char const*              description, // will copy to std::string
-        ::CommandPermissionLevel requirement,
-        struct CommandFlag       f,
-        struct CommandFlag = CommandFlagValue::None // useless, idiot
+    MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+        ::std::string const&                            name,
+        ::std::vector<::std::pair<uint64, uint>> const& values,
+        ::Bedrock::typeid_t<::CommandRegistry>          type,
+        bool (CommandRegistry::*
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const,
+        ::CommandRegistry::Signature* signature
     );
 
-    MCAPI void removeSoftEnumValues(std::string const& enumName, std::vector<std::string> values);
-
-    MCAPI bool requiresCheatsEnabled(std::string const& nameIn) const;
-
-    MCAPI class AvailableCommandsPacket serializeAvailableCommands() const;
-
-    MCAPI void setCommandRegistrationOverride(std::function<void(struct CommandFlag&, std::string const&)> functor);
-
-    MCAPI void setNetworkUpdateCallback(std::function<void(class Packet const&)> callback);
-
-    MCAPI void setScoreCallback(std::function<int(bool&, std::string const&, class Actor const&)> callback);
-
-    MCAPI void setSoftEnumValues(std::string const& enumName, std::vector<std::string> values);
-
-    MCAPI ~CommandRegistry();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
-        std::string const&                               name,
-        std::vector<std::pair<std::string, uint>> const& strings,
-        class Bedrock::typeid_t<class CommandRegistry>   type,
-        ParseFn                                          parse,
-        struct CommandRegistry::Signature*               signature
+    MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
+        ::std::string const&                                     name,
+        ::std::vector<::std::pair<::std::string, uint64>> const& strings,
+        ::Bedrock::typeid_t<::CommandRegistry>                   type,
+        bool (CommandRegistry::*
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const
     );
 
-    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
-        std::string const&                             name,
-        std::vector<std::pair<uint64, uint>> const&    values,
-        class Bedrock::typeid_t<class CommandRegistry> type,
-        ParseFn                                        parse,
-        struct CommandRegistry::Signature*             signature
+    MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
+        ::std::string const&                              name,
+        ::std::vector<::std::pair<uint64, uint64>> const& values,
+        ::Bedrock::typeid_t<::CommandRegistry>            type,
+        bool (CommandRegistry::*
+                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const
     );
 
-    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
-        std::string const&                                 name,
-        std::vector<std::pair<std::string, uint64>> const& strings,
-        class Bedrock::typeid_t<class CommandRegistry>     type,
-        ParseFn                                            parse
-    );
+    MCAPI ::CommandRegistry::Symbol _addFunctionSoftEnum();
 
-    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(
-        std::string const&                             name,
-        std::vector<std::pair<uint64, uint64>> const&  values,
-        class Bedrock::typeid_t<class CommandRegistry> type,
-        ParseFn                                        parse
-    );
-
-    MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();
-
-    MCAPI class CommandRegistry::Symbol _getConstrainedParamEnumSymbol(class CommandRegistry::Symbol symbol) const;
-
-    MCAPI bool _isCommandElementValid(std::string const& name) const;
-
-    MCAPI bool _matchesEnumConstraintsSet(
-        class CommandRegistry::Symbol const& commandParamSymbol,
-        class CommandOrigin const&           origin,
-        class CommandRegistry::Symbol const& value,
-        ::SemanticConstraint                 requiredConstraints
+    MCAPI ::std::unique_ptr<::CommandSelector<::Actor>> _createSelector(
+        ::CommandRegistry::ParseToken const& root,
+        ::CommandOrigin const&               origin,
+        int                                  version,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI void addChainedSubcommandValuesToExisting(uint index, std::vector<std::pair<uint64, uint>> const& values);
+    MCAPI ::CommandRegistry::Symbol _getConstrainedParamEnumSymbol(::CommandRegistry::Symbol symbol) const;
 
-    MCAPI void addEnumValuesToExisting(uint index, std::vector<std::pair<uint64, uint64>> const& values);
+    MCAPI bool _isCommandElementValid(::std::string const& name) const;
 
-    MCAPI class CommandRegistry::Symbol addPostfix(std::string const& name);
+    MCAPI bool _matchesEnumConstraintsSet(
+        ::CommandRegistry::Symbol const& commandParamSymbol,
+        ::CommandOrigin const&           origin,
+        ::CommandRegistry::Symbol const& value,
+        ::SemanticConstraint             requiredConstraints
+    ) const;
 
-    MCAPI void
-    addRule(Symbol symbol, std::vector<Symbol> derivation, ProcessFunction process, class CommandVersion versions = {});
+    MCAPI void addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
+
+    MCAPI void addEnumValueConstraints(
+        ::std::string const&                enumName,
+        ::std::vector<::std::string> const& values,
+        ::SemanticConstraint                constraints
+    );
+
+    MCAPI int addEnumValues(::std::string const& name, ::std::vector<::std::string> const& values);
+
+    MCAPI void addEnumValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint64>> const& values);
+
+    MCAPI ::CommandRegistry::Symbol addPostfix(::std::string const& name);
+
+    MCAPI void addRule(
+        ::CommandRegistry::Symbol                symbol,
+        ::std::vector<::CommandRegistry::Symbol> derivation,
+        ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>
+                         process,
+        ::CommandVersion versions
+    );
 
     MCAPI void addSemanticConstraint(::SemanticConstraint constraintType);
 
-    MCAPI class CommandRegistry::Symbol addSoftTerminal(std::string const& name);
+    MCAPI int addSoftEnum(::std::string const& name, ::std::vector<::std::string> values);
 
-    MCAPI void
-    buildFirstSet(struct CommandRegistry::ParseTable& table, class CommandRegistry::Symbol t, uint version) const;
+    MCAPI void addSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
+
+    MCAPI ::CommandRegistry::Symbol addSoftTerminal(::std::string const& name);
+
+    MCAPI void buildFirstSet(::CommandRegistry::ParseTable& table, ::CommandRegistry::Symbol t, uint version) const;
 
     MCAPI void buildFollowSet(
-        struct CommandRegistry::ParseTable&      table,
-        class CommandRegistry::Symbol            t,
-        uint                                     version,
-        std::set<class CommandRegistry::Symbol>& workingSet
+        ::CommandRegistry::ParseTable&         table,
+        ::CommandRegistry::Symbol              t,
+        uint                                   version,
+        ::std::set<::CommandRegistry::Symbol>& workingSet
     ) const;
 
-    MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(
-        struct CommandRegistry::Signature const&          signature,
-        std::vector<class CommandParameterData> const&    params,
-        std::vector<class CommandRegistry::Symbol> const& symbols
-    );
-
-    MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(
-        struct CommandRegistry::Signature const&       signature,
-        std::vector<class CommandParameterData> const& params,
-        class CommandParameterData const*              firstOptional,
-        uint64                                         count
+    MCAPI ::CommandRegistry::Symbol buildOptionalRuleChain(
+        ::CommandRegistry::Signature const&             signature,
+        ::std::vector<::CommandParameterData> const&    params,
+        ::std::vector<::CommandRegistry::Symbol> const& symbols
     );
 
     MCAPI void buildParseTable(uint version) const;
 
-    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable& table, uint version) const;
+    MCAPI void buildPredictTable(::CommandRegistry::ParseTable& table, uint version) const;
 
-    MCAPI class CommandRegistry::Symbol buildRules(
-        struct CommandRegistry::Signature&                                   signature,
-        std::vector<gsl::not_null<struct CommandRegistry::Overload*>> const& overloads,
-        uint64                                                               firstParam
+    MCAPI ::CommandRegistry::Symbol buildRules(
+        ::CommandRegistry::Signature&                                       signature,
+        ::std::vector<::gsl::not_null<::CommandRegistry::Overload*>> const& overloads,
+        uint64                                                              firstParam
     );
+
+    MCAPI bool
+    buildSelector(::ActorSelectorArgs const& args, ::CommandSelectorBase* output, ::std::string& error) const;
 
     MCAPI bool checkOriginCommandFlags(
-        class CommandOrigin const& origin,
-        struct CommandFlag         flags,
-        ::CommandPermissionLevel   permissionLevel
+        ::CommandOrigin const&   origin,
+        ::CommandFlag            flags,
+        ::CommandPermissionLevel permissionLevel
     ) const;
 
-    MCAPI std::unique_ptr<class Command> createCommand(
-        struct CommandRegistry::ParseToken const& root,
-        class CommandOrigin const&                origin,
-        int                                       version,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+    MCAPI ::std::unique_ptr<::Command> createCommand(
+        ::CommandRegistry::ParseToken const& root,
+        ::CommandOrigin const&               origin,
+        int                                  version,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI std::string describe(class CommandParameterData const& param) const;
+    MCAPI ::std::string describe(::CommandParameterData const& param) const;
 
-    MCAPI std::string describe(class CommandRegistry::Symbol symbol) const;
+    MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
-    MCAPI std::string describe(
-        struct CommandRegistry::Signature const& command,
-        std::string const&                       alias,
-        struct CommandRegistry::Overload const&  overload,
-        uint                                     highlight,
-        uint*                                    start,
-        uint*                                    length
+    MCAPI ::std::string describe(
+        ::CommandRegistry::Signature const& command,
+        ::std::string const&                alias,
+        ::CommandRegistry::Overload const&  overload,
+        uint                                highlight,
+        uint*                               start,
+        uint*                               length
     ) const;
 
-    MCAPI struct CommandRegistry::Signature* findCommand(std::string const& name);
+    MCAPI bool enabledInEditor(::std::string const& nameIn) const;
 
-    MCAPI struct CommandRegistry::Signature const* findCommand(std::string const& name) const;
+    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
-    MCAPI class CommandRegistry::Symbol findEnumValue(std::string const& name) const;
+    MCAPI ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
-    MCAPI class CommandRegistry::Symbol findIdentifierInfo(std::string const& name) const;
+    MCAPI ::CommandRegistry::Signature* findCommand(::std::string const& name);
 
-    MCAPI class CommandRegistry::Symbol findPostfix(std::string const& input) const;
+    MCAPI ::CommandRegistry::Symbol findEnum(::std::string const& name) const;
 
-    MCAPI void forEachNonTerminal(std::function<void(class CommandRegistry::Symbol)> func) const;
+    MCAPI ::CommandRegistry::Symbol findEnumValue(::std::string const& name) const;
 
-    MCAPI uint64 getEnumData(struct CommandRegistry::ParseToken const& token) const;
+    MCAPI ::CommandRegistry::Symbol findIdentifierInfo(::std::string const& name) const;
 
-    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const& token
-    ) const;
+    MCAPI ::CommandRegistry::Symbol findPostfix(::std::string const& input) const;
 
-    MCAPI bool isValid(class CommandRegistry::Symbol symbol) const;
+    MCAPI ::CommandRegistry::Symbol findSoftEnum(::std::string const& name) const;
 
-    MCAPI bool originCanRun(class CommandOrigin const& origin, struct CommandRegistry::Overload const& overload) const;
+    MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
-    MCAPI bool originCanRun(class CommandOrigin const& origin, struct CommandRegistry::Signature const& command) const;
+    MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
+
+    MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
+
+    MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
+
+    MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
+
+    MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
+
+    MCAPI ::CommandSyntaxInformation
+    getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
+
+    MCAPI ::CommandRunStats& getCommandRunStats() const;
+
+    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
+
+    MCAPI uint64 getEnumData(::CommandRegistry::ParseToken const& token) const;
+
+    MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
+
+    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+
+    MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
+
+    MCAPI bool isValidCommand(::std::string const& commandName) const;
+
+    MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
+
+    MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Overload const& overload) const;
 
     MCAPI bool parseSelector(
-        struct ActorSelectorArgs&                 args,
-        struct CommandRegistry::ParseToken const& token,
-        class CommandOrigin const&                origin,
-        int                                       version,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+        ::ActorSelectorArgs&                 args,
+        ::CommandRegistry::ParseToken const& token,
+        ::CommandOrigin const&               origin,
+        int                                  version,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI bool parseSelector(
-        class CommandSelectorBase*                output,
-        struct CommandRegistry::ParseToken const& token,
-        class CommandOrigin const&                origin,
-        int                                       version,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams,
-        bool                                      wildcard
-    ) const;
+    MCAPI void registerAlias(::std::string name, ::std::string alias);
 
-    MCAPI void
-    registerOverloadInternal(struct CommandRegistry::Signature& signature, struct CommandRegistry::Overload& overload);
-
-    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature& signature);
-
-    MCAPI void setupOverloadRules(struct CommandRegistry::Signature& signature);
-
-    MCAPI std::string symbolToString(class CommandRegistry::Symbol symbol) const;
-
-    MCAPI static std::string _removeStringQuotes(std::string const&);
-
-    MCAPI static void addNonEpsilonSymbols(
-        entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher>&       destination,
-        entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher> const& source
+    MCAPI void registerCommand(
+        ::std::string const&     name,
+        char const*              description,
+        ::CommandPermissionLevel requirement,
+        ::CommandFlag            f1,
+        ::CommandFlag            f2
     );
 
-    MCAPI static void buildOverload(struct CommandRegistry::Overload& overload);
+    MCAPI void registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);
 
-    MCAPI static struct CommandRegistry::ParseToken*
-    collapse(struct CommandRegistry::ParseToken& parent, class CommandRegistry::Symbol symbol);
+    MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
-    MCAPI static struct CommandRegistry::ParseToken* collapseOn(
-        struct CommandRegistry::ParseToken& parent,
-        class CommandRegistry::Symbol       symbol,
-        class CommandRegistry::Symbol       boundSymbol
+    MCAPI bool requiresCheatsEnabled(::std::string const& nameIn) const;
+
+    MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
+
+    MCAPI void setCommandRegistrationOverride(::std::function<void(::CommandFlag&, ::std::string const&)> functor);
+
+    MCAPI void setNetworkUpdateCallback(::std::function<void(::Packet const&)> callback);
+
+    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+
+    MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
+
+    MCAPI void setupChainedSubcommandOverloadRules(::CommandRegistry::Signature& signature);
+
+    MCAPI void setupOverloadRules(::CommandRegistry::Signature& signature);
+
+    MCAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
+
+    MCAPI ~CommandRegistry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
+
+    MCAPI static void buildOverload(::CommandRegistry::Overload& overload);
+
+    MCAPI static ::CommandRegistry::ParseToken*
+    collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
+
+    MCAPI static ::CommandRegistry::ParseToken* collapseOn(
+        ::CommandRegistry::ParseToken& parent,
+        ::CommandRegistry::Symbol      symbol,
+        ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static struct CommandRegistry::ParseToken*
-    expand(struct CommandRegistry::ParseToken& parent, class CommandRegistry::Symbol symbol);
+    MCAPI static ::CommandRegistry::ParseToken*
+    expand(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
-    MCAPI static struct CommandRegistry::ParseToken* expandExcept(
-        struct CommandRegistry::ParseToken& parent,
-        class CommandRegistry::Symbol       symbol,
-        class CommandRegistry::Symbol       boundSymbol
+    MCAPI static ::CommandRegistry::ParseToken* expandExcept(
+        ::CommandRegistry::ParseToken& parent,
+        ::CommandRegistry::Symbol      symbol,
+        ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static struct CommandRegistry::ParseToken* fold(
-        struct CommandRegistry::ParseToken& parent,
-        class CommandRegistry::Symbol       symbol,
-        class CommandRegistry::Symbol       boundSymbol
+    MCAPI static ::CommandRegistry::ParseToken* fold(
+        ::CommandRegistry::ParseToken& parent,
+        ::CommandRegistry::Symbol      symbol,
+        ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static struct CommandRegistry::ParseToken*
-    kill(struct CommandRegistry::ParseToken& parent, class CommandRegistry::Symbol symbol);
+    MCAPI static ::CommandRegistry::ParseToken*
+    kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
     MCAPI static bool readFloat(
-        float&                                    value,
-        struct CommandRegistry::ParseToken const& token,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+        float&                               value,
+        ::CommandRegistry::ParseToken const& token,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     );
 
     MCAPI static bool readInt(
-        int&                                      value,
-        struct CommandRegistry::ParseToken const& token,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+        int&                                 value,
+        ::CommandRegistry::ParseToken const& token,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     );
 
     MCAPI static bool readRelativeCoordinate(
-        bool&                                     relative,
-        float&                                    offset,
-        struct CommandRegistry::ParseToken const& token,
-        bool                                      readIntegerAsCentered,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+        bool&                                relative,
+        float&                               offset,
+        ::CommandRegistry::ParseToken const& token,
+        bool                                 readIntegerAsCentered,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     );
 
     MCAPI static bool readString(
-        std::string&                              value,
-        struct CommandRegistry::ParseToken const& token,
-        std::string&                              error,
-        std::vector<std::string>&                 errorParams
+        ::std::string&                       value,
+        ::CommandRegistry::ParseToken const& token,
+        ::std::string&                       error,
+        ::std::vector<::std::string>&        errorParams
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(bool isEduMode);
+    MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
 
-    MCAPI void dtor$();
+    MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
 
-    MCAPI static char const* const& CODE_STATUS_PROPERTY_NAME();
+    MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
 
-    MCAPI static char const* const& COMMAND_NAME_ENUM_NAME();
+    MCAPI static char const*& HASITEM_PARAM_DATA();
 
-    MCAPI static char const* const& FUNCTION_NAME_SOFTENUM_NAME();
+    MCAPI static char const*& HASITEM_PARAM_ITEM();
 
-    MCAPI static char const* const& HASITEM_PARAM_DATA();
+    MCAPI static char const*& HASITEM_PARAM_LOCATION();
 
-    MCAPI static char const* const& HASITEM_PARAM_ITEM();
+    MCAPI static char const*& HASITEM_PARAM_QUANTITY();
 
-    MCAPI static char const* const& HASITEM_PARAM_LOCATION();
+    MCAPI static char const*& HASITEM_PARAM_SLOT();
 
-    MCAPI static char const* const& HASITEM_PARAM_QUANTITY();
+    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_DISABLED();
 
-    MCAPI static char const* const& HASITEM_PARAM_SLOT();
+    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_ENABLED();
 
-    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_CAMERA();
+    MCAPI static char const*& HASPROPERTY_PARAM_PROPERTY_NAME();
 
-    MCAPI static char const* const& HASPERMISSIONCATEGORY_ENUM_MOVEMENT();
+    MCAPI static ::std::add_lvalue_reference_t<::std::pair<
+        bool (CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+            const,
+        ::CommandRegistry::Symbol> const[]>
+    ParseRuleSymbols();
 
-    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_DISABLED();
+    MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
 
-    MCAPI static char const* const& HASPERMISSIONSTATE_ENUM_ENABLED();
+    MCAPI static char const*& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
+    // NOLINTEND
 
-    MCAPI static char const* const& HASPROPERTY_PARAM_PROPERTY_NAME();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isEduMode);
+    // NOLINTEND
 
-    MCAPI static auto ParseRuleSymbols() -> std::pair<ParseFn, class CommandRegistry::Symbol> const (&)[];
-
-    MCAPI static char const* const& TAG_VALUES_SOFTENUM_NAME();
-
-    MCAPI static char const* const& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
-
-// following are the functions required by CommandParameterData's ParseFunction
-MCTAPI bool CommandRegistry::parse<
-    std::
-        string>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    int>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    float>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    Json::
-        Value>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandCompareOperator>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandFilePath>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandIntegerRange>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandMessage>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandOperator>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandPosition>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandPositionFloat>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandRawText>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<CommandSelector<
-    Actor>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<CommandSelector<
-    Player>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    CommandWildcardInt>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<
-    class
-    RelativeFloat>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<WildcardCommandSelector<
-    Actor>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<std::unique_ptr<
-    ::Command>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parse<std::vector<
-    BlockStateCommandParam>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
-
-MCTAPI bool CommandRegistry::parseEnum<
-    CommandChainedSubcommand,
-    void>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;

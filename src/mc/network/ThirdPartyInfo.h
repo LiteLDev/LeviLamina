@@ -4,27 +4,38 @@
 
 class ThirdPartyInfo {
 public:
-    // prevent constructor by default
-    ThirdPartyInfo& operator=(ThirdPartyInfo const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnke18fbe;
+    ::ll::UntypedStorage<8, 32> mUnk193b83;
+    ::ll::UntypedStorage<8, 32> mUnk3742ca;
+    ::ll::UntypedStorage<8, 32> mUnk6129b7;
+    ::ll::UntypedStorage<1, 1>  mUnkfff32d;
+    // NOLINTEND
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ThirdPartyInfo();
 
-    MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
+    MCAPI ThirdPartyInfo(::ThirdPartyInfo const&);
+
+    MCAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 
     MCAPI ~ThirdPartyInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class ThirdPartyInfo const&);
+    MCAPI void* $ctor(::ThirdPartyInfo const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

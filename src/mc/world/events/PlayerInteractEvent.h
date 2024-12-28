@@ -4,24 +4,28 @@
 
 struct PlayerInteractEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk432ae9;
+    ::ll::UntypedStorage<8, 24>  mUnkfa4327;
+    ::ll::UntypedStorage<8, 152> mUnkc6abd9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerInteractEvent& operator=(PlayerInteractEvent const&);
+    PlayerInteractEvent(PlayerInteractEvent const&);
     PlayerInteractEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractEvent(struct PlayerInteractEvent const&);
-
     MCAPI ~PlayerInteractEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct PlayerInteractEvent const&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

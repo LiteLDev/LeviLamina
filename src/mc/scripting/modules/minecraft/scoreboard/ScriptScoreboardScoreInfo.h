@@ -9,25 +9,42 @@ namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardScoreInfo {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk99b93b;
+    ::ll::UntypedStorage<4, 4>  mUnk19624a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptScoreboardScoreInfo& operator=(ScriptScoreboardScoreInfo const&);
     ScriptScoreboardScoreInfo(ScriptScoreboardScoreInfo const&);
-    ScriptScoreboardScoreInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI ScriptScoreboardScoreInfo();
+
     MCAPI ~ScriptScoreboardScoreInfo();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActionOrStopComponent;
+struct LocalMoveVelocityComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class FramewiseActionOrStopSystem {
 public:
     // prevent constructor by default
@@ -10,17 +17,13 @@ public:
     FramewiseActionOrStopSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
+    MCAPI static ::TickingSystemWithInfo createFramewiseActionOrStopSystem();
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI static void doFramewiseActionOrStopSystem(
-        struct LocalMoveVelocityComponent const& localMoveVelocityComponent,
-        struct ActionOrStopComponent&            actionOrStopComponent
+        ::LocalMoveVelocityComponent const& localMoveVelocityComponent,
+        ::ActionOrStopComponent&            actionOrStopComponent
     );
-
     // NOLINTEND
 };

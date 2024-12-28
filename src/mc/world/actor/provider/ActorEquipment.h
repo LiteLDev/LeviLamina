@@ -2,26 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemStack;
-class SimpleContainer;
+// auto generated forward declare list
+// clang-format off
 class EntityContext;
+class ItemStack;
 class Player;
+class SimpleContainer;
+// clang-format on
 
 namespace ActorEquipment {
+// functions
 // NOLINTBEGIN
-MCAPI std::vector<class ItemStack const*> getAllArmor(class EntityContext const& provider);
+MCAPI ::std::vector<::ItemStack const*> getAllArmor(::EntityContext const& provider);
 
-MCAPI class SimpleContainer& getArmorContainer(class EntityContext& provider);
+MCAPI ::SimpleContainer const& getArmorContainer(::EntityContext const& provider);
 
-MCAPI class SimpleContainer const& getArmorContainer(class EntityContext const& provider);
+MCAPI ::SimpleContainer& getArmorContainer(::EntityContext&);
 
-MCAPI class SimpleContainer& getHandContainer(class EntityContext& provider);
+MCAPI ::SimpleContainer const& getHandContainer(::EntityContext const&);
 
-MCAPI class SimpleContainer const& getHandContainer(class EntityContext const& provider);
+MCAPI ::SimpleContainer& getHandContainer(::EntityContext& provider);
 
-MCAPI void initializeActor(class EntityContext& provider);
+MCAPI void initializeActor(::EntityContext& provider);
 
-MCAPI void initializePlayer(class EntityContext& provider, class Player& player);
+MCAPI void initializePlayer(::EntityContext& provider, ::Player& player);
 // NOLINTEND
 
-}; // namespace ActorEquipment
+} // namespace ActorEquipment

@@ -4,6 +4,9 @@
 
 namespace br::worldgen {
 
-enum class JigsawExpansion {};
-
+enum class JigsawExpansion : uchar {
+    None         = 0,
+    LargestChild = 1,
 };
+
+}

@@ -16,16 +16,16 @@ public:
     RNS2_Windows_Linux_360(RNS2_Windows_Linux_360 const&);
     RNS2_Windows_Linux_360();
 
-    // protected:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static int Send_Windows_Linux_360NoVDP(
-        int                                 rns2Socket,
-        struct RakNet::RNS2_SendParameters* sendParameters,
-        char const*                         file,
-        uint                                line
+        int                            rns2Socket,
+        ::RakNet::RNS2_SendParameters* sendParameters,
+        char const*                    file,
+        uint                           line
     );
-
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

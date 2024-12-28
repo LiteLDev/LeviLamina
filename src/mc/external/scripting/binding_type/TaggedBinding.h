@@ -12,38 +12,44 @@ namespace Scripting {
 
 struct TaggedBinding {
 public:
-    // prevent constructor by default
-    TaggedBinding& operator=(TaggedBinding const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk89c47b;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TaggedBinding& operator=(TaggedBinding const&);
+    TaggedBinding(TaggedBinding const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TaggedBinding();
 
-    MCAPI TaggedBinding(struct Scripting::TaggedBinding const&);
+    MCAPI ::Scripting::TaggedBinding& beta();
 
-    MCAPI struct Scripting::TaggedBinding& beta();
+    MCAPI ::Scripting::TaggedBinding& onlyStable();
 
-    MCAPI struct Scripting::TaggedBinding& onlyStable();
-
-    MCAPI struct Scripting::TaggedBinding& release(
-        struct Scripting::Version                         inclusiveLowerVersion,
-        std::optional<class Scripting::MajorVersionLimit> exclusiveMajorVersionLimit
+    MCAPI ::Scripting::TaggedBinding& release(
+        ::Scripting::Version                            inclusiveLowerVersion,
+        ::std::optional<::Scripting::MajorVersionLimit> exclusiveMajorVersionLimit
     );
 
     MCAPI ~TaggedBinding();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct Scripting::TaggedBinding const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

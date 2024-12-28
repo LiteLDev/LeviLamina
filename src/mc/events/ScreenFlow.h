@@ -11,28 +11,39 @@ namespace Social::Events {
 
 class ScreenFlow {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk639462;
+    ::ll::UntypedStorage<8, 16> mUnk890a72;
+    ::ll::UntypedStorage<8, 8>  mUnk7be49c;
+    ::ll::UntypedStorage<8, 32> mUnk990b26;
+    ::ll::UntypedStorage<8, 32> mUnk675043;
+    ::ll::UntypedStorage<8, 64> mUnk5d55ec;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScreenFlow& operator=(ScreenFlow const&);
     ScreenFlow(ScreenFlow const&);
     ScreenFlow();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void AddScreen(
-        std::string const&                                  screenName,
-        double                                              timestamp,
-        double                                              seconds,
-        std::unordered_map<std::string, std::string> const& additionalProperties,
-        bool                                                isDeepLink
+        ::std::string const&                                      screenName,
+        double                                                    timestamp,
+        double                                                    seconds,
+        ::std::unordered_map<::std::string, ::std::string> const& additionalProperties,
+        bool                                                      isDeepLink
     );
 
-    MCAPI void PopulateEvent(class Social::Events::Event& event, bool clear);
+    MCAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
 
-    MCAPI void SetApplicationId(std::string const& appId);
+    MCAPI void SetApplicationId(::std::string const& appId);
 
     MCAPI bool ShouldSendEvent() const;
-
     // NOLINTEND
 };
 
-}; // namespace Social::Events
+} // namespace Social::Events

@@ -14,4 +14,4 @@ public:
     consteval size_t dim() const { return sizeof...(Ns); }
 };
 
-}; // namespace Util
+} // namespace Util

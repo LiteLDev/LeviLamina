@@ -2,11 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace ReplayStatePolicy {
-// NOLINTBEGIN
-MCAPI std::unique_ptr<struct IReplayStatePolicy> createClientContext(struct ReplayStateConfig const& config);
+// auto generated forward declare list
+// clang-format off
+struct IReplayStatePolicy;
+struct ReplayStateConfig;
+// clang-format on
 
-MCAPI std::unique_ptr<struct IReplayStatePolicy> createServerContext(struct ReplayStateConfig const& config);
+namespace ReplayStatePolicy {
+// functions
+// NOLINTBEGIN
+MCAPI ::std::unique_ptr<::IReplayStatePolicy> createClientContext(::ReplayStateConfig const& config);
+
+MCAPI ::std::unique_ptr<::IReplayStatePolicy> createServerContext(::ReplayStateConfig const& config);
 // NOLINTEND
 
-}; // namespace ReplayStatePolicy
+} // namespace ReplayStatePolicy

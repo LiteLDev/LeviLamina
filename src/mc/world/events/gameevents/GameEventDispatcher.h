@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+class Vec3;
+// clang-format on
+
 class GameEventDispatcher {
 public:
     // prevent constructor by default
@@ -10,22 +20,22 @@ public:
     GameEventDispatcher();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void post(
-        class BlockSource&     region,
-        class Actor*           source,
-        class GameEvent const& gameEvent,
-        class BlockPos const&  origin,
-        class Block const*     affectedBlock
+        ::BlockSource&     region,
+        ::Actor*           source,
+        ::GameEvent const& gameEvent,
+        ::Vec3 const&      originPos,
+        ::Block const*     affectedBlock
     );
 
     MCAPI void post(
-        class BlockSource&     region,
-        class Actor*           source,
-        class GameEvent const& gameEvent,
-        class Vec3 const&      origin,
-        class Block const*     affectedBlock
+        ::BlockSource&     region,
+        ::Actor*           source,
+        ::GameEvent const& gameEvent,
+        ::BlockPos const&  originPos,
+        ::Block const*     affectedBlock
     );
-
     // NOLINTEND
 };

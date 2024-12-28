@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ConnectionDefinition;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct SocketDescriptor; }
 namespace Social { class GameConnectionInfo; }
@@ -20,12 +21,6 @@ public:
     // clang-format on
 
     // RakPeerHelper inner types define
-    enum class PeerPurpose : int {
-        Gameplay      = 0x0,
-        LAN_Discovery = 0x1,
-        Count         = 0x2,
-    };
-
     class IPSupportInterface {
     public:
         // prevent constructor by default
@@ -34,21 +29,63 @@ public:
         IPSupportInterface();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~IPSupportInterface();
 
+        // vIndex: 1
+        virtual bool useIPv4Only() const = 0;
+
+        // vIndex: 2
+        virtual bool useIPv6Only() const = 0;
+
+        // vIndex: 3
+        virtual ushort getDefaultGamePort() const = 0;
+
+        // vIndex: 4
+        virtual ushort getDefaultGamePortv6() const = 0;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
 
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+    enum class PeerPurpose : int {
+        Gameplay     = 0,
+        LanDiscovery = 1,
+        Count        = 2,
+    };
+
+    enum class IPVersion : int {
+        IPv4  = 0,
+        IPv6  = 1,
+        Count = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::RakNet::StartupResult>              mResult;
+    ::ll::TypedStorage<4, 8, int[2]>                               mConnectionIndices;
+    ::ll::TypedStorage<2, 4, ushort[2]>                            mBoundPorts;
+    ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -57,10 +94,21 @@ public:
     RakPeerHelper();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface& ipInterface);
+    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
 
-    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const& connectionInfo) const;
+    MCAPI explicit RakPeerHelper(::RakPeerHelper::IPSupportInterface& ipInterface);
+
+    MCAPI ::RakNet::StartupResult _startupInternal(
+        ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
+        ::ConnectionDefinition const&                definition,
+        ::RakNet::SocketDescriptor*                  sockets,
+        int&                                         socketCount,
+        int                                          ipv6Index
+    );
+
+    MCAPI int getConnectionIndex(::Social::GameConnectionInfo const& connectionInfo) const;
 
     MCAPI ushort getIPv4BoundPort() const;
 
@@ -75,35 +123,17 @@ public:
     MCAPI bool isIPv6Supported() const;
 
     MCAPI ::RakNet::StartupResult peerStartup(
-        class RakNet::RakPeerInterface*    peerIn,
-        struct ConnectionDefinition const& definition,
-        ::RakPeerHelper::PeerPurpose       purpose
+        ::RakNet::RakPeerInterface*   peerIn,
+        ::ConnectionDefinition const& definition,
+        ::RakPeerHelper::PeerPurpose  purpose
     );
 
     MCAPI void reset();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
-
-    MCAPI void _resetToIPv6Only(gsl::span<struct RakNet::SocketDescriptor, 2> sockets, int& socketCount);
-
-    MCAPI ::RakNet::StartupResult _startupInternal(
-        gsl::not_null<class RakNet::RakPeerInterface*> peer,
-        struct ConnectionDefinition const&             definition,
-        struct RakNet::SocketDescriptor*               sockets,
-        int&                                           socketCount,
-        int                                            ipv6Index
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class RakPeerHelper::IPSupportInterface& ipInterface);
-
+    MCAPI void* $ctor(::RakPeerHelper::IPSupportInterface& ipInterface);
     // NOLINTEND
 };

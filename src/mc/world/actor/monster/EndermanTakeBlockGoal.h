@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class EnderMan;
+class Vec3;
+// clang-format on
+
 class EndermanTakeBlockGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk2848f9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EndermanTakeBlockGoal& operator=(EndermanTakeBlockGoal const&);
@@ -14,40 +26,57 @@ public:
     EndermanTakeBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndermanTakeBlockGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 10
-    virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const& centerPos) const;
+    virtual ::BlockPos getRandomNearbyBlockPos(::Vec3 const& centerPos) const;
 
-    MCAPI explicit EndermanTakeBlockGoal(class EnderMan& enderman);
-
+    // vIndex: 0
+    virtual ~EndermanTakeBlockGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit EndermanTakeBlockGoal(::EnderMan& enderman);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class EnderMan& enderman);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EnderMan& enderman);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI class BlockPos getRandomNearbyBlockPos$(class Vec3 const& centerPos) const;
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
+    MCAPI ::BlockPos $getRandomNearbyBlockPos(::Vec3 const& centerPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

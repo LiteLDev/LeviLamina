@@ -12,4 +12,4 @@ public:
     EmptyFilterData();
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

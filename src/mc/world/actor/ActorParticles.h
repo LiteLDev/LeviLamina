@@ -6,56 +6,63 @@
 #include "mc/world/actor/PaletteColor.h"
 #include "mc/world/actor/ParticleType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Block;
+class BlockPos;
+class ILevel;
+class Random;
+class Vec2;
+class Vec3;
+// clang-format on
+
 namespace ActorParticles {
+// functions
 // NOLINTBEGIN
 MCAPI uint calculateDustParticleNumberFromFall(float fallDistance);
 
-MCAPI class Vec3 getDustParticlePosition(class Vec3 const& position, class AABB const& aabb);
+MCAPI ::Vec3 getDustParticlePosition(::Vec3 const& position, ::AABB const& aabb);
 
-MCAPI void spawnBalloonPopParticles(
-    uint           particleCount,
-    class AABB     aabb,
-    ::PaletteColor color,
-    class ILevel&  level,
-    class Random&  random
-);
+MCAPI void
+spawnBalloonPopParticles(uint particleCount, ::AABB aabb, ::PaletteColor color, ::ILevel& level, ::Random& random);
 
-MCAPI void spawnDeathParticles(class Vec3 position, class Vec2 aabbDim, float heightOffset, class ILevel& level);
+MCAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
 
 MCAPI void spawnDustParticlesFromFalling(
-    uint               particleCount,
-    class Vec3         position,
-    class ILevel&      level,
-    class Block const& block,
-    class BlockPos     blockPos
+    uint           particleCount,
+    ::Vec3         position,
+    ::ILevel&      level,
+    ::Block const& block,
+    ::BlockPos     blockPos
 );
 
 MCAPI void spawnParticlesInArea(
-    class ILevel&     level,
-    uint              particleCount,
-    ::ParticleType    type,
-    class Vec3 const& position,
-    class Vec2 const& aabbDim,
-    class Random&     random
+    ::ILevel&      level,
+    uint           particleCount,
+    ::ParticleType type,
+    ::Vec3 const&  position,
+    ::Vec2 const&  aabbDim,
+    ::Random&      random
 );
 
 MCAPI void spawnPukeParticles(
-    uint          numLines,
-    uint          particlesPerLine,
-    class Vec3    position,
-    class Vec3    lookDirection,
-    class ILevel& level,
-    class Random& random
+    uint      numLines,
+    uint      particlesPerLine,
+    ::Vec3    position,
+    ::Vec3    lookDirection,
+    ::ILevel& level,
+    ::Random& random
 );
 
 MCAPI void spawnTreasureHuntingParticles(
-    uint          particleCount,
-    class Vec3    position,
-    class Vec3    direction,
-    class Vec2    aabbDim,
-    class ILevel& level,
-    class Random& random
+    uint      particleCount,
+    ::Vec3    position,
+    ::Vec3    direction,
+    ::Vec2    aabbDim,
+    ::ILevel& level,
+    ::Random& random
 );
 // NOLINTEND
 
-}; // namespace ActorParticles
+} // namespace ActorParticles

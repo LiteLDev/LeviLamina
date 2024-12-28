@@ -1,66 +1,89 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+class Vec3;
+struct ClientInputLockComponent;
+// clang-format on
+
 class UpdateClientInputLocksPacket : public ::Packet {
 public:
-    int  mInputLockComponentData; // this+0x30
-    Vec3 mServerPos;              // this+0x34
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint>    mInputLockComponentData;
+    ::ll::TypedStorage<4, 12, ::Vec3> mServerPos;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&);
     UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UpdateClientInputLocksPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI UpdateClientInputLocksPacket();
-
-    MCAPI UpdateClientInputLocksPacket(
-        struct ClientInputLockComponent const& inputLockComponent,
-        class Vec3 const&                      serverPos
-    );
-
+    // vIndex: 0
+    virtual ~UpdateClientInputLocksPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI UpdateClientInputLocksPacket();
 
-    MCAPI void* ctor$();
+    MCAPI UpdateClientInputLocksPacket(::ClientInputLockComponent const& inputLockComponent, ::Vec3 const& serverPos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ClientInputLockComponent const& inputLockComponent, class Vec3 const& serverPos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ClientInputLockComponent const& inputLockComponent, ::Vec3 const& serverPos);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

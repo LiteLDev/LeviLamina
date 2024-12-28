@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SwampBiomeSurfaceFlag {
+// auto generated inclusion list
+#include "mc/world/level/biome/components/BiomeComponentBase.h"
+
+struct SwampBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
     // prevent constructor by default
     SwampBiomeSurfaceFlag& operator=(SwampBiomeSurfaceFlag const&);
@@ -10,16 +13,21 @@ public:
     SwampBiomeSurfaceFlag();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SwampBiomeSurfaceFlag() = default;
-
+    virtual ~SwampBiomeSurfaceFlag() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

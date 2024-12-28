@@ -5,14 +5,14 @@
 namespace BedrockLog {
 
 enum class LogCategory : int {
-    LogArea          = 0x0,
-    LogWorldGen      = 0x1,
-    LogLoot          = 0x2,
-    LogRender        = 0x3,
-    LogStructure     = 0x4,
-    LogUI            = 0x5,
-    LogOnline        = 0x6,
-    NumLogCategories = 0x7,
+    LogArea          = 0,
+    LogWorldGen      = 1,
+    LogLoot          = 2,
+    LogRender        = 3,
+    LogStructure     = 4,
+    LogUI            = 5,
+    LogOnline        = 6,
+    NumLogCategories = 7,
 };
 
-};
+}

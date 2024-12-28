@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct TickingSystemWithInfo;
+// clang-format on
 
-class SoulSpeedAttributeSystem {
+struct SoulSpeedAttributeSystem {
 public:
     // prevent constructor by default
     SoulSpeedAttributeSystem& operator=(SoulSpeedAttributeSystem const&);
@@ -15,17 +17,10 @@ public:
     SoulSpeedAttributeSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryProcessSoulSpeed(class StrictEntityContext&, class ActorOwnerComponent& actorOwnerComponent);
+    MCAPI static void _tryProcessSoulSpeed(::StrictEntityContext&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    MCAPI static void tickSystem(class ViewT<
-                                 class StrictEntityContext,
-                                 struct Include<
-                                     class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                     class FlagComponent<struct MobFlag>>,
-                                 class ActorOwnerComponent> view);
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

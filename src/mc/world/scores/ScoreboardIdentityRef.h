@@ -6,34 +6,60 @@
 #include "mc/world/scores/IdentityDefinition.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class Objective;
+class Scoreboard;
+struct ActorUniqueID;
+struct PlayerScoreboardId;
+struct ScoreboardId;
+// clang-format on
+
 class ScoreboardIdentityRef {
 public:
-    uint         mObjectiveReferences; // this+0x0
-    ScoreboardId mScoreboardId;        // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint>            mObjectiveReferences;
+    ::ll::TypedStorage<8, 16, ::ScoreboardId> mScoreboardId;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScoreboardIdentityRef& operator=(ScoreboardIdentityRef const&);
+    ScoreboardIdentityRef(ScoreboardIdentityRef const&);
+    ScoreboardIdentityRef();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ActorUniqueID const& getEntityId() const;
+    MCAPI ::ActorUniqueID const& getEntityId() const;
+
+    MCAPI ::std::string const& getFakePlayerName() const;
 
     MCAPI ::IdentityDefinition::Type getIdentityType() const;
 
-    MCAPI std::string const& getName(std::function<std::string const&(struct ActorUniqueID)> const& playerNameResolver
+    MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
 
-    MCAPI struct PlayerScoreboardId const& getPlayerId() const;
+    MCAPI ::PlayerScoreboardId const& getPlayerId() const;
 
-    MCAPI struct ScoreboardId const& getScoreboardId() const;
+    MCAPI ::ScoreboardId const& getScoreboardId() const;
 
-    MCAPI bool modifyScoreInObjective(int& result, class Objective& objective, int score, ::PlayerScoreSetFunction fn);
+    MCAPI bool modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const& toSave);
-
+    MCAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class ScoreboardIdentityRef const& Undefined();
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ScoreboardIdentityRef const& toSave);
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ScoreboardIdentityRef const& Undefined();
     // NOLINTEND
 };

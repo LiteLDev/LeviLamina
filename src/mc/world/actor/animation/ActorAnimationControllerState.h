@@ -3,10 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
-#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/world/actor/animation/ActorAnimationBase.h"
 
-class ActorAnimationControllerState {
+// auto generated forward declare list
+// clang-format off
+class RenderParams;
+class StateAnimationVariable;
+// clang-format on
+
+class ActorAnimationControllerState : public ::ActorAnimationBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnkbdbeca;
+    ::ll::UntypedStorage<8, 24> mUnkb721a7;
+    ::ll::UntypedStorage<8, 24> mUnke5f286;
+    ::ll::UntypedStorage<8, 24> mUnk60ea74;
+    ::ll::UntypedStorage<8, 48> mUnk875dec;
+    ::ll::UntypedStorage<8, 24> mUnk247f4c;
+    ::ll::UntypedStorage<8, 24> mUnk849be1;
+    ::ll::UntypedStorage<1, 1>  mUnkf6716f;
+    ::ll::UntypedStorage<8, 24> mUnke33750;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorAnimationControllerState& operator=(ActorAnimationControllerState const&);
@@ -14,41 +33,18 @@ public:
     ActorAnimationControllerState();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addAnimation(class HashedString const& name);
+    MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
-    MCAPI void addAnimation(class HashedString const& name, class ExpressionNode const& blendWeightExpression);
+    MCAPI void setVariables(::RenderParams& renderParams) const;
 
-    MCAPI void addBlendTransitionKeyFrame(float time, float blendValue);
+    MCAPI ~ActorAnimationControllerState();
+    // NOLINTEND
 
-    MCAPI class ActorAnimationEvent& addEntryActorEvent(
-        float               time,
-        std::string const&  event,
-        ::CurrentCmdVersion commandVersion,
-        ::MolangVersion     molangVersion
-    );
-
-    MCAPI class ActorAnimationEvent& addExitActorEvent(
-        float               time,
-        std::string const&  event,
-        ::CurrentCmdVersion commandVersion,
-        ::MolangVersion     molangVersion
-    );
-
-    MCAPI class ActorParticleEffect& addParticleEffect();
-
-    MCAPI class ActorSoundEffect& addSoundEffect();
-
-    MCAPI void addTransition(
-        std::string const& stateName,
-        std::string const& expression,
-        ::MolangVersion    molangVersion,
-        bool               createEvenIfAlreadyExists
-    );
-
-    MCAPI class StateAnimationVariable& addVariable(std::string const& variableName);
-
-    MCAPI void setBlendTransitionTime(float time);
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

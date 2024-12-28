@@ -3,19 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Material;
+class Random;
+class Vec3;
+struct Brightness;
 // clang-format on
 
 class AbstractCandleBlock : public ::BlockLegacy {
@@ -26,105 +25,116 @@ public:
     AbstractCandleBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AbstractCandleBlock();
-
     // vIndex: 20
-    virtual bool hasVariableLighting() const;
+    virtual bool hasVariableLighting() const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 93
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
+
+    // vIndex: 150
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
+
+    // vIndex: 149
+    virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
+
+    // vIndex: 151
+    virtual int _getNumCandles(::Block const&) const;
+
+    // vIndex: 152
     virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)> callback) const;
 
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 153
+    virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 161
-    virtual void _onHitByActivatingAttack(class BlockSource& region, class BlockPos const& pos, class Actor*) const;
-
-    // vIndex: 162
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
-
-    // vIndex: 164
-    virtual void
-    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
-        const;
-
-    MCVAPI int _getNumCandles(class Block const&) const;
-
-    MCVAPI void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const;
-
-    MCAPI AbstractCandleBlock(std::string const& nameId, int id, class Material const& material);
-
+    // vIndex: 0
+    virtual ~AbstractCandleBlock() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _checkForWaterlogging(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void _extinguish(
-        class Actor*          extinguisher,
-        class Block const&    block,
-        class BlockSource&    region,
-        class BlockPos const& pos
-    ) const;
-
-    MCAPI static bool _canBeLit(class Block const& block, class BlockSource& region, class BlockPos const& pos);
-
-    MCAPI static bool _isLit(class Block const& block);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AbstractCandleBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material);
-
-    MCAPI void dtor$();
-
-    MCAPI int _getNumCandles$(class Block const&) const;
+    MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
-    _iterateCandles$(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
-        const;
+    _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI void _onHitByActivatingAttack$(class BlockSource& region, class BlockPos const& pos, class Actor*) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void _tryLightOnFire$(class BlockSource&, class BlockPos const&, class Actor*) const;
+    MCAPI static bool _isLit(::Block const& block);
+
+    MCAPI static void _setLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, bool litFlag);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $hasVariableLighting() const;
+
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI bool $isLavaBlocking() const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+
+    MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
+
+    MCAPI int $_getNumCandles(::Block const&) const;
 
     MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    $_iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)> callback) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI void $_tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    // NOLINTEND
 
-    MCAPI void entityInside$(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
-
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
-
-    MCAPI bool hasVariableLighting$() const;
-
-    MCAPI bool isWaterBlocking$() const;
-
-    MCAPI void
-    neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

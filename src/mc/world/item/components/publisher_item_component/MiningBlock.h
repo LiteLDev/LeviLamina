@@ -2,14 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/world/item/components/ItemComponent.h"
+
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+class Actor;
+class Block;
+class ItemStack;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
-class MiningBlock {
+class MiningBlock : public ::ItemComponent,
+                    public ::Bedrock::PubSub::Publisher<
+                        void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
+                        ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
     // prevent constructor by default
     MiningBlock& operator=(MiningBlock const&);
@@ -17,21 +27,27 @@ public:
     MiningBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static class HashedString const& getIdentifier();
-
+    // vIndex: 0
+    virtual ~MiningBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockPubSubConnector();
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
 
-    MCAPI static void** vftableForBedrockPubSubDetailDispatchingPublisherBase();
+    MCAPI static void** $vftableForConnector();
 
+    MCAPI static void** $vftableForDispatchingPublisherBase();
     // NOLINTEND
 };
 
-}; // namespace PublisherItemComponent
+} // namespace PublisherItemComponent

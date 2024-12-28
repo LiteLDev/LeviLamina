@@ -9,17 +9,26 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+class WeakEntityRef;
 namespace ScriptModuleMinecraft { struct ScriptCameraDefaultOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFadeOptions; }
+namespace ScriptModuleMinecraft { struct ScriptCameraFixedBoomOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetFacingOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetLocationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetPositionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetRotationOptions; }
+namespace ScriptModuleMinecraft { struct ScriptCameraTargetOptions; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptCamera {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf4cfb1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptCamera& operator=(ScriptCamera const&);
@@ -27,34 +36,65 @@ public:
     ScriptCamera();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCamera(class Player const& player);
+    MCAPI explicit ScriptCamera(::Player const& player);
 
-    MCAPI class Scripting::Result<void>
-    cameraFade(std::optional<struct ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
+    MCAPI explicit ScriptCamera(::WeakEntityRef const& playerRef);
 
-    MCAPI class Scripting::Result<void> clearCamera() const;
+    MCAPI ::Scripting::Result<void>
+    cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
-    MCAPI class Scripting::Result<void> setCamera(
-        std::string const&                                              cameraPreset,
-        std::optional<std::optional<std::variant<
-            struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
-            struct ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
-            struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
-            struct ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
-            struct ScriptModuleMinecraft::ScriptCameraDefaultOptions>>> options
+    MCAPI ::Scripting::Result<void> clearCamera() const;
+
+    MCAPI ::Scripting::Result<void> setCamera(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptCamera> bind();
+    MCAPI ::Scripting::Result<void> setCameraBeta(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
+    ) const;
 
+    MCAPI ::Scripting::Result<void> setCamera_V160(
+        ::std::string const&                                      cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions>> options
+    ) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Player const& player);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptCamera> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player const& player);
+
+    MCAPI void* $ctor(::WeakEntityRef const& playerRef);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

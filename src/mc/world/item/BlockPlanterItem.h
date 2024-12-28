@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Block;
+class CompoundTag;
+class Item;
+class ItemDescriptor;
+class ItemStackBase;
+struct ResolvedItemIconInfo;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class BlockPlanterItem : public ::ComponentItem {
@@ -26,56 +24,73 @@ public:
     BlockPlanterItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockPlanterItem() = default;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 3
-    virtual class BlockPlanterItem& setDescriptionId(std::string const& descriptionId);
+    virtual ::BlockPlanterItem& setDescriptionId(::std::string const& description) /*override*/;
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI BlockPlanterItem(
-        std::string const&            name,
-        int                           id,
-        struct cereal::ReflectionCtx& ctx,
-        class Block const&            block,
-        bool                          useBlockDescription
-    );
-
+    // vIndex: 0
+    virtual ~BlockPlanterItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&            name,
-        int                           id,
-        struct cereal::ReflectionCtx& ctx,
-        class Block const&            block,
-        bool                          useBlockDescription
+    MCAPI BlockPlanterItem(
+        ::std::string const&     name,
+        int                      id,
+        ::cereal::ReflectionCtx& ctx,
+        ::Block const&           block,
+        bool                     useBlockDescription
     );
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&     name,
+        int                      id,
+        ::cereal::ReflectionCtx& ctx,
+        ::Block const&           block,
+        bool                     useBlockDescription
+    );
+    // NOLINTEND
 
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class BlockPlanterItem& setDescriptionId$(std::string const& descriptionId);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+
+    MCAPI ::BlockPlanterItem& $setDescriptionId(::std::string const& description);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

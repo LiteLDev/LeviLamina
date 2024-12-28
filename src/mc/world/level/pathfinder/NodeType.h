@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class NodeType : int {
-    Stairs        = -7,
-    Honeyblock    = -6,
-    Unwalkable    = -5,
-    Hotblock      = -4,
-    Fence         = -3,
-    Lava          = -2,
-    Water         = -1,
+    Stairs        = 4294967289,
+    Honeyblock    = 4294967290,
+    Unwalkable    = 4294967291,
+    Hotblock      = 4294967292,
+    Fence         = 4294967293,
+    Lava          = 4294967294,
+    Water         = 4294967295,
     Blocked       = 0,
     Breakable     = 1,
     Open          = 2,

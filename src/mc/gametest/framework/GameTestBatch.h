@@ -11,39 +11,34 @@ namespace gametest {
 
 class GameTestBatch {
 public:
+    // GameTestBatch inner types define
+    using BeforeGameTestBatchFunction = ::std::function<void()>;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                            mBeforeBatchFunction;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                                mName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>> mTestFunctions;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     GameTestBatch& operator=(GameTestBatch const&);
+    GameTestBatch(GameTestBatch const&);
     GameTestBatch();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI
-    GameTestBatch(class gametest::GameTestBatch const&);
-
-    MCAPI GameTestBatch(
-        std::string                                                        name,
-        std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> testFunctions,
-        std::function<void()>                                              beforeBatchFunction
-    );
-
     MCAPI ~GameTestBatch();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(class gametest::GameTestBatch const&);
-
-    MCAPI void* ctor$(
-        std::string                                                        name,
-        std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> testFunctions,
-        std::function<void()>                                              beforeBatchFunction
-    );
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

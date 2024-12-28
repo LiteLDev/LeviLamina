@@ -5,7 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct RenderPositionComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class UpdateRenderPosSystem {
 public:
@@ -15,25 +23,20 @@ public:
     UpdateRenderPosSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doUpdateRenderPosSystem(
-        class StrictEntityContext const&,
-        struct StateVectorComponent const& stateVectorComponent,
-        struct RenderPositionComponent&    renderPositionComponent
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const& stateVectorComponent,
+        ::RenderPositionComponent&    renderPositionComponent
     );
 
-    MCAPI static void
-    _tickUpdateRenderPosSystem(class ViewT<
-                               class StrictEntityContext,
-                               struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                               struct StateVectorComponent const,
-                               struct RenderPositionComponent> view);
+    MCAPI static void _tickUpdateRenderPosSystem(::ViewT<
+                                                 ::StrictEntityContext,
+                                                 ::Include<::ActorMovementTickNeededComponent>,
+                                                 ::StateVectorComponent const,
+                                                 ::RenderPositionComponent> view);
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

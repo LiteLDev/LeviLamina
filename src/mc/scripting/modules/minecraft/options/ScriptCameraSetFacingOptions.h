@@ -9,33 +9,38 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCameraSetFacingOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkc207d1;
+    ::ll::UntypedStorage<4, 16> mUnk7caf74;
+    ::ll::UntypedStorage<4, 20> mUnk17dd55;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptCameraSetFacingOptions& operator=(ScriptCameraSetFacingOptions const&);
     ScriptCameraSetFacingOptions(ScriptCameraSetFacingOptions const&);
     ScriptCameraSetFacingOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions const&);
-
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
 
     MCAPI ~ScriptCameraSetFacingOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptCameraSetFacingOptions>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

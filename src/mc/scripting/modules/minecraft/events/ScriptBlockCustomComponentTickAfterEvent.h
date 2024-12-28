@@ -2,30 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
+namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentAfterEventIntermediateStorage; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentTickAfterEvent {
-public:
-    // ScriptBlockCustomComponentTickAfterEvent inner types declare
-    // clang-format off
-    struct IntermediateStorage;
-    // clang-format on
-
-    // ScriptBlockCustomComponentTickAfterEvent inner types define
-    struct IntermediateStorage {
-    public:
-        // prevent constructor by default
-        IntermediateStorage& operator=(IntermediateStorage const&);
-        IntermediateStorage(IntermediateStorage const&);
-        IntermediateStorage();
-    };
-
+struct ScriptBlockCustomComponentTickAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
+                                                  public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentTickAfterEvent& operator=(ScriptBlockCustomComponentTickAfterEvent const&);
@@ -33,25 +25,33 @@ public:
     ScriptBlockCustomComponentTickAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponentTickAfterEvent(
-        struct ScriptModuleMinecraft::ScriptBlockCustomComponentTickAfterEvent::IntermediateStorage const& eventData,
-        class Scripting::WeakLifetimeScope const&                                                          scope
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                   scope
     );
-
-    MCAPI static struct Scripting::ClassBinding bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        struct ScriptModuleMinecraft::ScriptBlockCustomComponentTickAfterEvent::IntermediateStorage const& eventData,
-        class Scripting::WeakLifetimeScope const&                                                          scope
-    );
+    MCAPI static ::Scripting::ClassBinding bind();
 
+    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    tryGetComponentsToExecute(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage const& eventData
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                   scope
+    );
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class NewInteractionModel : int {
-    Touch     = 0x0,
-    Crosshair = 0x1,
-    Classic   = 0x2,
+    Touch     = 0,
+    Crosshair = 1,
+    Classic   = 2,
+    Count     = 3,
 };

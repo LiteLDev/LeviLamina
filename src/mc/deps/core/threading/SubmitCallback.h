@@ -5,7 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/XTaskQueuePort.h"
 
-class SubmitCallback {
+// auto generated forward declare list
+// clang-format off
+struct XTaskQueueObject;
+struct XTaskQueueRegistrationToken;
+// clang-format on
+
+struct SubmitCallback {
 public:
     // prevent constructor by default
     SubmitCallback& operator=(SubmitCallback const&);
@@ -13,11 +19,10 @@ public:
     SubmitCallback();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI long
-    Register(void*, void (*)(void*, struct XTaskQueueObject*, ::XTaskQueuePort), struct XTaskQueueRegistrationToken*);
+    MCAPI long Register(void*, void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken*);
 
-    MCAPI void Unregister(struct XTaskQueueRegistrationToken);
-
+    MCAPI void Unregister(::XTaskQueueRegistrationToken);
     // NOLINTEND
 };

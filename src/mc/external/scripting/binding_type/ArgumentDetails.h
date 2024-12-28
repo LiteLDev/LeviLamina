@@ -6,26 +6,39 @@ namespace Scripting {
 
 struct ArgumentDetails {
 public:
-    // prevent constructor by default
-    ArgumentDetails& operator=(ArgumentDetails const&);
-    ArgumentDetails();
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ArgumentDetails(struct Scripting::ArgumentDetails const&);
-
-    MCAPI ~ArgumentDetails();
-
+    ::ll::UntypedStorage<8, 8>   mUnk64a1c3;
+    ::ll::UntypedStorage<8, 192> mUnk574b18;
+    ::ll::UntypedStorage<8, 192> mUnkcd9943;
+    ::ll::UntypedStorage<8, 192> mUnk8d35f7;
+    ::ll::UntypedStorage<8, 192> mUnk2c8f9c;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ArgumentDetails& operator=(ArgumentDetails const&);
+    ArgumentDetails(ArgumentDetails const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Scripting::ArgumentDetails const&);
+    MCAPI ArgumentDetails();
 
-    MCAPI void dtor$();
+    MCAPI ~ArgumentDetails();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

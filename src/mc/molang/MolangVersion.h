@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MolangVersion : int {
-    Invalid                                = -1,
+enum class MolangVersion : short {
+    Invalid                                = 65535,
     BeforeVersioning                       = 0,
     Initial                                = 1,
     FixedItemRemainingUseDurationQuery     = 2,
@@ -12,7 +12,12 @@ enum class MolangVersion : int {
     ConditionalOperatorAssociativity       = 5,
     ComparisonAndLogicalOperatorPrecedence = 6,
     DivideByNegativeValue                  = 7,
-    NumValidVersions                       = 8,
-    Latest                                 = NumValidVersions - 1,
-    HardcodedMolang                        = Latest,
+    FixedCapeFlapAmountQuery               = 8,
+    QueryBlockPropertyRenamedToState       = 9,
+    DeprecateOldBlockQueryNames            = 10,
+    DeprecatedSnifferAndCamelQueries       = 11,
+    LeafSupportingInFirstSolidBlockBelow   = 12,
+    NumValidVersions                       = 13,
+    Latest                                 = 12,
+    HardcodedMolang                        = 12,
 };

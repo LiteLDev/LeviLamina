@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorPostNormalTickSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ActorPostNormalTickSystem {
 public:
     // prevent constructor by default
     ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&);
@@ -10,10 +15,10 @@ public:
     ActorPostNormalTickSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystemClient();
+    MCAPI static ::TickingSystemWithInfo createSystemClient();
 
-    MCAPI static struct TickingSystemWithInfo createSystemServer();
-
+    MCAPI static ::TickingSystemWithInfo createSystemServer();
     // NOLINTEND
 };

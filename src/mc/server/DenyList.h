@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/threading/LockGuard.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
@@ -15,35 +18,55 @@ public:
     // clang-format on
 
     // DenyList inner types define
-    enum class Duration {};
+    enum class Duration : int {
+        Session = 0,
+        OneTime = 1,
+        Invalid = 2,
+    };
 
     struct Entry {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk89b913;
+        ::ll::UntypedStorage<8, 40> mUnk8e3c22;
+        ::ll::UntypedStorage<8, 32> mUnk99d06f;
+        ::ll::UntypedStorage<4, 4>  mUnk657815;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Entry& operator=(Entry const&);
+        Entry(Entry const&);
         Entry();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI Entry(struct DenyList::Entry const&);
-
-        MCAPI Entry(class mce::UUID const& uuid, std::string const& xuid);
+        MCAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
 
         MCAPI ~Entry();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct DenyList::Entry const&);
+        MCAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
+        // NOLINTEND
 
-        MCAPI void* ctor$(class mce::UUID const& uuid, std::string const& xuid);
-
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkfa0072;
+    ::ll::UntypedStorage<8, 80> mUnk3f8199;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -52,33 +75,24 @@ public:
     DenyList();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addEntry(struct DenyList::Entry const& entry);
+    MCAPI void addEntry(::DenyList::Entry const& entry);
 
-    MCAPI ::DenyList::Duration getDuration(struct DenyList::Entry const& entry) const;
+    MCAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
 
-    MCAPI std::string const& getMessage(struct DenyList::Entry const& entry) const;
+    MCAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
 
-    MCAPI bool isBlocked(struct DenyList::Entry const& entry) const;
+    MCAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
-    MCAPI void removeEntry(struct DenyList::Entry const& entry);
+    MCAPI void removeEntry(::DenyList::Entry const& entry);
 
     MCAPI ~DenyList();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool
-    isBlocked(struct DenyList::Entry const&, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<struct DenyList::Entry>>>&)
-        const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/threading/LockGuard.h"
+#include "mc/platform/threading/SharedLock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::JSONObject { class Node; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
+namespace Bedrock::Threading { class SharedRecursiveMutex; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -19,87 +21,29 @@ class DataStore : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DataStore inner types declare
     // clang-format off
+    template<typename T0, typename T1> class AccessHandle;
     struct CustomFileHandlers;
-    class EditorImpl;
+    class Editor;
     class Impl;
     class Viewer;
-    class ViewerImpl;
     // clang-format on
 
     // DataStore inner types define
-    struct CustomFileHandlers {
-    public:
-        // prevent constructor by default
-        CustomFileHandlers& operator=(CustomFileHandlers const&);
-        CustomFileHandlers(CustomFileHandlers const&);
-        CustomFileHandlers();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI struct Bedrock::DataStore::CustomFileHandlers& operator=(struct Bedrock::DataStore::CustomFileHandlers&&);
-
-        MCAPI ~CustomFileHandlers();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    class EditorImpl {
-    public:
-        // prevent constructor by default
-        EditorImpl& operator=(EditorImpl const&);
-        EditorImpl(EditorImpl const&);
-        EditorImpl();
-
-    public:
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~EditorImpl() = default;
-
-        // vIndex: 1
-        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
-
-        // vIndex: 2
-        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-
-        // vIndex: 3
-        virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view key);
-
-        // vIndex: 4
-        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
-
-        // vIndex: 5
-        virtual class Bedrock::JSONObject::Node*
-        setValueForKey(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value);
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI static void** vftable();
-
-        MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
-
-        MCAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore$();
-
-        MCAPI class Bedrock::JSONObject::Node* getValueForKey$(std::string_view key);
-
-        MCAPI class Bedrock::JSONObject::Node const* getValueForKey$(std::string_view key) const;
-
-        MCAPI class Bedrock::JSONObject::Node*
-        setValueForKey$(std::string_view key, class Bedrock::JSONObject::ValueWrapper const& value);
-
-        // NOLINTEND
-    };
-
     class Impl {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnk36485c;
+        ::ll::UntypedStorage<8, 40>  mUnk7c4cd3;
+        ::ll::UntypedStorage<8, 32>  mUnka16edc;
+        ::ll::UntypedStorage<8, 192> mUnkbf5d9d;
+        ::ll::UntypedStorage<8, 88>  mUnka2b527;
+        ::ll::UntypedStorage<8, 8>   mUnkb96eba;
+        ::ll::UntypedStorage<8, 24>  mUnk6aa7f3;
+        ::ll::UntypedStorage<8, 16>  mUnk431661;
+        ::ll::UntypedStorage<8, 24>  mUnk71a5a1;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         Impl& operator=(Impl const&);
@@ -107,18 +51,25 @@ public:
         Impl();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI explicit Impl(class Bedrock::DataStore* owner);
+        MCAPI explicit Impl(::Bedrock::DataStore* owner);
 
         MCAPI void load();
 
+        MCAPI ~Impl();
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class Bedrock::DataStore* owner);
+        MCAPI void* $ctor(::Bedrock::DataStore* owner);
+        // NOLINTEND
 
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -130,65 +81,126 @@ public:
         Viewer();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Viewer() = default;
-
-        // vIndex: 1
-        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const = 0;
+        virtual ~Viewer();
 
         // vIndex: 2
-        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore() = 0;
+        virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const = 0;
+
+        // vIndex: 1
+        virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() = 0;
 
         // vIndex: 3
-        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const = 0;
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
 
         // NOLINTEND
 
-        // thunks
     public:
+        // vftables
         // NOLINTBEGIN
-        MCAPI static void** vftable();
-
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
-    class ViewerImpl : public ::Bedrock::DataStore::Viewer {
+    class Editor : public ::Bedrock::DataStore::Viewer {
     public:
         // prevent constructor by default
-        ViewerImpl& operator=(ViewerImpl const&);
-        ViewerImpl(ViewerImpl const&);
-        ViewerImpl();
+        Editor& operator=(Editor const&);
+        Editor(Editor const&);
+        Editor();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
+        // vIndex: 4
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) = 0;
+
+        // vIndex: 5
+        virtual ::Bedrock::JSONObject::Node*
+        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
+
         // vIndex: 0
-        virtual ~ViewerImpl() = default;
-
-        // vIndex: 1
-        virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
-
-        // vIndex: 2
-        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-
-        // vIndex: 3
-        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
-
+        virtual ~Editor() /*override*/;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore$() const;
-
-        MCAPI gsl::not_null<class Bedrock::DataStore*> getOwningDataStore$();
-
-        MCAPI class Bedrock::JSONObject::Node const* getValueForKey$(std::string_view key) const;
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
 
         // NOLINTEND
     };
+
+    struct CustomFileHandlers {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnk78e097;
+        ::ll::UntypedStorage<8, 64> mUnkd4a032;
+        ::ll::UntypedStorage<8, 64> mUnk530bf3;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CustomFileHandlers& operator=(CustomFileHandlers const&);
+        CustomFileHandlers(CustomFileHandlers const&);
+        CustomFileHandlers();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers&&);
+
+        MCAPI ::Bedrock::DataStore::CustomFileHandlers& operator=(::Bedrock::DataStore::CustomFileHandlers&&);
+
+        MCAPI ~CustomFileHandlers();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Bedrock::DataStore::CustomFileHandlers&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    template <typename T0, typename T1>
+    class AccessHandle {
+    public:
+        // prevent constructor by default
+        AccessHandle& operator=(AccessHandle const&);
+        AccessHandle(AccessHandle const&);
+        AccessHandle();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb118aa;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -196,30 +208,41 @@ public:
     DataStore(DataStore const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataStore();
+    virtual ~DataStore() /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI DataStore();
 
     MCAPI void load();
 
-    MCAPI void setCustomFileHandlers(struct Bedrock::DataStore::CustomFileHandlers handlers);
+    MCAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
 
-    MCAPI void setFilePath(class Core::Path const& filePath);
-
+    MCAPI void setFilePath(::Core::Path const& filePath);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

@@ -4,12 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/BinaryRequestBody.h"
-#include "mc/deps/core/http/IRequestBody.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http { class BinaryRequestBody; }
-// clang-format on
 
 namespace Bedrock::Http {
 
@@ -21,11 +15,26 @@ public:
     StringRequestBody();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StringRequestBody() = default;
+    // vIndex: 5
+    virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
+    // vIndex: 0
+    virtual ~StringRequestBody() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

@@ -4,21 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class ItemInstance;
+class Random;
 // clang-format on
 
-class EndGatewayBlock : public ::ActorBlock {
+class EndGatewayBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     EndGatewayBlock& operator=(EndGatewayBlock const&);
@@ -26,76 +29,78 @@ public:
     EndGatewayBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndGatewayBlock() = default;
-
-    // vIndex: 1
-    virtual std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const& pos, class Block const&) const;
-
     // vIndex: 7
     virtual bool addCollisionShapes(
-        class Block const&                                         block,
-        class IConstBlockSource const&                             region,
-        class BlockPos const&                                      pos,
-        class AABB const*                                          intersectTestBox,
-        std::vector<class AABB>&                                   inoutBoxes,
-        class optional_ref<class GetCollisionShapeInterface const> entity
-    ) const;
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 72
+    virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 78
-    virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
+    // vIndex: 1
+    virtual ::std::shared_ptr<::BlockActor> newBlockEntity(::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI EndGatewayBlock(std::string const& nameId, int id);
-
+    // vIndex: 0
+    virtual ~EndGatewayBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EndGatewayBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI bool addCollisionShapes$(
-        class Block const&                                         block,
-        class IConstBlockSource const&                             region,
-        class BlockPos const&                                      pos,
-        class AABB const*                                          intersectTestBox,
-        std::vector<class AABB>&                                   inoutBoxes,
-        class optional_ref<class GetCollisionShapeInterface const> entity
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+    MCAPI bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    MCAPI bool canContainLiquid$() const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool canRenderSelectionOverlay$(::BlockRenderLayer) const;
+    MCAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
+    // NOLINTEND
 
-    MCAPI bool isWaterBlocking$() const;
-
-    MCAPI std::shared_ptr<class BlockActor> newBlockEntity$(class BlockPos const& pos, class Block const&) const;
-
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

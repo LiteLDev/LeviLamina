@@ -2,28 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 class LegacyStructureBlockPalette {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk37e34c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&);
     LegacyStructureBlockPalette(LegacyStructureBlockPalette const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LegacyStructureBlockPalette();
 
-    MCAPI class Block const& getBlock(int id);
+    MCAPI void addMapping(int id, ::Block const& block);
+
+    MCAPI void clearMap();
+
+    MCAPI ::Block const& getBlock(int id);
 
     MCAPI ~LegacyStructureBlockPalette();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

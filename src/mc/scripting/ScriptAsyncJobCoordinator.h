@@ -7,46 +7,54 @@
 
 // auto generated forward declare list
 // clang-format off
+class IScriptGeneratorStats;
 namespace Scripting { struct ContextId; }
 // clang-format on
 
 class ScriptAsyncJobCoordinator {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk47ca32;
+    ::ll::UntypedStorage<8, 24> mUnkba1ec6;
+    ::ll::UntypedStorage<8, 64> mUnk603ea7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptAsyncJobCoordinator(ScriptAsyncJobCoordinator const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptAsyncJobCoordinator();
 
-    MCAPI uint addGenerator(class Scripting::Generator<void, void, void>&& generator);
+    MCAPI void _addPendingGenerators(::IScriptGeneratorStats* stats);
+
+    MCAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
+
+    MCAPI uint addGenerator(::Scripting::Generator<void, void, void>&& generator);
 
     MCAPI void clear();
 
-    MCAPI class ScriptAsyncJobCoordinator& operator=(class ScriptAsyncJobCoordinator const&);
+    MCAPI ::ScriptAsyncJobCoordinator& operator=(::ScriptAsyncJobCoordinator const&);
 
-    MCAPI void process(std::chrono::microseconds timeSlice, class IScriptGeneratorStats* stats);
+    MCAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
 
-    MCAPI void removeGenerator(struct Scripting::ContextId originatingContextId, uint generatorId);
+    MCAPI void removeGenerator(::Scripting::ContextId originatingContextId, uint generatorId);
 
     MCAPI ~ScriptAsyncJobCoordinator();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addPendingGenerators(class IScriptGeneratorStats* stats);
-
-    MCAPI void _removeExpiredGenerators(class IScriptGeneratorStats* stats);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

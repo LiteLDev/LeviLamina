@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AppConfigs;
+// clang-format on
+
 class AppConfigsFactory {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     AppConfigsFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
-
+    MCAPI static ::std::unique_ptr<::AppConfigs> createAppConfigs();
     // NOLINTEND
 };

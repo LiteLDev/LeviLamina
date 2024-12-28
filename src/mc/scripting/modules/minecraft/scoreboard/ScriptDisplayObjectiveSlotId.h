@@ -4,6 +4,10 @@
 
 namespace ScriptModuleMinecraft {
 
-enum class ScriptDisplayObjectiveSlotId {};
-
+enum class ScriptDisplayObjectiveSlotId : int {
+    List      = 0,
+    Sidebar   = 1,
+    BelowName = 2,
 };
+
+}

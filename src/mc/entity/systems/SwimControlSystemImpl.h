@@ -8,27 +8,40 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ActorDataFlagComponent;
 struct ActorRotationComponent;
-struct InWaterFlag;
-struct MobIsJumpingFlag;
+struct MobIsJumpingFlagComponent;
 struct MobTravelComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct PlayerInputRequestComponent;
 struct StateVectorComponent;
+struct WasInWaterFlagComponent;
 // clang-format on
 
 namespace SwimControlSystemImpl {
 
-struct SwimControlSystemImpl {
+struct SwimControlSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
+      ::Read<
+          ::ActorDataFlagComponent,
+          ::MovementAbilitiesComponent,
+          ::ActorRotationComponent,
+          ::MoveInputComponent,
+          ::PlayerInputRequestComponent>,
+      ::Write<::StateVectorComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     SwimControlSystemImpl& operator=(SwimControlSystemImpl const&);
@@ -36,65 +49,56 @@ public:
     SwimControlSystemImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SwimControlSystemImpl() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          struct MobTravelComponent,
-                          class FlagComponent<struct InWaterFlag>,
-                          class FlagComponent<struct MobIsJumpingFlag>>,
-                      struct Read<
-                          struct ActorDataFlagComponent,
-                          struct MovementAbilitiesComponent,
-                          struct ActorRotationComponent,
-                          struct MoveInputComponent,
-                          struct PlayerInputRequestComponent>,
-                      struct Write<struct StateVectorComponent>,
-                      struct AddRemove<>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
+                      ::Read<
+                          ::ActorDataFlagComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorRotationComponent,
+                          ::MoveInputComponent,
+                          ::PlayerInputRequestComponent>,
+                      ::Write<::StateVectorComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
+    // vIndex: 0
+    virtual ~SwimControlSystemImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         struct MobTravelComponent,
-                         class FlagComponent<struct InWaterFlag>,
-                         class FlagComponent<struct MobIsJumpingFlag>>,
-                     struct Read<
-                         struct ActorDataFlagComponent,
-                         struct MovementAbilitiesComponent,
-                         struct ActorRotationComponent,
-                         struct MoveInputComponent,
-                         struct PlayerInputRequestComponent>,
-                     struct Write<struct StateVectorComponent>,
-                     struct AddRemove<>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<::MobTravelComponent, ::WasInWaterFlagComponent, ::MobIsJumpingFlagComponent>,
+                     ::Read<
+                         ::ActorDataFlagComponent,
+                         ::MovementAbilitiesComponent,
+                         ::ActorRotationComponent,
+                         ::MoveInputComponent,
+                         ::PlayerInputRequestComponent>,
+                     ::Write<::StateVectorComponent>,
+                     ::AddRemove<>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace SwimControlSystemImpl
+} // namespace SwimControlSystemImpl

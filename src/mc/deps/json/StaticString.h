@@ -6,11 +6,16 @@ namespace Json {
 
 class StaticString {
 public:
-    char const* str_;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk33dc96;
+    // NOLINTEND
 
-    explicit StaticString(char const* czstring) : str_(czstring) {}
-    explicit                  operator char const*() const { return str_; }
-    [[nodiscard]] char const* c_str() const { return str_; }
+public:
+    // prevent constructor by default
+    StaticString& operator=(StaticString const&);
+    StaticString(StaticString const&);
+    StaticString();
 };
 
-}; // namespace Json
+} // namespace Json

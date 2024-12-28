@@ -9,12 +9,17 @@
 // auto generated forward declare list
 // clang-format off
 class WorkerPool;
-namespace Bedrock { class WorkerPoolHandleInterface; }
 // clang-format on
 
 namespace Bedrock {
 
 class WorkerPoolHandleImpl : public ::Bedrock::WorkerPoolHandleInterface {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk12adf5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WorkerPoolHandleImpl& operator=(WorkerPoolHandleImpl const&);
@@ -22,23 +27,32 @@ public:
     WorkerPoolHandleImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorkerPoolHandleImpl() = default;
+    virtual ~WorkerPoolHandleImpl() /*override*/;
 
     // vIndex: 1
-    virtual Bedrock::NotNullNonOwnerPtr<class WorkerPool> get() const;
-
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class WorkerPool> get$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

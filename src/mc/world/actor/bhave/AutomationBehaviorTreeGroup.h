@@ -2,7 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BehaviorFactory;
+class BehaviorTreeDefinition;
+class BehaviorTreeDefinitionPtr;
+class ResourcePackManager;
+// clang-format on
+
 class AutomationBehaviorTreeGroup {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk6be485;
+    ::ll::UntypedStorage<8, 8>  mUnkf40c09;
+    ::ll::UntypedStorage<8, 64> mUnk9e3c09;
+    ::ll::UntypedStorage<8, 64> mUnkcdf6b0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AutomationBehaviorTreeGroup& operator=(AutomationBehaviorTreeGroup const&);
@@ -10,29 +27,26 @@ public:
     AutomationBehaviorTreeGroup();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI AutomationBehaviorTreeGroup(class ResourcePackManager& packManager, class BehaviorFactory& factory);
+    MCAPI AutomationBehaviorTreeGroup(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
 
-    MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const& defId);
+    MCAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
+
+    MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
 
     MCAPI ~AutomationBehaviorTreeGroup();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addRef(class BehaviorTreeDefinitionPtr& ref);
-
-    MCAPI void _removeRef(class BehaviorTreeDefinitionPtr& ref);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ResourcePackManager& packManager, class BehaviorFactory& factory);
+    MCAPI void* $ctor(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

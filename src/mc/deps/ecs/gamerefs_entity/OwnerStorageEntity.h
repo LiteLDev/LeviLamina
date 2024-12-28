@@ -1,59 +1,58 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 
-class Actor;
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class EntityRegistry;
+// clang-format on
 
 class OwnerStorageEntity {
 public:
-    std::optional<EntityContext> mContext;
-
-    template <class Entity = Actor, bool IncludeRemoved = false>
-    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
-        if (*this) {
-            return Entity::tryGetFromEntity(const_cast<EntityContext&>(*mContext), IncludeRemoved);
-        }
-        return nullptr;
-    }
-
-    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::optional<::EntityContext>> mContext;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     OwnerStorageEntity& operator=(OwnerStorageEntity const&);
     OwnerStorageEntity(OwnerStorageEntity const&);
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI OwnerStorageEntity();
 
-    MCAPI explicit OwnerStorageEntity(class EntityRegistry& registry);
+    MCAPI OwnerStorageEntity(::OwnerStorageEntity&& other);
 
-    MCAPI OwnerStorageEntity(class OwnerStorageEntity&& other);
+    MCAPI explicit OwnerStorageEntity(::EntityRegistry& registry);
 
-    MCAPI class EntityContext& _getStackRef() const;
+    MCAPI ::EntityContext& _getStackRef() const;
 
     MCAPI bool _hasValue() const;
 
     MCAPI void _reset();
 
-    MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&& other);
+    MCAPI ::OwnerStorageEntity& operator=(::OwnerStorageEntity&& other);
 
     MCAPI ~OwnerStorageEntity();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class EntityRegistry& registry);
+    MCAPI void* $ctor(::OwnerStorageEntity&& other);
 
-    MCAPI void* ctor$(class OwnerStorageEntity&& other);
+    MCAPI void* $ctor(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

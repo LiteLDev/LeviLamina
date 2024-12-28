@@ -6,32 +6,43 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct CurrentTickComponent;
+struct ElytraFlightTimeTicksComponent;
+struct ServerPlayerComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 namespace PlayerPostTravelSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createGlidingGameEventSystem();
+MCAPI ::TickingSystemWithInfo createGlidingGameEventSystem();
 
 MCAPI void doServerPlayerPostTravel(
-    struct ActorDataFlagComponent const&         synchedActorData,
-    struct ElytraFlightTimeTicksComponent const& elytraFlightTimeTicks,
-    struct StateVectorComponent const&           stateVector,
-    class ActorOwnerComponent&                   actorOwner,
-    struct CurrentTickComponent const&           currentTick
+    ::ActorDataFlagComponent const&         synchedActorData,
+    ::ElytraFlightTimeTicksComponent const& elytraFlightTimeTicks,
+    ::StateVectorComponent const&           stateVector,
+    ::ActorOwnerComponent&                  actorOwner,
+    ::CurrentTickComponent const&           currentTick
 );
 
 MCAPI void tickServerPlayerPostTravel(
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<
-            class FlagComponent<struct ActorMovementTickNeededFlag>,
-            class FlagComponent<struct ServerPlayerComponentFlag>>,
-        struct ActorDataFlagComponent const,
-        struct ElytraFlightTimeTicksComponent const,
-        struct StateVectorComponent const,
-        class ActorOwnerComponent>                          view,
-    class OptionalGlobal<struct CurrentTickComponent const> currentTick
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerComponent>,
+        ::ActorDataFlagComponent const,
+        ::ElytraFlightTimeTicksComponent const,
+        ::StateVectorComponent const,
+        ::ActorOwnerComponent>                     view,
+    ::OptionalGlobal<::CurrentTickComponent const> currentTick
 );
 // NOLINTEND
 
-}; // namespace PlayerPostTravelSystem
+} // namespace PlayerPostTravelSystem

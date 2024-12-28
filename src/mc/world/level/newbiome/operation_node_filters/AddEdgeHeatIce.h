@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/newbiome/operation_node_details/NeighborhoodReader.h"
+#include "mc/world/level/newbiome/operation_node_filters/FilterBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,8 @@ namespace OperationNodeValues { struct PreBiome; }
 
 namespace OperationNodeFilters {
 
-struct AddEdgeHeatIce {
+struct AddEdgeHeatIce
+: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
 public:
     // prevent constructor by default
     AddEdgeHeatIce& operator=(AddEdgeHeatIce const&);
@@ -20,12 +22,11 @@ public:
     AddEdgeHeatIce();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct OperationNodeValues::PreBiome
-    operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>& reader
-    ) const;
-
+    MCAPI ::OperationNodeValues::PreBiome
+    operator()(::OperationNodeDetails::NeighborhoodReader<::OperationNodeValues::PreBiome, 1, 1>& reader) const;
     // NOLINTEND
 };
 
-}; // namespace OperationNodeFilters
+} // namespace OperationNodeFilters

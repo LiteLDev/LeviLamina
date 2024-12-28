@@ -2,4 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangLoopContinue {};
+struct MolangLoopContinue {
+public:
+    // prevent constructor by default
+    MolangLoopContinue& operator=(MolangLoopContinue const&);
+    MolangLoopContinue(MolangLoopContinue const&);
+    MolangLoopContinue();
+};

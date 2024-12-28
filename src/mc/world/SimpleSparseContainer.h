@@ -3,9 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Container.h"
+#include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
-class SimpleSparseContainer {
+// auto generated forward declare list
+// clang-format off
+class IPlayerContainerSetter;
+class ISparseContainerSetListener;
+class ItemStack;
+class Player;
+// clang-format on
+
+class SimpleSparseContainer : public ::Container, public ::ContainerContentChangeListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkc19c02;
+    ::ll::UntypedStorage<4, 4>  mUnk8270ae;
+    ::ll::UntypedStorage<8, 64> mUnkbbe490;
+    ::ll::UntypedStorage<8, 8>  mUnk466ce8;
+    ::ll::UntypedStorage<8, 8>  mUnk3bf502;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimpleSparseContainer& operator=(SimpleSparseContainer const&);
@@ -13,79 +33,103 @@ public:
     SimpleSparseContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void containerContentChanged(int slot);
+    // vIndex: 0
+    virtual ~SimpleSparseContainer() /*override*/;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 22
+    virtual void startOpen(::Player& player) /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI void startOpen(class Player& player);
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI void stopOpen(class Player& player);
+    // vIndex: 0
+    virtual void containerContentChanged(int slot) /*override*/;
 
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI SimpleSparseContainer(
-        class Container&                                   backingContainer,
-        ::SparseContainerBackingSetType                    backingSetType,
-        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
-        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+        ::Container&                                     backingContainer,
+        ::SparseContainerBackingSetType                  backingSetType,
+        ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
+        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
+
+    MCAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
 
     MCAPI void clearItem(int slot);
 
     MCAPI void pushAllToBackingContainer();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _setBackingContainerSlot(int slot, class ItemStack const& newItem);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftableForContainer();
-
-    MCAPI static void** vftableForContainerContentChangeListener();
-
-    MCAPI void* ctor$(
-        class Container&                                   backingContainer,
-        ::SparseContainerBackingSetType                    backingSetType,
-        std::unique_ptr<class ISparseContainerSetListener> sparseContainerSetListener,
-        std::unique_ptr<class IPlayerContainerSetter>      playerSetter
+    MCAPI void* $ctor(
+        ::Container&                                     backingContainer,
+        ::SparseContainerBackingSetType                  backingSetType,
+        ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
+        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
+    // NOLINTEND
 
-    MCAPI void containerContentChanged$(int slot);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getContainerSize$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI int getMaxStackSize$() const;
+    MCAPI void $startOpen(::Player& player);
 
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    MCAPI void $stopOpen(::Player& player);
+
+    MCAPI int $getContainerSize() const;
+
+    MCAPI int $getMaxStackSize() const;
+
+    MCAPI void $containerContentChanged(int slot);
+
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+    // NOLINTEND
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainerContentChangeListener();
 
-    MCAPI void startOpen$(class Player& player);
-
-    MCAPI void stopOpen$(class Player& player);
-
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

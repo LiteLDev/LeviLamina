@@ -3,42 +3,63 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/util/Rotation.h"
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
-#include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
-#include "mc/world/level/levelgen/v2/JigsawExpansion.h"
-#include "mc/world/level/levelgen/v2/JigsawSectionDataKey.h"
-#include "mc/world/level/levelgen/v2/RandomSpreadPlacement.h"
-#include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
-#include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
+#include "mc/util/WeightedRandomList.h"
+#include "mc/world/actor/spawn_category/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace br::worldgen { class Beardifier; }
-namespace br::worldgen { class ConstantHeight; }
-namespace br::worldgen { class GenerationStub; }
-namespace br::worldgen { class JigsawSectionData; }
-namespace br::worldgen { class JigsawStructureBuilder; }
-namespace br::worldgen { class StructureCache; }
-namespace br::worldgen { class StructureHeightProvider; }
+class BlockPos;
+class BoundingBox;
+class IDataOutput;
+class StructureStart;
+namespace br { class LevelChunkDataRegistry; }
+namespace br { struct StaticSpawnArea; }
+namespace br { struct StructureKey; }
+namespace br { struct StructureType; }
 namespace br::worldgen { class StructureInstance; }
-namespace br::worldgen { class StructureRegistry; }
-namespace br::worldgen { class StructureSetRegistry; }
-namespace br::worldgen { class UniformHeight; }
-namespace br::worldgen { class VerticalAnchor; }
-namespace br::worldgen { class WorldGenContext; }
-namespace br::worldgen { struct ChunkGeneratorStructureState; }
-namespace br::worldgen { struct GenerationContext; }
-namespace br::worldgen { struct JigsawJunction; }
-namespace br::worldgen { struct JigsawPieceState; }
-namespace br::worldgen { struct JigsawStructure; }
-namespace br::worldgen { struct Rigid; }
 namespace br::worldgen { struct SpawnerData; }
-namespace br::worldgen { struct Structure; }
-namespace br::worldgen { struct StructurePlacement; }
-namespace br::worldgen { struct StructureSet; }
-namespace br::worldgen { struct WorldGenRandom; }
 // clang-format on
 
-namespace br {};
+namespace br {
+// functions
+// NOLINTBEGIN
+MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+dynamicStructureMobs(::br::LevelChunkDataRegistry const& reg, ::BlockPos pos, ::SpawnCategory::Type category);
+
+MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+findMobsPiece(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
+
+MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+findMobsStructure(::br::LevelChunkDataRegistry const& reg, ::br::StructureKey key, ::SpawnCategory::Type category);
+
+MCAPI ::br::StructureKey findStructureKey(::br::LevelChunkDataRegistry const& reg, ::std::string_view name);
+
+MCAPI void insertStructure(
+    ::br::LevelChunkDataRegistry& reg,
+    ::BoundingBox                 chunkBB,
+    ::br::StructureKey            key,
+    ::StructureStart const&       instance
+);
+
+MCAPI void insertStructure(
+    ::br::LevelChunkDataRegistry&            reg,
+    ::BoundingBox                            chunkBB,
+    ::br::StructureKey                       key,
+    ::br::worldgen::StructureInstance const& instance
+);
+
+MCAPI bool serialize(::IDataOutput& stream, ::br::StructureKey const& val);
+
+MCAPI bool serialize(::IDataOutput& stream, ::br::StructureType const& val);
+
+MCAPI bool serialize(::IDataOutput&, ::br::StaticSpawnArea const&);
+
+MCAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);
+
+MCAPI ::br::StructureKey spawnStructureKey(::br::LevelChunkDataRegistry& reg, ::std::string_view name);
+
+MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+staticStructureMobs(::br::LevelChunkDataRegistry const& reg, ::BlockPos pos, ::SpawnCategory::Type category);
+// NOLINTEND
+
+} // namespace br

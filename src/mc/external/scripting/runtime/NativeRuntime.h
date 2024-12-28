@@ -7,7 +7,7 @@
 #include "mc/external/scripting/reflection/Privilege.h"
 #include "mc/external/scripting/runtime/FutureStatus.h"
 #include "mc/external/scripting/runtime/IRuntime.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,6 @@ namespace Scripting { class IDebuggerTransport; }
 namespace Scripting { class IDependencyLoader; }
 namespace Scripting { class IPayload; }
 namespace Scripting { class IPrinter; }
-namespace Scripting { class IRuntime; }
 namespace Scripting { class IWatchdog; }
 namespace Scripting { class RegistryManager; }
 namespace Scripting { class ResultAny; }
@@ -36,7 +35,14 @@ namespace Scripting { struct WatchdogSettings; }
 
 namespace Scripting {
 
-class NativeRuntime : public ::Scripting::IRuntime {
+class NativeRuntime : public ::Scripting::IRuntime, public ::std::enable_shared_from_this<::Scripting::NativeRuntime> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkff21cf;
+    ::ll::UntypedStorage<8, 64> mUnk59e9d2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NativeRuntime& operator=(NativeRuntime const&);
@@ -44,152 +50,175 @@ public:
     NativeRuntime();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NativeRuntime() = default;
-
-    // vIndex: 1
-    virtual std::optional<class Scripting::ScriptContext>
-    createContext(struct Scripting::ModuleBindingBundle&& bindings, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter* printer, struct Scripting::ContextConfig const&);
-
-    // vIndex: 2
-    virtual void destroyContext(struct Scripting::ContextId contextId);
+    virtual ~NativeRuntime() /*override*/;
 
     // vIndex: 3
-    virtual class Scripting::ResultAny
-    run(struct Scripting::ContextId           contextId,
-        class Scripting::IPayload*            payload,
-        std::optional<::Scripting::Privilege> privilege);
+    virtual ::std::optional<::Scripting::ScriptContext>
+    createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&) /*override*/
+        ;
 
     // vIndex: 4
-    virtual class Scripting::ResultAny
-    call(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any*, uint, entt::meta_type const&, std::optional<::Scripting::Privilege>);
+    virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
 
     // vIndex: 5
-    virtual class Scripting::ResultAny
-    resolve(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+    virtual ::Scripting::ResultAny
+    run(::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 6
-    virtual class Scripting::ResultAny
-    reject(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+    virtual ::Scripting::ResultAny
+    call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>) /*override*/
+        ;
 
     // vIndex: 7
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>)
-            const;
+    virtual ::Scripting::ResultAny
+    resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/
+        ;
 
     // vIndex: 8
-    virtual class Scripting::ResultAny
-    getFutureResult(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>, entt::meta_type const&)
-        const;
+    virtual ::Scripting::ResultAny
+    reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) /*override*/
+        ;
 
     // vIndex: 9
-    virtual class Scripting::Result<struct Scripting::CoRoutineResult>
-        executeCoroutines(std::optional<std::chrono::microseconds>);
+    virtual ::Scripting::FutureStatus
+        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
+        /*override*/;
 
     // vIndex: 10
-    virtual bool hasPendingJobs();
+    virtual ::Scripting::ResultAny
+    getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
+        const /*override*/;
 
     // vIndex: 11
-    virtual class Scripting::IDebuggerController* enableDebugger(class Scripting::IDebuggerTransport&);
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+        executeCoroutines(::std::optional<::std::chrono::microseconds>) /*override*/;
 
     // vIndex: 12
-    virtual void disableDebugger();
+    virtual bool hasPendingJobs() /*override*/;
 
     // vIndex: 13
-    virtual void startProfiler();
+    virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport&) /*override*/;
 
     // vIndex: 14
-    virtual void stopProfiler(std::string const&);
+    virtual void disableDebugger() /*override*/;
 
     // vIndex: 15
-    virtual struct Scripting::RuntimeStats computeRuntimeStats() const;
+    virtual void startProfiler() /*override*/;
 
     // vIndex: 16
-    virtual class Scripting::IWatchdog* enableWatchdog(struct Scripting::WatchdogSettings);
+    virtual void
+        stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>) /*override*/
+        ;
 
     // vIndex: 17
-    virtual void disableWatchdog();
+    virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
 
     // vIndex: 18
-    virtual class Scripting::IWatchdog* getWatchdog() const;
+    virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings) /*override*/;
 
     // vIndex: 19
-    virtual std::optional<struct Scripting::TypeNameInfo>
-    getNameForType(struct Scripting::ContextId, entt::meta_type const&, bool) const;
+    virtual void disableWatchdog() /*override*/;
 
-    MCAPI explicit NativeRuntime(class Scripting::RegistryManager& registryManager);
+    // vIndex: 20
+    virtual ::Scripting::IWatchdog* getWatchdog() const /*override*/;
 
-    MCAPI class Scripting::ResultAny runFunction(
-        struct Scripting::ContextId contextId,
-        std::function<
-            class Scripting::
-                ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)> const&
-            function
-    );
-
+    // vIndex: 21
+    virtual ::std::optional<::Scripting::TypeNameInfo>
+    getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
 
-    MCAPI void* ctor$(class Scripting::RegistryManager& registryManager);
+    MCAPI ::Scripting::ResultAny runFunction(
+        ::Scripting::ContextId contextId,
+        ::std::function<
+            ::Scripting::
+                ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)> const&
+            function
+    );
+    // NOLINTEND
 
-    MCAPI class Scripting::ResultAny
-    call$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any*, uint, entt::meta_type const&, std::optional<::Scripting::Privilege>);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::RegistryManager& registryManager);
+    // NOLINTEND
 
-    MCAPI struct Scripting::RuntimeStats computeRuntimeStats$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<class Scripting::ScriptContext>
-    createContext$(struct Scripting::ModuleBindingBundle&& bindings, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter* printer, struct Scripting::ContextConfig const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::ScriptContext>
+    $createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const&);
 
-    MCAPI void destroyContext$(struct Scripting::ContextId contextId);
+    MCAPI void $destroyContext(::Scripting::ContextId contextId);
 
-    MCAPI void disableDebugger$();
-
-    MCAPI void disableWatchdog$();
-
-    MCAPI class Scripting::IDebuggerController* enableDebugger$(class Scripting::IDebuggerTransport&);
-
-    MCAPI class Scripting::IWatchdog* enableWatchdog$(struct Scripting::WatchdogSettings);
-
-    MCAPI class Scripting::Result<struct Scripting::CoRoutineResult>
-        executeCoroutines$(std::optional<std::chrono::microseconds>);
-
-    MCAPI class Scripting::ResultAny
-    getFutureResult$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>, entt::meta_type const&)
-        const;
-
-    MCAPI ::Scripting::FutureStatus
-        getFutureStatus$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::FutureType>)
-            const;
-
-    MCAPI std::optional<struct Scripting::TypeNameInfo>
-          getNameForType$(struct Scripting::ContextId, entt::meta_type const&, bool) const;
-
-    MCAPI class Scripting::IWatchdog* getWatchdog$() const;
-
-    MCAPI bool hasPendingJobs$();
-
-    MCAPI class Scripting::ResultAny
-    reject$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
-
-    MCAPI class Scripting::ResultAny
-    resolve$(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
-
-    MCAPI class Scripting::ResultAny run$(
-        struct Scripting::ContextId           contextId,
-        class Scripting::IPayload*            payload,
-        std::optional<::Scripting::Privilege> privilege
+    MCAPI ::Scripting::ResultAny $run(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege
     );
 
-    MCAPI void startProfiler$();
+    MCAPI ::Scripting::ResultAny
+    $call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>);
 
-    MCAPI void stopProfiler$(std::string const&);
+    MCAPI ::Scripting::ResultAny
+    $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
+    MCAPI ::Scripting::ResultAny
+    $reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
+
+    MCAPI ::Scripting::FutureStatus
+        $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
+
+    MCAPI ::Scripting::ResultAny
+    $getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
+        const;
+
+    MCAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+        $executeCoroutines(::std::optional<::std::chrono::microseconds>);
+
+    MCAPI bool $hasPendingJobs();
+
+    MCAPI ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
+
+    MCAPI void $disableDebugger();
+
+    MCAPI void $startProfiler();
+
+    MCAPI void
+        $stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>);
+
+    MCAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
+
+    MCAPI ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings);
+
+    MCAPI void $disableWatchdog();
+
+    MCAPI ::Scripting::IWatchdog* $getWatchdog() const;
+
+    MCAPI ::std::optional<::Scripting::TypeNameInfo>
+    $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

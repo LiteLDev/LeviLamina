@@ -2,30 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace LevelDataKeys {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString& DAYLIGHT_CYCLE();
+MCAPI ::HashedString& DAYLIGHT_CYCLE();
 
-MCAPI class HashedString& EDUCATION_OID();
+MCAPI ::HashedString& EDUCATION_OID();
 
-MCAPI class HashedString& EDUCATION_SHARED_RESOURCE();
+MCAPI ::HashedString& EDUCATION_SHARED_RESOURCE();
 
-MCAPI class HashedString& FLAT_WORLD_VERSION();
+MCAPI ::HashedString& FLAT_WORLD_VERSION();
 
-MCAPI class HashedString& GAME_TYPE();
+MCAPI ::HashedString& GAME_TYPE();
 
-MCAPI class HashedString& GENERATOR();
+MCAPI ::HashedString& GENERATOR();
 
-MCAPI class HashedString& LIMITED_WORLD_DEPTH();
+MCAPI ::HashedString& LIMITED_WORLD_DEPTH();
 
-MCAPI class HashedString& LIMITED_WORLD_WIDTH();
+MCAPI ::HashedString& LIMITED_WORLD_WIDTH();
 
-MCAPI class HashedString& LOADED_PLAYER_TAG();
+MCAPI ::HashedString& LOADED_PLAYER_TAG();
 
-MCAPI class HashedString& SEED();
+MCAPI ::HashedString& SEED();
 
-MCAPI class HashedString& SPAWN_POS();
+MCAPI ::HashedString& SERVER_AUTH_OPT_OUT_VERSION();
+
+MCAPI ::HashedString& SPAWN_POS();
 // NOLINTEND
 
-}; // namespace LevelDataKeys
+} // namespace LevelDataKeys

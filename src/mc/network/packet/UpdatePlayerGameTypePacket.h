@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/world/level/GameType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -10,57 +8,84 @@
 #include "mc/platform/Result.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+struct PlayerInputTick;
+// clang-format on
+
 class UpdatePlayerGameTypePacket : public ::Packet {
 public:
-    GameType      mPlayerGameType; // this+0x30
-    ActorUniqueID mTargetPlayer;   // this+0x38
-    int           mTick;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::GameType>        mPlayerGameType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>   mTargetPlayer;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     UpdatePlayerGameTypePacket& operator=(UpdatePlayerGameTypePacket const&);
     UpdatePlayerGameTypePacket(UpdatePlayerGameTypePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~UpdatePlayerGameTypePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI UpdatePlayerGameTypePacket();
-
-    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, struct ActorUniqueID const& targetPlayer, uint64 tick);
-
+    // vIndex: 0
+    virtual ~UpdatePlayerGameTypePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI UpdatePlayerGameTypePacket();
 
-    MCAPI void* ctor$(::GameType playerGameType, struct ActorUniqueID const& targetPlayer, uint64 tick);
+    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, ::ActorUniqueID const& targetPlayer, uint64 tick);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::GameType playerGameType, ::ActorUniqueID const& targetPlayer, uint64 tick);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

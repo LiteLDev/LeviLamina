@@ -10,16 +10,31 @@ public:
     IUIEventTelemetry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IUIEventTelemetry() = default;
+    virtual ~IUIEventTelemetry();
+
+    // vIndex: 1
+    virtual void
+    fireScreenLoadTimeUpdateEvent(uint const&, ::std::string const&, ::std::chrono::nanoseconds, ::std::string const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

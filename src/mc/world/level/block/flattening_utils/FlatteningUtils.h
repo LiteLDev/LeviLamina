@@ -4,101 +4,162 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/CoralColor.h"
-#include "mc/world/level/block/WoodType.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockLegacy;
+class BlockState;
+class CompoundTagUpdaterContext;
+struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { class RemovedState; }
-namespace FlatteningUtils { struct BlockNameRefAuxVariant; }
-namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
 // clang-format on
 
 namespace FlatteningUtils {
+// functions
 // NOLINTBEGIN
 MCAPI void addUpdate(
-    class CompoundTagUpdaterContext&                                         context,
-    uchar                                                                    major,
-    uchar                                                                    minor,
-    uchar                                                                    patch,
-    struct FlatteningUtils::LegacyBlockInfo const&                           legacyBlockInfo,
-    std::vector<std::shared_ptr<class FlatteningUtils::RemovedState>> const& removedStates
+    ::CompoundTagUpdaterContext&                                             context,
+    uchar const* const                                                       version,
+    ::FlatteningUtils::LegacyBlockInfo const&                                legacyBlockInfo,
+    ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-MCAPI std::vector<class WeakPtr<class BlockLegacy const>>
-      getComplexAliasBlocks(struct FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+MCAPI ::std::vector<::WeakPtr<::BlockLegacy const>>
+getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
-MCAPI std::function<class Block const*(int)> getSimpleBlockComplexAliasCallback(
-    struct FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo,
-    uint64                                         expectedCount
-);
+MCAPI ::ItemRegistryComplexAlias
+getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);
+
+MCAPI ::std::function<void()>
+removeSimpleStateCollection(::BlockState const& statRef, ::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::vector<std::reference_wrapper<struct FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyAnvilInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyCarpetInfo();
+MCAPI ::std::vector<::std::reference_wrapper<::FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyConcreteInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyBrownMushroomInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyConcretePowderInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCarpetInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyCoralBlockInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyChemistryTableInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyCoralFanInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCobblestoneWallInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyCoralInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchBPInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyDeadCoralFanInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyColoredTorchRGInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyDoublePlantInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcreteInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyFenceInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyConcretePowderInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralBlockInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassPaneInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralFanInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyLavaCauldronInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyLeaves2Info();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan1Info();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyLeavesInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan2Info();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyLog2Info();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyCoralWallFan3Info();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyLogInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDeadCoralFanInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyPlanksInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDirtInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyRedFlowerInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyDoublePlantInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacySaplingInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyFenceInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyShulkerBoxInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyHardStainedGlassPaneInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassPaneInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyInfestedBlockInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyStoneInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLavaCauldronInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab1Info();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeaves2Info();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyTallGrassInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLeavesInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyTerracottaInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLightBlockInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyWoodInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLog2Info();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyWoodenDoubleSlabInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyLogInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyWoodenSlabInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPlanksInfo();
 
-MCAPI struct FlatteningUtils::LegacyBlockInfo const& LegacyWoolInfo();
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPrismarineInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyPurpurInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyQuartzInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedFlowerInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedMushroomInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyRedSandstoneInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySandstoneInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySaplingInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyShulkerBoxInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySkullInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacySpongeInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStainedGlassPaneInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneBricksInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab1Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab2Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab3Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneDoubleSlab4Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab1Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab2Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab3Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStoneSlab4Info();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyStructureVoidInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTallGrassInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTerracottaInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyTntInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenDoubleSlabInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenSlabInfo();
+
+MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoolInfo();
 // NOLINTEND
 
-}; // namespace FlatteningUtils
+} // namespace FlatteningUtils

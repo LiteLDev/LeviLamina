@@ -5,8 +5,9 @@
 namespace BlockSerializationUtils {
 
 enum class NBTState : int {
-    Malformed = 0x0,
-    Unknown   = 0x1,
-    Success   = 0x2,
+    Malformed = 0,
+    Unknown   = 1,
+    Success   = 2,
 };
-};
+
+}

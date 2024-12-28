@@ -6,7 +6,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/UnzipResult.h"
 #include "mc/deps/core/file/ZipResult.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,32 +18,39 @@ namespace Core::ZipUtils { class ZipSettings; }
 // clang-format on
 
 namespace Core::ZipUtils {
+// functions
 // NOLINTBEGIN
-MCAPI class Core::PathBuffer<class Core::StackString<char, 1024>> _zipEncodedPathToUTF8(class Core::Path const& path);
+MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::Path const& path);
 
-MCAPI bool exists(class Core::Path const& zipPath, class Core::Path const& filePath);
+MCAPI bool exists(::Core::Path const& zipPath, ::Core::Path const& filePath);
+
+MCAPI bool getFilenames(
+    ::Core::Path const&                               zipPath,
+    ::std::vector<::Core::PathBuffer<::std::string>>& result,
+    ::Core::ZipUtils::UnzipSettings const&            unzipSettings
+);
 
 MCAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int inputResult);
 
 MCAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
 
-MCAPI class Core::Result
-isFolderDepthValid(class Core::PathBuffer<class Core::StackString<char, 1024>> const& filePath, uint64 maxFileDepth);
+MCAPI ::Core::Result
+isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
 
 MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
-    class Core::Path const&                    zipInputPath,
-    class Core::Path const&                    outputFolderPath,
-    class Core::ZipUtils::ZipProgress&         progress,
-    bool                                       useLowMemMode,
-    class Core::ZipUtils::UnzipSettings const& unzipSettings
+    ::Core::Path const&                    zipInputPath,
+    ::Core::Path const&                    outputFolderPath,
+    ::Core::ZipUtils::ZipProgress&         progress,
+    bool                                   useLowMemMode,
+    ::Core::ZipUtils::UnzipSettings const& unzipSettings
 );
 
 MCAPI ::Core::ZipUtils::ZipResult
-zip(class Core::Path const&                  inputPathIn,
-    class Core::Path const&                  zipOutputPath,
-    class Core::ZipUtils::ZipProgress&       progress,
-    bool                                     useLowMemMode,
-    class Core::ZipUtils::ZipSettings const& zipSettings);
+zip(::Core::Path const&                  inputPathIn,
+    ::Core::Path const&                  zipOutputPath,
+    ::Core::ZipUtils::ZipProgress&       progress,
+    bool                                 useLowMemMode,
+    ::Core::ZipUtils::ZipSettings const& zipSettings);
 // NOLINTEND
 
-}; // namespace Core::ZipUtils
+} // namespace Core::ZipUtils

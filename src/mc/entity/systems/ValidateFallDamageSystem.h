@@ -6,21 +6,31 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct EventingDispatcherComponent;
+struct EventingRequestQueueComponent;
+struct FallDamageResultComponent;
+struct PassengerComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct TickingSystemWithInfo;
+struct VehicleInputIntentComponent;
+// clang-format on
+
 namespace ValidateFallDamageSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doValidateFallDamage(
-    struct EventingDispatcherComponent const&                                eventingDispatcherComponent,
-    class Optional<struct ServerPlayerCurrentMovementComponent const> const& serverPlayerCurrentMovementComponent,
-    class Optional<struct FallDamageResultComponent const> const&            playerFallDamageResultComponent,
-    class Optional<struct PassengerComponent const> const&                   passengerComponent,
-    class ViewT<
-        class StrictEntityContext,
-        struct VehicleInputIntentComponent const,
-        struct FallDamageResultComponent const>                                  vehicleView,
-    class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent> requestQueueView
+    ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+    ::Optional<::ServerPlayerCurrentMovementComponent const> const& serverPlayerCurrentMovementComponent,
+    ::Optional<::FallDamageResultComponent const> const&            playerFallDamageResultComponent,
+    ::Optional<::PassengerComponent const> const&                   passengerComponent,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
+    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
 );
 // NOLINTEND
 
-}; // namespace ValidateFallDamageSystem
+} // namespace ValidateFallDamageSystem

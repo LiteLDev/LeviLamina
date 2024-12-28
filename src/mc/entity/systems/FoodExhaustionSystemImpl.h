@@ -8,45 +8,77 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-class ExhaustionComponent;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
-struct ActorMovementTickNeededFlag;
+struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct AttributeRequestComponent;
-struct CamelFlag;
+struct CamelFlagComponent;
 struct DimensionTypeComponent;
+struct ExhaustionComponent;
 struct ExternalDataComponent;
-struct HorseFlag;
-struct InWaterFlag;
+struct HorseFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
-struct MobFlag;
+struct MobFlagComponent;
 struct OffsetsComponent;
 struct OnGroundFlagComponent;
-struct ParrotFlag;
+struct ParrotFlagComponent;
 struct PassengerComponent;
 struct PassengerRenderingRidingOffsetComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct RenderRotationComponent;
 struct ServerPlayerCurrentMovementComponent;
 struct StandAnimationComponent;
 struct StateVectorComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
+struct WasInWaterFlagComponent;
 // clang-format on
 
 namespace FoodExhaustionSystemImpl {
 
-struct FoodExhaustionSystemImpl {
+struct FoodExhaustionSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                      ::Filter<
+                                          ::ActorMovementTickNeededComponent,
+                                          ::PassengerComponent,
+                                          ::PlayerComponent,
+                                          ::HorseFlagComponent,
+                                          ::MobFlagComponent,
+                                          ::ParrotFlagComponent,
+                                          ::VehicleComponent,
+                                          ::CamelFlagComponent>,
+                                      ::Read<
+                                          ::DimensionTypeComponent,
+                                          ::ExhaustionComponent,
+                                          ::OnGroundFlagComponent,
+                                          ::ActorGameTypeComponent,
+                                          ::ServerPlayerCurrentMovementComponent,
+                                          ::StateVectorComponent,
+                                          ::ActorDataFlagComponent,
+                                          ::WasInWaterFlagComponent,
+                                          ::ActorRotationComponent,
+                                          ::MobBodyRotationComponent,
+                                          ::PassengerComponent,
+                                          ::RenderRotationComponent,
+                                          ::StandAnimationComponent,
+                                          ::AABBShapeComponent,
+                                          ::OffsetsComponent,
+                                          ::VanillaOffsetComponent,
+                                          ::PassengerRenderingRidingOffsetComponent>,
+                                      ::Write<>,
+                                      ::AddRemove<::AttributeRequestComponent>,
+                                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+                                      ::GlobalWrite<>,
+                                      ::EntityFactoryT<>>> {
 public:
     // prevent constructor by default
     FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&);
@@ -54,99 +86,96 @@ public:
     FoodExhaustionSystemImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~FoodExhaustionSystemImpl() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct ActorMovementTickNeededFlag>,
-                          struct PassengerComponent,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct HorseFlag>,
-                          class FlagComponent<struct MobFlag>,
-                          class FlagComponent<struct ParrotFlag>,
-                          struct VehicleComponent,
-                          class FlagComponent<struct CamelFlag>>,
-                      struct Read<
-                          struct DimensionTypeComponent,
-                          class ExhaustionComponent,
-                          struct OnGroundFlagComponent,
-                          struct ActorGameTypeComponent,
-                          struct ServerPlayerCurrentMovementComponent,
-                          struct StateVectorComponent,
-                          struct ActorDataFlagComponent,
-                          class FlagComponent<struct InWaterFlag>,
-                          struct ActorRotationComponent,
-                          struct MobBodyRotationComponent,
-                          struct PassengerComponent,
-                          struct RenderRotationComponent,
-                          struct StandAnimationComponent,
-                          struct AABBShapeComponent,
-                          struct OffsetsComponent,
-                          struct VanillaOffsetComponent,
-                          struct PassengerRenderingRidingOffsetComponent>,
-                      struct Write<>,
-                      struct AddRemove<struct AttributeRequestComponent>,
-                      struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& context);
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorMovementTickNeededComponent,
+                          ::PassengerComponent,
+                          ::PlayerComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent>,
+                      ::Read<
+                          ::DimensionTypeComponent,
+                          ::ExhaustionComponent,
+                          ::OnGroundFlagComponent,
+                          ::ActorGameTypeComponent,
+                          ::ServerPlayerCurrentMovementComponent,
+                          ::StateVectorComponent,
+                          ::ActorDataFlagComponent,
+                          ::WasInWaterFlagComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::PassengerComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::AABBShapeComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent>,
+                      ::Write<>,
+                      ::AddRemove<::AttributeRequestComponent>,
+                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context) /*override*/;
 
+    // vIndex: 0
+    virtual ~FoodExhaustionSystemImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct ActorMovementTickNeededFlag>,
-                         struct PassengerComponent,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct HorseFlag>,
-                         class FlagComponent<struct MobFlag>,
-                         class FlagComponent<struct ParrotFlag>,
-                         struct VehicleComponent,
-                         class FlagComponent<struct CamelFlag>>,
-                     struct Read<
-                         struct DimensionTypeComponent,
-                         class ExhaustionComponent,
-                         struct OnGroundFlagComponent,
-                         struct ActorGameTypeComponent,
-                         struct ServerPlayerCurrentMovementComponent,
-                         struct StateVectorComponent,
-                         struct ActorDataFlagComponent,
-                         class FlagComponent<struct InWaterFlag>,
-                         struct ActorRotationComponent,
-                         struct MobBodyRotationComponent,
-                         struct PassengerComponent,
-                         struct RenderRotationComponent,
-                         struct StandAnimationComponent,
-                         struct AABBShapeComponent,
-                         struct OffsetsComponent,
-                         struct VanillaOffsetComponent,
-                         struct PassengerRenderingRidingOffsetComponent>,
-                     struct Write<>,
-                     struct AddRemove<struct AttributeRequestComponent>,
-                     struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::ActorMovementTickNeededComponent,
+                         ::PassengerComponent,
+                         ::PlayerComponent,
+                         ::HorseFlagComponent,
+                         ::MobFlagComponent,
+                         ::ParrotFlagComponent,
+                         ::VehicleComponent,
+                         ::CamelFlagComponent>,
+                     ::Read<
+                         ::DimensionTypeComponent,
+                         ::ExhaustionComponent,
+                         ::OnGroundFlagComponent,
+                         ::ActorGameTypeComponent,
+                         ::ServerPlayerCurrentMovementComponent,
+                         ::StateVectorComponent,
+                         ::ActorDataFlagComponent,
+                         ::WasInWaterFlagComponent,
+                         ::ActorRotationComponent,
+                         ::MobBodyRotationComponent,
+                         ::PassengerComponent,
+                         ::RenderRotationComponent,
+                         ::StandAnimationComponent,
+                         ::AABBShapeComponent,
+                         ::OffsetsComponent,
+                         ::VanillaOffsetComponent,
+                         ::PassengerRenderingRidingOffsetComponent>,
+                     ::Write<>,
+                     ::AddRemove<::AttributeRequestComponent>,
+                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& context);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace FoodExhaustionSystemImpl
+} // namespace FoodExhaustionSystemImpl

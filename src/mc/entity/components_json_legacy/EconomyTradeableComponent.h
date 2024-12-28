@@ -5,7 +5,37 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorInteraction;
+class CompoundTag;
+class DataLoadHelper;
+class MerchantRecipeList;
+class Player;
+class UpdateTradePacket;
+struct IntRange;
+struct Tick;
+struct Trade;
+struct TradeTable;
+// clang-format on
+
 class EconomyTradeableComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk59fee2;
+    ::ll::UntypedStorage<4, 4>  mUnkaa12b0;
+    ::ll::UntypedStorage<1, 1>  mUnk698dba;
+    ::ll::UntypedStorage<4, 4>  mUnkd43c37;
+    ::ll::UntypedStorage<8, 8>  mUnkaf6f5f;
+    ::ll::UntypedStorage<8, 8>  mUnkdfc605;
+    ::ll::UntypedStorage<8, 32> mUnk70e3fb;
+    ::ll::UntypedStorage<8, 32> mUnkf1b3ea;
+    ::ll::UntypedStorage<1, 1>  mUnk6e61ae;
+    ::ll::UntypedStorage<4, 4>  mUnkf5aad7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EconomyTradeableComponent& operator=(EconomyTradeableComponent const&);
@@ -13,24 +43,33 @@ public:
     EconomyTradeableComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit EconomyTradeableComponent(class Actor& owner);
+    MCAPI explicit EconomyTradeableComponent(::Actor& owner);
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI bool _generateTrades();
 
-    MCAPI class UpdateTradePacket createDataPacket(::ContainerID containerID);
+    MCAPI ::TradeTable* _getTradeTable();
 
-    MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList* oldOffers);
+    MCAPI void _rearrangeTradeList(::std::vector<::Trade>& tradeList, uint64 sampleCount);
 
-    MCAPI struct IntRange getCurrentCuredDiscount() const;
+    MCAPI void _setMaxTradeTier(int tradeTier);
 
-    MCAPI int getCurrentNearbyCuredDiscount() const;
+    MCAPI void _setTradeTier(int tradeTier);
 
-    MCAPI std::string const& getDisplayName() const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool getInteraction(class Player& player, class ActorInteraction& interaction);
+    MCAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
 
-    MCAPI class MerchantRecipeList* getOffers();
+    MCAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
+
+    MCAPI ::IntRange getCurrentCuredDiscount() const;
+
+    MCAPI ::std::string const& getDisplayName() const;
+
+    MCAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
+
+    MCAPI ::MerchantRecipeList* getOffers();
 
     MCAPI int getRiches() const;
 
@@ -40,17 +79,17 @@ public:
 
     MCAPI void initFromDefinition();
 
-    MCAPI std::string const& loadDisplayName();
+    MCAPI ::std::string const& loadDisplayName();
 
-    MCAPI void loadOffersFromTag(class CompoundTag const* tag);
+    MCAPI void loadOffersFromTag(::CompoundTag const* tag);
 
     MCAPI void matchExpAndTier();
 
     MCAPI void newServerAiStep();
 
-    MCAPI void notifyTrade(int recipeIndex);
+    MCAPI void notifyTrade(int recipeIndex, int numTrades);
 
-    MCAPI void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void reloadComponent();
 
@@ -58,7 +97,7 @@ public:
 
     MCAPI void setNearbyCuredDiscount(int discount);
 
-    MCAPI void setOffers(class MerchantRecipeList& offers);
+    MCAPI void setOffers(::MerchantRecipeList& offers);
 
     MCAPI void setRiches(int riches);
 
@@ -68,38 +107,24 @@ public:
 
     MCAPI bool showTradeScreen();
 
-    MCAPI void tickDiscountDegradationTimer(struct Tick currentTick);
+    MCAPI void tickDiscountDegradationTimer(::Tick currentTick);
 
     MCAPI void tryIncrementCuredDiscount();
 
     MCAPI void tryIncrementNearbyCuredDiscount();
 
-    MCAPI void tryToTransferOldOffers(class MerchantRecipeList* oldOffers);
-
-    MCAPI static bool isUseNewTradeScreen(class Actor const& owner);
-
+    MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _generateTrades();
-
-    MCAPI struct TradeTable* _getTradeTable();
-
-    MCAPI uint _getTradeTierFromCurrentExp() const;
-
-    MCAPI void _rearrangeTradeList(std::vector<struct Trade>& tradeList, uint64 sampleCount);
-
-    MCAPI void _setMaxTradeTier(int tradeTier);
-
-    MCAPI void _setTradeTier(int tradeTier);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Actor& owner);
+    MCAPI static bool isUseNewTradeScreen(::Actor const& owner);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& owner);
     // NOLINTEND
 };

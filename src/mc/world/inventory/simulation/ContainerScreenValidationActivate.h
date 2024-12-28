@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerScreenValidation.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ContainerValidationResult;
+// clang-format on
+
 class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
 public:
     // prevent constructor by default
@@ -13,21 +18,30 @@ public:
     ContainerScreenValidationActivate();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ContainerScreenValidationActivate() = default;
-
     // vIndex: 3
-    virtual struct ContainerValidationResult tryActivate();
+    virtual ::ContainerValidationResult tryActivate() /*override*/;
 
+    // vIndex: 0
+    virtual ~ContainerScreenValidationActivate() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct ContainerValidationResult tryActivate$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ContainerValidationResult $tryActivate();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

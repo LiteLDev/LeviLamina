@@ -2,31 +2,42 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 struct ActorInfo {
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ActorInfo();
-
-    MCAPI ActorInfo(struct ActorInfo const&);
-
-    MCAPI void load(class CompoundTag const* tag);
-
-    MCAPI struct ActorInfo& operator=(struct ActorInfo const&);
-
-    MCAPI std::unique_ptr<class CompoundTag> save() const;
-
-    MCAPI ~ActorInfo();
-
+    ::ll::UntypedStorage<4, 4>   mUnkb087cb;
+    ::ll::UntypedStorage<8, 176> mUnkfab62c;
+    ::ll::UntypedStorage<8, 176> mUnkee4af0;
+    ::ll::UntypedStorage<1, 1>   mUnk84432a;
+    ::ll::UntypedStorage<1, 1>   mUnk830ac5;
+    ::ll::UntypedStorage<4, 8>   mUnkbb7427;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ActorInfo& operator=(ActorInfo const&);
+    ActorInfo(ActorInfo const&);
+    ActorInfo();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ActorInfo const&);
+    MCAPI void load(::CompoundTag const* tag);
 
-    MCAPI void* ctor$();
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCAPI void dtor$();
+    MCAPI ~ActorInfo();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

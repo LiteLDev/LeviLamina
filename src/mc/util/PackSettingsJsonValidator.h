@@ -13,8 +13,8 @@ public:
     PackSettingsJsonValidator();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class JsonValidator::Property getValidator();
-
+    MCAPI static ::JsonValidator::Property getValidator();
     // NOLINTEND
 };

@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class VibrationListenerComponent;
+// clang-format on
+
 namespace VibrationListenerSystemInternal {
+// functions
 // NOLINTBEGIN
-MCAPI void tickComponent(
-    class ActorOwnerComponent&        actorOwnerComponent,
-    class VibrationListenerComponent& vibrationListenerComponent
-);
+MCAPI void
+tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::VibrationListenerComponent& vibrationListenerComponent);
 // NOLINTEND
 
-}; // namespace VibrationListenerSystemInternal
+} // namespace VibrationListenerSystemInternal

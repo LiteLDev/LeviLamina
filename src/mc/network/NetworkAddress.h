@@ -4,21 +4,28 @@
 
 struct NetworkAddress {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk58d039;
+    ::ll::UntypedStorage<2, 2>  mUnkd32ef9;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    NetworkAddress& operator=(NetworkAddress const&);
     NetworkAddress(NetworkAddress const&);
     NetworkAddress();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ~NetworkAddress();
+    MCAPI ::NetworkAddress& operator=(::NetworkAddress const&);
 
+    MCAPI ~NetworkAddress();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

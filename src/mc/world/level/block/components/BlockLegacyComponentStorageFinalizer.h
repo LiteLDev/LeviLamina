@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockLegacy;
+// clang-format on
+
 class BlockLegacyComponentStorageFinalizer {
 public:
     // prevent constructor by default
@@ -9,13 +14,17 @@ public:
     BlockLegacyComponentStorageFinalizer(BlockLegacyComponentStorageFinalizer const&);
     BlockLegacyComponentStorageFinalizer();
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _finalizeBlockEventComponents(class BlockLegacy& blockLegacy);
+    MCAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);
 
-    MCAPI void addRemainingComponents(class BlockLegacy& blockLegacy);
+    MCAPI void _finalizeCollisionBoxComponent(::BlockLegacy& blockLegacy);
 
-    MCAPI void finalizeComponentData(class BlockLegacy& blockLegacy);
+    MCAPI void _finalizeSelectionBoxComponent(::BlockLegacy& blockLegacy);
 
+    MCAPI void addRemainingComponents(::BlockLegacy& blockLegacy);
+
+    MCAPI void finalizeComponentData(::BlockLegacy& blockLegacy);
     // NOLINTEND
 };

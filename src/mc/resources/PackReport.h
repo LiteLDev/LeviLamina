@@ -1,10 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/resource/PackIdVersion.h"
-#include "mc/deps/core/resource/ResourceLocation.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/resources/PackError.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackType.h"
@@ -12,39 +8,45 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackError;
+class ResourceLocation;
+class SemVersion;
+struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
 class PackReport {
 public:
-    ResourceLocation mLocation;
-    bool             mWasUpgraded;
-    bool             mAttemptedUpgrade;
-    PackErrors       mErrors;
-    PackErrors       mWarnings;
-    SemVersion       mRequiredBaseGameVersion;
-    std::string      mOriginalName;
-    std::string      mOriginalVersion;
-    PackIdVersion    mIdentity;
-    PackType         mPackType;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                            mLocation;
+    ::ll::TypedStorage<1, 1, bool>                                           mWasUpgraded;
+    ::ll::TypedStorage<1, 1, bool>                                           mAttemptedUpgrade;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PackError>>> mErrors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PackError>>> mWarnings;
+    ::ll::TypedStorage<8, 112, ::SemVersion>                                 mRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mOriginalName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mOriginalVersion;
+    ::ll::TypedStorage<8, 136, ::PackIdVersion>                              mIdentity;
+    ::ll::TypedStorage<1, 1, ::PackType>                                     mPackType;
+    // NOLINTEND
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PackReport();
 
-    MCAPI PackReport(class PackReport&&);
+    MCAPI PackReport(::PackReport const&);
 
-    MCAPI PackReport(class PackReport const&);
+    MCAPI PackReport(::PackReport&&);
 
-    MCAPI std::vector<std::shared_ptr<class PackError>> const& getErrors() const;
+    MCAPI ::std::vector<::std::shared_ptr<::PackError>> const& getErrors() const;
 
-    MCAPI struct PackIdVersion const& getIdentity() const;
+    MCAPI ::ResourceLocation const& getLocation() const;
 
-    MCAPI class ResourceLocation const& getLocation() const;
+    MCAPI ::std::string const& getOriginalName() const;
 
-    MCAPI std::string const& getOriginalName() const;
-
-    MCAPI std::string const& getOriginalVersion() const;
+    MCAPI ::std::string const& getOriginalVersion() const;
 
     MCAPI ::PackType getPackType() const;
 
@@ -52,17 +54,19 @@ public:
 
     MCAPI bool hasErrors(::PackErrorType packErrorType);
 
-    MCAPI class PackReport& operator=(class PackReport&&);
+    MCAPI ::PackReport& operator=(::PackReport const&);
 
-    MCAPI void serialize(class Json::Value& out);
+    MCAPI ::PackReport& operator=(::PackReport&&);
+
+    MCAPI void serialize(::Json::Value& out);
 
     MCAPI void setAttemptedUpgrade();
 
-    MCAPI void setIdentity(struct PackIdVersion const& identity);
+    MCAPI void setIdentity(::PackIdVersion const& identity);
 
-    MCAPI void setLocation(class ResourceLocation const& location);
+    MCAPI void setLocation(::ResourceLocation const& location);
 
-    MCAPI void setOriginalIdentity(std::string const& originalName, std::string const& originalVersion);
+    MCAPI void setOriginalIdentity(::std::string const& originalName, ::std::string const& originalVersion);
 
     MCAPI void setPackType(::PackType packType);
 
@@ -71,19 +75,21 @@ public:
     MCAPI bool wasUpgraded() const;
 
     MCAPI ~PackReport();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class PackReport&&);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::PackReport const&);
 
-    MCAPI void* ctor$(class PackReport const&);
+    MCAPI void* $ctor(::PackReport&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

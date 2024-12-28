@@ -3,9 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/typeid_t.h"
+#include "mc/config/TypedScreenCapabilities.h"
 
-struct ActiveDirectoryScreenCapabilities {
+struct ActiveDirectoryScreenCapabilities : public ::TypedScreenCapabilities<::ActiveDirectoryScreenCapabilities> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk3c0f13;
+    ::ll::UntypedStorage<8, 32> mUnke090f0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActiveDirectoryScreenCapabilities& operator=(ActiveDirectoryScreenCapabilities const&);
@@ -13,23 +20,21 @@ public:
     ActiveDirectoryScreenCapabilities();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActiveDirectoryScreenCapabilities();
-
-    // vIndex: 1
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+    virtual ~ActiveDirectoryScreenCapabilities() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI bool isOfType$(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

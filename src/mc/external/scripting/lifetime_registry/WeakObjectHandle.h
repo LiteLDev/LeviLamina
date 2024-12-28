@@ -13,47 +13,57 @@ namespace Scripting {
 
 class WeakObjectHandle {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk7db6bc;
+    ::ll::UntypedStorage<8, 16> mUnkb898e0;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WeakObjectHandle();
 
-    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle&& rhs);
+    MCAPI WeakObjectHandle(::Scripting::WeakObjectHandle const&);
 
-    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle const& rhs);
+    MCAPI WeakObjectHandle(::Scripting::WeakObjectHandle&& rhs);
 
-    MCAPI WeakObjectHandle(class Scripting::WeakLifetimeScope scope, struct Scripting::ObjectHandle objHandle);
+    MCAPI WeakObjectHandle(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle);
 
-    MCAPI struct Scripting::ObjectHandle getHandle() const;
+    MCAPI ::Scripting::ObjectHandle getHandle() const;
 
-    MCAPI class Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI class Scripting::WeakLifetimeScope getScope() const;
+    MCAPI ::Scripting::WeakLifetimeScope getScope() const;
 
-    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle&& rhs);
+    MCAPI ::Scripting::WeakObjectHandle& operator=(::Scripting::WeakObjectHandle const&);
 
-    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle const& rhs);
+    MCAPI ::Scripting::WeakObjectHandle& operator=(::Scripting::WeakObjectHandle&& rhs);
 
-    MCAPI bool operator==(class Scripting::WeakObjectHandle const& rhs) const;
+    MCAPI bool operator==(::Scripting::WeakObjectHandle const& rhs) const;
 
     MCAPI bool valid() const;
 
     MCAPI ~WeakObjectHandle();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Scripting::WeakObjectHandle&& rhs);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class Scripting::WeakLifetimeScope scope, struct Scripting::ObjectHandle objHandle);
+    MCAPI void* $ctor(::Scripting::WeakObjectHandle const&);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Scripting::WeakObjectHandle&& rhs);
 
-    MCAPI void* ctor$(class Scripting::WeakObjectHandle const& rhs);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

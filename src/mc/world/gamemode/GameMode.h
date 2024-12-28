@@ -5,70 +5,155 @@
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class BlockPos;
+class HitResult;
+class InteractionResult;
+class ItemStack;
 class Player;
+class Vec3;
+struct IGameModeMessenger;
+struct IGameModeTimer;
+// clang-format on
 
 class GameMode {
 public:
-    // Player&                               mPlayer;                       // this+0x8
-    // BlockPos                              mDestroyBlockPos;              // this+0x10
-    // uchar                                 mDestroyBlockFace;             // this+0x1C
-    // float                                 mOldDestroyProgress;           // this+0x20
-    // float                                 mDestroyProgress;              // this+0x24
-    // double                                mLastDestroyTime;              // this+0x28
-    // float                                 mDistanceTravelled;            // this+0x30
-    // Vec3                                  mPlayerLastPosition;           // this+0x34
-    // BlockPos                              mLastBuiltBlockPosition;       // this+0x40
-    // bool                                  mLastBuildBlockWasInteractive; // this+0x4C
-    // bool                                  mLastBuildBlockWasSnappable;   // this+0x4D
-    // float                                 mMinPlayerSpeed;               // this+0x50
-    // int                                   mContinueBreakBlockCount;      // this+0x54
-    // std::chrono::steady_clock::time_point mLastBuildTime;                // this+0x58
-    // std::chrono::steady_clock::time_point mNoDestroyUntil;               // this+0x60
-    // std::chrono::steady_clock::time_point mNoDestroySoundUntil;          // this+0x68
-    // std::chrono::milliseconds             creativeDestructionTickDelay;  // this+0x70
-    // std::chrono::milliseconds             buildingTickDelay;             // this+0x78
-    // std::chrono::milliseconds             destroySoundDelay;             // this+0x80
-    // bool                                  mHasBuildDirection;            // this+0x88
-    // bool                                  mHasLastBuiltPosition;         // this+0x89
-    // uchar                                 mContinueFacing;               // this+0x8A
-    // BlockPos                              mBuildDirection;               // this+0x8C
-    // BlockPos                              mNextBuildPos;                 // this+0x98
-    // std::unique_ptr<IGameModeTimer>       mTimer;                        // this+0xA8
-    // std::unique_ptr<IGameModeMessenger>   mMessenger;                    // this+0xB0
+    // GameMode inner types declare
+    // clang-format off
+    struct BuildContext;
+    struct BuildDelay;
+    struct BuildPlayerContext;
+    struct ContinueBuildData;
+    // clang-format on
 
-    [[nodiscard]] constexpr class Player& getPlayer() const { return *ll::memory::dAccess<Player*>(this, 0x8); }
+    // GameMode inner types define
+    struct BuildContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnk38ec72;
+        ::ll::UntypedStorage<1, 1>  mUnk4845fa;
+        ::ll::UntypedStorage<1, 1>  mUnk32747a;
+        ::ll::UntypedStorage<1, 1>  mUnk3919e7;
+        ::ll::UntypedStorage<4, 12> mUnk880e8e;
+        ::ll::UntypedStorage<4, 12> mUnk51ff9c;
+        ::ll::UntypedStorage<4, 12> mUnkb294b2;
+        ::ll::UntypedStorage<4, 12> mUnkcd43e4;
+        ::ll::UntypedStorage<1, 1>  mUnk451025;
+        // NOLINTEND
 
+    public:
+        // prevent constructor by default
+        BuildContext& operator=(BuildContext const&);
+        BuildContext(BuildContext const&);
+        BuildContext();
+    };
+
+    struct BuildDelay {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk178db0;
+        ::ll::UntypedStorage<8, 8> mUnk3546ef;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BuildDelay& operator=(BuildDelay const&);
+        BuildDelay(BuildDelay const&);
+        BuildDelay();
+    };
+
+    struct ContinueBuildData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk3d6f00;
+        ::ll::UntypedStorage<1, 1>  mUnkfca6f6;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ContinueBuildData& operator=(ContinueBuildData const&);
+        ContinueBuildData(ContinueBuildData const&);
+        ContinueBuildData();
+    };
+
+    struct BuildPlayerContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnk7ef549;
+        ::ll::UntypedStorage<1, 1>  mUnk655443;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BuildPlayerContext& operator=(BuildPlayerContext const&);
+        BuildPlayerContext(BuildPlayerContext const&);
+        BuildPlayerContext();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Player&>                               mPlayer;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                             mDestroyBlockPos;
+    ::ll::TypedStorage<1, 1, uchar>                                   mDestroyBlockFace;
+    ::ll::TypedStorage<4, 4, float>                                   mOldDestroyProgress;
+    ::ll::TypedStorage<4, 4, float>                                   mDestroyProgress;
+    ::ll::TypedStorage<8, 8, double>                                  mLastDestroyTime;
+    ::ll::TypedStorage<4, 4, float>                                   mDistanceTravelled;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                 mPlayerLastPosition;
+    ::ll::TypedStorage<4, 56, ::GameMode::BuildContext>               mBuildContext;
+    ::ll::TypedStorage<4, 4, float>                                   mMinPlayerSpeed;
+    ::ll::TypedStorage<4, 4, int>                                     mContinueBreakBlockCount;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastBuildTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNoDestroyUntil;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNoDestroySoundUntil;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>             creativeDestructionTickDelay;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>             buildingTickDelay;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>             destroySoundDelay;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModeTimer>>     mTimer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModeMessenger>> mMessenger;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     GameMode& operator=(GameMode const&);
     GameMode(GameMode const&);
     GameMode();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameMode() = default;
+    virtual ~GameMode();
 
     // vIndex: 1
-    virtual bool startDestroyBlock(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
     // vIndex: 2
-    virtual bool destroyBlock(class BlockPos const& pos, uchar face);
+    virtual bool destroyBlock(::BlockPos const& pos, uchar face);
 
     // vIndex: 3
     virtual bool
-    continueDestroyBlock(class BlockPos const& pos, uchar face, class Vec3 const& playerPos, bool& hasDestroyedBlock);
+    continueDestroyBlock(::BlockPos const& pos, uchar face, ::Vec3 const& playerPos, bool& hasDestroyedBlock);
 
     // vIndex: 4
-    virtual void stopDestroyBlock(class BlockPos const& pos);
+    virtual void stopDestroyBlock(::BlockPos const& pos);
 
     // vIndex: 5
-    virtual void startBuildBlock(class BlockPos const& pos, uchar face);
+    virtual void startBuildBlock(::BlockPos const& pos, uchar face);
 
     // vIndex: 6
-    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool isSimTick);
+    virtual bool buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
 
     // vIndex: 7
-    virtual void continueBuildBlock(class BlockPos const& pos, uchar face);
+    virtual void continueBuildBlock(::BlockPos const& pos, uchar face);
 
     // vIndex: 8
     virtual void stopBuildBlock();
@@ -80,22 +165,23 @@ public:
     virtual float getPickRange(::InputMode const& currentInputMode, bool isVR);
 
     // vIndex: 11
-    virtual bool useItem(class ItemStack& item);
+    virtual bool useItem(::ItemStack& item);
 
     // vIndex: 12
-    virtual class InteractionResult useItemOn(
-        class ItemStack&      item,
-        class BlockPos const& at,
-        uchar                 face,
-        class Vec3 const&     hit,
-        class Block const*    targetBlock
+    virtual ::InteractionResult useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
     );
 
     // vIndex: 13
-    virtual bool interact(class Actor& entity, class Vec3 const& location);
+    virtual bool interact(::Actor& entity, ::Vec3 const& location);
 
     // vIndex: 14
-    virtual bool attack(class Actor& entity);
+    virtual bool attack(::Actor& entity);
 
     // vIndex: 15
     virtual void releaseUsingItem();
@@ -107,127 +193,77 @@ public:
     virtual bool isInTrialMode();
 
     // vIndex: 18
-    virtual void registerUpsellScreenCallback(std::function<void(bool)> callback);
+    virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI GameMode(
-        class Player&                              player,
-        std::unique_ptr<struct IGameModeTimer>     timer,
-        std::unique_ptr<struct IGameModeMessenger> messenger
+        ::Player&                               player,
+        ::std::unique_ptr<::IGameModeTimer>     timer,
+        ::std::unique_ptr<::IGameModeMessenger> messenger
     );
 
-    MCAPI bool
-    _startDestroyBlock(class BlockPos const& hitPos, class Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
+    MCAPI bool _attack(::Actor& entity, bool playPredictiveSound);
+
+    MCAPI bool _canUseBlock(::Block const& block);
+
+    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI bool _enableBlockBreakDelay() const;
+
+    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
+        ::ItemStack const& beforeItem,
+        ::ItemStack const& afterItem,
+        ::Player&          player,
+        ::BlockPos const&  at,
+        uchar              face,
+        ::Vec3 const&      hit,
+        bool               isFirstEvent
+    );
+
+    MCAPI ::std::optional<::ItemStack>
+    _sendTryDestroyBlockEvent(::Block const& block, ::BlockPos const& pos, ::ItemStack itemBeforeEvent) const;
+
+    MCAPI ::InteractionResult
+    _sendUseItemOnEvents(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, bool isFirstEvent)
+        const;
+
+    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 
     MCAPI bool _tickContinueDestroyBlock(
-        class BlockPos const&        hitPos,
-        class Vec3 const&            playerPos,
-        uchar                        hitFace,
-        bool&                        hasDestroyedBlock,
-        std::function<void()> const& crackBlock
+        ::BlockPos const&              hitPos,
+        ::Vec3 const&                  playerPos,
+        uchar                          hitFace,
+        bool&                          hasDestroyedBlock,
+        ::std::function<void()> const& crackBlock
     );
 
-    MCAPI bool baseUseItem(class ItemStack& item);
+    MCAPI bool baseUseItem(::ItemStack& item);
 
-    MCAPI void continueBuildBlockAction(class Player const& player, class HitResult const& hr);
+    MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
 
-    MCAPI gsl::final_action<std::function<void()>> createBlockBreakCaptureScope(
-        std::function<void(class ItemStack const&, class ItemStack const&, class BlockPos const&)> callback
+    MCAPI ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     );
 
     MCAPI uchar getDestroyBlockFace() const;
 
-    MCAPI class BlockPos const& getDestroyBlockPos() const;
+    MCAPI ::BlockPos const& getDestroyBlockPos() const;
 
-    MCAPI float getDestroyRate(class Block const& block);
+    MCAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
 
     MCAPI float getMaxPickRangeSqr();
 
     MCAPI bool isLastBuildBlockInteractive() const;
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _canDestroy(class BlockPos const& pos, uchar face);
-
-    MCAPI bool _canUseBlock(class Block const& block);
-
-    MCAPI bool _creativeDestroyBlock(class BlockPos const& pos, uchar face);
-
-    MCAPI bool _enableBlockBreakDelay() const;
-
-    MCAPI void _sendPlayerInteractWithBlockAfterEvent(
-        class Player&         player,
-        class BlockPos const& at,
-        uchar                 face,
-        class Vec3 const&     hit
-    );
-
-    MCAPI std::optional<class ItemStack>
-    _sendTryDestroyBlockEvent(class Block const& block, class BlockPos const& pos, class ItemStack itemBeforeEvent)
-        const;
-
-    MCAPI class InteractionResult
-    _sendUseItemOnEvents(class ItemStack& item, class BlockPos const& at, uchar face, class Vec3 const& hit) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Player&                              player,
-        std::unique_ptr<struct IGameModeTimer>     timer,
-        std::unique_ptr<struct IGameModeMessenger> messenger
-    );
-
-    MCAPI bool attack$(class Actor& entity);
-
-    MCAPI bool buildBlock$(class BlockPos const& pos, uchar face, bool isSimTick);
-
-    MCAPI void continueBuildBlock$(class BlockPos const& pos, uchar face);
-
-    MCAPI bool
-    continueDestroyBlock$(class BlockPos const& pos, uchar face, class Vec3 const& playerPos, bool& hasDestroyedBlock);
-
-    MCAPI bool destroyBlock$(class BlockPos const& pos, uchar face);
-
-    MCAPI float getPickRange$(::InputMode const& currentInputMode, bool isVR);
-
-    MCAPI bool interact$(class Actor& entity, class Vec3 const& location);
-
-    MCAPI bool isInTrialMode$();
-
-    MCAPI void registerUpsellScreenCallback$(std::function<void(bool)> callback);
-
-    MCAPI void releaseUsingItem$();
-
-    MCAPI void setTrialMode$(bool isEnabled);
-
-    MCAPI void startBuildBlock$(class BlockPos const& pos, uchar face);
-
-    MCAPI bool startDestroyBlock$(class BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
-
-    MCAPI void stopBuildBlock$();
-
-    MCAPI void stopDestroyBlock$(class BlockPos const& pos);
-
-    MCAPI void tick$();
-
-    MCAPI bool useItem$(class ItemStack& item);
-
-    MCAPI class InteractionResult useItemOn$(
-        class ItemStack&      item,
-        class BlockPos const& at,
-        uchar                 face,
-        class Vec3 const&     hit,
-        class Block const*    targetBlock
-    );
-
     MCAPI static float const& MIN_MOVING_NON_CREATIVE_BUILD_DELAY();
 
     MCAPI static float const& PICKRANGE_CREATIVE_MAXIMUM();
@@ -249,6 +285,75 @@ public:
     MCAPI static float const& PICKRANGE_VR_CREATIVE();
 
     MCAPI static float const& PICKRANGE_VR_SURVIVAL();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Player&                               player,
+        ::std::unique_ptr<::IGameModeTimer>     timer,
+        ::std::unique_ptr<::IGameModeMessenger> messenger
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI bool
+    $continueDestroyBlock(::BlockPos const& pos, uchar face, ::Vec3 const& playerPos, bool& hasDestroyedBlock);
+
+    MCAPI void $stopDestroyBlock(::BlockPos const& pos);
+
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+
+    MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI void $stopBuildBlock();
+
+    MCAPI void $tick();
+
+    MCAPI float $getPickRange(::InputMode const& currentInputMode, bool isVR);
+
+    MCAPI bool $useItem(::ItemStack& item);
+
+    MCAPI ::InteractionResult $useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    );
+
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+
+    MCAPI bool $attack(::Actor& entity);
+
+    MCAPI void $releaseUsingItem();
+
+    MCAPI void $setTrialMode(bool isEnabled);
+
+    MCAPI bool $isInTrialMode();
+
+    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

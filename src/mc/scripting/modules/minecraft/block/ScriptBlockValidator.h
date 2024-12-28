@@ -12,20 +12,27 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockValidator {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk63d84c;
+    ::ll::UntypedStorage<4, 12> mUnka50b5c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockValidator& operator=(ScriptBlockValidator const&);
     ScriptBlockValidator(ScriptBlockValidator const&);
     ScriptBlockValidator();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::optional<struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
-          getChunkAtPositionLoadedAndTickingError();
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+    getChunkAtPositionLoadedAndTickingError();
 
-    MCAPI std::optional<struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-          getPositionWithinWorldBoundsError();
-
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getPositionWithinWorldBoundsError();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

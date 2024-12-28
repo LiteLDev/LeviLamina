@@ -7,6 +7,16 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/entity/systems/OnFireSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorOwnerComponent;
+class EntityContext;
+class EntityRegistry;
+struct AbilitiesComponent;
+struct OnFireComponent;
+// clang-format on
+
 class OnFireServerSystem : public ::OnFireSystem {
 public:
     // prevent constructor by default
@@ -15,55 +25,49 @@ public:
     OnFireServerSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OnFireServerSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
     // vIndex: 2
-    virtual void tick(class EntityRegistry& registry);
+    virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    // vIndex: 3
-    virtual void singleTick(class EntityRegistry& registry, class EntityContext& entity);
-
-    // vIndex: 4
-    virtual void singleTick(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
+    // vIndex: 0
+    virtual ~OnFireServerSystem() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickServer(
-        class EntityContext&                            entity,
-        class ActorOwnerComponent&                      actorOwnerComponent,
-        struct OnFireComponent&                         onFireComponent,
-        class Optional<struct AbilitiesComponent const> abilities
+        ::EntityContext&                       entity,
+        ::ActorOwnerComponent&                 actorOwnerComponent,
+        ::OnFireComponent&                     onFireComponent,
+        ::Optional<::AbilitiesComponent const> abilities
     );
 
     MCAPI static void _tickServerImpl(
-        bool                                                isFireImmune,
-        class EntityContext&                                entity,
-        class Actor&                                        actor,
-        struct OnFireComponent&                             onFireComponent,
-        class optional_ref<struct AbilitiesComponent const> abilities
+        bool                                       isFireImmune,
+        ::EntityContext&                           entity,
+        ::Actor&                                   actor,
+        ::OnFireComponent&                         onFireComponent,
+        ::optional_ref<::AbilitiesComponent const> abilities
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void singleTick$(class EntityRegistry& registry, class EntityContext& entity);
-
-    MCAPI void singleTick$(class EntityRegistry& registry, class StrictEntityContext& entityContext);
-
-    MCAPI void tick$(class EntityRegistry& registry);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

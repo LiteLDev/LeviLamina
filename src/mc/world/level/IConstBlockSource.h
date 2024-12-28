@@ -3,15 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/material/MaterialType.h"
 
-class Material;
+// auto generated forward declare list
+// clang-format off
 class AABB;
-class GetCollisionShapeInterface;
-class BlockPos;
-class BlockActor;
 class Block;
+class BlockActor;
+class BlockPos;
+class Dimension;
+class GetCollisionShapeInterface;
+class Material;
+class Vec3;
 struct Bounds;
+namespace BlockSourceVisitor { struct CollisionShape; }
+// clang-format on
 
 class IConstBlockSource {
 public:
@@ -21,84 +29,98 @@ public:
     IConstBlockSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IConstBlockSource() = default;
-
-    // vIndex: 1
-    virtual class Block const& getBlock(int, int, int) const = 0;
-
-    // vIndex: 2
-    virtual class Block const& getBlock(class BlockPos const&) const = 0;
+    virtual ~IConstBlockSource();
 
     // vIndex: 3
-    virtual class Block const& getBlock(class BlockPos const&, uint) const = 0;
+    virtual ::Block const& getBlock(int, int, int) const = 0;
+
+    // vIndex: 2
+    virtual ::Block const& getBlock(::BlockPos const&) const = 0;
+
+    // vIndex: 1
+    virtual ::Block const& getBlock(::BlockPos const&, uint) const = 0;
 
     // vIndex: 4
-    virtual class BlockActor const* getBlockEntity(class BlockPos const&) const = 0;
+    virtual ::BlockActor const* getBlockEntity(::BlockPos const&) const = 0;
 
     // vIndex: 5
-    virtual class Block const& getExtraBlock(class BlockPos const&) const = 0;
+    virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
 
     // vIndex: 6
-    virtual class Block const& getLiquidBlock(class BlockPos const&) const = 0;
+    virtual ::Block const& getLiquidBlock(::BlockPos const&) const = 0;
 
     // vIndex: 7
-    virtual bool hasBlock(class BlockPos const&) const = 0;
+    virtual bool hasBlock(::BlockPos const&) const = 0;
 
     // vIndex: 8
-    virtual bool removeBlock(class BlockPos const& pos);
+    virtual bool containsAnyLiquid(::AABB const&) const = 0;
 
     // vIndex: 9
-    virtual bool containsAnyLiquid(class AABB const&) const = 0;
+    virtual bool containsMaterial(::AABB const&, ::MaterialType) const = 0;
 
     // vIndex: 10
-    virtual bool containsMaterial(class AABB const&, ::MaterialType) const = 0;
-
-    // vIndex: 11
-    virtual bool isUnderWater(class Vec3 const&, class Block const&) const = 0;
+    virtual bool isUnderWater(::Vec3 const&, ::Block const&) const = 0;
 
     // vIndex: 12
-    virtual class Material const& getMaterial(class BlockPos const&) const = 0;
+    virtual ::Material const& getMaterial(::BlockPos const&) const = 0;
+
+    // vIndex: 11
+    virtual ::Material const& getMaterial(int, int, int) const = 0;
 
     // vIndex: 13
-    virtual class Material const& getMaterial(int, int, int) const = 0;
-
-    // vIndex: 14
-    virtual bool hasBorderBlock(class BlockPos pos) const;
-
-    // vIndex: 15
-    virtual class LevelChunk* getChunkAt(class BlockPos const& pos) const;
+    virtual bool hasBorderBlock(::BlockPos const) const = 0;
 
     // vIndex: 16
-    virtual bool hasChunksAt(struct Bounds const&, bool) const = 0;
+    virtual bool hasChunksAt(::Bounds const&, bool) const = 0;
+
+    // vIndex: 15
+    virtual bool hasChunksAt(::BlockPos const&, int, bool) const = 0;
+
+    // vIndex: 14
+    virtual bool hasChunksAt(::AABB const&, bool) const = 0;
 
     // vIndex: 17
-    virtual bool hasChunksAt(class BlockPos const&, int, bool) const = 0;
+    virtual ::DimensionType getDimensionId() const = 0;
 
     // vIndex: 18
-    virtual bool hasChunksAt(class AABB const&, bool) const = 0;
+    virtual void fetchAABBs(::std::vector<::AABB>&, ::AABB const&, bool) const = 0;
 
     // vIndex: 19
-    virtual DimensionType getDimensionId() const = 0;
+    virtual void
+    fetchCollisionShapes(::std::vector<::AABB>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*)
+        const = 0;
 
     // vIndex: 20
-    virtual void fetchAABBs(std::vector<class AABB>&, class AABB const&, bool) const = 0;
+    virtual void
+    fetchCollisionShapesAndBlocks(::std::vector<::BlockSourceVisitor::CollisionShape>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*)
+        const = 0;
 
     // vIndex: 21
-    virtual void
-    fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>)
-        const = 0;
+    virtual ::AABB
+    getTallestCollisionShape(::AABB const&, float*, bool, ::optional_ref<::GetCollisionShapeInterface const>) const = 0;
 
     // vIndex: 22
-    virtual class AABB
-    getTallestCollisionShape(class AABB const&, float*, bool, class optional_ref<class GetCollisionShapeInterface const>)
-        const = 0;
+    virtual float getBrightness(::BlockPos const&) const = 0;
+    // NOLINTEND
 
-    // vIndex: 23
-    virtual float getBrightness(class BlockPos const&) const = 0;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool checkMaterial(::AABB const& box, ::MaterialType material) const;
+    // NOLINTEND
 
-    MCAPI bool checkMaterial(class AABB const& box, ::MaterialType material) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 };

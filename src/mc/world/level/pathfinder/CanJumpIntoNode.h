@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CanJumpIntoNode {};
+enum class CanJumpIntoNode : uchar {
+    Jumpable    = 1,
+    Nonjumpable = 0,
+};

@@ -2,36 +2,50 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class GameEventDynamicRegistration;
+// clang-format on
+
 class GameEventListenerComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkde87f1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameEventListenerComponent& operator=(GameEventListenerComponent const&);
     GameEventListenerComponent(GameEventListenerComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI GameEventListenerComponent();
 
-    MCAPI GameEventListenerComponent(class GameEventListenerComponent&& other);
+    MCAPI GameEventListenerComponent(::GameEventListenerComponent&&);
 
-    MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration> registration);
+    MCAPI bool initialize(::std::unique_ptr<::GameEventDynamicRegistration> registration);
 
-    MCAPI class GameEventListenerComponent& operator=(class GameEventListenerComponent&& other);
+    MCAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&&);
 
-    MCAPI class GameEventDynamicRegistration* tryGetListenerRegistration() const;
+    MCAPI ::GameEventDynamicRegistration* tryGetListenerRegistration() const;
 
     MCAPI ~GameEventListenerComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class GameEventListenerComponent&& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::GameEventListenerComponent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

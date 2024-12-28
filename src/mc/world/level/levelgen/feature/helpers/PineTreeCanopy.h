@@ -7,10 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
 namespace TreeHelper { struct TreeParams; }
 // clang-format on
 
 class PineTreeCanopy : public ::ITreeCanopy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>   mUnk173640;
+    ::ll::UntypedStorage<4, 4>   mUnk9ea4cc;
+    ::ll::UntypedStorage<8, 184> mUnk167c25;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PineTreeCanopy& operator=(PineTreeCanopy const&);
@@ -18,35 +30,44 @@ public:
     PineTreeCanopy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PineTreeCanopy() = default;
+    virtual ~PineTreeCanopy() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> placeCanopy(
-        class IBlockWorldGenAPI&             target,
-        class BlockPos const&                pos,
-        class Random&                        random,
-        class RenderParams&                  renderParams,
-        struct TreeHelper::TreeParams const& treeParams,
-        std::vector<class BlockPos> const&   attachmentPositions
-    ) const;
-
+    virtual ::std::optional<::BlockPos> placeCanopy(
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::Random&                        random,
+        ::RenderParams&                  renderParams,
+        ::TreeHelper::TreeParams const&  treeParams,
+        ::std::vector<::BlockPos> const& attachmentPositions
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> placeCanopy$(
-        class IBlockWorldGenAPI&             target,
-        class BlockPos const&                pos,
-        class Random&                        random,
-        class RenderParams&                  renderParams,
-        struct TreeHelper::TreeParams const& treeParams,
-        std::vector<class BlockPos> const&   attachmentPositions
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::Random&                        random,
+        ::RenderParams&                  renderParams,
+        ::TreeHelper::TreeParams const&  treeParams,
+        ::std::vector<::BlockPos> const& attachmentPositions
     ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

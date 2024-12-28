@@ -7,37 +7,53 @@
 
 class ScriptDebuggerWatchdog : public ::IScriptDebuggerWatchdog {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk636604;
+    ::ll::UntypedStorage<8, 8> mUnkf9b3b7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);
     ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&);
     ScriptDebuggerWatchdog();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDebuggerWatchdog() = default;
+    virtual ~ScriptDebuggerWatchdog() /*override*/;
 
     // vIndex: 1
-    virtual bool requireClose() const;
+    virtual bool requireClose() const /*override*/;
 
     // vIndex: 2
-    virtual void startListenTimeout(std::chrono::seconds duration);
+    virtual void startListenTimeout(::std::chrono::seconds duration) /*override*/;
 
     // vIndex: 3
-    virtual bool listenTimeoutExpired() const;
-
+    virtual bool listenTimeoutExpired() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool listenTimeoutExpired$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $requireClose() const;
 
-    MCAPI bool requireClose$() const;
+    MCAPI void $startListenTimeout(::std::chrono::seconds duration);
 
-    MCAPI void startListenTimeout$(std::chrono::seconds duration);
+    MCAPI bool $listenTimeoutExpired() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

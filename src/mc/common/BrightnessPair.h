@@ -1,10 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/Brightness.h"
+
+// auto generated forward declare list
+// clang-format off
+struct Brightness;
+// clang-format on
 
 struct BrightnessPair {
 public:
-    Brightness sky;   // this+0x0
-    Brightness block; // this+0x1
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::Brightness> sky;
+    ::ll::TypedStorage<1, 1, ::Brightness> block;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BrightnessPair& operator=(BrightnessPair const&);
+    BrightnessPair(BrightnessPair const&);
+    BrightnessPair();
 };

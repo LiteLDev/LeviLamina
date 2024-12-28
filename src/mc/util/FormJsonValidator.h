@@ -13,29 +13,27 @@ public:
     FormJsonValidator();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class JsonValidator::Property getContentItemProperty(
-        class JsonValidator::Property const& labelType,
-        class JsonValidator::Property const& toggleType,
-        class JsonValidator::Property const& sliderType,
-        class JsonValidator::Property const& stepSliderType,
-        class JsonValidator::Property const& dropdownType,
-        class JsonValidator::Property const& textInputType
+    MCAPI static ::JsonValidator::Property getContentItemProperty(
+        ::JsonValidator::Property const& labelType,
+        ::JsonValidator::Property const& toggleType,
+        ::JsonValidator::Property const& sliderType,
+        ::JsonValidator::Property const& stepSliderType,
+        ::JsonValidator::Property const& dropdownType,
+        ::JsonValidator::Property const& textInputType
     );
 
-    MCAPI static class JsonValidator::Property getControlLockedProperty();
+    MCAPI static ::JsonValidator::Property getControlLockedProperty();
 
-    MCAPI static class JsonValidator::Property getDropdownProperty(bool requiresDefault);
+    MCAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
-    MCAPI static class JsonValidator::Property getLabelProperty();
+    MCAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 
-    MCAPI static class JsonValidator::Property getSliderProperty(bool requiresDefault);
+    MCAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
 
-    MCAPI static class JsonValidator::Property getStepSliderProperty(bool requiresDefault);
+    MCAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
 
-    MCAPI static class JsonValidator::Property getTextInputProperty(bool requiresDefault);
-
-    MCAPI static class JsonValidator::Property getToggleProperty(bool requiresDefault);
-
+    MCAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
     // NOLINTEND
 };

@@ -8,13 +8,17 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI::Releases {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct Scripting::Version const& V010();
+MCAPI ::Scripting::Version const& V0_1_0();
 
-MCAPI struct Scripting::Version const& V100();
+MCAPI ::Scripting::Version const& V1_0_0();
 
-MCAPI struct Scripting::Version const& V110();
+MCAPI ::Scripting::Version const& V1_1_0();
+
+MCAPI ::Scripting::Version const& V1_2_0();
+
+MCAPI ::Scripting::Version const& V1_3_0();
 // NOLINTEND
 
-}; // namespace ScriptModuleMinecraftServerUI::Releases
+} // namespace ScriptModuleMinecraftServerUI::Releases

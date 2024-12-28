@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Dimension;
+class Random;
+// clang-format on
+
 class OceanMonumentStart : public ::StructureStart {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk1a186e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OceanMonumentStart& operator=(OceanMonumentStart const&);
@@ -13,23 +27,41 @@ public:
     OceanMonumentStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~OceanMonumentStart() = default;
-
     // vIndex: 1
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    MCAPI void createMonument(class Dimension& dim, class Random& random, int x, int z);
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~OceanMonumentStart() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
+    // NOLINTEND
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

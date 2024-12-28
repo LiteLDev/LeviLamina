@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStackRequestAction;
+class ItemStackRequestActionHandler;
+// clang-format on
+
 class ScreenHandlerBase {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb78672;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScreenHandlerBase& operator=(ScreenHandlerBase const&);
@@ -13,12 +25,13 @@ public:
     ScreenHandlerBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ScreenHandlerBase();
 
     // vIndex: 1
-    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction);
 
     // vIndex: 2
     virtual ::ItemStackNetResult endRequest();
@@ -27,28 +40,42 @@ public:
     virtual void endRequestBatch();
 
     // vIndex: 4
-    virtual void postRequest(bool wasSuccess);
-
-    MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler& requestHandler);
-
+    virtual void postRequest(bool const wasSuccess);
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ScreenHandlerBase(::ItemStackRequestActionHandler& requestHandler);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ItemStackRequestActionHandler& requestHandler);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackRequestActionHandler& requestHandler);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::ItemStackNetResult endRequest$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCAPI void endRequestBatch$();
+    MCAPI ::ItemStackNetResult $endRequest();
 
-    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+    MCAPI void $endRequestBatch();
 
-    MCAPI void postRequest$(bool wasSuccess);
+    MCAPI void $postRequest(bool const wasSuccess);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

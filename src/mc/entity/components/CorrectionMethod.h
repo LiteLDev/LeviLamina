@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CorrectionMethod {};
+enum class CorrectionMethod : uchar {
+    None          = 0,
+    AcceptClient  = 1,
+    CorrectClient = 2,
+};

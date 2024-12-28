@@ -1,0 +1,27 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ClientBlockPipeline { class Material; }
+// clang-format on
+
+namespace ClientBlockPipeline {
+
+struct BakedMaterialMap {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk880f0b;
+    ::ll::UntypedStorage<1, 1>  mUnkd8b6db;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BakedMaterialMap& operator=(BakedMaterialMap const&);
+    BakedMaterialMap(BakedMaterialMap const&);
+    BakedMaterialMap();
+};
+
+} // namespace ClientBlockPipeline

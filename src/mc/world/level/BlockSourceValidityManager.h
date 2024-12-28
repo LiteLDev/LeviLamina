@@ -3,9 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class DimensionManager;
+class GameplayUserManager;
+class IBlockSource;
+class IBlockSourceValidityProxy;
+// clang-format on
 
 class BlockSourceValidityManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk2cb1b4;
+    ::ll::UntypedStorage<8, 24> mUnk7d450b;
+    ::ll::UntypedStorage<8, 8>  mUnkc89ad5;
+    ::ll::UntypedStorage<8, 16> mUnk1b5dfe;
+    ::ll::UntypedStorage<8, 80> mUnk924dd9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockSourceValidityManager& operator=(BlockSourceValidityManager const&);
@@ -13,33 +31,36 @@ public:
     BlockSourceValidityManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BlockSourceValidityManager(
-        gsl::not_null<class StackRefResult<class DimensionManager>> const&    dimensionManager,
-        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager,
-        std::unique_ptr<class IBlockSourceValidityProxy>                      blockSourceValidityProxy
+        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::std::unique_ptr<::IBlockSourceValidityProxy>       blockSourceValidityProxy
     );
 
-    MCAPI void addBlockSourceForValidityTracking(class IBlockSource* region);
+    MCAPI void addBlockSourceForValidityTracking(::IBlockSource* region);
 
     MCAPI void checkBlockSourceValidity();
 
-    MCAPI void removeBlockSourceFromValidityTracking(class IBlockSource* region);
+    MCAPI void removeBlockSourceFromValidityTracking(::IBlockSource* region);
 
     MCAPI ~BlockSourceValidityManager();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        gsl::not_null<class StackRefResult<class DimensionManager>> const&    dimensionManager,
-        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager,
-        std::unique_ptr<class IBlockSourceValidityProxy>                      blockSourceValidityProxy
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::std::unique_ptr<::IBlockSourceValidityProxy>       blockSourceValidityProxy
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

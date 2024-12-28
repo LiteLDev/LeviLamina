@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class ILifetimeScopeListener; }
+class ScriptPlugin;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
@@ -22,24 +22,47 @@ public:
     // ScriptPluginHandleCounter inner types define
     struct TypeStats {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk5275d3;
+        ::ll::UntypedStorage<8, 8>  mUnk70abe5;
+        ::ll::UntypedStorage<1, 1>  mUnkc4270a;
+        ::ll::UntypedStorage<4, 4>  mUnkd4cd85;
+        ::ll::UntypedStorage<4, 4>  mUnk6d6437;
+        ::ll::UntypedStorage<4, 4>  mUnkbf890e;
+        ::ll::UntypedStorage<4, 4>  mUnk33b8bd;
+        ::ll::UntypedStorage<4, 4>  mUnk971dd2;
+        ::ll::UntypedStorage<4, 4>  mUnkaa4c8a;
+        ::ll::UntypedStorage<8, 8>  mUnk5cb9a0;
+        ::ll::UntypedStorage<8, 8>  mUnk6dc587;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         TypeStats& operator=(TypeStats const&);
         TypeStats(TypeStats const&);
         TypeStats();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~TypeStats();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkb0d518;
+    ::ll::UntypedStorage<8, 64> mUnkbc6a55;
+    ::ll::UntypedStorage<8, 24> mUnka4a8db;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -48,102 +71,118 @@ public:
     ScriptPluginHandleCounter();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptPluginHandleCounter() = default;
-
     // vIndex: 1
     virtual void onMakeObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    ) /*override*/;
 
     // vIndex: 2
     virtual void onDestroyObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    ) /*override*/;
 
     // vIndex: 3
     virtual void onTrackObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    ) /*override*/;
 
     // vIndex: 4
     virtual void onUntrackObject(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
+    ) /*override*/;
 
     // vIndex: 5
-    virtual void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    virtual void onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) /*override*/;
 
     // vIndex: 6
-    virtual void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    virtual void
+    onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) /*override*/;
 
     // vIndex: 7
-    virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
 
     // vIndex: 8
-    virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScriptPluginHandleCounter() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const& type);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ScriptPluginHandleCounter(::ScriptPlugin& plug);
 
-    MCAPI void onDestroyObject$(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
+    MCAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
+
+    MCAPI ::std::string getName() const;
+
+    MCAPI ::ScriptPlugin& getScriptPlugin();
+
+    MCAPI ::ScriptPluginHandleCounter::TypeStats const* getStatsById(uint id) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptPlugin& plug);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
+
+    MCAPI void $onDestroyObject(
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
     );
 
-    MCAPI void onMakeObject$(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
+    MCAPI void
+    $onTrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
+
+    MCAPI void $onUntrackObject(
+        ::Scripting::LifetimeRegistry&,
+        ::Scripting::ObjectHandle,
+        ::entt::meta_type const& type,
+        uint                     size
     );
 
-    MCAPI void onObjectPromotedToMultipleOwners$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    MCAPI void $onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
 
-    MCAPI void onObjectReducedToSingleOwner$(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    MCAPI void $onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
 
-    MCAPI void onPostLifetimeScopeDestroy$(class Scripting::LifetimeRegistry&);
+    MCAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
 
-    MCAPI void onPreLifetimeScopeDestroy$(class Scripting::LifetimeRegistry&);
+    MCAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
+    // NOLINTEND
 
-    MCAPI void onTrackObject$(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
-
-    MCAPI void onUntrackObject$(
-        class Scripting::LifetimeRegistry&,
-        struct Scripting::ObjectHandle,
-        entt::meta_type const& type,
-        uint                   size
-    );
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

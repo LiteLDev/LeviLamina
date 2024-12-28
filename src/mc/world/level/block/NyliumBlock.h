@@ -3,22 +3,44 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+class Randomize;
 // clang-format on
 
 class NyliumBlock : public ::BlockLegacy {
+public:
+    // NyliumBlock inner types declare
+    // clang-format off
+    struct CrimsonNyliumBlockVegetationProbabilities;
+    struct WarpedNyliumBlockVegetationProbabilities;
+    // clang-format on
+
+    // NyliumBlock inner types define
+    struct WarpedNyliumBlockVegetationProbabilities {
+    public:
+        // prevent constructor by default
+        WarpedNyliumBlockVegetationProbabilities& operator=(WarpedNyliumBlockVegetationProbabilities const&);
+        WarpedNyliumBlockVegetationProbabilities(WarpedNyliumBlockVegetationProbabilities const&);
+        WarpedNyliumBlockVegetationProbabilities();
+    };
+
+    struct CrimsonNyliumBlockVegetationProbabilities {
+    public:
+        // prevent constructor by default
+        CrimsonNyliumBlockVegetationProbabilities& operator=(CrimsonNyliumBlockVegetationProbabilities const&);
+        CrimsonNyliumBlockVegetationProbabilities(CrimsonNyliumBlockVegetationProbabilities const&);
+        CrimsonNyliumBlockVegetationProbabilities();
+    };
+
 public:
     // prevent constructor by default
     NyliumBlock& operator=(NyliumBlock const&);
@@ -26,60 +48,75 @@ public:
     NyliumBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 137
+    virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 76
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
+
+    // vIndex: 74
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~NyliumBlock() = default;
-
-    // vIndex: 80
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
-
-    // vIndex: 82
-    virtual bool
-    canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
-
-    // vIndex: 149
-    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI NyliumBlock(std::string const& nameId, int id);
-
-    MCAPI bool canBeNylium(class BlockSource const& region, class BlockPos const& pos) const;
-
-    MCAPI static class Block const& crimsonBlockProvider(class Randomize const& randomize);
-
-    MCAPI static class Block const& netherSproutBlockProvider(class Randomize const& randomize);
-
-    MCAPI static class Block const& warpedBlockProvider(class Randomize const& randomize);
-
+    virtual ~NyliumBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _scatterVegetation(
-        class BlockSource&                                        region,
-        class BlockPos const&                                     pos,
-        class Random&                                             random,
-        std::function<class Block const&(class Randomize const&)> plantProvider
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NyliumBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI bool _scatterVegetation(
+        ::BlockSource&                                      region,
+        ::BlockPos const&                                   pos,
+        ::Random&                                           random,
+        ::std::function<::Block const&(::Randomize const&)> plantProvider
+    ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
+
+    MCAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
+
+    MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
+
+    MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI bool
-    canBeFertilized$(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
+    // NOLINTEND
 
-    MCAPI bool
-    onFertilized$(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
-
-    MCAPI void randomTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

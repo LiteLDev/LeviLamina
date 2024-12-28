@@ -2,12 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/IPackLoadScoped.h"
+#include "mc/util/Factory.h"
+
 // auto generated forward declare list
 // clang-format off
+class IPackLoadContext;
+struct BlockComponentDescription;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class BlockComponentFactory {
+class BlockComponentFactory : public ::Factory<::BlockComponentDescription>, public ::IPackLoadScoped {
 public:
     // BlockComponentFactory inner types declare
     // clang-format off
@@ -17,62 +23,85 @@ public:
     // BlockComponentFactory inner types define
     struct ComponentMetadata {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>   mUnka06669;
+        ::ll::UntypedStorage<8, 24>  mUnkfbf74d;
+        ::ll::UntypedStorage<8, 120> mUnk6beadb;
+        ::ll::UntypedStorage<8, 24>  mUnk445a76;
+        ::ll::UntypedStorage<8, 64>  mUnka32189;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
+        ComponentMetadata& operator=(ComponentMetadata const&);
+        ComponentMetadata(ComponentMetadata const&);
         ComponentMetadata();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI ComponentMetadata(struct BlockComponentFactory::ComponentMetadata const&);
-
-        MCAPI struct BlockComponentFactory::ComponentMetadata&
-        operator=(struct BlockComponentFactory::ComponentMetadata&&);
-
-        MCAPI struct BlockComponentFactory::ComponentMetadata&
-        operator=(struct BlockComponentFactory::ComponentMetadata const&);
+        MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
 
         MCAPI ~ComponentMetadata();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void* ctor$(struct BlockComponentFactory::ComponentMetadata const&);
-
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkb8c428;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    BlockComponentFactory& operator=(BlockComponentFactory const&);
     BlockComponentFactory(BlockComponentFactory const&);
     BlockComponentFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI explicit BlockComponentFactory(class Experiments const& experiments);
-
-    MCAPI void initializeFactory(class Experiments const& experiments);
-
-    MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::ComponentMetadata>&
-    getPropRegisteredCerealComponents(struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI static void registerAllCerealDescriptions(struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~BlockComponentFactory() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static entt::meta_type initEnTTMetaType(struct cereal::ReflectionCtx& ctx);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Experiments const& experiments);
+    MCAPI void _buildBlockComponentsSchema();
 
+    MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+
+    MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
+    contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
+    setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

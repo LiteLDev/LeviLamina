@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Vec3;
+// clang-format on
+
 class WeavingMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,23 +19,36 @@ public:
     WeavingMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WeavingMobEffect() = default;
-
     // vIndex: 4
-    virtual void onActorRemovedAfterDeath(class Actor& target, int amplifier) const;
+    virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
 
+    // vIndex: 0
+    virtual ~WeavingMobEffect() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
+    // NOLINTEND
 
-    MCAPI void onActorRemovedAfterDeath$(class Actor& target, int amplifier) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static class Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

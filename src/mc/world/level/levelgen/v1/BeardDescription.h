@@ -4,23 +4,15 @@
 
 class BeardDescription {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 40> mUnk35dbdc;
+    ::ll::UntypedStorage<8, 8>  mUnk1646a3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BeardDescription& operator=(BeardDescription const&);
     BeardDescription(BeardDescription const&);
     BeardDescription();
-
-public:
-    // NOLINTBEGIN
-    MCAPI BeardDescription(class BeardingDescriptionCache cache, struct BeardKernel const& beardKernel);
-
-    MCAPI float calculateContribution(class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class BeardingDescriptionCache cache, struct BeardKernel const& beardKernel);
-
-    // NOLINTEND
 };

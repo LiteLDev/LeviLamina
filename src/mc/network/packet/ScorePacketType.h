@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum ScorePacketType : uint8_t {
+enum class ScorePacketType : uchar {
     Change = 0,
-    Remove = 0x1,
+    Remove = 1,
 };

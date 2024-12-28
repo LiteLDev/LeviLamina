@@ -11,16 +11,16 @@ struct ResourceDropsContext;
 // clang-format on
 
 namespace VanillaBlockDrops::Modifier {
+// functions
 // NOLINTBEGIN
-MCAPI std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      applyExplosionDecay(std::function<
-                          struct
-                          ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>);
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> applyExplosionDecay(
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
+);
 
-MCAPI std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      applyNameTagFromBlockActor(std::function<
-                                 struct
-                                 ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>);
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+applyNameTagFromBlockActor(
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
+);
 // NOLINTEND
 
-}; // namespace VanillaBlockDrops::Modifier
+} // namespace VanillaBlockDrops::Modifier

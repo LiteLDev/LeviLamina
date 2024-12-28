@@ -2,10 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+// clang-format on
+
 namespace FollowOwnerGoalVersions {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class BaseGameVersion const& RANDOMIZE_AND_CHECK_FOR_CLERANCE_WHEN_TELEPORTING();
+MCAPI ::BaseGameVersion const& KEEP_FOLLOWING_AFTER_TELEPORTING();
+
+MCAPI ::BaseGameVersion const& RANDOMIZE_AND_CHECK_FOR_CLEARANCE_WHEN_TELEPORTING();
 // NOLINTEND
 
-}; // namespace FollowOwnerGoalVersions
+} // namespace FollowOwnerGoalVersions

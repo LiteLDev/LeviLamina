@@ -5,14 +5,33 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
+#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/input/InputMode.h"
+#include "mc/deviceinfo/DeviceMemoryTier.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AnimatedImageData;
+class Certificate;
+class MinEngineVersion;
+class SerializedPersonaPieceHandle;
+class TintMapColor;
+class UnverifiedCertificate;
+class WebToken;
 namespace mce { class Color; }
 // clang-format on
 
 class ConnectionRequest {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>>           mCertificate;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                              mClientSubId;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ConnectionRequest& operator=(ConnectionRequest const&);
@@ -24,66 +43,77 @@ public:
     uchar                                        mClientSubId;
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionRequest(class ConnectionRequest const& other);
+    MCAPI ConnectionRequest(::ConnectionRequest const& other);
 
-    MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
+    MCAPI ConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
 
-    MCAPI std::string getArmSize() const;
+    MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCAPI std::vector<uchar> getCapeData() const;
+    MCAPI ::std::string getArmSize() const;
 
-    MCAPI std::string getCapeId() const;
+    MCAPI ::std::vector<uchar> getCapeData() const;
+
+    MCAPI ::std::string getCapeId() const;
 
     MCAPI ushort getCapeImageHeight() const;
 
     MCAPI ushort getCapeImageWidth() const;
 
-    MCAPI class Certificate const* getCertificate() const;
+    MCAPI ::Certificate const* getCertificate() const;
 
-    MCAPI std::string getClientPlatformId() const;
+    MCAPI ::std::string getClientPlatformId() const;
 
-    MCAPI std::string getClientPlatformOfflineId() const;
+    MCAPI ::std::string getClientPlatformOfflineId() const;
 
-    MCAPI std::string getClientPlatformOnlineId() const;
+    MCAPI ::std::string getClientPlatformOnlineId() const;
 
     MCAPI uint64 getClientRandomId() const;
 
     MCAPI ::SubClientId getClientSubId() const;
 
-    MCAPI std::string getClientThirdPartyName() const;
+    MCAPI ::std::string getClientThirdPartyName() const;
 
-    MCAPI std::string getDeviceId() const;
+    MCAPI ::InputMode getCurrentInputMode() const;
+
+    MCAPI ::std::string getDeviceId() const;
 
     MCAPI ::BuildPlatform getDeviceOS() const;
 
-    MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI ::std::string getEduTokenChain() const;
 
-    MCAPI std::unordered_map<::persona::PieceType, class TintMapColor> getPieceTintColors() const;
+    MCAPI int getMaxViewDistance() const;
 
-    MCAPI std::string getPlayFabIdUnverified() const;
+    MCAPI ::DeviceMemoryTier getMemoryTier() const;
 
-    MCAPI std::string getSelfSignedId() const;
+    MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCAPI std::string getSkinAnimationData() const;
+    MCAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
-    MCAPI class mce::Color getSkinColor() const;
+    MCAPI ::PlatformType getPlatformType() const;
 
-    MCAPI std::vector<uchar> getSkinData() const;
+    MCAPI ::std::string getPlayFabIdUnverified() const;
 
-    MCAPI std::string getSkinGeometry() const;
+    MCAPI ::std::string getSelfSignedId() const;
 
-    MCAPI class SemVersion getSkinGeometryEngineVersion() const;
+    MCAPI ::std::string getSkinAnimationData() const;
 
-    MCAPI std::string getSkinId() const;
+    MCAPI ::mce::Color getSkinColor() const;
+
+    MCAPI ::std::vector<uchar> getSkinData() const;
+
+    MCAPI ::std::string getSkinGeometry() const;
+
+    MCAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+
+    MCAPI ::std::string getSkinId() const;
 
     MCAPI ushort getSkinImageHeight() const;
 
     MCAPI ushort getSkinImageWidth() const;
 
-    MCAPI std::string getSkinResourcePatch() const;
-
-    MCAPI std::string getTenantId() const;
+    MCAPI ::std::string getSkinResourcePatch() const;
 
     MCAPI bool isCapeOnClassicSkin() const;
 
@@ -103,34 +133,32 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI std::string toString();
+    MCAPI ::std::string toString();
 
-    MCAPI bool verify(std::vector<std::string> const& trustedKeys, int64 currentTime);
+    MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, bool checkExpired);
 
-    MCAPI bool verifySelfSigned();
+    MCAPI bool verifySelfSigned(bool checkExpired);
 
     MCAPI ~ConnectionRequest();
-
-    MCAPI static class ConnectionRequest fromString(std::string const& str);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ConnectionRequest(std::unique_ptr<class WebToken> rawToken, std::string const& certificateString);
-
-    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64, bool) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ConnectionRequest const& other);
+    MCAPI static ::ConnectionRequest fromString(::std::string const& str);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::unique_ptr<class WebToken> rawToken, std::string const& certificateString);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ConnectionRequest const& other);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

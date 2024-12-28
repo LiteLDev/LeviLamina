@@ -2,7 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LegacyItemTriggerHandler {
+// auto generated inclusion list
+#include "mc/world/item/ILegacyItemTriggerHandler.h"
+
+// auto generated forward declare list
+// clang-format off
+class DefinitionEvent;
+class DefinitionTrigger;
+class ItemStackBase;
+class RenderParams;
+struct LegacyItemTriggerHandlerConfig;
+// clang-format on
+
+class LegacyItemTriggerHandler : public ::ILegacyItemTriggerHandler {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 320> mUnkca5d44;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyItemTriggerHandler& operator=(LegacyItemTriggerHandler const&);
@@ -10,55 +28,68 @@ public:
     LegacyItemTriggerHandler();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyItemTriggerHandler() = default;
-
     // vIndex: 1
     virtual bool executeTrigger(
-        std::unordered_map<std::string, class DefinitionEvent> const& eventHandlers,
-        class ItemStackBase&                                          item,
-        class DefinitionTrigger const&                                trigger,
-        class RenderParams&                                           params
-    ) const;
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
+        ::ItemStackBase&                                              item,
+        ::DefinitionTrigger const&                                    trigger,
+        ::RenderParams&                                               params
+    ) const /*override*/;
 
-    MCAPI explicit LegacyItemTriggerHandler(struct LegacyItemTriggerHandlerConfig&& config);
-
+    // vIndex: 0
+    virtual ~LegacyItemTriggerHandler() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit LegacyItemTriggerHandler(::LegacyItemTriggerHandlerConfig&& config);
+
     MCAPI void _executeEvent(
-        std::unordered_map<std::string, class DefinitionEvent> const& eventHandlers,
-        class ItemStackBase&                                          item,
-        std::string const&                                            name,
-        std::vector<std::pair<std::string const, std::string const>>& eventStack,
-        class RenderParams&                                           params
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
+        ::ItemStackBase&                                                      item,
+        ::std::string const&                                                  name,
+        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
+        ::RenderParams&                                                       params
     ) const;
 
     MCAPI bool _forceExecuteTrigger(
-        std::unordered_map<std::string, class DefinitionEvent> const& eventHandlers,
-        class ItemStackBase&                                          item,
-        class DefinitionTrigger const&                                trigger,
-        std::vector<std::pair<std::string const, std::string const>>& eventStack,
-        class RenderParams&                                           params
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
+        ::ItemStackBase&                                                      item,
+        ::DefinitionTrigger const&                                            trigger,
+        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
+        ::RenderParams&                                                       params
     ) const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig&& config);
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct LegacyItemTriggerHandlerConfig&& config);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool executeTrigger$(
-        std::unordered_map<std::string, class DefinitionEvent> const& eventHandlers,
-        class ItemStackBase&                                          item,
-        class DefinitionTrigger const&                                trigger,
-        class RenderParams&                                           params
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $executeTrigger(
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
+        ::ItemStackBase&                                              item,
+        ::DefinitionTrigger const&                                    trigger,
+        ::RenderParams&                                               params
     ) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

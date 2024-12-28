@@ -2,18 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+// auto generated forward declare list
+// clang-format off
+class BiomeSource;
+class ChunkPos;
+class HashedString;
+class Random;
+// clang-format on
 
 namespace NetherStructureFeatureHelper {
+// functions
 // NOLINTBEGIN
-MCAPI ::StructureFeatureType getStructureFeatureTypeForChunk(
-    class BiomeSource const&   biomeSource,
-    class Random&              random,
-    class ChunkPos const&      chunkPos,
-    uint                       levelSeed,
-    std::vector<uint64> const& allowedBiomes
+MCAPI ::HashedString getStructureFeatureTypeForChunk(
+    ::BiomeSource const&         biomeSource,
+    ::Random&                    random,
+    ::ChunkPos const&            chunkPos,
+    uint                         levelSeed,
+    ::std::vector<uint64> const& allowedBiomes
 );
 // NOLINTEND
 
-}; // namespace NetherStructureFeatureHelper
+} // namespace NetherStructureFeatureHelper

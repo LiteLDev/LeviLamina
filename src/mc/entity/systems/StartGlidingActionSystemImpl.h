@@ -7,21 +7,34 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct CurrentTickComponent;
+struct ElytraFlightTimeTicksComponent;
+struct PlayerActionComponent;
+struct PlayerInputRequestComponent;
+struct ShouldUpdateBoundingBoxRequestComponent;
+// clang-format on
 
 namespace StartGlidingActionSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doStartGlidingServerAction(
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct PlayerInputRequestComponent>,
-        struct PlayerActionComponent const,
-        struct ActorDataFlagComponent,
-        struct ActorDataDirtyFlagsComponent,
-        struct ElytraFlightTimeTicksComponent>                           view,
-    class OptionalGlobal<struct CurrentTickComponent const>              tickComponent,
-    class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent> modifier
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
+        ::PlayerActionComponent const,
+        ::ActorDataFlagComponent,
+        ::ActorDataDirtyFlagsComponent,
+        ::ElytraFlightTimeTicksComponent>                       view,
+    ::OptionalGlobal<::CurrentTickComponent const>              tickComponent,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 // NOLINTEND
 
-}; // namespace StartGlidingActionSystemImpl
+} // namespace StartGlidingActionSystemImpl

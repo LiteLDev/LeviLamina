@@ -4,20 +4,38 @@
 
 struct CrashDump_AllData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>     mUnk3e1fb5;
+    ::ll::UntypedStorage<4, 4>     mUnka1e590;
+    ::ll::UntypedStorage<4, 4>     mUnkec21fb;
+    ::ll::UntypedStorage<1, 1436>  mUnk46c649;
+    ::ll::UntypedStorage<8, 2344>  mUnk69c5c5;
+    ::ll::UntypedStorage<4, 32784> mUnkffc1fb;
+    ::ll::UntypedStorage<8, 8208>  mUnkdf7fc0;
+    ::ll::UntypedStorage<8, 272>   mUnkd18e80;
+    ::ll::UntypedStorage<4, 1552>  mUnkf26b20;
+    ::ll::UntypedStorage<4, 1040>  mUnkd788a1;
+    ::ll::UntypedStorage<4, 272>   mUnkb28d77;
+    ::ll::UntypedStorage<4, 400>   mUnk6fd1d7;
+    ::ll::UntypedStorage<4, 400>   mUnkb0e60f;
+    ::ll::UntypedStorage<8, 8>     mUnkc629c4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CrashDump_AllData& operator=(CrashDump_AllData const&);
     CrashDump_AllData(CrashDump_AllData const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI CrashDump_AllData();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinition;
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
 // clang-format on
 
@@ -16,33 +15,34 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorType {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8cd362;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorType& operator=(ScriptActorType const&);
     ScriptActorType(ScriptActorType const&);
     ScriptActorType();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptActorType(class ActorDefinition& definition);
-
-    MCAPI class Scripting::Result<void> addDynamicPropertiesDefinition(
-        class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
+    MCAPI ::Scripting::Result<void> addDynamicPropertiesDefinition(
+        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
-    MCAPI std::string getId() const;
+    MCAPI ::std::string getId() const;
 
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptActorType const& other) const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorType> bind();
-
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ActorDefinition& definition);
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorType> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class IConstBlockSource;
+class Vec3;
+// clang-format on
+
 class VehicleUtils {
 public:
     // VehicleUtils inner types declare
@@ -11,6 +20,13 @@ public:
 
     // VehicleUtils inner types define
     struct VehicleDirections {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkbf7371;
+        ::ll::UntypedStorage<4, 12> mUnkeb8adf;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         VehicleDirections& operator=(VehicleDirections const&);
@@ -25,39 +41,37 @@ public:
     VehicleUtils();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::optional<float>
-    calculateBlockFloorHeight(class IConstBlockSource const& region, class BlockPos const& blockPos);
+    MCAPI static ::std::optional<float>
+    calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
-    MCAPI static struct VehicleUtils::VehicleDirections
-    calculateVehicleDirections(class Vec3 const& currentPos, class Vec3 const& prevPos);
+    MCAPI static ::VehicleUtils::VehicleDirections
+    calculateVehicleDirections(::Vec3 const& currentPos, ::Vec3 const& prevPos);
 
-    MCAPI static auto getActivatorRailExitPatternStrategy(class BaseGameVersion const& version)
-        -> std::optional<
-            class
-            Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+    MCAPI static auto getActivatorRailExitPatternStrategy(::BaseGameVersion const& version)
+        -> ::std::optional<
+            ::Vec3> (*)(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)>);
 
-    MCAPI static auto getActorExitPatternStrategy(class BaseGameVersion const& version)
-        -> std::optional<
-            class
-            Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+    MCAPI static auto getActorExitPatternStrategy(::BaseGameVersion const& version)
+        -> ::std::optional<
+            ::Vec3> (*)(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)>);
 
-    MCAPI static bool ignoredExitCollisionBlock(class Block const& block);
+    MCAPI static bool ignoredExitCollisionBlock(::Block const& block);
 
-    MCAPI static std::optional<class Vec3> testPosFollowingEjectPattern(
-        struct VehicleUtils::VehicleDirections const&             vehicleDirections,
-        std::function<bool(class Vec3 const&, class Vec3 const&)> callback
+    MCAPI static ::std::optional<::Vec3> testPosFollowingEjectPattern(
+        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
+        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );
 
-    MCAPI static std::optional<class Vec3> testPosFollowingLegacyActivatorRailPattern(
-        struct VehicleUtils::VehicleDirections const&             vehicleDirections,
-        std::function<bool(class Vec3 const&, class Vec3 const&)> callback
+    MCAPI static ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
+        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
+        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );
 
-    MCAPI static std::optional<class Vec3> testPosFollowingLegacyActorPattern(
-        struct VehicleUtils::VehicleDirections const&             vehicleDirections,
-        std::function<bool(class Vec3 const&, class Vec3 const&)> callback
+    MCAPI static ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
+        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
+        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
     );
-
     // NOLINTEND
 };

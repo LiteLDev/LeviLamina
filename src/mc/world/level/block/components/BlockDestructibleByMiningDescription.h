@@ -3,16 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class BlockComponentStorage;
+class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructibleByMiningDescription : public ::BlockComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkcb1fc6;
+    ::ll::UntypedStorage<8, 24> mUnk6d11f2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockDestructibleByMiningDescription& operator=(BlockDestructibleByMiningDescription const&);
@@ -20,45 +27,79 @@ public:
     BlockDestructibleByMiningDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockDestructibleByMiningDescription() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentSortage) const;
+    // vIndex: 2
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
+    // vIndex: 4
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 7
-    virtual bool isNetworkComponent() const;
+    virtual bool isNetworkComponent() const /*override*/;
 
     // vIndex: 8
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~BlockDestructibleByMiningDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit BlockDestructibleByMiningDescription(float destroyTime);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentSortage) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(float destroyTime);
+    // NOLINTEND
 
-    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isNetworkComponent$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI static std::string const& NameID();
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
+    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI bool $isNetworkComponent() const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

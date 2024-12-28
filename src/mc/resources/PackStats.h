@@ -4,8 +4,17 @@
 
 class PackStats {
 public:
-    uint mOverriddenEntityCount; // this+0x0
-    uint mCustomEntityCount;     // this+0x4
-    uint mCustomAnimationCount;  // this+0x8
-    uint mCustomEffectCount;     // this+0xC
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint> mOverriddenEntityCount;
+    ::ll::TypedStorage<4, 4, uint> mCustomEntityCount;
+    ::ll::TypedStorage<4, 4, uint> mCustomAnimationCount;
+    ::ll::TypedStorage<4, 4, uint> mCustomEffectCount;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PackStats& operator=(PackStats const&);
+    PackStats(PackStats const&);
+    PackStats();
 };

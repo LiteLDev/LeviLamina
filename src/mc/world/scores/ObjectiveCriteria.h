@@ -5,16 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/scores/ObjectiveRenderType.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+// clang-format on
+
 class ObjectiveCriteria {
 public:
-    enum class ObjectiveRenderType : uchar {
-        Integer = 0x0,
-        Hearts  = 0x1,
-    };
-
-    std::string const         mName;
-    bool const                mReadOnly;
-    ObjectiveRenderType const mRenderType;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string const>        mName;
+    ::ll::TypedStorage<1, 1, bool const>                  mReadOnly;
+    ::ll::TypedStorage<1, 1, ::ObjectiveRenderType const> mRenderType;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -23,23 +26,18 @@ public:
     ObjectiveCriteria();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ObjectiveCriteria(std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
-
-    MCAPI std::string const& getName() const;
+    MCAPI ::std::string const& getName() const;
 
     MCAPI bool isReadOnly() const;
-
-    MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const& dataTag);
-
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const& toSave);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
+    MCAPI static ::std::unique_ptr<::ObjectiveCriteria> deserialize(::CompoundTag const& dataTag);
 
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ObjectiveCriteria const& toSave);
     // NOLINTEND
 };

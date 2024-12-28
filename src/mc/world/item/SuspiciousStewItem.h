@@ -3,21 +3,38 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class ItemStack;
+class Level;
+class MobEffectInstance;
+class Player;
 // clang-format on
 
 class SuspiciousStewItem : public ::Item {
+public:
+    // SuspiciousStewItem inner types define
+    enum class SuspiciousStewType : uint {
+        Poppy            = 0,
+        Cornflower       = 1,
+        Tulip            = 2,
+        AzureBluet       = 3,
+        LilyOfTheValley  = 4,
+        Dandelion        = 5,
+        BlueOrchid       = 6,
+        Allium           = 7,
+        OxeyeDaisy       = 8,
+        WitherRose       = 9,
+        Torchflower      = 10,
+        OpenEyeblossom   = 11,
+        ClosedEyeblossom = 12,
+        Count            = 13,
+    };
+
 public:
     // prevent constructor by default
     SuspiciousStewItem& operator=(SuspiciousStewItem const&);
@@ -25,36 +42,56 @@ public:
     SuspiciousStewItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 79
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
+
+    // vIndex: 63
+    virtual bool uniqueAuxValues() const /*override*/;
+
     // vIndex: 0
-    virtual ~SuspiciousStewItem() = default;
-
-    // vIndex: 59
-    virtual bool uniqueAuxValues() const;
-
-    // vIndex: 75
-    virtual ::ItemUseMethod
-    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
-
-    MCAPI static void applyStewEffect(class ItemStack const& inoutInstance, class Actor& actor);
-
+    virtual ~SuspiciousStewItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static std::array<class MobEffectInstance, 11> const& _getStewEffects();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SuspiciousStewItem(::std::string const& name, short id);
+    // NOLINTEND
 
-    MCAPI bool uniqueAuxValues$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
 
-    MCAPI ::ItemUseMethod
-    useTimeDepleted$(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
+    MCAPI static void applyStewEffect(::ItemStack const& inOutInstance, ::Actor& actor);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
+    MCAPI bool $uniqueAuxValues() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

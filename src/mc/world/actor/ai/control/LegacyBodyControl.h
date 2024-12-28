@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/BodyControl.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class LegacyBodyControl : public ::BodyControl {
 public:
     // prevent constructor by default
@@ -12,25 +17,42 @@ public:
     LegacyBodyControl(LegacyBodyControl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyBodyControl() = default;
-
     // vIndex: 1
-    virtual void clientTick(class Mob& mob);
+    virtual void clientTick(::Mob& mob) /*override*/;
 
-    MCAPI LegacyBodyControl();
-
+    // vIndex: 0
+    virtual ~LegacyBodyControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LegacyBodyControl();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void clientTick$(class Mob& mob);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $clientTick(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

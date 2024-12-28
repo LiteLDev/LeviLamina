@@ -6,9 +6,25 @@
 #include "mc/server/ServerInstance.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/GameSpecificNetEventCallback.h"
 
+// auto generated forward declare list
+// clang-format off
+class NetworkIdentifier;
+class ResourcePackClientResponsePacket;
+class ServerInstance;
+class ServerNetworkHandler;
+// clang-format on
+
 class VanillaServerNetworkHandler : public ::GameSpecificNetEventCallback {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>> mBedrockHandler;
+    ::ll::TypedStorage<8, 8, ::ServerInstance&>                                      mServer;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     VanillaServerNetworkHandler& operator=(VanillaServerNetworkHandler const&);
@@ -19,21 +35,31 @@ public:
     ServerInstance&                                   mServer;         // this+0x18
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VanillaServerNetworkHandler() = default;
+    virtual ~VanillaServerNetworkHandler() /*override*/;
 
     // vIndex: 1
-    virtual void handle(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
-
+    virtual void
+    handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void handle$(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

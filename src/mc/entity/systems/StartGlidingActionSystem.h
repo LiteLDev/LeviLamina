@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StartGlidingActionSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct StartGlidingActionSystem {
 public:
     // prevent constructor by default
     StartGlidingActionSystem& operator=(StartGlidingActionSystem const&);
@@ -10,8 +15,8 @@ public:
     StartGlidingActionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
-
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
     // NOLINTEND
 };

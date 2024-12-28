@@ -8,10 +8,20 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class CompoundTag;
+class Item;
+class ReadOnlyBinaryStream;
 // clang-format on
 
 struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 48> mUnkdc0e24;
+    ::ll::UntypedStorage<8, 16> mUnkeee21e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ComplexAliasDescriptor& operator=(ComplexAliasDescriptor const&);
@@ -19,78 +29,99 @@ public:
     ComplexAliasDescriptor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
+    virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const /*override*/;
 
     // vIndex: 1
-    virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool) const;
+    virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const /*override*/;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
-
-    // vIndex: 3
-    virtual std::string const& getFullName() const;
-
-    // vIndex: 4
-    virtual struct ItemDescriptor::ItemEntry getItem() const;
-
-    // vIndex: 5
-    virtual bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
+    virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const /*override*/;
 
     // vIndex: 6
-    virtual std::map<std::string, std::string> toMap() const;
+    virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const /*override*/;
+
+    // vIndex: 3
+    virtual ::std::string const& getFullName() const /*override*/;
+
+    // vIndex: 5
+    virtual ::ItemDescriptor::ItemEntry getItem() const /*override*/;
 
     // vIndex: 7
-    virtual std::optional<class CompoundTag> save() const;
+    virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
+
+    // vIndex: 8
+    virtual ::std::optional<::CompoundTag> save() const /*override*/;
 
     // vIndex: 9
-    virtual void serialize(class BinaryStream& stream) const;
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 10
-    virtual ::ItemDescriptor::InternalType getType() const;
+    // vIndex: 11
+    virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
-    // vIndex: 12
-    virtual uint64 getHash() const;
+    // vIndex: 13
+    virtual uint64 getHash() const /*override*/;
 
-    // vIndex: 15
-    virtual ~ComplexAliasDescriptor() = default;
-
-    MCAPI explicit ComplexAliasDescriptor(std::string const& fullName);
-
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>>
-    deserialize(class ReadOnlyBinaryStream& stream);
-
+    // vIndex: 16
+    virtual ~ComplexAliasDescriptor() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ComplexAliasDescriptor(::std::string const& fullName);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& fullName);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>>
+    deserialize(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& fullName);
+    // NOLINTEND
 
-    MCAPI bool forEachItemUntil$(std::function<bool(class Item const&, short)> func) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string const& getFullName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCAPI uint64 getHash$() const;
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-    MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
-    MCAPI ::ItemDescriptor::InternalType getType$() const;
+    MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const& otherItem, bool) const;
+    MCAPI ::std::string const& $getFullName() const;
 
-    MCAPI bool sameItems$(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool) const;
+    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
-    MCAPI std::optional<class CompoundTag> save$() const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCAPI void serialize$(class BinaryStream& stream) const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCAPI std::map<std::string, std::string> toMap$() const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
+    MCAPI ::ItemDescriptor::InternalType $getType() const;
+
+    MCAPI uint64 $getHash() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

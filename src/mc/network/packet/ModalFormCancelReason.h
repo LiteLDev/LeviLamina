@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ModalFormCancelReason : schar {
-    UserClosed = 0x0,
-    UserBusy   = 0x1,
+enum class ModalFormCancelReason : uchar {
+    UserClosed = 0,
+    UserBusy   = 1,
 };

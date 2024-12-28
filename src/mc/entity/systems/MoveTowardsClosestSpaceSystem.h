@@ -5,17 +5,27 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Vec3;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace MoveTowardsClosestSpaceSystem {
+// functions
 // NOLINTBEGIN
-MCAPI std::array<struct TickingSystemWithInfo, 2> createSystems();
+MCAPI ::std::array<::TickingSystemWithInfo, 2> createSystems();
 
 MCAPI void moveTowardsClosestSpace(
-    class AABB const&                                          aabb,
-    std::vector<class AABB> const&                             oneWayPhysicsBlocks,
-    class IConstBlockSource const&                             region,
-    class optional_ref<class GetCollisionShapeInterface const> collisionShape,
-    class Vec3&                                                posDelta
+    ::AABB const&                                      aabb,
+    ::std::vector<::AABB> const&                       oneWayPhysicsBlocks,
+    ::IConstBlockSource const&                         region,
+    ::optional_ref<::GetCollisionShapeInterface const> collisionShape,
+    ::Vec3&                                            posDelta
 );
 // NOLINTEND
 
-}; // namespace MoveTowardsClosestSpaceSystem
+} // namespace MoveTowardsClosestSpaceSystem

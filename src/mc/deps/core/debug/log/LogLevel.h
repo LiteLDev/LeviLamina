@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class LogLevel : int {
-    Verbose = 0x0,
-    Info    = 0x1,
-    Warning = 0x2,
-    Error   = 0x3,
-    Count   = 0x4,
+enum class LogLevel : uint {
+    Verbose = 0,
+    Inform  = 1,
+    Warning = 2,
+    Error   = 3,
+    Count   = 4,
 };

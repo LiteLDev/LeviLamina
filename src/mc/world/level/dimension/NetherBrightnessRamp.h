@@ -7,21 +7,36 @@
 
 class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
+    // prevent constructor by default
+    NetherBrightnessRamp& operator=(NetherBrightnessRamp const&);
+    NetherBrightnessRamp(NetherBrightnessRamp const&);
+    NetherBrightnessRamp();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NetherBrightnessRamp() = default;
-
     // vIndex: 2
-    virtual float getBaseAmbientValue() const;
+    virtual float getBaseAmbientValue() const /*override*/;
 
+    // vIndex: 0
+    virtual ~NetherBrightnessRamp() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI float getBaseAmbientValue$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI float $getBaseAmbientValue() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,22 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class HashedString;
+class ItemInstance;
+class Material;
+class MobSpawnerData;
+class SpawnConditions;
 // clang-format on
 
 class SlabBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk70fd63;
+    ::ll::UntypedStorage<8, 48> mUnk8d866f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SlabBlock& operator=(SlabBlock const&);
@@ -26,100 +37,114 @@ public:
     SlabBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SlabBlock();
+    // vIndex: 37
+    virtual bool isSlabBlock() const /*override*/;
 
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 14
-    virtual bool
-    isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
+    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const
+        /*override*/;
+
+    // vIndex: 57
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
+
+    // vIndex: 101
+    virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const
+        /*override*/;
 
     // vIndex: 19
     virtual bool liquidCanFlowIntoFromDirection(
-        uchar                                                           flowIntoFacing,
-        std::function<class Block const&(class BlockPos const&)> const& getBlock,
-        class BlockPos const&                                           pos
-    ) const;
-
-    // vIndex: 39
-    virtual bool isSlabBlock() const;
-
-    // vIndex: 40
-    virtual bool isDoubleSlabBlock() const;
-
-    // vIndex: 62
-    virtual bool
-    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
-
-    // vIndex: 73
-    virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const /*override*/;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 107
-    virtual class MobSpawnerData const*
-    getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    MCAPI SlabBlock(
-        std::string const&        nameId,
-        int                       id,
-        bool                      _fullsize,
-        class Material const&     mat,
-        class HashedString const& baseSlab
-    );
-
+    // vIndex: 0
+    virtual ~SlabBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        std::string const&        nameId,
-        int                       id,
-        bool                      _fullsize,
-        class Material const&     mat,
-        class HashedString const& baseSlab
+    MCAPI SlabBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        bool                  isDouble,
+        ::Material const&     mat,
+        ::HashedString const& otherSlab
     );
 
-    MCAPI void dtor$();
+    MCAPI ::Block const& getDoubleSlab() const;
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isDoubleSlab(::Block const& block);
+    // NOLINTEND
 
-    MCAPI bool breaksFallingBlocks$(class Block const& block, class BaseGameVersion version) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BaseGameVersion const& TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
 
-    MCAPI bool
-    checkIsPathable$(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, bool isDouble, ::Material const& mat, ::HashedString const& otherSlab);
+    // NOLINTEND
 
-    MCAPI class MobSpawnerData const*
-    getMobToSpawn$(class SpawnConditions const& conditions, class BlockSource& region) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::BlockProperty getRedstoneProperty$(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isSlabBlock() const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool isDoubleSlabBlock$() const;
+    MCAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    MCAPI bool
-    isObstructingChests$(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI bool isSlabBlock$() const;
+    MCAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCAPI bool liquidCanFlowIntoFromDirection$(
-        uchar                                                           flowIntoFacing,
-        std::function<class Block const&(class BlockPos const&)> const& getBlock,
-        class BlockPos const&                                           pos
+    MCAPI bool $liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI static class BaseGameVersion const& TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

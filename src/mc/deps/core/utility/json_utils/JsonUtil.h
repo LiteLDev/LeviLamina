@@ -9,64 +9,68 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class SemVersion;
+class Vec2;
+class Vec3;
 namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace JsonUtil { class JsonSchemaNodeBase; }
 // clang-format on
 
 namespace JsonUtil {
+// functions
 // NOLINTBEGIN
 MCAPI void LogMissingChildSchemaOption(
-    ::LogArea                area,
-    class Json::Value const& node,
-    std::string const&       missingName,
-    std::string const&       foundNodesStr,
-    std::string const&       optionsStr
+    ::LogArea            area,
+    ::Json::Value const& node,
+    ::std::string const& missingName,
+    ::std::string const& foundNodesStr,
+    ::std::string const& optionsStr
 );
 
-MCAPI void
-LogUnknownChildSchemaOption(std::string const& childName, ::LogArea area, class Json::Value const& childValue);
+MCAPI void LogUnknownChildSchemaOption(::std::string const& childName, ::LogArea area, ::Json::Value const& childValue);
 
-MCAPI void eraseSchema(class HashedString const& name, class SemVersion const& version);
+MCAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
 
-MCAPI class BlockLegacy const* getBlockLegacy(std::string const& name);
+MCAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::string_view memberName);
 
-MCAPI class Json::Value& getMemberByCaseInsensitiveName(class Json::Value& node, std::string_view const& memberName);
+MCAPI ::Json::Value const&
+getMemberByCaseInsensitiveNameConst(::Json::Value const& node, ::std::string_view memberName);
 
-MCAPI class Json::Value const&
-getMemberByCaseInsensitiveNameConst(class Json::Value const& node, std::string_view const& memberName);
+MCAPI ::std::map<::HashedString, ::std::map<::SemVersion, ::std::shared_ptr<::JsonUtil::JsonSchemaNodeBase>>>&
+getSchemaMap();
 
-MCAPI std::map<class HashedString, std::map<class SemVersion, std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>>>&
-      getSchemaMap();
+MCAPI ::Bedrock::Threading::Mutex& getSchemaMapLock();
 
-MCAPI class Bedrock::Threading::Mutex& getSchemaMapLock();
-
-MCAPI bool parseBannerBlockType(::BannerBlockType& outType, class Json::Value const& root);
+MCAPI bool parseBannerBlockType(::BannerBlockType& outType, ::Json::Value const& root);
 
 MCAPI bool
-parseItem(std::string& outItemName, std::string& outItemNamespace, int& inoutItemAux, std::string_view inString);
+parseItem(::std::string& outItemName, ::std::string& outItemNamespace, int& inoutItemAux, ::std::string_view inString);
 
-MCAPI bool parseItemColor(::ItemColor& outColor, class Json::Value const& root);
+MCAPI bool parseItemColor(::ItemColor& outColor, ::Json::Value const& root);
 
-MCAPI bool parseRange(class Json::Value const& root, int& outMin, int& outMax);
+MCAPI bool parseRange(::Json::Value const& root, int& outMin, int& outMax);
 
-MCAPI bool parseVec2(class Vec2& outVec, class Json::Value const& root);
+MCAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
 
-MCAPI bool parseVec3(class Vec3& outVec, class Json::Value const& root);
+MCAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
 
 MCAPI void printJsonSchema_childNode(
-    std::string&              output,
-    std::string const&        indent,
-    class HashedString const& typeName,
-    std::string const&        memberName,
-    bool                      isRequired,
-    uint64                    minChildren,
-    uint64                    maxChildren,
-    std::string const&        validValuesDocumentation,
-    std::string const&        documentation
+    ::std::string&        output,
+    ::std::string const&  indent,
+    ::HashedString const& typeName,
+    ::std::string const&  memberName,
+    bool                  isRequired,
+    uint64                minChildren,
+    uint64                maxChildren,
+    ::std::string const&  validValuesDocumentation,
+    ::std::string const&  documentation
 );
 
-MCAPI void setDefaultPrettyName(std::string& destPrettyName, class HashedString const& sourceName);
+MCAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
+
+MCAPI void unregisterSchema(::HashedString const& name, ::SemVersion const& version);
 // NOLINTEND
 
-}; // namespace JsonUtil
+} // namespace JsonUtil

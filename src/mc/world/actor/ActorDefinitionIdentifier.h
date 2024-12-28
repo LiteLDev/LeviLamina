@@ -1,92 +1,108 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 struct ActorDefinitionIdentifier {
 public:
-    std::string  mNamespace;     // 0
-    std::string  mIdentifier;    // 32
-    std::string  mInitEvent;     // 64
-    std::string  mFullName;      // 96
-    HashedString mCanonicalName; // 128
-
-    ActorDefinitionIdentifier() = default;
-
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
+    ::ll::TypedStorage<8, 32, ::std::string>  mNamespace;
+    ::ll::TypedStorage<8, 32, ::std::string>  mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>  mInitEvent;
+    ::ll::TypedStorage<8, 32, ::std::string>  mFullName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCanonicalName;
+    // NOLINTEND
 
-    MCAPI explicit ActorDefinitionIdentifier(std::string const& fullName);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorDefinitionIdentifier();
+
+    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&&);
+
+    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const&);
+
+    MCAPI explicit ActorDefinitionIdentifier(::std::string const& fullName);
+
+    MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
     MCAPI explicit ActorDefinitionIdentifier(::ActorType type);
 
-    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier&& other);
-
-    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const& other);
-
-    MCAPI ActorDefinitionIdentifier(std::string nameSpace, std::string identifier, std::string initEvent);
+    MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
     MCAPI ::ActorType _getLegacyActorType() const;
 
-    MCAPI class HashedString const& getCanonicalHash() const;
+    MCAPI void _initialize();
 
-    MCAPI std::string const& getCanonicalName() const;
+    MCAPI void clear();
 
-    MCAPI std::string const& getFullName() const;
+    MCAPI ::HashedString const& getCanonicalHash() const;
 
-    MCAPI std::string const& getIdentifier() const;
+    MCAPI ::std::string const& getCanonicalName() const;
 
-    MCAPI std::string const& getInitEvent() const;
+    MCAPI ::std::string const& getFullName() const;
 
-    MCAPI std::string const& getNamespace() const;
+    MCAPI ::std::string const& getIdentifier() const;
 
-    MCAPI void initialize(std::string const& fullName);
+    MCAPI ::std::string const& getInitEvent() const;
 
-    MCAPI void initialize(std::string const& nameSpace, std::string const& identifier, std::string const& initEvent);
+    MCAPI ::std::string const& getNamespace() const;
+
+    MCAPI void initialize(::std::string const& fullName);
+
+    MCAPI void
+    initialize(::std::string const& nameSpace, ::std::string const& identifier, ::std::string const& initEvent);
 
     MCAPI bool isEmpty() const;
 
     MCAPI bool isVanilla() const;
 
-    MCAPI struct ActorDefinitionIdentifier& operator=(struct ActorDefinitionIdentifier const& other);
+    MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const&);
 
-    MCAPI bool operator==(struct ActorDefinitionIdentifier const& other) const;
+    MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
 
-    MCAPI void setIdentifier(std::string const& identifier);
+    MCAPI void setIdentifier(::std::string const& identifier);
 
-    MCAPI void setInitEvent(std::string const& initEvent);
+    MCAPI void setInitEvent(::std::string const& initEvent);
 
+    MCAPI ~ActorDefinitionIdentifier();
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initialize();
-
-    MCAPI static void _extractIdentifier(std::string const& name, struct ActorDefinitionIdentifier& id);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(::ActorType type);
+    MCAPI static void _extractIdentifier(::std::string const& name, ::ActorDefinitionIdentifier& id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(char const* fullName);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(std::string nameSpace, std::string identifier, std::string initEvent);
+    MCAPI void* $ctor(::ActorDefinitionIdentifier&&);
 
-    MCAPI void* ctor$(struct ActorDefinitionIdentifier const& other);
+    MCAPI void* $ctor(::ActorDefinitionIdentifier const&);
 
-    MCAPI void* ctor$(struct ActorDefinitionIdentifier&& other);
+    MCAPI void* $ctor(::std::string const& fullName);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(char const* fullName);
 
-    MCAPI void* ctor$(std::string const& fullName);
+    MCAPI void* $ctor(::ActorType type);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

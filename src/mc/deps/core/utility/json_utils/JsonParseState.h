@@ -13,4 +13,4 @@ public:
     JsonParseState();
 };
 
-}; // namespace JsonUtil
+} // namespace JsonUtil

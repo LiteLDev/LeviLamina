@@ -7,7 +7,22 @@
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
+// auto generated forward declare list
+// clang-format off
+struct NetworkSettingOptions;
+// clang-format on
+
 class CompressedNetworkPeer : public ::NetworkPeer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>           mSendBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>           mReceiveBuffer;
+    ::ll::TypedStorage<1, 1, bool>                     mCompressionEnabled;
+    ::ll::TypedStorage<1, 1, bool>                     mHybridCompressionEnabled;
+    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions> mNetworkSettings;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CompressedNetworkPeer& operator=(CompressedNetworkPeer const&);
@@ -20,41 +35,65 @@ public:
     NetworkSettingOptions mNetworkSettings;    // this+0x5C
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompressedNetworkPeer() = default;
+    virtual ~CompressedNetworkPeer() /*override*/;
 
     // vIndex: 1
-    virtual void
-    sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+    virtual void sendPacket(
+        ::std::string const&       data,
+        ::NetworkPeer::Reliability reliability,
+        ::Compressibility          compressible
+    ) /*override*/;
 
     // vIndex: 2
-    virtual ::NetworkPeer::DataStatus
-    receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+    virtual ::NetworkPeer::DataStatus receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) /*override*/;
 
     // vIndex: 3
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-
-    MCAPI explicit CompressedNetworkPeer(std::shared_ptr<class NetworkPeer> peer);
-
-    MCAPI void setCompressionEnabled(bool val, struct NetworkSettingOptions options);
-
+    virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit CompressedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
 
-    MCAPI void* ctor$(std::shared_ptr<class NetworkPeer> peer);
+    MCAPI void setCompressionEnabled(bool val, ::NetworkSettingOptions options);
+    // NOLINTEND
 
-    MCAPI struct NetworkPeer::NetworkStatus getNetworkStatus$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
+    // NOLINTEND
 
-    MCAPI ::NetworkPeer::DataStatus
-    receivePacket$(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const& timepointPtr);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
     MCAPI void
-    sendPacket$(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
+    MCAPI ::NetworkPeer::DataStatus $receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
+
+    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,37 +5,39 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct PassengerComponent;
+struct PassengersChangedFlagComponent;
+struct RecalculateControlledByLocalInstanceRequestComponent;
+struct RemovePassengersComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace RemovePassengersSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void removePassengersSystem(
-    class StrictEntityContext const&  vehicleEntity,
-    struct RemovePassengersComponent& removePassengersComponent,
-    struct VehicleComponent&          vehicleComponent,
-    class EntityModifier<
-        struct VehicleComponent,
-        class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>,
-        class FlagComponent<struct PassengersChangedFlag>> modifier
+    ::StrictEntityContext const& vehicleEntity,
+    ::RemovePassengersComponent& removePassengersComponent,
+    ::VehicleComponent&          vehicleComponent,
+    ::EntityModifier<
+        ::VehicleComponent,
+        ::RecalculateControlledByLocalInstanceRequestComponent,
+        ::PassengersChangedFlagComponent> modifier
 );
 
 MCAPI void singleTickRemovePassenger(
-    class StrictEntityContext const& passengerEntity,
-    struct PassengerComponent const& passengerComponent,
-    class ViewT<class StrictEntityContext, struct RemovePassengersComponent const, struct VehicleComponent> vehicleView,
-    class EntityModifier<
-        struct VehicleComponent,
-        class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>,
-        class FlagComponent<struct PassengersChangedFlag>> modifier
-);
-
-MCAPI void tickRemovePassengersSystem(
-    class ViewT<class StrictEntityContext, struct RemovePassengersComponent, struct VehicleComponent> view,
-    class EntityModifier<
-        struct VehicleComponent,
-        class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>,
-        class FlagComponent<struct PassengersChangedFlag>> modifier
+    ::StrictEntityContext const&                                                          passengerEntity,
+    ::PassengerComponent const&                                                           passengerComponent,
+    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView,
+    ::EntityModifier<
+        ::VehicleComponent,
+        ::RecalculateControlledByLocalInstanceRequestComponent,
+        ::PassengersChangedFlagComponent> modifier
 );
 // NOLINTEND
 
-}; // namespace RemovePassengersSystemImpl
+} // namespace RemovePassengersSystemImpl

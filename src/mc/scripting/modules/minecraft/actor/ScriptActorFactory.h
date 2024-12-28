@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -22,24 +23,23 @@ public:
     ScriptActorFactory();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    createHandle(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _processCreatedHandle(
-        class Actor const&                                                                  actor,
-        class Scripting::WeakLifetimeScope const&                                           scope,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>& handle
+        ::Actor const&                                                              actor,
+        ::Scripting::WeakLifetimeScope const&                                       scope,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>& handle
     );
 
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    createHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    getHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    getHandle(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

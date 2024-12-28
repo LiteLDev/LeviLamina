@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/events/PlayerEventCoordinator.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class Player;
+// clang-format on
+
 class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
     // prevent constructor by default
@@ -13,20 +20,29 @@ public:
     ClientPlayerEventCoordinator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientPlayerEventCoordinator() = default;
-
-    MCAPI void sendPlayerDestroyedBlock(class Player& player, class Block const& block);
-
-    MCAPI void sendStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);
-
+    virtual ~ClientPlayerEventCoordinator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void sendPlayerDestroyedBlock(::Player& player, ::Block const& block);
 
+    MCAPI void sendStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

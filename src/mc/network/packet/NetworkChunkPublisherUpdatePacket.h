@@ -1,65 +1,90 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPos;
+class ChunkPos;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class NetworkChunkPublisherUpdatePacket : public ::Packet {
 public:
-    BlockPos              mPosition;    // this+0x30
-    uint                  mRadius;      // this+0x3C
-    std::vector<ChunkPos> mSavedChunks; // this+0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::BlockPos>                mPosition;
+    ::ll::TypedStorage<4, 4, uint>                       mRadius;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>> mServerBuiltChunks;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     NetworkChunkPublisherUpdatePacket& operator=(NetworkChunkPublisherUpdatePacket const&);
     NetworkChunkPublisherUpdatePacket(NetworkChunkPublisherUpdatePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NetworkChunkPublisherUpdatePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI NetworkChunkPublisherUpdatePacket();
-
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const& position, uint radius);
-
+    // vIndex: 0
+    virtual ~NetworkChunkPublisherUpdatePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NetworkChunkPublisherUpdatePacket();
 
-    MCAPI void* ctor$(class BlockPos const& position, uint radius);
+    MCAPI NetworkChunkPublisherUpdatePacket(::BlockPos const& position, uint radius);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BlockPos const& position, uint radius);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

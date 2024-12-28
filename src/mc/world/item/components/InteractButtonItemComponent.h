@@ -8,61 +8,94 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
+class HashedString;
+class SemVersion;
+namespace SharedTypes::v1_20_50 { struct InteractButtonItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class InteractButtonItemComponent : public ::ItemComponent {
 public:
-    // prevent constructor by default
-    InteractButtonItemComponent(InteractButtonItemComponent const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InteractButtonItemComponent();
-
-    // vIndex: 3
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
-
-    // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI InteractButtonItemComponent();
-
-    MCAPI class InteractButtonItemComponent& operator=(class InteractButtonItemComponent const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    ::ll::UntypedStorage<1, 1>  mUnk2a1aac;
+    ::ll::UntypedStorage<8, 32> mUnk69b303;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    InteractButtonItemComponent(InteractButtonItemComponent const&);
+    InteractButtonItemComponent();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 3
+    virtual bool isNetworkComponent() const /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 4
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 5
+    virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    MCAPI void _initializeComponent$();
+    // vIndex: 7
+    virtual void _initializeComponent() /*override*/;
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+    // vIndex: 0
+    virtual ~InteractButtonItemComponent() /*override*/;
+    // NOLINTEND
 
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
 
-    MCAPI bool isNetworkComponent$() const;
+    MCAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
 
+    MCAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isNetworkComponent() const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+
+    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

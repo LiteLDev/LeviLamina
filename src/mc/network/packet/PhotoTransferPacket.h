@@ -1,66 +1,90 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/world/level/storage/PhotoType.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/storage/PhotoType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
 
 class PhotoTransferPacket : public ::Packet {
 public:
-    std::string   mPhotoName;    // this+0x30
-    std::string   mPhotoData;    // this+0x50
-    std::string   mBookId;       // this+0x70
-    PhotoType     mType;         // this+0x90
-    PhotoType     mSourceType;   // this+0x91
-    ActorUniqueID mOwnerId;      // this+0x98
-    std::string   mNewPhotoName; // this+0xA0
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoData;
+    ::ll::TypedStorage<8, 32, ::std::string>  mBookId;
+    ::ll::TypedStorage<1, 1, ::PhotoType>     mType;
+    ::ll::TypedStorage<1, 1, ::PhotoType>     mSourceType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
+    ::ll::TypedStorage<8, 32, ::std::string>  mNewPhotoName;
+    // NOLINTEND
 
-
+public:
     // prevent constructor by default
     PhotoTransferPacket& operator=(PhotoTransferPacket const&);
     PhotoTransferPacket(PhotoTransferPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PhotoTransferPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI PhotoTransferPacket();
-
+    // vIndex: 0
+    virtual ~PhotoTransferPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PhotoTransferPacket();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,7 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
 class Actor;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+// clang-format on
 
 class InternalComponentRegistry {
 public:
@@ -14,27 +20,41 @@ public:
     // InternalComponentRegistry inner types define
     struct ComponentInfo {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 64, ::std::function<void(::CompoundTag const&, ::CompoundTag&)>>
+                                                                                         mLegacyDataConversionFunc;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Actor&, ::CompoundTag const&)>> mCreateAndLoadComponentFunc;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Actor const&, ::CompoundTag&)>> mSaveComponentFunc;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         ComponentInfo& operator=(ComponentInfo const&);
         ComponentInfo(ComponentInfo const&);
         ComponentInfo();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI struct InternalComponentRegistry::ComponentInfo&
-        operator=(struct InternalComponentRegistry::ComponentInfo&&);
+        MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
 
         MCAPI ~ComponentInfo();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo>>
+        mRegistry;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -43,41 +63,52 @@ public:
     InternalComponentRegistry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InternalComponentRegistry() = default;
+    virtual ~InternalComponentRegistry();
 
     // vIndex: 1
     virtual void registerComponents();
-
-    MCAPI void addComponentSaveData(class Actor const& owner, class CompoundTag& tag);
-
-    MCAPI void
-    initializeComponents(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper) const;
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void
-    _initializeComponents(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper) const;
-
-    MCAPI static class CompoundTag const*
-    _getComponentScope(class CompoundTag const& tag, std::string const& componentName);
-
-    MCAPI static class CompoundTag&
-    _getOrCreateComponentScope(class CompoundTag& tag, std::string const& componentName);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
 
-    MCAPI void registerComponents$();
+    MCAPI void addComponentSaveData(::Actor const& owner, ::CompoundTag& tag);
 
-    MCAPI static std::string const& INTERNAL_COMPONENTS();
+    MCAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::CompoundTag& _getOrCreateComponentScope(::CompoundTag& tag, ::std::string const& componentName);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& INTERNAL_COMPONENTS();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $registerComponents();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

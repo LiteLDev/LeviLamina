@@ -7,17 +7,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class GenericModuleBindingFactory; }
+namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
 class ScriptMinecraftModuleFactory : public ::Scripting::GenericModuleBindingFactory {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk2bf29c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptMinecraftModuleFactory& operator=(ScriptMinecraftModuleFactory const&);
@@ -25,42 +30,55 @@ public:
     ScriptMinecraftModuleFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptMinecraftModuleFactory() = default;
-
-    MCAPI explicit ScriptMinecraftModuleFactory(class ServerLevel* level);
-
-    MCAPI static std::string getModuleUUIDAsString();
-
-    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version version);
-
+    virtual ~ScriptMinecraftModuleFactory() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void _addVersions();
 
-    MCAPI struct Scripting::ModuleBinding _generateBindings(
-        class Scripting::ModuleBindingBuilder& moduleBuilder,
-        bool                                   allowUntagged,
-        std::vector<std::string> const&        additionalTags
+    MCAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&                 moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> const& contextConfig,
+        bool                                               allowUntagged,
+        ::std::vector<::std::string> const&                additionalTags
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
+    getActorComponentFactories();
 
-    MCAPI void* ctor$(class ServerLevel* level);
+    MCAPI static ::std::string getModuleUUIDAsString();
 
-    MCAPI static char const* const& LegacyModuleName();
+    MCAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+    // NOLINTEND
 
-    MCAPI static char const* const& ModuleName();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& LegacyModuleName();
 
-    MCAPI static class mce::UUID const& ModuleUUID();
+    MCAPI static char const*& ModuleName();
 
+    MCAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

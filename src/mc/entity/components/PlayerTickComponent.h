@@ -2,36 +2,51 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct IPlayerTickPolicy;
+// clang-format on
+
 struct PlayerTickComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkc791f1;
+    ::ll::UntypedStorage<8, 8> mUnkc8e399;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerTickComponent& operator=(PlayerTickComponent const&);
     PlayerTickComponent(PlayerTickComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI PlayerTickComponent();
 
-    MCAPI explicit PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy> policy);
+    MCAPI PlayerTickComponent(::PlayerTickComponent&&);
 
-    MCAPI PlayerTickComponent(struct PlayerTickComponent&&);
+    MCAPI explicit PlayerTickComponent(::std::unique_ptr<::IPlayerTickPolicy> policy);
 
-    MCAPI struct PlayerTickComponent& operator=(struct PlayerTickComponent&&);
+    MCAPI ::PlayerTickComponent& operator=(::PlayerTickComponent&&);
 
     MCAPI ~PlayerTickComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::unique_ptr<struct IPlayerTickPolicy> policy);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::PlayerTickComponent&&);
 
-    MCAPI void* ctor$(struct PlayerTickComponent&&);
+    MCAPI void* $ctor(::std::unique_ptr<::IPlayerTickPolicy> policy);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

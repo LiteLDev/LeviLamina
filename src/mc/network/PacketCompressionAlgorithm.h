@@ -2,7 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PacketCompressionAlgorithm : int {
-    ZLib   = 0x0,
-    Snappy = 0x1,
+enum class PacketCompressionAlgorithm : ushort {
+    ZLib   = 0,
+    Snappy = 1,
+    None   = 65535,
 };

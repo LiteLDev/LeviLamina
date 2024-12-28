@@ -8,9 +8,9 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 // clang-format on
 
 namespace BlockTraitConversionUtils::FacingDirectionToBlockFace {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI struct BlockTraitConversionUtils::ConvertedSet& R20U2();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
-}; // namespace BlockTraitConversionUtils::FacingDirectionToBlockFace
+} // namespace BlockTraitConversionUtils::FacingDirectionToBlockFace

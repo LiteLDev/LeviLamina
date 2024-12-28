@@ -1,43 +1,54 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/nbt/CompoundTag.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CommandOrigin;
+class CompoundTag;
+class Vec3;
+// clang-format on
 
 class CommandPosition {
 public:
-    Vec3 mOffset;
-    bool mRelativeX;
-    bool mRelativeY;
-    bool mRelativeZ;
-    bool mLocal;
-
-    CommandPosition() = default;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit CommandPosition(class Vec3 const& absoluteOffset);
-
-    MCAPI class BlockPos getBlockPos(class Vec3 const& ref, class Vec3 const& offsetFromBase = {}) const;
-
-    MCAPI class BlockPos
-    getBlockPos(int version, class CommandOrigin const& origin, class Vec3 const& offsetFromBase = {}) const;
-
-    MCAPI class Vec3 getPosition(class Vec3 const& ref, class Vec3 const& offsetFromBase = {}) const;
-
-    MCAPI class Vec3
-    getPosition(int version, class CommandOrigin const& origin, class Vec3 const& offsetFromBase = {}) const;
-
-    MCAPI class CompoundTag serialize() const;
-
+    ::ll::TypedStorage<4, 12, ::Vec3> mOffset;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeX;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeY;
+    ::ll::TypedStorage<1, 1, bool>    mRelativeZ;
+    ::ll::TypedStorage<1, 1, bool>    mLocal;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandPosition& operator=(CommandPosition const&);
+    CommandPosition(CommandPosition const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI CommandPosition();
 
-    MCAPI void* ctor$(class Vec3 const& absoluteOffset);
+    MCAPI explicit CommandPosition(::Vec3 const& absoluteOffset);
 
+    MCAPI ::BlockPos getBlockPos(::Vec3 const& ref, ::Vec3 const& offsetFromBase) const;
+
+    MCAPI ::BlockPos getBlockPos(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
+
+    MCAPI ::Vec3 getPosition(::Vec3 const& ref, ::Vec3 const& offsetFromBase) const;
+
+    MCAPI ::Vec3 getPosition(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
+
+    MCAPI ::CompoundTag serialize() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Vec3 const& absoluteOffset);
     // NOLINTEND
 };

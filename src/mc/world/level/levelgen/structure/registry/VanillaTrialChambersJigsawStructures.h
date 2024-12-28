@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VanillaTrialChambersJigsawStructures {
-public:
-    // prevent constructor by default
-    VanillaTrialChambersJigsawStructures& operator=(VanillaTrialChambersJigsawStructures const&);
-    VanillaTrialChambersJigsawStructures(VanillaTrialChambersJigsawStructures const&);
-    VanillaTrialChambersJigsawStructures();
+// auto generated forward declare list
+// clang-format off
+class JigsawStructureRegistry;
+struct StructureTemplateRegistrationContext;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static void
-    initialize(struct StructureTemplateRegistrationContext& context, class JigsawStructureRegistry& registry);
+namespace VanillaTrialChambersJigsawStructures {
+// functions
+// NOLINTBEGIN
+MCAPI void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);
+// NOLINTEND
 
-    // NOLINTEND
-};
+} // namespace VanillaTrialChambersJigsawStructures

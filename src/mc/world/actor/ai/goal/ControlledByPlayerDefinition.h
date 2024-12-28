@@ -8,38 +8,65 @@
 
 // auto generated forward declare list
 // clang-format off
+class ControlledByPlayerGoal;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ControlledByPlayerDefinition : public ::BaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbe611c;
+    ::ll::UntypedStorage<4, 4> mUnkeddaa5;
+    ::ll::UntypedStorage<4, 4> mUnk8266d5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ControlledByPlayerDefinition& operator=(ControlledByPlayerDefinition const&);
     ControlledByPlayerDefinition(ControlledByPlayerDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ControlledByPlayerDefinition() = default;
-
-    MCAPI ControlledByPlayerDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class ControlledByPlayerGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition>>& root
-    );
-
+    virtual ~ControlledByPlayerDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ControlledByPlayerDefinition();
 
-    MCAPI void* ctor$();
+    MCAPI void initialize(::EntityContext& entity, ::ControlledByPlayerGoal& goal) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const& name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ControlledByPlayerDefinition>>&
+            root
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

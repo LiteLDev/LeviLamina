@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class DirectoryPickerConfig; }
-namespace Bedrock { class FilePickerManager; }
 // clang-format on
 
 namespace Bedrock {
@@ -21,33 +20,53 @@ public:
     FilePickerManagerImpl(FilePickerManagerImpl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool directoryPickingEnabledForPlatform() const;
+    // vIndex: 1
+    virtual bool directoryPickingEnabledForPlatform() const /*override*/;
 
-    MCVAPI std::shared_ptr<
-        class Bedrock::Threading::IAsyncResult<struct Bedrock::FilePickerManager::DirectoryPickerResult>>
-    pickDirectory(class Bedrock::DirectoryPickerConfig const&);
+    // vIndex: 2
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
+    pickDirectory(::Bedrock::DirectoryPickerConfig const&) /*override*/;
 
-    MCAPI FilePickerManagerImpl();
-
+    // vIndex: 0
+    virtual ~FilePickerManagerImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI FilePickerManagerImpl();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockImplBase();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool directoryPickingEnabledForPlatform$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $directoryPickingEnabledForPlatform() const;
 
-    MCAPI std::shared_ptr<
-        class Bedrock::Threading::IAsyncResult<struct Bedrock::FilePickerManager::DirectoryPickerResult>>
-    pickDirectory$(class Bedrock::DirectoryPickerConfig const&);
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
+    $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForImplBase();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

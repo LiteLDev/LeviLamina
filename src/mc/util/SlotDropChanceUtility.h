@@ -5,20 +5,26 @@
 // auto generated inclusion list
 #include "mc/world/item/SlotWithDropChance.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+struct EquipmentTableDropChance;
+struct SlotDropChancesComponent;
+// clang-format on
+
 namespace SlotDropChanceUtility {
+// functions
 // NOLINTBEGIN
-MCAPI float getForSlot(struct SlotDropChancesComponent const& component, ::SlotWithDropChance slot);
+MCAPI float getForSlot(::SlotDropChancesComponent const& component, ::SlotWithDropChance slot);
 
-MCAPI struct SlotDropChancesComponent const& getOrDefault(class EntityContext& entity);
+MCAPI ::SlotDropChancesComponent const& getOrDefault(::EntityContext& entity);
 
-MCAPI void setDefaultChance(struct SlotDropChancesComponent& component, float dropChance);
+MCAPI void setDefaultChance(::SlotDropChancesComponent& component, float dropChance);
 
-MCAPI void setForSlot(struct SlotDropChancesComponent& component, ::SlotWithDropChance slot, float dropChance);
+MCAPI void setForSlot(::SlotDropChancesComponent& component, ::SlotWithDropChance slot, float dropChance);
 
-MCAPI void setForSlots(
-    struct SlotDropChancesComponent&                    component,
-    std::vector<struct EquipmentTableDropChance> const& dropChancesPerSlot
-);
+MCAPI void
+setForSlots(::SlotDropChancesComponent& component, ::std::vector<::EquipmentTableDropChance> const& dropChancesPerSlot);
 // NOLINTEND
 
-}; // namespace SlotDropChanceUtility
+} // namespace SlotDropChanceUtility

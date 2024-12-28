@@ -8,10 +8,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class CreativeGroupInfo;
+class ItemInstance;
+struct CreativeItemNetIdTag;
 // clang-format on
 
 class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnka74dfe;
+    ::ll::UntypedStorage<4, 4>   mUnkb16da3;
+    ::ll::UntypedStorage<4, 4>   mUnk812d45;
+    ::ll::UntypedStorage<8, 128> mUnka8ccac;
+    ::ll::UntypedStorage<4, 4>   mUnkde9665;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CreativeItemEntry& operator=(CreativeItemEntry const&);
@@ -19,28 +31,33 @@ public:
     CreativeItemEntry();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CreativeItemEntry() = default;
+    virtual ~CreativeItemEntry() /*override*/;
+    // NOLINTEND
 
-    MCAPI CreativeItemEntry(class CreativeItemEntry&& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::CreativeItemNetId const& getCreativeNetId() const;
 
-    MCAPI CreativeItemNetId const& getCreativeNetId() const;
-
-    MCAPI class CreativeGroupInfo* getGroup() const;
+    MCAPI ::CreativeGroupInfo* getGroup() const;
 
     MCAPI uint getIndex() const;
 
-    MCAPI class ItemInstance const& getItemInstance() const;
-
+    MCAPI ::ItemInstance const& getItemInstance() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class CreativeItemEntry&& rhs);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

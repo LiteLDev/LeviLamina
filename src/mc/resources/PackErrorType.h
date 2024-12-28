@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PackErrorType : int {
-    None                = 0x0,
-    IncompletePackError = 0x1,
-    PackParseError      = 0x2,
-    PackLoadError       = 0x3,
-    UIError             = 0x4,
-    PackSettingsError   = 0x5,
+    None                = 0,
+    IncompletePackError = 1,
+    PackParseError      = 2,
+    PackLoadError       = 3,
+    UIError             = 4,
+    PackSettingsError   = 5,
 };

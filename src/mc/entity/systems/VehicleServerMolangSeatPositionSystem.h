@@ -5,6 +5,17 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class RideableComponent;
+class StrictEntityContext;
+struct PassengerComponent;
+struct PositionPassengerRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
+
 class VehicleServerMolangSeatPositionSystem {
 public:
     // prevent constructor by default
@@ -13,25 +24,26 @@ public:
     VehicleServerMolangSeatPositionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickActor(
-        class StrictEntityContext&,
-        struct PassengerComponent const&          passengerComponent,
-        class ActorOwnerComponent&                actorComponent,
-        struct PositionPassengerRequestComponent& positionPassengerRequestComponent,
-        class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const> vehicleView
+        ::StrictEntityContext&,
+        ::PassengerComponent const&          passengerComponent,
+        ::ActorOwnerComponent&               actorComponent,
+        ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
     );
 
-    MCAPI static void _tickVehicleServerMolangSeatPositionSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct PassengerComponent const,
-            class ActorOwnerComponent,
-            struct PositionPassengerRequestComponent> passengerView,
-        class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const> vehicleView
+    MCAPI static void _tickVehicleServerMolangSeatPositionSystemSingleEntity(
+        ::StrictEntityContext const& entityContext,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::ActorOwnerComponent,
+            ::PositionPassengerRequestComponent>                                            passengerView,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
     );
 
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

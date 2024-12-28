@@ -3,18 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/BlockCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class BaseCommandBlock;
+class BlockPos;
+class BlockSource;
+class CommandBlockActor;
+class CommandOrigin;
+class CompoundTag;
+class Vec2;
+class Vec3;
+struct ActorUniqueID;
 // clang-format on
 
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk5eec5b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MinecartBlockCommandOrigin& operator=(MinecartBlockCommandOrigin const&);
@@ -22,75 +34,92 @@ public:
     MinecartBlockCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecartBlockCommandOrigin() = default;
+    virtual ~MinecartBlockCommandOrigin() /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos getBlockPosition() const;
+    virtual ::BlockPos getBlockPosition() const /*override*/;
 
     // vIndex: 4
-    virtual class Vec3 getWorldPosition() const;
+    virtual ::Vec3 getWorldPosition() const /*override*/;
 
     // vIndex: 5
-    virtual std::optional<class Vec2> getRotation() const;
+    virtual ::std::optional<::Vec2> getRotation() const /*override*/;
 
     // vIndex: 8
-    virtual class Actor* getEntity() const;
+    virtual ::Actor* getEntity() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 17
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
 
     // vIndex: 29
-    virtual class CompoundTag serialize() const;
+    virtual ::CompoundTag serialize() const /*override*/;
 
     // vIndex: 30
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
-    // vIndex: 32
-    virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource& region) const;
+    // vIndex: 34
+    virtual ::CommandBlockActor* _getBlockEntity(::BlockSource& region) const /*override*/;
 
     // vIndex: 33
-    virtual class CommandBlockActor* _getBlockEntity(class BlockSource& region) const;
-
-    MCAPI MinecartBlockCommandOrigin(class BlockSource& region, struct ActorUniqueID const& minecartId);
-
+    virtual ::BaseCommandBlock* _getBaseCommandBlock(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BlockSource& region, struct ActorUniqueID const& minecartId);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    // NOLINTEND
 
-    MCAPI class BaseCommandBlock* _getBaseCommandBlock$(class BlockSource& region) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class CommandBlockActor* _getBlockEntity$(class BlockSource& region) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI class BlockPos getBlockPosition$() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCAPI class Actor* getEntity$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI std::optional<class Vec2> getRotation$() const;
+    MCAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI class Vec3 getWorldPosition$() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCAPI bool isValid$() const;
+    MCAPI bool $isValid() const;
 
-    MCAPI class CompoundTag serialize$() const;
+    MCAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
 
+    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,6 +4,9 @@
 
 namespace sim {
 
-enum class ExecutionResult {};
-
+enum class ExecutionResult : uchar {
+    Executing = 0,
+    Complete  = 1,
 };
+
+}

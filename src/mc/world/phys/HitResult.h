@@ -1,91 +1,95 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/FacingID.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/world/level/BlockPos.h"
+
+// auto generated inclusion list
 #include "mc/world/phys/HitResultType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class Vec3;
+class WeakEntityRef;
+struct AABBHitResult;
+// clang-format on
 
 class HitResult {
 public:
-    Vec3          mStartPos;     // this+0x0
-    Vec3          mRayDir;       // this+0xC
-    HitResultType mType;         // this+0x18
-    FacingID      mFacing;       // this+0x1C
-    BlockPos      mBlockPos;     // this+0x20
-    Vec3          mPos;          // this+0x2C
-    WeakEntityRef mEntity;       // this+0x38
-    bool          mIsHitLiquid;  // this+0x50
-    FacingID      mLiquidFacing; // this+0x51
-    BlockPos      mLiquid;       // this+0x54
-    Vec3          mLiquidPos;    // this+0x60
-    bool          mIndirectHit;  // this+0x6C
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::Vec3>          mStartPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>          mRayDir;
+    ::ll::TypedStorage<4, 4, ::HitResultType>  mType;
+    ::ll::TypedStorage<1, 1, uchar>            mFacing;
+    ::ll::TypedStorage<4, 12, ::BlockPos>      mBlock;
+    ::ll::TypedStorage<4, 12, ::Vec3>          mPos;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<1, 1, bool>             mIsHitLiquid;
+    ::ll::TypedStorage<1, 1, uchar>            mLiquidFacing;
+    ::ll::TypedStorage<4, 12, ::BlockPos>      mLiquid;
+    ::ll::TypedStorage<4, 12, ::Vec3>          mLiquidPos;
+    ::ll::TypedStorage<1, 1, bool>             mIndirectHit;
+    // NOLINTEND
 
-    [[nodiscard]] constexpr explicit operator bool() const {
-        return mType == HitResultType::Tile || mType == HitResultType::Entity;
-    }
+public:
+    // prevent constructor by default
+    HitResult(HitResult const&);
 
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI HitResult();
 
-    MCAPI HitResult(class HitResult&&);
+    MCAPI explicit HitResult(::AABBHitResult const& hit);
 
-    MCAPI HitResult(class HitResult const&);
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
 
-    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor);
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
 
-    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& hitPos);
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 
-    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor, class Vec3 const& hitPos);
-
-    MCAPI
-    HitResult(
-        class Vec3 const&     startPos,
-        class Vec3 const&     rayDir,
-        class BlockPos const& blockPos,
-        uchar                 facing,
-        class Vec3 const&     pos
+    MCAPI HitResult(
+        ::Vec3 const&     startPos,
+        ::Vec3 const&     rayDir,
+        ::BlockPos const& blockPos,
+        uchar             facing,
+        ::Vec3 const&     pos
     );
 
-    MCAPI float distanceTo(class Actor const& otherEntity) const;
+    MCAPI float distanceTo(::Actor const& otherEntity) const;
 
-    MCAPI class Actor* getEntity() const;
+    MCAPI ::Actor* getEntity() const;
 
-    MCAPI class HitResult& operator=(class HitResult&&);
+    MCAPI ::HitResult& operator=(::HitResult&&);
 
-    MCAPI class HitResult& operator=(class HitResult const&);
+    MCAPI ::HitResult& operator=(::HitResult const&);
 
-    MCAPI void setIsHitLiquid(bool isHit, class HitResult const& liquidHit);
+    MCAPI void setIsHitLiquid(bool isHit, ::HitResult const& liquidHit);
 
     MCAPI ~HitResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::AABBHitResult const& hit);
 
-    MCAPI void* ctor$(
-        class Vec3 const&     startPos,
-        class Vec3 const&     rayDir,
-        class BlockPos const& blockPos,
-        uchar                 facing,
-        class Vec3 const&     pos
-    );
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
 
-    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity, class Vec3 const& pos);
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
 
-    MCAPI void* ctor$(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& rayEnd);
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 
-    MCAPI void* ctor$(class HitResult const&);
+    MCAPI void*
+    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::BlockPos const& blockPos, uchar facing, ::Vec3 const& pos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class HitResult&&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

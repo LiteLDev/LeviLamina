@@ -5,7 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct FrictionModifierComponent;
+struct PlayerInputRequestComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class ResetFrictionModifierSystem {
 public:
@@ -15,15 +23,14 @@ public:
     ResetFrictionModifierSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void tickResetFrictionModifierSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct PlayerInputRequestComponent>,
-            struct FrictionModifierComponent> view
-    );
-
+    MCAPI static void
+    tickResetFrictionModifierSystem(::ViewT<
+                                    ::StrictEntityContext,
+                                    ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
+                                    ::FrictionModifierComponent> view);
     // NOLINTEND
 };

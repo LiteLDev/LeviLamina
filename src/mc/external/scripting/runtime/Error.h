@@ -6,40 +6,48 @@ namespace Scripting {
 
 struct Error {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkff4b79;
+    ::ll::UntypedStorage<8, 32> mUnk13ff88;
+    ::ll::UntypedStorage<8, 32> mUnkf70731;
+    ::ll::UntypedStorage<1, 1>  mUnk1bf48e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Error(Error const&);
     Error();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit Error(std::string const& message_);
+    MCAPI explicit Error(::std::string const& message_);
 
-    MCAPI Error(struct Scripting::Error&&);
+    MCAPI Error(::std::string const& name_, ::std::string const& message_);
 
-    MCAPI Error(std::string const& name_, std::string const& message_);
+    MCAPI ::Scripting::Error& operator=(::Scripting::Error const&);
 
-    MCAPI struct Scripting::Error& operator=(struct Scripting::Error&&);
+    MCAPI ::Scripting::Error& operator=(::Scripting::Error&&);
 
-    MCAPI struct Scripting::Error& operator=(struct Scripting::Error const&);
-
-    MCAPI std::string toString() const;
+    MCAPI ::std::string toString() const;
 
     MCAPI ~Error();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& message_);
+    MCAPI void* $ctor(::std::string const& message_);
 
-    MCAPI void* ctor$(struct Scripting::Error&&);
+    MCAPI void* $ctor(::std::string const& name_, ::std::string const& message_);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name_, std::string const& message_);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

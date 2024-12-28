@@ -2,21 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 namespace ActorMovement {
+// functions
 // NOLINTBEGIN
-MCAPI bool getHasTeleported(class EntityContext const& entity);
+MCAPI bool getHasTeleported(::EntityContext const& entity);
 
-MCAPI float getPredictedWalkDist(class EntityContext const& entity, float alpha);
+MCAPI float getPredictedWalkDist(::EntityContext const& entity, float alpha);
 
-MCAPI void initializeActor(class EntityContext& entity);
+MCAPI void initializeActor(::EntityContext& entity);
 
-MCAPI bool isImmobile(class EntityContext const& entity);
+MCAPI bool isImmobile(::EntityContext const& entity);
 
-MCAPI void setHasTeleported(class EntityContext& entity, bool newValue);
+MCAPI void setHasTeleported(::EntityContext& entity, bool newValue);
 
-MCAPI void setIsImmobile(class EntityContext& entity, bool newValue);
+MCAPI void setIsImmobile(::EntityContext& entity, bool newValue);
 
-MCAPI void setIsJumping(class EntityContext& entity, bool newValue);
+MCAPI void setIsJumping(::EntityContext& entity, bool newValue);
 // NOLINTEND
 
-}; // namespace ActorMovement
+} // namespace ActorMovement

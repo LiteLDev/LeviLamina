@@ -7,7 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Block;
+class BlockLegacy;
+class Item;
+class ItemDescriptor;
+class ReadOnlyBinaryStream;
+struct ItemTag;
 // clang-format on
 
 class RecipeIngredient : public ::ItemDescriptorCount {
@@ -18,56 +23,67 @@ public:
     RecipeIngredient& operator=(RecipeIngredient const&) = default;
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RecipeIngredient();
-
-    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream& stream);
-
-    MCAPI RecipeIngredient(class RecipeIngredient&&);
-
-    MCAPI RecipeIngredient(class RecipeIngredient const&);
-
-    MCAPI RecipeIngredient(class Block const& block, ushort stackSize);
-
-    MCAPI RecipeIngredient(class BlockLegacy const& block, ushort stackSize);
-
-    MCAPI RecipeIngredient(class ItemDescriptor const& descriptor, ushort stackSize);
-
-    MCAPI RecipeIngredient(struct ItemTag const& itemTag, ushort stackSize);
-
-    MCAPI RecipeIngredient(class Item const& item, int auxValue, ushort stackSize);
-
-    MCAPI RecipeIngredient(std::string_view item, int auxValue, ushort stackSize);
-
+    virtual ~RecipeIngredient() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI RecipeIngredient(::RecipeIngredient const&);
 
-    MCAPI void* ctor$(class ItemDescriptor const& descriptor, ushort stackSize);
+    MCAPI explicit RecipeIngredient(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void* ctor$(class Block const& block, ushort stackSize);
+    MCAPI RecipeIngredient(::BlockLegacy const& block, ushort stackSize);
 
-    MCAPI void* ctor$(class RecipeIngredient const&);
+    MCAPI RecipeIngredient(::Block const& block, ushort stackSize);
 
-    MCAPI void* ctor$(struct ItemTag const& itemTag, ushort stackSize);
+    MCAPI RecipeIngredient(::ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize);
+    MCAPI RecipeIngredient(::ItemTag const& itemTag, ushort stackSize);
 
-    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+    MCAPI RecipeIngredient(::std::string_view item, int auxValue, ushort stackSize);
 
-    MCAPI void* ctor$(class BlockLegacy const& block, ushort stackSize);
+    MCAPI RecipeIngredient(::Item const& item, int auxValue, ushort stackSize);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class RecipeIngredient&&);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::RecipeIngredient& EMPTY_INGREDIENT();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string_view item, int auxValue, ushort stackSize);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::RecipeIngredient const&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI static class RecipeIngredient& EMPTY_INGREDIENT();
+    MCAPI void* $ctor(::BlockLegacy const& block, ushort stackSize);
 
+    MCAPI void* $ctor(::Block const& block, ushort stackSize);
+
+    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
+
+    MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
+
+    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
+
+    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

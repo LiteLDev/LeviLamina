@@ -5,10 +5,35 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class FeatureRegistry;
+class Random;
+// clang-format on
+
 class LegacyForestFoliageFeature : public ::Feature {
 public:
     // LegacyForestFoliageFeature inner types define
-    enum class Type {};
+    enum class Type : int {
+        Flower = 0,
+        Normal = 1,
+        Roofed = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk243b32;
+    ::ll::UntypedStorage<8, 24> mUnkd69d25;
+    ::ll::UntypedStorage<8, 24> mUnk6ea174;
+    ::ll::UntypedStorage<8, 24> mUnkc610a9;
+    ::ll::UntypedStorage<8, 24> mUnk978e6f;
+    ::ll::UntypedStorage<8, 24> mUnk31e8bb;
+    ::ll::UntypedStorage<8, 24> mUnkb634d1;
+    ::ll::UntypedStorage<8, 24> mUnkd770a0;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -17,25 +42,42 @@ public:
     LegacyForestFoliageFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LegacyForestFoliageFeature() = default;
+    virtual ~LegacyForestFoliageFeature() /*override*/;
 
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
-
-    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
-
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

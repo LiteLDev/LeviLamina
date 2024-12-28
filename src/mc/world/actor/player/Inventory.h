@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/inventory/FillingContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class Player;
+// clang-format on
+
 class Inventory : public ::FillingContainer {
 public:
     // prevent constructor by default
@@ -13,68 +19,83 @@ public:
     Inventory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Inventory() = default;
+    virtual ~Inventory() /*override*/;
 
     // vIndex: 1
-    virtual void init();
+    virtual void init() /*override*/;
 
-    // vIndex: 12
-    virtual void setItem(int slot, class ItemStack const& item);
+    // vIndex: 43
+    virtual bool add(::ItemStack& item) /*override*/;
 
-    // vIndex: 13
-    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
+    // vIndex: 44
+    virtual bool canAdd(::ItemStack const& item) const /*override*/;
 
-    // vIndex: 26
-    virtual int getEmptySlotsCount() const;
-
-    // vIndex: 41
-    virtual bool add(class ItemStack& item);
-
-    // vIndex: 42
-    virtual bool canAdd(class ItemStack const& item) const;
-
-    // vIndex: 46
+    // vIndex: 50
     virtual int getFirstEmptySlot() const;
 
-    // vIndex: 47
+    // vIndex: 26
+    virtual int getEmptySlotsCount() const /*override*/;
+
+    // vIndex: 51
     virtual void setContainerSize(int size);
 
-    MCAPI explicit Inventory(class Player* player);
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+
+    // vIndex: 13
+    virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit Inventory(::Player* player);
 
     MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
-
-    MCAPI std::vector<class ItemStack> getComplexItems();
 
     MCAPI void setupDefault();
 
     MCAPI void tick(int selectedSlot);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Player* player);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player* player);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool add$(class ItemStack& item);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $init();
 
-    MCAPI bool canAdd$(class ItemStack const& item) const;
+    MCAPI bool $add(::ItemStack& item);
 
-    MCAPI int getEmptySlotsCount$() const;
+    MCAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCAPI int getFirstEmptySlot$() const;
+    MCAPI int $getFirstEmptySlot() const;
 
-    MCAPI void init$();
+    MCAPI int $getEmptySlotsCount() const;
 
-    MCAPI void setContainerSize$(int size);
+    MCAPI void $setContainerSize(int size);
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void setItemWithForceBalance$(int slot, class ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

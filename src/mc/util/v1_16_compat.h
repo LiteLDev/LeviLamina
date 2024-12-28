@@ -9,9 +9,10 @@ class BlockPos;
 // clang-format on
 
 namespace BiomeSourceUtil::v1_16_compat {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<class BlockPos>
-      locateSpawnBiome2d(std::set<int> const& biomes, class BiomeSource const& biomeSource, int startingX);
+MCAPI ::std::optional<::BlockPos>
+locateSpawnBiome2d(::std::set<ushort> const& biomes, ::BiomeSource const& biomeSource, int startingX);
 // NOLINTEND
 
-}; // namespace BiomeSourceUtil::v1_16_compat
+} // namespace BiomeSourceUtil::v1_16_compat

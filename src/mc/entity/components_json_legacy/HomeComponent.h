@@ -4,46 +4,72 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/entity/components_json_legacy/RestrictionType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class Dimension;
+// clang-format on
 
 class HomeComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnke4d7e6;
+    ::ll::UntypedStorage<4, 4>  mUnkf877d7;
+    ::ll::UntypedStorage<4, 4>  mUnk814ab0;
+    ::ll::UntypedStorage<4, 4>  mUnkb1e8f1;
+    ::ll::UntypedStorage<4, 4>  mUnkd6819b;
+    ::ll::UntypedStorage<8, 24> mUnk5482c7;
+    ::ll::UntypedStorage<4, 12> mUnk2d8353;
+    ::ll::UntypedStorage<4, 4>  mUnkbdd2fa;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HomeComponent& operator=(HomeComponent const&);
     HomeComponent(HomeComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI HomeComponent();
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI DimensionType getHomeDimension() const;
-
-    MCAPI class BlockPos getHomePos() const;
+    MCAPI ::BlockPos getHomePos() const;
 
     MCAPI int getRestrictionRadius() const;
 
-    MCAPI bool hasRestriction() const;
+    MCAPI bool hasAnyRestriction() const;
+
+    MCAPI bool hasSpecificRestriction(::RestrictionType restrictionType) const;
+
+    MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
     MCAPI bool hasValidHomePos() const;
 
-    MCAPI bool isWithinRestriction(class BlockPos const& pos) const;
+    MCAPI bool isInHomeDimension(::Actor const& owner) const;
 
-    MCAPI class HomeComponent& operator=(class HomeComponent&&);
+    MCAPI bool isWithinRestriction(::BlockPos const& pos) const;
 
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI ::HomeComponent& operator=(::HomeComponent&&);
 
-    MCAPI void setHome(class BlockPos const& pos, DimensionType const& id);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void tick(class Actor& owner);
+    MCAPI void setHome(::BlockPos const& pos, ::DimensionType const& id);
 
+    MCAPI void tick(::Actor& owner);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };

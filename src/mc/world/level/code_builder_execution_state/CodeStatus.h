@@ -5,11 +5,12 @@
 namespace CodeBuilderExecutionState {
 
 enum class CodeStatus : uchar {
-    None       = 0x0,
-    NotStarted = 0x1,
-    InProgress = 0x2,
-    Paused     = 0x3,
-    Error      = 0x4,
-    Succeeded  = 0x5,
+    None       = 0,
+    NotStarted = 1,
+    InProgress = 2,
+    Paused     = 3,
+    Error      = 4,
+    Succeeded  = 5,
 };
-};
+
+}

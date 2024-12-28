@@ -5,7 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class GameEvent;
+struct GameEventContext;
+// clang-format on
+
 class SculkShriekerVibrationConfig : public ::VibrationListenerConfig {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk321d05;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SculkShriekerVibrationConfig& operator=(SculkShriekerVibrationConfig const&);
@@ -13,59 +28,67 @@ public:
     SculkShriekerVibrationConfig();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkShriekerVibrationConfig() = default;
+    // vIndex: 3
+    virtual bool
+    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
     // vIndex: 1
     virtual void onSignalReceive(
-        class BlockSource& region,
-        class BlockPos const&,
-        class GameEvent const&,
-        class Actor* source,
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const&,
+        ::Actor* source,
         float,
         uint,
-        class Actor* projectileOwner
-    );
-
-    // vIndex: 2
-    virtual bool isValidVibration(class GameEvent const& gameEvent);
-
-    // vIndex: 3
-    virtual bool
-    shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
+        ::Actor* projectileOwner
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void onSerializableDataChanged(class BlockSource& region);
+    virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 5
-    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const /*override*/;
 
+    // vIndex: 2
+    virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
+
+    // vIndex: 0
+    virtual ~SculkShriekerVibrationConfig() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canReceiveOnlyIfAdjacentChunksAreTicking$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
-    MCAPI bool isValidVibration$(class GameEvent const& gameEvent);
-
-    MCAPI void onSerializableDataChanged$(class BlockSource& region);
-
-    MCAPI void onSignalReceive$(
-        class BlockSource& region,
-        class BlockPos const&,
-        class GameEvent const&,
-        class Actor* source,
+    MCAPI void $onSignalReceive(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::GameEvent const&,
+        ::Actor* source,
         float,
         uint,
-        class Actor* projectileOwner
+        ::Actor* projectileOwner
     );
 
-    MCAPI bool
-    shouldListen$(class BlockSource& region, class GameEvent const&, struct GameEventContext const& gameEventContext);
+    MCAPI void $onSerializableDataChanged(::BlockSource& region);
 
+    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+
+    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

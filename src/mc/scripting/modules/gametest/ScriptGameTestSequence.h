@@ -10,36 +10,41 @@ namespace ScriptModuleGameTest {
 
 class ScriptGameTestSequence {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk87fcd3;
+    ::ll::UntypedStorage<8, 16> mUnkad14c4;
+    ::ll::UntypedStorage<8, 32> mUnkeee3da;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptGameTestSequence& operator=(ScriptGameTestSequence const&);
     ScriptGameTestSequence(ScriptGameTestSequence const&);
     ScriptGameTestSequence();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecute(class Scripting::Closure<void()> fn);
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    thenExecute(::Scripting::Closure<void()> fn);
 
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteAfter(int tickDelay, class Scripting::Closure<void()> fn);
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    thenExecuteAfter(int tickDelay, ::Scripting::Closure<void()> fn);
 
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteFor(int tickCount, class Scripting::Closure<void()> fn);
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    thenExecuteFor(int tickCount, ::Scripting::Closure<void()> fn);
 
-    MCAPI void thenFail(std::string error);
+    MCAPI void thenFail(::std::string error);
 
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenIdle(int tickDelay);
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int tickDelay);
 
-    MCAPI void thenSucceed();
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    thenWait(::Scripting::Closure<void()> fn);
 
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenWait(class Scripting::Closure<void()> fn);
-
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenWaitAfter(int tickDelay, class Scripting::Closure<void()> fn);
-
+    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
+    thenWaitAfter(int tickDelay, ::Scripting::Closure<void()> fn);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

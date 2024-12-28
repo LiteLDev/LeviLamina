@@ -2,40 +2,60 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChunkPos : public ll::math::intN2<ChunkPos> {
-public:
-    template <std::floating_point T0, std::floating_point T1>
-    [[nodiscard]] constexpr ChunkPos(T0 x, T1 z)
-    : intN2((static_cast<int>(std::floor(x)) >> 4), (static_cast<int>(std::floor(z)) >> 4)) {}
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Vec3;
+// clang-format on
 
-    using intN2::intN2;
-
+class ChunkPos {
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit ChunkPos(class BlockPos const& pos);
-
-    MCAPI explicit ChunkPos(class Vec3 const& pos);
-
-    MCAPI bool isWithinBounds(class ChunkPos const& min, class ChunkPos const& max) const;
-
-    MCAPI class Vec3 toBlockSpaceVec3(float y) const;
-
+    union {
+        ::ll::TypedStorage<8, 8, int64> packed;
+        struct {
+            ::ll::TypedStorage<4, 4, int> x;
+            ::ll::TypedStorage<4, 4, int> z;
+        };
+    };
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ChunkPos& operator=(ChunkPos const&);
+    ChunkPos(ChunkPos const&);
+    ChunkPos();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockPos const& pos);
+    MCAPI explicit ChunkPos(::BlockPos const& pos);
 
-    MCAPI void* ctor$(class Vec3 const& pos);
+    MCAPI explicit ChunkPos(::Vec3 const& pos);
 
-    MCAPI static class ChunkPos const& INVALID();
+    MCAPI bool isWithinBounds(::ChunkPos const& min, ::ChunkPos const& max) const;
 
-    MCAPI static class ChunkPos const& MAX();
+    MCAPI ::Vec3 toBlockSpaceVec3(float y) const;
+    // NOLINTEND
 
-    MCAPI static class ChunkPos const& MIN();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ChunkPos const& INVALID();
 
-    MCAPI static class ChunkPos const& ONE();
+    MCAPI static ::ChunkPos const& MAX();
 
+    MCAPI static ::ChunkPos const& MIN();
+
+    MCAPI static ::ChunkPos const& ONE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+
+    MCAPI void* $ctor(::Vec3 const& pos);
     // NOLINTEND
 };

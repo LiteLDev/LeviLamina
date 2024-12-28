@@ -3,19 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockPos;
+class BlockSource;
+class Container;
+class Experiments;
+class ItemStack;
+class Level;
+class Player;
+class Random;
+struct Brightness;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class RespawnAnchorBlock : public ::BlockLegacy {
@@ -26,100 +28,114 @@ public:
     RespawnAnchorBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& anchorBlockPos, uchar) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
+
+    // vIndex: 109
+    virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 110
+    virtual void notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
+
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~RespawnAnchorBlock() = default;
+    virtual ~RespawnAnchorBlock() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RespawnAnchorBlock(::std::string const& nameId, int id);
 
-    // vIndex: 112
-    virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    // vIndex: 115
-    virtual bool canSpawnAt(class BlockSource const& region, class BlockPos const& pos) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _bumpCharge(::BlockSource& region, ::BlockPos const& pos, ::Player* source, short delta);
 
-    // vIndex: 116
-    virtual void notifySpawnedAt(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI static void
+    _explode(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
 
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& anchorBlockPos, uchar) const;
-
-    MCAPI RespawnAnchorBlock(std::string const& nameId, int id);
+    MCAPI static bool
+    _trySetSpawn(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
 
     MCAPI static bool addItem(
-        class Container&       fromContainer,
-        int                    slot,
-        class ItemStack const& item,
-        class BlockSource&     region,
-        class Block const&     block,
-        class BlockPos const&  pos
+        ::Container&       fromContainer,
+        int                slot,
+        ::ItemStack const& item,
+        ::BlockSource&     region,
+        ::Block const&     block,
+        ::BlockPos const&  pos
     );
 
+    MCAPI static int getChargeLevel(::Block const& block);
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void
-    _bumpCharge(class BlockSource& region, class BlockPos const& pos, class Player* source, short delta);
-
-    MCAPI static void
-    _explode(class Player& player, class BlockPos const& anchorBlockPos, class BlockSource& region, class Level& level);
-
-    MCAPI static bool _trySetSpawn(
-        class Player&         player,
-        class BlockPos const& anchorBlockPos,
-        class BlockSource&    region,
-        class Level&          level
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool canSpawnAt$(class BlockSource const& region, class BlockPos const& pos) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI int
-    getComparatorSignal$(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& anchorBlockPos, uchar) const;
 
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI int getVariant$(class Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isInteractiveBlock$() const;
+    MCAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void notifySpawnedAt$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $hasComparatorSignal() const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& anchorBlockPos, uchar) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

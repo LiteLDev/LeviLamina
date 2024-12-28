@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/crypto/asymmetric/ISystemInterface.h"
 #include "mc/deps/crypto/asymmetric/Padding.h"
 #include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
@@ -11,7 +12,14 @@
 
 namespace Crypto::Asymmetric {
 
-class Asymmetric {
+class Asymmetric : public ::Crypto::Asymmetric::ISystemInterface {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkc59a46;
+    ::ll::UntypedStorage<8, 8> mUnked0db4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Asymmetric& operator=(Asymmetric const&);
@@ -19,86 +27,107 @@ public:
     Asymmetric();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Asymmetric() = default;
+    virtual ~Asymmetric() /*override*/;
 
     // vIndex: 1
-    virtual bool generateKeyPair(std::string& privateKey, std::string& publicKey);
+    virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
     // vIndex: 2
-    virtual std::string encryptData(
-        std::string const&                 publicKey,
-        std::string const&                 data,
+    virtual ::std::string encryptData(
+        ::std::string const&               publicKey,
+        ::std::string const&               data,
         ::Crypto::Asymmetric::Padding      paddingType,
         ::Crypto::Asymmetric::PubKeyFormat keyFormat
-    );
+    ) /*override*/;
 
     // vIndex: 3
-    virtual std::string
-    decryptData(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
+    virtual ::std::string decryptData(
+        ::std::string const&          privateKey,
+        ::std::string const&          data,
+        ::Crypto::Asymmetric::Padding paddingType
+    ) /*override*/;
 
     // vIndex: 4
-    virtual std::string signData(
-        std::string const&                            privateKey,
-        std::string const&                            data,
+    virtual ::std::string signData(
+        ::std::string const&                          privateKey,
+        ::std::string const&                          data,
         ::Crypto::Hash::HashType                      hash,
         ::Crypto::Asymmetric::PrivateKeySigningFormat format
-    );
+    ) /*override*/;
 
     // vIndex: 5
     virtual bool verifyData(
-        std::string const&       publicKey,
-        std::string const&       signature,
-        std::string const&       data,
+        ::std::string const&     publicKey,
+        ::std::string const&     signature,
+        ::std::string const&     data,
         ::Crypto::Hash::HashType hash
-    );
+    ) /*override*/;
 
     // vIndex: 6
-    virtual std::string computeSharedSecret(std::string const& myPrivateKey, std::string const& peerPublicKey);
+    virtual ::std::string
+    computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit Asymmetric(::Crypto::Asymmetric::System system);
 
     MCAPI bool canComputeSecret();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Crypto::Asymmetric::System system);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::Crypto::Asymmetric::System system);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string computeSharedSecret$(std::string const& myPrivateKey, std::string const& peerPublicKey);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
 
-    MCAPI std::string
-    decryptData$(std::string const& privateKey, std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
-
-    MCAPI std::string encryptData$(
-        std::string const&                 publicKey,
-        std::string const&                 data,
+    MCAPI ::std::string $encryptData(
+        ::std::string const&               publicKey,
+        ::std::string const&               data,
         ::Crypto::Asymmetric::Padding      paddingType,
         ::Crypto::Asymmetric::PubKeyFormat keyFormat
     );
 
-    MCAPI bool generateKeyPair$(std::string& privateKey, std::string& publicKey);
+    MCAPI ::std::string
+    $decryptData(::std::string const& privateKey, ::std::string const& data, ::Crypto::Asymmetric::Padding paddingType);
 
-    MCAPI std::string signData$(
-        std::string const&                            privateKey,
-        std::string const&                            data,
+    MCAPI ::std::string $signData(
+        ::std::string const&                          privateKey,
+        ::std::string const&                          data,
         ::Crypto::Hash::HashType                      hash,
         ::Crypto::Asymmetric::PrivateKeySigningFormat format
     );
 
-    MCAPI bool verifyData$(
-        std::string const&       publicKey,
-        std::string const&       signature,
-        std::string const&       data,
+    MCAPI bool $verifyData(
+        ::std::string const&     publicKey,
+        ::std::string const&     signature,
+        ::std::string const&     data,
         ::Crypto::Hash::HashType hash
     );
 
+    MCAPI ::std::string $computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Asymmetric
+} // namespace Crypto::Asymmetric

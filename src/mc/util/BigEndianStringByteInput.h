@@ -8,55 +8,66 @@
 
 class BigEndianStringByteInput : public ::StringByteInput {
 public:
-    using StringByteInput::StringByteInput;
+    // prevent constructor by default
+    BigEndianStringByteInput& operator=(BigEndianStringByteInput const&);
+    BigEndianStringByteInput(BigEndianStringByteInput const&);
+    BigEndianStringByteInput();
 
+public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BigEndianStringByteInput() = default;
-
-    // vIndex: 3
-    virtual class Bedrock::Result<float> readFloatResult();
-
-    // vIndex: 4
-    virtual class Bedrock::Result<double> readDoubleResult();
-
-    // vIndex: 6
-    virtual class Bedrock::Result<short> readShortResult();
-
-    // vIndex: 7
-    virtual class Bedrock::Result<int> readIntResult();
-
-    // vIndex: 8
-    virtual class Bedrock::Result<int64> readLongLongResult();
-
     // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     // vIndex: 11
-    virtual class Bedrock::Result<void> readBigEndianBytesResult(void* data, uint64 bytes);
+    virtual ::Bedrock::Result<void> readBigEndianBytesResult(void* data, uint64 bytes);
 
+    // vIndex: 3
+    virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
+
+    // vIndex: 4
+    virtual ::Bedrock::Result<double> readDoubleResult() /*override*/;
+
+    // vIndex: 6
+    virtual ::Bedrock::Result<short> readShortResult() /*override*/;
+
+    // vIndex: 7
+    virtual ::Bedrock::Result<int> readIntResult() /*override*/;
+
+    // vIndex: 8
+    virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
+
+    // vIndex: 0
+    virtual ~BigEndianStringByteInput() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
-    MCAPI class Bedrock::Result<void> readBigEndianBytesResult$(void* data, uint64 bytes);
+    MCAPI ::Bedrock::Result<void> $readBigEndianBytesResult(void* data, uint64 bytes);
 
-    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+    MCAPI ::Bedrock::Result<float> $readFloatResult();
 
-    MCAPI class Bedrock::Result<double> readDoubleResult$();
+    MCAPI ::Bedrock::Result<double> $readDoubleResult();
 
-    MCAPI class Bedrock::Result<float> readFloatResult$();
+    MCAPI ::Bedrock::Result<short> $readShortResult();
 
-    MCAPI class Bedrock::Result<int> readIntResult$();
+    MCAPI ::Bedrock::Result<int> $readIntResult();
 
-    MCAPI class Bedrock::Result<int64> readLongLongResult$();
+    MCAPI ::Bedrock::Result<int64> $readLongLongResult();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<short> readShortResult$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,10 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ContainerScreenContext;
+class ItemStack;
+class Player;
+// clang-format on
+
 class CrafterContainerManagerModel : public ::LevelContainerManagerModel {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnk13517c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CrafterContainerManagerModel& operator=(CrafterContainerManagerModel const&);
@@ -15,30 +28,47 @@ public:
     CrafterContainerManagerModel();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CrafterContainerManagerModel() = default;
+    virtual ~CrafterContainerManagerModel() /*override*/;
 
-    // vIndex: 7
-    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
+    // vIndex: 8
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    // vIndex: 17
-    virtual class ContainerScreenContext _postInit();
-
-    MCAPI CrafterContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
-
+    // vIndex: 20
+    virtual ::ContainerScreenContext _postInit() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CrafterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    // NOLINTEND
 
-    MCAPI class ContainerScreenContext _postInit$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void setSlot$(int slot, class ItemStack const& item, bool fromNetwork);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
+    MCAPI ::ContainerScreenContext $_postInit();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

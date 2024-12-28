@@ -2,53 +2,62 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExpressionNode;
+class Vec3;
+// clang-format on
+
 class KeyFrameTransform {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkb32d8a;
+    ::ll::UntypedStorage<8, 16> mUnk57e818;
+    ::ll::UntypedStorage<4, 4>  mUnk1b0226;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     KeyFrameTransform& operator=(KeyFrameTransform const&);
     KeyFrameTransform();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI KeyFrameTransform(class KeyFrameTransform const&);
+    MCAPI KeyFrameTransform(::KeyFrameTransform const&);
 
-    MCAPI explicit KeyFrameTransform(float keyFrameTimeStamp);
+    MCAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
 
-    MCAPI class KeyFrameLerpMode& getLerpMode();
+    MCAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
 
-    MCAPI class KeyFrameTransform& operator=(class KeyFrameTransform&&);
+    MCAPI void set(::ExpressionNode const& expression);
 
-    MCAPI bool optimizeAndGetDataValues(class Vec3& minValue, class Vec3& maxValue);
-
-    MCAPI void set(class ExpressionNode const& expression);
-
-    MCAPI void set(class ExpressionNode const& expression, class Vec3 const& axis);
-
-    MCAPI void set(class ExpressionNode const& expression, int axisIndex);
-
-    MCAPI void setPost(class ExpressionNode const& expression, int axisIndex);
-
-    MCAPI void setPre(class ExpressionNode const& expression, int axisIndex);
+    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
 
     MCAPI ~KeyFrameTransform();
-
-    MCAPI static void computeCubicPolynomial(
-        class KeyFrameTransform* p0,
-        class KeyFrameTransform& p1,
-        class KeyFrameTransform& p2,
-        class KeyFrameTransform* p3
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class KeyFrameTransform const&);
+    MCAPI static void computeCubicPolynomial(
+        ::KeyFrameTransform* p0,
+        ::KeyFrameTransform& p1,
+        ::KeyFrameTransform& p2,
+        ::KeyFrameTransform* p3
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(float keyFrameTimeStamp);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::KeyFrameTransform const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

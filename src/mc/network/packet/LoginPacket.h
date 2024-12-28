@@ -1,67 +1,94 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/ConnectionRequest.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ConnectionRequest;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class LoginPacket : public ::Packet {
 public:
-    int                                mClientNetworkVersion; // this+0x30
-    std::unique_ptr<ConnectionRequest> mConnectionRequest;    // this+0x38
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                    mClientNetworkVersion;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectionRequest>> mConnectionRequest;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     LoginPacket& operator=(LoginPacket const&);
     LoginPacket(LoginPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoginPacket() = default;
-
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ~LoginPacket() /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
+
+    // vIndex: 1
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 6
-    virtual bool disallowBatching() const;
+    virtual bool disallowBatching() const /*override*/;
 
     // vIndex: 7
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI LoginPacket();
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI LoginPacket();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool disallowBatching$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI bool isValid$() const;
+    MCAPI bool $disallowBatching() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI bool $isValid() const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

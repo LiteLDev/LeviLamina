@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/MoveControl.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class MoveControlComponent;
+struct MoveControlDescription;
+// clang-format on
+
 class SwimMoveControl : public ::MoveControl {
 public:
     // prevent constructor by default
@@ -12,30 +19,47 @@ public:
     SwimMoveControl(SwimMoveControl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SwimMoveControl() = default;
-
     // vIndex: 1
-    virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);
+    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description) /*override*/;
 
     // vIndex: 2
-    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
+    virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
-    MCAPI SwimMoveControl();
-
+    // vIndex: 0
+    virtual ~SwimMoveControl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SwimMoveControl();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void initializeInternal$(class Mob& mob, struct MoveControlDescription* description);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void tick$(class MoveControlComponent& parent, class Mob& mob);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
+    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

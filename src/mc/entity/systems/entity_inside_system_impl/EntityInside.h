@@ -8,10 +8,10 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 #include "mc/entity/components/InsideBlockWithPosComponent.h"
 
@@ -21,36 +21,72 @@ class FreezingComponent;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
-struct ActorMovementTickNeededFlag;
+struct ActorMovementTickNeededComponent;
 struct BlockMovementSlowdownAppliedComponent;
 struct BlockMovementSlowdownMultiplierComponent;
-struct BoatFlag;
+struct BoatFlagComponent;
 struct CactusBlockFlag;
 struct DimensionTypeComponent;
 struct EndPortalBlockFlag;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
-struct FreezeImmuneFlag;
+struct FreezeImmuneFlagComponent;
 struct HoneyBlockFlag;
 struct IgnoresEntityInsideFlagComponent;
-struct InWaterFlag;
 struct InsideBlockComponent;
 struct InsideBubbleColumnBlockComponent;
 struct InsideGenericBlockComponent;
-struct IsDeadFlag;
+struct InsideWebBlockComponent;
+struct IsDeadFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MovementAbilitiesComponent;
-struct PlayerComponentFlag;
+struct PlayerComponent;
 struct PowderSnowBlockFlag;
 struct StateVectorComponent;
 struct SweetBerryBushBlockFlag;
+struct WasInWaterFlagComponent;
 struct WaterlilyBlockFlag;
-struct WebBlockTag;
 // clang-format on
 
 namespace EntityInsideSystemImpl {
 
-struct EntityInside {
+struct EntityInside
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<
+          ::ActorMovementTickNeededComponent,
+          ::BoatFlagComponent,
+          ::FreezeImmuneFlagComponent,
+          ::IsDeadFlagComponent,
+          ::PlayerComponent,
+          ::WasInWaterFlagComponent>,
+      ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
+      ::Write<
+          ::BlockMovementSlowdownMultiplierComponent,
+          ::FallDistanceComponent,
+          ::InsideBlockComponent,
+          ::StateVectorComponent>,
+      ::AddRemove<
+          ::BlockMovementSlowdownAppliedComponent,
+          ::FreezingComponent,
+          ::IgnoresEntityInsideFlagComponent,
+          ::InsideBubbleColumnBlockComponent,
+          ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+          ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+          ::InsideGenericBlockComponent,
+          ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+          ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+          ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+          ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+          ::InsideWebBlockComponent>,
+      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkead05d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntityInside& operator=(EntityInside const&);
@@ -58,254 +94,248 @@ public:
     EntityInside();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EntityInside() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
     // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct ActorMovementTickNeededFlag>,
-                          class FlagComponent<struct BoatFlag>,
-                          class FlagComponent<struct FreezeImmuneFlag>,
-                          class FlagComponent<struct IsDeadFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct InWaterFlag>>,
-                      struct Read<
-                          struct AABBShapeComponent,
-                          struct MovementAbilitiesComponent,
-                          struct ActorGameTypeComponent,
-                          struct DimensionTypeComponent>,
-                      struct Write<
-                          struct BlockMovementSlowdownMultiplierComponent,
-                          struct FallDistanceComponent,
-                          struct InsideBlockComponent,
-                          struct StateVectorComponent>,
-                      struct AddRemove<
-                          struct BlockMovementSlowdownAppliedComponent,
-                          class FreezingComponent,
-                          struct IgnoresEntityInsideFlagComponent,
-                          struct InsideBubbleColumnBlockComponent,
-                          struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                          struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                          struct InsideGenericBlockComponent,
-                          struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                          struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                          struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                          struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                          class FlagComponent<struct WebBlockTag>>,
-                      struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& executionContext);
+    virtual void
+    tick(::StrictExecutionContext<
+         ::Filter<
+             ::ActorMovementTickNeededComponent,
+             ::BoatFlagComponent,
+             ::FreezeImmuneFlagComponent,
+             ::IsDeadFlagComponent,
+             ::PlayerComponent,
+             ::WasInWaterFlagComponent>,
+         ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
+         ::Write<
+             ::BlockMovementSlowdownMultiplierComponent,
+             ::FallDistanceComponent,
+             ::InsideBlockComponent,
+             ::StateVectorComponent>,
+         ::AddRemove<
+             ::BlockMovementSlowdownAppliedComponent,
+             ::FreezingComponent,
+             ::IgnoresEntityInsideFlagComponent,
+             ::InsideBubbleColumnBlockComponent,
+             ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+             ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+             ::InsideGenericBlockComponent,
+             ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+             ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+             ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+             ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+             ::InsideWebBlockComponent>,
+         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+         ::GlobalWrite<>,
+         ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct BoatFlag>,
-                class FlagComponent<struct FreezeImmuneFlag>,
-                class FlagComponent<struct IsDeadFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct InWaterFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorGameTypeComponent,
-                struct DimensionTypeComponent>,
-            struct Write<
-                struct BlockMovementSlowdownMultiplierComponent,
-                struct FallDistanceComponent,
-                struct InsideBlockComponent,
-                struct StateVectorComponent>,
-            struct AddRemove<
-                struct BlockMovementSlowdownAppliedComponent,
-                class FreezingComponent,
-                struct IgnoresEntityInsideFlagComponent,
-                struct InsideBubbleColumnBlockComponent,
-                struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                struct InsideGenericBlockComponent,
-                struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                class FlagComponent<struct WebBlockTag>>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
-    MCAPI static auto
-    createContextObjects(class StrictExecutionContext<
-                         struct Filter<
-                             class FlagComponent<struct ActorMovementTickNeededFlag>,
-                             class FlagComponent<struct BoatFlag>,
-                             class FlagComponent<struct FreezeImmuneFlag>,
-                             class FlagComponent<struct IsDeadFlag>,
-                             class FlagComponent<struct PlayerComponentFlag>,
-                             class FlagComponent<struct InWaterFlag>>,
-                         struct Read<
-                             struct AABBShapeComponent,
-                             struct MovementAbilitiesComponent,
-                             struct ActorGameTypeComponent,
-                             struct DimensionTypeComponent>,
-                         struct Write<
-                             struct BlockMovementSlowdownMultiplierComponent,
-                             struct FallDistanceComponent,
-                             struct InsideBlockComponent,
-                             struct StateVectorComponent>,
-                         struct AddRemove<
-                             struct BlockMovementSlowdownAppliedComponent,
-                             class FreezingComponent,
-                             struct IgnoresEntityInsideFlagComponent,
-                             struct InsideBubbleColumnBlockComponent,
-                             struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                             struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                             struct InsideGenericBlockComponent,
-                             struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                             struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                             struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                             struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                             class FlagComponent<struct WebBlockTag>>,
-                         struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                         struct GlobalWrite<>,
-                         struct EntityFactoryT<>>&);
-
-    MCAPI static auto
-    createServerSideContextObjects(class StrictExecutionContext<
-                                   struct Filter<
-                                       class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                       class FlagComponent<struct BoatFlag>,
-                                       class FlagComponent<struct FreezeImmuneFlag>,
-                                       class FlagComponent<struct IsDeadFlag>,
-                                       class FlagComponent<struct PlayerComponentFlag>,
-                                       class FlagComponent<struct InWaterFlag>>,
-                                   struct Read<
-                                       struct AABBShapeComponent,
-                                       struct MovementAbilitiesComponent,
-                                       struct ActorGameTypeComponent,
-                                       struct DimensionTypeComponent>,
-                                   struct Write<
-                                       struct BlockMovementSlowdownMultiplierComponent,
-                                       struct FallDistanceComponent,
-                                       struct InsideBlockComponent,
-                                       struct StateVectorComponent>,
-                                   struct AddRemove<
-                                       struct BlockMovementSlowdownAppliedComponent,
-                                       class FreezingComponent,
-                                       struct IgnoresEntityInsideFlagComponent,
-                                       struct InsideBubbleColumnBlockComponent,
-                                       struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                                       struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                                       struct InsideGenericBlockComponent,
-                                       struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                                       struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                                       struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                                       struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                                       class FlagComponent<struct WebBlockTag>>,
-                                   struct GlobalRead<
-                                       struct ExternalDataComponent,
-                                       struct LocalConstBlockSourceFactoryComponent>,
-                                   struct GlobalWrite<>,
-                                   struct EntityFactoryT<>>&);
-
+    // vIndex: 0
+    virtual ~EntityInside() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static auto
+    createContextObjects(::StrictExecutionContext<
+                         ::Filter<
+                             ::ActorMovementTickNeededComponent,
+                             ::BoatFlagComponent,
+                             ::FreezeImmuneFlagComponent,
+                             ::IsDeadFlagComponent,
+                             ::PlayerComponent,
+                             ::WasInWaterFlagComponent>,
+                         ::Read<
+                             ::AABBShapeComponent,
+                             ::MovementAbilitiesComponent,
+                             ::ActorGameTypeComponent,
+                             ::DimensionTypeComponent>,
+                         ::Write<
+                             ::BlockMovementSlowdownMultiplierComponent,
+                             ::FallDistanceComponent,
+                             ::InsideBlockComponent,
+                             ::StateVectorComponent>,
+                         ::AddRemove<
+                             ::BlockMovementSlowdownAppliedComponent,
+                             ::FreezingComponent,
+                             ::IgnoresEntityInsideFlagComponent,
+                             ::InsideBubbleColumnBlockComponent,
+                             ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                             ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                             ::InsideGenericBlockComponent,
+                             ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                             ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                             ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                             ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                             ::InsideWebBlockComponent>,
+                         ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                         ::GlobalWrite<>,
+                         ::EntityFactoryT<>>& executionContext);
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI static auto
+    createServerSideContextObjects(::StrictExecutionContext<
+                                   ::Filter<
+                                       ::ActorMovementTickNeededComponent,
+                                       ::BoatFlagComponent,
+                                       ::FreezeImmuneFlagComponent,
+                                       ::IsDeadFlagComponent,
+                                       ::PlayerComponent,
+                                       ::WasInWaterFlagComponent>,
+                                   ::Read<
+                                       ::AABBShapeComponent,
+                                       ::MovementAbilitiesComponent,
+                                       ::ActorGameTypeComponent,
+                                       ::DimensionTypeComponent>,
+                                   ::Write<
+                                       ::BlockMovementSlowdownMultiplierComponent,
+                                       ::FallDistanceComponent,
+                                       ::InsideBlockComponent,
+                                       ::StateVectorComponent>,
+                                   ::AddRemove<
+                                       ::BlockMovementSlowdownAppliedComponent,
+                                       ::FreezingComponent,
+                                       ::IgnoresEntityInsideFlagComponent,
+                                       ::InsideBubbleColumnBlockComponent,
+                                       ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                                       ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                                       ::InsideGenericBlockComponent,
+                                       ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                                       ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                                       ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                                       ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                                       ::InsideWebBlockComponent>,
+                                   ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                                   ::GlobalWrite<>,
+                                   ::EntityFactoryT<>>& executionContext);
+    // NOLINTEND
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                class FlagComponent<struct BoatFlag>,
-                class FlagComponent<struct FreezeImmuneFlag>,
-                class FlagComponent<struct IsDeadFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct InWaterFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorGameTypeComponent,
-                struct DimensionTypeComponent>,
-            struct Write<
-                struct BlockMovementSlowdownMultiplierComponent,
-                struct FallDistanceComponent,
-                struct InsideBlockComponent,
-                struct StateVectorComponent>,
-            struct AddRemove<
-                struct BlockMovementSlowdownAppliedComponent,
-                class FreezingComponent,
-                struct IgnoresEntityInsideFlagComponent,
-                struct InsideBubbleColumnBlockComponent,
-                struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                struct InsideGenericBlockComponent,
-                struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                class FlagComponent<struct WebBlockTag>>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::ActorMovementTickNeededComponent,
+                         ::BoatFlagComponent,
+                         ::FreezeImmuneFlagComponent,
+                         ::IsDeadFlagComponent,
+                         ::PlayerComponent,
+                         ::WasInWaterFlagComponent>,
+                     ::Read<
+                         ::AABBShapeComponent,
+                         ::MovementAbilitiesComponent,
+                         ::ActorGameTypeComponent,
+                         ::DimensionTypeComponent>,
+                     ::Write<
+                         ::BlockMovementSlowdownMultiplierComponent,
+                         ::FallDistanceComponent,
+                         ::InsideBlockComponent,
+                         ::StateVectorComponent>,
+                     ::AddRemove<
+                         ::BlockMovementSlowdownAppliedComponent,
+                         ::FreezingComponent,
+                         ::IgnoresEntityInsideFlagComponent,
+                         ::InsideBubbleColumnBlockComponent,
+                         ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                         ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                         ::InsideGenericBlockComponent,
+                         ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                         ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                         ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                         ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                         ::InsideWebBlockComponent>,
+                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& executionContext);
+
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::FreezeImmuneFlagComponent,
+                ::IsDeadFlagComponent,
+                ::PlayerComponent,
+                ::WasInWaterFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorGameTypeComponent,
+                ::DimensionTypeComponent>,
+            ::Write<
+                ::BlockMovementSlowdownMultiplierComponent,
+                ::FallDistanceComponent,
+                ::InsideBlockComponent,
+                ::StateVectorComponent>,
+            ::AddRemove<
+                ::BlockMovementSlowdownAppliedComponent,
+                ::FreezingComponent,
+                ::IgnoresEntityInsideFlagComponent,
+                ::InsideBubbleColumnBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                ::InsideGenericBlockComponent,
+                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                ::InsideWebBlockComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
     );
+    // NOLINTEND
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct ActorMovementTickNeededFlag>,
-                         class FlagComponent<struct BoatFlag>,
-                         class FlagComponent<struct FreezeImmuneFlag>,
-                         class FlagComponent<struct IsDeadFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct InWaterFlag>>,
-                     struct Read<
-                         struct AABBShapeComponent,
-                         struct MovementAbilitiesComponent,
-                         struct ActorGameTypeComponent,
-                         struct DimensionTypeComponent>,
-                     struct Write<
-                         struct BlockMovementSlowdownMultiplierComponent,
-                         struct FallDistanceComponent,
-                         struct InsideBlockComponent,
-                         struct StateVectorComponent>,
-                     struct AddRemove<
-                         struct BlockMovementSlowdownAppliedComponent,
-                         class FreezingComponent,
-                         struct IgnoresEntityInsideFlagComponent,
-                         struct InsideBubbleColumnBlockComponent,
-                         struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>,
-                         struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>,
-                         struct InsideGenericBlockComponent,
-                         struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>,
-                         struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>,
-                         struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>,
-                         struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>,
-                         class FlagComponent<struct WebBlockTag>>,
-                     struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& executionContext);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace EntityInsideSystemImpl
+} // namespace EntityInsideSystemImpl

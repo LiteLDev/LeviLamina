@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ScriptingNotificationEvent;
+// clang-format on
+
 class ScriptingEventListener {
 public:
     // prevent constructor by default
@@ -13,21 +18,30 @@ public:
     ScriptingEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptingEventListener() = default;
+    virtual ~ScriptingEventListener();
 
     // vIndex: 1
-    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
-
+    virtual ::EventResult onEvent(::ScriptingNotificationEvent const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct ScriptingNotificationEvent const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

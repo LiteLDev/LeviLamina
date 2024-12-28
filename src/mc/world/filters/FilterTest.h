@@ -4,6 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IWorldRegistriesProvider;
+struct FilterContext;
+struct FilterInputs;
 namespace Json { class Value; }
 // clang-format on
 
@@ -17,24 +20,42 @@ public:
     // FilterTest inner types define
     struct Definition {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkba715e;
+        ::ll::UntypedStorage<8, 32> mUnk1e4808;
+        ::ll::UntypedStorage<8, 8>  mUnkedef7d;
+        ::ll::UntypedStorage<8, 8>  mUnke70633;
+        ::ll::UntypedStorage<8, 8>  mUnk411256;
+        ::ll::UntypedStorage<8, 8>  mUnkf594ea;
+        ::ll::UntypedStorage<8, 64> mUnka344a1;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Definition();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<2, 2> mUnk20eb73;
+    ::ll::UntypedStorage<2, 2> mUnk995088;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -43,54 +64,57 @@ public:
     FilterTest();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~FilterTest();
 
     // vIndex: 1
-    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
+    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
     // vIndex: 2
-    virtual bool evaluate(struct FilterContext const& context) const = 0;
+    virtual bool evaluate(::FilterContext const&) const = 0;
 
     // vIndex: 3
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider& registries);
+    virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     // vIndex: 4
-    virtual std::string_view getName() const = 0;
+    virtual ::std::string_view getName() const = 0;
 
     // vIndex: 5
-    virtual class Json::Value _serializeDomain() const;
+    virtual ::Json::Value _serializeDomain() const;
 
     // vIndex: 6
-    virtual class Json::Value _serializeValue() const = 0;
-
-    MCAPI class Json::Value serialize() const;
-
+    virtual ::Json::Value _serializeValue() const = 0;
     // NOLINTEND
 
-    // protected:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
-    MCAPI bool _testValuesWithOperator(float a, float b) const;
-
-    MCAPI bool _testValuesWithOperator(int a, int b) const;
-
+    MCAPI ::Json::Value serialize() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI class Json::Value _serializeDomain$() const;
+    MCAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
-    MCAPI void finalizeParsedValue$(class IWorldRegistriesProvider& registries);
+    MCAPI ::Json::Value $_serializeDomain() const;
+    // NOLINTEND
 
-    MCAPI bool setup$(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

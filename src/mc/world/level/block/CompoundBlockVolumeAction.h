@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CompoundBlockVolumeAction {};
+enum class CompoundBlockVolumeAction : int {
+    Add      = 0,
+    Subtract = 1,
+};

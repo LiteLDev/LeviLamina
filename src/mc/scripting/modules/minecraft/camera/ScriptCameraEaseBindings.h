@@ -8,7 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptCameraEaseBindings {
+struct ScriptCameraEaseBindings {
 public:
     // prevent constructor by default
     ScriptCameraEaseBindings& operator=(ScriptCameraEaseBindings const&);
@@ -16,10 +16,10 @@ public:
     ScriptCameraEaseBindings();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::EasingType> bind();
-
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::EasingType> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

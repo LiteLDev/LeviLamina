@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class BiomeRegistry;
+class BiomeSource;
+class IPreliminarySurfaceProvider;
+// clang-format on
+
 class RuinedPortalStart : public ::StructureStart {
 public:
     // prevent constructor by default
@@ -13,32 +20,54 @@ public:
     RuinedPortalStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
+
     // vIndex: 0
-    virtual ~RuinedPortalStart() = default;
-
-    MCAPI RuinedPortalStart(
-        class BiomeRegistry&                     registry,
-        class BiomeSource const&                 source,
-        int                                      chunkX,
-        int                                      chunkZ,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
-
+    virtual ~RuinedPortalStart() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class BiomeRegistry&                     registry,
-        class BiomeSource const&                 source,
-        int                                      chunkX,
-        int                                      chunkZ,
-        class IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    MCAPI RuinedPortalStart(
+        ::BiomeRegistry&                     registry,
+        ::BiomeSource const&                 source,
+        int                                  chunkX,
+        int                                  chunkZ,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BiomeRegistry&                     registry,
+        ::BiomeSource const&                 source,
+        int                                  chunkX,
+        int                                  chunkZ,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

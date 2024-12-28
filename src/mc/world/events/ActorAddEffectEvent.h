@@ -4,24 +4,35 @@
 
 struct ActorAddEffectEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk8298a6;
+    ::ll::UntypedStorage<8, 136> mUnkf4ca67;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ActorAddEffectEvent& operator=(ActorAddEffectEvent const&);
+    ActorAddEffectEvent(ActorAddEffectEvent const&);
     ActorAddEffectEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ActorAddEffectEvent(struct ActorAddEffectEvent const&);
+    MCAPI ActorAddEffectEvent(::ActorAddEffectEvent&&);
 
     MCAPI ~ActorAddEffectEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ActorAddEffectEvent const&);
+    MCAPI void* $ctor(::ActorAddEffectEvent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

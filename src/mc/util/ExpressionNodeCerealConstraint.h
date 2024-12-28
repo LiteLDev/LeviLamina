@@ -3,16 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cereal/Constraint.h"
+#include "mc/deps/cereal/Constraint.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 class ExpressionNodeCerealConstraint : public ::cereal::Constraint {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk9589f3;
+    ::ll::UntypedStorage<1, 1>  mUnk34d183;
+    ::ll::UntypedStorage<1, 1>  mUnk31fd9c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExpressionNodeCerealConstraint& operator=(ExpressionNodeCerealConstraint const&);
@@ -20,32 +27,43 @@ public:
     ExpressionNodeCerealConstraint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
-
-    // vIndex: 1
-    virtual ~ExpressionNodeCerealConstraint();
+    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
 
     // vIndex: 2
-    virtual struct cereal::internal::ConstraintDescription description() const;
+    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    MCAPI class ExpressionNodeCerealConstraint& disallowSideEffects(bool countRandomAsSideEffect);
-
-    MCAPI class ExpressionNodeCerealConstraint& onlyAllowQueries(std::vector<std::string> const& allowedQueries);
-
+    // vIndex: 1
+    virtual ~ExpressionNodeCerealConstraint() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ExpressionNodeCerealConstraint& disallowSideEffects(bool countRandomAsSideEffect);
 
-    MCAPI void dtor$();
+    MCAPI ::ExpressionNodeCerealConstraint& onlyAllowQueries(::std::vector<::std::string> const& allowedQueries);
+    // NOLINTEND
 
-    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

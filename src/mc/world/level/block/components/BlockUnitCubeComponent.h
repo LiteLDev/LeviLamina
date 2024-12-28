@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockComponentBase.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
 
-struct BlockUnitCubeComponent : public ::BlockComponentBase {
+struct BlockUnitCubeComponent {
 public:
     // prevent constructor by default
     BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&);
@@ -18,18 +15,8 @@ public:
     BlockUnitCubeComponent();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockUnitCubeComponent() = default;
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
-
+    MCAPI static ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
     // NOLINTEND
 };

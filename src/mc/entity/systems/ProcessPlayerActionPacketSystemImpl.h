@@ -4,17 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class ReplayStateComponent;
+class UserEntityIdentifierComponent;
+struct PlayerComponent;
+struct ServerPlayerCurrentMovementComponent;
+// clang-format on
 
 namespace ProcessPlayerActionPacketSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doProcessPlayerActionPacket(
-    class FlagComponent<struct PlayerComponentFlag> const& playerComponent,
-    struct ServerPlayerCurrentMovementComponent const&     serverPlayerCurrentMovementComponent,
-    class UserEntityIdentifierComponent const&             userIdentifierComponent,
-    class Optional<class ReplayStateComponent const>       replayStateComponent,
-    class ActorOwnerComponent&                             actorOwnerComponent
+    ::PlayerComponent const&                      playerComponent,
+    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
+    ::UserEntityIdentifierComponent const&        userIdentifierComponent,
+    ::Optional<::ReplayStateComponent const>      replayStateComponent,
+    ::ActorOwnerComponent&                        actorOwnerComponent
 );
 // NOLINTEND
 
-}; // namespace ProcessPlayerActionPacketSystemImpl
+} // namespace ProcessPlayerActionPacketSystemImpl

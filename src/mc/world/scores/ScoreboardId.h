@@ -2,49 +2,56 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
 class IdentityDefinition;
+// clang-format on
 
 struct ScoreboardId {
 public:
-    int64               mRawId;       // this+0x0
-    IdentityDefinition* mIdentityDef; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, int64>                 mRawID;
+    ::ll::TypedStorage<8, 8, ::IdentityDefinition*> mIdentityDef;
+    // NOLINTEND
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScoreboardId();
 
     MCAPI explicit ScoreboardId(int64 bytes);
 
-    MCAPI ScoreboardId(struct ScoreboardId const& scoreboardId);
+    MCAPI ScoreboardId(::ScoreboardId const& scoreboardId);
 
     MCAPI uint64 getHash() const;
 
-    MCAPI class IdentityDefinition const& getIdentityDef() const;
+    MCAPI ::IdentityDefinition const& getIdentityDef() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI explicit operator bool() const;
+    MCAPI bool operator!=(::ScoreboardId const& rhs) const;
 
-    MCAPI bool operator!=(struct ScoreboardId const& rhs) const;
+    MCAPI ::ScoreboardId& operator++();
 
-    MCAPI struct ScoreboardId& operator++();
+    MCAPI ::ScoreboardId& operator=(::ScoreboardId const& scoreboardId);
 
-    MCAPI struct ScoreboardId& operator=(struct ScoreboardId const& scoreboardId);
-
-    MCAPI bool operator==(struct ScoreboardId const& rhs) const;
-
+    MCAPI bool operator==(::ScoreboardId const& rhs) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(int64 bytes);
+    MCAPI static ::ScoreboardId& INVALID();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScoreboardId const& scoreboardId);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(int64 bytes);
 
-    MCAPI static struct ScoreboardId& INVALID();
-
+    MCAPI void* $ctor(::ScoreboardId const& scoreboardId);
     // NOLINTEND
 };

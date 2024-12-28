@@ -19,46 +19,55 @@ namespace sim {
 
 struct LookAtIntent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk7a4d1a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     LookAtIntent& operator=(LookAtIntent const&);
     LookAtIntent(LookAtIntent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI LookAtIntent();
 
-    MCAPI explicit LookAtIntent(std::variant<
-                                struct sim::VoidLookAtIntent,
-                                struct sim::LookAtPositionIntent,
-                                struct sim::ContinuousLookAtPositionIntent,
-                                struct sim::LookAtEntityIntent,
-                                struct sim::ContinuousLookAtEntityIntent> type);
+    MCAPI explicit LookAtIntent(::std::variant<
+                                ::sim::VoidLookAtIntent,
+                                ::sim::LookAtPositionIntent,
+                                ::sim::ContinuousLookAtPositionIntent,
+                                ::sim::LookAtEntityIntent,
+                                ::sim::ContinuousLookAtEntityIntent> type);
 
-    MCAPI ::sim::ExecutionResult execute(class SimulatedPlayer& player);
+    MCAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
 
-    MCAPI void finalize(class SimulatedPlayer& player);
+    MCAPI void finalize(::SimulatedPlayer& player);
 
     MCAPI void reset();
 
     MCAPI ~LookAtIntent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(std::variant<
-                      struct sim::VoidLookAtIntent,
-                      struct sim::LookAtPositionIntent,
-                      struct sim::ContinuousLookAtPositionIntent,
-                      struct sim::LookAtEntityIntent,
-                      struct sim::ContinuousLookAtEntityIntent> type);
+    MCAPI void* $ctor(::std::variant<
+                      ::sim::VoidLookAtIntent,
+                      ::sim::LookAtPositionIntent,
+                      ::sim::ContinuousLookAtPositionIntent,
+                      ::sim::LookAtEntityIntent,
+                      ::sim::ContinuousLookAtEntityIntent> type);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace sim
+} // namespace sim

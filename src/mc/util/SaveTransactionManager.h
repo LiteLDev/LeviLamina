@@ -7,10 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class Scheduler;
+class WorkerPool;
 // clang-format on
 
 class SaveTransactionManager : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80>  mUnk5ac7c8;
+    ::ll::UntypedStorage<8, 336> mUnk54446c;
+    ::ll::UntypedStorage<8, 64>  mUnk97a76d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SaveTransactionManager& operator=(SaveTransactionManager const&);
@@ -18,37 +27,45 @@ public:
     SaveTransactionManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SaveTransactionManager() = default;
-
-    MCAPI SaveTransactionManager(
-        class WorkerPool&         workerPool,
-        class Scheduler&          scheduler,
-        std::function<void(bool)> showIconFunction
-    );
-
-    MCAPI void onBeginCompaction();
-
-    MCAPI void onEndCompaction();
-
+    virtual ~SaveTransactionManager() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI SaveTransactionManager(
+        ::WorkerPool&               workerPool,
+        ::Scheduler&                scheduler,
+        ::std::function<void(bool)> showIconFunction
+    );
+
     MCAPI void _hideGlobalSaveIcon();
 
     MCAPI void _showGlobalSaveIcon();
 
+    MCAPI void onBeginCompaction();
+
+    MCAPI void onEndCompaction();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::function<void(bool)> showIconFunction);
+    // NOLINTEND
 
-    MCAPI void*
-    ctor$(class WorkerPool& workerPool, class Scheduler& scheduler, std::function<void(bool)> showIconFunction);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

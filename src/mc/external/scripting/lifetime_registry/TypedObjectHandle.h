@@ -13,4 +13,4 @@ public:
     TypedObjectHandle();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

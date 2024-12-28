@@ -7,118 +7,165 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BoundingBox;
+class ChunkPos;
+class SimpleBlockVolumeIterator;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class SimpleBlockVolume : public ::BlockVolumeBase {
 public:
     // SimpleBlockVolume inner types define
-    enum class IntersectionResult {};
+    enum class IntersectionResult : int {
+        Disjoint   = 0,
+        Contains   = 1,
+        Intersects = 2,
+    };
+
+    enum class CornerIndex : uchar {
+        FrontBottomLeft  = 0,
+        BackBottomLeft   = 1,
+        FrontTopLeft     = 2,
+        BackTopLeft      = 3,
+        FrontBottomRight = 4,
+        BackBottomRight  = 5,
+        FrontTopRight    = 6,
+        BackTopRight     = 7,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnk1a8f23;
+    ::ll::UntypedStorage<4, 12> mUnk3dd422;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     SimpleBlockVolume();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SimpleBlockVolume();
-
-    // vIndex: 1
-    virtual class BoundingBox getBoundingBox() const;
-
     // vIndex: 2
-    virtual class BlockPos getMin() const;
+    virtual ::BlockPos getMin() const /*override*/;
 
     // vIndex: 3
-    virtual class BlockPos getMax() const;
+    virtual ::BlockPos getMax() const /*override*/;
+
+    // vIndex: 1
+    virtual ::BoundingBox getBoundingBox() const /*override*/;
 
     // vIndex: 4
-    virtual glm::ivec3 getSpan() const;
+    virtual ::glm::ivec3 getSpan() const /*override*/;
 
     // vIndex: 5
-    virtual int getCapacity() const;
+    virtual int getCapacity() const /*override*/;
 
     // vIndex: 6
-    virtual bool isInside(class BlockPos const& pos) const;
+    virtual bool isInside(::BlockPos const& pos) const /*override*/;
 
     // vIndex: 7
-    virtual void translate(class BlockPos const& delta);
+    virtual void translate(::BlockPos const& delta) /*override*/;
 
     // vIndex: 8
-    virtual void forEach(std::function<bool(class BlockPos const&)> callback) const;
+    virtual void forEach(::std::function<bool(::BlockPos const&)> callback) const /*override*/;
 
     // vIndex: 9
-    virtual std::set<class ChunkPos> getChunks() const;
+    virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
-    MCAPI SimpleBlockVolume(class SimpleBlockVolume&& volume);
-
-    MCAPI SimpleBlockVolume(class SimpleBlockVolume const& volume);
-
-    MCAPI SimpleBlockVolume(class BlockPos&& from, class BlockPos&& to);
-
-    MCAPI SimpleBlockVolume(class BlockPos const& from, class BlockPos const& to);
-
-    MCAPI class SimpleBlockVolumeIterator begin() const;
-
-    MCAPI bool contains(class BlockPos const& pos) const;
-
-    MCAPI bool doesAreaTouchFaces(class BlockPos const& min, class BlockPos const& max) const;
-
-    MCAPI bool doesBlockTouchFaces(class BlockPos const& blockPos) const;
-
-    MCAPI class BlockPos getFrom() const;
-
-    MCAPI class BlockPos getTo() const;
-
-    MCAPI class AABB getWorldAABB() const;
-
-    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(class SimpleBlockVolume const& other) const;
-
-    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume&& other);
-
-    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume const& other);
-
-    MCAPI bool operator==(class SimpleBlockVolume const& other) const;
-
-    MCAPI class SimpleBlockVolume translated(glm::ivec3 const&) const;
-
-    MCAPI static void cerealBindTypes(struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~SimpleBlockVolume() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SimpleBlockVolume(::SimpleBlockVolume&& volume);
 
-    MCAPI void* ctor$(class BlockPos const& from, class BlockPos const& to);
+    MCAPI SimpleBlockVolume(::SimpleBlockVolume const&);
 
-    MCAPI void* ctor$(class BlockPos&& from, class BlockPos&& to);
+    MCAPI SimpleBlockVolume(::BlockPos&& from, ::BlockPos&& to);
 
-    MCAPI void* ctor$(class SimpleBlockVolume const& volume);
+    MCAPI SimpleBlockVolume(::BlockPos const&, ::BlockPos const&);
 
-    MCAPI void* ctor$(class SimpleBlockVolume&& volume);
+    MCAPI ::SimpleBlockVolumeIterator begin() const;
 
-    MCAPI void dtor$();
+    MCAPI bool contains(::BlockPos const& pos) const;
 
-    MCAPI void forEach$(std::function<bool(class BlockPos const&)> callback) const;
+    MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI class BoundingBox getBoundingBox$() const;
+    MCAPI bool doesBlockTouchFaces(::BlockPos const& blockPos) const;
 
-    MCAPI int getCapacity$() const;
+    MCAPI ::BlockPos getFrom() const;
 
-    MCAPI std::set<class ChunkPos> getChunks$() const;
+    MCAPI ::BlockPos getTo() const;
 
-    MCAPI class BlockPos getMax$() const;
+    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
 
-    MCAPI class BlockPos getMin$() const;
+    MCAPI ::SimpleBlockVolume& operator=(::SimpleBlockVolume&& other);
 
-    MCAPI glm::ivec3 getSpan$() const;
+    MCAPI ::SimpleBlockVolume& operator=(::SimpleBlockVolume const& other);
 
-    MCAPI bool isInside$(class BlockPos const& pos) const;
+    MCAPI bool operator==(::SimpleBlockVolume const& other) const;
 
-    MCAPI void translate$(class BlockPos const& delta);
+    MCAPI ::std::string toString() const;
 
+    MCAPI ::SimpleBlockVolume& translate(::glm::ivec3 const& delta);
+
+    MCAPI ::SimpleBlockVolume translated(::glm::ivec3 const& delta) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SimpleBlockVolume&& volume);
+
+    MCAPI void* $ctor(::SimpleBlockVolume const&);
+
+    MCAPI void* $ctor(::BlockPos&& from, ::BlockPos&& to);
+
+    MCAPI void* $ctor(::BlockPos const&, ::BlockPos const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPos $getMin() const;
+
+    MCAPI ::BlockPos $getMax() const;
+
+    MCAPI ::BoundingBox $getBoundingBox() const;
+
+    MCAPI ::glm::ivec3 $getSpan() const;
+
+    MCAPI int $getCapacity() const;
+
+    MCAPI bool $isInside(::BlockPos const& pos) const;
+
+    MCAPI void $translate(::BlockPos const& delta);
+
+    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+
+    MCAPI ::std::set<::ChunkPos> $getChunks() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

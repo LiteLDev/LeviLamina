@@ -9,7 +9,38 @@ namespace Bedrock::JSONObject { class ValueWrapper; }
 
 namespace Bedrock::JSONObject {
 
-class ParseHandler {
+class ParseHandler
+: public ::rapidjson::BaseReaderHandler<::rapidjson::UTF8<char>, ::Bedrock::JSONObject::ParseHandler> {
+public:
+    // ParseHandler inner types declare
+    // clang-format off
+    struct StackEntry;
+    // clang-format on
+
+    // ParseHandler inner types define
+    struct StackEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk69c924;
+        ::ll::UntypedStorage<8, 8> mUnkf7a1f4;
+        ::ll::UntypedStorage<8, 8> mUnk8e9ec9;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        StackEntry& operator=(StackEntry const&);
+        StackEntry(StackEntry const&);
+        StackEntry();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk20ca89;
+    ::ll::UntypedStorage<8, 8> mUnk660ee3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ParseHandler& operator=(ParseHandler const&);
@@ -17,6 +48,7 @@ public:
     ParseHandler();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool Bool(bool b);
 
@@ -30,19 +62,18 @@ public:
 
     MCAPI bool Null();
 
+    MCAPI bool StartArray();
+
+    MCAPI bool StartObject();
+
     MCAPI bool String(char const* str, uint length, bool copy);
 
     MCAPI bool Uint(uint u);
 
     MCAPI bool Uint64(uint64 u);
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI bool _addObjectOrArray(class Bedrock::JSONObject::ValueWrapper const& value);
-
+    MCAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

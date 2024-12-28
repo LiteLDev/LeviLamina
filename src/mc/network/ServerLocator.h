@@ -8,6 +8,14 @@
 #include "mc/network/ServerConnectivityTestResult.h"
 #include "mc/world/level/GameType.h"
 
+// auto generated forward declare list
+// clang-format off
+class AppPlatform;
+class AsynchronousIPResolver;
+struct PingedCompatibleServer;
+struct PortPair;
+// clang-format on
+
 class ServerLocator : public ::NetworkEnableDisableListener {
 public:
     // prevent constructor by default
@@ -16,45 +24,41 @@ public:
     ServerLocator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerLocator();
-
-    // vIndex: 1
-    virtual void _onDisable();
-
-    // vIndex: 2
-    virtual void _onEnable();
+    virtual ~ServerLocator() /*override*/;
 
     // vIndex: 3
     virtual void startAnnouncingServer(
-        std::string const&                                playerName,
-        std::string const&                                worldName,
-        class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform,
-        ::GameType                                        gameType,
-        int                                               numPlayers,
-        int                                               maxNumPlayers,
-        bool                                              isJoinableThroughServerScreen,
-        bool                                              isEditorWorld
+        ::std::string const&,
+        ::std::string const&,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>,
+        ::GameType,
+        int,
+        int,
+        bool,
+        bool,
+        bool
     ) = 0;
 
     // vIndex: 4
-    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform> appPlatform) = 0;
+    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) = 0;
 
     // vIndex: 5
-    virtual void startServerDiscovery(struct PortPair ports) = 0;
+    virtual void startServerDiscovery(::PortPair) = 0;
 
     // vIndex: 6
     virtual void stopServerDiscovery() = 0;
 
-    // vIndex: 7
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port) = 0;
-
     // vIndex: 8
-    virtual void addCustomServer(std::string const& address, int port) = 0;
+    virtual void addCustomServer(::AsynchronousIPResolver const&, int) = 0;
+
+    // vIndex: 7
+    virtual void addCustomServer(::std::string const&, int) = 0;
 
     // vIndex: 9
-    virtual std::vector<struct PingedCompatibleServer> getServerList() const = 0;
+    virtual ::std::vector<::PingedCompatibleServer> getServerList() const = 0;
 
     // vIndex: 10
     virtual void clearServerList() = 0;
@@ -63,27 +67,36 @@ public:
     virtual void update() = 0;
 
     // vIndex: 12
-    virtual float getPingTimeForGUID(std::string const& guid) = 0;
+    virtual float getPingTimeForGUID(::std::string const&) = 0;
 
     // vIndex: 13
-    virtual void checkCanConnectToCustomServerAsync(
-        std::string                                         hostIpAddress,
-        int                                                 port,
-        std::function<void(::ServerConnectivityTestResult)> callback
-    ) = 0;
+    virtual void
+    checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) = 0;
 
+    // vIndex: 1
+    virtual void _onDisable() /*override*/;
+
+    // vIndex: 2
+    virtual void _onEnable() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_onDisable();
 
-    MCAPI void _onDisable$();
+    MCAPI void $_onEnable();
+    // NOLINTEND
 
-    MCAPI void _onEnable$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

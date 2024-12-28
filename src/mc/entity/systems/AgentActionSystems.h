@@ -4,27 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
 namespace AgentComponents { class CommandCooldown; }
 namespace AgentComponents { struct ActionDetails; }
-namespace AgentComponents { struct AnimationShrugFlag; }
-namespace AgentComponents { struct ExecutingFlag; }
+namespace AgentComponents { struct AnimationShrug; }
+namespace AgentComponents { struct Executing; }
 // clang-format on
 
 namespace AgentActionSystems {
+// functions
 // NOLINTBEGIN
 MCAPI void tickActionFailed(
-    class StrictEntityContext& entity,
-    class ActorOwnerComponent& actorOwner,
-    class EntityModifier<
-        struct AgentComponents::ActionDetails,
-        class FlagComponent<struct AgentComponents::AnimationShrugFlag>,
-        class AgentComponents::CommandCooldown,
-        class FlagComponent<struct AgentComponents::ExecutingFlag>>& modifier
+    ::StrictEntityContext& entity,
+    ::ActorOwnerComponent& actorOwner,
+    ::EntityModifier<
+        ::AgentComponents::ActionDetails,
+        ::AgentComponents::AnimationShrug,
+        ::AgentComponents::CommandCooldown,
+        ::AgentComponents::Executing>& modifier
 );
 // NOLINTEND
 
-}; // namespace AgentActionSystems
+} // namespace AgentActionSystems

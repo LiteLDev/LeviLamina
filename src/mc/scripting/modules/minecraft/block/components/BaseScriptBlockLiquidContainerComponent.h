@@ -5,20 +5,19 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/runtime/Result.h"
-#include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class BlockSource;
-class CauldronBlockActor;
-namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkf47896;
+    ::ll::UntypedStorage<4, 4> mUnk79f968;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BaseScriptBlockLiquidContainerComponent& operator=(BaseScriptBlockLiquidContainerComponent const&);
@@ -26,43 +25,50 @@ public:
     BaseScriptBlockLiquidContainerComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BaseScriptBlockLiquidContainerComponent() = default;
+    // vIndex: 2
+    virtual ::Scripting::Result<void> setFillLevel(int level);
 
     // vIndex: 1
-    virtual bool _isValid() const;
+    virtual bool _isValid() const /*override*/;
 
-    // vIndex: 2
-    virtual class Scripting::Result<void> setFillLevel(int level);
-
-    MCAPI class Scripting::Result<int> getFillLevel();
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
-    bind();
-
+    // vIndex: 0
+    virtual ~BaseScriptBlockLiquidContainerComponent() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();
-
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
-    _getActualCauldronLiquidType(class BlockSource& region, class BlockPos position);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<int> getFillLevel();
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
+    bind();
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<void> setFillLevel$(int level);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result<void> $setFillLevel(int level);
+
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

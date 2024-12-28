@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContentIdentity;
+class IContentKeyProvider;
+class PackAccessStrategy;
+class PackReport;
+class ResourceLocation;
+namespace Core { class Path; }
+// clang-format on
+
 class PackAccessStrategyFactory {
 public:
     // prevent constructor by default
@@ -13,31 +23,34 @@ public:
     PackAccessStrategyFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class PackAccessStrategy> create(
-        class ResourceLocation&                                             location,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
-        class PackReport&                                                   report,
-        bool                                                                optimizeForSpeedOverMemory
+    MCAPI static ::Core::Path _reconcileZipSubdir(::ResourceLocation const& location, ::Core::Path const& zipSubDir);
+
+    MCAPI static ::std::unique_ptr<::PackAccessStrategy> create(
+        ::ResourceLocation&                                               location,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::PackReport&                                                     report,
+        bool                                                              optimizeForSpeedOverMemory,
+        ::Core::Path const&                                               zipSubDir
     );
 
-    MCAPI static std::unique_ptr<class PackAccessStrategy>
-    createForDirectory(class ResourceLocation const& location, bool canRecurse);
+    MCAPI static ::std::unique_ptr<::PackAccessStrategy>
+    createForDirectory(::ResourceLocation const& location, bool canRecurse);
 
-    MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(
-        class ResourceLocation const&                                       location,
-        class ContentIdentity const&                                        contentIdentity,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
-        bool                                                                canRecurse
+    MCAPI static ::std::unique_ptr<::PackAccessStrategy> createForEncrypted(
+        ::ResourceLocation const&                                         location,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        bool                                                              canRecurse
     );
 
-    MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(
-        class ResourceLocation const&                                       location,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    MCAPI static ::std::unique_ptr<::PackAccessStrategy> createForEncryptedZip(
+        ::ResourceLocation const&                                         location,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI static std::unique_ptr<class PackAccessStrategy>
-    createForZip(class ResourceLocation const& location, bool optimizeForSpeedOverMemory);
-
+    MCAPI static ::std::unique_ptr<::PackAccessStrategy>
+    createForZip(::ResourceLocation const& location, bool optimizeForSpeedOverMemory, ::Core::Path const& zipSubDir);
     // NOLINTEND
 };

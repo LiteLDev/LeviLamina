@@ -6,7 +6,16 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct MobIsJumpingFlagComponent;
+struct MoveInputComponent;
+struct MovementAbilitiesComponent;
+struct PlayerInputRequestComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class JumpInputSystem {
 public:
@@ -16,17 +25,17 @@ public:
     JumpInputSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createJumpInputSystem();
+    MCAPI static ::TickingSystemWithInfo createJumpInputSystem();
 
     MCAPI static void tickJumpInputSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct PlayerInputRequestComponent>,
-            struct MovementAbilitiesComponent const,
-            struct MoveInputComponent const>                               view,
-        class EntityModifier<class FlagComponent<struct MobIsJumpingFlag>> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PlayerInputRequestComponent>,
+            ::MovementAbilitiesComponent const,
+            ::MoveInputComponent const>               view,
+        ::EntityModifier<::MobIsJumpingFlagComponent> mod
     );
-
     // NOLINTEND
 };

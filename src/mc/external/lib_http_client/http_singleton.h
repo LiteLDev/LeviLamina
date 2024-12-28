@@ -7,11 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace xbox::httpclient { struct http_retry_after_api_state; }
 struct HCInitArgs;
 struct HC_PERFORM_ENV;
 struct HttpPerformInfo;
 struct WebSocketPerformInfo;
+namespace xbox::httpclient { struct http_retry_after_api_state; }
 // clang-format on
 
 namespace xbox::httpclient {
@@ -19,7 +19,7 @@ namespace xbox::httpclient {
 struct http_singleton {
 public:
     // http_singleton inner types define
-    enum class singleton_access_mode {};
+    enum class singleton_access_mode : uint {};
 
 public:
     // prevent constructor by default
@@ -28,38 +28,41 @@ public:
     http_singleton();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void clear_retry_state(uint);
 
-    MCAPI struct xbox::httpclient::http_retry_after_api_state get_retry_state(uint);
+    MCAPI ::xbox::httpclient::http_retry_after_api_state get_retry_state(uint);
 
     MCAPI
-    http_singleton(struct HttpPerformInfo const&, struct WebSocketPerformInfo const&, std::unique_ptr<struct HC_PERFORM_ENV, struct http_alloc_deleter<struct HC_PERFORM_ENV>>&&);
+    http_singleton(::HttpPerformInfo const&, ::WebSocketPerformInfo const&, ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&);
 
-    MCAPI void set_retry_state(uint, struct xbox::httpclient::http_retry_after_api_state const&);
+    MCAPI void set_retry_state(uint, ::xbox::httpclient::http_retry_after_api_state const&);
 
     MCAPI ~http_singleton();
-
-    MCAPI static long create(struct HCInitArgs*);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static long
-    singleton_access(::xbox::httpclient::http_singleton::singleton_access_mode, struct HCInitArgs*, std::shared_ptr<struct xbox::httpclient::http_singleton>&);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static long create(::HCInitArgs*);
+
+    MCAPI static long
+    singleton_access(::xbox::httpclient::http_singleton::singleton_access_mode, ::HCInitArgs*, ::std::shared_ptr<::xbox::httpclient::http_singleton>&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    ctor$(struct HttpPerformInfo const&, struct WebSocketPerformInfo const&, std::unique_ptr<struct HC_PERFORM_ENV, struct http_alloc_deleter<struct HC_PERFORM_ENV>>&&);
+    $ctor(::HttpPerformInfo const&, ::WebSocketPerformInfo const&, ::std::unique_ptr<::HC_PERFORM_ENV, ::http_alloc_deleter<::HC_PERFORM_ENV>>&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

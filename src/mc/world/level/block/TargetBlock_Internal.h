@@ -2,12 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace TargetBlock_Internal {
-// NOLINTBEGIN
-MCAPI void createPoweredBlockComponentAtPos(class BlockSource& region, class BlockPos const& pos);
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+// clang-format on
 
-MCAPI void
-sendTargetBlockHitTelemetryEvent(class BlockSource& region, class Actor const& projectile, int signalStrength);
+namespace TargetBlock_Internal {
+// functions
+// NOLINTBEGIN
+MCAPI void createPoweredBlockComponentAtPos(::BlockSource& region, ::BlockPos const& pos);
+
+MCAPI void sendTargetBlockHitTelemetryEvent(::BlockSource& region, ::Actor const& projectile, int signalStrength);
 // NOLINTEND
 
-}; // namespace TargetBlock_Internal
+} // namespace TargetBlock_Internal

@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/runtime/IDebuggerController.h"
-#include "mc/scripting/debugger/DebuggerLogLevel.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IDebuggerController; }
 struct JSContext;
 struct JSRuntime;
 struct JSValue;
@@ -18,84 +16,93 @@ namespace Scripting::QuickJS {
 
 class Debugger : public ::Scripting::IDebuggerController {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkae28c9;
+    ::ll::UntypedStorage<8, 8>  mUnke101ac;
+    ::ll::UntypedStorage<8, 64> mUnk84399a;
+    ::ll::UntypedStorage<8, 64> mUnk142c77;
+    ::ll::UntypedStorage<8, 64> mUnkbbe543;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Debugger& operator=(Debugger const&);
     Debugger(Debugger const&);
     Debugger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Debugger() = default;
+    virtual ~Debugger() /*override*/;
 
     // vIndex: 1
-    virtual bool listen(ushort port);
+    virtual bool attach(
+        bool                                      performHandshake,
+        ::std::optional<::std::string>            targetModuleUuid,
+        ::std::function<void(::std::string_view)> handler
+    ) /*override*/;
 
     // vIndex: 2
-    virtual bool connect(std::string const& host, ushort port);
+    virtual void detach() /*override*/;
 
     // vIndex: 3
-    virtual void disconnect();
+    virtual bool closed() const /*override*/;
 
     // vIndex: 4
-    virtual void pollConnections();
-
-    // vIndex: 5
-    virtual bool closed() const;
-
-    // vIndex: 6
-    virtual bool isListening() const;
-
-    // vIndex: 7
-    virtual void sendMessage(std::string const& message) const;
-
-    // vIndex: 8
-    virtual void sendLog(::Scripting::DebuggerLogLevel logLevel, std::string_view message) const;
-
+    virtual void pumpMessages() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI bool _tryAttach();
+    MCAPI static uint ContextToId(::JSContext* ctx, void*);
 
-    MCAPI static uint ContextToId(struct JSContext* ctx, void*);
+    MCAPI static char const* ContextToModuleUuidLowerCase(::JSContext* ctx, void*);
+
+    MCAPI static void MessageHandler(void* udata, char const* message, uint64 length);
 
     MCAPI static void NotifyResume(void* udata);
 
-    MCAPI static char const* ToTypeName(struct JSContext* ctx, struct JSValue val);
+    MCAPI static char const* ToTypeName(::JSContext* ctx, ::JSValue val);
 
-    MCAPI static void TransportClose(struct JSRuntime* rt, void* udata);
+    MCAPI static void TransportClose(::JSRuntime* rt, void* udata);
 
     MCAPI static uint64 TransportPeek(void* udata);
 
     MCAPI static uint64 TransportRead(void* udata, char* buffer, uint64 length);
 
     MCAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool closed$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $attach(
+        bool                                      performHandshake,
+        ::std::optional<::std::string>            targetModuleUuid,
+        ::std::function<void(::std::string_view)> handler
+    );
 
-    MCAPI bool connect$(std::string const& host, ushort port);
+    MCAPI void $detach();
 
-    MCAPI void disconnect$();
+    MCAPI bool $closed() const;
 
-    MCAPI bool isListening$() const;
+    MCAPI void $pumpMessages();
+    // NOLINTEND
 
-    MCAPI bool listen$(ushort port);
-
-    MCAPI void pollConnections$();
-
-    MCAPI void sendLog$(::Scripting::DebuggerLogLevel logLevel, std::string_view message) const;
-
-    MCAPI void sendMessage$(std::string const& message) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting::QuickJS
+} // namespace Scripting::QuickJS

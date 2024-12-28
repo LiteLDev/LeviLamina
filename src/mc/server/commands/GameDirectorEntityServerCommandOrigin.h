@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/server/commands/ActorServerCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class UUID; }
+class Actor;
+class CommandOrigin;
 // clang-format on
 
 class GameDirectorEntityServerCommandOrigin : public ::ActorServerCommandOrigin {
@@ -22,45 +21,62 @@ public:
     GameDirectorEntityServerCommandOrigin();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameDirectorEntityServerCommandOrigin() = default;
+    virtual ~GameDirectorEntityServerCommandOrigin() /*override*/;
 
     // vIndex: 9
-    virtual ::CommandPermissionLevel getPermissionsLevel() const;
+    virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
 
     // vIndex: 10
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
+    virtual ::std::unique_ptr<::CommandOrigin> clone() const /*override*/;
 
     // vIndex: 17
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-
-    // vIndex: 18
-    virtual bool isSelectorExpansionAllowed() const;
+    virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
 
     // vIndex: 23
-    virtual ::CommandOriginType getOriginType() const;
+    virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
-
+    // vIndex: 18
+    virtual bool isSelectorExpansionAllowed() const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit GameDirectorEntityServerCommandOrigin(::Actor& origin);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Actor& origin);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& origin);
+    // NOLINTEND
 
-    MCAPI bool canUseCommandsWithoutCheatsEnabled$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CommandOrigin> clone$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::CommandOriginType getOriginType$() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CommandPermissionLevel getPermissionsLevel$() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI bool isSelectorExpansionAllowed$() const;
+    MCAPI ::CommandOriginType $getOriginType() const;
 
+    MCAPI bool $isSelectorExpansionAllowed() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

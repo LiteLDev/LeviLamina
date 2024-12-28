@@ -12,32 +12,39 @@ namespace Core {
 
 class FlatFileManifestTracker {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnkfd0579;
+    ::ll::UntypedStorage<8, 64> mUnkd6f372;
+    ::ll::UntypedStorage<8, 16> mUnk302eff;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FlatFileManifestTracker& operator=(FlatFileManifestTracker const&);
     FlatFileManifestTracker(FlatFileManifestTracker const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI FlatFileManifestTracker();
 
-    MCAPI std::shared_ptr<class Core::FlatFileManifest const> loadManifest(class Core::Path const& manifestPath);
+    MCAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::Path const& manifestPath);
 
-    MCAPI bool manifestExists(class Core::Path const& manifestPath) const;
+    MCAPI bool manifestExists(::Core::Path const& manifestPath) const;
 
-    MCAPI bool tryUnloadManifest(class Core::Path const& manifestPath);
+    MCAPI bool tryUnloadManifest(::Core::Path const& manifestPath);
 
     MCAPI void unloadAllManifests();
 
-    MCAPI void updateManifest(std::shared_ptr<class Core::FlatFileManifest> manifest, bool keepCached);
-
+    MCAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

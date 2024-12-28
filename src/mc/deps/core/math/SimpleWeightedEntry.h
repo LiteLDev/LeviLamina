@@ -13,4 +13,4 @@ public:
     SimpleWeightedEntry();
 };
 
-}; // namespace Core
+} // namespace Core

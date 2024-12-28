@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class Vec3;
+// clang-format on
+
 class ChunkBuildOrderPolicyBase {
 public:
     // prevent constructor by default
@@ -10,49 +16,45 @@ public:
     ChunkBuildOrderPolicyBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ChunkBuildOrderPolicyBase();
 
     // vIndex: 1
-    virtual int getChunkRebuildPriority(class ChunkPos const& cp) const = 0;
+    virtual int getChunkRebuildPriority(::ChunkPos const&) const = 0;
 
     // vIndex: 2
     virtual uint registerForUpdates();
 
     // vIndex: 3
-    virtual void unregisterForUpdates(uint handle) = 0;
+    virtual void unregisterForUpdates(uint) = 0;
 
     // vIndex: 4
-    virtual void setPlayerInfluence(
-        uint                  handle,
-        class ChunkPos const& playerPosition,
-        class Vec3 const&     playerMovementDirection
-    ) = 0;
+    virtual void setPlayerInfluence(uint, ::ChunkPos const&, ::Vec3 const&) = 0;
 
     // vIndex: 5
-    virtual void setTickingAreaInfluence(
-        uint                  handle,
-        class ChunkPos const& tickingAreaPosition,
-        int                   sizeX,
-        int                   sizeZ,
-        bool                  isCircle,
-        bool                  preload
-    ) = 0;
+    virtual void setTickingAreaInfluence(uint, ::ChunkPos const&, int, int, bool, bool) = 0;
 
     // vIndex: 6
     virtual void updateInfluences() = 0;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint $registerForUpdates();
+    // NOLINTEND
 
-    MCAPI uint registerForUpdates$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

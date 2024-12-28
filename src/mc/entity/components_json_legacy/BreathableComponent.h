@@ -2,24 +2,56 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+// clang-format on
+
 class BreathableComponent {
 public:
     // BreathableComponent inner types define
-    enum class BreathableState {};
+    enum class BreathableState : int {
+        InAir                        = 0,
+        InWater                      = 1,
+        InLava                       = 2,
+        InSolids                     = 3,
+        InBreathableOverrideBlock    = 4,
+        InNonBreathableOverrideBlock = 5,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk58f587;
+    ::ll::UntypedStorage<4, 4>  mUnk2575d0;
+    ::ll::UntypedStorage<4, 4>  mUnk90b35d;
+    ::ll::UntypedStorage<1, 1>  mUnk64330c;
+    ::ll::UntypedStorage<1, 1>  mUnk42a9fc;
+    ::ll::UntypedStorage<1, 1>  mUnk831168;
+    ::ll::UntypedStorage<1, 1>  mUnk93e36e;
+    ::ll::UntypedStorage<1, 1>  mUnk63c4b3;
+    ::ll::UntypedStorage<2, 2>  mUnk874e39;
+    ::ll::UntypedStorage<2, 2>  mUnk79d7bc;
+    ::ll::UntypedStorage<8, 24> mUnka5fa23;
+    ::ll::UntypedStorage<8, 24> mUnkbe7ee0;
+    ::ll::UntypedStorage<4, 4>  mUnk1042c3;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     BreathableComponent& operator=(BreathableComponent const&);
+    BreathableComponent(BreathableComponent const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI BreathableComponent();
 
-    MCAPI BreathableComponent(class BreathableComponent const&);
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
-
-    MCAPI bool canBreathe(class Actor const& owner) const;
+    MCAPI bool canBreathe(::Actor const& owner) const;
 
     MCAPI bool generatesBubbles() const;
 
@@ -35,26 +67,24 @@ public:
 
     MCAPI int getSuffocateTime() const;
 
-    MCAPI class BreathableComponent& operator=(class BreathableComponent&&);
-
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void setAirSupply(short supply);
 
-    MCAPI void updateBreathableState(class Actor& owner);
+    MCAPI void updateBreathableState(::Actor& owner);
 
     MCAPI ~BreathableComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class BreathableComponent const&);
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

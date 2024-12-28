@@ -4,13 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ChunkPos;
+class LevelChunk;
+class LevelChunkBlockActorAccessToken;
+class Random;
+struct Bounds;
+struct LevelChunkFinalDeleter;
+// clang-format on
+
 class ChunkViewSource : public ::ChunkSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode>                       mParentLoadMode;
+    ::ll::TypedStorage<8, 376, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
+    ::ll::TypedStorage<8, 8, ::ChunkSource&>                                mMainSource;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ChunkViewSource& operator=(ChunkViewSource const&);
@@ -22,112 +40,131 @@ public:
     ChunkSource&                          mMainSource;
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ChunkViewSource();
-
     // vIndex: 3
-    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& pos);
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos) /*override*/;
 
     // vIndex: 4
-    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random& random);
+    virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random) /*override*/;
+
+    // vIndex: 20
+    virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
     // vIndex: 7
-    virtual std::shared_ptr<class LevelChunk>
-    createNewChunk(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    virtual ::std::shared_ptr<::LevelChunk>
+    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
-    // vIndex: 19
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+    // vIndex: 24
+    virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
 
-    // vIndex: 23
-    virtual bool isWithinWorldLimit(class ChunkPos const& cp) const;
+    // vIndex: 31
+    virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
 
-    // vIndex: 30
-    virtual void setLevelChunk(std::shared_ptr<class LevelChunk> lc);
+    // vIndex: 0
+    virtual ~ChunkViewSource() /*override*/;
+    // NOLINTEND
 
-    MCAPI ChunkViewSource(class ChunkViewSource const& otherChunkViewSource);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI ChunkViewSource(class ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
+    MCAPI ChunkViewSource(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
     MCAPI ChunkViewSource(
-        class ChunkSource&                                                mainSource,
-        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& gridArea,
-        struct Bounds const&                                              bounds
+        ::ChunkSource&                                              mainSource,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
+        ::Bounds const&                                             bounds
     );
 
     MCAPI void clear();
 
-    MCAPI void clearEntryAtChunkPos(class ChunkPos const& chunkPos);
+    MCAPI void clearEntryAtChunkPos(::ChunkPos const& chunkPos);
 
-    MCAPI std::vector<class LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
+    MCAPI ::std::vector<::LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
 
-    MCAPI class GridArea<std::shared_ptr<class LevelChunk>>& getArea();
+    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
 
     MCAPI void move(
-        struct Bounds const&          bounds,
+        ::Bounds const&               bounds,
         bool                          isCircle,
         ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
-        float const* serverBuildRatio
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
     );
 
     MCAPI void move(
-        class BlockPos const&         blockMin,
-        class BlockPos const&         blockMax,
+        ::BlockPos const&             blockMin,
+        ::BlockPos const&             blockMax,
         bool                          isCircle,
         ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
-        float const* serverBuildRatio
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
     );
 
     MCAPI void move(
-        class BlockPos const&         center,
+        ::BlockPos const&             center,
         int                           radius,
         bool                          isCircle,
         ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add,
-        float const* serverBuildRatio
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
+        float const*                                                                                   serverBuildRatio
     );
 
     MCAPI void rebuildSpecificArea(
-        struct Bounds const& bounds,
+        ::Bounds const& bounds,
         bool,
-        std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add
+        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add
     );
-
-    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ChunkViewSource const& otherChunkViewSource);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI void* ctor$(class ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
+    MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
-    MCAPI void* ctor$(
-        class ChunkSource&                                                mainSource,
-        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& gridArea,
-        struct Bounds const&                                              bounds
+    MCAPI void* $ctor(
+        ::ChunkSource&                                              mainSource,
+        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
+        ::Bounds const&                                             bounds
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
 
-    MCAPI std::shared_ptr<class LevelChunk>
-          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
-    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& pos);
+    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Random& random);
+    MCAPI ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCAPI bool isWithinWorldLimit$(class ChunkPos const& cp) const;
+    MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    MCAPI void setLevelChunk$(std::shared_ptr<class LevelChunk> lc);
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

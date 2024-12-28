@@ -12,12 +12,13 @@ namespace Core { class Path; }
 // clang-format on
 
 namespace Core::StorageAreaFactory {
+// functions
 // NOLINTBEGIN
-MCAPI std::shared_ptr<class Core::FileStorageArea> createBasicStorageAreaForCurrentPlatform(
-    ::Core::FileAccessType  fileAccessType,
-    class Core::Path const& rootPath,
-    bool                    useFlatFiles
+MCAPI ::std::shared_ptr<::Core::FileStorageArea> createBasicStorageAreaForCurrentPlatform(
+    ::Core::FileAccessType fileAccessType,
+    ::Core::Path const&    rootPath,
+    bool                   useFlatFiles
 );
 // NOLINTEND
 
-}; // namespace Core::StorageAreaFactory
+} // namespace Core::StorageAreaFactory

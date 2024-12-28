@@ -6,6 +6,11 @@
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ScreenHandlerBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStackRequestAction;
+// clang-format on
+
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
     // prevent constructor by default
@@ -14,21 +19,30 @@ public:
     ScreenHandlerHUD();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScreenHandlerHUD() = default;
-
     // vIndex: 1
-    virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const& requestAction);
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
+    // vIndex: 0
+    virtual ~ScreenHandlerHUD() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::ItemStackNetResult handleAction$(class ItemStackRequestAction const& requestAction);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

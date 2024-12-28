@@ -4,10 +4,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class Random;
 namespace Json { class Value; }
 // clang-format on
 
 struct FloatRange {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkaba715;
+    ::ll::UntypedStorage<4, 4> mUnkcfba95;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FloatRange& operator=(FloatRange const&);
@@ -15,10 +23,10 @@ public:
     FloatRange();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI float getValue(class Random& random) const;
+    MCAPI float getValue(::Random& random) const;
 
-    MCAPI bool parseJson(class Json::Value const& node, float minDefault, float maxDefault);
-
+    MCAPI bool parseJson(::Json::Value const& node, float minDefault, float maxDefault);
     // NOLINTEND
 };

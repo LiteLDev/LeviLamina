@@ -5,7 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class ITickDelegate;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct FallingBlockFlagComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class FallingBlockNormalTickSystem {
 public:
@@ -15,25 +24,20 @@ public:
     FallingBlockNormalTickSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doFallingBlockNormalTickSystem(
-        class StrictEntityContext const&,
-        class ActorOwnerComponent& actorOwnerComponent,
-        class ITickDelegate&       onLand
+        ::StrictEntityContext const&,
+        ::ActorOwnerComponent& actorOwnerComponent,
+        ::ITickDelegate&       onLand
     );
 
-    MCAPI static void _tickFallingBlockNormalTickSystem(class ViewT<
-                                                        class StrictEntityContext,
-                                                        struct Include<
-                                                            class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                                            class FlagComponent<struct FallingBlockFlag>>,
-                                                        class ActorOwnerComponent> view);
+    MCAPI static void
+    _tickFallingBlockNormalTickSystem(::ViewT<
+                                      ::StrictEntityContext,
+                                      ::Include<::ActorMovementTickNeededComponent, ::FallingBlockFlagComponent>,
+                                      ::ActorOwnerComponent> view);
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -1,27 +1,40 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/storage/GameRule.h"
+
+// auto generated forward declare list
+// clang-format off
+class GameRule;
+// clang-format on
 
 class GameRulesChangedPacketData {
 public:
-    std::vector<class GameRule> mRules; // this+0x0
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI void addRule(class GameRule const& rule);
-
-    MCAPI std::vector<class GameRule> const& getRules() const;
-
-    MCAPI void setRules(std::vector<class GameRule> rules);
-
-    MCAPI ~GameRulesChangedPacketData();
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::GameRule>> mRules;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
+    // prevent constructor by default
+    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&);
+    GameRulesChangedPacketData(GameRulesChangedPacketData const&);
+    GameRulesChangedPacketData();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addRule(::GameRule const& rule);
+
+    MCAPI ::std::vector<::GameRule> const& getRules() const;
+
+    MCAPI void setRules(::std::vector<::GameRule> rules);
+
+    MCAPI ~GameRulesChangedPacketData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

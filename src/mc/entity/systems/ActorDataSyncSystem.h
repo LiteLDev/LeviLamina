@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 class ActorDataSyncSystem {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     ActorDataSyncSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createActorDataSyncSystem();
-
+    MCAPI static ::TickingSystemWithInfo createActorDataSyncSystem();
     // NOLINTEND
 };

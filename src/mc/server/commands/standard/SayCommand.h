@@ -5,7 +5,23 @@
 // auto generated inclusion list
 #include "mc/server/commands/standard/MessagingCommand.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class Level;
+class Player;
+struct CommandOriginIdentity;
+// clang-format on
+
 class SayCommand : public ::MessagingCommand {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk360023;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SayCommand& operator=(SayCommand const&);
@@ -13,37 +29,46 @@ public:
     SayCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SayCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~SayCommand() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _sendMessage(
-        std::string const&                  message,
-        std::string const&                  sender,
-        struct CommandOriginIdentity const& identity,
-        class Level&                        level
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage,
+        ::std::string const&           sender,
+        ::CommandOriginIdentity const& identity,
+        ::Level&                       level
     );
 
-    MCAPI static bool
-    _trySendSayCommandEvent(class Player const& player, class Level& level, std::string const& message);
+    MCAPI static bool _trySendSayCommandEvent(::Player const& player, ::Level& level, ::std::string const& message);
 
+    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

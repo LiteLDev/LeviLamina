@@ -10,9 +10,14 @@ public:
     // clang-format on
 
     // BehaviorData inner types define
-    enum class DataType {};
-
     struct DataProxy {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk4b5161;
+        ::ll::UntypedStorage<1, 1>  mUnka1c5c0;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         DataProxy& operator=(DataProxy const&);
@@ -20,21 +25,50 @@ public:
         DataProxy();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~DataProxy();
 
+        // vIndex: 1
+        virtual ::std::unique_ptr<::BehaviorData::DataProxy> copy() = 0;
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
 
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+    enum class DataType : uchar {
+        BlockPosition = 0,
+        Boolean       = 1,
+        Float         = 2,
+        Int           = 3,
+        String        = 4,
+        Vector3       = 5,
+        VoidPointer   = 6,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkdfa4a1;
+    ::ll::UntypedStorage<8, 24> mUnke4e167;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -43,10 +77,16 @@ public:
     BehaviorData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void copyData(std::string const& from, std::string const& to, class BehaviorData& other);
+    MCAPI ::BehaviorData& operator=(::BehaviorData&&);
 
-    MCAPI bool hasDataOfType(std::string const& strId, ::BehaviorData::DataType type) const;
+    MCAPI ~BehaviorData();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

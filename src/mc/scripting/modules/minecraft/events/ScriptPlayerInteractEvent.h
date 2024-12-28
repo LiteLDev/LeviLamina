@@ -6,28 +6,28 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerInteractEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk4dc911;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptPlayerInteractEvent& operator=(ScriptPlayerInteractEvent const&);
     ScriptPlayerInteractEvent(ScriptPlayerInteractEvent const&);
     ScriptPlayerInteractEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractEvent const&);
-
     MCAPI ~ScriptPlayerInteractEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

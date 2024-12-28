@@ -2,34 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Actor;
+class IBlockSource;
+class Vec3;
+// clang-format on
+
 namespace TargetRelativeMovementGoalUtils {
+// functions
 // NOLINTBEGIN
-MCAPI std::optional<class Vec3> calculateJumpVectorForElevationAngle(
-    class IBlockSource& region,
-    class AABB const&   actorAABB,
-    class Vec3 const&   actorPos,
-    class Vec3 const&   jumpAimBlockPos,
-    float               angle,
-    float               maxJumpVelocity,
-    float               scaleFactor,
-    bool                checkCollision
+MCAPI ::std::optional<::Vec3> calculateJumpVectorForElevationAngle(
+    ::IBlockSource& region,
+    ::AABB const&   actorAABB,
+    ::Vec3 const&   actorPos,
+    ::Vec3 const&   jumpAimBlockPos,
+    float           angle,
+    float           maxJumpVelocity,
+    float           scaleFactor,
+    bool            checkCollision
 );
 
-MCAPI class Vec3 getRandomPointBehindTarget(
-    class Actor const& owner,
-    class Actor const& target,
-    float              spreadDegrees,
-    float              minLandingDistance,
-    float              maxLandingDistance
+MCAPI ::Vec3 getRandomPointBehindTarget(
+    ::Actor const& owner,
+    ::Actor const& target,
+    float          spreadDegrees,
+    float          minLandingDistance,
+    float          maxLandingDistance
 );
 
 MCAPI bool validTransition(
-    class AABB const&   mobAABB,
-    class IBlockSource& region,
-    class Vec3 const&   oldPos,
-    class Vec3 const&   newPos,
-    float               scaleFactor
+    ::AABB const&   mobAABB,
+    ::IBlockSource& region,
+    ::Vec3 const&   oldPos,
+    ::Vec3 const&   newPos,
+    float           scaleFactor
 );
 // NOLINTEND
 
-}; // namespace TargetRelativeMovementGoalUtils
+} // namespace TargetRelativeMovementGoalUtils

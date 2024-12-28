@@ -7,10 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
 
 class TextObjectSelector : public ::ITextObject {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk193d71;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TextObjectSelector& operator=(TextObjectSelector const&);
@@ -18,35 +25,48 @@ public:
     TextObjectSelector();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TextObjectSelector() = default;
-
     // vIndex: 1
-    virtual std::string asString() const;
+    virtual ::std::string asString() const /*override*/;
 
     // vIndex: 2
-    virtual class Json::Value asJsonValue() const;
+    virtual ::Json::Value asJsonValue() const /*override*/;
 
     // vIndex: 3
-    virtual class Json::Value resolve(struct ResolveData const& resolveData) const;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
+    // vIndex: 0
+    virtual ~TextObjectSelector() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
 
-    MCAPI class Json::Value asJsonValue$() const;
+    MCAPI static ::std::string const& RAW_TEXT_SELECTOR_STAR();
+    // NOLINTEND
 
-    MCAPI std::string asString$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Json::Value resolve$(struct ResolveData const& resolveData) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $asString() const;
 
-    MCAPI static std::string const& RAW_TEXT_SELECTOR_KEY();
+    MCAPI ::Json::Value $asJsonValue() const;
 
-    MCAPI static std::string const& RAW_TEXT_SELECTOR_STAR();
+    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,7 +6,19 @@
 #include "mc/world/ContainerType.h"
 #include "mc/world/SimpleContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class Player;
+// clang-format on
+
 class SimplePlayerContainer : public ::SimpleContainer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk824404;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SimplePlayerContainer& operator=(SimplePlayerContainer const&);
@@ -14,32 +26,54 @@ public:
     SimplePlayerContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SimplePlayerContainer() = default;
+    virtual ~SimplePlayerContainer() /*override*/;
+
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, class ItemStack const& item);
-
-    MCAPI SimplePlayerContainer(
-        class Player&      player,
-        std::string const& name,
-        bool               customName,
-        int                size,
-        ::ContainerType    containerType
-    );
-
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SimplePlayerContainer(
+        ::Player&            player,
+        ::std::string const& name,
+        bool                 customName,
+        int                  size,
+        ::ContainerType      containerType
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class Player& player, std::string const& name, bool customName, int size, ::ContainerType containerType);
+    $ctor(::Player& player, ::std::string const& name, bool customName, int size, ::ContainerType containerType);
+    // NOLINTEND
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

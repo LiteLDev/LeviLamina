@@ -3,24 +3,40 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BlockSource;
+class CompoundTag;
+class Container;
+class ItemDescriptor;
+class ItemStackBase;
+class Level;
+class Vec3;
+namespace Bedrock::Safety { class RedactableString; }
 namespace mce { class Color; }
 // clang-format on
 
 class HorseArmorItem : public ::Item {
 public:
     // HorseArmorItem inner types define
-    enum class Tier {};
+    enum class Tier : int {
+        None    = 0,
+        Leather = 1,
+        Iron    = 2,
+        Gold    = 3,
+        Diamond = 4,
+        Count   = 5,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbc1e43;
+    ::ll::UntypedStorage<4, 4> mUnk58d2fe;
+    ::ll::UntypedStorage<4, 4> mUnk6e799e;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -29,76 +45,104 @@ public:
     HorseArmorItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HorseArmorItem() = default;
+    // vIndex: 56
+    virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 14
-    virtual bool isDyeable() const;
-
-    // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
-
-    // vIndex: 52
-    virtual int getArmorValue() const;
-
-    // vIndex: 62
-    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
-
-    // vIndex: 64
-    virtual bool hasCustomColor(class CompoundTag const* userData) const;
-
-    // vIndex: 65
-    virtual void clearColor(class ItemStackBase& item) const;
+    // vIndex: 67
+    virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 66
-    virtual void setColor(class ItemStackBase& item, class mce::Color const& color) const;
+    virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
+    // vIndex: 69
+    virtual void clearColor(::ItemStackBase& item) const /*override*/;
 
-    MCAPI HorseArmorItem(std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
+    // vIndex: 70
+    virtual void setColor(::ItemStackBase& item, ::mce::Color const& color) const /*override*/;
 
-    MCAPI ::HorseArmorItem::Tier getTier() const;
+    // vIndex: 15
+    virtual bool isDyeable() const /*override*/;
 
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+        /*override*/;
+
+    // vIndex: 52
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
+
+    // vIndex: 0
+    virtual ~HorseArmorItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HorseArmorItem(::std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
 
-    MCAPI void* ctor$(std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
+    MCAPI ::HorseArmorItem::Tier getTier() const;
+    // NOLINTEND
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void ResetDefaultHorseLeatherColor();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::mce::Color& DEFAULT_HORSE_LEATHER_COLOR();
+
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> mHealthPerTier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getArmorValue() const;
+
+    MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
+
+    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+
+    MCAPI void $clearColor(::ItemStackBase& item) const;
+
+    MCAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+
+    MCAPI bool $isDyeable() const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
     ) const;
+    // NOLINTEND
 
-    MCAPI void clearColor$(class ItemStackBase& item) const;
-
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
-
-    MCAPI int getArmorValue$() const;
-
-    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const&) const;
-
-    MCAPI bool hasCustomColor$(class CompoundTag const* userData) const;
-
-    MCAPI bool isDyeable$() const;
-
-    MCAPI void setColor$(class ItemStackBase& item, class mce::Color const& color) const;
-
-    MCAPI static auto mHealthPerTier() -> int const (&)[];
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,26 +6,29 @@ namespace Crypto::Random {
 
 class Random {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk93b04e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     Random& operator=(Random const&);
     Random(Random const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Random();
 
-    MCAPI void fillData(char* data, uint amount);
-
-    MCAPI std::string getBytes(uint amount);
-
+    MCAPI ::std::string getBytes(uint amount);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Random
+} // namespace Crypto::Random

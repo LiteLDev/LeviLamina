@@ -14,15 +14,14 @@ public:
     ItemUseMethodMap();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
-
+    MCAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class BidirectionalUnorderedMap<::ItemUseMethod, std::string> const& mMap();
-
+    MCAPI static ::BidirectionalUnorderedMap<::ItemUseMethod, ::std::string> const& mMap();
     // NOLINTEND
 };

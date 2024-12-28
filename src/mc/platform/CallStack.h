@@ -18,86 +18,138 @@ public:
     // clang-format on
 
     // CallStack inner types define
-    struct Context {
-    public:
-        std::string                        mMessage;
-        std::optional<::Bedrock::LogLevel> mLogLevel;
-        std::optional<::LogAreaID>         mLogAreaID;
-
-    public:
-        // NOLINTBEGIN
-        MCAPI
-        Context(std::string value, std::optional<::Bedrock::LogLevel> logLevel, std::optional<::LogAreaID> logArea);
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void*
-        ctor$(std::string value, std::optional<::Bedrock::LogLevel> logLevel, std::optional<::LogAreaID> logArea);
-
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
     struct Frame {
     public:
-        void* address[3];
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
+        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
+        ::ll::TypedStorage<4, 4, uint>                mLine;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Frame& operator=(Frame const&);
+        Frame(Frame const&);
+        Frame();
+    };
+
+    struct Context {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                       mValue;
+        ::ll::TypedStorage<4, 8, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
+        ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Context& operator=(Context const&);
+        Context();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Context(::Bedrock::CallStack::Context const&);
+
+        MCAPI Context(
+            ::std::string                        value,
+            ::std::optional<::Bedrock::LogLevel> logLevel,
+            ::std::optional<::LogAreaID>         logArea
+        );
+
+        MCAPI ~Context();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Bedrock::CallStack::Context const&);
+
+        MCAPI void*
+        $ctor(::std::string value, ::std::optional<::Bedrock::LogLevel> logLevel, ::std::optional<::LogAreaID> logArea);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     struct FrameWithContext {
     public:
-        Frame                  mFrame;
-        std::optional<Context> mContext;
-
-    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI FrameWithContext(
-            struct Bedrock::CallStack::Frame&&                  frame,
-            std::optional<struct Bedrock::CallStack::Context>&& context
-        );
-
+        ::ll::TypedStorage<8, 32, ::Bedrock::CallStack::Frame>                    mFrame;
+        ::ll::TypedStorage<8, 56, ::std::optional<::Bedrock::CallStack::Context>> mContext;
         // NOLINTEND
 
-        // thunks
     public:
+        // prevent constructor by default
+        FrameWithContext& operator=(FrameWithContext const&);
+        FrameWithContext(FrameWithContext const&);
+        FrameWithContext();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI
+        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+
+        MCAPI ~FrameWithContext();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
         // NOLINTBEGIN
         MCAPI void*
-        ctor$(struct Bedrock::CallStack::Frame&& frame, std::optional<struct Bedrock::CallStack::Context>&& context);
+        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
-    std::vector<Bedrock::CallStack::FrameWithContext> vector;
-
-    CallStack(struct Bedrock::CallStack const&)            = default;
-    CallStack& operator=(struct Bedrock::CallStack const&) = default;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit CallStack(std::vector<struct Bedrock::CallStack::FrameWithContext>&& frames);
-
-    MCAPI explicit CallStack(struct Bedrock::CallStack::FrameWithContext&& frame);
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::CallStack::FrameWithContext>> mFrames;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CallStack& operator=(CallStack const&);
+    CallStack(CallStack const&);
+    CallStack();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Bedrock::CallStack const&);
+    MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
 
-    MCAPI void* ctor$(struct Bedrock::CallStack::FrameWithContext&& frame);
+    MCAPI explicit CallStack(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
 
-    MCAPI void* ctor$(std::vector<struct Bedrock::CallStack::FrameWithContext>&& frames);
+    MCAPI ~CallStack();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
 
+    MCAPI void* $ctor(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

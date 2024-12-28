@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct JumpRidingScaleComponent;
+struct TickingSystemWithInfo;
+struct VanillaClientGameplayComponent;
+// clang-format on
+
 class ResetJumpRidingScaleSystem {
 public:
     // prevent constructor by default
@@ -10,18 +18,14 @@ public:
     ResetJumpRidingScaleSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doResetJumpRidingScaleSystem(
-        class StrictEntityContext const&,
-        struct JumpRidingScaleComponent&       jumpRidingScaleComponent,
-        struct VanillaClientGameplayComponent& vanillaClientGameplayComponent
+        ::StrictEntityContext const&,
+        ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
+        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

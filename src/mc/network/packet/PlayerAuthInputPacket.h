@@ -1,155 +1,199 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/entity/components/PackedItemUseLegacyInventoryTransaction.h"
-#include "mc/entity/components/PlayerBlockActions.h"
-#include "mc/input/ClientPlayMode.h"
-#include "mc/input/NewInteractionModel.h"
-#include "mc/world/inventory/network/ItemStackRequestAction.h"
-#include "mc/world/inventory/network/ItemStackRequestData.h"
 
 // auto generated inclusion list
+#include "mc/deps/input/InputMode.h"
+#include "mc/input/ClientPlayMode.h"
+#include "mc/input/NewInteractionModel.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ItemStackRequestData;
+class PlayerBlockActions;
+class ReadOnlyBinaryStream;
+class Vec2;
+class Vec3;
+struct ActorUniqueID;
+struct PackedItemUseLegacyInventoryTransaction;
+struct PlayerActionComponent;
+struct PlayerInputTick;
+// clang-format on
 
 class PlayerAuthInputPacket : public ::Packet {
 public:
     // PlayerAuthInputPacket inner types define
     enum class InputData : int {
-        Ascend                     = 0x0,
-        Descend                    = 0x1,
-        NorthJump_Deprecated       = 0x2,
-        JumpDown                   = 0x3,
-        SprintDown                 = 0x4,
-        ChangeHeight               = 0x5,
-        Jumping                    = 0x6,
-        AutoJumpingInWater         = 0x7,
-        Sneaking                   = 0x8,
-        SneakDown                  = 0x9,
-        Up                         = 0xA,
-        Down                       = 0xB,
-        Left                       = 0xC,
-        Right                      = 0xD,
-        UpLeft                     = 0xE,
-        UpRight                    = 0xF,
-        WantUp                     = 0x10,
-        WantDown                   = 0x11,
-        WantDownSlow               = 0x12,
-        WantUpSlow                 = 0x13,
-        Sprinting                  = 0x14,
-        AscendBlock                = 0x15,
-        DescendBlock               = 0x16,
-        SneakToggleDown            = 0x17,
-        PersistSneak               = 0x18,
-        StartSprinting             = 0x19,
-        StopSprinting              = 0x1A,
-        StartSneaking              = 0x1B,
-        StopSneaking               = 0x1C,
-        StartSwimming              = 0x1D,
-        StopSwimming               = 0x1E,
-        StartJumping               = 0x1F,
-        StartGliding               = 0x20,
-        StopGliding                = 0x21,
-        PerformItemInteraction     = 0x22,
-        PerformBlockActions        = 0x23,
-        PerformItemStackRequest    = 0x24,
-        HandledTeleport            = 0x25,
-        Emoting                    = 0x26,
-        MissedSwing                = 0x27,
-        StartCrawling              = 0x28,
-        StopCrawling               = 0x29,
-        StartFlying                = 0x2A,
-        StopFlying                 = 0x2B,
-        ReceivedServerData         = 0x2C,
-        InClientPredictedInVehicle = 0x2D,
-        PaddlingLeft               = 0x2E,
-        PaddlingRight              = 0x2F,
-        BlockBreakingDelayEnabled  = 0x30,
-        Input_Num                  = 0x31,
+        Ascend                          = 0,
+        Descend                         = 1,
+        NorthJumpDeprecated             = 2,
+        JumpDown                        = 3,
+        SprintDown                      = 4,
+        ChangeHeight                    = 5,
+        Jumping                         = 6,
+        AutoJumpingInWater              = 7,
+        Sneaking                        = 8,
+        SneakDown                       = 9,
+        Up                              = 10,
+        Down                            = 11,
+        Left                            = 12,
+        Right                           = 13,
+        UpLeft                          = 14,
+        UpRight                         = 15,
+        WantUp                          = 16,
+        WantDown                        = 17,
+        WantDownSlow                    = 18,
+        WantUpSlow                      = 19,
+        Sprinting                       = 20,
+        AscendBlock                     = 21,
+        DescendBlock                    = 22,
+        SneakToggleDown                 = 23,
+        PersistSneak                    = 24,
+        StartSprinting                  = 25,
+        StopSprinting                   = 26,
+        StartSneaking                   = 27,
+        StopSneaking                    = 28,
+        StartSwimming                   = 29,
+        StopSwimming                    = 30,
+        StartJumping                    = 31,
+        StartGliding                    = 32,
+        StopGliding                     = 33,
+        PerformItemInteraction          = 34,
+        PerformBlockActions             = 35,
+        PerformItemStackRequest         = 36,
+        HandledTeleport                 = 37,
+        Emoting                         = 38,
+        MissedSwing                     = 39,
+        StartCrawling                   = 40,
+        StopCrawling                    = 41,
+        StartFlying                     = 42,
+        StopFlying                      = 43,
+        ClientAckServerData             = 44,
+        IsInClientPredictedVehicle      = 45,
+        PaddlingLeft                    = 46,
+        PaddlingRight                   = 47,
+        BlockBreakingDelayEnabled       = 48,
+        HorizontalCollision             = 49,
+        VerticalCollision               = 50,
+        DownLeft                        = 51,
+        DownRight                       = 52,
+        StartUsingItem                  = 53,
+        IsCameraRelativeMovementEnabled = 54,
+        IsRotControlledByMoveDirection  = 55,
+        StartSpinAttack                 = 56,
+        StopSpinAttack                  = 57,
+        IsHotbarOnlyTouch               = 58,
+        JumpReleasedRaw                 = 59,
+        JumpPressedRaw                  = 60,
+        JumpCurrentRaw                  = 61,
+        SneakReleasedRaw                = 62,
+        SneakPressedRaw                 = 63,
+        SneakCurrentRaw                 = 64,
+        InputNum                        = 65,
     };
 
 public:
-    Vec2                                                     mRot;
-    Vec3                                                     mPos;
-    float                                                    mYHeadRot;
-    Vec3                                                     mPosDelta;
-    Vec2                                                     mAnalogMoveVector;
-    Vec2                                                     mVehicleRotation;
-    Vec2                                                     mMove;
-    Vec3                                                     mGazeDir;
-    std::bitset<39>                                          mInputData;
-    InputMode                                                mInputMode;
-    ClientPlayMode                                           mPlayMode;
-    NewInteractionModel                                      mNewInteractionModel;
-    uint64                                                   mClientTick;
-    std::unique_ptr<PackedItemUseLegacyInventoryTransaction> mItemUseTransaction;
-    std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;
-    PlayerBlockActions                                       mPlayerBlockActions;
-    ActorUniqueID                                            mPredictedVehicle;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPos;
+    ::ll::TypedStorage<4, 4, float>                                                        mYHeadRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPosDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mVehicleRot;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mAnalogMoveVector;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mInteractRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mCameraOrientation;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRawMoveVector;
+    ::ll::TypedStorage<8, 16, ::std::bitset<65>>                                           mInputData;
+    ::ll::TypedStorage<4, 4, ::InputMode>                                                  mInputMode;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                             mPlayMode;
+    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                        mNewInteractionModel;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                            mClientTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                              mClientPredictedVehicle;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
     PlayerAuthInputPacket(PlayerAuthInputPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerAuthInputPacket();
+    virtual ~PlayerAuthInputPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 7
-    virtual bool isValid() const;
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI PlayerAuthInputPacket();
 
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&& rhs);
+    MCAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&&);
 
     MCAPI bool getInput(::PlayerAuthInputPacket::InputData point) const;
 
-    MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&& rhs);
+    MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&&);
 
-    MCAPI struct PlayerActionComponent readIntoComponent() const;
+    MCAPI ::PlayerActionComponent readIntoComponent() const;
 
-    MCAPI class PlayerAuthInputPacket takeCopy() const;
-
+    MCAPI ::PlayerAuthInputPacket takeCopy() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::PlayerAuthInputPacket&&);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class PlayerAuthInputPacket&& rhs);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI bool $isValid() const;
 
-    MCAPI bool isValid$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

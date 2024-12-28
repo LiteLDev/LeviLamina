@@ -5,7 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class Dimension;
+class Random;
+// clang-format on
+
 class WoodlandMansionStart : public ::StructureStart {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk3df6c3;
+    ::ll::UntypedStorage<4, 12> mUnk62ee6c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WoodlandMansionStart& operator=(WoodlandMansionStart const&);
@@ -13,38 +30,50 @@ public:
     WoodlandMansionStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WoodlandMansionStart() = default;
-
     // vIndex: 1
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
+
+    // vIndex: 0
+    virtual ~WoodlandMansionStart() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _create(class Dimension& dimension, class Random& random, int x, int z);
+    MCAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
 
     MCAPI void _makeStairs(
-        class BlockPos const&    startPos,
-        class Block const&       stairBlock,
-        uchar                    xStepDir,
-        uchar                    yStepDir,
-        class BlockSource&       region,
-        class BoundingBox const& chunkBB
+        ::BlockPos const&    startPos,
+        ::Block const&       stairBlock,
+        uchar                xStepDir,
+        uchar                yStepDir,
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB
     );
-
-    MCAPI static void _fillCobblestone(class BlockPos const& startPos, class BlockSource& region);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class UseActorDefinition : public ::BehaviorDefinition {
 public:
     // prevent constructor by default
@@ -18,16 +13,21 @@ public:
     UseActorDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UseActorDefinition() = default;
-
+    virtual ~UseActorDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

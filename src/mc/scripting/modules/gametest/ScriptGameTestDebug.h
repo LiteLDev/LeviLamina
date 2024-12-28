@@ -15,10 +15,10 @@ public:
     ScriptGameTestDebug();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptGameTestDebug> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptGameTestDebug> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

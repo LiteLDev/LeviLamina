@@ -3,18 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BaseGameVersion;
+class BlockSource;
+class CompoundTag;
+class Container;
+class HashedString;
+class IDataInput;
+class IDataOutput;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class Mob;
+class Player;
+class ReadOnlyBinaryStream;
+class Vec3;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class ShieldItem : public ::Item {
@@ -25,139 +36,163 @@ public:
     ShieldItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ShieldItem() = default;
+    // vIndex: 92
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const
+        /*override*/;
 
-    // vIndex: 37
-    virtual bool isHandEquipped() const;
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 48
-    virtual void appendFormattedHovertext(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
-
-    // vIndex: 49
+    // vIndex: 53
     virtual bool isValidRepairItem(
-        class ItemStackBase const&   source,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
-    ) const;
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
+    // vIndex: 38
+    virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 72
-    virtual class ItemStack& use(class ItemStack& item, class Player&) const;
+    // vIndex: 102
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
-
-    // vIndex: 78
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
-
-    // vIndex: 83
-    virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const* userData) const;
-
-    // vIndex: 85
-    virtual void
-    readUserData(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
-        const;
-
-    // vIndex: 86
-    virtual void writeUserData(class ItemStackBase const& stack, class IDataOutput& output) const;
-
-    // vIndex: 88
-    virtual bool inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
-
-    // vIndex: 90
-    virtual class HashedString const& getCooldownType() const;
-
-    // vIndex: 91
-    virtual int getCooldownTime() const;
-
-    // vIndex: 94
-    virtual ::InHandUpdateType getInHandUpdateType(
-        class Player const&    player,
-        class ItemStack const& oldItem,
-        class ItemStack const& newItem,
-        bool                   isMainHand,
-        bool                   slotChanged
-    ) const;
+    // vIndex: 82
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 98
-    virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        ::Player const&    player,
+        ::ItemStack const& oldItem,
+        ::ItemStack const& newItem,
+        bool const         isMainHand,
+        bool const         slotChanged
+    ) const /*override*/;
 
-    MCAPI void playBlockSound(class Player* player) const;
+    // vIndex: 76
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    MCAPI void playBreakSound(class Player* player) const;
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+        /*override*/;
 
+    // vIndex: 89
+    virtual void
+    readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const
+        /*override*/;
+
+    // vIndex: 90
+    virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const /*override*/;
+
+    // vIndex: 94
+    virtual ::HashedString const& getCooldownType() const /*override*/;
+
+    // vIndex: 95
+    virtual int getCooldownTime() const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 52
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
+
+    // vIndex: 0
+    virtual ~ShieldItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ShieldItem(::std::string const& name, int id);
 
-    MCAPI void appendFormattedHovertext$(
-        class ItemStackBase const& stack,
-        class Level&               level,
-        std::string&               hovertext,
-        bool                       showCategory
-    ) const;
+    MCAPI void playBlockSound(::Player* player) const;
 
-    MCAPI std::string buildDescriptionId$(class ItemDescriptor const&, class CompoundTag const* userData) const;
+    MCAPI void playBreakSound(::Player* player) const;
+    // NOLINTEND
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
-
-    MCAPI int getCooldownTime$() const;
-
-    MCAPI class HashedString const& getCooldownType$() const;
-
-    MCAPI int getEnchantSlot$() const;
-
-    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
-
-    MCAPI ::InHandUpdateType getInHandUpdateType$(
-        class Player const&    player,
-        class ItemStack const& oldItem,
-        class ItemStack const& newItem,
-        bool                   isMainHand,
-        bool                   slotChanged
-    ) const;
-
-    MCAPI void hurtActor$(class ItemStack&, class Actor&, class Mob&) const;
-
-    MCAPI bool inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
-
-    MCAPI bool isHandEquipped$() const;
-
-    MCAPI bool isValidRepairItem$(
-        class ItemStackBase const&   source,
-        class ItemStackBase const&   repairItem,
-        class BaseGameVersion const& baseGameVersion
-    ) const;
-
-    MCAPI void
-    readUserData$(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
-        const;
-
-    MCAPI class ItemStack& use$(class ItemStack& item, class Player&) const;
-
-    MCAPI void writeUserData$(class ItemStackBase const& stack, class IDataOutput& output) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
 
     MCAPI static int const& IN_HAND_BLOCK_DURATION();
 
     MCAPI static int const& NO_SHIELD_PATTERN();
 
-    MCAPI static std::string const& TIMESTAMP_TAG();
+    MCAPI static ::std::string const& TIMESTAMP_TAG();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
+
+    MCAPI int $getEnchantSlot() const;
+
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
+
+    MCAPI bool $isHandEquipped() const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+
+    MCAPI ::InHandUpdateType $getInHandUpdateType(
+        ::Player const&    player,
+        ::ItemStack const& oldItem,
+        ::ItemStack const& newItem,
+        bool const         isMainHand,
+        bool const         slotChanged
+    ) const;
+
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+
+    MCAPI void
+    $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+
+    MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
+
+    MCAPI ::HashedString const& $getCooldownType() const;
+
+    MCAPI int $getCooldownTime() const;
+
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

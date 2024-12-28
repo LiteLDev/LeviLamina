@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameRuleId {
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
+struct GameRuleId : public ::NewType<int> {
 public:
     int value;
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit GameRuleId(int value);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(int value);
-
+    MCAPI void* $ctor(int value);
     // NOLINTEND
 };

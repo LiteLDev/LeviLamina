@@ -5,6 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct PlayerPreMobTravelComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class PlayerMovementStatsEventSystem {
 public:
     // prevent constructor by default
@@ -13,14 +22,14 @@ public:
     PlayerMovementStatsEventSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void tickPlayerMovementStatsEventSystem(class ViewT<
-                                                         class StrictEntityContext,
-                                                         class ActorOwnerComponent,
-                                                         struct PlayerPreMobTravelComponent const,
-                                                         struct StateVectorComponent const> view);
-
+    MCAPI static void tickPlayerMovementStatsEventSystem(::ViewT<
+                                                         ::StrictEntityContext,
+                                                         ::ActorOwnerComponent,
+                                                         ::PlayerPreMobTravelComponent const,
+                                                         ::StateVectorComponent const> view);
     // NOLINTEND
 };

@@ -9,7 +9,22 @@ namespace br::worldgen { struct JigsawPieceState; }
 
 namespace br::worldgen {
 
-class JigsawPlacer {
+struct JigsawPlacer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>   mUnkc88bf3;
+    ::ll::UntypedStorage<8, 8>   mUnk202f7b;
+    ::ll::UntypedStorage<8, 8>   mUnkeac50e;
+    ::ll::UntypedStorage<8, 8>   mUnk3e427a;
+    ::ll::UntypedStorage<4, 4>   mUnkbb4893;
+    ::ll::UntypedStorage<8, 168> mUnk234504;
+    ::ll::UntypedStorage<8, 8>   mUnk6c248d;
+    ::ll::UntypedStorage<8, 8>   mUnkbb6eb1;
+    ::ll::UntypedStorage<8, 24>  mUnk249f7a;
+    ::ll::UntypedStorage<8, 40>  mUnkf7b43e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     JigsawPlacer& operator=(JigsawPlacer const&);
@@ -17,19 +32,18 @@ public:
     JigsawPlacer();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void tryPlacingChildren(struct br::worldgen::JigsawPieceState state);
+    MCAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
 
     MCAPI ~JigsawPlacer();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace br::worldgen
+} // namespace br::worldgen

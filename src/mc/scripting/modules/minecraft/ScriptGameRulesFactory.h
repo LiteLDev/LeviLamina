@@ -22,11 +22,11 @@ public:
     ScriptGameRulesFactory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptGameRules>
-    getHandle(class Scripting::WeakLifetimeScope& scope, class Level& level);
-
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules>
+    getHandle(::Scripting::WeakLifetimeScope& scope, ::Level& level);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

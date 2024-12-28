@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cereal/Constraint.h"
+#include "mc/deps/cereal/Constraint.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
@@ -20,26 +19,29 @@ public:
     VolumeTriggerConstraint();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void doValidate(entt::meta_any const& any, class cereal::SerializerContext& context) const;
-
-    // vIndex: 1
-    virtual ~VolumeTriggerConstraint() = default;
+    virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const /*override*/;
 
     // vIndex: 2
-    virtual struct cereal::internal::ConstraintDescription description() const;
+    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
+    // vIndex: 1
+    virtual ~VolumeTriggerConstraint() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct cereal::internal::ConstraintDescription description$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
 
-    MCAPI void doValidate$(entt::meta_any const& any, class cereal::SerializerContext& context) const;
-
+    MCAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 };

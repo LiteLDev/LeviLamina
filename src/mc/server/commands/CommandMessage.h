@@ -1,10 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandSelector.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandSelector.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class CommandOrigin;
+struct GenerateMessageResult;
+// clang-format on
 
 class CommandMessage {
 public:
@@ -16,46 +22,69 @@ public:
     // CommandMessage inner types define
     struct MessageComponent {
     public:
-        std::string                                   string;
-        std::unique_ptr<CommandSelector<class Actor>> selection;
-
-    public:
+        // member variables
         // NOLINTBEGIN
-        MCAPI explicit MessageComponent(std::string&& s);
-
-        MCAPI explicit MessageComponent(std::unique_ptr<class CommandSelector<class Actor>>&& s);
-
-        MCAPI MessageComponent(struct CommandMessage::MessageComponent&& m);
-
+        ::ll::TypedStorage<8, 32, ::std::string>                                string;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandSelector<::Actor>>> selection;
         // NOLINTEND
 
-        // thunks
     public:
+        // prevent constructor by default
+        MessageComponent& operator=(MessageComponent const&);
+        MessageComponent(MessageComponent const&);
+        MessageComponent();
+
+    public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI void* ctor$(std::string&& s);
+        MCAPI MessageComponent(::CommandMessage::MessageComponent&& m);
 
-        MCAPI void* ctor$(std::unique_ptr<class CommandSelector<class Actor>>&& s);
+        MCAPI explicit MessageComponent(::std::string&& s);
 
-        MCAPI void* ctor$(struct CommandMessage::MessageComponent&& m);
+        MCAPI explicit MessageComponent(::std::unique_ptr<::CommandSelector<::Actor>>&& s);
+        // NOLINTEND
 
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::CommandMessage::MessageComponent&& m);
+
+        MCAPI void* $ctor(::std::string&& s);
+
+        MCAPI void* $ctor(::std::unique_ptr<::CommandSelector<::Actor>>&& s);
         // NOLINTEND
     };
 
 public:
-    std::vector<MessageComponent> components;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI struct GenerateMessageResult generateMessage(class CommandOrigin const& origin, int maxLength) const;
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::CommandMessage::MessageComponent>> mData;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandMessage& operator=(CommandMessage const&);
+    CommandMessage(CommandMessage const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI CommandMessage();
 
-    MCAPI void dtor$();
+    MCAPI ::GenerateMessageResult generateMessage(::CommandOrigin const& origin, int maxLength) const;
 
+    MCAPI ~CommandMessage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,13 +4,30 @@
 
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/LevelEventListener.h"
+#include "mc/world/events/ScriptDeferredEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class ScriptEngine; }
+class Level;
+class Player;
+struct ServerPerformanceData;
 // clang-format on
 
-class ScriptTickListener {
+class ScriptTickListener : public ::LevelEventListener, public ::ScriptDeferredEventListener {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnke390a2;
+    ::ll::UntypedStorage<8, 8> mUnke4e75b;
+    ::ll::UntypedStorage<8, 8> mUnkcc025a;
+    ::ll::UntypedStorage<8, 8> mUnk188dbe;
+    ::ll::UntypedStorage<8, 8> mUnke6f367;
+    ::ll::UntypedStorage<8, 8> mUnke18734;
+    ::ll::UntypedStorage<8, 8> mUnkd3f5bd;
+    ::ll::UntypedStorage<8, 8> mUnk4ba995;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptTickListener& operator=(ScriptTickListener const&);
@@ -18,39 +35,58 @@ public:
     ScriptTickListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onLevelRemovedPlayer(class Level&, class Player& player);
+    // vIndex: 0
+    virtual ~ScriptTickListener() /*override*/;
 
-    MCVAPI void onLevelTickEnd();
+    // vIndex: 6
+    virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 
-    MCVAPI void onRunAsyncJobs();
+    // vIndex: 7
+    virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
-    MCAPI ScriptTickListener(
-        class Scripting::ScriptEngine&   scriptEngine,
-        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
-        class ScriptFormPromiseTracker&  formPromiseTracker
-    );
+    // vIndex: 3
+    virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
 
+    // vIndex: 10
+    virtual void onScriptTickStart() /*override*/;
+
+    // vIndex: 11
+    virtual void onScriptTickEnd() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForLevelEventListener();
+    MCAPI ::ServerPerformanceData& _getServerPerfData();
+    // NOLINTEND
 
-    MCAPI static void** vftableForScriptDeferredEventListener();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class Scripting::ScriptEngine&   scriptEngine,
-        class ScriptAsyncJobCoordinator& asyncJobCoordinator,
-        class ScriptFormPromiseTracker&  formPromiseTracker
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCAPI ::EventResult onLevelRemovedPlayer$(class Level&, class Player& player);
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCAPI void onLevelTickEnd$();
+    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCAPI void onRunAsyncJobs$();
+    MCAPI void $onScriptTickStart();
 
+    MCAPI void $onScriptTickEnd();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForScriptDeferredEventListener();
+
+    MCAPI static void** $vftableForLevelEventListener();
     // NOLINTEND
 };

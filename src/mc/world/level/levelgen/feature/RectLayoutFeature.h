@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+class RenderParams;
+// clang-format on
+
 class RectLayoutFeature : public ::IFeature {
 public:
     // RectLayoutFeature inner types declare
@@ -15,11 +23,28 @@ public:
     // RectLayoutFeature inner types define
     struct FeatureArea {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk48c921;
+        ::ll::UntypedStorage<4, 4>  mUnkf431fe;
+        ::ll::UntypedStorage<4, 4>  mUnk4931ae;
+        ::ll::UntypedStorage<4, 4>  mUnka34aac;
+        ::ll::UntypedStorage<4, 4>  mUnkd456f6;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         FeatureArea& operator=(FeatureArea const&);
         FeatureArea(FeatureArea const&);
         FeatureArea();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk525c6f;
+    ::ll::UntypedStorage<4, 4>  mUnk27c366;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -28,46 +53,33 @@ public:
     RectLayoutFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RectLayoutFeature() = default;
-
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
 
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    // vIndex: 0
+    virtual ~RectLayoutFeature() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(
-        class Vec2 const&                            areaStartingPoint,
-        int                                          featureIndex,
-        std::array<std::array<uchar, 16>, 16> const& placementOccupancyGrid
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

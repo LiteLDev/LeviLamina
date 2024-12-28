@@ -5,7 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct TickingSystemWithInfo;
+struct WalkDistComponent;
+// clang-format on
 
 class SetPreviousWalkDistSystem {
 public:
@@ -15,17 +22,12 @@ public:
     SetPreviousWalkDistSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static void _tickWalkDistPrevSystem(
+        ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::WalkDistComponent> view
+    );
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _tickWalkDistPrevSystem(class ViewT<
-                                              class StrictEntityContext,
-                                              struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                              struct WalkDistComponent> view);
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

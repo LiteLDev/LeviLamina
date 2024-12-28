@@ -1,61 +1,70 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/levelgen/synth/ImprovedNoise.h"
+
+// auto generated forward declare list
+// clang-format off
+class IRandom;
+class ImprovedNoise;
+class Vec2;
+class Vec3;
+struct YBlendingBugSettings;
+// clang-format on
 
 class PerlinNoise {
 public:
-    const int                  mLevels;              // this+0x0
-    const int                  mMinLevel;            // this+0x4
-    std::vector<ImprovedNoise> mNoiseLevels;         // this+0x8
-    float                      mNormalizationFactor; // this+0x20
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int const>                       mLevels;
+    ::ll::TypedStorage<4, 4, int const>                       mMinLevel;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ImprovedNoise>> mNoiseLevels;
+    ::ll::TypedStorage<4, 4, float>                           mNormalizationFactor;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PerlinNoise& operator=(PerlinNoise const&);
     PerlinNoise();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI PerlinNoise(class PerlinNoise const&);
+    MCAPI PerlinNoise(::PerlinNoise const&);
 
-    MCAPI PerlinNoise(class IRandom& random, int levels, int minLevel);
+    MCAPI PerlinNoise(::IRandom& random, int levels, int minLevel);
 
     MCAPI PerlinNoise(uint seed, int levels, int minLevel);
 
-    MCAPI PerlinNoise(class IRandom& random, struct YBlendingBugSettings yBlendingSettings, int levels, int minLevel);
+    MCAPI PerlinNoise(::IRandom& random, ::YBlendingBugSettings yBlendingSettings, int levels, int minLevel);
 
-    MCAPI void
-    getRegion(float* buffer, class Vec2 const& pos, int xSize, int zSize, class Vec2 const& scale, float pow) const;
+    MCAPI void _init(::IRandom& random, ::YBlendingBugSettings yBlendingSettings);
 
-    MCAPI void
-    getRegion(float* buffer, class Vec3 const& pos, int xSize, int ySize, int zSize, class Vec3 const& scale) const;
+    MCAPI void getRegion(float* buffer, ::Vec3 const& pos, int xSize, int ySize, int zSize, ::Vec3 const& scale) const;
 
-    MCAPI float getValue(class Vec3 const& pos) const;
+    MCAPI void getRegion(float* buffer, ::Vec2 const& pos, int xSize, int zSize, ::Vec2 const& scale, float pow) const;
 
-    MCAPI float getValueNormalized(class Vec3 const& pos) const;
+    MCAPI float getValue(::Vec3 const& pos) const;
+
+    MCAPI float getValueNormalized(::Vec3 const& pos) const;
 
     MCAPI ~PerlinNoise();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _init(class IRandom& random, struct YBlendingBugSettings yBlendingSettings);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class PerlinNoise const&);
+    MCAPI void* $ctor(::PerlinNoise const&);
 
-    MCAPI void* ctor$(class IRandom& random, struct YBlendingBugSettings yBlendingSettings, int levels, int minLevel);
+    MCAPI void* $ctor(::IRandom& random, int levels, int minLevel);
 
-    MCAPI void* ctor$(class IRandom& random, int levels, int minLevel);
+    MCAPI void* $ctor(uint seed, int levels, int minLevel);
 
-    MCAPI void* ctor$(uint seed, int levels, int minLevel);
+    MCAPI void* $ctor(::IRandom& random, ::YBlendingBugSettings yBlendingSettings, int levels, int minLevel);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

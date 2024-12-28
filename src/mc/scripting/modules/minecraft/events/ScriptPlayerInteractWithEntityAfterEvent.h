@@ -4,57 +4,37 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
-// clang-format on
+#include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithEntityEvent.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptPlayerInteractWithEntityAfterEvent {
+struct ScriptPlayerInteractWithEntityAfterEvent : public ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkc41c67;
+    ::ll::UntypedStorage<8, 40> mUnk73e1d3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
+    ScriptPlayerInteractWithEntityAfterEvent& operator=(ScriptPlayerInteractWithEntityAfterEvent const&);
+    ScriptPlayerInteractWithEntityAfterEvent(ScriptPlayerInteractWithEntityAfterEvent const&);
     ScriptPlayerInteractWithEntityAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithEntityAfterEvent(struct ScriptModuleMinecraft::
-                                                       ScriptPlayerInteractWithEntityAfterEvent const&);
-
-    MCAPI ScriptPlayerInteractWithEntityAfterEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>                   player,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> item,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>                    target
-    );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>
-    bind();
-
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
-
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>                   player,
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> item,
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>                    target
-    );
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>
+    bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

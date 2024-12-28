@@ -3,21 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/RangedWeaponItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class Item;
+class ItemStackBase;
+struct ResolvedItemIconInfo;
 // clang-format on
 
 class BowItem : public ::RangedWeaponItem {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 192> mUnkbbecb4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BowItem& operator=(BowItem const&);
@@ -25,42 +27,59 @@ public:
     BowItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
+
+    // vIndex: 100
+    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
+
     // vIndex: 0
-    virtual ~BowItem() = default;
-
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
-
-    // vIndex: 96
-    virtual void enchantProjectile(class ItemStackBase const& weapon, class Actor& projectile) const;
-
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI BowItem(std::string const& name, int id);
-
+    virtual ~BowItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BowItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void enchantProjectile$(class ItemStackBase const& weapon, class Actor& projectile) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getEnchantSlot$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI int $getEnchantSlot() const;
 
+    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

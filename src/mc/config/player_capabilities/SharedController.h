@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/config/player_capabilities/SharedData.h"
 
 // auto generated inclusion list
 #include "mc/config/player_capabilities/ISharedController.h"
@@ -9,48 +8,61 @@
 // auto generated forward declare list
 // clang-format off
 namespace PlayerCapabilities { struct IPlayerData; }
-namespace PlayerCapabilities { struct ISharedController; }
+namespace PlayerCapabilities { struct ISharedData; }
 // clang-format on
 
 namespace PlayerCapabilities {
 
 class SharedController : public ::PlayerCapabilities::ISharedController {
 public:
-    std::unique_ptr<struct PlayerCapabilities::ISharedData> mShared;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerCapabilities::ISharedData>> mShared;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     SharedController& operator=(SharedController const&);
     SharedController(SharedController const&);
     SharedController();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SharedController() = default;
-
     // vIndex: 1
-    virtual bool canChat(struct PlayerCapabilities::IPlayerData const& player) const;
+    virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
     // vIndex: 2
-    virtual bool canTell(struct PlayerCapabilities::IPlayerData const& player) const;
+    virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
     // vIndex: 3
-    virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const& player) const;
+    virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
+    // vIndex: 0
+    virtual ~SharedController() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canChat$(struct PlayerCapabilities::IPlayerData const& player) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canChat(::PlayerCapabilities::IPlayerData const& player) const;
 
-    MCAPI bool canOpenChat$(struct PlayerCapabilities::IPlayerData const& player) const;
+    MCAPI bool $canTell(::PlayerCapabilities::IPlayerData const& player) const;
 
-    MCAPI bool canTell$(struct PlayerCapabilities::IPlayerData const& player) const;
+    MCAPI bool $canOpenChat(::PlayerCapabilities::IPlayerData const& player) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PlayerCapabilities
+} // namespace PlayerCapabilities

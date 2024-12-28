@@ -3,163 +3,115 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/facing/Axis.h"
+#include "mc/common/facing/Name.h"
+#include "mc/common/facing/Rotation.h"
+#include "mc/deps/shared_types/Facing.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/WeirdoDirection.h"
 
-class Facing {
-public:
-    // Facing inner types declare
-    // clang-format off
-    class Plane;
-    // clang-format on
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Random;
+class Vec2;
+class Vec3;
+// clang-format on
 
-    // Facing inner types define
-    enum class Axis : int {
-        X     = 0x0,
-        Y     = 0x1,
-        Z     = 0x2,
-        Count = 0x3,
-    };
+namespace Facing {
+// functions
+// NOLINTBEGIN
+MCAPI uchar convertDirectionToFacingDirection(::Direction::Type direction);
 
-    enum class Name : schar {
-        Down          = 0x0,
-        Up            = 0x1,
-        North         = 0x2,
-        South         = 0x3,
-        West          = 0x4,
-        East          = 0x5,
-        Max           = 0x6,
-        NotDefined    = 0x6,
-        NumCullingIds = 0x7,
-    };
+MCAPI uchar convertWeirdoDirectionToFacingDirection(::WeirdoDirection weirdoDirection);
 
-    enum class Rotation : int {
-        None  = 0x0,
-        CCW   = 0x1, // Counter-clockwise
-        OPP   = 0x2, // Opposite
-        CW    = 0x3, // Clockwise
-        Count = 0x4,
-    };
+MCAPI uchar convertYRotationToFacingDirection(float yRotation);
 
-    class Plane {
-    public:
-        // prevent constructor by default
-        Plane& operator=(Plane const&);
-        Plane(Plane const&);
-        Plane();
+MCAPI ::Facing::Name from2DDataValue(int data);
 
-    public:
-        // NOLINTBEGIN
-        // NOLINTEND
+MCAPI uchar fromSharedTypesFacing(::SharedTypes::Facing facing);
 
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI static std::vector<uchar> const& HORIZONTAL();
+MCAPI uchar fromVec3(::Vec3 const& dir);
 
-        // NOLINTEND
-    };
+MCAPI ::Facing::Axis getAxis(uchar face);
 
-public:
-    // prevent constructor by default
-    Facing& operator=(Facing const&);
-    Facing(Facing const&);
-    Facing();
+MCAPI ::std::optional<::Facing::Axis> getAxisFromStandingRotation(int standingRotation);
 
-public:
-    // NOLINTBEGIN
-    MCAPI static uchar convertDirectionToFacingDirection(::Direction::Type direction);
+MCAPI uchar getClockWise(uchar face);
 
-    MCAPI static uchar convertWeirdoDirectionToFacingDirection(::WeirdoDirection weirdoDirection);
+MCAPI ::Facing::Rotation getClosestRotation(float degree);
 
-    MCAPI static uchar convertYRotationToFacingDirection(float yRotation);
+MCAPI uchar getCounterClockWise(uchar face);
 
-    MCAPI static ::Facing::Name from2DDataValue(int data);
+MCAPI ::Vec3 getFaceLocation(uchar face, float u, float v);
 
-    MCAPI static uchar fromVec3(class Vec3 const& dir);
+MCAPI uchar getFacingDirection(::Vec3 const& currentPos, ::Vec3 const& TargetPos);
 
-    MCAPI static ::Facing::Axis getAxis(uchar face);
+MCAPI ::std::vector<uchar>
+getMostPrioritizedFacingDirection(::Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
 
-    MCAPI static std::optional<::Facing::Axis> getAxisFromStandingRotation(int standingRotation);
+MCAPI ::std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(::Vec2 const& viewVector);
 
-    MCAPI static uchar getClockWise(uchar face);
+MCAPI uchar getOpposite(uchar face);
 
-    MCAPI static ::Facing::Rotation getClosestRotation(float degree);
+MCAPI int getRandomFace(::Random& random);
 
-    MCAPI static uchar getCounterClockWise(uchar face);
+MCAPI int getRandomFaceHorizontal(::Random& random);
 
-    MCAPI static class Vec3 getFaceLocation(uchar face, float u, float v);
+MCAPI ::glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
 
-    MCAPI static uchar getFacingDirection(class Vec3 const& currentPos, class Vec3 const& TargetPos);
+MCAPI ::std::vector<uchar> getShuffledDirections();
 
-    MCAPI static std::vector<uchar>
-    getMostPrioritizedFacingDirection(class Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
+MCAPI ::std::vector<uchar> getShuffledDirections(::Random& random);
 
-    MCAPI static std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(class Vec2 const& viewVector);
+MCAPI int getStepX(uchar facing);
 
-    MCAPI static uchar getOpposite(uchar face);
+MCAPI int getStepY(uchar facing);
 
-    MCAPI static int getRandomFace(class Random& random);
+MCAPI int getStepZ(uchar facing);
 
-    MCAPI static int getRandomFaceHorizontal(class Random& random);
+MCAPI bool isHorizontal(uchar facing);
 
-    MCAPI static glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
+MCAPI bool isValidDirection(int face);
 
-    MCAPI static std::vector<uchar> getShuffledDirections();
+MCAPI uchar rotateFace(uchar face, ::Facing::Rotation rot);
 
-    MCAPI static std::vector<uchar> getShuffledDirections(class Random& random);
+MCAPI uchar rotateFaceAroundGivenFace(uchar faceToRotate, uchar faceToRotateAround, ::Facing::Rotation rotation);
 
-    MCAPI static int getStepX(uchar);
+MCAPI ::std::string_view toString(uchar face);
+// NOLINTEND
 
-    MCAPI static int getStepY(uchar);
+// static variables
+// NOLINTBEGIN
+MCAPI ::std::array<::std::vector<uchar>, 6> const& ALL_EXCEPT();
 
-    MCAPI static int getStepZ(uchar);
+MCAPI ::std::array<::std::vector<uchar>, 6> const& ALL_EXCEPT_AXIS_Y();
 
-    MCAPI static bool isValidDirection(int face);
+MCAPI ::std::vector<uchar> const& ALL_FACES();
 
-    MCAPI static std::array<uchar, 6> makeDirectionArray(uchar axis1, uchar axis2, uchar axis3);
+MCAPI ::std::add_lvalue_reference_t<::Facing::Name const[]> BY2DDATA();
 
-    MCAPI static uchar rotateFace(uchar face, ::Facing::Rotation rot);
+MCAPI ::std::add_lvalue_reference_t<::BlockPos const[]> DIRECTION();
 
-    MCAPI static uchar
-    rotateFaceAroundGivenFace(uchar faceToRotate, uchar faceToRotateAround, ::Facing::Rotation rotation);
+MCAPI ::std::add_lvalue_reference_t<::Facing::Name const[]> DIRECTIONS();
 
-    MCAPI static std::string_view toString(uchar face);
+MCAPI ::std::add_lvalue_reference_t<uchar const[]> FACINGMASK();
 
-    // NOLINTEND
+MCAPI ::std::add_lvalue_reference_t<uchar const[]> FACINGMASK_INV();
 
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static std::array<std::vector<uchar>, 6> const& ALL_EXCEPT();
+MCAPI ::std::unordered_map<::std::string, uchar> const& FROM_STRING_MAP();
 
-    MCAPI static std::array<std::vector<uchar>, 6> const& ALL_EXCEPT_AXIS_Y();
+MCAPI ::std::add_lvalue_reference_t<::Vec3 const[]> NORMAL();
 
-    MCAPI static std::vector<uchar> const& ALL_FACES();
+MCAPI ::std::add_lvalue_reference_t<uchar const[]> OPPOSITE_FACING();
 
-    MCAPI static auto BY2DDATA() -> ::Facing::Name const (&)[];
+MCAPI ::std::add_lvalue_reference_t<int const[]> STEP_X();
 
-    MCAPI static auto DIRECTION() -> class BlockPos const (&)[];
+MCAPI ::std::add_lvalue_reference_t<int const[]> STEP_Y();
 
-    MCAPI static auto DIRECTIONS() -> ::Facing::Name const (&)[];
+MCAPI ::std::add_lvalue_reference_t<int const[]> STEP_Z();
 
-    MCAPI static auto FACINGMASK() -> uchar const (&)[];
+MCAPI ::std::array<::std::string, 6> const& TO_STRING_ARR();
+// NOLINTEND
 
-    MCAPI static auto FACINGMASK_INV() -> uchar const (&)[];
-
-    MCAPI static std::unordered_map<std::string, uchar> const& FROM_STRING_MAP();
-
-    MCAPI static auto NORMAL() -> class Vec3 const (&)[];
-
-    MCAPI static auto OPPOSITE_FACING() -> uchar const (&)[];
-
-    MCAPI static auto STEP_X() -> int const (&)[];
-
-    MCAPI static auto STEP_Y() -> int const (&)[];
-
-    MCAPI static auto STEP_Z() -> int const (&)[];
-
-    MCAPI static std::array<std::string, 6> const& TO_STRING_ARR();
-
-    // NOLINTEND
-};
+} // namespace Facing

@@ -15,10 +15,10 @@ public:
     HeaderCompare();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool operator()(http_string const&, http_string const&) const;
-
+    MCAPI bool operator()(::http_string const&, ::http_string const&) const;
     // NOLINTEND
 };
 
-}; // namespace xbox::httpclient
+} // namespace xbox::httpclient

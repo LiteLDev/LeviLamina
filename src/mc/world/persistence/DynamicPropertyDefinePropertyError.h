@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class DynamicPropertyDefinePropertyError {};
+enum class DynamicPropertyDefinePropertyError : int {
+    IdentifierTooLong   = 0,
+    IdentifierDuplicate = 1,
+};

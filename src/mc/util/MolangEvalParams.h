@@ -6,7 +6,31 @@
 #include "mc/platform/threading/ThreadLocalObject.h"
 #include "mc/util/MolangVariableIndex.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class HashedString;
+class RenderParams;
+struct MolangEvalStackState;
+struct MolangScriptArg;
+// clang-format on
+
 struct MolangEvalParams {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk8afdb8;
+    ::ll::UntypedStorage<8, 8>  mUnk90ada9;
+    ::ll::UntypedStorage<8, 56> mUnkaafdf8;
+    ::ll::UntypedStorage<8, 56> mUnkca0934;
+    ::ll::UntypedStorage<8, 24> mUnkaee104;
+    ::ll::UntypedStorage<8, 24> mUnke3c715;
+    ::ll::UntypedStorage<8, 24> mUnkaed887;
+    ::ll::UntypedStorage<8, 24> mUnk42ab10;
+    ::ll::UntypedStorage<8, 8>  mUnk6fdf61;
+    ::ll::UntypedStorage<8, 8>  mUnk3b133b;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MolangEvalParams& operator=(MolangEvalParams const&);
@@ -14,56 +38,43 @@ public:
     MolangEvalParams();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const& arg) const;
+    MCAPI ::Actor* getActorFromArg(::MolangScriptArg const& arg) const;
 
-    MCAPI class Actor*
+    MCAPI ::Actor*
     getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
 
-    MCAPI class Actor* popActor();
-
-    MCAPI float popFloat();
-
-    MCAPI uint64 popHash();
-
-    MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const& variableName);
+    MCAPI ::Actor* popActor();
 
     MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
+    MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+
     MCAPI bool popPublicAccessMode();
 
-    MCAPI void popRenderParamsCopyAndPtr();
-
-    MCAPI void pushLoopScope(uint64 loopRepeatLogicInstructionIndex, uint64 loopCleanupStatementInstructionIndex);
-
-    MCAPI void pushRenderParams(class RenderParams const& rhs);
-
-    MCAPI void pushReturnValue();
-
-    MCAPI void pushValue(float value);
-
-    MCAPI class RenderParams& renderParams();
-
-    MCAPI class RenderParams const& renderParams() const;
-
-    MCAPI void restoreAndPopStackState();
-
-    MCAPI void setPushedValue(float);
-
-    MCAPI void setReturnValue(float);
+    MCAPI void restoreStackState(::MolangEvalStackState&& state);
 
     MCAPI ~MolangEvalParams();
-
-    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::MolangEvalParams& getLocalThreadEvalParams();
+    // NOLINTEND
 
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams>& mThreadLocalMolangEvalParams();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::RenderParams& mErrorRenderParams();
 
+    MCAPI static ::Bedrock::Threading::ThreadLocalObject<::MolangEvalParams>& mThreadLocalMolangEvalParams();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

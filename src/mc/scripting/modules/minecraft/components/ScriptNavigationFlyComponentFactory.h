@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
-namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -24,33 +23,42 @@ public:
     ScriptNavigationFlyComponentFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptNavigationFlyComponentFactory() = default;
+    virtual ~ScriptNavigationFlyComponentFactory() /*override*/;
 
     // vIndex: 1
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent>
-    createComponent(class WeakEntityRef entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
+        ::WeakEntityRef                       entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    ) /*override*/;
 
     // vIndex: 2
-    virtual bool hasComponent(class WeakEntityRef entity) const;
-
+    virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent> createComponent$(
-        class WeakEntityRef                       entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
+    $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
-    MCAPI bool hasComponent$(class WeakEntityRef entity) const;
+    MCAPI bool $hasComponent(::WeakEntityRef entity) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

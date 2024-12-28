@@ -6,21 +6,23 @@ namespace persona {
 
 struct PersonaCharacterHandle {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk85c790;
+    ::ll::UntypedStorage<4, 4>  mUnk752aff;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PersonaCharacterHandle& operator=(PersonaCharacterHandle const&);
     PersonaCharacterHandle(PersonaCharacterHandle const&);
     PersonaCharacterHandle();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static struct persona::PersonaCharacterHandle const& INVALID();
-
+    MCAPI static ::persona::PersonaCharacterHandle const& INVALID();
     // NOLINTEND
 };
 
-}; // namespace persona
+} // namespace persona

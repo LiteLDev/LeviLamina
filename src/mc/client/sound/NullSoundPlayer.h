@@ -8,6 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class SoundItem;
+class Vec3;
+struct LoopingSoundAttributes;
+struct LoopingSoundState;
+struct PlayingSoundAttributes;
+struct SoundInstanceProperties;
 namespace Core { class Path; }
 // clang-format on
 
@@ -19,136 +25,146 @@ public:
     NullSoundPlayer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NullSoundPlayer() = default;
-
     // vIndex: 1
-    virtual uint64 play(std::string const&, class Vec3 const&, float, float);
+    virtual uint64 play(::std::string const&, ::Vec3 const&, float, float) /*override*/;
 
     // vIndex: 2
-    virtual uint64 playUI(std::string const&, float, float);
-
-    // vIndex: 3
-    virtual void playMusic(std::string const&, float, uint&);
+    virtual uint64 playUI(::std::string const&, float, float) /*override*/;
 
     // vIndex: 4
-    virtual void playMusic(std::string const&, float);
+    virtual void playMusic(::std::string const&, float, uint&) /*override*/;
+
+    // vIndex: 3
+    virtual void playMusic(::std::string const&, float) /*override*/;
 
     // vIndex: 5
-    virtual bool isLoadingMusic() const;
+    virtual bool isLoadingMusic() const /*override*/;
 
     // vIndex: 6
-    virtual bool isPlayingMusicEvent(std::string const&) const;
+    virtual bool isPlayingMusicEvent(::std::string const&) const /*override*/;
 
     // vIndex: 7
-    virtual bool isPlayingMusic(class Core::Path const&) const;
-
-    // vIndex: 8
-    virtual void fadeToStopMusic(float);
-
-    // vIndex: 9
-    virtual void setMusicVolumeMultiplier(float);
-
-    // vIndex: 10
-    virtual void fadeOut(uint64, float);
-
-    // vIndex: 11
-    virtual void stopMusic();
-
-    // vIndex: 12
-    virtual void stop(std::string const&);
-
-    // vIndex: 13
-    virtual void stop(uint64);
-
-    // vIndex: 14
-    virtual void stopAllSounds();
+    virtual bool isPlayingMusic(::Core::Path const&) const /*override*/;
 
     // vIndex: 15
-    virtual class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName();
+    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() /*override*/;
 
     // vIndex: 16
-    virtual bool getItem(std::string const&, class Core::Path const&, class SoundItem&) const;
+    virtual bool getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const /*override*/;
+
+    // vIndex: 8
+    virtual void fadeToStopMusic(float) /*override*/;
+
+    // vIndex: 9
+    virtual void setMusicCommandVolumeMultiplier(float) /*override*/;
+
+    // vIndex: 11
+    virtual void stopMusic() /*override*/;
 
     // vIndex: 17
-    virtual uint64 registerLoop(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float);
+    virtual uint64
+    registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) /*override*/;
 
     // vIndex: 18
-    virtual void unregisterLoop(uint64, bool);
+    virtual void unregisterLoop(uint64, bool) /*override*/;
 
-    // vIndex: 19
-    virtual bool isPlayingSound(uint64) const;
+    // vIndex: 13
+    virtual void stop(::std::string const&) /*override*/;
+
+    // vIndex: 12
+    virtual void stop(uint64) /*override*/;
+
+    // vIndex: 10
+    virtual void fadeOut(uint64, float) /*override*/;
+
+    // vIndex: 14
+    virtual void stopAllSounds() /*override*/;
 
     // vIndex: 20
-    virtual bool isPlayingSound(class Core::Path const&) const;
+    virtual bool isPlayingSound(uint64) const /*override*/;
+
+    // vIndex: 19
+    virtual bool isPlayingSound(::Core::Path const&) const /*override*/;
 
     // vIndex: 21
-    virtual uint64 playAttached(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
+    virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) /*override*/;
 
     // vIndex: 22
-    virtual void stopAllDelayedSoundActions();
+    virtual void stopAllDelayedSoundActions() /*override*/;
 
     // vIndex: 23
-    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
+    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const /*override*/;
 
     // vIndex: 24
-    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
+    virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const /*override*/;
 
+    // vIndex: 0
+    virtual ~NullSoundPlayer() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void fadeOut$(uint64, float);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float);
 
-    MCAPI void fadeToStopMusic$(float);
+    MCAPI uint64 $playUI(::std::string const&, float, float);
 
-    MCAPI class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName$();
+    MCAPI void $playMusic(::std::string const&, float, uint&);
 
-    MCAPI bool getItem$(std::string const&, class Core::Path const&, class SoundItem&) const;
+    MCAPI void $playMusic(::std::string const&, float);
 
-    MCAPI bool isLoadingMusic$() const;
+    MCAPI bool $isLoadingMusic() const;
 
-    MCAPI bool isPlayingMusic$(class Core::Path const&) const;
+    MCAPI bool $isPlayingMusicEvent(::std::string const&) const;
 
-    MCAPI bool isPlayingMusicEvent$(std::string const&) const;
+    MCAPI bool $isPlayingMusic(::Core::Path const&) const;
 
-    MCAPI bool isPlayingSound$(uint64) const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicName();
 
-    MCAPI bool isPlayingSound$(class Core::Path const&) const;
+    MCAPI bool $getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const;
 
-    MCAPI uint64 play$(std::string const&, class Vec3 const&, float, float);
+    MCAPI void $fadeToStopMusic(float);
 
-    MCAPI uint64 playAttached$(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
+    MCAPI void $setMusicCommandVolumeMultiplier(float);
 
-    MCAPI void playMusic$(std::string const&, float, uint&);
+    MCAPI void $stopMusic();
 
-    MCAPI void playMusic$(std::string const&, float);
+    MCAPI uint64 $registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float);
 
-    MCAPI uint64 playUI$(std::string const&, float, float);
+    MCAPI void $unregisterLoop(uint64, bool);
 
-    MCAPI uint64 registerLoop$(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float);
+    MCAPI void $stop(::std::string const&);
 
-    MCAPI void setMusicVolumeMultiplier$(float);
+    MCAPI void $stop(uint64);
 
-    MCAPI void stop$(std::string const&);
+    MCAPI void $fadeOut(uint64, float);
 
-    MCAPI void stop$(uint64);
+    MCAPI void $stopAllSounds();
 
-    MCAPI void stopAllDelayedSoundActions$();
+    MCAPI bool $isPlayingSound(uint64) const;
 
-    MCAPI void stopAllSounds$();
+    MCAPI bool $isPlayingSound(::Core::Path const&) const;
 
-    MCAPI void stopMusic$();
+    MCAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 
-    MCAPI std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes$(uint64) const;
+    MCAPI void $stopAllDelayedSoundActions();
 
-    MCAPI std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes$(uint64) const;
+    MCAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64) const;
 
-    MCAPI void unregisterLoop$(uint64, bool);
+    MCAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -7,18 +7,33 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class IWatchdog; }
+struct JSContext;
+struct JSRuntime;
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct WatchdogEvent; }
 namespace Scripting { struct WatchdogSettings; }
 namespace Scripting::QuickJS { class ContextTimings; }
-struct JSContext;
-struct JSRuntime;
 // clang-format on
 
 namespace Scripting::QuickJS {
 
 class Watchdog : public ::Scripting::IWatchdog {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk4f214f;
+    ::ll::UntypedStorage<8, 64> mUnke0fc70;
+    ::ll::UntypedStorage<8, 8>  mUnk74e2d6;
+    ::ll::UntypedStorage<8, 16> mUnk83402b;
+    ::ll::UntypedStorage<8, 16> mUnke744e8;
+    ::ll::UntypedStorage<8, 8>  mUnk2babb0;
+    ::ll::UntypedStorage<8, 40> mUnk1dbd5d;
+    ::ll::UntypedStorage<8, 24> mUnk22872d;
+    ::ll::UntypedStorage<8, 24> mUnk3218f5;
+    ::ll::UntypedStorage<8, 8>  mUnk341985;
+    ::ll::UntypedStorage<1, 1>  mUnkc10073;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     Watchdog& operator=(Watchdog const&);
@@ -26,66 +41,91 @@ public:
     Watchdog();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Watchdog() = default;
+    virtual ~Watchdog() /*override*/;
 
     // vIndex: 1
-    virtual void setWatchdogEventHandler(std::function<void(struct Scripting::WatchdogEvent)> watchdogEventHandler);
+    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void beginTiming(struct Scripting::ContextId contextId);
+    virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
 
     // vIndex: 3
-    virtual void endTiming(struct Scripting::ContextId contextId);
+    virtual void endTiming(::Scripting::ContextId contextId) /*override*/;
 
     // vIndex: 4
-    virtual void endFrame();
+    virtual void pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine) /*override*/;
 
     // vIndex: 5
-    virtual void resetTimings();
+    virtual void popPhase() /*override*/;
 
     // vIndex: 6
-    virtual std::chrono::microseconds collectTotalFrameTime() const;
+    virtual void endFrame() /*override*/;
 
-    MCAPI Watchdog(struct JSRuntime* rt, struct Scripting::WatchdogSettings settings);
-
+    // vIndex: 7
+    virtual void resetTimings() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _endContextTiming(struct Scripting::ContextId contextId);
-
-    MCAPI class Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(struct Scripting::ContextId contextId);
-
-    MCAPI static void _outOfMemoryHandler(struct JSContext* ctx, void* runtimeOpaque);
-
-    MCAPI static int _stackOverflowHandler(struct JSContext* ctx, void* runtimeOpaque);
-
-    MCAPI static int _timeoutHandler(struct JSContext* ctx, void* runtimeOpaque);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI Watchdog(::JSRuntime* rt, ::Scripting::WatchdogSettings settings);
 
-    MCAPI void* ctor$(struct JSRuntime* rt, struct Scripting::WatchdogSettings settings);
+    MCAPI void _endContextTiming(::Scripting::ContextId contextId);
 
-    MCAPI void beginTiming$(struct Scripting::ContextId contextId);
+    MCAPI ::Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(::Scripting::ContextId contextId);
 
-    MCAPI std::chrono::microseconds collectTotalFrameTime$() const;
+    MCAPI void _sendWatchdogEvent(::Scripting::WatchdogEvent watchdogEvent);
+    // NOLINTEND
 
-    MCAPI void endFrame$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _outOfMemoryHandler(::JSContext* ctx, void* runtimeOpaque);
 
-    MCAPI void endTiming$(struct Scripting::ContextId contextId);
+    MCAPI static int _stackOverflowHandler(::JSContext* ctx, void* runtimeOpaque);
 
-    MCAPI void resetTimings$();
+    MCAPI static int _timeoutHandler(::JSContext* ctx, void* runtimeOpaque);
+    // NOLINTEND
 
-    MCAPI void setWatchdogEventHandler$(std::function<void(struct Scripting::WatchdogEvent)> watchdogEventHandler);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::JSRuntime* rt, ::Scripting::WatchdogSettings settings);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler);
+
+    MCAPI void $beginTiming(::Scripting::ContextId contextId);
+
+    MCAPI void $endTiming(::Scripting::ContextId contextId);
+
+    MCAPI void $pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine);
+
+    MCAPI void $popPhase();
+
+    MCAPI void $endFrame();
+
+    MCAPI void $resetTimings();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting::QuickJS
+} // namespace Scripting::QuickJS

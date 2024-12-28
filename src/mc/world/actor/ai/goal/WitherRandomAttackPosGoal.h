@@ -3,10 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk7c6ae6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&);
@@ -14,40 +24,57 @@ public:
     WitherRandomAttackPosGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WitherRandomAttackPosGoal() = default;
-
-    // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
-
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
-    MCAPI WitherRandomAttackPosGoal(class Mob& mob, float speed, int xzDist, int yDist);
+    // vIndex: 1
+    virtual bool canUse() /*override*/;
 
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
+
+    // vIndex: 0
+    virtual ~WitherRandomAttackPosGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WitherRandomAttackPosGoal(::Mob& mob, float speed, int xzDist, int yDist);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speed, int xzDist, int yDist);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist);
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $start();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI bool $canUse();
 
+    MCAPI bool $canContinueToUse();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

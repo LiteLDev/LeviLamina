@@ -4,15 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
+#include "mc/external/scripting/runtime/Error.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptLocationInUnloadedChunkError {
+struct ScriptLocationInUnloadedChunkError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptLocationInUnloadedChunkError& operator=(ScriptLocationInUnloadedChunkError const&);
@@ -20,20 +16,10 @@ public:
     ScriptLocationInUnloadedChunkError();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationInUnloadedChunkError(class Vec3 const& pos);
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
-    bind();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Vec3 const& pos);
-
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

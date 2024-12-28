@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+// clang-format on
+
 namespace ExternalFileLevelStorageMetadata {
+// functions
 // NOLINTBEGIN
-MCAPI void saveLevelMetadata(std::string const& levelId, class LevelData const& levelData);
+MCAPI void saveLevelMetadata(::std::string const& levelId, ::LevelData const& levelData);
 // NOLINTEND
 
-}; // namespace ExternalFileLevelStorageMetadata
+} // namespace ExternalFileLevelStorageMetadata

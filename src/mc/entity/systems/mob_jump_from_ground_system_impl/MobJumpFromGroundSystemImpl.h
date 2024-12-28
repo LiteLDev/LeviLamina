@@ -13,112 +13,157 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class JumpControlComponent;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct ActorGameTypeComponent;
+struct ActorRotationComponent;
+struct ActorTypeComponent;
+struct CamelFlagComponent;
+struct CanStandOnSnowFlagComponent;
+struct DimensionTypeComponent;
+struct ExternalDataComponent;
+struct FallDistanceComponent;
+struct HasLightweightFamilyFlagComponent;
+struct HorseFlagComponent;
+struct LavaSlimeFlagComponent;
+struct LavaSlimeJumpRequestComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct LocalPlayerComponent;
+struct LocalPlayerJumpRequestComponent;
+struct MobBodyRotationComponent;
+struct MobEffectsComponent;
+struct MobFlagComponent;
+struct MobJumpComponent;
+struct MovementAbilitiesComponent;
+struct OffsetsComponent;
+struct OtherJumpRequestComponent;
+struct ParrotFlagComponent;
+struct PassengerComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerActionComponent;
+struct PlayerComponent;
+struct RenderRotationComponent;
+struct SquidFlagComponent;
+struct SquidJumpRequestComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+struct TriggerJumpRequestComponent;
+struct VanillaOffsetComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace MobJumpFromGroundSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void doFilter(
-    class StrictEntityContext const&                                                  context,
-    class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const> const& localPlayer,
-    class Optional<class FlagComponent<struct LavaSlimeFlag> const> const&            lavaSlime,
-    class Optional<class FlagComponent<struct SquidFlag> const> const&                squid,
-    class EntityModifier<
-        class FlagComponent<struct LocalPlayerJumpRequestFlag>,
-        class FlagComponent<struct LavaSlimeJumpRequestFlag>,
-        class FlagComponent<struct SquidJumpRequestFlag>,
-        class FlagComponent<struct OtherJumpRequestFlag>> mod
+    ::StrictEntityContext const&                      context,
+    ::Optional<::LocalPlayerComponent const> const&   localPlayer,
+    ::Optional<::LavaSlimeFlagComponent const> const& lavaSlime,
+    ::Optional<::SquidFlagComponent const> const&     squid,
+    ::EntityModifier<
+        ::LocalPlayerJumpRequestComponent,
+        ::LavaSlimeJumpRequestComponent,
+        ::SquidJumpRequestComponent,
+        ::OtherJumpRequestComponent> mod
 );
 
 MCAPI void doLavaSlimeJumpFromGround(
-    class StrictEntityContext const&                          entity,
-    struct AABBShapeComponent const&                          aabbShapeComponent,
-    struct SynchedActorDataComponent const&                   synchedActorDataComponent,
-    struct StateVectorComponent&                              stateVectorComponent,
-    struct MobEffectsComponent const&                         mobEffectsComponent,
-    class EntityModifier<struct TriggerJumpRequestComponent>& modifier,
-    class IConstBlockSource const&                            region
+    ::StrictEntityContext const&                     entity,
+    ::AABBShapeComponent const&                      aabbShapeComponent,
+    ::SynchedActorDataComponent const&               synchedActorDataComponent,
+    ::StateVectorComponent&                          stateVectorComponent,
+    ::MobEffectsComponent const&                     mobEffectsComponent,
+    ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
+    ::IConstBlockSource const&                       region
 );
 
 MCAPI void doLocalPlayerJumpFromGround(
-    class StrictEntityContext const&                          entity,
-    class Optional<class JumpControlComponent const> const&   jumpControl,
-    struct AABBShapeComponent const&                          aabbShapeComponent,
-    struct ActorDataFlagComponent const&                      actorDataFlagComponent,
-    struct ActorRotationComponent const&                      actorRotationComponent,
-    struct MobEffectsComponent const&                         mobEffectsComponent,
-    struct MobJumpComponent&                                  mobJumpComponent,
-    struct StateVectorComponent&                              stateVectorComponent,
-    struct PlayerActionComponent&                             playerAction,
-    class EntityModifier<struct TriggerJumpRequestComponent>& modifier,
-    class StrictExecutionContext<
-        struct Filter<
-            class FlagComponent<struct CanStandOnSnowFlag>,
-            class FlagComponent<struct HasLightweightFamilyFlag>,
-            class FlagComponent<struct HorseFlag>,
-            class FlagComponent<struct MobFlag>,
-            class FlagComponent<struct ParrotFlag>,
-            struct VehicleComponent,
-            class FlagComponent<struct CamelFlag>,
-            class FlagComponent<struct PlayerComponentFlag>,
-            class FlagComponent<struct LocalPlayerJumpRequestFlag>,
-            class FlagComponent<struct LavaSlimeJumpRequestFlag>,
-            class FlagComponent<struct SquidJumpRequestFlag>,
-            class FlagComponent<struct OtherJumpRequestFlag>>,
-        struct Read<
-            struct AABBShapeComponent,
-            struct MovementAbilitiesComponent,
-            struct ActorTypeComponent,
-            struct FallDistanceComponent,
-            struct PassengerComponent,
-            struct ActorGameTypeComponent,
-            struct ActorDataFlagComponent,
-            struct VehicleComponent,
-            struct ActorRotationComponent,
-            struct MobBodyRotationComponent,
-            struct RenderRotationComponent,
-            struct StandAnimationComponent,
-            struct OffsetsComponent,
-            struct VanillaOffsetComponent,
-            struct PassengerRenderingRidingOffsetComponent,
-            struct MobEffectsComponent,
-            struct SynchedActorDataComponent,
-            class JumpControlComponent,
-            struct DimensionTypeComponent>,
-        struct Write<struct MobJumpComponent, struct StateVectorComponent, struct PlayerActionComponent>,
-        struct AddRemove<struct TriggerJumpRequestComponent>,
-        struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-        struct GlobalWrite<>,
-        struct EntityFactoryT<>>&  executionContext,
-    class IConstBlockSource const& region
+    ::StrictEntityContext const&                     entity,
+    ::Optional<::JumpControlComponent const> const&  jumpControl,
+    ::AABBShapeComponent const&                      aabbShapeComponent,
+    ::ActorDataFlagComponent const&                  actorDataFlagComponent,
+    ::ActorRotationComponent const&                  actorRotationComponent,
+    ::MobEffectsComponent const&                     mobEffectsComponent,
+    ::MobJumpComponent&                              mobJumpComponent,
+    ::StateVectorComponent&                          stateVectorComponent,
+    ::PlayerActionComponent&                         playerAction,
+    ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
+    ::StrictExecutionContext<
+        ::Filter<
+            ::CanStandOnSnowFlagComponent,
+            ::HasLightweightFamilyFlagComponent,
+            ::HorseFlagComponent,
+            ::MobFlagComponent,
+            ::ParrotFlagComponent,
+            ::VehicleComponent,
+            ::CamelFlagComponent,
+            ::PlayerComponent,
+            ::LocalPlayerJumpRequestComponent,
+            ::LavaSlimeJumpRequestComponent,
+            ::SquidJumpRequestComponent,
+            ::OtherJumpRequestComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::MovementAbilitiesComponent,
+            ::ActorTypeComponent,
+            ::FallDistanceComponent,
+            ::PassengerComponent,
+            ::ActorGameTypeComponent,
+            ::ActorDataFlagComponent,
+            ::VehicleComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::RenderRotationComponent,
+            ::StandAnimationComponent,
+            ::OffsetsComponent,
+            ::VanillaOffsetComponent,
+            ::PassengerRenderingRidingOffsetComponent,
+            ::MobEffectsComponent,
+            ::SynchedActorDataComponent,
+            ::JumpControlComponent,
+            ::DimensionTypeComponent>,
+        ::Write<::MobJumpComponent, ::StateVectorComponent, ::PlayerActionComponent>,
+        ::AddRemove<::TriggerJumpRequestComponent>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>&   executionContext,
+    ::IConstBlockSource const& region
 );
 
 MCAPI void doOtherMobJumpFromGround(
-    class StrictEntityContext const&                          entity,
-    class Optional<class JumpControlComponent const> const&   jumpControl,
-    struct AABBShapeComponent const&                          aabbShapeComponent,
-    struct ActorDataFlagComponent const&                      actorDataFlagComponent,
-    struct ActorRotationComponent const&                      actorRotationComponent,
-    struct MobEffectsComponent const&                         mobEffectsComponent,
-    struct MobJumpComponent&                                  mobJumpComponent,
-    struct StateVectorComponent&                              stateVectorComponent,
-    class EntityModifier<struct TriggerJumpRequestComponent>& modifier,
-    bool                                                      isSquid,
-    class IConstBlockSource const&                            region
+    ::StrictEntityContext const&                     entity,
+    ::Optional<::JumpControlComponent const> const&  jumpControl,
+    ::AABBShapeComponent const&                      aabbShapeComponent,
+    ::ActorDataFlagComponent const&                  actorDataFlagComponent,
+    ::ActorRotationComponent const&                  actorRotationComponent,
+    ::MobEffectsComponent const&                     mobEffectsComponent,
+    ::MobJumpComponent&                              mobJumpComponent,
+    ::StateVectorComponent&                          stateVectorComponent,
+    ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
+    bool                                             isSquid,
+    ::IConstBlockSource const&                       region
 );
 
 MCAPI void mobJumpFromGround(
-    class StrictEntityContext const&                          entity,
-    struct AABBShapeComponent const&                          aabbShapeComponent,
-    struct ActorDataFlagComponent const&                      actorDataFlagComponent,
-    struct ActorRotationComponent const&                      actorRotationComponent,
-    struct MobEffectsComponent const&                         mobEffectsComponent,
-    class JumpControlComponent const*                         jumpControlComponent,
-    struct MobJumpComponent&                                  mobJumpComponent,
-    struct StateVectorComponent&                              stateVectorComponent,
-    class EntityModifier<struct TriggerJumpRequestComponent>& modifier,
-    class IConstBlockSource const&                            region,
-    bool                                                      isSquid
+    ::StrictEntityContext const&                     entity,
+    ::AABBShapeComponent const&                      aabbShapeComponent,
+    ::ActorDataFlagComponent const&                  actorDataFlagComponent,
+    ::ActorRotationComponent const&                  actorRotationComponent,
+    ::MobEffectsComponent const&                     mobEffectsComponent,
+    ::JumpControlComponent const*                    jumpControlComponent,
+    ::MobJumpComponent&                              mobJumpComponent,
+    ::StateVectorComponent&                          stateVectorComponent,
+    ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
+    ::IConstBlockSource const&                       region,
+    bool                                             isSquid
 );
 // NOLINTEND
 
-}; // namespace MobJumpFromGroundSystemImpl
+} // namespace MobJumpFromGroundSystemImpl

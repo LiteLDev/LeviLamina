@@ -4,23 +4,38 @@
 
 struct PlayerStorageIds {
 public:
-    std::string MsaId;             // this+0x0
-    std::string PlatformId;        // this+0x20
-    std::string PlatformOnlineId;  // this+0x40
-    std::string PlatformOfflineId; // this+0x60
-    std::string SelfSignedId;      // this+0x80
-    std::string RandomClientId;    // this+0xA0
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ~PlayerStorageIds();
-
+    ::ll::TypedStorage<8, 32, ::std::string> MsaId;
+    ::ll::TypedStorage<8, 32, ::std::string> PlatformId;
+    ::ll::TypedStorage<8, 32, ::std::string> PlatformOnlineId;
+    ::ll::TypedStorage<8, 32, ::std::string> PlatformOfflineId;
+    ::ll::TypedStorage<8, 32, ::std::string> SelfSignedId;
+    ::ll::TypedStorage<8, 32, ::std::string> RandomClientId;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
+    // prevent constructor by default
+    PlayerStorageIds& operator=(PlayerStorageIds const&);
+    PlayerStorageIds(PlayerStorageIds const&);
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerStorageIds();
+
+    MCAPI ~PlayerStorageIds();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

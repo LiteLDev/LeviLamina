@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace HeartbeatComponentInternal {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI char const* const& INTERVAL_KEY();
+MCAPI char const*& INTERVAL_KEY();
 
-MCAPI char const* const& SOUND_EVENT_DEFAULT_VALUE();
+MCAPI char const*& SOUND_EVENT_DEFAULT_VALUE();
 
-MCAPI char const* const& SOUND_EVENT_KEY();
+MCAPI char const*& SOUND_EVENT_KEY();
 // NOLINTEND
 
-}; // namespace HeartbeatComponentInternal
+} // namespace HeartbeatComponentInternal

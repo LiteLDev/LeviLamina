@@ -5,19 +5,27 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct ExitFromPassengerFlagComponent;
+struct PendingRemovePassengersComponent;
+struct RemovePassengersComponent;
+struct VehicleComponent;
+// clang-format on
 
 namespace PendingRemovePassengersSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void pendingRemovePassengers(
-    entt::type_list<struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct VehicleComponent>>,
-    class StrictEntityContext const&         vehicle,
-    struct PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,
-    class EntityModifier<
-        class FlagComponent<struct ExitFromPassengerFlag>,
-        struct PendingRemovePassengersComponent,
-        struct RemovePassengersComponent> modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::VehicleComponent>>,
+    ::StrictEntityContext const&        vehicle,
+    ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,
+    ::EntityModifier<::ExitFromPassengerFlagComponent, ::PendingRemovePassengersComponent, ::RemovePassengersComponent>
+        modifier
 );
 // NOLINTEND
 
-}; // namespace PendingRemovePassengersSystemImpl
+} // namespace PendingRemovePassengersSystemImpl

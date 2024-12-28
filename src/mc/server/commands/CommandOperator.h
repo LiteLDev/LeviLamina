@@ -1,19 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/typeid_t.h"
 
-enum class CommandOperator : schar {
-    Invalid      = 0x0,
-    Equals       = 0x1,
-    PlusEquals   = 0x2,
-    MinusEquals  = 0x3,
-    TimesEquals  = 0x4,
-    DivideEquals = 0x5,
-    ModEquals    = 0x6,
-    MinEquals    = 0x7,
-    MaxEquals    = 0x8,
-    Swap         = 0x9,
+enum class CommandOperator : uchar {
+    Invalid      = 0,
+    Equals       = 1,
+    PlusEquals   = 2,
+    MinusEquals  = 3,
+    TimesEquals  = 4,
+    DivideEquals = 5,
+    ModEquals    = 6,
+    MinEquals    = 7,
+    MaxEquals    = 8,
+    Swap         = 9,
 };
-
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandOperator>();

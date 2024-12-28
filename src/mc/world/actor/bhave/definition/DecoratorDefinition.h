@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class BehaviorFactory;
+class BehaviorTreeDefinitionPtr;
 namespace Json { class Value; }
 // clang-format on
 
 class DecoratorDefinition : public ::BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkb6b773;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DecoratorDefinition& operator=(DecoratorDefinition const&);
@@ -18,19 +26,22 @@ public:
     DecoratorDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DecoratorDefinition() = default;
-
+    virtual ~DecoratorDefinition() /*override*/;
     // NOLINTEND
 
-    // protected:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(
-        class Json::Value               value,
-        class BehaviorFactory const&    factory,
-        class BehaviorTreeDefinitionPtr ptr
-    );
+    MCAPI static ::std::unique_ptr<::BehaviorDefinition>
+    _decoratorLoadChildBehavior(::Json::Value value, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

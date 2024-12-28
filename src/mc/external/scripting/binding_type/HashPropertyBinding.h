@@ -12,4 +12,4 @@ public:
     HashPropertyBinding();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

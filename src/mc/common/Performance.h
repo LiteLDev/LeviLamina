@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StopwatchHandler;
+// clang-format on
+
 class Performance {
 public:
     // prevent constructor by default
@@ -10,13 +15,8 @@ public:
     Performance();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static class StopwatchHandler& watches();
-
+    MCAPI static ::StopwatchHandler& watches();
     // NOLINTEND
 };

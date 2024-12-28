@@ -15,12 +15,21 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptMusicOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnkc5fc5e;
+    ::ll::UntypedStorage<4, 8> mUnk1a0684;
+    ::ll::UntypedStorage<1, 2> mUnk8a9f22;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptMusicOptions& operator=(ScriptMusicOptions const&);
     ScriptMusicOptions(ScriptMusicOptions const&);
     ScriptMusicOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI float getFade() const;
 
@@ -28,16 +37,19 @@ public:
 
     MCAPI float getVolume() const;
 
-    MCAPI std::optional<struct Scripting::Error> validate() const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV010();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV1();
-
+    MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMusicOptions> bindV010();
+
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptMusicOptions> bindV1();
+    // NOLINTEND
+
+public:
+    // static variables
     // NOLINTBEGIN
     MCAPI static float const& FADE_DEFAULT();
 
@@ -48,8 +60,7 @@ public:
     MCAPI static float const& VOLUME_DEFAULT();
 
     MCAPI static float const& VOLUME_MIN();
-
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

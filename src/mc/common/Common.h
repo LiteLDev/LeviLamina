@@ -8,18 +8,19 @@ namespace Common { struct BuildInfo; }
 // clang-format on
 
 namespace Common {
+// functions
 // NOLINTBEGIN
-MCAPI struct Common::BuildInfo getBuildInfo();
+MCAPI ::Common::BuildInfo getBuildInfo();
 
-MCAPI std::string getGameDevVersionString();
+MCAPI ::std::string getGameDevVersionString();
 
-MCAPI std::string getGameSemVerString();
+MCAPI ::std::string getGameSemVerString();
 
-MCAPI std::string getGameVersionString();
+MCAPI ::std::string getGameVersionString();
 
-MCAPI std::string getGameVersionStringNet();
+MCAPI ::std::string getGameVersionStringNet();
 
-MCAPI std::string getServerVersionString();
+MCAPI ::std::string getServerVersionString();
 // NOLINTEND
 
-}; // namespace Common
+} // namespace Common

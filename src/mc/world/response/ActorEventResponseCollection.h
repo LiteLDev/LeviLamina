@@ -8,10 +8,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorEventResponse;
+class SemVersion;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 struct ActorEventResponseCollection {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf13946;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorEventResponseCollection& operator=(ActorEventResponseCollection const&);
@@ -19,14 +27,10 @@ public:
     ActorEventResponseCollection();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<
-        class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>
-    buildSchema(
-        std::string const&                             name,
-        class SemVersion const&                        version,
-        class Factory<class ActorEventResponse> const& factory
-    );
-
+    MCAPI static ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>
+    buildSchema(::std::string const& name, ::SemVersion const& version, ::Factory<::ActorEventResponse> const& factory);
     // NOLINTEND
 };

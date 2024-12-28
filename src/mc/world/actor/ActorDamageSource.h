@@ -3,23 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ActorCategory.h"
+#include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class VersionedActorDamageCause;
+struct ActorUniqueID;
 namespace Scripting { struct Version; }
 // clang-format on
 
 class ActorDamageSource {
 public:
-    ::ActorDamageCause mCause;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ActorDamageCause> mCause;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDamageSource& operator=(ActorDamageSource const&);
+    ActorDamageSource(ActorDamageSource const&);
+    ActorDamageSource();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorDamageSource() = default;
+    virtual ~ActorDamageSource();
 
     // vIndex: 1
     virtual bool isEntitySource() const;
@@ -49,8 +62,8 @@ public:
     virtual bool isFallDamage() const;
 
     // vIndex: 10
-    virtual std::pair<std::string, std::vector<std::string>>
-    getDeathMessage(std::string deadName, class Actor* dead) const;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     // vIndex: 11
     virtual bool getIsCreative() const;
@@ -59,7 +72,7 @@ public:
     virtual bool getIsWorldBuilder() const;
 
     // vIndex: 13
-    virtual struct ActorUniqueID getEntityUniqueID() const;
+    virtual ::ActorUniqueID getEntityUniqueID() const;
 
     // vIndex: 14
     virtual ::ActorType getEntityType() const;
@@ -74,7 +87,7 @@ public:
     virtual bool getDamagingEntityIsWorldBuilder() const;
 
     // vIndex: 18
-    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    virtual ::ActorUniqueID getDamagingEntityUniqueID() const;
 
     // vIndex: 19
     virtual ::ActorType getDamagingEntityType() const;
@@ -83,81 +96,101 @@ public:
     virtual ::ActorCategory getDamagingEntityCategories() const;
 
     // vIndex: 21
-    virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    virtual ::std::unique_ptr<::ActorDamageSource> clone() const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit ActorDamageSource(::ActorDamageCause cause);
 
     MCAPI ::ActorDamageCause getCause() const;
 
     MCAPI void setCause(::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-    generateDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::vector<::std::pair<::std::string, ::ActorDamageCause>>
+    generateDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
-    generateNewDamageCauseCommandEnum(std::optional<struct Scripting::Version> scriptVersion);
+    MCAPI static ::std::vector<::std::pair<::std::string, ::ActorDamageCause>>
+    generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
+    MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(struct Scripting::Version scriptingVersion);
+    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
 
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
 
-    MCAPI static ::ActorDamageCause lookupCause(std::string const& name);
+    MCAPI static ::ActorDamageCause lookupCause(::std::string const& name);
 
-    MCAPI static std::string const& lookupCauseName(::ActorDamageCause cause);
-
+    MCAPI static ::std::string const& lookupCauseName(::ActorDamageCause cause);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::ActorDamageCause cause);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::ActorDamageCause cause);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class ActorDamageSource> clone$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isEntitySource() const;
 
-    MCAPI ::ActorCategory getDamagingEntityCategories$() const;
+    MCAPI bool $isChildEntitySource() const;
 
-    MCAPI bool getDamagingEntityIsCreative$() const;
+    MCAPI bool $isBlockSource() const;
 
-    MCAPI bool getDamagingEntityIsWorldBuilder$() const;
+    MCAPI bool $isFire() const;
 
-    MCAPI ::ActorType getDamagingEntityType$() const;
+    MCAPI bool $isReducedByResistanceEffect() const;
 
-    MCAPI struct ActorUniqueID getDamagingEntityUniqueID$() const;
+    MCAPI bool $isReducedByEnchantReduction() const;
 
-    MCAPI std::pair<std::string, std::vector<std::string>>
-          getDeathMessage$(std::string deadName, class Actor* dead) const;
+    MCAPI bool $isReducedByArmorReduction() const;
 
-    MCAPI ::ActorCategory getEntityCategories$() const;
+    MCAPI bool $isFallingBlockDamage() const;
 
-    MCAPI ::ActorType getEntityType$() const;
+    MCAPI bool $isFallDamage() const;
 
-    MCAPI struct ActorUniqueID getEntityUniqueID$() const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI bool getIsCreative$() const;
+    MCAPI bool $getIsCreative() const;
 
-    MCAPI bool getIsWorldBuilder$() const;
+    MCAPI bool $getIsWorldBuilder() const;
 
-    MCAPI bool isBlockSource$() const;
+    MCAPI ::ActorUniqueID $getEntityUniqueID() const;
 
-    MCAPI bool isChildEntitySource$() const;
+    MCAPI ::ActorType $getEntityType() const;
 
-    MCAPI bool isEntitySource$() const;
+    MCAPI ::ActorCategory $getEntityCategories() const;
 
-    MCAPI bool isFallDamage$() const;
+    MCAPI bool $getDamagingEntityIsCreative() const;
 
-    MCAPI bool isFallingBlockDamage$() const;
+    MCAPI bool $getDamagingEntityIsWorldBuilder() const;
 
-    MCAPI bool isFire$() const;
+    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCAPI bool isReducedByArmorReduction$() const;
+    MCAPI ::ActorType $getDamagingEntityType() const;
 
-    MCAPI bool isReducedByEnchantReduction$() const;
+    MCAPI ::ActorCategory $getDamagingEntityCategories() const;
 
-    MCAPI bool isReducedByResistanceEffect$() const;
+    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

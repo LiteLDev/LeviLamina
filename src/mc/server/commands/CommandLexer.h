@@ -11,48 +11,64 @@ public:
 
     // CommandLexer inner types define
     enum class TokenType : int {
-        Error                    = 0,    // error
-        Integer                  = 0x1,  // integer
-        NInteger                 = 0x2,  // ninteger
-        Identifier               = 0x3,  // identifier
-        Selector                 = 0x4,  // selector
-        Slash                    = 0x5,  // /
-        Value                    = 0x6,  // value
-        RelativeValue            = 0x7,  // rvalue
-        LocalDirectionalValue    = 0x8,  // lvalue
-        Equals                   = 0x9,  // =
-        Comma                    = 0xa,  // ,
-        Colon                    = 0xb,  // :
-        Not                      = 0xc,  // !
-        Asterisk                 = 0xd,  // *
-        Hash                     = 0xe,  // #
-        OpenBracket              = 0xf,  // [
-        CloseBracket             = 0x10, // ]
-        OpenBrace                = 0x11, // {
-        CloseBrace               = 0x12, // }
-        String                   = 0x13, // string
-        Range                    = 0x14, // ..
-        LessThan                 = 0x15, // <
-        GreaterThan              = 0x16, // >
-        LessThanEquals           = 0x17, // <=
-        GreaterThanEquals        = 0x18, // >=
-        PlusEquals               = 0x19, // +=
-        MinusEquals              = 0x1a, // -=
-        TimesEquals              = 0x1b, // *=
-        DivideEquals             = 0x1c, // /=
-        ModEquals                = 0x1d, // %=
-        GreaterThanLessThan      = 0x1e, // ><
-        IdentifierFilenameSubset = 0x1f, // cmdFilePath
-        Unknown                  = 0x20, // unknown
-        End                      = 0x21, // end
-        Count,
+        Error                    = 0,
+        Integer                  = 1,
+        NInteger                 = 2,
+        Identifier               = 3,
+        Selector                 = 4,
+        Slash                    = 5,
+        Value                    = 6,
+        RelativeValue            = 7,
+        LocalDirectionalValue    = 8,
+        Equals                   = 9,
+        Comma                    = 10,
+        Colon                    = 11,
+        Not                      = 12,
+        Asterisk                 = 13,
+        Hash                     = 14,
+        OpenBracket              = 15,
+        CloseBracket             = 16,
+        OpenBrace                = 17,
+        CloseBrace               = 18,
+        String                   = 19,
+        Range                    = 20,
+        LessThan                 = 21,
+        GreaterThan              = 22,
+        LessThanEquals           = 23,
+        GreaterThanEquals        = 24,
+        PlusEquals               = 25,
+        MinusEquals              = 26,
+        TimesEquals              = 27,
+        DivideEquals             = 28,
+        ModEquals                = 29,
+        GreaterThanLessThan      = 30,
+        IdentifierFilenameSubset = 31,
+        Unknown                  = 32,
+        End                      = 33,
     };
 
     struct Token {
-        char const* text;   // this+0x0
-        uint        length; // this+0x8
-        TokenType   type;   // this+0xc
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, char const*>               text;
+        ::ll::TypedStorage<4, 4, uint>                      length;
+        ::ll::TypedStorage<4, 4, ::CommandLexer::TokenType> type;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Token& operator=(Token const&);
+        Token(Token const&);
+        Token();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::string const&>   mInput;
+    ::ll::TypedStorage<8, 16, ::CommandLexer::Token> mToken;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -60,24 +76,25 @@ public:
     CommandLexer(CommandLexer const&);
     CommandLexer();
 
-    std::string const&  mInput; // this+0x0
-    CommandLexer::Token mToken; // this+0x8
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandLexer(std::string const& commandInput);
+    MCAPI explicit CommandLexer(::std::string const& commandInput);
 
-    MCAPI struct CommandLexer::Token const& next() const;
+    MCAPI ::CommandLexer::Token const& next() const;
 
     MCAPI void step();
-
-    MCAPI static bool isDigit(char c);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& commandInput);
+    MCAPI static bool isDigit(char c);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& commandInput);
     // NOLINTEND
 };

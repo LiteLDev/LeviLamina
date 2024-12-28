@@ -4,25 +4,27 @@
 
 struct IntegrityTokenResult {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk2ec332;
+    ::ll::UntypedStorage<8, 32> mUnk1ed878;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     IntegrityTokenResult& operator=(IntegrityTokenResult const&);
     IntegrityTokenResult(IntegrityTokenResult const&);
     IntegrityTokenResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI IntegrityTokenResult(struct IntegrityTokenResult&&);
-
     MCAPI ~IntegrityTokenResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct IntegrityTokenResult&&);
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

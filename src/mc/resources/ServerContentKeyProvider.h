@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/resources/IContentAccessibilityProvider.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContentIdentity;
+// clang-format on
+
 class ServerContentKeyProvider : public ::IContentAccessibilityProvider {
 public:
     // prevent constructor by default
@@ -13,46 +18,45 @@ public:
     ServerContentKeyProvider();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ServerContentKeyProvider() = default;
-
     // vIndex: 1
-    virtual std::string getContentKey(class ContentIdentity const& contentIdentity) const;
-
-    // vIndex: 2
-    virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
-
-    // vIndex: 3
-    virtual bool requireEncryptedReads() const;
-
-    // vIndex: 4
-    virtual void setTempContentKeys(std::unordered_map<class ContentIdentity, std::string> const&);
-
-    // vIndex: 5
-    virtual void clearTempContentKeys();
+    virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const /*override*/;
 
     // vIndex: 6
-    virtual bool canAccess(class ContentIdentity const& contentIdentity) const;
+    virtual bool canAccess(::ContentIdentity const& contentIdentity) const /*override*/;
 
+    // vIndex: 4
+    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
+
+    // vIndex: 5
+    virtual void clearTempContentKeys() /*override*/;
+
+    // vIndex: 0
+    virtual ~ServerContentKeyProvider() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canAccess$(class ContentIdentity const& contentIdentity) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getContentKey(::ContentIdentity const& contentIdentity) const;
 
-    MCAPI void clearTempContentKeys$();
+    MCAPI bool $canAccess(::ContentIdentity const& contentIdentity) const;
 
-    MCAPI std::string getAlternateContentKey$(class ContentIdentity const&) const;
+    MCAPI void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
 
-    MCAPI std::string getContentKey$(class ContentIdentity const& contentIdentity) const;
+    MCAPI void $clearTempContentKeys();
+    // NOLINTEND
 
-    MCAPI bool requireEncryptedReads$() const;
-
-    MCAPI void setTempContentKeys$(std::unordered_map<class ContentIdentity, std::string> const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

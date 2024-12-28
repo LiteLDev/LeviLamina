@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class Random;
+// clang-format on
+
 class BuriedTreasureStart : public ::StructureStart {
 public:
     // prevent constructor by default
@@ -13,20 +19,42 @@ public:
     BuriedTreasureStart();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual ::std::string_view getStructureName() const /*override*/;
+
     // vIndex: 0
-    virtual ~BuriedTreasureStart() = default;
-
-    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int x, int z);
-
+    virtual ~BuriedTreasureStart() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BuriedTreasureStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension&, class Random&, int x, int z);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string_view $getStructureName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

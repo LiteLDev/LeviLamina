@@ -2,38 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 class EntitySet {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkcf9ab5;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EntitySet& operator=(EntitySet const&);
+    EntitySet(EntitySet const&);
+    EntitySet();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI EntitySet();
-
-    MCAPI EntitySet(class EntitySet&&);
-
-    MCAPI EntitySet(class EntitySet const&);
-
-    MCAPI bool add(class EntityContext const& entity);
-
-    MCAPI
-    std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<uint64 const, class WeakEntityRef>>>>
-        erase(std::_List_const_iterator<
-              std::_List_val<std::_List_simple_types<std::pair<uint64 const, class WeakEntityRef>>>>);
-
-    MCAPI class EntitySet& operator=(class EntitySet&&);
-
+    MCAPI EntitySet(::EntitySet&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class EntitySet&&);
-
-    MCAPI void* ctor$(class EntitySet const&);
-
-    MCAPI void* ctor$();
-
+    MCAPI void* $ctor(::EntitySet&&);
     // NOLINTEND
 };

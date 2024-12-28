@@ -6,7 +6,22 @@
 #include "mc/entity/components/IReplayStatePolicy.h"
 #include "mc/input/AdvanceFrameResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class PlayerAuthInputPacket;
+struct MovementCorrection;
+// clang-format on
+
 class ClientReplayStatePolicy : public ::IReplayStatePolicy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk6b7c80;
+    ::ll::UntypedStorage<4, 8>  mUnka1d393;
+    ::ll::UntypedStorage<4, 24> mUnk4025aa;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ClientReplayStatePolicy& operator=(ClientReplayStatePolicy const&);
@@ -14,52 +29,68 @@ public:
     ClientReplayStatePolicy();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClientReplayStatePolicy() = default;
-
     // vIndex: 1
-    virtual bool isReplayNeeded(::AdvanceFrameResult result) const;
+    virtual bool isReplayNeeded(::AdvanceFrameResult result) const /*override*/;
 
     // vIndex: 2
-    virtual bool canRewindToFrame(class EntityContext const& entity, uint64 rewindFrame);
+    virtual bool canRewindToFrame(::EntityContext const& entity, uint64 rewindFrame) /*override*/;
 
     // vIndex: 3
-    virtual struct MovementCorrection
-    shouldCorrectMovement(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
+    virtual ::MovementCorrection
+    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64) /*override*/;
 
     // vIndex: 4
-    virtual void flagUnsupportedMovement(uint64 frame);
+    virtual void flagUnsupportedMovement(uint64 frame) /*override*/;
 
     // vIndex: 5
-    virtual void storeCurrentFrameSupported(uint64 currentFrame, class EntityContext& entity);
+    virtual void storeCurrentFrameSupported(uint64 currentFrame, ::EntityContext& entity) /*override*/;
 
     // vIndex: 6
-    virtual void notifyOfExternalCorrection(uint64);
+    virtual void notifyOfExternalCorrection(uint64) /*override*/;
 
-    MCAPI bool _checkSupportedFrame(class EntityContext& entity) const;
-
-    MCAPI static bool _isSupportedMovementMode(class EntityContext const& entity);
-
+    // vIndex: 0
+    virtual ~ClientReplayStatePolicy() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool _checkSupportedFrame(::EntityContext& entity) const;
+    // NOLINTEND
 
-    MCAPI bool canRewindToFrame$(class EntityContext const& entity, uint64 rewindFrame);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isSupportedMovementMode(::EntityContext const& entity);
+    // NOLINTEND
 
-    MCAPI void flagUnsupportedMovement$(uint64 frame);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isReplayNeeded$(::AdvanceFrameResult result) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isReplayNeeded(::AdvanceFrameResult result) const;
 
-    MCAPI void notifyOfExternalCorrection$(uint64);
+    MCAPI bool $canRewindToFrame(::EntityContext const& entity, uint64 rewindFrame);
 
-    MCAPI struct MovementCorrection
-    shouldCorrectMovement$(class EntityContext&, class PlayerAuthInputPacket const&, uint64);
+    MCAPI ::MovementCorrection $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64);
 
-    MCAPI void storeCurrentFrameSupported$(uint64 currentFrame, class EntityContext& entity);
+    MCAPI void $flagUnsupportedMovement(uint64 frame);
 
+    MCAPI void $storeCurrentFrameSupported(uint64 currentFrame, ::EntityContext& entity);
+
+    MCAPI void $notifyOfExternalCorrection(uint64);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

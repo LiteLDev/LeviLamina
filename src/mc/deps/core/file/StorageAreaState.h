@@ -8,11 +8,25 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
+namespace Core { class Path; }
+namespace Core { class StorageAreaStateListener; }
 // clang-format on
 
 namespace Core {
 
 class StorageAreaState {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 80> mUnk26e6b4;
+    ::ll::UntypedStorage<8, 32> mUnk380d66;
+    ::ll::UntypedStorage<1, 1>  mUnk3f48e4;
+    ::ll::UntypedStorage<1, 1>  mUnk8adcca;
+    ::ll::UntypedStorage<1, 1>  mUnkd72f6a;
+    ::ll::UntypedStorage<1, 1>  mUnk628078;
+    ::ll::UntypedStorage<8, 24> mUnk844666;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StorageAreaState& operator=(StorageAreaState const&);
@@ -20,12 +34,17 @@ public:
     StorageAreaState();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit StorageAreaState(::Core::Path storageAreaRootPath);
+
+    MCAPI void addListener(::Core::StorageAreaStateListener* l);
+
     MCAPI void checkUserStorage(
-        std::weak_ptr<class Core::FileStorageArea>& fileStorageAreaWeakPtr,
-        uint64                                      freeSpace,
-        uint64                                      usedSpace,
-        uint64                                      totalCapacity
+        ::std::weak_ptr<::Core::FileStorageArea>& fileStorageAreaWeakPtr,
+        uint64                                    freeSpace,
+        uint64                                    usedSpace,
+        uint64                                    totalCapacity
     );
 
     MCAPI bool isCriticalDiskError() const;
@@ -34,16 +53,22 @@ public:
 
     MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
 
-    MCAPI ~StorageAreaState();
+    MCAPI void removeListener(::Core::StorageAreaStateListener* l);
 
+    MCAPI ~StorageAreaState();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Core::Path storageAreaRootPath);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

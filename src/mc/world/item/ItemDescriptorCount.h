@@ -7,76 +7,95 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class Block;
+class BlockLegacy;
+class Item;
+class ReadOnlyBinaryStream;
+struct ItemTag;
 // clang-format on
 
 class ItemDescriptorCount : public ::ItemDescriptor {
 public:
-    ushort mStackSize; // this+0x10
-
-    ItemDescriptorCount& operator=(ItemDescriptorCount&&)      = default;
-    ItemDescriptorCount& operator=(ItemDescriptorCount const&) = default;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ushort> mStackSize;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemDescriptorCount& operator=(ItemDescriptorCount const&);
+    ItemDescriptorCount(ItemDescriptorCount const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
+
     // vIndex: 0
-    virtual ~ItemDescriptorCount();
+    virtual ~ItemDescriptorCount() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 2
-    virtual void serialize(class BinaryStream& stream) const;
-
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ItemDescriptorCount();
 
-    MCAPI ItemDescriptorCount(class ItemDescriptorCount const&);
+    MCAPI explicit ItemDescriptorCount(::ReadOnlyBinaryStream& stream);
 
-    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream& stream);
+    MCAPI ItemDescriptorCount(::Block const& block, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(class Block const& block, ushort stackSize);
+    MCAPI ItemDescriptorCount(::BlockLegacy const& block, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(class BlockLegacy const& block, ushort stackSize);
+    MCAPI ItemDescriptorCount(::ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(class ItemDescriptor const& descriptor, ushort stackSize);
+    MCAPI ItemDescriptorCount(::ItemTag const& itemTag, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(struct ItemTag const& itemTag, ushort stackSize);
+    MCAPI ItemDescriptorCount(::Item const& item, int auxValue, ushort stackSize);
 
-    MCAPI ItemDescriptorCount(class Item const& item, int auxValue, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(std::string_view item, int auxValue, ushort stackSize);
+    MCAPI ItemDescriptorCount(::std::string_view item, int auxValue, ushort stackSize);
 
     MCAPI short getStackSize() const;
 
-    MCAPI explicit operator bool() const;
-
     MCAPI void setStackSize(short size);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void* ctor$(class BlockLegacy const& block, ushort stackSize);
+    MCAPI void* $ctor(::Block const& block, ushort stackSize);
 
-    MCAPI void* ctor$(class Block const& block, ushort stackSize);
+    MCAPI void* $ctor(::BlockLegacy const& block, ushort stackSize);
 
-    MCAPI void* ctor$(class Item const& item, int auxValue, ushort stackSize);
+    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
 
-    MCAPI void* ctor$(struct ItemTag const& itemTag, ushort stackSize);
+    MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize);
 
-    MCAPI void* ctor$(class ItemDescriptor const& descriptor, ushort stackSize);
+    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string_view item, int auxValue, ushort stackSize);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ItemDescriptorCount const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serialize(::BinaryStream& stream) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI void serialize$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

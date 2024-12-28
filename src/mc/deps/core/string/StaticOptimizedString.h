@@ -7,7 +7,16 @@ namespace Bedrock {
 class StaticOptimizedString {
 public:
     // StaticOptimizedString inner types define
-    enum class StorageType {};
+    enum class StorageType : int {
+        Static  = 0,
+        Dynamic = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk31dddc;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -15,31 +24,30 @@ public:
     StaticOptimizedString();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI StaticOptimizedString(class Bedrock::StaticOptimizedString&& other);
+    MCAPI StaticOptimizedString(::Bedrock::StaticOptimizedString const& other);
 
-    MCAPI StaticOptimizedString(class Bedrock::StaticOptimizedString const& other);
+    MCAPI StaticOptimizedString(::Bedrock::StaticOptimizedString&& other);
 
-    MCAPI ~StaticOptimizedString();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
     MCAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
+    MCAPI ~StaticOptimizedString();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::StaticOptimizedString const& other);
+    MCAPI void* $ctor(::Bedrock::StaticOptimizedString const& other);
 
-    MCAPI void* ctor$(class Bedrock::StaticOptimizedString&& other);
+    MCAPI void* $ctor(::Bedrock::StaticOptimizedString&& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock
+} // namespace Bedrock

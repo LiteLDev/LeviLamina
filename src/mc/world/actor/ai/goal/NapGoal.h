@@ -3,10 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorFilterGroup;
+class Mob;
+// clang-format on
+
 class NapGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkb23e58;
+    ::ll::UntypedStorage<8, 8>  mUnk25817f;
+    ::ll::UntypedStorage<8, 8>  mUnk9139a1;
+    ::ll::UntypedStorage<1, 1>  mUnk1b9754;
+    ::ll::UntypedStorage<4, 4>  mUnk3f6f7b;
+    ::ll::UntypedStorage<4, 4>  mUnkaf9fae;
+    ::ll::UntypedStorage<4, 12> mUnk3a2039;
+    ::ll::UntypedStorage<8, 64> mUnk695ccc;
+    ::ll::UntypedStorage<8, 64> mUnka070a1;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NapGoal& operator=(NapGoal const&);
@@ -14,73 +33,86 @@ public:
     NapGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NapGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
+
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI NapGoal(
-        class Mob&                    mob,
-        float                         cooldownTimeMin,
-        float                         cooldownTimeMax,
-        float                         detectMobDistXZ,
-        float                         detectMobDistY,
-        class ActorFilterGroup const& canNapFilters,
-        class ActorFilterGroup const& wakeMobExceptions
-    );
-
+    // vIndex: 0
+    virtual ~NapGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSleep(struct Tick const& currentTick) const;
+    MCAPI NapGoal(
+        ::Mob&                    mob,
+        float                     cooldownTimeMin,
+        float                     cooldownTimeMax,
+        float                     detectMobDistXZ,
+        float                     detectMobDistY,
+        ::ActorFilterGroup const& canNapFilters,
+        ::ActorFilterGroup const& wakeMobExceptions
+    );
 
     MCAPI bool _detectsMobs() const;
-
-    MCAPI void _setCooldown();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob&                    mob,
-        float                         cooldownTimeMin,
-        float                         cooldownTimeMax,
-        float                         detectMobDistXZ,
-        float                         detectMobDistY,
-        class ActorFilterGroup const& canNapFilters,
-        class ActorFilterGroup const& wakeMobExceptions
-    );
-
-    MCAPI void appendDebugInfo$(std::string& str) const;
-
-    MCAPI bool canContinueToUse$();
-
-    MCAPI bool canUse$();
-
-    MCAPI void start$();
-
-    MCAPI void stop$();
-
     MCAPI static float const& MOB_DETECT_TIME();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                    mob,
+        float                     cooldownTimeMin,
+        float                     cooldownTimeMax,
+        float                     detectMobDistXZ,
+        float                     detectMobDistY,
+        ::ActorFilterGroup const& canNapFilters,
+        ::ActorFilterGroup const& wakeMobExceptions
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

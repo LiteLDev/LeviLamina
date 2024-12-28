@@ -4,6 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandRationalRange;
+class HashedString;
+class PropertyComponent;
 namespace ScriptModuleMinecraft { struct EqualsComparison; }
 namespace ScriptModuleMinecraft { struct GreaterThanComparison; }
 namespace ScriptModuleMinecraft { struct GreaterThanOrEqualsComparison; }
@@ -15,49 +18,50 @@ namespace ScriptModuleMinecraft { struct ValueParams; }
 // clang-format on
 
 namespace ActorHasPropertySelectorUtils {
+// functions
 // NOLINTBEGIN
 MCAPI bool checkBoolProperty(
-    class PropertyComponent const&                                     property,
-    class HashedString const&                                          propertyName,
-    std::variant<class CommandRationalRange, bool, std::string> const& value,
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
     bool                                                               inverted
 );
 
 MCAPI bool checkIntProperty(
-    class PropertyComponent const& property,
-    class HashedString const&      propertyName,
-    class CommandRationalRange&    rationalRange,
-    bool                           inverted
+    ::PropertyComponent const& property,
+    ::HashedString const&      propertyName,
+    ::CommandRationalRange&    rationalRange,
+    bool                       inverted
 );
 
 MCAPI bool checkRationalCommandRange(
-    class PropertyComponent const&                                     property,
-    class HashedString const&                                          propertyName,
-    std::variant<class CommandRationalRange, bool, std::string> const& value,
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
     bool                                                               inverted
 );
 
 MCAPI bool checkStringProperty(
-    class PropertyComponent const&                                     property,
-    class HashedString const&                                          propertyName,
-    std::variant<class CommandRationalRange, bool, std::string> const& value,
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
     bool                                                               inverted
 );
 
-MCAPI std::variant<class CommandRationalRange, bool, std::string> parseComparison(
-    std::variant<
-        struct ScriptModuleMinecraft::LessThanComparison,
-        struct ScriptModuleMinecraft::LessThanOrEqualsComparison,
-        struct ScriptModuleMinecraft::GreaterThanComparison,
-        struct ScriptModuleMinecraft::GreaterThanOrEqualsComparison,
-        struct ScriptModuleMinecraft::EqualsComparison,
-        struct ScriptModuleMinecraft::NotEqualsComparison,
-        struct ScriptModuleMinecraft::RangeComparison> const& comparison,
-    bool                                                      isExclude
+MCAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparison(
+    ::std::variant<
+        ::ScriptModuleMinecraft::LessThanComparison,
+        ::ScriptModuleMinecraft::LessThanOrEqualsComparison,
+        ::ScriptModuleMinecraft::GreaterThanComparison,
+        ::ScriptModuleMinecraft::GreaterThanOrEqualsComparison,
+        ::ScriptModuleMinecraft::EqualsComparison,
+        ::ScriptModuleMinecraft::NotEqualsComparison,
+        ::ScriptModuleMinecraft::RangeComparison> const& comparison,
+    bool                                                 isExclude
 );
 
-MCAPI std::variant<class CommandRationalRange, bool, std::string>
-      parseValueParams(struct ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
+MCAPI ::std::variant<::CommandRationalRange, bool, ::std::string>
+parseValueParams(::ScriptModuleMinecraft::ValueParams const& params, bool isExclude);
 // NOLINTEND
 
-}; // namespace ActorHasPropertySelectorUtils
+} // namespace ActorHasPropertySelectorUtils

@@ -8,23 +8,23 @@ class HashedString;
 // clang-format on
 
 namespace EntitySpecificMolang::MemberNames {
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI class HashedString const& ANIM_STATE();
+MCAPI ::HashedString const& ANIM_STATE();
 
-MCAPI class HashedString const& EASE_IN();
+MCAPI ::HashedString const& EASE_IN();
 
-MCAPI class HashedString const& FACING_DIRECTION();
+MCAPI ::HashedString const& FACING_DIRECTION();
 
-MCAPI class HashedString const& IS_HOVERING();
+MCAPI ::HashedString const& IS_HOVERING();
 
-MCAPI class HashedString const& MOVE_SPEED_SCALAR();
+MCAPI ::HashedString const& MOVE_SPEED_SCALAR();
 
-MCAPI class HashedString const& PEEK_AMOUNT();
+MCAPI ::HashedString const& PEEK_AMOUNT();
 
-MCAPI class HashedString const& SWING_ANIMATION_DURATION();
+MCAPI ::HashedString const& SWING_ANIMATION_DURATION();
 
-MCAPI class HashedString const& SWING_ANIMATION_TICK();
+MCAPI ::HashedString const& SWING_ANIMATION_TICK();
 // NOLINTEND
 
-}; // namespace EntitySpecificMolang::MemberNames
+} // namespace EntitySpecificMolang::MemberNames

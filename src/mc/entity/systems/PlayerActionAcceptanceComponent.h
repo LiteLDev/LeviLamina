@@ -4,21 +4,27 @@
 
 struct PlayerActionAcceptanceComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 360> mUnkcb00e8;
+    ::ll::UntypedStorage<1, 1>   mUnk9517d4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PlayerActionAcceptanceComponent& operator=(PlayerActionAcceptanceComponent const&);
     PlayerActionAcceptanceComponent(PlayerActionAcceptanceComponent const&);
     PlayerActionAcceptanceComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~PlayerActionAcceptanceComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

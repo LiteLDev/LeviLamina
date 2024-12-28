@@ -4,25 +4,28 @@
 
 struct ComponentInfo {
 public:
-    bool        mThreadSafe; // this+0x0
-    std::string mName;       // this+0x8
-    uint        mId;         // this+0x28
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>           mThreadSafe;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<4, 4, uint>           mId;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ComponentInfo& operator=(ComponentInfo const&);
     ComponentInfo(ComponentInfo const&);
     ComponentInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ComponentInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

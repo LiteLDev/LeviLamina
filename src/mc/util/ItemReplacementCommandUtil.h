@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/EquipmentSlot.h"
+#include "mc/deps/shared_types/EquipmentSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,34 +24,29 @@ public:
     ItemReplacementCommandUtil();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct Util::ReplacementResults
-    replaceActorSlotsOrError(struct Util::ActorReplacementParams& actorParams);
-
-    MCAPI static struct Util::ReplacementResults
-    replaceContainerSlotsOrError(struct Util::ContainerReplacementParams& containerParams);
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _replaceArmorSlots(
-        struct Util::ReplacementResults& replacementResults,
-        class Actor&                     entity,
-        gsl::span<class ItemStack const> itemSpan,
-        ::Puv::Legacy::EquipmentSlot     slotType,
-        int                              count
+        ::Util::ReplacementResults&          replacementResults,
+        ::Actor&                             entity,
+        ::gsl::span<::ItemStack const>       itemSpan,
+        ::SharedTypes::Legacy::EquipmentSlot slotType,
+        int                                  count
     );
 
     MCAPI static bool _slotBoundsValid(
-        struct Util::ReplacementResults& replacementResults,
-        int                              slotId,
-        int                              sizeForSlotIdCheck,
-        std::optional<int>               consecutiveSlotFillCount,
-        std::optional<int>               sizeForCountCheck
+        ::Util::ReplacementResults& replacementResults,
+        int                         slotId,
+        int                         sizeForSlotIdCheck,
+        ::std::optional<int>        consecutiveSlotFillCount,
+        ::std::optional<int>        sizeForCountCheck
     );
 
+    MCAPI static ::Util::ReplacementResults replaceActorSlotsOrError(::Util::ActorReplacementParams& actorParams);
+
+    MCAPI static ::Util::ReplacementResults
+    replaceContainerSlotsOrError(::Util::ContainerReplacementParams& containerParams);
     // NOLINTEND
 };
 
-}; // namespace Util
+} // namespace Util

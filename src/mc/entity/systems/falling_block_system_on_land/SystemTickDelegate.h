@@ -11,12 +11,17 @@ class BlockPos;
 class FallingBlock;
 class FallingBlockActor;
 class IBlockSource;
-class ITickDelegate;
 // clang-format on
 
 namespace FallingBlockSystemOnLand {
 
 class SystemTickDelegate : public ::ITickDelegate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk3f25b4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SystemTickDelegate& operator=(SystemTickDelegate const&);
@@ -24,30 +29,37 @@ public:
     SystemTickDelegate();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SystemTickDelegate();
-
     // vIndex: 1
-    virtual void onLand(class FallingBlock const& block, class IBlockSource& region, class BlockPos const& pos);
+    virtual void onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 2
-    virtual void breakBlock(class FallingBlockActor& fallingBlock);
+    virtual void breakBlock(::FallingBlockActor& fallingBlock) /*override*/;
 
+    // vIndex: 0
+    virtual ~SystemTickDelegate() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void breakBlock$(class FallingBlockActor& fallingBlock);
+    MCAPI void $breakBlock(::FallingBlockActor& fallingBlock);
+    // NOLINTEND
 
-    MCAPI void onLand$(class FallingBlock const& block, class IBlockSource& region, class BlockPos const& pos);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace FallingBlockSystemOnLand
+} // namespace FallingBlockSystemOnLand

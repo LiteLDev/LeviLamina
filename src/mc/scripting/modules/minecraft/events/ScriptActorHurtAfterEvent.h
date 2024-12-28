@@ -9,39 +9,59 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorHurtAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk8e9c39;
+    ::ll::UntypedStorage<8, 88> mUnkd8fc28;
+    ::ll::UntypedStorage<4, 4>  mUnkbc914a;
+    ::ll::UntypedStorage<8, 40> mUnk2ac240;
+    ::ll::UntypedStorage<8, 40> mUnk4c5039;
+    ::ll::UntypedStorage<4, 4>  mUnkc62760;
+    ::ll::UntypedStorage<8, 32> mUnk3edad4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&);
     ScriptActorHurtAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     MCAPI ~ScriptActorHurtAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>
-    bind();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>
-    bindV010();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent> bind();
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>
+    bindV010();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

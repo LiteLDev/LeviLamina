@@ -4,30 +4,35 @@
 
 class ExperimentStorage {
 public:
-    std::vector<bool> mExperimentData;
-    std::vector<bool> mDeprecatedData;
-    bool              mExperimentsEverToggled;
+    // ExperimentStorage inner types define
+    using ExperimentData = ::std::vector<bool>;
 
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::vector<bool>> mExperimentData;
+    ::ll::TypedStorage<8, 32, ::std::vector<bool>> mDeprecatedData;
+    ::ll::TypedStorage<1, 1, bool>                 mExperimentsEverToggled;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ExperimentStorage(ExperimentStorage const&);
     ExperimentStorage();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool isAnyToggleEnabled() const;
+    MCAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
 
-    MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
-
-    MCAPI bool wereAnyExperimentsEverToggled() const;
+    MCAPI ::ExperimentStorage& operator=(::ExperimentStorage const&);
 
     MCAPI ~ExperimentStorage();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

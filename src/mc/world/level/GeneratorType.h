@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class GeneratorType : int {
-    Legacy    = 0x0,
-    Overworld = 0x1,
-    Flat      = 0x2,
-    Nether    = 0x3,
-    TheEnd    = 0x4,
-    Void      = 0x5,
-    Undefined = 0x6,
+    Legacy    = 0,
+    Overworld = 1,
+    Flat      = 2,
+    Nether    = 3,
+    TheEnd    = 4,
+    Void      = 5,
+    Undefined = 6,
 };

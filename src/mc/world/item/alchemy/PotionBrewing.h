@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Item;
+class ItemDescriptor;
+class ItemInstance;
+// clang-format on
+
 class PotionBrewing {
 public:
     // PotionBrewing inner types declare
@@ -13,28 +20,32 @@ public:
     // PotionBrewing inner types define
     class Ingredient {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnka70936;
+        ::ll::UntypedStorage<4, 4> mUnk808e4c;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Ingredient& operator=(Ingredient const&);
         Ingredient(Ingredient const&);
         Ingredient();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI explicit Ingredient(class ItemInstance const& item);
-
-        MCAPI bool equals(class ItemDescriptor const& input) const;
+        MCAPI explicit Ingredient(::ItemInstance const& item);
 
         MCAPI int getData() const;
 
         MCAPI int getItemId() const;
-
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class ItemInstance const& item);
-
+        MCAPI void* $ctor(::ItemInstance const& item);
         // NOLINTEND
     };
 
@@ -54,63 +65,49 @@ public:
     PotionBrewing();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void
-    addContainerRecipe(class Item const& from, class PotionBrewing::Ingredient const& ingredient, class Item const& to);
+    addContainerRecipe(::Item const& from, ::PotionBrewing::Ingredient const& ingredient, ::Item const& to);
 
     MCAPI static void addPotionMix(
-        class ItemDescriptor const&            from,
-        class PotionBrewing::Ingredient const& ingredient,
-        class ItemDescriptor const&            to
+        ::ItemDescriptor const&            from,
+        ::PotionBrewing::Ingredient const& ingredient,
+        ::ItemDescriptor const&            to
     );
 
-    MCAPI static int getFuelValue(class ItemDescriptor const& item);
+    MCAPI static int getFuelValue(::ItemDescriptor const& item);
 
-    MCAPI static bool hasMix(class ItemInstance const& source, class ItemDescriptor const& ingredient);
+    MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
     MCAPI static void initPotionBrewing();
 
-    MCAPI static bool isFuel(class ItemDescriptor const& item);
+    MCAPI static bool isFuel(::ItemDescriptor const& item);
 
-    MCAPI static bool isIngredient(class ItemDescriptor const& item);
+    MCAPI static bool isIngredient(::ItemDescriptor const& item);
 
-    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const& item);
+    MCAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
 
-    MCAPI static class ItemInstance mix(class ItemDescriptor const& ingredient, class ItemInstance const& source);
+    MCAPI static ::ItemInstance mix(::ItemDescriptor const& ingredient, ::ItemInstance const& source);
 
     MCAPI static void shutdown();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void addChemistryMix(
-        class ItemInstance const&              from,
-        class PotionBrewing::Ingredient const& ingredient,
-        class ItemInstance const&              to
-    );
-
-    MCAPI static class ItemInstance
-    getChemistryMix(class ItemDescriptor const& from, class ItemDescriptor const& ingredient);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>>& mChemistryMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
 
-    MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>>& mContainerMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
     MCAPI static bool& mIsInitialized();
 
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>>& mPotionMixes();
+    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 
-    MCAPI static std::vector<class PotionBrewing::Ingredient>& mValidContainers();
+    MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
 
-    MCAPI static std::unordered_set<class PotionBrewing::Ingredient>& mValidIngredients();
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
 
-    MCAPI static std::unordered_set<class PotionBrewing::Ingredient>& mValidRecipeInputs();
-
+    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
 };

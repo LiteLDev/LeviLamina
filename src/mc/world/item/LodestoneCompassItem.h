@@ -4,19 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/AbstractCompassItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class Dimension;
+class InteractionResult;
+class ItemStack;
+class LodestoneCompassComponent;
+class Mob;
+class Vec3;
+struct ActorUniqueID;
 namespace PositionTrackingDB { class TrackingRecord; }
-namespace mce { class Color; }
 // clang-format on
 
 class LodestoneCompassItem : public ::AbstractCompassItem {
@@ -27,45 +29,61 @@ public:
     LodestoneCompassItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 110
+    virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const /*override*/;
+
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~LodestoneCompassItem() = default;
-
-    // vIndex: 106
-    virtual int getAnimationFrameFor(class Mob* holder, bool, class ItemStack const* item, bool) const;
-
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
-
-    MCAPI LodestoneCompassItem(std::string const& name, int id);
-
-    MCAPI static bool linkCompassToLodestone(class ItemStack& item, class BlockSource& region, class BlockPos pos);
-
+    virtual ~LodestoneCompassItem() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static class LodestoneCompassComponent* _tryGetOrAddComponent(
-        class PositionTrackingDB::TrackingRecord*                                           record,
-        std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const& calcId
+    MCAPI LodestoneCompassItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
+        ::PositionTrackingDB::TrackingRecord*                                            record,
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& calcId
     );
 
+    MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& item, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
-    MCAPI int getAnimationFrameFor$(class Mob* holder, bool, class ItemStack const* item, bool) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

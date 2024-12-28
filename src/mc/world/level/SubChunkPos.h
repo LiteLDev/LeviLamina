@@ -2,30 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SubChunkPos : public ll::math::intN3<SubChunkPos> {
-public:
-    using intN3::intN3;
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
 
+class SubChunkPos {
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit SubChunkPos(class BlockPos const& bp);
-
-    MCAPI explicit operator class BlockPos() const;
-
+    ::ll::TypedStorage<4, 4, int> x;
+    ::ll::TypedStorage<4, 4, int> y;
+    ::ll::TypedStorage<4, 4, int> z;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    SubChunkPos& operator=(SubChunkPos const&);
+    SubChunkPos(SubChunkPos const&);
+    SubChunkPos();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockPos const& bp);
+    MCAPI explicit SubChunkPos(::BlockPos const& bp);
 
-    MCAPI static class SubChunkPos const& MAX();
+    MCAPI explicit operator ::BlockPos() const;
+    // NOLINTEND
 
-    MCAPI static class SubChunkPos const& MIN();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SubChunkPos const& MAX();
 
-    MCAPI static class SubChunkPos const& ONE();
+    MCAPI static ::SubChunkPos const& MIN();
 
-    MCAPI static class SubChunkPos const& ZERO();
+    MCAPI static ::SubChunkPos const& ONE();
 
+    MCAPI static ::SubChunkPos const& ZERO();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& bp);
     // NOLINTEND
 };

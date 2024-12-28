@@ -2,7 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 class PlayerSuspendLevelStorageSaveToken {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkf58512;
+    ::ll::UntypedStorage<8, 16> mUnk1626c0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerSuspendLevelStorageSaveToken& operator=(PlayerSuspendLevelStorageSaveToken const&);
@@ -10,23 +22,26 @@ public:
     PlayerSuspendLevelStorageSaveToken();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerSuspendLevelStorageSaveToken(class EntityContext& entity);
+    MCAPI PlayerSuspendLevelStorageSaveToken(::PlayerSuspendLevelStorageSaveToken&&);
 
-    MCAPI PlayerSuspendLevelStorageSaveToken(class PlayerSuspendLevelStorageSaveToken&&);
+    MCAPI explicit PlayerSuspendLevelStorageSaveToken(::EntityContext& entity);
 
     MCAPI ~PlayerSuspendLevelStorageSaveToken();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class EntityContext& entity);
+    MCAPI void* $ctor(::PlayerSuspendLevelStorageSaveToken&&);
 
-    MCAPI void* ctor$(class PlayerSuspendLevelStorageSaveToken&&);
+    MCAPI void* $ctor(::EntityContext& entity);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

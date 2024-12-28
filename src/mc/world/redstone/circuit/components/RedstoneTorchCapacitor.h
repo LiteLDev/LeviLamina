@@ -5,97 +5,156 @@
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
+#include "mc/world/redstone/circuit/components/RedstoneLogicExecutionFlags.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseCircuitComponent;
+class BlockPos;
+class CircuitSceneGraph;
+class CircuitSystem;
+class CircuitTrackingInfo;
+// clang-format on
 
 class RedstoneTorchCapacitor : public ::CapacitorComponent {
 public:
-    class State {
-        bool mOn;
-        bool mHalfFrame;
-        bool mChanged;
+    // RedstoneTorchCapacitor inner types declare
+    // clang-format off
+    struct State;
+    // clang-format on
+
+    // RedstoneTorchCapacitor inner types define
+    struct State {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnkea9d51;
+        ::ll::UntypedStorage<1, 1> mUnk58ecb8;
+        ::ll::UntypedStorage<1, 1> mUnk8cada1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        State& operator=(State const&);
+        State(State const&);
+        State();
     };
-    RedstoneTorchCapacitor*    mNextOrder;
-    int                        mSelfPowerCount;
-    State                      mState[2];
-    bool                       mCanReigniteFromBurnout;
-    const CircuitComponentType mCircuitComponentType = CircuitComponentType::RedstoneTorchCapacitor;
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::RedstoneTorchCapacitor*>          mNextOrder;
+    ::ll::TypedStorage<4, 4, int>                                mSelfPowerCount;
+    ::ll::TypedStorage<1, 6, ::RedstoneTorchCapacitor::State[2]> mState;
+    ::ll::TypedStorage<1, 1, bool>                               mCanReigniteFromBurnout;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const>       mCircuitComponentType;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RedstoneTorchCapacitor& operator=(RedstoneTorchCapacitor const&);
+    RedstoneTorchCapacitor(RedstoneTorchCapacitor const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RedstoneTorchCapacitor() = default;
+    virtual ~RedstoneTorchCapacitor() /*override*/;
 
-    // vIndex: 1
-    virtual int getStrength() const;
-
-    // vIndex: 10
-    virtual void removeSource(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
-
-    // vIndex: 11
-    virtual bool
-    addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    // vIndex: 26
+    virtual uchar getPoweroutDirection() const /*override*/;
 
     // vIndex: 12
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+    virtual bool
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+
+    // vIndex: 11
+    virtual bool addSource(
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
+    ) /*override*/;
+
+    // vIndex: 10
+    virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
 
     // vIndex: 14
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 15
-    virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
+    virtual void cacheValues(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
+
+    // vIndex: 1
+    virtual int getStrength() const /*override*/;
+
+    // vIndex: 19
+    virtual bool isHalfPulse() const /*override*/;
+
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+
+    // vIndex: 17
+    virtual ::RedstoneLogicExecutionFlags getLogicExecutionFlags() const /*override*/;
 
     // vIndex: 16
-    virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const&);
+    virtual void updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos) /*override*/;
+    // NOLINTEND
 
-    // vIndex: 18
-    virtual bool isHalfPulse() const;
-
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
-
-    // vIndex: 25
-    virtual uchar getPoweroutDirection() const;
-
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI RedstoneTorchCapacitor();
+
+    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
 
     MCAPI void resetBurnOutCount();
 
     MCAPI void setOn(bool bOn);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI int _findStrongestStrength(class BlockPos const& targetPos, class CircuitSystem&, bool& bPowerFromSelf);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI uchar $getPoweroutDirection() const;
+
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    addSource$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCAPI void cacheValues$(class CircuitSystem& system, class BlockPos const& pos);
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool evaluate$(class CircuitSystem&, class BlockPos const&);
+    MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+    MCAPI int $getStrength() const;
 
-    MCAPI uchar getPoweroutDirection$() const;
+    MCAPI bool $isHalfPulse() const;
 
-    MCAPI int getStrength$() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
 
-    MCAPI bool isHalfPulse$() const;
+    MCAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCAPI void removeSource$(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
+    MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI void updateDependencies$(class CircuitSceneGraph& system, class BlockPos const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

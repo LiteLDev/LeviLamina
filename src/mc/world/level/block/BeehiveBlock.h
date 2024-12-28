@@ -3,19 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Actor;
+class BeehiveBlockActor;
+class Block;
+class BlockPos;
+class BlockSource;
+class ItemStack;
+class Player;
+class Random;
 // clang-format on
 
 class BeehiveBlock : public ::FaceDirectionalActorBlock {
@@ -26,108 +25,124 @@ public:
     BeehiveBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BeehiveBlock() = default;
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 2
-    virtual class Block const* getNextBlockPermutation(class Block const& currentBlock) const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 95
-    virtual class Block const*
-    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    // vIndex: 100
+    virtual void executeEvent(
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             sourceEntity
+    ) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
     // vIndex: 106
-    virtual void executeEvent(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&,
-        std::string const& eventName,
-        class Actor&       sourceEntity
-    ) const;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
+    // vIndex: 89
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
 
-    // vIndex: 112
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+    // vIndex: 2
+    virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
-    // vIndex: 129
-    virtual int getVariant(class Block const& block) const;
+    // vIndex: 121
+    virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 132
-    virtual uchar getMappedFace(uchar face, class Block const& block) const;
-
-    // vIndex: 134
-    virtual void animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    MCAPI BeehiveBlock(std::string const& nameId, int id);
-
-    MCAPI void emitHoneyComb(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void evictAll(class BlockSource& region, class BlockPos const& pos, bool angry) const;
-
-    MCAPI void onPlayerPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI static void deliverNectar(class BlockSource& region, class Block const& block, class BlockPos const& pos);
-
-    MCAPI static class ItemStack
-    getHiveItemWithOccupants(class Block const& block, class BeehiveBlockActor const* beehiveBlockActor);
-
-    MCAPI static bool hasHoneyToHarvest(class Block const& block);
-
-    MCAPI static void resetHoneyLevel(class BlockSource& region, class Block const& block, class BlockPos const& pos);
-
+    // vIndex: 0
+    virtual ~BeehiveBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _fillHoneyBottle(
-        class Player&         player,
-        class ItemStack&      emptyBottle,
-        class ItemStack&      honeyBottle,
-        class BlockSource&    region,
-        class BlockPos const& pos
-    ) const;
-
-    MCAPI void _playBottleSound(class BlockSource& region, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BeehiveBlock(::std::string const& nameId, int id);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
-
-    MCAPI void animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    MCAPI void executeEvent$(
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&,
-        std::string const& eventName,
-        class Actor&       sourceEntity
+    MCAPI void _fillHoneyBottle(
+        ::Player&         player,
+        ::ItemStack&      emptyBottle,
+        ::ItemStack&      honeyBottle,
+        ::BlockSource&    region,
+        ::BlockPos const& pos
     ) const;
 
-    MCAPI int getComparatorSignal$(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+    MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI uchar getMappedFace$(uchar face, class Block const& block) const;
+    MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
 
-    MCAPI class Block const* getNextBlockPermutation$(class Block const& currentBlock) const;
+    MCAPI void onPlayerPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI int getVariant$(class Block const& block) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void deliverNectar(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI bool hasComparatorSignal$() const;
+    MCAPI static ::ItemStack
+    getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 
-    MCAPI class Block const*
-    playerWillDestroy$(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    MCAPI static bool hasHoneyToHarvest(::Block const& block);
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI static void resetHoneyLevel(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+
+    MCAPI void $executeEvent(
+        ::BlockSource&       region,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             sourceEntity
+    ) const;
+
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $hasComparatorSignal() const;
+
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

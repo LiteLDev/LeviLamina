@@ -13,7 +13,6 @@
 namespace Scripting { class IObjectInspector; }
 namespace Scripting { class IRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class ScriptValue; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClosureType; }
 namespace Scripting { struct ContextId; }
@@ -23,65 +22,83 @@ namespace Scripting {
 
 class ClosureAny : public ::Scripting::ScriptValue {
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClosureAny();
-
-    MCAPI ClosureAny();
-
-    MCAPI ClosureAny(class Scripting::ClosureAny&& rhs);
-
-    MCAPI ClosureAny(class Scripting::ClosureAny const& rhs);
-
-    MCAPI ClosureAny(
-        class Scripting::IRuntime*                                              runtime,
-        struct Scripting::ContextId                                             contextId,
-        class Scripting::WeakLifetimeScope                                      scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::ClosureType> handle,
-        class Scripting::IObjectInspector*                                      inspector
-    );
-
-    MCAPI class Scripting::ResultAny callGeneric(
-        entt::meta_any*                       args,
-        uint                                  argc,
-        entt::meta_type                       expectedReturnType,
-        std::optional<::Scripting::Privilege> privilege
-    ) const;
-
-    MCAPI bool compareTo(class Scripting::ClosureAny const& rhs) const;
-
-    MCAPI std::optional<struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>> getClosureHandle() const;
-
-    MCAPI class Scripting::ClosureAny& operator=(class Scripting::ClosureAny&& rhs);
-
-    MCAPI class Scripting::ClosureAny& operator=(class Scripting::ClosureAny const& rhs);
-
-    MCAPI bool valid() const;
-
+    ::ll::UntypedStorage<8, 40> mUnke4d77a;
+    ::ll::UntypedStorage<8, 8>  mUnk1d806b;
     // NOLINTEND
 
-    // thunks
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~ClosureAny() /*override*/;
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Scripting::ClosureAny&& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ClosureAny();
 
-    MCAPI void* ctor$();
+    MCAPI ClosureAny(::Scripting::ClosureAny const& rhs);
 
-    MCAPI void* ctor$(class Scripting::ClosureAny const& rhs);
+    MCAPI ClosureAny(::Scripting::ClosureAny&& rhs);
 
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*                                              runtime,
-        struct Scripting::ContextId                                             contextId,
-        class Scripting::WeakLifetimeScope                                      scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::ClosureType> handle,
-        class Scripting::IObjectInspector*                                      inspector
+    MCAPI ClosureAny(
+        ::Scripting::IRuntime*                                         runtime,
+        ::Scripting::ContextId                                         contextId,
+        ::Scripting::WeakLifetimeScope                                 scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::ClosureType> handle,
+        ::Scripting::IObjectInspector*                                 inspector
     );
 
-    MCAPI void dtor$();
+    MCAPI ::Scripting::ResultAny callGeneric(
+        ::entt::meta_any*                       args,
+        uint                                    argc,
+        ::entt::meta_type                       expectedReturnType,
+        ::std::optional<::Scripting::Privilege> privilege
+    ) const;
 
+    MCAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
+
+    MCAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::ClosureType>> getClosureHandle() const;
+
+    MCAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny const& rhs);
+
+    MCAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
+
+    MCAPI bool valid() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Scripting::ClosureAny const& rhs);
+
+    MCAPI void* $ctor(::Scripting::ClosureAny&& rhs);
+
+    MCAPI void* $ctor(
+        ::Scripting::IRuntime*                                         runtime,
+        ::Scripting::ContextId                                         contextId,
+        ::Scripting::WeakLifetimeScope                                 scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::ClosureType> handle,
+        ::Scripting::IObjectInspector*                                 inspector
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

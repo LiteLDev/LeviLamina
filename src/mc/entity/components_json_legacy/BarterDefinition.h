@@ -12,16 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 class BarterDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk985781;
+    ::ll::UntypedStorage<4, 4>  mUnkd61421;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     BarterDefinition& operator=(BarterDefinition const&);
     BarterDefinition(BarterDefinition const&);
     BarterDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>>& root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BarterDefinition>>& root);
     // NOLINTEND
 };

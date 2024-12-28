@@ -3,10 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemDescriptor;
+class ItemStack;
+class Mob;
+// clang-format on
+
 class SnackGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk2c5e87;
+    ::ll::UntypedStorage<8, 24> mUnke35d76;
+    ::ll::UntypedStorage<8, 8>  mUnkb7787d;
+    ::ll::UntypedStorage<4, 4>  mUnk8ea1a9;
+    ::ll::UntypedStorage<4, 4>  mUnkcb1e56;
+    ::ll::UntypedStorage<4, 4>  mUnk5af591;
+    ::ll::UntypedStorage<8, 40> mUnk2ff079;
+    ::ll::UntypedStorage<8, 8>  mUnkf96a22;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SnackGoal& operator=(SnackGoal const&);
@@ -14,78 +33,47 @@ public:
     SnackGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SnackGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
-
-    // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
+
+    // vIndex: 2
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 10
     virtual int getRandomEatingEnd() const;
 
-    MCAPI SnackGoal(
-        class Mob&                               mob,
-        std::vector<class ItemDescriptor> const& itemList,
-        float                                    cooldown,
-        float                                    min,
-        float                                    stopChance
-    );
-
+    // vIndex: 0
+    virtual ~SnackGoal() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI
+    SnackGoal(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
+
     MCAPI bool _hasSnackableItems();
 
-    MCAPI bool _isSnackableItem(class ItemStack const& item) const;
-
-    MCAPI void _updateHand(class ItemStack const& item);
-
+    MCAPI void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob&                               mob,
-        std::vector<class ItemDescriptor> const& itemList,
-        float                                    cooldown,
-        float                                    min,
-        float                                    stopChance
-    );
-
-    MCAPI void appendDebugInfo$(std::string& str) const;
-
-    MCAPI bool canContinueToUse$();
-
-    MCAPI bool canUse$();
-
-    MCAPI int getRandomEatingEnd$() const;
-
-    MCAPI void start$();
-
-    MCAPI void stop$();
-
-    MCAPI void tick$();
-
     MCAPI static int const& CHEW_CHANCE();
 
     MCAPI static int const& EATING_TIME();
@@ -99,6 +87,42 @@ public:
     MCAPI static float const& SEARCH_SIZE();
 
     MCAPI static float const& STOP_DIST_SQRD();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
+
+    MCAPI void $start();
+
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI bool $canContinueToUse();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI int $getRandomEatingEnd() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

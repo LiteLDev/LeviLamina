@@ -2,7 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InsideBubbleColumnSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct InsideBubbleColumnSystem {
+public:
+    // InsideBubbleColumnSystem inner types declare
+    // clang-format off
+    struct SpawnBubblesVisitor;
+    // clang-format on
+
+    // InsideBubbleColumnSystem inner types define
+    struct SpawnBubblesVisitor {
+    public:
+        // prevent constructor by default
+        SpawnBubblesVisitor& operator=(SpawnBubblesVisitor const&);
+        SpawnBubblesVisitor(SpawnBubblesVisitor const&);
+        SpawnBubblesVisitor();
+    };
+
 public:
     // prevent constructor by default
     InsideBubbleColumnSystem& operator=(InsideBubbleColumnSystem const&);
@@ -10,8 +30,8 @@ public:
     InsideBubbleColumnSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
     // NOLINTEND
 };

@@ -7,95 +7,108 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntitySystems;
+class ILevel;
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
 namespace VanillaSystemsRegistration {
+// functions
 // NOLINTBEGIN
 MCAPI void registerActorAiStepSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerActorMoveSystems(
-    class EntitySystems&                                          systems,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
-);
+MCAPI void
+registerActorMoveSystems(::EntitySystems& systems, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 
 MCAPI void registerActorMovementTickSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerActorNormalTickSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerActorPreTravelSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerActorTravelSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerBlockPosTrackerSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+MCAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
+
 MCAPI void registerEntityInsideSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerEnvironmentSensingSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerMinecartMovementSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerMovementInputSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
+MCAPI void registerMovementTickEligibilitySystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerPostMovementSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerPreMoveTravelVelocitySystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerResetMovementValuesSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems& systemRegistry);
+MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
 
-MCAPI void registerTickFilterSystems(class EntitySystems& systemRegistry);
+MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
+
+MCAPI void registerVanillaServerRuntimeInitializers(
+    ::EntitySystems&                                         systems,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
 MCAPI void registerVanillaServerTickingSystems(
-    class EntitySystems&                                          systemRegistry,
-    Bedrock::NotNullNonOwnerPtr<class ILevel const>               level,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::Bedrock::NotNullNonOwnerPtr<::ILevel const>            level,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 MCAPI void registerVehicleManagementSystems(
-    class EntitySystems&                                          systemRegistry,
-    struct VanillaSystemsRegistration::RegistrationOptions const& options
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 // NOLINTEND
 
-}; // namespace VanillaSystemsRegistration
+} // namespace VanillaSystemsRegistration

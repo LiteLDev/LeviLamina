@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -17,55 +17,71 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptRawMessageInterface {
 public:
-    // prevent constructor by default
-    ScriptRawMessageInterface();
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ScriptRawMessageInterface(struct ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
-
-    MCAPI void buildJsonObject(class Json::Value& val) const;
-
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
-
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
-
-    MCAPI class Scripting::Result<class Json::Value>
-    resolveAsJson(class Actor& recipient, ::CurrentCmdVersion commandVersion) const;
-
-    MCAPI class Scripting::Result<std::string>
-    resolveAsJsonString(class Actor& recipient, ::CurrentCmdVersion commandVersion) const;
-
-    MCAPI class Json::Value toJson() const;
-
-    MCAPI ~ScriptRawMessageInterface();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageInterface>
-    bind();
-
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(class Json::Value const& json);
-
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromString(std::string const& str);
-
-    MCAPI static std::vector<struct ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(
-        std::vector<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
-            rawTextWithString
-    );
-
+    ::ll::UntypedStorage<8, 40> mUnk5071be;
+    ::ll::UntypedStorage<8, 40> mUnkd71b92;
+    ::ll::UntypedStorage<8, 8>  mUnk51e4bc;
+    ::ll::UntypedStorage<8, 32> mUnkbb74af;
+    ::ll::UntypedStorage<8, 88> mUnk52bfc9;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    MCAPI ScriptRawMessageInterface();
 
-    MCAPI void dtor$();
+    MCAPI ScriptRawMessageInterface(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
+    MCAPI void buildJsonObject(::Json::Value& val) const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
+
+    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    resolveAsJson(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string>
+    resolveAsJsonString(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
+
+    MCAPI ::Json::Value toJson() const;
+
+    MCAPI ~ScriptRawMessageInterface();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRawMessageInterface> bind();
+
+    MCAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(::Json::Value const& json);
+
+    MCAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromString(::std::string const& str);
+
+    MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(
+        ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
+            rawTextWithString
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

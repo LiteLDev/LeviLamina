@@ -1,14 +1,16 @@
 #pragma once
 
-#include "ll/api/Expected.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/platform/ErrorInfo.h"
 
 namespace Bedrock {
-template <typename T, typename Err>
-class Result : public nonstd::expected<T, ErrorInfo<Err>> {
+
+template <typename T0, typename T1>
+class Result {
 public:
-    using Base = nonstd::expected<T, ErrorInfo<Err>>;
-    using Base::Base;
+    // prevent constructor by default
+    Result& operator=(Result const&);
+    Result(Result const&);
+    Result();
 };
-}; // namespace Bedrock
+
+} // namespace Bedrock

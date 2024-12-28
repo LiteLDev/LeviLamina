@@ -9,7 +9,16 @@ class Random;
 
 namespace ValueProviders {
 
-class ClampedNormalFloat {
+struct ClampedNormalFloat {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk2faf21;
+    ::ll::UntypedStorage<4, 4> mUnk1f8356;
+    ::ll::UntypedStorage<4, 4> mUnk25b93c;
+    ::ll::UntypedStorage<4, 4> mUnkd8f4e6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ClampedNormalFloat& operator=(ClampedNormalFloat const&);
@@ -17,12 +26,16 @@ public:
     ClampedNormalFloat();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI float generateNext(class Random& random) const;
+    MCAPI float generateNext(::Random& random) const;
+    // NOLINTEND
 
-    MCAPI static float generateNext(class Random& random, float mean, float deviation, float min, float max);
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float generateNext(::Random& random, float mean, float deviation, float min, float max);
     // NOLINTEND
 };
 
-}; // namespace ValueProviders
+} // namespace ValueProviders

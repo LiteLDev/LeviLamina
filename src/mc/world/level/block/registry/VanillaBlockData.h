@@ -9,14 +9,21 @@ namespace cereal { struct ReflectionCtx; }
 
 class VanillaBlockData {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbfccfd;
+    ::ll::UntypedStorage<4, 4> mUnk98e017;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VanillaBlockData& operator=(VanillaBlockData const&);
     VanillaBlockData(VanillaBlockData const&);
     VanillaBlockData();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

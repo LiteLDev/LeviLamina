@@ -2,15 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorOwnerComponent;
+class EntityContext;
+class FreezingComponent;
+// clang-format on
+
 namespace FreezingSystemInternal {
+// functions
 // NOLINTBEGIN
-MCAPI void processFreezeEffect(class Actor& actor, class FreezingComponent const& freezeComp);
+MCAPI void processFreezeEffect(::Actor& actor, ::FreezingComponent const& freezeComp);
 
 MCAPI void tickFreezeComponent(
-    class EntityContext&       entity,
-    class ActorOwnerComponent& actorOwnerComponent,
-    class FreezingComponent&   freezingComponent
+    ::EntityContext&       entity,
+    ::ActorOwnerComponent& actorOwnerComponent,
+    ::FreezingComponent&   freezingComponent
 );
 // NOLINTEND
 
-}; // namespace FreezingSystemInternal
+} // namespace FreezingSystemInternal

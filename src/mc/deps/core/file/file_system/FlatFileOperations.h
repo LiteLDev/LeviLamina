@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,57 +25,56 @@ public:
     FlatFileOperations();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Core::Result copyFlatFile(
-        class Core::FileSystemImpl*                   sourceTransaction,
-        class Core::Path const&                       sourceDirectoryPath,
-        class Core::FileSystemImpl*                   targetTransaction,
-        class Core::Path const&                       targetDirectoryPath,
-        std::vector<struct Core::ExcludedPath> const& exclusionDirectories,
-        std::vector<struct Core::ExcludedPath> const& excludedFiles
+    MCAPI static ::Core::Result copyFlatFile(
+        ::Core::FileSystemImpl*                    sourceTransaction,
+        ::Core::Path const&                        sourceDirectoryPath,
+        ::Core::FileSystemImpl*                    targetTransaction,
+        ::Core::Path const&                        targetDirectoryPath,
+        ::std::vector<::Core::ExcludedPath> const& exclusionDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
-    MCAPI static class Core::Result createFlatFile(
-        class Core::FileSystemImpl*                   sourceTransaction,
-        class Core::Path const&                       sourceDirectoryPath,
-        class Core::FileSystemImpl*                   targetTransaction,
-        class Core::Path const&                       targetDirectoryPath,
-        std::vector<struct Core::ExcludedPath> const& exclusionPaths,
-        bool                                          deleteSourceDirectory
+    MCAPI static ::Core::Result createFlatFile(
+        ::Core::FileSystemImpl*                    sourceTransaction,
+        ::Core::Path const&                        sourceDirectoryPath,
+        ::Core::FileSystemImpl*                    targetTransaction,
+        ::Core::Path const&                        targetDirectoryPath,
+        ::std::vector<::Core::ExcludedPath> const& exclusionPaths,
+        bool                                       deleteSourceDirectory
     );
 
-    MCAPI static class Core::Result replaceFlatFileManifest(
-        class Core::FileSystemImpl&                          transaction,
-        class Core::Path const&                              flatFileManifestPath,
-        std::vector<class Core::FlatFileManifestInfo> const& manifestInfoVector,
-        bool                                                 keepCached
+    MCAPI static ::Core::Result replaceFlatFileManifest(
+        ::Core::FileSystemImpl&                            transaction,
+        ::Core::Path const&                                flatFileManifestPath,
+        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
+        bool                                               keepCached
     );
 
-    MCAPI static class Core::Result transferFlatFileDirectory(
-        class Core::FileSystemImpl* sourceTransaction,
-        class Core::Path const&     sourceDirectoryPath,
-        class Core::FileSystemImpl* targetTransaction,
-        class Core::Path const&     targetDirectoryPath
+    MCAPI static ::Core::Result transferFlatFileDirectory(
+        ::Core::FileSystemImpl* sourceTransaction,
+        ::Core::Path const&     sourceDirectoryPath,
+        ::Core::FileSystemImpl* targetTransaction,
+        ::Core::Path const&     targetDirectoryPath
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
     MCAPI static uint64 const& FLAT_FILE_CURRENT_VERSION();
 
-    MCAPI static std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
+    MCAPI static ::std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& FLAT_FILE_EXTENSION();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_EXTENSION();
 
     MCAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
 
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
 
     MCAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
-
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

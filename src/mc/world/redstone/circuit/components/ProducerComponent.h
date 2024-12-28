@@ -6,60 +6,94 @@
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class CircuitSceneGraph;
+class CircuitSystem;
+class CircuitTrackingInfo;
+// clang-format on
+
 class ProducerComponent : public ::BaseCircuitComponent {
 public:
-    int                        mNextStrength;
-    bool                       mAttachedAllowed;
-    bool                       mStopPower;
-    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ProducerComponent;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                          mNextStrength;
+    ::ll::TypedStorage<1, 1, bool>                         mAttachedAllowed;
+    ::ll::TypedStorage<1, 1, bool>                         mStopPower;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ProducerComponent& operator=(ProducerComponent const&);
+    ProducerComponent(ProducerComponent const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ProducerComponent() = default;
+    // vIndex: 14
+    virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 3
-    virtual void setStrength(int strength);
-
-    // vIndex: 8
-    virtual bool canStopPower() const;
-
-    // vIndex: 9
-    virtual void setStopPower(bool bPower);
+    virtual void setStrength(int strength) /*override*/;
 
     // vIndex: 12
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+    virtual bool
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
-    // vIndex: 14
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    // vIndex: 8
+    virtual bool canStopPower() const /*override*/;
 
-    // vIndex: 23
-    virtual ::CircuitComponentType getCircuitComponentType() const;
+    // vIndex: 9
+    virtual void setStopPower(bool bPower) /*override*/;
 
+    // vIndex: 24
+    virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+
+    // vIndex: 0
+    virtual ~ProducerComponent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ProducerComponent();
 
     MCAPI void allowAttachments(bool bAttached);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool allowConnection$(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool canStopPower$() const;
+    MCAPI void $setStrength(int strength);
 
-    MCAPI bool evaluate$(class CircuitSystem&, class BlockPos const&);
+    MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI ::CircuitComponentType getCircuitComponentType$() const;
+    MCAPI bool $canStopPower() const;
 
-    MCAPI void setStopPower$(bool bPower);
+    MCAPI void $setStopPower(bool bPower);
 
-    MCAPI void setStrength$(int strength);
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

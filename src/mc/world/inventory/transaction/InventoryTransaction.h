@@ -1,71 +1,89 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/inventory/transaction/InventoryAction.h"
-#include "mc/world/inventory/transaction/InventoryTransactionItemGroup.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/inventory/transaction/InventoryTransactionError.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPalette;
+class InventoryAction;
+class InventorySource;
+class InventoryTransactionItemGroup;
+class ItemStack;
+class Player;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class InventoryTransaction {
 public:
-    std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
-    std::vector<class InventoryTransactionItemGroup>                              items;   // 0x40
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InventorySource, ::std::vector<::InventoryAction>>> mActions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryTransactionItemGroup>>                            mContents;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     InventoryTransaction& operator=(InventoryTransaction const&);
     InventoryTransaction();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI InventoryTransaction(class InventoryTransaction const&);
+    MCAPI InventoryTransaction(::InventoryTransaction const&);
 
     MCAPI void _logTransaction(bool isClientSide) const;
 
-    MCAPI void addAction(class InventoryAction const& action);
+    MCAPI void addAction(::InventoryAction const& action);
 
-    MCAPI ::InventoryTransactionError executeFull(class Player& p, bool isSenderAuthority) const;
+    MCAPI void addItemToContent(::ItemStack const& item, int count);
+
+    MCAPI ::InventoryTransactionError executeFull(::Player& p, bool isSenderAuthority) const;
 
     MCAPI void forceBalanceTransaction();
 
-    MCAPI std::vector<class InventoryAction> const& getActions(class InventorySource const& source) const;
+    MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
 
-    MCAPI std::function<::InventoryTransactionError(class Player&, class InventoryAction const&, bool)>
-          getVerifyFunction(class InventorySource const& source) const;
+    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
+    MCAPI void serialize(::BinaryStream& stream, bool isClientSide) const;
 
-    MCAPI void serialize(class BinaryStream& stream, bool isClientSide) const;
-
-    MCAPI ::InventoryTransactionError verifyFull(class Player& p, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
 
     MCAPI ~InventoryTransaction();
-
-    MCAPI static bool checkTransactionItemsMatch(class ItemStack const& serverItem, class ItemStack const& clientItem);
-
-    MCAPI static class Bedrock::Result<class InventoryTransaction> deserialize(class ReadOnlyBinaryStream& stream);
-
-    MCAPI static std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void addItemToContent(class ItemStack const& item, int count);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class InventoryTransaction const&);
+    MCAPI static bool checkTransactionItemsMatch(::ItemStack const& serverItem, ::ItemStack const& clientItem);
 
-    MCAPI void dtor$();
+    MCAPI static ::Bedrock::Result<::InventoryTransaction> deserialize(::ReadOnlyBinaryStream& stream);
 
-    MCAPI static class BidirectionalUnorderedMap<::InventoryTransactionError, std::string> const&
+    MCAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const&
     inventoryTransactionErrorMap();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::InventoryTransaction const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

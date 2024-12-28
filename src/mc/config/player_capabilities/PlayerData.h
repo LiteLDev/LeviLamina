@@ -9,52 +9,72 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
-namespace PlayerCapabilities { struct IPlayerData; }
 // clang-format on
 
 namespace PlayerCapabilities {
 
 class PlayerData : public ::PlayerCapabilities::IPlayerData {
 public:
-    Player const& mPlayer; // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Player const&> mPlayer;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     PlayerData& operator=(PlayerData const&);
     PlayerData(PlayerData const&);
     PlayerData();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerData() = default;
-
     // vIndex: 1
-    virtual bool isAbilityEnabled(::AbilitiesIndex ability) const;
+    virtual bool isAbilityEnabled(::AbilitiesIndex ability) const /*override*/;
 
     // vIndex: 2
-    virtual bool isTeacher() const;
+    virtual bool isTeacher() const /*override*/;
 
     // vIndex: 3
-    virtual bool isOperator() const;
+    virtual bool isOperator() const /*override*/;
 
-    MCAPI explicit PlayerData(class Player const& player);
-
+    // vIndex: 0
+    virtual ~PlayerData() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit PlayerData(::Player const& player);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player const& player);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player const& player);
+    // NOLINTEND
 
-    MCAPI bool isAbilityEnabled$(::AbilitiesIndex ability) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isOperator$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isAbilityEnabled(::AbilitiesIndex ability) const;
 
-    MCAPI bool isTeacher$() const;
+    MCAPI bool $isTeacher() const;
 
+    MCAPI bool $isOperator() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace PlayerCapabilities
+} // namespace PlayerCapabilities

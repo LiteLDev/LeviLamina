@@ -6,13 +6,13 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptProjectileShootOptions; }
 namespace Scripting { struct Error; }
@@ -29,96 +29,117 @@ public:
     ScriptProjectileComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptProjectileComponent() = default;
-
     // vIndex: 1
-    virtual bool _isValid() const;
+    virtual bool _isValid() const /*override*/;
 
-    MCAPI class Scripting::Result<float> getAirInertia() const;
-
-    MCAPI class Scripting::Result<bool> getCatchFireOnHurt() const;
-
-    MCAPI class Scripting::Result<bool> getCritParticlesOnProjectileHurt() const;
-
-    MCAPI class Scripting::Result<bool> getDestroyOnProjectileHurt() const;
-
-    MCAPI class Scripting::Result<float> getGravity() const;
-
-    MCAPI class Scripting::Result<std::optional<std::string>> getHitEntitySound() const;
-
-    MCAPI class Scripting::Result<std::optional<std::string>> getHitGroundSound() const;
-
-    MCAPI class Scripting::Result<std::optional<std::string>> getHitParticle() const;
-
-    MCAPI class Scripting::Result<bool> getLightningStrikeOnHit() const;
-
-    MCAPI class Scripting::Result<float> getLiquidInertia() const;
-
-    MCAPI class Scripting::Result<float> getOnFireTime() const;
-
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
-    getOwner() const;
-
-    MCAPI class Scripting::Result<bool> getShouldBounceOnHit() const;
-
-    MCAPI class Scripting::Result<bool> getStopOnHit() const;
-
-    MCAPI class Scripting::Result<void> setAirInertia(float value);
-
-    MCAPI class Scripting::Result<void> setCatchFireOnHurt(bool value);
-
-    MCAPI class Scripting::Result<void> setCritParticlesOnProjectileHurt(bool value);
-
-    MCAPI class Scripting::Result<void> setDestroyOnProjectileHurt(bool value);
-
-    MCAPI class Scripting::Result<void> setGravity(float value);
-
-    MCAPI class Scripting::Result<void, struct Scripting::InvalidArgumentError, struct Scripting::Error>
-    setHitEntitySound(std::optional<std::string> const& value);
-
-    MCAPI class Scripting::Result<void, struct Scripting::InvalidArgumentError, struct Scripting::Error>
-    setHitGroundSound(std::optional<std::string> const& value);
-
-    MCAPI class Scripting::Result<void, struct Scripting::InvalidArgumentError, struct Scripting::Error>
-    setHitParticle(std::optional<std::string> const& value);
-
-    MCAPI class Scripting::Result<void> setLightningStrikeOnHit(bool value);
-
-    MCAPI class Scripting::Result<void> setLiquidInertia(float value);
-
-    MCAPI class Scripting::Result<void> setOnFireTime(float value);
-
-    MCAPI class Scripting::Result<void>
-    setOwner(std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>> const&
-                 scriptActor);
-
-    MCAPI class Scripting::Result<void> setShouldBounceOnHit(bool value);
-
-    MCAPI class Scripting::Result<void> setStopOnHit(bool value);
-
-    MCAPI class Scripting::Result<void> shoot(
-        class Vec3 const&                                                                velocity,
-        std::optional<struct ScriptModuleMinecraft::ScriptProjectileShootOptions> const& options
-    );
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptProjectileComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    // vIndex: 0
+    virtual ~ScriptProjectileComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::Scripting::Result_deprecated<float> getAirInertia() const;
 
-    MCAPI bool _isValid$() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getCatchFireOnHurt() const;
 
-    MCAPI static char const* const& ComponentId();
+    MCAPI ::Scripting::Result_deprecated<bool> getCritParticlesOnProjectileHurt() const;
 
+    MCAPI ::Scripting::Result_deprecated<bool> getDestroyOnProjectileHurt() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getGravity() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitEntitySound() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitGroundSound() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitParticle() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getLightningStrikeOnHit() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getLiquidInertia() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getOnFireTime() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getOwner() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getShouldBounceOnHit() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getStopOnHit() const;
+
+    MCAPI ::Scripting::Result<void> setAirInertia(float value);
+
+    MCAPI ::Scripting::Result<void> setCatchFireOnHurt(bool value);
+
+    MCAPI ::Scripting::Result<void> setCritParticlesOnProjectileHurt(bool value);
+
+    MCAPI ::Scripting::Result<void> setDestroyOnProjectileHurt(bool value);
+
+    MCAPI ::Scripting::Result<void> setGravity(float value);
+
+    MCAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError, ::Scripting::Error>
+    setHitEntitySound(::std::optional<::std::string> const& value);
+
+    MCAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError, ::Scripting::Error>
+    setHitGroundSound(::std::optional<::std::string> const& value);
+
+    MCAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError, ::Scripting::Error>
+    setHitParticle(::std::optional<::std::string> const& value);
+
+    MCAPI ::Scripting::Result<void> setLightningStrikeOnHit(bool value);
+
+    MCAPI ::Scripting::Result<void> setLiquidInertia(float value);
+
+    MCAPI ::Scripting::Result<void> setOnFireTime(float value);
+
+    MCAPI ::Scripting::Result<void> setOwner(
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& scriptActor
+    );
+
+    MCAPI ::Scripting::Result<void> setShouldBounceOnHit(bool value);
+
+    MCAPI ::Scripting::Result<void> setStopOnHit(bool value);
+
+    MCAPI ::Scripting::Result<void> shoot(
+        ::Vec3 const&                                                                 velocity,
+        ::std::optional<::ScriptModuleMinecraft::ScriptProjectileShootOptions> const& options
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptProjectileComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

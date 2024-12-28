@@ -11,12 +11,95 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-struct ExitVehicleSystemImpl {
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class IConstBlockSource;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct ActorDataFlagComponent;
+struct ActorDataSeatOffsetComponent;
+struct ActorGameTypeComponent;
+struct ActorIsBeingDestroyedFlagComponent;
+struct ActorRotationComponent;
+struct ActorSetPositionRequestComponent;
+struct ActorTypeComponent;
+struct CamelFlagComponent;
+struct CanStandOnSnowFlagComponent;
+struct DimensionTypeComponent;
+struct EjectedByActivatorRailFlagComponent;
+struct ExitFromPassengerFlagComponent;
+struct ExternalDataComponent;
+struct FallDistanceComponent;
+struct HasLightweightFamilyFlagComponent;
+struct HorseFlagComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct MobBodyRotationComponent;
+struct MobFlagComponent;
+struct MovementAbilitiesComponent;
+struct MovementInterpolatorComponent;
+struct OffsetsComponent;
+struct ParrotFlagComponent;
+struct PassengerComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerComponent;
+struct PostTickPositionDeltaComponent;
+struct RenderRotationComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+struct StopRidingRequestComponent;
+struct VanillaOffsetComponent;
+struct VehicleComponent;
+// clang-format on
+
+struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                   ::Filter<
+                                       ::CanStandOnSnowFlagComponent,
+                                       ::HasLightweightFamilyFlagComponent,
+                                       ::HorseFlagComponent,
+                                       ::MobFlagComponent,
+                                       ::ParrotFlagComponent,
+                                       ::VehicleComponent,
+                                       ::CamelFlagComponent,
+                                       ::PlayerComponent,
+                                       ::StopRidingRequestComponent>,
+                                   ::Read<
+                                       ::AABBShapeComponent,
+                                       ::MovementAbilitiesComponent,
+                                       ::ActorTypeComponent,
+                                       ::FallDistanceComponent,
+                                       ::PassengerComponent,
+                                       ::ActorGameTypeComponent,
+                                       ::ActorDataFlagComponent,
+                                       ::VehicleComponent,
+                                       ::ActorRotationComponent,
+                                       ::MobBodyRotationComponent,
+                                       ::RenderRotationComponent,
+                                       ::StandAnimationComponent,
+                                       ::OffsetsComponent,
+                                       ::VanillaOffsetComponent,
+                                       ::PassengerRenderingRidingOffsetComponent,
+                                       ::DimensionTypeComponent,
+                                       ::EjectedByActivatorRailFlagComponent,
+                                       ::PostTickPositionDeltaComponent>,
+                                   ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+                                   ::AddRemove<::ActorSetPositionRequestComponent>,
+                                   ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                                   ::GlobalWrite<>,
+                                   ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 120> mUnk391aec;
+    ::ll::UntypedStorage<1, 1>   mUnk380d8c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ExitVehicleSystemImpl& operator=(ExitVehicleSystemImpl const&);
@@ -24,278 +107,240 @@ public:
     ExitVehicleSystemImpl();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ExitVehicleSystemImpl() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5
-    virtual void
-    tick(class StrictExecutionContext<
-         struct Filter<
-             class FlagComponent<struct CanStandOnSnowFlag>,
-             class FlagComponent<struct HasLightweightFamilyFlag>,
-             class FlagComponent<struct HorseFlag>,
-             class FlagComponent<struct MobFlag>,
-             class FlagComponent<struct ParrotFlag>,
-             struct VehicleComponent,
-             class FlagComponent<struct CamelFlag>,
-             class FlagComponent<struct PlayerComponentFlag>,
-             class FlagComponent<struct StopRidingRequestFlag>>,
-         struct Read<
-             struct AABBShapeComponent,
-             struct MovementAbilitiesComponent,
-             struct ActorTypeComponent,
-             struct FallDistanceComponent,
-             struct PassengerComponent,
-             struct ActorGameTypeComponent,
-             struct ActorDataFlagComponent,
-             struct VehicleComponent,
-             struct ActorRotationComponent,
-             struct MobBodyRotationComponent,
-             struct RenderRotationComponent,
-             struct StandAnimationComponent,
-             struct OffsetsComponent,
-             struct VanillaOffsetComponent,
-             struct PassengerRenderingRidingOffsetComponent,
-             struct DimensionTypeComponent,
-             class FlagComponent<struct EjectedByActivatorRailFlag>,
-             struct PostTickPositionDeltaComponent>,
-         struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-         struct AddRemove<struct ActorSetPositionRequestComponent>,
-         struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-         struct GlobalWrite<>,
-         struct EntityFactoryT<>>& executionContext);
-
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct StopRidingRequestFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct DimensionTypeComponent,
-                class FlagComponent<struct EjectedByActivatorRailFlag>,
-                struct PostTickPositionDeltaComponent>,
-            struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-            struct AddRemove<struct ActorSetPositionRequestComponent>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::StopRidingRequestComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::EjectedByActivatorRailFlagComponent,
+                ::PostTickPositionDeltaComponent>,
+            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+            ::AddRemove<::ActorSetPositionRequestComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
-    MCAPI static void _tickExitVehicle(
-        class StrictEntityContext const&                                            entity,
-        struct PassengerComponent const&                                            passenger,
-        struct AABBShapeComponent const&                                            aabb,
-        struct StateVectorComponent const&                                          svc,
-        struct OffsetsComponent const&                                              offsetsComponent,
-        struct ActorRotationComponent&                                              rotation,
-        class Optional<class FlagComponent<struct ExitFromPassengerFlag> const>     exitFromPassengerFlag,
-        class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const> actorIsBeingDestroyedFlag,
-        class Optional<class FlagComponent<struct EjectedByActivatorRailFlag> const>
-                                     ejectedByActivatorRailFlagComponent,
-        class BaseGameVersion const& baseGameVersion,
-        class ViewT<
-            class StrictEntityContext,
-            struct VehicleComponent const,
-            struct StateVectorComponent const,
-            class Optional<struct PostTickPositionDeltaComponent const>> vehicleView,
-        class EntityModifier<struct ActorSetPositionRequestComponent>&   modifier,
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct StopRidingRequestFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct DimensionTypeComponent,
-                class FlagComponent<struct EjectedByActivatorRailFlag>,
-                struct PostTickPositionDeltaComponent>,
-            struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-            struct AddRemove<struct ActorSetPositionRequestComponent>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>&  executionContext,
-        bool                           isClientSide,
-        class IConstBlockSource const& region
-    );
+    // vIndex: 5
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent,
+                          ::StopRidingRequestComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::DimensionTypeComponent,
+                          ::EjectedByActivatorRailFlagComponent,
+                          ::PostTickPositionDeltaComponent>,
+                      ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+                      ::AddRemove<::ActorSetPositionRequestComponent>,
+                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext) /*override*/;
 
-    MCAPI static auto
-    createViews(class StrictExecutionContext<
-                struct Filter<
-                    class FlagComponent<struct CanStandOnSnowFlag>,
-                    class FlagComponent<struct HasLightweightFamilyFlag>,
-                    class FlagComponent<struct HorseFlag>,
-                    class FlagComponent<struct MobFlag>,
-                    class FlagComponent<struct ParrotFlag>,
-                    struct VehicleComponent,
-                    class FlagComponent<struct CamelFlag>,
-                    class FlagComponent<struct PlayerComponentFlag>,
-                    class FlagComponent<struct StopRidingRequestFlag>>,
-                struct Read<
-                    struct AABBShapeComponent,
-                    struct MovementAbilitiesComponent,
-                    struct ActorTypeComponent,
-                    struct FallDistanceComponent,
-                    struct PassengerComponent,
-                    struct ActorGameTypeComponent,
-                    struct ActorDataFlagComponent,
-                    struct VehicleComponent,
-                    struct ActorRotationComponent,
-                    struct MobBodyRotationComponent,
-                    struct RenderRotationComponent,
-                    struct StandAnimationComponent,
-                    struct OffsetsComponent,
-                    struct VanillaOffsetComponent,
-                    struct PassengerRenderingRidingOffsetComponent,
-                    struct DimensionTypeComponent,
-                    class FlagComponent<struct EjectedByActivatorRailFlag>,
-                    struct PostTickPositionDeltaComponent>,
-                struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-                struct AddRemove<struct ActorSetPositionRequestComponent>,
-                struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-                struct GlobalWrite<>,
-                struct EntityFactoryT<>>&);
-
+    // vIndex: 0
+    virtual ~ExitVehicleSystemImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _tickExitVehicle(
+        ::StrictEntityContext const&                            entity,
+        ::PassengerComponent const&                             passenger,
+        ::AABBShapeComponent const&                             aabb,
+        ::StateVectorComponent const&                           svc,
+        ::OffsetsComponent const&                               offsetsComponent,
+        ::ActorDataSeatOffsetComponent const&                   actorDataSeatOffset,
+        ::ActorRotationComponent&                               rotation,
+        ::Optional<::ExitFromPassengerFlagComponent const>      exitFromPassengerFlag,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>  actorIsBeingDestroyedFlag,
+        ::Optional<::EjectedByActivatorRailFlagComponent const> ejectedByActivatorRailFlagComponent,
+        ::BaseGameVersion const&                                baseGameVersion,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::VehicleComponent>,
+            ::StateVectorComponent const,
+            ::ActorRotationComponent const,
+            ::Optional<::PostTickPositionDeltaComponent const>,
+            ::Optional<::MovementInterpolatorComponent const>> const& vehicleView,
+        ::EntityModifier<::ActorSetPositionRequestComponent>&         modifier,
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::StopRidingRequestComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::EjectedByActivatorRailFlagComponent,
+                ::PostTickPositionDeltaComponent>,
+            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+            ::AddRemove<::ActorSetPositionRequestComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&   executionContext,
+        bool                       isClientSide,
+        ::IConstBlockSource const& region
+    );
+    // NOLINTEND
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct CanStandOnSnowFlag>,
-                class FlagComponent<struct HasLightweightFamilyFlag>,
-                class FlagComponent<struct HorseFlag>,
-                class FlagComponent<struct MobFlag>,
-                class FlagComponent<struct ParrotFlag>,
-                struct VehicleComponent,
-                class FlagComponent<struct CamelFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct StopRidingRequestFlag>>,
-            struct Read<
-                struct AABBShapeComponent,
-                struct MovementAbilitiesComponent,
-                struct ActorTypeComponent,
-                struct FallDistanceComponent,
-                struct PassengerComponent,
-                struct ActorGameTypeComponent,
-                struct ActorDataFlagComponent,
-                struct VehicleComponent,
-                struct ActorRotationComponent,
-                struct MobBodyRotationComponent,
-                struct RenderRotationComponent,
-                struct StandAnimationComponent,
-                struct OffsetsComponent,
-                struct VanillaOffsetComponent,
-                struct PassengerRenderingRidingOffsetComponent,
-                struct DimensionTypeComponent,
-                class FlagComponent<struct EjectedByActivatorRailFlag>,
-                struct PostTickPositionDeltaComponent>,
-            struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-            struct AddRemove<struct ActorSetPositionRequestComponent>,
-            struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::StopRidingRequestComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::EjectedByActivatorRailFlagComponent,
+                ::PostTickPositionDeltaComponent>,
+            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+            ::AddRemove<::ActorSetPositionRequestComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
     );
 
-    MCAPI void
-    tick$(class StrictExecutionContext<
-          struct Filter<
-              class FlagComponent<struct CanStandOnSnowFlag>,
-              class FlagComponent<struct HasLightweightFamilyFlag>,
-              class FlagComponent<struct HorseFlag>,
-              class FlagComponent<struct MobFlag>,
-              class FlagComponent<struct ParrotFlag>,
-              struct VehicleComponent,
-              class FlagComponent<struct CamelFlag>,
-              class FlagComponent<struct PlayerComponentFlag>,
-              class FlagComponent<struct StopRidingRequestFlag>>,
-          struct Read<
-              struct AABBShapeComponent,
-              struct MovementAbilitiesComponent,
-              struct ActorTypeComponent,
-              struct FallDistanceComponent,
-              struct PassengerComponent,
-              struct ActorGameTypeComponent,
-              struct ActorDataFlagComponent,
-              struct VehicleComponent,
-              struct ActorRotationComponent,
-              struct MobBodyRotationComponent,
-              struct RenderRotationComponent,
-              struct StandAnimationComponent,
-              struct OffsetsComponent,
-              struct VanillaOffsetComponent,
-              struct PassengerRenderingRidingOffsetComponent,
-              struct DimensionTypeComponent,
-              class FlagComponent<struct EjectedByActivatorRailFlag>,
-              struct PostTickPositionDeltaComponent>,
-          struct Write<struct AABBShapeComponent, struct ActorRotationComponent, struct StateVectorComponent>,
-          struct AddRemove<struct ActorSetPositionRequestComponent>,
-          struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
-          struct GlobalWrite<>,
-          struct EntityFactoryT<>>& executionContext);
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::CanStandOnSnowFlagComponent,
+                         ::HasLightweightFamilyFlagComponent,
+                         ::HorseFlagComponent,
+                         ::MobFlagComponent,
+                         ::ParrotFlagComponent,
+                         ::VehicleComponent,
+                         ::CamelFlagComponent,
+                         ::PlayerComponent,
+                         ::StopRidingRequestComponent>,
+                     ::Read<
+                         ::AABBShapeComponent,
+                         ::MovementAbilitiesComponent,
+                         ::ActorTypeComponent,
+                         ::FallDistanceComponent,
+                         ::PassengerComponent,
+                         ::ActorGameTypeComponent,
+                         ::ActorDataFlagComponent,
+                         ::VehicleComponent,
+                         ::ActorRotationComponent,
+                         ::MobBodyRotationComponent,
+                         ::RenderRotationComponent,
+                         ::StandAnimationComponent,
+                         ::OffsetsComponent,
+                         ::VanillaOffsetComponent,
+                         ::PassengerRenderingRidingOffsetComponent,
+                         ::DimensionTypeComponent,
+                         ::EjectedByActivatorRailFlagComponent,
+                         ::PostTickPositionDeltaComponent>,
+                     ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+                     ::AddRemove<::ActorSetPositionRequestComponent>,
+                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& executionContext);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

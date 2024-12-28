@@ -6,12 +6,29 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/util/Rotation.h"
-#include "mc/world/level/levelgen/structure/PostProcessSettings.h"
-#include "mc/world/level/levelgen/structure/Projection.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class IFeature;
+class JigsawBlockInfo;
+class LegacyStructureSettings;
+class Random;
+class StructureManager;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class FeaturePoolElement : public ::StructurePoolElement {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkba215a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     FeaturePoolElement& operator=(FeaturePoolElement const&);
@@ -19,63 +36,80 @@ public:
     FeaturePoolElement();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual class BlockPos getSize(::Rotation rotation) const;
+    virtual ::BlockPos getSize(::Rotation) const /*override*/;
 
-    // vIndex: 2
-    virtual std::vector<class JigsawBlockInfo>
-    getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;
+    // vIndex: 1
+    virtual ::std::vector<::JigsawBlockInfo>
+    getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const
+        /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual bool place(
-        class BlockSource&                                                                   region,
-        class BlockPos                                                                       position,
-        ::Rotation                                                                           rotation,
-        class BoundingBox                                                                    chunkBB,
-        class Random&                                                                        random,
-        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace,
-        class BlockPos                                                                       refPos
-    ) const;
+        ::BlockSource&                                                                  region,
+        ::BlockPos                                                                      position,
+        ::Rotation                                                                      rotation,
+        ::BoundingBox                                                                   chunkBB,
+        ::Random&                                                                       random,
+        ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace,
+        ::BlockPos                                                                      refPos
+    ) const /*override*/;
 
-    // vIndex: 12
-    virtual ~FeaturePoolElement() = default;
+    // vIndex: 15
+    virtual ::StructurePoolElementType type() const /*override*/;
 
-    // vIndex: 13
-    virtual ::StructurePoolElementType type() const;
-
-    MCAPI FeaturePoolElement(
-        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
-        class WeakRef<class IFeature>                       feature
-    );
-
+    // vIndex: 14
+    virtual ~FeaturePoolElement() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI FeaturePoolElement(
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+        ::WeakRef<::IFeature>                             feature
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager, class WeakRef<class IFeature> feature);
+    $ctor(::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager, ::WeakRef<::IFeature> feature);
+    // NOLINTEND
 
-    MCAPI std::vector<class JigsawBlockInfo>
-          getJigsawMarkers$(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region)
-        const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class BlockPos getSize$(::Rotation rotation) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPos $getSize(::Rotation) const;
 
-    MCAPI bool place$(
-        class BlockSource&                                                                   region,
-        class BlockPos                                                                       position,
-        ::Rotation                                                                           rotation,
-        class BoundingBox                                                                    chunkBB,
-        class Random&                                                                        random,
-        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace,
-        class BlockPos                                                                       refPos
+    MCAPI ::std::vector<::JigsawBlockInfo>
+    $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
+
+    MCAPI bool $place(
+        ::BlockSource&                                                                  region,
+        ::BlockPos                                                                      position,
+        ::Rotation                                                                      rotation,
+        ::BoundingBox                                                                   chunkBB,
+        ::Random&                                                                       random,
+        ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace,
+        ::BlockPos                                                                      refPos
     ) const;
 
-    MCAPI ::StructurePoolElementType type$() const;
+    MCAPI ::StructurePoolElementType $type() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

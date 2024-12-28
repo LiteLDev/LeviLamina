@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace Scripting::OptionalHelper {
+// functions
 // NOLINTBEGIN
-MCAPI entt::meta_any getValue(entt::meta_any& optionalAny);
+MCAPI ::entt::meta_any getValue(::entt::meta_any& optionalAny);
 
-MCAPI bool isOptionalAny(entt::meta_type type);
+MCAPI bool isOptionalAny(::entt::meta_type type);
 // NOLINTEND
 
-}; // namespace Scripting::OptionalHelper
+} // namespace Scripting::OptionalHelper

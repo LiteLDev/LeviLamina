@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class HttpInterface; }
 struct HC_CALL;
 struct HC_PERFORM_ENV;
 struct XAsyncBlock;
@@ -23,31 +22,37 @@ public:
     HttpInterfaceInternal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HttpInterfaceInternal() = default;
+    virtual ~HttpInterfaceInternal() /*override*/;
 
     // vIndex: 1
     virtual void send(
-        gsl::not_null<struct HC_CALL*>     call,
-        gsl::not_null<struct XAsyncBlock*> asyncBlock,
-        struct HC_PERFORM_ENV*             env
-    );
-
+        ::gsl::not_null<::HC_CALL*>     call,
+        ::gsl::not_null<::XAsyncBlock*> asyncBlock,
+        ::HC_PERFORM_ENV*               env
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void send$(
-        gsl::not_null<struct HC_CALL*>     call,
-        gsl::not_null<struct XAsyncBlock*> asyncBlock,
-        struct HC_PERFORM_ENV*             env
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void
+    $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

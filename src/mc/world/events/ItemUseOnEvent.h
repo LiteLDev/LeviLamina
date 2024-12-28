@@ -4,31 +4,31 @@
 
 struct ItemUseOnEvent {
 public:
-    // prevent constructor by default
-    ItemUseOnEvent& operator=(ItemUseOnEvent const&);
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ItemUseOnEvent();
-
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent&&);
-
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent const&);
-
-    MCAPI ~ItemUseOnEvent();
-
+    ::ll::UntypedStorage<8, 128> mUnkacc1d0;
+    ::ll::UntypedStorage<8, 24>  mUnkb2f95c;
+    ::ll::UntypedStorage<1, 1>   mUnkf53236;
+    ::ll::UntypedStorage<4, 12>  mUnk957924;
+    ::ll::UntypedStorage<4, 12>  mUnkedea33;
+    ::ll::UntypedStorage<1, 1>   mUnk7736a1;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ItemUseOnEvent& operator=(ItemUseOnEvent const&);
+    ItemUseOnEvent(ItemUseOnEvent const&);
+    ItemUseOnEvent();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ItemUseOnEvent&&);
+    MCAPI ~ItemUseOnEvent();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ItemUseOnEvent const&);
-
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

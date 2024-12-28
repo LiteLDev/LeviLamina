@@ -11,7 +11,6 @@
 // clang-format off
 namespace Scripting { class IRuntime; }
 namespace Scripting { class ResultAny; }
-namespace Scripting { class ScriptValue; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextId; }
 namespace Scripting { struct PromiseType; }
@@ -21,60 +20,73 @@ namespace Scripting {
 
 class PromiseAny : public ::Scripting::ScriptValue {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnkc023ba;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     PromiseAny();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PromiseAny() = default;
+    virtual ~PromiseAny() /*override*/;
+    // NOLINTEND
 
-    MCAPI PromiseAny(class Scripting::PromiseAny&& rhs);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PromiseAny(::Scripting::PromiseAny&& rhs);
 
-    MCAPI PromiseAny(class Scripting::PromiseAny const& rhs);
+    MCAPI PromiseAny(::Scripting::PromiseAny const& rhs);
 
     MCAPI PromiseAny(
-        class Scripting::IRuntime*                                                     runtime,
-        struct Scripting::ContextId                                                    contextId,
-        class Scripting::WeakLifetimeScope                                             scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const& promiseHandle
+        ::Scripting::IRuntime*                                                runtime,
+        ::Scripting::ContextId                                                contextId,
+        ::Scripting::WeakLifetimeScope                                        scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> const& promiseHandle
     );
 
-    MCAPI std::optional<struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>> getPromiseHandle() const;
+    MCAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::PromiseType>> getPromiseHandle() const;
 
-    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny&& rhs);
+    MCAPI ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny&& rhs);
 
-    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny const& rhs);
+    MCAPI ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny const& rhs);
 
-    MCAPI bool valid() const;
+    MCAPI ::Scripting::ResultAny rejectGeneric(::entt::meta_any& any) const;
 
+    MCAPI ::Scripting::ResultAny resolveGeneric(::entt::meta_any& any) const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI class Scripting::ResultAny rejectGeneric(entt::meta_any& any) const;
-
-    MCAPI class Scripting::ResultAny resolveGeneric(entt::meta_any& any) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::Scripting::PromiseAny&& rhs);
 
-    MCAPI void* ctor$(class Scripting::PromiseAny const& rhs);
+    MCAPI void* $ctor(::Scripting::PromiseAny const& rhs);
 
-    MCAPI void* ctor$(class Scripting::PromiseAny&& rhs);
-
-    MCAPI void* ctor$(
-        class Scripting::IRuntime*                                                     runtime,
-        struct Scripting::ContextId                                                    contextId,
-        class Scripting::WeakLifetimeScope                                             scope,
-        class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const& promiseHandle
+    MCAPI void* $ctor(
+        ::Scripting::IRuntime*                                                runtime,
+        ::Scripting::ContextId                                                contextId,
+        ::Scripting::WeakLifetimeScope                                        scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> const& promiseHandle
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

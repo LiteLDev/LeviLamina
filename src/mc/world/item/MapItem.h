@@ -3,19 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ComplexItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 #include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Dimension;
+class Item;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Level;
+class MapItemSavedData;
+class Packet;
+struct ActorUniqueID;
+struct ClientTerrainPixel;
+struct MapSample;
+struct ResolvedItemIconInfo;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class MapItem : public ::ComplexItem {
@@ -26,126 +35,155 @@ public:
     MapItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MapItem() = default;
-
-    // vIndex: 48
-    virtual void
-    appendFormattedHovertext(class ItemStackBase const& stack, class Level& level, std::string& hovertext, bool) const;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 88
-    virtual bool inventoryTick(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
-
-    // vIndex: 89
-    virtual void refreshedInContainer(class ItemStackBase const& stack, class Level& level) const;
+    // vIndex: 92
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
+        /*override*/;
 
     // vIndex: 93
-    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
+    virtual void refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const /*override*/;
 
-    // vIndex: 101
-    virtual bool hasSameRelevantUserData(class ItemStackBase const& stack, class ItemStackBase const& other) const;
+    // vIndex: 121
+    virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const
+        /*override*/;
 
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& item, int, bool) const;
+    // vIndex: 52
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
-    // vIndex: 119
-    virtual std::unique_ptr<class Packet>
-    getUpdatePacket(class ItemStack const& item, class Level& level, class Actor& player) const;
+    // vIndex: 105
+    virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
 
-    MCAPI MapItem(std::string const& itemName, short itemId);
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    MCAPI void blockTick(class ItemStack& item, class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    MCAPI void update(class Level& level, class Actor& player, class MapItemSavedData& map) const;
+    // vIndex: 96
+    virtual void fixupCommon(::ItemStackBase& stack, ::Level& level) const /*override*/;
 
-    MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const& item);
-
-    MCAPI static struct ActorUniqueID getMapId(class CompoundTag const* tag);
-
-    MCAPI static void markForRegeneration(class ItemStackBase& item);
-
-    MCAPI static void renderBiomePreviewMap(class Dimension& dimension, class MapItemSavedData& data);
-
-    MCAPI static bool sampleMapData(
-        class BlockSource&                      region,
-        int                                     blocksPerTexel,
-        class BlockPos const&                   worldOrigin,
-        class BlockPos const&                   updateOrigin,
-        int                                     imageWidth,
-        int                                     imageHeight,
-        std::vector<struct MapSample>*          output,
-        class MapItemSavedData*                 mapData,
-        std::vector<struct ClientTerrainPixel>* clientPixels
-    );
-
-    MCAPI static void serializeMapData(std::vector<struct MapSample> const& mapSamples, std::string& output);
-
-    MCAPI static void setItemInstanceInfo(class ItemStackBase& item, class MapItemSavedData& savedData);
-
-    MCAPI static void setMapNameIndex(class ItemStack& item, int mapNameIndex);
-
+    // vIndex: 0
+    virtual ~MapItem() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MapItem(::std::string const& itemName, short itemId);
+
+    MCAPI void blockTick(::ItemStack& item, ::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
+    // NOLINTEND
+
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _scheduleMapChunkRendering(
-        class Dimension&                     dimension,
-        class MapItemSavedData const&        original,
-        struct MapItemSavedData::ChunkBounds bb,
-        std::shared_ptr<bool>                chunksRefCount
+        ::Dimension&                    dimension,
+        ::MapItemSavedData const&       original,
+        ::MapItemSavedData::ChunkBounds bb,
+        ::std::shared_ptr<bool>         chunksRefCount
     );
 
+    MCAPI static bool doesDisplayPlayerMarkers(::ItemStack const& item);
+
+    MCAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
+
+    MCAPI static void markForRegeneration(::ItemStackBase& item);
+
+    MCAPI static void renderBiomePreviewMap(::Dimension& dimension, ::MapItemSavedData& data);
+
+    MCAPI static bool sampleMapData(
+        ::BlockSource&                       region,
+        int                                  blocksPerTexel,
+        ::BlockPos const&                    worldOrigin,
+        ::BlockPos const&                    updateOrigin,
+        int                                  imageWidth,
+        int                                  imageHeight,
+        ::std::vector<::MapSample>*          output,
+        ::MapItemSavedData*                  mapData,
+        ::std::vector<::ClientTerrainPixel>* clientPixels
+    );
+
+    MCAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
+
+    MCAPI static void setItemInstanceInfo(::ItemStackBase& item, ::MapItemSavedData& savedData);
+
+    MCAPI static void setMapNameIndex(::ItemStack& item, int mapNameIndex);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& TAG_MAP_INIT();
 
-    MCAPI void* ctor$(std::string const& itemName, short itemId);
+    MCAPI static ::std::string const& TAG_MAP_NAME_INDEX();
 
-    MCAPI void
-    appendFormattedHovertext$(class ItemStackBase const& stack, class Level& level, std::string& hovertext, bool) const;
+    MCAPI static ::std::string const& TAG_MAP_PLAYER_DISPLAY();
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+    MCAPI static ::std::string const& TAG_MAP_REGENERATE();
 
-    MCAPI void fixupCommon$(class ItemStackBase& stack, class Level& level) const;
+    MCAPI static ::std::string const& TAG_MAP_SCALE();
 
-    MCAPI struct ResolvedItemIconInfo getIconInfo$(class ItemStackBase const& item, int, bool) const;
+    MCAPI static ::std::string const& TAG_MAP_SCALING();
 
-    MCAPI std::unique_ptr<class Packet>
-          getUpdatePacket$(class ItemStack const& item, class Level& level, class Actor& player) const;
+    MCAPI static ::std::string const& TAG_MAP_UUID();
+    // NOLINTEND
 
-    MCAPI bool hasSameRelevantUserData$(class ItemStackBase const& stack, class ItemStackBase const& other) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& itemName, short itemId);
+    // NOLINTEND
 
-    MCAPI bool inventoryTick$(class ItemStack& item, class Level& level, class Actor& owner, int, bool selected) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void refreshedInContainer$(class ItemStackBase const& stack, class Level& level) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI void $refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const;
 
-    MCAPI static std::string const& TAG_MAP_INIT();
+    MCAPI ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
 
-    MCAPI static std::string const& TAG_MAP_NAME_INDEX();
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI static std::string const& TAG_MAP_PLAYER_DISPLAY();
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
-    MCAPI static std::string const& TAG_MAP_REGENERATE();
+    MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCAPI static std::string const& TAG_MAP_SCALE();
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI static std::string const& TAG_MAP_SCALING();
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI static std::string const& TAG_MAP_UUID();
+    MCAPI void $fixupCommon(::ItemStackBase& stack, ::Level& level) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

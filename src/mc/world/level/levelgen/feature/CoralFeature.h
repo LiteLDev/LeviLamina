@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Random;
+// clang-format on
+
 class CoralFeature : public ::Feature {
 public:
     // prevent constructor by default
@@ -13,110 +21,94 @@ public:
     CoralFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 4
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
     // vIndex: 0
-    virtual ~CoralFeature() = default;
-
-    // vIndex: 3
-    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
+    virtual ~CoralFeature() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI void _buildHand(
-        class BlockSource&                             region,
-        class BlockPos const&                          pos,
-        class Random&                                  random,
-        std::vector<class BlockPos>&                   topDec,
-        std::vector<std::pair<class BlockPos, uchar>>& sideDec,
-        gsl::not_null<class Block const*>              block
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
+        ::gsl::not_null<::Block const*>                block
     ) const;
 
     MCAPI void _buildPlantArm(
-        class BlockSource&                             region,
-        class Random&                                  random,
-        class BlockPos const&                          pos,
-        gsl::not_null<class Block const*>              block,
-        std::vector<class BlockPos>&                   topDec,
-        std::vector<std::pair<class BlockPos, uchar>>& sideDec,
+        ::BlockSource&                                 region,
+        ::Random&                                      random,
+        ::BlockPos const&                              pos,
+        ::gsl::not_null<::Block const*>                block,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
         uchar                                          direction,
         bool                                           notTall
     ) const;
 
     MCAPI void _buildPlantLike(
-        class BlockSource&                             region,
-        class BlockPos const&                          pos,
-        class Random&                                  random,
-        std::vector<class BlockPos>&                   topDec,
-        std::vector<std::pair<class BlockPos, uchar>>& sideDec,
-        gsl::not_null<class Block const*>              block
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
+        ::gsl::not_null<::Block const*>                block
     ) const;
 
     MCAPI void _buildSmallClump(
-        class BlockSource&           region,
-        class BlockPos const&        pos,
-        class Random&                random,
-        std::vector<class BlockPos>& topDec,
-        std::vector<std::pair<class BlockPos, uchar>>&,
-        gsl::not_null<class Block const*> block
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::Random&                  random,
+        ::std::vector<::BlockPos>& topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>&,
+        ::gsl::not_null<::Block const*> block
     ) const;
 
     MCAPI void _buildSpire(
-        class BlockSource&                             region,
-        class BlockPos const&                          pos,
-        class Random&                                  random,
-        std::vector<class BlockPos>&                   topDec,
-        std::vector<std::pair<class BlockPos, uchar>>& sideDec,
-        gsl::not_null<class Block const*>              block
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
+        ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCAPI bool _canOverwrite(class BlockSource const& region, class BlockPos const& pos, int color) const;
+    MCAPI int _getColor(::Block const& block) const;
 
-    MCAPI void
-    _placeSideDecorations(class BlockSource& region, class BlockPos const& pos, class Random& random, uchar dir) const;
-
-    MCAPI uchar _randomDirectionExcept(class Random& random, uchar except) const;
+    MCAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
     MCAPI bool
-    _setBlock(class BlockSource& region, class BlockPos const& pos, gsl::not_null<class Block const*> block, int color)
+    _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
+
+    MCAPI bool
+    _setBlockOnSolid(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color)
         const;
 
-    MCAPI bool _setBlockOnSolid(
-        class BlockSource&                region,
-        class BlockPos const&             pos,
-        gsl::not_null<class Block const*> block,
-        int                               color
-    ) const;
-
-    MCAPI void _starCorners(
-        class BlockSource&                region,
-        class Random&                     random,
-        class BlockPos const&             pos,
-        gsl::not_null<class Block const*> block,
-        float                             chance,
-        int                               iteration,
-        bool                              negateChance
-    ) const;
-
-    MCAPI void _starFormation(
-        class BlockSource&                region,
-        class Random&                     random,
-        class BlockPos const&             pos,
-        gsl::not_null<class Block const*> block,
-        float                             chance,
-        int                               iteration,
-        bool                              negateChance
-    ) const;
-
+    MCAPI ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool place$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

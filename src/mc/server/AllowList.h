@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AllowListEntry;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -15,11 +16,18 @@ class AllowList : public ::IJsonSerializable {
 public:
     // AllowList inner types declare
     // clang-format off
-    class AllowListEntryMatcher;
+    struct AllowListEntryMatcher;
     // clang-format on
 
     // AllowList inner types define
-    class AllowListEntryMatcher {
+    struct AllowListEntryMatcher {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkac9474;
+        ::ll::UntypedStorage<8, 32> mUnk2ba5a7;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         AllowListEntryMatcher& operator=(AllowListEntryMatcher const&);
@@ -27,24 +35,26 @@ public:
         AllowListEntryMatcher();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI AllowListEntryMatcher(std::string, std::string);
+        MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
 
-        MCAPI bool operator()(class AllowListEntry& entry);
-
-        MCAPI ~AllowListEntryMatcher();
-
+        MCAPI bool operator()(::AllowListEntry& entry);
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(std::string, std::string);
-
-        MCAPI void dtor$();
-
+        MCAPI void* $ctor(::std::string name, ::std::string xuid);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkbac7e4;
+    ::ll::UntypedStorage<8, 64> mUnk4ff264;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -53,38 +63,51 @@ public:
     AllowList();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AllowList() = default;
-
     // vIndex: 1
-    virtual void serialize(class Json::Value& root);
+    virtual void serialize(::Json::Value& root) /*override*/;
 
     // vIndex: 2
-    virtual void deserialize(class Json::Value& root);
+    virtual void deserialize(::Json::Value& root) /*override*/;
 
-    MCAPI bool addEntry(class AllowListEntry const& entry);
-
-    MCAPI std::vector<class AllowListEntry> const& getEntries() const;
-
-    MCAPI bool isAllowed(class mce::UUID const& uuid, std::string const& xuid) const;
-
-    MCAPI bool isIgnoringPlayerLimit(class mce::UUID const& uuid, std::string const& xuid) const;
-
-    MCAPI bool removeByName(std::string const& name);
-
-    MCAPI void tryUpdateEntries(class mce::UUID const& uuid, std::string const& xuid, std::string const& name);
-
+    // vIndex: 0
+    virtual ~AllowList() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI bool addEntry(::AllowListEntry const& entry);
 
-    MCAPI void deserialize$(class Json::Value& root);
+    MCAPI ::std::vector<::AllowListEntry> const& getEntries() const;
 
-    MCAPI void serialize$(class Json::Value& root);
+    MCAPI bool isAllowed(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
+    MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
+
+    MCAPI bool removeByName(::std::string const& name);
+
+    MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serialize(::Json::Value& root);
+
+    MCAPI void $deserialize(::Json::Value& root);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

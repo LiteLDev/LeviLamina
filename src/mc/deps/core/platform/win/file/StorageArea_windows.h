@@ -3,20 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/BasicDirectoryStorageArea.h"
 #include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/FileStorageArea.h"
-#include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class FileSystemImpl; }
+namespace Core { class FileSystem_windows; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on
 
 namespace Core {
 
-class StorageArea_windows {
+class StorageArea_windows : public ::Core::BasicDirectoryStorageArea<::Core::FileSystem_windows> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnkc8f210;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StorageArea_windows& operator=(StorageArea_windows const&);
@@ -24,152 +30,113 @@ public:
     StorageArea_windows();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StorageArea_windows() = default;
-
-    // vIndex: 1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2
-    virtual std::unique_ptr<class Core::FileSystemImpl> createTransaction(::Core::FileAccessType);
-
     // vIndex: 3
-    virtual bool supportsSizeQuery() const;
+    virtual bool supportsSizeQuery() const /*override*/;
 
     // vIndex: 4
-    virtual uint64 getTotalSize() const;
+    virtual uint64 getTotalSize() const /*override*/;
 
     // vIndex: 5
-    virtual class Core::Result getUsedSize(uint64&);
+    virtual ::Core::Result getUsedSize(uint64& outUsedSize) /*override*/;
 
     // vIndex: 6
-    virtual void setUsedSizeOverride(uint64);
+    virtual void setUsedSizeOverride(uint64 fileSize) /*override*/;
 
     // vIndex: 7
-    virtual void clearUsedSizeOverride();
-
-    // vIndex: 8
-    virtual void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
-
-    // vIndex: 9
-    virtual void __unk_vfn_9();
-
-    // vIndex: 10
-    virtual void __unk_vfn_10();
-
-    // vIndex: 11
-    virtual void __unk_vfn_11();
+    virtual void clearUsedSizeOverride() /*override*/;
 
     // vIndex: 12
-    virtual bool supportsExtendSize() const;
+    virtual bool supportsExtendSize() const /*override*/;
 
     // vIndex: 13
-    virtual bool canExtendSize() const;
+    virtual bool canExtendSize() const /*override*/;
 
     // vIndex: 14
-    virtual void resetCanAttemptExtendSize();
+    virtual void resetCanAttemptExtendSize() /*override*/;
 
     // vIndex: 15
-    virtual class Core::Result getExtendSizeThreshold(uint64&) const;
+    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const /*override*/;
 
     // vIndex: 16
-    virtual void attemptExtendSize(int64 const&, std::function<void()>);
+    virtual void
+    attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
 
     // vIndex: 17
-    virtual void preemptiveExtendSize(uint64, std::function<void()>, std::function<void()>);
+    virtual void preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
+    ) /*override*/;
 
     // vIndex: 18
-    virtual uint64 getAvailableUserStorageSize();
-
-    // vIndex: 19
-    virtual void unloadFlatFileManifests(bool shouldClearManifests);
-
-    // vIndex: 20
-    virtual void __unk_vfn_20();
-
-    // vIndex: 21
-    virtual void __unk_vfn_21();
-
-    // vIndex: 22
-    virtual void __unk_vfn_22();
-
-    // vIndex: 23
-    virtual void __unk_vfn_23();
-
-    // vIndex: 24
-    virtual void __unk_vfn_24();
-
-    // vIndex: 25
-    virtual void __unk_vfn_25();
-
-    // vIndex: 26
-    virtual void __unk_vfn_26();
-
-    // vIndex: 27
-    virtual bool shouldAllowCommit() const;
-
-    // vIndex: 28
-    virtual void
-    trackBytesWritten(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
-
-    // vIndex: 29
-    virtual void trackWriteOperation(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+    virtual uint64 getAvailableUserStorageSize() /*override*/;
 
     // vIndex: 30
-    virtual struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
+    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
-    MCAPI StorageArea_windows(::Core::FileAccessType, class Core::Path const&, bool);
-
+    // vIndex: 0
+    virtual ~StorageArea_windows() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StorageArea_windows(::Core::FileAccessType accessType, ::Core::Path const& rootPath, bool usesFlatFile);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::Core::FileAccessType, class Core::Path const&, bool);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::FileAccessType accessType, ::Core::Path const& rootPath, bool usesFlatFile);
+    // NOLINTEND
 
-    MCAPI void attemptExtendSize$(int64 const&, std::function<void()>);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canExtendSize$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $supportsSizeQuery() const;
 
-    MCAPI void clearUsedSizeOverride$();
+    MCAPI uint64 $getTotalSize() const;
 
-    MCAPI std::unique_ptr<class Core::FileSystemImpl> createTransaction$(::Core::FileAccessType);
+    MCAPI ::Core::Result $getUsedSize(uint64& outUsedSize);
 
-    MCAPI uint64 getAvailableUserStorageSize$();
+    MCAPI void $setUsedSizeOverride(uint64 fileSize);
 
-    MCAPI class Core::Result getExtendSizeThreshold$(uint64&) const;
+    MCAPI void $clearUsedSizeOverride();
 
-    MCAPI struct Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo$();
+    MCAPI bool $supportsExtendSize() const;
 
-    MCAPI uint64 getTotalSize$() const;
+    MCAPI bool $canExtendSize() const;
 
-    MCAPI class Core::Result getUsedSize$(uint64&);
+    MCAPI void $resetCanAttemptExtendSize();
 
-    MCAPI void notifyChangeInFileSize$(int64 changeInSize, int64 changeInAllocatedSize);
+    MCAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
-    MCAPI void preemptiveExtendSize$(uint64, std::function<void()>, std::function<void()>);
+    MCAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCAPI void resetCanAttemptExtendSize$();
+    MCAPI void $preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
+    );
 
-    MCAPI void setUsedSizeOverride$(uint64);
+    MCAPI uint64 $getAvailableUserStorageSize();
 
-    MCAPI bool shouldAllowCommit$() const;
+    MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
+    // NOLINTEND
 
-    MCAPI bool supportsExtendSize$() const;
-
-    MCAPI bool supportsSizeQuery$() const;
-
-    MCAPI void
-    trackBytesWritten$(class Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
-
-    MCAPI void trackWriteOperation$(class Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
-
-    MCAPI void unloadFlatFileManifests$(bool shouldClearManifests);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

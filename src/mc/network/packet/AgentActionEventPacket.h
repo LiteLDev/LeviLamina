@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -9,58 +8,84 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class ReadOnlyBinaryStream;
+namespace Json { class Value; }
+// clang-format on
+
 class AgentActionEventPacket : public ::Packet {
 public:
-    AgentActionType mAction;    // this+0x2c
-    std::string     mRequestId; // this+0x30
-    Json::Value     mResponse;  // this+0x50
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::AgentActionType> mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>    mRequestId;
+    ::ll::TypedStorage<8, 16, ::Json::Value>    mResponse;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     AgentActionEventPacket& operator=(AgentActionEventPacket const&);
     AgentActionEventPacket(AgentActionEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AgentActionEventPacket();
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~AgentActionEventPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI AgentActionEventPacket();
 
     MCAPI
-    AgentActionEventPacket(std::string const& requestId, ::AgentActionType action, class Json::Value const& response);
-
+    AgentActionEventPacket(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(std::string const& requestId, ::AgentActionType action, class Json::Value const& response);
+    MCAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $getName() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

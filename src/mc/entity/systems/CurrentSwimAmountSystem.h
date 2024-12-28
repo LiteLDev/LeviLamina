@@ -5,7 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
+struct SwimAmountComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class CurrentSwimAmountSystem {
 public:
@@ -15,24 +23,20 @@ public:
     CurrentSwimAmountSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    MCAPI static void tick(class ViewT<
-                           class StrictEntityContext,
-                           struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                           struct SwimAmountComponent,
-                           struct ActorDataFlagComponent const> view);
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _doCurrentSwimAmountSystem(
-        class StrictEntityContext const&,
-        struct SwimAmountComponent&          swimAmountComponent,
-        struct ActorDataFlagComponent const& synchedActorDataComponent
+        ::StrictEntityContext const&,
+        ::SwimAmountComponent&          swimAmountComponent,
+        ::ActorDataFlagComponent const& synchedActorDataComponent
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
+
+    MCAPI static void tick(::ViewT<
+                           ::StrictEntityContext,
+                           ::Include<::ActorMovementTickNeededComponent>,
+                           ::SwimAmountComponent,
+                           ::ActorDataFlagComponent const> view);
     // NOLINTEND
 };

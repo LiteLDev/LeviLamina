@@ -1,15 +1,22 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/NetworkBlockPosition.h"
-#include "mc/world/level/ActorBlockSyncMessage.h"
+
+// auto generated forward declare list
+// clang-format off
+class NetworkBlockPosition;
+struct ActorBlockSyncMessage;
+// clang-format on
 
 struct UpdateSubChunkNetworkBlockInfo {
 public:
-    NetworkBlockPosition  mPos;         // this+0x0
-    uint                  mRuntimeId;   // this+0xC
-    uchar                 mUpdateFlags; // this+0x10
-    ActorBlockSyncMessage mSyncMessage; // this+0x18
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>  mPos;
+    ::ll::TypedStorage<4, 4, uint>                     mRuntimeId;
+    ::ll::TypedStorage<1, 1, uchar>                    mUpdateFlags;
+    ::ll::TypedStorage<8, 16, ::ActorBlockSyncMessage> mSyncMessage;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -18,15 +25,14 @@ public:
     UpdateSubChunkNetworkBlockInfo();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~UpdateSubChunkNetworkBlockInfo();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

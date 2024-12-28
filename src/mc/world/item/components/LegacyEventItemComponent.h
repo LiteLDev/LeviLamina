@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+struct LegacyEventItemComponentData;
 // clang-format on
 
 class LegacyEventItemComponent : public ::ItemComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk72f467;
+    ::ll::UntypedStorage<8, 64> mUnkfdd33d;
+    ::ll::UntypedStorage<8, 8>  mUnk98ee52;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyEventItemComponent& operator=(LegacyEventItemComponent const&);
@@ -18,23 +26,42 @@ public:
     LegacyEventItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 7
+    virtual void _initializeComponent() /*override*/;
+
     // vIndex: 0
-    virtual ~LegacyEventItemComponent() = default;
-
-    // vIndex: 9
-    virtual void _initializeComponent();
-
-    MCAPI static class HashedString const& getIdentifier();
-
+    virtual ~LegacyEventItemComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit LegacyEventItemComponent(::LegacyEventItemComponentData&& componentData);
+    // NOLINTEND
 
-    MCAPI void _initializeComponent$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LegacyEventItemComponentData&& componentData);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

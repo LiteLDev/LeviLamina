@@ -3,12 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Rotation.h"
-#include "mc/world/level/levelgen/structure/PostProcessSettings.h"
-#include "mc/world/level/levelgen/structure/Projection.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class JigsawBlockInfo;
+class LegacyStructureSettings;
+// clang-format on
 
 class EmptyPoolElement : public ::StructurePoolElement {
 public:
@@ -18,52 +24,59 @@ public:
     EmptyPoolElement();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual class BlockPos getSize(::Rotation) const;
-
-    // vIndex: 1
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, ::Rotation) const;
+    virtual ::BlockPos getSize(::Rotation) const /*override*/;
 
     // vIndex: 2
-    virtual std::vector<class JigsawBlockInfo>
-    getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const
+        /*override*/;
+
+    // vIndex: 1
+    virtual ::std::vector<::JigsawBlockInfo>
+    getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const
+        /*override*/;
 
     // vIndex: 3
-    virtual class BoundingBox getBoundingBox(class BlockPos, ::Rotation) const;
-
-    // vIndex: 11
-    virtual bool isValid() const;
-
-    // vIndex: 12
-    virtual ~EmptyPoolElement() = default;
+    virtual ::BoundingBox getBoundingBox(::BlockPos position, ::Rotation rotation) const /*override*/;
 
     // vIndex: 13
-    virtual ::StructurePoolElementType type() const;
+    virtual bool isValid() const /*override*/;
 
-    MCAPI explicit EmptyPoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager> manager);
+    // vIndex: 15
+    virtual ::StructurePoolElementType type() const /*override*/;
 
+    // vIndex: 14
+    virtual ~EmptyPoolElement() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(Bedrock::NotNullNonOwnerPtr<class StructureManager> manager);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BlockPos $getSize(::Rotation) const;
 
-    MCAPI class BoundingBox getBoundingBox$(class BlockPos, ::Rotation) const;
+    MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI std::vector<class JigsawBlockInfo> getJigsawMarkers$(class BlockPos, ::Rotation) const;
+    MCAPI ::std::vector<::JigsawBlockInfo>
+    $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI std::vector<class JigsawBlockInfo>
-          getJigsawMarkers$(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI class BlockPos getSize$(::Rotation) const;
+    MCAPI bool $isValid() const;
 
-    MCAPI bool isValid$() const;
+    MCAPI ::StructurePoolElementType $type() const;
+    // NOLINTEND
 
-    MCAPI ::StructurePoolElementType type$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

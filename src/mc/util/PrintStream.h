@@ -10,25 +10,30 @@ public:
     // PrintStream();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~PrintStream();
 
     // vIndex: 1
-    virtual void print(std::string const&);
-
-    MCAPI void println(std::string const&);
-
+    virtual void print(::std::string const& s);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $print(::std::string const& s);
+    // NOLINTEND
 
-    MCAPI void print$(std::string const&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

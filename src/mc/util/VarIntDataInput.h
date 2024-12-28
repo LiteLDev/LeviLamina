@@ -1,85 +1,99 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/util/BytesDataInput.h"
 
+// auto generated forward declare list
+// clang-format off
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class VarIntDataInput : public ::BytesDataInput {
 public:
-    ReadOnlyBinaryStream* mStream;
-
-    explicit VarIntDataInput(ReadOnlyBinaryStream* bs) : mStream(bs) {}
-
-    explicit VarIntDataInput(ReadOnlyBinaryStream& bs) : mStream(std::addressof(bs)) {}
-
-    VarIntDataInput() = delete;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~VarIntDataInput() = default;
-
-    // vIndex: 1
-    virtual class Bedrock::Result<std::string> readStringResult();
-
-    // vIndex: 2
-    virtual class Bedrock::Result<std::string> readLongStringResult();
-
-    // vIndex: 3
-    virtual class Bedrock::Result<float> readFloatResult();
-
-    // vIndex: 4
-    virtual class Bedrock::Result<double> readDoubleResult();
-
-    // vIndex: 5
-    virtual class Bedrock::Result<uchar> readByteResult();
-
-    // vIndex: 6
-    virtual class Bedrock::Result<short> readShortResult();
-
-    // vIndex: 7
-    virtual class Bedrock::Result<int> readIntResult();
-
-    // vIndex: 8
-    virtual class Bedrock::Result<int64> readLongLongResult();
-
-    // vIndex: 9
-    virtual class Bedrock::Result<void> readBytesResult(void* data, uint64 bytes);
-
-    // vIndex: 10
-    virtual uint64 numBytesLeft() const;
-
+    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&> mStream;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    VarIntDataInput& operator=(VarIntDataInput const&);
+    VarIntDataInput(VarIntDataInput const&);
+    VarIntDataInput();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual ::Bedrock::Result<::std::string> readStringResult() /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 2
+    virtual ::Bedrock::Result<::std::string> readLongStringResult() /*override*/;
 
-    MCAPI uint64 numBytesLeft$() const;
+    // vIndex: 3
+    virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
 
-    MCAPI class Bedrock::Result<uchar> readByteResult$();
+    // vIndex: 4
+    virtual ::Bedrock::Result<double> readDoubleResult() /*override*/;
 
-    MCAPI class Bedrock::Result<void> readBytesResult$(void* data, uint64 bytes);
+    // vIndex: 5
+    virtual ::Bedrock::Result<uchar> readByteResult() /*override*/;
 
-    MCAPI class Bedrock::Result<double> readDoubleResult$();
+    // vIndex: 6
+    virtual ::Bedrock::Result<short> readShortResult() /*override*/;
 
-    MCAPI class Bedrock::Result<float> readFloatResult$();
+    // vIndex: 7
+    virtual ::Bedrock::Result<int> readIntResult() /*override*/;
 
-    MCAPI class Bedrock::Result<int> readIntResult$();
+    // vIndex: 8
+    virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
 
-    MCAPI class Bedrock::Result<int64> readLongLongResult$();
+    // vIndex: 9
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
-    MCAPI class Bedrock::Result<std::string> readLongStringResult$();
+    // vIndex: 10
+    virtual uint64 numBytesLeft() const /*override*/;
 
-    MCAPI class Bedrock::Result<short> readShortResult$();
+    // vIndex: 0
+    virtual ~VarIntDataInput() /*override*/;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<std::string> readStringResult$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<::std::string> $readStringResult();
+
+    MCAPI ::Bedrock::Result<::std::string> $readLongStringResult();
+
+    MCAPI ::Bedrock::Result<float> $readFloatResult();
+
+    MCAPI ::Bedrock::Result<double> $readDoubleResult();
+
+    MCAPI ::Bedrock::Result<uchar> $readByteResult();
+
+    MCAPI ::Bedrock::Result<short> $readShortResult();
+
+    MCAPI ::Bedrock::Result<int> $readIntResult();
+
+    MCAPI ::Bedrock::Result<int64> $readLongLongResult();
+
+    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+
+    MCAPI uint64 $numBytesLeft() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

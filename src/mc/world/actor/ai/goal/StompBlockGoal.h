@@ -3,10 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Level;
+// clang-format on
+
 class StompBlockGoal : public ::BaseMoveToBlockGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk159c8f;
+    ::ll::UntypedStorage<4, 4> mUnkb9d2d7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StompBlockGoal& operator=(StompBlockGoal const&);
@@ -14,86 +27,95 @@ public:
     StompBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StompBlockGoal() = default;
+    // vIndex: 17
+    virtual bool findTargetBlock() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
-
-    // vIndex: 13
-    virtual bool _canReach(class BlockPos const& pos);
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 14
-    virtual void _moveToBlock();
+    virtual void _moveToBlock() /*override*/;
 
-    // vIndex: 17
-    virtual bool findTargetBlock();
+    // vIndex: 13
+    virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
     // vIndex: 18
-    virtual void _createBreakProgressParticles(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
     // vIndex: 19
-    virtual void _createDestroyParticles(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
     // vIndex: 20
-    virtual void _playBreakProgressSound(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
     // vIndex: 21
-    virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
+    virtual void _playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
+    // vIndex: 0
+    virtual ~StompBlockGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _canReach$(class BlockPos const& pos);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $findTargetBlock();
 
-    MCAPI void _createBreakProgressParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+    MCAPI bool $canUse();
 
-    MCAPI void _createDestroyParticles$(class Level& level, class BlockSource& region, class BlockPos pos);
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void _moveToBlock$();
+    MCAPI void $start();
 
-    MCAPI void _playBreakProgressSound$(class Level& level, class BlockSource& region, class BlockPos pos);
+    MCAPI void $stop();
 
-    MCAPI void _playDestroySound$(class Level& level, class BlockSource& region, class BlockPos pos);
+    MCAPI void $tick();
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool canContinueToUse$();
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool canUse$();
+    MCAPI void $_moveToBlock();
 
-    MCAPI bool findTargetBlock$();
+    MCAPI bool $_canReach(::BlockPos const& pos);
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void start$();
+    MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void stop$();
+    MCAPI void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void tick$();
+    MCAPI void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

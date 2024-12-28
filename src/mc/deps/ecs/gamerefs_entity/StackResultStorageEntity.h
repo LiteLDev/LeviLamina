@@ -1,51 +1,48 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 
-class Actor;
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class OwnerStorageEntity;
+class WeakStorageEntity;
+// clang-format on
 
 class StackResultStorageEntity {
 public:
-    std::optional<EntityContext> mContext;
-
-    template <class Entity = Actor, bool IncludeRemoved = false>
-    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
-        if (*this) {
-            return Entity::tryGetFromEntity(const_cast<EntityContext&>(*mContext), IncludeRemoved);
-        }
-        return nullptr;
-    }
-
-    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
-
-public:
-    StackResultStorageEntity& operator=(StackResultStorageEntity const&) = delete;
-    StackResultStorageEntity(StackResultStorageEntity const&)            = delete;
-    StackResultStorageEntity()                                           = delete;
-
-    // protected:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit StackResultStorageEntity(class OwnerStorageEntity const& ownerStorage);
-
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity&& other);
-
-    MCAPI explicit StackResultStorageEntity(class WeakStorageEntity const& weakStorage);
-
-    MCAPI class EntityContext& _getStackRef() const;
-
-    MCAPI bool _hasValue() const;
-
+    ::ll::TypedStorage<8, 32, ::std::optional<::EntityContext>> mContext;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    StackResultStorageEntity& operator=(StackResultStorageEntity const&);
+    StackResultStorageEntity(StackResultStorageEntity const&);
+    StackResultStorageEntity();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class StackResultStorageEntity&& other);
+    MCAPI StackResultStorageEntity(::StackResultStorageEntity&& other);
 
-    MCAPI void* ctor$(class WeakStorageEntity const& weakStorage);
+    MCAPI explicit StackResultStorageEntity(::OwnerStorageEntity const& ownerStorage);
 
-    MCAPI void* ctor$(class OwnerStorageEntity const& ownerStorage);
+    MCAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);
 
+    MCAPI ::EntityContext& _getStackRef() const;
+
+    MCAPI bool _hasValue() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::StackResultStorageEntity&& other);
+
+    MCAPI void* $ctor(::OwnerStorageEntity const& ownerStorage);
+
+    MCAPI void* $ctor(::WeakStorageEntity const& weakStorage);
     // NOLINTEND
 };

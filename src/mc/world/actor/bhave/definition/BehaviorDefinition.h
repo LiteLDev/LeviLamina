@@ -4,10 +4,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BehaviorData;
+class BehaviorFactory;
+class BehaviorNode;
 namespace Json { class Value; }
 // clang-format on
 
 class BehaviorDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkdacf89;
+    ::ll::UntypedStorage<8, 16> mUnk91fff8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BehaviorDefinition& operator=(BehaviorDefinition const&);
@@ -15,38 +26,37 @@ public:
     BehaviorDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BehaviorDefinition();
 
     // vIndex: 1
-    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
 
     // vIndex: 2
-    virtual std::unique_ptr<class BehaviorNode> createNode(
-        class Actor&                 owner,
-        class BehaviorFactory const& factory,
-        class BehaviorNode*          parent,
-        class BehaviorData*          data
-    ) const;
-
+    virtual ::std::unique_ptr<::BehaviorNode>
+    createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
-    MCAPI std::unique_ptr<class BehaviorNode> createNode$(
-        class Actor&                 owner,
-        class BehaviorFactory const& factory,
-        class BehaviorNode*          parent,
-        class BehaviorData*          data
-    ) const;
+    MCAPI ::std::unique_ptr<::BehaviorNode>
+    $createNode(::Actor& owner, ::BehaviorFactory const& factory, ::BehaviorNode* parent, ::BehaviorData* data) const;
+    // NOLINTEND
 
-    MCAPI void load$(class Json::Value value, class BehaviorFactory const& factory);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

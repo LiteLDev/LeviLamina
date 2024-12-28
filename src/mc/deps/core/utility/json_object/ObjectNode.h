@@ -2,15 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/json_object/Collection.h"
+#include "mc/deps/core/utility/json_object/Node.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::JSONObject { class MemoryPage; }
+namespace Bedrock::JSONObject { class StringNode; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
 
 namespace Bedrock::JSONObject {
 
-class ObjectNode {
+class ObjectNode : public ::Bedrock::JSONObject::Node, public ::Bedrock::JSONObject::Collection {
 public:
     // ObjectNode inner types declare
     // clang-format off
@@ -34,32 +38,17 @@ public:
     ObjectNode();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0> begin();
+    MCAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> begin() const;
 
     MCAPI void clear();
 
-    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0> end();
+    MCAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0>
+    insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
 
-    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0>
-    insert(std::string_view keyStr, class Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
-
-    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const& contents);
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI explicit ObjectNode(class Bedrock::JSONObject::MemoryPage* owningPage);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage);
-
+    MCAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

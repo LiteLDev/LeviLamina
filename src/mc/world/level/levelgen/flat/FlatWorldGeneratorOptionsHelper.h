@@ -4,12 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerEnumMapping; }
+class LevelData;
 // clang-format on
 
 namespace FlatWorldGeneratorOptionsHelper {
+// functions
 // NOLINTBEGIN
-MCAPI class cereal::SerializerEnumMapping worldVersionEnumMapping();
+MCAPI ::std::string getJSON(::LevelData const& levelData);
 // NOLINTEND
 
-}; // namespace FlatWorldGeneratorOptionsHelper
+} // namespace FlatWorldGeneratorOptionsHelper

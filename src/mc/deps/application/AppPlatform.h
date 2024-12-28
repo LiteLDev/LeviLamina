@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/DeviceSunsetTier.h"
+#include "mc/deps/application/IAppPlatform.h"
 #include "mc/deps/application/OsVersion.h"
 #include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
@@ -18,50 +19,94 @@
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/core/resource/ResourceFileSystem.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/secure_storage/ISecureStorageKeySystem.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/VRControllerType.h"
 
 // auto generated forward declare list
 // clang-format off
+class AppLifecycleContext;
+class AppPlatformListener;
+class IFileAccess;
+class SecureStorage;
+class SecureStorageKey;
+class WebviewInterface;
+struct IntegrityTokenResult;
+struct ScreenshotOptions;
 namespace Bedrock { struct PlatformRuntimeInfo; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Social { class MultiplayerService; }
+namespace Social { struct UserCreationData; }
 namespace Webview { class PlatformArguments; }
 namespace mce { class UUID; }
 // clang-format on
 
-class AppPlatform {
+class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {
 public:
-    // AppPlatform inner types declare
-    // clang-format off
-    struct AndroidScopedStorageInfo;
-    // clang-format on
-
-    // AppPlatform inner types define
-    struct AndroidScopedStorageInfo {
-    public:
-        // prevent constructor by default
-        AndroidScopedStorageInfo& operator=(AndroidScopedStorageInfo const&);
-        AndroidScopedStorageInfo(AndroidScopedStorageInfo const&);
-        AndroidScopedStorageInfo();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~AndroidScopedStorageInfo();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnkcb9aaa;
+    ::ll::UntypedStorage<8, 8>   mUnk2be013;
+    ::ll::UntypedStorage<8, 8>   mUnk6c1d8d;
+    ::ll::UntypedStorage<1, 1>   mUnkbe6f7b;
+    ::ll::UntypedStorage<1, 1>   mUnk513795;
+    ::ll::UntypedStorage<1, 1>   mUnkce9805;
+    ::ll::UntypedStorage<4, 4>   mUnk94a798;
+    ::ll::UntypedStorage<8, 16>  mUnk7a3ae6;
+    ::ll::UntypedStorage<8, 104> mUnke68af5;
+    ::ll::UntypedStorage<1, 1>   mUnk3eb9fc;
+    ::ll::UntypedStorage<8, 64>  mUnkb50203;
+    ::ll::UntypedStorage<1, 4>   mUnka5d242;
+    ::ll::UntypedStorage<4, 4>   mUnk678160;
+    ::ll::UntypedStorage<8, 80>  mUnkafb54c;
+    ::ll::UntypedStorage<8, 32>  mUnked78dc;
+    ::ll::UntypedStorage<8, 32>  mUnkb79db9;
+    ::ll::UntypedStorage<8, 32>  mUnk2d8cb0;
+    ::ll::UntypedStorage<4, 4>   mUnkc074d8;
+    ::ll::UntypedStorage<8, 8>   mUnkdc46a5;
+    ::ll::UntypedStorage<8, 8>   mUnk59b922;
+    ::ll::UntypedStorage<8, 8>   mUnk14a700;
+    ::ll::UntypedStorage<8, 8>   mUnk2c6ecf;
+    ::ll::UntypedStorage<1, 1>   mUnk31e0b7;
+    ::ll::UntypedStorage<8, 32>  mUnk6d6135;
+    ::ll::UntypedStorage<8, 8>   mUnk896a24;
+    ::ll::UntypedStorage<8, 8>   mUnk69a5b2;
+    ::ll::UntypedStorage<1, 1>   mUnkd7bea9;
+    ::ll::UntypedStorage<8, 8>   mUnk69afa6;
+    ::ll::UntypedStorage<1, 1>   mUnk6e12ac;
+    ::ll::UntypedStorage<1, 1>   mUnkff6e88;
+    ::ll::UntypedStorage<4, 4>   mUnk1d28ac;
+    ::ll::UntypedStorage<4, 4>   mUnk81425d;
+    ::ll::UntypedStorage<1, 1>   mUnkd5341c;
+    ::ll::UntypedStorage<1, 1>   mUnkdcaaf8;
+    ::ll::UntypedStorage<1, 1>   mUnk113b3b;
+    ::ll::UntypedStorage<1, 1>   mUnkbe6182;
+    ::ll::UntypedStorage<1, 1>   mUnkb00e9d;
+    ::ll::UntypedStorage<1, 1>   mUnk78da06;
+    ::ll::UntypedStorage<1, 1>   mUnk2ff939;
+    ::ll::UntypedStorage<8, 32>  mUnkd9746f;
+    ::ll::UntypedStorage<8, 80>  mUnk267c61;
+    ::ll::UntypedStorage<8, 32>  mUnk26e8ea;
+    ::ll::UntypedStorage<8, 80>  mUnkd6f5b8;
+    ::ll::UntypedStorage<8, 8>   mUnkb30295;
+    ::ll::UntypedStorage<8, 8>   mUnk40dee2;
+    ::ll::UntypedStorage<8, 8>   mUnk92e07d;
+    ::ll::UntypedStorage<8, 16>  mUnk31065b;
+    ::ll::UntypedStorage<8, 16>  mUnk429079;
+    ::ll::UntypedStorage<8, 16>  mUnk706c14;
+    ::ll::UntypedStorage<8, 16>  mUnk391b07;
+    ::ll::UntypedStorage<8, 16>  mUnke84b85;
+    ::ll::UntypedStorage<8, 16>  mUnkb30208;
+    ::ll::UntypedStorage<8, 8>   mUnkf2b382;
+    ::ll::UntypedStorage<4, 4>   mUnk50488d;
+    ::ll::UntypedStorage<8, 16>  mUnkea295c;
+    ::ll::UntypedStorage<8, 8>   mUnk8138ec;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -70,953 +115,1294 @@ public:
     AppPlatform();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void _disableCPUBoost();
+    // vIndex: 0
+    virtual ~AppPlatform() /*override*/;
 
-    MCVAPI void _initializeFileStorageAreas();
+    // vIndex: 21
+    virtual void initialize();
 
-    MCVAPI void _onInitialize();
+    // vIndex: 22
+    virtual void teardown();
 
-    MCVAPI void _onTeardown();
+    // vIndex: 6
+    virtual void initAppPlatformNetworkSettings() /*override*/;
 
-    MCVAPI void _teardownFileStorageAreas();
+    // vIndex: 23
+    virtual void initializeScreenDependentResources();
 
-    MCVAPI bool _tryEnableCPUBoost();
+    // vIndex: 24
+    virtual uint64 getHighPerformanceThreadsCount() const;
 
-    MCVAPI void addListener(class AppPlatformListener* l, float priority);
+    // vIndex: 25
+    virtual uint64 getTotalHardwareThreadsCount() const;
 
-    MCVAPI bool allowBetaXblSignIn() const;
+    // vIndex: 26
+    virtual void addListener(::AppPlatformListener* l, float priority);
 
-    MCVAPI bool allowContentLogWriteToDisk();
+    // vIndex: 27
+    virtual void removeListener(::AppPlatformListener* l);
 
-    MCVAPI bool allowsResourcePackDevelopment() const;
+    // vIndex: 28
+    virtual void restartApp(bool restart);
 
-    MCVAPI bool areThreadsFrozen() const;
+    // vIndex: 1
+    virtual bool restartRequested() /*override*/;
 
-    MCVAPI void buyGame();
+    // vIndex: 29
+    virtual ::Core::PathBuffer<::std::string> getPackagePath() const = 0;
 
-    MCVAPI void calculateIfLowMemoryDevice();
+    // vIndex: 7
+    virtual int const numberOfThrottledTreatmentPacksToImportPerMinute() const /*override*/;
 
-    MCVAPI bool canLaunchUri(std::string const& uri);
+    // vIndex: 8
+    virtual bool const areTreatmentPacksThrottled() const /*override*/;
 
-    MCVAPI bool canManageLegacyData() const;
+    // vIndex: 30
+    virtual bool hasFastAlphaTest() const;
 
-    MCVAPI bool canMigrateWorldData() const;
+    // vIndex: 31
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::IntegrityTokenResult>>
+    requestIntegrityToken(::std::string const& nonceToken);
 
-    MCVAPI bool canSwapVRMode(bool inVRMode) const;
+    // vIndex: 32
+    virtual void setIntegrityToken(::std::string const& integrityToken);
 
-    MCVAPI int checkLicense();
+    // vIndex: 33
+    virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
 
-    MCVAPI void collectGraphicsHardwareDetails();
+    // vIndex: 34
+    virtual bool supportsInPackageRecursion() const;
 
-    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const& otherReceipt);
+    // vIndex: 35
+    virtual bool supportsXboxLiveAchievements() const;
 
-    MCVAPI bool copyAssetFile(class Core::Path const& filename, class Core::Path const& destination);
+    // vIndex: 36
+    virtual void hideSplashScreen();
 
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const& filePath);
+    // vIndex: 37
+    virtual ::std::string getFeedbackBugsLink() const;
 
-    MCVAPI std::shared_ptr<class Core::FileStorageArea>
-           createLoggingStorageArea(::Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
+    // vIndex: 38
+    virtual ::std::string getFeedbackHelpLink() const;
 
-    MCVAPI void createUserInput();
+    // vIndex: 39
+    virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    MCVAPI void createUserInput(int dialogId);
+    // vIndex: 40
+    virtual void updateLocalization(::std::string const& loc);
 
-    MCVAPI std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments&&) const;
+    // vIndex: 41
+    virtual void setSleepEnabled(bool enabled);
 
-    MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
+    // vIndex: 42
+    virtual ::Core::PathBuffer<::std::string> getScratchPath();
 
-    MCVAPI void exitVRMode(std::function<void()> callback);
+    // vIndex: 43
+    virtual ::Core::PathBuffer<::std::string> getInternalPackStoragePath() const;
 
-    MCVAPI void finish();
+    // vIndex: 44
+    virtual ::Core::PathBuffer<::std::string> getSettingsPath();
 
-    MCVAPI ::ARVRPlatform getARVRPlatform() const;
+    // vIndex: 2
+    virtual ::Core::PathBuffer<::std::string> getLoggingPath() const /*override*/;
 
-    MCVAPI struct AppPlatform::AndroidScopedStorageInfo const& getAndroidScopedStorageInfo() const;
+    // vIndex: 45
+    virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath();
 
-    MCVAPI class AppLifecycleContext& getAppLifecycleContext();
+    // vIndex: 46
+    virtual ::Core::PathBuffer<::std::string> getShaderCachePath();
 
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const& filename);
+    // vIndex: 47
+    virtual ::Core::PathBuffer<::std::string> getUserdataPathForLevels() const;
 
-    MCVAPI std::vector<std::string> getBroadcastAddresses();
+    // vIndex: 48
+    virtual ::Core::PathBuffer<::std::string> getCacheStoragePath();
 
-    MCVAPI std::vector<::Social::MultiplayerServiceIdentifier>
-           getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
+    // vIndex: 49
+    virtual ::Core::PathBuffer<::std::string> getOnDiskScratchPath();
 
-    MCVAPI ::BuildPlatform getBuildPlatform() const;
+    // vIndex: 50
+    virtual ::Core::PathBuffer<::std::string> getOnDiskPackScratchPath();
 
-    MCVAPI class Core::PathBuffer<std::string> getCacheStoragePath();
+    // vIndex: 51
+    virtual ::Core::PathBuffer<::std::string> getLevelInfoCachePath() const;
 
-    MCVAPI class Core::PathBuffer<std::string> getCatalogSearchScratchPath();
+    // vIndex: 52
+    virtual ::Core::PathBuffer<::std::string> getCatalogSearchScratchPath();
 
-    MCVAPI std::string getClientUpdateUrl() const;
+    // vIndex: 53
+    virtual ::Core::PathBuffer<::std::string> getUserStorageRootPath() const;
 
-    MCVAPI ::InputMode getDefaultInputMode() const;
+    // vIndex: 54
+    virtual ::std::shared_ptr<::Core::FileStorageArea> getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
-    MCVAPI int getDefaultNetworkMaxPlayers() const;
+    // vIndex: 55
+    virtual bool hasSeparatedStorageAreasForContentAcquisition() const;
 
-    MCVAPI float getDefaultSafeZoneScaleAll() const;
+    // vIndex: 56
+    virtual uint64 getOptimalLDBSize();
 
-    MCVAPI float getDefaultSafeZoneScaleX() const;
+    // vIndex: 57
+    virtual int getMaxLDBFilesOpen() const;
 
-    MCVAPI float getDefaultSafeZoneScaleY() const;
+    // vIndex: 58
+    virtual bool getDisableLDBSeekCompactions() const;
 
-    MCVAPI float getDefaultScreenPositionX() const;
+    // vIndex: 59
+    virtual void showDialog(int dialogId);
 
-    MCVAPI float getDefaultScreenPositionY() const;
+    // vIndex: 61
+    virtual void createUserInput();
 
-    MCVAPI ::DeviceSunsetTier getDeviceSunsetTier() const;
+    // vIndex: 60
+    virtual void createUserInput(int dialogId);
 
-    MCVAPI int getDisplayHeight();
+    // vIndex: 62
+    virtual int getUserInputStatus();
 
-    MCVAPI int getDisplayWidth();
+    // vIndex: 63
+    virtual ::std::vector<::std::string> getUserInput();
 
-    MCVAPI int getDpi() const;
+    // vIndex: 64
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem fileSystem);
 
-    MCVAPI std::string getEdition() const;
+    // vIndex: 65
+    virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCVAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const& levelId) const;
+    // vIndex: 66
+    virtual void registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
 
-    MCVAPI std::string getFeedbackBugsLink() const;
+    // vIndex: 67
+    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCVAPI std::string getFeedbackHelpLink() const;
+    // vIndex: 68
+    virtual int getScreenWidth() const;
 
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(::ResourceFileSystem fileSystem);
+    // vIndex: 69
+    virtual int getScreenHeight() const;
 
-    MCVAPI ::AppFocusState getFocusState();
+    // vIndex: 70
+    virtual int getDisplayWidth();
 
-    MCVAPI uint64 getHighPerformanceThreadsCount() const;
+    // vIndex: 71
+    virtual int getDisplayHeight();
 
-    MCVAPI std::vector<std::string> getIPAddresses();
+    // vIndex: 72
+    virtual void setScreenSize(int width, int height);
 
-    MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
+    // vIndex: 73
+    virtual void setWindowSize(int width, int height);
 
-    MCVAPI bool getIsRunningInAppCenter() const;
+    // vIndex: 74
+    virtual void setWindowText(::std::string const& title);
 
-    MCVAPI class Core::PathBuffer<std::string> getLevelInfoCachePath() const;
+    // vIndex: 75
+    virtual ::std::optional<::OperationMode> getOperationMode() const;
 
-    MCVAPI std::chrono::nanoseconds getLevelSaveInterval() const;
+    // vIndex: 76
+    virtual bool allowContentLogWriteToDisk();
 
-    MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
+    // vIndex: 77
+    virtual uint getMaxClubsRequests() const;
 
-    MCVAPI uint64 getLowPhysicalMemoryThreshold() const;
+    // vIndex: 78
+    virtual void queueForMainThread_DEPRECATED(::std::function<void()>) = 0;
 
-    MCVAPI uint getMaxClubsRequests() const;
+    // vIndex: 79
+    virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() = 0;
 
-    MCVAPI int getMaxLDBFilesOpen() const;
+    // vIndex: 80
+    virtual bool supportsLaunchingLegacyVersion() const;
 
-    MCVAPI int getMaxSimRadiusInChunks() const;
+    // vIndex: 81
+    virtual void launchLegacyVersion();
 
-    MCVAPI int getMaxSimultaneousDownloads() const;
+    // vIndex: 82
+    virtual bool canManageLegacyData() const;
 
-    MCVAPI uint getMaxSimultaneousServiceRequests() const;
+    // vIndex: 83
+    virtual bool supportsDayOneExperience() const;
 
-    MCVAPI uint64 getMaximumUsedMemory();
+    // vIndex: 84
+    virtual bool canMigrateWorldData() const;
 
-    MCVAPI auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(std::string const&, std::string const&);
+    // vIndex: 85
+    virtual bool isContentAutoUpdateAllowed() const;
 
-    MCVAPI std::string getModelName();
+    // vIndex: 86
+    virtual int getMaxSimultaneousDownloads() const;
 
-    MCVAPI std::vector<std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
+    // vIndex: 87
+    virtual uint getMaxSimultaneousServiceRequests() const;
 
-    MCVAPI ::NetworkConnectionType getNetworkConnectionType();
+    // vIndex: 88
+    virtual bool isDownloadAndImportBlocking() const;
 
-    MCVAPI int getNumberOfParticleFramesToInterpolate() const;
+    // vIndex: 89
+    virtual bool isDownloadBuffered() const;
 
-    MCVAPI ::OsVersion getOSVersion() const;
+    // vIndex: 90
+    virtual bool supportsAutoSaveOnDBCompaction() const;
 
-    MCVAPI class Core::PathBuffer<std::string> getOnDiskPackScratchPath();
+    // vIndex: 91
+    virtual ::std::string getTextBoxBackend() const = 0;
 
-    MCVAPI class Core::PathBuffer<std::string> getOnDiskScratchPath();
+    // vIndex: 92
+    virtual void setTextBoxBackend(::std::string const&) = 0;
 
-    MCVAPI std::optional<::OperationMode> getOperationMode() const;
+    // vIndex: 93
+    virtual int getCaretPosition() const = 0;
 
-    MCVAPI uint64 getOptimalLDBSize();
+    // vIndex: 94
+    virtual void setCaretPosition(int) = 0;
 
-    MCVAPI std::chrono::nanoseconds getOptionsSaveInterval() const;
+    // vIndex: 95
+    virtual bool supportsVibration() const;
 
-    MCVAPI std::string getPackageFamilyName() const;
+    // vIndex: 96
+    virtual void vibrate(int milliSeconds);
 
-    MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
+    // vIndex: 97
+    virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
-    MCVAPI int getPlatformDpi() const;
+    // vIndex: 98
+    virtual ::std::string readAssetFile(::Core::Path const& filename);
 
-    MCVAPI std::string getPlatformStringVar(int stringId);
+    // vIndex: 99
+    virtual bool hasAssetFile(::Core::Path const& filename);
 
-    MCVAPI bool getPlatformTTSEnabled() const;
+    // vIndex: 100
+    virtual bool copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
 
-    MCVAPI bool getPlatformTTSExists() const;
+    // vIndex: 101
+    virtual ::std::set<::Core::PathBuffer<::std::string>>
+    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
-    MCVAPI ::PlatformType getPlatformType() const;
+    // vIndex: 102
+    virtual bool supportsClientUpdate() const;
 
-    MCVAPI ::UIScalingRules getPlatformUIScalingRules() const;
+    // vIndex: 103
+    virtual ::std::string getClientUpdateUrl() const;
 
-    MCVAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters() const;
+    // vIndex: 104
+    virtual int checkLicense();
 
-    MCVAPI class Core::PathBuffer<std::string> getScratchPath();
+    // vIndex: 105
+    virtual bool hasBuyButtonWhenInvalidLicense();
 
-    MCVAPI int getScreenHeight() const;
+    // vIndex: 10
+    virtual bool isNetworkAvailable() const /*override*/;
 
-    MCVAPI int getScreenWidth() const;
+    // vIndex: 11
+    virtual bool isLANAvailable() const /*override*/;
 
-    MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
+    // vIndex: 9
+    virtual bool isNetworkEnabled(bool onlyWifiAllowed) const /*override*/;
 
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const& key);
+    // vIndex: 106
+    virtual void setNetworkAllowed(bool allowed);
 
-    MCVAPI class Core::PathBuffer<std::string> getSettingsPath();
+    // vIndex: 107
+    virtual bool isNetworkAllowed() const;
 
-    MCVAPI class Core::PathBuffer<std::string> getShaderCachePath();
+    // vIndex: 13
+    virtual bool isInternetAvailable() const /*override*/;
 
-    MCVAPI float getStoreNetworkFailureTimeout() const;
+    // vIndex: 108
+    virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue();
 
-    MCVAPI class mce::UUID const& getThirdPartyPackUUID() const;
+    // vIndex: 109
+    virtual ::NetworkConnectionType getNetworkConnectionType();
 
-    MCVAPI uint64 getTotalHardwareThreadsCount() const;
+    // vIndex: 110
+    virtual void setNetworkConnectionType(::NetworkConnectionType connectionType);
 
-    MCVAPI ::UIScalingRules getUIScalingRules() const;
+    // vIndex: 111
+    virtual int getDefaultNetworkMaxPlayers() const;
 
-    MCVAPI std::vector<std::string> getUserInput();
+    // vIndex: 14
+    virtual bool multiplayerRequiresPremiumAccess() const /*override*/;
 
-    MCVAPI int getUserInputStatus();
+    // vIndex: 15
+    virtual bool multiplayerRequiresUGCEnabled() const /*override*/;
 
-    MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
+    // vIndex: 112
+    virtual bool isCrossPlatformToggleVisible() const;
 
-    MCVAPI class Core::PathBuffer<std::string> getUserdataPathForLevels() const;
+    // vIndex: 113
+    virtual bool isTelemetryAllowed();
 
-    MCVAPI ::VRControllerType getVRControllerType() const;
+    // vIndex: 114
+    virtual bool isTrialWorldsTransferToFullGameAllowed() const;
 
-    MCVAPI void goToExternalConsumablesStoreListing() const;
+    // vIndex: 115
+    virtual void buyGame();
 
-    MCVAPI void handlePlatformSpecificCommerceError(uint error);
+    // vIndex: 116
+    virtual void finish();
 
-    MCVAPI bool hasAssetFile(class Core::Path const& filename);
+    // vIndex: 117
+    virtual bool canLaunchUri(::std::string const& uri);
 
-    MCVAPI bool hasBuyButtonWhenInvalidLicense();
+    // vIndex: 118
+    virtual void launchUri(::std::string const& uri);
 
-    MCVAPI bool hasFastAlphaTest() const;
+    // vIndex: 119
+    virtual void launchSettings();
 
-    MCVAPI bool hasIDEProfiler();
+    // vIndex: 120
+    virtual bool useXboxControlHelpers() const;
 
-    MCVAPI bool hasJournalingFilesystem() const;
+    // vIndex: 121
+    virtual ::PlatformType getPlatformType() const;
 
-    MCVAPI bool hasMulticastReceivePermission() const;
+    // vIndex: 122
+    virtual bool isCentennial() const;
 
-    MCVAPI bool hasPlatformSpecificInvites() const;
+    // vIndex: 123
+    virtual ::std::string getPackageFamilyName() const;
 
-    MCVAPI bool hasSeparatedStorageAreasForContentAcquisition() const;
+    // vIndex: 16
+    virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    MCVAPI void hideSplashScreen();
+    // vIndex: 124
+    virtual ::std::string getPlatformString() const = 0;
 
-    MCVAPI bool importAsFlatFile() const;
+    // vIndex: 125
+    virtual ::std::string getSubPlatformString() const = 0;
 
-    MCVAPI void initAppPlatformNetworkSettings();
+    // vIndex: 126
+    virtual void setARVRPlatform(::ARVRPlatform platform);
 
-    MCVAPI void initialize();
+    // vIndex: 17
+    virtual ::ARVRPlatform getARVRPlatform() const /*override*/;
 
-    MCVAPI void initializeGameStreaming();
+    // vIndex: 127
+    virtual int getNumberOfParticleFramesToInterpolate() const;
 
-    MCVAPI void initializeMulticast() const;
+    // vIndex: 128
+    virtual int getDpi() const;
 
-    MCVAPI void initializeScreenDependentResources();
+    // vIndex: 129
+    virtual void setDpi(int dpi);
 
-    MCVAPI bool isAutoCompactionEnabled() const;
+    // vIndex: 130
+    virtual ::UIScalingRules getUIScalingRules() const;
 
-    MCVAPI bool isCentennial() const;
+    // vIndex: 131
+    virtual void setUIScalingRules(::UIScalingRules UIScalingRules);
 
-    MCVAPI bool isContentAutoUpdateAllowed() const;
+    // vIndex: 132
+    virtual void setVRControllerType(::VRControllerType controllerType);
 
-    MCVAPI bool isCrossPlatformToggleVisible() const;
+    // vIndex: 133
+    virtual ::VRControllerType getVRControllerType() const;
 
-    MCVAPI bool isDisplayInitialized() const;
+    // vIndex: 134
+    virtual bool hasIDEProfiler();
 
-    MCVAPI bool isDownloadAndImportBlocking() const;
+    // vIndex: 135
+    virtual ::std::string getPlatformStringVar(int stringId);
 
-    MCVAPI bool isDownloadBuffered() const;
+    // vIndex: 136
+    virtual ::std::string getApplicationId() const = 0;
 
-    MCVAPI bool isEduMode() const;
+    // vIndex: 137
+    virtual uint64 getFreeMemory() const = 0;
 
-    MCVAPI bool isFireTV() const;
+    // vIndex: 138
+    virtual uint64 getMemoryLimit() const = 0;
 
-    MCVAPI bool isInternetAvailable() const;
+    // vIndex: 139
+    virtual uint64 getUsedMemory() = 0;
 
-    MCVAPI bool isJoinableViaExternalServers() const;
+    // vIndex: 20
+    virtual uint64 getTotalPhysicalMemory() const = 0;
 
-    MCVAPI bool isLANAllowed() const;
+    // vIndex: 140
+    virtual uint64 getMaximumUsedMemory();
 
-    MCVAPI bool isLANAvailable() const;
+    // vIndex: 141
+    virtual uint64 getLowMemoryEventThreshold() const;
 
-    MCVAPI bool isLowMemoryDevice() const;
+    // vIndex: 142
+    virtual uint64 getLowMemoryEventRecoveryThreshold() const;
 
-    MCVAPI bool isLowPhysicalMemoryDevice() const;
+    // vIndex: 19
+    virtual uint64 getLowPhysicalMemoryThreshold() const /*override*/;
 
-    MCVAPI bool isNetworkAllowed() const;
+    // vIndex: 143
+    virtual void calculateIfLowMemoryDevice();
 
-    MCVAPI bool isNetworkAvailable() const;
+    // vIndex: 3
+    virtual bool isLowMemoryDevice() const /*override*/;
 
-    MCVAPI bool isNetworkEnabled(bool onlyWifiAllowed) const;
+    // vIndex: 4
+    virtual bool isLowPhysicalMemoryDevice() const /*override*/;
 
-    MCVAPI bool isNetworkThrottled() const;
+    // vIndex: 144
+    virtual ::DeviceSunsetTier getDeviceSunsetTier() const;
 
-    MCVAPI std::optional<bool> isOnWifiConnectionTelemetryValue();
+    // vIndex: 145
+    virtual int getMaxSimRadiusInChunks() const;
 
-    MCVAPI bool isQuitCapable() const;
+    // vIndex: 146
+    virtual ::std::vector<::std::string> getBroadcastAddresses();
 
-    MCVAPI bool isRealmsEnabled() const;
+    // vIndex: 147
+    virtual ::std::vector<::std::string> getIPAddresses();
 
-    MCVAPI bool isTelemetryAllowed();
+    // vIndex: 148
+    virtual bool useAppPlatformForTelemetryIPAddress();
 
-    MCVAPI bool isTrialWorldsTransferToFullGameAllowed() const;
+    // vIndex: 149
+    virtual ::std::string getModelName();
 
-    MCVAPI bool isWebviewSupported() const;
+    // vIndex: 150
+    virtual bool usesHDRBrightness() const;
 
-    MCVAPI bool isWin10Arm() const;
+    // vIndex: 151
+    virtual void updateBootstrapSettingsFromTreatmentsAsync();
 
-    MCVAPI void launchLegacyVersion();
+    // vIndex: 152
+    virtual void setFullscreenMode(::FullscreenMode const fullscreenMode);
 
-    MCVAPI void launchSettings();
+    // vIndex: 153
+    virtual bool isNetworkThrottled() const;
 
-    MCVAPI void launchUri(std::string const& uri);
+    // vIndex: 12
+    virtual bool isLANAllowed() const /*override*/;
 
-    MCVAPI std::set<class Core::PathBuffer<std::string>>
-           listAssetFilesIn(class Core::Path const& path, std::string const& extension) const;
+    // vIndex: 154
+    virtual bool doesLANRequireMultiplayerRestrictions() const;
 
-    MCVAPI uint maxFileDataRequestConcurrency() const;
+    // vIndex: 155
+    virtual void collectGraphicsHardwareDetails();
 
-    MCVAPI bool minimizeBackgroundDownloads() const;
+    // vIndex: 156
+    virtual ::std::string getEdition() const;
 
-    MCVAPI bool multiplayerRequiresPremiumAccess() const;
+    // vIndex: 157
+    virtual ::OsVersion getOSVersion() const;
 
-    MCVAPI bool multiplayerRequiresUGCEnabled() const;
+    // vIndex: 158
+    virtual bool isFireTV() const;
 
-    MCVAPI bool notifyControllerConnectionStateChange() const;
+    // vIndex: 159
+    virtual bool isWin10Arm() const;
 
-    MCVAPI void notifyNetworkConfigurationChanged();
+    // vIndex: 160
+    virtual void setThreadsFrozen(bool frozen);
 
-    MCVAPI void onFullGameUnlock();
+    // vIndex: 161
+    virtual bool areThreadsFrozen() const;
 
-    MCVAPI void onMinecraftGameInitComplete();
+    // vIndex: 162
+    virtual float getDefaultSafeZoneScaleX() const;
 
-    MCVAPI void onPrimaryUserNetworkReady();
+    // vIndex: 163
+    virtual float getDefaultSafeZoneScaleY() const;
 
-    MCVAPI bool platformRequiresControllerApplet() const;
+    // vIndex: 164
+    virtual float getDefaultSafeZoneScaleAll() const;
 
-    MCVAPI std::string readAssetFile(class Core::Path const& filename);
+    // vIndex: 165
+    virtual float getDefaultScreenPositionX() const;
 
-    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const& activeExperiments) const;
+    // vIndex: 166
+    virtual float getDefaultScreenPositionY() const;
 
-    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const& fileName);
+    // vIndex: 167
+    virtual bool isQuitCapable() const;
 
-    MCVAPI void releaseMulticastReceivePermission() const;
+    // vIndex: 168
+    virtual bool requireControllerAtStartup() const;
 
-    MCVAPI bool reloadRenderResourcesOnResume() const;
+    // vIndex: 169
+    virtual bool notifyControllerConnectionStateChange() const;
 
-    MCVAPI void removeListener(class AppPlatformListener* l);
+    // vIndex: 170
+    virtual bool platformRequiresControllerApplet() const;
 
-    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct IntegrityTokenResult>>
-           requestIntegrityToken(std::string const& nonceToken);
+    // vIndex: 171
+    virtual ::InputMode getDefaultInputMode() const;
 
-    MCVAPI void requestMulticastReceivePermission();
+    // vIndex: 172
+    virtual ::AppFocusState getFocusState();
 
-    MCVAPI bool requireControllerAtStartup() const;
+    // vIndex: 173
+    virtual ::AppLifecycleContext& getAppLifecycleContext();
 
-    MCVAPI bool requiresAutoSaveIconExplanationPopup() const;
+    // vIndex: 174
+    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) = 0;
 
-    MCVAPI bool requiresLiveGoldForMultiplayer() const;
+    // vIndex: 175
+    virtual bool supportsFliteTTS() const;
 
-    MCVAPI bool requiresXboxLiveSigninToPlay() const;
+    // vIndex: 176
+    virtual ::std::unique_ptr<::SecureStorage> getSecureStorage();
 
-    MCVAPI void restartApp(bool restart);
+    // vIndex: 1
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
 
-    MCVAPI bool restartRequested();
+    // vIndex: 2
+    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
 
-    MCVAPI bool saveTreatmentPacksAsZips() const;
+    // vIndex: 177
+    virtual bool devHotReloadRenderResources() const;
 
-    MCVAPI void setARVRPlatform(::ARVRPlatform platform);
+    // vIndex: 178
+    virtual bool shouldPauseDownloadsWhenEnterGame() const;
 
-    MCVAPI void setDpi(int dpi);
+    // vIndex: 179
+    virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
 
-    MCVAPI void setFullscreenMode(::FullscreenMode fullscreenMode);
+    // vIndex: 180
+    virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
-    MCVAPI void setIntegrityToken(std::string const& integrityToken);
+    // vIndex: 181
+    virtual bool saveTreatmentPacksAsZips() const;
 
-    MCVAPI void setIntegrityTokenErrorMessage(std::string const& errorMessage);
+    // vIndex: 182
+    virtual bool saveEncryptedPacksAsZips() const;
 
-    MCVAPI void setKeepScreenOnFlag(bool);
+    // vIndex: 183
+    virtual bool saveEncryptedWorldTemplatePacksAsZips() const;
 
-    MCVAPI void setNetworkAllowed(bool allowed);
+    // vIndex: 184
+    virtual bool allowsResourcePackDevelopment() const;
 
-    MCVAPI void setNetworkConnectionType(::NetworkConnectionType connectionType);
+    // vIndex: 185
+    virtual bool supportsLegacySinglePremiumCacheDirectory() const;
 
-    MCVAPI void setScreenSize(int width, int height);
+    // vIndex: 186
+    virtual bool supportsWorldShare() const;
 
-    MCVAPI void setSecureStorageKey(std::string const& key, class SecureStorageKey const& value);
+    // vIndex: 187
+    virtual bool hasJournalingFilesystem() const;
 
-    MCVAPI void setSleepEnabled(bool enabled);
+    // vIndex: 188
+    virtual bool isAutoCompactionEnabled() const;
 
-    MCVAPI void setThreadsFrozen(bool frozen);
+    // vIndex: 189
+    virtual ::std::chrono::nanoseconds getLevelSaveInterval() const;
 
-    MCVAPI void setUIScalingRules(::UIScalingRules UIScalingRules);
+    // vIndex: 190
+    virtual ::std::chrono::nanoseconds getOptionsSaveInterval() const;
 
-    MCVAPI void setVRControllerType(::VRControllerType controllerType);
+    // vIndex: 191
+    virtual bool hasPlatformSpecificInvites() const;
 
-    MCVAPI void setWindowSize(int width, int height);
+    // vIndex: 192
+    virtual bool usePlatformProfilePicturesOnly() const;
 
-    MCVAPI void setWindowText(std::string const& title);
+    // vIndex: 193
+    virtual bool allowBetaXblSignIn() const;
 
-    MCVAPI bool shouldPauseDownloadsWhenEnterGame() const;
+    // vIndex: 194
+    virtual bool requiresXboxLiveSigninToPlay() const;
 
-    MCVAPI bool shouldRegisterForXboxLiveNotifications() const;
+    // vIndex: 195
+    virtual bool requiresLiveGoldForMultiplayer() const;
 
-    MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
+    // vIndex: 196
+    virtual bool shouldRegisterForXboxLiveNotifications() const;
 
-    MCVAPI void showDialog(int dialogId);
+    // vIndex: 5
+    virtual bool isRealmsEnabled() const /*override*/;
 
-    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<bool>>
-           showOSUserDialog(std::string, std::string, std::string);
+    // vIndex: 197
+    virtual bool minimizeBackgroundDownloads() const;
 
-    MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&& callback);
+    // vIndex: 198
+    virtual bool requiresAutoSaveIconExplanationPopup() const;
 
-    MCVAPI void showPlatformStoreIcon(bool shouldShow);
+    // vIndex: 199
+    virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const& levelId) const;
 
-    MCVAPI bool supportsAutoSaveOnDBCompaction() const;
+    // vIndex: 200
+    virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
 
-    MCVAPI bool supportsClientUpdate() const;
+    // vIndex: 18
+    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
+    getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
 
-    MCVAPI bool supportsDayOneExperience() const;
+    // vIndex: 201
+    virtual uint maxFileDataRequestConcurrency() const;
 
-    MCVAPI bool supportsFliteTTS() const;
+    // vIndex: 202
+    virtual void goToExternalConsumablesStoreListing() const;
 
-    MCVAPI bool supportsInPackageRecursion() const;
+    // vIndex: 203
+    virtual float getStoreNetworkFailureTimeout() const;
 
-    MCVAPI bool supportsLaunchingLegacyVersion() const;
+    // vIndex: 204
+    virtual ::std::shared_ptr<::Core::FileStorageArea>
+    createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::Path const& loggingPath);
 
-    MCVAPI bool supportsLegacySinglePremiumCacheDirectory() const;
+    // vIndex: 205
+    virtual void handlePlatformSpecificCommerceError(uint error);
 
-    MCVAPI bool supportsVRModeSwap() const;
+    // vIndex: 206
+    virtual bool isEduMode() const;
 
-    MCVAPI bool supportsVibration() const;
+    // vIndex: 207
+    virtual bool importAsFlatFile() const;
 
-    MCVAPI bool supportsWorldShare() const;
+    // vIndex: 208
+    virtual bool isWebviewSupported() const;
 
-    MCVAPI bool supportsXboxLiveAchievements() const;
+    // vIndex: 209
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const;
 
-    MCVAPI void teardown();
+    // vIndex: 210
+    virtual bool canAppSelfTerminate() const = 0;
 
-    MCVAPI void tryEnterVRMode(bool duringStartup, std::function<void(bool)> callback);
+    // vIndex: 211
+    virtual bool getPlatformTTSExists() const;
 
-    MCVAPI void updateLocalization(std::string const& loc);
+    // vIndex: 212
+    virtual bool getPlatformTTSEnabled() const;
 
-    MCVAPI bool useAppPlatformForTelemetryIPAddress();
+    // vIndex: 213
+    virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const;
 
-    MCVAPI bool useNativeStoreForRealmsPurchase();
+    // vIndex: 214
+    virtual bool shouldRemoveGraphicsDeviceOnAppTermination() const;
 
-    MCVAPI bool usePlatformProfilePicturesOnly() const;
+    // vIndex: 215
+    virtual bool isJoinableViaExternalServers() const;
 
-    MCVAPI bool useXboxControlHelpers() const;
+    // vIndex: 216
+    virtual void onPrimaryUserNetworkReady();
 
-    MCVAPI bool usesAsyncOptionSaving() const;
+    // vIndex: 217
+    virtual bool isDisplayInitialized() const;
 
-    MCVAPI bool usesHDRBrightness() const;
+    // vIndex: 218
+    virtual bool usesAsyncOptionSaving() const;
 
-    MCVAPI void vibrate(int milliSeconds);
+    // vIndex: 219
+    virtual void showPlatformStoreIcon(bool shouldShow);
 
-    MCVAPI ~AppPlatform();
+    // vIndex: 220
+    virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
 
+    // vIndex: 221
+    virtual bool supportsVRModeSwap() const;
+
+    // vIndex: 222
+    virtual bool canSwapVRMode(bool const inVRMode) const;
+
+    // vIndex: 223
+    virtual void tryEnterVRMode(bool duringStartup, ::std::function<void(bool)> callback);
+
+    // vIndex: 224
+    virtual void exitVRMode(::std::function<void()> callback);
+
+    // vIndex: 225
+    virtual void initializeGameStreaming();
+
+    // vIndex: 226
+    virtual void notifyNetworkConfigurationChanged();
+
+    // vIndex: 227
+    virtual void setKeepScreenOnFlag(bool);
+
+    // vIndex: 228
+    virtual bool getIsRunningInAppCenter() const;
+
+    // vIndex: 229
+    virtual void initializeMulticast() const;
+
+    // vIndex: 230
+    virtual void requestMulticastReceivePermission();
+
+    // vIndex: 231
+    virtual bool hasMulticastReceivePermission() const;
+
+    // vIndex: 232
+    virtual void releaseMulticastReceivePermission() const;
+
+    // vIndex: 233
+    virtual void onMinecraftGameInitComplete();
+
+    // vIndex: 234
+    virtual void onFullGameUnlock();
+
+    // vIndex: 235
+    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
+        showOSUserDialog(::std::string, ::std::string, ::std::string);
+
+    // vIndex: 236
+    virtual bool allowsExternalCommandExecution() const;
+
+    // vIndex: 237
+    virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const = 0;
+
+    // vIndex: 238
+    virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const = 0;
+
+    // vIndex: 239
+    virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const = 0;
+
+    // vIndex: 240
+    virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const = 0;
+
+    // vIndex: 241
+    virtual bool _tryEnableCPUBoost();
+
+    // vIndex: 242
+    virtual void _disableCPUBoost();
+
+    // vIndex: 243
+    virtual void _initializeFileStorageAreas();
+
+    // vIndex: 244
+    virtual void _teardownFileStorageAreas();
+
+    // vIndex: 245
+    virtual int getPlatformDpi() const;
+
+    // vIndex: 246
+    virtual ::UIScalingRules getPlatformUIScalingRules() const;
+
+    // vIndex: 247
+    virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const = 0;
+
+    // vIndex: 248
+    virtual void _onInitialize();
+
+    // vIndex: 249
+    virtual void _onTeardown();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI explicit AppPlatform(bool registerService);
 
     MCAPI void _fireAppTerminated();
 
-    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
+    MCAPI void _initializeLoadProfiler();
 
-    MCAPI class Core::PathBuffer<std::string> getCurrentStoragePath() const;
+    MCAPI ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
 
-    MCAPI class Core::PathBuffer<std::string> getInternalStoragePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getCurrentStoragePath() const;
 
-    MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
+    MCAPI ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
 
-    MCAPI class Core::PathBuffer<std::string> getUserdataPath() const;
+    MCAPI ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> getUserdataPath() const;
 
     MCAPI bool isTerminating() const;
 
     MCAPI void notifyUserStorageInitialized();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initializeLoadProfiler();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftableForIAppPlatform();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_PATH();
 
-    MCAPI static void** vftableForISecureStorageKeySystem();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& LOG_PATH();
 
-    MCAPI void* ctor$(bool registerService);
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
 
-    MCAPI void dtor$();
-
-    MCAPI void _disableCPUBoost$();
-
-    MCAPI void _initializeFileStorageAreas$();
-
-    MCAPI void _onInitialize$();
-
-    MCAPI void _onTeardown$();
-
-    MCAPI void _teardownFileStorageAreas$();
-
-    MCAPI bool _tryEnableCPUBoost$();
-
-    MCAPI void addListener$(class AppPlatformListener* l, float priority);
-
-    MCAPI bool allowBetaXblSignIn$() const;
-
-    MCAPI bool allowContentLogWriteToDisk$();
-
-    MCAPI bool allowsResourcePackDevelopment$() const;
-
-    MCAPI bool areThreadsFrozen$() const;
-
-    MCAPI void buyGame$();
-
-    MCAPI void calculateIfLowMemoryDevice$();
-
-    MCAPI bool canLaunchUri$(std::string const& uri);
-
-    MCAPI bool canManageLegacyData$() const;
-
-    MCAPI bool canMigrateWorldData$() const;
-
-    MCAPI bool canSwapVRMode$(bool inVRMode) const;
-
-    MCAPI int checkLicense$();
-
-    MCAPI void collectGraphicsHardwareDetails$();
-
-    MCAPI bool compareAppReceiptToLocalReceipt$(std::string const& otherReceipt);
-
-    MCAPI bool copyAssetFile$(class Core::Path const& filename, class Core::Path const& destination);
-
-    MCAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder$(class Core::Path const& filePath);
-
-    MCAPI std::shared_ptr<class Core::FileStorageArea>
-          createLoggingStorageArea$(::Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
-
-    MCAPI void createUserInput$();
-
-    MCAPI void createUserInput$(int dialogId);
-
-    MCAPI std::shared_ptr<class WebviewInterface> createWebview$(class Webview::PlatformArguments&&) const;
-
-    MCAPI bool doesLANRequireMultiplayerRestrictions$() const;
-
-    MCAPI void exitVRMode$(std::function<void()> callback);
-
-    MCAPI void finish$();
-
-    MCAPI ::ARVRPlatform getARVRPlatform$() const;
-
-    MCAPI struct AppPlatform::AndroidScopedStorageInfo const& getAndroidScopedStorageInfo$() const;
-
-    MCAPI class AppLifecycleContext& getAppLifecycleContext$();
-
-    MCAPI class Core::PathBuffer<std::string> getAssetFileFullPath$(class Core::Path const& filename);
-
-    MCAPI std::vector<std::string> getBroadcastAddresses$();
-
-    MCAPI std::vector<::Social::MultiplayerServiceIdentifier>
-          getBroadcastingMultiplayerServiceIds$(bool xblBroadcast, bool platformBroadcast) const;
-
-    MCAPI ::BuildPlatform getBuildPlatform$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getCacheStoragePath$();
-
-    MCAPI class Core::PathBuffer<std::string> getCatalogSearchScratchPath$();
-
-    MCAPI std::string getClientUpdateUrl$() const;
-
-    MCAPI ::InputMode getDefaultInputMode$() const;
-
-    MCAPI int getDefaultNetworkMaxPlayers$() const;
-
-    MCAPI float getDefaultSafeZoneScaleAll$() const;
-
-    MCAPI float getDefaultSafeZoneScaleX$() const;
-
-    MCAPI float getDefaultSafeZoneScaleY$() const;
-
-    MCAPI float getDefaultScreenPositionX$() const;
-
-    MCAPI float getDefaultScreenPositionY$() const;
-
-    MCAPI ::DeviceSunsetTier getDeviceSunsetTier$() const;
-
-    MCAPI int getDisplayHeight$();
-
-    MCAPI int getDisplayWidth$();
-
-    MCAPI int getDpi$() const;
-
-    MCAPI std::string getEdition$() const;
-
-    MCAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams$(std::string const& levelId) const;
-
-    MCAPI std::string getFeedbackBugsLink$() const;
-
-    MCAPI std::string getFeedbackHelpLink$() const;
-
-    MCAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess$(::ResourceFileSystem fileSystem);
-
-    MCAPI ::AppFocusState getFocusState$();
-
-    MCAPI uint64 getHighPerformanceThreadsCount$() const;
-
-    MCAPI std::vector<std::string> getIPAddresses$();
-
-    MCAPI class Core::PathBuffer<std::string> getInternalPackStoragePath$() const;
-
-    MCAPI bool getIsRunningInAppCenter$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getLevelInfoCachePath$() const;
-
-    MCAPI std::chrono::nanoseconds getLevelSaveInterval$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getLoggingPath$() const;
-
-    MCAPI uint64 getLowPhysicalMemoryThreshold$() const;
-
-    MCAPI uint getMaxClubsRequests$() const;
-
-    MCAPI int getMaxLDBFilesOpen$() const;
-
-    MCAPI int getMaxSimRadiusInChunks$() const;
-
-    MCAPI int getMaxSimultaneousDownloads$() const;
-
-    MCAPI uint getMaxSimultaneousServiceRequests$() const;
-
-    MCAPI uint64 getMaximumUsedMemory$();
-
-    MCAPI auto getModalErrorMessageProc$() -> ::AssertDialogResponse (*)(std::string const&, std::string const&);
-
-    MCAPI std::string getModelName$();
-
-    MCAPI std::vector<std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister$() const;
-
-    MCAPI ::NetworkConnectionType getNetworkConnectionType$();
-
-    MCAPI int getNumberOfParticleFramesToInterpolate$() const;
-
-    MCAPI ::OsVersion getOSVersion$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getOnDiskPackScratchPath$();
-
-    MCAPI class Core::PathBuffer<std::string> getOnDiskScratchPath$();
-
-    MCAPI std::optional<::OperationMode> getOperationMode$() const;
-
-    MCAPI uint64 getOptimalLDBSize$();
-
-    MCAPI std::chrono::nanoseconds getOptionsSaveInterval$() const;
-
-    MCAPI std::string getPackageFamilyName$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath$();
-
-    MCAPI int getPlatformDpi$() const;
-
-    MCAPI std::string getPlatformStringVar$(int stringId);
-
-    MCAPI bool getPlatformTTSEnabled$() const;
-
-    MCAPI bool getPlatformTTSExists$() const;
-
-    MCAPI ::PlatformType getPlatformType$() const;
-
-    MCAPI ::UIScalingRules getPlatformUIScalingRules$() const;
-
-    MCAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getScratchPath$();
-
-    MCAPI int getScreenHeight$() const;
-
-    MCAPI int getScreenWidth$() const;
-
-    MCAPI std::unique_ptr<class SecureStorage> getSecureStorage$();
-
-    MCAPI class SecureStorageKey getSecureStorageKey$(std::string const& key);
-
-    MCAPI class Core::PathBuffer<std::string> getSettingsPath$();
-
-    MCAPI class Core::PathBuffer<std::string> getShaderCachePath$();
-
-    MCAPI float getStoreNetworkFailureTimeout$() const;
-
-    MCAPI class mce::UUID const& getThirdPartyPackUUID$() const;
-
-    MCAPI uint64 getTotalHardwareThreadsCount$() const;
-
-    MCAPI ::UIScalingRules getUIScalingRules$() const;
-
-    MCAPI std::vector<std::string> getUserInput$();
-
-    MCAPI int getUserInputStatus$();
-
-    MCAPI class Core::PathBuffer<std::string> getUserStorageRootPath$() const;
-
-    MCAPI class Core::PathBuffer<std::string> getUserdataPathForLevels$() const;
-
-    MCAPI ::VRControllerType getVRControllerType$() const;
-
-    MCAPI void goToExternalConsumablesStoreListing$() const;
-
-    MCAPI void handlePlatformSpecificCommerceError$(uint error);
-
-    MCAPI bool hasAssetFile$(class Core::Path const& filename);
-
-    MCAPI bool hasBuyButtonWhenInvalidLicense$();
-
-    MCAPI bool hasFastAlphaTest$() const;
-
-    MCAPI bool hasIDEProfiler$();
-
-    MCAPI bool hasJournalingFilesystem$() const;
-
-    MCAPI bool hasMulticastReceivePermission$() const;
-
-    MCAPI bool hasPlatformSpecificInvites$() const;
-
-    MCAPI bool hasSeparatedStorageAreasForContentAcquisition$() const;
-
-    MCAPI void hideSplashScreen$();
-
-    MCAPI bool importAsFlatFile$() const;
-
-    MCAPI void initAppPlatformNetworkSettings$();
-
-    MCAPI void initialize$();
-
-    MCAPI void initializeGameStreaming$();
-
-    MCAPI void initializeMulticast$() const;
-
-    MCAPI void initializeScreenDependentResources$();
-
-    MCAPI bool isAutoCompactionEnabled$() const;
-
-    MCAPI bool isCentennial$() const;
-
-    MCAPI bool isContentAutoUpdateAllowed$() const;
-
-    MCAPI bool isCrossPlatformToggleVisible$() const;
-
-    MCAPI bool isDisplayInitialized$() const;
-
-    MCAPI bool isDownloadAndImportBlocking$() const;
-
-    MCAPI bool isDownloadBuffered$() const;
-
-    MCAPI bool isEduMode$() const;
-
-    MCAPI bool isFireTV$() const;
-
-    MCAPI bool isInternetAvailable$() const;
-
-    MCAPI bool isJoinableViaExternalServers$() const;
-
-    MCAPI bool isLANAllowed$() const;
-
-    MCAPI bool isLANAvailable$() const;
-
-    MCAPI bool isLowMemoryDevice$() const;
-
-    MCAPI bool isLowPhysicalMemoryDevice$() const;
-
-    MCAPI bool isNetworkAllowed$() const;
-
-    MCAPI bool isNetworkAvailable$() const;
-
-    MCAPI bool isNetworkEnabled$(bool onlyWifiAllowed) const;
-
-    MCAPI bool isNetworkThrottled$() const;
-
-    MCAPI std::optional<bool> isOnWifiConnectionTelemetryValue$();
-
-    MCAPI bool isQuitCapable$() const;
-
-    MCAPI bool isRealmsEnabled$() const;
-
-    MCAPI bool isTelemetryAllowed$();
-
-    MCAPI bool isTrialWorldsTransferToFullGameAllowed$() const;
-
-    MCAPI bool isWebviewSupported$() const;
-
-    MCAPI bool isWin10Arm$() const;
-
-    MCAPI void launchLegacyVersion$();
-
-    MCAPI void launchSettings$();
-
-    MCAPI void launchUri$(std::string const& uri);
-
-    MCAPI std::set<class Core::PathBuffer<std::string>>
-          listAssetFilesIn$(class Core::Path const& path, std::string const& extension) const;
-
-    MCAPI uint maxFileDataRequestConcurrency$() const;
-
-    MCAPI bool minimizeBackgroundDownloads$() const;
-
-    MCAPI bool multiplayerRequiresPremiumAccess$() const;
-
-    MCAPI bool multiplayerRequiresUGCEnabled$() const;
-
-    MCAPI bool notifyControllerConnectionStateChange$() const;
-
-    MCAPI void notifyNetworkConfigurationChanged$();
-
-    MCAPI void onFullGameUnlock$();
-
-    MCAPI void onMinecraftGameInitComplete$();
-
-    MCAPI void onPrimaryUserNetworkReady$();
-
-    MCAPI bool platformRequiresControllerApplet$() const;
-
-    MCAPI std::string readAssetFile$(class Core::Path const& filename);
-
-    MCAPI void registerExperimentsActiveCrashDump$(std::vector<std::string> const& activeExperiments) const;
-
-    MCAPI void registerFileForCollectionWithCrashDump$(class Core::Path const& fileName);
-
-    MCAPI void releaseMulticastReceivePermission$() const;
-
-    MCAPI bool reloadRenderResourcesOnResume$() const;
-
-    MCAPI void removeListener$(class AppPlatformListener* l);
-
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct IntegrityTokenResult>>
-          requestIntegrityToken$(std::string const& nonceToken);
-
-    MCAPI void requestMulticastReceivePermission$();
-
-    MCAPI bool requireControllerAtStartup$() const;
-
-    MCAPI bool requiresAutoSaveIconExplanationPopup$() const;
-
-    MCAPI bool requiresLiveGoldForMultiplayer$() const;
-
-    MCAPI bool requiresXboxLiveSigninToPlay$() const;
-
-    MCAPI void restartApp$(bool restart);
-
-    MCAPI bool restartRequested$();
-
-    MCAPI bool saveTreatmentPacksAsZips$() const;
-
-    MCAPI void setARVRPlatform$(::ARVRPlatform platform);
-
-    MCAPI void setDpi$(int dpi);
-
-    MCAPI void setFullscreenMode$(::FullscreenMode fullscreenMode);
-
-    MCAPI void setIntegrityToken$(std::string const& integrityToken);
-
-    MCAPI void setIntegrityTokenErrorMessage$(std::string const& errorMessage);
-
-    MCAPI void setKeepScreenOnFlag$(bool);
-
-    MCAPI void setNetworkAllowed$(bool allowed);
-
-    MCAPI void setNetworkConnectionType$(::NetworkConnectionType connectionType);
-
-    MCAPI void setScreenSize$(int width, int height);
-
-    MCAPI void setSecureStorageKey$(std::string const& key, class SecureStorageKey const& value);
-
-    MCAPI void setSleepEnabled$(bool enabled);
-
-    MCAPI void setThreadsFrozen$(bool frozen);
-
-    MCAPI void setUIScalingRules$(::UIScalingRules UIScalingRules);
-
-    MCAPI void setVRControllerType$(::VRControllerType controllerType);
-
-    MCAPI void setWindowSize$(int width, int height);
-
-    MCAPI void setWindowText$(std::string const& title);
-
-    MCAPI bool shouldPauseDownloadsWhenEnterGame$() const;
-
-    MCAPI bool shouldRegisterForXboxLiveNotifications$() const;
-
-    MCAPI bool shouldRemoveGraphicsDeviceOnAppTermination$() const;
-
-    MCAPI void showDialog$(int dialogId);
-
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<bool>>
-          showOSUserDialog$(std::string, std::string, std::string);
-
-    MCAPI void showPlatformEmptyStoreDialog$(std::function<void(bool)>&& callback);
-
-    MCAPI void showPlatformStoreIcon$(bool shouldShow);
-
-    MCAPI bool supportsAutoSaveOnDBCompaction$() const;
-
-    MCAPI bool supportsClientUpdate$() const;
-
-    MCAPI bool supportsDayOneExperience$() const;
-
-    MCAPI bool supportsFliteTTS$() const;
-
-    MCAPI bool supportsInPackageRecursion$() const;
-
-    MCAPI bool supportsLaunchingLegacyVersion$() const;
-
-    MCAPI bool supportsLegacySinglePremiumCacheDirectory$() const;
-
-    MCAPI bool supportsVRModeSwap$() const;
-
-    MCAPI bool supportsVibration$() const;
-
-    MCAPI bool supportsWorldShare$() const;
-
-    MCAPI bool supportsXboxLiveAchievements$() const;
-
-    MCAPI void teardown$();
-
-    MCAPI void tryEnterVRMode$(bool duringStartup, std::function<void(bool)> callback);
-
-    MCAPI void updateLocalization$(std::string const& loc);
-
-    MCAPI bool useAppPlatformForTelemetryIPAddress$();
-
-    MCAPI bool useNativeStoreForRealmsPurchase$();
-
-    MCAPI bool usePlatformProfilePicturesOnly$() const;
-
-    MCAPI bool useXboxControlHelpers$() const;
-
-    MCAPI bool usesAsyncOptionSaving$() const;
-
-    MCAPI bool usesHDRBrightness$() const;
-
-    MCAPI void vibrate$(int milliSeconds);
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& HOME_PATH();
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& LOG_PATH();
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& SETTINGS_PATH();
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const& SHADERCACHE_PATH();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
 
     MCAPI static bool& mIsInitialized();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool registerService);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $initialize();
+
+    MCAPI void $teardown();
+
+    MCAPI void $initAppPlatformNetworkSettings();
+
+    MCAPI void $initializeScreenDependentResources();
+
+    MCAPI uint64 $getHighPerformanceThreadsCount() const;
+
+    MCAPI uint64 $getTotalHardwareThreadsCount() const;
+
+    MCAPI void $addListener(::AppPlatformListener* l, float priority);
+
+    MCAPI void $removeListener(::AppPlatformListener* l);
+
+    MCAPI void $restartApp(bool restart);
+
+    MCAPI bool $restartRequested();
+
+    MCAPI int const $numberOfThrottledTreatmentPacksToImportPerMinute() const;
+
+    MCAPI bool const $areTreatmentPacksThrottled() const;
+
+    MCAPI bool $hasFastAlphaTest() const;
+
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::IntegrityTokenResult>>
+    $requestIntegrityToken(::std::string const& nonceToken);
+
+    MCAPI void $setIntegrityToken(::std::string const& integrityToken);
+
+    MCAPI void $setIntegrityTokenErrorMessage(::std::string const& errorMessage);
+
+    MCAPI bool $supportsInPackageRecursion() const;
+
+    MCAPI bool $supportsXboxLiveAchievements() const;
+
+    MCAPI void $hideSplashScreen();
+
+    MCAPI ::std::string $getFeedbackBugsLink() const;
+
+    MCAPI ::std::string $getFeedbackHelpLink() const;
+
+    MCAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+
+    MCAPI void $updateLocalization(::std::string const& loc);
+
+    MCAPI void $setSleepEnabled(bool enabled);
+
+    MCAPI ::Core::PathBuffer<::std::string> $getScratchPath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getInternalPackStoragePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getSettingsPath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getShaderCachePath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getUserdataPathForLevels() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getCacheStoragePath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getOnDiskScratchPath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getOnDiskPackScratchPath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getLevelInfoCachePath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> $getCatalogSearchScratchPath();
+
+    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+
+    MCAPI ::std::shared_ptr<::Core::FileStorageArea> $getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
+
+    MCAPI bool $hasSeparatedStorageAreasForContentAcquisition() const;
+
+    MCAPI uint64 $getOptimalLDBSize();
+
+    MCAPI int $getMaxLDBFilesOpen() const;
+
+    MCAPI bool $getDisableLDBSeekCompactions() const;
+
+    MCAPI void $showDialog(int dialogId);
+
+    MCAPI void $createUserInput();
+
+    MCAPI void $createUserInput(int dialogId);
+
+    MCAPI int $getUserInputStatus();
+
+    MCAPI ::std::vector<::std::string> $getUserInput();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> $getFileAccess(::ResourceFileSystem fileSystem);
+
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+
+    MCAPI void $registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
+
+    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+
+    MCAPI int $getScreenWidth() const;
+
+    MCAPI int $getScreenHeight() const;
+
+    MCAPI int $getDisplayWidth();
+
+    MCAPI int $getDisplayHeight();
+
+    MCAPI void $setScreenSize(int width, int height);
+
+    MCAPI void $setWindowSize(int width, int height);
+
+    MCAPI void $setWindowText(::std::string const& title);
+
+    MCAPI ::std::optional<::OperationMode> $getOperationMode() const;
+
+    MCAPI bool $allowContentLogWriteToDisk();
+
+    MCAPI uint $getMaxClubsRequests() const;
+
+    MCAPI bool $supportsLaunchingLegacyVersion() const;
+
+    MCAPI void $launchLegacyVersion();
+
+    MCAPI bool $canManageLegacyData() const;
+
+    MCAPI bool $supportsDayOneExperience() const;
+
+    MCAPI bool $canMigrateWorldData() const;
+
+    MCAPI bool $isContentAutoUpdateAllowed() const;
+
+    MCAPI int $getMaxSimultaneousDownloads() const;
+
+    MCAPI uint $getMaxSimultaneousServiceRequests() const;
+
+    MCAPI bool $isDownloadAndImportBlocking() const;
+
+    MCAPI bool $isDownloadBuffered() const;
+
+    MCAPI bool $supportsAutoSaveOnDBCompaction() const;
+
+    MCAPI bool $supportsVibration() const;
+
+    MCAPI void $vibrate(int milliSeconds);
+
+    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
+
+    MCAPI ::std::string $readAssetFile(::Core::Path const& filename);
+
+    MCAPI bool $hasAssetFile(::Core::Path const& filename);
+
+    MCAPI bool $copyAssetFile(::Core::Path const& filename, ::Core::Path const& destination);
+
+    MCAPI ::std::set<::Core::PathBuffer<::std::string>>
+    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
+
+    MCAPI bool $supportsClientUpdate() const;
+
+    MCAPI ::std::string $getClientUpdateUrl() const;
+
+    MCAPI int $checkLicense();
+
+    MCAPI bool $hasBuyButtonWhenInvalidLicense();
+
+    MCAPI bool $isNetworkAvailable() const;
+
+    MCAPI bool $isLANAvailable() const;
+
+    MCAPI bool $isNetworkEnabled(bool onlyWifiAllowed) const;
+
+    MCAPI void $setNetworkAllowed(bool allowed);
+
+    MCAPI bool $isNetworkAllowed() const;
+
+    MCAPI bool $isInternetAvailable() const;
+
+    MCAPI ::std::optional<bool> $isOnWifiConnectionTelemetryValue();
+
+    MCAPI ::NetworkConnectionType $getNetworkConnectionType();
+
+    MCAPI void $setNetworkConnectionType(::NetworkConnectionType connectionType);
+
+    MCAPI int $getDefaultNetworkMaxPlayers() const;
+
+    MCAPI bool $multiplayerRequiresPremiumAccess() const;
+
+    MCAPI bool $multiplayerRequiresUGCEnabled() const;
+
+    MCAPI bool $isCrossPlatformToggleVisible() const;
+
+    MCAPI bool $isTelemetryAllowed();
+
+    MCAPI bool $isTrialWorldsTransferToFullGameAllowed() const;
+
+    MCAPI void $buyGame();
+
+    MCAPI void $finish();
+
+    MCAPI bool $canLaunchUri(::std::string const& uri);
+
+    MCAPI void $launchUri(::std::string const& uri);
+
+    MCAPI void $launchSettings();
+
+    MCAPI bool $useXboxControlHelpers() const;
+
+    MCAPI ::PlatformType $getPlatformType() const;
+
+    MCAPI bool $isCentennial() const;
+
+    MCAPI ::std::string $getPackageFamilyName() const;
+
+    MCAPI ::BuildPlatform $getBuildPlatform() const;
+
+    MCAPI void $setARVRPlatform(::ARVRPlatform platform);
+
+    MCAPI ::ARVRPlatform $getARVRPlatform() const;
+
+    MCAPI int $getNumberOfParticleFramesToInterpolate() const;
+
+    MCAPI int $getDpi() const;
+
+    MCAPI void $setDpi(int dpi);
+
+    MCAPI ::UIScalingRules $getUIScalingRules() const;
+
+    MCAPI void $setUIScalingRules(::UIScalingRules UIScalingRules);
+
+    MCAPI void $setVRControllerType(::VRControllerType controllerType);
+
+    MCAPI ::VRControllerType $getVRControllerType() const;
+
+    MCAPI bool $hasIDEProfiler();
+
+    MCAPI ::std::string $getPlatformStringVar(int stringId);
+
+    MCAPI uint64 $getMaximumUsedMemory();
+
+    MCAPI uint64 $getLowMemoryEventThreshold() const;
+
+    MCAPI uint64 $getLowMemoryEventRecoveryThreshold() const;
+
+    MCAPI uint64 $getLowPhysicalMemoryThreshold() const;
+
+    MCAPI void $calculateIfLowMemoryDevice();
+
+    MCAPI bool $isLowMemoryDevice() const;
+
+    MCAPI bool $isLowPhysicalMemoryDevice() const;
+
+    MCAPI ::DeviceSunsetTier $getDeviceSunsetTier() const;
+
+    MCAPI int $getMaxSimRadiusInChunks() const;
+
+    MCAPI ::std::vector<::std::string> $getBroadcastAddresses();
+
+    MCAPI ::std::vector<::std::string> $getIPAddresses();
+
+    MCAPI bool $useAppPlatformForTelemetryIPAddress();
+
+    MCAPI ::std::string $getModelName();
+
+    MCAPI bool $usesHDRBrightness() const;
+
+    MCAPI void $updateBootstrapSettingsFromTreatmentsAsync();
+
+    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+
+    MCAPI bool $isNetworkThrottled() const;
+
+    MCAPI bool $isLANAllowed() const;
+
+    MCAPI bool $doesLANRequireMultiplayerRestrictions() const;
+
+    MCAPI void $collectGraphicsHardwareDetails();
+
+    MCAPI ::std::string $getEdition() const;
+
+    MCAPI ::OsVersion $getOSVersion() const;
+
+    MCAPI bool $isFireTV() const;
+
+    MCAPI bool $isWin10Arm() const;
+
+    MCAPI void $setThreadsFrozen(bool frozen);
+
+    MCAPI bool $areThreadsFrozen() const;
+
+    MCAPI float $getDefaultSafeZoneScaleX() const;
+
+    MCAPI float $getDefaultSafeZoneScaleY() const;
+
+    MCAPI float $getDefaultSafeZoneScaleAll() const;
+
+    MCAPI float $getDefaultScreenPositionX() const;
+
+    MCAPI float $getDefaultScreenPositionY() const;
+
+    MCAPI bool $isQuitCapable() const;
+
+    MCAPI bool $requireControllerAtStartup() const;
+
+    MCAPI bool $notifyControllerConnectionStateChange() const;
+
+    MCAPI bool $platformRequiresControllerApplet() const;
+
+    MCAPI ::InputMode $getDefaultInputMode() const;
+
+    MCAPI ::AppFocusState $getFocusState();
+
+    MCAPI ::AppLifecycleContext& $getAppLifecycleContext();
+
+    MCAPI bool $supportsFliteTTS() const;
+
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);
+
+    MCAPI void $setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value);
+
+    MCAPI bool $devHotReloadRenderResources() const;
+
+    MCAPI bool $shouldPauseDownloadsWhenEnterGame() const;
+
+    MCAPI bool $compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
+
+    MCAPI ::mce::UUID const& $getThirdPartyPackUUID() const;
+
+    MCAPI bool $saveTreatmentPacksAsZips() const;
+
+    MCAPI bool $saveEncryptedPacksAsZips() const;
+
+    MCAPI bool $saveEncryptedWorldTemplatePacksAsZips() const;
+
+    MCAPI bool $allowsResourcePackDevelopment() const;
+
+    MCAPI bool $supportsLegacySinglePremiumCacheDirectory() const;
+
+    MCAPI bool $supportsWorldShare() const;
+
+    MCAPI bool $hasJournalingFilesystem() const;
+
+    MCAPI bool $isAutoCompactionEnabled() const;
+
+    MCAPI ::std::chrono::nanoseconds $getLevelSaveInterval() const;
+
+    MCAPI ::std::chrono::nanoseconds $getOptionsSaveInterval() const;
+
+    MCAPI bool $hasPlatformSpecificInvites() const;
+
+    MCAPI bool $usePlatformProfilePicturesOnly() const;
+
+    MCAPI bool $allowBetaXblSignIn() const;
+
+    MCAPI bool $requiresXboxLiveSigninToPlay() const;
+
+    MCAPI bool $requiresLiveGoldForMultiplayer() const;
+
+    MCAPI bool $shouldRegisterForXboxLiveNotifications() const;
+
+    MCAPI bool $isRealmsEnabled() const;
+
+    MCAPI bool $minimizeBackgroundDownloads() const;
+
+    MCAPI bool $requiresAutoSaveIconExplanationPopup() const;
+
+    MCAPI ::std::optional<::ScreenshotOptions> $getExtraLevelSaveDataIconParams(::std::string const& levelId) const;
+
+    MCAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
+
+    MCAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
+    $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
+
+    MCAPI uint $maxFileDataRequestConcurrency() const;
+
+    MCAPI void $goToExternalConsumablesStoreListing() const;
+
+    MCAPI float $getStoreNetworkFailureTimeout() const;
+
+    MCAPI ::std::shared_ptr<::Core::FileStorageArea>
+    $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::Path const& loggingPath);
+
+    MCAPI void $handlePlatformSpecificCommerceError(uint error);
+
+    MCAPI bool $isEduMode() const;
+
+    MCAPI bool $importAsFlatFile() const;
+
+    MCAPI bool $isWebviewSupported() const;
+
+    MCAPI ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
+
+    MCAPI bool $getPlatformTTSExists() const;
+
+    MCAPI bool $getPlatformTTSEnabled() const;
+
+    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+
+    MCAPI bool $shouldRemoveGraphicsDeviceOnAppTermination() const;
+
+    MCAPI bool $isJoinableViaExternalServers() const;
+
+    MCAPI void $onPrimaryUserNetworkReady();
+
+    MCAPI bool $isDisplayInitialized() const;
+
+    MCAPI bool $usesAsyncOptionSaving() const;
+
+    MCAPI void $showPlatformStoreIcon(bool shouldShow);
+
+    MCAPI void $showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
+
+    MCAPI bool $supportsVRModeSwap() const;
+
+    MCAPI bool $canSwapVRMode(bool const inVRMode) const;
+
+    MCAPI void $tryEnterVRMode(bool duringStartup, ::std::function<void(bool)> callback);
+
+    MCAPI void $exitVRMode(::std::function<void()> callback);
+
+    MCAPI void $initializeGameStreaming();
+
+    MCAPI void $notifyNetworkConfigurationChanged();
+
+    MCAPI void $setKeepScreenOnFlag(bool);
+
+    MCAPI bool $getIsRunningInAppCenter() const;
+
+    MCAPI void $initializeMulticast() const;
+
+    MCAPI void $requestMulticastReceivePermission();
+
+    MCAPI bool $hasMulticastReceivePermission() const;
+
+    MCAPI void $releaseMulticastReceivePermission() const;
+
+    MCAPI void $onMinecraftGameInitComplete();
+
+    MCAPI void $onFullGameUnlock();
+
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
+        $showOSUserDialog(::std::string, ::std::string, ::std::string);
+
+    MCAPI bool $allowsExternalCommandExecution() const;
+
+    MCAPI bool $_tryEnableCPUBoost();
+
+    MCAPI void $_disableCPUBoost();
+
+    MCAPI void $_initializeFileStorageAreas();
+
+    MCAPI void $_teardownFileStorageAreas();
+
+    MCAPI int $getPlatformDpi() const;
+
+    MCAPI ::UIScalingRules $getPlatformUIScalingRules() const;
+
+    MCAPI void $_onInitialize();
+
+    MCAPI void $_onTeardown();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForIAppPlatform();
+
+    MCAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
 };

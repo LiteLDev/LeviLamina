@@ -7,12 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class GenericModuleBindingFactory; }
-namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDescriptor; }
-namespace Scripting { struct UUID; }
-namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -24,18 +18,23 @@ public:
     ScriptLiveEventsUtilitiesModuleFactory();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptLiveEventsUtilitiesModuleFactory() = default;
-
+    virtual ~ScriptLiveEventsUtilitiesModuleFactory() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static char const* const& ModuleName();
+    MCAPI static char const*& ModuleName();
 
-    MCAPI static class mce::UUID const& ModuleUUID();
+    MCAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

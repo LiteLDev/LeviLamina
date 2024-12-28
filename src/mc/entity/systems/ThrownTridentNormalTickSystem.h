@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ThrownTridentNormalTickSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct ThrownTridentNormalTickSystem {
 public:
     // prevent constructor by default
     ThrownTridentNormalTickSystem& operator=(ThrownTridentNormalTickSystem const&);
@@ -10,8 +15,8 @@ public:
     ThrownTridentNormalTickSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

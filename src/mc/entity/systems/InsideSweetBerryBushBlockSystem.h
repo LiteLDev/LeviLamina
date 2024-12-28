@@ -2,13 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace InsideSweetBerryBushBlockSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createInsideSystem();
+MCAPI ::TickingSystemWithInfo createInsideSystem();
 
-MCAPI struct TickingSystemWithInfo createReplayInputSystem();
+MCAPI ::TickingSystemWithInfo createReplayInputSystem();
 
-MCAPI struct TickingSystemWithInfo createSlowdownSystem();
+MCAPI ::TickingSystemWithInfo createSlowdownSystem();
 // NOLINTEND
 
-}; // namespace InsideSweetBerryBushBlockSystem
+} // namespace InsideSweetBerryBushBlockSystem

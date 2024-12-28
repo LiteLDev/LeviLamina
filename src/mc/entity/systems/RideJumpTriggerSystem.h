@@ -7,27 +7,43 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
 
-namespace RideJumpTriggerSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createPassengerSystem();
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct JumpRidingScaleComponent;
+struct MoveInputComponent;
+struct OnGroundFlagComponent;
+struct PassengerComponent;
+struct PlayerInputRequestComponent;
+struct TickingSystemWithInfo;
+struct VanillaClientGameplayComponent;
+struct VehicleComponent;
+struct VehicleInputIntentComponent;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createVehicleSystem();
+namespace RideJumpTriggerSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createPassengerSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleSystem();
 
 MCAPI void tickPassengerJumpTriggerSystem(
-    entt::type_list<struct Include<struct PlayerInputRequestComponent>>,
-    class StrictEntityContext const&       context,
-    struct MoveInputComponent const&       moveInputComponent,
-    struct PassengerComponent const&       passengerComponent,
-    struct JumpRidingScaleComponent&       jumpRidingScaleComponent,
-    struct VanillaClientGameplayComponent& state,
-    class ViewT<
-        class StrictEntityContext,
-        struct VehicleComponent const,
-        struct ActorDataFlagComponent const,
-        struct VehicleInputIntentComponent,
-        class Optional<struct OnGroundFlagComponent const>,
-        class Optional<struct PassengerComponent const>> const& vehicleView
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
+    ::StrictEntityContext const&      context,
+    ::MoveInputComponent const&       moveInputComponent,
+    ::PassengerComponent const&       passengerComponent,
+    ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
+    ::VanillaClientGameplayComponent& state,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::VehicleComponent const,
+        ::ActorDataFlagComponent const,
+        ::VehicleInputIntentComponent,
+        ::Optional<::OnGroundFlagComponent const>,
+        ::Optional<::PassengerComponent const>> const& vehicleView
 );
 // NOLINTEND
 
-}; // namespace RideJumpTriggerSystem
+} // namespace RideJumpTriggerSystem

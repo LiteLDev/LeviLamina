@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PathCompletionType : schar {
-    Empty   = 0x0,
-    Partial = 0x1,
-    Full    = 0x2,
+enum class PathCompletionType : uchar {
+    Empty   = 0,
+    Partial = 1,
+    Full    = 2,
 };

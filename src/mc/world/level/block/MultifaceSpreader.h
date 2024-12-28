@@ -2,10 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class IBlockWorldGenAPI;
+// clang-format on
+
 class MultifaceSpreader {
 public:
     // MultifaceSpreader inner types define
-    enum class SpreadType {};
+    enum class SpreadType : uchar {
+        SamePosition = 0,
+        SamePlane    = 1,
+        WrapAround   = 2,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk693f7c;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -14,109 +32,110 @@ public:
     MultifaceSpreader();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MultifaceSpreader() = default;
+    virtual ~MultifaceSpreader();
 
     // vIndex: 1
-    virtual bool _canSpreadFrom(class Block const& block, uchar facing) const;
+    virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
 
     // vIndex: 2
     virtual bool _canSpreadInto(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class BlockPos const&    pos,
-        uchar                    placementDirection
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
     ) const;
 
     // vIndex: 3
-    virtual bool _isOtherBlockValidAsSource(class Block const&) const;
+    virtual bool _isOtherBlockValidAsSource(::Block const&) const;
+    // NOLINTEND
 
-    MCAPI explicit MultifaceSpreader(std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MultifaceSpreader(::std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
 
-    MCAPI std::optional<std::pair<class BlockPos const, uchar const>> getSpreadFromFaceTowardDirection(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class Block const&       block,
-        class BlockPos const&    pos,
-        uchar                    startingFace,
-        uchar                    spreadDirection
+    MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> getSpreadFromFaceTowardDirection(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos,
+        uchar                startingFace,
+        uchar                spreadDirection
     ) const;
 
     MCAPI int spreadFromAllFacesTowardAllDirections(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class Block const&       block,
-        class BlockPos const&    pos
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos
     ) const;
 
     MCAPI bool spreadFromFaceTowardDirection(
-        class BlockSource&    region,
-        class Block const&    self,
-        class Block const&    block,
-        class BlockPos const& pos,
-        uchar                 startingFace,
-        uchar                 spreadDirection
-    ) const;
-
-    MCAPI bool spreadFromFaceTowardDirectionWorldGen(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class Block const&       block,
-        class BlockPos const&    pos,
-        uchar                    startingFace,
-        uchar                    spreadDirection
+        ::BlockSource&    region,
+        ::Block const&    self,
+        ::Block const&    block,
+        ::BlockPos const& pos,
+        uchar             startingFace,
+        uchar             spreadDirection
     ) const;
 
     MCAPI bool spreadFromFaceTowardRandomDirection(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class Block const&       block,
-        class BlockPos const&    pos,
-        uchar                    startingFace
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos,
+        uchar                startingFace
     ) const;
 
     MCAPI bool spreadFromRandomFaceTowardRandomDirection(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class Block const&       block,
-        class BlockPos const&    pos
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos
     ) const;
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI bool _canSpreadToFace(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class BlockPos const&    pos,
-        uchar                    faceDirection
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::vector<::MultifaceSpreader::SpreadType> const& ALL_SPREAD_TYPES();
 
-    MCAPI void* ctor$(std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
+    MCAPI static ::std::vector<::MultifaceSpreader::SpreadType> const& SAME_POSITION_ONLY();
+    // NOLINTEND
 
-    MCAPI bool _canSpreadFrom$(class Block const& block, uchar facing) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
+    // NOLINTEND
 
-    MCAPI bool _canSpreadInto$(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class BlockPos const&    pos,
-        uchar                    placementDirection
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
+
+    MCAPI bool $_canSpreadInto(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
     ) const;
 
-    MCAPI bool _isOtherBlockValidAsSource$(class Block const&) const;
+    MCAPI bool $_isOtherBlockValidAsSource(::Block const&) const;
+    // NOLINTEND
 
-    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const& ALL_SPREAD_TYPES();
-
-    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const& SAME_POSITION_ONLY();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

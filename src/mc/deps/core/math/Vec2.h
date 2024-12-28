@@ -2,42 +2,53 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec2 : public ll::math::floatN2<Vec2> {
+class Vec2 {
 public:
-    using floatN2::floatN2;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI class Vec2 normalized() const;
-
-    MCAPI std::string toJsonString() const;
-
-    MCAPI std::string toString() const;
-
-    MCAPI static class Vec2 rotate(class Vec2 const& v, float angleinRadians);
-
+    ::ll::TypedStorage<4, 4, float> x;
+    ::ll::TypedStorage<4, 4, float> y;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    Vec2& operator=(Vec2 const&);
+    Vec2(Vec2 const&);
+    Vec2();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static class Vec2 const& LOWEST();
+    MCAPI ::std::string toJsonString() const;
 
-    MCAPI static class Vec2 const& MAX();
+    MCAPI ::std::string toString() const;
+    // NOLINTEND
 
-    MCAPI static class Vec2 const& MIN();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec2 rotate(::Vec2 const& v, float angleinRadians);
+    // NOLINTEND
 
-    MCAPI static class Vec2 const& NEG_UNIT_X();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::Vec2 const& LOWEST();
 
-    MCAPI static class Vec2 const& NEG_UNIT_Y();
+    MCAPI static ::Vec2 const& MAX();
 
-    MCAPI static class Vec2 const& ONE();
+    MCAPI static ::Vec2 const& MIN();
 
-    MCAPI static class Vec2 const& UNIT_X();
+    MCAPI static ::Vec2 const& NEG_UNIT_X();
 
-    MCAPI static class Vec2 const& UNIT_Y();
+    MCAPI static ::Vec2 const& NEG_UNIT_Y();
 
-    MCAPI static class Vec2 const& ZERO();
+    MCAPI static ::Vec2 const& ONE();
 
+    MCAPI static ::Vec2 const& UNIT_X();
+
+    MCAPI static ::Vec2 const& UNIT_Y();
+
+    MCAPI static ::Vec2 const& ZERO();
     // NOLINTEND
 };

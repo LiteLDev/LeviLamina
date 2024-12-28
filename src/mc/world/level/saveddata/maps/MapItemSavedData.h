@@ -10,6 +10,23 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class Dimension;
+class ItemStack;
+class Level;
+class LevelStorage;
+class MapDecoration;
+class MapItemTrackedActor;
+class Packet;
+class Player;
+class Random;
+class SpinLockImpl;
+class Vec3;
+struct ActorUniqueID;
+struct ClientTerrainPixel;
 namespace mce { class Color; }
 // clang-format on
 
@@ -18,16 +35,84 @@ public:
     // MapItemSavedData inner types declare
     // clang-format off
     struct ChunkBounds;
+    struct MapDecorationContext;
+    struct MapDecorationTypeAndRotation;
     // clang-format on
 
     // MapItemSavedData inner types define
     struct ChunkBounds {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnkb62bc1;
+        ::ll::UntypedStorage<4, 4> mUnk19082b;
+        ::ll::UntypedStorage<4, 4> mUnk8e087d;
+        ::ll::UntypedStorage<4, 4> mUnk7e8fed;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         ChunkBounds& operator=(ChunkBounds const&);
         ChunkBounds(ChunkBounds const&);
         ChunkBounds();
     };
+
+    struct MapDecorationTypeAndRotation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk542a5a;
+        ::ll::UntypedStorage<4, 4> mUnkd03173;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MapDecorationTypeAndRotation& operator=(MapDecorationTypeAndRotation const&);
+        MapDecorationTypeAndRotation(MapDecorationTypeAndRotation const&);
+        MapDecorationTypeAndRotation();
+    };
+
+    struct MapDecorationContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk821781;
+        ::ll::UntypedStorage<4, 4> mUnk7d9d48;
+        ::ll::UntypedStorage<4, 4> mUnk417032;
+        ::ll::UntypedStorage<4, 4> mUnkef3488;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MapDecorationContext& operator=(MapDecorationContext const&);
+        MapDecorationContext(MapDecorationContext const&);
+        MapDecorationContext();
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk75af2b;
+    ::ll::UntypedStorage<8, 8>  mUnk9ef9c7;
+    ::ll::UntypedStorage<8, 8>  mUnkcec791;
+    ::ll::UntypedStorage<1, 1>  mUnkd97511;
+    ::ll::UntypedStorage<1, 1>  mUnk321d33;
+    ::ll::UntypedStorage<4, 12> mUnk8fe42a;
+    ::ll::UntypedStorage<4, 4>  mUnk1124f9;
+    ::ll::UntypedStorage<1, 1>  mUnk6b22d5;
+    ::ll::UntypedStorage<8, 24> mUnkedc92c;
+    ::ll::UntypedStorage<8, 24> mUnkd864b3;
+    ::ll::UntypedStorage<8, 24> mUnkad59b1;
+    ::ll::UntypedStorage<1, 1>  mUnk99a310;
+    ::ll::UntypedStorage<1, 1>  mUnk33dae3;
+    ::ll::UntypedStorage<1, 1>  mUnkaa89b9;
+    ::ll::UntypedStorage<1, 1>  mUnk3709d4;
+    ::ll::UntypedStorage<8, 24> mUnkdffa4a;
+    ::ll::UntypedStorage<1, 1>  mUnk7f273b;
+    ::ll::UntypedStorage<8, 8>  mUnk31063e;
+    ::ll::UntypedStorage<1, 1>  mUnke63e1f;
+    ::ll::UntypedStorage<1, 1>  mUnkf77c62;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -36,52 +121,99 @@ public:
     MapItemSavedData();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI MapItemSavedData(struct ActorUniqueID mapId, bool isDLCworld);
+    MCAPI MapItemSavedData(::ActorUniqueID mapId, bool isDLCworld);
 
-    MCAPI std::shared_ptr<class MapItemTrackedActor>
-          addTrackedMapEntity(class Actor& entity, ::MapDecoration::Type decorationType);
-
-    MCAPI std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(
-        class BlockPos const& position,
-        class BlockSource&    region,
-        ::MapDecoration::Type decorationType
+    MCAPI void _addDecoration(
+        ::MapDecoration::Type                  type,
+        ::MapItemTrackedActor::UniqueId const& id,
+        ::Vec3 const&                          position,
+        ::std::string const&                   label,
+        ::mce::Color const&                    color
     );
+
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor> _addTrackedMapEntity(
+        ::MapItemTrackedActor::UniqueId const& key,
+        ::BlockSource&                         region,
+        ::MapDecoration::Type                  decorationType
+    );
+
+    MCAPI ::MapItemSavedData::MapDecorationContext _calculateDecorationLocationAndType(
+        ::MapDecoration::Type                  type,
+        float                                  yRot,
+        int                                    xDeltaFromCenter,
+        int                                    yDeltaFromCenter,
+        ::MapItemTrackedActor::UniqueId const& uniqueId
+    ) const;
+
+    MCAPI schar _calculateRotation(
+        float                                  yRot,
+        ::MapDecoration::Type                  type,
+        ::MapItemTrackedActor::UniqueId const& uniqueId,
+        ::Random&                              rng
+    ) const;
+
+    MCAPI void _deserializeData(::CompoundTag const& tag);
+
+    MCAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
+
+    MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
+
+    MCAPI bool
+    _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
+
+    MCAPI void _updateTrackedEntityDecorations(::BlockSource& region);
+
+    MCAPI void _updateTrackedPlayerDecorations(
+        ::BlockSource&         region,
+        ::Player&              player,
+        ::Vec3&                decorationPos,
+        ::std::string&         decorationLabel,
+        ::mce::Color&          decorationColor,
+        ::DimensionType        dimensionID,
+        ::MapDecoration::Type& type
+    );
+
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor>
+    addTrackedMapEntity(::Actor& entity, ::MapDecoration::Type decorationType);
+
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor>
+    addTrackedMapEntity(::BlockPos const& position, ::BlockSource& region, ::MapDecoration::Type decorationType);
 
     MCAPI bool areClientPixelsDirty() const;
 
     MCAPI void checkNeedsResampling();
 
-    MCAPI void copyMapData(class MapItemSavedData const& map);
+    MCAPI void copyMapData(::MapItemSavedData const& map);
 
-    MCAPI void deserialize(class CompoundTag const& tag);
+    MCAPI void deserialize(::CompoundTag const& tag);
 
     MCAPI void enableUnlimitedTracking();
 
-    MCAPI std::vector<struct ClientTerrainPixel>& getClientPixels();
+    MCAPI ::std::vector<::ClientTerrainPixel>& getClientPixels();
 
-    MCAPI class SpinLock* getClientSamplingLock();
+    MCAPI ::SpinLockImpl* getClientSamplingLock();
 
-    MCAPI std::unique_ptr<class Packet> getFullDataPacket() const;
+    MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
-    MCAPI struct ActorUniqueID getMapId() const;
+    MCAPI ::ActorUniqueID getMapId() const;
 
-    MCAPI struct ActorUniqueID getParentMapId() const;
+    MCAPI ::ActorUniqueID getParentMapId() const;
 
-    MCAPI class buffer_span<uint> getPixels() const;
+    MCAPI ::buffer_span<uint> getPixels() const;
 
-    MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor& entity);
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
 
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level&, class BlockPos const& pos) const;
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
-    MCAPI std::unique_ptr<class Packet>
-          getUpdatePacket(class ItemStack const&, class Level&, class Actor& entity) const;
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
 
     MCAPI bool hasParentMap() const;
 
-    MCAPI bool isAdjacent(class MapItemSavedData const& other, int dir) const;
+    MCAPI bool isAdjacent(::MapItemSavedData const& other, int dir) const;
 
-    MCAPI bool isChunkAllEmpty(struct MapItemSavedData::ChunkBounds bb) const;
+    MCAPI bool isChunkAllEmpty(::MapItemSavedData::ChunkBounds bb) const;
 
     MCAPI bool isFullyExplored() const;
 
@@ -89,11 +221,11 @@ public:
 
     MCAPI bool needsResampling() const;
 
-    MCAPI void removeTrackedMapEntity(class BlockPos const& position);
+    MCAPI void removeTrackedMapEntity(::BlockPos const& position);
 
-    MCAPI void save(class LevelStorage& storage);
+    MCAPI void save(::LevelStorage& storage);
 
-    MCAPI void serialize(class CompoundTag& tag) const;
+    MCAPI void serialize(::CompoundTag& tag) const;
 
     MCAPI void setClientPixelsDirty(bool isDirty);
 
@@ -101,83 +233,47 @@ public:
 
     MCAPI void setLocked();
 
-    MCAPI void setMapSection(class buffer_span<uint> src, struct MapItemSavedData::ChunkBounds bb);
+    MCAPI void setMapSection(::buffer_span<uint> src, ::MapItemSavedData::ChunkBounds bb);
 
     MCAPI void setOrigin(
-        class Vec3            origin,
-        int                   mapScale,
-        DimensionType         dimension,
-        bool                  isLegacyLevel,
-        bool                  isCentered,
-        class BlockPos const& worldCenter
+        ::Vec3            origin,
+        int               mapScale,
+        ::DimensionType   dimension,
+        bool              isLegacyLevel,
+        bool              isCentered,
+        ::BlockPos const& worldCenter
     );
 
     MCAPI bool setPixel(uint color, uint x, uint y);
 
-    MCAPI void setPixelDirty(uint x, uint y);
-
     MCAPI void setScale(int mapScale);
 
-    MCAPI void setScaleAndParentMapId(int mapScale, struct ActorUniqueID parentMapId);
+    MCAPI void setScaleAndParentMapId(int mapScale, ::ActorUniqueID parentMapId);
 
-    MCAPI void tickByBlock(class BlockPos const& pos, class BlockSource& region);
+    MCAPI void tickByBlock(::BlockPos const& pos, ::BlockSource& region);
 
-    MCAPI void tickCarriedBy(class Actor& player, class CompoundTag const* item);
+    MCAPI void tickCarriedBy(::Actor& player, ::CompoundTag const* item);
 
-    MCAPI void trySave(class LevelStorage& storage);
+    MCAPI void trySave(::LevelStorage& storage);
 
     MCAPI ~MapItemSavedData();
-
-    MCAPI static std::string getSerializationKey(struct ActorUniqueID id);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _addDecoration(
-        ::MapDecoration::Type type,
-        class Level&,
-        struct MapItemTrackedActor::UniqueId const& key,
-        class Vec3 const&                           position,
-        std::string const&                          label,
-        class mce::Color const&                     color
-    );
-
-    MCAPI std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(
-        struct MapItemTrackedActor::UniqueId const& key,
-        class BlockSource&                          region,
-        ::MapDecoration::Type                       decorationType
-    );
-
-    MCAPI void _deserializeData(class CompoundTag const& tag);
-
-    MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const& id);
-
-    MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const& key);
-
-    MCAPI bool
-    _updateTrackedEntityDecoration(class BlockSource& region, std::shared_ptr<class MapItemTrackedActor> trackedActor);
-
-    MCAPI void _updateTrackedEntityDecorations(class BlockSource& region);
-
-    MCAPI void _updateTrackedPlayerDecorations(
-        class BlockSource&     region,
-        class Player&          player,
-        class Vec3&            decorationPos,
-        std::string&           decorationLabel,
-        class mce::Color&      decorationColor,
-        DimensionType          dimensionID,
-        ::MapDecoration::Type& type
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ActorUniqueID mapId, bool isDLCworld);
+    MCAPI static ::std::string getSerializationKey(::ActorUniqueID id);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorUniqueID mapId, bool isDLCworld);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

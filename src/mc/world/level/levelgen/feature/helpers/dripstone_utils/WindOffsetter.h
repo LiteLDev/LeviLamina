@@ -13,28 +13,34 @@ namespace DripstoneUtils {
 
 class WindOffsetter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk5b4900;
+    ::ll::UntypedStorage<4, 16> mUnk688166;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     WindOffsetter& operator=(WindOffsetter const&);
     WindOffsetter(WindOffsetter const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI WindOffsetter();
 
-    MCAPI WindOffsetter(int originY, class Random& random, struct ValueProviders::UniformFloat const& windSpeedRange);
+    MCAPI WindOffsetter(int originY, ::Random& random, ::ValueProviders::UniformFloat const& windSpeedRange);
 
-    MCAPI class BlockPos offset(class BlockPos pos) const;
-
+    MCAPI ::BlockPos offset(::BlockPos pos) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(int originY, class Random& random, struct ValueProviders::UniformFloat const& windSpeedRange);
-
+    MCAPI void* $ctor(int originY, ::Random& random, ::ValueProviders::UniformFloat const& windSpeedRange);
     // NOLINTEND
 };
 
-}; // namespace DripstoneUtils
+} // namespace DripstoneUtils

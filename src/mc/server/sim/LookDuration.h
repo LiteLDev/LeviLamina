@@ -4,6 +4,10 @@
 
 namespace sim {
 
-enum class LookDuration { Instant = 0, Continuous = 1, UntilMove = 2 };
-
+enum class LookDuration : uchar {
+    Instant    = 0,
+    Continuous = 1,
+    UntilMove  = 2,
 };
+
+}

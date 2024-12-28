@@ -13,4 +13,4 @@ public:
     ScriptFilteredEventSignal();
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

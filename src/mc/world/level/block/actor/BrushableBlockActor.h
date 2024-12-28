@@ -5,12 +5,50 @@
 // auto generated inclusion list
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockActorDataPacket;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class DataLoadHelper;
+class HashedString;
+class ItemStack;
+class Level;
+class Player;
+class SaveContext;
+// clang-format on
+
 class BrushableBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // BrushableBlockActor inner types define
-    enum class BrushingState {};
+    enum class BrushingState : int {
+        Ongoing   = 0,
+        Completed = 1,
+    };
 
-    enum class Placement {};
+    enum class Placement : int {
+        DesertWell       = 0,
+        DesertPyramid    = 1,
+        ColdOceanRuin    = 2,
+        WarmOceanRuin    = 3,
+        TrailRuinsCommon = 4,
+        TrailRuinsRare   = 5,
+        Empty            = 6,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkde09e2;
+    ::ll::UntypedStorage<8, 24> mUnk3261c5;
+    ::ll::UntypedStorage<8, 24> mUnk654472;
+    ::ll::UntypedStorage<8, 24> mUnk28ec02;
+    ::ll::UntypedStorage<8, 48> mUnk2a8a05;
+    ::ll::UntypedStorage<4, 4>  mUnkbc15b6;
+    ::ll::UntypedStorage<1, 1>  mUnkcfa867;
+    ::ll::UntypedStorage<1, 1>  mUnkdba7af;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -19,96 +57,124 @@ public:
     BrushableBlockActor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    // vIndex: 0
+    virtual ~BrushableBlockActor() /*override*/;
 
-    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
+    // vIndex: 2
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
-    MCVAPI int getContainerSize() const;
+    // vIndex: 20
+    virtual int getContainerSize() const /*override*/;
 
-    MCVAPI class ItemStack const& getItem(int slot) const;
+    // vIndex: 21
+    virtual int getMaxStackSize() const /*override*/;
 
-    MCVAPI int getMaxStackSize() const;
+    // vIndex: 7
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    // vIndex: 12
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    MCVAPI void onChanged(class BlockSource& region);
+    // vIndex: 23
+    virtual void stopOpen(::Player& player) /*override*/;
 
-    MCVAPI void onRemoved(class BlockSource& region);
+    // vIndex: 8
+    virtual void onChanged(::BlockSource& region) /*override*/;
 
-    MCVAPI bool save(class CompoundTag& tag) const;
+    // vIndex: 13
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    MCVAPI void serverInitItemStackIds(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
-    );
+    // vIndex: 1
+    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    MCVAPI void setItem(int slot, class ItemStack const& item);
+    // vIndex: 2
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    MCVAPI void stopOpen(class Player&);
+    // vIndex: 43
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    MCAPI BrushableBlockActor(
-        class HashedString const&        name,
-        class BlockPos const&            pos,
-        ::BrushableBlockActor::Placement placement
-    );
-
-    MCAPI ::BrushableBlockActor::BrushingState brush(class BlockSource& region, class BlockPos const& pos, uchar face);
-
-    MCAPI void update(class BlockSource& region, class BlockPos const& pos);
-
-    MCAPI static std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
-
-    MCAPI static class BrushableBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
-
+    // vIndex: 44
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _brushingCompleted(class BlockSource& region);
-
-    MCAPI void _removeDisplayEntity(class BlockSource& region);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForContainer();
+    MCAPI
+    BrushableBlockActor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
 
-    MCAPI static void** vftableForRandomizableBlockActorContainerBase();
+    MCAPI void _brushingCompleted(::BlockSource& region);
 
-    MCAPI void*
-    ctor$(class HashedString const& name, class BlockPos const& pos, ::BrushableBlockActor::Placement placement);
+    MCAPI void _removeDisplayEntity(::BlockSource& region);
 
-    MCAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket$(class BlockSource&);
+    MCAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
 
-    MCAPI void _onUpdatePacket$(class CompoundTag const& data, class BlockSource& region);
+    MCAPI void update(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI int getContainerSize$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
 
-    MCAPI class ItemStack const& getItem$(int slot) const;
+    MCAPI static ::BrushableBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
 
-    MCAPI int getMaxStackSize$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
+    // NOLINTEND
 
-    MCAPI void load$(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onChanged$(class BlockSource& region);
-
-    MCAPI void onRemoved$(class BlockSource& region);
-
-    MCAPI bool save$(class CompoundTag& tag) const;
-
-    MCAPI void serverInitItemStackIds$(
-        int                                              containerSlot,
-        int                                              count,
-        std::function<void(int, class ItemStack const&)> onNetIdChanged
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void setItem$(int slot, class ItemStack const& item);
+    MCAPI int $getContainerSize() const;
 
-    MCAPI void stopOpen$(class Player&);
+    MCAPI int $getMaxStackSize() const;
 
+    MCAPI ::ItemStack const& $getItem(int slot) const;
+
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
+
+    MCAPI void $stopOpen(::Player& player);
+
+    MCAPI void $onChanged(::BlockSource& region);
+
+    MCAPI void $onRemoved(::BlockSource& region);
+
+    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForContainer();
+
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

@@ -4,9 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/components/BlockComponentBase.h"
 
-struct BlockMaterialInstancesComponent : public ::BlockComponentBase {
+// auto generated forward declare list
+// clang-format off
+struct BlockMaterialInstancesDescription;
+// clang-format on
+
+struct BlockMaterialInstancesComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk627ac4;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockMaterialInstancesComponent& operator=(BlockMaterialInstancesComponent const&);
@@ -14,18 +24,18 @@ public:
     BlockMaterialInstancesComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockMaterialInstancesComponent() = default;
+    MCAPI explicit BlockMaterialInstancesComponent(
+        ::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription
+    );
 
     MCAPI ::BlockRenderLayer getRenderLayer() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI void* $ctor(::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription);
     // NOLINTEND
 };

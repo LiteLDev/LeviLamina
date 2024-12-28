@@ -7,11 +7,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockComponentFactory;
+class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
+class CompoundTag;
+class EntityContext;
+class SemVersion;
+struct BlockComponentGroupDescription;
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke3e67a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockComponentDescription& operator=(BlockComponentDescription const&);
@@ -19,80 +32,89 @@ public:
     BlockComponentDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockComponentDescription();
 
     // vIndex: 1
-    virtual std::string const& getName() const;
-
-    // vIndex: 2
-    virtual void initializeComponent(class EntityContext& entity) const;
+    virtual ::std::string const& getName() const;
 
     // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
+    virtual void initializeComponent(::EntityContext& entity) const;
 
-    // vIndex: 4
-    virtual void initializeComponentFromCode(class EntityContext& entity) const;
+    // vIndex: 2
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 5
-    virtual void initializeComponentFromCode(class BlockComponentStorage& blockComponentStorage) const;
+    virtual void initializeComponentFromCode(::EntityContext& entity) const;
+
+    // vIndex: 4
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 6
     virtual void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
-                                           componentSchema,
-        class BlockComponentFactory const& factory
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
+                                       componentSchema,
+        ::BlockComponentFactory const& factory
     ) const;
 
     // vIndex: 7
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     // vIndex: 10
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
-
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet& schemaUpgrades);
-
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI void buildSchema$(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
-                                           componentSchema,
-        class BlockComponentFactory const& factory
+    MCAPI void $initializeComponent(::EntityContext& entity) const;
+
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $initializeComponentFromCode(::EntityContext& entity) const;
+
+    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
+                                       componentSchema,
+        ::BlockComponentFactory const& factory
     ) const;
 
-    MCAPI std::string const& getName$() const;
+    MCAPI bool $isNetworkComponent() const;
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void initializeComponent$(class EntityContext& entity) const;
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    // NOLINTEND
 
-    MCAPI void initializeComponentFromCode$(class EntityContext& entity) const;
-
-    MCAPI void initializeComponentFromCode$(class BlockComponentStorage& blockComponentStorage) const;
-
-    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
-
-    MCAPI bool isNetworkComponent$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

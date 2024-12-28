@@ -2,32 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class MemoryPage; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/utility/json_object/Node.h"
 
 namespace Bedrock::JSONObject {
 
-class BooleanNode {
+class BooleanNode : public ::Bedrock::JSONObject::Node {
 public:
     // prevent constructor by default
     BooleanNode& operator=(BooleanNode const&);
     BooleanNode(BooleanNode const&);
     BooleanNode();
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI BooleanNode(class Bedrock::JSONObject::MemoryPage* owningPage, bool value);
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class Bedrock::JSONObject::MemoryPage* owningPage, bool value);
-
-    // NOLINTEND
 };
 
-}; // namespace Bedrock::JSONObject
+} // namespace Bedrock::JSONObject

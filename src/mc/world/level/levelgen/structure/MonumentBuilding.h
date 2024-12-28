@@ -6,7 +6,24 @@
 #include "mc/world/level/levelgen/structure/OceanMonumentPiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+class RoomDefinition;
+// clang-format on
+
 class MonumentBuilding : public ::OceanMonumentPiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk9fcf05;
+    ::ll::UntypedStorage<8, 24> mUnke9d97c;
+    ::ll::UntypedStorage<8, 16> mUnkea3ff3;
+    ::ll::UntypedStorage<8, 16> mUnk2fd715;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MonumentBuilding& operator=(MonumentBuilding const&);
@@ -14,61 +31,69 @@ public:
     MonumentBuilding();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MonumentBuilding() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 5
-    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    MCAPI MonumentBuilding(class Random& random, short seaLevel, int west, int north, int& orientation);
-
+    // vIndex: 0
+    virtual ~MonumentBuilding() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void generateEntranceArchs(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI void generateEntranceWall(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI void generateLowerWall(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI void generateMiddleWall(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI void generateRoofPiece(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI std::vector<std::shared_ptr<class RoomDefinition>> generateRoomGraph(class Random& random);
-
-    MCAPI void generateUpperWall(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    MCAPI void generateWing(
-        bool                     isFlipped,
-        int                      xoff,
-        class BlockSource&       region,
-        class Random&            random,
-        class BoundingBox const& chunkBB
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
 
-    MCAPI void* ctor$(class Random& random, short seaLevel, int west, int north, int& orientation);
+    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI ::StructurePieceType getType$() const;
+    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI void generateLowerWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
+    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
+
+    MCAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI void
+    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Random& random, short seaLevel, int west, int north, int& orientation);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
+
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,28 +13,46 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeAttackDefinition : public ::BaseGoalDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk397efe;
+    ::ll::UntypedStorage<4, 4> mUnkb648c6;
+    ::ll::UntypedStorage<4, 4> mUnk67ead0;
+    ::ll::UntypedStorage<4, 4> mUnkf38a35;
+    ::ll::UntypedStorage<1, 1> mUnkcb6343;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SlimeAttackDefinition& operator=(SlimeAttackDefinition const&);
     SlimeAttackDefinition(SlimeAttackDefinition const&);
     SlimeAttackDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SlimeAttackDefinition() = default;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>>&
-            root
-    );
-
+    virtual ~SlimeAttackDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                  name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SlimeAttackDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

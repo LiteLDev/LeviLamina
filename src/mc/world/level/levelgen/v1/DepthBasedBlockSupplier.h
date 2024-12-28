@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class XoroshiroPositionalRandomFactory;
+// clang-format on
+
 class DepthBasedBlockSupplier {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk2dec1b;
+    ::ll::UntypedStorage<8, 8>  mUnkdecfa3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DepthBasedBlockSupplier& operator=(DepthBasedBlockSupplier const&);
@@ -10,17 +24,16 @@ public:
     DepthBasedBlockSupplier();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory randomFactory, class Block const* block);
+    MCAPI DepthBasedBlockSupplier(::XoroshiroPositionalRandomFactory randomFactory, ::Block const* block);
 
-    MCAPI class Block const* getBlock(class BlockPos const& pos, class Block const* fallback) const;
-
+    MCAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class XoroshiroPositionalRandomFactory randomFactory, class Block const* block);
-
+    MCAPI void* $ctor(::XoroshiroPositionalRandomFactory randomFactory, ::Block const* block);
     // NOLINTEND
 };

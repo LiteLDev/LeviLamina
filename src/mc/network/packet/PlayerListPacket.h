@@ -1,63 +1,92 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/packet/PlayerListPacketType.h"
-#include "mc/world/actor/player/PlayerListEntry.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/PlayerListPacketType.h"
 #include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class PlayerListEntry;
+class ReadOnlyBinaryStream;
+// clang-format on
 
 class PlayerListPacket : public ::Packet {
 public:
-    std::vector<PlayerListEntry> mEntries; // this+0x30
-    PlayerListPacketType         mAction;  // this+0x48
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~PlayerListPacket();
-
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
-
-    // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
-
-    // vIndex: 5
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
-
-    // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI PlayerListPacket();
-
-    MCAPI void emplace(class PlayerListEntry&& entry);
-
+    ::ll::TypedStorage<8, 24, ::std::vector<::PlayerListEntry>> mEntries;
+    ::ll::TypedStorage<1, 1, ::PlayerListPacketType>            mAction;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    PlayerListPacket& operator=(PlayerListPacket const&);
+    PlayerListPacket(PlayerListPacket const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 0
+    virtual ~PlayerListPacket() /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 1
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    // vIndex: 4
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    // vIndex: 5
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
-    MCAPI std::string getName$() const;
+    // vIndex: 8
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> read$(class ReadOnlyBinaryStream& stream);
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerListPacket();
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void emplace(::PlayerListEntry&& entry);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

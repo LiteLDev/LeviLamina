@@ -4,16 +4,17 @@
 
 namespace SubChunkStorageUnit {
 
-enum class Type : schar {
-    Paletted0  = 0x0,
-    Paletted1  = 0x1,
-    Paletted2  = 0x2,
-    Paletted3  = 0x3,
-    Paletted4  = 0x4,
-    Paletted5  = 0x5,
-    Paletted6  = 0x6,
-    Paletted8  = 0x8,
-    Paletted16 = 0x10,
-    Empty      = 0x7F,
+enum class Type : uchar {
+    Paletted0  = 0,
+    Paletted1  = 1,
+    Paletted2  = 2,
+    Paletted3  = 3,
+    Paletted4  = 4,
+    Paletted5  = 5,
+    Paletted6  = 6,
+    Paletted8  = 8,
+    Paletted16 = 16,
+    Empty      = 127,
 };
-};
+
+}

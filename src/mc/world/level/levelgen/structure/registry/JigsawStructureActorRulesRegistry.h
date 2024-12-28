@@ -2,35 +2,41 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StructurePoolActorRule;
+// clang-format on
+
 class JigsawStructureActorRulesRegistry {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkfcfca1;
+    ::ll::UntypedStorage<8, 64> mUnk478b5e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     JigsawStructureActorRulesRegistry& operator=(JigsawStructureActorRulesRegistry const&);
     JigsawStructureActorRulesRegistry(JigsawStructureActorRulesRegistry const&);
+    JigsawStructureActorRulesRegistry();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureActorRulesRegistry();
-
-    MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const* lookupByName(std::string name) const;
+    MCAPI ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
 
     MCAPI void registerActorRules(
-        std::string name,
-        std::unique_ptr<std::vector<
-            std::unique_ptr<class StructurePoolActorRule, std::default_delete<class StructurePoolActorRule>>>>&&
-            ruleList
+        ::std::string                                                                   name,
+        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>&& ruleList
     );
 
     MCAPI ~JigsawStructureActorRulesRegistry();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* ctor$();
-
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

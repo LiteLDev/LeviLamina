@@ -1,33 +1,53 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/raknet/BitStream.h"
 
 // auto generated inclusion list
 #include "mc/util/BytesDataOutput.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class BitStream; }
+// clang-format on
+
 class RakDataOutput : public ::BytesDataOutput {
 public:
-    RakNet::BitStream* mBitStream;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RakDataOutput();
-
-    // vIndex: 9
-    virtual void writeBytes(void const* data, uint64 bytes);
-
+    ::ll::TypedStorage<8, 8, ::RakNet::BitStream&> mBitStream;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    RakDataOutput& operator=(RakDataOutput const&);
+    RakDataOutput(RakDataOutput const&);
+    RakDataOutput();
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 9
+    virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
 
-    MCAPI void dtor$();
+    // vIndex: 0
+    virtual ~RakDataOutput() /*override*/;
+    // NOLINTEND
 
-    MCAPI void writeBytes$(void const* data, uint64 bytes);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $writeBytes(void const* data, uint64 bytes);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

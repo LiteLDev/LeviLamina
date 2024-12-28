@@ -3,16 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class BlockComponentStorage;
+class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockCraftingTableDescription : public ::BlockComponentDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnkae0efd;
+    ::ll::UntypedStorage<8, 32> mUnk3c89d2;
+    ::ll::UntypedStorage<8, 24> mUnk6a9be7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockCraftingTableDescription& operator=(BlockCraftingTableDescription const&);
@@ -20,45 +28,62 @@ public:
     BlockCraftingTableDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BlockCraftingTableDescription() = default;
-
     // vIndex: 1
-    virtual std::string const& getName() const;
+    virtual ::std::string const& getName() const /*override*/;
 
-    // vIndex: 3
-    virtual void initializeComponent(class BlockComponentStorage& blockComponentStorage) const;
+    // vIndex: 2
+    virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 7
-    virtual bool isNetworkComponent() const;
+    virtual bool isNetworkComponent() const /*override*/;
 
     // vIndex: 8
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     // vIndex: 9
-    virtual void initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~BlockCraftingTableDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const&) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCAPI std::string const& getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void initializeComponent$(class BlockComponentStorage& blockComponentStorage) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getName() const;
 
-    MCAPI void initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const&);
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI bool isNetworkComponent$() const;
+    MCAPI bool $isNetworkComponent() const;
 
-    MCAPI static std::string const& NameID();
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

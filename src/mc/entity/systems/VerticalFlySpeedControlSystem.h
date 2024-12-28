@@ -2,19 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorGameTypeComponent;
+struct ExternalDataInterface;
+struct FrictionModifierComponent;
+struct MoveInputComponent;
+struct PlayerInputRequestComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace VerticalFlySpeedControlSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doFlySpeedControlSystem(
-    class StrictEntityContext const&,
-    struct MoveInputComponent const&          moveInputComponent,
-    struct PlayerInputRequestComponent const& playerInputRequestComponent,
-    struct ActorGameTypeComponent const&      actorGameTypeComponent,
-    struct FrictionModifierComponent&         frictionModifierComponent,
-    struct StateVectorComponent&              stateVectorComponent,
-    struct ExternalDataInterface const&       externalData
+    ::StrictEntityContext const&,
+    ::MoveInputComponent const&          moveInputComponent,
+    ::PlayerInputRequestComponent const& playerInputRequestComponent,
+    ::ActorGameTypeComponent const&      actorGameTypeComponent,
+    ::FrictionModifierComponent&         frictionModifierComponent,
+    ::StateVectorComponent&              stateVectorComponent,
+    ::ExternalDataInterface const&       externalData
 );
 // NOLINTEND
 
-}; // namespace VerticalFlySpeedControlSystem
+} // namespace VerticalFlySpeedControlSystem

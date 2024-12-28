@@ -1,79 +1,106 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossBarColor.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossBarOverlay.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/platform/Result.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
+#include "mc/world/actor/ai/util/BossBarOverlay.h"
+#include "mc/world/actor/ai/util/BossEventUpdateType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BossComponent;
+class RaidBossComponent;
+class ReadOnlyBinaryStream;
+struct ActorUniqueID;
+// clang-format on
 
 class BossEventPacket : public ::Packet {
 public:
-    int                   FLAG_DARKEN;     // this+0x30
-    int                   FLAG_FOG;        // this+0x34
-    ActorUniqueID         mBossID;         // this+0x38
-    ActorUniqueID         mPlayerID;       // this+0x40
-    ::BossEventUpdateType mEventType;      // this+0x48
-    std::string           mName;           // this+0x50
-    float                 mHealthPercent;  // this+0x70
-    ::BossBarColor        mColor;          // this+0x74
-    ::BossBarOverlay      mOverlay;        // this+0x78
-    uchar                 mDarkenScreen;   // this+0x7C
-    uchar                 mCreateWorldFog; // this+0x7D
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int const>             FLAG_DARKEN;
+    ::ll::TypedStorage<4, 4, int const>             FLAG_FOG;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mBossID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mPlayerID;
+    ::ll::TypedStorage<4, 4, ::BossEventUpdateType> mEventType;
+    ::ll::TypedStorage<8, 32, ::std::string>        mName;
+    ::ll::TypedStorage<4, 4, float>                 mHealthPercent;
+    ::ll::TypedStorage<4, 4, ::BossBarColor>        mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay>      mOverlay;
+    ::ll::TypedStorage<1, 1, uchar>                 mDarkenScreen;
+    ::ll::TypedStorage<1, 1, uchar>                 mCreateWorldFog;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     BossEventPacket& operator=(BossEventPacket const&);
     BossEventPacket(BossEventPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BossEventPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI BossEventPacket();
-
-    MCAPI BossEventPacket(::BossEventUpdateType type, class RaidBossComponent& component);
-
-    MCAPI BossEventPacket(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
-
+    // vIndex: 0
+    virtual ~BossEventPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BossEventPacket();
 
-    MCAPI void* ctor$(::BossEventUpdateType type, class RaidBossComponent& component);
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::RaidBossComponent& component);
 
-    MCAPI void* ctor$();
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+    // NOLINTEND
 
-    MCAPI void* ctor$(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::BossEventUpdateType type, ::RaidBossComponent& component);
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

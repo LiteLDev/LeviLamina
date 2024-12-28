@@ -1,76 +1,105 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/ecs/EntityNetId.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/network/NetworkBlockPosition.h"
-#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class CompoundTag;
+class Dimension;
+class EntityContext;
+class EntityNetId;
+class MinEngineVersion;
+class NetworkBlockPosition;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class AddVolumeEntityPacket : public ::Packet {
 public:
-    CompoundTag          mComponents;     // this+0x30
-    std::string          mJsonIdentifier; // this+0x68
-    std::string          mInstanceName;   // this+0x88
-    NetworkBlockPosition mMinBounds;      // this+0xa8
-    NetworkBlockPosition mMaxBounds;      // this+0xb4
-    DimensionType        mDimensionType;  // this+0xc0
-    SemVersion           mEngineVersion;  // this+0xc8
-    EntityNetId          mEntityNetId;    // this+0x118
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::CompoundTag>          mComponents;
+    ::ll::TypedStorage<8, 32, ::std::string>          mJsonIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>          mInstanceName;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMinBounds;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMaxBounds;
+    ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
+    ::ll::TypedStorage<8, 120, ::MinEngineVersion>    mMinEngineVersion;
+    ::ll::TypedStorage<4, 4, ::EntityNetId>           mEntityNetId;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);
     AddVolumeEntityPacket(AddVolumeEntityPacket const&);
-    AddVolumeEntityPacket();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AddVolumeEntityPacket();
+    virtual ~AddVolumeEntityPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI AddVolumeEntityPacket(
-        class EntityContext const& entity,
-        class CompoundTag          components,
-        class SemVersion const&    engineVersion
-    );
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AddVolumeEntityPacket();
+
+    MCAPI AddVolumeEntityPacket(
+        ::EntityContext const&    entity,
+        ::CompoundTag             components,
+        ::MinEngineVersion const& minEngineVersion
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
     MCAPI void*
-    ctor$(class EntityContext const& entity, class CompoundTag components, class SemVersion const& engineVersion);
+    $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

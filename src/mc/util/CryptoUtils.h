@@ -8,10 +8,9 @@ namespace Core { class Path; }
 // clang-format on
 
 namespace CryptoUtils {
+// functions
 // NOLINTBEGIN
-MCAPI std::string getDirectroyChecksum(class Core::Path const& path);
-
-MCAPI std::string getFileChecksum(class Core::Path const& path);
+MCAPI ::std::string getFileChecksum(::Core::Path const& path);
 // NOLINTEND
 
-}; // namespace CryptoUtils
+} // namespace CryptoUtils

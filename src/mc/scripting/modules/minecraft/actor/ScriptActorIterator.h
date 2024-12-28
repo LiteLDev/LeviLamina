@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptVectorIterator.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,9 @@ namespace ScriptModuleMinecraft { class ScriptActor; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptActorIterator {
+class ScriptActorIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator<
+                                ::ScriptModuleMinecraft::ScriptActorIterator,
+                                ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> {
 public:
     // prevent constructor by default
     ScriptActorIterator& operator=(ScriptActorIterator const&);
@@ -21,26 +24,25 @@ public:
     ScriptActorIterator();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptActorIterator(
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>&& scriptActors
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>&& scriptActors
     );
-
-    MCAPI class ScriptModuleMinecraft::ScriptActorIterator&
-    operator=(class ScriptModuleMinecraft::ScriptActorIterator&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorIterator> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorIterator> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    ctor$(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>&& scriptActors
-    );
-
+    $ctor(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>&& scriptActors);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

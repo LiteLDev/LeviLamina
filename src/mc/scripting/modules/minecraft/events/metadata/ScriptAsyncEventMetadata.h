@@ -13,4 +13,4 @@ public:
     ScriptAsyncEventMetadata();
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

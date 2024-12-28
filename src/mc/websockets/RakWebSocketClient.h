@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/websockets/CloseStatusCode.h"
 #include "mc/websockets/RakWebSocket.h"
-#include "mc/websockets/WSConnectionResult.h"
 
 class RakWebSocketClient : public ::RakWebSocket {
 public:
@@ -15,32 +13,35 @@ public:
     RakWebSocketClient();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RakWebSocketClient();
-
     // vIndex: 8
-    virtual void _updateState();
+    virtual void _updateState() /*override*/;
 
     // vIndex: 9
-    virtual uint _genMaskingKey() const;
+    virtual uint _genMaskingKey() const /*override*/;
 
-    MCAPI explicit RakWebSocketClient(std::unique_ptr<class TcpProxy> proxy);
-
+    // vIndex: 0
+    virtual ~RakWebSocketClient() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::unique_ptr<class TcpProxy> proxy);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $_updateState();
 
-    MCAPI void dtor$();
+    MCAPI uint $_genMaskingKey() const;
+    // NOLINTEND
 
-    MCAPI uint _genMaskingKey$() const;
-
-    MCAPI void _updateState$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,42 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class Vec3;
+// clang-format on
+
 namespace MobMovement {
+// functions
 // NOLINTBEGIN
-MCAPI float getAirSpeed(class EntityContext const& provider);
+MCAPI float getAirSpeed(::EntityContext const& provider);
 
-MCAPI float getFrictionModifier(class EntityContext const& provider);
+MCAPI float getFrictionModifier(::EntityContext const& provider);
 
-MCAPI class Vec3 const& getLocalMoveVelocity(class EntityContext const& provider);
+MCAPI ::Vec3 const& getLocalMoveVelocity(::EntityContext const& provider);
 
-MCAPI float getMobRotation(class EntityContext const& provider);
+MCAPI float getMobRotation(::EntityContext const& provider);
 
-MCAPI float getMovementSpeed(class EntityContext const& provider);
+MCAPI float getMovementSpeed(::EntityContext const& provider);
 
-MCAPI void initializeMob(class EntityContext& provider);
+MCAPI void initializeMob(::EntityContext& provider);
 
-MCAPI bool isFrictionDiscarded(class EntityContext const& provider);
+MCAPI bool isFrictionDiscarded(::EntityContext const& provider);
 
-MCAPI void resetLocalMoveVelocity(class EntityContext& provider);
+MCAPI void resetLocalMoveVelocity(::EntityContext& provider);
 
-MCAPI void setAirSpeed(class EntityContext& provider, float flySpeed);
+MCAPI void setAirSpeed(::EntityContext& provider, float flySpeed);
 
-MCAPI void setDiscardFriction(class EntityContext& provider, bool discardFriction);
+MCAPI void setDiscardFriction(::EntityContext& provider, bool discardFriction);
 
-MCAPI void setFrictionModifier(class EntityContext& provider, float modifier);
+MCAPI void setFrictionModifier(::EntityContext& provider, float modifier);
 
-MCAPI void setLocalMoveVelocity(class EntityContext& provider, class Vec3 const& localMoveVelocity);
+MCAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
 
 MCAPI void setLocalMoveVelocity(
-    class EntityContext& provider,
-    std::optional<float> x,
-    std::optional<float> y,
-    std::optional<float> z
+    ::EntityContext&       provider,
+    ::std::optional<float> x,
+    ::std::optional<float> y,
+    ::std::optional<float> z
 );
 
-MCAPI void setMobRotation(class EntityContext& provider, float rotation);
+MCAPI void setMobRotation(::EntityContext& provider, float rotation);
 
-MCAPI void setMovementSpeed(class EntityContext& provider, float speed);
+MCAPI void setMovementSpeed(::EntityContext& provider, float speed);
 // NOLINTEND
 
-}; // namespace MobMovement
+} // namespace MobMovement

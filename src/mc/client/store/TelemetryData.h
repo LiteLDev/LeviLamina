@@ -12,4 +12,4 @@ public:
     TelemetryData();
 };
 
-}; // namespace storeSearch
+} // namespace storeSearch

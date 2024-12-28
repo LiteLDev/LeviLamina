@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ItemStackBase;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,30 +20,26 @@ public:
     ItemLockHelper();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static bool addKeepOnDeath(class ItemStackBase& item, class Json::Value const& data);
+    MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCAPI static bool canMoveItemSlots(class Actor const& actor, class ItemStackBase const& item);
+    MCAPI static bool _parseKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCAPI static ::ItemLockMode getItemLockMode(class ItemStackBase const& item);
+    MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
 
-    MCAPI static bool isItemLocked(class ItemStackBase const& item);
+    MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
 
-    MCAPI static bool isItemLockedInSlot(class ItemStackBase const& item);
+    MCAPI static bool isItemLocked(::ItemStackBase const& item);
 
-    MCAPI static void setItemLockMode(class ItemStackBase& item, ::ItemLockMode lockMode);
+    MCAPI static bool isItemLockedInSlot(::ItemStackBase const& item);
 
-    MCAPI static void setKeepOnDeath(class ItemStackBase& item, bool value);
+    MCAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
 
-    MCAPI static bool shouldKeepOnDeath(class ItemStackBase const& item);
+    MCAPI static void setKeepOnDeath(::ItemStackBase& item, bool value);
 
-    MCAPI static bool shouldKeepOnDeath(class Actor const& actor, class ItemStackBase const& item);
+    MCAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
 
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI static bool _parseItemLockMode(class ItemStackBase& item, class Json::Value const& data);
-
+    MCAPI static bool shouldKeepOnDeath(::Actor const& actor, ::ItemStackBase const& item);
     // NOLINTEND
 };

@@ -1,25 +1,32 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/SubscriptionBase.h"
 
 namespace Bedrock::PubSub {
 
-class Subscription : public SubscriptionBase {
+class Subscription : public ::Bedrock::PubSub::SubscriptionBase {
 public:
+    // prevent constructor by default
+    Subscription& operator=(Subscription const&);
+    Subscription(Subscription const&);
+    Subscription();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Bedrock::PubSub::Subscription& operator=(class Bedrock::PubSub::Subscription&&);
+    MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
 
     MCAPI ~Subscription();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::PubSub
+} // namespace Bedrock::PubSub

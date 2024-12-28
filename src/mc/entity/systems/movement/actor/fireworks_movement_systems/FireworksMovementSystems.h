@@ -6,55 +6,67 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/entity/systems/movement/actor/fireworks_movement_systems/RocketAttached.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntitySystems;
+class LocalSpatialEntityFetcher;
+class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
+struct ActorRotationComponent;
+struct ActorSetPositionRequestComponent;
+struct DimensionTypeComponent;
+struct FireworksRocketFlagComponent;
+struct LocalSpatialEntityFetcherFactoryComponent;
+struct MobFlagComponent;
+struct MoveRequestComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+// clang-format on
+
 namespace FireworksMovementSystems {
+// functions
 // NOLINTBEGIN
-MCAPI void applyBoost(class Vec3& posDelta, class Vec3 const& lookAngle, uint64 count);
+MCAPI void fireworksRocketMoveClient(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
+        ::SynchedActorDataComponent const,
+        ::StateVectorComponent,
+        ::ActorRotationComponent>                                                               view,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>                              dimensions,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                        modifier,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
+);
 
 MCAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
-    class StrictEntityContext const&        rocket,
-    struct SynchedActorDataComponent const& rocketData,
-    struct StateVectorComponent&            rocketStateVector,
-    struct ActorRotationComponent&          rocketRotation,
-    class LocalSpatialEntityFetcher&        fetcher,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct MobFlag>>,
-        struct StateVectorComponent const> const&                                                  stateVectors,
-    class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent> modifier
+    ::StrictEntityContext const&       rocket,
+    ::SynchedActorDataComponent const& rocketData,
+    ::StateVectorComponent&            rocketStateVector,
+    ::ActorRotationComponent&          rocketRotation,
+    ::LocalSpatialEntityFetcher&       fetcher,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
 );
 
-MCAPI void fireworksRocketMoveServerEntity(
-    class StrictEntityContext const&        rocket,
-    struct SynchedActorDataComponent const& rocketData,
-    struct StateVectorComponent&            rocketStateVector,
-    struct ActorRotationComponent&          rocketRotation,
-    class LocalSpatialEntityFetcher&        fetcher,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct MobFlag>>,
-        struct StateVectorComponent const> const&                                                  stateVectors,
-    class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent> clientModifier,
-    class EntityModifier<struct MoveRequestComponent>                                              serverModifier
+MCAPI void fireworksRocketMoveServer(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
+        ::SynchedActorDataComponent const,
+        ::StateVectorComponent,
+        ::ActorRotationComponent>                                                               view,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>                              dimensions,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                        clientModifier,
+    ::EntityModifier<::MoveRequestComponent>                                                    serverModifier,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
 );
 
-MCAPI void registerAttachedRocketSystems(class EntitySystems& systemRegistry, bool isUsingClientRewind);
-
-MCAPI void registerRocketMovementSystems(class EntitySystems& systemRegistry, bool isClientSide);
-
-MCAPI void simulateAttachedRocket(
-    class StrictEntityContext const& rocket,
-    struct ActorUniqueID const&      attachedID,
-    struct StateVectorComponent&     rocketStateVector,
-    class LocalSpatialEntityFetcher& fetcher,
-    class ViewT<
-        class StrictEntityContext,
-        struct Include<class FlagComponent<struct MobFlag>>,
-        struct StateVectorComponent const> const&                                                  stateVectors,
-    class EntityModifier<struct ActorSetPositionRequestComponent, struct AttachedRocketsComponent> modifier
-);
+MCAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}; // namespace FireworksMovementSystems
+} // namespace FireworksMovementSystems

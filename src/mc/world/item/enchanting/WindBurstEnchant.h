@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class WindBurstEnchant : public ::Enchant {
 public:
     // prevent constructor by default
@@ -13,69 +18,60 @@ public:
     WindBurstEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WindBurstEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 8
-    virtual float getDamageBonus(int, class Actor const&, class Actor const&) const;
+    virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
 
     // vIndex: 10
-    virtual void doPostItemHurtActor(class Actor& attacker, class Actor&, int enchantLevel) const;
+    virtual void doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const /*override*/;
 
     // vIndex: 14
-    virtual bool isTreasureOnly() const;
+    virtual bool isTreasureOnly() const /*override*/;
 
     // vIndex: 15
-    virtual bool isDiscoverable() const;
+    virtual bool isDiscoverable() const /*override*/;
 
-    MCAPI WindBurstEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
-
+    // vIndex: 0
+    virtual ~WindBurstEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI void doPostItemHurtActor$(class Actor& attacker, class Actor&, int enchantLevel) const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI float getDamageBonus$(int, class Actor const&, class Actor const&) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI int getMaxCost$(int level) const;
+    MCAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI void $doPostItemHurtActor(::Actor& attacker, ::Actor&, int enchantLevel) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI bool $isTreasureOnly() const;
 
-    MCAPI bool isDiscoverable$() const;
+    MCAPI bool $isDiscoverable() const;
+    // NOLINTEND
 
-    MCAPI bool isTreasureOnly$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

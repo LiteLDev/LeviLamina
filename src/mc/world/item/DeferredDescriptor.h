@@ -9,10 +9,21 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class BinaryStream;
+class BlockLegacy;
+class CompoundTag;
+class Item;
+class ReadOnlyBinaryStream;
 // clang-format on
 
 struct DeferredDescriptor : public ::ItemDescriptor::BaseDescriptor {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkd4971a;
+    ::ll::UntypedStorage<2, 2>  mUnk5e449c;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DeferredDescriptor& operator=(DeferredDescriptor const&);
@@ -20,79 +31,90 @@ public:
     DeferredDescriptor();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
+    virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const /*override*/;
 
     // vIndex: 2
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
+    virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const /*override*/;
 
     // vIndex: 3
-    virtual std::string const& getFullName() const;
-
-    // vIndex: 6
-    virtual std::map<std::string, std::string> toMap() const;
+    virtual ::std::string const& getFullName() const /*override*/;
 
     // vIndex: 7
-    virtual std::optional<class CompoundTag> save() const;
+    virtual ::std::map<::std::string, ::std::string> toMap() const /*override*/;
+
+    // vIndex: 8
+    virtual ::std::optional<::CompoundTag> save() const /*override*/;
 
     // vIndex: 9
-    virtual void serialize(class BinaryStream& stream) const;
+    virtual void serialize(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 10
-    virtual ::ItemDescriptor::InternalType getType() const;
-
-    // vIndex: 12
-    virtual uint64 getHash() const;
+    // vIndex: 11
+    virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     // vIndex: 13
-    virtual bool shouldResolve() const;
+    virtual uint64 getHash() const /*override*/;
 
     // vIndex: 14
-    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
+    virtual bool shouldResolve() const /*override*/;
 
     // vIndex: 15
-    virtual ~DeferredDescriptor() = default;
+    virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const /*override*/;
 
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>>
-    deserialize(class ReadOnlyBinaryStream& stream);
-
+    // vIndex: 16
+    virtual ~DeferredDescriptor() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
-          _initFromBlockLegacy(class BlockLegacy const& block, class WeakPtr<class Item>&& item) const;
-
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
-          _initFromItem(class WeakPtr<class Item>&& item, short aux) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
+    _initFromBlockLegacy(::BlockLegacy const& block, ::WeakPtr<::Item>&& item) const;
 
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone$() const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
+    // NOLINTEND
 
-    MCAPI std::string const& getFullName$() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::DeferredDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
-    MCAPI uint64 getHash$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::ItemDescriptor::InternalType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve$() const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
 
-    MCAPI bool sameItem$(struct ItemDescriptor::ItemEntry const&, bool) const;
+    MCAPI ::std::string const& $getFullName() const;
 
-    MCAPI std::optional<class CompoundTag> save$() const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCAPI void serialize$(class BinaryStream& stream) const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCAPI bool shouldResolve$() const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCAPI std::map<std::string, std::string> toMap$() const;
+    MCAPI ::ItemDescriptor::InternalType $getType() const;
 
+    MCAPI uint64 $getHash() const;
+
+    MCAPI bool $shouldResolve() const;
+
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

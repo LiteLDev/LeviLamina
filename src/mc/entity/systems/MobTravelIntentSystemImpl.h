@@ -2,14 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct LocalMoveVelocityComponent;
+struct MobRotationComponent;
+struct MobTravelComponent;
+// clang-format on
+
 namespace MobTravelIntentSystemImpl {
+// functions
 // NOLINTBEGIN
 MCAPI void updatedMoveVelocity(
-    class StrictEntityContext const&,
-    struct LocalMoveVelocityComponent& localMoveVelocityComponent,
-    struct MobRotationComponent&       mobRotationComponent,
-    struct MobTravelComponent&         mobTravelComponent
+    ::StrictEntityContext const&,
+    ::LocalMoveVelocityComponent& localMoveVelocityComponent,
+    ::MobRotationComponent&       mobRotationComponent,
+    ::MobTravelComponent&         mobTravelComponent
 );
 // NOLINTEND
 
-}; // namespace MobTravelIntentSystemImpl
+} // namespace MobTravelIntentSystemImpl

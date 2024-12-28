@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class WorkerPool;
+// clang-format on
+
 class MinecraftWorkerPool {
+public:
+    // MinecraftWorkerPool inner types define
+    enum class CoreConfigFlavor : int {
+        LegacyCores             = 0,
+        ClientRenderServerCores = 1,
+    };
+
 public:
     // prevent constructor by default
     MinecraftWorkerPool& operator=(MinecraftWorkerPool const&);
@@ -13,6 +25,7 @@ public:
     MinecraftWorkerPool();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void configureMainThread();
 
@@ -22,40 +35,38 @@ public:
 
     MCAPI static void destroySingletons();
 
-    MCAPI static void initializeDefaults();
+    MCAPI static void initializeDefaults(::MinecraftWorkerPool::CoreConfigFlavor nxCoreConfigFlavor);
 
     MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& ASYNC();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& CONNECTEDSTORAGE();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& DISK();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& GAMEFACE_LAYOUT();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& INPUT();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& INPUT();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& LEVELDB();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& LEVELDB_COMPACTION();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& NETWORK();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& PYTHONRUNTIME();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& PYTHONRUNTIME();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& RENDERING();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& RENDERING_HELPERS();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& VR();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& VR();
 
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool>& WATCHDOG();
-
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

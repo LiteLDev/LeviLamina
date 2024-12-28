@@ -3,11 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/core/utility/ServiceReference.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace JsonUtil { class EmptyClass; }
+class AppPlatform;
+class FeatureRegistry;
+class HashedString;
+class IWorldRegistriesProvider;
+class MinEngineVersion;
+class ResourcePackManager;
+class SemVersion;
+namespace SharedTypes::v1_21_20 { struct AutomaticFeatureRulesData; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AutomaticFeatureRules {
@@ -20,24 +28,36 @@ public:
     // AutomaticFeatureRules inner types define
     struct AutomaticFeatureRule {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 1928> mUnk6ed10e;
+        ::ll::UntypedStorage<8, 64>   mUnk9f3a19;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         AutomaticFeatureRule& operator=(AutomaticFeatureRule const&);
         AutomaticFeatureRule(AutomaticFeatureRule const&);
         AutomaticFeatureRule();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~AutomaticFeatureRule();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 360> mUnk333374;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -46,41 +66,52 @@ public:
     AutomaticFeatureRules();
 
 public:
+    // member functions
     // NOLINTBEGIN
+    MCAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
+
+    MCAPI void _applyAutomaticFeatureRuleDefinition(
+        ::AutomaticFeatureRules::AutomaticFeatureRule&            automaticFeatureRule,
+        ::SharedTypes::v1_21_20::AutomaticFeatureRulesData const& automaticFeatureRulesData,
+        ::MinEngineVersion const&                                 minEngineVersion,
+        ::FeatureRegistry&                                        featureRegistry
+    ) const;
+
+    MCAPI void _parseAndInsertUnsorted(
+        ::std::string const&        filename,
+        ::std::string&&             data,
+        ::MinEngineVersion const&   minEngineVersion,
+        ::IWorldRegistriesProvider& worldRegistries,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>& bucketedFeatures,
+        bool                                                                                      isBasePack
+    ) const;
+
     MCAPI void attachAutomaticFeatures(
-        class ResourcePackManager&      resourcePackManager,
-        class IWorldRegistriesProvider& worldRegistries
+        ::ResourcePackManager&      resourcePackManager,
+        ::IWorldRegistriesProvider& worldRegistries
     ) const;
 
-    MCAPI std::unordered_map<
-        std::string,
-        std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule>>
+    MCAPI ::std::unordered_map<
+        ::std::string,
+        ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>
     parseAutomaticFeatures(
-        class ResourcePackManager&      resourcePackManager,
-        class IWorldRegistriesProvider& worldRegistries
+        ::ServiceReference<::AppPlatform> appPlatform,
+        ::ResourcePackManager&            resourcePackManager,
+        ::IWorldRegistriesProvider&       worldRegistries
     ) const;
-
     // NOLINTEND
 
-    // private:
+public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void _parseAndInsertUnsorted(
-        class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::EmptyClass,
-            std::tuple<
-                std::reference_wrapper<std::string>,
-                std::reference_wrapper<struct AutomaticFeatureRules::AutomaticFeatureRule>,
-                std::reference_wrapper<class IWorldRegistriesProvider>>> const& schema,
-        std::string const&                                                      filename,
-        std::string const&                                                      input,
-        class SemVersion const&                                                 engineVersion,
-        class IWorldRegistriesProvider&                                         worldRegistries,
-        std::unordered_map<
-            std::string,
-            std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule>>&
-             bucketedFeatures,
-        bool isBasePack
-    ) const;
+    MCAPI static ::SemVersion const& SCHEMA_VERSION_1();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 };

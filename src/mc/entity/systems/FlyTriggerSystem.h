@@ -2,13 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace FlyTriggerSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createActionSystem();
+MCAPI ::TickingSystemWithInfo createActionSystem();
 
-MCAPI struct TickingSystemWithInfo createIntentSystem();
+MCAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCAPI struct TickingSystemWithInfo createRemovePermissionFlyFlagSystem();
+MCAPI ::TickingSystemWithInfo createRemovePermissionFlyFlagSystem();
 // NOLINTEND
 
-}; // namespace FlyTriggerSystem
+} // namespace FlyTriggerSystem

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockPatternPreEvent {
+// auto generated inclusion list
+#include "mc/world/events/BlockPatternEvent.h"
+
+struct BlockPatternPreEvent : public ::BlockPatternEvent {
 public:
     // prevent constructor by default
     BlockPatternPreEvent& operator=(BlockPatternPreEvent const&);
@@ -10,15 +13,14 @@ public:
     BlockPatternPreEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~BlockPatternPreEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

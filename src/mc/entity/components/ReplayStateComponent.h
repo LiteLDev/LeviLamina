@@ -6,7 +6,29 @@
 #include "mc/entity/components/ReplayCorrectionResult.h"
 #include "mc/input/AdvanceFrameResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorHistory;
+class EntityContext;
+class EntityRegistry;
+class PlayerAuthInputPacket;
+struct IMovementCorrection;
+struct IReplayStatePolicy;
+struct IReplayableActorInput;
+struct MovementCorrection;
+// clang-format on
+
 class ReplayStateComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk7e24cc;
+    ::ll::UntypedStorage<8, 8> mUnk5a088a;
+    ::ll::UntypedStorage<8, 8> mUnkb84ec7;
+    ::ll::UntypedStorage<8, 8> mUnk827b65;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ReplayStateComponent& operator=(ReplayStateComponent const&);
@@ -14,57 +36,56 @@ public:
     ReplayStateComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ReplayStateComponent(class ReplayStateComponent&& rhs);
+    MCAPI ReplayStateComponent(::ReplayStateComponent&&);
 
-    MCAPI ReplayStateComponent(
-        std::unique_ptr<class ActorHistory>        history,
-        std::unique_ptr<struct IReplayStatePolicy> policy
-    );
+    MCAPI
+    ReplayStateComponent(::std::unique_ptr<::ActorHistory> history, ::std::unique_ptr<::IReplayStatePolicy> policy);
 
-    MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput> input) const;
+    MCAPI ::AdvanceFrameResult _applyCorrection(
+        ::std::shared_ptr<::IMovementCorrection> correction,
+        ::Actor&                                 actor,
+        uint64                                   destinationTimestamp,
+        bool                                     addInput
+    ) const;
+
+    MCAPI void addInputToCurrentFrame(::std::shared_ptr<::IReplayableActorInput> input) const;
+
+    MCAPI void addInputToFrontOfCurrentFrame(::std::shared_ptr<::IReplayableActorInput> input) const;
 
     MCAPI ::ReplayCorrectionResult
-    applyFrameCorrection(class Actor& actor, std::shared_ptr<struct IMovementCorrection> correction, uint64 frame);
+    applyFrameCorrection(::Actor& actor, ::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
     MCAPI void clearHistory();
 
-    MCAPI void enqueueInputSimulation(std::unique_ptr<struct IReplayableActorInput> input);
+    MCAPI void enqueueInputSimulation(::std::unique_ptr<::IReplayableActorInput> input);
 
     MCAPI uint64 getCurrentTick() const;
 
     MCAPI void notifyOfExternalCorrection() const;
 
-    MCAPI class ReplayStateComponent& operator=(class ReplayStateComponent&&);
+    MCAPI ::ReplayStateComponent& operator=(::ReplayStateComponent&&);
 
-    MCAPI struct MovementCorrection
-    shouldSendCorrectionToClient(class EntityContext& entity, class PlayerAuthInputPacket const& packet) const;
+    MCAPI ::MovementCorrection
+    shouldSendCorrectionToClient(::EntityContext& entity, ::PlayerAuthInputPacket const& packet) const;
 
-    MCAPI void tick(class Actor* actor, uint64 currentTick, class EntityRegistry* registry);
+    MCAPI void tick(::Actor* actor, uint64 currentTick, ::EntityRegistry* registry);
 
     MCAPI ~ReplayStateComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult _applyCorrection(
-        std::shared_ptr<struct IMovementCorrection> correction,
-        class Actor&                                actor,
-        uint64                                      destinationTimestamp,
-        bool                                        addInput
-    ) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ReplayStateComponent&& rhs);
+    MCAPI void* $ctor(::ReplayStateComponent&&);
 
-    MCAPI void* ctor$(std::unique_ptr<class ActorHistory> history, std::unique_ptr<struct IReplayStatePolicy> policy);
+    MCAPI void* $ctor(::std::unique_ptr<::ActorHistory> history, ::std::unique_ptr<::IReplayStatePolicy> policy);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

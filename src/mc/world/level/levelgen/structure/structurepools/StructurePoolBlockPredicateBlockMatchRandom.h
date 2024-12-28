@@ -4,8 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
+#include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class Randomize;
+namespace Util { class XXHash; }
+// clang-format on
 
 class StructurePoolBlockPredicateBlockMatchRandom : public ::IStructurePoolBlockPredicate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk887dd6;
+    ::ll::UntypedStorage<4, 4> mUnk377c03;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructurePoolBlockPredicateBlockMatchRandom& operator=(StructurePoolBlockPredicateBlockMatchRandom const&);
@@ -13,35 +29,57 @@ public:
     StructurePoolBlockPredicateBlockMatchRandom();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructurePoolBlockPredicateBlockMatchRandom() = default;
+    // vIndex: 2
+    virtual bool test(::Block const& block, ::Randomize& randomize) const /*override*/;
 
     // vIndex: 1
-    virtual bool test(class Block const& block, class Randomize& randomize) const;
+    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const /*override*/;
 
-    // vIndex: 2
-    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
+    // vIndex: 5
+    virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
-    // vIndex: 3
-    virtual bool finalize(class BlockSource&, class IRandom&);
+    // vIndex: 6
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const& block, float probability);
-
+    // vIndex: 0
+    virtual ~StructurePoolBlockPredicateBlockMatchRandom() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI StructurePoolBlockPredicateBlockMatchRandom(::Block const& block, float probability);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block, float probability);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, float probability);
+    // NOLINTEND
 
-    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool test$(class Block const& block, class Randomize& randomize) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCAPI bool test$(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
+    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
 
+    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

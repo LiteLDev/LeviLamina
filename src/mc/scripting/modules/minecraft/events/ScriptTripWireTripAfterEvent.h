@@ -4,16 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class WeakLifetimeScope; }
 struct TripWireTripEvent;
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptTripWireTripAfterEvent {
+struct ScriptTripWireTripAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnkccc723;
+    ::ll::UntypedStorage<8, 24> mUnk8ad5c8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&);
@@ -21,27 +29,25 @@ public:
     ScriptTripWireTripAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptTripWireTripAfterEvent(
-        struct TripWireTripEvent const&           tripWireTripEvent,
-        class Scripting::WeakLifetimeScope const& scope
+        ::TripWireTripEvent const&            tripWireTripEvent,
+        ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void*
-    ctor$(struct TripWireTripEvent const& tripWireTripEvent, class Scripting::WeakLifetimeScope const& scope);
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

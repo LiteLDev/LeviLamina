@@ -1,29 +1,45 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
-#include "mc/world/scores/IdentityDefinition.h"
-#include "mc/world/scores/ScoreboardId.h"
 
+// auto generated inclusion list
+#include "mc/world/scores/IdentityDefinition.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+struct PlayerScoreboardId;
+struct ScoreboardId;
+// clang-format on
 
 struct ScorePacketInfo {
 public:
-    ScoreboardId             mScoreboardId;   // this+0x0
-    std::string              mObjectiveName;  // this+0x10
-    int                      mScoreValue;     // this+0x30
-    IdentityDefinition::Type mIdentityType;   // this+0x34
-    PlayerScoreboardId       mPlayerId;       // this+0x38
-    ActorUniqueID            mEntityId;       // this+0x40
-    std::string              mFakePlayerName; // this+0x48
-
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::ScoreboardId>            mScoreboardId;
+    ::ll::TypedStorage<8, 32, ::std::string>             mObjectiveName;
+    ::ll::TypedStorage<4, 4, int>                        mScoreValue;
+    ::ll::TypedStorage<1, 1, ::IdentityDefinition::Type> mIdentityType;
+    ::ll::TypedStorage<8, 8, ::PlayerScoreboardId>       mPlayerId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mEntityId;
+    ::ll::TypedStorage<8, 32, ::std::string>             mFakePlayerName;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ScorePacketInfo& operator=(ScorePacketInfo const&);
+    ScorePacketInfo(ScorePacketInfo const&);
+    ScorePacketInfo();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScorePacketInfo&&);
+    MCAPI ~ScorePacketInfo();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

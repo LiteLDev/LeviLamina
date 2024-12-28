@@ -8,12 +8,70 @@
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
+#include "mc/deps/ecs/strict/IStrictTickingSystem.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class ActorSetPosSystem {
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class ActorOwnerComponent;
+class EntityContext;
+class HitboxComponent;
+class StrictEntityContext;
+class Vec2;
+class Vec3;
+struct AABBShapeComponent;
+struct ActorAddedFlagComponent;
+struct ActorChunkMoveFlagComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct ActorLocalPlayerEntityMovedFlagComponent;
+struct ActorRemovedFlagComponent;
+struct ActorSetPositionRequestComponent;
+struct ChunkPositionComponent;
+struct Hitbox;
+struct LocalPlayerComponent;
+struct OffsetsComponent;
+struct PaintingFlagComponent;
+struct PlayerComponent;
+struct ShulkerFlagComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
+class ActorSetPosSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                              ::Filter<
+                                  ::ActorAddedFlagComponent,
+                                  ::ActorRemovedFlagComponent,
+                                  ::LocalPlayerComponent,
+                                  ::PaintingFlagComponent,
+                                  ::PlayerComponent,
+                                  ::ShulkerFlagComponent>,
+                              ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+                              ::Write<
+                                  ::AABBShapeComponent,
+                                  ::ActorSetPositionRequestComponent,
+                                  ::HitboxComponent,
+                                  ::StateVectorComponent,
+                                  ::SynchedActorDataComponent,
+                                  ::ActorDataFlagComponent,
+                                  ::ActorDataDirtyFlagsComponent>,
+                              ::AddRemove<
+                                  ::ActorChunkMoveFlagComponent,
+                                  ::ActorLocalPlayerEntityMovedFlagComponent,
+                                  ::ActorSetPositionRequestComponent>,
+                              ::GlobalRead<>,
+                              ::GlobalWrite<>,
+                              ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk3fcc8a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ActorSetPosSystem& operator=(ActorSetPosSystem const&);
@@ -21,146 +79,147 @@ public:
     ActorSetPosSystem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ActorSetPosSystem() = default;
-
-    // vIndex: 1
-    virtual void registerEvents(entt::dispatcher& dispatcher);
-
-    // vIndex: 2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3
-    virtual void __unk_vfn_3();
-
-    // vIndex: 4
-    virtual void __unk_vfn_4();
-
-    // vIndex: 5
-    virtual void tick(class StrictExecutionContext<
-                      struct Filter<
-                          class FlagComponent<struct ActorAddedFlag>,
-                          class FlagComponent<struct ActorRemovedFlag>,
-                          class FlagComponent<struct LocalPlayerComponentFlag>,
-                          class FlagComponent<struct PaintingFlag>,
-                          class FlagComponent<struct PlayerComponentFlag>,
-                          class FlagComponent<struct ShulkerFlag>>,
-                      struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
-                      struct Write<
-                          struct AABBShapeComponent,
-                          struct ActorSetPositionRequestComponent,
-                          class HitboxComponent,
-                          struct StateVectorComponent,
-                          struct SynchedActorDataComponent,
-                          struct ActorDataFlagComponent,
-                          struct ActorDataDirtyFlagsComponent>,
-                      struct AddRemove<
-                          class FlagComponent<struct ActorChunkMoveFlag>,
-                          class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-                          struct ActorSetPositionRequestComponent>,
-                      struct GlobalRead<>,
-                      struct GlobalWrite<>,
-                      struct EntityFactoryT<>>& executionContext);
-
     // vIndex: 6
     virtual void singleTick(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorAddedFlag>,
-                class FlagComponent<struct ActorRemovedFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>,
-                class FlagComponent<struct PaintingFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorSetPositionRequestComponent,
-                class HitboxComponent,
-                struct StateVectorComponent,
-                struct SynchedActorDataComponent,
-                struct ActorDataFlagComponent,
-                struct ActorDataDirtyFlagsComponent>,
-            struct AddRemove<
-                class FlagComponent<struct ActorChunkMoveFlag>,
-                class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-                struct ActorSetPositionRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
-    );
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorAddedFlagComponent,
+                ::ActorRemovedFlagComponent,
+                ::LocalPlayerComponent,
+                ::PaintingFlagComponent,
+                ::PlayerComponent,
+                ::ShulkerFlagComponent>,
+            ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorSetPositionRequestComponent,
+                ::HitboxComponent,
+                ::StateVectorComponent,
+                ::SynchedActorDataComponent,
+                ::ActorDataFlagComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<
+                ::ActorChunkMoveFlagComponent,
+                ::ActorLocalPlayerEntityMovedFlagComponent,
+                ::ActorSetPositionRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
-    MCAPI static void actorUpdateOwnerChunk(class EntityContext& entity);
+    // vIndex: 5
+    virtual void tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::ActorAddedFlagComponent,
+                          ::ActorRemovedFlagComponent,
+                          ::LocalPlayerComponent,
+                          ::PaintingFlagComponent,
+                          ::PlayerComponent,
+                          ::ShulkerFlagComponent>,
+                      ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+                      ::Write<
+                          ::AABBShapeComponent,
+                          ::ActorSetPositionRequestComponent,
+                          ::HitboxComponent,
+                          ::StateVectorComponent,
+                          ::SynchedActorDataComponent,
+                          ::ActorDataFlagComponent,
+                          ::ActorDataDirtyFlagsComponent>,
+                      ::AddRemove<
+                          ::ActorChunkMoveFlagComponent,
+                          ::ActorLocalPlayerEntityMovedFlagComponent,
+                          ::ActorSetPositionRequestComponent>,
+                      ::GlobalRead<>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& executionContext) /*override*/;
 
-    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
-
-    MCAPI static void moveHitboxTo(class Vec3 const& pos, std::vector<struct Hitbox>& hitboxes);
-
-    MCAPI static class AABB refreshAABB(float heightOffset, class Vec3 const& pos, class Vec2 const& aabbDim);
-
+    // vIndex: 0
+    virtual ~ActorSetPosSystem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void actorUpdateOwnerChunk(::EntityContext& entity);
 
-    MCAPI void registerEvents$(entt::dispatcher& dispatcher);
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCAPI void singleTick$(
-        class StrictExecutionContext<
-            struct Filter<
-                class FlagComponent<struct ActorAddedFlag>,
-                class FlagComponent<struct ActorRemovedFlag>,
-                class FlagComponent<struct LocalPlayerComponentFlag>,
-                class FlagComponent<struct PaintingFlag>,
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct ShulkerFlag>>,
-            struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
-            struct Write<
-                struct AABBShapeComponent,
-                struct ActorSetPositionRequestComponent,
-                class HitboxComponent,
-                struct StateVectorComponent,
-                struct SynchedActorDataComponent,
-                struct ActorDataFlagComponent,
-                struct ActorDataDirtyFlagsComponent>,
-            struct AddRemove<
-                class FlagComponent<struct ActorChunkMoveFlag>,
-                class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-                struct ActorSetPositionRequestComponent>,
-            struct GlobalRead<>,
-            struct GlobalWrite<>,
-            struct EntityFactoryT<>>& executionContext,
-        class StrictEntityContext&    entityContext
+    MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
+
+    MCAPI static ::AABB refreshAABB(float heightOffset, ::Vec3 const& pos, ::Vec2 const& aabbDim);
+
+    MCAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorAddedFlagComponent,
+                ::ActorRemovedFlagComponent,
+                ::LocalPlayerComponent,
+                ::PaintingFlagComponent,
+                ::PlayerComponent,
+                ::ShulkerFlagComponent>,
+            ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorSetPositionRequestComponent,
+                ::HitboxComponent,
+                ::StateVectorComponent,
+                ::SynchedActorDataComponent,
+                ::ActorDataFlagComponent,
+                ::ActorDataDirtyFlagsComponent>,
+            ::AddRemove<
+                ::ActorChunkMoveFlagComponent,
+                ::ActorLocalPlayerEntityMovedFlagComponent,
+                ::ActorSetPositionRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
     );
 
-    MCAPI void tick$(class StrictExecutionContext<
-                     struct Filter<
-                         class FlagComponent<struct ActorAddedFlag>,
-                         class FlagComponent<struct ActorRemovedFlag>,
-                         class FlagComponent<struct LocalPlayerComponentFlag>,
-                         class FlagComponent<struct PaintingFlag>,
-                         class FlagComponent<struct PlayerComponentFlag>,
-                         class FlagComponent<struct ShulkerFlag>>,
-                     struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent>,
-                     struct Write<
-                         struct AABBShapeComponent,
-                         struct ActorSetPositionRequestComponent,
-                         class HitboxComponent,
-                         struct StateVectorComponent,
-                         struct SynchedActorDataComponent,
-                         struct ActorDataFlagComponent,
-                         struct ActorDataDirtyFlagsComponent>,
-                     struct AddRemove<
-                         class FlagComponent<struct ActorChunkMoveFlag>,
-                         class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
-                         struct ActorSetPositionRequestComponent>,
-                     struct GlobalRead<>,
-                     struct GlobalWrite<>,
-                     struct EntityFactoryT<>>& executionContext);
+    MCAPI void $tick(::StrictExecutionContext<
+                     ::Filter<
+                         ::ActorAddedFlagComponent,
+                         ::ActorRemovedFlagComponent,
+                         ::LocalPlayerComponent,
+                         ::PaintingFlagComponent,
+                         ::PlayerComponent,
+                         ::ShulkerFlagComponent>,
+                     ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+                     ::Write<
+                         ::AABBShapeComponent,
+                         ::ActorSetPositionRequestComponent,
+                         ::HitboxComponent,
+                         ::StateVectorComponent,
+                         ::SynchedActorDataComponent,
+                         ::ActorDataFlagComponent,
+                         ::ActorDataDirtyFlagsComponent>,
+                     ::AddRemove<
+                         ::ActorChunkMoveFlagComponent,
+                         ::ActorLocalPlayerEntityMovedFlagComponent,
+                         ::ActorSetPositionRequestComponent>,
+                     ::GlobalRead<>,
+                     ::GlobalWrite<>,
+                     ::EntityFactoryT<>>& executionContext);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

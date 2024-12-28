@@ -1,133 +1,171 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/biome/source/FixedBiomeSource.h"
-#include "mc/world/level/block/BlockVolume.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeArea;
+class BiomeSource;
+class Block;
+class BlockPos;
+class BlockSource;
+class BlockVolume;
+class BlockVolumeTarget;
+class BoundingBox;
+class ChunkLocalNoiseCache;
+class ChunkPos;
+class ChunkViewSource;
+class Dimension;
+class LevelChunk;
+class PerlinSimplexNoise;
+class Random;
+class WorldGenCache;
+// clang-format on
+
 class VoidGenerator : public ::WorldGenerator {
 public:
-    const Biome*                      mBiome; // this+188
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;
-    void*                             unk_408;
-    std::vector<Block const*>         mPrototypeBlocks;
-    BlockVolume                       mPrototype;
-    bool                              unk_480;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Biome const*>                          mBiome;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>>        mBiomeSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mNoise;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>          mPrototypeBlocks;
+    ::ll::TypedStorage<8, 40, ::BlockVolume>                          mPrototype;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsLegacyWorld;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     VoidGenerator& operator=(VoidGenerator const&);
     VoidGenerator(VoidGenerator const&);
     VoidGenerator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 47
-    virtual class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
-
-    // vIndex: 48
-    virtual class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
-
-    // vIndex: 45
-    virtual void decorateWorldGenLoadChunk(
-        class Biome const&       biome,
-        class LevelChunk&        lc,
-        class BlockVolumeTarget& target,
-        class Random&            random,
-        class ChunkPos const&    pos
-    ) const;
-
-    // vIndex: 46
-    virtual void decorateWorldGenPostProcess(
-        class Biome const& biome,
-        class LevelChunk&  lc,
-        class BlockSource& source,
-        class Random&      random
-    ) const;
-
-    // vIndex: 43
-    virtual class BlockPos findSpawnPosition() const;
-
-    // vIndex: 40
-    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
+    // vIndex: 0
+    virtual ~VoidGenerator() /*override*/;
 
     // vIndex: 41
-    virtual class BiomeSource const& getBiomeSource() const;
+    virtual ::BiomeSource const& getBiomeSource() const /*override*/;
 
-    // vIndex: 42
-    virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
+    // vIndex: 43
+    virtual ::BlockPos findSpawnPosition() const /*override*/;
 
     // vIndex: 11
-    virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
-    virtual bool postProcess(class ChunkViewSource& neighborhood);
+    virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
+
+    // vIndex: 38
+    virtual void
+    prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, bool factorInBeardsAndShavers) /*override*/;
 
     // vIndex: 39
     virtual void prepareAndComputeHeights(
-        class BlockVolume&    box,
-        class ChunkPos const& chunkPos,
-        std::vector<short>&   ZXheights,
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>& ZXheights,
         bool                  factorInBeardsAndShavers,
         int                   skipTopN
-    );
+    ) /*override*/;
 
-    // vIndex: 38
-    virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+    // vIndex: 40
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    MCAPI VoidGenerator(class Dimension& dimension);
+    // vIndex: 42
+    virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
+    // vIndex: 48
+    virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const;
+
+    // vIndex: 49
+    virtual ::WorldGenCache createWorldGenCache(::ChunkPos chunkPos) const;
+
+    // vIndex: 47
+    virtual void
+    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 46
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForChunkSource();
+    MCAPI explicit VoidGenerator(::Dimension& dimension);
+    // NOLINTEND
 
-    MCAPI static void** vftableForIPreliminarySurfaceProvider();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Dimension& dimension);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ChunkLocalNoiseCache createNoiseCache$(class ChunkPos chunkPos) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI class WorldGenCache createWorldGenCache$(class ChunkPos chunkPos) const;
+    MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI void decorateWorldGenLoadChunk$(
-        class Biome const&       biome,
-        class LevelChunk&        lc,
-        class BlockVolumeTarget& target,
-        class Random&            random,
-        class ChunkPos const&    pos
-    ) const;
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI void decorateWorldGenPostProcess$(
-        class Biome const& biome,
-        class LevelChunk&  lc,
-        class BlockSource& source,
-        class Random&      random
-    ) const;
+    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
-    MCAPI class BlockPos findSpawnPosition$() const;
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
-    MCAPI class BiomeArea getBiomeArea$(class BoundingBox const& area, uint scale) const;
-
-    MCAPI class BiomeSource const& getBiomeSource$() const;
-
-    MCAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions$() const;
-
-    MCAPI void loadChunk$(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
-
-    MCAPI bool postProcess$(class ChunkViewSource& neighborhood);
-
-    MCAPI void prepareAndComputeHeights$(
-        class BlockVolume&    box,
-        class ChunkPos const& chunkPos,
-        std::vector<short>&   ZXheights,
+    MCAPI void $prepareAndComputeHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>& ZXheights,
         bool                  factorInBeardsAndShavers,
         int                   skipTopN
     );
 
-    MCAPI void prepareHeights$(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
+    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+
+    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+
+    MCAPI ::WorldGenCache $createWorldGenCache(::ChunkPos chunkPos) const;
+
+    MCAPI void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+
+    MCAPI void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForChunkSource();
+
+    MCAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
 };

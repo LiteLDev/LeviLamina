@@ -1,34 +1,48 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class Dimension;
+class LevelChunk;
+// clang-format on
+
 class ChunkKey {
 public:
-    ChunkPos      pos; // this+0x0
-    DimensionType id;  // this+0x8
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit ChunkKey(class LevelChunk const& lc);
-
-    MCAPI ChunkKey(class ChunkPos const& pos, DimensionType id);
-
-    MCAPI std::string_view asSpan() const;
-
-    MCAPI uint64 hashCode() const;
-
+    ::ll::TypedStorage<8, 8, ::ChunkPos const>      pos;
+    ::ll::TypedStorage<4, 4, ::DimensionType const> id;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    ChunkKey& operator=(ChunkKey const&);
+    ChunkKey(ChunkKey const&);
+    ChunkKey();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class LevelChunk const& lc);
+    MCAPI explicit ChunkKey(::LevelChunk const& lc);
 
-    MCAPI void* ctor$(class ChunkPos const& pos, DimensionType id);
+    MCAPI ChunkKey(::ChunkPos const& pos, ::DimensionType id);
 
+    MCAPI ::std::string_view asSpan() const;
+
+    MCAPI uint64 hashCode() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelChunk const& lc);
+
+    MCAPI void* $ctor(::ChunkPos const& pos, ::DimensionType id);
     // NOLINTEND
 };

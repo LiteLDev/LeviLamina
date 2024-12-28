@@ -3,10 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class GuardianAttackGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnke84967;
+    ::ll::UntypedStorage<4, 4> mUnkfba32c;
+    ::ll::UntypedStorage<4, 4> mUnk537304;
+    ::ll::UntypedStorage<4, 4> mUnk6eaa96;
+    ::ll::UntypedStorage<4, 4> mUnkafeca2;
+    ::ll::UntypedStorage<4, 4> mUnk8ecbce;
+    ::ll::UntypedStorage<4, 4> mUnk68a445;
+    ::ll::UntypedStorage<4, 4> mUnkcbc051;
+    ::ll::UntypedStorage<4, 4> mUnkd6ec0f;
+    ::ll::UntypedStorage<1, 1> mUnk8baa5f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GuardianAttackGoal& operator=(GuardianAttackGoal const&);
@@ -14,50 +33,67 @@ public:
     GuardianAttackGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~GuardianAttackGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
-
-    // vIndex: 5
-    virtual void stop();
+    virtual void start() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
+
+    // vIndex: 5
+    virtual void stop() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit GuardianAttackGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~GuardianAttackGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit GuardianAttackGoal(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $start();
 
-    MCAPI void stop$();
+    MCAPI void $tick();
 
-    MCAPI void tick$();
+    MCAPI void $stop();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

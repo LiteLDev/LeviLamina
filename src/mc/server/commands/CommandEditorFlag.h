@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CommandEditorFlag : ushort {
-    Editor   = 0,
-    NoEditor = 1 << 9,
+    // bitfield representation
+    Editor    = 0,
+    NotEditor = 1 << 9,
 };

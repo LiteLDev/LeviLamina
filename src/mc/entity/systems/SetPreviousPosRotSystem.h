@@ -4,9 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class SetPreviousPosRotSystem {
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorRotationComponent;
+struct PrevPosRotSetThisTickFlagComponent;
+struct StateVectorComponent;
+// clang-format on
+
+struct SetPreviousPosRotSystem {
 public:
     // prevent constructor by default
     SetPreviousPosRotSystem& operator=(SetPreviousPosRotSystem const&);
@@ -14,15 +21,13 @@ public:
     SetPreviousPosRotSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _setPreviousPosRot(
-        class StrictEntityContext&                                                  entity,
-        struct StateVectorComponent&                                                stateVectorComponent,
-        struct ActorRotationComponent&                                              actorRotationComponent,
-        class EntityModifier<class FlagComponent<struct PrevPosRotSetThisTickFlag>> modifier
+        ::StrictEntityContext&                                 entity,
+        ::StateVectorComponent&                                stateVectorComponent,
+        ::ActorRotationComponent&                              actorRotationComponent,
+        ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> modifier
     );
-
-    MCAPI static void _setPreviousPosRotSystem(class EntityContext const&);
-
     // NOLINTEND
 };

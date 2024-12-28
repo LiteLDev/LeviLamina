@@ -5,98 +5,100 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-#include "mc/world/level/levelgen/synth/ParityImprovedNoiseImpl.h"
+
+// auto generated forward declare list
+// clang-format off
+class XoroshiroPositionalRandomFactory;
+// clang-format on
 
 class CavifierNoises {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 56> mUnk874752;
+    ::ll::UntypedStorage<8, 56> mUnkfc41ae;
+    ::ll::UntypedStorage<8, 56> mUnkcd02ba;
+    ::ll::UntypedStorage<8, 56> mUnkfafae8;
+    ::ll::UntypedStorage<8, 56> mUnk6628cf;
+    ::ll::UntypedStorage<8, 56> mUnk3210d7;
+    ::ll::UntypedStorage<8, 56> mUnkf107a9;
+    ::ll::UntypedStorage<8, 56> mUnk9d0a55;
+    ::ll::UntypedStorage<8, 56> mUnkd1f749;
+    ::ll::UntypedStorage<8, 56> mUnkae28ef;
+    ::ll::UntypedStorage<8, 56> mUnke471fd;
+    ::ll::UntypedStorage<8, 56> mUnka972b6;
+    ::ll::UntypedStorage<8, 56> mUnk5723bb;
+    ::ll::UntypedStorage<8, 56> mUnkffb34d;
+    ::ll::UntypedStorage<8, 56> mUnk7055a2;
+    ::ll::UntypedStorage<8, 56> mUnk9ba9ad;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CavifierNoises& operator=(CavifierNoises const&);
     CavifierNoises();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI CavifierNoises(class CavifierNoises const&);
+    MCAPI CavifierNoises(::CavifierNoises const&);
+
+    MCAPI CavifierNoises(
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarRarenessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DElevationModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DRarityModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DNoiseSource1,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DNoiseSource2,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DRarityModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghettiRoughnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghettiRoughnessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mBigEntranceNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mLayerNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mCheeseNoise
+    );
 
     MCAPI ~CavifierNoises();
-
-    MCAPI static class CavifierNoises make(class XoroshiroPositionalRandomFactory const& randomFactory);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI CavifierNoises(
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mPillarRarenessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mPillarThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DElevationModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DRarityModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DNoiseSource1,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DNoiseSource2,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DRarityModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghettiRoughnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghettiRoughnessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mBigEntranceNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mLayerNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mCheeseNoise
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CavifierNoises const&);
+    MCAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mPillarRarenessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mPillarThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DElevationModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DRarityModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti2DThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DNoiseSource1,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DNoiseSource2,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DRarityModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghetti3DThicknessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghettiRoughnessNoise,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mSpaghettiRoughnessModulator,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>
-            mBigEntranceNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mLayerNoiseSource,
-        class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> mCheeseNoise
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CavifierNoises const&);
+
+    MCAPI void* $ctor(
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarRarenessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mPillarThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DElevationModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DRarityModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti2DThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DNoiseSource1,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DNoiseSource2,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DRarityModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghetti3DThicknessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghettiRoughnessNoise,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mSpaghettiRoughnessModulator,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mBigEntranceNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mLayerNoiseSource,
+        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mCheeseNoise
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

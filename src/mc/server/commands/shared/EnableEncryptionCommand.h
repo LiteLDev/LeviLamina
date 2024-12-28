@@ -5,7 +5,23 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class IMinecraftApp;
+// clang-format on
+
 class EnableEncryptionCommand : public ::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk219a3e;
+    ::ll::UntypedStorage<8, 32> mUnk24d2e6;
+    ::ll::UntypedStorage<1, 1>  mUnkfabc20;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     EnableEncryptionCommand& operator=(EnableEncryptionCommand const&);
@@ -13,25 +29,42 @@ public:
     EnableEncryptionCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EnableEncryptionCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, class IMinecraftApp& app);
-
+    // vIndex: 0
+    virtual ~EnableEncryptionCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::IMinecraftApp*& mApp();
+    // NOLINTEND
 
-    MCAPI static class IMinecraftApp*& mApp();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

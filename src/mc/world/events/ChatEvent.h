@@ -1,43 +1,59 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/WeakEntityRef.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class TextPacket;
+// clang-format on
+
 struct ChatEvent {
 public:
-    std::string                mMessage;        // this+0x0
-    WeakEntityRef              mSender;         // this+0x20
-    bool                       mSendToTargets;  // this+0x38
-    std::vector<WeakEntityRef> mTargets;        // this+0x40
-    std::string                mAuthor;         // this+0x58
-    bool                       mMessageValid;   // this+0x78
-    bool                       mAllowFiltering; // this+0x79
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                             mFilteredMessage;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                                 mSender;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::WeakRef<::EntityContext>>>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mAuthor;
+    ::ll::TypedStorage<1, 1, bool>                                                        mMessageValid;
+    ::ll::TypedStorage<1, 1, bool>                                                        mAllowFiltering;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ChatEvent& operator=(ChatEvent const&);
     ChatEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ChatEvent(struct ChatEvent const&);
+    MCAPI ChatEvent(::ChatEvent const&);
 
-    MCAPI ChatEvent(class WeakRef<class EntityContext>, class TextPacket const&);
+    MCAPI ChatEvent(::ChatEvent&&);
+
+    MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
 
     MCAPI ~ChatEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class WeakRef<class EntityContext>, class TextPacket const&);
+    MCAPI void* $ctor(::ChatEvent const&);
 
-    MCAPI void* ctor$(struct ChatEvent const&);
+    MCAPI void* $ctor(::ChatEvent&&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -6,7 +6,32 @@
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class BlockSource;
+class ChunkPos;
+class CommandArea;
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class Random;
+class Vec2;
+// clang-format on
+
 class SpreadPlayersCommand : public ::Command {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 200> mUnkcaddae;
+    ::ll::UntypedStorage<4, 8>   mUnkbc1c46;
+    ::ll::UntypedStorage<4, 8>   mUnka2e82a;
+    ::ll::UntypedStorage<4, 8>   mUnkf56085;
+    ::ll::UntypedStorage<4, 4>   mUnk17014b;
+    ::ll::UntypedStorage<4, 4>   mUnk87ff63;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SpreadPlayersCommand& operator=(SpreadPlayersCommand const&);
@@ -14,71 +39,91 @@ public:
     SpreadPlayersCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SpreadPlayersCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static std::vector<class Vec2>
-    createInitialPositions(class Random& random, int count, class Vec2 const& minPos, class Vec2 const& maxPos);
-
-    MCAPI static bool
-    isDangerousSpawn(class BlockSource& region, class BlockPos const& checkPos, short minHeight, int commandVersion);
-
-    MCAPI static void setup(class CommandRegistry& registry);
-
-    MCAPI static bool spreadPositions(
-        class CommandOutput&                                          output,
-        class Random&                                                 random,
-        class CommandOrigin const&                                    origin,
-        class Vec2 const&                                             center,
-        float                                                         spreadDist,
-        class Vec2 const&                                             minPos,
-        class Vec2 const&                                             maxPos,
-        std::vector<class Vec2>&                                      positions,
-        std::map<class ChunkPos, std::unique_ptr<class CommandArea>>& areas,
-        int                                                           commandVersion
-    );
-
+    // vIndex: 0
+    virtual ~SpreadPlayersCommand() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static bool _checkPositionValid(
-        class CommandOrigin const&                                    origin,
-        class BlockPos const&                                         checkPos,
-        std::map<class ChunkPos, std::unique_ptr<class CommandArea>>& areas,
-        int                                                           commandVersion
+        ::CommandOrigin const&                                    origin,
+        ::BlockPos const&                                         checkPos,
+        ::std::optional<short>                                    maxHeight,
+        ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>& areas,
+        int                                                       commandVersion
     );
 
-    MCAPI static short _getTeleportHeight(class BlockSource& region, int x, int z);
+    MCAPI static short
+    _getTeleportHeight(::BlockSource& region, int x, ::std::optional<short> maxHeight, int z, int commandVersion);
 
     MCAPI static float _setPlayerPositions(
-        class CommandSelectorResults<class Actor>&                    entities,
-        std::vector<class Vec2>&                                      positions,
-        std::map<class ChunkPos, std::unique_ptr<class CommandArea>>& areas
+        ::CommandSelectorResults<::Actor>&                        entities,
+        ::std::vector<::Vec2>&                                    positions,
+        ::std::optional<short>                                    maxHeight,
+        ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>& areas,
+        int                                                       commandVersion
     );
 
     MCAPI static bool _spreadEntities(
-        class CommandOutput&                       output,
-        class CommandSelectorResults<class Actor>& entities,
-        class CommandOrigin const&                 origin,
-        class Vec2 const&                          center,
-        float                                      spreadDist,
-        float                                      maxDistFromCenter,
-        int                                        commandVersion
+        ::CommandOutput&                   output,
+        ::CommandSelectorResults<::Actor>& entities,
+        ::CommandOrigin const&             origin,
+        ::Vec2 const&                      center,
+        float                              spreadDist,
+        float                              maxDistFromCenter,
+        ::std::optional<short>             maxHeight,
+        int                                commandVersion
     );
 
+    MCAPI static ::std::vector<::Vec2>
+    createInitialPositions(::Random& random, int count, ::Vec2 const& minPos, ::Vec2 const& maxPos);
+
+    MCAPI static bool isDangerousSpawn(
+        ::BlockSource&         region,
+        ::BlockPos const&      checkPos,
+        short                  minHeight,
+        ::std::optional<short> maxHeight,
+        int                    commandVersion
+    );
+
+    MCAPI static void setup(::CommandRegistry& registry);
+
+    MCAPI static bool spreadPositions(
+        ::CommandOutput&                                          output,
+        ::Random&                                                 random,
+        ::CommandOrigin const&                                    origin,
+        ::Vec2 const&                                             center,
+        float                                                     spreadDist,
+        ::Vec2 const&                                             minPos,
+        ::Vec2 const&                                             maxPos,
+        ::std::vector<::Vec2>&                                    positions,
+        ::std::optional<short>                                    maxHeight,
+        ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>& areas,
+        int                                                       commandVersion
+    );
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

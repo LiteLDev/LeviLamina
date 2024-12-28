@@ -2,10 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class InputMode : int {
-    Undefined        = 0x0,
-    Mouse            = 0x1,
-    Touch            = 0x2,
-    GamePad          = 0x3,
-    MotionController = 0x4,
+enum class InputMode : uint {
+    Undefined        = 0,
+    Mouse            = 1,
+    Touch            = 2,
+    GamePad          = 3,
+    MotionController = 4,
+    Count            = 5,
 };

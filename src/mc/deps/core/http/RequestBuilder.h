@@ -11,39 +11,49 @@ namespace Bedrock::Http {
 
 class RequestBuilder {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 216> mUnkaf9bb2;
+    ::ll::UntypedStorage<8, 64>  mUnkd459f4;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     RequestBuilder& operator=(RequestBuilder const&);
     RequestBuilder(RequestBuilder const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Bedrock::Http::RequestBuilder& POST();
+    MCAPI ::Bedrock::Http::RequestBuilder& POST();
 
     MCAPI RequestBuilder();
 
-    MCAPI class Bedrock::Http::RequestBuilder&
-    addHeader(std::string const& header, std::string const& value, bool ignoreRestrictedHeaderCheck);
+    MCAPI ::Bedrock::Http::RequestBuilder&
+    addHeader(::std::string const& header, ::std::string const& value, bool ignoreRestrictedHeaderCheck);
 
-    MCAPI class Bedrock::Http::RequestBuilder& body(std::string const& plainText);
+    MCAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
 
-    MCAPI class Bedrock::Http::Request& build();
+    MCAPI ::Bedrock::Http::Request& build();
 
-    MCAPI class Bedrock::Http::RequestBuilder& timeout(std::chrono::seconds timeout);
+    MCAPI ::Bedrock::Http::RequestBuilder& timeout(::std::chrono::seconds timeout);
 
-    MCAPI class Bedrock::Http::RequestBuilder& url(std::string const& url);
+    MCAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
 
     MCAPI ~RequestBuilder();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

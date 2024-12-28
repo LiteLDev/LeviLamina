@@ -3,10 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class MoveTowardsTargetGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40> mUnk2f116d;
+    ::ll::UntypedStorage<8, 8>  mUnkc5097d;
+    ::ll::UntypedStorage<4, 4>  mUnkcb0421;
+    ::ll::UntypedStorage<4, 4>  mUnka3f440;
+    ::ll::UntypedStorage<4, 12> mUnkba54ba;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MoveTowardsTargetGoal& operator=(MoveTowardsTargetGoal const&);
@@ -14,45 +28,62 @@ public:
     MoveTowardsTargetGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MoveTowardsTargetGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
-
-    // vIndex: 4
-    virtual void start();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
+
+    // vIndex: 4
+    virtual void start() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI MoveTowardsTargetGoal(class Mob& pathMob, float speedModifier, float within);
-
+    // vIndex: 0
+    virtual ~MoveTowardsTargetGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI MoveTowardsTargetGoal(::Mob& pathMob, float speedModifier, float within);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& pathMob, float speedModifier, float within);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& pathMob, float speedModifier, float within);
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void start$();
+    MCAPI void $stop();
 
-    MCAPI void stop$();
+    MCAPI void $start();
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

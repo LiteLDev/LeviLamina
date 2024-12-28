@@ -5,13 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/events/MinecraftEventing.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/ActorBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CauldronLiquidType.h"
 #include "mc/world/level/block/LevelEvent.h"
@@ -19,10 +14,29 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class BaseGameVersion;
+class Block;
+class BlockActor;
+class BlockLegacy;
+class BlockPos;
+class BlockSource;
+class CauldronBlockActor;
+class Experiments;
+class GetCollisionShapeInterface;
+class HitResult;
+class IConstBlockSource;
+class ItemInstance;
+class ItemStack;
+class Level;
+class Player;
+class Random;
+class Vec3;
+struct Brightness;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CauldronBlock : public ::ActorBlock {
+class CauldronBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // prevent constructor by default
     CauldronBlock& operator=(CauldronBlock const&);
@@ -30,194 +44,220 @@ public:
     CauldronBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CauldronBlock() = default;
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
     // vIndex: 4
-    virtual class HitResult
-    clip(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::HitResult
+    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
     // vIndex: 8
     virtual void addAABBs(
-        class Block const&,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
-    ) const;
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 55
     virtual void
-    handlePrecipitation(class BlockSource& region, class BlockPos const& pos, float downfallAmount, float temperature)
-        const;
+    handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const
+        /*override*/;
 
     // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 105
+    virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    // vIndex: 106
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    // vIndex: 111
-    virtual bool hasComparatorSignal() const;
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
 
-    // vIndex: 112
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 145
+    virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 137
-    virtual struct Brightness getLightEmission(class Block const& block) const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 84
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    virtual ::Brightness getLight(::Block const& block) const /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
+    // vIndex: 126
+    virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    // vIndex: 157
-    virtual int getExtraRenderLayers() const;
-
-    // vIndex: 158
-    virtual struct Brightness getLight(class Block const& block) const;
-
-    MCAPI CauldronBlock(std::string const& nameId, int id);
-
-    MCAPI void
-    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int liquidLevel, ::CauldronLiquidType type)
-        const;
-
-    MCAPI static bool
-    canReceiveStalactiteDrip(class BlockSource& region, class BlockPos const& pos, ::MaterialType liquidType);
-
-    MCAPI static int clampLiquidLevel(int fillLevel);
-
-    MCAPI static void
-    spawnPotionParticles(class Level& level, class Vec3 const& pos, class Random&, int color, int count);
-
+    // vIndex: 0
+    virtual ~CauldronBlock() /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void _checkForStalactiteDrip(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI CauldronBlock(::std::string const& nameId, int id);
 
-    MCAPI void _explodeCauldronContents(class BlockSource& region, class BlockPos const& pos, ushort) const;
+    MCAPI void _checkForStalactiteDrip(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool const _mayUpdateLiquidLevel(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
+
+    MCAPI void _flushCauldronEvent(::BlockSource& region, ::BlockPos const& pos, int prevColor) const;
 
     MCAPI void _sendCauldronUsedEventToClient(
-        class Player const&                          player,
+        ::Player const&                              player,
         short                                        itemId,
         ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
-    MCAPI void _spawnCauldronEvent(class BlockSource& region, class BlockPos const& pos, ::LevelEvent levelEvent) const;
+    MCAPI void _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::LevelEvent levelEvent) const;
 
     MCAPI bool _useDyeableComponent(
-        class ItemStack&          itemInstance,
-        class Player&             player,
-        class BlockPos const&     pos,
-        class CauldronBlockActor& blockEntity,
-        class BlockSource&        region,
-        int                       fillLevel,
-        bool                      isEmpty,
-        bool                      isWater,
-        bool                      isCleanWater
+        ::ItemStack&          itemInstance,
+        ::Player&             player,
+        ::BlockPos const&     pos,
+        ::CauldronBlockActor& blockEntity,
+        ::BlockSource&        region,
+        int                   fillLevel,
+        bool                  isEmpty,
+        bool                  isWater,
+        bool                  isCleanWater
     ) const;
 
-    MCAPI void
-    _useInventory(class Player& player, class ItemStack& current, class ItemStack& replaceWith, int useCount) const;
+    MCAPI void _useInventory(::Player& player, ::ItemStack& current, ::ItemStack& replaceWith, int useCount) const;
 
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void receiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType) const;
+
+    MCAPI void
+    setLiquidLevel(::BlockSource& region, ::BlockPos const& pos, int liquidLevel, ::CauldronLiquidType type) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static bool canReceiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType);
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+    MCAPI static int clampLiquidLevel(int fillLevel);
 
-    MCAPI void addAABBs$(
-        class Block const&,
-        class IConstBlockSource const&,
-        class BlockPos const&    pos,
-        class AABB const*        intersectTestBox,
-        std::vector<class AABB>& inoutBoxes
-    ) const;
+    MCAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random&, int color, int count);
+    // NOLINTEND
 
-    MCAPI bool
-    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
-
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
-
-    MCAPI bool canContainLiquid$() const;
-
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI class HitResult
-    clip$(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    MCAPI int getComparatorSignal$(class BlockSource&, class BlockPos const&, class Block const& block, uchar) const;
-
-    MCAPI int getExtraRenderLayers$() const;
-
-    MCAPI struct Brightness getLight$(class Block const& block) const;
-
-    MCAPI struct Brightness getLightEmission$(class Block const& block) const;
-
-    MCAPI void
-    handlePrecipitation$(class BlockSource& region, class BlockPos const& pos, float downfallAmount, float temperature)
-        const;
-
-    MCAPI bool hasComparatorSignal$() const;
-
-    MCAPI bool isInteractiveBlock$() const;
-
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random&) const;
-
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& BASE_WATER_PIXEL();
 
-    MCAPI static class BaseGameVersion const& CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCAPI static ::BaseGameVersion const& CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     MCAPI static int const& FILL_LEVEL_PER_DRIP();
 
     MCAPI static int const& PIXEL_PER_LEVEL();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
+    MCAPI ::HitResult
+    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+
+    MCAPI void
+    $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI bool $hasComparatorSignal() const;
+
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $isInteractiveBlock() const;
+
+    MCAPI int $getExtraRenderLayers() const;
+
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI ::Brightness $getLight(::Block const& block) const;
+
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

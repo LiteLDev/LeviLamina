@@ -5,29 +5,44 @@
 // auto generated inclusion list
 #include "mc/network/packet/SoftEnumUpdateType.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandRegistry;
+// clang-format on
+
 class CommandSoftEnumRegistry {
 public:
-    class CommandRegistry* registry;
-
-    [[nodiscard]] inline explicit CommandSoftEnumRegistry(class CommandRegistry& registry)
-    : CommandSoftEnumRegistry(&registry) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI explicit CommandSoftEnumRegistry(class CommandRegistry* registry);
-
-    MCAPI void updateSoftEnum(::SoftEnumUpdateType type, std::string const& enumName, std::vector<std::string> values);
-
-    MCAPI ~CommandSoftEnumRegistry();
-
+    ::ll::TypedStorage<8, 8, ::CommandRegistry*> mRegistry;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandSoftEnumRegistry& operator=(CommandSoftEnumRegistry const&);
+    CommandSoftEnumRegistry(CommandSoftEnumRegistry const&);
+    CommandSoftEnumRegistry();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(class CommandRegistry* registry);
+    MCAPI explicit CommandSoftEnumRegistry(::CommandRegistry* registry);
 
-    MCAPI void dtor$();
+    MCAPI void
+    updateSoftEnum(::SoftEnumUpdateType type, ::std::string const& enumName, ::std::vector<::std::string> values);
 
+    MCAPI ~CommandSoftEnumRegistry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CommandRegistry* registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

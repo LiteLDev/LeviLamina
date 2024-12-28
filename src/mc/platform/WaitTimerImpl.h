@@ -4,18 +4,18 @@
 
 namespace OS {
 
-class WaitTimerImpl {
+struct WaitTimerImpl {
 public:
     // prevent constructor by default
     WaitTimerImpl& operator=(WaitTimerImpl const&);
     WaitTimerImpl(WaitTimerImpl const&);
     WaitTimerImpl();
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_TIMER*);
-
+    MCAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE*, void*, ::_TP_TIMER*);
     // NOLINTEND
 };
 
-}; // namespace OS
+} // namespace OS

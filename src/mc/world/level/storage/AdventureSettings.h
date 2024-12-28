@@ -4,22 +4,29 @@
 
 struct AdventureSettings {
 public:
-    bool mNoPvM;
-    bool mNoMvP;
-    bool mImmutableWorld;
-    bool mShowNameTags;
-    bool mAutoJump;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI AdventureSettings();
-
+    ::ll::TypedStorage<1, 1, bool> noPvM;
+    ::ll::TypedStorage<1, 1, bool> noMvP;
+    ::ll::TypedStorage<1, 1, bool> immutableWorld;
+    ::ll::TypedStorage<1, 1, bool> showNameTags;
+    ::ll::TypedStorage<1, 1, bool> autoJump;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
+    // prevent constructor by default
+    AdventureSettings& operator=(AdventureSettings const&);
+    AdventureSettings(AdventureSettings const&);
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AdventureSettings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -11,9 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
-namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -21,63 +19,66 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSimpleBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptSimpleBlockVolume();
-
     // vIndex: 1
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator(class Scripting::WeakLifetimeScope scope);
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
-    MCAPI ScriptSimpleBlockVolume();
-
-    MCAPI ScriptSimpleBlockVolume(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
-
-    MCAPI ScriptSimpleBlockVolume(class Vec3 const& from, class Vec3 const& to);
-
-    MCAPI bool doesLocationTouchFaces(class Vec3 const& pos);
-
-    MCAPI bool doesVolumeTouchFaces(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
-
-    MCAPI class Vec3 getFrom() const;
-
-    MCAPI class Vec3 getTo() const;
-
-    MCAPI ::SimpleBlockVolume::IntersectionResult
-    intersects(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
-
-    MCAPI class ScriptModuleMinecraft::ScriptSimpleBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
-
-    MCAPI void setFrom(class Vec3 const& from);
-
-    MCAPI void setTo(class Vec3 const& to);
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSimpleBlockVolume> bind();
-
-    MCAPI static class Scripting::
-        EnumBindingBuilder<::SimpleBlockVolume::IntersectionResult, ::SimpleBlockVolume::IntersectionResult>
-        bindEnums();
-
+    // vIndex: 0
+    virtual ~ScriptSimpleBlockVolume() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptSimpleBlockVolume();
 
-    MCAPI void* ctor$();
+    MCAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
-    MCAPI void* ctor$(class ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    MCAPI ::SimpleBlockVolume::IntersectionResult
+    intersects(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
 
-    MCAPI void* ctor$(class Vec3 const& from, class Vec3 const& to);
+    MCAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume&
+    operator=(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> bind();
 
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator$(class Scripting::WeakLifetimeScope scope);
+    MCAPI static ::Scripting::
+        EnumBindingBuilder<::SimpleBlockVolume::IntersectionResult, ::SimpleBlockVolume::IntersectionResult>
+        bindEnums();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

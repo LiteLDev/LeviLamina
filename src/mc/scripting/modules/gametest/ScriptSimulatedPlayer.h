@@ -6,6 +6,7 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/player/ScriptPlayer.h"
 #include "mc/server/sim/LookDuration.h"
@@ -15,7 +16,6 @@
 class Actor;
 class BlockPos;
 class Player;
-class Scoreboard;
 class SimulatedPlayer;
 class Vec2;
 class Vec3;
@@ -23,11 +23,9 @@ namespace ScriptModuleGameTest { struct ScriptMoveToOptions; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
-struct ScoreboardId;
 // clang-format on
 
 namespace ScriptModuleGameTest {
@@ -40,181 +38,187 @@ public:
     ScriptSimulatedPlayer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptSimulatedPlayer();
+    // vIndex: 8
+    virtual ::Scripting::Result<void> applyImpulse(::Actor& self, ::Vec3 const& vector) /*override*/;
 
     // vIndex: 2
-    virtual class Scripting::Result<void> clearVelocity(class Actor& self);
-
-    // vIndex: 7
-    virtual class Scripting::Result<void> applyImpulse(class Actor& self, class Vec3 const& vector);
-
-    // vIndex: 8
-    virtual class Scripting::Result<void> remove(class Actor& self);
+    virtual ::Scripting::Result<void> clearVelocity(::Actor& self) /*override*/;
 
     // vIndex: 9
-    virtual bool _isValid() const;
+    virtual ::Scripting::Result<void> remove(::Actor& self) /*override*/;
 
-    MCAPI ScriptSimulatedPlayer(class Player const& player, class Scripting::WeakLifetimeScope const& scope);
+    // vIndex: 10
+    virtual bool _isValid() const /*override*/;
 
-    MCAPI class Scripting::Result<bool> attack() const;
+    // vIndex: 0
+    virtual ~ScriptSimulatedPlayer() /*override*/;
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<bool> attackEntity(class ScriptModuleMinecraft::ScriptActor const& scriptActor) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result_deprecated<bool> attack() const;
 
-    MCAPI class Scripting::Result<bool>
-    breakBlock(class Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face) const;
-
-    MCAPI class Scripting::Result<void> chat(std::string const& message) const;
-
-    MCAPI class Scripting::Result<void> disconnect() const;
-
-    MCAPI class Scripting::Result<bool> dropSelectedItem() const;
-
-    MCAPI class Scripting::Result<void> fly() const;
-
-    MCAPI class Scripting::Result<class Vec2> getHeadRotation();
-
-    MCAPI class Scripting::Result<bool> getSprinting() const;
-
-    MCAPI class Scripting::Result<bool>
-    giveItem(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, bool selectSlot) const;
-
-    MCAPI class Scripting::Result<bool> glide() const;
-
-    MCAPI class Scripting::Result<bool> interact() const;
-
-    MCAPI class Scripting::Result<bool>
-    interactWithBlock(class Vec3 const& blockPos, ::ScriptModuleMinecraft::ScriptFacing facing) const;
-
-    MCAPI class Scripting::Result<bool> interactWithEntity(class ScriptModuleMinecraft::ScriptActor const& scriptActor
+    MCAPI ::Scripting::Result_deprecated<bool> attackEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor
     ) const;
 
-    MCAPI class Scripting::Result<bool> jump() const;
+    MCAPI ::Scripting::Result_deprecated<bool>
+    breakBlock(::Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face) const;
 
-    MCAPI class Scripting::Result<void> lookAtBlock(class Vec3 const& blockPos, ::sim::LookDuration duration) const;
+    MCAPI ::Scripting::Result<void> chat(::std::string const& message) const;
 
-    MCAPI class Scripting::Result<void>
-    lookAtEntity(class ScriptModuleMinecraft::ScriptActor const& scriptActor, ::sim::LookDuration duration) const;
+    MCAPI ::Scripting::Result<void> disconnect() const;
 
-    MCAPI class Scripting::Result<void> lookAtLocation(class Vec3 const& pos, ::sim::LookDuration duration) const;
+    MCAPI ::Scripting::Result_deprecated<bool> dropSelectedItem() const;
 
-    MCAPI class Scripting::Result<void> move(float directionX, float directionZ, float speed) const;
+    MCAPI ::Scripting::Result<void> fly() const;
 
-    MCAPI class Scripting::Result<void> moveRelative(float directionX, float directionZ, float speed) const;
+    MCAPI ::Scripting::Result_deprecated<::Vec2> getHeadRotation();
 
-    MCAPI class Scripting::Result<void> moveToBlock(
-        class Vec3 const&                                               position,
-        std::optional<struct ScriptModuleGameTest::ScriptMoveToOptions> options
-    ) const;
+    MCAPI ::Scripting::Result_deprecated<bool> getSprinting() const;
 
-    MCAPI class Scripting::Result<void> moveToLocation(
-        class Vec3 const&                                               position,
-        std::optional<struct ScriptModuleGameTest::ScriptMoveToOptions> options
-    ) const;
+    MCAPI ::Scripting::Result_deprecated<bool>
+    giveItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, bool selectSlot) const;
 
-    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
-    navigateToBlock(class Vec3 const& position, float speed) const;
+    MCAPI ::Scripting::Result_deprecated<bool> glide() const;
 
-    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
-    navigateToEntity(class ScriptModuleMinecraft::ScriptActor const& scriptActor, float speed) const;
+    MCAPI ::Scripting::Result_deprecated<bool> interact() const;
 
-    MCAPI class Scripting::Result<struct ScriptModuleGameTest::ScriptNavigationResult>
-    navigateToLocation(class Vec3 const& position, float speed) const;
+    MCAPI ::Scripting::Result_deprecated<bool>
+    interactWithBlock(::Vec3 const& blockPos, ::ScriptModuleMinecraft::ScriptFacing facing) const;
 
-    MCAPI class Scripting::Result<void>
-    navigateToLocations(std::vector<class Vec3> const& positions, float speed) const;
+    MCAPI ::Scripting::Result_deprecated<bool>
+    interactWithEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor) const;
 
-    MCAPI class Scripting::Result<bool> respawn() const;
+    MCAPI ::Scripting::Result_deprecated<bool> jump() const;
 
-    MCAPI class Scripting::Result<void> rotateBody(float angleInDegrees) const;
+    MCAPI ::Scripting::Result<void> lookAtBlock(::Vec3 const& blockPos, ::sim::LookDuration duration) const;
 
-    MCAPI class Scripting::Result<void> setBodyRotation(float angleInDegrees) const;
+    MCAPI ::Scripting::Result<void>
+    lookAtEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor, ::sim::LookDuration duration) const;
 
-    MCAPI class Scripting::Result<bool>
-    setItem(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, int slot, bool selectSlot) const;
+    MCAPI ::Scripting::Result<void> lookAtLocation(::Vec3 const& pos, ::sim::LookDuration duration) const;
 
-    MCAPI class Scripting::Result<void> setSprinting(bool sprinting) const;
+    MCAPI ::Scripting::Result<void> move(float directionX, float directionZ, float speed) const;
 
-    MCAPI class Scripting::Result<void> startBuild(int slot) const;
+    MCAPI ::Scripting::Result<void> moveRelative(float directionX, float directionZ, float speed) const;
 
-    MCAPI class Scripting::Result<void> stopBreakingBlock() const;
+    MCAPI ::Scripting::Result<void>
+    moveToBlock(::Vec3 const& position, ::std::optional<::ScriptModuleGameTest::ScriptMoveToOptions> options) const;
 
-    MCAPI class Scripting::Result<void> stopBuild() const;
+    MCAPI ::Scripting::Result<void>
+    moveToLocation(::Vec3 const& position, ::std::optional<::ScriptModuleGameTest::ScriptMoveToOptions> options) const;
 
-    MCAPI class Scripting::Result<void> stopFlying() const;
+    MCAPI ::Scripting::Result_deprecated<::ScriptModuleGameTest::ScriptNavigationResult>
+    navigateToBlock(::Vec3 const& position, float speed) const;
 
-    MCAPI class Scripting::Result<void> stopGliding() const;
+    MCAPI ::Scripting::Result_deprecated<::ScriptModuleGameTest::ScriptNavigationResult>
+    navigateToEntity(::ScriptModuleMinecraft::ScriptActor const& scriptActor, float speed) const;
 
-    MCAPI class Scripting::Result<void> stopInteracting() const;
+    MCAPI ::Scripting::Result_deprecated<::ScriptModuleGameTest::ScriptNavigationResult>
+    navigateToLocation(::Vec3 const& position, float speed) const;
 
-    MCAPI class Scripting::Result<void> stopMoving() const;
+    MCAPI ::Scripting::Result<void> navigateToLocations(::std::vector<::Vec3> const& positions, float speed) const;
 
-    MCAPI class Scripting::Result<void> stopSwimming() const;
+    MCAPI ::Scripting::Result_deprecated<bool> respawn() const;
 
-    MCAPI class Scripting::Result<
-        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
+    MCAPI ::Scripting::Result<void> rotateBody(float angleInDegrees) const;
+
+    MCAPI ::Scripting::Result<void> setBodyRotation(float angleInDegrees) const;
+
+    MCAPI ::Scripting::Result_deprecated<bool>
+    setItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, int slot, bool selectSlot) const;
+
+    MCAPI ::Scripting::Result<void> setSprinting(bool sprinting) const;
+
+    MCAPI ::Scripting::Result<void> startBuild(int slot) const;
+
+    MCAPI ::Scripting::Result<void> stopBreakingBlock() const;
+
+    MCAPI ::Scripting::Result<void> stopBuild() const;
+
+    MCAPI ::Scripting::Result<void> stopFlying() const;
+
+    MCAPI ::Scripting::Result<void> stopGliding() const;
+
+    MCAPI ::Scripting::Result<void> stopInteracting() const;
+
+    MCAPI ::Scripting::Result<void> stopMoving() const;
+
+    MCAPI ::Scripting::Result<void> stopSwimming() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     stopUsingItem() const;
 
-    MCAPI class Scripting::Result<void> swim() const;
+    MCAPI ::Scripting::Result<void> swim() const;
 
-    MCAPI class SimulatedPlayer* tryGetSimulatedPlayer() const;
+    MCAPI ::SimulatedPlayer* tryGetSimulatedPlayer() const;
 
-    MCAPI class Scripting::Result<bool> useItem(class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
+    MCAPI ::Scripting::Result_deprecated<bool> useItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
     ) const;
 
-    MCAPI class Scripting::Result<bool> useItemInSlot(int slot) const;
+    MCAPI ::Scripting::Result_deprecated<bool> useItemInSlot(int slot) const;
 
-    MCAPI class Scripting::Result<bool> useItemInSlotOnBlock(
+    MCAPI ::Scripting::Result_deprecated<bool> useItemInSlotOnBlock(
         int                                   slot,
-        class Vec3 const&                     pos,
+        ::Vec3 const&                         pos,
         ::ScriptModuleMinecraft::ScriptFacing face,
-        std::optional<class Vec3>             faceLocation
+        ::std::optional<::Vec3>               faceLocation
     ) const;
 
-    MCAPI class Scripting::Result<bool> useItemOnBlock(
-        class ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack,
-        class Vec3 const&                                   pos,
-        ::ScriptModuleMinecraft::ScriptFacing               face,
-        std::optional<class Vec3>                           faceLocation
+    MCAPI ::Scripting::Result_deprecated<bool> useItemOnBlock(
+        ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack,
+        ::Vec3 const&                                   pos,
+        ::ScriptModuleMinecraft::ScriptFacing           face,
+        ::std::optional<::Vec3>                         faceLocation
     ) const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
-
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class gametest::BaseGameTestHelper const* _getHelper(class SimulatedPlayer const& player);
+    MCAPI static ::gametest::BaseGameTestHelper const* _getHelper(::SimulatedPlayer const& player);
 
-    MCAPI static std::optional<struct gametest::GameTestError>
-    _toWorld(class SimulatedPlayer& player, class BlockPos* blockPos, uchar* face, class Vec3* pos);
+    MCAPI static ::std::optional<::gametest::GameTestError>
+    _toWorld(::SimulatedPlayer& player, ::BlockPos* blockPos, uchar* face, ::Vec3* pos);
 
-    MCAPI static struct ScriptModuleGameTest::ScriptNavigationResult _worldToLocalNavigationResult(
-        class SimulatedPlayer&                              player,
-        struct ScriptModuleGameTest::ScriptNavigationResult navigationResult
+    MCAPI static ::ScriptModuleGameTest::ScriptNavigationResult _worldToLocalNavigationResult(
+        ::SimulatedPlayer&                             player,
+        ::ScriptModuleGameTest::ScriptNavigationResult navigationResult
     );
 
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>
+    getHandle(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Player const& player, class Scripting::WeakLifetimeScope const& scope);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCAPI void dtor$();
+    MCAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
 
-    MCAPI bool _isValid$() const;
+    MCAPI ::Scripting::Result<void> $remove(::Actor& self);
 
-    MCAPI class Scripting::Result<void> applyImpulse$(class Actor& self, class Vec3 const& vector);
+    MCAPI bool $_isValid() const;
+    // NOLINTEND
 
-    MCAPI class Scripting::Result<void> clearVelocity$(class Actor& self);
-
-    MCAPI class Scripting::Result<void> remove$(class Actor& self);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

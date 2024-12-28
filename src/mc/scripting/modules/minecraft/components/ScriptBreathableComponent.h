@@ -6,18 +6,25 @@
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class BreathableComponent;
+class BreathableDefinition;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct Error; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBreathableComponent {
+class ScriptBreathableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::BreathableComponent, ::BreathableDefinition> {
 public:
     // prevent constructor by default
     ScriptBreathableComponent& operator=(ScriptBreathableComponent const&);
@@ -25,63 +32,84 @@ public:
     ScriptBreathableComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBreathableComponent() = default;
-
-    // vIndex: 1
-    virtual bool _isValid() const;
-
-    MCAPI ScriptBreathableComponent(
-        class WeakEntityRef const&                entity,
-        class Scripting::WeakLifetimeScope const& scope,
-        std::string const&                        id
-    );
-
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>>
-    getBreatheBlocks() const;
-
-    MCAPI class Scripting::Result<bool> getBreathesAir() const;
-
-    MCAPI class Scripting::Result<bool> getBreathesLava() const;
-
-    MCAPI class Scripting::Result<bool> getBreathesSolids() const;
-
-    MCAPI class Scripting::Result<bool> getBreathesWater() const;
-
-    MCAPI class Scripting::Result<bool> getGeneratesBubbles() const;
-
-    MCAPI class Scripting::Result<float> getInhaleTime() const;
-
-    MCAPI class Scripting::Result<
-        std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>>
-    getNonBreatheBlocks() const;
-
-    MCAPI class Scripting::Result<int> getSuffocateTime() const;
-
-    MCAPI class Scripting::Result<int> getTotalSupply() const;
-
-    MCAPI class Scripting::Result<void> setAirSupply(short value) const;
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBreathableComponent>
-    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
+    virtual ~ScriptBreathableComponent() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptBreathableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
+    MCAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
+    getBreatheBlocks() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
+
+    MCAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
+
+    MCAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
+    getNonBreatheBlocks() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
+
+    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
+
+    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::PropertyOutOfBoundsError> setAirSupply(short value
+    ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBreathableComponent>
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
     MCAPI void*
-    ctor$(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const& id);
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
 
-    MCAPI bool _isValid$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static char const* const& ComponentId();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

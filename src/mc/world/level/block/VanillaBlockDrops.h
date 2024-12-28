@@ -2,40 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Block;
+class Experiments;
+class Randomize;
+struct ResourceDrops;
+struct ResourceDropsContext;
+// clang-format on
+
 namespace VanillaBlockDrops {
+// functions
 // NOLINTBEGIN
-MCAPI std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      addUniformFortuneBonus(std::function<
-                             int(class Block const&, class Randomize&, struct ResourceDropsContext const&)>);
+MCAPI ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+addUniformFortuneBonus(::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider);
 
-MCAPI std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      between(int minInclusive, int maxInclusive);
+MCAPI ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+between(int minInclusive, int maxInclusive);
 
-MCAPI std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-    combine(std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>, std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>);
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> combine(
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategyA,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategyB
+);
 
-MCAPI void configureBlockDrops(class BaseGameVersion const& baseGameVersion, class Experiments const&);
+MCAPI void configureBlockDrops(::BaseGameVersion const& baseGameVersion, ::Experiments const&);
 
-MCAPI std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)> exactly(int value);
+MCAPI ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> exactly(int value);
 
-MCAPI std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      limitCount(int, std::function<int(class Block const&, class Randomize&, struct ResourceDropsContext const&)>);
+MCAPI ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+limitCount(int max, ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider);
 
-MCAPI std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      when(
-          std::function<bool(class Block const&, class Randomize&, struct ResourceDropsContext const&)> condition,
-          std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-              trueStrategy
-      );
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> when(
+    ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>            condition,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> trueStrategy
+);
 
-MCAPI std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-      when(
-          std::function<bool(class Block const&, class Randomize&, struct ResourceDropsContext const&)> condition,
-          std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-              trueStrategy,
-          std::function<struct ResourceDrops(class Block const&, class Randomize&, struct ResourceDropsContext const&)>
-              falseStrategy
-      );
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> when(
+    ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>            condition,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> trueStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> falseStrategy
+);
 // NOLINTEND
 
-}; // namespace VanillaBlockDrops
+} // namespace VanillaBlockDrops

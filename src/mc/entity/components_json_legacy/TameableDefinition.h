@@ -7,34 +7,46 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class TameableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class TameableDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>   mUnk3a69ae;
+    ::ll::UntypedStorage<8, 16>  mUnkb332e4;
+    ::ll::UntypedStorage<8, 104> mUnk1ae022;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TameableDefinition& operator=(TameableDefinition const&);
     TameableDefinition(TameableDefinition const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI TameableDefinition();
 
-    MCAPI void addTamingItemByName(std::string const& name);
+    MCAPI void addTamingItemByName(::std::string const& name);
 
-    MCAPI void initialize(class EntityContext&, class TameableComponent& component) const;
-
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>>&
-            root
-    );
-
+    MCAPI void initialize(::EntityContext&, ::TameableComponent& component) const;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root
+    );
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

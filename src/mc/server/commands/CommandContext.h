@@ -1,42 +1,46 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandOrigin.h"
-#include "mc/server/commands/CommandVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+// clang-format on
 
 class CommandContext {
 public:
-    std::string                    mCommand;
-    std::unique_ptr<CommandOrigin> mOrigin;
-    int                            mVersion;
-
-    template <std::derived_from<CommandOrigin> T, class... Args>
-    [[nodiscard]] explicit CommandContext(std::string command, Args&&... args)
-    : mCommand(std::move(command)),
-      mOrigin(std::make_unique<T>(std::forward<Args>(args)...)),
-      mVersion(CommandVersion::CurrentVersion()) {}
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI
-    CommandContext(
-        std::string const&                   command,
-        std::unique_ptr<class CommandOrigin> origin,
-        int                                  version = CommandVersion::CurrentVersion()
-    );
-
-    MCAPI class CommandOrigin const& getCommandOrigin() const;
-
-    MCAPI ~CommandContext();
-
+    ::ll::TypedStorage<8, 32, ::std::string>                     mCommand;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
+    ::ll::TypedStorage<4, 4, int>                                mVersion;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    CommandContext& operator=(CommandContext const&);
+    CommandContext(CommandContext const&);
+    CommandContext();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string const& cmd, std::unique_ptr<class CommandOrigin> origin, int version);
+    MCAPI CommandContext(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
 
-    MCAPI void dtor$();
+    MCAPI ::CommandOrigin const& getCommandOrigin() const;
 
+    MCAPI ~CommandContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/effect/MobEffect.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BaseAttributeMap;
+struct EffectDuration;
+// clang-format on
+
 class AbsorptionMobEffect : public ::MobEffect {
 public:
     // prevent constructor by default
@@ -13,26 +20,35 @@ public:
     AbsorptionMobEffect();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AbsorptionMobEffect() = default;
+    // vIndex: 2
+    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) /*override*/;
 
     // vIndex: 1
-    virtual void applyEffects(class Actor& target, int durationTicks, int amplification) const;
+    virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
 
-    // vIndex: 2
-    virtual void removeEffects(class BaseAttributeMap& attributeMapToRemoveFrom);
-
+    // vIndex: 0
+    virtual ~AbsorptionMobEffect() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void applyEffects$(class Actor& target, int durationTicks, int amplification) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    MCAPI void removeEffects$(class BaseAttributeMap& attributeMapToRemoveFrom);
+    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

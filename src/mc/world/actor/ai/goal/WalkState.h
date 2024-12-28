@@ -13,31 +13,30 @@ public:
     WalkState();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~WalkState() = default;
-
     // vIndex: 1
-    virtual void tick();
+    virtual void tick() /*override*/;
 
-    // vIndex: 2
-    virtual void start();
-
-    // vIndex: 3
-    virtual void stop();
-
+    // vIndex: 0
+    virtual ~WalkState() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $tick();
+    // NOLINTEND
 
-    MCAPI void stop$();
-
-    MCAPI void tick$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

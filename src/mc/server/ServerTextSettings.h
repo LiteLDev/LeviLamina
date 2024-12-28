@@ -5,12 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-// clang-format on
-
 class ServerTextSettings : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd3ac72;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ServerTextSettings& operator=(ServerTextSettings const&);
@@ -18,22 +19,35 @@ public:
     ServerTextSettings();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerTextSettings() = default;
-
-    MCAPI explicit ServerTextSettings(std::bitset<3> const& settings);
-
-    MCAPI std::bitset<3> const& getEnabledServerTextEvents() const;
-
+    virtual ~ServerTextSettings() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ServerTextSettings(::std::bitset<3> const& settings);
 
-    MCAPI void* ctor$(std::bitset<3> const& settings);
+    MCAPI ::std::bitset<3> const& getEnabledServerTextEvents() const;
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::bitset<3> const& settings);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

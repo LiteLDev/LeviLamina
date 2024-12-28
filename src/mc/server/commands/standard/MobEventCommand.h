@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+class CommandOutput;
+class CommandRegistry;
+class ServerLevel;
+// clang-format on
+
 class MobEventCommand : public ::Command {
 public:
     // MobEventCommand inner types declare
@@ -15,24 +23,37 @@ public:
     // MobEventCommand inner types define
     struct InitProxy {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk50c0de;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI explicit InitProxy(class ServerLevel& level);
-
+        MCAPI explicit InitProxy(::ServerLevel& level);
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class ServerLevel& level);
-
+        MCAPI void* $ctor(::ServerLevel& level);
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk4148c7;
+    ::ll::UntypedStorage<1, 1>  mUnkdf3e53;
+    ::ll::UntypedStorage<1, 1>  mUnkdf864c;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -41,23 +62,36 @@ public:
     MobEventCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MobEventCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void setup(class CommandRegistry& registry, struct MobEventCommand::InitProxy&& dependencies);
-
+    // vIndex: 0
+    virtual ~MobEventCommand() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void setup(::CommandRegistry& registry, ::MobEventCommand::InitProxy&& dependencies);
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

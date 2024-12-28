@@ -18,21 +18,20 @@ public:
     SocketLayer();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const adapters);
+    MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
 
-    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString inIpString);
+    MCAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
 
-    MCAPI static void SetSocketOptions(uint64, bool, bool);
-
+    MCAPI static void SetSocketOptions(uint64 listenSocket, bool blockingSocket, bool setBroadcast);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static std::function<std::vector<std::string>()>& mPlatformAdapterOverride();
-
+    MCAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

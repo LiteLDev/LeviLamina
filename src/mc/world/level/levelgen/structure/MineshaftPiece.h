@@ -4,9 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
-#include "mc/world/level/levelgen/structure/StructurePieceType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class Random;
+struct MineshaftData;
+// clang-format on
 
 class MineshaftPiece : public ::StructurePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk1ccc77;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MineshaftPiece& operator=(MineshaftPiece const&);
@@ -14,20 +27,31 @@ public:
     MineshaftPiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MineshaftPiece();
-
     // vIndex: 6
-    virtual bool isInInvalidLocation(class BlockSource& region, class BoundingBox const& chunkBB);
+    virtual bool isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 10
-    virtual bool canBeReplaced(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
+    virtual bool canBeReplaced(
+        ::BlockSource&       region,
+        int const            x,
+        int const            y,
+        int const            z,
+        ::BoundingBox const& chunkBB
+    ) /*override*/;
 
-    MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(
-        struct MineshaftData&                               metadata,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random,
+    // vIndex: 0
+    virtual ~MineshaftPiece() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
+        ::MineshaftData&                                    metadata,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
         int                                                 footX,
         int                                                 footY,
         int                                                 footZ,
@@ -35,31 +59,36 @@ public:
         int                                                 genDepth
     );
 
-    MCAPI class StructurePiece* generateAndAddPiece(
-        class StructurePiece&                               startPiece,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random,
+    MCAPI ::StructurePiece* generateAndAddPiece(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
         int                                                 footX,
         int                                                 footY,
         int                                                 footZ,
         int                                                 direction,
         int                                                 depth
     );
-
-    MCAPI void setPlanksBlock(class BlockSource& region, class Block const& planksBlock, int x, int y, int z);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    MCAPI bool canBeReplaced$(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
+    MCAPI bool
+    $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
+    // NOLINTEND
 
-    MCAPI bool isInInvalidLocation$(class BlockSource& region, class BoundingBox const& chunkBB);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

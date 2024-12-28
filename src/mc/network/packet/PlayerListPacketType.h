@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayerListPacketType : schar {
-    Add    = 0x0,
-    Remove = 0x1,
+enum class PlayerListPacketType : uchar {
+    Add    = 0,
+    Remove = 1,
 };

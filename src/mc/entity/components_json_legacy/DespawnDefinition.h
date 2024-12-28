@@ -12,16 +12,29 @@ namespace JsonUtil { class EmptyClass; }
 
 class DespawnDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk53e872;
+    ::ll::UntypedStorage<1, 1>  mUnke961cb;
+    ::ll::UntypedStorage<4, 4>  mUnk553827;
+    ::ll::UntypedStorage<1, 1>  mUnk5f546f;
+    ::ll::UntypedStorage<4, 4>  mUnk4e2d5a;
+    ::ll::UntypedStorage<1, 1>  mUnk16fd17;
+    ::ll::UntypedStorage<1, 1>  mUnka5a077;
+    ::ll::UntypedStorage<4, 8>  mUnk7a21de;
+    ::ll::UntypedStorage<1, 1>  mUnk5d7770;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     DespawnDefinition& operator=(DespawnDefinition const&);
     DespawnDefinition(DespawnDefinition const&);
     DespawnDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>>& root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DespawnDefinition>>& root);
     // NOLINTEND
 };

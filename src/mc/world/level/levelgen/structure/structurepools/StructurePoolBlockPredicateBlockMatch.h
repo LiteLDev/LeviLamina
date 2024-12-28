@@ -4,8 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
+#include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class HashedString;
+class Randomize;
+namespace Util { class XXHash; }
+// clang-format on
 
 class StructurePoolBlockPredicateBlockMatch : public ::IStructurePoolBlockPredicate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk4d1c55;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StructurePoolBlockPredicateBlockMatch& operator=(StructurePoolBlockPredicateBlockMatch const&);
@@ -13,39 +29,61 @@ public:
     StructurePoolBlockPredicateBlockMatch();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StructurePoolBlockPredicateBlockMatch() = default;
+    // vIndex: 2
+    virtual bool test(::Block const& block, ::Randomize&) const /*override*/;
 
     // vIndex: 1
-    virtual bool test(class Block const& block, class Randomize&) const;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const /*override*/;
 
-    // vIndex: 2
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+    // vIndex: 5
+    virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
-    // vIndex: 3
-    virtual bool finalize(class BlockSource&, class IRandom&);
+    // vIndex: 6
+    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const& block);
-
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString> blockMatchings);
-
+    // vIndex: 0
+    virtual ~StructurePoolBlockPredicateBlockMatch() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::Block const& block);
 
-    MCAPI void* ctor$(std::vector<class HashedString> blockMatchings);
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::std::vector<::HashedString> blockMatchings);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Block const& block);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block);
 
-    MCAPI bool finalize$(class BlockSource&, class IRandom&);
+    MCAPI void* $ctor(::std::vector<::HashedString> blockMatchings);
+    // NOLINTEND
 
-    MCAPI bool test$(class Block const& block, class Randomize&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool test$(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $test(::Block const& block, ::Randomize&) const;
 
+    MCAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+
+    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

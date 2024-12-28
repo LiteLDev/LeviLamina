@@ -2,12 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
+
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ItemComponent {
+class ItemComponent : public ::IItemComponentLegacyFactoryData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnka8cff0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ItemComponent& operator=(ItemComponent const&);
@@ -15,9 +26,10 @@ public:
     ItemComponent();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemComponent() = default;
+    virtual ~ItemComponent() /*override*/;
 
     // vIndex: 1
     virtual bool checkComponentDataForContentErrors() const;
@@ -29,47 +41,45 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const& ctx) const;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     // vIndex: 5
-    virtual bool initializeFromNetwork(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+    virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     // vIndex: 6
-    virtual void handleVersionBasedInitialization(class SemVersion const& originalJsonVersion);
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
     // vIndex: 7
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
-
-    // vIndex: 8
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
-
-    // vIndex: 9
     virtual void _initializeComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool _canUseOn$(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $checkComponentDataForContentErrors() const;
 
-    MCAPI void _initializeComponent$();
+    MCAPI void $writeSettings();
 
-    MCAPI bool _useOn$(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+    MCAPI bool $isNetworkComponent() const;
 
-    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag$(struct cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool checkComponentDataForContentErrors$() const;
+    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void handleVersionBasedInitialization$(class SemVersion const& originalJsonVersion);
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI bool initializeFromNetwork$(class CompoundTag const& tag, struct cereal::ReflectionCtx const& ctx);
+    MCAPI void $_initializeComponent();
+    // NOLINTEND
 
-    MCAPI bool isNetworkComponent$() const;
-
-    MCAPI void writeSettings$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

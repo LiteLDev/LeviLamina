@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace LecternBlockUtil {
-// thunks
-// NOLINTBEGIN
-MCAPI class Vec3 const& LECTERN_AABB_ORIGIN();
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
 
-MCAPI class Vec3 const& LECTERN_AABB_SIZE();
+namespace LecternBlockUtil {
+// static variables
+// NOLINTBEGIN
+MCAPI ::Vec3 const& LECTERN_AABB_ORIGIN();
+
+MCAPI ::Vec3 const& LECTERN_AABB_SIZE();
 // NOLINTEND
 
-}; // namespace LecternBlockUtil
+} // namespace LecternBlockUtil

@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 namespace Json { class Value; }
 // clang-format on
 
@@ -15,17 +19,13 @@ public:
     BlockListSerializer();
 
 public:
+    // static functions
     // NOLINTBEGIN
+    MCAPI static void loadJSON(::Json::Value value, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);
+
     MCAPI static void
-    loadJSON(class Json::Value value, class SemVersion const& engineVersion, class BlockDescriptor& blockDescriptor);
+    loadJSON(::Json::Value value, ::MolangVersion molangVersion, ::std::vector<::BlockDescriptor>& blockDescriptors);
 
-    MCAPI static void loadJSON(
-        class Json::Value                   value,
-        class SemVersion const&             engineVersion,
-        std::vector<class BlockDescriptor>& blockDescriptors
-    );
-
-    MCAPI static void saveJSON(std::vector<class BlockDescriptor> const& blockDescriptors, class Json::Value& value);
-
+    MCAPI static void saveJSON(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Json::Value& value);
     // NOLINTEND
 };

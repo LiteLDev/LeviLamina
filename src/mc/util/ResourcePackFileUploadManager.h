@@ -3,16 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/util/FileUploadManager.h"
 
 // auto generated forward declare list
 // clang-format off
+class IFileChunkUploader;
+class ResourceLocation;
+class TaskGroup;
 namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on
 
 class ResourcePackFileUploadManager : public ::FileUploadManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnkfb19b9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ResourcePackFileUploadManager& operator=(ResourcePackFileUploadManager const&);
@@ -20,55 +31,85 @@ public:
     ResourcePackFileUploadManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ResourcePackFileUploadManager();
+    virtual ~ResourcePackFileUploadManager() /*override*/;
 
     // vIndex: 2
-    virtual void uploadFileToRealmStorage(
-        std::string const&      uploadId,
-        class Core::Path const& path,
-        int                     slotIndex,
-        std::string const&      realmsGuid
+    virtual void archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    ) /*override*/;
+
+    // vIndex: 3
+    virtual void
+    uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ResourcePackFileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+
+    MCAPI void
+    _archiveAndUploadPackToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int slotIndex, ::std::string const&);
+
+    MCAPI void _extractPackFromZipAndUpload(
+        ::std::string const&                     resourcePack,
+        ::ResourceLocation const&                resourcePackLocation,
+        ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
+        ::Core::PathBuffer<::std::string> const& resourceZipPath,
+        ::Json::Value const&                     uploadOptions
+    );
+
+    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> _uploadResourcePackFolder(
+        ::std::string const&                     resourcePack,
+        ::ResourceLocation const&                resourcePackLocation,
+        ::Core::PathBuffer<::std::string> const& resourceZipPath,
+        ::Json::Value const&                     uploadOptions
     );
 
     MCAPI void uploadResourcePack(
-        std::string const&            resourcePackName,
-        class ResourceLocation const& resourceLocation,
-        bool                          isZipped,
-        bool                          isPremium,
-        ::PackType                    packType
+        ::std::string const&                     resourcePackName,
+        ::ResourceLocation const&                resourceLocation,
+        bool                                     isZipped,
+        ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
+        bool                                     isPremium,
+        ::PackType                               packType
     );
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void
-    _uploadPackToRealmStorage(std::string const& uploadId, class Core::Path const& path, int slotIndex, std::string const&);
-
-    MCAPI void _uploadResourcePackFolder(
-        std::string const&            resourcePack,
-        class ResourceLocation const& resourcePackLocation,
-        class Core::Path const&       resourceZipPath,
-        class Json::Value const&      uploadOptions
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void uploadFileToRealmStorage$(
-        std::string const&      uploadId,
-        class Core::Path const& path,
-        int                     slotIndex,
-        std::string const&      realmsGuid
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
     );
 
+    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

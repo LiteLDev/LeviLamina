@@ -2,13 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockPlayerDestroyEventComponent; }
-namespace BlockEvents { struct BlockPlayerDestroyEvent; }
+namespace BlockEvents { class BlockEventManager; }
+namespace BlockEvents { class BlockPlayerDestroyEvent; }
 // clang-format on
 
-class OnPlayerDestroyedTrigger {
+class OnPlayerDestroyedTrigger : public ::DefinitionTrigger {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk7d90fa;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OnPlayerDestroyedTrigger& operator=(OnPlayerDestroyedTrigger const&);
@@ -16,20 +25,29 @@ public:
     OnPlayerDestroyedTrigger();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OnPlayerDestroyedTrigger() = default;
-
-    MCAPI void finalize(gsl::not_null<class BlockEvents::BlockPlayerDestroyEventComponent*> comp);
-
-    MCAPI void onPlayerDestroy(struct BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
-
+    virtual ~OnPlayerDestroyedTrigger();
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
+    MCAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

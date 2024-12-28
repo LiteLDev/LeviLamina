@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 namespace OfferFlowerTickUtility {
+// functions
 // NOLINTBEGIN
-MCAPI void offerFlower(bool offerFlower, class Actor& actor, int maxOfferFlowerTicks);
+MCAPI void offerFlower(bool offerFlower, ::Actor& actor, int maxOfferFlowerTicks);
 // NOLINTEND
 
-}; // namespace OfferFlowerTickUtility
+} // namespace OfferFlowerTickUtility

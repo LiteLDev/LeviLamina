@@ -5,145 +5,196 @@
 // auto generated inclusion list
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/ILegacyStructureTemplate.h"
+#include "mc/world/level/levelgen/structure/IStructureTemplate.h"
 
-class LegacyStructureTemplate {
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class JigsawStructureBlockInfo;
+class LegacyStructureSettings;
+class Random;
+namespace br::worldgen { struct StructureTemplateBlockPalette; }
+// clang-format on
+
+class LegacyStructureTemplate : public ::ILegacyStructureTemplate, public ::IStructureTemplate {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk467b1d;
+    ::ll::UntypedStorage<4, 12> mUnk2575f4;
+    ::ll::UntypedStorage<8, 64> mUnk5003c3;
+    ::ll::UntypedStorage<8, 64> mUnk74807d;
+    ::ll::UntypedStorage<8, 24> mUnk70fc6f;
+    ::ll::UntypedStorage<8, 24> mUnk2fd089;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     LegacyStructureTemplate& operator=(LegacyStructureTemplate const&);
     LegacyStructureTemplate(LegacyStructureTemplate const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual std::unordered_map<class BlockPos, std::string>
-    getMarkers(class BlockPos const& position, class LegacyStructureSettings& settings) const;
+    virtual ~LegacyStructureTemplate() /*override*/;
+
+    // vIndex: 0
+    virtual ::std::unordered_map<::BlockPos, ::std::string>
+    getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const /*override*/;
 
     // vIndex: 1
-    virtual void placeInWorld(
-        class BlockSource&             region,
-        class BlockPos const&          pos,
-        class LegacyStructureSettings& settings,
-        class Random&                  random
-    ) const;
+    virtual void
+    placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random)
+        const /*override*/;
 
     // vIndex: 2
-    virtual ~LegacyStructureTemplate() = default;
+    virtual ::BlockPos rawSize() const /*override*/;
 
+    // vIndex: 1
+    virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
-    MCAPI class BlockPos calculateConnectedPosition(
-        class LegacyStructureSettings const& settings1,
-        class BlockPos const&                connection1,
-        class LegacyStructureSettings const& settings2,
-        class BlockPos const&                connection2
+    MCAPI ::IStructureTemplate const& asStructureTemplate() const;
+
+    MCAPI ::BlockPos calculateConnectedPosition(
+        ::LegacyStructureSettings const& settings1,
+        ::BlockPos const&                connection1,
+        ::LegacyStructureSettings const& settings2,
+        ::BlockPos const&                connection2
     ) const;
 
     MCAPI void
-    finalizeBlockRules(class BlockSource& region, class BlockPos const& position, class LegacyStructureSettings& settings, class Random&)
+    finalizeBlockRules(::BlockSource& region, ::BlockPos const& position, ::LegacyStructureSettings& settings, ::Random&)
         const;
 
-    MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
+    MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI class BlockPos getSize(::Rotation rotation) const;
+    MCAPI ::BlockPos getSize(::Rotation rotation) const;
 
-    MCAPI void load(class CompoundTag const& tag);
+    MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void placeInWorldChunk(
-        class BlockSource&             region,
-        class BlockPos const&          position,
-        class LegacyStructureSettings& settings,
-        class Random&                  random
+        ::BlockSource&             region,
+        ::BlockPos const&          position,
+        ::LegacyStructureSettings& settings,
+        ::Random&                  random
     );
-
-    MCAPI static class Block const*
-    _mapPropertyToExtraBlock(std::string const& propertyString, std::string const& valueString);
-
-    MCAPI static class Block const* _mapToBlock(std::string const& blockName);
-
-    MCAPI static class Block const& _mapToData(class Block const& curr, class LegacyStructureSettings const& settings);
-
-    MCAPI static class Block const*
-    _mapToProperty(std::string const& propertyString, std::string const& valueString, class Block const& block);
-
-    MCAPI static class BlockPos getZeroPositionWithTransform(
-        class BlockPos const& zeroPos,
-        ::Mirror              mirror,
-        ::Rotation            rotation,
-        int                   sizeX,
-        int                   sizeZ
-    );
-
-    MCAPI static class BlockPos transform(class BlockPos pos, ::Mirror mirror, ::Rotation rotation);
-
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void _fixItemStack(class CompoundTag& itemTag, int dataVersion);
+    MCAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
 
-    MCAPI static void _mapPropertiesToTags(class CompoundTag& originalTag, class CompoundTag const& paletteTag);
+    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+
+    MCAPI static ::Block const*
+    _mapPropertyToExtraBlock(::std::string const& propertyString, ::std::string const& valueString);
 
     MCAPI static void _mapPropertyToTag(
-        class CompoundTag& originalTag,
-        std::string const& propertyString,
-        std::string const& valueString
+        ::CompoundTag&       originalTag,
+        ::std::string const& propertyString,
+        ::std::string const& valueString
     );
 
-    MCAPI static std::unique_ptr<class CompoundTag>
-    _mapTag(std::unique_ptr<class CompoundTag> originalTag, std::string const& javaBlockName, int dataVersion);
+    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+        ::std::unique_ptr<::CompoundTag> originalTag,
+        ::std::string const&             javaBlockName,
+        int                              dataVersion,
+        ::Block const*&                  block
+    );
 
+    MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
+
+    MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
+
+    MCAPI static ::Block const*
+    _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
+
+    MCAPI static ::BlockPos
+    getZeroPositionWithTransform(::BlockPos const& zeroPos, ::Mirror mirror, ::Rotation rotation, int sizeX, int sizeZ);
+
+    MCAPI static ::BlockPos transform(::BlockPos pos, ::Mirror mirror, ::Rotation rotation);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::std::string const& AUTHOR_TAG();
 
-    MCAPI void* ctor$();
+    MCAPI static ::std::string const& BLOCKS_TAG();
 
-    MCAPI std::unordered_map<class BlockPos, std::string>
-          getMarkers$(class BlockPos const& position, class LegacyStructureSettings& settings) const;
+    MCAPI static ::std::string const& BLOCK_TAG_NBT();
 
-    MCAPI void placeInWorld$(
-        class BlockSource&             region,
-        class BlockPos const&          pos,
-        class LegacyStructureSettings& settings,
-        class Random&                  random
-    ) const;
+    MCAPI static ::std::string const& BLOCK_TAG_POS();
 
-    MCAPI static std::string const& AUTHOR_TAG();
-
-    MCAPI static std::string const& BLOCKS_TAG();
-
-    MCAPI static std::string const& BLOCK_TAG_NBT();
-
-    MCAPI static std::string const& BLOCK_TAG_POS();
-
-    MCAPI static std::string const& BLOCK_TAG_STATE();
+    MCAPI static ::std::string const& BLOCK_TAG_STATE();
 
     MCAPI static int const& CHUNK_SIZE();
 
-    MCAPI static std::string const& DATA_VERSION_TAG();
+    MCAPI static ::std::string const& DATA_VERSION_TAG();
 
-    MCAPI static std::string const& ENTITIES_TAG();
+    MCAPI static ::std::string const& ENTITIES_TAG();
 
-    MCAPI static std::string const& ENTITY_TAG_BLOCKPOS();
+    MCAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
 
-    MCAPI static std::string const& ENTITY_TAG_NBT();
+    MCAPI static ::std::string const& ENTITY_TAG_NBT();
 
-    MCAPI static std::string const& ENTITY_TAG_POS();
+    MCAPI static ::std::string const& ENTITY_TAG_POS();
 
-    MCAPI static std::string const& MINECRAFT_PREFIX();
+    MCAPI static ::std::string const& MINECRAFT_PREFIX();
 
-    MCAPI static std::string const& PALETTE_TAG();
+    MCAPI static ::std::string const& PALETTE_TAG();
 
-    MCAPI static std::string const& SIZE_TAG();
+    MCAPI static ::std::string const& SIZE_TAG();
 
     MCAPI static int const& STRUCTURE_VERSION();
 
-    MCAPI static std::string const& VERSION_TAG();
+    MCAPI static ::std::string const& VERSION_TAG();
+    // NOLINTEND
 
-    MCAPI static class LegacyStructureSettings const& defaultSettings();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unordered_map<::BlockPos, ::std::string>
+    $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
+
+    MCAPI void
+    $placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random)
+        const;
+
+    MCAPI ::BlockPos $rawSize() const;
+
+    MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForILegacyStructureTemplate();
+
+    MCAPI static void** $vftableForIStructureTemplate();
     // NOLINTEND
 };

@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ServerAuthMovementMode : schar {
-    ClientAuthoritative           = 0x0,
-    ServerAuthoritative           = 0x1,
-    ServerAuthoritativeWithRewind = 0x2,
+enum class ServerAuthMovementMode : uchar {
+    LegacyClientAuthoritativeV1 = 0,
+    ClientAuthoritativeV2       = 1,
+    ServerAuthoritativeV3       = 2,
 };

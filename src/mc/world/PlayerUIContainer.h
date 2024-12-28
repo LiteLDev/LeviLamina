@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/SimpleContainer.h"
 
+// auto generated forward declare list
+// clang-format off
+class ListTag;
+class SaveContext;
+class SemVersion;
+// clang-format on
+
 class PlayerUIContainer : public ::SimpleContainer {
 public:
     // prevent constructor by default
@@ -13,26 +20,37 @@ public:
     PlayerUIContainer();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerUIContainer();
-
-    MCAPI PlayerUIContainer(std::string const& name, bool customName, int size);
-
-    MCAPI void load(class ListTag const& inventoryList, class SemVersion const& version);
-
-    MCAPI std::unique_ptr<class ListTag> save() const;
-
+    virtual ~PlayerUIContainer() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PlayerUIContainer(::std::string const& name, bool customName, int size);
 
-    MCAPI void* ctor$(std::string const& name, bool customName, int size);
+    MCAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
 
-    MCAPI void dtor$();
+    MCAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, bool customName, int size);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

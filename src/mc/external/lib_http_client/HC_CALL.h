@@ -7,6 +7,12 @@
 #include "mc/deps/core/threading/XAsyncOp.h"
 #include "mc/external/lib_http_client/http_alloc_deleter.h"
 
+// auto generated forward declare list
+// clang-format off
+struct XAsyncBlock;
+struct XAsyncProviderData;
+// clang-format on
+
 struct HC_CALL {
 public:
     // prevent constructor by default
@@ -15,52 +21,46 @@ public:
     HC_CALL();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~HC_CALL();
+    MCAPI ::Result<::std::chrono::seconds> GetRetryAfterHeaderTime();
 
-    MCAPI long PerformAsync(struct XAsyncBlock*);
-
-    MCAPI static class Result<std::unique_ptr<struct HC_CALL, struct http_alloc_deleter<struct HC_CALL>>> Initialize();
-
-    MCAPI static long ReadRequestBody(struct HC_CALL*, uint64, uint64, void*, uchar*, uint64*);
-
-    MCAPI static long ResponseBodyWrite(struct HC_CALL*, uchar const*, uint64, void*);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
     MCAPI explicit HC_CALL(uint64);
 
-    // NOLINTEND
+    MCAPI long PerformAsync(::XAsyncBlock*);
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Result<std::chrono::seconds> GetRetryAfterHeaderTime();
-
-    MCAPI class Result<bool> ShouldFailFast(uint&);
+    MCAPI ::Result<bool> ShouldFailFast(uint&);
 
     MCAPI bool ShouldRetry(uint&);
+    // NOLINTEND
 
-    MCAPI static long PerfomAsyncProvider(::XAsyncOp, struct XAsyncProviderData const*);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Result<::std::unique_ptr<::HC_CALL, ::http_alloc_deleter<::HC_CALL>>> Initialize();
+
+    MCAPI static long PerfomAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
     MCAPI static void PerformSingleRequest(void*, bool);
 
-    MCAPI static long PerformSingleRequestAsyncProvider(::XAsyncOp, struct XAsyncProviderData const*);
+    MCAPI static long PerformSingleRequestAsyncProvider(::XAsyncOp, ::XAsyncProviderData const*);
 
-    MCAPI static void PerformSingleRequestComplete(struct XAsyncBlock*);
+    MCAPI static void PerformSingleRequestComplete(::XAsyncBlock*);
 
+    MCAPI static long ReadRequestBody(::HC_CALL*, uint64, uint64, void*, uchar*, uint64*);
+
+    MCAPI static long ResponseBodyWrite(::HC_CALL*, uchar const*, uint64, void*);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(uint64);
+    // NOLINTEND
 
-    MCAPI void* ctor$(uint64);
-
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

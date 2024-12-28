@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/loot/entries/LootPoolEntry.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+class LootTableContext;
+class Random;
+// clang-format on
+
 class EmptyLootItem : public ::LootPoolEntry {
 public:
     // prevent constructor by default
@@ -13,23 +20,31 @@ public:
     EmptyLootItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool
-    _createItem(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
+        /*override*/;
 
     // vIndex: 1
-    virtual ~EmptyLootItem() = default;
-
+    virtual ~EmptyLootItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool
-    _createItem$(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

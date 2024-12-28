@@ -2,7 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CleanUpSingleTickRemovePassengersSystem {
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct CleanUpSingleTickRemovePassengersSystem {
 public:
     // prevent constructor by default
     CleanUpSingleTickRemovePassengersSystem& operator=(CleanUpSingleTickRemovePassengersSystem const&);
@@ -10,8 +15,8 @@ public:
     CleanUpSingleTickRemovePassengersSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSingleTickSystem();
-
+    MCAPI static ::TickingSystemWithInfo createSingleTickSystem();
     // NOLINTEND
 };

@@ -5,7 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/OwnerPtr.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+struct ActorUniqueID;
+// clang-format on
+
 class UniqueIDManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk6cf853;
+    ::ll::UntypedStorage<1, 1> mUnk123888;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     UniqueIDManager& operator=(UniqueIDManager const&);
@@ -13,11 +26,14 @@ public:
     UniqueIDManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ActorUniqueID getNewUniqueID();
+    MCAPI ::ActorUniqueID getNewUniqueID();
+    // NOLINTEND
 
-    MCAPI static class OwnerPtr<class UniqueIDManager>
-    setupUniqueIDManager(class LevelData& levelData, bool isClientSide);
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::OwnerPtr<::UniqueIDManager> setupUniqueIDManager(::LevelData& levelData, bool isClientSide);
     // NOLINTEND
 };

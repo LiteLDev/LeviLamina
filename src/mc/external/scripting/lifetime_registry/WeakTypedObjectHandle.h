@@ -13,4 +13,4 @@ public:
     WeakTypedObjectHandle();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

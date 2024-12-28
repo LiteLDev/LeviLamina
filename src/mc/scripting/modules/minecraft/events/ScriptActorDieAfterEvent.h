@@ -9,33 +9,38 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorDieAfterEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk1f3ea3;
+    ::ll::UntypedStorage<8, 88> mUnk80828a;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorDieAfterEvent& operator=(ScriptActorDieAfterEvent const&);
     ScriptActorDieAfterEvent(ScriptActorDieAfterEvent const&);
     ScriptActorDieAfterEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDieAfterEvent(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorDieAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
 
     MCAPI ~ScriptActorDieAfterEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilderReadOnly<struct ScriptModuleMinecraft::ScriptActorDieAfterEvent>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+    MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorDieAfterEvent> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

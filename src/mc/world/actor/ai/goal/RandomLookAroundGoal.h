@@ -3,10 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomLookAroundGoal : public ::Goal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkb16298;
+    ::ll::UntypedStorage<4, 4> mUnk3eac08;
+    ::ll::UntypedStorage<4, 4> mUnk134092;
+    ::ll::UntypedStorage<4, 4> mUnkc1fd3e;
+    ::ll::UntypedStorage<4, 4> mUnk7b1e45;
+    ::ll::UntypedStorage<8, 8> mUnkccc90e;
+    ::ll::UntypedStorage<4, 4> mUnkaab356;
+    ::ll::UntypedStorage<4, 4> mUnk5ebce6;
+    ::ll::UntypedStorage<4, 4> mUnk78ac64;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RandomLookAroundGoal& operator=(RandomLookAroundGoal const&);
@@ -14,65 +32,72 @@ public:
     RandomLookAroundGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RandomLookAroundGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI RandomLookAroundGoal(
-        class Mob& mob,
-        int        minLookTime,
-        int        maxLookTime,
-        float      minAngleOfView,
-        float      maxAngleOfView,
-        float      probability
-    );
-
+    // vIndex: 0
+    virtual ~RandomLookAroundGoal() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _setRandomLook();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob& mob,
-        int        minLookTime,
-        int        maxLookTime,
-        float      minAngleOfView,
-        float      maxAngleOfView,
-        float      probability
+    MCAPI RandomLookAroundGoal(
+        ::Mob& mob,
+        int    minLookTime,
+        int    maxLookTime,
+        float  minAngleOfView,
+        float  maxAngleOfView,
+        float  probability
     );
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI void _setRandomLook();
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Mob& mob, int minLookTime, int maxLookTime, float minAngleOfView, float maxAngleOfView, float probability);
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void tick$();
+    MCAPI bool $canContinueToUse();
 
+    MCAPI void $start();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,65 +3,58 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/entity/components/FlagComponent.h"
 
-class InitialTickFilterSystem {
-public:
-    // prevent constructor by default
-    InitialTickFilterSystem& operator=(InitialTickFilterSystem const&);
-    InitialTickFilterSystem(InitialTickFilterSystem const&);
-    InitialTickFilterSystem();
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+class TickWorldComponent;
+struct ActorHeadRotationComponent;
+struct ActorMovementTickNeededComponent;
+struct ActorRotationComponent;
+struct ActorWalkAnimationComponent;
+struct CurrentTickComponent;
+struct MobBodyRotationComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static void blockFilterTickEntity(
-        class StrictEntityContext const&                                               context,
-        struct StateVectorComponent const&                                             stateVectorComponent,
-        class EntityModifier<class FlagComponent<struct ActorMovementTickNeededFlag>>& modifier,
-        class IConstBlockSource const&                                                 region
-    );
+namespace InitialTickFilterSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createTickingAreaFilterSystem();
 
-    MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
+MCAPI ::TickingSystemWithInfo createValidChunkFilterSystem();
 
-    MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();
+MCAPI void tickingAreaFilterTickEntity(
+    ::StrictEntityContext const&                          context,
+    ::TickWorldComponent&                                 tickWorldComponent,
+    ::CurrentTickComponent const&                         currentTickComponent,
+    ::EntityModifier<::ActorMovementTickNeededComponent>& modifier
+);
 
-    MCAPI static void tickingAreaFilterTickEntity(
-        class StrictEntityContext&                                                     context,
-        class TickWorldComponent&                                                      tickWorldComponent,
-        struct CurrentTickComponent const&                                             currentTickComponent,
-        class EntityModifier<class FlagComponent<struct ActorMovementTickNeededFlag>>& modifier
-    );
+MCAPI void tickingAreaFilterTickView(
+    ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view,
+    ::EntityModifier<::ActorMovementTickNeededComponent>                                                modifier
+);
 
-    // NOLINTEND
+MCAPI void validChunkFilterTickEntity(
+    ::StrictEntityContext const&                               context,
+    ::StateVectorComponent&                                    stateVector,
+    ::Optional<::ActorRotationComponent> const&                actorRotation,
+    ::Optional<::MobBodyRotationComponent> const&              mobBodyRotation,
+    ::Optional<::ActorHeadRotationComponent> const&            actorHeadRotation,
+    ::Optional<::ActorWalkAnimationComponent> const&           actorWalkAnimation,
+    ::std::function<void(::StrictEntityContext const&)> const& modifierFunctor,
+    bool                                                       resetAnimation,
+    ::IConstBlockSource const&                                 region
+);
+// NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _blockFilterTickView(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            struct StateVectorComponent const,
-            struct Exclude<
-                class FlagComponent<struct PlayerComponentFlag>,
-                class FlagComponent<struct GlobalActorFlag>>>                         view,
-        class ViewT<class StrictEntityContext, struct DimensionTypeComponent const>   dimensionView,
-        class OptionalGlobal<struct LocalConstBlockSourceFactoryComponent const>      factory,
-        class EntityModifier<class FlagComponent<struct ActorMovementTickNeededFlag>> modifier
-    );
-
-    MCAPI static void _tickingAreaFilterTickView(
-        class OptionalGlobal<struct CurrentTickComponent const> currentTickComponent,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-            class TickWorldComponent>                                                 view,
-        class EntityModifier<class FlagComponent<struct ActorMovementTickNeededFlag>> modifier
-    );
-
-    // NOLINTEND
-};
+} // namespace InitialTickFilterSystem

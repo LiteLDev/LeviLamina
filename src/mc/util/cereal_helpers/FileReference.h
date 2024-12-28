@@ -11,16 +11,22 @@ namespace CerealHelpers {
 
 struct FileReference {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkefc077;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     FileReference& operator=(FileReference const&);
     FileReference(FileReference const&);
     FileReference();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 
-}; // namespace CerealHelpers
+} // namespace CerealHelpers

@@ -2,7 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IsSpawnableDescription {
+// auto generated inclusion list
+#include "mc/world/actor/DefintionDescription.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
+struct IsSpawnableDescription : public ::DefintionDescription {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkd016c3;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IsSpawnableDescription& operator=(IsSpawnableDescription const&);
@@ -10,21 +24,36 @@ public:
     IsSpawnableDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~IsSpawnableDescription() = default;
-
     // vIndex: 1
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
+    // vIndex: 0
+    virtual ~IsSpawnableDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void parse(::Json::Value const& root);
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

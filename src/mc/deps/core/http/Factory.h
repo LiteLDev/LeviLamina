@@ -17,10 +17,10 @@ public:
     Factory();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::shared_ptr<class Bedrock::Http::DispatcherProcess> createDispatcher();
-
+    MCAPI static ::std::shared_ptr<::Bedrock::Http::DispatcherProcess> createDispatcher();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Http
+} // namespace Bedrock::Http

@@ -1,48 +1,94 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/threading/MovePriorityQueue.h"
-#include "mc/world/level/TickNextTickData.h"
+
+// auto generated inclusion list
+#include "mc/deps/core/container/MovePriorityQueue.h"
+#include "mc/world/level/TickingQueueType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockLegacy;
+class BlockPalette;
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class CompoundTag;
+class LevelChunk;
+class ListTag;
+class TickNextTickData;
+struct Tick;
+struct TickDelayBlock;
+// clang-format on
 
 class BlockTickingQueue {
 public:
     // BlockTickingQueue inner types declare
     // clang-format off
+    class BlockTick;
+    struct HashBlockTick;
     class TickDataSet;
     // clang-format on
 
+    // BlockTickingQueue inner types define
     class BlockTick {
     public:
-        bool             mIsRemoved{};
-        TickNextTickData mData;
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnk958ddb;
+        ::ll::UntypedStorage<8, 40> mUnk723bc0;
+        // NOLINTEND
 
     public:
-        bool operator>(BlockTick const& other) const { return mData > other.mData; }
+        // prevent constructor by default
+        BlockTick& operator=(BlockTick const&);
+        BlockTick(BlockTick const&);
+        BlockTick();
     };
 
-    // BlockTickingQueue inner types define
-    class TickDataSet : public MovePriorityQueue<BlockTick, std::greater<>> {
+    struct HashBlockTick {
     public:
+        // prevent constructor by default
+        HashBlockTick& operator=(HashBlockTick const&);
+        HashBlockTick(HashBlockTick const&);
+        HashBlockTick();
+    };
+
+    class TickDataSet
+    : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
+    public:
+        // prevent constructor by default
+        TickDataSet& operator=(TickDataSet const&);
+        TickDataSet(TickDataSet const&);
+        TickDataSet();
+
+    public:
+        // member functions
         // NOLINTBEGIN
         MCAPI void _pruneQueueForMemory();
 
-        MCAPI class BlockTickingQueue::TickDataSet& operator=(class BlockTickingQueue::TickDataSet&&);
-
-        MCAPI bool remove(std::function<bool(class TickNextTickData const&)> const& removeCondition);
-
-        MCAPI bool remove(class BlockPos const& pos, class Block const& block);
-
         MCAPI ~TickDataSet();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::LevelChunk*>                     mOwningChunk;
+    ::ll::TypedStorage<8, 8, ::Tick>                            mCurrentTick;
+    ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mNextTickQueue;
+    ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mActiveTickQueue;
+    ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mDeferredTicks;
+    ::ll::TypedStorage<1, 1, ::TickingQueueType>                mQueueType;
+    ::ll::TypedStorage<1, 1, bool>                              mInstaTick;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -51,84 +97,72 @@ public:
     BlockTickingQueue();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void acquireAllRandomTicks(class LevelChunk& lc);
+    MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
-    MCAPI void acquireAllTicks(class BlockTickingQueue& otherQueue);
+    MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
-    MCAPI void acquireAllTicks(class LevelChunk& lc);
+    MCAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
+
+    MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
+
+    MCAPI void acquireAllRandomTicks(::LevelChunk& lc);
+
+    MCAPI void acquireAllTicks(::LevelChunk& lc);
+
+    MCAPI void acquireAllTicks(::BlockTickingQueue& otherQueue);
 
     MCAPI void
-    add(class BlockSource&    region,
-        class BlockPos const& pos,
-        class Block const&    block,
-        int                   tickDelay,
-        int                   priorityOffset);
+    add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
     MCAPI void addTickToLevelChunk(
-        class LevelChunk&     lc,
-        class BlockPos const& pos,
-        class Block const&    block,
-        int                   tickDelay,
-        int                   priorityOffset
+        ::LevelChunk&     lc,
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        int               tickDelay,
+        int               priorityOffset
     );
 
     MCAPI void eliminateAllTicksZeroAndAbove();
 
-    MCAPI void eliminateDuplicatesOf(class BlockLegacy const& block);
+    MCAPI void eliminateDuplicatesOf(::BlockLegacy const& block);
 
     MCAPI void finishInstaticking();
 
-    MCAPI bool getNextUpdateForPos(class BlockPos const& pos, struct Tick& tick) const;
+    MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
 
-    MCAPI std::optional<struct Tick> getTickDelayForNextTickUpdateAtPos(class BlockPos const& pos) const;
+    MCAPI ::std::optional<::Tick> getTickDelayForNextTickUpdateAtPos(::BlockPos const& pos) const;
 
-    MCAPI std::unordered_multimap<class BlockPos, struct TickDelayBlock>
-          getTickDelaysInArea(class BoundingBox const& boundingBox) const;
+    MCAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock> getTickDelaysInArea(::BoundingBox const& boundingBox
+    ) const;
 
-    MCAPI bool hasTickInPendingTicks(class BlockPos const& pos) const;
+    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
 
     MCAPI bool isEmpty() const;
 
-    MCAPI void load(class CompoundTag const& tag, class BlockPalette const& palette);
+    MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
-    MCAPI void remove(std::function<bool(class TickNextTickData const&)> const& removeCondition);
+    MCAPI void remove(::std::function<bool(::TickNextTickData const&)> const& removeCondition);
 
-    MCAPI void save(class CompoundTag& tag) const;
+    MCAPI void remove(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI void setOwningChunk(class LevelChunk* owningChunk);
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void tickAllPendingTicks(class BlockSource& region, uint64 maximumTicksAllowed);
+    MCAPI void setOwningChunk(::LevelChunk* owningChunk);
 
-    MCAPI bool tickPendingTicks(class BlockSource& region, struct Tick const& until, int max, bool instaTick_);
+    MCAPI void tickAllPendingTicks(::BlockSource& region, uint64 maximumTicksAllowed);
+
+    MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
 
     MCAPI int ticksFromNow(int offset) const;
 
     MCAPI ~BlockTickingQueue();
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void _saveQueue(class ListTag& list, class BlockTickingQueue::TickDataSet const& queue) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _acquireAllTicks(class BlockTickingQueue& otherChunkQueue);
-
-    MCAPI void
-    _addToNextTickQueue(class BlockPos const& pos, class Block const& block, int tickDelay, int priorityOffset);
-
-    MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet& queue);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

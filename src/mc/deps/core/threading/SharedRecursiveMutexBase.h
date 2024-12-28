@@ -4,7 +4,15 @@
 
 namespace Bedrock::Threading {
 
-class SharedRecursiveMutexBase {
+class SharedRecursiveMutexBase : public ::std::shared_mutex {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkdaa45e;
+    ::ll::UntypedStorage<4, 4> mUnk904537;
+    ::ll::UntypedStorage<8, 8> mUnk7dbf45;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SharedRecursiveMutexBase& operator=(SharedRecursiveMutexBase const&);
@@ -12,31 +20,38 @@ public:
     SharedRecursiveMutexBase();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SharedRecursiveMutexBase() = default;
+    virtual ~SharedRecursiveMutexBase();
 
     // vIndex: 1
-    virtual bool _threadHoldsSharedLock(std::thread::id) = 0;
+    virtual bool _threadHoldsSharedLock(::std::thread::id) = 0;
 
     // vIndex: 2
-    virtual bool _shouldLockForSharedAccess(std::thread::id) = 0;
+    virtual bool _shouldLockForSharedAccess(::std::thread::id) = 0;
 
     // vIndex: 3
-    virtual bool _shouldUnLockForSharedAccess(std::thread::id) = 0;
+    virtual bool _shouldUnLockForSharedAccess(::std::thread::id) = 0;
+    // NOLINTEND
 
-    MCAPI void lock();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void unlock();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

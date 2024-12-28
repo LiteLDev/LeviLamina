@@ -2,86 +2,74 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockSource;
+class Mob;
+class Path;
+class Vec3;
+// clang-format on
+
 namespace NavigationUtility {
+// functions
 // NOLINTBEGIN
-MCAPI bool canFlyDirectly(class Mob& mob, class Vec3 const& startPos, class Vec3 const& stopPos);
+MCAPI bool canFlyDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
 
-MCAPI bool canMoveDirectly(
-    class Mob&        mob,
-    class Vec3 const& startPos,
-    class Vec3 const& stopPos,
-    int               sx,
-    int               sy,
-    int               sz,
-    bool              isClimbing
-);
+MCAPI bool
+canMoveDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
-MCAPI bool canMoveDirectlyWaterBound(class Mob const& mob, class Vec3 const& startPos, class Vec3 const& stopPos);
+MCAPI bool canMoveDirectlyWaterBound(::Mob const& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
 
-MCAPI bool canWalkDirectly(
-    class Mob&        mob,
-    class Vec3 const& startPos,
-    class Vec3 const& stopPos,
-    int               sx,
-    int               sy,
-    int               sz,
-    bool              isClimbing
-);
+MCAPI bool
+canWalkDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
 MCAPI bool canWalkOn(
-    class Mob&        mob,
-    int               x,
-    int               y,
-    int               z,
-    int               sx,
-    int               sy,
-    int               sz,
-    class Vec3 const& startPos,
-    float             goalDirX,
-    float             goalDirZ,
-    bool              isClimbing
+    ::Mob&        mob,
+    int           x,
+    int           y,
+    int           z,
+    int           sx,
+    int           sy,
+    int           sz,
+    ::Vec3 const& startPos,
+    float         goalDirX,
+    float         goalDirZ,
+    bool          isClimbing
 );
 
-MCAPI bool closeToDone(class Mob const& mob, float dist);
+MCAPI bool closeToDone(::Mob const& mob, float dist);
 
-MCAPI bool flyCondition(class Mob const& mob, class BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCAPI bool flyCondition(::Mob const& mob, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
-MCAPI float getHeightDifference(
-    class BlockSource&    region,
-    class Vec3 const&     currentPos,
-    class Block const&    block,
-    class BlockPos const& blockPos
-);
+MCAPI float
+getHeightDifference(::BlockSource& region, ::Vec3 const& currentPos, ::Block const& block, ::BlockPos const& blockPos);
 
-MCAPI class BlockPos const getMobScale(class Mob const& mob);
+MCAPI ::BlockPos const getMobScale(::Mob const& mob);
 
-MCAPI int getSurfaceY(class Mob const& mob);
+MCAPI int getSurfaceY(::Mob const& mob);
 
-MCAPI bool invalidPathStartStatus(class Mob const& mob, class BlockPos& startPosition);
+MCAPI bool invalidPathStartStatus(::Mob const& mob, ::BlockPos& startPosition);
 
-MCAPI bool isDoorBlockingPath(
-    class Mob const&      mob,
-    class Block const&    block,
-    class Path const&     path,
-    class BlockPos const& nodePos,
-    uint64                index
-);
+MCAPI bool
+isDoorBlockingPath(::Mob const& mob, ::Block const& block, ::Path const& path, ::BlockPos const& nodePos, uint64 index);
 
-MCAPI bool isInLiquid(class Mob const& mob);
+MCAPI bool isInLiquid(::Mob const& mob);
 
-MCAPI bool isInNode(class Mob const& mob, class BlockPos const& nodePos);
+MCAPI bool isInNode(::Mob const& mob, ::BlockPos const& nodePos);
 
-MCAPI bool isLastNode(uint64 index, class Path const& path);
+MCAPI bool isLastNode(uint64 index, ::Path const& path);
 
-MCAPI bool isStableDestination(class Mob const& mob, class BlockPos& pos);
+MCAPI bool isStableDestination(::Mob const& mob, ::BlockPos& pos);
 
-MCAPI bool isStairBlockFacingMob(class Mob const& mob, class BlockPos const& blockPos);
+MCAPI bool isStairBlockFacingMob(::Mob const& mob, ::BlockPos const& blockPos);
 
-MCAPI bool moveCondition(class Mob const& mob, class Block const& block);
+MCAPI bool moveCondition(::Mob const& mob, ::Block const& block);
 
-MCAPI bool swimCondition(class Mob const&, class BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
-MCAPI void trimPathFromSun(class Mob const& mob);
+MCAPI void trimPathFromSun(::Mob const& mob);
 // NOLINTEND
 
-}; // namespace NavigationUtility
+} // namespace NavigationUtility

@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/SimpleWeightedEntry.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class IRandom;
+class JigsawStructureRegistry;
+struct StructureTemplateRegistrationContext;
+// clang-format on
+
 class PoolAliasBinding {
 public:
     // PoolAliasBinding inner types declare
@@ -15,26 +23,29 @@ public:
     // PoolAliasBinding inner types define
     class PoolAliasLookup {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnkbb4557;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         PoolAliasLookup& operator=(PoolAliasLookup const&);
         PoolAliasLookup(PoolAliasLookup const&);
         PoolAliasLookup();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI std::string_view getOrDefault(std::string_view alias, std::string_view defaultValue) const;
-
-        MCAPI void insert(std::string const& id, std::string const& poolName);
+        MCAPI ::std::string_view getOrDefault(::std::string_view alias, ::std::string_view defaultValue) const;
 
         MCAPI ~PoolAliasLookup();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -45,45 +56,59 @@ public:
     PoolAliasBinding();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void
-    appendResolvedAliases(class IRandom&, class PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const = 0;
+    virtual void appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup&) const = 0;
 
     // vIndex: 1
-    virtual void forAllTargets(std::function<void(std::string const&, std::string const&)> const& fn) const = 0;
+    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const&) const = 0;
 
     // vIndex: 2
-    virtual ~PoolAliasBinding() = default;
+    virtual ~PoolAliasBinding();
+    // NOLINTEND
 
-    MCAPI static std::shared_ptr<class PoolAliasBinding> direct(std::string&& id, std::string&& target);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
 
-    MCAPI static std::shared_ptr<class PoolAliasBinding>
-    random(std::string&& id, std::vector<struct Core::SimpleWeightedEntry<std::string>>&& targets);
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding>
+    random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
 
-    MCAPI static std::shared_ptr<class PoolAliasBinding> randomGroup(
-        std::vector<struct Core::SimpleWeightedEntry<std::vector<std::shared_ptr<class PoolAliasBinding>>>>&& targets
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
+        ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
     );
 
     MCAPI static void registerTargetsAsPools(
-        class JigsawStructureRegistry&                              registry,
-        struct StructureTemplateRegistrationContext&                context,
-        std::string_view                                            fallback,
-        std::vector<std::shared_ptr<class PoolAliasBinding>> const& aliasBindings
+        ::JigsawStructureRegistry&                                  registry,
+        ::StructureTemplateRegistrationContext&                     context,
+        ::std::string_view                                          fallback,
+        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliasBindings
     );
 
-    MCAPI static class PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
-        std::vector<std::shared_ptr<class PoolAliasBinding>> const& aliases,
-        class BlockPos const&                                       structureStartPosition,
+    MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
+        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
+        ::BlockPos const&                                           structureStartPosition,
         int64                                                       levelSeed
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

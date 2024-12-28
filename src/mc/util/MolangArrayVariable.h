@@ -1,19 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
 
-struct MolangArrayVariable : HashedString {
+// auto generated inclusion list
+#include "mc/util/MolangHashStringVariable.h"
+
+struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {
 public:
+    // prevent constructor by default
+    MolangArrayVariable& operator=(MolangArrayVariable const&);
+    MolangArrayVariable(MolangArrayVariable const&);
+    MolangArrayVariable();
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~MolangArrayVariable();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

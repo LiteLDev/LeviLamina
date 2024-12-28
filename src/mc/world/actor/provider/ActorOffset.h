@@ -2,51 +2,64 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class Vec2;
+class Vec3;
+// clang-format on
+
 namespace ActorOffset {
+// functions
 // NOLINTBEGIN
-MCAPI class Vec3 getEyeOffset(class EntityContext const& entity);
+MCAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
 
-MCAPI class Vec3 getHeadOffset(class EntityContext const& entity);
+MCAPI ::Vec3 getHeadOffset(::EntityContext const& entity);
 
-MCAPI float getHeightOffset(class EntityContext const& entity);
+MCAPI float getHeightOffset(::EntityContext const& entity);
 
-MCAPI void initializeActor(class EntityContext& entity);
+MCAPI void initializeActor(::EntityContext& entity);
 
-MCAPI void initializePlayer(class EntityContext& entity);
+MCAPI void initializePlayer(::EntityContext& entity);
 
 MCAPI void setAABBRelativeScaling(
-    class EntityContext&      entity,
-    std::optional<class Vec2> headScalar,
-    std::optional<class Vec2> eyeScalar,
-    std::optional<class Vec2> breathingScalar,
-    std::optional<class Vec2> mouthScalar
+    ::EntityContext&        entity,
+    ::std::optional<::Vec2> headScalar,
+    ::std::optional<::Vec2> eyeScalar,
+    ::std::optional<::Vec2> breathingScalar,
+    ::std::optional<::Vec2> mouthScalar
 );
 
 MCAPI void setAABBRelativeScalingAndScaleNow(
-    class EntityContext&      entity,
-    std::optional<class Vec2> headScalar,
-    std::optional<class Vec2> eyeScalar,
-    std::optional<class Vec2> breathingScalar,
-    std::optional<class Vec2> mouthScalar
+    ::EntityContext&        entity,
+    ::std::optional<::Vec2> headScalar,
+    ::std::optional<::Vec2> eyeScalar,
+    ::std::optional<::Vec2> breathingScalar,
+    ::std::optional<::Vec2> mouthScalar
 );
 
 MCAPI void setAbsoluteScaling(
-    class EntityContext&      entity,
-    std::optional<class Vec3> headOffset,
-    std::optional<class Vec3> eyeOffset,
-    std::optional<class Vec3> breathingOffset,
-    std::optional<class Vec3> mouthOffset
+    ::EntityContext&        entity,
+    ::std::optional<::Vec3> headOffset,
+    ::std::optional<::Vec3> eyeOffset,
+    ::std::optional<::Vec3> breathingOffset,
+    ::std::optional<::Vec3> mouthOffset
 );
 
-MCAPI void setBreathingOffset(class EntityContext& entity, class Vec3 const& breathingOffset);
+MCAPI void setBreathingOffset(::EntityContext& entity, ::Vec3 const& breathingOffset);
 
-MCAPI void setExplosionOffset(class EntityContext& entity, float explosionOffset);
+MCAPI void setExplosionOffset(::EntityContext& entity, float explosionOffset);
 
-MCAPI void setEyeOffset(class EntityContext& entity, class Vec3 const& eyeOffset);
+MCAPI void setEyeOffset(::EntityContext& entity, ::Vec3 const& eyeOffset);
 
-MCAPI void setHeightOffset(class EntityContext& entity, float heightOffset);
+MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
 
-MCAPI void setShulkerScaling(class EntityContext& entity);
+MCAPI void setShulkerScaling(::EntityContext& entity);
 // NOLINTEND
 
-}; // namespace ActorOffset
+// static variables
+// NOLINTBEGIN
+MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
+// NOLINTEND
+
+} // namespace ActorOffset

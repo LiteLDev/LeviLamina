@@ -4,21 +4,35 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class BaseGameVersion;
+class Block;
+class BlockPos;
+class BlockSource;
+class EntityContext;
+class Experiments;
+class GetCollisionShapeInterface;
+class HitResult;
+class IConstBlockSource;
+class Player;
+class Random;
+class Vec3;
 // clang-format on
 
 class StairBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk7eb6c6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     StairBlock& operator=(StairBlock const&);
@@ -26,236 +40,251 @@ public:
     StairBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~StairBlock();
-
     // vIndex: 4
-    virtual class HitResult
-    clip(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::HitResult
+    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 7
-    virtual bool
-    addCollisionShapes(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    // vIndex: 9
+    virtual ::AABB const&
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
     // vIndex: 8
     virtual void addAABBs(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          blockPos,
-        class AABB const*              intersectTestBox,
-        std::vector<class AABB>&       inoutBoxes
-    ) const;
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const /*override*/;
 
-    // vIndex: 9
-    virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
-        const;
+    // vIndex: 7
+    virtual bool addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const /*override*/;
 
     // vIndex: 13
-    virtual bool getLiquidClipVolume(
-        class Block const&    block,
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class AABB&           includeBox
-    ) const;
+    virtual bool
+    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
+        /*override*/;
+
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
+        /*override*/;
+
+    // vIndex: 124
+    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 95
+    virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 85
+    virtual void
+    destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
+        /*override*/;
+
+    // vIndex: 78
+    virtual bool mayPick() const /*override*/;
+
+    // vIndex: 77
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
+
+    // vIndex: 80
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 132
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 134
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    // vIndex: 133
+    virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
+
+    // vIndex: 92
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
+
+    // vIndex: 36
+    virtual bool isStairBlock() const /*override*/;
+
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
+    // vIndex: 25
+    virtual bool canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
     // vIndex: 19
     virtual bool liquidCanFlowIntoFromDirection(
-        uchar                                                           flowIntoFacing,
-        std::function<class Block const&(class BlockPos const&)> const& getBlock,
-        class BlockPos const&                                           pos
-    ) const;
-
-    // vIndex: 23
-    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType) const;
-
-    // vIndex: 25
-    virtual bool canConnect(class Block const&, uchar toOther, class Block const& thisBlock) const;
-
-    // vIndex: 38
-    virtual bool isStairBlock() const;
-
-    // vIndex: 73
-    virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 83
-    virtual bool mayPick() const;
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const /*override*/;
 
     // vIndex: 84
-    virtual bool mayPick(class BlockSource const& region, class Block const& block, bool liquid) const;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 85
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 90
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
+    // vIndex: 0
+    virtual ~StairBlock() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 91
-    virtual void
-    destroy(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
-        const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StairBlock(::std::string const& nameId, int id, ::BlockLegacy const& base);
 
-    // vIndex: 98
-    virtual class Block const& getPlacementBlock(
-        class Actor const& by,
-        class BlockPos const&,
-        uchar             face,
-        class Vec3 const& clickPos,
-        int               itemValue
+    MCAPI bool _neighboringBlockCheckForCreatingBarrierInDirection(
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos,
+        ::Block const&                                            otherBlock,
+        int                                                       directionToCheck
     ) const;
 
-    // vIndex: 101
-    virtual bool attack(class Player* player, class BlockPos const& pos) const;
-
-    // vIndex: 129
-    virtual int getVariant(class Block const&) const;
-
-    // vIndex: 134
-    virtual void
-    animateTickBedrockLegacy(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 135
-    virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 143
-    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 144
-    virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
-
-    // vIndex: 145
-    virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
-
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
-
-    MCAPI StairBlock(std::string const& nameId, int id, class BlockLegacy const& base);
-
     MCAPI bool setInnerPieceShape(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    shape,
-        bool                           shrink
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    shape,
+        bool                       shrink
     ) const;
 
     MCAPI bool setStepShape(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          pos,
-        class AABB&                    shape,
-        bool                           shrink
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    shape,
+        bool                       shrink
     ) const;
 
-    MCAPI static uchar stairDirectionToFacing(int stairDirection);
-
+    MCAPI void shapeZFightShrink(::AABB& shape) const;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void shapeZFightShrink(class AABB& shape) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static uchar stairDirectionToFacing(int stairDirection);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class BlockLegacy const& base);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& base);
+    // NOLINTEND
 
-    MCAPI void addAABBs$(
-        class Block const&             block,
-        class IConstBlockSource const& region,
-        class BlockPos const&          blockPos,
-        class AABB const*              intersectTestBox,
-        std::vector<class AABB>&       inoutBoxes
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::HitResult
+    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
+    MCAPI ::AABB const&
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+
+    MCAPI void $addAABBs(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB const*              intersectTestBox,
+        ::std::vector<::AABB>&     inoutBoxes
+    ) const;
+
+    MCAPI bool $addCollisionShapes(
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::AABB const*                                      intersectTestBox,
+        ::std::vector<::AABB>&                             inoutBoxes,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     MCAPI bool
-    addCollisionShapes$(class Block const& block, class IConstBlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI void animateTick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI void
-    animateTickBedrockLegacy$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool attack$(class Player* player, class BlockPos const& pos) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool breaksFallingBlocks$(class Block const&, class BaseGameVersion version) const;
+    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool canConnect$(class Block const&, uchar toOther, class Block const& thisBlock) const;
-
-    MCAPI bool canProvideSupport$(class Block const& block, uchar face, ::BlockSupportType) const;
-
-    MCAPI class HitResult
-    clip$(class Block const& block, class BlockSource const&, class BlockPos const& pos, class Vec3 const& A, class Vec3 const& B, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
     MCAPI void
-    destroy$(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
+    $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
+
+    MCAPI bool $mayPick() const;
+
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI bool getLiquidClipVolume$(
-        class Block const&    block,
-        class BlockSource&    region,
-        class BlockPos const& pos,
-        class AABB&           includeBox
+    MCAPI bool $isStairBlock() const;
+
+    MCAPI int $getVariant(::Block const& block) const;
+
+    MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
+
+    MCAPI bool $liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI class AABB const&
-    getOutline$(class Block const&, class IConstBlockSource const&, class BlockPos const& pos, class AABB& bufferValue)
-        const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI class Block const& getPlacementBlock$(
-        class Actor const& by,
-        class BlockPos const&,
-        uchar             face,
-        class Vec3 const& clickPos,
-        int               itemValue
-    ) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    // NOLINTEND
 
-    MCAPI ::BlockProperty getRedstoneProperty$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI int getVariant$(class Block const&) const;
-
-    MCAPI bool isStairBlock$() const;
-
-    MCAPI bool liquidCanFlowIntoFromDirection$(
-        uchar                                                           flowIntoFacing,
-        std::function<class Block const&(class BlockPos const&)> const& getBlock,
-        class BlockPos const&                                           pos
-    ) const;
-
-    MCAPI bool mayPick$() const;
-
-    MCAPI bool mayPick$(class BlockSource const& region, class Block const& block, bool liquid) const;
-
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos, uchar) const;
-
-    MCAPI void onExploded$(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
-
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onRemove$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI void onStandOn$(class EntityContext& entity, class BlockPos const& pos) const;
-
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
-
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar face) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

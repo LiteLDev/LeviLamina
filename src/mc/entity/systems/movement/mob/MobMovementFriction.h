@@ -4,46 +4,61 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class NavigationComponent;
+class StrictEntityContext;
+struct ActorDataFlagComponent;
+struct CurrentLocalMoveVelocityComponent;
+struct FrictionModifierComponent;
+struct MobTravelComponent;
+struct MovementAbilitiesComponent;
+struct PlayerInputModeComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct VexFlagComponent;
+// clang-format on
 
 namespace MobMovementFriction {
+// functions
 // NOLINTBEGIN
 MCAPI void applyFriction(
-    struct CurrentLocalMoveVelocityComponent const* currentLocalMoveVelocityComponent,
-    class FlagComponent<struct VexFlag> const*      vexFlagComponent,
-    struct MovementAbilitiesComponent const*        abilities,
-    struct PlayerInputModeComponent const*          playerInputMode,
-    struct ActorDataFlagComponent const&            synchedActorData,
-    struct StateVectorComponent&                    stateVector,
-    float                                           finalFriction,
-    bool                                            usingModifiedFriction
+    ::CurrentLocalMoveVelocityComponent const* currentLocalMoveVelocityComponent,
+    ::VexFlagComponent const*                  vexFlagComponent,
+    ::MovementAbilitiesComponent const*        abilities,
+    ::PlayerInputModeComponent const*          playerInputMode,
+    ::ActorDataFlagComponent const&            synchedActorData,
+    ::StateVectorComponent&                    stateVector,
+    float                                      finalFriction,
+    bool                                       usingModifiedFriction
 );
 
-MCAPI void forSystems(std::function<void(struct TickingSystemWithInfo&&)> const& func);
+MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickLavaWalkFriction(
-    class StrictEntityContext const&,
-    class NavigationComponent const&                               navigationComponent,
-    class Optional<struct MovementAbilitiesComponent const>        abilitiesComponent,
-    class Optional<struct CurrentLocalMoveVelocityComponent const> currentLocalMoveVelocityComponent,
-    class Optional<struct PlayerInputModeComponent const>          playerInputModeComponent,
-    class Optional<class FlagComponent<struct VexFlag> const>      vexFlagComponent,
-    struct FrictionModifierComponent const&                        frictionModifierComponent,
-    struct ActorDataFlagComponent const&                           synchedActorDataComponent,
-    struct StateVectorComponent&                                   stateVectorComponent
+    ::StrictEntityContext const&,
+    ::NavigationComponent const&                          navigationComponent,
+    ::Optional<::MovementAbilitiesComponent const>        abilitiesComponent,
+    ::Optional<::CurrentLocalMoveVelocityComponent const> currentLocalMoveVelocityComponent,
+    ::Optional<::PlayerInputModeComponent const>          playerInputModeComponent,
+    ::Optional<::VexFlagComponent const>                  vexFlagComponent,
+    ::FrictionModifierComponent const&                    frictionModifierComponent,
+    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
+    ::StateVectorComponent&                               stateVectorComponent
 );
 
 MCAPI void tickNormalFriction(
-    class StrictEntityContext const&,
-    struct MobTravelComponent const&                               mobTravelComponent,
-    class Optional<struct MovementAbilitiesComponent const>        abilitiesComponent,
-    class Optional<struct CurrentLocalMoveVelocityComponent const> currentLocalMoveVelocityComponent,
-    class Optional<struct PlayerInputModeComponent const>          playerInputModeComponent,
-    class Optional<class FlagComponent<struct VexFlag> const>      vexFlagComponent,
-    struct FrictionModifierComponent const&                        frictionModifierComponent,
-    struct ActorDataFlagComponent const&                           synchedActorDataComponent,
-    struct StateVectorComponent&                                   stateVectorComponent
+    ::StrictEntityContext const&,
+    ::MobTravelComponent const&                           mobTravelComponent,
+    ::Optional<::MovementAbilitiesComponent const>        abilitiesComponent,
+    ::Optional<::CurrentLocalMoveVelocityComponent const> currentLocalMoveVelocityComponent,
+    ::Optional<::PlayerInputModeComponent const>          playerInputModeComponent,
+    ::Optional<::VexFlagComponent const>                  vexFlagComponent,
+    ::FrictionModifierComponent const&                    frictionModifierComponent,
+    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
+    ::StateVectorComponent&                               stateVectorComponent
 );
 // NOLINTEND
 
-}; // namespace MobMovementFriction
+} // namespace MobMovementFriction

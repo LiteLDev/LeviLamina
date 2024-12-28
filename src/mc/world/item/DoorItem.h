@@ -3,22 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 #include "mc/world/level/block/DoorBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class InteractionResult;
+class ItemStack;
+class Vec3;
 // clang-format on
 
 class DoorItem : public ::Item {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk8e4ea9;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DoorItem& operator=(DoorItem const&);
@@ -26,33 +31,53 @@ public:
     DoorItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~DoorItem() = default;
-
-    // vIndex: 118
-    virtual class InteractionResult
-    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
-
-    MCAPI DoorItem(std::string const& name, int id, ::DoorBlock::DoorType type);
-
-    MCAPI class Block const* getDoorBlock() const;
-
-    MCAPI static bool place(class BlockSource* source, int x, int y, int z, int dir, class Block const* block);
-
+    virtual ~DoorItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI DoorItem(::std::string const& name, int id, ::DoorBlock::DoorType type);
 
-    MCAPI void* ctor$(std::string const& name, int id, ::DoorBlock::DoorType type);
+    MCAPI ::Block const* getDoorBlock() const;
+    // NOLINTEND
 
-    MCAPI class InteractionResult
-    _useOn$(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
-        const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool place(::BlockSource* source, int x, int y, int z, int dir, ::Block const* block);
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::DoorBlock::DoorType type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

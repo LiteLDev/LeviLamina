@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct PackIdVersion;
 namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
@@ -13,11 +14,18 @@ public:
     // clang-format off
     struct Error;
     struct Info;
+    struct Verbose;
     struct Warning;
     // clang-format on
 
     // ScriptPluginResult inner types define
     struct Error {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkca3847;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         Error& operator=(Error const&);
@@ -25,41 +33,25 @@ public:
         Error();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Error();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
-        // NOLINTEND
-    };
-
-    struct Info {
-    public:
-        // prevent constructor by default
-        Info& operator=(Info const&);
-        Info(Info const&);
-        Info();
-
-    public:
-        // NOLINTBEGIN
-        MCAPI ~Info();
-
-        // NOLINTEND
-
-        // thunks
-    public:
-        // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
     struct Warning {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkbedc65;
+        // NOLINTEND
+
     public:
         // prevent constructor by default
         Warning& operator=(Warning const&);
@@ -67,18 +59,81 @@ public:
         Warning();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Warning();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+    struct Info {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkf326df;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Info& operator=(Info const&);
+        Info(Info const&);
+        Info();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Info();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct Verbose {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnk58cf1f;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Verbose& operator=(Verbose const&);
+        Verbose(Verbose const&);
+        Verbose();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Verbose();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 136> mUnk1834eb;
+    ::ll::UntypedStorage<8, 104> mUnk14873c;
+    ::ll::UntypedStorage<8, 24>  mUnkf68085;
+    ::ll::UntypedStorage<8, 24>  mUnkd65271;
+    ::ll::UntypedStorage<8, 24>  mUnkea957c;
+    ::ll::UntypedStorage<8, 24>  mUnk5f16dc;
+    ::ll::UntypedStorage<8, 8>   mUnk2c14cc;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -86,31 +141,44 @@ public:
     ScriptPluginResult();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPluginResult(class ScriptPluginResult const&);
+    MCAPI ScriptPluginResult(::ScriptPluginResult const&);
 
-    MCAPI void addError(std::string const& error);
+    MCAPI ScriptPluginResult(::ScriptPluginResult&&);
 
-    MCAPI void addInfo(std::string const& info);
+    MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCAPI void addWarning(std::string const& warning);
+    MCAPI ::std::vector<::ScriptPluginResult::Error> const& getErrors() const;
 
-    MCAPI std::vector<struct ScriptPluginResult::Error> const& getErrors() const;
+    MCAPI ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
 
-    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCAPI ::std::chrono::microseconds getRunDuration() const;
 
-    MCAPI std::vector<struct ScriptPluginResult::Warning> const& getWarnings() const;
+    MCAPI ::std::vector<::ScriptPluginResult::Warning> const& getWarnings() const;
+
+    MCAPI void logError(::std::string const& error);
+
+    MCAPI void logErrors(::std::vector<::std::string> const& errors);
+
+    MCAPI void logInfo(::std::string const& info);
 
     MCAPI ~ScriptPluginResult();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ScriptPluginResult const&);
+    MCAPI void* $ctor(::ScriptPluginResult const&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ScriptPluginResult&&);
 
+    MCAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

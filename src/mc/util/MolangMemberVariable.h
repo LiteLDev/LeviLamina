@@ -1,25 +1,36 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/string/HashedString.h"
-#include "mc/util/MolangScriptArg.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
 struct MolangScriptArg;
+// clang-format on
 
 struct MolangMemberVariable {
-    HashedString    mName;
-    MolangScriptArg mData;
-
 public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI ~MolangMemberVariable();
-
+    ::ll::TypedStorage<8, 48, ::HashedString>    mName;
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg> mData;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void dtor$();
+    // prevent constructor by default
+    MolangMemberVariable& operator=(MolangMemberVariable const&);
+    MolangMemberVariable(MolangMemberVariable const&);
+    MolangMemberVariable();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~MolangMemberVariable();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,18 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class Experiments;
+class GetCollisionShapeInterface;
+class IConstBlockSource;
+class Random;
+struct BlockGraphicsModeChangeContext;
+namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class BaseRailBlock : public ::BlockLegacy {
@@ -28,46 +32,58 @@ public:
     // BaseRailBlock inner types define
     class Rail {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk412683;
+        ::ll::UntypedStorage<4, 12> mUnkd97f47;
+        ::ll::UntypedStorage<1, 1>  mUnk590a6e;
+        ::ll::UntypedStorage<8, 24> mUnk82a548;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Rail& operator=(Rail const&);
         Rail(Rail const&);
         Rail();
 
     public:
+        // member functions
         // NOLINTBEGIN
-        MCAPI Rail(class BlockSource& region, class BlockPos const& pos);
+        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+
+        MCAPI void connectTo(::BaseRailBlock::Rail& rail);
+
+        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
+
+        MCAPI bool hasNeighborRail(::BlockPos const& pos);
 
         MCAPI void place(int signalStrength, bool first);
-
-        MCAPI ~Rail();
-
-        // NOLINTEND
-
-        // protected:
-        // NOLINTBEGIN
-        MCAPI void connectTo(class BaseRailBlock::Rail& rail);
-
-        MCAPI bool connectsTo(class BaseRailBlock::Rail& rail);
-
-        MCAPI std::shared_ptr<class BaseRailBlock::Rail> getRail(class BlockPos const& p);
-
-        MCAPI bool hasNeighborRail(class BlockPos const& pos);
 
         MCAPI void removeSoftConnections();
 
         MCAPI void updateConnections(int direction);
 
+        MCAPI ~Rail();
         // NOLINTEND
 
-        // thunks
     public:
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* ctor$(class BlockSource& region, class BlockPos const& pos);
+        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
+        // NOLINTEND
 
-        MCAPI void dtor$();
-
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke7ff3a;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -76,128 +92,134 @@ public:
     BaseRailBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~BaseRailBlock() = default;
+    // vIndex: 11
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual class AABB
-    getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual ::AABB
+    getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
+        const /*override*/;
 
-    // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    // vIndex: 79
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 33
-    virtual bool isWaterBlocking() const;
+    // vIndex: 143
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
+        /*override*/;
 
-    // vIndex: 42
-    virtual bool isRailBlock() const;
+    // vIndex: 67
+    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
+    // vIndex: 61
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
-    // vIndex: 57
-    virtual bool canContainLiquid() const;
+    // vIndex: 87
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
-    // vIndex: 66
-    virtual void
-    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    // vIndex: 39
+    virtual bool isRailBlock() const /*override*/;
 
-    // vIndex: 72
-    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 119
+    virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 86
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 31
+    virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 93
-    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    // vIndex: 115
+    virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 126
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
+    // vIndex: 136
+    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 130
-    virtual bool canSpawnOn(class Actor*) const;
+    // vIndex: 142
+    virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 146
-    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 148
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    // vIndex: 0
+    virtual ~BaseRailBlock() /*override*/;
+    // NOLINTEND
 
-    // vIndex: 154
-    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseRailBlock(::std::string const& nameId, int id, bool usesDataBit);
 
-    // vIndex: 156
-    virtual ::BlockRenderLayer
-    getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
 
-    MCAPI BaseRailBlock(std::string const& nameId, int id, bool usesDataBit);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool isCorner(class BlockSource const& region, class BlockPos const& pos);
+    MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isFacingWestEast(class BlockSource const& region, class BlockPos const& pos);
+    MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isRail(class Block const& block);
+    MCAPI static bool isRail(::Block const& block);
 
-    MCAPI static bool isRail(class IConstBlockSource const& region, class BlockPos const& pos);
+    MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isSlope(class Block const& block);
+    MCAPI static bool isSlope(::Block const& block);
 
     MCAPI static bool isSlope(int railDirection);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _updatePlacement(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI static void _createCircuitComponent(class BlockSource& region, class BlockPos const& pos);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool usesDataBit);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, bool usesDataBit);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canContainLiquid$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool canSpawnOn$(class Actor*) const;
-
-    MCAPI bool canSurvive$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI class AABB
-    getCollisionShape$(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
+    MCAPI ::AABB
+    $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI ::BlockRenderLayer
-    getRenderLayer$(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isRailBlock$() const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isWaterBlocking$() const;
+    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI bool mayPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void neighborChanged$(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
+    MCAPI bool $isRailBlock() const;
 
-    MCAPI void onGraphicsModeChanged$(struct BlockGraphicsModeChangeContext const& context);
+    MCAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI void onPlace$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $isLavaBlocking() const;
 
-    MCAPI void
-    onRedstoneUpdate$(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI void setupRedstoneComponent$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void tick$(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

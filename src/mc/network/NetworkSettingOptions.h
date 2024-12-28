@@ -1,15 +1,28 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/network/DevConnectionQuality.h"
 #include "mc/network/PacketCompressionAlgorithm.h"
 
 struct NetworkSettingOptions {
 public:
-    ushort                     mCompressionThreshold;             // this+0x0
-    PacketCompressionAlgorithm mCompressionAlgorithm;             // this+0x2
-    bool                       mClientThrottleEnabled;            // this+0x4
-    int                        mClientThrottleThreshold;          // this+0x8
-    float                      mClientThrottleScalar;             // this+0xc
-    bool                       mRaknetJoinFloodProtectionEnabled; // this+0x10
-    bool                       mEncryptionDisabled;               // this+0x11
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ushort>                       mCompressionThreshold;
+    ::ll::TypedStorage<2, 2, ::PacketCompressionAlgorithm> mCompressionAlgorithm;
+    ::ll::TypedStorage<1, 1, bool>                         mClientThrottleEnabled;
+    ::ll::TypedStorage<4, 4, int>                          mClientThrottleThreshold;
+    ::ll::TypedStorage<4, 4, float>                        mClientThrottleScalar;
+    ::ll::TypedStorage<1, 1, bool>                         mRaknetJoinFloodProtectionEnabled;
+    ::ll::TypedStorage<1, 1, bool>                         mEncryptionDisabled;
+    ::ll::TypedStorage<4, 4, ::DevConnectionQuality>       mDevConnectionQuality;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetworkSettingOptions& operator=(NetworkSettingOptions const&);
+    NetworkSettingOptions(NetworkSettingOptions const&);
+    NetworkSettingOptions();
 };

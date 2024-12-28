@@ -9,38 +9,53 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptTitleDisplayOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 224> mUnkf9096b;
+    ::ll::UntypedStorage<4, 4>   mUnkeab427;
+    ::ll::UntypedStorage<4, 4>   mUnkbb8084;
+    ::ll::UntypedStorage<4, 4>   mUnkf6ce1b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptTitleDisplayOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTitleDisplayOptions(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
+    MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
 
-    MCAPI ScriptTitleDisplayOptions(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
+    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
+    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
 
     MCAPI ~ScriptTitleDisplayOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptTitleDisplayOptions>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

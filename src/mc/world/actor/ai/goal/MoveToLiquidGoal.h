@@ -3,11 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/level/material/MaterialType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Mob;
+// clang-format on
+
 class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkbf5c17;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MoveToLiquidGoal& operator=(MoveToLiquidGoal const&);
@@ -15,44 +27,32 @@ public:
     MoveToLiquidGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~MoveToLiquidGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
-
-    // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+
+    // vIndex: 7
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 17
-    virtual bool findTargetBlock();
+    virtual bool findTargetBlock() /*override*/;
 
-    MCAPI MoveToLiquidGoal(
-        class Mob&     mob,
-        float          speedModifier,
-        int            searchRange,
-        int            searchHeight,
-        int            searchCount,
-        ::MaterialType materialType,
-        float          goalRadius
-    );
-
+    // vIndex: 0
+    virtual ~MoveToLiquidGoal() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
-    MCAPI void* ctor$(
-        class Mob&     mob,
+    MCAPI MoveToLiquidGoal(
+        ::Mob&         mob,
         float          speedModifier,
         int            searchRange,
         int            searchHeight,
@@ -60,16 +60,45 @@ public:
         ::MaterialType materialType,
         float          goalRadius
     );
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&         mob,
+        float          speedModifier,
+        int            searchRange,
+        int            searchHeight,
+        int            searchCount,
+        ::MaterialType materialType,
+        float          goalRadius
+    );
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool findTargetBlock$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI bool $findTargetBlock();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

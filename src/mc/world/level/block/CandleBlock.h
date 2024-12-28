@@ -3,19 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/AbstractCandleBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class AABB;
+class Actor;
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Player;
+class Vec3;
 // clang-format on
 
 class CandleBlock : public ::AbstractCandleBlock {
@@ -26,109 +27,90 @@ public:
     CandleBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~CandleBlock() = default;
-
     // vIndex: 11
-    virtual class AABB const& getVisualShape(class Block const& block, class AABB& bufferAABB) const;
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 138
+    virtual bool isInteractiveBlock() const /*override*/;
+
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 56
-    virtual bool waterSpreadCausesSpawn() const;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
-
-    // vIndex: 150
-    virtual bool isInteractiveBlock() const;
+    // vIndex: 151
+    virtual int _getNumCandles(::Block const& block) const /*override*/;
 
     // vIndex: 152
-    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
-
-    // vIndex: 163
-    virtual int _getNumCandles(class Block const& block) const;
-
-    // vIndex: 164
-    virtual void _iterateCandles(
-        class Block const&                          block,
-        class BlockPos const&                       pos,
-        std::function<void(class Vec3 const&, int)> callback
-    ) const;
-
-    // vIndex: 165
-    virtual void _tryLightOnFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
-
-    // vIndex: 166
-    virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 167
-    virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 168
     virtual void
-    startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
-        const;
+    _iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
+        const /*override*/;
 
-    // vIndex: 169
-    virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
+    // vIndex: 153
+    virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
-    MCAPI CandleBlock(std::string const& nameId, int id);
-
-    MCAPI static bool tryLightFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor);
-
+    // vIndex: 0
+    virtual ~CandleBlock() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI static void _forEachCandle(
-        class Block const&                          block,
-        class BlockPos const&                       pos,
-        std::function<void(class Vec3 const&, int)> callback
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CandleBlock(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _forEachCandle(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback);
 
-    MCAPI int _getNumCandles$(class Block const& block) const;
+    MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
+    // NOLINTEND
 
-    MCAPI void _iterateCandles$(
-        class Block const&                          block,
-        class BlockPos const&                       pos,
-        std::function<void(class Vec3 const&, int)> callback
-    ) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
 
-    MCAPI void _tryLightOnFire$(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class ItemInstance asItemInstance$(class Block const& block, class BlockActor const*) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool canProvideSupport$(class Block const&, uchar face, ::BlockSupportType type) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $isInteractiveBlock() const;
 
-    MCAPI class AABB const& getVisualShape$(class Block const& block, class AABB& bufferAABB) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI bool isFreeToFall$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCAPI bool isInteractiveBlock$() const;
-
-    MCAPI void onLand$(class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI int $_getNumCandles(::Block const& block) const;
 
     MCAPI void
-    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+    $_iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
         const;
 
-    MCAPI bool use$(class Player& player, class BlockPos const& pos, uchar) const;
+    MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    // NOLINTEND
 
-    MCAPI bool waterSpreadCausesSpawn$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

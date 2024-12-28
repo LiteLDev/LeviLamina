@@ -8,4 +8,29 @@ public:
     ITickDeltaTimeManagerProxy& operator=(ITickDeltaTimeManagerProxy const&);
     ITickDeltaTimeManagerProxy(ITickDeltaTimeManagerProxy const&);
     ITickDeltaTimeManagerProxy();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ITickDeltaTimeManagerProxy();
+
+    // vIndex: 1
+    virtual void start() = 0;
+
+    // vIndex: 2
+    virtual double calculateDeltaTimeAndReset() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
 };

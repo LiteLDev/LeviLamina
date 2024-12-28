@@ -3,17 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class BlockPos;
+class BlockSource;
+class CompoundTag;
+class InteractionResult;
+class ItemDescriptor;
+class ItemInstance;
+class ItemStack;
+class LeashFenceKnotActor;
+class Vec3;
 namespace mce { class Color; }
 // clang-format on
 
@@ -25,61 +28,64 @@ public:
     BalloonItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 66
+    virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const /*override*/;
+
+    // vIndex: 15
+    virtual bool isDyeable() const /*override*/;
+
+    // vIndex: 120
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
+
     // vIndex: 0
-    virtual ~BalloonItem() = default;
-
-    // vIndex: 14
-    virtual bool isDyeable() const;
-
-    // vIndex: 62
-    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
-
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 118
-    virtual class InteractionResult _useOn(
-        class ItemStack&  instance,
-        class Actor&      spawningActor,
-        class BlockPos    pos,
-        uchar             face,
-        class Vec3 const& clickPos
-    ) const;
-
-    MCAPI BalloonItem(std::string const& name, int id);
-
+    virtual ~BalloonItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class LeashFenceKnotActor*
-    _createKnot(class BlockSource& region, class BlockPos pos, class ItemInstance const& item) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI BalloonItem(::std::string const& name, int id);
 
-    MCAPI void* ctor$(std::string const& name, int id);
+    MCAPI ::LeashFenceKnotActor* _createKnot(::BlockSource& region, ::BlockPos pos, ::ItemInstance const& item) const;
+    // NOLINTEND
 
-    MCAPI class InteractionResult _useOn$(
-        class ItemStack&  instance,
-        class Actor&      spawningActor,
-        class BlockPos    pos,
-        uchar             face,
-        class Vec3 const& clickPos
-    ) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class mce::Color getColor$(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI bool isDyeable$() const;
+    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
+    MCAPI bool $isDyeable() const;
+
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,15 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MoveRequestComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+struct WalkDistComponent;
+// clang-format on
+
 namespace WalkDistanceSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void updateWalkDistance(
-    struct MoveRequestComponent const& moveRequest,
-    struct StateVectorComponent const& state,
-    struct WalkDistComponent&          walkDistance
+    ::MoveRequestComponent const& moveRequest,
+    ::StateVectorComponent const& state,
+    ::WalkDistComponent&          walkDistance
 );
 // NOLINTEND
 
-}; // namespace WalkDistanceSystem
+} // namespace WalkDistanceSystem

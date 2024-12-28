@@ -3,14 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cg { class ImageBuffer; }
+class Actor;
+class Block;
+class BlockPos;
+class BlockSource;
+class ChunkSource;
+class IMinecraftEventing;
+class LevelChunk;
+struct ActorBlockSyncMessage;
 // clang-format on
 
 class ClassroomModeListener : public ::LevelListener {
@@ -21,70 +26,87 @@ public:
     ClassroomModeListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ClassroomModeListener() = default;
+    // vIndex: 17
+    virtual void onEntityAdded(::Actor& entity) /*override*/;
 
-    // vIndex: 3
-    virtual void onAreaChanged(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+    // vIndex: 18
+    virtual void onEntityRemoved(::Actor& entity) /*override*/;
 
     // vIndex: 4
     virtual void onBlockChanged(
-        class BlockSource&                  source,
-        class BlockPos const&               pos,
-        uint                                layer,
-        class Block const&                  block,
-        class Block const&                  oldBlock,
-        int                                 updateFlags,
-        struct ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget           eventTarget,
-        class Actor*                        blockChangeSource
-    );
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    ) /*override*/;
 
-    // vIndex: 17
-    virtual void onEntityAdded(class Actor& entity);
-
-    // vIndex: 18
-    virtual void onEntityRemoved(class Actor& entity);
+    // vIndex: 3
+    virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
 
     // vIndex: 19
-    virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 22
-    virtual void onChunkUnloaded(class LevelChunk& lc);
+    virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
-    MCAPI explicit ClassroomModeListener(class IMinecraftEventing& eventing);
-
+    // vIndex: 0
+    virtual ~ClassroomModeListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit ClassroomModeListener(::IMinecraftEventing& eventing);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class IMinecraftEventing& eventing);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftEventing& eventing);
+    // NOLINTEND
 
-    MCAPI void onAreaChanged$(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onBlockChanged$(
-        class BlockSource&                  source,
-        class BlockPos const&               pos,
-        uint                                layer,
-        class Block const&                  block,
-        class Block const&                  oldBlock,
-        int                                 updateFlags,
-        struct ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget           eventTarget,
-        class Actor*                        blockChangeSource
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onEntityAdded(::Actor& entity);
+
+    MCAPI void $onEntityRemoved(::Actor& entity);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
     );
 
-    MCAPI void onChunkLoaded$(class ChunkSource& source, class LevelChunk& lc);
+    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCAPI void onChunkUnloaded$(class LevelChunk& lc);
+    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void onEntityAdded$(class Actor& entity);
+    MCAPI void $onChunkUnloaded(::LevelChunk& lc);
+    // NOLINTEND
 
-    MCAPI void onEntityRemoved$(class Actor& entity);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

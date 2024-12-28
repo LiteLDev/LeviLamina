@@ -8,38 +8,76 @@
 
 // auto generated forward declare list
 // clang-format off
+class AvoidMobTypeGoal;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class AvoidMobTypeDefinition : public ::BaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>   mUnk83ce21;
+    ::ll::UntypedStorage<4, 4>   mUnk50d225;
+    ::ll::UntypedStorage<4, 4>   mUnkabe867;
+    ::ll::UntypedStorage<4, 4>   mUnk24b650;
+    ::ll::UntypedStorage<4, 4>   mUnkcfc28c;
+    ::ll::UntypedStorage<4, 4>   mUnk400c69;
+    ::ll::UntypedStorage<4, 4>   mUnkf08cd0;
+    ::ll::UntypedStorage<4, 4>   mUnka4d38b;
+    ::ll::UntypedStorage<4, 4>   mUnkd1aab1;
+    ::ll::UntypedStorage<4, 4>   mUnka078d6;
+    ::ll::UntypedStorage<1, 1>   mUnk905770;
+    ::ll::UntypedStorage<8, 104> mUnk184a73;
+    ::ll::UntypedStorage<8, 32>  mUnkc6dbc8;
+    ::ll::UntypedStorage<4, 8>   mUnkf0f9c2;
+    ::ll::UntypedStorage<8, 24>  mUnk167642;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     AvoidMobTypeDefinition& operator=(AvoidMobTypeDefinition const&);
     AvoidMobTypeDefinition(AvoidMobTypeDefinition const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AvoidMobTypeDefinition() = default;
-
-    MCAPI AvoidMobTypeDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class AvoidMobTypeGoal& goal) const;
-
-    MCAPI static void buildSchema(
-        std::string const& name,
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>>&
-            root
-    );
-
+    virtual ~AvoidMobTypeDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AvoidMobTypeDefinition();
 
-    MCAPI void* ctor$();
+    MCAPI void initialize(::EntityContext& entity, ::AvoidMobTypeGoal& goal) const;
+    // NOLINTEND
 
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                   name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidMobTypeDefinition>>& root
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

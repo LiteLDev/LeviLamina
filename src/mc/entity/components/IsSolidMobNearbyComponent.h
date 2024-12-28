@@ -4,26 +4,29 @@
 
 struct IsSolidMobNearbyComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 12> mUnka03654;
+    ::ll::UntypedStorage<8, 64> mUnkdcfcb3;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     IsSolidMobNearbyComponent& operator=(IsSolidMobNearbyComponent const&);
+    IsSolidMobNearbyComponent(IsSolidMobNearbyComponent const&);
     IsSolidMobNearbyComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI IsSolidMobNearbyComponent(struct IsSolidMobNearbyComponent&&);
+    MCAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
 
-    MCAPI IsSolidMobNearbyComponent(struct IsSolidMobNearbyComponent const&);
-
-    MCAPI struct IsSolidMobNearbyComponent& operator=(struct IsSolidMobNearbyComponent&&);
-
+    MCAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct IsSolidMobNearbyComponent&&);
-
-    MCAPI void* ctor$(struct IsSolidMobNearbyComponent const&);
-
+    MCAPI void* $ctor(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
 };

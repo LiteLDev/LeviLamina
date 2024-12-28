@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/SystemAddress.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,31 +12,30 @@ namespace RakNet {
 
 struct AddressOrGUID {
 public:
-    RakNetGUID    guid;
-    SystemAddress adr;
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const& input);
-
-    MCAPI AddressOrGUID(struct RakNet::RakNetGUID const& input);
-
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const& input);
-
-    MCAPI bool IsUndefined() const;
-
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     rakNetGuid;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    AddressOrGUID& operator=(AddressOrGUID const&);
+    AddressOrGUID();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct RakNet::RakNetGUID const& input);
+    MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
 
-    MCAPI void* ctor$(struct RakNet::SystemAddress const& input);
+    MCAPI bool IsUndefined() const;
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct RakNet::AddressOrGUID const& input);
-
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 
-}; // namespace RakNet
+} // namespace RakNet

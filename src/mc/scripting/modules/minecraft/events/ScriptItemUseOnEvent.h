@@ -4,67 +4,42 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class BlockSource;
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptItemUseOnEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke9534a;
+    ::ll::UntypedStorage<4, 4>  mUnk90638f;
+    ::ll::UntypedStorage<4, 12> mUnk62f204;
+    ::ll::UntypedStorage<8, 32> mUnk259048;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
+    ScriptItemUseOnEvent& operator=(ScriptItemUseOnEvent const&);
     ScriptItemUseOnEvent(ScriptItemUseOnEvent const&);
     ScriptItemUseOnEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseOnEvent&&);
-
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
-
     MCAPI ~ScriptItemUseOnEvent();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseOnEvent> bind();
-
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI ScriptItemUseOnEvent(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> scriptItem,
-        uchar                                                                                  face,
-        class Vec3                                                                             faceLocation,
-        class BlockPos                                                                         blockPosition,
-        class BlockSource&                                                                     region,
-        class Scripting::WeakLifetimeScope const&                                              scope
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> scriptItem,
-        uchar                                                                                  face,
-        class Vec3                                                                             faceLocation,
-        class BlockPos                                                                         blockPosition,
-        class BlockSource&                                                                     region,
-        class Scripting::WeakLifetimeScope const&                                              scope
-    );
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnEvent> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

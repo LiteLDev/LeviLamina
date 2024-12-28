@@ -5,6 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelComponent;
+class StrictEntityContext;
+struct EventingRequestQueueComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class EventingRequestSystem {
 public:
     // prevent constructor by default
@@ -13,22 +21,17 @@ public:
     EventingRequestSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _eventingRequestSystem(
-        class StrictEntityContext const&,
-        struct EventingRequestQueueComponent& eventingRequestQueueComponent,
-        class LevelComponent&                 levelComponent
+        ::StrictEntityContext const&,
+        ::EventingRequestQueueComponent& eventingRequestQueueComponent,
+        ::LevelComponent&                levelComponent
     );
 
-    MCAPI static void _tickEventingRequestSystem(
-        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent, class LevelComponent> view
-    );
+    MCAPI static void
+    _tickEventingRequestSystem(::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent> view);
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

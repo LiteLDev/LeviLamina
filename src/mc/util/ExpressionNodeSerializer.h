@@ -4,14 +4,16 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::Legacy { struct ExpressionNode; }
+class ExpressionNode;
+namespace SharedTypes::Legacy { struct ExpressionNode; }
 // clang-format on
 
 namespace ExpressionNodeSerializer {
+// functions
 // NOLINTBEGIN
-MCAPI void fromPuv(class ExpressionNode& instance, struct Puv::Legacy::ExpressionNode const& expr);
+MCAPI void fromSharedTypes(::ExpressionNode& instance, ::SharedTypes::Legacy::ExpressionNode const& expr);
 
-MCAPI struct Puv::Legacy::ExpressionNode toPuv(class ExpressionNode const& node);
+MCAPI ::SharedTypes::Legacy::ExpressionNode toSharedTypes(::ExpressionNode const& node);
 // NOLINTEND
 
-}; // namespace ExpressionNodeSerializer
+} // namespace ExpressionNodeSerializer

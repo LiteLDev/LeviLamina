@@ -4,16 +4,20 @@
 
 class LevelStorageObserver {
 public:
-    using OnSaveCallbackT = std::function<void(std::string const&)>;
-
-    OnSaveCallbackT mOnSaveCallback;
-
-    [[nodiscard]] inline explicit LevelStorageObserver(OnSaveCallbackT onSaveCallback)
-    : mOnSaveCallback(std::move(onSaveCallback)) {}
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> mOnSaveCallback;
+    // NOLINTEND
 
 public:
-    // NOLINTBEGIN
-    MCAPI void onSave(std::string const& levelId);
+    // prevent constructor by default
+    LevelStorageObserver& operator=(LevelStorageObserver const&);
+    LevelStorageObserver(LevelStorageObserver const&);
+    LevelStorageObserver();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void onSave(::std::string const& levelId);
     // NOLINTEND
 };

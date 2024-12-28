@@ -9,7 +9,12 @@ namespace mce { struct Radian; }
 
 namespace mce {
 
-struct Degree {
+struct Degree : public ::type_safe::strong_typedef<::mce::Degree, float>,
+                public ::type_safe::strong_typedef_op::equality_comparison<::mce::Degree>,
+                public ::type_safe::strong_typedef_op::relational_comparison<::mce::Degree>,
+                public ::type_safe::strong_typedef_op::floating_point_arithmetic<::mce::Degree>,
+                public ::type_safe::strong_typedef_op::input_operator<::mce::Degree>,
+                public ::type_safe::strong_typedef_op::output_operator<::mce::Degree> {
 public:
     // prevent constructor by default
     Degree& operator=(Degree const&);
@@ -17,19 +22,18 @@ public:
     Degree();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit Degree(struct mce::Radian rad);
+    MCAPI explicit Degree(::mce::Radian rad);
 
     MCAPI float const& asFloat() const;
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct mce::Radian rad);
-
+    MCAPI void* $ctor(::mce::Radian rad);
     // NOLINTEND
 };
 
-}; // namespace mce
+} // namespace mce

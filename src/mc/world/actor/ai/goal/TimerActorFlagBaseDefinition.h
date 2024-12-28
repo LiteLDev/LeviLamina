@@ -5,31 +5,50 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class TimerActorFlagBaseGoal;
+// clang-format on
+
 class TimerActorFlagBaseDefinition : public ::BaseGoalDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8>   mUnk76f887;
+    ::ll::UntypedStorage<4, 8>   mUnkfe75c9;
+    ::ll::UntypedStorage<8, 104> mUnk4ebed7;
+    ::ll::UntypedStorage<8, 104> mUnk8570b2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     TimerActorFlagBaseDefinition& operator=(TimerActorFlagBaseDefinition const&);
     TimerActorFlagBaseDefinition(TimerActorFlagBaseDefinition const&);
+    TimerActorFlagBaseDefinition();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TimerActorFlagBaseDefinition();
-
-    MCAPI TimerActorFlagBaseDefinition();
-
-    MCAPI void initialize(class EntityContext& entity, class TimerActorFlagBaseGoal& goal) const;
-
+    virtual ~TimerActorFlagBaseDefinition() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void initialize(::EntityContext& entity, ::TimerActorFlagBaseGoal& goal) const;
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -1,16 +1,14 @@
 #pragma once
 
+// clang-format off
+
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 
 #include "ll/api/base/Macro.h"
 
 #define MCAPI  LL_SHARED_IMPORT
-#define MCVAPI MCAPI
-
-#define MCTAPI                                                                                                         \
-    template <>                                                                                                        \
-    MCAPI
+#define MCTAPI template<> MCAPI
 
 #include <algorithm>          // STL general algorithms
 #include <array>              // STL array container
@@ -62,6 +60,7 @@
 #include <utility>            // STL utility components
 #include <variant>            // STL variant type
 #include <vector>             // STL dynamic array container
+#include <future>        // STL future
 
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
@@ -98,14 +97,35 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
+// type_safe C++ Library
+#include "type_safe/strong_typedef.hpp"
+
+// expected_lite C++ Library
+#include "nonstd/expected.hpp"
+
 #include "ll/api/base/Alias.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
 
+struct HWND__;
+struct _TP_CALLBACK_INSTANCE;
+struct _TP_WAIT;
+struct _TP_WORK;
+struct _TP_TIMER;
+typedef long HRESULT;
+enum _WINHTTP_WEB_SOCKET_BUFFER_TYPE;
+struct in6_addr;
+struct in_addr;
+struct sockaddr;
+struct addrinfo;
+struct _IP_ADAPTER_PREFIX_XP;
+struct sockaddr_storage;
+struct sockaddr_in;
+struct sockaddr_in6;
+
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/math/vector/Vecs.h"               // for vector types
 
-// clang-format off
 template <typename T0, typename T1>
 class AutomaticID;
 class Dimension;
@@ -132,6 +152,20 @@ using ItemStackNetId           = TypedServerNetId<ItemStackNetIdTag, int>;
 using ItemStackRequestId       = TypedClientNetId<ItemStackRequestIdTag, int>;
 using ItemStackLegacyRequestId = TypedClientNetId<ItemStackLegacyRequestIdTag, int>;
 
+template<int>
+class ParityImprovedNoiseImpl;
+
+template<typename T>
+class buffer_span_mut {
+public:
+    T* mBegin;
+    T* mEnd;
+    class iterator {
+    public:
+        T* mPtr;
+    };
+};
+
 namespace Bedrock {
 template <typename T, typename Err = std::error_code>
 class Result;
@@ -140,11 +174,54 @@ class NonOwnerPointer;
 template <typename T>
 using NotNullNonOwnerPtr = gsl::not_null<NonOwnerPointer<T>>;
 
+template <typename T, typename... Args>
+class ImplBase {
+public:
+    virtual ~ImplBase() = default;
+};
+
+template <typename T, typename U, typename A, typename M>
+class AccessUpdateEditor;
+namespace Detail {
+template <typename T, typename U = void>
+struct AccessUpdateEditorAccessor;
+}
+
 namespace Threading {
 template <typename T, typename Alloc = std::allocator<T>>
 class ThreadLocalObject;
+}
+}
+
+namespace Core {
+template <typename T0, typename T1>
+class CallbackListeners {
+public:
+    class Listener {};
 };
+}
+
+namespace Social {
+enum class SignInResult;
+}
+
+namespace NetherNet::Utils {
+template <typename T>
+class ThreadSafe {
+public:
+    class View {};
 };
+}
+
+namespace brstd {
+template <typename T, typename U = T>
+class function_ref;
+}
+
+namespace rtc {
+template<class T, size_t N = size_t(-4711ll)>
+class ArrayView;
+}
 
 template <typename T0>
 class http_stl_allocator;
@@ -154,4 +231,5 @@ using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class
 namespace asio::ssl {
 class verify_context;
 }
+
 // clang-format on

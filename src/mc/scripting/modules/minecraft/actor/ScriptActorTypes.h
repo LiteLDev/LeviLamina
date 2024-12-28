@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinition;
+class Level;
 namespace ScriptModuleMinecraft { class ScriptActorType; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -17,28 +17,33 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorTypes {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk883648;
+    ::ll::UntypedStorage<8, 8>  mUnk5bfa27;
+    ::ll::UntypedStorage<1, 1>  mUnk4ca34e;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptActorTypes& operator=(ScriptActorTypes const&);
     ScriptActorTypes(ScriptActorTypes const&);
     ScriptActorTypes();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorType>>
-          get(std::string const& actorName);
+    MCAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
 
-    MCAPI static void bind(
-        class Scripting::ModuleBindingBuilder&                                         moduleBuilder,
-        std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const& actorDefinitionList
-    );
-
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>
+    get(::std::string const& actorName);
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void registerTypes(class Scripting::WeakLifetimeScope& scope);
-
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

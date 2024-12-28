@@ -5,77 +5,82 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/strict/AddRemove.h"
-#include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Filter.h"
-#include "mc/deps/ecs/strict/GlobalRead.h"
-#include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Read.h"
-#include "mc/deps/ecs/strict/StrictExecutionContext.h"
-#include "mc/deps/ecs/strict/Write.h"
-#include "mc/entity/components/FlagComponent.h"
-#include "mc/entity/components/ShouldUpdateBoundingBoxRequestComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class CollisionBoxComponent;
+class StrictEntityContext;
+struct AABBRelativeSizeUpdateComponent;
+struct AABBShapeComponent;
+struct AbsoluteSizeUpdateComponent;
+struct ActorDataBoundingBoxComponent;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataFlagComponent;
+struct CustomSizeUpdateComponent;
+struct DepenetrationComponent;
+struct IsHorizontalPoseFlagComponent;
+struct OffsetsComponent;
+struct ShouldUpdateBoundingBoxRequestComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
 namespace UpdateBoundingBox { struct SystemParams; }
 // clang-format on
 
 namespace UpdateBoundingBox {
+// functions
 // NOLINTBEGIN
 MCAPI void onAABBRelativeSizeChanged(
-    struct AABBRelativeSizeUpdateComponent const& relative,
-    struct AABBShapeComponent const&              aabb,
-    struct OffsetsComponent&                      offsets
+    ::AABBRelativeSizeUpdateComponent const& relative,
+    ::AABBShapeComponent const&              aabb,
+    ::OffsetsComponent&                      offsets
 );
 
-MCAPI void onAbsoluteSizeChanged(struct AbsoluteSizeUpdateComponent const& absolute, struct OffsetsComponent& offsets);
+MCAPI void onAbsoluteSizeChanged(::AbsoluteSizeUpdateComponent const& absolute, ::OffsetsComponent& offsets);
 
 MCAPI void onCustomSizeChanged(
-    struct CustomSizeUpdateComponent const& custom,
-    struct AABBShapeComponent const&        aabb,
-    struct OffsetsComponent&                offsets
+    ::CustomSizeUpdateComponent const& custom,
+    ::AABBShapeComponent const&        aabb,
+    ::OffsetsComponent&                offsets
 );
 
 MCAPI void onMinecartSizeChanged(
-    struct StateVectorComponent const& stateVector,
-    struct AABBShapeComponent&         aabb,
-    struct OffsetsComponent&           offsets
+    ::StateVectorComponent const& stateVector,
+    ::AABBShapeComponent&         aabb,
+    ::OffsetsComponent&           offsets
 );
 
 MCAPI void onShulkerSizeChanged(
-    struct SynchedActorDataComponent const& data,
-    struct AABBShapeComponent const&        aabb,
-    struct OffsetsComponent&                offsets
+    ::SynchedActorDataComponent const& data,
+    ::AABBShapeComponent const&        aabb,
+    ::OffsetsComponent&                offsets
 );
 
-MCAPI void singleTickImpl(class StrictEntityContext const& entity, struct UpdateBoundingBox::SystemParams& args);
+MCAPI void singleTickImpl(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
-MCAPI void
-singleTickOnSizeChanged(class StrictEntityContext const& entity, struct UpdateBoundingBox::SystemParams& args);
+MCAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
-MCAPI void tickImpl(struct UpdateBoundingBox::SystemParams& args);
+MCAPI void tickImpl(::UpdateBoundingBox::SystemParams& args);
 
 MCAPI void transformPlayerSizeRequest(
-    struct ShouldUpdateBoundingBoxRequestComponent&            request,
-    class CollisionBoxComponent const&                         collisionBox,
-    class Optional<struct IsHorizontalPoseFlagComponent const> isHorizontal,
-    struct ActorDataFlagComponent const&                       data,
-    float                                                      sneakHeight
+    ::ShouldUpdateBoundingBoxRequestComponent&        request,
+    ::CollisionBoxComponent const&                    collisionBox,
+    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontal,
+    ::ActorDataFlagComponent const&                   data,
+    float                                             sneakHeight
 );
 
 MCAPI void visitCommonSetSize(
-    class StrictEntityContext const&                                     entity,
-    struct ShouldUpdateBoundingBoxRequestComponent const&                request,
-    struct StateVectorComponent const&                                   stateVector,
-    struct ActorDataDirtyFlagsComponent&                                 actorDataDirtyFlags,
-    struct ActorDataBoundingBoxComponent&                                actorData,
-    struct AABBShapeComponent&                                           aabbShape,
-    struct DepenetrationComponent&                                       depenetration,
-    class optional_ref<class CollisionBoxComponent const>                collisionBox,
-    class EntityModifier<struct ShouldUpdateBoundingBoxRequestComponent> modifier
+    ::StrictEntityContext const&                                entity,
+    ::ShouldUpdateBoundingBoxRequestComponent const&            request,
+    ::StateVectorComponent const&                               stateVector,
+    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
+    ::ActorDataBoundingBoxComponent&                            actorData,
+    ::AABBShapeComponent&                                       aabbShape,
+    ::DepenetrationComponent&                                   depenetration,
+    ::optional_ref<::CollisionBoxComponent const>               collisionBox,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 // NOLINTEND
 
-}; // namespace UpdateBoundingBox
+} // namespace UpdateBoundingBox

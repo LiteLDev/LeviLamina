@@ -5,80 +5,88 @@
 // auto generated inclusion list
 #include "mc/entity/components/DepenetrationComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class EntityContext;
+class StrictEntityContext;
+struct ActorUniqueID;
+// clang-format on
+
 namespace ActorCollision {
+// functions
 // NOLINTBEGIN
-MCAPI void clearPushedBy(class EntityContext& provider);
+MCAPI void clearPushedBy(::EntityContext& provider);
 
-MCAPI bool getCollidableMobNear(class EntityContext const& provider);
+MCAPI bool getCollidableMobNear(::EntityContext const& provider);
 
-MCAPI std::vector<class AABB> const& getOnewayPhysicsBlocks(class EntityContext const& provider);
+MCAPI bool getDepenetrationComponentBit(::EntityContext const& provider, ::DepenetrationComponent::Bit bit);
 
-MCAPI float getPickRadius(class EntityContext const& provider);
+MCAPI ::std::vector<::AABB> const& getOnewayPhysicsBlocks(::EntityContext const& provider);
 
-MCAPI struct ActorUniqueID getPushedByID(class EntityContext const& provider);
+MCAPI float getPickRadius(::EntityContext const& provider);
 
-MCAPI std::vector<class AABB>& getSubAABBs(class EntityContext& provider);
+MCAPI ::ActorUniqueID getPushedByID(::EntityContext const& provider);
 
-MCAPI bool hasCollision(class EntityContext const& provider);
+MCAPI ::std::vector<::AABB>& getSubAABBs(::EntityContext& provider);
 
-MCAPI bool hasHorizontalCollision(class EntityContext const& provider);
+MCAPI bool hasCollision(::EntityContext const& provider);
 
-MCAPI bool hasVerticalCollision(class EntityContext const& provider);
+MCAPI bool hasHorizontalCollision(::EntityContext const& provider);
 
-MCAPI void initializeActor(class EntityContext& provider);
+MCAPI bool hasVerticalCollision(::EntityContext const& provider);
 
-MCAPI void initializePickable(class EntityContext& provider, float pickRadius);
+MCAPI void initializeActor(::EntityContext& provider);
 
-MCAPI bool isKnockedBackOnDeath(class EntityContext const& provider);
+MCAPI void initializePickable(::EntityContext& provider, float pickRadius);
 
-MCAPI bool isOnGround(class EntityContext const& provider);
+MCAPI void initializePlayer(::EntityContext& provider);
 
-MCAPI bool isPickable(class EntityContext const& provider);
+MCAPI bool isKnockedBackOnDeath(::EntityContext const& provider);
 
-MCAPI bool isStuckInCollider(class EntityContext const& provider);
+MCAPI bool isOnGround(::EntityContext const& provider);
 
-MCAPI bool isStuckItem(class EntityContext const& provider);
+MCAPI bool isPickable(::EntityContext const& provider);
 
-MCAPI void onOnewayCollision(class EntityContext& provider, class AABB const& oneWayVolume);
+MCAPI bool isStuckInCollider(::EntityContext const& provider);
 
-MCAPI void setCollidableMob(class EntityContext& provider, bool value);
+MCAPI bool isStuckItem(::EntityContext const& provider);
 
-MCAPI void setCollidableMobNear(class EntityContext& provider, bool value);
+MCAPI void setCollidableMob(::EntityContext& provider, bool value);
 
-MCAPI void setCollision(class EntityContext& provider, bool value);
+MCAPI void setCollidableMobNear(::EntityContext& provider, bool value);
 
-MCAPI void setDepenetrationComponentBit(class EntityContext& provider, ::DepenetrationComponent::Bit bit, bool value);
+MCAPI void setCollision(::EntityContext& provider, bool value);
 
-MCAPI void setHorizontalCollision(class EntityContext& provider, bool value);
+MCAPI void setDepenetrationComponentBit(::EntityContext& provider, ::DepenetrationComponent::Bit bit, bool value);
 
-MCAPI void setIsKnockedBackOnDeath(class EntityContext& provider, bool value);
+MCAPI void setHorizontalCollision(::EntityContext& provider, bool value);
 
-MCAPI void setIsPickable(class EntityContext& provider, bool isPickable);
+MCAPI void setIsKnockedBackOnDeath(::EntityContext& provider, bool value);
 
-MCAPI void setOnGround(class EntityContext& provider, bool value);
+MCAPI void setIsPickable(::EntityContext& provider, bool isPickable);
 
-MCAPI void setPickRadius(class EntityContext& provider, float pickRadius);
+MCAPI void setOnGround(::EntityContext& provider, bool value);
 
-MCAPI void
-setPushedBy(class EntityContext& provider, class StrictEntityContext context, struct ActorUniqueID const& id);
+MCAPI void setPickRadius(::EntityContext& provider, float pickRadius);
 
-MCAPI void setStuckItem(class EntityContext& provider, bool value);
+MCAPI void setPushedBy(::EntityContext& provider, ::StrictEntityContext context, ::ActorUniqueID const& id);
 
-MCAPI void setSubAABBs(class EntityContext& provider, std::vector<class AABB> const& bbs);
+MCAPI void setStuckItem(::EntityContext& provider, bool value);
 
-MCAPI void setUsesOneWayCollision(class EntityContext& provider, bool value);
+MCAPI void setSubAABBs(::EntityContext& provider, ::std::vector<::AABB> const& bbs);
 
-MCAPI void setVerticalCollision(class EntityContext& provider, bool value);
+MCAPI void setUsesOneWayCollision(::EntityContext& provider, bool value);
 
-MCAPI void setWasOnGround(class EntityContext& provider, bool value);
+MCAPI void setVerticalCollision(::EntityContext& provider, bool value);
 
-MCAPI void updateOnewayCollisions(class EntityContext& provider);
+MCAPI void setWasOnGround(::EntityContext& provider, bool value);
 
-MCAPI bool usesOneWayCollision(class EntityContext const& provider);
+MCAPI bool usesOneWayCollision(::EntityContext const& provider);
 
-MCAPI bool wasOnGround(class EntityContext const& provider);
+MCAPI bool wasOnGround(::EntityContext const& provider);
 
-MCAPI bool wasPenetratingLastFrame(class EntityContext const& provider);
+MCAPI bool wasPenetratingLastFrame(::EntityContext const& provider);
 // NOLINTEND
 
-}; // namespace ActorCollision
+} // namespace ActorCollision

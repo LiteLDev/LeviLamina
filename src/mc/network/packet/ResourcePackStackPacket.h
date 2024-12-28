@@ -1,83 +1,109 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/resource/PackInstanceId.h"
-#include "mc/resources/BaseGameVersion.h"
-#include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class BinaryStream;
+class ExperimentStorage;
+class Experiments;
+class ReadOnlyBinaryStream;
+struct PackInstanceId;
+// clang-format on
+
 class ResourcePackStackPacket : public ::Packet {
 public:
-    std::vector<PackInstanceId> mAddOnIdsAndVersions;
-    std::vector<PackInstanceId> mTexturePackIdsAndVersions;
-    BaseGameVersion             mBaseGameVersion;
-    bool                        mTexturePackRequired;
-    ExperimentStorage           mExperiments;
-    bool                        mHasEditorPacks;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mAddOnIdsAndVersions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
+    ::ll::TypedStorage<8, 120, ::BaseGameVersion>              mBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
+    ::ll::TypedStorage<8, 72, ::ExperimentStorage>             mExperiments;
+    ::ll::TypedStorage<1, 1, bool>                             mIncludeEditorPacks;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     ResourcePackStackPacket& operator=(ResourcePackStackPacket const&);
     ResourcePackStackPacket(ResourcePackStackPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ResourcePackStackPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
+    // vIndex: 0
+    virtual ~ResourcePackStackPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ResourcePackStackPacket();
 
     MCAPI ResourcePackStackPacket(
-        std::vector<struct PackInstanceId> addOnIdsAndVersions,
-        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
-        class BaseGameVersion const&       baseGameVersion,
-        bool                               texturePackRequired,
-        class Experiments const&           experiments,
-        bool                               includeEditorPacks
+        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
+        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
+        ::BaseGameVersion const&        baseGameVersion,
+        bool                            texturePackRequired,
+        ::Experiments const&            experiments,
+        bool                            includeEditorPacks
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
-
-    MCAPI void* ctor$(
-        std::vector<struct PackInstanceId> addOnIdsAndVersions,
-        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
-        class BaseGameVersion const&       baseGameVersion,
-        bool                               texturePackRequired,
-        class Experiments const&           experiments,
-        bool                               includeEditorPacks
+    MCAPI void* $ctor(
+        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
+        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
+        ::BaseGameVersion const&        baseGameVersion,
+        bool                            texturePackRequired,
+        ::Experiments const&            experiments,
+        bool                            includeEditorPacks
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -20,10 +20,10 @@ public:
     ScriptActorDefinitionFeedItem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind();
-
+    MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionFeedItem> bind();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

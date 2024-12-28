@@ -1,38 +1,49 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/gametest/framework/BaseGameTestFunction.h"
+
+// auto generated inclusion list
+#include "mc/util/Rotation.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+namespace gametest { class BaseGameTestFunction; }
+// clang-format on
 
 namespace gametest {
 
 struct TestParameters {
 public:
-    BlockPos                                                     mTestPos;                 // this+0x0
-    bool                                                         mStopOnFailure;           // this+0xC
-    bool                                                         mStopOtherTestsOnFailure; // this+0x10
-    int                                                          mRepeatCount;             // this+0x14
-    int                                                          mTestsPerRow;             // this+0x18
-    int                                                          mMaxTestsPerBatch;        // this+0x1C
-    std::vector<std::shared_ptr<gametest::BaseGameTestFunction>> mtestFunctions;           // this+0x20
-    Rotation                                                     mRotation;                // this+0x38
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::BlockPos> mTestPos;
+    ::ll::TypedStorage<1, 1, bool>        mStopOnFailure;
+    ::ll::TypedStorage<1, 1, bool>        mStopOtherTestsOnFailure;
+    ::ll::TypedStorage<4, 4, int>         mRepeatCount;
+    ::ll::TypedStorage<4, 4, int>         mTestsPerRow;
+    ::ll::TypedStorage<4, 4, int>         mMaxTestsPerBatch;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>> mtestFunctions;
+    ::ll::TypedStorage<1, 1, ::Rotation>                                                          mRotation;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     TestParameters& operator=(TestParameters const&);
     TestParameters(TestParameters const&);
     TestParameters();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~TestParameters();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace gametest
+} // namespace gametest

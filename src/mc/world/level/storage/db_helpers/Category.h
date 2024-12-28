@@ -4,20 +4,22 @@
 
 namespace DBHelpers {
 
-enum class Category : int {
-    Uncategorized    = 0x0,
-    Actor            = 0x1,
-    Biome            = 0x2,
-    Block            = 0x3,
-    Chunk            = 0x4,
-    EDU              = 0x5,
-    Item             = 0x6,
-    Player           = 0x7,
-    TickingArea      = 0x8,
-    VolumeArea       = 0x9,
-    WorldFeature     = 0xA,
-    ForcedCorruption = 0xB,
-    Count            = 0xC,
-    All              = 0xD,
+enum class Category : uint {
+    Uncategorized    = 0,
+    Actor            = 1,
+    Biome            = 2,
+    Block            = 3,
+    Chunk            = 4,
+    Edu              = 5,
+    Item             = 6,
+    Player           = 7,
+    Realms           = 8,
+    TickingArea      = 9,
+    VolumeArea       = 10,
+    WorldFeature     = 11,
+    ForcedCorruption = 12,
+    Count            = 13,
+    All              = 14,
 };
-};
+
+}

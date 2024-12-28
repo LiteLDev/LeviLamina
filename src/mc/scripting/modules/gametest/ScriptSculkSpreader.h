@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,38 +15,44 @@ namespace ScriptModuleGameTest {
 
 class ScriptSculkSpreader {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk731900;
+    ::ll::UntypedStorage<8, 8>  mUnka70c1b;
+    ::ll::UntypedStorage<4, 12> mUnk6529e7;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptSculkSpreader& operator=(ScriptSculkSpreader const&);
     ScriptSculkSpreader(ScriptSculkSpreader const&);
     ScriptSculkSpreader();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void addCursorsWithOffset(class Vec3 const& offset, int charge);
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
 
-    MCAPI class Scripting::Result<class Vec3> getCursorPosition(int index) const;
+    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
 
-    MCAPI class Scripting::Result<int> getMaxCharge() const;
+    MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
-    MCAPI class Scripting::Result<int> getNumberOfCursors() const;
-
-    MCAPI class Scripting::Result<int> getTotalCharge() const;
-
-    MCAPI class ScriptModuleGameTest::ScriptSculkSpreader&
-    operator=(class ScriptModuleGameTest::ScriptSculkSpreader&& rhs);
+    MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
 
     MCAPI ~ScriptSculkSpreader();
-
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSculkSpreader> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSculkSpreader> bind();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleGameTest
+} // namespace ScriptModuleGameTest

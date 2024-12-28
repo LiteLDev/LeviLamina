@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/RTree.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+struct BiomeNoiseTarget;
+struct TargetPoint;
+// clang-format on
+
 class ParameterList {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24>  mUnk22c268;
+    ::ll::UntypedStorage<8, 168> mUnkb49057;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ParameterList& operator=(ParameterList const&);
@@ -13,29 +27,32 @@ public:
     ParameterList();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ParameterList(class ParameterList&&);
+    MCAPI ParameterList(::ParameterList&&);
 
-    MCAPI explicit ParameterList(std::vector<struct BiomeNoiseTarget> const& targets);
+    MCAPI explicit ParameterList(::std::vector<::BiomeNoiseTarget> const& targets);
 
-    MCAPI class Biome* findTarget(struct TargetPoint const& current, struct RTree::Hint* hint) const;
+    MCAPI ::Biome* findTarget(::TargetPoint const& current, ::RTree::Hint* hint) const;
 
     MCAPI bool hasBiome(uint64 id) const;
 
     MCAPI bool hasBiomeByHashId(uint64 id) const;
 
     MCAPI ~ParameterList();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class ParameterList&&);
+    MCAPI void* $ctor(::ParameterList&&);
 
-    MCAPI void* ctor$(std::vector<struct BiomeNoiseTarget> const& targets);
+    MCAPI void* $ctor(::std::vector<::BiomeNoiseTarget> const& targets);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

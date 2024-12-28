@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class SwiftSneakEnchant : public ::Enchant {
 public:
     // prevent constructor by default
@@ -13,63 +18,56 @@ public:
     SwiftSneakEnchant();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SwiftSneakEnchant() = default;
-
     // vIndex: 2
-    virtual int getMinCost(int level) const;
+    virtual int getMinCost(int level) const /*override*/;
 
     // vIndex: 3
-    virtual int getMaxCost(int level) const;
+    virtual int getMaxCost(int level) const /*override*/;
 
     // vIndex: 5
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 14
-    virtual bool isTreasureOnly() const;
+    virtual bool isTreasureOnly() const /*override*/;
 
     // vIndex: 15
-    virtual bool isDiscoverable() const;
+    virtual bool isDiscoverable() const /*override*/;
 
-    MCAPI SwiftSneakEnchant(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
-
-    MCAPI static float getExtraSneakingMovementFactor(class Actor const& entity);
-
-    MCAPI static int getLevel(class Actor const& entity);
-
+    // vIndex: 0
+    virtual ~SwiftSneakEnchant() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static float getExtraSneakingMovementFactor(::Actor const& entity);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        ::Enchant::Type      type,
-        ::Enchant::Frequency frequency,
-        std::string_view     stringId,
-        std::string_view     description,
-        int                  primarySlots,
-        int                  secondarySlots
-    );
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI int getMaxCost$(int level) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getMinCost(int level) const;
 
-    MCAPI int getMaxLevel$() const;
+    MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int getMinCost$(int level) const;
+    MCAPI int $getMaxLevel() const;
 
-    MCAPI bool isDiscoverable$() const;
+    MCAPI bool $isTreasureOnly() const;
 
-    MCAPI bool isTreasureOnly$() const;
+    MCAPI bool $isDiscoverable() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

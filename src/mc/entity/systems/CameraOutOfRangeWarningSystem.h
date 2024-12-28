@@ -5,17 +5,28 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
+// auto generated forward declare list
+// clang-format off
+class IConstBlockSource;
+class StrictEntityContext;
+struct CameraOutOfRangeWarningSentComponent;
+struct ServerActiveCameraComponent;
+struct StateVectorComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 namespace CameraOutOfRangeWarningSystem {
+// functions
 // NOLINTBEGIN
 MCAPI void _tick(
-    class StrictEntityContext const&                                  entity,
-    struct StateVectorComponent const&                                stateVectorComponent,
-    struct ServerActiveCameraComponent const&                         serverActiveCameraComponent,
-    class EntityModifier<struct CameraOutOfRangeWarningSentComponent> modifier,
-    class IConstBlockSource const&                                    region
+    ::StrictEntityContext const&                             entity,
+    ::StateVectorComponent const&                            stateVectorComponent,
+    ::ServerActiveCameraComponent const&                     serverActiveCameraComponent,
+    ::EntityModifier<::CameraOutOfRangeWarningSentComponent> modifier,
+    ::IConstBlockSource const&                               region
 );
 
-MCAPI struct TickingSystemWithInfo create();
+MCAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
-}; // namespace CameraOutOfRangeWarningSystem
+} // namespace CameraOutOfRangeWarningSystem

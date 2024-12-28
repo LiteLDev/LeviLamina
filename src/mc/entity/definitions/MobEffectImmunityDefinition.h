@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct MobEffectImmunityComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class MobEffectImmunityDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk8bf693;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MobEffectImmunityDefinition& operator=(MobEffectImmunityDefinition const&);
@@ -18,19 +26,18 @@ public:
     MobEffectImmunityDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext&, struct MobEffectImmunityComponent& component) const;
+    MCAPI void addEffectByName(::std::string const& name);
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<
-            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectImmunityDefinition>>& root
-    );
-
+    MCAPI void initialize(::EntityContext&, ::MobEffectImmunityComponent& component) const;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void addEffectByName(std::string const& name);
-
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectImmunityDefinition>>& root
+    );
     // NOLINTEND
 };

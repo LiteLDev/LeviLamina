@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
 class ActorMoveSystem {
 public:
     // prevent constructor by default
@@ -10,14 +15,14 @@ public:
     ActorMoveSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createActorMoveSystem();
+    MCAPI static ::TickingSystemWithInfo createActorMoveSystem();
 
-    MCAPI static struct TickingSystemWithInfo createConfigureDepenetrationSystem();
+    MCAPI static ::TickingSystemWithInfo createConfigureDepenetrationSystem();
 
-    MCAPI static struct TickingSystemWithInfo createUpdateDepenetrationSystem();
+    MCAPI static ::TickingSystemWithInfo createUpdateDepenetrationSystem();
 
-    MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();
-
+    MCAPI static ::TickingSystemWithInfo createUpdateHitboxSystem();
     // NOLINTEND
 };

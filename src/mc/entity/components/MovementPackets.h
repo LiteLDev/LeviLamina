@@ -2,17 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InteractPacket;
+class InventoryTransactionPacket;
+class PlayerAuthInputPacket;
+// clang-format on
+
 struct MovementPackets {
 public:
-    char unk[304];
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 232, ::std::optional<::PlayerAuthInputPacket>>                      mInput;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::InventoryTransactionPacket>>> mTransactions;
+    ::ll::TypedStorage<8, 88, ::std::optional<::InteractPacket>>                              mInteraction;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MovementPackets& operator=(MovementPackets const&);
     MovementPackets(MovementPackets const&);
     MovementPackets();
-
-public:
-    // NOLINTBEGIN
-    MCAPI bool isReadyToSimulate() const;
-
-    // NOLINTEND
 };

@@ -8,10 +8,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class WeakEntityRef;
+struct ActorUniqueID;
 namespace npc { struct ActionContainer; }
 // clang-format on
 
-class NpcSceneDialogueData : public ::INpcDialogueData {
+struct NpcSceneDialogueData : public ::INpcDialogueData {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
+    ::ll::TypedStorage<8, 32, ::std::string>   mSceneName;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     NpcSceneDialogueData& operator=(NpcSceneDialogueData const&);
@@ -22,77 +32,82 @@ public:
     std::string   mSceneName; // this+0x20
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~NpcSceneDialogueData();
-
     // vIndex: 1
-    virtual std::string const& getDialogueText() const;
-
-    // vIndex: 2
-    virtual std::string const& getRawDialogueText() const;
-
-    // vIndex: 3
-    virtual std::string const& getNameText() const;
-
-    // vIndex: 4
-    virtual std::string const& getNameRawText() const;
+    virtual ::std::string const& getDialogueText() const /*override*/;
 
     // vIndex: 5
-    virtual std::string const& getSceneName() const;
+    virtual ::std::string const& getSceneName() const /*override*/;
 
-    // vIndex: 6
-    virtual struct npc::ActionContainer const* getActionsContainer() const;
+    // vIndex: 3
+    virtual ::std::string const& getNameText() const /*override*/;
+
+    // vIndex: 4
+    virtual ::std::string const& getNameRawText() const /*override*/;
 
     // vIndex: 7
-    virtual struct npc::ActionContainer* getActionsContainer();
+    virtual ::npc::ActionContainer* getActionsContainer() /*override*/;
+
+    // vIndex: 6
+    virtual ::npc::ActionContainer const* getActionsContainer() const /*override*/;
 
     // vIndex: 8
-    virtual struct ActorUniqueID getActorUniqueID();
-
-    // vIndex: 9
-    virtual class Actor const* getActor() const;
+    virtual ::ActorUniqueID getActorUniqueID() /*override*/;
 
     // vIndex: 10
-    virtual class Actor* getActor();
+    virtual ::Actor* getActor() /*override*/;
 
-    // vIndex: 11
-    virtual bool isRemoteFire();
+    // vIndex: 9
+    virtual ::Actor const* getActor() const /*override*/;
 
-    MCAPI NpcSceneDialogueData(class WeakEntityRef npc, std::string const& sceneName);
-
+    // vIndex: 0
+    virtual ~NpcSceneDialogueData() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI NpcSceneDialogueData(::WeakEntityRef npc, ::std::string const& sceneName);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class WeakEntityRef npc, std::string const& sceneName);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakEntityRef npc, ::std::string const& sceneName);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI struct npc::ActionContainer const* getActionsContainer$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string const& $getDialogueText() const;
 
-    MCAPI struct npc::ActionContainer* getActionsContainer$();
+    MCAPI ::std::string const& $getSceneName() const;
 
-    MCAPI class Actor const* getActor$() const;
+    MCAPI ::std::string const& $getNameText() const;
 
-    MCAPI class Actor* getActor$();
+    MCAPI ::std::string const& $getNameRawText() const;
 
-    MCAPI struct ActorUniqueID getActorUniqueID$();
+    MCAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCAPI std::string const& getDialogueText$() const;
+    MCAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCAPI std::string const& getNameRawText$() const;
+    MCAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCAPI std::string const& getNameText$() const;
+    MCAPI ::Actor* $getActor();
 
-    MCAPI std::string const& getRawDialogueText$() const;
+    MCAPI ::Actor const* $getActor() const;
+    // NOLINTEND
 
-    MCAPI std::string const& getSceneName$() const;
-
-    MCAPI bool isRemoteFire$();
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

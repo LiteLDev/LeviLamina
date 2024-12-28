@@ -12,16 +12,21 @@ namespace JsonUtil { class EmptyClass; }
 
 struct ScaleDefinition {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk849fdc;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScaleDefinition& operator=(ScaleDefinition const&);
     ScaleDefinition(ScaleDefinition const&);
     ScaleDefinition();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ScaleDefinition>>& root
-    );
-
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ScaleDefinition>>& root);
     // NOLINTEND
 };

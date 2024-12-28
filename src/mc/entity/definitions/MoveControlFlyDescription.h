@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/entity/definitions/MoveControlDescription.h"
 
-class MoveControlFlyDescription : public ::MoveControlDescription {
+struct MoveControlFlyDescription : public ::MoveControlDescription {
 public:
     // prevent constructor by default
     MoveControlFlyDescription& operator=(MoveControlFlyDescription const&);
@@ -13,23 +13,30 @@ public:
     MoveControlFlyDescription();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 1
-    virtual ~MoveControlFlyDescription();
-
+    virtual ~MoveControlFlyDescription() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI char const* $getJsonName() const;
+    // NOLINTEND
 
-    MCAPI char const* getJsonName$() const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

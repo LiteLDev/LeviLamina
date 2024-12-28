@@ -2,11 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace InsidePowderSnowBlockSystem {
-// NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
+namespace InsidePowderSnowBlockSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createClientSideSpawnParticleSystem();
+
+MCAPI ::TickingSystemWithInfo createServerSideClearFireSystem();
 // NOLINTEND
 
-}; // namespace InsidePowderSnowBlockSystem
+} // namespace InsidePowderSnowBlockSystem

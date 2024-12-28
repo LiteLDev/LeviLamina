@@ -1,176 +1,207 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/ItemTag.h"
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
+class Block;
+class BlockLegacy;
+class CompoundTag;
+class Item;
+class ItemStack;
+class ReadOnlyBinaryStream;
+struct ItemTag;
 namespace Json { class Value; }
-namespace Puv::Legacy { struct ItemDescriptor; }
+namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
-
-class BinaryStream;
 
 class ItemDescriptor {
 public:
     // ItemDescriptor inner types declare
     // clang-format off
-    struct ItemEntry;
     struct BaseDescriptor;
+    struct ItemEntry;
     // clang-format on
 
     // ItemDescriptor inner types define
-    enum class InternalType : schar {
-        Invalid      = 0x0,
-        Default      = 0x1,
-        Molang       = 0x2,
-        ItemTag      = 0x3,
-        Deferred     = 0x4,
-        ComplexAlias = 0x5,
-    };
-
     struct ItemEntry {
     public:
-        const class Item* mItem;     // this+0x0
-        short             mAuxValue; // this+0x8
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Item const*> mItem;
+        ::ll::TypedStorage<2, 2, short>         mAuxValue;
+        // NOLINTEND
 
     public:
-        // NOLINTBEGIN
-        MCAPI class Block const* getBlock() const;
+        // prevent constructor by default
+        ItemEntry& operator=(ItemEntry const&);
+        ItemEntry(ItemEntry const&);
+        ItemEntry();
+    };
 
-        // NOLINTEND
+    enum class InternalType : uchar {
+        Invalid      = 0,
+        Default      = 1,
+        Molang       = 2,
+        ItemTag      = 3,
+        Deferred     = 4,
+        ComplexAlias = 5,
     };
 
     struct BaseDescriptor {
     public:
-        ItemTag mItemTag;
-
-        BaseDescriptor() = delete;
+        // prevent constructor by default
+        BaseDescriptor& operator=(BaseDescriptor const&);
+        BaseDescriptor(BaseDescriptor const&);
+        BaseDescriptor();
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const = 0;
+        virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> clone() const = 0;
 
         // vIndex: 1
-        virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+        virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
         // vIndex: 2
-        virtual bool sameItem(struct ItemDescriptor::ItemEntry const& otherItem, bool) const = 0;
+        virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const = 0;
 
         // vIndex: 3
-        virtual std::string const& getFullName() const;
+        virtual ::std::string const& getFullName() const;
 
         // vIndex: 4
-        virtual struct ItemDescriptor::ItemEntry getItem() const;
+        virtual ::std::string toString() const;
 
         // vIndex: 5
-        virtual bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
+        virtual ::ItemDescriptor::ItemEntry getItem() const;
 
         // vIndex: 6
-        virtual std::map<std::string, std::string> toMap() const = 0;
+        virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
         // vIndex: 7
-        virtual std::optional<class CompoundTag> save() const = 0;
+        virtual ::std::map<::std::string, ::std::string> toMap() const = 0;
 
         // vIndex: 8
-        virtual void serialize(class Json::Value& val) const;
-
-        // vIndex: 9
-        virtual void serialize(class BinaryStream& stream) const = 0;
+        virtual ::std::optional<::CompoundTag> save() const = 0;
 
         // vIndex: 10
-        virtual ::ItemDescriptor::InternalType getType() const = 0;
+        virtual void serialize(::Json::Value& val) const;
+
+        // vIndex: 9
+        virtual void serialize(::BinaryStream&) const = 0;
 
         // vIndex: 11
-        virtual bool isValid() const;
+        virtual ::ItemDescriptor::InternalType getType() const = 0;
 
         // vIndex: 12
-        virtual uint64 getHash() const = 0;
+        virtual bool isValid() const;
 
         // vIndex: 13
-        virtual bool shouldResolve() const;
+        virtual uint64 getHash() const = 0;
 
         // vIndex: 14
-        virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
+        virtual bool shouldResolve() const;
 
         // vIndex: 15
-        virtual ~BaseDescriptor();
+        virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const;
 
+        // vIndex: 16
+        virtual ~BaseDescriptor();
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI void $dtor();
+        // NOLINTEND
 
-        MCAPI void dtor$();
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        MCAPI bool forEachItemUntil$(std::function<bool(class Item const&, short)> func) const;
+        MCAPI ::std::string const& $getFullName() const;
 
-        MCAPI std::string const& getFullName$() const;
+        MCAPI ::std::string $toString() const;
 
-        MCAPI struct ItemDescriptor::ItemEntry getItem$() const;
+        MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
-        MCAPI bool isValid$() const;
+        MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-        MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve$() const;
+        MCAPI void $serialize(::Json::Value& val) const;
 
-        MCAPI bool sameItems$(struct ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+        MCAPI bool $isValid() const;
 
-        MCAPI void serialize$(class Json::Value& val) const;
+        MCAPI bool $shouldResolve() const;
 
-        MCAPI bool shouldResolve$() const;
+        MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
+        // NOLINTEND
 
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
-    std::unique_ptr<ItemDescriptor::BaseDescriptor> mImpl;
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>> mImpl;
+    // NOLINTEND
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ItemDescriptor();
 
-    // vIndex: 1
-    virtual void serialize(class Json::Value& val) const;
-
     // vIndex: 2
-    virtual void serialize(class BinaryStream& stream) const;
+    virtual void serialize(::Json::Value& val) const;
 
+    // vIndex: 1
+    virtual void serialize(::BinaryStream& stream) const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI ItemDescriptor();
 
-    MCAPI explicit ItemDescriptor(class Block const& block);
+    MCAPI explicit ItemDescriptor(::Block const& block);
 
-    MCAPI explicit ItemDescriptor(class BlockLegacy const& block);
+    MCAPI explicit ItemDescriptor(::BlockLegacy const& block);
 
-    MCAPI ItemDescriptor(class ItemDescriptor&& rhs);
+    MCAPI explicit ItemDescriptor(::SharedTypes::Legacy::ItemDescriptor const& desc);
 
-    MCAPI ItemDescriptor(class ItemDescriptor const& rhs);
+    MCAPI explicit ItemDescriptor(::ItemTag const& itemTag);
 
-    MCAPI explicit ItemDescriptor(class ReadOnlyBinaryStream& stream);
+    MCAPI ItemDescriptor(::ItemDescriptor&& rhs);
 
-    MCAPI explicit ItemDescriptor(struct ItemTag const& itemTag);
+    MCAPI ItemDescriptor(::ItemDescriptor const& rhs);
 
-    MCAPI explicit ItemDescriptor(struct Puv::Legacy::ItemDescriptor const& desc);
+    MCAPI explicit ItemDescriptor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ItemDescriptor(class Item const& item, int auxValue);
+    MCAPI ItemDescriptor(::std::string_view fullName, int itemAux);
 
-    MCAPI ItemDescriptor(class Json::Value const& val, class SemVersion const& engineVersion);
+    MCAPI ItemDescriptor(::Item const& item, int auxValue);
 
-    MCAPI ItemDescriptor(std::string_view fullName, int itemAux);
+    MCAPI ItemDescriptor(::Json::Value const& val, ::MolangVersion molangVersion);
 
-    MCAPI bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
+    MCAPI bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
     MCAPI short getAuxValue() const;
 
-    MCAPI class Block const* getBlock() const;
+    MCAPI ::Block const* getBlock() const;
 
-    MCAPI std::string getFullName() const;
+    MCAPI ::std::string getFullName() const;
 
     MCAPI uint64 getHash() const;
 
@@ -178,13 +209,13 @@ public:
 
     MCAPI int getIdAux() const;
 
-    MCAPI class Item const* getItem() const;
+    MCAPI ::Item const* getItem() const;
 
-    MCAPI class WeakPtr<class BlockLegacy const> const& getLegacyBlock() const;
+    MCAPI ::WeakPtr<::BlockLegacy const> const& getLegacyBlock() const;
 
-    MCAPI std::string getRawNameId() const;
+    MCAPI ::std::string getRawNameId() const;
 
-    MCAPI std::string getSerializedNameAndAux() const;
+    MCAPI ::std::string getSerializedNameAndAux() const;
 
     MCAPI bool isDefinedAsItemName() const;
 
@@ -192,62 +223,74 @@ public:
 
     MCAPI bool isValid(bool shouldResolve) const;
 
-    MCAPI void operator=(class ItemDescriptor&& rhs);
+    MCAPI bool operator!=(::ItemDescriptor const& rhs) const;
 
-    MCAPI void operator=(class ItemDescriptor const& rhs);
+    MCAPI void operator=(::ItemDescriptor const& rhs);
 
-    MCAPI bool operator==(class ItemDescriptor const& rhs) const;
+    MCAPI void operator=(::ItemDescriptor&& rhs);
 
-    MCAPI bool sameItem(class ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
+    MCAPI bool operator==(::ItemDescriptor const& rhs) const;
 
-    MCAPI bool sameItem(class ItemStack const& item, bool compareAux) const;
+    MCAPI bool sameItem(::ItemStack const& item, bool compareAux) const;
 
-    MCAPI std::optional<class CompoundTag> save() const;
+    MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
 
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
+    MCAPI ::std::optional<::CompoundTag> save() const;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _resolve() const;
-
-    MCAPI static struct Puv::Legacy::ItemDescriptor toPuv(class ItemDescriptor const& id);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI void* ctor$(std::string_view fullName, int itemAux);
+    MCAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
 
-    MCAPI void* ctor$();
+    MCAPI static ::SharedTypes::Legacy::ItemDescriptor toSharedTypes(::ItemDescriptor const& id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class ReadOnlyBinaryStream& stream);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(struct Puv::Legacy::ItemDescriptor const& desc);
+    MCAPI void* $ctor(::Block const& block);
 
-    MCAPI void* ctor$(struct ItemTag const& itemTag);
+    MCAPI void* $ctor(::BlockLegacy const& block);
 
-    MCAPI void* ctor$(class Item const& item, int auxValue);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ItemDescriptor const& desc);
 
-    MCAPI void* ctor$(class BlockLegacy const& block);
+    MCAPI void* $ctor(::ItemTag const& itemTag);
 
-    MCAPI void* ctor$(class ItemDescriptor&& rhs);
+    MCAPI void* $ctor(::ItemDescriptor&& rhs);
 
-    MCAPI void* ctor$(class ItemDescriptor const& rhs);
+    MCAPI void* $ctor(::ItemDescriptor const& rhs);
 
-    MCAPI void* ctor$(class Json::Value const& val, class SemVersion const& engineVersion);
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void* ctor$(class Block const& block);
+    MCAPI void* $ctor(::std::string_view fullName, int itemAux);
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Item const& item, int auxValue);
 
-    MCAPI void serialize$(class Json::Value& val) const;
+    MCAPI void* $ctor(::Json::Value const& val, ::MolangVersion molangVersion);
+    // NOLINTEND
 
-    MCAPI void serialize$(class BinaryStream& stream) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $serialize(::Json::Value& val) const;
+
+    MCAPI void $serialize(::BinaryStream& stream) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

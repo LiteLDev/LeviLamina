@@ -16,30 +16,58 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentType {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkbf350b;
+    ::ll::UntypedStorage<1, 1>  mUnka2d387;
+    ::ll::UntypedStorage<8, 32> mUnk2361be;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptItemEnchantmentType& operator=(ScriptItemEnchantmentType const&);
     ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
-    ScriptItemEnchantmentType();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI std::string getName() const;
+    MCAPI ScriptItemEnchantmentType();
+
+    MCAPI ::std::string getName() const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
+    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;
 
     MCAPI ~ScriptItemEnchantmentType();
-
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
-
-    MCAPI static class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>
-    getOrCreateHandle(class Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
 
+    MCAPI static ::Enchant::Type
+    getEnchantType(::std::variant<
+                   ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
+                   ::std::string> const& enchantmentTypeOrId);
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

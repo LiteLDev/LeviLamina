@@ -3,41 +3,59 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/FilterSubject.h"
+#include "mc/deps/shared_types/FilterSubject.h"
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
+class RenderParams;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class DefinitionTrigger {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32>  mUnk7493a2;
+    ::ll::UntypedStorage<2, 2>   mUnk3f7da8;
+    ::ll::UntypedStorage<8, 216> mUnk801453;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     DefinitionTrigger(DefinitionTrigger const&);
     DefinitionTrigger();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI DefinitionTrigger(std::string type, ::Puv::Legacy::FilterSubject target, class ExpressionNode condition);
+    MCAPI
+    DefinitionTrigger(::std::string type, ::SharedTypes::Legacy::FilterSubject target, ::ExpressionNode condition);
 
-    MCAPI bool canTrigger(class RenderParams& params) const;
+    MCAPI bool canTrigger(::RenderParams& params) const;
 
-    MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger&&);
+    MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
 
-    MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger const&);
+    MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger const&);
 
     MCAPI ~DefinitionTrigger();
-
-    MCAPI static void bindType(struct cereal::ReflectionCtx& ctx);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(std::string type, ::Puv::Legacy::FilterSubject target, class ExpressionNode condition);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string type, ::SharedTypes::Legacy::FilterSubject target, ::ExpressionNode condition);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

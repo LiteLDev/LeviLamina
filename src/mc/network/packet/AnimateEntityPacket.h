@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
@@ -9,77 +8,103 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class AnimateEntityPacket : public ::Packet {
 public:
-    std::vector<ActorRuntimeID> mRuntimeIds;            // this+0x30
-    std::string                 mAnimation;             // this+0x48
-    std::string                 mNextState;             // this+0x68
-    std::string                 mStopExpression;        // this+0x88
-    MolangVersion               mStopExpressionVersion; // this+0xa8
-    std::string                 mController;            // this+0xb0
-    float                       mBlendOutTime;          // this+0xd0
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorRuntimeID>> mRuntimeIds;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mAnimation;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mNextState;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mStopExpression;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>                  mStopExpressionVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mController;
+    ::ll::TypedStorage<4, 4, float>                            mBlendOutTime;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     AnimateEntityPacket& operator=(AnimateEntityPacket const&);
     AnimateEntityPacket(AnimateEntityPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AnimateEntityPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& s) const;
+    virtual void write(::BinaryStream& s) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& s);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& s) /*override*/;
 
+    // vIndex: 0
+    virtual ~AnimateEntityPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI AnimateEntityPacket();
 
     MCAPI AnimateEntityPacket(
-        std::vector<class ActorRuntimeID> const& runtimeIds,
-        std::string const&                       animation,
-        std::string const&                       nextState,
-        float                                    blendOutTime,
-        std::string const&                       stopExpression,
-        ::MolangVersion                          stopExpressionVersion,
-        std::string const&                       controller
+        ::std::vector<::ActorRuntimeID> const& runtimeIds,
+        ::std::string const&                   animation,
+        ::std::string const&                   nextState,
+        float                                  blendOutTime,
+        ::std::string const&                   stopExpression,
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(
-        std::vector<class ActorRuntimeID> const& runtimeIds,
-        std::string const&                       animation,
-        std::string const&                       nextState,
-        float                                    blendOutTime,
-        std::string const&                       stopExpression,
-        ::MolangVersion                          stopExpressionVersion,
-        std::string const&                       controller
+    MCAPI void* $ctor(
+        ::std::vector<::ActorRuntimeID> const& runtimeIds,
+        ::std::string const&                   animation,
+        ::std::string const&                   nextState,
+        float                                  blendOutTime,
+        ::std::string const&                   stopExpression,
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
     );
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& s);
+    MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI void $write(::BinaryStream& s) const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& s);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& s) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

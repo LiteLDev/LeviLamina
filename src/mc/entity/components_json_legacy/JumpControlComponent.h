@@ -5,12 +5,36 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/control/JumpType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionDescriptor;
+class JumpControl;
+class Mob;
+struct JumpControlDescription;
+// clang-format on
+
 class JumpControlComponent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk94c1e3;
+    ::ll::UntypedStorage<1, 1>  mUnk5e04b7;
+    ::ll::UntypedStorage<4, 4>  mUnk21548b;
+    ::ll::UntypedStorage<4, 4>  mUnkbdca45;
+    ::ll::UntypedStorage<4, 64> mUnkd6355d;
+    ::ll::UntypedStorage<8, 8>  mUnkbe6877;
+    // NOLINTEND
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI JumpControlComponent();
 
-    MCAPI JumpControlComponent(class JumpControlComponent const& other);
+    MCAPI JumpControlComponent(::JumpControlComponent const& other);
+
+    MCAPI float _getDelayInternal() const;
+
+    MCAPI float _getHeightInternal() const;
 
     MCAPI int getAnimationDuration() const;
 
@@ -24,15 +48,15 @@ public:
 
     MCAPI bool getSwimming() const;
 
-    MCAPI void initMultiTypeJumpComponent(class Mob& entity, class ActorDefinitionDescriptor& initDescription);
+    MCAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCAPI void initializeFromDefinition(class Mob& owner, struct JumpControlDescription* description);
+    MCAPI void initializeFromDefinition(::Mob& owner, ::JumpControlDescription* description);
 
-    MCAPI class JumpControlComponent& operator=(class JumpControlComponent const& other);
+    MCAPI ::JumpControlComponent& operator=(::JumpControlComponent const& other);
 
-    MCAPI void resetSpeedModifier(class Mob& owner);
+    MCAPI void resetSpeedModifier(::Mob& owner);
 
-    MCAPI void setInternalType(std::unique_ptr<class JumpControl> type);
+    MCAPI void setInternalType(::std::unique_ptr<::JumpControl> type);
 
     MCAPI void setJumpType(::JumpType type);
 
@@ -40,28 +64,22 @@ public:
 
     MCAPI void setSwimming(bool swimming);
 
-    MCAPI void update(class Mob& owner);
+    MCAPI void update(::Mob& owner);
 
     MCAPI ~JumpControlComponent();
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI float _getDelayInternal() const;
-
-    MCAPI float _getHeightInternal() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class JumpControlComponent const& other);
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$();
+    MCAPI void* $ctor(::JumpControlComponent const& other);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

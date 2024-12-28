@@ -1,31 +1,43 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/Tick.h"
-#include "mc/world/level/block/Block.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+struct Tick;
+// clang-format on
 
 class TickNextTickData {
 public:
-    BlockPos     mPos;            // this+0x0
-    Block const* mBlock;          // this+0x10
-    Tick         mTick;           // this+0x18
-    int          mPriorityOffset; // this+0x20
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI TickNextTickData(class BlockPos const& pos, class Block const& block, struct Tick const& tick, int pOffset);
-
-    MCAPI bool operator==(class TickNextTickData const& t) const;
-
-    MCAPI bool operator>(class TickNextTickData const& tnd) const;
-
+    ::ll::TypedStorage<4, 12, ::BlockPos>    pos;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<8, 8, ::Tick>         tick;
+    ::ll::TypedStorage<4, 4, int>            priorityOffset;
     // NOLINTEND
 
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(class BlockPos const& pos, class Block const& block, struct Tick const& tick, int pOffset);
+    // prevent constructor by default
+    TickNextTickData& operator=(TickNextTickData const&);
+    TickNextTickData(TickNextTickData const&);
+    TickNextTickData();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TickNextTickData(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
+
+    MCAPI bool operator==(::TickNextTickData const& t) const;
+
+    MCAPI bool operator>(::TickNextTickData const& tnd) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
     // NOLINTEND
 };

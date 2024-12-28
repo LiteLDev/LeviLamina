@@ -3,65 +3,98 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/types/world/actor/ai/util/BossEventUpdateType.h"
+#include "mc/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/world/level/BossEventSubscriptionManager.h"
 
 // auto generated forward declare list
 // clang-format off
+class BossEventPacket;
+struct ActorUniqueID;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class BossEventSubscriptionManagerImpl : public ::BossEventSubscriptionManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 128> mUnk18be39;
+    ::ll::UntypedStorage<8, 128> mUnk99a634;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BossEventSubscriptionManagerImpl& operator=(BossEventSubscriptionManagerImpl const&);
     BossEventSubscriptionManagerImpl(BossEventSubscriptionManagerImpl const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI bool areBossEventSubscribersReady() const;
+    // vIndex: 2
+    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback
+    ) /*override*/;
 
-    MCVAPI void broadcastBossEvent(::BossEventUpdateType type);
+    // vIndex: 1
+    virtual ::Bedrock::PubSub::Subscription subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
+    ) /*override*/;
 
-    MCVAPI void
-    broadcastBossEvent(::BossEventUpdateType type, struct ActorUniqueID const& id, class BossEventPacket const& packet);
+    // vIndex: 4
+    virtual void broadcastBossEvent(::BossEventUpdateType type) /*override*/;
 
-    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(std::function<void(::BossEventUpdateType)> callback
-    );
+    // vIndex: 3
+    virtual void broadcastBossEvent(
+        ::BossEventUpdateType    type,
+        ::ActorUniqueID const&   id,
+        ::BossEventPacket const& packet
+    ) /*override*/;
 
-    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(
-        std::function<void(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&)> callback
-    );
+    // vIndex: 5
+    virtual bool areBossEventSubscribersReady() const /*override*/;
 
-    MCAPI BossEventSubscriptionManagerImpl();
-
+    // vIndex: 0
+    virtual ~BossEventSubscriptionManagerImpl() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftableForBedrockEnableNonOwnerReferences();
+    MCAPI BossEventSubscriptionManagerImpl();
+    // NOLINTEND
 
-    MCAPI static void** vftableForBedrockImplBase();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool areBossEventSubscribersReady$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
 
-    MCAPI void broadcastBossEvent$(::BossEventUpdateType type);
-
-    MCAPI void broadcastBossEvent$(
-        ::BossEventUpdateType        type,
-        struct ActorUniqueID const&  id,
-        class BossEventPacket const& packet
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
+        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
     );
 
-    MCAPI class Bedrock::PubSub::Subscription subscribeToBossEvent$(std::function<void(::BossEventUpdateType)> callback
-    );
+    MCAPI void $broadcastBossEvent(::BossEventUpdateType type);
 
-    MCAPI class Bedrock::PubSub::Subscription subscribeToBossEvent$(
-        std::function<void(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&)> callback
-    );
+    MCAPI void
+    $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
+    MCAPI bool $areBossEventSubscribersReady() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCAPI static void** $vftableForImplBase();
     // NOLINTEND
 };

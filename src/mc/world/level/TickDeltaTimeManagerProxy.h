@@ -7,35 +7,58 @@
 
 class TickDeltaTimeManagerProxy : public ::ITickDeltaTimeManagerProxy {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 56> mUnk793aac;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     TickDeltaTimeManagerProxy& operator=(TickDeltaTimeManagerProxy const&);
     TickDeltaTimeManagerProxy(TickDeltaTimeManagerProxy const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TickDeltaTimeManagerProxy() = default;
+    virtual ~TickDeltaTimeManagerProxy() /*override*/;
 
     // vIndex: 1
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 2
-    virtual double calculateDeltaTimeAndReset();
-
-    MCAPI TickDeltaTimeManagerProxy();
-
+    virtual double calculateDeltaTimeAndReset() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI TickDeltaTimeManagerProxy();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI double calculateDeltaTimeAndReset$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $start();
 
+    MCAPI double $calculateDeltaTimeAndReset();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

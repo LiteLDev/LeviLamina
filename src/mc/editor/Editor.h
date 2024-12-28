@@ -4,22 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/WorldType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct Version; }
-// clang-format on
+#include "mc/editor/ProjectExportType.h"
+#include "mc/world/level/FileArchiver.h"
 
 namespace Editor {
+// functions
 // NOLINTBEGIN
+MCAPI ::FileArchiver::ExportType getFileArchiverExportType(::Editor::ProjectExportType exportType);
+
+MCAPI bool hasEditorNamespace(::std::string_view str);
+
 MCAPI bool isEditorTestWorld(::Editor::WorldType t);
 
 MCAPI bool isEditorWorld(::Editor::WorldType t);
 // NOLINTEND
 
-// thunks
+// static variables
 // NOLINTBEGIN
-MCAPI std::string_view const& EDITOR_PACK_CAPABILITY();
+MCAPI ::std::string_view const& EDITOR_PACK_CAPABILITY();
 // NOLINTEND
 
-}; // namespace Editor
+} // namespace Editor

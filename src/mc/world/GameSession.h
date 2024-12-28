@@ -1,58 +1,76 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 
+// auto generated forward declare list
+// clang-format off
+class ClientOrServerNetworkSystemRef;
+class EntityContext;
+class Level;
+class LoopbackPacketSender;
+class NetEventCallback;
+class ServerNetworkHandler;
+class ServerNetworkSystem;
+// clang-format on
+
 class GameSession {
 public:
-    // from https://github.com/EndstoneMC/endstone/blob/main/include/bedrock/world/game_session.h
-    ClientOrServerNetworkSystemRef              mNetwork;                    // this+0x0
-    OwnerPtr<class EntityContext>               mLevelEntity;                // this+0x10
-    Bedrock::NonOwnerPointer<class Level>       mLevel;                      // this+0x28
-    std::unique_ptr<class ServerNetworkHandler> mServerNetworkHandler;       // this+0x38
-    std::unique_ptr<class NetEventCallback>     mLegacyClientNetworkHandler; // this+0x40
-    std::unique_ptr<class NetEventCallback>     mClientNetworkHandler;       // this+0x48
-    class LoopbackPacketSender&                 mLoopbackPacketSender;       // this+0x50
-    SubClientId                                 mClientSubId;                // this+0x58
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>         mNetwork;
+    ::ll::TypedStorage<8, 32, ::OwnerPtr<::EntityContext>>              mLevelEntity;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Level>>      mLevel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerNetworkHandler>> mServerNetworkHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetEventCallback>>     mLegacyClientNetworkHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetEventCallback>>     mClientNetworkHandler;
+    ::ll::TypedStorage<8, 8, ::LoopbackPacketSender&>                   mLoopbackPacketSender;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                             mClientSubId;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     GameSession& operator=(GameSession const&);
     GameSession(GameSession const&);
     GameSession();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI GameSession(
-        class ServerNetworkSystem&                                                   network,
-        std::unique_ptr<class ServerNetworkHandler>                                  serverNetworkHandler,
-        class LoopbackPacketSender&                                                  loopbackPacketSender,
-        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
-        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
-        ::SubClientId                                                                subid
+        ::ServerNetworkSystem&                                               network,
+        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
+        ::LoopbackPacketSender&                                              loopbackPacketSender,
+        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::SubClientId                                                        subid
     );
 
-    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+    MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
-    MCAPI void setLevel(std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity);
-
+    MCAPI ~GameSession();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(
-        class ServerNetworkSystem&                                                   network,
-        std::unique_ptr<class ServerNetworkHandler>                                  serverNetworkHandler,
-        class LoopbackPacketSender&                                                  loopbackPacketSender,
-        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
-        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
-        ::SubClientId                                                                subid
+    MCAPI void* $ctor(
+        ::ServerNetworkSystem&                                               network,
+        ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
+        ::LoopbackPacketSender&                                              loopbackPacketSender,
+        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::SubClientId                                                        subid
     );
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

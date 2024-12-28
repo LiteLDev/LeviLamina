@@ -6,7 +6,21 @@
 #include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class BoundingBox;
+class LevelChunk;
+class Random;
+// clang-format on
+
 class SwamplandHut : public ::ScatteredFeaturePiece {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkbead7a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     SwamplandHut& operator=(SwamplandHut const&);
@@ -14,49 +28,60 @@ public:
     SwamplandHut();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SwamplandHut() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
-
-    // vIndex: 4
-    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
-
-    // vIndex: 5
-    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+    virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 12
-    virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
+    virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
+    // vIndex: 4
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+
+    // vIndex: 5
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+
+    // vIndex: 0
+    virtual ~SwamplandHut() /*override*/;
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    MCAPI void placeCauldron(
-        class BlockSource&       region,
-        class Random&            random,
-        int                      x,
-        int                      y,
-        int                      z,
-        class BoundingBox const& chunkBB
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SwamplandHut(short seaLevel, int west, int north);
 
-    MCAPI void addHardcodedSpawnAreas$(class LevelChunk& chunk) const;
+    MCAPI void
+    placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(short seaLevel, int west, int north);
+    // NOLINTEND
 
-    MCAPI bool postProcess$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void postProcessMobsAt$(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
 
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

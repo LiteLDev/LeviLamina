@@ -4,34 +4,41 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/external/scripting/runtime/Error.h"
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemEnchantmentUnknownIdError {
+struct ScriptItemEnchantmentUnknownIdError : public ::Scripting::Error {
 public:
     // prevent constructor by default
     ScriptItemEnchantmentUnknownIdError& operator=(ScriptItemEnchantmentUnknownIdError const&);
     ScriptItemEnchantmentUnknownIdError(ScriptItemEnchantmentUnknownIdError const&);
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemEnchantmentUnknownIdError();
 
     MCAPI ~ScriptItemEnchantmentUnknownIdError();
-
-    MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> bind();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

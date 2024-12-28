@@ -1,92 +1,126 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/server/commands/CommandPositionFloat.h"
-#include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/util/rotation_command_utils/FacingResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class CommandArea;
+class CommandOrigin;
+class CommandOutput;
+class CommandPositionFloat;
+class CommandRegistry;
+class Dimension;
+class RelativeFloat;
+class TeleportTarget;
+class Vec3;
 namespace RotationCommandUtils { class RotationData; }
 // clang-format on
 
 class TeleportCommand : public ::Command {
 public:
-    std::function<
-        void(Actor&, Vec3, Vec3*, DimensionType, std::optional<RotationCommandUtils::RotationData> const&, int)>
-        mApplyTeleport; // this+0x20
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<void(
+            ::Actor&,
+            ::Vec3,
+            ::Vec3*,
+            ::DimensionType,
+            ::std::optional<::RotationCommandUtils::RotationData> const&,
+            int
+        )>>
+                                                                   mApplyTeleport;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mTargets;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mDestinationEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mDestinationPos;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mFacingEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mFacingPos;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mYRot;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mXRot;
+    ::ll::TypedStorage<4, 4, ::RotationCommandUtils::FacingResult> mHaveFacing;
+    ::ll::TypedStorage<1, 1, bool>                                 mDestinationIsPosition;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsUsingRotation;
+    ::ll::TypedStorage<1, 1, bool>                                 mFacingIsPosition;
+    ::ll::TypedStorage<1, 1, bool>                                 mCheckForBlocks;
+    // NOLINTEND
 
-    CommandSelector<Actor>             mTargets;               // this+0x60
-    CommandSelector<Actor>             mDestinationEntity;     // this+0x128
-    CommandPositionFloat               mDestinationPos;        // this+0x1F0
-    CommandSelector<Actor>             mFacingEntity;          // this+0x200
-    CommandPositionFloat               mFacingPos;             // this+0x2C8
-    RelativeFloat                      mYRot;                  // this+0x2D8
-    RelativeFloat                      mXRot;                  // this+0x2E0
-    RotationCommandUtils::FacingResult mHaveFacing;            // this+0x2E8
-    bool                               mDestinationIsPosition; // this+0x2EC
-    bool                               mIsUsingRotation;       // this+0x2ED
-    bool                               mFacingIsPosition;      // this+0x2EE
-    bool                               mCheckForBlocks;        // this+0x2EF
-
+public:
+    // prevent constructor by default
+    TeleportCommand& operator=(TeleportCommand const&);
+    TeleportCommand(TeleportCommand const&);
     TeleportCommand();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~TeleportCommand() = default;
-
     // vIndex: 2
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
-    MCAPI static void applyTarget(class Actor& victim, class TeleportTarget target, bool keepVelocity);
-
-    MCAPI static class TeleportTarget computeTarget(
-        class Actor&                                                   victim,
-        class Vec3                                                     destination,
-        class Vec3*                                                    facePosition,
-        DimensionType                                                  destinationDimension,
-        std::optional<class RotationCommandUtils::RotationData> const& rotationData,
-        int                                                            commandVersion
-    );
-
-    MCAPI static void setup(class CommandRegistry& registry);
-
+    // vIndex: 0
+    virtual ~TeleportCommand() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void doArmorStandTeleportBackwardCompability(class Actor& target, class Actor const* destinationEntity) const;
-
-    MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
-        class CommandOrigin const& origin,
-        class CommandOutput&       output,
-        class Vec3&                faceTarget,
-        class Actor*               destinationEntity
-    ) const;
-
-    MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(
-        class CommandOrigin const&                       origin,
-        class CommandSelectorResults<class Actor> const& targets,
-        class Vec3                                       destination,
-        int                                              commandVersion,
-        bool                                             allowUnloadedChunks
-    );
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::Vec3&                faceTarget,
+        ::Actor*               destinationEntity
+    ) const;
+    // NOLINTEND
 
-    MCAPI void execute$(class CommandOrigin const& origin, class CommandOutput& output) const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void applyTarget(::Actor& victim, ::TeleportTarget target, bool keepVelocity);
 
+    MCAPI static ::TeleportTarget computeTarget(
+        ::Actor&                                                     victim,
+        ::Vec3                                                       destination,
+        ::Vec3*                                                      facePosition,
+        ::DimensionType                                              destinationDimension,
+        ::std::optional<::RotationCommandUtils::RotationData> const& rotationData,
+        int                                                          commandVersion
+    );
+
+    MCAPI static ::std::unique_ptr<::CommandArea> getCommandAreaForTargets(
+        ::CommandOrigin const&                   origin,
+        ::CommandSelectorResults<::Actor> const& targets,
+        ::Vec3                                   destination,
+        int                                      commandVersion,
+        bool                                     allowUnloadedChunks
+    );
+
+    MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

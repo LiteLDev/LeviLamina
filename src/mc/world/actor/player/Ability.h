@@ -5,30 +5,45 @@
 class Ability {
 public:
     // Ability inner types define
-    enum class Options : schar {
-        None                        = 0x0,
-        NoSave                      = 0x1,
-        CommandExposed              = 0x2,
-        PermissionsInterfaceExposed = 0x4,
+    enum class Type : uchar {
+        Invalid = 0,
+        Unset   = 1,
+        Bool    = 2,
+        Float   = 3,
     };
 
-    enum class Type : schar {
-        Invalid = 0x0,
-        Unset   = 0x1,
-        Bool    = 0x2,
-        Float   = 0x3,
+    enum class Options : uchar {
+        // bitfield representation
+        None                        = 0,
+        NoSave                      = 1 << 0,
+        CommandExposed              = 1 << 1,
+        PermissionsInterfaceExposed = 1 << 2,
     };
 
     union Value {
-        bool  mBoolVal;
-        float mFloatVal;
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 4> mUnk45a32a;
+        ::ll::UntypedStorage<4, 4> mUnk46b742;
+        // NOLINTEND
     };
 
-    Ability::Type    mType;    // this+0x0
-    Ability::Value   mValue;   // this+0x4
-    Ability::Options mOptions; // this+0x8
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::Ability::Type>    mType;
+    ::ll::TypedStorage<4, 4, ::Ability::Value>   mValue;
+    ::ll::TypedStorage<1, 1, ::Ability::Options> mOptions;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Ability& operator=(Ability const&);
+    Ability(Ability const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI Ability();
 
@@ -44,22 +59,20 @@ public:
 
     MCAPI bool isSet() const;
 
-    MCAPI bool operator!=(class Ability const& rhs) const;
+    MCAPI bool operator!=(::Ability const& rhs) const;
 
     MCAPI void setBool(bool val);
 
     MCAPI void setFloat(float val);
 
     MCAPI void unSet();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
 
-    MCAPI void* ctor$(bool value, ::Ability::Options ops);
-
+    MCAPI void* $ctor(bool value, ::Ability::Options ops);
     // NOLINTEND
 };

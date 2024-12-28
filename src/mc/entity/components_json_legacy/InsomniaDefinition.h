@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class InsomniaComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class InsomniaDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk17de4d;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     InsomniaDefinition& operator=(InsomniaDefinition const&);
@@ -18,13 +26,16 @@ public:
     InsomniaDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, class InsomniaComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::InsomniaComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(
-        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>>&
-            root
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::InsomniaDefinition>>& root
     );
-
     // NOLINTEND
 };

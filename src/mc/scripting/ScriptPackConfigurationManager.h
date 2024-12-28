@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/scripting/ScriptPackConfiguration.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
@@ -9,13 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
+class ScriptPackConfiguration;
 // clang-format on
 
 class ScriptPackConfigurationManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    std::unordered_map<std::string, ScriptPackConfiguration> mPackConfigurations;
-    ScriptPackConfiguration                                  mDefaultPackConfiguration;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>> const>       mConfigDirectory;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScriptPackConfiguration>> mPackConfigurations;
+    ::ll::TypedStorage<8, 224, ::ScriptPackConfiguration>                                     mDefaultPackConfiguration;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -23,38 +26,53 @@ public:
     ScriptPackConfigurationManager();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPackConfigurationManager();
-
-    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager&&);
-
-    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const&);
-
-    MCAPI explicit ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>> configDirectory);
-
-    MCAPI std::optional<class Core::PathBuffer<std::string>> const& getConfigPath() const;
-
-    MCAPI class ScriptPackConfiguration const& getPackConfiguration(std::string const& packIdentifier) const;
-
-    MCAPI void loadPackConfigs();
-
+    virtual ~ScriptPackConfigurationManager() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager&&);
 
-    MCAPI void* ctor$(class ScriptPackConfigurationManager const&);
+    MCAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager const&);
 
-    MCAPI void* ctor$(class ScriptPackConfigurationManager&&);
+    MCAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
 
-    MCAPI void* ctor$(std::optional<class Core::PathBuffer<std::string>> configDirectory);
+    MCAPI ::std::optional<::Core::PathBuffer<::std::string>> const& getConfigPath() const;
 
-    MCAPI void dtor$();
+    MCAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCAPI static std::string const& sDefaultConfigurationName();
+    MCAPI void loadPackConfigs();
+    // NOLINTEND
 
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& sDefaultConfigurationName();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptPackConfigurationManager&&);
+
+    MCAPI void* $ctor(::ScriptPackConfigurationManager const&);
+
+    MCAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

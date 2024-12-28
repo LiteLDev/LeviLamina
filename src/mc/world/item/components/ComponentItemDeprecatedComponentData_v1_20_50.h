@@ -2,35 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ComponentItemDeprecatedComponentData_v1_20_50 {
+// auto generated inclusion list
+#include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_40.h"
+
+struct ComponentItemDeprecatedComponentData_v1_20_50 : public ::ComponentItemDeprecatedComponentData_v1_20_40 {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 272> mUnka82b15;
+    ::ll::UntypedStorage<8, 296> mUnke61a10;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ComponentItemDeprecatedComponentData_v1_20_50();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(struct ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(struct ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
-    MCAPI struct ComponentItemDeprecatedComponentData_v1_20_50&
-    operator=(struct ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
+    operator=(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI struct ComponentItemDeprecatedComponentData_v1_20_50&
-    operator=(struct ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50& operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ComponentItemDeprecatedComponentData_v1_20_50&&);
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
 
-    MCAPI void* ctor$(struct ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

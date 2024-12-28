@@ -4,7 +4,7 @@
 
 namespace Scripting::QuickJS {
 
-class CurrentlyOwnedArrayProperties {
+struct CurrentlyOwnedArrayProperties {
 public:
     // CurrentlyOwnedArrayProperties inner types declare
     // clang-format off
@@ -14,30 +14,49 @@ public:
     // CurrentlyOwnedArrayProperties inner types define
     struct Prop {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk8478ce;
+        ::ll::UntypedStorage<8, 32> mUnk32882d;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Prop& operator=(Prop const&);
         Prop(Prop const&);
         Prop();
 
     public:
+        // member functions
         // NOLINTBEGIN
         MCAPI ~Prop();
-
         // NOLINTEND
 
-        // thunks
     public:
+        // destructor thunk
         // NOLINTBEGIN
-        MCAPI void dtor$();
-
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk9a4599;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
     CurrentlyOwnedArrayProperties& operator=(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Scripting::QuickJS::CurrentlyOwnedArrayProperties&
+    operator=(::Scripting::QuickJS::CurrentlyOwnedArrayProperties&&);
+    // NOLINTEND
 };
 
-}; // namespace Scripting::QuickJS
+} // namespace Scripting::QuickJS

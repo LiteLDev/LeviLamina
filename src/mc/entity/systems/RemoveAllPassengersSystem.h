@@ -5,30 +5,35 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorIsBeingDestroyedFlagComponent;
+struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
 
 namespace RemoveAllPassengersSystem {
+// functions
 // NOLINTBEGIN
-MCAPI struct TickingSystemWithInfo createRequestProcessingSystem();
+MCAPI ::TickingSystemWithInfo createRequestProcessingSystem();
 
-MCAPI struct TickingSystemWithInfo createRideableComponentRemovalSystem();
+MCAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
 
 MCAPI void removeAllPassengers(
-    struct VehicleComponent const& vehicleComponent,
-    bool                           actorIsBeingDestroyed,
-    class EntityModifier<
-        class FlagComponent<struct ActorIsBeingDestroyedFlag>,
-        class FlagComponent<struct StopRidingRequestFlag>>& modifier
+    ::VehicleComponent const&                                                             vehicleComponent,
+    bool                                                                                  actorIsBeingDestroyed,
+    ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::StopRidingRequestComponent>& modifier
 );
 
 MCAPI void tickRemoveAllPassengers(
-    class StrictEntityContext&,
-    struct VehicleComponent const&                                        vehicleComponent,
-    class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag>> actorIsBeingDestroyed,
-    class EntityModifier<
-        class FlagComponent<struct ActorIsBeingDestroyedFlag>,
-        class FlagComponent<struct StopRidingRequestFlag>> modifier
+    ::StrictEntityContext&,
+    ::VehicleComponent const&                                                            vehicleComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent>                                     actorIsBeingDestroyed,
+    ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::StopRidingRequestComponent> modifier
 );
 // NOLINTEND
 
-}; // namespace RemoveAllPassengersSystem
+} // namespace RemoveAllPassengersSystem

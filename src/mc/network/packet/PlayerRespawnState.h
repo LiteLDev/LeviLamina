@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayerRespawnState : schar {
-    SearchingForSpawn  = 0x0,
-    ReadyToSpawn       = 0x1,
-    ClientReadyToSpawn = 0x2,
+enum class PlayerRespawnState : uchar {
+    SearchingForSpawn  = 0,
+    ReadyToSpawn       = 1,
+    ClientReadyToSpawn = 2,
 };

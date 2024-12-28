@@ -1,79 +1,110 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class AnimatePacket : public ::Packet {
 public:
     // AnimatePacket inner types define
     enum class Action : int {
-        NoAction         = 0x0,
-        Swing            = 0x1,
-        WakeUp           = 0x3,
-        CriticalHit      = 0x4,
-        MagicCriticalHit = 0x5,
-        RowRight         = 0x80,
-        RowLeft          = 0x81,
+        NoAction         = 0,
+        Swing            = 1,
+        WakeUp           = 3,
+        CriticalHit      = 4,
+        MagicCriticalHit = 5,
+        RowRight         = 128,
+        RowLeft          = 129,
     };
 
-    ActorRuntimeID        mRuntimeId; // this+0x30
-    AnimatePacket::Action mAction;    // this+0x38
-    float                 mData;      // this+0x3C
-
 public:
+    // member variables
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AnimatePacket();
-
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
-
-    // vIndex: 2
-    virtual std::string getName() const;
-
-    // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
-
-    // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI AnimatePacket();
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, class Actor& e);
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId);
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
-
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::AnimatePacket::Action> mAction;
+    ::ll::TypedStorage<4, 4, float>                   mData;
     // NOLINTEND
 
-    // thunks
 public:
+    // prevent constructor by default
+    AnimatePacket& operator=(AnimatePacket const&);
+    AnimatePacket(AnimatePacket const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    // vIndex: 1
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    MCAPI void* ctor$(::AnimatePacket::Action action, class Actor& e);
+    // vIndex: 2
+    virtual ::std::string getName() const /*override*/;
 
-    MCAPI void* ctor$();
+    // vIndex: 4
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
-    MCAPI void* ctor$(::AnimatePacket::Action action, class ActorRuntimeID runtimeId);
+    // vIndex: 8
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI void* ctor$(::AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
+    // vIndex: 0
+    virtual ~AnimatePacket() /*override*/;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AnimatePacket();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI AnimatePacket(::AnimatePacket::Action action, ::Actor& e);
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+    MCAPI AnimatePacket(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId);
 
-    MCAPI std::string getName$() const;
+    MCAPI AnimatePacket(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId, float data);
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::AnimatePacket::Action action, ::Actor& e);
+
+    MCAPI void* $ctor(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId);
+
+    MCAPI void* $ctor(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId, float data);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
+
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

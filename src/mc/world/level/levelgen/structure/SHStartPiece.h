@@ -8,27 +8,46 @@
 
 class SHStartPiece : public ::SHStairsDown {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnka76256;
+    ::ll::UntypedStorage<8, 8>  mUnk7618fd;
+    ::ll::UntypedStorage<8, 32> mUnkbf6972;
+    ::ll::UntypedStorage<8, 32> mUnk1f9403;
+    ::ll::UntypedStorage<8, 24> mUnkad8592;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     SHStartPiece& operator=(SHStartPiece const&);
     SHStartPiece(SHStartPiece const&);
     SHStartPiece();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SHStartPiece() = default;
-
     // vIndex: 2
-    virtual ::StructurePieceType getType() const;
+    virtual ::StructurePieceType getType() const /*override*/;
 
+    // vIndex: 0
+    virtual ~SHStartPiece() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::StructurePieceType getType$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::StructurePieceType $getType() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

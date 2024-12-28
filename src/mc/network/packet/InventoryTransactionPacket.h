@@ -1,70 +1,101 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/network/ItemStackLegacyRequestIdTag.h"
-#include "mc/world/inventory/network/TypedClientNetId.h"
-#include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
+
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+class BlockPalette;
+class ComplexInventoryTransaction;
+class ReadOnlyBinaryStream;
+struct ItemStackLegacyRequestIdTag;
+// clang-format on
 
 class InventoryTransactionPacket : public ::Packet {
 public:
-    ItemStackLegacyRequestId                                      mLegacyRequestId;    // this+0x30
-    std::vector<std::pair<ContainerEnumName, std::vector<uchar>>> mLegacySetItemSlots; // this+0x40
-    std::unique_ptr<ComplexInventoryTransaction>                  mTransaction;        // this+0x58
-    bool                                                          mIsClientSide;       // this+0x60
+    // InventoryTransactionPacket inner types define
+    using LegacySetSlot = ::std::pair<::ContainerEnumName, ::std::vector<uchar>>;
 
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId> mLegacyRequestId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>>
+                                                                               mLegacySetItemSlots;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ComplexInventoryTransaction>> mTransaction;
+    ::ll::TypedStorage<1, 1, bool>                                             mIsClientSide;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     InventoryTransactionPacket& operator=(InventoryTransactionPacket const&);
     InventoryTransactionPacket(InventoryTransactionPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~InventoryTransactionPacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI InventoryTransactionPacket();
-
-    MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction> transaction, bool isClientSide);
-
-    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide) const;
-
+    // vIndex: 0
+    virtual ~InventoryTransactionPacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI InventoryTransactionPacket();
 
-    MCAPI void* ctor$(std::unique_ptr<class ComplexInventoryTransaction> transaction, bool isClientSide);
+    MCAPI InventoryTransactionPacket(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
 
-    MCAPI void* ctor$();
+    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) const;
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void* $ctor(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI ::std::string $getName() const;
 
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

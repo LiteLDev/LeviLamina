@@ -3,9 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
-class VanillaServerGameplayEventListener {
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ActorEventListener;
+class Block;
+class BlockEventListener;
+class BlockPos;
+class LevelEventListener;
+class Player;
+class PlayerEventListener;
+struct ActorHurtEvent;
+struct PlayerDamageEvent;
+struct PlayerOpenContainerEvent;
+// clang-format on
+
+class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
+                                           public ::EventListenerDispatcher<::BlockEventListener>,
+                                           public ::EventListenerDispatcher<::PlayerEventListener>,
+                                           public ::EventListenerDispatcher<::LevelEventListener> {
 public:
     // prevent constructor by default
     VanillaServerGameplayEventListener& operator=(VanillaServerGameplayEventListener const&);
@@ -13,53 +32,67 @@ public:
     VanillaServerGameplayEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI ::EventResult onActorCreationAttemptFailed(class Actor& actor, std::string_view message);
+    // vIndex: 32
+    virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    MCVAPI ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
+    // vIndex: 63
+    virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
-    MCVAPI ::EventResult onBlockPlacedByPlayer(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
-    );
+    // vIndex: 57
+    virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
-    MCVAPI ::EventResult onEvent(struct PlayerDamageEvent const& playerDamageEvent);
+    // vIndex: 8
+    virtual ::EventResult onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message) /*override*/;
 
-    MCVAPI ::EventResult onEvent(struct ActorHurtEvent const& actorHurtEvent);
+    // vIndex: 7
+    virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos) /*override*/;
 
-    MCVAPI ::EventResult onEvent(struct PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    // vIndex: 1
+    virtual ::EventResult onBlockPlacedByPlayer(
+        ::Player&         player,
+        ::Block const&    placedBlock,
+        ::BlockPos const& pos,
+        bool              isUnderwater
+    ) /*override*/;
 
+    // vIndex: 0
+    virtual ~VanillaServerGameplayEventListener() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftableForEventListenerDispatcherActorEventListener();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static void** vftableForEventListenerDispatcherBlockEventListener();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCAPI static void** vftableForEventListenerDispatcherLevelEventListener();
+    MCAPI ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
-    MCAPI static void** vftableForEventListenerDispatcherPlayerEventListener();
+    MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
-    MCAPI ::EventResult onActorCreationAttemptFailed$(class Actor& actor, std::string_view message);
+    MCAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 
-    MCAPI ::EventResult onBlockInteractedWith$(class Player& player, class BlockPos const& blockPos);
+    MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI ::EventResult onBlockPlacedByPlayer$(
-        class Player&         player,
-        class Block const&    placedBlock,
-        class BlockPos const& pos,
-        bool                  isUnderwater
-    );
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    // NOLINTEND
 
-    MCAPI ::EventResult onEvent$(struct PlayerDamageEvent const& playerDamageEvent);
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
 
-    MCAPI ::EventResult onEvent$(struct ActorHurtEvent const& actorHurtEvent);
+    MCAPI static void** $vftableForEventListenerDispatcherActorEventListener();
 
-    MCAPI ::EventResult onEvent$(struct PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    MCAPI static void** $vftableForEventListenerDispatcherBlockEventListener();
 
+    MCAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

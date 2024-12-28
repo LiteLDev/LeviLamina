@@ -5,15 +5,16 @@
 namespace gametest {
 
 enum class GameTestErrorType : int {
-    Unknown                      = 0x0,
-    Waiting                      = 0x1,
-    ExhaustedAttempts            = 0x2,
-    AssertAtPosition             = 0x3,
-    MethodNotImplemented         = 0x4,
-    ExecutionTimeout             = 0x5,
-    LevelStateModificationFailed = 0x6,
-    FailConditionsMet            = 0x7,
-    Assert                       = 0x8,
-    SimulatedPlayerOutOfBounds   = 0x9,
+    Unknown                      = 0,
+    Waiting                      = 1,
+    ExhaustedAttempts            = 2,
+    AssertAtPosition             = 3,
+    MethodNotImplemented         = 4,
+    ExecutionTimeout             = 5,
+    LevelStateModificationFailed = 6,
+    FailConditionsMet            = 7,
+    Assert                       = 8,
+    SimulatedPlayerOutOfBounds   = 9,
 };
-};
+
+}

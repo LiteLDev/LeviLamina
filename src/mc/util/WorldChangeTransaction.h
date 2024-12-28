@@ -1,25 +1,42 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/IBlockWorldGenAPI.h"
-#include "mc/world/level/block/Block.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class IBlockWorldGenAPI;
+// clang-format on
 
 class WorldChangeTransaction {
 public:
-    struct BlockChange {
-        int          mUpdateFlags;
-        Block const* mOldBlock;
-        Block const* mNewBlock;
-    };
+    // WorldChangeTransaction inner types declare
+    // clang-format off
+    struct Data;
+    // clang-format on
 
+    // WorldChangeTransaction inner types define
     struct Data {
-        std::unordered_map<BlockPos, BlockChange> mChanges;
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64> mUnkb19e91;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Data& operator=(Data const&);
+        Data(Data const&);
+        Data();
     };
 
 public:
-    IBlockWorldGenAPI&    mTarget; // this+0x0
-    std::unique_ptr<Data> mData;   // this+0x8
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&>                              mTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldChangeTransaction::Data>> mData;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -28,25 +45,28 @@ public:
     WorldChangeTransaction();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldChangeTransaction(class IBlockWorldGenAPI& target);
+    MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
 
     MCAPI bool apply() const;
 
-    MCAPI class Block const& getBlock(class BlockPos const& pos) const;
+    MCAPI ::Block const& getBlock(::BlockPos const& pos) const;
 
-    MCAPI void setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
+    MCAPI void setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
     MCAPI ~WorldChangeTransaction();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class IBlockWorldGenAPI& target);
+    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

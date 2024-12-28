@@ -6,7 +6,24 @@
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/world/level/CommandOriginSystem.h"
 
+// auto generated forward declare list
+// clang-format off
+class Command;
+class CommandOrigin;
+class FunctionManager;
+class HashedString;
+class MinecraftCommands;
+class ResourcePackManager;
+// clang-format on
+
 class CommandManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk66ac1d;
+    ::ll::UntypedStorage<8, 8> mUnk549ea2;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     CommandManager& operator=(CommandManager const&);
@@ -14,38 +31,41 @@ public:
     CommandManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandManager(class MinecraftCommands& commands);
+    MCAPI explicit CommandManager(::MinecraftCommands& commands);
 
-    MCAPI class MinecraftCommands& getCommands();
+    MCAPI ::MinecraftCommands& getCommands();
 
-    MCAPI class FunctionManager& getFunctionManager();
+    MCAPI ::FunctionManager& getFunctionManager();
 
-    MCAPI void initialize(std::unique_ptr<class FunctionManager> functionManager);
+    MCAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);
 
-    MCAPI void loadFunctionManager(class ResourcePackManager& resourcePackManager);
+    MCAPI void loadFunctionManager(::ResourcePackManager& resourcePackManager);
 
-    MCAPI void runCommand(class Command& command, class CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
     MCAPI void runCommand(
-        class HashedString const& commandStr,
-        class CommandOrigin&      origin,
-        ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion       commandVersion
+        ::HashedString const& commandStr,
+        ::CommandOrigin&      origin,
+        ::CommandOriginSystem originSystem,
+        ::CurrentCmdVersion   commandVersion
     );
 
     MCAPI void tick();
 
     MCAPI ~CommandManager();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class MinecraftCommands& commands);
+    MCAPI void* $ctor(::MinecraftCommands& commands);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

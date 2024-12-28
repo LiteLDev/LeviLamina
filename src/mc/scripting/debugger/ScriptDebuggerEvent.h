@@ -4,24 +4,31 @@
 
 struct ScriptDebuggerEvent {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnkd362b7;
+    ::ll::UntypedStorage<8, 32> mUnkbf220a;
+    ::ll::UntypedStorage<8, 24> mUnk6b7901;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptDebuggerEvent(ScriptDebuggerEvent const&);
     ScriptDebuggerEvent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptDebuggerEvent& operator=(struct ScriptDebuggerEvent&&);
+    MCAPI ::ScriptDebuggerEvent& operator=(::ScriptDebuggerEvent const&);
 
-    MCAPI struct ScriptDebuggerEvent& operator=(struct ScriptDebuggerEvent const&);
+    MCAPI ::ScriptDebuggerEvent& operator=(::ScriptDebuggerEvent&&);
 
     MCAPI ~ScriptDebuggerEvent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

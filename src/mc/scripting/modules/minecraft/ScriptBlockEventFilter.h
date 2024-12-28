@@ -14,43 +14,54 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptBlockEventFilter {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkdbbb16;
+    ::ll::UntypedStorage<8, 32> mUnk9cfae1;
+    ::ll::UntypedStorage<8, 24> mUnkc9c956;
+    ::ll::UntypedStorage<8, 24> mUnked0089;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptBlockEventFilter();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockEventFilter(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
+    MCAPI ScriptBlockEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCAPI ScriptBlockEventFilter(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCAPI struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
-
-    MCAPI struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
 
     MCAPI void process();
 
-    MCAPI bool shouldAllow(struct ScriptModuleMinecraft::EventFilters::ScriptBlockFilterData const& data);
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptBlockFilterData const& data);
 
     MCAPI ~ScriptBlockEventFilter();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<
-        struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter>
-    bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter>
+    bind();
+    // NOLINTEND
 
-    MCAPI void* ctor$(struct ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft::EventFilters
+} // namespace ScriptModuleMinecraft::EventFilters

@@ -10,6 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class IBlockWorldGenAPI;
+class ITreeCanopyWrapper;
+class ITreeTrunkWrapper;
+class Random;
+class RenderParams;
 namespace FeatureLoading { struct FeatureRootParseContext; }
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -23,71 +29,58 @@ public:
     VanillaTreeFeature();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VanillaTreeFeature() = default;
+    virtual ~VanillaTreeFeature() /*override*/;
 
     // vIndex: 1
-    virtual std::optional<class BlockPos> place(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
-    // vIndex: 2
-    virtual bool isValidPlacement(std::string const&);
-
+    virtual ::std::optional<::BlockPos>
+    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
+        /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void _buildSchema(
-        class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
-            struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode
-    );
+    MCAPI static void
+    _buildSchema(::JsonUtil::JsonSchemaObjectNode<
+                 ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+                 ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode);
 
     MCAPI static void _buildVanillaCanopyVariants(
-        class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
-            struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode,
-        std::function<
-            class ITreeCanopyWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
+        ::std::function<::ITreeCanopyWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
             canopyAccessor
     );
 
-    MCAPI static void _buildVanillaRootVariants(
-        class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
-            struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode,
-        std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>
-            rootAccessor
-    );
-
     MCAPI static void _buildVanillaTrunkVariants(
-        class JsonUtil::JsonSchemaObjectNode<
-            class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
-            struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>& schemaNode,
-        std::function<class ITreeTrunkWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
+        ::std::function<::ITreeTrunkWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
             trunkAccessor
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool isValidPlacement$(std::string const&);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    // NOLINTEND
 
-    MCAPI std::optional<class BlockPos> place$(
-        class IBlockWorldGenAPI& target,
-        class BlockPos const&    pos,
-        class Random&            random,
-        class RenderParams&      renderParams
-    ) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

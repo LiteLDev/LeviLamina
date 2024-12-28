@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/StackString.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,50 +18,55 @@ namespace Core {
 
 class File {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk222808;
+    ::ll::UntypedStorage<8, 8> mUnke0759b;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     File& operator=(File const&);
     File(File const&);
     File();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI class Core::Result close();
+    MCAPI ::Core::Result close();
 
-    MCAPI class Core::Result
-    open(class Core::Path const& fileName, class Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
+    MCAPI ::Core::Result
+    open(::Core::Path const& fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
-    MCAPI class Core::Result write(void const* pBuf, uint64 numBytes);
+    MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
     MCAPI ~File();
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> cleanPath(class Core::Path const& entryPath
-    );
-
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>>
-    cleanPathSeparators(class Core::Path const& entryPath);
-
-    MCAPI static class Core::Result writeCreateOrAppendFileData(
-        class Core::Path const&   path,
-        uint64                    offset,
-        uint64                    numBytesToWrite,
-        std::vector<uchar> const& buffer
-    );
-
-    MCAPI static class Core::Result writeCreateOrAppendFileData(
-        class Core::Path const& path,
-        uint64                  offset,
-        uint64                  numBytesToWrite,
-        uchar const*            buffer
-    );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::Path const& entryPath);
 
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    cleanPathSeparators(::Core::Path const& entryPath);
+
+    MCAPI static ::Core::Result writeCreateOrAppendFileData(
+        ::Core::Path const&         path,
+        uint64                      offset,
+        uint64                      numBytesToWrite,
+        ::std::vector<uchar> const& buffer
+    );
+
+    MCAPI static ::Core::Result
+    writeCreateOrAppendFileData(::Core::Path const& path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

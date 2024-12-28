@@ -3,9 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class GameplayUserManager;
+class LayeredAbilities;
+class PacketSender;
+class Player;
+struct ActorUniqueID;
+// clang-format on
 
 class PlayerAbilitiesManager {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnkc638fa;
+    ::ll::UntypedStorage<8, 24> mUnkdac0ef;
+    ::ll::UntypedStorage<8, 24> mUnk9614c6;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlayerAbilitiesManager& operator=(PlayerAbilitiesManager const&);
@@ -13,25 +30,30 @@ public:
     PlayerAbilitiesManager();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerAbilitiesManager(
-        gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager
-    );
+    MCAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const& playerId);
+    MCAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
 
-    MCAPI void sendAllPlayerAbilities(class Player const& playerReference);
+    MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
 
-    MCAPI void setPacketSender(class PacketSender& packetSender);
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
-    MCAPI void setPlayerAbilities(struct ActorUniqueID const& playerId, class LayeredAbilities const& abilities);
+    MCAPI void setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
 
+    MCAPI ~PlayerAbilitiesManager();
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(gsl::not_null<class StackRefResult<class GameplayUserManager>> const& gameplayUserManager);
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

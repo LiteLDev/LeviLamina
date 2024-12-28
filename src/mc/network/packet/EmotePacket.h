@@ -1,68 +1,101 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class ReadOnlyBinaryStream;
+// clang-format on
+
 class EmotePacket : public ::Packet {
 public:
+    // EmotePacket inner types define
     enum class Flags : uchar {
-        Invalid    = 0x0,
-        ServerSide = 0x1,
-        MuteChat   = 0x2,
+        ServerSide    = 1,
+        MuteEmoteChat = 2,
     };
 
-    ActorRuntimeID mRuntimeId;  // this+0x30
-    std::string    mPieceId;    // this+0x38
-    std::string    mXuid;       // this+0x58
-    std::string    mPlatformId; // this+0x78
-    Flags          mFlags;      // this+0x98
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>   mPieceId;
+    ::ll::TypedStorage<4, 4, uint>             mEmoteTicks;
+    ::ll::TypedStorage<8, 32, ::std::string>   mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string>   mPlatformId;
+    ::ll::TypedStorage<1, 1, uchar>            mFlags;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     EmotePacket& operator=(EmotePacket const&);
     EmotePacket(EmotePacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EmotePacket();
-
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
-    MCAPI EmotePacket();
-
+    // vIndex: 0
+    virtual ~EmotePacket() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI EmotePacket();
 
-    MCAPI void* ctor$();
+    MCAPI bool isServerSide() const;
 
-    MCAPI void dtor$();
+    MCAPI void setEmoteChatMute();
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+    MCAPI void setServerSide();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI std::string getName$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void write$(class BinaryStream& stream) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
+    MCAPI ::std::string $getName() const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

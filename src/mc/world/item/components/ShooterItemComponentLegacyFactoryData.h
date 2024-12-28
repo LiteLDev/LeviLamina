@@ -3,14 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-struct ShooterItemComponentLegacyFactoryData {
+struct ShooterItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
     // ShooterItemComponentLegacyFactoryData inner types declare
     // clang-format off
@@ -20,20 +22,29 @@ public:
     // ShooterItemComponentLegacyFactoryData inner types define
     struct ShooterAmmunitionEntry {
     public:
-        // prevent constructor by default
-        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
-        ShooterAmmunitionEntry();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16> mUnk6a36e6;
+        ::ll::UntypedStorage<1, 1>  mUnk900e5c;
+        ::ll::UntypedStorage<1, 1>  mUnkca2106;
+        ::ll::UntypedStorage<1, 1>  mUnkdbd154;
+        // NOLINTEND
 
     public:
-        // NOLINTBEGIN
-        MCAPI struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
-        operator=(struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&&);
-
-        MCAPI struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
-        operator=(struct ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
-
-        // NOLINTEND
+        // prevent constructor by default
+        ShooterAmmunitionEntry& operator=(ShooterAmmunitionEntry const&);
+        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
+        ShooterAmmunitionEntry();
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk597ee5;
+    ::ll::UntypedStorage<4, 4>  mUnk6b3fc3;
+    ::ll::UntypedStorage<1, 1>  mUnkb19aba;
+    ::ll::UntypedStorage<1, 1>  mUnk2bb913;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -41,26 +52,39 @@ public:
     ShooterItemComponentLegacyFactoryData();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShooterItemComponentLegacyFactoryData() = default;
-
-    MCAPI struct ShooterItemComponentLegacyFactoryData& operator=(struct ShooterItemComponentLegacyFactoryData&&);
-
-    MCAPI struct ShooterItemComponentLegacyFactoryData& operator=(struct ShooterItemComponentLegacyFactoryData const&);
-
-    MCAPI static void bindType(
-        struct cereal::ReflectionCtx&        ctx,
-        std::vector<::AllExperiments> const& requiredToggles,
-        std::optional<class SemVersion>      releasedMinFormatVersion
-    );
-
+    virtual ~ShooterItemComponentLegacyFactoryData() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI ::ShooterItemComponentLegacyFactoryData& operator=(::ShooterItemComponentLegacyFactoryData&&);
 
+    MCAPI ::ShooterItemComponentLegacyFactoryData& operator=(::ShooterItemComponentLegacyFactoryData const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

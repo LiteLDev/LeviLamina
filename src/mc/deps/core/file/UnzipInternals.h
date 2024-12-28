@@ -6,29 +6,16 @@ namespace Core {
 
 class UnzipInternals {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk8cf14c;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     UnzipInternals& operator=(UnzipInternals const&);
     UnzipInternals(UnzipInternals const&);
     UnzipInternals();
-
-public:
-    // NOLINTBEGIN
-    MCAPI explicit UnzipInternals(void* zipFile);
-
-    MCAPI void* get();
-
-    MCAPI ~UnzipInternals();
-
-    // NOLINTEND
-
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$(void* zipFile);
-
-    MCAPI void dtor$();
-
-    // NOLINTEND
 };
 
-}; // namespace Core
+} // namespace Core

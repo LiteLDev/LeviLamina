@@ -3,10 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class Mob;
+// clang-format on
+
 class OcelotSitOnBlockGoal : public ::BaseMoveToBlockGoal {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk4b5e32;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&);
@@ -14,55 +26,72 @@ public:
     OcelotSitOnBlockGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OcelotSitOnBlockGoal() = default;
+    virtual ~OcelotSitOnBlockGoal() /*override*/;
 
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
-
-    // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
-
-    // vIndex: 11
-    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
+    virtual void tick() /*override*/;
 
     // vIndex: 13
-    virtual bool _canReach(class BlockPos const& pos);
+    virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
-    MCAPI OcelotSitOnBlockGoal(class Mob& mob, float speedMod);
+    // vIndex: 11
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
+    // vIndex: 7
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI OcelotSitOnBlockGoal(::Mob& mob, float speedMod);
+    // NOLINTEND
 
-    MCAPI void* ctor$(class Mob& mob, float speedMod);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speedMod);
+    // NOLINTEND
 
-    MCAPI bool _canReach$(class BlockPos const& pos);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI bool canUse$();
+    MCAPI void $start();
 
-    MCAPI bool isValidTarget$(class BlockSource& region, class BlockPos const& pos);
+    MCAPI void $stop();
 
-    MCAPI void start$();
+    MCAPI void $tick();
 
-    MCAPI void stop$();
+    MCAPI bool $_canReach(::BlockPos const& pos);
 
-    MCAPI void tick$();
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

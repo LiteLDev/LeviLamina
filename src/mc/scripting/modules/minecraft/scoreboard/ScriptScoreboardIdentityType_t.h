@@ -4,6 +4,10 @@
 
 namespace ScriptModuleMinecraft {
 
-enum class ScriptScoreboardIdentityType_t {};
-
+enum class ScriptScoreboardIdentityType_t : int {
+    Entity     = 2,
+    FakePlayer = 3,
+    Player     = 1,
 };
+
+}

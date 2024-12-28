@@ -4,6 +4,11 @@
 
 namespace Util::ResourceUri {
 
-enum class ValidationStatus {};
-
+enum class ValidationStatus : int {
+    Success         = 0,
+    InvalidScheme   = 1,
+    InvalidFilePath = 2,
+    InvalidEmpty    = 3,
 };
+
+}

@@ -1,92 +1,117 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
-#include "mc/common/ActorUniqueID.h"
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/network/packet/types/world/actor/ActorLink.h"
-#include "mc/platform/UUID.h"
-#include "mc/world/actor/DataItem.h"
-#include "mc/world/actor/SynchedActorDataEntityWrapper.h"
-#include "mc/world/actor/player/LayeredAbilities.h"
-#include "mc/world/actor/state/PropertySyncData.h"
-#include "mc/world/item/NetworkItemStackDescriptor.h"
-#include "mc/world/level/GameType.h"
-
 
 // auto generated inclusion list
+#include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/AddActorBasePacket.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/GameType.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorRuntimeID;
+class BinaryStream;
+class DataItem;
+class LayeredAbilities;
+class NetworkItemStackDescriptor;
+class Player;
+class ReadOnlyBinaryStream;
+class SynchedActorDataEntityWrapper;
+class Vec2;
+class Vec3;
+struct ActorLink;
+struct ActorUniqueID;
+struct PropertySyncData;
+namespace mce { class UUID; }
+// clang-format on
 
 class AddPlayerPacket : public ::AddActorBasePacket {
 public:
-    std::vector<ActorLink>                 mLinks;
-    std::string                            mName;
-    mce::UUID                              mUuid;
-    ActorUniqueID                          mEntityId;
-    ActorRuntimeID                         mRuntimeId;
-    std::string                            mPlatformOnlineId;
-    Vec3                                   mPos;
-    Vec3                                   mVelocity;
-    Vec2                                   mRot;
-    float                                  mYHeadRot;
-    std::vector<std::unique_ptr<DataItem>> mUnpack;
-    LayeredAbilities                       mAbilities;
-    std::string                            mDeviceId;
-    BuildPlatform                          mBuildPlatform;
-    GameType                               mPlayerGameType;
-    NetworkItemStackDescriptor             mCarriedItem;
-    SynchedActorDataEntityWrapper const*   mEntityData;
-    PropertySyncData                       mSynchedProperties;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                                  mUuid;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mPlatformOnlineId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;
+    ::ll::TypedStorage<4, 1372, ::LayeredAbilities>                         mAbilities;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;
+    ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mCarriedItem;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper const*>        mEntityData;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     AddPlayerPacket& operator=(AddPlayerPacket const&);
     AddPlayerPacket(AddPlayerPacket const&);
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AddPlayerPacket();
+    virtual ~AddPlayerPacket() /*override*/;
 
     // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const;
+    virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
-    virtual std::string getName() const;
+    virtual ::std::string getName() const /*override*/;
 
     // vIndex: 4
-    virtual void write(class BinaryStream& stream) const;
+    virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
-
-    MCAPI AddPlayerPacket();
-
-    MCAPI explicit AddPlayerPacket(class Player& p);
-
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI AddPlayerPacket();
 
-    MCAPI void* ctor$(class Player& p);
+    MCAPI explicit AddPlayerPacket(::Player& p);
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
 
-    MCAPI void dtor$();
+    MCAPI void* $ctor(::Player& p);
+    // NOLINTEND
 
-    MCAPI class Bedrock::Result<void> _read$(class ReadOnlyBinaryStream& stream);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::MinecraftPacketIds getId$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI std::string getName$() const;
+    MCAPI ::std::string $getName() const;
 
-    MCAPI void write$(class BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

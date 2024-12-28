@@ -12,4 +12,4 @@ public:
     GeneratorIteratorType();
 };
 
-}; // namespace Scripting
+} // namespace Scripting

@@ -5,20 +5,26 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class IDataInput;
+class IDataOutput;
+class Tag;
+// clang-format on
+
 namespace NbtIo {
+// functions
 // NOLINTBEGIN
-MCAPI class Bedrock::Result<std::unique_ptr<class CompoundTag>> read(class IDataInput& dis);
+MCAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> read(::IDataInput& dis);
 
-MCAPI class Bedrock::Result<std::unique_ptr<class CompoundTag>>
-readNamedCompoundTag(class IDataInput& dis, std::string& name);
+MCAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> readNamedCompoundTag(::IDataInput& dis, ::std::string& name);
 
-MCAPI class Bedrock::Result<std::unique_ptr<class Tag>> readNamedTag(class IDataInput& dis, std::string& name);
+MCAPI ::Bedrock::Result<::std::unique_ptr<::Tag>> readNamedTag(::IDataInput& dis, ::std::string& name);
 
-MCAPI std::unique_ptr<class CompoundTag> readOrGetEmpty(class IDataInput& dis);
+MCAPI ::std::unique_ptr<::CompoundTag> readOrGetEmpty(::IDataInput& dis);
 
-MCAPI void write(class CompoundTag const* tag, class IDataOutput& dos);
-
-MCAPI void writeNamedTag(std::string const& name, class Tag const& tag, class IDataOutput& dos);
+MCAPI void write(::CompoundTag const* tag, ::IDataOutput& dos);
 // NOLINTEND
 
-}; // namespace NbtIo
+} // namespace NbtIo

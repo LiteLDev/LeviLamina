@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PackCategory : int {
-    Unknown       = 0x0,
-    RealmsUnknown = 0x1,
-    Standard      = 0x2,
-    Premium       = 0x3,
-    Custom        = 0x4,
-    Subpack       = 0x5,
+    Unknown       = 0,
+    RealmsUnknown = 1,
+    Standard      = 2,
+    Premium       = 3,
+    Custom        = 4,
+    Subpack       = 5,
+    Chemistry     = 6,
 };

@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
+class CraftingContext;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -18,28 +20,42 @@ public:
     ShapedChemistryRecipe();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ShapedChemistryRecipe() = default;
+    // vIndex: 7
+    virtual ::mce::UUID const& getId() const /*override*/;
 
     // vIndex: 5
-    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
-    // vIndex: 7
-    virtual class mce::UUID const& getId() const;
-
+    // vIndex: 0
+    virtual ~ShapedChemistryRecipe() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static ::mce::UUID const& ID();
+    // NOLINTEND
 
-    MCAPI class mce::UUID const& getId$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool matches$(class CraftingContainer const& craftSlots, class CraftingContext const& craftingContext) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::mce::UUID const& $getId() const;
 
-    MCAPI static class mce::UUID const& ID();
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

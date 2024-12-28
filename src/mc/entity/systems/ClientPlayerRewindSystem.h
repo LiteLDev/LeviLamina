@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+struct ReplayStateTrackerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
+
 class ClientPlayerRewindSystem {
 public:
     // prevent constructor by default
@@ -10,15 +17,15 @@ public:
     ClientPlayerRewindSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo accumulateHistoryChangesSystem();
+    MCAPI static ::TickingSystemWithInfo accumulateHistoryChangesSystem();
 
     MCAPI static void applyHistoryChangesToLiveEntity(
-        struct ReplayStateTrackerComponent const& postSimulationState,
-        class EntityContext&                      liveData
+        ::ReplayStateTrackerComponent const& postSimulationState,
+        ::EntityContext&                     liveData
     );
 
-    MCAPI static struct TickingSystemWithInfo discardHistoryChangesSystem();
-
+    MCAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
     // NOLINTEND
 };

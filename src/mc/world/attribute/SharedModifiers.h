@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AttributeModifier;
+// clang-format on
+
 class SharedModifiers {
 public:
     // prevent constructor by default
@@ -10,23 +15,18 @@ public:
     SharedModifiers();
 
 public:
+    // static variables
     // NOLINTBEGIN
-    // NOLINTEND
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& DAMAGE_BOOST();
 
-    // thunks
-public:
-    // NOLINTBEGIN
-    MCAPI static std::shared_ptr<class AttributeModifier>& DAMAGE_BOOST();
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& HEALTH_BOOST();
 
-    MCAPI static std::shared_ptr<class AttributeModifier>& HEALTH_BOOST();
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SLOWDOWN();
 
-    MCAPI static std::shared_ptr<class AttributeModifier>& MOVEMENT_SLOWDOWN();
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& MOVEMENT_SPEED();
 
-    MCAPI static std::shared_ptr<class AttributeModifier>& MOVEMENT_SPEED();
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& SPRINTING_BOOST();
 
-    MCAPI static std::shared_ptr<class AttributeModifier>& SPRINTING_BOOST();
-
-    MCAPI static std::shared_ptr<class AttributeModifier>& WEAKNESS();
-
+    MCAPI static ::std::shared_ptr<::AttributeModifier>& WEAKNESS();
     // NOLINTEND
 };

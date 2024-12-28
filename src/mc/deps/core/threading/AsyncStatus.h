@@ -10,4 +10,5 @@ enum class AsyncStatus : int {
     Canceled  = 2,
     Error     = 3,
 };
-};
+
+}

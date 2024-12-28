@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/block/MultifaceSpreader.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class IBlockWorldGenAPI;
+// clang-format on
+
 class SculkVeinMultifaceSpreader : public ::MultifaceSpreader {
 public:
     // prevent constructor by default
@@ -13,43 +20,50 @@ public:
     SculkVeinMultifaceSpreader();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SculkVeinMultifaceSpreader();
-
-    // vIndex: 1
-    virtual bool _canSpreadFrom(class Block const& block, uchar facing) const;
-
     // vIndex: 2
     virtual bool _canSpreadInto(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class BlockPos const&    pos,
-        uchar                    placementDirection
-    ) const;
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
+    ) const /*override*/;
+
+    // vIndex: 1
+    virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const /*override*/;
 
     // vIndex: 3
-    virtual bool _isOtherBlockValidAsSource(class Block const& block) const;
+    virtual bool _isOtherBlockValidAsSource(::Block const& block) const /*override*/;
 
+    // vIndex: 0
+    virtual ~SculkVeinMultifaceSpreader() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
-    MCAPI bool _canSpreadFrom$(class Block const& block, uchar facing) const;
-
-    MCAPI bool _canSpreadInto$(
-        class IBlockWorldGenAPI& target,
-        class Block const&       self,
-        class BlockPos const&    pos,
-        uchar                    placementDirection
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_canSpreadInto(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
     ) const;
 
-    MCAPI bool _isOtherBlockValidAsSource$(class Block const& block) const;
+    MCAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
 
+    MCAPI bool $_isOtherBlockValidAsSource(::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

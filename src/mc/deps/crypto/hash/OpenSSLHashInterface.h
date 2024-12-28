@@ -5,14 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/IHash.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Crypto::Hash { class IHash; }
-// clang-format on
-
 namespace Crypto::Hash {
 
 class OpenSSLHashInterface : public ::Crypto::Hash::IHash {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkf67a52;
+    ::ll::UntypedStorage<8, 8> mUnk3bbd85;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     OpenSSLHashInterface& operator=(OpenSSLHashInterface const&);
@@ -20,44 +22,47 @@ public:
     OpenSSLHashInterface();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OpenSSLHashInterface() = default;
+    virtual ~OpenSSLHashInterface() /*override*/;
 
     // vIndex: 1
-    virtual void reset();
+    virtual void reset() /*override*/;
 
     // vIndex: 2
-    virtual void update(void const* data, uint size);
+    virtual void update(void const* data, uint size) /*override*/;
 
     // vIndex: 3
-    virtual void final(uchar* result);
+    virtual void final(uchar* result) /*override*/;
 
     // vIndex: 4
-    virtual uint64 resultSize() const;
-
+    virtual uint64 resultSize() const /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initHashContextPointer();
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void final$(uchar* result);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $reset();
 
-    MCAPI void reset$();
+    MCAPI void $update(void const* data, uint size);
 
-    MCAPI uint64 resultSize$() const;
+    MCAPI void $final(uchar* result);
 
-    MCAPI void update$(void const* data, uint size);
+    MCAPI uint64 $resultSize() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Crypto::Hash
+} // namespace Crypto::Hash

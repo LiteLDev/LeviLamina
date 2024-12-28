@@ -9,12 +9,17 @@
 // clang-format off
 class CompoundTag;
 class CompoundTagUpdaterNodeBuilder;
-namespace FlatteningUtils { class RemovedState; }
 // clang-format on
 
 namespace FlatteningUtils {
 
 class RemovedStringState : public ::FlatteningUtils::RemovedState {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk843fe7;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     RemovedStringState& operator=(RemovedStringState const&);
@@ -22,33 +27,42 @@ public:
     RemovedStringState();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~RemovedStringState() = default;
-
     // vIndex: 1
-    virtual void addValue(class CompoundTag const& tag);
+    virtual void addValue(::CompoundTag const& tag) /*override*/;
 
     // vIndex: 2
-    virtual void match(class CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const /*override*/;
 
     // vIndex: 3
-    virtual uint64 valueCount() const;
+    virtual uint64 valueCount() const /*override*/;
 
+    // vIndex: 0
+    virtual ~RemovedStringState() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addValue$(class CompoundTag const& tag);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $addValue(::CompoundTag const& tag);
 
-    MCAPI void match$(class CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    MCAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
 
-    MCAPI uint64 valueCount$() const;
+    MCAPI uint64 $valueCount() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace FlatteningUtils
+} // namespace FlatteningUtils

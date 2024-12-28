@@ -9,30 +9,46 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockFillOptions {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 2>   mUnka09902;
+    ::ll::UntypedStorage<8, 168> mUnk602490;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
-    ScriptBlockFillOptions(ScriptBlockFillOptions const&);
     ScriptBlockFillOptions();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions&&);
+    MCAPI ScriptBlockFillOptions(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
 
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockFillOptions& operator=(::ScriptModuleMinecraft::ScriptBlockFillOptions&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockFillOptions&
+    operator=(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
 
     MCAPI ~ScriptBlockFillOptions();
-
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
-}; // namespace ScriptModuleMinecraft
+} // namespace ScriptModuleMinecraft

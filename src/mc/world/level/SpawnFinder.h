@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+// clang-format on
+
 class SpawnFinder {
 public:
     // prevent constructor by default
@@ -10,11 +16,9 @@ public:
     SpawnFinder();
 
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static std::optional<class BlockPos>
-    findStandupPosition(class BlockPos const& requestedPosition, class BlockSource const& region);
-
-    MCAPI static bool isStandupPosition(class BlockPos const& position, class BlockSource const& region);
-
+    MCAPI static ::std::optional<::BlockPos>
+    findStandupPosition(::BlockPos const& requestedPosition, ::BlockSource const& region);
     // NOLINTEND
 };

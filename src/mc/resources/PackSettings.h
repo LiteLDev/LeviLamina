@@ -1,39 +1,35 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Value.h"
-#include "mc/resources/PackSetting.h"
 
 // auto generated forward declare list
 // clang-format off
+class PackSetting;
+struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
 
 class PackSettings {
 public:
-    Json::Value                                  mSettings;     // this+0x0
-    std::unordered_map<std::string, PackSetting> mPackSettings; // this+0x10
-
-public:
+    // member variables
     // NOLINTBEGIN
-    MCAPI PackSettings();
-
-    MCAPI class Json::Value const& getAllSettings() const;
-
-    MCAPI void loadPackSettings(struct PackIdVersion const& packId, class Json::Value const& packSettings);
-
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                      mSettings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackSetting>> mPackSettings;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _initPackSetting(std::string const& name, class Json::Value const& value);
-
-    // NOLINTEND
-
-    // thunks
 public:
-    // NOLINTBEGIN
-    MCAPI void* ctor$();
+    // prevent constructor by default
+    PackSettings& operator=(PackSettings const&);
+    PackSettings(PackSettings const&);
+    PackSettings();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
+
+    MCAPI ::Json::Value const& getAllSettings() const;
+
+    MCAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
     // NOLINTEND
 };

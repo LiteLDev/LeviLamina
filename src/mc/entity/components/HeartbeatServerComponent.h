@@ -2,7 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HeartbeatServerComponent {
+struct HeartbeatServerComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 216> mUnkcfe0d9;
+    ::ll::UntypedStorage<8, 496> mUnk92c81f;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     HeartbeatServerComponent& operator=(HeartbeatServerComponent const&);
@@ -10,19 +17,22 @@ public:
     HeartbeatServerComponent();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI HeartbeatServerComponent(class HeartbeatServerComponent&&);
+    MCAPI HeartbeatServerComponent(::HeartbeatServerComponent&&);
 
     MCAPI ~HeartbeatServerComponent();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$(class HeartbeatServerComponent&&);
+    MCAPI void* $ctor(::HeartbeatServerComponent&&);
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

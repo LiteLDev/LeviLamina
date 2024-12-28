@@ -4,6 +4,10 @@
 
 namespace ScriptModuleMinecraftServerUI {
 
-enum class ScriptFormRejectReason {};
-
+enum class ScriptFormRejectReason : int {
+    ServerShutdown    = 0,
+    PlayerQuit        = 1,
+    MalformedResponse = 2,
 };
+
+}

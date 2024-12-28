@@ -3,19 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/ComponentItem.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
+class Actor;
+class BlockSource;
+class CompoundTag;
+class Container;
+class Item;
+class ItemDescriptor;
+class ItemStack;
+class ItemStackBase;
+class Vec3;
+struct ResolvedItemIconInfo;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
 // clang-format on
 
 class SnowballItem : public ::ComponentItem {
@@ -26,66 +28,75 @@ public:
     SnowballItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SnowballItem() = default;
+    // vIndex: 107
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+
+    // vIndex: 108
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
+    // vIndex: 87
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 3
-    virtual class SnowballItem& setDescriptionId(std::string const& descriptionId);
+    virtual ::SnowballItem& setDescriptionId(::std::string const& description) /*override*/;
 
-    // vIndex: 73
-    virtual class Actor* createProjectileActor(
-        class BlockSource& region,
-        class ItemStack const&,
-        class Vec3 const& pos,
-        class Vec3 const& direction
-    ) const;
+    // vIndex: 77
+    virtual ::Actor*
+    createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const
+        /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    // vIndex: 78
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
-    // vIndex: 83
-    virtual std::string
-    buildDescriptionId(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
-
-    // vIndex: 103
-    virtual class Item& setIconInfo(std::string const& name, int id);
-
-    // vIndex: 104
-    virtual struct ResolvedItemIconInfo
-    getIconInfo(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI SnowballItem(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
-
+    // vIndex: 0
+    virtual ~SnowballItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI SnowballItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id, struct cereal::ReflectionCtx& ctx);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI std::string
-          buildDescriptionId$(class ItemDescriptor const& itemDescriptor, class CompoundTag const* userData) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class Actor* createProjectileActor$(
-        class BlockSource& region,
-        class ItemStack const&,
-        class Vec3 const& pos,
-        class Vec3 const& direction
-    ) const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI bool
-    dispense$(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI struct ResolvedItemIconInfo
-    getIconInfo$(class ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI class SnowballItem& setDescriptionId$(std::string const& descriptionId);
+    MCAPI ::SnowballItem& $setDescriptionId(::std::string const& description);
 
-    MCAPI class Item& setIconInfo$(std::string const& name, int id);
+    MCAPI ::Actor*
+    $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

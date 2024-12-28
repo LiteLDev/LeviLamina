@@ -20,28 +20,34 @@ public:
     IGetPlacementBlockCallback();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGetPlacementBlockCallback() = default;
+    virtual ~IGetPlacementBlockCallback();
 
     // vIndex: 1
-    virtual gsl::not_null<class Block const*> getPlacementBlock(
-        gsl::not_null<class Block const*> block,
-        class Actor const&                by,
-        class BlockPos const&,
-        uchar,
-        class Vec3 const&,
-        int
-    ) const = 0;
+    virtual ::gsl::not_null<::Block const*>
+    getPlacementBlock(::gsl::not_null<::Block const*>, ::Actor const&, ::BlockPos const&, uchar, ::Vec3 const&, int)
+        const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
 
     // NOLINTEND
 
-    // thunks
 public:
+    // vftables
     // NOLINTBEGIN
-    MCAPI static void** vftable();
-
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace BlockTrait
+} // namespace BlockTrait

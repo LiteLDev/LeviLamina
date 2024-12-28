@@ -5,7 +5,19 @@
 // auto generated inclusion list
 #include "mc/scripting/IScriptPluginSourceEnumerator.h"
 
+// auto generated forward declare list
+// clang-format off
+class IScriptPluginSource;
+class PackInstance;
+// clang-format on
+
 class ScriptPluginPackSourceEnumerator : public ::IScriptPluginSourceEnumerator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk5b034a;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ScriptPluginPackSourceEnumerator& operator=(ScriptPluginPackSourceEnumerator const&);
@@ -13,28 +25,43 @@ public:
     ScriptPluginPackSourceEnumerator();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ScriptPluginPackSourceEnumerator();
-
     // vIndex: 1
-    virtual std::vector<std::shared_ptr<class IScriptPluginSource>> const& getPluginSources() const;
+    virtual ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& getPluginSources() const /*override*/;
 
-    MCAPI
-    ScriptPluginPackSourceEnumerator(std::string const& scriptRoot, std::vector<class PackInstance> const& packStack);
-
+    // vIndex: 0
+    virtual ~ScriptPluginPackSourceEnumerator() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI
+    ScriptPluginPackSourceEnumerator(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& scriptRoot, std::vector<class PackInstance> const& packStack);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::vector<std::shared_ptr<class IScriptPluginSource>> const& getPluginSources$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

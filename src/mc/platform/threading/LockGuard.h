@@ -11,4 +11,4 @@ public:
     MCAPI ~LockGuard();
 };
 
-}; // namespace Bedrock::Threading
+} // namespace Bedrock::Threading

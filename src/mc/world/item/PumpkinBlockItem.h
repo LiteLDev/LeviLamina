@@ -3,19 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/BlockItem.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/level/block/BlockShape.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
-// clang-format on
 
 class PumpkinBlockItem : public ::BlockItem {
 public:
@@ -25,35 +15,52 @@ public:
     PumpkinBlockItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 54
+    virtual int getEnchantSlot() const /*override*/;
+
+    // vIndex: 101
+    virtual ::ActorLocation getEquipLocation() const /*override*/;
+
+    // vIndex: 102
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
+
     // vIndex: 0
-    virtual ~PumpkinBlockItem() = default;
-
-    // vIndex: 50
-    virtual int getEnchantSlot() const;
-
-    // vIndex: 97
-    virtual ::ActorLocation getEquipLocation() const;
-
-    // vIndex: 98
-    virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
-
-    MCAPI PumpkinBlockItem(std::string const& name, int id);
-
+    virtual ~PumpkinBlockItem() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PumpkinBlockItem(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& name, int id);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
 
-    MCAPI int getEnchantSlot$() const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI ::ActorLocation getEquipLocation$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getEnchantSlot() const;
 
-    MCAPI ::Puv::Legacy::LevelSoundEvent getEquipSound$() const;
+    MCAPI ::ActorLocation $getEquipLocation() const;
 
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

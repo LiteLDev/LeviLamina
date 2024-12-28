@@ -7,7 +7,24 @@
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class ChangeDimensionRequest;
+class DimensionStateComponent;
+class Player;
+class StrictEntityContext;
+struct DimensionTransitionComponent;
+struct ExitFromPassengerFlagComponent;
+struct PassengerComponent;
+struct PlayerChangeDimensionRequestComponent;
+struct PlayerComponent;
+struct StateVectorComponent;
+struct StopRidingRequestComponent;
+struct TickingSystemWithInfo;
+struct VehicleComponent;
+// clang-format on
 
 class DimensionTransitionSystem {
 public:
@@ -17,62 +34,63 @@ public:
     DimensionTransitionSystem();
 
 public:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickPortalTransition(
-        class ViewT<
-            class StrictEntityContext,
-            struct Exclude<struct PassengerComponent, struct VehicleComponent>,
-            class ActorOwnerComponent,
-            struct DimensionTransitionComponent const>            view,
-        class EntityModifier<struct DimensionTransitionComponent> mod
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<::PassengerComponent, ::VehicleComponent>,
+            ::ActorOwnerComponent,
+            ::DimensionTransitionComponent const>        view,
+        ::EntityModifier<::DimensionTransitionComponent> mod
     );
+
+    MCAPI static void
+    _tickReadyToContinueServer(::ViewT<
+                               ::StrictEntityContext,
+                               ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
+                               ::PlayerChangeDimensionRequestComponent> view);
 
     MCAPI static void _tickVehicleDismount(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct PlayerChangeDimensionRequestComponent, struct PassengerComponent>> passengers,
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<struct PlayerChangeDimensionRequestComponent>,
-            struct VehicleComponent const> vehicles,
-        class EntityModifier<
-            class FlagComponent<struct StopRidingRequestFlag>,
-            class FlagComponent<struct ExitFromPassengerFlag>> modifier
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
+            passengers,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent>, ::VehicleComponent const>
+                                                                                         vehicles,
+        ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier
     );
 
-    MCAPI static struct TickingSystemWithInfo createPortalTransition();
+    MCAPI static ::TickingSystemWithInfo createPortalTransition();
 
-    MCAPI static struct TickingSystemWithInfo createReadyToContinueServer();
+    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
 
-    MCAPI static struct TickingSystemWithInfo createVehicleDismount();
+    MCAPI static ::TickingSystemWithInfo createVehicleDismount();
 
     MCAPI static void removeChangeDimensionRequest(
-        class StrictEntityContext const&                                   entity,
-        class EntityModifier<struct PlayerChangeDimensionRequestComponent> modifier
+        ::StrictEntityContext const&                              entity,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent> modifier
     );
 
     MCAPI static void requestPlayerChangeDimension(
-        class StrictEntityContext const&                                                                   player,
-        class ChangeDimensionRequest&&                                                                     request,
-        class ViewT<class StrictEntityContext, class DimensionStateComponent, struct StateVectorComponent> playerData,
-        class EntityModifier<struct PlayerChangeDimensionRequestComponent>                                 modifier
+        ::StrictEntityContext const&                                                      player,
+        ::ChangeDimensionRequest&&                                                        request,
+        ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
     );
 
     MCAPI static bool shouldLevelWaitForSystem(
-        class StrictEntityContext const&                                                           entity,
-        class ViewT<class StrictEntityContext, struct PlayerChangeDimensionRequestComponent const> view
+        ::StrictEntityContext const&                                                  entity,
+        ::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent const> view
     );
 
     MCAPI static void tryHandleChangeDimensionRequestLevel(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct PlayerComponentFlag>>,
-            struct PlayerChangeDimensionRequestComponent,
-            class ActorOwnerComponent>                                           requests,
-        class EntityModifier<struct PlayerChangeDimensionRequestComponent>       modifier,
-        std::function<bool(class Player&, class ChangeDimensionRequest&)> const& callback,
-        std::function<bool(class Player&)> const&                                isSuspended
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PlayerComponent>,
+            ::PlayerChangeDimensionRequestComponent,
+            ::ActorOwnerComponent>                                         requests,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent>          modifier,
+        ::std::function<bool(::Player&, ::ChangeDimensionRequest&)> const& callback,
+        ::std::function<bool(::Player&)> const&                            isSuspended
     );
-
     // NOLINTEND
 };

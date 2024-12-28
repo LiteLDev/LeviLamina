@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
@@ -11,6 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class Mob;
+struct DistanceSortedActor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,36 +26,75 @@ public:
     // SniffGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk4e5c3a;
+        ::ll::UntypedStorage<4, 4> mUnk36f1db;
+        ::ll::UntypedStorage<4, 4> mUnke583fe;
+        ::ll::UntypedStorage<4, 4> mUnk3a8303;
+        ::ll::UntypedStorage<4, 8> mUnkaa5169;
+        // NOLINTEND
+
+    public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
 
     public:
+        // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() = default;
+        virtual ~Definition() /*override*/;
+        // NOLINTEND
 
+    public:
+        // member functions
+        // NOLINTBEGIN
         MCAPI Definition();
 
-        MCAPI void initialize(class EntityContext& entity, class SniffGoal& goal) const;
-
-        MCAPI static void buildSchema(
-            std::string const& name,
-            std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SniffGoal::Definition>>& root
-        );
-
+        MCAPI void initialize(::EntityContext& entity, ::SniffGoal& goal) const;
         // NOLINTEND
 
-        // thunks
     public:
+        // static functions
         // NOLINTBEGIN
-        MCAPI static void** vftable();
+        MCAPI static void buildSchema(
+            ::std::string const&                                                                                  name,
+            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SniffGoal::Definition>>& root
+        );
+        // NOLINTEND
 
-        MCAPI void* ctor$();
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+        // NOLINTEND
 
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk127f63;
+    ::ll::UntypedStorage<4, 12> mUnk38a0a0;
+    ::ll::UntypedStorage<4, 8>  mUnk71a353;
+    ::ll::UntypedStorage<2, 2>  mUnk664b71;
+    ::ll::UntypedStorage<8, 8>  mUnk8cb558;
+    ::ll::UntypedStorage<8, 8>  mUnkd4f69b;
+    ::ll::UntypedStorage<4, 4>  mUnka684b6;
+    ::ll::UntypedStorage<4, 4>  mUnk8ee75a;
+    // NOLINTEND
 
 public:
     // prevent constructor by default
@@ -62,58 +103,71 @@ public:
     SniffGoal();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~SniffGoal() = default;
-
     // vIndex: 1
-    virtual bool canUse();
+    virtual bool canUse() /*override*/;
 
     // vIndex: 2
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 4
-    virtual void start();
+    virtual void start() /*override*/;
 
     // vIndex: 5
-    virtual void stop();
+    virtual void stop() /*override*/;
 
     // vIndex: 6
-    virtual void tick();
+    virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(std::string& str) const;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    MCAPI explicit SniffGoal(class Mob& mob);
-
+    // vIndex: 0
+    virtual ~SniffGoal() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
-
-    MCAPI std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit SniffGoal(::Mob& mob);
 
-    MCAPI void* ctor$(class Mob& mob);
+    MCAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
 
-    MCAPI void appendDebugInfo$(std::string& str) const;
+    MCAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
+    // NOLINTEND
 
-    MCAPI bool canContinueToUse$();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
 
-    MCAPI bool canUse$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void start$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $canUse();
 
-    MCAPI void stop$();
+    MCAPI bool $canContinueToUse();
 
-    MCAPI void tick$();
+    MCAPI void $start();
 
+    MCAPI void $stop();
+
+    MCAPI void $tick();
+
+    MCAPI void $appendDebugInfo(::std::string& str) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

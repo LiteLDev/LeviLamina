@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/ClientOrServerNetworkSystemRef.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/ecs/gamerefs_entity/IEntityRegistryOwner.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
@@ -14,56 +14,95 @@
 
 // auto generated forward declare list
 // clang-format off
+class AllowList;
+class ClientNetworkSystem;
+class ClientOrServerNetworkSystemRef;
+class EntityContext;
+class EntityRegistry;
+class EntitySystems;
+class Experiments;
+class FileArchiver;
+class GameCallbacks;
+class GameModuleServer;
+class GameSession;
+class GameTestLevelListener;
+class IContentTierManager;
+class IMinecraftApp;
+class IMinecraftEventing;
+class Level;
+class MinecraftCommands;
+class MinecraftGameTest;
+class NetEventCallback;
+class NetworkIdentifier;
+class PacketSender;
+class PermissionsFile;
+class Player;
+class PrivateKeyManager;
+class ResourcePackManager;
+class Scheduler;
+class ServerMetrics;
+class ServerNetworkHandler;
+class ServerNetworkSystem;
+class StructureManager;
+class TextFilteringProcessor;
+class Timer;
+struct ConnectionDefinition;
+struct NetworkServerConfig;
+struct PackIdVersion;
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 // clang-format on
 
 class Minecraft : public ::IEntityRegistryOwner {
 public:
-    // from https://github.com/EndstoneMC/endstone/blob/main/include/bedrock/world/minecraft.h
-    class GameCallbacks&                               mGameCallbacks;         // this+0x18
-    class IMinecraftEventing&                          mEventing;              // this+0x20
-    std::unique_ptr<class ResourcePackManager>         mResourceLoader;        // this+0x28
-    std::unique_ptr<class StructureManager>            mStructureManager;      // this+0x30
-    std::shared_ptr<class GameModuleServer>            mGameModuleServer;      // this+0x38
-    class AllowList&                                   mAllowList;             // this+0x48
-    class PermissionsFile*                             mPermissionsFile;       // this+0x50
-    std::unique_ptr<class PrivateKeyManager>           mServerKeys;            // this+0x58
-    std::string const                                  mSaveGamePath;          // this+0x60
-    Bedrock::NotNullNonOwnerPtr<Core::FilePathManager> mFilePathManager;       // this+0x80
-    class ServerMetrics*                               mServerMetrics;         // this+0x90
-    bool                                               mCorruptionDetected;    // this+0x98
-    bool                                               mFireOnLevelCorrupt;    // this+0x99
-    double                                             mFrameDuration;         // this+0xa0
-    double                                             mLastFrameStart;        // this+0xa8
-    std::chrono::seconds                               mMaxPlayerIdleTime;     // this+0xb0
-    std::unique_ptr<class MinecraftCommands>           mCommands;              // this+0xb8
-    std::unique_ptr<class GameSession>                 mGameSession;           // this+0xc0
-    std::unique_ptr<class GameTestLevelListener>       mGameTestLevelListener; // this+0xc8
-    std::unique_ptr<class MinecraftGameTest>           mGameTest;              // this+0xd0
-    class Timer&                                       mSimTimer;              // this+0xd8
-    class Timer&                                       mRealTimer;             // this+0xe0
-    ClientOrServerNetworkSystemRef                     mNetwork;               // this+0xe8
-    class PacketSender&                                mPacketSender;          // this+0xf0
-    class IMinecraftApp&                               mApp;                   // this+0xf8
-    SubClientId                                        mClientSubId;           // this+0x100
-    OwnerPtr<class EntityRegistry>                     mEntityRegistry;        // this+0x108
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                        mGameCallbacks;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                   mEventing;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>                mResourceLoader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>                   mStructureManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>                  mGameModuleServer;
+    ::ll::TypedStorage<8, 8, ::AllowList&>                                            mAllowList;
+    ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                      mPermissionsFile;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PrivateKeyManager>>                  mServerKeys;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                    mSaveGamePath;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>> mFilePathManager;
+    ::ll::TypedStorage<8, 8, ::ServerMetrics*>                                        mServerMetrics;
+    ::ll::TypedStorage<1, 1, bool>                                                    mCorruptionDetected;
+    ::ll::TypedStorage<1, 1, bool>                                                    mFireOnLevelCorrupt;
+    ::ll::TypedStorage<8, 8, double>                                                  mFrameDuration;
+    ::ll::TypedStorage<8, 8, double>                                                  mLastFrameStart;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                                  mMaxPlayerIdleTime;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftCommands>>                  mCommands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameSession>>                        mGameSession;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameTestLevelListener>>              mGameTestLevelListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftGameTest>>                  mGameTest;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                                mSimTimer;
+    ::ll::TypedStorage<8, 8, ::Timer&>                                                mRealTimer;
+    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>                       mNetwork;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                         mPacketSender;
+    ::ll::TypedStorage<8, 8, ::IMinecraftApp&>                                        mApp;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                                           mClientSubId;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                           mEntityRegistry;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::Level*), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+        mLevelSubscribers;
+    // NOLINTEND
 
+public:
     // prevent constructor by default
     Minecraft& operator=(Minecraft const&);
     Minecraft(Minecraft const&);
     Minecraft();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Minecraft();
-
-    // vIndex: 1
-    virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
-
-    // vIndex: 2
-    virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
+    virtual ~Minecraft() /*override*/;
 
     // vIndex: 3
     virtual void setSimTimePause(bool pause);
@@ -77,75 +116,86 @@ public:
     // vIndex: 6
     virtual bool isOnlineClient() const;
 
+    // vIndex: 2
+    virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() /*override*/;
+
+    // vIndex: 1
+    virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI Minecraft(
-        class IMinecraftApp&                                                app,
-        class GameCallbacks&                                                gameCallbacks,
-        class AllowList&                                                    allowList,
-        class PermissionsFile*                                              permissionsFile,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
-        std::chrono::seconds                                                maxPlayerIdleTime,
-        class IMinecraftEventing&                                           eventing,
-        class ClientOrServerNetworkSystemRef                                network,
-        class PacketSender&                                                 packetSender,
-        ::SubClientId                                                       clientSubId,
-        class Timer&                                                        simTimer,
-        class Timer&                                                        realTimer,
-        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
-        class ServerMetrics*                                                serverMetrics
+        ::IMinecraftApp&                                                  app,
+        ::GameCallbacks&                                                  gameCallbacks,
+        ::AllowList&                                                      allowList,
+        ::PermissionsFile*                                                permissionsFile,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
+        ::std::chrono::seconds                                            maxPlayerIdleTime,
+        ::IMinecraftEventing&                                             eventing,
+        ::ClientOrServerNetworkSystemRef                                  network,
+        ::PacketSender&                                                   packetSender,
+        ::SubClientId                                                     clientSubId,
+        ::Timer&                                                          simTimer,
+        ::Timer&                                                          realTimer,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
+        ::ServerMetrics*                                                  serverMetrics
     );
+
+    MCAPI void _tryCatchupMovementTicks();
 
     MCAPI void activateAllowList();
 
-    MCAPI void configureGameTest(class Level& level, class Experiments const& experiments);
+    MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
     MCAPI void disconnectClient(
-        class NetworkIdentifier const&     id,
+        ::NetworkIdentifier const&         id,
         ::Connection::DisconnectFailReason discoReason,
-        std::string const&                 reasonMessage
+        ::std::string const&               reasonMessage
     );
 
     MCAPI void earlyShutdownMainthread();
 
-    MCAPI class ClientNetworkSystem& getClientNetworkSystem();
+    MCAPI ::ClientNetworkSystem& getClientNetworkSystem();
 
-    MCAPI class MinecraftCommands& getCommands();
+    MCAPI ::MinecraftCommands& getCommands();
 
-    MCAPI class IMinecraftEventing& getEventing() const;
+    MCAPI ::IMinecraftEventing& getEventing() const;
 
-    MCAPI class GameModuleServer& getGameModuleServer();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const;
 
-    MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
+    MCAPI ::GameModuleServer& getGameModuleServer();
+
+    MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
 
     MCAPI double getLastTimestep();
 
-    MCAPI class Level* getLevel() const;
+    MCAPI ::Level* getLevel() const;
 
-    MCAPI class ResourcePackManager& getResourceLoader();
+    MCAPI ::ResourcePackManager& getResourceLoader();
 
-    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI class ServerNetworkSystem& getServerNetworkSystem();
+    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
 
-    MCAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 
     MCAPI bool hasCommands();
 
     MCAPI bool hostMultiplayer(
-        std::string const&                                                           serverName,
-        std::pair<std::unique_ptr<class Level>, class OwnerPtr<class EntityContext>> levelEntity,
-        class Player*                                                                localPlayer,
-        class mce::UUID const&                                                       localPlayerId,
-        std::unique_ptr<class NetEventCallback>                                      clientNetworkHandler,
-        int                                                                          maxChunkRadius,
-        bool                                                                         shouldAnnounce,
-        bool                                                                         requireTrustedAuthentication,
-        std::vector<std::string> const&                                              extraTrustedKeys,
-        std::string                                                                  serverType,
-        struct ConnectionDefinition const&                                           connectionDefinition,
-        std::unordered_map<struct PackIdVersion, std::string> const&                 packIdToContentKey,
-        class Scheduler&                                                             scheduler,
-        class TextFilteringProcessor*                                                textFilteringProcessor,
-        struct NetworkPermissions const&                                             networkPermissions
+        ::std::string const&                                                 serverName,
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
+        ::Player*                                                            localPlayer,
+        ::mce::UUID const&                                                   localPlayerId,
+        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
+        int                                                                  maxChunkRadius,
+        bool                                                                 shouldAnnounce,
+        ::ConnectionDefinition const&                                        connectionDefinition,
+        ::std::unordered_map<::PackIdVersion, ::std::string> const&          packIdToContentKey,
+        ::Scheduler&                                                         scheduler,
+        ::TextFilteringProcessor*                                            textFilteringProcessor,
+        ::NetworkServerConfig const&                                         packetHandlerConfig
     );
 
     MCAPI void init();
@@ -158,59 +208,65 @@ public:
 
     MCAPI void requestResourceReload();
 
-    MCAPI void requestServerShutdown(std::string const& message);
+    MCAPI void requestServerShutdown(::std::string const& message);
 
     MCAPI void startLeaveGame(bool stopNetwork);
 
     MCAPI bool update();
-
-    MCAPI static void _tryCatchupMovementTicks(class EntitySystems& entitySystems, class EntityRegistry& registry);
-
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI void _tryCatchupMovementTicks();
-
-    MCAPI void tickSimtime(int nTick, int maxTick);
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI static void _tryCatchupMovementTicks(::EntitySystems& entitySystems, ::EntityRegistry& registry);
+    // NOLINTEND
 
-    MCAPI void* ctor$(
-        class IMinecraftApp&                                                app,
-        class GameCallbacks&                                                gameCallbacks,
-        class AllowList&                                                    allowList,
-        class PermissionsFile*                                              permissionsFile,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
-        std::chrono::seconds                                                maxPlayerIdleTime,
-        class IMinecraftEventing&                                           eventing,
-        class ClientOrServerNetworkSystemRef                                network,
-        class PacketSender&                                                 packetSender,
-        ::SubClientId                                                       clientSubId,
-        class Timer&                                                        simTimer,
-        class Timer&                                                        realTimer,
-        Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const& contentTierManager,
-        class ServerMetrics*                                                serverMetrics
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IMinecraftApp&                                                  app,
+        ::GameCallbacks&                                                  gameCallbacks,
+        ::AllowList&                                                      allowList,
+        ::PermissionsFile*                                                permissionsFile,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
+        ::std::chrono::seconds                                            maxPlayerIdleTime,
+        ::IMinecraftEventing&                                             eventing,
+        ::ClientOrServerNetworkSystemRef                                  network,
+        ::PacketSender&                                                   packetSender,
+        ::SubClientId                                                     clientSubId,
+        ::Timer&                                                          simTimer,
+        ::Timer&                                                          realTimer,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
+        ::ServerMetrics*                                                  serverMetrics
     );
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI class StackRefResult<class EntityRegistry> getEntityRegistry$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $setSimTimePause(bool pause);
 
-    MCAPI class StackRefResult<class EntityRegistry const> getEntityRegistry$() const;
+    MCAPI void $setSimTimeScale(float scale);
 
-    MCAPI bool getSimPaused$() const;
+    MCAPI bool $getSimPaused() const;
 
-    MCAPI bool isOnlineClient$() const;
+    MCAPI bool $isOnlineClient() const;
 
-    MCAPI void setSimTimePause$(bool pause);
+    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCAPI void setSimTimeScale$(float scale);
+    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

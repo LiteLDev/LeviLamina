@@ -3,57 +3,90 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/PackOrigin.h"
-#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
+// auto generated forward declare list
+// clang-format off
+class IContentKeyProvider;
+class IPackManifestFactory;
+class Pack;
+class PackSourceReport;
+// clang-format on
+
 class CompositePackSource : public ::PackSource {
 public:
-    std::vector<PackSource*> mPackSources;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackSource*>> mPackSources;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     CompositePackSource& operator=(CompositePackSource const&);
     CompositePackSource(CompositePackSource const&);
-    CompositePackSource();
-
-    void addPackSource(PackSource& source) { mPackSources.push_back(&source); }
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompositePackSource() = default;
+    virtual ~CompositePackSource() /*override*/;
 
     // vIndex: 1
-    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
+    virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
 
     // vIndex: 2
-    virtual void forEachPack(std::function<void(class Pack&)> callback);
+    virtual void forEachPack(::std::function<void(::Pack&)> callback) /*override*/;
 
     // vIndex: 5
-    virtual class PackSourceReport load(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
-    );
-
-    MCAPI explicit CompositePackSource(std::vector<class PackSource*>&& packSources);
-
+    virtual ::PackSourceReport load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    ) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI CompositePackSource();
 
-    MCAPI void* ctor$(std::vector<class PackSource*>&& packSources);
+    MCAPI explicit CompositePackSource(::std::vector<::PackSource*>&& packSources);
 
-    MCAPI void forEachPack$(std::function<void(class Pack&)> callback);
+    MCAPI void addPackSource(::PackSource* packSource);
 
-    MCAPI void forEachPackConst$(std::function<void(class Pack const&)> callback) const;
+    MCAPI void clear();
+    // NOLINTEND
 
-    MCAPI class PackSourceReport load$(
-        class IPackManifestFactory&                                         manifestFactory,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::vector<::PackSource*>&& packSources);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+
+    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
+
+    MCAPI ::PackSourceReport $load(
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

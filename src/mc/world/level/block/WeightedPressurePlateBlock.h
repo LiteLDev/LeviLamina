@@ -3,22 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BasePressurePlateBlock.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class BlockActor;
+class BlockPos;
+class BlockSource;
+class ItemInstance;
+class Material;
 // clang-format on
 
 class WeightedPressurePlateBlock : public ::BasePressurePlateBlock {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnka5d4c8;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     WeightedPressurePlateBlock& operator=(WeightedPressurePlateBlock const&);
@@ -26,96 +29,70 @@ public:
     WeightedPressurePlateBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 151
+    virtual int getTickDelay() const /*override*/;
+
+    // vIndex: 90
+    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
+
+    // vIndex: 152
+    virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 153
+    virtual int getSignalForData(int data) const /*override*/;
+
+    // vIndex: 154
+    virtual int getRedstoneSignal(int signal) const /*override*/;
+
     // vIndex: 0
-    virtual ~WeightedPressurePlateBlock() = default;
-
-    // vIndex: 96
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
-
-    // vIndex: 163
-    virtual int getTickDelay() const;
-
-    // vIndex: 164
-    virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 168
-    virtual void
-    startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
-        const;
-
-    // vIndex: 169
-    virtual int getInputSignal(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 170
-    virtual bool isAlternateInput(class Block const& block) const;
-
-    // vIndex: 171
-    virtual int getAlternateSignal(class BlockSource& region, class BlockPos const& pos) const;
-
-    // vIndex: 172
-    virtual int getOutputSignal(class Block const& block) const;
-
-    // vIndex: 173
-    virtual int getTurnOffDelay(class Block const& block) const;
-
-    // vIndex: 174
-    virtual int getTurnOnDelay(class Block const& block) const;
-
-    // vIndex: 175
-    virtual class Block const* getOnBlock(class Block const* block) const;
-
-    // vIndex: 176
-    virtual class Block const* getOffBlock(class Block const* block) const;
-
-    MCVAPI int getRedstoneSignal(int signal) const;
-
-    MCVAPI int getSignalForData(int data) const;
-
-    MCAPI WeightedPressurePlateBlock(std::string const& nameId, int id, class Material const& material, int maxWeight);
-
+    virtual ~WeightedPressurePlateBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI WeightedPressurePlateBlock(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, class Material const& material, int maxWeight);
-
-    MCAPI class ItemInstance asItemInstance$(class Block const&, class BlockActor const*) const;
-
-    MCAPI int getAlternateSignal$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI int getInputSignal$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI class Block const* getOffBlock$(class Block const* block) const;
-
-    MCAPI class Block const* getOnBlock$(class Block const* block) const;
-
-    MCAPI int getOutputSignal$(class Block const& block) const;
-
-    MCAPI int getRedstoneSignal$(int signal) const;
-
-    MCAPI int getSignalForData$(int data) const;
-
-    MCAPI int getSignalStrength$(class BlockSource& region, class BlockPos const& pos) const;
-
-    MCAPI int getTickDelay$() const;
-
-    MCAPI int getTurnOffDelay$(class Block const& block) const;
-
-    MCAPI int getTurnOnDelay$(class Block const& block) const;
-
-    MCAPI bool isAlternateInput$(class Block const& block) const;
-
-    MCAPI void
-    startFalling$(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
-        const;
-
+public:
+    // static variables
+    // NOLINTBEGIN
     MCAPI static int const& MAX_WEIGHT_HEAVY();
 
     MCAPI static int const& MAX_WEIGHT_LIGHT();
+    // NOLINTEND
 
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI int $getTickDelay() const;
+
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI int $getSignalForData(int data) const;
+
+    MCAPI int $getRedstoneSignal(int signal) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

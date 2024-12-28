@@ -5,7 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/level/chunk/ChunkSource.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class LevelChunk;
+class Random;
+struct LevelChunkFinalDeleter;
+// clang-format on
+
 class MainChunkSource : public ::ChunkSource {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 64> mUnk48482e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     MainChunkSource& operator=(MainChunkSource const&);
@@ -13,72 +27,89 @@ public:
     MainChunkSource();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MainChunkSource() = default;
+    virtual ~MainChunkSource() /*override*/;
 
     // vIndex: 3
-    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& cp);
-
-    // vIndex: 4
-    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random& random);
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
     // vIndex: 5
-    virtual bool isChunkKnown(class ChunkPos const& chunkPos);
+    virtual bool isChunkKnown(::ChunkPos const& chunkPos) /*override*/;
+
+    // vIndex: 4
+    virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random) /*override*/;
 
     // vIndex: 7
-    virtual std::shared_ptr<class LevelChunk>
-    createNewChunk(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    virtual ::std::shared_ptr<::LevelChunk>
+    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
-    // vIndex: 19
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
-
-    // vIndex: 24
-    virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap();
-
-    // vIndex: 25
-    virtual std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage() const;
+    // vIndex: 20
+    virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
     // vIndex: 26
-    virtual void clearDeletedEntities();
+    virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& getStorage() const /*override*/;
 
     // vIndex: 27
-    virtual bool canCreateViews() const;
+    virtual void clearDeletedEntities() /*override*/;
 
-    // vIndex: 30
-    virtual void setLevelChunk(std::shared_ptr<class LevelChunk> lc);
+    // vIndex: 25
+    virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap() /*override*/;
 
-    MCAPI explicit MainChunkSource(std::unique_ptr<class ChunkSource> storage);
+    // vIndex: 28
+    virtual bool canCreateViews() const /*override*/;
 
+    // vIndex: 31
+    virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::unique_ptr<class ChunkSource> storage);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage);
+    // NOLINTEND
 
-    MCAPI void acquireDiscarded$(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI bool canCreateViews$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
 
-    MCAPI void clearDeletedEntities$();
+    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCAPI std::shared_ptr<class LevelChunk>
-          createNewChunk$(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
-    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const* getChunkMap$();
+    MCAPI ::std::shared_ptr<::LevelChunk>
+    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCAPI std::shared_ptr<class LevelChunk> getExistingChunk$(class ChunkPos const& cp);
+    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI std::shared_ptr<class LevelChunk> getRandomChunk$(class Random& random);
+    MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& $getStorage() const;
 
-    MCAPI std::unordered_map<class ChunkPos, std::weak_ptr<class LevelChunk>> const& getStorage$() const;
+    MCAPI void $clearDeletedEntities();
 
-    MCAPI bool isChunkKnown$(class ChunkPos const& chunkPos);
+    MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
 
-    MCAPI void setLevelChunk$(std::shared_ptr<class LevelChunk> lc);
+    MCAPI bool $canCreateViews() const;
 
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

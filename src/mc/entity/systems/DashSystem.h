@@ -6,7 +6,15 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/entity/components/FlagComponent.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorOwnerComponent;
+class StrictEntityContext;
+struct ActorTickedComponent;
+struct DashCooldownTimerComponent;
+struct TickingSystemWithInfo;
+// clang-format on
 
 class DashSystem {
 public:
@@ -16,21 +24,17 @@ public:
     DashSystem();
 
 public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
+    // static functions
     // NOLINTBEGIN
     MCAPI static void _tickDashSystem(
-        class ViewT<
-            class StrictEntityContext,
-            struct Include<class FlagComponent<struct ActorTickedFlag>>,
-            class ActorOwnerComponent,
-            struct DashCooldownTimerComponent>                  view,
-        class EntityModifier<struct DashCooldownTimerComponent> modifier
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorTickedComponent>,
+            ::ActorOwnerComponent,
+            ::DashCooldownTimerComponent>              view,
+        ::EntityModifier<::DashCooldownTimerComponent> modifier
     );
 
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

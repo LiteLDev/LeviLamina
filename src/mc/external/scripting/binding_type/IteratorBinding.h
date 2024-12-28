@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/binding_type/TaggedBinding.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting::Reflection { class IFunction; }
@@ -9,7 +12,20 @@ namespace Scripting::Reflection { class IFunction; }
 
 namespace Scripting {
 
-struct IteratorBinding {
+struct IteratorBinding : public ::Scripting::TaggedBinding {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16>  mUnk1afcd4;
+    ::ll::UntypedStorage<8, 16>  mUnkb3a8f1;
+    ::ll::UntypedStorage<8, 16>  mUnk6d4a21;
+    ::ll::UntypedStorage<8, 16>  mUnk947f9a;
+    ::ll::UntypedStorage<8, 144> mUnk5f052a;
+    ::ll::UntypedStorage<8, 8>   mUnkcaebdd;
+    ::ll::UntypedStorage<8, 16>  mUnk54998d;
+    ::ll::UntypedStorage<8, 32>  mUnk2f9c97;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     IteratorBinding& operator=(IteratorBinding const&);
@@ -17,24 +33,39 @@ public:
     IteratorBinding();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IteratorBinding();
-
-    MCAPI explicit IteratorBinding(std::shared_ptr<class Scripting::Reflection::IFunction>);
-
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI IteratorBinding(
+        ::std::string                                         iteratorClassName,
+        ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback
+    );
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::shared_ptr<class Scripting::Reflection::IFunction>);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
-}; // namespace Scripting
+} // namespace Scripting

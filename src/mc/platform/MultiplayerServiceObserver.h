@@ -2,9 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/Observer.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class SingleThreadedLock; }
+namespace mce { class UUID; }
+// clang-format on
+
 namespace Social {
 
-class MultiplayerServiceObserver {
+class MultiplayerServiceObserver
+: public ::Core::Observer<::Social::MultiplayerServiceObserver, ::Core::SingleThreadedLock> {
 public:
     // prevent constructor by default
     MultiplayerServiceObserver& operator=(MultiplayerServiceObserver const&);
@@ -12,21 +22,31 @@ public:
     MultiplayerServiceObserver();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    MCVAPI void onUserDisconnectedBecauseConcurrentLogin(std::string const& id);
+    // vIndex: 2
+    virtual void onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
 
-    MCVAPI ~MultiplayerServiceObserver();
+    // vIndex: 3
+    virtual void onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
 
+    // vIndex: 0
+    virtual ~MultiplayerServiceObserver() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void onUserDisconnectedBecauseConcurrentLogin$(std::string const& id);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
 
+    MCAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
     // NOLINTEND
 };
 
-}; // namespace Social
+} // namespace Social

@@ -2,26 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EducationLocalLevelSettings {
+struct EducationLocalLevelSettings {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> codeBuilderOverrideUri;
+    // NOLINTEND
+
 public:
     std::string mCodeBuilderOverrideUri;
     bool        mHasQuiz;
 
     // prevent constructor by default
-    EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&);
     EducationLocalLevelSettings(EducationLocalLevelSettings const&);
     EducationLocalLevelSettings();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI ~EducationLocalLevelSettings();
+    MCAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);
 
+    MCAPI ~EducationLocalLevelSettings();
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void dtor$();
-
+    MCAPI void $dtor();
     // NOLINTEND
 };

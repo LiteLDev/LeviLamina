@@ -1,53 +1,56 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/scores/IdentityDefinition.h"
+
+// auto generated forward declare list
+// clang-format off
+class IdentityDefinition;
+struct ActorUniqueID;
+struct PlayerScoreboardId;
+struct ScoreboardId;
+// clang-format on
 
 class IdentityDictionary {
 public:
-    std::unordered_map<PlayerScoreboardId, ScoreboardId> mPlayers;
-    std::unordered_map<ActorUniqueID, ScoreboardId>      mEntities;
-    std::unordered_map<std::string, ScoreboardId>        mFakes;
-    std::unordered_map<ScoreboardId, IdentityDefinition> mIdentityDefs;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::PlayerScoreboardId, ::ScoreboardId>> mPlayers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ScoreboardId>>      mEntities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScoreboardId>>        mFakes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, ::IdentityDefinition>> mIdentityDefs;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    IdentityDictionary& operator=(IdentityDictionary const&);
+    IdentityDictionary(IdentityDictionary const&);
+
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI IdentityDictionary();
 
-    MCAPI bool clearIdentity(struct ScoreboardId const& scoreboardId);
+    MCAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
 
-    MCAPI struct ScoreboardId const&
-    convertFakeToReal(struct ScoreboardId const& scoreboardId, struct PlayerScoreboardId const& playerId);
+    MCAPI ::ScoreboardId const&
+    convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
-    MCAPI std::vector<struct ScoreboardId> getAllScoreboardIds() const;
+    MCAPI ::ScoreboardId const& getScoreboardId(::PlayerScoreboardId const& playerId) const;
 
-    MCAPI struct ScoreboardId const& getScoreboardId(std::string const& fakePlayerName) const;
-
-    MCAPI struct ScoreboardId const& getScoreboardId(struct ActorUniqueID const& euid) const;
-
-    MCAPI struct ScoreboardId const& getScoreboardId(struct PlayerScoreboardId const& playerId) const;
-
-    MCAPI struct ScoreboardId const&
-    registerIdentity(struct ScoreboardId const& scoreboardId, std::string const& fakePlayerName);
-
-    MCAPI struct ScoreboardId const&
-    registerIdentity(struct ScoreboardId const& scoreboardId, struct ActorUniqueID const& euid);
-
-    MCAPI struct ScoreboardId const&
-    registerIdentity(struct ScoreboardId const& scoreboardId, struct PlayerScoreboardId const& playerId);
-
-    MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const& playerId, std::string const& displayName);
+    MCAPI bool shouldConvertFakePlayer(::PlayerScoreboardId const& playerId, ::std::string const& displayName);
 
     MCAPI ~IdentityDictionary();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* ctor$();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
-
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

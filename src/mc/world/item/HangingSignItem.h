@@ -3,19 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/InHandUpdateType.h"
-#include "mc/world/item/ItemColor.h"
-#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/SignItem.h"
-#include "mc/world/level/block/BlockShape.h"
 #include "mc/world/level/block/SignBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
-namespace mce { class Color; }
+class Actor;
+class Block;
+class BlockPos;
+class ItemStackBase;
 // clang-format on
 
 class HangingSignItem : public ::SignItem {
@@ -26,40 +22,54 @@ public:
     HangingSignItem();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 121
+    virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const
+        /*override*/;
+
+    // vIndex: 118
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
+
     // vIndex: 0
-    virtual ~HangingSignItem() = default;
-
-    // vIndex: 116
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
-
-    // vIndex: 119
-    virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
-
-    MCAPI HangingSignItem(std::string const& name, int id, ::SignBlock::SignType type);
-
+    virtual ~HangingSignItem() /*override*/;
     // NOLINTEND
 
-    // private:
-    // NOLINTBEGIN
-    MCAPI class Block const*
-    _getCeilingHangingSignBlock(class Actor const& entity, uchar const& face, class BlockPos const& pos) const;
-
-    MCAPI class Block const*
-    _getWallHangingSignBlock(class Actor const& entity, uchar const& face, class BlockPos const& pos) const;
-
-    // NOLINTEND
-
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI HangingSignItem(::std::string const& name, int id, ::SignBlock::SignType type);
 
-    MCAPI void* ctor$(std::string const& name, int id, ::SignBlock::SignType type);
+    MCAPI ::Block const*
+    _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI bool _calculatePlacePos$(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
+    MCAPI ::Block const*
+    _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
+    // NOLINTEND
 
-    MCAPI class Block const* getBlockToPlace$(uchar face, class Actor const& entity, class BlockPos pos) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::SignBlock::SignType type);
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
+
+    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

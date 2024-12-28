@@ -3,9 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class Rotation : uchar {
-    None      = 0x0,
-    Rotate90  = 0x1,
-    Rotate180 = 0x2,
-    Rotate270 = 0x3,
-    Total     = 0x4,
+    // bitfield representation
+    None               = 0,
+    Rotate90           = 1 << 0,
+    Clockwise90        = 1 << 0,
+    Rotate180          = 1 << 1,
+    Clockwise180       = 1 << 1,
+    Total              = 1 << 2,
+    CounterClockwise90 = Clockwise90 | Clockwise180,
+    Rotate270          = Clockwise90 | Clockwise180,
 };

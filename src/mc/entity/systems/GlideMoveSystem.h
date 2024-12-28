@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GlideMoveSystem {
-public:
-    // prevent constructor by default
-    GlideMoveSystem& operator=(GlideMoveSystem const&);
-    GlideMoveSystem(GlideMoveSystem const&);
-    GlideMoveSystem();
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
 
-public:
-    // NOLINTBEGIN
-    MCAPI static struct TickingSystemWithInfo createGlideMoveSystem();
+namespace GlideMoveSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createGlideMoveSystem();
+// NOLINTEND
 
-    // NOLINTEND
-};
+} // namespace GlideMoveSystem

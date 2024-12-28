@@ -7,10 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GameEventMovementTrackingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GameEventMovementTrackingDefinition {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk27c313;
+    ::ll::UntypedStorage<1, 1> mUnkd64ec5;
+    ::ll::UntypedStorage<1, 1> mUnk1628a0;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     GameEventMovementTrackingDefinition& operator=(GameEventMovementTrackingDefinition const&);
@@ -18,12 +28,16 @@ public:
     GameEventMovementTrackingDefinition();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(class EntityContext& entity, class GameEventMovementTrackingComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::GameEventMovementTrackingComponent& component) const;
+    // NOLINTEND
 
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class GameEventMovementTrackingDefinition>>& root);
-
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    buildSchema(::std::shared_ptr<
+                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GameEventMovementTrackingDefinition>>& root);
     // NOLINTEND
 };

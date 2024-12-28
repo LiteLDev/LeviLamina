@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Item;
+class ItemInstance;
+class ItemStack;
+class LootTableContext;
+class Random;
+// clang-format on
+
 class SetDataFromColorIndexFunction : public ::LootItemFunction {
 public:
     // prevent constructor by default
@@ -13,37 +23,46 @@ public:
     SetDataFromColorIndexFunction();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetDataFromColorIndexFunction() = default;
+    virtual ~SetDataFromColorIndexFunction() /*override*/;
 
-    // vIndex: 1
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+    // vIndex: 4
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 3
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
+    // vIndex: 2
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
-    // private:
+public:
+    // member functions
     // NOLINTBEGIN
     MCAPI bool _applyImpl(
-        class Item const*& inOutItemDef,
-        class Actor const* thisEntity,
-        std::string const& originalItemName,
-        int&               outResultAux
+        ::Item const*&       inOutItemDef,
+        ::Actor const*       thisEntity,
+        ::std::string const& originalItemName,
+        int&                 outResultAux
     );
-
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void apply$(class ItemStack& item, class Random& random, class LootTableContext& context);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void apply$(class ItemInstance& item, class Random& random, class LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

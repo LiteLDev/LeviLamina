@@ -4,10 +4,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Puv { class VersionRange; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct ComponentItemData_v1_19_83 {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk14f68e;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     ComponentItemData_v1_19_83& operator=(ComponentItemData_v1_19_83 const&);
@@ -15,19 +23,28 @@ public:
     ComponentItemData_v1_19_83();
 
 public:
+    // member functions
     // NOLINTBEGIN
     MCAPI ~ComponentItemData_v1_19_83();
-
     // NOLINTEND
 
-    // thunks
 public:
+    // static functions
     // NOLINTBEGIN
-    MCAPI void dtor$();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCAPI static class SemVersion const& PARSER_VERSION();
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersion const& PARSER_VERSION();
 
-    MCAPI static class Puv::VersionRange const& SUPPORTED_VERSIONS();
+    MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    // NOLINTEND
 
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

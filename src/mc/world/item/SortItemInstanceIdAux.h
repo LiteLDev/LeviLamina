@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+// clang-format on
+
 struct SortItemInstanceIdAux {
 public:
     // prevent constructor by default
@@ -10,8 +15,8 @@ public:
     SortItemInstanceIdAux();
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI bool operator()(class ItemInstance const& lhs, class ItemInstance const& rhs) const;
-
+    MCAPI bool operator()(::ItemInstance const& lhs, ::ItemInstance const& rhs) const;
     // NOLINTEND
 };

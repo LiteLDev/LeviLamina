@@ -9,6 +9,14 @@
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/events/EventResult.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Player;
+struct ActorDefinitionModifier;
+struct ActorNotificationEvent;
+// clang-format on
+
 class ActorEventListener {
 public:
     // prevent constructor by default
@@ -17,121 +25,128 @@ public:
     ActorEventListener();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ActorEventListener();
 
     // vIndex: 1
-    virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
+    virtual ::EventResult onEvent(::ActorNotificationEvent const& event);
 
     // vIndex: 2
     virtual ::EventResult onActorDefinitionEvent(
-        class Actor&                                 actor,
-        std::string const&                           event,
-        std::vector<struct ActorDefinitionModifier>& modifiers
+        ::Actor&                                  actor,
+        ::std::string const&                      event,
+        ::std::vector<::ActorDefinitionModifier>& modifiers
     );
 
     // vIndex: 3
-    virtual ::EventResult onActorTick(class Actor& actor);
+    virtual ::EventResult onActorTick(::Actor& actor);
 
     // vIndex: 4
-    virtual ::EventResult onActorSneakChanged(class Actor& actor, bool isSneaking);
+    virtual ::EventResult onActorSneakChanged(::Actor& actor, bool isSneaking);
 
     // vIndex: 5
-    virtual ::EventResult onActorStartRiding(class Actor& actor, class Actor& vehicle);
+    virtual ::EventResult onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 
     // vIndex: 6
     virtual ::EventResult
-    onActorStopRiding(class Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+    onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
 
     // vIndex: 7
-    virtual ::EventResult onActorCreated(class Actor& actor, ::ActorInitializationMethod initializationMethod);
+    virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
     // vIndex: 8
-    virtual ::EventResult onActorCreationAttemptFailed(class Actor& actor, std::string_view message);
+    virtual ::EventResult onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 
     // vIndex: 9
-    virtual ::EventResult onActorTeleported(class Actor& actor);
+    virtual ::EventResult onActorTeleported(::Actor& actor);
 
     // vIndex: 10
-    virtual ::EventResult onActorAttackedActor(class Actor& actor, class Actor& target);
+    virtual ::EventResult onActorAttackedActor(::Actor& actor, ::Actor& target);
 
     // vIndex: 11
     virtual ::EventResult onActorMobInteraction(
-        class Actor&                         actor,
+        ::Actor&                             actor,
         ::MinecraftEventing::InteractionType interactionType,
         ::ActorType                          interactedActorType
     );
 
     // vIndex: 12
-    virtual ::EventResult onActorTargetAcquired(class Actor& actor, class Actor& target);
+    virtual ::EventResult onActorTargetAcquired(::Actor& actor, ::Actor& target);
 
     // vIndex: 13
-    virtual ::EventResult onPlayerAuthInputReceived(class Player&);
+    virtual ::EventResult onPlayerAuthInputReceived(::Player&);
 
     // vIndex: 14
-    virtual ::EventResult onPlayerAuthInputApplied(class Player&);
+    virtual ::EventResult onPlayerAuthInputApplied(::Player&);
 
     // vIndex: 15
-    virtual ::EventResult onPlayerAIStepBegin(class Player&);
+    virtual ::EventResult onPlayerAIStepBegin(::Player&);
 
     // vIndex: 16
-    virtual ::EventResult onPlayerAIStepEnd(class Player&);
+    virtual ::EventResult onPlayerAIStepEnd(::Player&);
 
     // vIndex: 17
-    virtual ::EventResult onActorMovementRewindCorrected(class Actor&, uint64, ::ReplayCorrectionResult);
-
+    virtual ::EventResult onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::EventResult $onEvent(::ActorNotificationEvent const& event);
 
-    MCAPI ::EventResult onActorAttackedActor$(class Actor& actor, class Actor& target);
-
-    MCAPI ::EventResult onActorCreated$(class Actor& actor, ::ActorInitializationMethod initializationMethod);
-
-    MCAPI ::EventResult onActorCreationAttemptFailed$(class Actor& actor, std::string_view message);
-
-    MCAPI ::EventResult onActorDefinitionEvent$(
-        class Actor&                                 actor,
-        std::string const&                           event,
-        std::vector<struct ActorDefinitionModifier>& modifiers
+    MCAPI ::EventResult $onActorDefinitionEvent(
+        ::Actor&                                  actor,
+        ::std::string const&                      event,
+        ::std::vector<::ActorDefinitionModifier>& modifiers
     );
 
-    MCAPI ::EventResult onActorMobInteraction$(
-        class Actor&                         actor,
+    MCAPI ::EventResult $onActorTick(::Actor& actor);
+
+    MCAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
+
+    MCAPI ::EventResult $onActorStartRiding(::Actor& actor, ::Actor& vehicle);
+
+    MCAPI ::EventResult
+    $onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+
+    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+
+    MCAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
+
+    MCAPI ::EventResult $onActorTeleported(::Actor& actor);
+
+    MCAPI ::EventResult $onActorAttackedActor(::Actor& actor, ::Actor& target);
+
+    MCAPI ::EventResult $onActorMobInteraction(
+        ::Actor&                             actor,
         ::MinecraftEventing::InteractionType interactionType,
         ::ActorType                          interactedActorType
     );
 
-    MCAPI ::EventResult onActorMovementRewindCorrected$(class Actor&, uint64, ::ReplayCorrectionResult);
+    MCAPI ::EventResult $onActorTargetAcquired(::Actor& actor, ::Actor& target);
 
-    MCAPI ::EventResult onActorSneakChanged$(class Actor& actor, bool isSneaking);
+    MCAPI ::EventResult $onPlayerAuthInputReceived(::Player&);
 
-    MCAPI ::EventResult onActorStartRiding$(class Actor& actor, class Actor& vehicle);
+    MCAPI ::EventResult $onPlayerAuthInputApplied(::Player&);
 
-    MCAPI ::EventResult
-    onActorStopRiding$(class Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+    MCAPI ::EventResult $onPlayerAIStepBegin(::Player&);
 
-    MCAPI ::EventResult onActorTargetAcquired$(class Actor& actor, class Actor& target);
+    MCAPI ::EventResult $onPlayerAIStepEnd(::Player&);
 
-    MCAPI ::EventResult onActorTeleported$(class Actor& actor);
+    MCAPI ::EventResult $onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
+    // NOLINTEND
 
-    MCAPI ::EventResult onActorTick$(class Actor& actor);
-
-    MCAPI ::EventResult onEvent$(struct ActorNotificationEvent const&);
-
-    MCAPI ::EventResult onPlayerAIStepBegin$(class Player&);
-
-    MCAPI ::EventResult onPlayerAIStepEnd$(class Player&);
-
-    MCAPI ::EventResult onPlayerAuthInputApplied$(class Player&);
-
-    MCAPI ::EventResult onPlayerAuthInputReceived$(class Player&);
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

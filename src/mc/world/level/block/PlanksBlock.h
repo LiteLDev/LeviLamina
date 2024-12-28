@@ -3,23 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
-#include "mc/world/Flip.h"
-#include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/WoodType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class Color; }
+class Block;
+class Experiments;
 // clang-format on
 
 class PlanksBlock : public ::BlockLegacy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk504336;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     PlanksBlock& operator=(PlanksBlock const&);
@@ -27,32 +26,53 @@ public:
     PlanksBlock();
 
 public:
+    // virtual functions
     // NOLINTBEGIN
+    // vIndex: 112
+    virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
-    virtual ~PlanksBlock() = default;
-
-    // vIndex: 119
-    virtual std::string buildDescriptionId(class Block const&) const;
-
-    // vIndex: 142
-    virtual void _addHardCodedBlockComponents(class Experiments const& experiments);
-
-    MCAPI PlanksBlock(std::string const& nameId, int id, ::WoodType woodType);
-
+    virtual ~PlanksBlock() /*override*/;
     // NOLINTEND
 
-    // thunks
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI PlanksBlock(::std::string const& nameId, int id, ::WoodType woodType);
+    // NOLINTEND
 
-    MCAPI void* ctor$(std::string const& nameId, int id, ::WoodType woodType);
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
+    // NOLINTEND
 
-    MCAPI void _addHardCodedBlockComponents$(class Experiments const& experiments);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType woodType);
+    // NOLINTEND
 
-    MCAPI std::string buildDescriptionId$(class Block const&) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI static std::array<std::string, 9> const& WOOD_NAMES();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

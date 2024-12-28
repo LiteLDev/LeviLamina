@@ -2,34 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct Brightness {
+// auto generated inclusion list
+#include "mc/util/NewType.h"
+
+struct Brightness : public ::NewType<uchar> {
 public:
     uchar value;
 
 public:
+    // member functions
     // NOLINTBEGIN
-    MCAPI Brightness(struct Brightness const&);
-
     MCAPI explicit Brightness(uchar const&);
 
-    MCAPI struct Brightness& operator=(struct Brightness&&);
+    MCAPI Brightness(::Brightness const&);
 
-    MCAPI struct Brightness& operator=(struct Brightness const&);
+    MCAPI ::Brightness& operator=(::Brightness&&);
 
+    MCAPI ::Brightness& operator=(::Brightness const&);
     // NOLINTEND
 
-    // thunks
 public:
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* ctor$(struct Brightness const&);
+    MCAPI static ::Brightness const& INVALID();
 
-    MCAPI void* ctor$(uchar const&);
+    MCAPI static ::Brightness const& MAX();
 
-    MCAPI static struct Brightness const& INVALID();
+    MCAPI static ::Brightness const& MIN();
+    // NOLINTEND
 
-    MCAPI static struct Brightness const& MAX();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uchar const&);
 
-    MCAPI static struct Brightness const& MIN();
-
+    MCAPI void* $ctor(::Brightness const&);
     // NOLINTEND
 };

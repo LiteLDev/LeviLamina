@@ -1,79 +1,104 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/trading/MerchantRecipe.h"
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/TypedServerNetId.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+class ItemInstance;
+class MerchantRecipe;
+class SaveContext;
+struct RecipeNetIdTag;
+// clang-format on
+
 class MerchantRecipeList {
 public:
-    std::vector<class MerchantRecipe> mRecipeList;
-    std::vector<uint>                 mTierExpRequirements;
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::MerchantRecipe>> mRecipeList;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>             mTierExpRequirements;
+    // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MerchantRecipeList& operator=(MerchantRecipeList const&);
+    MerchantRecipeList(MerchantRecipeList const&);
+
+public:
+    // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MerchantRecipeList() = default;
+    virtual ~MerchantRecipeList();
 
     // vIndex: 1
-    virtual class MerchantRecipe*
-    getRecipeFor(class ItemInstance const& buyA, class ItemInstance const& buyB, int selectionHint);
+    virtual ::MerchantRecipe* getRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, int selectionHint);
 
     // vIndex: 2
-    virtual void addIfNewOrBetter(class MerchantRecipe* toMatch);
-
-    // vIndex: 3
-    virtual class MerchantRecipe* getMatchingRecipeFor(
-        class ItemInstance const& buyA,
-        class ItemInstance const& buyB,
-        class ItemInstance const& sell
-    );
+    virtual void addIfNewOrBetter(::MerchantRecipe* toMatch);
 
     // vIndex: 4
-    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const& recipe);
+    virtual ::MerchantRecipe*
+    getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+
+    // vIndex: 3
+    virtual ::MerchantRecipe* getMatchingRecipeFor(::MerchantRecipe const& recipe);
 
     // vIndex: 5
-    virtual void load(class CompoundTag const& tag);
+    virtual void load(::CompoundTag const& tag);
 
     // vIndex: 6
-    virtual std::unique_ptr<class CompoundTag> createTag(bool includeNetInfo) const;
+    virtual ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+    // NOLINTEND
 
+public:
+    // member functions
+    // NOLINTBEGIN
     MCAPI MerchantRecipeList();
 
     MCAPI void assignNetIds();
 
-    MCAPI class MerchantRecipe const* getRecipeByNetId(RecipeNetId const& netId) const;
+    MCAPI ::MerchantRecipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
 
-    MCAPI std::optional<uint64> getRecipeIndexByNetId(RecipeNetId const& netId) const;
+    MCAPI ::std::optional<uint64> getRecipeIndexByNetId(::RecipeNetId const& netId) const;
 
-    MCAPI bool isRequiredItem(class ItemInstance const& offer, class ItemInstance const& requiredItem);
-
+    MCAPI bool isRequiredItem(::ItemInstance const& offer, ::ItemInstance const& requiredItem);
     // NOLINTEND
 
-    // thunks
 public:
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI void* ctor$();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void addIfNewOrBetter$(class MerchantRecipe* toMatch);
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::MerchantRecipe* $getRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, int selectionHint);
 
-    MCAPI std::unique_ptr<class CompoundTag> createTag$(bool includeNetInfo) const;
+    MCAPI void $addIfNewOrBetter(::MerchantRecipe* toMatch);
 
-    MCAPI class MerchantRecipe* getMatchingRecipeFor$(
-        class ItemInstance const& buyA,
-        class ItemInstance const& buyB,
-        class ItemInstance const& sell
-    );
+    MCAPI ::MerchantRecipe*
+    $getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCAPI class MerchantRecipe* getMatchingRecipeFor$(class MerchantRecipe const& recipe);
+    MCAPI ::MerchantRecipe* $getMatchingRecipeFor(::MerchantRecipe const& recipe);
 
-    MCAPI class MerchantRecipe*
-    getRecipeFor$(class ItemInstance const& buyA, class ItemInstance const& buyB, int selectionHint);
+    MCAPI void $load(::CompoundTag const& tag);
 
-    MCAPI void load$(class CompoundTag const& tag);
+    MCAPI ::std::unique_ptr<::CompoundTag> $createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

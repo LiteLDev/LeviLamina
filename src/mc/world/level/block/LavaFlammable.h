@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class LavaFlammable {};
+enum class LavaFlammable : uchar {
+    Always = 1,
+    Never  = 0,
+};
