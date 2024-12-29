@@ -21,7 +21,7 @@ public:
 
     LLNDAPI std::shared_ptr<Logger> tryGet(std::string_view title);
 
-    LLNDAPI bool erase(std::string_view title);
+    LLAPI bool erase(std::string_view title);
 
     LLNDAPI coro::Generator<Logger&> loggers();
 };

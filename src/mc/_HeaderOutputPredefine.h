@@ -2,9 +2,11 @@
 
 // clang-format off
 
+#ifdef _MSC_VER
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 #pragma warning(disable : 4373) // for MOJANG : override virtual function with different const/volatile params
+#endif
 
 #include "ll/api/base/Macro.h"
 
@@ -102,7 +104,14 @@
 #include "type_safe/strong_typedef.hpp"
 
 // expected_lite C++ Library
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4702)
+#endif
 #include "nonstd/expected.hpp"
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 #include "ll/api/base/Alias.h"
 #include "ll/api/base/StdInt.h"
