@@ -8,8 +8,8 @@
 [![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
 [![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
 
-[![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)](README.md)
-![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)
+[![English](https://img.shields.io/badge/English-informational?style=for-the-badge)](README.md)
+![中文](https://img.shields.io/badge/简体中文-inactive?style=for-the-badge)
 
 轻量级、模块化和多功能的Minecraft基岩版模组加载器，曾被称为LiteLoaderBDS
 
