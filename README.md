@@ -1,9 +1,9 @@
 # LeviLamina
 
-![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fmain%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)](https://discord.gg/v5R5P4vRZk)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)  
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)
 [![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
 [![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
 [![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
@@ -21,8 +21,8 @@ For more information, please refer to [the documentation](https://levilamina.lit
 
 ## Security
 
-!!! warning
-    Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
+> [!WARNING]
+> Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
 
 LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
 
@@ -34,17 +34,9 @@ Users should comply with relevant laws and regulations when using this software,
 
 If you have any questions or comments about this disclaimer, please contact the developer.
 
-## Install
+## Install & Usage
 
 Please refer to [Quickstart](https://levilamina.liteldev.com/quickstart/)
-
-## Usage
-
-To start the server, simply run `bedrock_server_mod.exe`:
-
-```sh
-./bedrock_server_mod.exe
-```
 
 ## Star History
 
@@ -76,6 +68,6 @@ This project exists thanks to all the people who contribute.
 
 ## License
 
-Copyright © 2023-2024 LiteLDev, All rights reserved.
+Copyright © 2024 LeviMC, All rights reserved.
 
 This project is licensed under the LGPL-3.0 License - see the [COPYING](COPYING) and [COPYING.LESSER](COPYING.LESSER) files for details.
