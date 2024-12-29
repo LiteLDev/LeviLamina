@@ -435,26 +435,26 @@ public:
 
     enum class Error : int {
         KNoError                    = 0,
-        KUnspecifiedError           = 4294967295,
-        KCreationFailedError        = 4294967294,
-        KUnsupportedComponentError  = 4294967293,
-        KUnsupportedFunctionError   = 4294967292,
-        KNullPointerError           = 4294967291,
-        KBadParameterError          = 4294967290,
-        KBadSampleRateError         = 4294967289,
-        KBadDataLengthError         = 4294967288,
-        KBadNumberChannelsError     = 4294967287,
-        KFileError                  = 4294967286,
-        KStreamParameterNotSetError = 4294967285,
-        KNotEnabledError            = 4294967284,
-        KBadStreamParameterWarning  = 4294967283,
+        KUnspecifiedError           = -1,
+        KCreationFailedError        = -2,
+        KUnsupportedComponentError  = -3,
+        KUnsupportedFunctionError   = -4,
+        KNullPointerError           = -5,
+        KBadParameterError          = -6,
+        KBadSampleRateError         = -7,
+        KBadDataLengthError         = -8,
+        KBadNumberChannelsError     = -9,
+        KFileError                  = -10,
+        KStreamParameterNotSetError = -11,
+        KNotEnabledError            = -12,
+        KBadStreamParameterWarning  = -13,
     };
 
     enum class NativeRate : int {
         KSampleRate8kHz  = 8000,
         KSampleRate16kHz = 16000,
         KSampleRate32kHz = 32000,
-        KSampleRate48kHz = 4294949760,
+        KSampleRate48kHz = 48000,
     };
 
 public:

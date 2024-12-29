@@ -75,7 +75,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 98
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
         /*override*/;
 
     // vIndex: 139
@@ -136,7 +136,7 @@ public:
 
     MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
     // NOLINTEND

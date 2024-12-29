@@ -45,7 +45,8 @@ public:
     };
 
     enum : uint64 {
-        KInlineStorageSize = 0,
+        // bitfield representation
+        KInlineStorageSize = 1ull << 5,
     };
 
 public:

@@ -15,7 +15,7 @@ class Potion {
 public:
     // Potion inner types define
     enum class PotionType : int {
-        Undefined = 4294967295,
+        Undefined = -1,
         Regular   = 0,
         Splash    = 1,
         Lingering = 2,

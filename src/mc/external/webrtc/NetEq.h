@@ -47,7 +47,7 @@ public:
 
     enum class ReturnCodes : int {
         KOK   = 0,
-        KFail = 4294967295,
+        KFail = -1,
     };
 
     enum class Operation : int {

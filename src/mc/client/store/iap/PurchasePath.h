@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PurchasePath : int {
-    Unknown             = 4294967295,
+    Unknown             = -1,
     MinecoinScreen      = 0,
     InsufficientFunds   = 1,
     RealMoneyButton     = 2,

@@ -5,7 +5,7 @@
 namespace rtc::array_view_internal {
 // inner types
 enum : int64 {
-    KArrayViewVarSize = 0,
+    KArrayViewVarSize = -4711,
 };
 
 } // namespace rtc::array_view_internal

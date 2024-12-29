@@ -50,7 +50,7 @@ public:
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::std::string const& eventName,
-        ::Actor&             actor
+        ::Actor&             sourceEntity
     ) const /*override*/;
 
     // vIndex: 124
@@ -107,7 +107,7 @@ public:
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::std::string const& eventName,
-        ::Actor&             actor
+        ::Actor&             sourceEntity
     ) const;
 
     MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;

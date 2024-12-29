@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ArmorTextureType : int {
-    None      = 4294967295,
+    None      = -1,
     Leather   = 0,
     Chain     = 1,
     Iron      = 2,

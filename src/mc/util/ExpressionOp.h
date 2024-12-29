@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ExpressionOp : short {
-    Unknown          = 65535,
+    Unknown          = -1,
     LeftBrace        = 0,
     RightBrace       = 1,
     LeftBracket      = 2,

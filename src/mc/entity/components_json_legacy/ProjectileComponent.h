@@ -23,7 +23,7 @@ class ProjectileComponent {
 public:
     // ProjectileComponent inner types define
     enum class EAxis : int {
-        None = 4294967295,
+        None = -1,
         X    = 0,
         Y    = 1,
         Z    = 2,

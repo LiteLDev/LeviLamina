@@ -5,7 +5,7 @@
 namespace ParticleSystem {
 
 enum class ParticleCurveType : int {
-    Invalid     = 4294967295,
+    Invalid     = -1,
     Linear      = 0,
     Bezier      = 1,
     CatmullRom  = 2,

@@ -14,9 +14,9 @@ public:
     // ArmSize inner types define
     enum class Type : uint64 {
         Slim    = 0,
-        Wide    = 0,
-        Count   = 0,
-        Unknown = 0,
+        Wide    = 1,
+        Count   = 2,
+        Unknown = 3,
     };
 
     using SizeInfoList = ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo>;

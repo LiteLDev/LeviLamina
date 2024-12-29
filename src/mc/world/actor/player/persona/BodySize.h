@@ -14,11 +14,11 @@ public:
     // BodySize inner types define
     enum class Type : uint64 {
         Smaller = 0,
-        Small   = 0,
-        Medium  = 0,
-        Tall    = 0,
-        Count   = 0,
-        Unknown = 0,
+        Small   = 1,
+        Medium  = 2,
+        Tall    = 3,
+        Count   = 4,
+        Unknown = 5,
     };
 
 public:

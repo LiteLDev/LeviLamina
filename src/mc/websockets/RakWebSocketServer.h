@@ -17,7 +17,7 @@ public:
     public:
         // WebsocketServerMetaDataPayload inner types define
         enum class MetaDataPayloadType : int {
-            Unknown  = 4294967295,
+            Unknown  = -1,
             TextHtml = 0,
         };
 

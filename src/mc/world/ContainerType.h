@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ContainerType : schar {
-    None               = 247,
-    Inventory          = 255,
+    None               = -9,
+    Inventory          = -1,
     Container          = 0,
     Workbench          = 1,
     Furnace            = 2,

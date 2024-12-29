@@ -207,7 +207,7 @@ public:
 
     // vIndex: 208
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -275,7 +275,7 @@ public:
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
     // vIndex: 74
-    virtual void setArmor(::ArmorSlot const slot, ::ItemStack const& item) /*override*/;
+    virtual void setArmor(::ArmorSlot const armorSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 81
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
@@ -556,7 +556,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -608,7 +608,7 @@ public:
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
-    MCAPI void $setArmor(::ArmorSlot const slot, ::ItemStack const& item);
+    MCAPI void $setArmor(::ArmorSlot const armorSlot, ::ItemStack const& item);
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 

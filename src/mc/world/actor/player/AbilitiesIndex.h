@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class AbilitiesIndex : schar {
-    Invalid           = 255,
+    Invalid           = -1,
     Build             = 0,
     Mine              = 1,
     DoorsAndSwitches  = 2,

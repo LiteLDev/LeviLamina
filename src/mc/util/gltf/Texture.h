@@ -21,9 +21,9 @@ public:
 
     enum class Type : int {
         Byte         = 5121,
-        Short5_6_5   = 4294935395,
-        Short4_4_4_4 = 4294934579,
-        Short5_5_5_1 = 4294934580,
+        Short5_6_5   = 33635,
+        Short4_4_4_4 = 32819,
+        Short5_5_5_1 = 32820,
     };
 
 public:

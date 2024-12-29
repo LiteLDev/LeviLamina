@@ -19,7 +19,7 @@ public:
     };
 
     enum class ConnectionFailureReason : int {
-        Unknown                     = 4294967295,
+        Unknown                     = -1,
         MismatchedMinecraftProtocol = 1,
         MismatchedRaknetVersion     = 2,
     };

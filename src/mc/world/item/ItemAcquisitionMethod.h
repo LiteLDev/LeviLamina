@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ItemAcquisitionMethod : int {
-    Unknown             = 4294967295,
+    Unknown             = -1,
     None                = 0,
     PickedUp            = 1,
     Crafted             = 2,
