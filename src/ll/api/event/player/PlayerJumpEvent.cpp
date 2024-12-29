@@ -7,7 +7,7 @@
 #include "mc/server/ServerPlayer.h"
 
 namespace ll::event::inline player {
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerJumpEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
@@ -17,10 +17,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::PlayerAuthInputPacket const& packet
 ) {
     auto& handle = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
-    if (ServerPlayer* player = handle._getServerPlayer(source, packet.mClientSubId)) {
+    if (ServerPlayer* player = handle._getServerPlayer(source, packet.mClientSubId); player) {
         if (packet.getInput(::PlayerAuthInputPacket::InputData::StartJumping)) {
-            std::cout << player->getRealName() << std::endl;
-            EventBus::getInstance().publish(PlayerJumpEvent(*(Player*)player));
+            EventBus::getInstance().publish(PlayerJumpEvent(*player));
         }
     }
     return origin(source, packet);

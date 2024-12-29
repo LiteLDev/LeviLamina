@@ -4,6 +4,7 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/SetLocalPlayerAsInitializedPacket.h"
+#include "mc/server/ServerPlayer.h"
 
 namespace ll::event::inline player {
 
@@ -16,7 +17,8 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const&                 identifier,
     SetLocalPlayerAsInitializedPacket const& packet
 ) {
-    if (auto player = _getServerPlayer(identifier, packet.mClientSubId); player) {
+    auto& handle = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
+    if (auto player = handle._getServerPlayer(identifier, packet.mClientSubId); player) {
         auto event = PlayerJoinEvent{*player};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {

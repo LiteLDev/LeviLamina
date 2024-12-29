@@ -17,8 +17,9 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const& id,
     AnimatePacket const&     packet
 ) {
+    auto& handle = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
     if (packet.mAction == AnimatePacket::Action::Swing) {
-        if (auto player = this->_getServerPlayer(id, packet.mClientSubId); player) {
+        if (auto player = handle._getServerPlayer(id, packet.mClientSubId); player) {
             EventBus::getInstance().publish(PlayerSwingEvent(*player));
         }
     }

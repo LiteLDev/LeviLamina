@@ -155,8 +155,8 @@ LL_TYPE_INSTANCE_HOOK(
     NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    if (auto player = static_cast<ServerNetworkHandler&>(callback)._getServerPlayer(source, SubClientId::PrimaryClient);
-        player) {
+    auto& handle = ll::memory::dAccess<ServerNetworkHandler>(&callback, -16);
+    if (auto player = handle._getServerPlayer(source, packet->mClientSubId); player) {
         auto& modalPacket = (ModalFormResponsePacket&)*packet;
 
         if (ll::form::handler::handleFormPacket(
