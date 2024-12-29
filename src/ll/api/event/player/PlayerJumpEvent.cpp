@@ -4,6 +4,8 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/PlayerAuthInputPacket.h"
+#include "mc/server/ServerPlayer.h"
+
 namespace ll::event::inline player {
 LL_AUTO_TYPE_INSTANCE_HOOK(
     PlayerJumpEventHook,
@@ -14,8 +16,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::NetworkIdentifier const&     source,
     ::PlayerAuthInputPacket const& packet
 ) {
-    if (ServerPlayer* player = _getServerPlayer(source, packet.mClientSubId)) {
+    auto& handle = ll::memory::dAccess<ServerNetworkHandler>(this, -16);
+    if (ServerPlayer* player = handle._getServerPlayer(source, packet.mClientSubId)) {
         if (packet.getInput(::PlayerAuthInputPacket::InputData::StartJumping)) {
+            std::cout << player->getRealName() << std::endl;
             EventBus::getInstance().publish(PlayerJumpEvent(*(Player*)player));
         }
     }
