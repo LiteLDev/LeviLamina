@@ -1,12 +1,16 @@
-#include "ll/api/memory/Hook.h"
-
-#include "mc/deps/core/memory/IMemoryAllocator.h"
-#include "mc/deps/core/memory/Memory.h"
+#include "mc/deps/core/memory/InternalHeapAllocator.h"
 
 namespace ll::memory {
+auto replaceMemoryAllocator = []() -> bool {
+    auto allocator = *reinterpret_cast<void***>(&getDefaultAllocator());
+    auto vftable   = ::Bedrock::Memory::InternalHeapAllocator::$vftable();
 
-LL_AUTO_STATIC_HOOK(ReplaceMemoryAllocator, HookPriority::High, ::Bedrock::Memory::getDefaultAllocator, ::Bedrock::Memory::IMemoryAllocator&) {
-    return ::ll::memory::getDefaultAllocator();
-}
+    modify(vftable, 8 * sizeof(void*), [&] {
+        for (size_t i = 0; i < 8; ++i) {
+            vftable[i] = allocator[i];
+        }
+    });
 
+    return true;
+}();
 } // namespace ll::memory
