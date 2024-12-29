@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class GameType : int {
-    Undefined    = 4294967295,
+    Undefined    = -1,
     Survival     = 0,
     Creative     = 1,
     Adventure    = 2,

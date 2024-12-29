@@ -8,8 +8,8 @@ struct Shader {
 public:
     // Shader inner types define
     enum class Type : int {
-        FragmentShader = 4294937392,
-        VertexShader   = 4294937393,
+        FragmentShader = 35632,
+        VertexShader   = 35633,
     };
 
 public:

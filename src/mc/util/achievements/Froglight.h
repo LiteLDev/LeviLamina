@@ -5,7 +5,7 @@
 namespace Achievements {
 
 enum class Froglight : int {
-    Unknown     = 4294967295,
+    Unknown     = -1,
     Ochre       = 0,
     Pearlescent = 1,
     Verdant     = 2,

@@ -6,12 +6,12 @@ namespace Social {
 
 enum class IdentityType : uint64 {
     PlayFab         = 0,
-    XboxLive        = 0,
-    Platform        = 0,
-    PlatformNetwork = 0,
-    Mock            = 0,
-    Count           = 0,
-    All             = 0,
+    XboxLive        = 1,
+    Platform        = 2,
+    PlatformNetwork = 3,
+    Mock            = 4,
+    Count           = 5,
+    All             = 6,
 };
 
 }

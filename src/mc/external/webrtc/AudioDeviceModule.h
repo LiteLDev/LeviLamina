@@ -35,8 +35,8 @@ public:
     };
 
     enum class WindowsDeviceType : int {
-        KDefaultCommunicationDevice = 4294967295,
-        KDefaultDevice              = 4294967294,
+        KDefaultCommunicationDevice = -1,
+        KDefaultDevice              = -2,
     };
 
     struct Stats {

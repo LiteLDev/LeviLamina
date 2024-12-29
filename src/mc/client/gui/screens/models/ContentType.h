@@ -4,10 +4,10 @@
 
 enum class ContentType : uint64 {
     None           = 0,
-    World          = 0,
-    WorldTemplate  = 0,
-    Resource       = 0,
-    Behavior       = 0,
-    Skin           = 0,
-    ItemCollection = 0,
+    World          = 1,
+    WorldTemplate  = 2,
+    Resource       = 3,
+    Behavior       = 4,
+    Skin           = 5,
+    ItemCollection = 6,
 };

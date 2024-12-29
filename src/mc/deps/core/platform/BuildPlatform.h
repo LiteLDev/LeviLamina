@@ -17,5 +17,5 @@ enum class BuildPlatform : int {
     Xbox                   = 13,
     WindowsPhoneDeprecated = 14,
     Linux                  = 15,
-    Unknown                = 4294967295,
+    Unknown                = -1,
 };

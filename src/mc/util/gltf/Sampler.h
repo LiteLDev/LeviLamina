@@ -22,14 +22,14 @@ public:
     };
 
     enum class WrapS : int {
-        ClampToEdge    = 4294934831,
-        MirroredRepeat = 4294935408,
+        ClampToEdge    = 33071,
+        MirroredRepeat = 33648,
         Repeat         = 10497,
     };
 
     enum class WrapT : int {
-        ClampToEdge    = 4294934831,
-        MirroredRepeat = 4294935408,
+        ClampToEdge    = 33071,
+        MirroredRepeat = 33648,
         Repeat         = 10497,
     };
 

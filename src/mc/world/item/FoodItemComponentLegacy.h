@@ -27,7 +27,7 @@ public:
 
     // FoodItemComponentLegacy inner types define
     enum class OnUseAction : int {
-        None                 = 4294967295,
+        None                 = -1,
         ChorusTeleport       = 0,
         SuspiciousStewEffect = 1,
     };

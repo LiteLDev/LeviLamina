@@ -5,7 +5,7 @@
 namespace webrtc {
 
 enum class VideoCodecComplexity : int {
-    KComplexityLow    = 4294967295,
+    KComplexityLow    = -1,
     KComplexityNormal = 0,
     KComplexityHigh   = 1,
     KComplexityHigher = 2,

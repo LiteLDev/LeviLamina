@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ItemSpecialLocation : int {
-    Invalid         = 4294967295,
+    Invalid         = -1,
     Destroy         = 0,
     PlayerPosExact  = 1,
     PlayerPosNearby = 2,

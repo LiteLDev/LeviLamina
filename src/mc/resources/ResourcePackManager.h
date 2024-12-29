@@ -82,7 +82,7 @@ public:
     // vIndex: 5
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 8
@@ -214,7 +214,7 @@ public:
 
     MCAPI bool $isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;

@@ -1,31 +1,54 @@
-# execute clang-format at src with multi-threading
-
 import os
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 import multiprocessing
 
 
-def format_file(file):
-    print("formatting {0}".format(file))
-    subprocess.run(["clang-format", "-i", file])
-    subprocess.run(["clang-format", "-i", file]) # not bug, for extra spaces
-    # change file from LF to CRLF
-    with open(file, "rb") as f:
-        content = f.read()
-    with open(file, "wb") as f:
-        f.write(content.replace(b"\n", b"\r\n").replace(b"\r\r", b"\r"))
-
-
-def format_all():
-    pool = multiprocessing.Pool(
-        processes=max(multiprocessing.cpu_count()-2, 1))
-    for root, dirs, files in os.walk("./src"):
+def get_all_code_files(directory, extensions):
+    """获取指定目录及其子目录下的所有代码文件"""
+    code_files = []
+    for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith(".h") or file.endswith(".cpp"):
-                pool.apply_async(format_file, (os.path.join(root, file),))
-    pool.close()
-    pool.join()
+            if file.endswith(extensions):
+                code_files.append(os.path.join(root, file))
+    return code_files
+
+
+def format_file(file_path, clang_format_path):
+    """使用 clang-format 格式化单个文件"""
+    try:
+        subprocess.run([clang_format_path, "-i", file_path], check=True)
+        subprocess.run([clang_format_path, "-i", file_path], check=True)
+        with open(file_path, "rb") as f:
+            content = f.read()
+        with open(file_path, "wb") as f:
+            f.write(content.replace(b"\n", b"\r\n").replace(b"\r\r", b"\r"))
+        print(f"Formatted: {file_path}")
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to format {file_path}: {e}")
+
+
+def format_code_files(
+    directory, clang_format_path, extensions=(".cpp", ".c", ".h"), threads=None
+):
+    """格式化指定目录及其子目录下的所有代码文件"""
+    code_files = get_all_code_files(directory, extensions)
+    print(f"Found {len(code_files)} files to format.")
+
+    if threads is None:
+        threads = multiprocessing.cpu_count()
+        print(f"Using {threads} threads (number of CPU cores).")
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+        executor.map(lambda file: format_file(
+            file, clang_format_path), code_files)
 
 
 if __name__ == "__main__":
-    format_all()
+    clang_format_path = r"clang-format"
+
+    import time
+
+    print(f"开始 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
+    format_code_files("./src", clang_format_path)
+    print(f"结束 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")

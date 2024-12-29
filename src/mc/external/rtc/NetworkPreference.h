@@ -6,7 +6,7 @@ namespace rtc {
 
 enum class NetworkPreference : int {
     Neutral      = 0,
-    NotPreferred = 4294967295,
+    NotPreferred = -1,
 };
 
 }

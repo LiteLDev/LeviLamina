@@ -5,7 +5,7 @@
 namespace rtc {
 
 enum class DiffServCodePoint : int {
-    NoChange = 4294967295,
+    NoChange = -1,
     Default  = 0,
     Cs0      = 0,
     Cs1      = 8,

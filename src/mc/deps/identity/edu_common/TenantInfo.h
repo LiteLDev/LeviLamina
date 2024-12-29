@@ -6,8 +6,8 @@ class TenantInfo {
 public:
     // TenantInfo inner types define
     enum class TokenState : int {
-        Missing = 4294967294,
-        Expired = 4294967295,
+        Missing = -2,
+        Expired = -1,
         Stale   = 0,
         Fresh   = 1,
     };

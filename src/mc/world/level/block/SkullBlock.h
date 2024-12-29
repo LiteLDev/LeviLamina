@@ -25,7 +25,7 @@ class SkullBlock : public ::ActorBlockBase<::BlockLegacy> {
 public:
     // SkullBlock inner types define
     enum class SkullType : int {
-        Unset    = 4294967295,
+        Unset    = -1,
         Skeleton = 0,
         Wither   = 1,
         Zombie   = 2,

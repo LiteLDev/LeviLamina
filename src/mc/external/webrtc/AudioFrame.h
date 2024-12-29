@@ -24,8 +24,8 @@ public:
     };
 
     enum : uint64 {
-        KMaxDataSizeSamples = 0,
-        KMaxDataSizeBytes   = 0,
+        KMaxDataSizeSamples = 7680,
+        KMaxDataSizeBytes   = 15360,
     };
 
 public:

@@ -5,8 +5,9 @@
 namespace absl::internal_any_invocable {
 
 enum class StorageProperty : uint64 {
-    KAlignment   = 0,
-    KStorageSize = 0,
+    // bitfield representation
+    KAlignment   = 1ull << 3,
+    KStorageSize = 1ull << 4,
 };
 
 }

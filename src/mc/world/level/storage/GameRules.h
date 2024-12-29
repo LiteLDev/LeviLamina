@@ -28,7 +28,7 @@ public:
     using WorldPolicyMap = ::std::map<::HashedString, ::GameRule>;
 
     enum class GameRulesIndex : int {
-        InvalidGameRule           = 4294967295,
+        InvalidGameRule           = -1,
         CommandBlockOutput        = 0,
         DoDaylightCycle           = 1,
         DoEntityDrops             = 2,

@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 91
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
@@ -156,7 +156,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 

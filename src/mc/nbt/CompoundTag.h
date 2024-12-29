@@ -63,7 +63,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(::Tag const& rhs) const /*override*/;
+    virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
 public:
@@ -199,7 +199,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& obj) const;
     // NOLINTEND
 
 public:

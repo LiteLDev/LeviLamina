@@ -63,7 +63,8 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 79
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
@@ -121,7 +122,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

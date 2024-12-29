@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class RenderContextType : int {
-    Unknown           = 4294967295,
+    Unknown           = -1,
     Actor             = 0,
     ActorRenderData   = 1,
     TestQueryContext  = 2,

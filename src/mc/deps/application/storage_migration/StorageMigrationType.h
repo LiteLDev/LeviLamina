@@ -5,7 +5,7 @@
 namespace Bedrock::StorageMigration {
 
 enum class StorageMigrationType : int {
-    Unknown                   = 4294967295,
+    Unknown                   = -1,
     AndroidApi30ScopedStorage = 0,
 };
 

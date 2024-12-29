@@ -484,7 +484,7 @@ public:
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 71
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 165
     virtual ::std::vector<::ItemStack const*> getAllHand() const /*override*/;
@@ -597,7 +597,7 @@ public:
     virtual bool isSilentObserver() const /*override*/;
 
     // vIndex: 114
-    virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
+    virtual void useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
 
     // vIndex: 215
     virtual bool isLoading() const;
@@ -1441,7 +1441,7 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHand() const;
 
@@ -1524,7 +1524,7 @@ public:
 
     MCAPI bool $isSilentObserver() const;
 
-    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCAPI bool $isLoading() const;
 

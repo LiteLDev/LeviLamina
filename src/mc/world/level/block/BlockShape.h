@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class BlockShape : int {
-    Invisible                   = 4294967295,
+    Invisible                   = -1,
     Block                       = 0,
     CrossTexture                = 1,
     Torch                       = 2,

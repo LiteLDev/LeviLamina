@@ -24,9 +24,9 @@ public:
     // DecoratedPotBlockActor inner types define
     enum class PotFace : uint64 {
         Back  = 0,
-        Left  = 0,
-        Right = 0,
-        Front = 0,
+        Left  = 1,
+        Right = 2,
+        Front = 3,
     };
 
 public:

@@ -15,7 +15,7 @@ class BeaconContainerManagerController : public ::ContainerManagerController {
 public:
     // BeaconContainerManagerController inner types define
     enum class ButtonId : int {
-        IdInvalid   = 4294967295,
+        IdInvalid   = -1,
         IdConfirm   = 0,
         IdCancel    = 1,
         IdSpeed     = 2,

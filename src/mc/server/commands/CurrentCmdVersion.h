@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CurrentCmdVersion : int {
-    Invalid                                      = 4294967295,
+    Invalid                                      = -1,
     Initial                                      = 1,
     TpRotationClamping                           = 2,
     NewBedrockCmdSystem                          = 3,

@@ -5,7 +5,7 @@
 namespace Social {
 
 enum class ConnectionType : short {
-    Undefined                 = 65535,
+    Undefined                 = -1,
     Local                     = 0,
     IPv4                      = 1,
     IPv6                      = 2,
